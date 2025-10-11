@@ -16,36 +16,37 @@ interface FiltersPanelProps {
   availableFields: { id: string; label: string; type: string }[]
 }
 
-const OPERATORS: Record<string, { value: FilterOperator; label: string }[]> = {
+const getOperators = (t: any): Record<string, { value: FilterOperator; label: string }[]> => ({
   text: [
-    { value: "equals", label: "Equals" },
-    { value: "not_equals", label: "Does not equal" },
-    { value: "contains", label: "Contains" },
-    { value: "not_contains", label: "Does not contain" },
-    { value: "starts_with", label: "Starts with" },
-    { value: "ends_with", label: "Ends with" },
-    { value: "is_empty", label: "Is empty" },
-    { value: "is_not_empty", label: "Is not empty" },
+    { value: "equals", label: t('common.equals') },
+    { value: "not_equals", label: t('filters.doesNotEqual') },
+    { value: "contains", label: t('filters.contains') },
+    { value: "not_contains", label: t('filters.doesNotContain') },
+    { value: "starts_with", label: t('filters.startsWith') },
+    { value: "ends_with", label: t('filters.endsWith') },
+    { value: "is_empty", label: t('filters.isEmpty') },
+    { value: "is_not_empty", label: t('filters.isNotEmpty') },
   ],
   number: [
-    { value: "equals", label: "Equals" },
-    { value: "not_equals", label: "Does not equal" },
-    { value: "greater_than", label: "Greater than" },
-    { value: "less_than", label: "Less than" },
-    { value: "greater_than_or_equal", label: "Greater than or equal" },
-    { value: "less_than_or_equal", label: "Less than or equal" },
+    { value: "equals", label: t('common.equals') },
+    { value: "not_equals", label: t('filters.doesNotEqual') },
+    { value: "greater_than", label: t('filters.greaterThan') },
+    { value: "less_than", label: t('filters.lessThan') },
+    { value: "greater_than_or_equal", label: t('filters.greaterThanOrEqual') },
+    { value: "less_than_or_equal", label: t('filters.lessThanOrEqual') },
   ],
   date: [
-    { value: "is_on", label: "Is on" },
-    { value: "is_before", label: "Is before" },
-    { value: "is_after", label: "Is after" },
-    { value: "is_between", label: "Is between" },
+    { value: "is_on", label: t('filters.isOn') },
+    { value: "is_before", label: t('filters.isBefore') },
+    { value: "is_after", label: t('filters.isAfter') },
+    { value: "is_between", label: t('filters.isBetween') },
   ],
-}
+})
 
 export function FiltersPanel({ filters, onFiltersChange, availableFields }: FiltersPanelProps) {
   const t = useTranslations()
   const [open, setOpen] = useState(false)
+  const OPERATORS = getOperators(t)
 
   const addFilter = () => {
     const newFilter: FilterConfig = {
@@ -136,7 +137,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
                     onValueChange={(value) => updateFilter(filter.id, { field: value })}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select field" />
+                      <SelectValue placeholder={t('filters.selectField')} />
                     </SelectTrigger>
                     <SelectContent>
                       {availableFields.map((field) => (
@@ -155,7 +156,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
                     }
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select operator" />
+                      <SelectValue placeholder={t('filters.selectOperator')} />
                     </SelectTrigger>
                     <SelectContent>
                       {operators.map((op) => (

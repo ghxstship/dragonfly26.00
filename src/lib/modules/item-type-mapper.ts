@@ -11,16 +11,23 @@ export function getItemTypeForModule(moduleSlug: string): ItemType {
     people: "task", // People entries can be tasks
     assets: "task", // Asset items
     locations: "task", // Location entries
-    files: "doc", // Files/Documents
+    files: "file", // Files/Documents
     
     // Network Hub
     companies: "task", // Company entries
-    contacts: "task", // Contact entries
+    community: "task", // Community member entries
+    marketplace: "task", // Marketplace items
+    resources: "file", // Resource documents
     
     // Business Hub
     finance: "task", // Financial items
     procurement: "task", // Purchase orders
     jobs: "task", // Job postings
+    
+    // Intelligence Hub
+    reports: "task", // Reports
+    analytics: "task", // Analytics items
+    goals: "task", // Goals/OKRs
     
     // Default
     dashboard: "task",
@@ -41,10 +48,15 @@ export function getNewItemLabel(moduleSlug: string, moduleName: string): string 
     locations: "Location",
     files: "Document",
     companies: "Company",
-    contacts: "Contact",
+    community: "Member",
+    marketplace: "Item",
+    resources: "Resource",
     finance: "Transaction",
     procurement: "Purchase Order",
     jobs: "Job Posting",
+    reports: "Report",
+    analytics: "Analysis",
+    goals: "Goal",
   }
 
   return customLabels[moduleSlug] || moduleName.slice(0, -1) // Remove trailing 's'

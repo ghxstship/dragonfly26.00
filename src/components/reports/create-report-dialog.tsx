@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -24,12 +25,12 @@ export function CreateReportDialog({ open, onOpenChange }: CreateReportDialogPro
         <div className="space-y-4">
           <div>
             <Label htmlFor="name">Report Name</Label>
-            <Input id="name" placeholder="Task Completion Rate" />
+            <Input id="name" placeholder={t('reports.taskCompletionRate')} />
           </div>
 
           <div>
             <Label htmlFor="description">Description</Label>
-            <Textarea id="description" placeholder="What does this report show?" rows={2} />
+            <Textarea id="description" placeholder={t('placeholders.whatDoesReportShow')} rows={2} />
           </div>
 
           <div className="grid grid-cols-2 gap-4">

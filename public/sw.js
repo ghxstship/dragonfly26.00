@@ -9,9 +9,8 @@ const OFFLINE_URL = '/offline'
 // Files to cache on install
 const STATIC_ASSETS = [
   '/',
-  '/offline',
   '/manifest.json',
-  '/favicon.ico',
+  '/icon-192.png',
 ]
 
 // Install event - cache static assets

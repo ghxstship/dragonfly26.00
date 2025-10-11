@@ -119,7 +119,7 @@ export function GoalDetail({ goal, open, onOpenChange, onUpdate }: GoalDetailPro
                   <div className="flex gap-2">
                     <Input
                       type="number"
-                      placeholder="Enter new value"
+                      placeholder={t('goals.enterNewValue')}
                       value={newProgress}
                       onChange={(e) => setNewProgress(e.target.value)}
                     />
@@ -177,7 +177,7 @@ export function GoalDetail({ goal, open, onOpenChange, onUpdate }: GoalDetailPro
                 <CardContent className="p-6 space-y-4">
                   <div>
                     <Label>Description</Label>
-                    <p className="text-sm mt-1">{goal.description || "No description"}</p>
+                    <p className="text-sm mt-1">{goal.description || t('goals.noDescription')}</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">

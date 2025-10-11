@@ -49,13 +49,6 @@ export function ExportPanel({ onExport }: ExportPanelProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Export Data</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Export your data in various formats for use in other applications.
-        </p>
-      </div>
-
       {/* Format Selection */}
       <div className="space-y-3">
         <Label>Export Format</Label>

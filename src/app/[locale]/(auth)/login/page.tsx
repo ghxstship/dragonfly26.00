@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { createClient } from "@/lib/supabase/client"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -16,7 +16,11 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
+  const pathname = usePathname()
   const supabase = createClient()
+  
+  // Extract locale from pathname (e.g., /en/login -> en)
+  const locale = pathname.split('/')[1] || 'en'
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -32,7 +36,7 @@ export default function LoginPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      router.push("/workspace/default/projects")
+      router.push(`/${locale}/workspace/default/dashboard/overview`)
     }
   }
 

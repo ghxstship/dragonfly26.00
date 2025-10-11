@@ -196,14 +196,19 @@
     "deleteGoal": "Delete Goal",
     "progress": "Progress",
     "targetDate": "Target Date",
-    "completed": "Completed"
+    "completed": "Completed",
+    "describeGoal": "Describe the goal and why it matters",
+    "enterNewValue": "Enter new value",
+    "noDescription": "No description"
   },
   "reports": {
     "title": "Reports",
     "createReport": "Create Report",
     "viewReport": "View Report",
     "generateReport": "Generate Report",
-    "exportReport": "Export Report"
+    "exportReport": "Export Report",
+    "taskCompletionRate": "Task Completion Rate",
+    "reportDescription": "What does this report show?"
   },
   "plugins": {
     "title": "Plugins",
@@ -260,13 +265,30 @@
     "incomplete": "Incomplete"
   },
   "errors": {
-    "somethingWentWrong": "Something went wrong",
-    "tryAgain": "Try again",
-    "pageNotFound": "Page not found",
-    "accessDenied": "Access denied",
-    "invalidInput": "Invalid input",
-    "requiredField": "This field is required",
-    "networkError": "Network error"
+    "somethingWentWrong": "Kuna kitu kimeenda vibaya",
+    "tryAgain": "Jaribu tena",
+    "pageNotFound": "Ukurasa haujapatikana",
+    "accessDenied": "Ufikiaji umekataliwa",
+    "invalidInput": "Ingizo batili",
+    "requiredField": "Sehemu hii inahitajika",
+    "networkError": "Hitilafu ya mtandao",
+    "error404Title": "404 - Ukurasa haujapatikana",
+    "error404Description": "Samahani, hatukuweza kupata ukurasa unaoutafuta. Inaweza kuwa umehamishwa au kufutwa.",
+    "error500Title": "500 - Hitilafu ya seva",
+    "error500Description": "Lo! Kuna kitu kimeenda vibaya upande wetu. Tunafanya kazi kukirekebisha.",
+    "errorGenericTitle": "Kuna kitu kimeenda vibaya",
+    "errorGenericDescription": "Hitilafu isiyotarajiwa imetokea. Tafadhali jaribu tena au wasiliana na usaidizi ikiwa tatizo linaendelea.",
+    "goBackHome": "Rudi kwenye ukurasa wa kwanza",
+    "reloadPage": "Pakia upya ukurasa",
+    "contactSupport": "Wasiliana na usaidizi",
+    "errorCode": "Msimbo wa hitilafu",
+    "whatHappened": "Nini kilitokea?",
+    "whatYouCanDo": "Unachoweza kufanya:",
+    "checkUrl": "Angalia kama URL ni sahihi",
+    "goBack": "Rudi kwenye ukurasa uliopita",
+    "visitHomepage": "Tembelea ukurasa wetu wa nyumbani",
+    "reportProblem": "Ripoti tatizo hili",
+    "technicalDetails": "Maelezo ya kiufundi"
   },
   "success": {
     "saved": "Saved successfully",
@@ -290,6 +312,87 @@
     "thisMonth": "This month",
     "lastMonth": "Last month",
     "nextMonth": "Next month",
-    "pickDate": "Pick a date"
+    "pickDate": "Pick a date",
+    "justNow": "Just now"
+  },
+  "dependencies": {
+    "blocksTitle": "Blocks",
+    "blocksDescription": "This item must be completed before the other can start",
+    "blockedByTitle": "Blocked by",
+    "blockedByDescription": "This item cannot start until the other is completed",
+    "relatesTitle": "Relates to",
+    "relatesDescription": "This item is related to another item",
+    "duplicateTitle": "Duplicate",
+    "duplicateDescription": "This item is a duplicate of another",
+    "selectItem": "Select an item",
+    "unknownItem": "Unknown item"
+  },
+  "filters": {
+    "doesNotEqual": "Does not equal",
+    "contains": "Contains",
+    "doesNotContain": "Does not contain",
+    "startsWith": "Starts with",
+    "endsWith": "Ends with",
+    "isEmpty": "Is empty",
+    "isNotEmpty": "Is not empty",
+    "greaterThan": "Greater than",
+    "lessThan": "Less than",
+    "greaterThanOrEqual": "Greater than or equal",
+    "lessThanOrEqual": "Less than or equal",
+    "isOn": "Is on",
+    "isBefore": "Is before",
+    "isAfter": "Is after",
+    "isBetween": "Is between",
+    "selectField": "Select field",
+    "selectOperator": "Select operator",
+    "matchAll": "Show items that match all filters",
+    "matchAny": "Show items that match any filter"
+  },
+  "recurrence": {
+    "notRecurring": "Not recurring",
+    "setRecurrence": "Set recurrence",
+    "numberOfOccurrences": "Number of occurrences"
+  },
+  "import": {
+    "uploadPrompt": "Click to upload or drag and drop"
+  },
+  "templates": {
+    "standardChecklist": "Standard checklist for new projects",
+    "createProjectPlan": "Create project plan",
+    "assignTeamMembers": "Assign team members",
+    "setupCommunication": "Set up communication channels",
+    "describeUsage": "Describe when to use this template",
+    "addChecklistItem": "Add checklist item"
+  },
+  "tokens": {
+    "productionAPI": "Production API",
+    "tokenUsage": "What will this token be used for?"
+  },
+  "views": {
+    "moveItem": "Move item",
+    "noContent": "No content",
+    "selectAll": "Select all",
+    "selectRow": "Select row",
+    "untitledDocument": "Untitled Document",
+    "myWebsite": "My Website"
+  },
+  "realtime": {
+    "mentionedInComment": "You were mentioned in a comment",
+    "taskAssigned": "New task assigned",
+    "taskDueSoon": "Task due soon",
+    "implementAuth": "Implement user authentication",
+    "designLanding": "Design landing page",
+    "fixNavBug": "Fix navigation bug"
+  },
+  "placeholders": {
+    "describeGoal": "Describe the goal and why it matters",
+    "whatDoesReportShow": "What does this report show?",
+    "tokenPurpose": "What will this token be used for?",
+    "describeTemplate": "Describe when to use this template",
+    "addNewTask": "Add a new task to track work",
+    "startNewProject": "Start a new project",
+    "createNewDocument": "Create a new document",
+    "createNewListView": "Create a new list view",
+    "createNewWorkspace": "Create a new workspace for your team"
   }
 }

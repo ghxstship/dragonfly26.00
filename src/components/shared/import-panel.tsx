@@ -53,13 +53,6 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Import Data</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Upload a file to import your data. Supported formats include CSV, Excel, and JSON.
-        </p>
-      </div>
-
       {/* Format Selection */}
       <div className="space-y-3">
         <Label>File Format</Label>
@@ -91,7 +84,7 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
       {/* File Upload */}
       <div className="space-y-3">
         <Label>Upload File</Label>
-        <div className="border-2 border-dashed rounded-lg p-8 text-center hover:border-primary/50 transition-colors">
+        <div className="border-2 border-dashed rounded-lg p-10 text-center hover:border-primary/50 transition-colors">
           <input
             type="file"
             id="file-upload"
@@ -108,7 +101,7 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
           <label htmlFor="file-upload" className="cursor-pointer">
             <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
             <p className="text-sm font-medium mb-1">
-              {file ? file.name : "Click to upload or drag and drop"}
+              {file ? file.name : t('import.uploadPrompt')}
             </p>
             <p className="text-xs text-muted-foreground">
               {selectedFormat === "csv"

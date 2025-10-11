@@ -211,7 +211,7 @@ export function EmbedView({ data, onItemClick }: EmbedViewProps) {
               <Label htmlFor="embed-title">Title</Label>
               <Input
                 id="embed-title"
-                placeholder="My Website"
+                placeholder={t('views.myWebsite')}
                 value={newEmbedTitle}
                 onChange={(e) => setNewEmbedTitle(e.target.value)}
               />

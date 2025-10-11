@@ -86,13 +86,6 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Filters</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Add filters to narrow down your view. Multiple filters can be combined.
-        </p>
-      </div>
-
       {/* Filter Logic */}
       {filters.length > 1 && (
         <div className="space-y-2">
@@ -115,8 +108,8 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
           </div>
           <p className="text-xs text-muted-foreground">
             {filterLogic === "and"
-              ? "Show items that match all filters"
-              : "Show items that match any filter"}
+              ? t('filters.matchAll')
+              : t('filters.matchAny')}
           </p>
         </div>
       )}
@@ -124,7 +117,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
       {/* Filter Rules */}
       <div className="space-y-3">
         {filters.length === 0 ? (
-          <div className="text-center py-8 border-2 border-dashed rounded-lg">
+          <div className="text-center py-10 border-2 border-dashed rounded-lg">
             <Filter className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
             <p className="text-sm text-muted-foreground mb-4">No filters applied</p>
             <Button onClick={addFilter} variant="outline" size="sm">

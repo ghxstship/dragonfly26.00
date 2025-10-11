@@ -5,8 +5,9 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
 import {
-  ChevronLeft,
-  ChevronRight,
+  Menu,
+  ChevronDown,
+  ChevronUp,
   Star,
   Settings,
   User,
@@ -25,6 +26,10 @@ export function Sidebar() {
   const pathname = usePathname()
   const { sidebarCollapsed, toggleSidebar, currentWorkspace, focusMode } = useUIStore()
   const [favorites, setFavorites] = useState<string[]>([])
+  const [collapsedHubs, setCollapsedHubs] = useState<Record<string, boolean>>({})
+  
+  // Extract locale from pathname
+  const locale = pathname.split('/')[1] || 'en'
 
   const toggleFavorite = (moduleId: string) => {
     setFavorites((prev) =>
@@ -32,6 +37,13 @@ export function Sidebar() {
         ? prev.filter((id) => id !== moduleId)
         : [...prev, moduleId]
     )
+  }
+
+  const toggleHub = (category: string) => {
+    setCollapsedHubs((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }))
   }
 
   const groupedModules = Object.entries(MODULE_CATEGORIES).map(([category, info]) => ({
@@ -48,162 +60,179 @@ export function Sidebar() {
         focusMode && "hidden"
       )}
     >
+      {/* Hamburger Menu Toggle at Top */}
+      <div className="border-b p-2">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-10 w-10"
+          onClick={toggleSidebar}
+          title={sidebarCollapsed ? t('sidebar.expand') : t('sidebar.collapse')}
+        >
+          <Menu className="h-4 w-4" />
+        </Button>
+      </div>
+
+      {/* Scrollable Content - Hubs */}
       <ScrollArea className="flex-1">
         <div className="p-2">
           {/* Favorites Section */}
           {!sidebarCollapsed && favorites.length > 0 && (
             <div className="mb-4">
-              <div className="mb-2 px-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                {t('sidebar.favorites')}
-              </div>
-              {favorites.map((favId) => {
-                const favModule = MODULES.find((m) => m.id === favId)
-                if (!favModule) return null
-                const Icon = iconMap[favModule.icon]
+              <button
+                onClick={() => toggleHub('favorites')}
+                className="flex items-center justify-between w-full mb-2 px-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider hover:text-foreground transition-colors"
+              >
+                <span>{t('sidebar.favorites')}</span>
+                {collapsedHubs['favorites'] ? (
+                  <ChevronDown className="h-3 w-3" />
+                ) : (
+                  <ChevronUp className="h-3 w-3" />
+                )}
+              </button>
+              {!collapsedHubs['favorites'] && (
+                <div className="space-y-1">
+                  {favorites.map((favId) => {
+                    const favModule = MODULES.find((m) => m.id === favId)
+                    if (!favModule) return null
+                    const Icon = iconMap[favModule.icon]
 
-                return (
-                  <Link
-                    key={favModule.id}
-                    href={`/workspace/${currentWorkspace?.id}/${favModule.slug}`}
-                    className={cn(
-                      "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent transition-colors",
-                      pathname.includes(favModule.slug) && "bg-accent"
-                    )}
-                  >
-                    {Icon && <Icon className="h-4 w-4" style={{ color: favModule.color }} />}
-                    <span>{favModule.name}</span>
-                  </Link>
-                )
-              })}
+                    return (
+                      <Link
+                        key={favModule.id}
+                        href={`/${locale}/workspace/${currentWorkspace?.id}/${favModule.slug}`}
+                        className={cn(
+                          "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+                          pathname.includes(favModule.slug) && "bg-accent"
+                        )}
+                      >
+                        {Icon && <Icon className="h-4 w-4 flex-shrink-0" style={{ color: favModule.color }} />}
+                        <span>{favModule.name}</span>
+                      </Link>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           )}
 
-          {/* Module Categories */}
+          {/* Module Categories - Collapsible Hubs */}
           {groupedModules.map((group) => (
             <div key={group.category} className="mb-4">
-              {!sidebarCollapsed && (
-                <div className="mb-2 px-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                  {group.label}
+              {!sidebarCollapsed ? (
+                <button
+                  onClick={() => toggleHub(group.category)}
+                  className="flex items-center justify-between w-full mb-2 px-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider hover:text-foreground transition-colors"
+                >
+                  <span>{group.label}</span>
+                  {collapsedHubs[group.category] ? (
+                    <ChevronDown className="h-3 w-3" />
+                  ) : (
+                    <ChevronUp className="h-3 w-3" />
+                  )}
+                </button>
+              ) : null}
+              {(!collapsedHubs[group.category] || sidebarCollapsed) && (
+                <div className="space-y-1">
+                  {group.modules.map((moduleItem) => {
+                    const Icon = iconMap[moduleItem.icon]
+                    const isActive = pathname.includes(moduleItem.slug)
+                    const isFavorited = favorites.includes(moduleItem.id)
+
+                    return (
+                      <div
+                        key={moduleItem.id}
+                        className="group relative flex items-center"
+                      >
+                        <Link
+                          href={`/${locale}/workspace/${currentWorkspace?.id}/${moduleItem.slug}`}
+                          className={cn(
+                            "flex flex-1 items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+                            isActive && "bg-accent",
+                            sidebarCollapsed && "justify-center px-2"
+                          )}
+                          title={sidebarCollapsed ? moduleItem.name : undefined}
+                        >
+                          {Icon && (
+                            <Icon
+                              className="h-4 w-4 flex-shrink-0"
+                              style={{ color: moduleItem.color }}
+                            />
+                          )}
+                          {!sidebarCollapsed && <span>{moduleItem.name}</span>}
+                        </Link>
+
+                        {!sidebarCollapsed && (
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                            onClick={() => toggleFavorite(moduleItem.id)}
+                          >
+                            <Star
+                              className={cn(
+                                "h-3.5 w-3.5",
+                                isFavorited && "fill-yellow-400 text-yellow-400"
+                              )}
+                            />
+                          </Button>
+                        )}
+                      </div>
+                    )
+                  })}
                 </div>
               )}
-              <div className="space-y-1">
-                {group.modules.map((moduleItem) => {
-                  const Icon = iconMap[moduleItem.icon]
-                  const isActive = pathname.includes(moduleItem.slug)
-                  const isFavorited = favorites.includes(moduleItem.id)
-
-                  return (
-                    <div
-                      key={moduleItem.id}
-                      className="group relative flex items-center"
-                    >
-                      <Link
-                        href={`/workspace/${currentWorkspace?.id}/${moduleItem.slug}`}
-                        className={cn(
-                          "flex flex-1 items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent transition-colors",
-                          isActive && "bg-accent",
-                          sidebarCollapsed && "justify-center"
-                        )}
-                        title={sidebarCollapsed ? moduleItem.name : undefined}
-                      >
-                        {Icon && (
-                          <Icon
-                            className="h-4 w-4 flex-shrink-0"
-                            style={{ color: moduleItem.color }}
-                          />
-                        )}
-                        {!sidebarCollapsed && <span>{moduleItem.name}</span>}
-                      </Link>
-
-                      {!sidebarCollapsed && (
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="h-6 w-6 opacity-0 group-hover:opacity-100 transition-opacity"
-                          onClick={() => toggleFavorite(moduleItem.id)}
-                        >
-                          <Star
-                            className={cn(
-                              "h-3 w-3",
-                              isFavorited && "fill-yellow-400 text-yellow-400"
-                            )}
-                          />
-                        </Button>
-                      )}
-                    </div>
-                  )
-                })}
-              </div>
             </div>
           ))}
-
-          {/* User & Settings */}
-          <div className="mt-4 pt-4 border-t space-y-1">
-            <Link
-              href="/profile"
-              className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent transition-colors",
-                sidebarCollapsed && "justify-center"
-              )}
-              title={sidebarCollapsed ? t('sidebar.profile') : undefined}
-            >
-              <User className="h-4 w-4" style={{ color: "#3b82f6" }} />
-              {!sidebarCollapsed && <span>{t('sidebar.profile')}</span>}
-            </Link>
-            <Link
-              href="/settings"
-              className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent transition-colors",
-                sidebarCollapsed && "justify-center"
-              )}
-              title={sidebarCollapsed ? t('sidebar.settings') : undefined}
-            >
-              <Settings className="h-4 w-4" style={{ color: "#6366f1" }} />
-              {!sidebarCollapsed && <span>{t('sidebar.settings')}</span>}
-            </Link>
-            <Link
-              href="/admin"
-              className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent transition-colors",
-                sidebarCollapsed && "justify-center"
-              )}
-              title={sidebarCollapsed ? t('sidebar.admin') : undefined}
-            >
-              <Shield className="h-4 w-4" style={{ color: "#64748b" }} />
-              {!sidebarCollapsed && <span>{t('sidebar.admin')}</span>}
-            </Link>
-            <Link
-              href="/invite"
-              className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent transition-colors",
-                sidebarCollapsed && "justify-center"
-              )}
-              title={sidebarCollapsed ? t('sidebar.invite') : undefined}
-            >
-              <UserPlus className="h-4 w-4" style={{ color: "#10b981" }} />
-              {!sidebarCollapsed && <span>{t('sidebar.invite')}</span>}
-            </Link>
-          </div>
         </div>
       </ScrollArea>
 
-      {/* Collapse Toggle */}
-      <div className="border-t p-2">
-        <Button
-          variant="ghost"
-          size="sm"
-          className={cn("w-full", sidebarCollapsed && "px-0")}
-          onClick={toggleSidebar}
-        >
-          {sidebarCollapsed ? (
-            <ChevronRight className="h-4 w-4" />
-          ) : (
-            <>
-              <ChevronLeft className="h-4 w-4 mr-2" />
-              <span>{t('sidebar.collapse')}</span>
-            </>
+      {/* User & Settings - Anchored to Bottom */}
+      <div className="border-t p-2 space-y-1 bg-background">
+        <Link
+          href={`/${locale}/workspace/${currentWorkspace?.id}/admin/profile`}
+          className={cn(
+            "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+            sidebarCollapsed && "justify-center px-2"
           )}
-        </Button>
+          title={sidebarCollapsed ? t('sidebar.profile') : undefined}
+        >
+          <User className="h-4 w-4 flex-shrink-0" style={{ color: "#3b82f6" }} />
+          {!sidebarCollapsed && <span>{t('sidebar.profile')}</span>}
+        </Link>
+        <Link
+          href={`/${locale}/workspace/${currentWorkspace?.id}/admin/settings`}
+          className={cn(
+            "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+            sidebarCollapsed && "justify-center px-2"
+          )}
+          title={sidebarCollapsed ? t('sidebar.settings') : undefined}
+        >
+          <Settings className="h-4 w-4 flex-shrink-0" style={{ color: "#6366f1" }} />
+          {!sidebarCollapsed && <span>{t('sidebar.settings')}</span>}
+        </Link>
+        <Link
+          href={`/${locale}/workspace/${currentWorkspace?.id}/admin`}
+          className={cn(
+            "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+            sidebarCollapsed && "justify-center px-2"
+          )}
+          title={sidebarCollapsed ? t('sidebar.admin') : undefined}
+        >
+          <Shield className="h-4 w-4 flex-shrink-0" style={{ color: "#64748b" }} />
+          {!sidebarCollapsed && <span>{t('sidebar.admin')}</span>}
+        </Link>
+        <Link
+          href={`/${locale}/workspace/${currentWorkspace?.id}/admin/members`}
+          className={cn(
+            "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+            sidebarCollapsed && "justify-center px-2"
+          )}
+          title={sidebarCollapsed ? t('sidebar.invite') : undefined}
+        >
+          <UserPlus className="h-4 w-4 flex-shrink-0" style={{ color: "#10b981" }} />
+          {!sidebarCollapsed && <span>{t('sidebar.invite')}</span>}
+        </Link>
       </div>
     </aside>
   )

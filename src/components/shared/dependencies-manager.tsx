@@ -18,26 +18,26 @@ interface DependenciesManagerProps {
   onDependenciesChange: (dependencies: Dependency[]) => void
 }
 
-const DEPENDENCY_TYPES: { value: DependencyType; label: string; description: string }[] = [
+const getDependencyTypes = (t: any): { value: DependencyType; label: string; description: string }[] => [
   {
     value: "blocks",
-    label: "Blocks",
-    description: "This item must be completed before the other can start",
+    label: t('dependencies.blocksTitle'),
+    description: t('dependencies.blocksDescription'),
   },
   {
     value: "blocked_by",
-    label: "Blocked by",
-    description: "This item cannot start until the other is completed",
+    label: t('dependencies.blockedByTitle'),
+    description: t('dependencies.blockedByDescription'),
   },
   {
     value: "relates_to",
-    label: "Relates to",
-    description: "This item is related to another item",
+    label: t('dependencies.relatesTitle'),
+    description: t('dependencies.relatesDescription'),
   },
   {
     value: "duplicates",
-    label: "Duplicates",
-    description: "This item is a duplicate of another",
+    label: t('dependencies.duplicateTitle'),
+    description: t('dependencies.duplicateDescription'),
   },
 ]
 
@@ -49,6 +49,8 @@ export function DependenciesManager({
   onDependenciesChange,
 }: DependenciesManagerProps) {
   const t = useTranslations()
+  const [open, setOpen] = useState(false)
+  const DEPENDENCY_TYPES = getDependencyTypes(t)
   const [isAdding, setIsAdding] = useState(false)
   const [selectedItemId, setSelectedItemId] = useState("")
   const [dependencyType, setDependencyType] = useState<DependencyType>("blocks")
@@ -81,7 +83,7 @@ export function DependenciesManager({
 
   const getItemName = (depItemId: string) => {
     const item = availableItems.find((i) => i.id === depItemId)
-    return item?.name || item?.title || "Unknown item"
+    return item?.name || item?.title || t('dependencies.unknownItem')
   }
 
   const hasBlockedDependencies = dependencies.some(
@@ -184,7 +186,7 @@ export function DependenciesManager({
               <Label>Related Item</Label>
               <Select value={selectedItemId} onValueChange={setSelectedItemId}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select an item" />
+                  <SelectValue placeholder={t('dependencies.selectItem')} />
                 </SelectTrigger>
                 <SelectContent>
                   {availableItems

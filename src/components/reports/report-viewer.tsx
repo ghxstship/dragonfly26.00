@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -32,9 +33,9 @@ const mockChartData = [
 ]
 
 const mockPieData = [
-  { name: t('statuses.active'), value: 45, color: "#10b981" },
+  { name: "Active", value: 45, color: "#10b981" },
   { name: "On Hold", value: 20, color: "#f59e0b" },
-  { name: t('statuses.completed'), value: 35, color: "#3b82f6" },
+  { name: "Completed", value: 35, color: "#3b82f6" },
 ]
 
 export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) {

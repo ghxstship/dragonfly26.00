@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { TrendingUp, TrendingDown, Minus, Calendar, User } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
@@ -18,7 +19,7 @@ const STATUS_CONFIG = {
   on_track: { label: "On Track", color: "text-green-600", bg: "bg-green-100" },
   at_risk: { label: "At Risk", color: "text-yellow-600", bg: "bg-yellow-100" },
   behind: { label: "Behind", color: "text-red-600", bg: "bg-red-100" },
-  completed: { label: t('statuses.completed'), color: "text-blue-600", bg: "bg-blue-100" },
+  completed: { label: "Completed", color: "text-blue-600", bg: "bg-blue-100" },
 }
 
 export function GoalsList({ goals, onGoalClick, onGoalUpdate }: GoalsListProps) {

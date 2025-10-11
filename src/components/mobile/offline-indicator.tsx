@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { WifiOff, Wifi } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { usePWA } from "@/hooks/use-pwa"

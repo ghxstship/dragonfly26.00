@@ -71,7 +71,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
   }
 
   const getRecurrenceLabel = () => {
-    if (!recurrence) return "Not recurring"
+    if (!recurrence) return t('recurrence.notRecurring')
 
     const parts = []
     parts.push(`Every ${recurrence.interval > 1 ? recurrence.interval : ""}`)
@@ -100,7 +100,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
         <DialogTrigger asChild>
           <Button variant={recurrence ? "ghost" : "outline"} size="sm" className="gap-2">
             <Calendar className="h-4 w-4" />
-            {recurrence ? t('common.edit') : "Set recurrence"}
+            {recurrence ? t('common.edit') : t('recurrence.setRecurrence')}
           </Button>
         </DialogTrigger>
         <DialogContent>
@@ -188,7 +188,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
                   min="1"
                   value={endCount}
                   onChange={(e) => setEndCount(parseInt(e.target.value) || 1)}
-                  placeholder="Number of occurrences"
+                  placeholder={t('recurrence.numberOfOccurrences')}
                 />
               )}
             </div>

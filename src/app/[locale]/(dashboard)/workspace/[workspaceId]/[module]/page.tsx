@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { Filter, Search, SlidersHorizontal, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal } from "lucide-react"
+import { Filter, Search, Columns3, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -78,6 +78,7 @@ export default function ModulePage() {
   const router = useRouter()
   const moduleSlug = params.module as string
   const workspaceId = params.workspaceId as string
+  const locale = params.locale as string
   const currentModule = getModuleBySlug(moduleSlug)
   const moduleTabs = getModuleTabs(moduleSlug)
   const { setRightSidebarOpen, toggleRightSidebar } = useUIStore()
@@ -91,9 +92,9 @@ export default function ModulePage() {
   // Redirect to first tab if tabs exist
   useEffect(() => {
     if (moduleTabs.length > 0) {
-      router.replace(`/workspace/${workspaceId}/${moduleSlug}/${moduleTabs[0].slug}`)
+      router.replace(`/${locale}/workspace/${workspaceId}/${moduleSlug}/${moduleTabs[0].slug}`)
     }
-  }, [moduleTabs, moduleSlug, workspaceId, router])
+  }, [moduleTabs, moduleSlug, workspaceId, locale, router])
 
   // Mock data - in real app, fetch from Supabase
   const mockData = generateMockData(20)
@@ -244,7 +245,18 @@ export default function ModulePage() {
               }}
               title="Field Configuration"
             >
-              <SlidersHorizontal className="h-4 w-4" />
+              <Columns3 className="h-4 w-4" />
+            </Button>
+
+            <Button 
+              variant="outline" 
+              size="icon"
+              onClick={() => {
+                setRightSidebarOpen(true, 'pages')
+              }}
+              title="Page Configuration"
+            >
+              <Eye className="h-4 w-4" />
             </Button>
 
             {/* More Actions Menu */}

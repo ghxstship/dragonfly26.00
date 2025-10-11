@@ -103,13 +103,6 @@ export function FieldConfigPanel({ onFieldsChange }: FieldConfigPanelProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Field Configuration</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Show, hide, and reorder fields to customize your view.
-        </p>
-      </div>
-
       {/* Stats */}
       <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
         <div className="text-sm">
@@ -132,14 +125,14 @@ export function FieldConfigPanel({ onFieldsChange }: FieldConfigPanelProps) {
           placeholder="Search fields..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="h-9"
+          className="h-10"
         />
       </div>
 
       {/* Fields List */}
-      <div className="space-y-2">
-        <Label>Fields</Label>
-        <div className="space-y-1">
+      <div className="space-y-3">
+        <Label className="text-sm font-medium">Fields</Label>
+        <div className="space-y-2">
           {filteredFields.map((field) => (
             <div
               key={field.id}
@@ -147,7 +140,7 @@ export function FieldConfigPanel({ onFieldsChange }: FieldConfigPanelProps) {
               onDragStart={() => handleDragStart(field.id)}
               onDragOver={(e) => handleDragOver(e, field.id)}
               onDragEnd={handleDragEnd}
-              className={`flex items-center gap-2 p-2 rounded-md hover:bg-muted/50 transition-colors ${
+              className={`flex items-center gap-3 p-3 rounded-md hover:bg-muted/50 transition-colors ${
                 draggedItem === field.id ? "opacity-50" : ""
               } ${field.locked ? "cursor-default" : "cursor-grab active:cursor-grabbing"}`}
             >

@@ -120,9 +120,10 @@ export const MODULES: Module[] = [
     description: 'Browse/purchase templates, integrations, services',
     icon: 'Store',
     category: 'network',
-    order: 7,
+    order: 8,
     enabled: true,
     color: '#7c3aed',
+    has_tabs: true,
   },
   {
     id: 'companies',
@@ -131,19 +132,19 @@ export const MODULES: Module[] = [
     description: 'Client, vendor, partner, and sponsor relationship management',
     icon: 'Building2',
     category: 'network',
-    order: 8,
+    order: 9,
     enabled: true,
     color: '#2563eb',
     has_tabs: true,
   },
   {
-    id: 'contacts',
+    id: 'community',
     name: 'Community',
-    slug: 'contacts',
-    description: 'Master professional network directory - connect and manage all industry contacts',
+    slug: 'community',
+    description: 'Professional network & community - connect and manage industry relationships',
     icon: 'UserCircle2',
     category: 'network',
-    order: 9,
+    order: 7,
     enabled: true,
     color: '#10b981',
     has_tabs: true,
@@ -158,6 +159,7 @@ export const MODULES: Module[] = [
     order: 10,
     enabled: true,
     color: '#0891b2',
+    has_tabs: true,
   },
 
   // Business Hub
@@ -171,6 +173,7 @@ export const MODULES: Module[] = [
     order: 9,
     enabled: true,
     color: '#059669',
+    has_tabs: true,
   },
   {
     id: 'procurement',
@@ -182,6 +185,7 @@ export const MODULES: Module[] = [
     order: 10,
     enabled: true,
     color: '#d97706',
+    has_tabs: true,
   },
   {
     id: 'jobs',
@@ -193,6 +197,7 @@ export const MODULES: Module[] = [
     order: 11,
     enabled: true,
     color: '#8b5cf6',
+    has_tabs: true,
   },
 
   // Intelligence Hub
@@ -206,6 +211,7 @@ export const MODULES: Module[] = [
     order: 12,
     enabled: true,
     color: '#0284c7',
+    has_tabs: true,
   },
   {
     id: 'analytics',
@@ -217,6 +223,7 @@ export const MODULES: Module[] = [
     order: 13,
     enabled: true,
     color: '#7c3aed',
+    has_tabs: true,
   },
 
   // User Management (standalone, accessed via bottom sidebar only)
@@ -244,6 +251,7 @@ export const MODULES: Module[] = [
     order: 14,
     enabled: true,
     color: '#10b981',
+    has_tabs: true,
   },
 
   // Phase 3: Extensibility & Integrations (Now nested in Admin module as tabs)

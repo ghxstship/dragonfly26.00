@@ -196,14 +196,19 @@
     "deleteGoal": "Delete Goal",
     "progress": "Progress",
     "targetDate": "Target Date",
-    "completed": "Completed"
+    "completed": "Completed",
+    "describeGoal": "Describe the goal and why it matters",
+    "enterNewValue": "Enter new value",
+    "noDescription": "No description"
   },
   "reports": {
     "title": "Reports",
     "createReport": "Create Report",
     "viewReport": "View Report",
     "generateReport": "Generate Report",
-    "exportReport": "Export Report"
+    "exportReport": "Export Report",
+    "taskCompletionRate": "Task Completion Rate",
+    "reportDescription": "What does this report show?"
   },
   "plugins": {
     "title": "Plugins",
@@ -260,13 +265,30 @@
     "incomplete": "Incomplete"
   },
   "errors": {
-    "somethingWentWrong": "Something went wrong",
-    "tryAgain": "Try again",
-    "pageNotFound": "Page not found",
-    "accessDenied": "Access denied",
-    "invalidInput": "Invalid input",
-    "requiredField": "This field is required",
-    "networkError": "Network error"
+    "somethingWentWrong": "कुछ गलत हो गया",
+    "tryAgain": "पुनः प्रयास करें",
+    "pageNotFound": "पेज नहीं मिला",
+    "accessDenied": "पहुंच अस्वीकृत",
+    "invalidInput": "अमान्य इनपुट",
+    "requiredField": "यह फ़ील्ड आवश्यक है",
+    "networkError": "नेटवर्क त्रुटि",
+    "error404Title": "404 - पेज नहीं मिला",
+    "error404Description": "क्षमा करें, हम आपके द्वारा खोजे जा रहे पेज को नहीं ढूंढ सके। यह स्थानांतरित या हटाया जा सकता है।",
+    "error500Title": "500 - सर्वर त्रुटि",
+    "error500Description": "ओह! हमारी ओर से कुछ गड़बड़ हो गई। हम इसे ठीक करने के लिए काम कर रहे हैं।",
+    "errorGenericTitle": "कुछ गलत हो गया",
+    "errorGenericDescription": "एक अप्रत्याशित त्रुटि हुई। कृपया पुनः प्रयास करें या यदि समस्या बनी रहती है तो सहायता से संपर्क करें।",
+    "goBackHome": "होम पेज पर जाएं",
+    "reloadPage": "पेज पुनः लोड करें",
+    "contactSupport": "सहायता से संपर्क करें",
+    "errorCode": "त्रुटि कोड",
+    "whatHappened": "क्या हुआ?",
+    "whatYouCanDo": "आप क्या कर सकते हैं:",
+    "checkUrl": "जांचें कि URL सही है या नहीं",
+    "goBack": "पिछले पेज पर वापस जाएं",
+    "visitHomepage": "हमारे होमपेज पर जाएं",
+    "reportProblem": "इस समस्या की रिपोर्ट करें",
+    "technicalDetails": "तकनीकी विवरण"
   },
   "success": {
     "saved": "Saved successfully",
@@ -290,6 +312,87 @@
     "thisMonth": "This month",
     "lastMonth": "Last month",
     "nextMonth": "Next month",
-    "pickDate": "Pick a date"
+    "pickDate": "Pick a date",
+    "justNow": "Just now"
+  },
+  "dependencies": {
+    "blocksTitle": "Blocks",
+    "blocksDescription": "This item must be completed before the other can start",
+    "blockedByTitle": "Blocked by",
+    "blockedByDescription": "This item cannot start until the other is completed",
+    "relatesTitle": "Relates to",
+    "relatesDescription": "This item is related to another item",
+    "duplicateTitle": "Duplicate",
+    "duplicateDescription": "This item is a duplicate of another",
+    "selectItem": "Select an item",
+    "unknownItem": "Unknown item"
+  },
+  "filters": {
+    "doesNotEqual": "Does not equal",
+    "contains": "Contains",
+    "doesNotContain": "Does not contain",
+    "startsWith": "Starts with",
+    "endsWith": "Ends with",
+    "isEmpty": "Is empty",
+    "isNotEmpty": "Is not empty",
+    "greaterThan": "Greater than",
+    "lessThan": "Less than",
+    "greaterThanOrEqual": "Greater than or equal",
+    "lessThanOrEqual": "Less than or equal",
+    "isOn": "Is on",
+    "isBefore": "Is before",
+    "isAfter": "Is after",
+    "isBetween": "Is between",
+    "selectField": "Select field",
+    "selectOperator": "Select operator",
+    "matchAll": "Show items that match all filters",
+    "matchAny": "Show items that match any filter"
+  },
+  "recurrence": {
+    "notRecurring": "Not recurring",
+    "setRecurrence": "Set recurrence",
+    "numberOfOccurrences": "Number of occurrences"
+  },
+  "import": {
+    "uploadPrompt": "Click to upload or drag and drop"
+  },
+  "templates": {
+    "standardChecklist": "Standard checklist for new projects",
+    "createProjectPlan": "Create project plan",
+    "assignTeamMembers": "Assign team members",
+    "setupCommunication": "Set up communication channels",
+    "describeUsage": "Describe when to use this template",
+    "addChecklistItem": "Add checklist item"
+  },
+  "tokens": {
+    "productionAPI": "Production API",
+    "tokenUsage": "What will this token be used for?"
+  },
+  "views": {
+    "moveItem": "Move item",
+    "noContent": "No content",
+    "selectAll": "Select all",
+    "selectRow": "Select row",
+    "untitledDocument": "Untitled Document",
+    "myWebsite": "My Website"
+  },
+  "realtime": {
+    "mentionedInComment": "You were mentioned in a comment",
+    "taskAssigned": "New task assigned",
+    "taskDueSoon": "Task due soon",
+    "implementAuth": "Implement user authentication",
+    "designLanding": "Design landing page",
+    "fixNavBug": "Fix navigation bug"
+  },
+  "placeholders": {
+    "describeGoal": "Describe the goal and why it matters",
+    "whatDoesReportShow": "What does this report show?",
+    "tokenPurpose": "What will this token be used for?",
+    "describeTemplate": "Describe when to use this template",
+    "addNewTask": "Add a new task to track work",
+    "startNewProject": "Start a new project",
+    "createNewDocument": "Create a new document",
+    "createNewListView": "Create a new list view",
+    "createNewWorkspace": "Create a new workspace for your team"
   }
 }

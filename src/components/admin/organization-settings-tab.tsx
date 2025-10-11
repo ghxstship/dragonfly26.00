@@ -38,7 +38,7 @@ export function OrganizationSettingsTab() {
     try {
       // TODO: Save to Supabase
       toast({
-        title: "Settings saved",
+        title: t('success.saved'),
         description: "Organization settings have been updated successfully.",
       })
     } catch (error) {

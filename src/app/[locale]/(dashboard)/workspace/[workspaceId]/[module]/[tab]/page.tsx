@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useParams } from "next/navigation"
-import { Filter, Search, SlidersHorizontal, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal } from "lucide-react"
+import { Filter, Search, Columns3, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -238,7 +238,18 @@ export default function ModuleTabPage() {
               }}
               title="Field Configuration"
             >
-              <SlidersHorizontal className="h-4 w-4" />
+              <Columns3 className="h-4 w-4" />
+            </Button>
+
+            <Button 
+              variant="outline" 
+              size="icon"
+              onClick={() => {
+                setRightSidebarOpen(true, 'pages')
+              }}
+              title="Page Configuration"
+            >
+              <Eye className="h-4 w-4" />
             </Button>
 
             {/* More Actions Menu */}

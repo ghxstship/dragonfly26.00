@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
 import {
   Search,
@@ -55,6 +55,10 @@ export function TopBar() {
   const { currentWorkspace, focusMode, toggleFocusMode } = useUIStore()
   const { currentOrganization } = useWorkspaceStore()
   const router = useRouter()
+  
+  // Extract locale from pathname
+  const pathname = usePathname()
+  const locale = pathname.split('/')[1] || 'en'
 
   // Simulate unread notifications count
   const unreadCount = 3
@@ -188,31 +192,42 @@ export function TopBar() {
               <DropdownMenuLabel>{t('create.createNew')}</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => handleCreateItem("task")}>
-                  <Plus className="mr-2 h-4 w-4" />
-                  {t('create.task')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">T</kbd>
-                </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleCreateItem("project")}>
                   <Plus className="mr-2 h-4 w-4" />
                   {t('create.project')}
                   <kbd className="ml-auto text-xs text-muted-foreground">P</kbd>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleCreateItem("doc")}>
+                <DropdownMenuItem onClick={() => handleCreateItem("job")}>
                   <Plus className="mr-2 h-4 w-4" />
-                  {t('create.doc')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">D</kbd>
+                  {t('create.job')}
+                  <kbd className="ml-auto text-xs text-muted-foreground">J</kbd>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleCreateItem("list")}>
+                <DropdownMenuItem onClick={() => handleCreateItem("task")}>
                   <Plus className="mr-2 h-4 w-4" />
-                  {t('create.listView')}
+                  {t('create.task')}
+                  <kbd className="ml-auto text-xs text-muted-foreground">T</kbd>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCreateItem("asset")}>
+                  <Plus className="mr-2 h-4 w-4" />
+                  {t('create.asset')}
+                  <kbd className="ml-auto text-xs text-muted-foreground">A</kbd>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCreateItem("location")}>
+                  <Plus className="mr-2 h-4 w-4" />
+                  {t('create.location')}
+                  <kbd className="ml-auto text-xs text-muted-foreground">L</kbd>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCreateItem("file")}>
+                  <Plus className="mr-2 h-4 w-4" />
+                  {t('create.file')}
+                  <kbd className="ml-auto text-xs text-muted-foreground">F</kbd>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCreateItem("report")}>
+                  <Plus className="mr-2 h-4 w-4" />
+                  {t('create.report')}
+                  <kbd className="ml-auto text-xs text-muted-foreground">R</kbd>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => handleCreateItem("workspace")}>
-                <Plus className="mr-2 h-4 w-4" />
-                {t('create.workspace')}
-              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -224,7 +239,7 @@ export function TopBar() {
                   variant="ghost" 
                   size="sm" 
                   className="gap-2 h-9 hidden md:flex"
-                  onClick={() => router.push('/billing')}
+                  onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/billing`)}
                 >
                   <Sparkles className="h-4 w-4" />
                   <span className="hidden lg:inline">{t('nav.upgrade')}</span>
@@ -304,11 +319,11 @@ export function TopBar() {
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => router.push('/profile')}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/profile`)}>
                   {t('nav.profile')}
                   <kbd className="ml-auto text-xs text-muted-foreground">⌘P</kbd>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push('/settings')}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/settings`)}>
                   {t('nav.settings')}
                   <kbd className="ml-auto text-xs text-muted-foreground">⌘,</kbd>
                 </DropdownMenuItem>
@@ -318,13 +333,13 @@ export function TopBar() {
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => router.push('/billing')}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/billing`)}>
                   {t('nav.billing')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/members`)}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/members`)}>
                   {t('nav.team')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push('/invite')}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/members`)}>
                   {t('nav.inviteUsers')}
                 </DropdownMenuItem>
               </DropdownMenuGroup>

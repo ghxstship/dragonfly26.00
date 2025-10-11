@@ -39,12 +39,12 @@ export function CreateTokenDialog({ open, onOpenChange }: CreateTokenDialogProps
         <div className="space-y-4">
           <div>
             <Label htmlFor="name">Token Name</Label>
-            <Input id="name" placeholder="Production API" />
+            <Input id="name" placeholder={t('tokens.productionAPI')} />
           </div>
 
           <div>
             <Label htmlFor="description">Description</Label>
-            <Textarea id="description" placeholder="What will this token be used for?" rows={2} />
+            <Textarea id="description" placeholder={t('tokens.tokenUsage')} rows={2} />
           </div>
 
           <div>

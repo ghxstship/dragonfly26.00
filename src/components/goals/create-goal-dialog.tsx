@@ -60,7 +60,7 @@ export function CreateGoalDialog({ open, onOpenChange, onCreateGoal }: CreateGoa
           <div className="space-y-2">
             <Label>Description</Label>
             <Textarea
-              placeholder="Describe the goal and why it matters"
+              placeholder={t('placeholders.describeGoal')}
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               rows={3}

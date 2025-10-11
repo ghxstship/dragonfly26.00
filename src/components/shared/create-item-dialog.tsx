@@ -31,7 +31,7 @@ import { CalendarIcon, Loader2 } from "lucide-react"
 import { format } from "date-fns"
 import { cn } from "@/lib/utils"
 
-export type ItemType = "task" | "project" | "doc" | "list" | "workspace"
+export type ItemType = "task" | "project" | "job" | "asset" | "location" | "file" | "report" | "list" | "workspace"
 
 interface CreateItemDialogProps {
   open: boolean
@@ -51,9 +51,29 @@ const typeConfig = {
     description: "Start a new project",
     fields: ["name", "description", "status", "startDate"],
   },
-  doc: {
-    title: "Create Document",
-    description: "Create a new document",
+  job: {
+    title: "Create Job",
+    description: "Create a new job",
+    fields: ["name", "description", "status", "startDate"],
+  },
+  asset: {
+    title: "Create Asset",
+    description: "Create a new asset",
+    fields: ["name", "description"],
+  },
+  location: {
+    title: "Create Location",
+    description: "Create a new location",
+    fields: ["name", "description"],
+  },
+  file: {
+    title: "Create File",
+    description: "Create a new file",
+    fields: ["name", "description"],
+  },
+  report: {
+    title: "Create Report",
+    description: "Create a new report",
     fields: ["name", "description"],
   },
   list: {
@@ -97,9 +117,29 @@ export function CreateItemDialog({
       description: t('create.startNewProject'),
       fields: ["name", "description", "status", "startDate"],
     },
-    doc: {
-      title: t('create.createDoc'),
-      description: t('create.createNewDocument'),
+    job: {
+      title: t('create.createJob'),
+      description: t('create.createNewJob'),
+      fields: ["name", "description", "status", "startDate"],
+    },
+    asset: {
+      title: t('create.createAsset'),
+      description: t('create.createNewAsset'),
+      fields: ["name", "description"],
+    },
+    location: {
+      title: t('create.createLocation'),
+      description: t('create.createNewLocation'),
+      fields: ["name", "description"],
+    },
+    file: {
+      title: t('create.createFile'),
+      description: t('create.createNewFile'),
+      fields: ["name", "description"],
+    },
+    report: {
+      title: t('create.createReport'),
+      description: t('create.createNewReport'),
       fields: ["name", "description"],
     },
     list: {

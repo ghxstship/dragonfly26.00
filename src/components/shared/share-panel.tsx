@@ -41,13 +41,6 @@ export function SharePanel({ onShare }: SharePanelProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Share</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Share this module with others via link or email.
-        </p>
-      </div>
-
       {/* Share Type */}
       <div className="space-y-3">
         <Label>Share Method</Label>

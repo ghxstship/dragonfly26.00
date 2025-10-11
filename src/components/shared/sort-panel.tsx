@@ -141,13 +141,6 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h3 className="text-lg font-semibold mb-4">Sort</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          Order your data by one or more fields. Drag to reorder sort priority.
-        </p>
-      </div>
-
       {/* Sort Priority Info */}
       {sorts.length > 1 && (
         <div className="bg-muted/50 rounded-lg p-3 text-sm">
@@ -160,7 +153,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
       {/* Sort Rules */}
       <div className="space-y-3">
         {sorts.length === 0 ? (
-          <div className="text-center py-8 border-2 border-dashed rounded-lg">
+          <div className="text-center py-10 border-2 border-dashed rounded-lg">
             <ArrowUpDown className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
             <p className="text-sm text-muted-foreground mb-4">No sorting applied</p>
             <Button onClick={addSort} variant="outline" size="sm">

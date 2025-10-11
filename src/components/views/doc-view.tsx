@@ -77,7 +77,7 @@ export function DocView({ data, onItemClick }: DocViewProps) {
           <input
             type="text"
             className="font-semibold text-lg bg-transparent border-none outline-none focus:ring-0"
-            placeholder="Untitled Document"
+            placeholder={t('views.untitledDocument')}
             defaultValue="Document"
           />
         </div>

@@ -17,16 +17,16 @@ interface BoardViewProps {
   onItemClick?: (item: DataItem) => void
 }
 
-const defaultColumns = [
-  { id: "todo", title: "To Do", color: "#94a3b8" },
-  { id: "in_progress", title: t('statuses.inProgress'), color: "#3b82f6" },
-  { id: "review", title: "Review", color: "#f59e0b" },
-  { id: "done", title: "Done", color: "#10b981" },
-]
-
 export function BoardView({ data, onItemClick }: BoardViewProps) {
   const t = useTranslations()
   const [activeId, setActiveId] = useState<string | null>(null)
+
+  const defaultColumns = [
+    { id: "todo", title: "To Do", color: "#94a3b8" },
+    { id: "in_progress", title: t('statuses.inProgress'), color: "#3b82f6" },
+    { id: "review", title: "Review", color: "#f59e0b" },
+    { id: "done", title: "Done", color: "#10b981" },
+  ]
 
   // Group data by status
   const columnData = defaultColumns.map((column) => ({
@@ -43,7 +43,7 @@ export function BoardView({ data, onItemClick }: BoardViewProps) {
     
     if (over && active.id !== over.id) {
       // Handle item reordering or moving between columns
-      console.log("Move item", active.id, "to", over.id)
+      console.log(t('views.moveItem'), active.id, "to", over.id)
     }
     
     setActiveId(null)

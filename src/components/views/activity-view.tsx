@@ -126,35 +126,37 @@ export function ActivityView({ data, onItemClick }: ActivityViewProps) {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel>Filter by User</DropdownMenuLabel>
-              {users.map((user) => (
-                <DropdownMenuCheckboxItem
-                  key={user}
-                  checked={filterByUser.includes(user)}
-                  onCheckedChange={(checked) => {
-                    setFilterByUser((prev) =>
-                      checked ? [...prev, user] : prev.filter((u) => u !== user)
-                    )
-                  }}
-                >
-                  {user}
-                </DropdownMenuCheckboxItem>
-              ))}
-              <DropdownMenuSeparator />
-              <DropdownMenuLabel>Filter by Action</DropdownMenuLabel>
-              {actions.map((action) => (
-                <DropdownMenuCheckboxItem
-                  key={action}
-                  checked={filterByAction.includes(action)}
-                  onCheckedChange={(checked) => {
-                    setFilterByAction((prev) =>
-                      checked ? [...prev, action] : prev.filter((a) => a !== action)
-                    )
-                  }}
-                >
-                  {action}
-                </DropdownMenuCheckboxItem>
-              ))}
+              <div className="max-h-[400px] overflow-y-auto p-1">
+                <DropdownMenuLabel>Filter by User</DropdownMenuLabel>
+                {users.map((user) => (
+                  <DropdownMenuCheckboxItem
+                    key={user}
+                    checked={filterByUser.includes(user)}
+                    onCheckedChange={(checked) => {
+                      setFilterByUser((prev) =>
+                        checked ? [...prev, user] : prev.filter((u) => u !== user)
+                      )
+                    }}
+                  >
+                    {user}
+                  </DropdownMenuCheckboxItem>
+                ))}
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel>Filter by Action</DropdownMenuLabel>
+                {actions.map((action) => (
+                  <DropdownMenuCheckboxItem
+                    key={action}
+                    checked={filterByAction.includes(action)}
+                    onCheckedChange={(checked) => {
+                      setFilterByAction((prev) =>
+                        checked ? [...prev, action] : prev.filter((a) => a !== action)
+                      )
+                    }}
+                  >
+                    {action}
+                  </DropdownMenuCheckboxItem>
+                ))}
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

@@ -98,18 +98,17 @@ export function AssigneeSelector({
               <UserPlus className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-64">
-            <DropdownMenuLabel>Assign to</DropdownMenuLabel>
-            <div className="p-2">
+          <DropdownMenuContent align="end" className="w-64 p-0">
+            <div className="p-2 border-b sticky top-0 bg-background z-10">
+              <DropdownMenuLabel className="px-2 py-1.5">Assign to</DropdownMenuLabel>
               <Input
                 placeholder="Search users..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="h-8"
+                className="h-8 mt-2"
               />
             </div>
-            <DropdownMenuSeparator />
-            <div className="max-h-48 overflow-y-auto">
+            <div className="max-h-[280px] overflow-y-auto p-1">
               {filteredUsers.map((user) => {
                 const isAssigned = assignedUserIds.has(user.id)
                 

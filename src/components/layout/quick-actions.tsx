@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import {
   Calendar,
   ClipboardList,
@@ -29,8 +29,12 @@ import { useUIStore } from "@/store/ui-store"
 
 export function QuickActions() {
   const router = useRouter()
+  const pathname = usePathname()
   const { currentWorkspace } = useUIStore()
   const [showHelp, setShowHelp] = useState(false)
+  
+  // Extract locale from pathname
+  const locale = pathname.split('/')[1] || 'en'
   return (
     <TooltipProvider delayDuration={300}>
       <div className="hidden md:flex items-center gap-1">
@@ -41,7 +45,7 @@ export function QuickActions() {
               variant="ghost" 
               size="icon" 
               className="h-9 w-9"
-              onClick={() => router.push(`/workspace/${currentWorkspace?.id}/events/show-calendar`)}
+              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/events/show-calendar`)}
             >
               <Calendar className="h-4 w-4" />
             </Button>
@@ -59,7 +63,7 @@ export function QuickActions() {
               variant="ghost" 
               size="icon" 
               className="h-9 w-9"
-              onClick={() => router.push(`/workspace/${currentWorkspace?.id}/projects/my-tasks`)}
+              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/projects/my-tasks`)}
             >
               <ClipboardList className="h-4 w-4" />
             </Button>
@@ -77,7 +81,7 @@ export function QuickActions() {
               variant="ghost" 
               size="icon" 
               className="h-9 w-9"
-              onClick={() => router.push(`/workspace/${currentWorkspace?.id}/files/all-documents`)}
+              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/files/all-documents`)}
             >
               <FileText className="h-4 w-4" />
             </Button>
@@ -105,15 +109,15 @@ export function QuickActions() {
           <DropdownMenuContent align="end" className="w-64">
             <DropdownMenuLabel>Quick Access</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/automations`)}>
+            <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/automations`)}>
               <Zap className="mr-2 h-4 w-4" />
               Automations
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/files/templates`)}>
+            <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/files/templates`)}>
               <FileText className="mr-2 h-4 w-4" />
               Templates
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/plugins`)}>
+            <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/plugins`)}>
               <LayoutGrid className="mr-2 h-4 w-4" />
               Integrations
             </DropdownMenuItem>

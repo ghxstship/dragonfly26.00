@@ -1,0 +1,10 @@
+{
+  "/src/components/shared/create-item-dialog.tsx": [
+    {
+      "file": "/src/components/shared/create-item-dialog.tsx",
+      "line": 198,
+      "text": "🎬",
+      "context": "placeholder=\"🎬\""
+    }
+  ]
+}

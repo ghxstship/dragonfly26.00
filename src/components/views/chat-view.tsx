@@ -49,7 +49,7 @@ export function ChatView({ data, onItemClick }: ChatViewProps) {
     id: item.id,
     userId: item.user_id || "unknown",
     userName: item.user_name || "Anonymous",
-    content: item.content || item.message || "No content",
+    content: item.content || item.message || t('views.noContent'),
     timestamp: item.created_at || new Date().toISOString(),
     parentId: item.parent_id,
     read: item.read !== false,
@@ -76,7 +76,7 @@ export function ChatView({ data, onItemClick }: ChatViewProps) {
     const hours = Math.floor(diff / 3600000)
     const days = Math.floor(diff / 86400000)
 
-    if (minutes < 1) return "Just now"
+    if (minutes < 1) return t('date.justNow')
     if (minutes < 60) return `${minutes}m ago`
     if (hours < 24) return `${hours}h ago`
     if (days < 7) return `${days}d ago`

@@ -42,14 +42,14 @@ export function TableView({ data, onItemClick }: TableViewProps) {
         <Checkbox
           checked={table.getIsAllPageRowsSelected()}
           onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
+          aria-label={t('views.selectAll')}
         />
       ),
       cell: ({ row }) => (
         <Checkbox
           checked={row.getIsSelected()}
           onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
+          aria-label={t('views.selectRow')}
         />
       ),
       enableSorting: false,

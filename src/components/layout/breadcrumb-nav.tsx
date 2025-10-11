@@ -16,6 +16,7 @@ export function BreadcrumbNav() {
 
   // Parse path segments
   const segments = pathname.split("/").filter(Boolean)
+  const locale = segments[0] || 'en'
   
   // Build breadcrumb items
   const breadcrumbs = []
@@ -23,7 +24,7 @@ export function BreadcrumbNav() {
   if (currentWorkspace) {
     breadcrumbs.push({
       label: currentWorkspace.name,
-      href: `/workspace/${currentWorkspace.id}`,
+      href: `/${locale}/workspace/${currentWorkspace.id}`,
       icon: currentWorkspace.icon,
     })
   }
@@ -42,7 +43,7 @@ export function BreadcrumbNav() {
   return (
     <nav className="hidden lg:flex items-center gap-1 text-sm">
       <Link
-        href="/"
+        href={`/${locale}`}
         className="p-1.5 rounded-md hover:bg-accent transition-colors"
         title={t('breadcrumb.home')}
       >

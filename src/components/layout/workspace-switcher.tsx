@@ -44,27 +44,26 @@ export function WorkspaceSwitcher() {
           <ChevronsUpDown className="ml-1 h-4 w-4 text-muted-foreground" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="w-80">
-        <DropdownMenuLabel>
-          {currentOrganization?.name || t('workspace.organization')}
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        
-        {/* Search */}
-        <div className="p-2">
-          <div className="relative">
-            <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+      <DropdownMenuContent align="start" className="w-80 p-0">
+        <div className="p-2 border-b sticky top-0 bg-background z-10">
+          <DropdownMenuLabel className="px-2 py-1.5">
+            {currentOrganization?.name || t('workspace.organization')}
+          </DropdownMenuLabel>
+          
+          {/* Search */}
+          <div className="relative mt-2">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder={t('workspace.searchWorkspaces')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-8"
+              className="h-9 pl-9"
             />
           </div>
         </div>
 
         {/* Workspace List */}
-        <div className="max-h-64 overflow-y-auto">
+        <div className="max-h-[320px] overflow-y-auto p-1">
           {filteredWorkspaces.map((workspace) => (
             <DropdownMenuItem
               key={workspace.id}
@@ -95,13 +94,20 @@ export function WorkspaceSwitcher() {
               )}
             </DropdownMenuItem>
           ))}
+          
+          {filteredWorkspaces.length === 0 && (
+            <div className="p-4 text-center text-sm text-muted-foreground">
+              No workspaces found
+            </div>
+          )}
         </div>
 
-        <DropdownMenuSeparator />
-        <DropdownMenuItem className="gap-2">
-          <Plus className="h-4 w-4" />
-          <span>{t('workspace.createWorkspace')}</span>
-        </DropdownMenuItem>
+        <div className="p-1 border-t">
+          <DropdownMenuItem className="gap-2">
+            <Plus className="h-4 w-4" />
+            <span>{t('workspace.createWorkspace')}</span>
+          </DropdownMenuItem>
+        </div>
       </DropdownMenuContent>
     </DropdownMenu>
   )

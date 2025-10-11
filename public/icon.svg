@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#7c3aed" rx="96"/>
+  <g transform="translate(128, 128)">
+    <!-- Dragonfly design -->
+    <circle cx="128" cy="128" r="40" fill="#fff"/>
+    <ellipse cx="128" cy="180" rx="30" ry="50" fill="#fff"/>
+    <ellipse cx="50" cy="120" rx="50" ry="25" fill="#fff" opacity="0.8"/>
+    <ellipse cx="206" cy="120" rx="50" ry="25" fill="#fff" opacity="0.8"/>
+    <ellipse cx="60" cy="180" rx="45" ry="20" fill="#fff" opacity="0.6"/>
+    <ellipse cx="196" cy="180" rx="45" ry="20" fill="#fff" opacity="0.6"/>
+  </g>
+</svg>

@@ -1,38 +1,40 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { formatDate, getInitials } from "@/lib/utils"
 
-const mockActivities = [
-  {
-    id: "1",
-    user: { name: "John Doe", avatar_url: null },
-    action: "created task",
-    entity_type: "task",
-    entity_id: "123",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "2",
-    user: { name: "Jane Smith", avatar_url: null },
-    action: "commented on",
-    entity_type: "task",
-    entity_id: "123",
-    created_at: new Date(Date.now() - 3600000).toISOString(),
-  },
-  {
-    id: "3",
-    user: { name: "Bob Wilson", avatar_url: null },
-    action: "updated status to",
-    entity_type: "task",
-    entity_id: "123",
-    metadata: { status: t('statuses.inProgress') },
-    created_at: new Date(Date.now() - 7200000).toISOString(),
-  },
-]
-
 export function ActivityFeed() {
   const t = useTranslations()
+  
+  const mockActivities = [
+    {
+      id: "1",
+      user: { name: "John Doe", avatar_url: null },
+      action: "created task",
+      entity_type: "task",
+      entity_id: "123",
+      created_at: new Date().toISOString(),
+    },
+    {
+      id: "2",
+      user: { name: "Jane Smith", avatar_url: null },
+      action: "commented on",
+      entity_type: "task",
+      entity_id: "123",
+      created_at: new Date(Date.now() - 3600000).toISOString(),
+    },
+    {
+      id: "3",
+      user: { name: "Bob Wilson", avatar_url: null },
+      action: "updated status to",
+      entity_type: "task",
+      entity_id: "123",
+      metadata: { status: t('statuses.inProgress') },
+      created_at: new Date(Date.now() - 7200000).toISOString(),
+    },
+  ]
+  
   return (
     <div className="space-y-4">
       {mockActivities.map((activity) => (

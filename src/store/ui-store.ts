@@ -1,6 +1,10 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import type { UIState, ThemeMode, Density, Workspace, Module, View } from '@/types'
+import type { UIState, ThemeMode, Density, Workspace, Module, View, ModuleTab } from '@/types'
+
+interface TabConfig {
+  [moduleId: string]: ModuleTab[]
+}
 
 interface UIStore extends UIState {
   setSidebarCollapsed: (collapsed: boolean) => void
@@ -18,11 +22,14 @@ interface UIStore extends UIState {
   focusMode: boolean
   toggleFocusMode: () => void
   setFocusMode: (enabled: boolean) => void
+  tabConfigs: TabConfig
+  setTabConfig: (moduleId: string, tabs: ModuleTab[]) => void
+  getTabConfig: (moduleId: string) => ModuleTab[] | undefined
 }
 
 export const useUIStore = create<UIStore>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       sidebarCollapsed: false,
       rightSidebarOpen: false,
       rightSidebarTab: 'activity',
@@ -33,6 +40,7 @@ export const useUIStore = create<UIStore>()(
       currentModule: undefined,
       currentView: undefined,
       focusMode: false,
+      tabConfigs: {},
 
       setSidebarCollapsed: (collapsed) => set({ sidebarCollapsed: collapsed }),
       toggleSidebar: () => set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
@@ -53,6 +61,12 @@ export const useUIStore = create<UIStore>()(
       setCurrentView: (view) => set({ currentView: view }),
       toggleFocusMode: () => set((state) => ({ focusMode: !state.focusMode })),
       setFocusMode: (enabled) => set({ focusMode: enabled }),
+      setTabConfig: (moduleId, tabs) => set((state) => ({
+        tabConfigs: { ...state.tabConfigs, [moduleId]: tabs }
+      })),
+      getTabConfig: (moduleId) => {
+        return get().tabConfigs[moduleId]
+      },
     }),
     {
       name: 'ui-storage',

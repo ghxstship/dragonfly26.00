@@ -196,14 +196,19 @@
     "deleteGoal": "Delete Goal",
     "progress": "Progress",
     "targetDate": "Target Date",
-    "completed": "Completed"
+    "completed": "Completed",
+    "describeGoal": "Describe the goal and why it matters",
+    "enterNewValue": "Enter new value",
+    "noDescription": "No description"
   },
   "reports": {
     "title": "Reports",
     "createReport": "Create Report",
     "viewReport": "View Report",
     "generateReport": "Generate Report",
-    "exportReport": "Export Report"
+    "exportReport": "Export Report",
+    "taskCompletionRate": "Task Completion Rate",
+    "reportDescription": "What does this report show?"
   },
   "plugins": {
     "title": "Plugins",
@@ -260,13 +265,30 @@
     "incomplete": "Incomplete"
   },
   "errors": {
-    "somethingWentWrong": "Something went wrong",
-    "tryAgain": "Try again",
-    "pageNotFound": "Page not found",
-    "accessDenied": "Access denied",
-    "invalidInput": "Invalid input",
-    "requiredField": "This field is required",
-    "networkError": "Network error"
+    "somethingWentWrong": "ஏதோ தவறு ஏற்பட்டது",
+    "tryAgain": "மீண்டும் முயற்சிக்கவும்",
+    "pageNotFound": "பக்கம் கிடைக்கவில்லை",
+    "accessDenied": "அணுகல் மறுக்கப்பட்டது",
+    "invalidInput": "தவறான உள்ளீடு",
+    "requiredField": "இந்த புலம் தேவை",
+    "networkError": "நெட்வொர்க் பிழை",
+    "error404Title": "404 - பக்கம் கிடைக்கவில்லை",
+    "error404Description": "மன்னிக்கவும், நீங்கள் தேடும் பக்கத்தை எங்களால் கண்டுபிடிக்க முடியவில்லை. இது நகர்த்தப்பட்டிருக்கலாம் அல்லது நீக்கப்பட்டிருக்கலாம்.",
+    "error500Title": "500 - சேவையக பிழை",
+    "error500Description": "அடடா! எங்கள் தரப்பில் ஏதோ தவறு ஏற்பட்டது. அதை சரிசெய்ய நாங்கள் உழைத்துக்கொண்டிருக்கிறோம்.",
+    "errorGenericTitle": "ஏதோ தவறு ஏற்பட்டது",
+    "errorGenericDescription": "எதிர்பாராத பிழை ஏற்பட்டது. தயவுசெய்து மீண்டும் முயற்சிக்கவும் அல்லது சிக்கல் தொடர்ந்தால் ஆதரவைத் தொடர்பு கொள்ளவும்.",
+    "goBackHome": "முகப்புக்குத் திரும்பு",
+    "reloadPage": "பக்கத்தை மீண்டும் ஏற்றவும்",
+    "contactSupport": "ஆதரவைத் தொடர்பு கொள்ளவும்",
+    "errorCode": "பிழை குறியீடு",
+    "whatHappened": "என்ன நடந்தது?",
+    "whatYouCanDo": "நீங்கள் என்ன செய்யலாம்:",
+    "checkUrl": "URL சரியானதா என சரிபார்க்கவும்",
+    "goBack": "முந்தைய பக்கத்திற்குச் செல்லவும்",
+    "visitHomepage": "எங்கள் முகப்புப் பக்கத்தைப் பார்வையிடவும்",
+    "reportProblem": "இந்த சிக்கலைப் புகாரளிக்கவும்",
+    "technicalDetails": "தொழில்நுட்ப விவரங்கள்"
   },
   "success": {
     "saved": "Saved successfully",
@@ -290,6 +312,87 @@
     "thisMonth": "This month",
     "lastMonth": "Last month",
     "nextMonth": "Next month",
-    "pickDate": "Pick a date"
+    "pickDate": "Pick a date",
+    "justNow": "Just now"
+  },
+  "dependencies": {
+    "blocksTitle": "Blocks",
+    "blocksDescription": "This item must be completed before the other can start",
+    "blockedByTitle": "Blocked by",
+    "blockedByDescription": "This item cannot start until the other is completed",
+    "relatesTitle": "Relates to",
+    "relatesDescription": "This item is related to another item",
+    "duplicateTitle": "Duplicate",
+    "duplicateDescription": "This item is a duplicate of another",
+    "selectItem": "Select an item",
+    "unknownItem": "Unknown item"
+  },
+  "filters": {
+    "doesNotEqual": "Does not equal",
+    "contains": "Contains",
+    "doesNotContain": "Does not contain",
+    "startsWith": "Starts with",
+    "endsWith": "Ends with",
+    "isEmpty": "Is empty",
+    "isNotEmpty": "Is not empty",
+    "greaterThan": "Greater than",
+    "lessThan": "Less than",
+    "greaterThanOrEqual": "Greater than or equal",
+    "lessThanOrEqual": "Less than or equal",
+    "isOn": "Is on",
+    "isBefore": "Is before",
+    "isAfter": "Is after",
+    "isBetween": "Is between",
+    "selectField": "Select field",
+    "selectOperator": "Select operator",
+    "matchAll": "Show items that match all filters",
+    "matchAny": "Show items that match any filter"
+  },
+  "recurrence": {
+    "notRecurring": "Not recurring",
+    "setRecurrence": "Set recurrence",
+    "numberOfOccurrences": "Number of occurrences"
+  },
+  "import": {
+    "uploadPrompt": "Click to upload or drag and drop"
+  },
+  "templates": {
+    "standardChecklist": "Standard checklist for new projects",
+    "createProjectPlan": "Create project plan",
+    "assignTeamMembers": "Assign team members",
+    "setupCommunication": "Set up communication channels",
+    "describeUsage": "Describe when to use this template",
+    "addChecklistItem": "Add checklist item"
+  },
+  "tokens": {
+    "productionAPI": "Production API",
+    "tokenUsage": "What will this token be used for?"
+  },
+  "views": {
+    "moveItem": "Move item",
+    "noContent": "No content",
+    "selectAll": "Select all",
+    "selectRow": "Select row",
+    "untitledDocument": "Untitled Document",
+    "myWebsite": "My Website"
+  },
+  "realtime": {
+    "mentionedInComment": "You were mentioned in a comment",
+    "taskAssigned": "New task assigned",
+    "taskDueSoon": "Task due soon",
+    "implementAuth": "Implement user authentication",
+    "designLanding": "Design landing page",
+    "fixNavBug": "Fix navigation bug"
+  },
+  "placeholders": {
+    "describeGoal": "Describe the goal and why it matters",
+    "whatDoesReportShow": "What does this report show?",
+    "tokenPurpose": "What will this token be used for?",
+    "describeTemplate": "Describe when to use this template",
+    "addNewTask": "Add a new task to track work",
+    "startNewProject": "Start a new project",
+    "createNewDocument": "Create a new document",
+    "createNewListView": "Create a new list view",
+    "createNewWorkspace": "Create a new workspace for your team"
   }
 }

@@ -196,14 +196,19 @@
     "deleteGoal": "Delete Goal",
     "progress": "Progress",
     "targetDate": "Target Date",
-    "completed": "Completed"
+    "completed": "Completed",
+    "describeGoal": "Describe the goal and why it matters",
+    "enterNewValue": "Enter new value",
+    "noDescription": "No description"
   },
   "reports": {
     "title": "Reports",
     "createReport": "Create Report",
     "viewReport": "View Report",
     "generateReport": "Generate Report",
-    "exportReport": "Export Report"
+    "exportReport": "Export Report",
+    "taskCompletionRate": "Task Completion Rate",
+    "reportDescription": "What does this report show?"
   },
   "plugins": {
     "title": "Plugins",
@@ -260,13 +265,30 @@
     "incomplete": "Incomplete"
   },
   "errors": {
-    "somethingWentWrong": "Something went wrong",
-    "tryAgain": "Try again",
-    "pageNotFound": "Page not found",
-    "accessDenied": "Access denied",
-    "invalidInput": "Invalid input",
-    "requiredField": "This field is required",
-    "networkError": "Network error"
+    "somethingWentWrong": "কিছু ভুল হয়েছে",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "pageNotFound": "পৃষ্ঠা পাওয়া যায়নি",
+    "accessDenied": "প্রবেশাধিকার অস্বীকৃত",
+    "invalidInput": "অবৈধ ইনপুট",
+    "requiredField": "এই ক্ষেত্রটি প্রয়োজনীয়",
+    "networkError": "নেটওয়ার্ক ত্রুটি",
+    "error404Title": "404 - পৃষ্ঠা পাওয়া যায়নি",
+    "error404Description": "দুঃখিত, আপনি যে পৃষ্ঠাটি খুঁজছেন তা আমরা খুঁজে পাইনি। এটি সরানো বা মুছে ফেলা হতে পারে।",
+    "error500Title": "500 - সার্ভার ত্রুটি",
+    "error500Description": "ওহ! আমাদের পক্ষ থেকে কিছু ভুল হয়েছে। আমরা এটি ঠিক করার জন্য কাজ করছি।",
+    "errorGenericTitle": "কিছু ভুল হয়েছে",
+    "errorGenericDescription": "একটি অপ্রত্যাশিত ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন বা সমস্যা অব্যাহত থাকলে সহায়তার সাথে যোগাযোগ করুন।",
+    "goBackHome": "হোম পেজে ফিরে যান",
+    "reloadPage": "পৃষ্ঠা পুনরায় লোড করুন",
+    "contactSupport": "সহায়তার সাথে যোগাযোগ করুন",
+    "errorCode": "ত্রুটি কোড",
+    "whatHappened": "কি হয়েছে?",
+    "whatYouCanDo": "আপনি কি করতে পারেন:",
+    "checkUrl": "URL সঠিক কিনা পরীক্ষা করুন",
+    "goBack": "পূর্ববর্তী পৃষ্ঠায় ফিরে যান",
+    "visitHomepage": "আমাদের হোমপেজ দেখুন",
+    "reportProblem": "এই সমস্যা রিপোর্ট করুন",
+    "technicalDetails": "প্রযুক্তিগত বিবরণ"
   },
   "success": {
     "saved": "Saved successfully",
@@ -290,6 +312,87 @@
     "thisMonth": "This month",
     "lastMonth": "Last month",
     "nextMonth": "Next month",
-    "pickDate": "Pick a date"
+    "pickDate": "Pick a date",
+    "justNow": "Just now"
+  },
+  "dependencies": {
+    "blocksTitle": "Blocks",
+    "blocksDescription": "This item must be completed before the other can start",
+    "blockedByTitle": "Blocked by",
+    "blockedByDescription": "This item cannot start until the other is completed",
+    "relatesTitle": "Relates to",
+    "relatesDescription": "This item is related to another item",
+    "duplicateTitle": "Duplicate",
+    "duplicateDescription": "This item is a duplicate of another",
+    "selectItem": "Select an item",
+    "unknownItem": "Unknown item"
+  },
+  "filters": {
+    "doesNotEqual": "Does not equal",
+    "contains": "Contains",
+    "doesNotContain": "Does not contain",
+    "startsWith": "Starts with",
+    "endsWith": "Ends with",
+    "isEmpty": "Is empty",
+    "isNotEmpty": "Is not empty",
+    "greaterThan": "Greater than",
+    "lessThan": "Less than",
+    "greaterThanOrEqual": "Greater than or equal",
+    "lessThanOrEqual": "Less than or equal",
+    "isOn": "Is on",
+    "isBefore": "Is before",
+    "isAfter": "Is after",
+    "isBetween": "Is between",
+    "selectField": "Select field",
+    "selectOperator": "Select operator",
+    "matchAll": "Show items that match all filters",
+    "matchAny": "Show items that match any filter"
+  },
+  "recurrence": {
+    "notRecurring": "Not recurring",
+    "setRecurrence": "Set recurrence",
+    "numberOfOccurrences": "Number of occurrences"
+  },
+  "import": {
+    "uploadPrompt": "Click to upload or drag and drop"
+  },
+  "templates": {
+    "standardChecklist": "Standard checklist for new projects",
+    "createProjectPlan": "Create project plan",
+    "assignTeamMembers": "Assign team members",
+    "setupCommunication": "Set up communication channels",
+    "describeUsage": "Describe when to use this template",
+    "addChecklistItem": "Add checklist item"
+  },
+  "tokens": {
+    "productionAPI": "Production API",
+    "tokenUsage": "What will this token be used for?"
+  },
+  "views": {
+    "moveItem": "Move item",
+    "noContent": "No content",
+    "selectAll": "Select all",
+    "selectRow": "Select row",
+    "untitledDocument": "Untitled Document",
+    "myWebsite": "My Website"
+  },
+  "realtime": {
+    "mentionedInComment": "You were mentioned in a comment",
+    "taskAssigned": "New task assigned",
+    "taskDueSoon": "Task due soon",
+    "implementAuth": "Implement user authentication",
+    "designLanding": "Design landing page",
+    "fixNavBug": "Fix navigation bug"
+  },
+  "placeholders": {
+    "describeGoal": "Describe the goal and why it matters",
+    "whatDoesReportShow": "What does this report show?",
+    "tokenPurpose": "What will this token be used for?",
+    "describeTemplate": "Describe when to use this template",
+    "addNewTask": "Add a new task to track work",
+    "startNewProject": "Start a new project",
+    "createNewDocument": "Create a new document",
+    "createNewListView": "Create a new list view",
+    "createNewWorkspace": "Create a new workspace for your team"
   }
 }

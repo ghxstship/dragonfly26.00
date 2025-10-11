@@ -24,11 +24,11 @@ export function ChecklistTemplatesTab() {
       id: "1",
       organization_id: "org-1",
       name: "New Project Checklist",
-      description: "Standard checklist for new projects",
+      description: t('templates.standardChecklist'),
       items: [
-        { content: "Create project plan", completed: false, order: 0 },
-        { content: "Assign team members", completed: false, order: 1 },
-        { content: "Set up communication channels", completed: false, order: 2 },
+        { content: t('templates.createProjectPlan'), completed: false, order: 0 },
+        { content: t('templates.assignTeamMembers'), completed: false, order: 1 },
+        { content: t('templates.setupCommunication'), completed: false, order: 2 },
       ],
       created_by: "user-1",
       created_at: "",
@@ -107,7 +107,7 @@ export function ChecklistTemplatesTab() {
                   <div className="space-y-2">
                     <Label>Description</Label>
                     <Textarea
-                      placeholder="Describe when to use this template"
+                      placeholder={t('templates.describeUsage')}
                       value={newTemplate.description}
                       onChange={(e) =>
                         setNewTemplate({ ...newTemplate, description: e.target.value })
@@ -121,7 +121,7 @@ export function ChecklistTemplatesTab() {
                     {newTemplate.items.map((item, index) => (
                       <div key={index} className="flex gap-2">
                         <Input
-                          placeholder="Add checklist item"
+                          placeholder={t('templates.addChecklistItem')}
                           value={item}
                           onChange={(e) => {
                             const newItems = [...newTemplate.items]

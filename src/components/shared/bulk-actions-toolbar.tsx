@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { X, Trash2, Edit, Copy, Archive, Tag, UserPlus, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
