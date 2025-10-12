@@ -29,7 +29,7 @@ export class EventService {
     if (conflicts.length > 0) {
       const warning = {
         hasConflicts: true,
-        conflicts: conflicts.map(c => ({
+        conflicts: conflicts.map((c: any) => ({
           event: c.event_name,
           time: c.start_time
         }))

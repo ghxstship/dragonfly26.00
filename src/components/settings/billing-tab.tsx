@@ -235,7 +235,7 @@ export function BillingTab() {
         <CardHeader>
           <CardTitle>Available Plans</CardTitle>
           <CardDescription>
-            Choose the plan that's right for you
+            Choose the plan that&apos;s right for you
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -381,7 +381,7 @@ export function BillingTab() {
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-sm font-medium">What's included:</p>
+                  <p className="text-sm font-medium">What&apos;s included:</p>
                   <ul className="space-y-1">
                     {plans.find(p => p.id === selectedPlan)?.features.map((feature, index) => (
                       <li key={index} className="flex items-center gap-2 text-sm">

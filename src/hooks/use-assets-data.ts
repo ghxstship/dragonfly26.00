@@ -38,7 +38,9 @@ export function useAssets(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { assets, loading }
@@ -86,7 +88,9 @@ export function useAssetTransactions(workspaceId: string, assetId?: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId, assetId])
 
   return { transactions, loading }
@@ -126,7 +130,9 @@ export function useMaintenance(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { maintenance, loading }
@@ -167,7 +173,9 @@ export function useAdvances(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { advances, loading }

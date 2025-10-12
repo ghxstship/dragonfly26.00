@@ -288,7 +288,7 @@ export function EndorsementsTab() {
       <div className="bg-muted/50 rounded-lg p-4">
         <p className="text-sm text-muted-foreground">
           <strong>Tip:</strong> Endorsements help build trust and credibility. Request endorsements
-          from colleagues you've worked with closely, and be sure to return the favor by endorsing
+          from colleagues you&apos;ve worked with closely, and be sure to return the favor by endorsing
           others for their valuable contributions.
         </p>
       </div>

@@ -184,8 +184,8 @@ export function PerformanceTab() {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">
-                "Outstanding leadership and problem-solving skills. Kept the team motivated and
-                on schedule throughout the entire event."
+                &ldquo;Outstanding leadership and problem-solving skills. Kept the team motivated and
+                on schedule throughout the entire event.&rdquo;
               </p>
               <p className="text-xs text-muted-foreground">- Sarah Johnson, Production Director</p>
             </div>
@@ -202,8 +202,8 @@ export function PerformanceTab() {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">
-                "Professional, punctual, and extremely thorough. Audio quality was perfect
-                throughout the conference."
+                &ldquo;Professional, punctual, and extremely thorough. Audio quality was perfect
+                throughout the conference.&rdquo;
               </p>
               <p className="text-xs text-muted-foreground">- Michael Chen, Event Coordinator</p>
             </div>
@@ -220,7 +220,7 @@ export function PerformanceTab() {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">
-                "Solid technical skills and good team player. Would work with again."
+                &ldquo;Solid technical skills and good team player. Would work with again.&rdquo;
               </p>
               <p className="text-xs text-muted-foreground">
                 - Robert Williams, Technical Director

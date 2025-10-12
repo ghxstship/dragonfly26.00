@@ -176,7 +176,7 @@ export function SpotlightTab() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
-                {item.tags?.map((tag) => (
+                {item.tags?.map((tag: string) => (
                   <Badge key={tag} variant="secondary" className="text-xs">
                     #{tag}
                   </Badge>

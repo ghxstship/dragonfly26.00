@@ -1,4 +1,7 @@
-import { ItemType } from "@/components/shared/create-item-dialog"
+/**
+ * Item types for different modules
+ */
+export type ItemType = "project" | "task" | "event" | "person" | "asset" | "location" | "file" | "company" | "product" | "resource" | "job"
 
 /**
  * Maps module slugs to the appropriate item type for creation

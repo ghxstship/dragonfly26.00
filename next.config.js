@@ -2,6 +2,14 @@ const withNextIntl = require('next-intl/plugin')('./src/i18n/request.ts')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    // ESLint warnings don't fail the build (standard for production)
+    ignoreDuringBuilds: false,
+  },
+  typescript: {
+    // TypeScript errors will fail the build (strict mode)
+    ignoreBuildErrors: false,
+  },
   images: {
     domains: ['localhost'],
     remotePatterns: [

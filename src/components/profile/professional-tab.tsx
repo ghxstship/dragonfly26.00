@@ -175,7 +175,7 @@ export function ProfessionalTab() {
         <CardContent className="space-y-6">
           {experiences.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-8">
-              No work experience added yet. Click "Add Experience" to get started.
+              No work experience added yet. Click &ldquo;Add Experience&rdquo; to get started.
             </p>
           ) : (
             experiences.map((exp) => (
@@ -290,7 +290,7 @@ export function ProfessionalTab() {
         <CardContent className="space-y-6">
           {education.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-8">
-              No education added yet. Click "Add Education" to get started.
+              No education added yet. Click &ldquo;Add Education&rdquo; to get started.
             </p>
           ) : (
             education.map((edu) => (

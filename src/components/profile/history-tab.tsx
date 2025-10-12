@@ -144,7 +144,7 @@ export function HistoryTab() {
         <CardHeader>
           <CardTitle>Project History</CardTitle>
           <CardDescription>
-            All jobs and projects you've worked on in this application
+            All jobs and projects you&apos;ve worked on in this application
           </CardDescription>
           <div className="pt-4">
             <Input

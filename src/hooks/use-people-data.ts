@@ -37,7 +37,9 @@ export function usePersonnel(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { personnel, loading }
@@ -78,7 +80,9 @@ export function useTeams(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { teams, loading }
@@ -124,7 +128,9 @@ export function useTimeEntries(workspaceId: string, personnelId?: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId, personnelId])
 
   return { timeEntries, loading }
@@ -161,7 +167,9 @@ export function useTraining(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { training, loading }
@@ -198,7 +206,9 @@ export function useJobOpenings(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { openings, loading }

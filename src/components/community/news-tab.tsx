@@ -183,7 +183,7 @@ export function NewsTab() {
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Today's News</div>
+            <div className="text-sm font-medium">Today&apos;s News</div>
             <Newspaper className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -304,7 +304,7 @@ export function NewsTab() {
                     </div>
 
                     <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
-                    <p className="text-muted-foreground mb-4">{article.summary}</p>
+                    <p className="text-muted-foreground mb-4">We&apos;re excited to announce {article.summary}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {article.tags.map((tag) => (

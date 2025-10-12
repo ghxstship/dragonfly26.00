@@ -271,23 +271,23 @@ export function ShowcaseTab() {
                 {/* Post Images */}
                 {post.images && post.images.length > 0 && (
                   <div className={`grid gap-2 mb-4 ${
-                    post.images.length === 1 ? 'grid-cols-1' :
-                    post.images.length === 2 ? 'grid-cols-2' :
-                    post.images.length === 3 ? 'grid-cols-3' :
+                    post.images?.length === 1 ? 'grid-cols-1' :
+                    post.images?.length === 2 ? 'grid-cols-2' :
+                    post.images?.length === 3 ? 'grid-cols-3' :
                     'grid-cols-2'
                   }`}>
-                    {post.images.slice(0, 4).map((image, idx) => (
+                    {post.images?.slice(0, 4).map((image, idx) => (
                       <div 
                         key={idx}
                         className={`relative rounded-lg overflow-hidden ${
-                          post.images.length === 1 ? 'h-96' : 'h-48'
+                          post.images?.length === 1 ? 'h-96' : 'h-48'
                         } bg-muted`}
                       >
                         <div 
                           className="absolute inset-0 bg-cover bg-center"
                           style={{ backgroundImage: `url(${image})` }}
                         />
-                        {idx === 3 && post.images.length > 4 && (
+                        {idx === 3 && post.images && post.images.length > 4 && (
                           <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                             <span className="text-white text-2xl font-bold">
                               +{post.images.length - 4}

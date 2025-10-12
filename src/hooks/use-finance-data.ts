@@ -43,7 +43,9 @@ export function useBudgets(workspaceId: string, productionId?: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId, productionId])
 
   return { budgets, loading }
@@ -89,7 +91,9 @@ export function useTransactions(workspaceId: string, budgetId?: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId, budgetId])
 
   return { transactions, loading }
@@ -131,7 +135,9 @@ export function useInvoices(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { invoices, loading }
@@ -172,7 +178,9 @@ export function usePayroll(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { payroll, loading }
@@ -237,7 +245,9 @@ export function useGLCodes(workspaceId: string) {
       )
       .subscribe()
 
-    return () => supabase.removeChannel(channel)
+    return () => {
+      supabase.removeChannel(channel)
+    }
   }, [workspaceId])
 
   return { glCodes, loading }

@@ -2,13 +2,39 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Switch } from "@/components/ui/switch"
+import { Separator } from "@/components/ui/separator"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
+import { Plus, Lock, Users, Edit, Trash2, CheckCircle2 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
 import { rolesPermissionsSchema } from "@/lib/schemas/admin-schemas"
 import type { DataItem } from "@/types"
 
+interface Role {
+  id: string
+  name: string
+  description: string
+  memberCount: number
+  permissions: Record<string, boolean>
+  isSystem: boolean
+}
+
 export function RolesPermissionsTab() {
   const { toast } = useToast()
+  const [selectedRole, setSelectedRole] = useState<Role | null>(null)
+  const [dialogOpen, setDialogOpen] = useState(false)
 
   const permissionCategories = {
     projects: [
