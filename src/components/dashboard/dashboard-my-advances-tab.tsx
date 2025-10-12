@@ -171,26 +171,12 @@ export function DashboardMyAdvancesTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5" />
-                My Advances
-              </CardTitle>
-              <CardDescription>
-                Equipment, credentials, materials, and asset requests
-              </CardDescription>
-            </div>
-            <Button size="sm" className="gap-2">
-              <Plus className="h-4 w-4" />
-              Request Advance
-            </Button>
-          </div>
-        </CardHeader>
-      </Card>
+      <div className="flex justify-end">
+        <Button size="sm" className="gap-2">
+          <Plus className="h-4 w-4" />
+          Request Advance
+        </Button>
+      </div>
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

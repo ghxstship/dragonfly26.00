@@ -41,13 +41,14 @@ import { QuickActions } from "./quick-actions"
 import { ThemeToggle } from "./theme-toggle"
 import { LanguageSwitcher } from "./language-switcher"
 import { CreateMenu } from "./create-menu"
-import { CreateItemDialog, ItemType } from "@/components/shared/create-item-dialog"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { CreateObjectiveDialog } from "@/components/insights/create-objective-dialog"
 import { CreateWebhookDialog } from "@/components/webhooks/create-webhook-dialog"
 import { CreateTokenDialog } from "@/components/api-tokens/create-token-dialog"
 import { getInitials, cn } from "@/lib/utils"
 import { useUIStore } from "@/store/ui-store"
 import { useWorkspaceStore } from "@/store/workspace-store"
+import { ItemType, getModuleTabForItemType } from "@/lib/modules/item-type-to-module-mapper"
 
 export function TopBar() {
   const t = useTranslations()
@@ -386,10 +387,11 @@ export function TopBar() {
       />
 
       {/* Create Item Dialog */}
-      <CreateItemDialog
+      <CreateItemDialogEnhanced
         open={createDialogOpen}
         onOpenChange={setCreateDialogOpen}
-        type={createDialogType}
+        moduleId={getModuleTabForItemType(createDialogType).moduleId}
+        tabSlug={getModuleTabForItemType(createDialogType).tabSlug}
         onSuccess={(item) => {
           console.log("Created item:", item)
           // TODO: Add to data store and redirect if needed

@@ -28,7 +28,7 @@ export interface CreateAction {
   icon: string // Icon name as string for dynamic lookup
   category: 'core' | 'advanced' | 'admin' | 'system'
   keyboard_shortcut?: string
-  itemType?: string // For CreateItemDialog compatibility
+  itemType?: string // For item creation dialogs
   dialogType?: 'item' | 'objective' | 'token' | 'webhook' | 'automation' | 'template' | 'status' | 'custom'
   moduleContext?: string // Which module this belongs to
   requiresAdmin?: boolean

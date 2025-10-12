@@ -85,19 +85,6 @@ export function DashboardOverviewTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <LayoutDashboard className="h-5 w-5" />
-            My Dashboard
-          </CardTitle>
-          <CardDescription>
-            Your personalized workspace overview
-          </CardDescription>
-        </CardHeader>
-      </Card>
-
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat) => {

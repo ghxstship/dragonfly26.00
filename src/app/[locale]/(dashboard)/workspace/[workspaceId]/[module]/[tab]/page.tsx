@@ -36,8 +36,8 @@ import { PivotView } from "@/components/views/pivot-view"
 import { getModuleBySlug } from "@/lib/modules/registry"
 import { getTabBySlug } from "@/lib/modules/tabs-registry"
 import { ModuleTabs } from "@/components/layout/module-tabs"
-import { CreateItemDialog } from "@/components/shared/create-item-dialog"
-import { getItemTypeForModule, getNewItemLabel } from "@/lib/modules/item-type-mapper"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
+import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
 import { getAdminTabComponent } from "@/lib/admin-tab-components"
 import { getSettingsTabComponent } from "@/lib/settings-tab-components"
 import { getProfileTabComponent } from "@/lib/profile-tab-components"
@@ -533,10 +533,11 @@ export default function ModuleTabPage() {
 
       {/* Create Item Dialog - Only for standard views */}
       {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
-        <CreateItemDialog
+        <CreateItemDialogEnhanced
           open={createDialogOpen}
           onOpenChange={setCreateDialogOpen}
-          type={getItemTypeForModule(moduleSlug)}
+          moduleId={moduleSlug}
+          tabSlug={tabSlug}
           onSuccess={(item) => {
             console.log("Created item:", item)
             // TODO: Add to data store and refresh list

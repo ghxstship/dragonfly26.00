@@ -43,7 +43,7 @@ import {
   Calendar,
   Globe,
 } from "lucide-react"
-import type { ItemType } from "@/components/shared/create-item-dialog"
+import type { ItemType } from "@/lib/modules/item-type-to-module-mapper"
 
 // Icon mapping
 const ICON_MAP: Record<string, any> = {

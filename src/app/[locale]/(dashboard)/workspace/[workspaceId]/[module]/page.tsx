@@ -36,8 +36,8 @@ import { PivotView } from "@/components/views/pivot-view"
 import { getModuleBySlug } from "@/lib/modules/registry"
 import { getModuleTabs } from "@/lib/modules/tabs-registry"
 import { ModuleTabs } from "@/components/layout/module-tabs"
-import { CreateItemDialog } from "@/components/shared/create-item-dialog"
-import { getItemTypeForModule, getNewItemLabel } from "@/lib/modules/item-type-mapper"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
+import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
 import { generateProjectsMockData } from "@/lib/modules/projects-mock-data"
 import { generateEventsMockData } from "@/lib/modules/events-mock-data"
 import { generatePeopleMockData } from "@/lib/modules/people-mock-data"
@@ -379,10 +379,11 @@ export default function ModulePage() {
       />
 
       {/* Create Item Dialog */}
-      <CreateItemDialog
+      <CreateItemDialogEnhanced
         open={createDialogOpen}
         onOpenChange={setCreateDialogOpen}
-        type={getItemTypeForModule(moduleSlug)}
+        moduleId={moduleSlug}
+        tabSlug={moduleTabs[0]?.slug || 'overview'}
         onSuccess={(item) => {
           console.log("Created item:", item)
           // TODO: Add to data store and refresh list

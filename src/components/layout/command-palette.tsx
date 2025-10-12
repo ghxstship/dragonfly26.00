@@ -22,7 +22,7 @@ import {
   Folder,
   Plus,
 } from "lucide-react"
-import { ItemType } from "@/components/shared/create-item-dialog"
+import { ItemType } from "@/lib/modules/item-type-to-module-mapper"
 
 interface CommandPaletteProps {
   open: boolean

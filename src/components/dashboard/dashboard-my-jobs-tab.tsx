@@ -98,26 +98,12 @@ export function DashboardMyJobsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <Briefcase className="h-5 w-5" />
-                My Jobs
-              </CardTitle>
-              <CardDescription>
-                Your contracts and scopes of work
-              </CardDescription>
-            </div>
-            <Button size="sm" className="gap-2">
-              <Plus className="h-4 w-4" />
-              New Contract
-            </Button>
-          </div>
-        </CardHeader>
-      </Card>
+      <div className="flex justify-end">
+        <Button size="sm" className="gap-2">
+          <Plus className="h-4 w-4" />
+          New Contract
+        </Button>
+      </div>
 
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

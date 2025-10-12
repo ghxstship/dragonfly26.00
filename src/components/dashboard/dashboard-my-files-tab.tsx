@@ -193,35 +193,21 @@ export function DashboardMyFilesTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <FolderOpen className="h-5 w-5" />
-                My Files
-              </CardTitle>
-              <CardDescription>
-                Files uploaded, downloaded, saved, and favorited
-              </CardDescription>
-            </div>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="gap-2">
-                <Search className="h-4 w-4" />
-                Search
-              </Button>
-              <Button size="sm" className="gap-2">
-                <Plus className="h-4 w-4" />
-                Upload File
-              </Button>
-            </div>
-          </div>
-        </CardHeader>
-      </Card>
+      <div className="flex justify-end">
+        <div className="flex items-center gap-2">
+          <Button variant="outline" size="sm" className="gap-2">
+            <Search className="h-4 w-4" />
+            Search
+          </Button>
+          <Button size="sm" className="gap-2">
+            <Plus className="h-4 w-4" />
+            Upload File
+          </Button>
+        </div>
+      </div>
 
       {/* Summary Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">

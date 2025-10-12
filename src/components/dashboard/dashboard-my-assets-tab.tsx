@@ -142,32 +142,18 @@ export function DashboardMyAssetsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <Package className="h-5 w-5" />
-                My Assets
-              </CardTitle>
-              <CardDescription>
-                Personal inventories of owned and rented equipment
-              </CardDescription>
-            </div>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="gap-2">
-                <Search className="h-4 w-4" />
-                Search
-              </Button>
-              <Button size="sm" className="gap-2">
-                <Plus className="h-4 w-4" />
-                Add Asset
-              </Button>
-            </div>
-          </div>
-        </CardHeader>
-      </Card>
+      <div className="flex justify-end">
+        <div className="flex items-center gap-2">
+          <Button variant="outline" size="sm" className="gap-2">
+            <Search className="h-4 w-4" />
+            Search
+          </Button>
+          <Button size="sm" className="gap-2">
+            <Plus className="h-4 w-4" />
+            Add Asset
+          </Button>
+        </div>
+      </div>
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

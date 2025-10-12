@@ -157,26 +157,12 @@ export function DashboardMyReportsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <FileBarChart className="h-5 w-5" />
-                My Reports
-              </CardTitle>
-              <CardDescription>
-                Custom, favorited and recurring reports
-              </CardDescription>
-            </div>
-            <Button size="sm" className="gap-2">
-              <Plus className="h-4 w-4" />
-              Create Report
-            </Button>
-          </div>
-        </CardHeader>
-      </Card>
+      <div className="flex justify-end">
+        <Button size="sm" className="gap-2">
+          <Plus className="h-4 w-4" />
+          Create Report
+        </Button>
+      </div>
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">

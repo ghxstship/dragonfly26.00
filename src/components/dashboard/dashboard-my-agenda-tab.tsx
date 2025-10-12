@@ -122,26 +122,12 @@ export function DashboardMyAgendaTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                My Agenda
-              </CardTitle>
-              <CardDescription>
-                Events including you or created by you
-              </CardDescription>
-            </div>
-            <Button size="sm" className="gap-2">
-              <Plus className="h-4 w-4" />
-              New Event
-            </Button>
-          </div>
-        </CardHeader>
-      </Card>
+      <div className="flex justify-end">
+        <Button size="sm" className="gap-2">
+          <Plus className="h-4 w-4" />
+          New Event
+        </Button>
+      </div>
 
       {/* Week Overview */}
       <Card>

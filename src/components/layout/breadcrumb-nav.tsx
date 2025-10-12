@@ -18,29 +18,37 @@ export function BreadcrumbNav() {
   // Parse path segments
   const segments = pathname.split("/").filter(Boolean)
   const locale = segments[0] || 'en'
+  const workspaceId = segments[2]
+  const moduleName = segments[3]
+  const tabSlug = segments[4]
   
   // Build breadcrumb items
   const breadcrumbs = []
-  
-  if (currentWorkspace) {
-    // Link to dashboard/overview as the default workspace home
-    breadcrumbs.push({
-      label: currentWorkspace.name,
-      href: `/${locale}/workspace/${currentWorkspace.id}/dashboard/overview`,
-      icon: currentWorkspace.icon,
-    })
-  }
 
-  // Add module/section breadcrumbs
-  if (segments.length > 2) {
-    const moduleName = segments[2]
+  // Add module breadcrumb
+  if (moduleName && workspaceId) {
     const moduleTabs = getModuleTabs(moduleName)
     const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
     
     breadcrumbs.push({
       label: moduleName.charAt(0).toUpperCase() + moduleName.slice(1).replace(/-/g, " "),
-      href: `/${locale}/workspace/${segments[1]}/${moduleName}/${firstTabSlug}`,
+      href: `/${locale}/workspace/${workspaceId}/${moduleName}/${firstTabSlug}`,
+      icon: undefined,
     })
+  }
+
+  // Add tab breadcrumb (if present)
+  if (tabSlug && moduleName && workspaceId) {
+    const moduleTabs = getModuleTabs(moduleName)
+    const currentTab = moduleTabs.find(tab => tab.slug === tabSlug)
+    
+    if (currentTab) {
+      breadcrumbs.push({
+        label: currentTab.name,
+        href: `/${locale}/workspace/${workspaceId}/${moduleName}/${tabSlug}`,
+        icon: undefined,
+      })
+    }
   }
 
   if (breadcrumbs.length === 0) return null

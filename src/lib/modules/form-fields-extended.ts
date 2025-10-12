@@ -3,8 +3,9 @@ import type { TabFormConfig } from './form-fields-registry'
 // Events Module Forms
 export const eventsForms: Record<string, TabFormConfig> = {
   'all-events': {
-    title: 'Create Event',
-    description: 'Schedule a new event',
+    title: 'Schedule Event',
+    description: 'Create and schedule a new event',
+    submitLabel: 'Schedule Event',
     fields: [
       { name: 'title', label: 'Event Title', type: 'text', required: true },
       { name: 'event_type', label: 'Type', type: 'select', required: true, options: [
@@ -34,7 +35,8 @@ export const eventsForms: Record<string, TabFormConfig> = {
   },
   'bookings': {
     title: 'Create Booking',
-    description: 'Create venue or resource booking',
+    description: 'Reserve a venue or resource',
+    submitLabel: 'Create Booking',
     fields: [
       { name: 'name', label: 'Booking Name', type: 'text', required: true },
       { name: 'booking_type', label: 'Type', type: 'select', options: [
@@ -66,7 +68,8 @@ export const eventsForms: Record<string, TabFormConfig> = {
 export const locationsForms: Record<string, TabFormConfig> = {
   'directory': {
     title: 'Add Location',
-    description: 'Add a new venue or facility',
+    description: 'Register a new venue or facility',
+    submitLabel: 'Add Location',
     fields: [
       { name: 'name', label: 'Location Name', type: 'text', required: true },
       { name: 'location_type', label: 'Type', type: 'select', required: true, options: [
@@ -100,7 +103,8 @@ export const locationsForms: Record<string, TabFormConfig> = {
 export const companiesForms: Record<string, TabFormConfig> = {
   'organizations': {
     title: 'Add Company',
-    description: 'Add a new company or organization',
+    description: 'Register a new company or organization',
+    submitLabel: 'Add Company',
     fields: [
       { name: 'name', label: 'Company Name', type: 'text', required: true },
       { name: 'company_type', label: 'Type', type: 'select', options: [
@@ -135,8 +139,9 @@ export const companiesForms: Record<string, TabFormConfig> = {
 // Marketplace Module Forms
 export const marketplaceForms: Record<string, TabFormConfig> = {
   'products': {
-    title: 'Add Product',
-    description: 'List a new product',
+    title: 'List Product',
+    description: 'Add a new product to the marketplace',
+    submitLabel: 'List Product',
     fields: [
       { name: 'name', label: 'Product Name', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'richtext', required: true },
@@ -168,7 +173,8 @@ export const marketplaceForms: Record<string, TabFormConfig> = {
 export const procurementForms: Record<string, TabFormConfig> = {
   'orders': {
     title: 'Create Order',
-    description: 'Create a new purchase or work order',
+    description: 'Generate a new purchase or work order',
+    submitLabel: 'Create Order',
     fields: [
       { name: 'order_number', label: 'Order Number', type: 'text', required: true },
       { name: 'order_type', label: 'Type', type: 'select', required: true, options: [
@@ -205,8 +211,9 @@ export const procurementForms: Record<string, TabFormConfig> = {
 // Reports Module Forms
 export const reportsForms: Record<string, TabFormConfig> = {
   'custom-builder': {
-    title: 'Create Custom Report',
-    description: 'Build a custom report',
+    title: 'Build Custom Report',
+    description: 'Design a custom analytics report',
+    submitLabel: 'Build Report',
     fields: [
       { name: 'name', label: 'Report Name', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'textarea' },
@@ -239,8 +246,9 @@ export const reportsForms: Record<string, TabFormConfig> = {
 // Analytics Module Forms
 export const analyticsForms: Record<string, TabFormConfig> = {
   'custom-views': {
-    title: 'Create Custom View',
-    description: 'Build a custom analytics dashboard',
+    title: 'Create Dashboard View',
+    description: 'Design a custom analytics dashboard',
+    submitLabel: 'Create View',
     fields: [
       { name: 'name', label: 'View Name', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'textarea' },
@@ -270,8 +278,9 @@ export const analyticsForms: Record<string, TabFormConfig> = {
 // Insights Module Forms
 export const insightsForms: Record<string, TabFormConfig> = {
   'objectives': {
-    title: 'Create Objective',
-    description: 'Set a strategic objective',
+    title: 'Set Objective',
+    description: 'Define a new strategic objective',
+    submitLabel: 'Set Objective',
     fields: [
       { name: 'name', label: 'Objective Name', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'richtext', required: true },
@@ -302,8 +311,9 @@ export const insightsForms: Record<string, TabFormConfig> = {
     ]
   },
   'key-results': {
-    title: 'Create Key Result',
-    description: 'Define a measurable key result',
+    title: 'Add Key Result',
+    description: 'Define a measurable key result for an objective',
+    submitLabel: 'Add Key Result',
     fields: [
       { name: 'name', label: 'Key Result Name', type: 'text', required: true },
       { name: 'objective', label: 'Objective', type: 'autocomplete', required: true },

@@ -61,8 +61,9 @@ export interface TabFormConfig {
 // Dashboard Module Forms
 const dashboardForms: Record<string, TabFormConfig> = {
   'my-agenda': {
-    title: 'Create Event',
-    description: 'Add a new event to your agenda',
+    title: 'Schedule Event',
+    description: 'Add a new event to your personal agenda',
+    submitLabel: 'Add to Agenda',
     fields: [
       { name: 'title', label: 'Event Title', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'textarea' },
@@ -95,8 +96,9 @@ const dashboardForms: Record<string, TabFormConfig> = {
     ]
   },
   'my-jobs': {
-    title: 'Create Job',
-    description: 'Add a new job or contract',
+    title: 'Add Job',
+    description: 'Track a new job opportunity or contract',
+    submitLabel: 'Add Job',
     fields: [
       { name: 'title', label: 'Job Title', type: 'text', required: true },
       { name: 'company', label: 'Company', type: 'autocomplete', required: true },
@@ -131,8 +133,9 @@ const dashboardForms: Record<string, TabFormConfig> = {
     ]
   },
   'my-tasks': {
-    title: 'Create Task',
-    description: 'Add a new task',
+    title: 'Add Task',
+    description: 'Create a new personal task',
+    submitLabel: 'Add Task',
     fields: [
       { name: 'title', label: 'Task Title', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'textarea' },
@@ -162,6 +165,7 @@ const projectsForms: Record<string, TabFormConfig> = {
   'productions': {
     title: 'Create Production',
     description: 'Start a new production project',
+    submitLabel: 'Create Production',
     fields: [
       { name: 'name', label: 'Production Name', type: 'text', required: true },
       { name: 'production_type', label: 'Type', type: 'select', required: true, options: [
@@ -198,7 +202,8 @@ const projectsForms: Record<string, TabFormConfig> = {
   },
   'activations': {
     title: 'Create Activation',
-    description: 'Create a new stage, installation, or brand activation',
+    description: 'Design a new stage, installation, or brand activation',
+    submitLabel: 'Create Activation',
     fields: [
       { name: 'name', label: 'Activation Name', type: 'text', required: true },
       { name: 'activation_type', label: 'Type', type: 'select', required: true, options: [
@@ -230,8 +235,9 @@ const projectsForms: Record<string, TabFormConfig> = {
     ]
   },
   'tasks': {
-    title: 'Create Task',
-    description: 'Add a new project task',
+    title: 'Add Project Task',
+    description: 'Create a new task for this project',
+    submitLabel: 'Add Task',
     fields: [
       { name: 'title', label: 'Task Title', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'textarea' },
@@ -256,8 +262,9 @@ const projectsForms: Record<string, TabFormConfig> = {
     ]
   },
   'milestones': {
-    title: 'Create Milestone',
-    description: 'Add a key project milestone',
+    title: 'Add Milestone',
+    description: 'Define a key project milestone or deliverable',
+    submitLabel: 'Add Milestone',
     fields: [
       { name: 'name', label: 'Milestone Name', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'textarea' },
@@ -287,8 +294,9 @@ const projectsForms: Record<string, TabFormConfig> = {
     ]
   },
   'compliance': {
-    title: 'Create Compliance Item',
-    description: 'Add licensing, permit, or regulatory requirement',
+    title: 'Add Compliance Requirement',
+    description: 'Track a licensing, permit, or regulatory requirement',
+    submitLabel: 'Add Requirement',
     fields: [
       { name: 'name', label: 'Item Name', type: 'text', required: true },
       { name: 'compliance_type', label: 'Type', type: 'select', required: true, options: [
@@ -318,8 +326,9 @@ const projectsForms: Record<string, TabFormConfig> = {
     ]
   },
   'safety': {
-    title: 'Create Safety Item',
-    description: 'Add safety assessment or emergency procedure',
+    title: 'Add Safety Item',
+    description: 'Document a safety assessment or emergency procedure',
+    submitLabel: 'Add Safety Item',
     fields: [
       { name: 'name', label: 'Item Name', type: 'text', required: true },
       { name: 'safety_type', label: 'Type', type: 'select', required: true, options: [
@@ -359,8 +368,9 @@ const projectsForms: Record<string, TabFormConfig> = {
 // People Module Forms
 const peopleForms: Record<string, TabFormConfig> = {
   'personnel': {
-    title: 'Add Personnel',
-    description: 'Add a new crew member or staff',
+    title: 'Add Team Member',
+    description: 'Add a new crew member or staff to your team',
+    submitLabel: 'Add Team Member',
     fields: [
       { name: 'full_name', label: 'Full Name', type: 'text', required: true },
       { name: 'email', label: 'Email', type: 'email', required: true },
@@ -408,7 +418,8 @@ const peopleForms: Record<string, TabFormConfig> = {
   },
   'teams': {
     title: 'Create Team',
-    description: 'Create a new team or department',
+    description: 'Form a new team or department',
+    submitLabel: 'Create Team',
     fields: [
       { name: 'name', label: 'Team Name', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'textarea' },
@@ -434,8 +445,9 @@ const peopleForms: Record<string, TabFormConfig> = {
     ]
   },
   'openings': {
-    title: 'Create Job Opening',
-    description: 'Post a new job opening',
+    title: 'Post Job Opening',
+    description: 'Create a new job posting to recruit talent',
+    submitLabel: 'Post Opening',
     fields: [
       { name: 'title', label: 'Job Title', type: 'text', required: true },
       { name: 'description', label: 'Job Description', type: 'richtext', required: true },
@@ -477,7 +489,8 @@ const peopleForms: Record<string, TabFormConfig> = {
 const financeForms: Record<string, TabFormConfig> = {
   'budgets': {
     title: 'Create Budget',
-    description: 'Create a new production budget',
+    description: 'Set up a new budget for tracking finances',
+    submitLabel: 'Create Budget',
     fields: [
       { name: 'name', label: 'Budget Name', type: 'text', required: true },
       { name: 'description', label: 'Description', type: 'textarea' },
@@ -510,8 +523,9 @@ const financeForms: Record<string, TabFormConfig> = {
     ]
   },
   'invoices': {
-    title: 'Create Invoice',
-    description: 'Create a new invoice',
+    title: 'Generate Invoice',
+    description: 'Create and send a new invoice to a client',
+    submitLabel: 'Generate Invoice',
     fields: [
       { name: 'invoice_number', label: 'Invoice Number', type: 'text', required: true },
       { name: 'client', label: 'Client', type: 'autocomplete', required: true },
@@ -544,8 +558,9 @@ const financeForms: Record<string, TabFormConfig> = {
     ]
   },
   'expenses': {
-    title: 'Create Expense',
-    description: 'Submit a new expense',
+    title: 'Submit Expense',
+    description: 'Record a new expense for reimbursement',
+    submitLabel: 'Submit Expense',
     fields: [
       { name: 'description', label: 'Description', type: 'text', required: true },
       { name: 'category', label: 'Category', type: 'select', required: true, options: [
@@ -584,7 +599,8 @@ const financeForms: Record<string, TabFormConfig> = {
 const assetsForms: Record<string, TabFormConfig> = {
   'inventory': {
     title: 'Add Asset',
-    description: 'Add a new asset to inventory',
+    description: 'Register a new asset in your inventory',
+    submitLabel: 'Add Asset',
     fields: [
       { name: 'name', label: 'Asset Name', type: 'text', required: true },
       { name: 'asset_id', label: 'Asset ID/Serial Number', type: 'text', required: true },
@@ -623,8 +639,9 @@ const assetsForms: Record<string, TabFormConfig> = {
     ]
   },
   'maintenance': {
-    title: 'Create Maintenance Record',
-    description: 'Schedule maintenance or log repair',
+    title: 'Schedule Maintenance',
+    description: 'Schedule maintenance or log a repair',
+    submitLabel: 'Schedule Maintenance',
     fields: [
       { name: 'asset', label: 'Asset', type: 'autocomplete', required: true },
       { name: 'maintenance_type', label: 'Type', type: 'select', required: true, options: [
