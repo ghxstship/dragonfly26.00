@@ -38,6 +38,7 @@ import { getModuleTabs } from "@/lib/modules/tabs-registry"
 import { ModuleTabs } from "@/components/layout/module-tabs"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
+import { getCreateButtonLabel } from "@/lib/modules/form-fields-registry"
 import { generateProjectsMockData } from "@/lib/modules/projects-mock-data"
 import { generateEventsMockData } from "@/lib/modules/events-mock-data"
 import { generatePeopleMockData } from "@/lib/modules/people-mock-data"
@@ -217,7 +218,7 @@ export default function ModulePage() {
                 </p>
               </div>
               <Button onClick={() => setCreateDialogOpen(true)}>
-                + New {getNewItemLabel(moduleSlug, currentModule.name)}
+                + {getCreateButtonLabel(moduleSlug, moduleTabs[0]?.slug || 'overview') || `New ${getNewItemLabel(moduleSlug, currentModule.name)}`}
               </Button>
             </div>
           )}

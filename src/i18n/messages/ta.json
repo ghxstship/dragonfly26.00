@@ -178,7 +178,7 @@
   "admin": {
     "title": "Admin",
     "overview": "Overview",
-    "members": "Members",
+    "invite": "Invite",
     "apiTokens": "API Tokens",
     "automations": "Automations",
     "webhooks": "Webhooks",

@@ -350,10 +350,10 @@ export function TopBar() {
                 <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/billing`)}>
                   {t('nav.billing')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/members`)}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/invite`)}>
                   {t('nav.team')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/members`)}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/invite`)}>
                   {t('nav.inviteUsers')}
                 </DropdownMenuItem>
               </DropdownMenuGroup>

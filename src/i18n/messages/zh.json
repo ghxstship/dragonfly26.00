@@ -178,7 +178,7 @@
   "admin": {
     "title": "管理",
     "overview": "概览",
-    "members": "成员",
+    "invite": "邀请",
     "apiTokens": "API 令牌",
     "automations": "自动化",
     "webhooks": "Webhooks",

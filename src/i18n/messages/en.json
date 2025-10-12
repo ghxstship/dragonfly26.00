@@ -85,8 +85,7 @@
     "profile": "Profile",
     "settings": "Settings",
     "admin": "Admin",
-    "invite": "Invite",
-    "members": "Members"
+    "invite": "Invite"
   },
   "workspace": {
     "selectWorkspace": "Select workspace",
@@ -215,7 +214,7 @@
   "admin": {
     "title": "Admin",
     "overview": "Overview",
-    "members": "Members",
+    "invite": "Invite",
     "apiTokens": "API Tokens",
     "automations": "Automations",
     "webhooks": "Webhooks",

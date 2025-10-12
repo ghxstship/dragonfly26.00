@@ -13,7 +13,7 @@ import { ApiTokensTab } from "@/components/admin/api-tokens-tab"
 export const ADMIN_TAB_COMPONENTS: Record<string, React.ComponentType> = {
   "overview": AdminOverviewTab,
   "organization": OrganizationSettingsTab,
-  "members": MembersManagementTab,
+  "invite": MembersManagementTab,
   "roles-permissions": RolesPermissionsTab,
   "billing": BillingTab,
   "security": SecurityTab,

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -35,6 +35,8 @@ import { useToast } from "@/lib/hooks/use-toast"
 
 export function AccountTab() {
   const { toast } = useToast()
+  const [profilePicture, setProfilePicture] = useState("https://github.com/shadcn.png")
+  const fileInputRef = useRef<HTMLInputElement>(null)
   const [formData, setFormData] = useState({
     firstName: "John",
     lastName: "Doe",
@@ -48,10 +50,50 @@ export function AccountTab() {
   })
 
   const handleSave = () => {
+    // Save to localStorage for persistence
+    localStorage.setItem('account-data', JSON.stringify({
+      ...formData,
+      profilePicture
+    }))
+    
     toast({
       title: "Account updated",
       description: "Your account information has been saved successfully.",
     })
+  }
+
+  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) { // 2MB limit
+        toast({
+          title: "File too large",
+          description: "Please select an image under 2MB.",
+          variant: "destructive",
+        })
+        return
+      }
+      
+      if (!file.type.startsWith('image/')) {
+        toast({
+          title: "Invalid file type",
+          description: "Please select an image file (JPG, PNG, or GIF).",
+          variant: "destructive",
+        })
+        return
+      }
+      
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        const dataUrl = event.target?.result as string
+        setProfilePicture(dataUrl)
+        toast({
+          title: "Photo uploaded",
+          description: "Your profile picture has been updated.",
+        })
+      }
+      reader.readAsDataURL(file)
+    }
   }
 
   const handleChangePassword = () => {
@@ -93,11 +135,22 @@ export function AccountTab() {
           {/* Profile Picture */}
           <div className="flex items-center gap-6">
             <Avatar className="h-24 w-24">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>JD</AvatarFallback>
+              <AvatarImage src={profilePicture} />
+              <AvatarFallback>{formData.firstName[0]}{formData.lastName[0]}</AvatarFallback>
             </Avatar>
             <div className="space-y-2">
-              <Button variant="outline" size="sm">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/gif"
+                onChange={handlePhotoUpload}
+                className="hidden"
+              />
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => fileInputRef.current?.click()}
+              >
                 <Upload className="h-4 w-4 mr-2" />
                 Upload New Photo
               </Button>

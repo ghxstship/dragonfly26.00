@@ -21,6 +21,7 @@ import { useUIStore } from "@/store/ui-store"
 import { MODULES, MODULE_CATEGORIES } from "@/lib/modules/registry"
 import { iconMap } from "@/lib/modules/icon-map"
 import { getModuleTabs } from "@/lib/modules/tabs-registry"
+import { InviteDialog } from "@/components/members/invite-dialog"
 
 export function Sidebar() {
   const t = useTranslations()
@@ -28,6 +29,7 @@ export function Sidebar() {
   const { sidebarCollapsed, toggleSidebar, currentWorkspace, focusMode } = useUIStore()
   const [favorites, setFavorites] = useState<string[]>([])
   const [collapsedHubs, setCollapsedHubs] = useState<Record<string, boolean>>({})
+  const [inviteDialogOpen, setInviteDialogOpen] = useState(false)
   
   // Extract locale from pathname
   const locale = pathname.split('/')[1] || 'en'
@@ -230,19 +232,21 @@ export function Sidebar() {
           <Shield className="h-4 w-4 flex-shrink-0" style={{ color: "#64748b" }} />
           {!sidebarCollapsed && <span>{t('sidebar.admin')}</span>}
         </Link>
-        <Link
-          href={`/${locale}/workspace/${currentWorkspace?.id}/admin/members`}
+        <button
+          onClick={() => setInviteDialogOpen(true)}
           className={cn(
-            "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2",
-            pathname.includes('/admin/members') && "bg-accent"
+            "flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+            sidebarCollapsed && "justify-center px-2"
           )}
-          title={sidebarCollapsed ? t('sidebar.members') : undefined}
+          title={sidebarCollapsed ? t('sidebar.invite') : undefined}
         >
           <UserPlus className="h-4 w-4 flex-shrink-0" style={{ color: "#10b981" }} />
-          {!sidebarCollapsed && <span>{t('sidebar.members')}</span>}
-        </Link>
+          {!sidebarCollapsed && <span>{t('sidebar.invite')}</span>}
+        </button>
       </div>
+      
+      {/* Invite Dialog */}
+      <InviteDialog open={inviteDialogOpen} onOpenChange={setInviteDialogOpen} />
     </aside>
   )
 }

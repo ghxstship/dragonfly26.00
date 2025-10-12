@@ -157,6 +157,186 @@ const dashboardForms: Record<string, TabFormConfig> = {
       { name: 'estimated_hours', label: 'Estimated Hours', type: 'number' },
       { name: 'tags', label: 'Tags', type: 'tags' }
     ]
+  },
+  'my-assets': {
+    title: 'Add Personal Asset',
+    description: 'Register personal equipment or asset',
+    submitLabel: 'Add Asset',
+    fields: [
+      { name: 'name', label: 'Asset Name', type: 'text', required: true },
+      { name: 'asset_id', label: 'Serial Number/ID', type: 'text' },
+      { name: 'category', label: 'Category', type: 'select', required: true, options: [
+        { value: 'audio', label: 'Audio Equipment' },
+        { value: 'lighting', label: 'Lighting' },
+        { value: 'video', label: 'Video' },
+        { value: 'computer', label: 'Computer/Tech' },
+        { value: 'tools', label: 'Tools' },
+        { value: 'vehicle', label: 'Vehicle' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'manufacturer', label: 'Manufacturer', type: 'text' },
+      { name: 'model', label: 'Model', type: 'text' },
+      { name: 'purchase_date', label: 'Purchase Date', type: 'date' },
+      { name: 'purchase_price', label: 'Purchase Price', type: 'currency' },
+      { name: 'rental_rate', label: 'Daily Rental Rate', type: 'currency' },
+      { name: 'condition', label: 'Condition', type: 'select', defaultValue: 'good', options: [
+        { value: 'excellent', label: 'Excellent' },
+        { value: 'good', label: 'Good' },
+        { value: 'fair', label: 'Fair' },
+        { value: 'needs_repair', label: 'Needs Repair' }
+      ]},
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'my-orders': {
+    title: 'Create Order',
+    description: 'Place a new marketplace order',
+    submitLabel: 'Create Order',
+    fields: [
+      { name: 'vendor', label: 'Vendor', type: 'autocomplete', required: true },
+      { name: 'order_type', label: 'Order Type', type: 'select', required: true, options: [
+        { value: 'rental', label: 'Equipment Rental' },
+        { value: 'purchase', label: 'Purchase' },
+        { value: 'service', label: 'Service' }
+      ]},
+      { name: 'description', label: 'Description', type: 'textarea', required: true },
+      { name: 'quantity', label: 'Quantity', type: 'number', required: true, defaultValue: 1 },
+      { name: 'unit_price', label: 'Unit Price', type: 'currency', required: true },
+      { name: 'delivery_date', label: 'Needed By', type: 'date', required: true },
+      { name: 'delivery_location', label: 'Delivery Location', type: 'location' },
+      { name: 'project', label: 'Project', type: 'autocomplete' },
+      { name: 'notes', label: 'Special Instructions', type: 'textarea' }
+    ]
+  },
+  'my-advances': {
+    title: 'Request Advance',
+    description: 'Request equipment, credentials, or materials',
+    submitLabel: 'Submit Request',
+    fields: [
+      { name: 'request_type', label: 'Request Type', type: 'select', required: true, options: [
+        { value: 'equipment', label: 'Equipment' },
+        { value: 'credentials', label: 'Credentials/Access' },
+        { value: 'materials', label: 'Materials' },
+        { value: 'tools', label: 'Tools' },
+        { value: 'vehicle', label: 'Vehicle' }
+      ]},
+      { name: 'item_description', label: 'Item/Description', type: 'text', required: true },
+      { name: 'quantity', label: 'Quantity', type: 'number', defaultValue: 1 },
+      { name: 'project', label: 'Project', type: 'autocomplete', required: true },
+      { name: 'needed_date', label: 'Date Needed', type: 'date', required: true },
+      { name: 'return_date', label: 'Return Date', type: 'date' },
+      { name: 'justification', label: 'Justification', type: 'textarea', required: true },
+      { name: 'estimated_value', label: 'Estimated Value', type: 'currency' },
+      { name: 'priority', label: 'Priority', type: 'select', defaultValue: 'normal', options: [
+        { value: 'low', label: 'Low' },
+        { value: 'normal', label: 'Normal' },
+        { value: 'high', label: 'High' },
+        { value: 'urgent', label: 'Urgent' }
+      ]}
+    ]
+  },
+  'my-travel': {
+    title: 'Add Travel',
+    description: 'Create a travel arrangement or itinerary',
+    submitLabel: 'Add Travel',
+    fields: [
+      { name: 'trip_name', label: 'Trip Name', type: 'text', required: true },
+      { name: 'travel_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'flight', label: 'Flight' },
+        { value: 'train', label: 'Train' },
+        { value: 'bus', label: 'Bus' },
+        { value: 'car', label: 'Car/Driving' },
+        { value: 'accommodation', label: 'Accommodation' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'departure_location', label: 'From', type: 'location', required: true },
+      { name: 'arrival_location', label: 'To', type: 'location', required: true },
+      { name: 'departure_date', label: 'Departure Date & Time', type: 'datetime', required: true },
+      { name: 'arrival_date', label: 'Arrival Date & Time', type: 'datetime' },
+      { name: 'confirmation_number', label: 'Confirmation #', type: 'text' },
+      { name: 'carrier', label: 'Airline/Carrier', type: 'text' },
+      { name: 'seat_number', label: 'Seat/Room #', type: 'text' },
+      { name: 'project', label: 'Project', type: 'autocomplete' },
+      { name: 'cost', label: 'Cost', type: 'currency' },
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'my-expenses': {
+    title: 'Submit Expense',
+    description: 'Submit a personal expense for reimbursement',
+    submitLabel: 'Submit Expense',
+    fields: [
+      { name: 'expense_date', label: 'Date', type: 'date', required: true },
+      { name: 'category', label: 'Category', type: 'select', required: true, options: [
+        { value: 'meals', label: 'Meals & Entertainment' },
+        { value: 'travel', label: 'Travel' },
+        { value: 'accommodation', label: 'Accommodation' },
+        { value: 'transportation', label: 'Transportation' },
+        { value: 'equipment', label: 'Equipment' },
+        { value: 'materials', label: 'Materials/Supplies' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'merchant', label: 'Merchant/Vendor', type: 'text', required: true },
+      { name: 'amount', label: 'Amount', type: 'currency', required: true },
+      { name: 'project', label: 'Project', type: 'autocomplete', required: true },
+      { name: 'description', label: 'Description', type: 'textarea', required: true },
+      { name: 'receipt', label: 'Receipt', type: 'file' },
+      { name: 'billable', label: 'Billable to Client', type: 'switch' },
+      { name: 'payment_method', label: 'Payment Method', type: 'select', options: [
+        { value: 'personal_card', label: 'Personal Card' },
+        { value: 'cash', label: 'Cash' },
+        { value: 'company_card', label: 'Company Card' }
+      ]}
+    ]
+  },
+  'my-reports': {
+    title: 'Save Report',
+    description: 'Save a custom or recurring report',
+    submitLabel: 'Save Report',
+    fields: [
+      { name: 'report_name', label: 'Report Name', type: 'text', required: true },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'report_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'financial', label: 'Financial' },
+        { value: 'project', label: 'Project' },
+        { value: 'personnel', label: 'Personnel' },
+        { value: 'operations', label: 'Operations' },
+        { value: 'custom', label: 'Custom' }
+      ]},
+      { name: 'schedule', label: 'Schedule', type: 'select', options: [
+        { value: 'one_time', label: 'One Time' },
+        { value: 'daily', label: 'Daily' },
+        { value: 'weekly', label: 'Weekly' },
+        { value: 'monthly', label: 'Monthly' }
+      ]},
+      { name: 'format', label: 'Export Format', type: 'select', options: [
+        { value: 'pdf', label: 'PDF' },
+        { value: 'excel', label: 'Excel' },
+        { value: 'csv', label: 'CSV' }
+      ]},
+      { name: 'favorite', label: 'Add to Favorites', type: 'switch' }
+    ]
+  },
+  'my-files': {
+    title: 'Upload File',
+    description: 'Upload a document or file',
+    submitLabel: 'Upload File',
+    fields: [
+      { name: 'file', label: 'File', type: 'file', required: true },
+      { name: 'name', label: 'File Name', type: 'text', required: true },
+      { name: 'category', label: 'Category', type: 'select', required: true, options: [
+        { value: 'contract', label: 'Contract' },
+        { value: 'invoice', label: 'Invoice' },
+        { value: 'receipt', label: 'Receipt' },
+        { value: 'report', label: 'Report' },
+        { value: 'photo', label: 'Photo' },
+        { value: 'drawing', label: 'Drawing/Plan' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'project', label: 'Project', type: 'autocomplete' },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'tags', label: 'Tags', type: 'tags' }
+    ]
   }
 }
 
@@ -482,6 +662,146 @@ const peopleForms: Record<string, TabFormConfig> = {
         { value: 'cancelled', label: 'Cancelled' }
       ]}
     ]
+  },
+  'assignments': {
+    title: 'Create Assignment',
+    description: 'Assign personnel to project tasks',
+    submitLabel: 'Create Assignment',
+    fields: [
+      { name: 'person', label: 'Team Member', type: 'user', required: true },
+      { name: 'project', label: 'Project', type: 'autocomplete', required: true },
+      { name: 'task', label: 'Task', type: 'autocomplete' },
+      { name: 'role', label: 'Role on Project', type: 'text', required: true },
+      { name: 'start_date', label: 'Start Date', type: 'date', required: true },
+      { name: 'end_date', label: 'End Date', type: 'date' },
+      { name: 'estimated_hours', label: 'Estimated Hours', type: 'number' },
+      { name: 'hourly_rate', label: 'Rate', type: 'currency' },
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'timekeeping': {
+    title: 'Log Time',
+    description: 'Record time worked by crew member',
+    submitLabel: 'Log Time',
+    fields: [
+      { name: 'person', label: 'Team Member', type: 'user', required: true },
+      { name: 'project', label: 'Project', type: 'autocomplete', required: true },
+      { name: 'date', label: 'Date', type: 'date', required: true },
+      { name: 'clock_in', label: 'Clock In', type: 'time', required: true },
+      { name: 'clock_out', label: 'Clock Out', type: 'time', required: true },
+      { name: 'break_duration', label: 'Break Duration (minutes)', type: 'number' },
+      { name: 'total_hours', label: 'Total Hours', type: 'number', required: true },
+      { name: 'overtime_hours', label: 'Overtime Hours', type: 'number' },
+      { name: 'time_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'regular', label: 'Regular Time' },
+        { value: 'overtime', label: 'Overtime' },
+        { value: 'double_time', label: 'Double Time' },
+        { value: 'holiday', label: 'Holiday Pay' }
+      ]},
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'scheduling': {
+    title: 'Create Schedule',
+    description: 'Schedule crew availability and shifts',
+    submitLabel: 'Create Schedule',
+    fields: [
+      { name: 'schedule_name', label: 'Schedule Name', type: 'text', required: true },
+      { name: 'person', label: 'Team Member', type: 'user', required: true },
+      { name: 'project', label: 'Project', type: 'autocomplete', required: true },
+      { name: 'start_datetime', label: 'Start Date & Time', type: 'datetime', required: true },
+      { name: 'end_datetime', label: 'End Date & Time', type: 'datetime', required: true },
+      { name: 'shift_type', label: 'Shift Type', type: 'select', options: [
+        { value: 'day', label: 'Day Shift' },
+        { value: 'night', label: 'Night Shift' },
+        { value: 'split', label: 'Split Shift' },
+        { value: 'on_call', label: 'On-Call' }
+      ]},
+      { name: 'location', label: 'Location', type: 'location' },
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'training': {
+    title: 'Schedule Training',
+    description: 'Create a training session or program',
+    submitLabel: 'Schedule Training',
+    fields: [
+      { name: 'training_title', label: 'Training Title', type: 'text', required: true },
+      { name: 'description', label: 'Description', type: 'richtext', required: true },
+      { name: 'training_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'safety', label: 'Safety Training' },
+        { value: 'technical', label: 'Technical Skills' },
+        { value: 'equipment', label: 'Equipment Training' },
+        { value: 'certification', label: 'Certification Program' },
+        { value: 'compliance', label: 'Compliance' },
+        { value: 'soft_skills', label: 'Soft Skills' }
+      ]},
+      { name: 'instructor', label: 'Instructor', type: 'user', required: true },
+      { name: 'attendees', label: 'Attendees', type: 'multiuser' },
+      { name: 'start_date', label: 'Start Date', type: 'datetime', required: true },
+      { name: 'end_date', label: 'End Date', type: 'datetime' },
+      { name: 'location', label: 'Location', type: 'location' },
+      { name: 'capacity', label: 'Max Capacity', type: 'number' },
+      { name: 'certification_provided', label: 'Provides Certification', type: 'switch' },
+      { name: 'materials', label: 'Training Materials', type: 'file' }
+    ]
+  },
+  'onboarding': {
+    title: 'Create Onboarding',
+    description: 'Set up new hire onboarding process',
+    submitLabel: 'Create Onboarding',
+    fields: [
+      { name: 'employee', label: 'New Hire', type: 'user', required: true },
+      { name: 'position', label: 'Position', type: 'text', required: true },
+      { name: 'department', label: 'Department', type: 'select', required: true, options: [
+        { value: 'production', label: 'Production' },
+        { value: 'audio', label: 'Audio' },
+        { value: 'lighting', label: 'Lighting' },
+        { value: 'video', label: 'Video' },
+        { value: 'management', label: 'Management' }
+      ]},
+      { name: 'start_date', label: 'Start Date', type: 'date', required: true },
+      { name: 'onboarding_buddy', label: 'Onboarding Buddy', type: 'user' },
+      { name: 'manager', label: 'Direct Manager', type: 'user', required: true },
+      { name: 'orientation_date', label: 'Orientation Date', type: 'date' },
+      { name: 'equipment_needed', label: 'Equipment Needed', type: 'tags' },
+      { name: 'access_required', label: 'Access/Credentials Required', type: 'tags' },
+      { name: 'training_modules', label: 'Required Training', type: 'multiselect' },
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'applicants': {
+    title: 'Add Applicant',
+    description: 'Track a new job applicant',
+    submitLabel: 'Add Applicant',
+    fields: [
+      { name: 'full_name', label: 'Full Name', type: 'text', required: true },
+      { name: 'email', label: 'Email', type: 'email', required: true },
+      { name: 'phone', label: 'Phone', type: 'phone' },
+      { name: 'position_applied', label: 'Position Applied For', type: 'autocomplete', required: true },
+      { name: 'application_date', label: 'Application Date', type: 'date', required: true },
+      { name: 'resume', label: 'Resume', type: 'file' },
+      { name: 'cover_letter', label: 'Cover Letter', type: 'file' },
+      { name: 'years_experience', label: 'Years of Experience', type: 'number' },
+      { name: 'skills', label: 'Skills', type: 'tags' },
+      { name: 'referral_source', label: 'How did they hear about us?', type: 'select', options: [
+        { value: 'website', label: 'Website' },
+        { value: 'referral', label: 'Employee Referral' },
+        { value: 'job_board', label: 'Job Board' },
+        { value: 'social_media', label: 'Social Media' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'status', label: 'Status', type: 'select', defaultValue: 'applied', options: [
+        { value: 'applied', label: 'Applied' },
+        { value: 'screening', label: 'Screening' },
+        { value: 'interviewing', label: 'Interviewing' },
+        { value: 'offer_extended', label: 'Offer Extended' },
+        { value: 'hired', label: 'Hired' },
+        { value: 'rejected', label: 'Rejected' },
+        { value: 'withdrawn', label: 'Withdrawn' }
+      ]},
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
   }
 }
 
@@ -592,6 +912,218 @@ const financeForms: Record<string, TabFormConfig> = {
         { value: 'reimbursed', label: 'Reimbursed' }
       ]}
     ]
+  },
+  'transactions': {
+    title: 'Record Transaction',
+    description: 'Log a financial transaction or entry',
+    submitLabel: 'Record Transaction',
+    fields: [
+      { name: 'transaction_date', label: 'Date', type: 'date', required: true },
+      { name: 'transaction_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'income', label: 'Income' },
+        { value: 'expense', label: 'Expense' },
+        { value: 'transfer', label: 'Transfer' },
+        { value: 'adjustment', label: 'Adjustment' }
+      ]},
+      { name: 'description', label: 'Description', type: 'text', required: true },
+      { name: 'amount', label: 'Amount', type: 'currency', required: true },
+      { name: 'account', label: 'Account', type: 'select', required: true, options: [
+        { value: 'operating', label: 'Operating' },
+        { value: 'payroll', label: 'Payroll' },
+        { value: 'production', label: 'Production' },
+        { value: 'capital', label: 'Capital' }
+      ]},
+      { name: 'category', label: 'Category', type: 'autocomplete' },
+      { name: 'gl_code', label: 'GL Code', type: 'text' },
+      { name: 'project', label: 'Project', type: 'autocomplete' },
+      { name: 'vendor', label: 'Vendor/Payee', type: 'autocomplete' },
+      { name: 'reference', label: 'Reference Number', type: 'text' },
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'revenue': {
+    title: 'Record Revenue',
+    description: 'Log revenue or income stream',
+    submitLabel: 'Record Revenue',
+    fields: [
+      { name: 'revenue_date', label: 'Date', type: 'date', required: true },
+      { name: 'source', label: 'Revenue Source', type: 'text', required: true },
+      { name: 'amount', label: 'Amount', type: 'currency', required: true },
+      { name: 'revenue_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'ticket_sales', label: 'Ticket Sales' },
+        { value: 'sponsorship', label: 'Sponsorship' },
+        { value: 'merchandise', label: 'Merchandise' },
+        { value: 'services', label: 'Services' },
+        { value: 'licensing', label: 'Licensing' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'client', label: 'Client', type: 'autocomplete', required: true },
+      { name: 'project', label: 'Project', type: 'autocomplete' },
+      { name: 'payment_method', label: 'Payment Method', type: 'select', options: [
+        { value: 'cash', label: 'Cash' },
+        { value: 'check', label: 'Check' },
+        { value: 'wire', label: 'Wire Transfer' },
+        { value: 'credit_card', label: 'Credit Card' },
+        { value: 'ach', label: 'ACH' }
+      ]},
+      { name: 'invoice_number', label: 'Invoice #', type: 'text' },
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'payroll': {
+    title: 'Process Payroll',
+    description: 'Create a payroll entry for crew payment',
+    submitLabel: 'Process Payroll',
+    fields: [
+      { name: 'pay_period_start', label: 'Pay Period Start', type: 'date', required: true },
+      { name: 'pay_period_end', label: 'Pay Period End', type: 'date', required: true },
+      { name: 'pay_date', label: 'Pay Date', type: 'date', required: true },
+      { name: 'employee', label: 'Employee', type: 'user', required: true },
+      { name: 'project', label: 'Project', type: 'autocomplete' },
+      { name: 'hours_worked', label: 'Hours Worked', type: 'number', required: true },
+      { name: 'hourly_rate', label: 'Hourly Rate', type: 'currency', required: true },
+      { name: 'overtime_hours', label: 'Overtime Hours', type: 'number' },
+      { name: 'overtime_rate', label: 'Overtime Rate', type: 'currency' },
+      { name: 'gross_pay', label: 'Gross Pay', type: 'currency', required: true },
+      { name: 'deductions', label: 'Deductions', type: 'currency' },
+      { name: 'net_pay', label: 'Net Pay', type: 'currency', required: true },
+      { name: 'payment_method', label: 'Payment Method', type: 'select', options: [
+        { value: 'direct_deposit', label: 'Direct Deposit' },
+        { value: 'check', label: 'Check' },
+        { value: 'cash', label: 'Cash' }
+      ]},
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'payments': {
+    title: 'Process Payment',
+    description: 'Record an outgoing payment',
+    submitLabel: 'Process Payment',
+    fields: [
+      { name: 'payment_date', label: 'Payment Date', type: 'date', required: true },
+      { name: 'payee', label: 'Payee', type: 'autocomplete', required: true },
+      { name: 'amount', label: 'Amount', type: 'currency', required: true },
+      { name: 'payment_method', label: 'Payment Method', type: 'select', required: true, options: [
+        { value: 'check', label: 'Check' },
+        { value: 'ach', label: 'ACH Transfer' },
+        { value: 'wire', label: 'Wire Transfer' },
+        { value: 'credit_card', label: 'Credit Card' },
+        { value: 'cash', label: 'Cash' }
+      ]},
+      { name: 'payment_type', label: 'Payment Type', type: 'select', required: true, options: [
+        { value: 'invoice', label: 'Invoice Payment' },
+        { value: 'expense', label: 'Expense Reimbursement' },
+        { value: 'payroll', label: 'Payroll' },
+        { value: 'vendor', label: 'Vendor Payment' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'reference', label: 'Reference/Check #', type: 'text' },
+      { name: 'invoice', label: 'Invoice', type: 'autocomplete' },
+      { name: 'project', label: 'Project', type: 'autocomplete' },
+      { name: 'account', label: 'Account', type: 'select', options: [
+        { value: 'operating', label: 'Operating Account' },
+        { value: 'payroll', label: 'Payroll Account' },
+        { value: 'production', label: 'Production Account' }
+      ]},
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'reconciliation': {
+    title: 'Create Reconciliation',
+    description: 'Reconcile project finances and settlements',
+    submitLabel: 'Create Reconciliation',
+    fields: [
+      { name: 'reconciliation_name', label: 'Name', type: 'text', required: true },
+      { name: 'project', label: 'Project/Show', type: 'autocomplete', required: true },
+      { name: 'reconciliation_date', label: 'Reconciliation Date', type: 'date', required: true },
+      { name: 'period_start', label: 'Period Start', type: 'date', required: true },
+      { name: 'period_end', label: 'Period End', type: 'date', required: true },
+      { name: 'budgeted_amount', label: 'Budgeted Amount', type: 'currency', required: true },
+      { name: 'actual_spent', label: 'Actual Spent', type: 'currency', required: true },
+      { name: 'variance', label: 'Variance', type: 'currency' },
+      { name: 'reconciliation_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'project', label: 'Project Settlement' },
+        { value: 'show', label: 'Show Settlement' },
+        { value: 'monthly', label: 'Monthly Reconciliation' },
+        { value: 'final', label: 'Final Settlement' }
+      ]},
+      { name: 'prepared_by', label: 'Prepared By', type: 'user', required: true },
+      { name: 'approved_by', label: 'Approved By', type: 'user' },
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'taxes': {
+    title: 'Add Tax Document',
+    description: 'Record tax document or filing',
+    submitLabel: 'Add Tax Document',
+    fields: [
+      { name: 'tax_year', label: 'Tax Year', type: 'number', required: true },
+      { name: 'tax_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'income_tax', label: 'Income Tax' },
+        { value: 'sales_tax', label: 'Sales Tax' },
+        { value: 'payroll_tax', label: 'Payroll Tax' },
+        { value: 'property_tax', label: 'Property Tax' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'tax_form', label: 'Tax Form', type: 'select', options: [
+        { value: '1040', label: 'Form 1040' },
+        { value: '1099', label: 'Form 1099' },
+        { value: 'w2', label: 'Form W-2' },
+        { value: 'w4', label: 'Form W-4' },
+        { value: '941', label: 'Form 941' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'filing_date', label: 'Filing Date', type: 'date' },
+      { name: 'due_date', label: 'Due Date', type: 'date', required: true },
+      { name: 'amount', label: 'Amount', type: 'currency' },
+      { name: 'status', label: 'Status', type: 'select', defaultValue: 'pending', options: [
+        { value: 'pending', label: 'Pending' },
+        { value: 'filed', label: 'Filed' },
+        { value: 'paid', label: 'Paid' },
+        { value: 'overdue', label: 'Overdue' }
+      ]},
+      { name: 'document', label: 'Document', type: 'file' },
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'accounts': {
+    title: 'Add Account',
+    description: 'Create a new accounting category',
+    submitLabel: 'Add Account',
+    fields: [
+      { name: 'account_name', label: 'Account Name', type: 'text', required: true },
+      { name: 'account_number', label: 'Account Number', type: 'text', required: true },
+      { name: 'account_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'asset', label: 'Asset' },
+        { value: 'liability', label: 'Liability' },
+        { value: 'equity', label: 'Equity' },
+        { value: 'revenue', label: 'Revenue' },
+        { value: 'expense', label: 'Expense' }
+      ]},
+      { name: 'sub_type', label: 'Sub-type', type: 'text' },
+      { name: 'parent_account', label: 'Parent Account', type: 'autocomplete' },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'active', label: 'Active', type: 'switch', defaultValue: true }
+    ]
+  },
+  'gl-codes': {
+    title: 'Add GL Code',
+    description: 'Create a general ledger code',
+    submitLabel: 'Add GL Code',
+    fields: [
+      { name: 'gl_code', label: 'GL Code', type: 'text', required: true },
+      { name: 'name', label: 'Name', type: 'text', required: true },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'account_type', label: 'Account Type', type: 'select', required: true, options: [
+        { value: 'asset', label: 'Asset' },
+        { value: 'liability', label: 'Liability' },
+        { value: 'equity', label: 'Equity' },
+        { value: 'revenue', label: 'Revenue' },
+        { value: 'expense', label: 'Expense' }
+      ]},
+      { name: 'category', label: 'Category', type: 'text' },
+      { name: 'active', label: 'Active', type: 'switch', defaultValue: true }
+    ]
   }
 }
 
@@ -671,6 +1203,120 @@ const assetsForms: Record<string, TabFormConfig> = {
         { value: 'urgent', label: 'Urgent' }
       ]}
     ]
+  },
+  'tracking': {
+    title: 'Check Out Asset',
+    description: 'Check out or track asset movement',
+    submitLabel: 'Check Out',
+    fields: [
+      { name: 'asset', label: 'Asset', type: 'autocomplete', required: true },
+      { name: 'action', label: 'Action', type: 'select', required: true, options: [
+        { value: 'check_out', label: 'Check Out' },
+        { value: 'check_in', label: 'Check In' },
+        { value: 'transfer', label: 'Transfer Location' }
+      ]},
+      { name: 'person', label: 'Checked Out To', type: 'user', required: true },
+      { name: 'project', label: 'Project', type: 'autocomplete' },
+      { name: 'checkout_date', label: 'Check-Out Date', type: 'datetime', required: true },
+      { name: 'expected_return', label: 'Expected Return', type: 'datetime' },
+      { name: 'from_location', label: 'From Location', type: 'location' },
+      { name: 'to_location', label: 'To Location', type: 'location' },
+      { name: 'condition_out', label: 'Condition at Check-Out', type: 'select', options: [
+        { value: 'excellent', label: 'Excellent' },
+        { value: 'good', label: 'Good' },
+        { value: 'fair', label: 'Fair' },
+        { value: 'needs_attention', label: 'Needs Attention' }
+      ]},
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'approvals': {
+    title: 'Request Approval',
+    description: 'Submit an approval request for production advance',
+    submitLabel: 'Submit Request',
+    fields: [
+      { name: 'request_type', label: 'Request Type', type: 'select', required: true, options: [
+        { value: 'equipment', label: 'Equipment Request' },
+        { value: 'purchase', label: 'Purchase Request' },
+        { value: 'rental', label: 'Rental Request' },
+        { value: 'access', label: 'Access Request' }
+      ]},
+      { name: 'project', label: 'Project', type: 'autocomplete', required: true },
+      { name: 'description', label: 'Description', type: 'textarea', required: true },
+      { name: 'requested_by', label: 'Requested By', type: 'user', required: true },
+      { name: 'justification', label: 'Business Justification', type: 'richtext', required: true },
+      { name: 'estimated_cost', label: 'Estimated Cost', type: 'currency' },
+      { name: 'needed_by', label: 'Needed By Date', type: 'date', required: true },
+      { name: 'priority', label: 'Priority', type: 'select', defaultValue: 'normal', options: [
+        { value: 'low', label: 'Low' },
+        { value: 'normal', label: 'Normal' },
+        { value: 'high', label: 'High' },
+        { value: 'urgent', label: 'Urgent' }
+      ]},
+      { name: 'approver', label: 'Approver', type: 'user', required: true },
+      { name: 'attachments', label: 'Supporting Documents', type: 'file' }
+    ]
+  },
+  'advances': {
+    title: 'Create Production Advance',
+    description: 'Issue production advance for equipment/materials',
+    submitLabel: 'Create Advance',
+    fields: [
+      { name: 'advance_number', label: 'Advance Number', type: 'text', required: true },
+      { name: 'project', label: 'Project', type: 'autocomplete', required: true },
+      { name: 'advance_type', label: 'Type', type: 'select', required: true, options: [
+        { value: 'equipment', label: 'Equipment' },
+        { value: 'materials', label: 'Materials' },
+        { value: 'credentials', label: 'Credentials' },
+        { value: 'tools', label: 'Tools' },
+        { value: 'vehicle', label: 'Vehicle' }
+      ]},
+      { name: 'recipient', label: 'Recipient', type: 'user', required: true },
+      { name: 'items', label: 'Items/Description', type: 'richtext', required: true },
+      { name: 'quantity', label: 'Quantity', type: 'number', defaultValue: 1 },
+      { name: 'estimated_value', label: 'Estimated Value', type: 'currency', required: true },
+      { name: 'issue_date', label: 'Issue Date', type: 'date', required: true },
+      { name: 'return_date', label: 'Expected Return Date', type: 'date' },
+      { name: 'status', label: 'Status', type: 'select', defaultValue: 'pending', options: [
+        { value: 'pending', label: 'Pending' },
+        { value: 'approved', label: 'Approved' },
+        { value: 'issued', label: 'Issued' },
+        { value: 'returned', label: 'Returned' },
+        { value: 'overdue', label: 'Overdue' }
+      ]},
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'catalog': {
+    title: 'Add to Catalog',
+    description: 'Add item to complete asset catalog',
+    submitLabel: 'Add to Catalog',
+    fields: [
+      { name: 'item_name', label: 'Item Name', type: 'text', required: true },
+      { name: 'catalog_category', label: 'Category', type: 'select', required: true, options: [
+        { value: 'infrastructure', label: 'Infrastructure' },
+        { value: 'equipment', label: 'Equipment' },
+        { value: 'vehicle', label: 'Vehicle' },
+        { value: 'tool', label: 'Tool' },
+        { value: 'credential', label: 'Credential/Badge' },
+        { value: 'consumable', label: 'Consumable' }
+      ]},
+      { name: 'description', label: 'Description', type: 'richtext', required: true },
+      { name: 'specifications', label: 'Technical Specifications', type: 'richtext' },
+      { name: 'manufacturer', label: 'Manufacturer', type: 'text' },
+      { name: 'model_number', label: 'Model Number', type: 'text' },
+      { name: 'unit_cost', label: 'Unit Cost', type: 'currency' },
+      { name: 'rental_rate_daily', label: 'Daily Rental Rate', type: 'currency' },
+      { name: 'availability', label: 'Availability', type: 'select', options: [
+        { value: 'in_stock', label: 'In Stock' },
+        { value: 'limited', label: 'Limited Availability' },
+        { value: 'out_of_stock', label: 'Out of Stock' },
+        { value: 'discontinued', label: 'Discontinued' }
+      ]},
+      { name: 'image', label: 'Product Image', type: 'file' },
+      { name: 'datasheet', label: 'Datasheet/Manual', type: 'file' },
+      { name: 'tags', label: 'Tags', type: 'tags' }
+    ]
   }
 }
 
@@ -683,7 +1329,11 @@ import {
   procurementForms,
   reportsForms,
   analyticsForms,
-  insightsForms
+  insightsForms,
+  filesForms,
+  resourcesForms,
+  communityForms,
+  jobsForms
 } from './form-fields-extended'
 
 // Export all form configurations
@@ -701,6 +1351,10 @@ export const MODULE_FORMS: Record<string, Record<string, TabFormConfig>> = {
   reports: reportsForms,
   analytics: analyticsForms,
   insights: insightsForms,
+  files: filesForms,
+  resources: resourcesForms,
+  community: communityForms,
+  jobs: jobsForms,
 }
 
 // Helper function to get form config for a module tab
@@ -708,4 +1362,14 @@ export function getFormConfig(moduleId: string, tabSlug: string): TabFormConfig 
   const moduleForms = MODULE_FORMS[moduleId]
   if (!moduleForms) return undefined
   return moduleForms[tabSlug]
+}
+
+// Helper function to get the create button label for a module tab
+export function getCreateButtonLabel(moduleId: string, tabSlug: string): string | undefined {
+  const config = getFormConfig(moduleId, tabSlug)
+  if (!config) return undefined
+  
+  // Use the form title without "Create", "Add", etc. prefix for a cleaner button
+  // Or return the submitLabel if you want the full action text
+  return config.title
 }

@@ -117,26 +117,13 @@ export function AutomationsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header Card */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-start justify-between">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <Bot className="h-5 w-5" />
-                Automations
-              </CardTitle>
-              <CardDescription className="mt-2">
-                Automate repetitive tasks and workflows to save time and increase productivity
-              </CardDescription>
-            </div>
-            <Button onClick={handleCreateNew}>
-              <Plus className="h-4 w-4 mr-2" />
-              New Automation
-            </Button>
-          </div>
-        </CardHeader>
-      </Card>
+      {/* Header Actions */}
+      <div className="flex justify-end">
+        <Button onClick={handleCreateNew}>
+          <Plus className="h-4 w-4 mr-2" />
+          New Automation
+        </Button>
+      </div>
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

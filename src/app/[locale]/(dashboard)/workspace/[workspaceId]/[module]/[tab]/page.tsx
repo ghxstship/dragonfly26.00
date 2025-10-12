@@ -38,6 +38,7 @@ import { getTabBySlug } from "@/lib/modules/tabs-registry"
 import { ModuleTabs } from "@/components/layout/module-tabs"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
+import { getCreateButtonLabel } from "@/lib/modules/form-fields-registry"
 import { getAdminTabComponent } from "@/lib/admin-tab-components"
 import { getSettingsTabComponent } from "@/lib/settings-tab-components"
 import { getProfileTabComponent } from "@/lib/profile-tab-components"
@@ -346,7 +347,7 @@ export default function ModuleTabPage() {
               </div>
               {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
                 <Button onClick={() => setCreateDialogOpen(true)}>
-                  + New {getNewItemLabel(moduleSlug, currentModule.name)}
+                  + {getCreateButtonLabel(moduleSlug, tabSlug) || `New ${getNewItemLabel(moduleSlug, currentModule.name)}`}
                 </Button>
               )}
             </div>

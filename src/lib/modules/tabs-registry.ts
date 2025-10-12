@@ -114,7 +114,7 @@ export const MODULE_TABS: Record<string, ModuleTab[]> = {
   admin: [
     createTab('admin-overview', 'admin', 'Overview', 'overview', 'Gauge', 0, 'dashboard', 'Organization overview & metrics', '#64748b'),
     createTab('admin-organization', 'admin', 'Organization', 'organization', 'Building2', 1, 'table', 'Organization settings & profile', '#2563eb'),
-    createTab('admin-members', 'admin', 'Members', 'members', 'UserSquare2', 2, 'table', 'Team member management', '#7c3aed'),
+    createTab('admin-invite', 'admin', 'Invite', 'invite', 'UserSquare2', 2, 'table', 'Invite team members', '#7c3aed'),
     createTab('admin-roles-permissions', 'admin', 'Roles & Permissions', 'roles-permissions', 'Shield', 3, 'table', 'Access control & permissions', '#8b5cf6'),
     createTab('admin-billing', 'admin', 'Billing', 'billing', 'CreditCard', 4, 'table', 'Subscription & billing', '#059669'),
     createTab('admin-security', 'admin', 'Security', 'security', 'Lock', 5, 'table', 'Security settings & logs', '#dc2626'),

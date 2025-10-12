@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
@@ -28,6 +28,75 @@ export function AppearanceTab() {
   const [customCSS, setCustomCSS] = useState("")
   const [enableAnimations, setEnableAnimations] = useState(true)
   const [enableParticles, setEnableParticles] = useState(false)
+  const backgroundFileInputRef = useRef<HTMLInputElement>(null)
+
+  // Apply accent color to CSS variables
+  useEffect(() => {
+    document.documentElement.style.setProperty('--accent-color', accentColor)
+    // Update primary color for better integration
+    const hsl = hexToHSL(accentColor)
+    if (hsl) {
+      document.documentElement.style.setProperty('--primary', `${hsl.h} ${hsl.s}% ${hsl.l}%`)
+    }
+  }, [accentColor])
+
+  // Apply background image
+  useEffect(() => {
+    if (backgroundImage) {
+      document.body.style.backgroundImage = `url(${backgroundImage})`
+      document.body.style.backgroundSize = 'cover'
+      document.body.style.backgroundAttachment = 'fixed'
+    } else {
+      document.body.style.backgroundImage = ''
+    }
+  }, [backgroundImage])
+
+  // Apply custom CSS
+  useEffect(() => {
+    const styleId = 'custom-user-css'
+    let styleElement = document.getElementById(styleId) as HTMLStyleElement
+    
+    if (customCSS) {
+      if (!styleElement) {
+        styleElement = document.createElement('style')
+        styleElement.id = styleId
+        document.head.appendChild(styleElement)
+      }
+      styleElement.textContent = customCSS
+    } else if (styleElement) {
+      styleElement.remove()
+    }
+  }, [customCSS])
+
+  // Helper function to convert hex to HSL
+  const hexToHSL = (hex: string) => {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+    if (!result) return null
+    
+    let r = parseInt(result[1], 16) / 255
+    let g = parseInt(result[2], 16) / 255
+    let b = parseInt(result[3], 16) / 255
+    
+    const max = Math.max(r, g, b)
+    const min = Math.min(r, g, b)
+    let h = 0, s = 0, l = (max + min) / 2
+    
+    if (max !== min) {
+      const d = max - min
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
+      switch (max) {
+        case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break
+        case g: h = ((b - r) / d + 2) / 6; break
+        case b: h = ((r - g) / d + 4) / 6; break
+      }
+    }
+    
+    return {
+      h: Math.round(h * 360),
+      s: Math.round(s * 100),
+      l: Math.round(l * 100)
+    }
+  }
 
   const themePresets = [
     { id: "default", name: "Default Purple", color: "#8b5cf6" },
@@ -39,10 +108,45 @@ export function AppearanceTab() {
   ]
 
   const handleSave = () => {
+    // Save to localStorage for persistence
+    localStorage.setItem('appearance-settings', JSON.stringify({
+      theme,
+      accentColor,
+      backgroundImage,
+      customCSS,
+      enableAnimations,
+      enableParticles
+    }))
+    
     toast({
       title: "Settings saved",
       description: "Your appearance preferences have been updated.",
     })
+  }
+
+  const handleBackgroundFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        toast({
+          title: "File too large",
+          description: "Please select an image under 5MB.",
+          variant: "destructive",
+        })
+        return
+      }
+      
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        const dataUrl = event.target?.result as string
+        setBackgroundImage(dataUrl)
+        toast({
+          title: "Background uploaded",
+          description: "Your background image has been set.",
+        })
+      }
+      reader.readAsDataURL(file)
+    }
   }
 
   const handleReset = () => {
@@ -158,7 +262,30 @@ export function AppearanceTab() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="bg-image">Background Image URL</Label>
+            <Label>Upload Background Image</Label>
+            <input
+              ref={backgroundFileInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleBackgroundFileUpload}
+              className="hidden"
+            />
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => backgroundFileInputRef.current?.click()}
+              className="w-full"
+            >
+              <Upload className="h-4 w-4 mr-2" />
+              Choose Image File
+            </Button>
+            <p className="text-xs text-muted-foreground">
+              JPG, PNG or GIF. Max size 5MB.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="bg-image">Or Enter Image URL</Label>
             <Input
               id="bg-image"
               type="text"
@@ -166,9 +293,6 @@ export function AppearanceTab() {
               onChange={(e) => setBackgroundImage(e.target.value)}
               placeholder="https://example.com/background.jpg"
             />
-            <p className="text-xs text-muted-foreground">
-              Enter a URL to an image you'd like as your background
-            </p>
           </div>
 
           {backgroundImage && (

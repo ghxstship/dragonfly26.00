@@ -231,16 +231,6 @@ export function IntegrationsTab() {
 
   return (
     <div className="space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Integrations</CardTitle>
-          <CardDescription>
-            Connect your favorite tools and services. Organization-level integrations are shared with your team,
-            while personal integrations are for your individual use.
-          </CardDescription>
-        </CardHeader>
-      </Card>
-
       <Tabs defaultValue="all" className="space-y-4">
         <TabsList>
           <TabsTrigger value="all">All Integrations</TabsTrigger>
