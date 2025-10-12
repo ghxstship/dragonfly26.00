@@ -76,7 +76,7 @@ export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPale
             <Folder className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.createNewProject')}</span>
           </CommandItem>
-          <CommandItem onSelect={() => runCommand(() => onCreateItem?.("doc"))}>
+          <CommandItem onSelect={() => runCommand(() => onCreateItem?.("file"))}>
             <FileText className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.createNewDoc')}</span>
           </CommandItem>
@@ -89,15 +89,15 @@ export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPale
         <CommandSeparator />
 
         <CommandGroup heading={t('commandPalette.navigation')}>
-          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/projects`))}>
+          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/projects/overview`))}>
             <Folder className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.projects')}</span>
           </CommandItem>
-          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/people`))}>
+          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/people/personnel`))}>
             <Users className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.people')}</span>
           </CommandItem>
-          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/events`))}>
+          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/events/all-events`))}>
             <Calendar className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.events')}</span>
           </CommandItem>
@@ -106,7 +106,7 @@ export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPale
         <CommandSeparator />
 
         <CommandGroup heading="Settings">
-          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin`))}>
+          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/overview`))}>
             <Settings className="mr-2 h-4 w-4" />
             <span>Workspace settings</span>
           </CommandItem>

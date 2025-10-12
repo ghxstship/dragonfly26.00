@@ -222,7 +222,7 @@ export function ChatView({ data, onItemClick }: ChatViewProps) {
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Send message</p>
-                  <kbd className="ml-2 text-xs">Enter</kbd>
+                  <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">Enter</kbd>
                 </TooltipContent>
               </Tooltip>
             </div>

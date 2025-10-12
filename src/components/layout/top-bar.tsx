@@ -13,6 +13,7 @@ import {
   WifiOff,
   Activity,
   Maximize2,
+  Plane,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -39,7 +40,11 @@ import { BreadcrumbNav } from "./breadcrumb-nav"
 import { QuickActions } from "./quick-actions"
 import { ThemeToggle } from "./theme-toggle"
 import { LanguageSwitcher } from "./language-switcher"
+import { CreateMenu } from "./create-menu"
 import { CreateItemDialog, ItemType } from "@/components/shared/create-item-dialog"
+import { CreateObjectiveDialog } from "@/components/insights/create-objective-dialog"
+import { CreateWebhookDialog } from "@/components/webhooks/create-webhook-dialog"
+import { CreateTokenDialog } from "@/components/api-tokens/create-token-dialog"
 import { getInitials, cn } from "@/lib/utils"
 import { useUIStore } from "@/store/ui-store"
 import { useWorkspaceStore } from "@/store/workspace-store"
@@ -52,7 +57,10 @@ export function TopBar() {
   const [isOnline, setIsOnline] = useState(true)
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const [createDialogType, setCreateDialogType] = useState<ItemType>("task")
-  const { currentWorkspace, focusMode, toggleFocusMode } = useUIStore()
+  const [createObjectiveOpen, setCreateObjectiveOpen] = useState(false)
+  const [createWebhookOpen, setCreateWebhookOpen] = useState(false)
+  const [createTokenOpen, setCreateTokenOpen] = useState(false)
+  const { currentWorkspace, focusMode, toggleFocusMode, airplaneMode, toggleAirplaneMode } = useUIStore()
   const { currentOrganization } = useWorkspaceStore()
   const router = useRouter()
   
@@ -62,6 +70,27 @@ export function TopBar() {
 
   // Simulate unread notifications count
   const unreadCount = 3
+
+  // Monitor online/offline status and sync with airplane mode
+  useEffect(() => {
+    const handleOnline = () => {
+      if (!airplaneMode) {
+        setIsOnline(true)
+      }
+    }
+    const handleOffline = () => setIsOnline(false)
+
+    window.addEventListener('online', handleOnline)
+    window.addEventListener('offline', handleOffline)
+
+    // Set initial online status based on airplane mode
+    setIsOnline(navigator.onLine && !airplaneMode)
+
+    return () => {
+      window.removeEventListener('online', handleOnline)
+      window.removeEventListener('offline', handleOffline)
+    }
+  }, [airplaneMode])
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -84,6 +113,18 @@ export function TopBar() {
   const handleCreateItem = (type: ItemType) => {
     setCreateDialogType(type)
     setCreateDialogOpen(true)
+  }
+
+  const handleCreateObjective = () => {
+    setCreateObjectiveOpen(true)
+  }
+
+  const handleCreateWebhook = () => {
+    setCreateWebhookOpen(true)
+  }
+
+  const handleCreateToken = () => {
+    setCreateTokenOpen(true)
   }
 
   return (
@@ -148,21 +189,26 @@ export function TopBar() {
             </Tooltip>
           </div>
 
-          {/* Focus Mode Toggle */}
+          {/* Airplane Mode Toggle */}
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                variant={focusMode ? "secondary" : "ghost"}
+                variant={airplaneMode ? "secondary" : "ghost"}
                 size="icon"
                 className="h-9 w-9 hidden lg:flex"
-                onClick={toggleFocusMode}
+                onClick={() => {
+                  toggleAirplaneMode()
+                  setIsOnline(!airplaneMode && navigator.onLine)
+                }}
               >
-                <Maximize2 className="h-4 w-4" />
+                <Plane className={cn(
+                  "h-4 w-4",
+                  airplaneMode && "text-orange-500"
+                )} />
               </Button>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{focusMode ? t('status.focusModeOn') : t('status.focusModeOff')}</p>
-              <kbd className="ml-2 text-xs">F</kbd>
+              <p>{airplaneMode ? t('status.airplaneModeOn') : t('status.airplaneModeOff')}</p>
             </TooltipContent>
           </Tooltip>
 
@@ -172,64 +218,13 @@ export function TopBar() {
           {/* Divider */}
           <div className="hidden md:block h-6 w-px bg-border mx-1" />
 
-          {/* Create New Dropdown */}
-          <DropdownMenu>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <DropdownMenuTrigger asChild>
-                  <Button size="sm" className="gap-2 h-9">
-                    <Plus className="h-4 w-4" />
-                    <span className="hidden sm:inline">{t('common.new')}</span>
-                  </Button>
-                </DropdownMenuTrigger>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Create new</p>
-                <kbd className="ml-2 text-xs">N</kbd>
-              </TooltipContent>
-            </Tooltip>
-            <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel>{t('create.createNew')}</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => handleCreateItem("project")}>
-                  <Plus className="mr-2 h-4 w-4" />
-                  {t('create.project')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">P</kbd>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleCreateItem("job")}>
-                  <Plus className="mr-2 h-4 w-4" />
-                  {t('create.job')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">J</kbd>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleCreateItem("task")}>
-                  <Plus className="mr-2 h-4 w-4" />
-                  {t('create.task')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">T</kbd>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleCreateItem("asset")}>
-                  <Plus className="mr-2 h-4 w-4" />
-                  {t('create.asset')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">A</kbd>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleCreateItem("location")}>
-                  <Plus className="mr-2 h-4 w-4" />
-                  {t('create.location')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">L</kbd>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleCreateItem("file")}>
-                  <Plus className="mr-2 h-4 w-4" />
-                  {t('create.file')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">F</kbd>
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleCreateItem("report")}>
-                  <Plus className="mr-2 h-4 w-4" />
-                  {t('create.report')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">R</kbd>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {/* Create Menu */}
+          <CreateMenu
+            onCreateItem={handleCreateItem}
+            onCreateObjective={handleCreateObjective}
+            onCreateWebhook={handleCreateWebhook}
+            onCreateToken={handleCreateToken}
+          />
 
           {/* Upgrade Button (for non-enterprise) */}
           {currentOrganization?.subscription_tier !== "enterprise" && (
@@ -288,6 +283,24 @@ export function TopBar() {
           {/* Theme Toggle */}
           <ThemeToggle />
 
+          {/* Focus Mode Toggle */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant={focusMode ? "secondary" : "ghost"}
+                size="icon"
+                className="h-9 w-9 hidden lg:flex"
+                onClick={toggleFocusMode}
+              >
+                <Maximize2 className="h-4 w-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{focusMode ? t('status.focusModeOn') : t('status.focusModeOff')}</p>
+              <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">F</kbd>
+            </TooltipContent>
+          </Tooltip>
+
           {/* User Menu */}
           <DropdownMenu>
             <Tooltip>
@@ -319,13 +332,13 @@ export function TopBar() {
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/profile`)}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/profile/basic-info`)}>
                   {t('nav.profile')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">⌘P</kbd>
+                  <kbd className="ml-auto inline-flex items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">⌘P</kbd>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/settings`)}>
+                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/settings/appearance`)}>
                   {t('nav.settings')}
-                  <kbd className="ml-auto text-xs text-muted-foreground">⌘,</kbd>
+                  <kbd className="ml-auto inline-flex items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">⌘,</kbd>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setShowCommandPalette(true)}>
                   {t('nav.keyboardShortcuts')}
@@ -381,6 +394,28 @@ export function TopBar() {
           console.log("Created item:", item)
           // TODO: Add to data store and redirect if needed
         }}
+      />
+
+      {/* Create Objective Dialog */}
+      <CreateObjectiveDialog
+        open={createObjectiveOpen}
+        onOpenChange={setCreateObjectiveOpen}
+        onCreateGoal={(objective) => {
+          console.log("Created objective:", objective)
+          setCreateObjectiveOpen(false)
+        }}
+      />
+
+      {/* Create Webhook Dialog */}
+      <CreateWebhookDialog
+        open={createWebhookOpen}
+        onOpenChange={setCreateWebhookOpen}
+      />
+
+      {/* Create API Token Dialog */}
+      <CreateTokenDialog
+        open={createTokenOpen}
+        onOpenChange={setCreateTokenOpen}
       />
     </TooltipProvider>
   )

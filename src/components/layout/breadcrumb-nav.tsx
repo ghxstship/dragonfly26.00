@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useUIStore } from "@/store/ui-store"
 import { useWorkspaceStore } from "@/store/workspace-store"
+import { getModuleTabs } from "@/lib/modules/tabs-registry"
 
 export function BreadcrumbNav() {
   const t = useTranslations()
@@ -22,9 +23,10 @@ export function BreadcrumbNav() {
   const breadcrumbs = []
   
   if (currentWorkspace) {
+    // Link to dashboard/overview as the default workspace home
     breadcrumbs.push({
       label: currentWorkspace.name,
-      href: `/${locale}/workspace/${currentWorkspace.id}`,
+      href: `/${locale}/workspace/${currentWorkspace.id}/dashboard/overview`,
       icon: currentWorkspace.icon,
     })
   }
@@ -32,9 +34,12 @@ export function BreadcrumbNav() {
   // Add module/section breadcrumbs
   if (segments.length > 2) {
     const moduleName = segments[2]
+    const moduleTabs = getModuleTabs(moduleName)
+    const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
+    
     breadcrumbs.push({
       label: moduleName.charAt(0).toUpperCase() + moduleName.slice(1).replace(/-/g, " "),
-      href: `/${segments.slice(0, 3).join("/")}`,
+      href: `/${locale}/workspace/${segments[1]}/${moduleName}/${firstTabSlug}`,
     })
   }
 

@@ -145,18 +145,6 @@ export function TableView({ data, onItemClick }: TableViewProps) {
 
   return (
     <div className="space-y-4">
-      {/* Toolbar */}
-      <div className="flex items-center justify-between">
-        <Input
-          placeholder="Filter by name..."
-          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("name")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
-      </div>
-
       {/* Table */}
       <div className="rounded-md border">
         <table className="w-full">

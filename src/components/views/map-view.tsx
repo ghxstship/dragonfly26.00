@@ -2,9 +2,8 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { MapPin, Search, Filter, Maximize2 } from "lucide-react"
+import { MapPin, Filter, Maximize2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import {
@@ -24,7 +23,6 @@ interface MapViewProps {
 export function MapView({ data, onItemClick }: MapViewProps) {
   const t = useTranslations()
   const [selectedItem, setSelectedItem] = useState<DataItem | null>(null)
-  const [searchQuery, setSearchQuery] = useState("")
 
   // Filter items with location data
   const itemsWithLocation = data.filter((item) => item.latitude && item.longitude)
@@ -57,18 +55,7 @@ export function MapView({ data, onItemClick }: MapViewProps) {
         </div>
 
         {/* Map Controls */}
-        <div className="absolute top-4 left-4 right-4 flex gap-2">
-          <div className="flex-1 max-w-sm">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Search locations..."
-                className="pl-9 bg-background"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-          </div>
+        <div className="absolute top-4 right-4 flex gap-2">
           <TooltipProvider delayDuration={300}>
             <Tooltip>
               <TooltipTrigger asChild>

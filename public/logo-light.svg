@@ -1,0 +1,21 @@
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;display=swap');
+    </style>
+  </defs>
+  
+  <!-- ATLVS Text - Light theme version -->
+  <text 
+    x="50%" 
+    y="50%" 
+    dominant-baseline="middle" 
+    text-anchor="middle"
+    font-family="'Silkscreen', 'Courier New', monospace"
+    font-size="60"
+    font-weight="700"
+    fill="#1a1a1a"
+    letter-spacing="2">
+    ATLVS
+  </text>
+</svg>

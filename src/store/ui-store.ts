@@ -22,6 +22,9 @@ interface UIStore extends UIState {
   focusMode: boolean
   toggleFocusMode: () => void
   setFocusMode: (enabled: boolean) => void
+  airplaneMode: boolean
+  toggleAirplaneMode: () => void
+  setAirplaneMode: (enabled: boolean) => void
   tabConfigs: TabConfig
   setTabConfig: (moduleId: string, tabs: ModuleTab[]) => void
   getTabConfig: (moduleId: string) => ModuleTab[] | undefined
@@ -40,7 +43,8 @@ export const useUIStore = create<UIStore>()(
       currentModule: undefined,
       currentView: undefined,
       focusMode: false,
-      tabConfigs: {},
+      airplaneMode: false,
+      tabConfigs: {}, // Tab configs cache - cleared on 2024-10-11 for dashboard update
 
       setSidebarCollapsed: (collapsed) => set({ sidebarCollapsed: collapsed }),
       toggleSidebar: () => set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
@@ -61,6 +65,8 @@ export const useUIStore = create<UIStore>()(
       setCurrentView: (view) => set({ currentView: view }),
       toggleFocusMode: () => set((state) => ({ focusMode: !state.focusMode })),
       setFocusMode: (enabled) => set({ focusMode: enabled }),
+      toggleAirplaneMode: () => set((state) => ({ airplaneMode: !state.airplaneMode })),
+      setAirplaneMode: (enabled) => set({ airplaneMode: enabled }),
       setTabConfig: (moduleId, tabs) => set((state) => ({
         tabConfigs: { ...state.tabConfigs, [moduleId]: tabs }
       })),
@@ -69,7 +75,7 @@ export const useUIStore = create<UIStore>()(
       },
     }),
     {
-      name: 'ui-storage',
+      name: 'ui-storage-v2', // Changed from 'ui-storage' to invalidate old cached tabs
     }
   )
 )

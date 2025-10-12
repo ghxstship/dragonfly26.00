@@ -27,7 +27,7 @@ export function getItemTypeForModule(moduleSlug: string): ItemType {
     // Intelligence Hub
     reports: "task", // Reports
     analytics: "task", // Analytics items
-    goals: "task", // Goals/OKRs
+    insights: "task", // Strategic insights & objectives
     
     // Default
     dashboard: "task",
@@ -56,7 +56,7 @@ export function getNewItemLabel(moduleSlug: string, moduleName: string): string 
     jobs: "Job Posting",
     reports: "Report",
     analytics: "Analysis",
-    goals: "Goal",
+    insights: "Objective",
   }
 
   return customLabels[moduleSlug] || moduleName.slice(0, -1) // Remove trailing 's'

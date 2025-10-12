@@ -1,6 +1,6 @@
 "use client"
 
-import { X, MessageSquare, Activity, Clock, Upload, Download, Share2, Filter, Columns3, ArrowUpDown, Eye } from "lucide-react"
+import { X, MessageSquare, Activity, Clock, Upload, Download, Share2, Filter, Columns3, ArrowUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -15,27 +15,14 @@ import { SharePanel } from "@/components/shared/share-panel"
 import { FilterPanel } from "@/components/shared/filter-panel"
 import { SortPanel } from "@/components/shared/sort-panel"
 import { FieldConfigPanel } from "@/components/shared/field-config-panel"
-import { TabConfigPanel } from "@/components/shared/tab-config-panel"
 import { useParams } from "next/navigation"
-import { getModuleTabs } from "@/lib/modules/tabs-registry"
 
 export function RightSidebar() {
   const params = useParams()
   const moduleSlug = params.module as string | undefined
-  const { rightSidebarOpen, setRightSidebarOpen, rightSidebarTab, setRightSidebarTab, setTabConfig, getTabConfig } = useUIStore()
+  const { rightSidebarOpen, setRightSidebarOpen, rightSidebarTab, setRightSidebarTab } = useUIStore()
 
   if (!rightSidebarOpen) return null
-
-  // Get current module tabs
-  const moduleTabs = moduleSlug ? getModuleTabs(moduleSlug) : []
-  const savedTabConfig = moduleSlug ? getTabConfig(moduleSlug) : undefined
-  const currentTabs = savedTabConfig || moduleTabs
-
-  const handleTabsChange = (tabs: any[]) => {
-    if (moduleSlug) {
-      setTabConfig(moduleSlug, tabs)
-    }
-  }
 
   // Determine the title based on the active tab
   const getTitle = () => {
@@ -58,8 +45,6 @@ export function RightSidebar() {
         return "Sort"
       case "fields":
         return "Fields"
-      case "pages":
-        return "Pages"
       default:
         return "Details"
     }
@@ -120,10 +105,6 @@ export function RightSidebar() {
             <Columns3 className="h-3.5 w-3.5" />
             Fields
           </TabsTrigger>
-          <TabsTrigger value="pages" className="gap-1.5 text-xs px-3">
-            <Eye className="h-3.5 w-3.5" />
-            Pages
-          </TabsTrigger>
         </TabsList>
 
         <ScrollArea className="flex-1">
@@ -161,20 +142,6 @@ export function RightSidebar() {
 
           <TabsContent value="fields" className="p-6 m-0">
             <FieldConfigPanel />
-          </TabsContent>
-
-          <TabsContent value="pages" className="p-6 m-0">
-            {moduleSlug && moduleTabs.length > 0 ? (
-              <TabConfigPanel 
-                moduleSlug={moduleSlug}
-                tabs={currentTabs}
-                onTabsChange={handleTabsChange}
-              />
-            ) : (
-              <div className="text-sm text-muted-foreground text-center py-8">
-                No module pages available
-              </div>
-            )}
           </TabsContent>
         </ScrollArea>
       </Tabs>

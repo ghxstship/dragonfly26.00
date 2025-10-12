@@ -48,7 +48,7 @@ export function ExportPanel({ onExport }: ExportPanelProps) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Format Selection */}
       <div className="space-y-3">
         <Label>Export Format</Label>

@@ -16,6 +16,27 @@ const nextConfig = {
       allowedOrigins: ['localhost:3000'],
     },
   },
+  webpack: (config, { isServer }) => {
+    // Fix for @radix-ui vendor chunks issue
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization.splitChunks,
+          cacheGroups: {
+            ...config.optimization.splitChunks?.cacheGroups,
+            radix: {
+              test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
+              name: 'radix-ui',
+              chunks: 'all',
+              priority: 10,
+            },
+          },
+        },
+      }
+    }
+    return config
+  },
 }
 
 module.exports = withNextIntl(nextConfig)

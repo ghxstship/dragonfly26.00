@@ -58,7 +58,8 @@
     "optional": "Optional",
     "selected": "Selected",
     "none": "None",
-    "all": "All"
+    "all": "All",
+    "favorites": "Favorites"
   },
   "nav": {
     "focusMode": "Focus Mode",
@@ -84,7 +85,8 @@
     "profile": "Profile",
     "settings": "Settings",
     "admin": "Admin",
-    "invite": "Invite"
+    "invite": "Invite",
+    "members": "Members"
   },
   "workspace": {
     "selectWorkspace": "Select workspace",
@@ -101,7 +103,11 @@
     "allChangesSynced": "All changes synced",
     "workingOffline": "Working offline",
     "focusModeOn": "Focus Mode (On)",
-    "focusModeOff": "Focus Mode (Off)"
+    "focusModeOff": "Focus Mode (Off)",
+    "airplaneModeOn": "Airplane Mode (On)",
+    "airplaneModeOff": "Airplane Mode (Off)",
+    "goOnline": "Go Online",
+    "goOffline": "Go Offline"
   },
   "create": {
     "createNew": "Create New",
@@ -115,6 +121,9 @@
     "doc": "Doc",
     "listView": "List View",
     "workspace": "Workspace",
+    "event": "Event",
+    "person": "Person",
+    "company": "Company",
     "createTask": "Create Task",
     "createProject": "Create Project",
     "createJob": "Create Job",
@@ -125,6 +134,9 @@
     "createDoc": "Create Document",
     "createListView": "Create List View",
     "createWorkspace": "Create Workspace",
+    "createEvent": "Create Event",
+    "createPerson": "Create Person",
+    "createCompany": "Create Company",
     "addNewTask": "Add a new task to track work",
     "startNewProject": "Start a new project",
     "createNewJob": "Create a new job",
@@ -134,7 +146,13 @@
     "createNewReport": "Create a new report",
     "createNewDocument": "Create a new document",
     "createNewListView": "Create a new list view",
-    "createNewWorkspace": "Create a new workspace for your team"
+    "createNewWorkspace": "Create a new workspace for your team",
+    "createNewEvent": "Schedule a new event or show",
+    "createNewPerson": "Add a new crew member or contact",
+    "createNewCompany": "Add a new client, vendor, or partner",
+    "coreItems": "Core Items",
+    "advancedItems": "Advanced Items",
+    "adminConfig": "Admin & Configuration"
   },
   "fields": {
     "name": "Name",
@@ -171,6 +189,10 @@
     "completed": "Completed",
     "cancelled": "Cancelled"
   },
+  "search": {
+    "searchActions": "Search actions...",
+    "noResultsFound": "No results found"
+  },
   "commandPalette": {
     "typeCommand": "Type a command or search...",
     "noResults": "No results found.",
@@ -202,6 +224,99 @@
     "recurrenceRules": "Recurrence Rules",
     "organizationSettings": "Organization Settings",
     "plugins": "Plugins"
+  },
+  "members": {
+    "title": "Invite & Create Members",
+    "subtitle": "Invite new team members or create accounts directly",
+    "invite": "Invite",
+    "create": "Create",
+    "inviteTab": {
+      "title": "Invite Team Members",
+      "description": "Send email invitations to join your organization",
+      "emailAddress": "Email Address",
+      "emailPlaceholder": "colleague@example.com",
+      "addButton": "Add",
+      "sendButton": "Send Invitation",
+      "sendMultipleButton": "Send Invitations",
+      "pendingInvites": "Pending Invites",
+      "customMessage": "Custom Message (Optional)",
+      "messagePlaceholder": "Add a personal message to your invitation...",
+      "messageHelp": "This message will be included in the invitation email",
+      "enterHelp": "Press Enter or click Add to include this email in the invite list",
+      "bulkTitle": "Bulk Invite",
+      "bulkDescription": "Import multiple email addresses at once",
+      "bulkEmailsLabel": "Email Addresses",
+      "bulkEmailsPlaceholder": "Enter multiple emails separated by commas, semicolons, or new lines\nexample1@company.com, example2@company.com\nexample3@company.com",
+      "bulkHelp": "Separate emails with commas, semicolons, or line breaks",
+      "defaultRole": "Default Role",
+      "defaultRoleHelp": "All imported emails will be assigned this role",
+      "importButton": "Import Emails",
+      "clearButton": "Clear"
+    },
+    "createTab": {
+      "title": "Create User Account",
+      "description": "Create a new user account without sending an invitation",
+      "alertTitle": "Direct Account Creation",
+      "alertDescription": "Creating accounts directly bypasses the invitation process. Users will receive their credentials via email and can log in immediately.",
+      "emailLabel": "Email Address *",
+      "emailPlaceholder": "user@example.com",
+      "nameLabel": "Full Name *",
+      "namePlaceholder": "John Doe",
+      "roleLabel": "Role",
+      "passwordLabel": "Password (Optional)",
+      "passwordPlaceholder": "Auto-generate if empty",
+      "passwordHelp": "Leave empty to auto-generate a secure password",
+      "generateButton": "Generate",
+      "addUserButton": "Add User",
+      "createButton": "Create Account",
+      "createMultipleButton": "Create Accounts",
+      "pendingAccounts": "Pending Accounts",
+      "bulkTitle": "Bulk Import",
+      "bulkDescription": "Import multiple users from CSV or spreadsheet data",
+      "bulkFormatTitle": "Format:",
+      "bulkFormatText": "email, name, role (one user per line)",
+      "bulkExampleTitle": "Example:",
+      "bulkExampleText": "john@example.com, John Doe, member",
+      "bulkDataLabel": "User Data",
+      "bulkDataPlaceholder": "john@example.com, John Doe, member\njane@example.com, Jane Smith, admin\nbob@example.com, Bob Johnson, viewer",
+      "bulkDataHelp": "Format: email, name, role (comma or tab-separated, one per line)",
+      "importUsersButton": "Import Users"
+    },
+    "roles": {
+      "admin": "Admin",
+      "member": "Member",
+      "viewer": "Viewer"
+    },
+    "notifications": {
+      "emailRequired": "Email required",
+      "emailRequiredDesc": "Please enter an email address",
+      "invalidEmail": "Invalid email",
+      "invalidEmailDesc": "Please enter a valid email address",
+      "invitationsSent": "Invitations sent",
+      "invitationsSentDesc": "Successfully sent {count} invitation(s)",
+      "noInvites": "No invites to send",
+      "noInvitesDesc": "Please add at least one email address",
+      "emailsImported": "Emails imported",
+      "emailsImportedDesc": "Added {count} email(s) to the invite list",
+      "noEmails": "No emails provided",
+      "noEmailsDesc": "Please enter email addresses",
+      "noValidEmails": "No valid emails found",
+      "noValidEmailsDesc": "Please enter valid email addresses",
+      "requiredFields": "Required fields missing",
+      "requiredFieldsDesc": "Please enter both email and name",
+      "usersCreated": "Users created",
+      "usersCreatedDesc": "Successfully created {count} user account(s)",
+      "noUsers": "No users to create",
+      "noUsersDesc": "Please add at least one user",
+      "usersImported": "Users imported",
+      "usersImportedDesc": "Added {count} user(s) to the creation list",
+      "noData": "No data provided",
+      "noDataDesc": "Please enter user data",
+      "noValidUsers": "No valid users found",
+      "noValidUsersDesc": "Please check the data format",
+      "importFailed": "Import failed",
+      "importFailedDesc": "Please check the data format and try again"
+    }
   },
   "goals": {
     "title": "Goals",

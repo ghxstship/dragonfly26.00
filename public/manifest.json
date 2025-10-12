@@ -1,6 +1,6 @@
 {
-  "name": "Dragonfly - Project Management",
-  "short_name": "Dragonfly",
+  "name": "ATLVS - Project Management",
+  "short_name": "ATLVS",
   "description": "Enterprise project management platform with offline support",
   "start_url": "/",
   "display": "standalone",

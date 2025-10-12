@@ -18,7 +18,7 @@ export default function WorkspaceLayout({
       id: params.workspaceId,
       name: params.workspaceId.charAt(0).toUpperCase() + params.workspaceId.slice(1),
       organization_id: "default-org",
-      is_default: params.workspaceId === "default",
+      is_default: params.workspaceId === "personal",
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     })

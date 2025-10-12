@@ -1,0 +1,42 @@
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;display=swap');
+      
+      /* Fallback to Silkscreen (similar pixel font) if Coral Pixels is not available */
+      @font-face {
+        font-family: 'LogoFont';
+        src: url('https://fonts.googleapis.com/css2?family=Silkscreen&amp;display=swap');
+      }
+    </style>
+  </defs>
+  
+  <!-- Background (optional, remove for transparent) -->
+  <rect width="400" height="100" fill="transparent"/>
+  
+  <!-- ATLVS Text -->
+  <text 
+    x="50%" 
+    y="50%" 
+    dominant-baseline="middle" 
+    text-anchor="middle"
+    font-family="'Silkscreen', 'Courier New', monospace"
+    font-size="60"
+    font-weight="700"
+    fill="url(#gradient)"
+    letter-spacing="2">
+    ATLVS
+  </text>
+  
+  <!-- Gradient definition for colorful pixel effect -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#F7931E;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#FDC830;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C44569;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

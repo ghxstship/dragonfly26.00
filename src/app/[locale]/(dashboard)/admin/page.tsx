@@ -2,15 +2,36 @@
 
 import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { getModuleTabs } from "@/lib/modules/tabs-registry"
+import { iconMap } from "@/lib/modules/icon-map"
+import { AdminOverviewTab } from "@/components/admin/admin-overview-tab"
 import { OrganizationSettingsTab } from "@/components/admin/organization-settings-tab"
-import { CustomStatusesTab } from "@/components/admin/custom-statuses-tab"
-import { ChecklistTemplatesTab } from "@/components/admin/checklist-templates-tab"
-import { RecurrenceRulesTab } from "@/components/admin/recurrence-rules-tab"
 import { MembersManagementTab } from "@/components/admin/members-management-tab"
-import { Settings, Users, ListChecks, Calendar, Palette } from "lucide-react"
+import { RolesPermissionsTab } from "@/components/admin/roles-permissions-tab"
+import { BillingTab } from "@/components/admin/billing-tab"
+import { SecurityTab } from "@/components/admin/security-tab"
+import { AutomationsTab } from "@/components/admin/automations-tab"
+import { IntegrationsTab } from "@/components/admin/integrations-tab"
+import { WebhooksTab } from "@/components/admin/webhooks-tab"
+import { ApiTokensTab } from "@/components/admin/api-tokens-tab"
+
+// Map tab slugs to components
+const tabComponents: Record<string, React.ComponentType> = {
+  "overview": AdminOverviewTab,
+  "organization": OrganizationSettingsTab,
+  "members": MembersManagementTab,
+  "roles-permissions": RolesPermissionsTab,
+  "billing": BillingTab,
+  "security": SecurityTab,
+  "automations": AutomationsTab,
+  "integrations": IntegrationsTab,
+  "webhooks": WebhooksTab,
+  "api-tokens": ApiTokensTab,
+}
 
 export default function AdminPage() {
-  const [activeTab, setActiveTab] = useState("settings")
+  const adminTabs = getModuleTabs("admin").filter(tab => tab.enabled)
+  const [activeTab, setActiveTab] = useState(adminTabs[0]?.slug || "overview")
 
   return (
     <div className="flex flex-col h-full">
@@ -25,48 +46,33 @@ export default function AdminPage() {
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="settings" className="gap-2">
-              <Settings className="h-4 w-4" />
-              Settings
-            </TabsTrigger>
-            <TabsTrigger value="statuses" className="gap-2">
-              <Palette className="h-4 w-4" />
-              Statuses
-            </TabsTrigger>
-            <TabsTrigger value="checklists" className="gap-2">
-              <ListChecks className="h-4 w-4" />
-              Checklists
-            </TabsTrigger>
-            <TabsTrigger value="recurrence" className="gap-2">
-              <Calendar className="h-4 w-4" />
-              Recurrence
-            </TabsTrigger>
-            <TabsTrigger value="members" className="gap-2">
-              <Users className="h-4 w-4" />
-              Members
-            </TabsTrigger>
+          <TabsList className="inline-flex h-auto flex-wrap justify-start gap-1 bg-muted p-1 rounded-lg">
+            {adminTabs.map((tab) => {
+              const Icon = iconMap[tab.icon]
+              return (
+                <TabsTrigger 
+                  key={tab.id} 
+                  value={tab.slug} 
+                  className="gap-2 data-[state=active]:bg-background"
+                  style={activeTab === tab.slug ? { color: tab.color } : undefined}
+                >
+                  {Icon && <Icon className="h-4 w-4" style={{ color: tab.color }} />}
+                  {tab.name}
+                </TabsTrigger>
+              )
+            })}
           </TabsList>
 
-          <TabsContent value="settings" className="space-y-4">
-            <OrganizationSettingsTab />
-          </TabsContent>
-
-          <TabsContent value="statuses" className="space-y-4">
-            <CustomStatusesTab />
-          </TabsContent>
-
-          <TabsContent value="checklists" className="space-y-4">
-            <ChecklistTemplatesTab />
-          </TabsContent>
-
-          <TabsContent value="recurrence" className="space-y-4">
-            <RecurrenceRulesTab />
-          </TabsContent>
-
-          <TabsContent value="members" className="space-y-4">
-            <MembersManagementTab />
-          </TabsContent>
+          {adminTabs.map((tab) => {
+            const TabComponent = tabComponents[tab.slug]
+            if (!TabComponent) return null
+            
+            return (
+              <TabsContent key={tab.id} value={tab.slug} className="space-y-4">
+                <TabComponent />
+              </TabsContent>
+            )
+          })}
         </Tabs>
       </div>
     </div>

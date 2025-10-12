@@ -24,9 +24,14 @@ export function ModuleTabs({ moduleSlug }: ModuleTabsProps) {
   // Get saved configuration from store
   const savedConfig = getTabConfig(moduleSlug)
   
-  // Use saved configuration if available, otherwise use registry tabs
-  // Filter out disabled tabs and sort by order
-  const tabs = (savedConfig || registryTabs)
+  // Always use registry tabs as the source of truth
+  // Saved config is only used for user preferences (order, enabled state)
+  // If saved config exists and has same number of tabs, merge preferences
+  const tabs = registryTabs
+    .map(registryTab => {
+      const savedTab = savedConfig?.find(t => t.id === registryTab.id)
+      return savedTab ? { ...registryTab, enabled: savedTab.enabled, order: savedTab.order } : registryTab
+    })
     .filter(tab => tab.enabled)
     .sort((a, b) => a.order - b.order)
 

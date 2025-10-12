@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils"
 import { useUIStore } from "@/store/ui-store"
 import { MODULES, MODULE_CATEGORIES } from "@/lib/modules/registry"
 import { iconMap } from "@/lib/modules/icon-map"
+import { getModuleTabs } from "@/lib/modules/tabs-registry"
 
 export function Sidebar() {
   const t = useTranslations()
@@ -96,11 +97,13 @@ export function Sidebar() {
                     const favModule = MODULES.find((m) => m.id === favId)
                     if (!favModule) return null
                     const Icon = iconMap[favModule.icon]
+                    const moduleTabs = getModuleTabs(favModule.slug)
+                    const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
 
                     return (
                       <Link
                         key={favModule.id}
-                        href={`/${locale}/workspace/${currentWorkspace?.id}/${favModule.slug}`}
+                        href={`/${locale}/workspace/${currentWorkspace?.id}/${favModule.slug}/${firstTabSlug}`}
                         className={cn(
                           "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
                           pathname.includes(favModule.slug) && "bg-accent"
@@ -138,6 +141,8 @@ export function Sidebar() {
                     const Icon = iconMap[moduleItem.icon]
                     const isActive = pathname.includes(moduleItem.slug)
                     const isFavorited = favorites.includes(moduleItem.id)
+                    const moduleTabs = getModuleTabs(moduleItem.slug)
+                    const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
 
                     return (
                       <div
@@ -145,7 +150,7 @@ export function Sidebar() {
                         className="group relative flex items-center"
                       >
                         <Link
-                          href={`/${locale}/workspace/${currentWorkspace?.id}/${moduleItem.slug}`}
+                          href={`/${locale}/workspace/${currentWorkspace?.id}/${moduleItem.slug}/${firstTabSlug}`}
                           className={cn(
                             "flex flex-1 items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
                             isActive && "bg-accent",
@@ -190,10 +195,11 @@ export function Sidebar() {
       {/* User & Settings - Anchored to Bottom */}
       <div className="border-t p-2 space-y-1 bg-background">
         <Link
-          href={`/${locale}/workspace/${currentWorkspace?.id}/admin/profile`}
+          href={`/${locale}/workspace/${currentWorkspace?.id}/profile/basic-info`}
           className={cn(
             "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2"
+            sidebarCollapsed && "justify-center px-2",
+            pathname.includes('/profile') && "bg-accent"
           )}
           title={sidebarCollapsed ? t('sidebar.profile') : undefined}
         >
@@ -201,10 +207,11 @@ export function Sidebar() {
           {!sidebarCollapsed && <span>{t('sidebar.profile')}</span>}
         </Link>
         <Link
-          href={`/${locale}/workspace/${currentWorkspace?.id}/admin/settings`}
+          href={`/${locale}/workspace/${currentWorkspace?.id}/settings/appearance`}
           className={cn(
             "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2"
+            sidebarCollapsed && "justify-center px-2",
+            pathname.includes('/settings') && "bg-accent"
           )}
           title={sidebarCollapsed ? t('sidebar.settings') : undefined}
         >
@@ -212,10 +219,11 @@ export function Sidebar() {
           {!sidebarCollapsed && <span>{t('sidebar.settings')}</span>}
         </Link>
         <Link
-          href={`/${locale}/workspace/${currentWorkspace?.id}/admin`}
+          href={`/${locale}/workspace/${currentWorkspace?.id}/admin/overview`}
           className={cn(
             "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2"
+            sidebarCollapsed && "justify-center px-2",
+            pathname.includes('/admin') && "bg-accent"
           )}
           title={sidebarCollapsed ? t('sidebar.admin') : undefined}
         >
@@ -226,12 +234,13 @@ export function Sidebar() {
           href={`/${locale}/workspace/${currentWorkspace?.id}/admin/members`}
           className={cn(
             "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2"
+            sidebarCollapsed && "justify-center px-2",
+            pathname.includes('/admin/members') && "bg-accent"
           )}
-          title={sidebarCollapsed ? t('sidebar.invite') : undefined}
+          title={sidebarCollapsed ? t('sidebar.members') : undefined}
         >
           <UserPlus className="h-4 w-4 flex-shrink-0" style={{ color: "#10b981" }} />
-          {!sidebarCollapsed && <span>{t('sidebar.invite')}</span>}
+          {!sidebarCollapsed && <span>{t('sidebar.members')}</span>}
         </Link>
       </div>
     </aside>

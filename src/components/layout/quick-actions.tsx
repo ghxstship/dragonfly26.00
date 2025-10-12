@@ -45,14 +45,14 @@ export function QuickActions() {
               variant="ghost" 
               size="icon" 
               className="h-9 w-9"
-              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/events/show-calendar`)}
+              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/dashboard/my-agenda`)}
             >
               <Calendar className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Calendar</p>
-            <kbd className="ml-2 text-xs">C</kbd>
+            <p>My Agenda</p>
+            <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⌘C</kbd>
           </TooltipContent>
         </Tooltip>
 
@@ -63,14 +63,14 @@ export function QuickActions() {
               variant="ghost" 
               size="icon" 
               className="h-9 w-9"
-              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/projects/my-tasks`)}
+              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/dashboard/my-tasks`)}
             >
               <ClipboardList className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
             <p>My Tasks</p>
-            <kbd className="ml-2 text-xs">T</kbd>
+            <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⌘T</kbd>
           </TooltipContent>
         </Tooltip>
 
@@ -81,14 +81,14 @@ export function QuickActions() {
               variant="ghost" 
               size="icon" 
               className="h-9 w-9"
-              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/files/all-documents`)}
+              onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/dashboard/my-files`)}
             >
               <FileText className="h-4 w-4" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Docs</p>
-            <kbd className="ml-2 text-xs">D</kbd>
+            <p>My Files</p>
+            <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⌘D</kbd>
           </TooltipContent>
         </Tooltip>
 
@@ -109,17 +109,17 @@ export function QuickActions() {
           <DropdownMenuContent align="end" className="w-64">
             <DropdownMenuLabel>Quick Access</DropdownMenuLabel>
             <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/integrations`)}>
+              <LayoutGrid className="mr-2 h-4 w-4" />
+              Integrations
+            </DropdownMenuItem>
             <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/automations`)}>
               <Zap className="mr-2 h-4 w-4" />
               Automations
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/files/templates`)}>
+            <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/templates`)}>
               <FileText className="mr-2 h-4 w-4" />
               Templates
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/plugins`)}>
-              <LayoutGrid className="mr-2 h-4 w-4" />
-              Integrations
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -138,7 +138,7 @@ export function QuickActions() {
           </TooltipTrigger>
           <TooltipContent>
             <p>Help & Shortcuts</p>
-            <kbd className="ml-2 text-xs">?</kbd>
+            <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⇧?</kbd>
           </TooltipContent>
         </Tooltip>
       </div>

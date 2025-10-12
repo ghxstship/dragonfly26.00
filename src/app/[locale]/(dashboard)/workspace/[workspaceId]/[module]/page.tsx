@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { Filter, Search, Columns3, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal, Eye } from "lucide-react"
+import { Filter, Search, Columns3, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal, Camera, QrCode } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -38,6 +38,14 @@ import { getModuleTabs } from "@/lib/modules/tabs-registry"
 import { ModuleTabs } from "@/components/layout/module-tabs"
 import { CreateItemDialog } from "@/components/shared/create-item-dialog"
 import { getItemTypeForModule, getNewItemLabel } from "@/lib/modules/item-type-mapper"
+import { generateProjectsMockData } from "@/lib/modules/projects-mock-data"
+import { generateEventsMockData } from "@/lib/modules/events-mock-data"
+import { generatePeopleMockData } from "@/lib/modules/people-mock-data"
+import { generateLocationsMockData } from "@/lib/modules/locations-mock-data"
+import { generateFilesMockData } from "@/lib/modules/files-mock-data"
+import { generateFinanceMockData } from "@/lib/modules/finance-mock-data"
+import { generateResourcesMockData } from "@/lib/modules/resources-mock-data"
+import { generateCompaniesMockData } from "@/lib/modules/companies-mock-data"
 import type { ViewType, DataItem } from "@/types"
 
 // Mock data generator
@@ -81,7 +89,7 @@ export default function ModulePage() {
   const locale = params.locale as string
   const currentModule = getModuleBySlug(moduleSlug)
   const moduleTabs = getModuleTabs(moduleSlug)
-  const { setRightSidebarOpen, toggleRightSidebar } = useUIStore()
+  const { setRightSidebarOpen, toggleRightSidebar, focusMode } = useUIStore()
 
   const [currentView, setCurrentView] = useState<ViewType>("list")
   const [searchQuery, setSearchQuery] = useState("")
@@ -97,7 +105,24 @@ export default function ModulePage() {
   }, [moduleTabs, moduleSlug, workspaceId, locale, router])
 
   // Mock data - in real app, fetch from Supabase
-  const mockData = generateMockData(20)
+  // Use contextual mock data for Projects, Events, People, Locations, Files, Finance, Resources, and Companies modules
+  const mockData = moduleSlug === 'projects' 
+    ? generateProjectsMockData(moduleTabs[0]?.slug || '', 20)
+    : moduleSlug === 'events'
+    ? generateEventsMockData(moduleTabs[0]?.slug || '', 20)
+    : moduleSlug === 'people'
+    ? generatePeopleMockData(moduleTabs[0]?.slug || '', 20)
+    : moduleSlug === 'locations'
+    ? generateLocationsMockData(moduleTabs[0]?.slug || '', 20)
+    : moduleSlug === 'files'
+    ? generateFilesMockData(moduleTabs[0]?.slug || '', 20)
+    : moduleSlug === 'finance'
+    ? generateFinanceMockData(moduleTabs[0]?.slug || '', 20)
+    : moduleSlug === 'resources'
+    ? generateResourcesMockData(moduleTabs[0]?.slug || '', 20)
+    : moduleSlug === 'companies'
+    ? generateCompaniesMockData(moduleTabs[0]?.slug || '', 20)
+    : generateMockData(20)
 
   const handleItemClick = (item: DataItem) => {
     setSelectedItem(item)
@@ -181,19 +206,21 @@ export default function ModulePage() {
       <div className="border-b bg-background">
         <div className="p-4 space-y-4">
           {/* Title and Actions */}
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold" style={{ color: currentModule.color }}>
-                {currentModule.name}
-              </h1>
-              <p className="text-sm text-muted-foreground mt-1">
-                {currentModule.description}
-              </p>
+          {!focusMode && (
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-2xl font-bold" style={{ color: currentModule.color }}>
+                  {currentModule.name}
+                </h1>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {currentModule.description}
+                </p>
+              </div>
+              <Button onClick={() => setCreateDialogOpen(true)}>
+                + New {getNewItemLabel(moduleSlug, currentModule.name)}
+              </Button>
             </div>
-            <Button onClick={() => setCreateDialogOpen(true)}>
-              + New {getNewItemLabel(moduleSlug, currentModule.name)}
-            </Button>
-          </div>
+          )}
 
           {/* View Controls */}
           <div className="flex items-center gap-2">
@@ -248,17 +275,6 @@ export default function ModulePage() {
               <Columns3 className="h-4 w-4" />
             </Button>
 
-            <Button 
-              variant="outline" 
-              size="icon"
-              onClick={() => {
-                setRightSidebarOpen(true, 'pages')
-              }}
-              title="Page Configuration"
-            >
-              <Eye className="h-4 w-4" />
-            </Button>
-
             {/* More Actions Menu */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -290,6 +306,14 @@ export default function ModulePage() {
                 >
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
+                </DropdownMenuItem>
+                <DropdownMenuItem disabled>
+                  <Camera className="h-4 w-4 mr-2" />
+                  Photo <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem disabled>
+                  <QrCode className="h-4 w-4 mr-2" />
+                  Scan <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

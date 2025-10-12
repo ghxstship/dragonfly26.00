@@ -85,7 +85,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Filter Logic */}
       {filters.length > 1 && (
         <div className="space-y-2">

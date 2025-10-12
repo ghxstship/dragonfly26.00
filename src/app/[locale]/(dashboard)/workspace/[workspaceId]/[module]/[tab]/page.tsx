@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useParams } from "next/navigation"
-import { Filter, Search, Columns3, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal, Eye } from "lucide-react"
+import { Filter, Search, Columns3, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal, Camera, QrCode } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -38,6 +38,30 @@ import { getTabBySlug } from "@/lib/modules/tabs-registry"
 import { ModuleTabs } from "@/components/layout/module-tabs"
 import { CreateItemDialog } from "@/components/shared/create-item-dialog"
 import { getItemTypeForModule, getNewItemLabel } from "@/lib/modules/item-type-mapper"
+import { getAdminTabComponent } from "@/lib/admin-tab-components"
+import { getSettingsTabComponent } from "@/lib/settings-tab-components"
+import { getProfileTabComponent } from "@/lib/profile-tab-components"
+import { getDashboardTabComponent } from "@/lib/dashboard-tab-components"
+import { getProjectsTabComponent } from "@/lib/projects-tab-components"
+import { getEventsTabComponent } from "@/lib/events-tab-components"
+import { getLocationsTabComponent } from "@/lib/locations-tab-components"
+import { getCommunityTabComponent } from "@/lib/community-tab-components"
+import { getMarketplaceTabComponent } from "@/lib/marketplace-tab-components"
+import { getReportsTabComponent } from "@/lib/reports-tab-components"
+import { getAnalyticsTabComponent } from "@/lib/analytics-tab-components"
+import { getInsightsTabComponent } from "@/lib/insights-tab-components"
+import { generateProjectsMockData } from "@/lib/modules/projects-mock-data"
+import { generateEventsMockData } from "@/lib/modules/events-mock-data"
+import { generatePeopleMockData } from "@/lib/modules/people-mock-data"
+import { generateAssetsMockData } from "@/lib/modules/assets-mock-data"
+import { generateLocationsMockData } from "@/lib/modules/locations-mock-data"
+import { generateFilesMockData } from "@/lib/modules/files-mock-data"
+import { generateFinanceMockData } from "@/lib/modules/finance-mock-data"
+import { generateResourcesMockData } from "@/lib/modules/resources-mock-data"
+import { generateCompaniesMockData } from "@/lib/modules/companies-mock-data"
+import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
+import { generateProcurementMockData } from "@/lib/modules/procurement-mock-data"
+import { generateJobsMockData } from "@/lib/modules/jobs-mock-data"
 import type { ViewType, DataItem } from "@/types"
 
 // Mock data generator
@@ -79,7 +103,21 @@ export default function ModuleTabPage() {
   const tabSlug = params.tab as string
   const currentModule = getModuleBySlug(moduleSlug)
   const currentTab = getTabBySlug(moduleSlug, tabSlug)
-  const { setRightSidebarOpen } = useUIStore()
+  const { setRightSidebarOpen, focusMode } = useUIStore()
+  
+  // Check if this is an admin, settings, profile, dashboard, projects, events, locations, community, reports, analytics, or insights tab with custom component
+  const isAdminCustomTab = moduleSlug === "admin" && getAdminTabComponent(tabSlug) !== undefined
+  const isSettingsCustomTab = moduleSlug === "settings" && getSettingsTabComponent(tabSlug) !== undefined
+  const isProfileCustomTab = moduleSlug === "profile" && getProfileTabComponent(tabSlug) !== undefined
+  const isDashboardCustomTab = moduleSlug === "dashboard" && getDashboardTabComponent(tabSlug) !== undefined
+  const isProjectsCustomTab = moduleSlug === "projects" && getProjectsTabComponent(tabSlug) !== undefined
+  const isEventsCustomTab = moduleSlug === "events" && getEventsTabComponent(tabSlug) !== undefined
+  const isLocationsCustomTab = moduleSlug === "locations" && getLocationsTabComponent(tabSlug) !== undefined
+  const isCommunityCustomTab = moduleSlug === "community" && getCommunityTabComponent(tabSlug) !== undefined
+  const isMarketplaceCustomTab = moduleSlug === "marketplace" && getMarketplaceTabComponent(tabSlug) !== undefined
+  const isReportsCustomTab = moduleSlug === "reports" && getReportsTabComponent(tabSlug) !== undefined
+  const isAnalyticsCustomTab = moduleSlug === "analytics" && getAnalyticsTabComponent(tabSlug) !== undefined
+  const isInsightsCustomTab = moduleSlug === "insights" && getInsightsTabComponent(tabSlug) !== undefined
 
   const [currentView, setCurrentView] = useState<ViewType>(currentTab?.default_view || "list")
   const [searchQuery, setSearchQuery] = useState("")
@@ -88,7 +126,32 @@ export default function ModuleTabPage() {
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   // Mock data - in real app, fetch from Supabase
-  const mockData = generateMockData(20)
+  // Use contextual mock data for Projects, Events, People, Assets, Locations, Files, Finance, Resources, Companies, Marketplace, Procurement, and Jobs modules
+  const mockData = moduleSlug === 'projects' 
+    ? generateProjectsMockData(tabSlug, 20)
+    : moduleSlug === 'events'
+    ? generateEventsMockData(tabSlug, 20)
+    : moduleSlug === 'people'
+    ? generatePeopleMockData(tabSlug, 20)
+    : moduleSlug === 'assets'
+    ? generateAssetsMockData(tabSlug, 20)
+    : moduleSlug === 'locations'
+    ? generateLocationsMockData(tabSlug, 20)
+    : moduleSlug === 'files'
+    ? generateFilesMockData(tabSlug, 20)
+    : moduleSlug === 'finance'
+    ? generateFinanceMockData(tabSlug, 20)
+    : moduleSlug === 'resources'
+    ? generateResourcesMockData(tabSlug, 20)
+    : moduleSlug === 'companies'
+    ? generateCompaniesMockData(tabSlug, 20)
+    : moduleSlug === 'marketplace'
+    ? generateMarketplaceMockData(tabSlug, 20)
+    : moduleSlug === 'procurement'
+    ? generateProcurementMockData(tabSlug, 20)
+    : moduleSlug === 'jobs'
+    ? generateJobsMockData(tabSlug, 20)
+    : generateMockData(20)
 
   const handleItemClick = (item: DataItem) => {
     setSelectedItem(item)
@@ -96,6 +159,103 @@ export default function ModuleTabPage() {
   }
 
   const renderView = () => {
+    // For admin module, check if there's a custom tab component
+    if (moduleSlug === "admin") {
+      const AdminComponent = getAdminTabComponent(tabSlug)
+      if (AdminComponent) {
+        return <AdminComponent />
+      }
+    }
+
+    // For settings module, check if there's a custom tab component
+    if (moduleSlug === "settings") {
+      const SettingsComponent = getSettingsTabComponent(tabSlug)
+      if (SettingsComponent) {
+        return <SettingsComponent />
+      }
+    }
+
+    // For profile module, check if there's a custom tab component
+    if (moduleSlug === "profile") {
+      const ProfileComponent = getProfileTabComponent(tabSlug)
+      if (ProfileComponent) {
+        return <ProfileComponent />
+      }
+    }
+
+    // For dashboard module, check if there's a custom tab component
+    if (moduleSlug === "dashboard") {
+      const DashboardComponent = getDashboardTabComponent(tabSlug)
+      if (DashboardComponent) {
+        return <DashboardComponent />
+      }
+    }
+
+    // For projects module, check if there's a custom tab component
+    if (moduleSlug === "projects") {
+      const ProjectsComponent = getProjectsTabComponent(tabSlug)
+      if (ProjectsComponent) {
+        return <ProjectsComponent />
+      }
+    }
+
+    // For events module, check if there's a custom tab component
+    if (moduleSlug === "events") {
+      const EventsComponent = getEventsTabComponent(tabSlug)
+      if (EventsComponent) {
+        return <EventsComponent />
+      }
+    }
+
+    // For locations module, check if there's a custom tab component
+    if (moduleSlug === "locations") {
+      const LocationsComponent = getLocationsTabComponent(tabSlug)
+      if (LocationsComponent) {
+        return <LocationsComponent />
+      }
+    }
+
+    // For community module, check if there's a custom tab component
+    if (moduleSlug === "community") {
+      const CommunityComponent = getCommunityTabComponent(tabSlug)
+      if (CommunityComponent) {
+        return <CommunityComponent />
+      }
+    }
+
+    // For marketplace module, check if there's a custom tab component
+    if (moduleSlug === "marketplace") {
+      const MarketplaceComponent = getMarketplaceTabComponent(tabSlug)
+      if (MarketplaceComponent) {
+        return <MarketplaceComponent />
+      }
+    }
+
+    // For reports module, check if there's a custom tab component
+    if (moduleSlug === "reports") {
+      const ReportsComponent = getReportsTabComponent(tabSlug)
+      if (ReportsComponent) {
+        return <ReportsComponent />
+      }
+    }
+
+    // For analytics module, check if there's a custom tab component
+    if (moduleSlug === "analytics") {
+      const AnalyticsComponent = getAnalyticsTabComponent(tabSlug)
+      if (AnalyticsComponent) {
+        return <AnalyticsComponent />
+      }
+    }
+
+    // For insights module, check if there's a custom tab component
+    if (moduleSlug === "insights") {
+      const InsightsComponent = getInsightsTabComponent(tabSlug)
+      if (InsightsComponent) {
+        return <InsightsComponent />
+      }
+    }
+
+    // Otherwise, render based on view type
     switch (currentView) {
       case "list":
         return <ListView data={mockData} onItemClick={handleItemClick} />
@@ -172,23 +332,34 @@ export default function ModuleTabPage() {
     <div className="flex flex-col h-full">
       {/* Module Header */}
       <div className="border-b bg-background">
-        <div className="p-4 space-y-4">
+        <div className="p-4">
           {/* Title and Actions */}
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold" style={{ color: currentModule.color }}>
-                {currentModule.name}
-              </h1>
-              <p className="text-sm text-muted-foreground mt-1">
-                {currentModule.description}
-              </p>
+          {!focusMode && (
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-2xl font-bold" style={{ color: currentModule.color }}>
+                  {currentModule.name}
+                </h1>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {currentModule.description}
+                </p>
+              </div>
+              {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+                <Button onClick={() => setCreateDialogOpen(true)}>
+                  + New {getNewItemLabel(moduleSlug, currentModule.name)}
+                </Button>
+              )}
             </div>
-            <Button onClick={() => setCreateDialogOpen(true)}>
-              + New {getNewItemLabel(moduleSlug, currentModule.name)}
-            </Button>
-          </div>
+          )}
+        </div>
+      </div>
 
-          {/* View Controls */}
+      {/* Module Tabs */}
+      <ModuleTabs moduleSlug={moduleSlug} />
+
+      {/* View Controls - Hidden for admin, settings, profile, dashboard, projects, events, locations, community, reports, analytics, and insights custom tabs */}
+      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+        <div className="border-b bg-background p-4">
           <div className="flex items-center gap-2">
             <ViewSwitcher
               currentView={currentView}
@@ -241,17 +412,6 @@ export default function ModuleTabPage() {
               <Columns3 className="h-4 w-4" />
             </Button>
 
-            <Button 
-              variant="outline" 
-              size="icon"
-              onClick={() => {
-                setRightSidebarOpen(true, 'pages')
-              }}
-              title="Page Configuration"
-            >
-              <Eye className="h-4 w-4" />
-            </Button>
-
             {/* More Actions Menu */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -283,6 +443,14 @@ export default function ModuleTabPage() {
                 >
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
+                </DropdownMenuItem>
+                <DropdownMenuItem disabled>
+                  <Camera className="h-4 w-4 mr-2" />
+                  Photo <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem disabled>
+                  <QrCode className="h-4 w-4 mr-2" />
+                  Scan <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -321,10 +489,7 @@ export default function ModuleTabPage() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Module Tabs */}
-      <ModuleTabs moduleSlug={moduleSlug} />
+      )}
 
       {/* Tab Content */}
       <div className="border-b bg-muted/30 px-4 py-2">
@@ -348,32 +513,36 @@ export default function ModuleTabPage() {
         {renderView()}
       </div>
 
-      {/* Item Detail Drawer */}
-      <ItemDetailDrawer
-        item={selectedItem}
-        open={drawerOpen}
-        onOpenChange={setDrawerOpen}
-        onUpdate={(updates) => {
-          console.log("Item updated:", updates)
-          // In real app, update in Supabase
-        }}
-        onDelete={() => {
-          console.log("Item deleted")
-          setDrawerOpen(false)
-          // In real app, delete from Supabase
-        }}
-      />
+      {/* Item Detail Drawer - Only for standard views */}
+      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+        <ItemDetailDrawer
+          item={selectedItem}
+          open={drawerOpen}
+          onOpenChange={setDrawerOpen}
+          onUpdate={(updates) => {
+            console.log("Item updated:", updates)
+            // In real app, update in Supabase
+          }}
+          onDelete={() => {
+            console.log("Item deleted")
+            setDrawerOpen(false)
+            // In real app, delete from Supabase
+          }}
+        />
+      )}
 
-      {/* Create Item Dialog */}
-      <CreateItemDialog
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        type={getItemTypeForModule(moduleSlug)}
-        onSuccess={(item) => {
-          console.log("Created item:", item)
-          // TODO: Add to data store and refresh list
-        }}
-      />
+      {/* Create Item Dialog - Only for standard views */}
+      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+        <CreateItemDialog
+          open={createDialogOpen}
+          onOpenChange={setCreateDialogOpen}
+          type={getItemTypeForModule(moduleSlug)}
+          onSuccess={(item) => {
+            console.log("Created item:", item)
+            // TODO: Add to data store and refresh list
+          }}
+        />
+      )}
     </div>
   )
 }

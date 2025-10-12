@@ -36,7 +36,7 @@ export default function LoginPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      router.push(`/${locale}/workspace/default/dashboard/overview`)
+      router.push(`/${locale}/workspace/personal/dashboard/overview`)
     }
   }
 

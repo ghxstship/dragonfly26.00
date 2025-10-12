@@ -1,0 +1,11 @@
+// Analytics Module Tab Components
+export { AnalyticsOverviewTab } from './analytics-overview-tab'
+export { AnalyticsPerformanceTab } from './analytics-performance-tab'
+export { AnalyticsTrendsTab } from './analytics-trends-tab'
+export { AnalyticsComparisonsTab } from './analytics-comparisons-tab'
+export { AnalyticsForecastingTab } from './analytics-forecasting-tab'
+export { AnalyticsRealtimeTab } from './analytics-realtime-tab'
+export { AnalyticsCustomViewsTab } from './analytics-custom-views-tab'
+export { AnalyticsPivotTablesTab } from './analytics-pivot-tables-tab'
+export { AnalyticsMetricsLibraryTab } from './analytics-metrics-library-tab'
+export { AnalyticsDataSourcesTab } from './analytics-data-sources-tab'

@@ -3,8 +3,6 @@
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { TabConfigPanel } from "./tab-config-panel"
 import { getModuleTabs } from "@/lib/modules/tabs-registry"
-import { useUIStore } from "@/store/ui-store"
-import type { ModuleTab } from "@/types"
 
 interface TabConfigDrawerProps {
   open: boolean
@@ -13,20 +11,8 @@ interface TabConfigDrawerProps {
 }
 
 export function TabConfigDrawer({ open, onOpenChange, moduleSlug }: TabConfigDrawerProps) {
-  const { getTabConfig, setTabConfig } = useUIStore()
-  
-  // Get tabs from registry
+  // Get tabs from registry to check if module has tabs
   const moduleTabs = getModuleTabs(moduleSlug)
-  
-  // Get saved configuration from store
-  const savedConfig = getTabConfig(moduleSlug)
-  
-  // Use saved configuration if available, otherwise use registry tabs
-  const currentTabs = savedConfig || moduleTabs
-
-  const handleTabsChange = (tabs: ModuleTab[]) => {
-    setTabConfig(moduleSlug, tabs)
-  }
 
   if (moduleTabs.length === 0) {
     return null
@@ -38,15 +24,11 @@ export function TabConfigDrawer({ open, onOpenChange, moduleSlug }: TabConfigDra
         <SheetHeader>
           <SheetTitle>Tab Configuration</SheetTitle>
           <SheetDescription>
-            Customize which tabs are visible and their order for this module.
+            Customize which tabs are visible for this module.
           </SheetDescription>
         </SheetHeader>
         <div className="mt-6">
-          <TabConfigPanel 
-            moduleSlug={moduleSlug}
-            tabs={currentTabs}
-            onTabsChange={handleTabsChange}
-          />
+          <TabConfigPanel moduleSlug={moduleSlug} />
         </div>
       </SheetContent>
     </Sheet>

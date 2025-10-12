@@ -31,7 +31,7 @@ import { CalendarIcon, Loader2 } from "lucide-react"
 import { format } from "date-fns"
 import { cn } from "@/lib/utils"
 
-export type ItemType = "task" | "project" | "job" | "asset" | "location" | "file" | "report" | "list" | "workspace"
+export type ItemType = "task" | "project" | "job" | "asset" | "location" | "file" | "report" | "list" | "workspace" | "event" | "person" | "company"
 
 interface CreateItemDialogProps {
   open: boolean
@@ -151,6 +151,21 @@ export function CreateItemDialog({
       title: t('create.createWorkspace'),
       description: t('create.createNewWorkspace'),
       fields: ["name", "description", "icon"],
+    },
+    event: {
+      title: t('create.createEvent'),
+      description: t('create.createNewEvent'),
+      fields: ["name", "description", "startDate"],
+    },
+    person: {
+      title: t('create.createPerson'),
+      description: t('create.createNewPerson'),
+      fields: ["name", "description"],
+    },
+    company: {
+      title: t('create.createCompany'),
+      description: t('create.createNewCompany'),
+      fields: ["name", "description"],
     },
   }[type])
   

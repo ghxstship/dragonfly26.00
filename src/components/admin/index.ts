@@ -1,0 +1,16 @@
+export { AdminOverviewTab } from "./admin-overview-tab"
+export { OrganizationSettingsTab } from "./organization-settings-tab"
+export { MembersManagementTab } from "./members-management-tab"
+export { RolesPermissionsTab } from "./roles-permissions-tab"
+export { BillingTab } from "./billing-tab"
+export { SecurityTab } from "./security-tab"
+export { AutomationsTab } from "./automations-tab"
+export { IntegrationsTab } from "./integrations-tab"
+export { WebhooksTab } from "./webhooks-tab"
+export { ApiTokensTab } from "./api-tokens-tab"
+
+// Legacy tabs - available but not in main admin navigation
+export { CustomStatusesTab } from "./custom-statuses-tab"
+export { ChecklistTemplatesTab } from "./checklist-templates-tab"
+export { RecurrenceRulesTab } from "./recurrence-rules-tab"
+export { PluginsTab } from "./plugins-tab"

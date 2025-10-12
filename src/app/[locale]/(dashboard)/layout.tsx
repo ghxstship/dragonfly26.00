@@ -1,14 +1,21 @@
 "use client"
 
+import { useEffect } from "react"
 import { TopBar } from "@/components/layout/top-bar"
 import { Sidebar } from "@/components/layout/sidebar"
 import { RightSidebar } from "@/components/layout/right-sidebar"
+import { cleanupOldStorage } from "@/lib/storage-cleanup"
 
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  // Clean up old localStorage keys on mount
+  useEffect(() => {
+    cleanupOldStorage()
+  }, [])
+
   return (
     <div className="h-screen flex flex-col">
       <TopBar />

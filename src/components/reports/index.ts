@@ -1,0 +1,10 @@
+// Reports Module Tab Components
+export { ReportsOverviewTab } from './reports-overview-tab'
+export { ReportsTemplatesTab } from './reports-templates-tab'
+export { ReportsScheduledTab } from './reports-scheduled-tab'
+export { ReportsExportsTab } from './reports-exports-tab'
+export { ReportsCustomBuilderTab } from './reports-custom-builder-tab'
+export { ReportsComplianceTab } from './reports-compliance-tab'
+export { ReportsExecutiveTab } from './reports-executive-tab'
+export { ReportsOperationalTab } from './reports-operational-tab'
+export { ReportsArchivedTab } from './reports-archived-tab'
