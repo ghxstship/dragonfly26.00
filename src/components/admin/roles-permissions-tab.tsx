@@ -1,263 +1,149 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
-import { Separator } from "@/components/ui/separator"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
-import { Plus, Lock, Users, Edit, Trash2, CheckCircle2 } from "lucide-react"
+import { Plus, Crown, Shield, Plane, Sword, Compass, Users as UsersIcon, User, Briefcase, UserPlus, Eye, Megaphone } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
-import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
-import { rolesPermissionsSchema } from "@/lib/schemas/admin-schemas"
-import type { DataItem } from "@/types"
+import { BRANDED_ROLES, getAllRolesSorted } from "@/lib/rbac/role-definitions"
+import { getRolePermissions } from "@/lib/rbac/permission-matrix"
+import type { RoleSlug, RoleMetadata } from "@/types/rbac"
 
-interface Role {
-  id: string
-  name: string
-  description: string
-  memberCount: number
-  permissions: Record<string, boolean>
-  isSystem: boolean
+// Icon mapping for branded roles
+const ROLE_ICONS: Record<string, any> = {
+  crown: Crown,
+  shield: Shield,
+  plane: Plane,
+  sword: Sword,
+  compass: Compass,
+  users: UsersIcon,
+  user: User,
+  briefcase: Briefcase,
+  'user-plus': UserPlus,
+  eye: Eye,
+  megaphone: Megaphone,
 }
 
 export function RolesPermissionsTab() {
   const { toast } = useToast()
-  const [selectedRole, setSelectedRole] = useState<Role | null>(null)
-  const [dialogOpen, setDialogOpen] = useState(false)
+  const [brandedRoles, setBrandedRoles] = useState<RoleMetadata[]>([])
+  const [selectedRole, setSelectedRole] = useState<RoleSlug | null>(null)
+  
+  useEffect(() => {
+    // Load branded roles
+    setBrandedRoles(getAllRolesSorted())
+  }, [])
 
-  const permissionCategories = {
-    projects: [
-      { id: "projects.view", label: "View Projects", description: "Can view all projects" },
-      { id: "projects.create", label: "Create Projects", description: "Can create new projects" },
-      { id: "projects.edit", label: "Edit Projects", description: "Can edit project details" },
-      { id: "projects.delete", label: "Delete Projects", description: "Can delete projects" },
-    ],
-    members: [
-      { id: "members.view", label: "View Members", description: "Can view member list" },
-      { id: "members.invite", label: "Invite Members", description: "Can invite new members" },
-      { id: "members.edit", label: "Edit Members", description: "Can edit member details" },
-      { id: "members.remove", label: "Remove Members", description: "Can remove members" },
-    ],
-    finance: [
-      { id: "finance.view", label: "View Finances", description: "Can view financial data" },
-      { id: "finance.edit", label: "Edit Budgets", description: "Can edit budgets and expenses" },
-      { id: "finance.approve", label: "Approve Expenses", description: "Can approve expense requests" },
-    ],
-    settings: [
-      { id: "settings.view", label: "View Settings", description: "Can view organization settings" },
-      { id: "settings.edit", label: "Edit Settings", description: "Can modify organization settings" },
-      { id: "settings.billing", label: "Manage Billing", description: "Can manage billing and subscription" },
-    ],
+  const getRoleIcon = (iconName: string) => {
+    return ROLE_ICONS[iconName] || User
   }
 
-  const [roles, setRoles] = useState<Role[]>([
-    {
-      id: "owner",
-      name: "Owner",
-      description: "Full access to everything",
-      memberCount: 1,
-      permissions: Object.fromEntries(
-        Object.values(permissionCategories).flat().map(p => [p.id, true])
-      ),
-      isSystem: true,
-    },
-    {
-      id: "admin",
-      name: "Admin",
-      description: "Can manage most aspects of the organization",
-      memberCount: 3,
-      permissions: {
-        "projects.view": true,
-        "projects.create": true,
-        "projects.edit": true,
-        "projects.delete": true,
-        "members.view": true,
-        "members.invite": true,
-        "members.edit": true,
-        "members.remove": false,
-        "finance.view": true,
-        "finance.edit": true,
-        "finance.approve": true,
-        "settings.view": true,
-        "settings.edit": false,
-        "settings.billing": false,
-      },
-      isSystem: true,
-    },
-    {
-      id: "member",
-      name: "Member",
-      description: "Standard access to projects and resources",
-      memberCount: 28,
-      permissions: {
-        "projects.view": true,
-        "projects.create": true,
-        "projects.edit": true,
-        "projects.delete": false,
-        "members.view": true,
-        "members.invite": false,
-        "members.edit": false,
-        "members.remove": false,
-        "finance.view": false,
-        "finance.edit": false,
-        "finance.approve": false,
-        "settings.view": false,
-        "settings.edit": false,
-        "settings.billing": false,
-      },
-      isSystem: true,
-    },
-    {
-      id: "viewer",
-      name: "Viewer",
-      description: "Read-only access",
-      memberCount: 10,
-      permissions: {
-        "projects.view": true,
-        "projects.create": false,
-        "projects.edit": false,
-        "projects.delete": false,
-        "members.view": true,
-        "members.invite": false,
-        "members.edit": false,
-        "members.remove": false,
-        "finance.view": false,
-        "finance.edit": false,
-        "finance.approve": false,
-        "settings.view": false,
-        "settings.edit": false,
-        "settings.billing": false,
-      },
-      isSystem: true,
-    },
-  ])
-
-  const handleCreateRole = () => {
-    setSelectedRole(null)
-    setDialogOpen(true)
+  const getRolePermissionCount = (roleSlug: RoleSlug): number => {
+    const permissions = getRolePermissions(roleSlug)
+    return Object.keys(permissions).length
   }
 
-  const handleEditRole = (role: Role) => {
-    setSelectedRole(role)
-    setDialogOpen(true)
-  }
-
-  const handleDeleteRole = (roleId: string) => {
-    setRoles(roles.filter(r => r.id !== roleId))
-    toast({
-      title: "Role deleted",
-      description: "The role has been removed successfully.",
-      variant: "destructive",
-    })
+  const handleViewRole = (roleSlug: RoleSlug) => {
+    setSelectedRole(roleSlug)
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button onClick={handleCreateRole}>
-          <Plus className="h-4 w-4 mr-2" />
-          Create Role
-        </Button>
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold">Branded Role System</h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            11 distinct roles with comprehensive permission matrix
+          </p>
+        </div>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* Role Hierarchy Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Total Roles</CardDescription>
-            <CardTitle className="text-3xl">{roles.length}</CardTitle>
+            <CardTitle className="text-3xl">11</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Custom Roles</CardDescription>
-            <CardTitle className="text-3xl">
-              {roles.filter(r => !r.isSystem).length}
-            </CardTitle>
+            <CardDescription>Permission Categories</CardDescription>
+            <CardTitle className="text-3xl">12</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Members</CardDescription>
-            <CardTitle className="text-3xl">
-              {roles.reduce((sum, r) => sum + r.memberCount, 0)}
-            </CardTitle>
+            <CardDescription>Total Permissions</CardDescription>
+            <CardTitle className="text-3xl">72+</CardTitle>
+          </CardHeader>
+        </Card>
+        <Card>
+          <CardHeader className="pb-3">
+            <CardDescription>Access Levels</CardDescription>
+            <CardTitle className="text-3xl">8</CardTitle>
           </CardHeader>
         </Card>
       </div>
 
-      {/* Roles List */}
-      <div className="space-y-3">
-        {roles.map((role) => {
-          const enabledPermissions = Object.values(role.permissions).filter(Boolean).length
-          const totalPermissions = Object.keys(role.permissions).length
+      {/* Branded Roles Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {brandedRoles.map((role) => {
+          const Icon = getRoleIcon(role.icon)
+          const permissionCount = getRolePermissionCount(role.slug)
 
           return (
-            <Card key={role.id}>
+            <Card 
+              key={role.slug} 
+              className="hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => handleViewRole(role.slug)}
+            >
               <CardHeader>
                 <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
+                  <div className="flex items-center gap-3">
+                    <div 
+                      className="p-2 rounded-lg"
+                      style={{ backgroundColor: `${role.color}20` }}
+                    >
+                      <Icon className="h-5 w-5" style={{ color: role.color }} />
+                    </div>
+                    <div>
                       <CardTitle className="text-base">{role.name}</CardTitle>
-                      {role.isSystem && (
-                        <Badge variant="secondary">
-                          <Lock className="h-3 w-3 mr-1" />
-                          System Role
-                        </Badge>
-                      )}
-                      <Badge variant="outline">
-                        <Users className="h-3 w-3 mr-1" />
-                        {role.memberCount} members
+                      <Badge 
+                        variant="secondary" 
+                        className="mt-1"
+                        style={{ 
+                          backgroundColor: `${role.color}20`,
+                          color: role.color,
+                          borderColor: role.color
+                        }}
+                      >
+                        {role.badge}
                       </Badge>
                     </div>
-                    <CardDescription>{role.description}</CardDescription>
                   </div>
-                  {!role.isSystem && (
-                    <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => handleEditRole(role)}
-                      >
-                        <Edit className="h-4 w-4 mr-2" />
-                        Edit
-                      </Button>
-                      <Button
-                        variant="destructive"
-                        size="sm"
-                        onClick={() => handleDeleteRole(role.id)}
-                      >
-                        <Trash2 className="h-4 w-4 mr-2" />
-                        Delete
-                      </Button>
-                    </div>
-                  )}
                 </div>
+                <CardDescription className="mt-2 line-clamp-2">
+                  {role.description}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Permissions</span>
-                    <span className="font-medium">
-                      {enabledPermissions} of {totalPermissions} enabled
-                    </span>
+                    <span className="text-muted-foreground">Level</span>
+                    <span className="font-medium">{role.level}</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-primary"
-                      style={{ width: `${(enabledPermissions / totalPermissions) * 100}%` }}
-                    />
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">Permissions</span>
+                    <span className="font-medium">{permissionCount}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">Scope</span>
+                    <Badge variant="outline" className="text-xs capitalize">
+                      {role.scope}
+                    </Badge>
                   </div>
                 </div>
               </CardContent>
@@ -266,134 +152,77 @@ export function RolesPermissionsTab() {
         })}
       </div>
 
-      {/* Permission Matrix */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Permission Matrix</CardTitle>
-          <CardDescription>
-            Overview of all roles and their permissions
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            {Object.entries(permissionCategories).map(([category, permissions]) => (
-              <div key={category}>
-                <h3 className="text-sm font-semibold mb-3 capitalize">
-                  {category}
-                </h3>
-                <div className="space-y-2">
-                  {permissions.map((permission) => (
-                    <div
-                      key={permission.id}
-                      className="flex items-center justify-between p-3 border rounded-lg"
-                    >
-                      <div className="flex-1">
-                        <p className="text-sm font-medium">{permission.label}</p>
-                        <p className="text-xs text-muted-foreground">
-                          {permission.description}
-                        </p>
+      {/* Role Details Panel */}
+      {selectedRole && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                {(() => {
+                  const role = BRANDED_ROLES[selectedRole]
+                  const Icon = getRoleIcon(role.icon)
+                  return (
+                    <>
+                      <div 
+                        className="p-3 rounded-lg"
+                        style={{ backgroundColor: `${role.color}20` }}
+                      >
+                        <Icon className="h-6 w-6" style={{ color: role.color }} />
                       </div>
-                      <div className="flex gap-2">
-                        {roles.map((role) => (
-                          <div
-                            key={role.id}
-                            className="flex items-center justify-center w-8 h-8"
-                            title={role.name}
-                          >
-                            {role.permissions[permission.id] ? (
-                              <CheckCircle2 className="h-4 w-4 text-green-500" />
-                            ) : (
-                              <div className="h-4 w-4 rounded-full border-2 border-muted" />
-                            )}
-                          </div>
-                        ))}
+                      <div>
+                        <CardTitle>{role.name}</CardTitle>
+                        <CardDescription>{role.description}</CardDescription>
                       </div>
+                    </>
+                  )
+                })()}
+              </div>
+              <Button variant="outline" onClick={() => setSelectedRole(null)}>
+                Close
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {/* Key Capabilities */}
+              <div>
+                <h3 className="text-sm font-semibold mb-3">Key Capabilities</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {BRANDED_ROLES[selectedRole].capabilities.map((capability, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm">
+                      <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      {capability}
                     </div>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
 
-      {/* Create/Edit Dialog */}
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-2xl">
-          <DialogHeader>
-            <DialogTitle>
-              {selectedRole ? "Edit Role" : "Create New Role"}
-            </DialogTitle>
-            <DialogDescription>
-              Define the role name and configure permissions
-            </DialogDescription>
-          </DialogHeader>
-
-          <div className="space-y-4 py-4">
-            <div className="space-y-2">
-              <Label>Role Name</Label>
-              <Input
-                placeholder="e.g., Production Manager"
-                defaultValue={selectedRole?.name}
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label>Description</Label>
-              <Input
-                placeholder="Brief description of this role"
-                defaultValue={selectedRole?.description}
-              />
-            </div>
-
-            <Separator />
-
-            <div className="space-y-4 max-h-[400px] overflow-y-auto">
-              <Label>Permissions</Label>
-              {Object.entries(permissionCategories).map(([category, permissions]) => (
-                <div key={category}>
-                  <h3 className="text-sm font-semibold mb-2 capitalize">
-                    {category}
-                  </h3>
-                  <div className="space-y-2 ml-4">
-                    {permissions.map((permission) => (
-                      <div
-                        key={permission.id}
-                        className="flex items-center justify-between p-2 border rounded"
-                      >
-                        <div className="flex-1">
-                          <p className="text-sm font-medium">{permission.label}</p>
-                          <p className="text-xs text-muted-foreground">
-                            {permission.description}
-                          </p>
-                        </div>
-                        <Switch />
-                      </div>
-                    ))}
+              {/* Permission Count */}
+              <div>
+                <h3 className="text-sm font-semibold mb-3">Permission Summary</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="text-center p-3 border rounded-lg">
+                    <div className="text-2xl font-bold">{getRolePermissionCount(selectedRole)}</div>
+                    <div className="text-xs text-muted-foreground">Total Permissions</div>
+                  </div>
+                  <div className="text-center p-3 border rounded-lg">
+                    <div className="text-2xl font-bold">{BRANDED_ROLES[selectedRole].level}</div>
+                    <div className="text-xs text-muted-foreground">Hierarchy Level</div>
+                  </div>
+                  <div className="text-center p-3 border rounded-lg">
+                    <div className="text-2xl font-bold capitalize">{BRANDED_ROLES[selectedRole].scope}</div>
+                    <div className="text-xs text-muted-foreground">Permission Scope</div>
+                  </div>
+                  <div className="text-center p-3 border rounded-lg">
+                    <div className="text-2xl font-bold">12</div>
+                    <div className="text-xs text-muted-foreground">Categories</div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setDialogOpen(false)}>
-              Cancel
-            </Button>
-            <Button
-              onClick={() => {
-                toast({
-                  title: "Role saved",
-                  description: "The role has been saved successfully.",
-                })
-                setDialogOpen(false)
-              }}
-            >
-              {selectedRole ? "Save Changes" : "Create Role"}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+          </CardContent>
+        </Card>
+      )}
     </div>
   )
 }
