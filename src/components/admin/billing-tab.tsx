@@ -1,24 +1,26 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { 
   CreditCard, 
-  Download,
   Users,
   Database,
   Calendar,
-  CheckCircle2,
-  DollarSign,
   TrendingUp
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
+import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
+import { billingSchema } from "@/lib/schemas/admin-schemas"
+import type { DataItem } from "@/types"
 
 export function BillingTab() {
   const { toast } = useToast()
 
+  // Current plan data
   const currentPlan = {
     name: "Enterprise",
     price: 99,
@@ -30,11 +32,73 @@ export function BillingTab() {
     usedStorage: 640,
   }
 
-  const invoices = [
-    { id: "INV-001", date: "2024-01-20", amount: 99.00, status: "paid" as const },
-    { id: "INV-002", date: "2023-12-20", amount: 99.00, status: "paid" as const },
-    { id: "INV-003", date: "2023-11-20", amount: 99.00, status: "paid" as const },
-  ]
+  // Mock invoice data
+  const [invoices, setInvoices] = useState<DataItem[]>([
+    { 
+      id: "1",
+      invoice_number: "INV-001", 
+      billing_date: "2024-01-20", 
+      due_date: "2024-02-20",
+      amount: 99.00, 
+      status: "paid",
+      plan: "enterprise",
+      payment_method: "Visa •••• 4242",
+      created_at: "2024-01-20T10:00:00Z",
+      updated_at: "2024-01-20T10:00:00Z"
+    },
+    { 
+      id: "2",
+      invoice_number: "INV-002", 
+      billing_date: "2023-12-20", 
+      due_date: "2024-01-20",
+      amount: 99.00, 
+      status: "paid",
+      plan: "enterprise",
+      payment_method: "Visa •••• 4242",
+      created_at: "2023-12-20T10:00:00Z",
+      updated_at: "2023-12-20T10:00:00Z"
+    },
+    { 
+      id: "3",
+      invoice_number: "INV-003", 
+      billing_date: "2023-11-20", 
+      due_date: "2023-12-20",
+      amount: 99.00, 
+      status: "paid",
+      plan: "enterprise",
+      payment_method: "Visa •••• 4242",
+      created_at: "2023-11-20T10:00:00Z",
+      updated_at: "2023-11-20T10:00:00Z"
+    },
+  ])
+
+  const handleCreate = async (data: Record<string, any>) => {
+    const now = new Date().toISOString()
+    const newInvoice: DataItem = {
+      id: String(invoices.length + 1),
+      invoice_number: `INV-${String(invoices.length + 1).padStart(3, '0')}`,
+      ...data,
+      created_at: now,
+      updated_at: now,
+    }
+    setInvoices([...invoices, newInvoice])
+    toast({ title: "Invoice created successfully" })
+  }
+
+  const handleUpdate = async (id: string, updates: Record<string, any>) => {
+    setInvoices(invoices.map(inv => inv.id === id ? { ...inv, ...updates } : inv))
+    toast({ title: "Invoice updated successfully" })
+  }
+
+  const handleDelete = async (id: string) => {
+    setInvoices(invoices.filter(inv => inv.id !== id))
+    toast({ title: "Invoice deleted successfully" })
+  }
+
+  const handleBulkDelete = async (ids: string[]) => {
+    setInvoices(invoices.filter(inv => !ids.includes(inv.id)))
+    toast({ title: `${ids.length} invoices deleted successfully` })
+  }
 
   return (
     <div className="space-y-6">
@@ -117,49 +181,23 @@ export function BillingTab() {
         </CardContent>
       </Card>
 
-      {/* Billing History */}
+      {/* Billing History with CRUD */}
       <Card>
         <CardHeader>
           <CardTitle className="text-base">Billing History</CardTitle>
           <CardDescription>
-            Download your past invoices and receipts
+            Manage invoices and billing records
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
-            {invoices.map((invoice) => (
-              <div
-                key={invoice.id}
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
-              >
-                <div className="flex items-center gap-4 flex-1">
-                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <DollarSign className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium">{invoice.id}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {new Date(invoice.date).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                      })}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-semibold">${invoice.amount.toFixed(2)}</p>
-                    <Badge variant="default" className="bg-green-500">
-                      <CheckCircle2 className="h-3 w-3 mr-1" />
-                      Paid
-                    </Badge>
-                  </div>
-                  <Button variant="ghost" size="icon">
-                    <Download className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
+          <EnhancedTableView
+            data={invoices}
+            schema={billingSchema.fields}
+            onCreate={handleCreate}
+            onUpdate={handleUpdate}
+            onDelete={handleDelete}
+            onBulkDelete={handleBulkDelete}
+          />
         </CardContent>
       </Card>
     </div>

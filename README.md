@@ -1,203 +1,183 @@
-# ClickUp Clone - Multi-Tenant Project Management Platform
+# Supabase CLI
 
-A production-ready, multi-tenant ClickUp-style project management platform with universal data architecture and comprehensive visualization capabilities.
+[![Coverage Status](https://coveralls.io/repos/github/supabase/cli/badge.svg?branch=main)](https://coveralls.io/github/supabase/cli?branch=main) [![Bitbucket Pipelines](https://img.shields.io/bitbucket/pipelines/supabase-cli/setup-cli/master?style=flat-square&label=Bitbucket%20Canary)](https://bitbucket.org/supabase-cli/setup-cli/pipelines) [![Gitlab Pipeline Status](https://img.shields.io/gitlab/pipeline-status/sweatybridge%2Fsetup-cli?label=Gitlab%20Canary)
+](https://gitlab.com/sweatybridge/setup-cli/-/pipelines)
 
-## Features
+[Supabase](https://supabase.io) is an open source Firebase alternative. We're building the features of Firebase using enterprise-grade open source tools.
 
-### Core Architecture
-- ✅ Multi-tenant Supabase backend with Row Level Security (RLS)
-- ✅ Organization-based data isolation with workspace switching
-- ✅ Generic schema mapping - dynamically adapt to any Supabase table structure
-- ✅ Real-time subscriptions for live collaborative updates
-- ✅ Role-based access control (RBAC) - Owner, Admin, Member, Guest
+This repository contains all the functionality for Supabase CLI.
 
-### Stripe Integration
-- ✅ Subscription Management (Free, Pro, Business, Enterprise tiers)
-- ✅ Usage-based and seat-based pricing
-- ✅ Marketplace for templates and integrations
-- ✅ Vendor onboarding and payout management
+- [x] Running Supabase locally
+- [x] Managing database migrations
+- [x] Creating and deploying Supabase Functions
+- [x] Generating types directly from your database schema
+- [x] Making authenticated HTTP requests to [Management API](https://supabase.com/docs/reference/api/introduction)
 
-### 13 Core Modules
+## Getting started
 
-#### Operations Hub
-- Projects - Project/task management
-- People - Team members, contacts, stakeholders
-- Events - Calendar, meetings, milestones
-- Assets - Equipment, inventory, resources
-- Locations - Sites, offices, facilities
-- Files - Document management, attachments
+### Install the CLI
 
-#### Marketplace Hub
-- Marketplace - Browse/purchase templates, integrations
-- Resources - Shared resource library
+Available via [NPM](https://www.npmjs.com) as dev dependency. To install:
 
-#### Business Hub
-- Finance - Budget tracking, expenses, invoicing
-- Procurement - Purchase orders, vendor management
-- Jobs - Hiring, applicants, job postings
-
-#### Intelligence Hub
-- Reports - Custom report builder
-- Analytics - Dashboards, metrics, insights
-
-### 18+ Universal Data Views
-1. **List View** - Grouped rows with inline editing
-2. **Board/Kanban View** - Drag-and-drop swimlanes
-3. **Table View** - Spreadsheet-style grid
-4. **Calendar View** - Month/Week/Day/Agenda modes
-5. **Timeline/Gantt View** - Dependencies and milestones
-6. **Workload View** - Team capacity planning
-7. **Map View** - Geographic visualization
-8. **Mind Map View** - Hierarchical node diagram
-9. **Form View** - Public-facing data collection
-10. **Activity/Feed View** - Chronological activity stream
-11. **Box View** - Card-based grid layout
-12. **Embed View** - Iframe external content
-13. **Chat/Inbox View** - Threaded conversations
-14. **Dashboard/Widget View** - Customizable widget grid
-15. **Doc View** - Collaborative rich text editing
-16. **Financial Dashboard** - Budget and expense tracking
-17. **Portfolio View** - Multi-project overview
-18. **Pivot Table View** - Multi-dimensional analysis
-
-### UI Features
-- ✅ Top navigation with workspace switcher and global search (Cmd+K)
-- ✅ Collapsible left sidebar with module navigation
-- ✅ Contextual right sidebar with activity feed
-- ✅ Light/Dark/High-contrast themes
-- ✅ Responsive mobile layout
-- ✅ Real-time collaboration with user presence
-- ✅ Bulk actions and advanced filtering
-- ✅ Template marketplace
-- ✅ Import/Export (CSV, Excel, JSON, PDF)
-
-## Getting Started
-
-### Prerequisites
-- Node.js 18+ and npm
-- Supabase account
-- Stripe account
-
-### Installation
-
-1. Clone the repository
 ```bash
-git clone <repository-url>
-cd clickup-clone
+npm i supabase --save-dev
 ```
 
-2. Install dependencies
+To install the beta release channel:
+
 ```bash
-npm install
+npm i supabase@beta --save-dev
 ```
 
-3. Set up environment variables
+When installing with yarn 4, you need to disable experimental fetch with the following nodejs config.
+
+```
+NODE_OPTIONS=--no-experimental-fetch yarn add supabase
+```
+
+> **Note**
+For Bun versions below v1.0.17, you must add `supabase` as a [trusted dependency](https://bun.sh/guides/install/trusted) before running `bun add -D supabase`.
+
+<details>
+  <summary><b>macOS</b></summary>
+
+  Available via [Homebrew](https://brew.sh). To install:
+
+  ```sh
+  brew install supabase/tap/supabase
+  ```
+
+  To install the beta release channel:
+  
+  ```sh
+  brew install supabase/tap/supabase-beta
+  brew link --overwrite supabase-beta
+  ```
+  
+  To upgrade:
+
+  ```sh
+  brew upgrade supabase
+  ```
+</details>
+
+<details>
+  <summary><b>Windows</b></summary>
+
+  Available via [Scoop](https://scoop.sh). To install:
+
+  ```powershell
+  scoop bucket add supabase https://github.com/supabase/scoop-bucket.git
+  scoop install supabase
+  ```
+
+  To upgrade:
+
+  ```powershell
+  scoop update supabase
+  ```
+</details>
+
+<details>
+  <summary><b>Linux</b></summary>
+
+  Available via [Homebrew](https://brew.sh) and Linux packages.
+
+  #### via Homebrew
+
+  To install:
+
+  ```sh
+  brew install supabase/tap/supabase
+  ```
+
+  To upgrade:
+
+  ```sh
+  brew upgrade supabase
+  ```
+
+  #### via Linux packages
+
+  Linux packages are provided in [Releases](https://github.com/supabase/cli/releases). To install, download the `.apk`/`.deb`/`.rpm`/`.pkg.tar.zst` file depending on your package manager and run the respective commands.
+
+  ```sh
+  sudo apk add --allow-untrusted <...>.apk
+  ```
+
+  ```sh
+  sudo dpkg -i <...>.deb
+  ```
+
+  ```sh
+  sudo rpm -i <...>.rpm
+  ```
+
+  ```sh
+  sudo pacman -U <...>.pkg.tar.zst
+  ```
+</details>
+
+<details>
+  <summary><b>Other Platforms</b></summary>
+
+  You can also install the CLI via [go modules](https://go.dev/ref/mod#go-install) without the help of package managers.
+
+  ```sh
+  go install github.com/supabase/cli@latest
+  ```
+
+  Add a symlink to the binary in `$PATH` for easier access:
+
+  ```sh
+  ln -s "$(go env GOPATH)/bin/cli" /usr/bin/supabase
+  ```
+
+  This works on other non-standard Linux distros.
+</details>
+
+<details>
+  <summary><b>Community Maintained Packages</b></summary>
+
+  Available via [pkgx](https://pkgx.sh/). Package script [here](https://github.com/pkgxdev/pantry/blob/main/projects/supabase.com/cli/package.yml).
+  To install in your working directory:
+
+  ```bash
+  pkgx install supabase
+  ```
+
+  Available via [Nixpkgs](https://nixos.org/). Package script [here](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/supabase-cli/default.nix).
+</details>
+
+### Run the CLI
+
 ```bash
-cp .env.example .env
+supabase bootstrap
 ```
 
-Edit `.env` and add your Supabase and Stripe credentials.
+Or using npx:
 
-4. Run the development server
 ```bash
-npm run dev
+npx supabase bootstrap
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+The bootstrap command will guide you through the process of setting up a Supabase project using one of the [starter](https://github.com/supabase-community/supabase-samples/blob/main/samples.json) templates.
 
-### Supabase Setup
+## Docs
 
-Run the SQL migrations in `/supabase/migrations` to set up the database schema:
+Command & config reference can be found [here](https://supabase.com/docs/reference/cli/about).
 
-1. Organizations and workspaces
-2. User roles and permissions
-3. Module tables with RLS policies
-4. Real-time subscriptions
+## Breaking changes
 
-### Stripe Setup
+We follow semantic versioning for changes that directly impact CLI commands, flags, and configurations.
 
-Configure Stripe products and prices:
-- Free tier (0/month)
-- Pro tier ($10/month)
-- Business tier ($25/month)
-- Enterprise tier (Custom)
+However, due to dependencies on other service images, we cannot guarantee that schema migrations, seed.sql, and generated types will always work for the same CLI major version. If you need such guarantees, we encourage you to pin a specific version of CLI in package.json.
 
-## Project Structure
+## Developing
 
+To run from source:
+
+```sh
+# Go >= 1.22
+go run . help
 ```
-src/
-├── app/                    # Next.js app router pages
-│   ├── (auth)/            # Authentication pages
-│   ├── (dashboard)/       # Main application pages
-│   └── api/               # API routes
-├── components/            # React components
-│   ├── ui/               # Base UI components (shadcn/ui)
-│   ├── layout/           # Layout components (nav, sidebar)
-│   ├── views/            # Data view components
-│   ├── modules/          # Module-specific components
-│   └── shared/           # Shared components
-├── lib/                   # Utility libraries
-│   ├── supabase/         # Supabase client and utilities
-│   ├── stripe/           # Stripe integration
-│   ├── hooks/            # Custom React hooks
-│   └── utils/            # Helper functions
-├── store/                 # Zustand state management
-├── types/                 # TypeScript type definitions
-└── styles/               # Global styles
-```
-
-## Key Technologies
-
-- **Frontend**: React 18, Next.js 14, TypeScript
-- **Styling**: Tailwind CSS, shadcn/ui
-- **Backend**: Supabase (PostgreSQL, Real-time, Auth, Storage)
-- **Payments**: Stripe
-- **State Management**: Zustand, React Query
-- **Data Tables**: TanStack Table
-- **Drag & Drop**: dnd-kit
-- **Charts**: Recharts
-- **Forms**: React Hook Form + Zod
-
-## Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
-
-### Adding a New Module
-
-1. Create module configuration in `src/lib/modules/registry.ts`
-2. Add module routes in `src/app/(dashboard)/[workspace]/[module]`
-3. Create module-specific components in `src/components/modules/[module]`
-4. Set up Supabase tables with RLS policies
-
-### Adding a New View Type
-
-1. Create view component in `src/components/views/[view-name]`
-2. Register view in `src/lib/views/registry.ts`
-3. Add view configuration interface in `src/types/views.ts`
-4. Implement view controls (filters, sorting, grouping)
-
-## Performance
-
-- Initial load: < 2 seconds
-- View switching: < 300ms
-- Real-time updates: < 500ms latency
-- Virtualization for 1000+ items
-- Optimistic UI updates
-
-## Contributing
-
-This is a whitelabel-ready platform designed to adapt to any Supabase schema. Contributions should maintain this flexibility and avoid domain-specific business logic.
-
-## License
-
-MIT
-
-## Support
-
-For issues and questions, please open a GitHub issue.

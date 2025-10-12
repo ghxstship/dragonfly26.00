@@ -51,57 +51,80 @@ import { getMarketplaceTabComponent } from "@/lib/marketplace-tab-components"
 import { getReportsTabComponent } from "@/lib/reports-tab-components"
 import { getAnalyticsTabComponent } from "@/lib/analytics-tab-components"
 import { getInsightsTabComponent } from "@/lib/insights-tab-components"
-import { generateProjectsMockData } from "@/lib/modules/projects-mock-data"
-import { generateEventsMockData } from "@/lib/modules/events-mock-data"
-import { generatePeopleMockData } from "@/lib/modules/people-mock-data"
-import { generateAssetsMockData } from "@/lib/modules/assets-mock-data"
-import { generateLocationsMockData } from "@/lib/modules/locations-mock-data"
-import { generateFilesMockData } from "@/lib/modules/files-mock-data"
-import { generateFinanceMockData } from "@/lib/modules/finance-mock-data"
-import { generateResourcesMockData } from "@/lib/modules/resources-mock-data"
-import { generateCompaniesMockData } from "@/lib/modules/companies-mock-data"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
-import { generateProcurementMockData } from "@/lib/modules/procurement-mock-data"
-import { generateJobsMockData } from "@/lib/modules/jobs-mock-data"
+import { useModuleData, useCreateItem, useUpdateItem, useDeleteItem } from "@/hooks/use-module-data"
 import type { ViewType, DataItem } from "@/types"
 
-// Mock data generator
-const generateMockData = (count: number): DataItem[] => {
-  const statuses = ["todo", "in_progress", "review", "done"]
-  const priorities = ["urgent", "high", "normal", "low"]
-  const names = [
-    "Design new landing page",
-    "Fix authentication bug",
-    "Update documentation",
-    "Implement search feature",
-    "Review pull requests",
-    "Optimize database queries",
-    "Create marketing materials",
-    "Setup CI/CD pipeline",
-  ]
-
-  return Array.from({ length: count }, (_, i) => ({
-    id: `item-${i + 1}`,
-    name: names[i % names.length],
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    status: statuses[i % statuses.length],
-    priority: priorities[i % priorities.length],
-    assignee: i % 3 === 0 ? "John Doe" : i % 3 === 1 ? "Jane Smith" : "Bob Wilson",
-    assignee_name: i % 3 === 0 ? "John Doe" : i % 3 === 1 ? "Jane Smith" : "Bob Wilson",
-    due_date: new Date(Date.now() + Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString(),
-    start_date: new Date(Date.now() - Math.random() * 10 * 24 * 60 * 60 * 1000).toISOString(),
-    created_at: new Date(Date.now() - Math.random() * 60 * 24 * 60 * 60 * 1000).toISOString(),
-    updated_at: new Date().toISOString(),
-    tags: i % 2 === 0 ? ["urgent", "frontend"] : ["backend"],
-    comments_count: Math.floor(Math.random() * 10),
-    attachments_count: Math.floor(Math.random() * 5),
-  }))
+// Table mapping for CRUD operations
+const getTableNameForTab = (moduleSlug: string, tabSlug: string): string => {
+  const tableMap: Record<string, string> = {
+    'productions': 'productions',
+    'activations': 'productions',
+    'tasks': 'project_tasks',
+    'milestones': 'project_milestones',
+    'compliance': 'compliance_requirements',
+    'safety': 'safety_guidelines',
+    'all-events': 'events',
+    'activities': 'events',
+    'run-of-show': 'run_of_show',
+    'bookings': 'bookings',
+    'incidents': 'incidents',
+    'tours': 'tours',
+    'itineraries': 'travel_itineraries',
+    'reservations': 'hospitality_reservations',
+    'shipping-receiving': 'shipments',
+    'personnel': 'personnel',
+    'teams': 'teams',
+    'timekeeping': 'time_entries',
+    'training': 'training_sessions',
+    'openings': 'job_openings',
+    'tracking': 'asset_transactions',
+    'inventory': 'assets',
+    'maintenance': 'asset_maintenance',
+    'advances': 'production_advances',
+    'directory': 'locations',
+    'site-maps': 'site_maps',
+    'all-documents': 'files',
+    'contracts': 'files',
+    'organizations': 'companies',
+    'contacts': 'company_contacts',
+    'scopes-of-work': 'scopes_of_work',
+    'bids': 'bids',
+    'budgets': 'budgets',
+    'transactions': 'financial_transactions',
+    'invoices': 'invoices',
+    'expenses': 'financial_transactions',
+    'payroll': 'payroll',
+    'gl-codes': 'gl_codes',
+    'orders': 'purchase_orders',
+    'agreements': 'agreements',
+    'requisitions': 'purchase_requisitions',
+    'activity': 'community_posts',
+    'connections': 'connections',
+    'shop': 'marketplace_products',
+    'products': 'marketplace_products',
+    'purchases': 'marketplace_orders',
+    'library': 'resources',
+    'courses': 'courses',
+    'grants': 'grants',
+    'active': 'job_contracts',
+    'rfps': 'rfps',
+    'templates': 'report_templates',
+    'data-sources': 'data_sources',
+    'custom-views': 'analytics_views',
+    'benchmarks': 'benchmarks',
+    'objectives': 'objectives',
+    'key-results': 'key_results',
+    'priorities': 'strategic_priorities',
+    'recommendations': 'ai_recommendations',
+  }
+  return tableMap[tabSlug] || 'productions'
 }
 
 export default function ModuleTabPage() {
   const params = useParams()
   const moduleSlug = params.module as string
   const tabSlug = params.tab as string
+  const workspaceId = params.workspaceId as string
   const currentModule = getModuleBySlug(moduleSlug)
   const currentTab = getTabBySlug(moduleSlug, tabSlug)
   const { setRightSidebarOpen, focusMode } = useUIStore()
@@ -126,37 +149,55 @@ export default function ModuleTabPage() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
-  // Mock data - in real app, fetch from Supabase
-  // Use contextual mock data for Projects, Events, People, Assets, Locations, Files, Finance, Resources, Companies, Marketplace, Procurement, and Jobs modules
-  const mockData = moduleSlug === 'projects' 
-    ? generateProjectsMockData(tabSlug, 20)
-    : moduleSlug === 'events'
-    ? generateEventsMockData(tabSlug, 20)
-    : moduleSlug === 'people'
-    ? generatePeopleMockData(tabSlug, 20)
-    : moduleSlug === 'assets'
-    ? generateAssetsMockData(tabSlug, 20)
-    : moduleSlug === 'locations'
-    ? generateLocationsMockData(tabSlug, 20)
-    : moduleSlug === 'files'
-    ? generateFilesMockData(tabSlug, 20)
-    : moduleSlug === 'finance'
-    ? generateFinanceMockData(tabSlug, 20)
-    : moduleSlug === 'resources'
-    ? generateResourcesMockData(tabSlug, 20)
-    : moduleSlug === 'companies'
-    ? generateCompaniesMockData(tabSlug, 20)
-    : moduleSlug === 'marketplace'
-    ? generateMarketplaceMockData(tabSlug, 20)
-    : moduleSlug === 'procurement'
-    ? generateProcurementMockData(tabSlug, 20)
-    : moduleSlug === 'jobs'
-    ? generateJobsMockData(tabSlug, 20)
-    : generateMockData(20)
+  // ✅ REAL DATA from Supabase with real-time updates!
+  const { data: realData, loading, error } = useModuleData(moduleSlug, tabSlug, workspaceId)
+  
+  // Get table name for CRUD operations
+  const tableName = getTableNameForTab(moduleSlug, tabSlug)
+  const { createItem } = useCreateItem(tableName)
+  const { updateItem } = useUpdateItem(tableName)
+  const { deleteItem } = useDeleteItem(tableName)
 
   const handleItemClick = (item: DataItem) => {
     setSelectedItem(item)
     setDrawerOpen(true)
+  }
+
+  const handleUpdateItem = async (updates: any) => {
+    if (!selectedItem) return
+    try {
+      await updateItem(selectedItem.id, updates)
+      console.log("Item updated successfully")
+    } catch (err) {
+      console.error("Failed to update item:", err)
+      alert("Failed to update item")
+    }
+  }
+
+  const handleDeleteItem = async () => {
+    if (!selectedItem) return
+    try {
+      await deleteItem(selectedItem.id)
+      setDrawerOpen(false)
+      console.log("Item deleted successfully")
+    } catch (err) {
+      console.error("Failed to delete item:", err)
+      alert("Failed to delete item")
+    }
+  }
+
+  const handleCreateItem = async (item: any) => {
+    try {
+      await createItem({
+        ...item,
+        workspace_id: workspaceId,
+      })
+      console.log("Item created successfully")
+      setCreateDialogOpen(false)
+    } catch (err) {
+      console.error("Failed to create item:", err)
+      alert("Failed to create item")
+    }
   }
 
   const renderView = () => {
@@ -256,44 +297,76 @@ export default function ModuleTabPage() {
       }
     }
 
-    // Otherwise, render based on view type
+    // Show loading state
+    if (loading) {
+      return (
+        <div className="flex items-center justify-center h-full">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Loading {currentTab?.name || 'data'}...</p>
+          </div>
+        </div>
+      )
+    }
+
+    // Show error state
+    if (error) {
+      return (
+        <div className="flex items-center justify-center h-full">
+          <div className="text-center">
+            <p className="text-red-500 mb-2">Error loading data</p>
+            <p className="text-sm text-muted-foreground">{error.message}</p>
+            <p className="text-xs text-muted-foreground mt-2">Table: {tableName}</p>
+          </div>
+        </div>
+      )
+    }
+
+    // Filter data by search query
+    const filteredData = searchQuery
+      ? realData.filter(item => 
+          JSON.stringify(item).toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      : realData
+
+    // Otherwise, render based on view type with REAL DATA
     switch (currentView) {
       case "list":
-        return <ListView data={mockData} onItemClick={handleItemClick} />
+        return <ListView data={filteredData} onItemClick={handleItemClick} />
       case "board":
-        return <BoardView data={mockData} onItemClick={handleItemClick} />
+        return <BoardView data={filteredData} onItemClick={handleItemClick} />
       case "table":
-        return <TableView data={mockData} onItemClick={handleItemClick} />
+        return <TableView data={filteredData} onItemClick={handleItemClick} />
       case "calendar":
-        return <CalendarView data={mockData} onItemClick={handleItemClick} />
+        return <CalendarView data={filteredData} onItemClick={handleItemClick} />
       case "timeline":
-        return <TimelineView data={mockData} onItemClick={handleItemClick} />
+        return <TimelineView data={filteredData} onItemClick={handleItemClick} />
       case "dashboard":
-        return <DashboardView data={mockData} />
+        return <DashboardView data={filteredData} />
       case "workload":
-        return <WorkloadView data={mockData} onItemClick={handleItemClick} />
+        return <WorkloadView data={filteredData} onItemClick={handleItemClick} />
       case "map":
-        return <MapView data={mockData} onItemClick={handleItemClick} />
+        return <MapView data={filteredData} onItemClick={handleItemClick} />
       case "mind-map":
-        return <MindMapView data={mockData} onItemClick={handleItemClick} />
+        return <MindMapView data={filteredData} onItemClick={handleItemClick} />
       case "form":
-        return <FormView data={mockData} />
+        return <FormView data={filteredData} />
       case "activity":
-        return <ActivityView data={mockData} />
+        return <ActivityView data={filteredData} />
       case "box":
-        return <BoxView data={mockData} onItemClick={handleItemClick} />
+        return <BoxView data={filteredData} onItemClick={handleItemClick} />
       case "embed":
-        return <EmbedView data={mockData} />
+        return <EmbedView data={filteredData} />
       case "chat":
-        return <ChatView data={mockData} />
+        return <ChatView data={filteredData} />
       case "doc":
-        return <DocView data={mockData} onItemClick={handleItemClick} />
+        return <DocView data={filteredData} onItemClick={handleItemClick} />
       case "financial":
-        return <FinancialView data={mockData} />
+        return <FinancialView data={filteredData} />
       case "portfolio":
-        return <PortfolioView data={mockData} onItemClick={handleItemClick} />
+        return <PortfolioView data={filteredData} onItemClick={handleItemClick} />
       case "pivot":
-        return <PivotView data={mockData} />
+        return <PivotView data={filteredData} />
       default:
         return (
           <div className="flex items-center justify-center h-full text-muted-foreground">
@@ -344,6 +417,15 @@ export default function ModuleTabPage() {
                 <p className="text-sm text-muted-foreground mt-1">
                   {currentModule.description}
                 </p>
+                {/* Real-time indicator */}
+                {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+                  <div className="flex items-center gap-2 mt-2">
+                    <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-xs text-muted-foreground">
+                      Live • {loading ? '...' : `${realData.length} items`}
+                    </span>
+                  </div>
+                )}
               </div>
               {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
                 <Button onClick={() => setCreateDialogOpen(true)}>
@@ -520,15 +602,8 @@ export default function ModuleTabPage() {
           item={selectedItem}
           open={drawerOpen}
           onOpenChange={setDrawerOpen}
-          onUpdate={(updates) => {
-            console.log("Item updated:", updates)
-            // In real app, update in Supabase
-          }}
-          onDelete={() => {
-            console.log("Item deleted")
-            setDrawerOpen(false)
-            // In real app, delete from Supabase
-          }}
+          onUpdate={handleUpdateItem}
+          onDelete={handleDeleteItem}
         />
       )}
 
@@ -539,10 +614,7 @@ export default function ModuleTabPage() {
           onOpenChange={setCreateDialogOpen}
           moduleId={moduleSlug}
           tabSlug={tabSlug}
-          onSuccess={(item) => {
-            console.log("Created item:", item)
-            // TODO: Add to data store and refresh list
-          }}
+          onSuccess={handleCreateItem}
         />
       )}
     </div>

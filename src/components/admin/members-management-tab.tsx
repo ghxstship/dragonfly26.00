@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   Dialog,
   DialogContent,
@@ -40,9 +41,16 @@ import {
   XCircle,
   Clock,
   Search,
-  Filter
+  Filter,
+  Eye,
+  Edit,
+  Copy
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
+import { CrudDrawer } from "@/components/shared/crud-drawer"
+import { BulkActionsToolbar } from "@/components/shared/bulk-actions-toolbar"
+import { membersSchema } from "@/lib/schemas/admin-schemas"
+import type { DataItem } from "@/types"
 
 interface Member {
   id: string
@@ -62,6 +70,13 @@ export function MembersManagementTab() {
   const [inviteEmail, setInviteEmail] = useState("")
   const [inviteRole, setInviteRole] = useState("member")
   const [searchQuery, setSearchQuery] = useState("")
+  
+  // CRUD drawer state
+  const [drawerMode, setDrawerMode] = useState<'view' | 'create' | 'edit' | null>(null)
+  const [selectedMember, setSelectedMember] = useState<DataItem | null>(null)
+  
+  // Bulk selection state
+  const [selectedIds, setSelectedIds] = useState<string[]>([])
 
   const [members, setMembers] = useState<Member[]>([
     {
@@ -134,6 +149,58 @@ export function MembersManagementTab() {
       description: "The team member has been removed successfully.",
       variant: "destructive",
     })
+  }
+
+  // CRUD handlers
+  const handleCreate = async (data: Record<string, any>) => {
+    const now = new Date().toISOString()
+    const newMember: Member = {
+      id: String(members.length + 1),
+      name: data.name,
+      email: data.email,
+      role: data.role || 'member',
+      department: data.department || '',
+      status: 'pending',
+      joinedAt: now,
+      lastActive: 'Never',
+    }
+    setMembers([...members, newMember])
+    toast({ title: "Member added successfully" })
+  }
+
+  const handleUpdate = async (id: string, updates: Record<string, any>) => {
+    setMembers(members.map(m => m.id === id ? { ...m, ...updates } : m))
+    toast({ title: "Member updated successfully" })
+  }
+
+  const handleDelete = async (id: string) => {
+    handleRemoveMember(id)
+  }
+
+  const handleBulkDelete = async (ids: string[]) => {
+    setMembers(members.filter(m => !ids.includes(m.id)))
+    setSelectedIds([])
+    toast({ title: `${ids.length} members removed successfully` })
+  }
+
+  const handleDuplicate = async (member: DataItem) => {
+    const { id, ...rest } = member
+    await handleCreate({ ...rest, name: `${member.name} (Copy)` })
+  }
+
+  // Selection handlers
+  const handleSelectAll = () => {
+    if (selectedIds.length === filteredMembers.length) {
+      setSelectedIds([])
+    } else {
+      setSelectedIds(filteredMembers.map(m => m.id))
+    }
+  }
+
+  const handleSelectMember = (id: string) => {
+    setSelectedIds(prev => 
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    )
   }
 
   const handleChangeRole = (memberId: string, newRole: string) => {
@@ -240,16 +307,36 @@ export function MembersManagementTab() {
       {/* Members List */}
       <Card>
         <CardHeader>
-          <CardTitle>All Members ({filteredMembers.length})</CardTitle>
+          <div className="flex items-center justify-between">
+            <CardTitle>All Members ({filteredMembers.length})</CardTitle>
+            <div className="flex items-center gap-2">
+              <Checkbox
+                checked={selectedIds.length === filteredMembers.length && filteredMembers.length > 0}
+                onCheckedChange={handleSelectAll}
+              />
+              <span className="text-sm text-muted-foreground">Select All</span>
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {filteredMembers.map((member) => (
               <div
                 key={member.id}
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
+                className={`flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors cursor-pointer ${
+                  selectedIds.includes(member.id) ? 'bg-accent/50 border-primary' : ''
+                }`}
+                onClick={() => {
+                  setSelectedMember(member as any)
+                  setDrawerMode('view')
+                }}
               >
                 <div className="flex items-center gap-4 flex-1">
+                  <Checkbox
+                    checked={selectedIds.includes(member.id)}
+                    onCheckedChange={() => handleSelectMember(member.id)}
+                    onClick={(e) => e.stopPropagation()}
+                  />
                   <Avatar className="h-10 w-10">
                     <AvatarImage src={member.avatar} />
                     <AvatarFallback>
@@ -281,46 +368,92 @@ export function MembersManagementTab() {
                       {member.role.charAt(0).toUpperCase() + member.role.slice(1)}
                     </Badge>
 
-                    {member.role !== "owner" && (
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon">
-                            <MoreVertical className="h-4 w-4" />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                          <DropdownMenuItem
-                            onClick={() => handleChangeRole(member.id, "admin")}
-                            disabled={member.role === "admin"}
-                          >
-                            <Shield className="h-4 w-4 mr-2" />
-                            Make Admin
-                          </DropdownMenuItem>
-                          <DropdownMenuItem
-                            onClick={() => handleChangeRole(member.id, "member")}
-                            disabled={member.role === "member"}
-                          >
-                            <Users className="h-4 w-4 mr-2" />
-                            Make Member
-                          </DropdownMenuItem>
-                          <DropdownMenuItem
-                            onClick={() => handleChangeRole(member.id, "viewer")}
-                            disabled={member.role === "viewer"}
-                          >
-                            <Users className="h-4 w-4 mr-2" />
-                            Make Viewer
-                          </DropdownMenuItem>
-                          <DropdownMenuSeparator />
-                          <DropdownMenuItem
-                            onClick={() => handleRemoveMember(member.id)}
-                            className="text-destructive"
-                          >
-                            <Trash2 className="h-4 w-4 mr-2" />
-                            Remove
-                          </DropdownMenuItem>
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                    )}
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
+                        <Button variant="ghost" size="icon">
+                          <MoreVertical className="h-4 w-4" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="end">
+                        <DropdownMenuItem
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setSelectedMember(member as any)
+                            setDrawerMode('view')
+                          }}
+                        >
+                          <Eye className="h-4 w-4 mr-2" />
+                          View Details
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setSelectedMember(member as any)
+                            setDrawerMode('edit')
+                          }}
+                        >
+                          <Edit className="h-4 w-4 mr-2" />
+                          Edit
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleDuplicate(member as any)
+                          }}
+                        >
+                          <Copy className="h-4 w-4 mr-2" />
+                          Duplicate
+                        </DropdownMenuItem>
+                        
+                        {member.role !== "owner" && (
+                          <>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleChangeRole(member.id, "admin")
+                              }}
+                              disabled={member.role === "admin"}
+                            >
+                              <Shield className="h-4 w-4 mr-2" />
+                              Make Admin
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleChangeRole(member.id, "member")
+                              }}
+                              disabled={member.role === "member"}
+                            >
+                              <Users className="h-4 w-4 mr-2" />
+                              Make Member
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleChangeRole(member.id, "viewer")
+                              }}
+                              disabled={member.role === "viewer"}
+                            >
+                              <Users className="h-4 w-4 mr-2" />
+                              Make Viewer
+                            </DropdownMenuItem>
+                          </>
+                        )}
+                        
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleRemoveMember(member.id)
+                          }}
+                          className="text-destructive"
+                        >
+                          <Trash2 className="h-4 w-4 mr-2" />
+                          Remove
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </div>
                 </div>
               </div>
@@ -375,6 +508,55 @@ export function MembersManagementTab() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* CRUD Drawer */}
+      <CrudDrawer
+        mode={drawerMode || 'view'}
+        item={selectedMember}
+        schema={membersSchema.fields}
+        open={drawerMode !== null}
+        onOpenChange={(open) => {
+          if (!open) {
+            setDrawerMode(null)
+            setSelectedMember(null)
+          }
+        }}
+        onCreate={async (data) => {
+          await handleCreate(data)
+          setDrawerMode(null)
+        }}
+        onUpdate={async (id, updates) => {
+          await handleUpdate(id, updates)
+          setDrawerMode(null)
+        }}
+        onDelete={async (id) => {
+          await handleDelete(id)
+          setDrawerMode(null)
+        }}
+        onDuplicate={async (item) => {
+          await handleDuplicate(item)
+          setDrawerMode(null)
+        }}
+      />
+
+      {/* Bulk Actions Toolbar */}
+      <BulkActionsToolbar
+        selectedCount={selectedIds.length}
+        onClearSelection={() => setSelectedIds([])}
+        onDelete={() => handleBulkDelete(selectedIds)}
+        onDuplicate={() => {
+          selectedIds.forEach(id => {
+            const member = members.find(m => m.id === id)
+            if (member) handleDuplicate(member as any)
+          })
+          setSelectedIds([])
+        }}
+        onArchive={() => {
+          // Archive functionality
+          toast({ title: `${selectedIds.length} members archived` })
+          setSelectedIds([])
+        }}
+      />
     </div>
   )
 }
