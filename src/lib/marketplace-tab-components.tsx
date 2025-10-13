@@ -27,6 +27,6 @@ export const MARKETPLACE_TAB_COMPONENTS: Record<string, React.ComponentType<Mark
   "reviews": ReviewsTab,
 }
 
-export function getMarketplaceTabComponent(tabSlug: string) {
+export function getMarketplaceTabComponent(tabSlug: string): React.ComponentType<MarketplaceTabProps> | undefined {
   return MARKETPLACE_TAB_COMPONENTS[tabSlug]
 }

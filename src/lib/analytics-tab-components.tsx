@@ -10,6 +10,6 @@ export const ANALYTICS_TAB_COMPONENTS: Record<string, React.ComponentType<Analyt
   // Add custom analytics tab components here when needed
 }
 
-export function getAnalyticsTabComponent(tabSlug: string) {
+export function getAnalyticsTabComponent(tabSlug: string): React.ComponentType<AnalyticsTabProps> | undefined {
   return ANALYTICS_TAB_COMPONENTS[tabSlug]
 }

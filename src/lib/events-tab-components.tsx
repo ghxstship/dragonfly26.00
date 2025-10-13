@@ -10,6 +10,6 @@ export const EVENTS_TAB_COMPONENTS: Record<string, React.ComponentType<EventsTab
   // Add custom event tab components here when needed
 }
 
-export function getEventsTabComponent(tabSlug: string) {
+export function getEventsTabComponent(tabSlug: string): React.ComponentType<EventsTabProps> | undefined {
   return EVENTS_TAB_COMPONENTS[tabSlug]
 }

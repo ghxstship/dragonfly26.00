@@ -10,6 +10,6 @@ export const REPORTS_TAB_COMPONENTS: Record<string, React.ComponentType<ReportsT
   // Add custom reports tab components here when needed
 }
 
-export function getReportsTabComponent(tabSlug: string) {
+export function getReportsTabComponent(tabSlug: string): React.ComponentType<ReportsTabProps> | undefined {
   return REPORTS_TAB_COMPONENTS[tabSlug]
 }

@@ -10,6 +10,6 @@ export const PROJECTS_TAB_COMPONENTS: Record<string, React.ComponentType<Project
   // Projects uses generic views with contextual mock data
 }
 
-export function getProjectsTabComponent(tabSlug: string) {
+export function getProjectsTabComponent(tabSlug: string): React.ComponentType<ProjectsTabProps> | undefined {
   return PROJECTS_TAB_COMPONENTS[tabSlug]
 }

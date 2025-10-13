@@ -10,6 +10,6 @@ export const LOCATIONS_TAB_COMPONENTS: Record<string, React.ComponentType<Locati
   // Add custom location tab components here when needed
 }
 
-export function getLocationsTabComponent(tabSlug: string) {
+export function getLocationsTabComponent(tabSlug: string): React.ComponentType<LocationsTabProps> | undefined {
   return LOCATIONS_TAB_COMPONENTS[tabSlug]
 }

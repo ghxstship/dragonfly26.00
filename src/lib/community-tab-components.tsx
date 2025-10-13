@@ -12,7 +12,7 @@ interface CommunityTabProps {
   loading?: boolean
 }
 
-export function getCommunityTabComponent(tabSlug: string) {
+export function getCommunityTabComponent(tabSlug: string): React.ComponentType<CommunityTabProps> | undefined {
   const components: Record<string, React.ComponentType<CommunityTabProps>> = {
     'news': NewsTab,
     'showcase': ShowcaseTab,

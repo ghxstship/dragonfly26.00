@@ -29,6 +29,6 @@ export const DASHBOARD_TAB_COMPONENTS: Record<string, React.ComponentType<Dashbo
   "my-files": DashboardMyFilesTab,
 }
 
-export function getDashboardTabComponent(tabSlug: string) {
+export function getDashboardTabComponent(tabSlug: string): React.ComponentType<DashboardTabProps> | undefined {
   return DASHBOARD_TAB_COMPONENTS[tabSlug]
 }

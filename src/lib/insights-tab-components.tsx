@@ -10,6 +10,6 @@ export const INSIGHTS_TAB_COMPONENTS: Record<string, React.ComponentType<Insight
   // Add custom insights tab components here when needed
 }
 
-export function getInsightsTabComponent(tabSlug: string) {
+export function getInsightsTabComponent(tabSlug: string): React.ComponentType<InsightsTabProps> | undefined {
   return INSIGHTS_TAB_COMPONENTS[tabSlug]
 }
