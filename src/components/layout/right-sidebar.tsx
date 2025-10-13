@@ -204,7 +204,7 @@ export function RightSidebar() {
                     <ChevronLeft className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent side="left">
+                <TooltipContent side="left" className="z-[100]">
                   <p>Expand sidebar</p>
                 </TooltipContent>
               </Tooltip>
@@ -227,7 +227,7 @@ export function RightSidebar() {
                           <GroupIcon className="h-5 w-5" />
                         </Button>
                       </TooltipTrigger>
-                      <TooltipContent side="left">
+                      <TooltipContent side="left" className="z-[100]">
                         <p>{config.label}</p>
                       </TooltipContent>
                     </Tooltip>
@@ -249,7 +249,7 @@ export function RightSidebar() {
                     <X className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent side="left">
+                <TooltipContent side="left" className="z-[100]">
                   <p>Close sidebar</p>
                 </TooltipContent>
               </Tooltip>
@@ -281,7 +281,7 @@ export function RightSidebar() {
                       <ChevronRight className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="z-[100]">
                     <p>Collapse sidebar</p>
                   </TooltipContent>
                 </Tooltip>

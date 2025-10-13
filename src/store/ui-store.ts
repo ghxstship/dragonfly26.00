@@ -33,7 +33,7 @@ interface UIStore extends UIState {
 export const useUIStore = create<UIStore>()(
   persist(
     (set, get) => ({
-      sidebarCollapsed: false,
+      sidebarCollapsed: true,
       rightSidebarOpen: false,
       rightSidebarTab: 'activity',
       density: 'comfortable',

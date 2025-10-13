@@ -5,9 +5,10 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
 import {
-  Menu,
   ChevronDown,
   ChevronUp,
+  ChevronLeft,
+  ChevronRight,
   Star,
   Settings,
   User,
@@ -22,6 +23,12 @@ import { MODULES, MODULE_CATEGORIES } from "@/lib/modules/registry"
 import { iconMap } from "@/lib/modules/icon-map"
 import { getModuleTabs } from "@/lib/modules/tabs-registry"
 import { InviteDialog } from "@/components/members/invite-dialog"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 export function Sidebar() {
   const t = useTranslations()
@@ -56,25 +63,36 @@ export function Sidebar() {
   }))
 
   return (
-    <aside
-      className={cn(
-        "sticky top-14 flex h-[calc(100vh-3.5rem)] flex-col border-r bg-background transition-all duration-300",
-        sidebarCollapsed ? "w-16" : "w-60",
-        focusMode && "hidden"
-      )}
-    >
-      {/* Hamburger Menu Toggle at Top */}
-      <div className="border-b p-2">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="h-10 w-10"
-          onClick={toggleSidebar}
-          title={sidebarCollapsed ? t('sidebar.expand') : t('sidebar.collapse')}
-        >
-          <Menu className="h-4 w-4" />
-        </Button>
-      </div>
+    <TooltipProvider>
+      <aside
+        className={cn(
+          "sticky top-14 flex h-[calc(100vh-3.5rem)] flex-col border-r bg-background transition-all duration-300",
+          sidebarCollapsed ? "w-16" : "w-60",
+          focusMode && "hidden"
+        )}
+      >
+        {/* Toggle Button at Top */}
+        <div className="border-b p-2">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-10 w-10"
+                onClick={toggleSidebar}
+              >
+                {sidebarCollapsed ? (
+                  <ChevronRight className="h-4 w-4" />
+                ) : (
+                  <ChevronLeft className="h-4 w-4" />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="right" className="z-[100]">
+              <p>{sidebarCollapsed ? t('sidebar.expand') : t('sidebar.collapse')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </div>
 
       {/* Scrollable Content - Hubs */}
       <ScrollArea className="flex-1">
@@ -245,8 +263,9 @@ export function Sidebar() {
         </button>
       </div>
       
-      {/* Invite Dialog */}
-      <InviteDialog open={inviteDialogOpen} onOpenChange={setInviteDialogOpen} />
-    </aside>
+        {/* Invite Dialog */}
+        <InviteDialog open={inviteDialogOpen} onOpenChange={setInviteDialogOpen} />
+      </aside>
+    </TooltipProvider>
   )
 }
