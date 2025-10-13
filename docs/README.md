@@ -101,6 +101,15 @@ Cross-cutting features and systems:
 
 ---
 
+## 🔧 Fixes
+
+Historical bug fixes and resolutions:
+
+- [ONBOARDING_FIXES_HISTORY.md](fixes/ONBOARDING_FIXES_HISTORY.md) - Complete onboarding bug fix history | Status: ✅ All resolved
+- [HEADER_RESPONSIVE_FIX.md](fixes/HEADER_RESPONSIVE_FIX.md) - Header responsive layout fix | Status: ✅ Complete
+
+---
+
 ## 📖 Guides
 
 Development and operational guides:
@@ -161,6 +170,9 @@ All 8 architectural layers complete and deployed.
 
 **"What modules are available?"**
 → See [Modules](#-modules) section above
+
+**"How was the onboarding bug fixed?"**
+→ See [ONBOARDING_FIXES_HISTORY.md](fixes/ONBOARDING_FIXES_HISTORY.md)
 
 ---
 

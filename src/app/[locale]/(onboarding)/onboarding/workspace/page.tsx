@@ -57,7 +57,7 @@ export default function WorkspacePage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) throw new Error('Not authenticated')
 
-      // Create organization
+      // Step 1: Create organization
       const { data: org, error: orgError } = await supabase
         .from('organizations')
         .insert({
@@ -69,7 +69,18 @@ export default function WorkspacePage() {
 
       if (orgError) throw orgError
 
-      // Create workspace
+      // Step 2: Add user to organization_members (required before creating workspace due to RLS)
+      const { error: orgMemberError } = await supabase
+        .from('organization_members')
+        .insert({
+          organization_id: org.id,
+          user_id: user.id,
+          role: 'owner',
+        })
+
+      if (orgMemberError) throw orgMemberError
+
+      // Step 3: Create workspace (now user has org access for RLS check)
       const { data: workspace, error: workspaceError } = await supabase
         .from('workspaces')
         .insert({
@@ -202,7 +213,7 @@ export default function WorkspacePage() {
                       Workspace URL
                     </Label>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm text-muted-foreground">app.com/</span>
+                      <span className="text-sm text-muted-foreground">app.atlvs.one/</span>
                       <Input
                         id="slug"
                         placeholder="acme-productions"
