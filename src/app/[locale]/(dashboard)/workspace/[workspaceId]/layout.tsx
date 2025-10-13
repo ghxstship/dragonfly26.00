@@ -1,28 +1,29 @@
 "use client"
 
 import { useEffect } from "react"
+import { useParams } from "next/navigation"
 import { useUIStore } from "@/store/ui-store"
 
 export default function WorkspaceLayout({
   children,
-  params,
 }: {
   children: React.ReactNode
-  params: { workspaceId: string }
 }) {
+  const params = useParams<{ workspaceId: string }>()
   const { setCurrentWorkspace } = useUIStore()
+  const workspaceId = params.workspaceId
 
   useEffect(() => {
     // Initialize workspace from URL params
     setCurrentWorkspace({
-      id: params.workspaceId,
-      name: params.workspaceId.charAt(0).toUpperCase() + params.workspaceId.slice(1),
+      id: workspaceId,
+      name: workspaceId.charAt(0).toUpperCase() + workspaceId.slice(1),
       organization_id: "default-org",
-      is_default: params.workspaceId === "personal",
+      is_default: workspaceId === "personal",
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     })
-  }, [params.workspaceId, setCurrentWorkspace])
+  }, [workspaceId, setCurrentWorkspace])
 
   return <>{children}</>
 }
