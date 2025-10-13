@@ -13,7 +13,7 @@ export async function POST(req: Request) {
       )
     }
 
-    const supabase = createClient()
+    const supabase = await createClient()
 
     // Get organization
     const { data: organization, error } = await supabase
