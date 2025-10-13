@@ -3,8 +3,9 @@ import { useTranslations } from 'next-intl'
 import { Home, AlertTriangle, ArrowLeft } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 
-export async function generateMetadata({ params }: { params: { locale: string } }) {
-  const t = await getTranslations({ locale: params.locale, namespace: 'errors' })
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'errors' })
   
   return {
     title: t('error404Title'),
@@ -13,10 +14,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 }
 
 export default async function LocalizedNotFound({
-  params: { locale }
+  params
 }: {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'errors' })
   
   return (
