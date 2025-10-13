@@ -46,7 +46,7 @@ export default function WelcomePage() {
 
     if (data) {
       setProfile({
-        name: data.name || '',
+        name: data.full_name || '',
         title: data.title || '',
         bio: data.bio || '',
         avatar_url: data.avatar_url || '',
@@ -67,7 +67,10 @@ export default function WelcomePage() {
         .from('profiles')
         .upsert({
           id: user.id,
-          ...profile,
+          full_name: profile.name,
+          title: profile.title,
+          bio: profile.bio,
+          avatar_url: profile.avatar_url,
           updated_at: new Date().toISOString(),
         })
 

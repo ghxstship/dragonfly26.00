@@ -40,12 +40,28 @@ export function CreateTab() {
   const [bulkData, setBulkData] = useState("")
 
   const generatePassword = () => {
-    const length = 12
-    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*"
+    // Generate a secure password that meets requirements:
+    // At least 8 characters with lowercase, uppercase, digit, and symbol
+    const lowercase = "abcdefghijklmnopqrstuvwxyz"
+    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const digits = "0123456789"
+    const symbols = "!@#$%^&*"
+    const allChars = lowercase + uppercase + digits + symbols
+    
     let password = ""
-    for (let i = 0; i < length; i++) {
-      password += charset.charAt(Math.floor(Math.random() * charset.length))
+    // Ensure at least one of each required type
+    password += lowercase[Math.floor(Math.random() * lowercase.length)]
+    password += uppercase[Math.floor(Math.random() * uppercase.length)]
+    password += digits[Math.floor(Math.random() * digits.length)]
+    password += symbols[Math.floor(Math.random() * symbols.length)]
+    
+    // Fill the rest to make it 12 characters total
+    for (let i = 4; i < 12; i++) {
+      password += allChars[Math.floor(Math.random() * allChars.length)]
     }
+    
+    // Shuffle the password to avoid predictable patterns
+    password = password.split('').sort(() => Math.random() - 0.5).join('')
     setPassword(password)
   }
 
@@ -240,7 +256,7 @@ export function CreateTab() {
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">
-                Leave empty to auto-generate a secure password
+                Must be at least 8 characters with lowercase, uppercase, digit, and symbol. Leave empty to auto-generate.
               </p>
             </div>
           </div>

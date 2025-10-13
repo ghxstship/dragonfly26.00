@@ -32,12 +32,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   // Check if user has completed onboarding by checking their profile
   const { data: profile } = await supabase
     .from('profiles')
-    .select('name, onboarding_completed')
+    .select('full_name, onboarding_completed')
     .eq('id', user.id)
     .single()
 
   // New user or incomplete onboarding - redirect to onboarding
-  if (!profile || !profile.name || profile.onboarding_completed === false) {
+  if (!profile || !profile.full_name || profile.onboarding_completed === false) {
     redirect(`/${locale}/onboarding/welcome`)
   }
 

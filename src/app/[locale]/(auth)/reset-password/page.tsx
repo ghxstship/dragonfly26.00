@@ -44,8 +44,20 @@ export default function ResetPasswordPage() {
     setError(null)
 
     // Validation
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters")
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters")
+      setLoading(false)
+      return
+    }
+
+    // Check for required character types
+    const hasLowercase = /[a-z]/.test(password)
+    const hasUppercase = /[A-Z]/.test(password)
+    const hasDigit = /[0-9]/.test(password)
+    const hasSymbol = /[^a-zA-Z0-9]/.test(password)
+
+    if (!hasLowercase || !hasUppercase || !hasDigit || !hasSymbol) {
+      setError("Password must contain at least one lowercase letter, one uppercase letter, one digit, and one symbol")
       setLoading(false)
       return
     }
@@ -146,7 +158,7 @@ export default function ResetPasswordPage() {
                 </button>
               </div>
               <p className="text-xs text-muted-foreground">
-                Must be at least 6 characters
+                Must be at least 8 characters with lowercase, uppercase, digit, and symbol
               </p>
             </div>
 

@@ -37,7 +37,8 @@ export default function LoginPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      router.push(`/${locale}/workspace/personal/dashboard/overview`)
+      // Redirect to root - it will handle onboarding check and proper routing
+      router.push(`/${locale}`)
     }
   }
 

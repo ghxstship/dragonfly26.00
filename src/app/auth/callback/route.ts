@@ -50,26 +50,29 @@ export async function GET(request: Request) {
       // Check if user has completed onboarding
       const { data: profile } = await supabase
         .from('profiles')
-        .select('name, onboarding_completed')
+        .select('full_name, onboarding_completed')
         .eq('id', user.id)
         .single()
 
       // Determine redirect destination
-      let redirectPath = next
+      let redirectPath: string
 
-      if (!redirectPath) {
-        // If no explicit next path, check onboarding status
-        if (!profile?.onboarding_completed || !profile?.name) {
-          redirectPath = `/${locale}/onboarding/welcome`
+      // ALWAYS check onboarding status first - never skip onboarding
+      // regardless of the 'next' parameter
+      if (!profile?.onboarding_completed || !profile?.full_name) {
+        // User hasn't completed onboarding - send them there
+        redirectPath = `/${locale}/onboarding/welcome`
+      } else if (next && !next.includes('/onboarding/')) {
+        // User is onboarded and has a next parameter - honor it
+        // Ensure the next path includes locale if it doesn't already
+        if (!next.startsWith(`/${locale}`)) {
+          redirectPath = `/${locale}${next.startsWith('/') ? '' : '/'}${next}`
         } else {
-          // User is fully onboarded, send to dashboard
-          redirectPath = `/${locale}/workspace/personal/dashboard/overview`
+          redirectPath = next
         }
       } else {
-        // Ensure the next path includes locale if it doesn't already
-        if (!redirectPath.startsWith(`/${locale}`)) {
-          redirectPath = `/${locale}${redirectPath.startsWith('/') ? '' : '/'}${redirectPath}`
-        }
+        // User is fully onboarded, no valid next path - send to dashboard
+        redirectPath = `/${locale}/workspace/personal/dashboard/overview`
       }
 
       return NextResponse.redirect(`${requestUrl.origin}${redirectPath}`)

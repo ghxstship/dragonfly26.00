@@ -48,7 +48,11 @@ export default function CompletePage() {
 
   const handleContinue = () => {
     // Redirect to dashboard
-    router.push(`/workspace/${workspaceId || ''}`)
+    // If workspaceId is available, use it; otherwise use 'personal' to load user's default workspace
+    const targetPath = workspaceId 
+      ? `/workspace/${workspaceId}/dashboard/overview` 
+      : '/workspace/personal/dashboard/overview'
+    router.push(targetPath)
   }
 
   return (
