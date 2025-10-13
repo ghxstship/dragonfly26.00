@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { Briefcase, TrendingUp, AlertCircle, CheckCircle2, Clock } from "lucide-react"
+import { Briefcase, TrendingUp, AlertCircle, CheckCircle2, Clock, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
@@ -102,20 +103,6 @@ export function PortfolioView({ data, onItemClick }: PortfolioViewProps) {
       default:
         return "bg-muted"
     }
-  }
-
-  // Check if there's no data at all
-  if (data.length === 0) {
-    return (
-      <EmptyState
-        icon={Briefcase}
-        viewType={t('views.emptyState.portfolioView')}
-        mainMessage={t('views.emptyState.nothingToSeeYet')}
-        description={t('views.emptyState.portfolioViewDescription')}
-        actionLabel={t('views.emptyState.createFirstItem')}
-        onAction={() => console.log('Create first item')}
-      />
-    )
   }
 
   return (
@@ -232,8 +219,23 @@ export function PortfolioView({ data, onItemClick }: PortfolioViewProps) {
           </Card>
 
           {/* Project Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredProjects.map((project) => (
+          {data.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-16 text-center">
+              <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+                {t('views.emptyState.portfolioView')}
+              </Badge>
+              <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+              <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+                {t('views.emptyState.portfolioViewDescription')}
+              </p>
+              <Button size="lg">
+                <Plus className="h-4 w-4 mr-2" />
+                {t('views.emptyState.createFirstItem')}
+              </Button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filteredProjects.map((project) => (
               <Card
                 key={project.id}
                 className="hover:shadow-lg transition-all cursor-pointer"
@@ -313,7 +315,8 @@ export function PortfolioView({ data, onItemClick }: PortfolioViewProps) {
                 </CardContent>
               </Card>
             ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 [&>*:first-child]:mt-0">
       {/* Share Type */}
       <div className="space-y-3">
         <Label>Share Method</Label>

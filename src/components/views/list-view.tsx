@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl"
 import { ChevronDown, ChevronRight, MoreHorizontal, Plus, List } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
+import { Badge } from "@/components/ui/badge"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -57,23 +58,31 @@ export function ListView({ data, onItemClick }: ListViewProps) {
     })
   }
 
-  // Check if there's no data at all
-  if (data.length === 0) {
-    return (
-      <EmptyState
-        icon={List}
-        viewType={t('views.emptyState.listView')}
-        mainMessage={t('views.emptyState.nothingToSeeYet')}
-        description={t('views.emptyState.listViewDescription')}
-        actionLabel={t('views.emptyState.createFirstItem')}
-        onAction={() => console.log('Create first item')}
-      />
-    )
-  }
-
   return (
     <div className="space-y-2">
-      {Object.entries(groupedData).map(([group, items]) => {
+      {data.length === 0 ? (
+        // Empty state with list skeleton
+        <div className="border rounded-lg">
+          <div className="flex items-center gap-2 p-3 bg-muted/50 border-b">
+            <List className="h-4 w-4 text-muted-foreground" />
+            <span className="font-semibold text-muted-foreground">Items</span>
+          </div>
+          <div className="flex flex-col items-center justify-center py-16 px-6 text-center">
+            <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+              {t('views.emptyState.listView')}
+            </Badge>
+            <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+            <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+              {t('views.emptyState.listViewDescription')}
+            </p>
+            <Button size="lg">
+              <Plus className="h-4 w-4 mr-2" />
+              {t('views.emptyState.createFirstItem')}
+            </Button>
+          </div>
+        </div>
+      ) : (
+        Object.entries(groupedData).map(([group, items]) => {
         const isExpanded = expandedGroups.has(group)
         
         return (
@@ -163,7 +172,8 @@ export function ListView({ data, onItemClick }: ListViewProps) {
             )}
           </div>
         )
-      })}
+      })
+      )}
     </div>
   )
 }

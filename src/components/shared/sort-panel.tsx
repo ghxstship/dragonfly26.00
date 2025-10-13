@@ -140,7 +140,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 [&>*:first-child]:mt-0">
       {/* Sort Priority Info */}
       {sorts.length > 1 && (
         <div className="bg-muted/50 rounded-lg p-3 text-sm">

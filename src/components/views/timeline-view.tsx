@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from "lucide-react"
+import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import {
   Tooltip,
   TooltipContent,
@@ -187,29 +188,39 @@ export function TimelineView({ data, onItemClick }: TimelineViewProps) {
 
           {/* Timeline Rows */}
           <div className="divide-y">
-            {filteredData.map((item, index) => {
-              const position = getItemPosition(item)
-              return (
-                <div key={item.id} className="flex h-12 items-center hover:bg-accent/50">
-                  <div className="w-48 flex-shrink-0 border-r px-4 text-sm font-medium truncate">
-                    {item.name || item.title || "Untitled"}
-                  </div>
-                  <div className="flex-1 relative h-full">
-                    <div
-                      className="absolute top-2 bottom-2 rounded-md bg-primary/80 hover:bg-primary cursor-pointer flex items-center px-2 text-xs text-primary-foreground font-medium overflow-hidden"
-                      style={position}
-                      onClick={() => onItemClick?.(item)}
-                    >
-                      <span className="truncate">{item.name || item.title}</span>
+            {filteredData.length > 0 ? (
+              filteredData.map((item, index) => {
+                const position = getItemPosition(item)
+                return (
+                  <div key={item.id} className="flex h-12 items-center hover:bg-accent/50">
+                    <div className="w-48 flex-shrink-0 border-r px-4 text-sm font-medium truncate">
+                      {item.name || item.title || "Untitled"}
+                    </div>
+                    <div className="flex-1 relative h-full">
+                      <div
+                        className="absolute top-2 bottom-2 rounded-md bg-primary/80 hover:bg-primary cursor-pointer flex items-center px-2 text-xs text-primary-foreground font-medium overflow-hidden"
+                        style={position}
+                        onClick={() => onItemClick?.(item)}
+                      >
+                        <span className="truncate">{item.name || item.title}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )
-            })}
-
-            {filteredData.length === 0 && (
-              <div className="flex items-center justify-center h-32 text-muted-foreground">
-                No items to display in this time range
+                )
+              })
+            ) : (
+              <div className="flex flex-col items-center justify-center py-16 text-center">
+                <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+                  {t('views.emptyState.timelineView')}
+                </Badge>
+                <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+                <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+                  {t('views.emptyState.timelineViewDescription')}
+                </p>
+                <Button size="lg">
+                  <Plus className="h-4 w-4 mr-2" />
+                  {t('views.emptyState.createFirstItem')}
+                </Button>
               </div>
             )}
           </div>

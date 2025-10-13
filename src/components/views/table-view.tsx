@@ -12,8 +12,9 @@ import {
   type SortingState,
   type ColumnFiltersState,
 } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal, Table as TableIcon } from "lucide-react"
+import { ArrowUpDown, MoreHorizontal, Table as TableIcon, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import {
@@ -144,20 +145,6 @@ export function TableView({ data, onItemClick }: TableViewProps) {
     },
   })
 
-  // Check if there's no data at all
-  if (data.length === 0) {
-    return (
-      <EmptyState
-        icon={TableIcon}
-        viewType={t('views.emptyState.tableView')}
-        mainMessage={t('views.emptyState.nothingToSeeYet')}
-        description={t('views.emptyState.tableViewDescription')}
-        actionLabel={t('views.emptyState.createFirstItem')}
-        onAction={() => console.log('Create first item')}
-      />
-    )
-  }
-
   return (
     <div className="space-y-4">
       {/* Table */}
@@ -205,9 +192,21 @@ export function TableView({ data, onItemClick }: TableViewProps) {
               <tr>
                 <td
                   colSpan={columns.length}
-                  className="h-24 text-center text-muted-foreground"
+                  className="py-16 text-center"
                 >
-                  No results.
+                  <div className="flex flex-col items-center justify-center">
+                    <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+                      {t('views.emptyState.tableView')}
+                    </Badge>
+                    <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+                    <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+                      {t('views.emptyState.tableViewDescription')}
+                    </p>
+                    <Button size="lg">
+                      <Plus className="h-4 w-4 mr-2" />
+                      {t('views.emptyState.createFirstItem')}
+                    </Button>
+                  </div>
                 </td>
               </tr>
             )}

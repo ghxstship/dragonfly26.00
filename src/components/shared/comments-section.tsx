@@ -222,7 +222,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 [&>*:first-child]:mt-0">
       {/* Comment Input */}
       <div className="space-y-2">
         <Textarea

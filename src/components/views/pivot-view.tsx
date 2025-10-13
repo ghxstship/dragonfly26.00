@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { Table as TableIcon, Settings, Download, RefreshCw } from "lucide-react"
+import { Table as TableIcon, Settings, Download, RefreshCw, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -89,20 +89,6 @@ export function PivotView({ data, onItemClick }: PivotViewProps) {
       return value.toFixed(2)
     }
     return Math.round(value).toLocaleString()
-  }
-
-  // Check if there's no data at all
-  if (data.length === 0) {
-    return (
-      <EmptyState
-        icon={TableIcon}
-        viewType={t('views.emptyState.pivotView')}
-        mainMessage={t('views.emptyState.nothingToSeeYet')}
-        description={t('views.emptyState.pivotViewDescription')}
-        actionLabel={t('views.emptyState.createFirstItem')}
-        onAction={() => console.log('Create first item')}
-      />
-    )
   }
 
   return (
@@ -197,28 +183,43 @@ export function PivotView({ data, onItemClick }: PivotViewProps) {
 
       {/* Pivot Table */}
       <div className="flex-1 overflow-auto p-6">
-        <div className="inline-block min-w-full align-middle">
-          <div className="overflow-hidden border rounded-lg">
-            <table className="min-w-full divide-y divide-border">
-              <thead className="bg-muted/50">
-                <tr>
-                  <th className="sticky left-0 z-10 bg-muted/50 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider">
-                    {rowField} / {columnField}
-                  </th>
-                  {columnValues.map((col) => (
-                    <th
-                      key={col}
-                      className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider"
-                    >
-                      {String(col)}
+        {data.length === 0 ? (
+          <div className="flex flex-col items-center justify-center h-full py-16 text-center">
+            <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+              {t('views.emptyState.pivotView')}
+            </Badge>
+            <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+            <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+              {t('views.emptyState.pivotViewDescription')}
+            </p>
+            <Button size="lg">
+              <Plus className="h-4 w-4 mr-2" />
+              {t('views.emptyState.createFirstItem')}
+            </Button>
+          </div>
+        ) : (
+          <div className="inline-block min-w-full align-middle">
+            <div className="overflow-hidden border rounded-lg">
+              <table className="min-w-full divide-y divide-border">
+                <thead className="bg-muted/50">
+                  <tr>
+                    <th className="sticky left-0 z-10 bg-muted/50 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider">
+                      {rowField} / {columnField}
                     </th>
-                  ))}
-                  <th className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider bg-muted">
-                    Total
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border bg-background">
+                    {columnValues.map((col) => (
+                      <th
+                        key={col}
+                        className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider"
+                      >
+                        {String(col)}
+                      </th>
+                    ))}
+                    <th className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider bg-muted">
+                      Total
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border bg-background">
                 {rowValues.map((row, rowIdx) => (
                   <tr key={row} className={cn(rowIdx % 2 === 0 ? "bg-muted/5" : "")}>
                     <td className="sticky left-0 z-10 bg-background px-4 py-3 text-sm font-medium">
@@ -258,39 +259,40 @@ export function PivotView({ data, onItemClick }: PivotViewProps) {
               </tbody>
             </table>
           </div>
+
+          {/* Summary Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium">Total Records</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{data.length}</div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium">Dimensions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">
+                  {rowValues.length} × {columnValues.length}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium">Grand Total</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{formatValue(grandTotal)}</div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-
-        {/* Summary Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Total Records</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{data.length}</div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Dimensions</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">
-                {rowValues.length} × {columnValues.length}
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Grand Total</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{formatValue(grandTotal)}</div>
-            </CardContent>
-          </Card>
-        </div>
+        )}
       </div>
     </div>
   )

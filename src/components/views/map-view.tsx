@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { MapPin, Filter, Maximize2 } from "lucide-react"
+import { MapPin, Filter, Maximize2, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
@@ -36,37 +36,39 @@ export function MapView({ data, onItemClick }: MapViewProps) {
     return acc
   }, {} as Record<string, DataItem[]>)
 
-  // Check if there's no data at all
-  if (data.length === 0) {
-    return (
-      <EmptyState
-        icon={MapPin}
-        viewType={t('views.emptyState.mapView')}
-        mainMessage={t('views.emptyState.nothingToSeeYet')}
-        description={t('views.emptyState.mapViewDescription')}
-        actionLabel={t('views.emptyState.createFirstItem')}
-        onAction={() => console.log('Create first item')}
-      />
-    )
-  }
-
   return (
     <div className="flex h-full gap-4">
       {/* Map Area */}
       <div className="flex-1 relative bg-muted/30 rounded-lg border overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <div className="mx-auto w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
-              <MapPin className="h-12 w-12 text-primary" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold">Map View</h3>
-              <p className="text-sm text-muted-foreground max-w-md">
-                Geographic visualization of {itemsWithLocation.length} items with location data.
-                Map integration available with external mapping services.
+          {data.length === 0 ? (
+            <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg p-8 text-center max-w-md">
+              <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+                {t('views.emptyState.mapView')}
+              </Badge>
+              <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+              <p className="text-sm text-muted-foreground mb-6">
+                {t('views.emptyState.mapViewDescription')}
               </p>
+              <Button size="lg">
+                <Plus className="h-4 w-4 mr-2" />
+                {t('views.emptyState.createFirstItem')}
+              </Button>
             </div>
-          </div>
+          ) : (
+            <div className="text-center space-y-4">
+              <div className="mx-auto w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
+                <MapPin className="h-12 w-12 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold">Map View</h3>
+                <p className="text-sm text-muted-foreground max-w-md">
+                  Geographic visualization of {itemsWithLocation.length} items with location data.
+                  Map integration available with external mapping services.
+                </p>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Map Controls */}

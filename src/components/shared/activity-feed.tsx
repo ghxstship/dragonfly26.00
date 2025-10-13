@@ -154,7 +154,7 @@ export function ActivityFeed() {
   }
   
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 [&>*:first-child]:mt-0">
       {activities.length === 0 ? (
         <div className="text-center py-8 text-sm text-muted-foreground">
           No activity yet

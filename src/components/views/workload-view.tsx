@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { ChevronDown, ChevronRight, User as UserIcon, Users } from "lucide-react"
+import { ChevronDown, ChevronRight, User as UserIcon, Users, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
@@ -70,23 +70,24 @@ export function WorkloadView({ data, onItemClick }: WorkloadViewProps) {
     return "text-green-500"
   }
 
-  // Check if there's no data at all
-  if (data.length === 0) {
-    return (
-      <EmptyState
-        icon={Users}
-        viewType={t('views.emptyState.workloadView')}
-        mainMessage={t('views.emptyState.nothingToSeeYet')}
-        description={t('views.emptyState.workloadViewDescription')}
-        actionLabel={t('views.emptyState.createFirstItem')}
-        onAction={() => console.log('Create first item')}
-      />
-    )
-  }
-
   return (
     <div className="space-y-4">
-      {userWorkloads.map((workload) => {
+      {data.length === 0 ? (
+        <div className="flex flex-col items-center justify-center py-16 text-center border rounded-lg">
+          <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+            {t('views.emptyState.workloadView')}
+          </Badge>
+          <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+          <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+            {t('views.emptyState.workloadViewDescription')}
+          </p>
+          <Button size="lg">
+            <Plus className="h-4 w-4 mr-2" />
+            {t('views.emptyState.createFirstItem')}
+          </Button>
+        </div>
+      ) : (
+        userWorkloads.map((workload) => {
         const isExpanded = expandedUsers.has(workload.userId)
         const utilizationPercent = Math.round((workload.allocated / workload.capacity) * 100)
         const isOverallocated = workload.allocated > workload.capacity
@@ -180,7 +181,8 @@ export function WorkloadView({ data, onItemClick }: WorkloadViewProps) {
             )}
           </div>
         )
-      })}
+      })
+      )}
     </div>
   )
 }

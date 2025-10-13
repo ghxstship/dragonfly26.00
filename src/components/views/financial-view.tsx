@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { DollarSign, TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight } from "lucide-react"
+import { DollarSign, TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
@@ -57,20 +58,6 @@ export function FinancialView({ data, onItemClick }: FinancialViewProps) {
     .sort(([, a], [, b]) => b - a)
     .slice(0, 5)
 
-  // Check if there's no data at all
-  if (data.length === 0) {
-    return (
-      <EmptyState
-        icon={DollarSign}
-        viewType={t('views.emptyState.financialView')}
-        mainMessage={t('views.emptyState.nothingToSeeYet')}
-        description={t('views.emptyState.financialViewDescription')}
-        actionLabel={t('views.emptyState.createFirstItem')}
-        onAction={() => console.log('Create first item')}
-      />
-    )
-  }
-
   return (
     <div className="h-full flex flex-col">
       {/* Header */}
@@ -90,9 +77,24 @@ export function FinancialView({ data, onItemClick }: FinancialViewProps) {
 
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
-        <div className="max-w-7xl mx-auto space-y-6">
-          {/* Key Metrics */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {data.length === 0 ? (
+          <div className="flex flex-col items-center justify-center h-full py-16 text-center">
+            <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+              {t('views.emptyState.financialView')}
+            </Badge>
+            <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+            <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+              {t('views.emptyState.financialViewDescription')}
+            </p>
+            <Button size="lg">
+              <Plus className="h-4 w-4 mr-2" />
+              {t('views.emptyState.createFirstItem')}
+            </Button>
+          </div>
+        ) : (
+          <div className="max-w-7xl mx-auto space-y-6">
+            {/* Key Metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium">Revenue</CardTitle>
@@ -267,7 +269,8 @@ export function FinancialView({ data, onItemClick }: FinancialViewProps) {
               </div>
             </CardContent>
           </Card>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   )

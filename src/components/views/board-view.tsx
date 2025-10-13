@@ -6,6 +6,7 @@ import { DndContext, DragEndEvent, DragOverlay, closestCorners } from "@dnd-kit/
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import { Plus, MoreHorizontal, Columns3 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
@@ -52,27 +53,13 @@ export function BoardView({ data, onItemClick }: BoardViewProps) {
 
   const activeItem = activeId ? data.find((item) => item.id === activeId) : null
 
-  // Check if there's no data at all
-  if (data.length === 0) {
-    return (
-      <EmptyState
-        icon={Columns3}
-        viewType={t('views.emptyState.boardView')}
-        mainMessage={t('views.emptyState.nothingToSeeYet')}
-        description={t('views.emptyState.boardViewDescription')}
-        actionLabel={t('views.emptyState.createFirstItem')}
-        onAction={() => console.log('Create first item')}
-      />
-    )
-  }
-
   return (
     <DndContext
       collisionDetection={closestCorners}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <div className="flex gap-4 h-full overflow-x-auto pb-4">
+      <div className="flex gap-4 h-full overflow-x-auto pb-4 relative">
         {columnData.map((column) => (
           <BoardColumn
             key={column.id}
@@ -89,6 +76,25 @@ export function BoardView({ data, onItemClick }: BoardViewProps) {
             Add column
           </Button>
         </div>
+
+        {/* Empty State Overlay when no data */}
+        {data.length === 0 && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg p-8 text-center max-w-md pointer-events-auto">
+              <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
+                {t('views.emptyState.boardView')}
+              </Badge>
+              <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+              <p className="text-sm text-muted-foreground mb-6">
+                {t('views.emptyState.boardViewDescription')}
+              </p>
+              <Button size="lg">
+                <Plus className="h-4 w-4 mr-2" />
+                {t('views.emptyState.createFirstItem')}
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
 
       <DragOverlay>
