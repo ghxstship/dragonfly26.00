@@ -2,7 +2,7 @@
 export type UserRole = 'owner' | 'admin' | 'member' | 'guest'
 export type ItemPermission = 'can_edit' | 'can_comment' | 'can_view'
 export type ViewPermission = 'private' | 'team' | 'public'
-export type SubscriptionTier = 'free' | 'pro' | 'business' | 'enterprise'
+export type SubscriptionTier = 'network' | 'crew' | 'team' | 'pro' | 'core' | 'executive'
 export type ViewType =
   | 'list'
   | 'board'

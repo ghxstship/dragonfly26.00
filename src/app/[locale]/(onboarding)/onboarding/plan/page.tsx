@@ -19,7 +19,7 @@ export default function SelectPlanPage() {
   const supabase = createClient()
   
   const [loading, setLoading] = useState(false)
-  const [selectedPlan, setSelectedPlan] = useState('free')
+  const [selectedPlan, setSelectedPlan] = useState('network')
   const workspaceId = searchParams.get('workspace')
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function SelectPlanPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) throw new Error('Not authenticated')
 
-      if (planId === 'free') {
+      if (planId === 'network') {
         // Free plan - just continue to next step
         router.push(`/${locale}/onboarding/invite?workspace=${workspaceId}`)
       } else {
@@ -129,7 +129,7 @@ export default function SelectPlanPage() {
                       <span className="text-5xl font-bold">${plan.price}</span>
                       <span className="text-muted-foreground">/month</span>
                     </div>
-                    {plan.id !== 'free' && (
+                    {plan.id !== 'network' && (
                       <p className="text-sm text-muted-foreground mt-2">
                         14-day free trial included
                       </p>
@@ -163,7 +163,7 @@ export default function SelectPlanPage() {
                     {loading && isSelected && (
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                     )}
-                    {plan.id === 'free' ? 'Start Free' : 'Start Free Trial'}
+                    {plan.id === 'network' ? 'Start Free' : 'Start Free Trial'}
                   </Button>
 
                   {plan.highlight && (

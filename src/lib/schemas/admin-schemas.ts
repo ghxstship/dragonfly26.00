@@ -87,10 +87,12 @@ export const billingSchema: ModuleSchema = {
       showInForm: true, 
       order: 6, 
       options: [
-        { label: 'Free', value: 'free' },
+        { label: 'Network', value: 'network' },
+        { label: 'Crew', value: 'crew' },
+        { label: 'Team', value: 'team' },
         { label: 'Pro', value: 'pro' },
-        { label: 'Business', value: 'business' },
-        { label: 'Enterprise', value: 'enterprise' },
+        { label: 'Core', value: 'core' },
+        { label: 'Executive', value: 'executive' },
       ]
     },
     { 
