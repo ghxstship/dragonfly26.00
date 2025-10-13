@@ -68,9 +68,6 @@ export function ListView({ data, onItemClick }: ListViewProps) {
             <span className="font-semibold text-muted-foreground">Items</span>
           </div>
           <div className="flex flex-col items-center justify-center py-16 px-6 text-center">
-            <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
-              {t('views.emptyState.listView')}
-            </Badge>
             <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
             <p className="text-sm text-muted-foreground mb-6 max-w-sm">
               {t('views.emptyState.listViewDescription')}

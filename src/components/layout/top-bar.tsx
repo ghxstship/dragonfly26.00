@@ -174,17 +174,11 @@ export function TopBar() {
           <div className="hidden xl:flex items-center gap-2 mr-2">
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="flex items-center gap-1.5 px-2 py-1 rounded-md text-xs">
+                <div className="flex items-center">
                   {isOnline ? (
-                    <>
-                      <Wifi className="h-3.5 w-3.5 text-green-500" />
-                      <span className="text-muted-foreground">{t('common.synced')}</span>
-                    </>
+                    <Wifi className="h-4 w-4 text-green-500" />
                   ) : (
-                    <>
-                      <WifiOff className="h-3.5 w-3.5 text-destructive" />
-                      <span className="text-muted-foreground">{t('common.offline')}</span>
-                    </>
+                    <WifiOff className="h-4 w-4 text-destructive" />
                   )}
                 </div>
               </TooltipTrigger>

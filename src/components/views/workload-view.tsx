@@ -74,9 +74,6 @@ export function WorkloadView({ data, onItemClick }: WorkloadViewProps) {
     <div className="space-y-4">
       {data.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-16 text-center border rounded-lg">
-          <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
-            {t('views.emptyState.workloadView')}
-          </Badge>
           <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
           <p className="text-sm text-muted-foreground mb-6 max-w-sm">
             {t('views.emptyState.workloadViewDescription')}

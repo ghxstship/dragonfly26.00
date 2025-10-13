@@ -43,9 +43,6 @@ export function MapView({ data, onItemClick }: MapViewProps) {
         <div className="absolute inset-0 flex items-center justify-center">
           {data.length === 0 ? (
             <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg p-8 text-center max-w-md">
-              <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
-                {t('views.emptyState.mapView')}
-              </Badge>
               <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
               <p className="text-sm text-muted-foreground mb-6">
                 {t('views.emptyState.mapViewDescription')}

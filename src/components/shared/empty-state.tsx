@@ -2,12 +2,10 @@
 
 import { LucideIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 
 interface EmptyStateProps {
   icon?: LucideIcon
-  viewType: string
   mainMessage: string
   description?: string
   actionLabel?: string
@@ -17,7 +15,6 @@ interface EmptyStateProps {
 
 export function EmptyState({
   icon: Icon,
-  viewType,
   mainMessage,
   description,
   actionLabel,
@@ -36,9 +33,6 @@ export function EmptyState({
           <Icon className="h-12 w-12 text-muted-foreground" />
         </div>
       )}
-      <Badge variant="outline" className="mb-4 text-xs uppercase tracking-wider">
-        {viewType}
-      </Badge>
       <h2 className="mb-3 text-2xl font-bold tracking-tight">{mainMessage}</h2>
       {description && (
         <p className="mb-8 max-w-md text-muted-foreground">

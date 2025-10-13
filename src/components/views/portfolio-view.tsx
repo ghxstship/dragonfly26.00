@@ -221,9 +221,6 @@ export function PortfolioView({ data, onItemClick }: PortfolioViewProps) {
           {/* Project Cards */}
           {data.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-16 text-center">
-              <Badge variant="outline" className="mb-3 text-xs uppercase tracking-wider">
-                {t('views.emptyState.portfolioView')}
-              </Badge>
               <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
               <p className="text-sm text-muted-foreground mb-6 max-w-sm">
                 {t('views.emptyState.portfolioViewDescription')}
