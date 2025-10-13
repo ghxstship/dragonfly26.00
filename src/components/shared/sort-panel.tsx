@@ -140,7 +140,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
   }
 
   return (
-    <div className="space-y-4 [&>*:first-child]:mt-0">
+    <div className="space-y-4">
       {/* Sort Priority Info */}
       {sorts.length > 1 && (
         <div className="bg-muted/50 rounded-lg p-3 text-sm">
@@ -151,79 +151,77 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
       )}
 
       {/* Sort Rules */}
-      <div className="space-y-3">
-        {sorts.length === 0 ? (
-          <div className="text-center py-10 border-2 border-dashed rounded-lg">
-            <ArrowUpDown className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-            <p className="text-sm text-muted-foreground mb-4">No sorting applied</p>
-            <Button onClick={addSort} variant="outline" size="sm">
-              <Plus className="h-4 w-4 mr-2" />
-              Add Sort
-            </Button>
-          </div>
-        ) : (
-          sorts.map((sort, index) => (
-            <div
-              key={sort.id}
-              draggable
-              onDragStart={() => handleDragStart(sort.id)}
-              onDragOver={(e) => handleDragOver(e, sort.id)}
-              onDragEnd={handleDragEnd}
-              className={`space-y-2 p-3 border rounded-lg cursor-grab active:cursor-grabbing ${
-                draggedItem === sort.id ? "opacity-50" : ""
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <GripVertical className="h-4 w-4 text-muted-foreground" />
-                  <Label className="text-xs font-medium">Sort {index + 1}</Label>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-6 w-6"
-                  onClick={() => removeSort(sort.id)}
-                >
-                  <X className="h-3 w-3" />
-                </Button>
+      {sorts.length === 0 ? (
+        <div className="text-center py-10 border-2 border-dashed rounded-lg">
+          <ArrowUpDown className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+          <p className="text-sm text-muted-foreground mb-4">No sorting applied</p>
+          <Button onClick={addSort} variant="outline" size="sm">
+            <Plus className="h-4 w-4 mr-2" />
+            Add Sort
+          </Button>
+        </div>
+      ) : (
+        sorts.map((sort, index) => (
+          <div
+            key={sort.id}
+            draggable
+            onDragStart={() => handleDragStart(sort.id)}
+            onDragOver={(e) => handleDragOver(e, sort.id)}
+            onDragEnd={handleDragEnd}
+            className={`space-y-2 p-3 border rounded-lg cursor-grab active:cursor-grabbing ${
+              draggedItem === sort.id ? "opacity-50" : ""
+            }`}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <GripVertical className="h-4 w-4 text-muted-foreground" />
+                <Label className="text-xs font-medium">Sort {index + 1}</Label>
               </div>
-              <div className="flex gap-2">
-                <Select
-                  value={sort.field}
-                  onValueChange={(value) => updateSort(sort.id, { field: value })}
-                >
-                  <SelectTrigger className="h-9 flex-1">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {fields.map((field) => (
-                      <SelectItem key={field.value} value={field.value}>
-                        {field.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="h-9 w-9 flex-shrink-0"
-                  onClick={() => toggleDirection(sort.id)}
-                  title={sort.direction === "asc" ? "Ascending" : "Descending"}
-                >
-                  {sort.direction === "asc" ? (
-                    <ArrowUp className="h-4 w-4" />
-                  ) : (
-                    <ArrowDown className="h-4 w-4" />
-                  )}
-                </Button>
-              </div>
-              <p className="text-xs text-muted-foreground">
-                {sort.direction === "asc" ? "A → Z, 0 → 9" : "Z → A, 9 → 0"}
-              </p>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-6 w-6"
+                onClick={() => removeSort(sort.id)}
+              >
+                <X className="h-3 w-3" />
+              </Button>
             </div>
-          ))
-        )}
-      </div>
+            <div className="flex gap-2">
+              <Select
+                value={sort.field}
+                onValueChange={(value) => updateSort(sort.id, { field: value })}
+              >
+                <SelectTrigger className="h-9 flex-1">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {fields.map((field) => (
+                    <SelectItem key={field.value} value={field.value}>
+                      {field.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-9 w-9 flex-shrink-0"
+                onClick={() => toggleDirection(sort.id)}
+                title={sort.direction === "asc" ? "Ascending" : "Descending"}
+              >
+                {sort.direction === "asc" ? (
+                  <ArrowUp className="h-4 w-4" />
+                ) : (
+                  <ArrowDown className="h-4 w-4" />
+                )}
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {sort.direction === "asc" ? "A → Z, 0 → 9" : "Z → A, 9 → 0"}
+            </p>
+          </div>
+        ))
+      )}
 
       {/* Actions */}
       {sorts.length > 0 && (

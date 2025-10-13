@@ -52,7 +52,7 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
   }
 
   return (
-    <div className="space-y-4 [&>*:first-child]:mt-0">
+    <div className="space-y-4">
       {/* Format Selection */}
       <div className="space-y-3">
         <Label>File Format</Label>

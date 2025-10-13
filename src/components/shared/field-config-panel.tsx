@@ -61,7 +61,7 @@ export function FieldConfigPanel() {
   const totalCount = fields.length
 
   return (
-    <div className="space-y-4 [&>*:first-child]:mt-0">
+    <div className="space-y-4">
       {/* Search */}
       <Input
         placeholder="Search fields..."

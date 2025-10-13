@@ -40,28 +40,26 @@ export function SharePanel({ onShare }: SharePanelProps) {
   }
 
   return (
-    <div className="space-y-4 [&>*:first-child]:mt-0">
+    <div className="space-y-4">
       {/* Share Type */}
-      <div className="space-y-3">
-        <Label>Share Method</Label>
-        <div className="grid grid-cols-2 gap-2">
-          <Button
-            variant={shareType === "link" ? "default" : "outline"}
-            onClick={() => setShareType("link")}
-            className="justify-start"
-          >
-            <LinkIcon className="h-4 w-4 mr-2" />
-            Copy Link
-          </Button>
-          <Button
-            variant={shareType === "email" ? "default" : "outline"}
-            onClick={() => setShareType("email")}
-            className="justify-start"
-          >
-            <Mail className="h-4 w-4 mr-2" />
-            Send Email
-          </Button>
-        </div>
+      <Label>Share Method</Label>
+      <div className="grid grid-cols-2 gap-2">
+        <Button
+          variant={shareType === "link" ? "default" : "outline"}
+          onClick={() => setShareType("link")}
+          className="justify-start"
+        >
+          <LinkIcon className="h-4 w-4 mr-2" />
+          Copy Link
+        </Button>
+        <Button
+          variant={shareType === "email" ? "default" : "outline"}
+          onClick={() => setShareType("email")}
+          className="justify-start"
+        >
+          <Mail className="h-4 w-4 mr-2" />
+          Send Email
+        </Button>
       </div>
 
       {/* Permission Level */}
