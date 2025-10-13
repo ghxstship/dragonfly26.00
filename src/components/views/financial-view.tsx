@@ -6,6 +6,7 @@ import { DollarSign, TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight } fr
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
 
@@ -55,6 +56,20 @@ export function FinancialView({ data, onItemClick }: FinancialViewProps) {
   const topExpenses = Object.entries(expensesByCategory)
     .sort(([, a], [, b]) => b - a)
     .slice(0, 5)
+
+  // Check if there's no data at all
+  if (data.length === 0) {
+    return (
+      <EmptyState
+        icon={DollarSign}
+        viewType={t('views.emptyState.financialView')}
+        mainMessage={t('views.emptyState.nothingToSeeYet')}
+        description={t('views.emptyState.financialViewDescription')}
+        actionLabel={t('views.emptyState.createFirstItem')}
+        onAction={() => console.log('Create first item')}
+      />
+    )
+  }
 
   return (
     <div className="h-full flex flex-col">

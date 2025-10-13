@@ -12,7 +12,7 @@ import {
   type SortingState,
   type ColumnFiltersState,
 } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { ArrowUpDown, MoreHorizontal, Table as TableIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
@@ -22,6 +22,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { EmptyState } from "@/components/shared/empty-state"
 import type { DataItem } from "@/types"
 
 interface TableViewProps {
@@ -142,6 +143,20 @@ export function TableView({ data, onItemClick }: TableViewProps) {
       rowSelection,
     },
   })
+
+  // Check if there's no data at all
+  if (data.length === 0) {
+    return (
+      <EmptyState
+        icon={TableIcon}
+        viewType={t('views.emptyState.tableView')}
+        mainMessage={t('views.emptyState.nothingToSeeYet')}
+        description={t('views.emptyState.tableViewDescription')}
+        actionLabel={t('views.emptyState.createFirstItem')}
+        onAction={() => console.log('Create first item')}
+      />
+    )
+  }
 
   return (
     <div className="space-y-4">

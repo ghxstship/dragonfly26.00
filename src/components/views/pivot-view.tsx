@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
 
@@ -88,6 +89,20 @@ export function PivotView({ data, onItemClick }: PivotViewProps) {
       return value.toFixed(2)
     }
     return Math.round(value).toLocaleString()
+  }
+
+  // Check if there's no data at all
+  if (data.length === 0) {
+    return (
+      <EmptyState
+        icon={TableIcon}
+        viewType={t('views.emptyState.pivotView')}
+        mainMessage={t('views.emptyState.nothingToSeeYet')}
+        description={t('views.emptyState.pivotViewDescription')}
+        actionLabel={t('views.emptyState.createFirstItem')}
+        onAction={() => console.log('Create first item')}
+      />
+    )
   }
 
   return (

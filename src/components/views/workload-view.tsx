@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { ChevronDown, ChevronRight, User as UserIcon } from "lucide-react"
+import { ChevronDown, ChevronRight, User as UserIcon, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
 
@@ -67,6 +68,20 @@ export function WorkloadView({ data, onItemClick }: WorkloadViewProps) {
     if (percentage > 100) return "text-red-500"
     if (percentage > 80) return "text-orange-500"
     return "text-green-500"
+  }
+
+  // Check if there's no data at all
+  if (data.length === 0) {
+    return (
+      <EmptyState
+        icon={Users}
+        viewType={t('views.emptyState.workloadView')}
+        mainMessage={t('views.emptyState.nothingToSeeYet')}
+        description={t('views.emptyState.workloadViewDescription')}
+        actionLabel={t('views.emptyState.createFirstItem')}
+        onAction={() => console.log('Create first item')}
+      />
+    )
   }
 
   return (

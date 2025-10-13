@@ -12,6 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
 
@@ -34,6 +35,20 @@ export function MapView({ data, onItemClick }: MapViewProps) {
     acc[region].push(item)
     return acc
   }, {} as Record<string, DataItem[]>)
+
+  // Check if there's no data at all
+  if (data.length === 0) {
+    return (
+      <EmptyState
+        icon={MapPin}
+        viewType={t('views.emptyState.mapView')}
+        mainMessage={t('views.emptyState.nothingToSeeYet')}
+        description={t('views.emptyState.mapViewDescription')}
+        actionLabel={t('views.emptyState.createFirstItem')}
+        onAction={() => console.log('Create first item')}
+      />
+    )
+  }
 
   return (
     <div className="flex h-full gap-4">
@@ -106,40 +121,50 @@ export function MapView({ data, onItemClick }: MapViewProps) {
           </p>
         </div>
         <div className="flex-1 overflow-y-auto">
-          <div className="divide-y">
-            {itemsWithLocation.map((item) => (
-              <div
-                key={item.id}
-                className={cn(
-                  "p-3 hover:bg-accent transition-colors cursor-pointer",
-                  selectedItem?.id === item.id && "bg-accent"
-                )}
-                onClick={() => {
-                  setSelectedItem(item)
-                  onItemClick?.(item)
-                }}
-              >
-                <div className="flex items-start gap-2">
-                  <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                  <div className="flex-1 min-w-0">
-                    <div className="font-medium text-sm">
-                      {item.name || item.title || "Untitled"}
-                    </div>
-                    {item.address && (
-                      <div className="text-xs text-muted-foreground truncate">
-                        {item.address}
+          {itemsWithLocation.length === 0 ? (
+            <div className="flex flex-col items-center justify-center h-full p-6 text-center">
+              <MapPin className="h-8 w-8 text-muted-foreground mb-3" />
+              <p className="text-sm font-medium mb-1">{t('views.emptyState.nothingToSeeYet')}</p>
+              <p className="text-xs text-muted-foreground">
+                {t('views.emptyState.mapViewDescription')}
+              </p>
+            </div>
+          ) : (
+            <div className="divide-y">
+              {itemsWithLocation.map((item) => (
+                <div
+                  key={item.id}
+                  className={cn(
+                    "p-3 hover:bg-accent transition-colors cursor-pointer",
+                    selectedItem?.id === item.id && "bg-accent"
+                  )}
+                  onClick={() => {
+                    setSelectedItem(item)
+                    onItemClick?.(item)
+                  }}
+                >
+                  <div className="flex items-start gap-2">
+                    <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <div className="font-medium text-sm">
+                        {item.name || item.title || "Untitled"}
                       </div>
-                    )}
-                    {item.region && (
-                      <Badge variant="outline" className="mt-1 text-xs">
-                        {item.region}
-                      </Badge>
-                    )}
+                      {item.address && (
+                        <div className="text-xs text-muted-foreground truncate">
+                          {item.address}
+                        </div>
+                      )}
+                      {item.region && (
+                        <Badge variant="outline" className="mt-1 text-xs">
+                          {item.region}
+                        </Badge>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

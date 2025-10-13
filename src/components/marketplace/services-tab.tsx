@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -8,9 +9,13 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Users, Star, MapPin, Briefcase, Clock, MessageCircle, Search, Award } from "lucide-react"
 import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
+import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
 export function ServicesTab() {
   const servicesData = generateMarketplaceMockData('services', 20)
+  const [detailsDrawerOpen, setDetailsDrawerOpen] = useState(false)
+  const [selectedService, setSelectedService] = useState<MarketplaceProduct | null>(null)
+  const [favorites, setFavorites] = useState<Set<string>>(new Set())
   
   const getAvailabilityBadge = (status: string) => {
     switch (status) {
@@ -36,6 +41,21 @@ export function ServicesTab() {
       default:
         return null
     }
+  }
+
+  const handleViewProfile = (service: any) => {
+    setSelectedService(service as MarketplaceProduct)
+    setDetailsDrawerOpen(true)
+  }
+
+  const toggleFavorite = (id: string) => {
+    const newFavorites = new Set(favorites)
+    if (newFavorites.has(id)) {
+      newFavorites.delete(id)
+    } else {
+      newFavorites.add(id)
+    }
+    setFavorites(newFavorites)
   }
 
   return (
@@ -160,7 +180,7 @@ export function ServicesTab() {
                   <p className="text-xs text-muted-foreground">Rate per day</p>
                 </div>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm">
+                  <Button variant="outline" size="sm" onClick={() => handleViewProfile(service)}>
                     View Profile
                   </Button>
                   <Button size="sm">
@@ -172,6 +192,15 @@ export function ServicesTab() {
           </Card>
         ))}
       </div>
+
+      {/* Service Details Drawer */}
+      <MarketplaceProductDetailDrawer
+        product={selectedService}
+        open={detailsDrawerOpen}
+        onOpenChange={setDetailsDrawerOpen}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={selectedService ? favorites.has(selectedService.id) : false}
+      />
     </div>
   )
 }

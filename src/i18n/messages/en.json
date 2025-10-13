@@ -503,7 +503,32 @@
     "selectAll": "Select all",
     "selectRow": "Select row",
     "untitledDocument": "Untitled Document",
-    "myWebsite": "My Website"
+    "myWebsite": "My Website",
+    "emptyState": {
+      "nothingToSeeYet": "NOTHING TO SEE HERE... (YET)",
+      "listView": "List View",
+      "listViewDescription": "Create your first item to see it in the organized list",
+      "boardView": "Board View",
+      "boardViewDescription": "Add items to see them organized across board columns",
+      "tableView": "Table View",
+      "tableViewDescription": "Create items to see them displayed in a table format",
+      "calendarView": "Calendar View",
+      "calendarViewDescription": "Add items with dates to see them on the calendar",
+      "timelineView": "Timeline View",
+      "timelineViewDescription": "Add items with dates to visualize them on the timeline",
+      "mapView": "Map View",
+      "mapViewDescription": "Add items with location data to see them on the map",
+      "pivotView": "Pivot View",
+      "pivotViewDescription": "Add data to analyze it with pivot tables",
+      "workloadView": "Workload View",
+      "workloadViewDescription": "Add tasks to see workload distribution across team members",
+      "portfolioView": "Portfolio View",
+      "portfolioViewDescription": "Add projects to track your portfolio performance",
+      "financialView": "Financial View",
+      "financialViewDescription": "Add financial data to track revenue and expenses",
+      "createFirstItem": "Create First Item",
+      "addItem": "Add Item"
+    }
   },
   "realtime": {
     "mentionedInComment": "You were mentioned in a comment",

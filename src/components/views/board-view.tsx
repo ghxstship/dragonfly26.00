@@ -4,9 +4,10 @@ import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { DndContext, DragEndEvent, DragOverlay, closestCorners } from "@dnd-kit/core"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
-import { Plus, MoreHorizontal } from "lucide-react"
+import { Plus, MoreHorizontal, Columns3 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
 import { BoardColumn } from "./board-column"
@@ -50,6 +51,20 @@ export function BoardView({ data, onItemClick }: BoardViewProps) {
   }
 
   const activeItem = activeId ? data.find((item) => item.id === activeId) : null
+
+  // Check if there's no data at all
+  if (data.length === 0) {
+    return (
+      <EmptyState
+        icon={Columns3}
+        viewType={t('views.emptyState.boardView')}
+        mainMessage={t('views.emptyState.nothingToSeeYet')}
+        description={t('views.emptyState.boardViewDescription')}
+        actionLabel={t('views.emptyState.createFirstItem')}
+        onAction={() => console.log('Create first item')}
+      />
+    )
+  }
 
   return (
     <DndContext

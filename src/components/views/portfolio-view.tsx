@@ -6,6 +6,7 @@ import { Briefcase, TrendingUp, AlertCircle, CheckCircle2, Clock } from "lucide-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
 
@@ -101,6 +102,20 @@ export function PortfolioView({ data, onItemClick }: PortfolioViewProps) {
       default:
         return "bg-muted"
     }
+  }
+
+  // Check if there's no data at all
+  if (data.length === 0) {
+    return (
+      <EmptyState
+        icon={Briefcase}
+        viewType={t('views.emptyState.portfolioView')}
+        mainMessage={t('views.emptyState.nothingToSeeYet')}
+        description={t('views.emptyState.portfolioViewDescription')}
+        actionLabel={t('views.emptyState.createFirstItem')}
+        onAction={() => console.log('Create first item')}
+      />
+    )
   }
 
   return (

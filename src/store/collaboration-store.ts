@@ -1,10 +1,46 @@
 import { create } from 'zustand'
-import type { UserPresence, Activity, Comment } from '@/types'
+import type { UserPresence, Activity } from '@/types'
+
+// Database comment type
+export interface CommentData {
+  id: string
+  workspace_id: string
+  entity_type: string
+  entity_id: string
+  user_id: string
+  content: string
+  created_at: string
+  updated_at: string
+  user?: {
+    id: string
+    email: string
+    name: string
+    avatar_url?: string
+  }
+}
+
+// Database activity type with user info
+export interface ActivityData {
+  id: string
+  workspace_id: string
+  user_id: string
+  action: string
+  entity_type: string
+  entity_id: string
+  metadata?: any
+  created_at: string
+  user?: {
+    id: string
+    email: string
+    name: string
+    avatar_url?: string
+  }
+}
 
 interface CollaborationStore {
   presence: UserPresence[]
-  activities: Activity[]
-  comments: Record<string, Comment[]>
+  activities: ActivityData[]
+  comments: Record<string, CommentData[]>
   unreadCount: number
 
   setPresence: (presence: UserPresence[]) => void
@@ -12,12 +48,12 @@ interface CollaborationStore {
   removePresence: (userId: string) => void
   updatePresence: (userId: string, updates: Partial<UserPresence>) => void
 
-  setActivities: (activities: Activity[]) => void
-  addActivity: (activity: Activity) => void
+  setActivities: (activities: ActivityData[]) => void
+  addActivity: (activity: ActivityData) => void
 
-  setComments: (entityId: string, comments: Comment[]) => void
-  addComment: (entityId: string, comment: Comment) => void
-  updateComment: (entityId: string, commentId: string, updates: Partial<Comment>) => void
+  setComments: (entityId: string, comments: CommentData[]) => void
+  addComment: (entityId: string, comment: CommentData) => void
+  updateComment: (entityId: string, commentId: string, updates: Partial<CommentData>) => void
   removeComment: (entityId: string, commentId: string) => void
 
   setUnreadCount: (count: number) => void

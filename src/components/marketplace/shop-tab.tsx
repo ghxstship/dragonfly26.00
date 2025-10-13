@@ -8,18 +8,57 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ShoppingCart, Heart, Star, Package, Filter, Search } from "lucide-react"
 import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
+import { MarketplaceCartDrawer } from "./marketplace-cart-drawer"
+import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
 export function ShopTab() {
   const shopItems = generateMarketplaceMockData('shop', 24)
-  const [cart, setCart] = useState<Set<string>>(new Set())
+  const [cart, setCart] = useState<Map<string, number>>(new Map())
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
   const [view, setView] = useState<"grid" | "list">("grid")
+  const [cartDrawerOpen, setCartDrawerOpen] = useState(false)
+  const [detailsDrawerOpen, setDetailsDrawerOpen] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState<MarketplaceProduct | null>(null)
 
-  const addToCart = (id: string) => {
-    const newCart = new Set(cart)
-    newCart.add(id)
+  const addToCart = (id: string, quantity: number = 1) => {
+    const newCart = new Map(cart)
+    const currentQuantity = newCart.get(id) || 0
+    newCart.set(id, currentQuantity + quantity)
+    setCart(newCart)
+    setCartDrawerOpen(true)
+  }
+
+  const updateCartQuantity = (id: string, quantity: number) => {
+    const newCart = new Map(cart)
+    if (quantity <= 0) {
+      newCart.delete(id)
+    } else {
+      newCart.set(id, quantity)
+    }
     setCart(newCart)
   }
+
+  const removeFromCart = (id: string) => {
+    const newCart = new Map(cart)
+    newCart.delete(id)
+    setCart(newCart)
+  }
+
+  const handleViewDetails = (item: any) => {
+    setSelectedProduct(item as MarketplaceProduct)
+    setDetailsDrawerOpen(true)
+  }
+
+  const handleCheckout = () => {
+    alert(`Proceeding to checkout with ${cart.size} items`)
+    setCartDrawerOpen(false)
+  }
+
+  // Convert cart Map to array for drawer
+  const cartItems = Array.from(cart.entries()).map(([id, quantity]) => {
+    const item = shopItems.find(i => i.id === id)
+    return item ? { ...item, quantity } : null
+  }).filter(Boolean) as any[]
 
   const toggleFavorite = (id: string) => {
     const newFavorites = new Set(favorites)
@@ -52,7 +91,7 @@ export function ShopTab() {
             <ShoppingCart className="h-3 w-3 mr-1" />
             {cart.size} items
           </Badge>
-          <Button>
+          <Button onClick={() => setCartDrawerOpen(true)}>
             View Cart
           </Button>
         </div>
@@ -171,12 +210,12 @@ export function ShopTab() {
               <Button
                 className="flex-1"
                 onClick={() => addToCart(item.id)}
-                disabled={cart.has(item.id)}
               >
-                {cart.has(item.id) ? "Added" : "Add to Cart"}
+                <ShoppingCart className="h-4 w-4 mr-2" />
+                Add
               </Button>
-              <Button variant="outline" size="icon">
-                <Package className="h-4 w-4" />
+              <Button variant="outline" onClick={() => handleViewDetails(item)}>
+                Details
               </Button>
             </CardFooter>
           </Card>
@@ -191,6 +230,26 @@ export function ShopTab() {
         <Button variant="outline">3</Button>
         <Button variant="outline">Next</Button>
       </div>
+
+      {/* Cart Drawer */}
+      <MarketplaceCartDrawer
+        open={cartDrawerOpen}
+        onOpenChange={setCartDrawerOpen}
+        cartItems={cartItems}
+        onUpdateQuantity={updateCartQuantity}
+        onRemoveItem={removeFromCart}
+        onCheckout={handleCheckout}
+      />
+
+      {/* Product Details Drawer */}
+      <MarketplaceProductDetailDrawer
+        product={selectedProduct}
+        open={detailsDrawerOpen}
+        onOpenChange={setDetailsDrawerOpen}
+        onAddToCart={addToCart}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={selectedProduct ? favorites.has(selectedProduct.id) : false}
+      />
     </div>
   )
 }

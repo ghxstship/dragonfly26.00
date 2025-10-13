@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from "@/components/ui/button"
@@ -8,87 +8,181 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { formatDate } from "@/lib/utils"
-import { CheckCheck, MessageSquare, AtSign, UserPlus, Clock, CheckCircle2 } from "lucide-react"
+import { CheckCheck, MessageSquare, AtSign, UserPlus, Clock, CheckCircle2, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { getSupabaseClient } from "@/lib/supabase/hooks-client"
+import { useToast } from "@/lib/hooks/use-toast"
 
 interface NotificationsPanelProps {
   open: boolean
   onOpenChange: (open: boolean) => void
 }
 
-type NotificationType = "mention" | "comment" | "assignment" | "update"
+type NotificationType = "mention" | "comment" | "assignment" | "update" | "system"
 
-interface Notification {
+interface NotificationData {
   id: string
-  type: NotificationType
+  user_id: string
+  type: string
   title: string
   message: string
-  link: string
+  link: string | null
   read: boolean
   created_at: string
-  priority?: "low" | "medium" | "high"
 }
 
-const mockNotifications: Notification[] = [
-  {
-    id: "1",
-    type: "mention",
-    title: "You were mentioned",
-    message: "John Doe mentioned you in Project Alpha",
-    link: "/projects/alpha",
-    read: false,
-    priority: "high",
-    created_at: new Date().toISOString(),
-  },
-  {
-    id: "2",
-    type: "comment",
-    title: "New comment",
-    message: "Jane Smith commented on your task",
-    link: "/tasks/123",
-    read: false,
-    priority: "medium",
-    created_at: new Date(Date.now() - 3600000).toISOString(),
-  },
-  {
-    id: "3",
-    type: "assignment",
-    title: "Task assigned",
-    message: "You were assigned to Update Documentation",
-    link: "/tasks/456",
-    read: true,
-    created_at: new Date(Date.now() - 86400000).toISOString(),
-  },
-  {
-    id: "4",
-    type: "update",
-    title: "Status changed",
-    message: "Task 'Design Review' moved to In Progress",
-    link: "/tasks/789",
-    read: false,
-    created_at: new Date(Date.now() - 7200000).toISOString(),
-  },
-]
-
-const notificationIcons: Record<NotificationType, any> = {
+const notificationIcons: Record<string, any> = {
   mention: AtSign,
   comment: MessageSquare,
   assignment: UserPlus,
   update: Clock,
+  system: CheckCircle2,
 }
 
 export function NotificationsPanel({ open, onOpenChange }: NotificationsPanelProps) {
-  const [notifications, setNotifications] = useState<Notification[]>(mockNotifications)
+  const supabase = getSupabaseClient()
+  const { toast } = useToast()
+  
+  const [notifications, setNotifications] = useState<NotificationData[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [currentUser, setCurrentUser] = useState<any>(null)
+  
   const unreadCount = notifications.filter((n) => !n.read).length
 
-  const markAsRead = (id: string) => {
-    setNotifications((prev) =>
-      prev.map((n) => (n.id === id ? { ...n, read: true } : n))
-    )
+  // Fetch current user
+  useEffect(() => {
+    const fetchUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      setCurrentUser(user)
+    }
+    fetchUser()
+  }, [supabase])
+
+  // Fetch notifications
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      if (!currentUser) return
+      
+      try {
+        const { data, error } = await supabase
+          .from('notifications')
+          .select('*')
+          .eq('user_id', currentUser.id)
+          .order('created_at', { ascending: false })
+          .limit(50)
+
+        if (error) throw error
+        setNotifications(data || [])
+      } catch (error: any) {
+        console.error('Error fetching notifications:', error)
+        toast({
+          title: "Error",
+          description: "Failed to load notifications",
+          variant: "destructive",
+        })
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchNotifications()
+  }, [supabase, currentUser, toast])
+
+  // Subscribe to real-time notifications
+  useEffect(() => {
+    if (!currentUser) return
+
+    const channel = supabase
+      .channel(`notifications:${currentUser.id}`)
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'notifications',
+          filter: `user_id=eq.${currentUser.id}`,
+        },
+        (payload) => {
+          const newNotification = payload.new as NotificationData
+          setNotifications((prev) => [newNotification, ...prev])
+          
+          // Show toast for new notification
+          toast({
+            title: newNotification.title,
+            description: newNotification.message,
+          })
+        }
+      )
+      .on(
+        'postgres_changes',
+        {
+          event: 'UPDATE',
+          schema: 'public',
+          table: 'notifications',
+          filter: `user_id=eq.${currentUser.id}`,
+        },
+        (payload) => {
+          const updated = payload.new as NotificationData
+          setNotifications((prev) =>
+            prev.map((n) => (n.id === updated.id ? updated : n))
+          )
+        }
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [supabase, currentUser, toast])
+
+  const markAsRead = async (id: string) => {
+    try {
+      const { error } = await supabase
+        .from('notifications')
+        .update({ read: true })
+        .eq('id', id)
+
+      if (error) throw error
+
+      setNotifications((prev) =>
+        prev.map((n) => (n.id === id ? { ...n, read: true } : n))
+      )
+    } catch (error: any) {
+      console.error('Error marking notification as read:', error)
+      toast({
+        title: "Error",
+        description: "Failed to mark notification as read",
+        variant: "destructive",
+      })
+    }
   }
 
-  const markAllAsRead = () => {
-    setNotifications((prev) => prev.map((n) => ({ ...n, read: true })))
+  const markAllAsRead = async () => {
+    if (!currentUser) return
+    
+    try {
+      const { error } = await supabase
+        .from('notifications')
+        .update({ read: true })
+        .eq('user_id', currentUser.id)
+        .eq('read', false)
+
+      if (error) throw error
+
+      setNotifications((prev) => prev.map((n) => ({ ...n, read: true })))
+      
+      toast({
+        title: "Success",
+        description: "All notifications marked as read",
+      })
+    } catch (error: any) {
+      console.error('Error marking all as read:', error)
+      toast({
+        title: "Error",
+        description: "Failed to mark all as read",
+        variant: "destructive",
+      })
+    }
   }
 
   const groupedNotifications = {
@@ -100,8 +194,8 @@ export function NotificationsPanel({ open, onOpenChange }: NotificationsPanelPro
     ),
   }
 
-  const renderNotification = (notification: Notification) => {
-    const Icon = notificationIcons[notification.type]
+  const renderNotification = (notification: NotificationData) => {
+    const Icon = notificationIcons[notification.type] || CheckCircle2
     
     return (
       <button
@@ -141,11 +235,6 @@ export function NotificationsPanel({ open, onOpenChange }: NotificationsPanelPro
             <div className="flex items-start justify-between gap-2">
               <div className="font-medium text-sm">{notification.title}</div>
               <div className="flex items-center gap-2">
-                {notification.priority === "high" && (
-                  <Badge variant="destructive" className="text-[10px] px-1.5 py-0">
-                    High
-                  </Badge>
-                )}
                 {!notification.read && (
                   <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />
                 )}
@@ -206,6 +295,11 @@ export function NotificationsPanel({ open, onOpenChange }: NotificationsPanelPro
           </div>
         </SheetHeader>
 
+        {isLoading ? (
+          <div className="flex items-center justify-center py-12">
+            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+          </div>
+        ) : (
         <Tabs defaultValue="all" className="mt-4">
           <TabsList className="w-full grid grid-cols-3">
             <TabsTrigger value="all">All</TabsTrigger>
@@ -287,6 +381,7 @@ export function NotificationsPanel({ open, onOpenChange }: NotificationsPanelPro
             </ScrollArea>
           </TabsContent>
         </Tabs>
+        )}
       </SheetContent>
     </Sheet>
   )
