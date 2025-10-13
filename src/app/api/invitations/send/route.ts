@@ -42,11 +42,11 @@ export async function POST(request: Request) {
     // Get inviter profile
     const { data: profile } = await supabase
       .from('profiles')
-      .select('name')
+      .select('full_name')
       .eq('id', user.id)
       .single()
 
-    const inviterName = profile?.name || user.email
+    const inviterName = profile?.full_name || user.email
 
     // Create invitations
     const invitationRecords = invites.map((invite) => ({
