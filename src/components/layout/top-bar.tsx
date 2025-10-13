@@ -132,31 +132,35 @@ export function TopBar() {
     <TooltipProvider delayDuration={300}>
       <header className="sticky top-0 z-50 flex h-14 items-center gap-2 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
         {/* Left Section: Logo + Workspace + Breadcrumbs */}
-        <div className="flex items-center gap-2 flex-1 min-w-0">
+        <div className="flex items-center gap-2 min-w-0 flex-shrink">
           {/* App Logo/Icon */}
           <div className="flex items-center justify-center h-8 w-8 rounded-md bg-primary text-primary-foreground font-bold text-sm flex-shrink-0">
             DF
           </div>
 
           {/* Workspace Switcher */}
-          <WorkspaceSwitcher />
+          <div className="flex-shrink-0">
+            <WorkspaceSwitcher />
+          </div>
 
           {/* Breadcrumb Navigation */}
-          <div className="hidden lg:block h-6 w-px bg-border mx-1" />
-          <BreadcrumbNav />
+          <div className="hidden xl:block h-6 w-px bg-border mx-1 flex-shrink-0" />
+          <div className="hidden xl:block min-w-0">
+            <BreadcrumbNav />
+          </div>
         </div>
 
         {/* Center Section: Search */}
-        <div className="flex items-center justify-center flex-1 max-w-2xl mx-4">
+        <div className="flex items-center justify-center flex-1 min-w-0 px-2 sm:px-4">
           <Button
             variant="outline"
             className="w-full max-w-md h-9 justify-start text-muted-foreground hover:text-foreground transition-colors"
             onClick={() => setShowCommandPalette(true)}
           >
             <Search className="mr-2 h-4 w-4 flex-shrink-0" />
-            <span className="hidden sm:inline">{t('common.searchAnything')}</span>
-            <span className="sm:hidden">{t('common.search')}</span>
-            <div className="ml-auto flex items-center gap-1">
+            <span className="hidden sm:inline truncate">{t('common.searchAnything')}</span>
+            <span className="sm:hidden truncate">{t('common.search')}</span>
+            <div className="ml-auto flex items-center gap-1 flex-shrink-0">
               <kbd className="hidden md:inline-flex pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
                 <span className="text-xs">⌘</span>K
               </kbd>
@@ -165,7 +169,7 @@ export function TopBar() {
         </div>
 
         {/* Right Section: Actions + Status + User */}
-        <div className="flex items-center gap-1 flex-1 justify-end">
+        <div className="flex items-center gap-1 flex-shrink-0">
           {/* Status Indicators */}
           <div className="hidden xl:flex items-center gap-2 mr-2">
             <Tooltip>

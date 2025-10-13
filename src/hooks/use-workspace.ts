@@ -53,34 +53,39 @@ export function useWorkspace(workspaceIdOrSlug: string) {
               .select('organization_id')
               .eq('user_id', user.id)
               .limit(1)
-              .single()
 
             if (memberError) throw memberError
 
-            if (!memberships) {
+            if (!memberships || memberships.length === 0) {
               throw new Error('User is not a member of any organization')
             }
+
+            const membership = memberships[0]
 
             // Get the default workspace for this organization
             const { data: defaultWorkspace, error: workspaceError } = await supabase
               .from('workspaces')
               .select('*')
-              .eq('organization_id', memberships.organization_id)
+              .eq('organization_id', membership.organization_id)
               .eq('is_default', true)
               .single()
 
             if (workspaceError) {
               // If no default workspace, get the first workspace
-              const { data: firstWorkspace, error: firstError } = await supabase
+              const { data: firstWorkspaces, error: firstError } = await supabase
                 .from('workspaces')
                 .select('*')
-                .eq('organization_id', memberships.organization_id)
+                .eq('organization_id', membership.organization_id)
                 .order('created_at', { ascending: true })
                 .limit(1)
-                .single()
 
               if (firstError) throw firstError
               
+              if (!firstWorkspaces || firstWorkspaces.length === 0) {
+                throw new Error('No workspaces found for this organization')
+              }
+              
+              const firstWorkspace = firstWorkspaces[0]
               setWorkspace(firstWorkspace)
               setWorkspaceId(firstWorkspace.id)
             } else {
@@ -110,18 +115,22 @@ export function useWorkspace(workspaceIdOrSlug: string) {
             const orgIds = memberships.map((m: any) => m.organization_id)
 
             // Find workspace by name in user's organizations
-            const { data: workspaceByName, error: nameError } = await supabase
+            const { data: workspacesByName, error: nameError } = await supabase
               .from('workspaces')
               .select('*')
               .in('organization_id', orgIds)
               .ilike('name', workspaceIdOrSlug)
               .limit(1)
-              .single()
 
             if (nameError) {
               throw new Error(`Workspace "${workspaceIdOrSlug}" not found`)
             }
 
+            if (!workspacesByName || workspacesByName.length === 0) {
+              throw new Error(`Workspace "${workspaceIdOrSlug}" not found`)
+            }
+
+            const workspaceByName = workspacesByName[0]
             setWorkspace(workspaceByName)
             setWorkspaceId(workspaceByName.id)
           }

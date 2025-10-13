@@ -54,30 +54,30 @@ export function BreadcrumbNav() {
   if (breadcrumbs.length === 0) return null
 
   return (
-    <nav className="hidden lg:flex items-center gap-1 text-sm">
+    <nav className="flex items-center gap-1 text-sm min-w-0">
       <Link
         href={`/${locale}`}
-        className="p-1.5 rounded-md hover:bg-accent transition-colors"
+        className="p-1.5 rounded-md hover:bg-accent transition-colors flex-shrink-0"
         title={t('breadcrumb.home')}
       >
         <Home className="h-4 w-4 text-muted-foreground" />
       </Link>
       
       {breadcrumbs.map((crumb, index) => (
-        <div key={crumb.href} className="flex items-center gap-1">
-          <ChevronRight className="h-4 w-4 text-muted-foreground" />
+        <div key={crumb.href} className="flex items-center gap-1 min-w-0">
+          <ChevronRight className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           <Link
             href={crumb.href}
             className={cn(
-              "px-2 py-1.5 rounded-md hover:bg-accent transition-colors max-w-[150px] truncate",
+              "px-2 py-1.5 rounded-md hover:bg-accent transition-colors truncate",
               index === breadcrumbs.length - 1
-                ? "text-foreground font-medium"
-                : "text-muted-foreground"
+                ? "text-foreground font-medium max-w-[200px]"
+                : "text-muted-foreground max-w-[120px]"
             )}
             title={crumb.label}
           >
-            {crumb.icon && <span className="mr-1.5">{crumb.icon}</span>}
-            {crumb.label}
+            {crumb.icon && <span className="mr-1.5 flex-shrink-0">{crumb.icon}</span>}
+            <span className="truncate">{crumb.label}</span>
           </Link>
         </div>
       ))}

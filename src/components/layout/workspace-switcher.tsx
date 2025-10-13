@@ -109,18 +109,18 @@ export function WorkspaceSwitcher() {
     <>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="gap-2 px-3">
+        <Button variant="ghost" className="gap-2 px-3 max-w-[200px] sm:max-w-[250px]">
           {currentWorkspace ? (
             <>
               {currentWorkspace.icon && (
-                <span className="text-lg">{currentWorkspace.icon}</span>
+                <span className="text-lg flex-shrink-0">{currentWorkspace.icon}</span>
               )}
-              <span className="font-semibold">{currentWorkspace.name}</span>
+              <span className="font-semibold truncate">{currentWorkspace.name}</span>
             </>
           ) : (
-            <span className="text-muted-foreground">{t('workspace.selectWorkspace')}</span>
+            <span className="text-muted-foreground truncate">{t('workspace.selectWorkspace')}</span>
           )}
-          <ChevronsUpDown className="ml-1 h-4 w-4 text-muted-foreground" />
+          <ChevronsUpDown className="ml-1 h-4 w-4 text-muted-foreground flex-shrink-0" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-80 p-0">
