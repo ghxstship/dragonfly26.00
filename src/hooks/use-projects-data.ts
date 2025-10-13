@@ -18,7 +18,7 @@ export function useProductions(workspaceId: string) {
         .select(`
           *,
           workspaces!workspace_id(name),
-          project_manager:project_manager_id(first_name, last_name),
+          project_manager:profiles!project_manager_id(first_name, last_name),
           tasks:project_tasks(count),
           milestones:project_milestones(count)
         `)
@@ -71,7 +71,7 @@ export function useTasks(workspaceId: string, productionId?: string) {
         .select(`
           *,
           production:production_id(name),
-          assignee:assignee_id(first_name, last_name),
+          assignee:profiles!assignee_id(first_name, last_name),
           milestone:milestone_id(name)
         `)
         .eq('workspace_id', workspaceId)

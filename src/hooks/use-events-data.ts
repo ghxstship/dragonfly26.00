@@ -237,7 +237,7 @@ export function useTours(workspaceId: string) {
         .select(`
           *,
           production:production_id(name),
-          tour_manager:tour_manager_id(first_name, last_name),
+          tour_manager:profiles!tour_manager_id(first_name, last_name),
           tour_dates:tour_dates(count)
         `)
         .eq('workspace_id', workspaceId)

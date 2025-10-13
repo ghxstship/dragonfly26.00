@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import { useUIStore } from "@/store/ui-store"
 import { useWorkspaceStore } from "@/store/workspace-store"
 import { getModuleTabs } from "@/lib/modules/tabs-registry"
+import { useMemo } from "react"
 
 export function BreadcrumbNav() {
   const t = useTranslations()
@@ -15,41 +16,51 @@ export function BreadcrumbNav() {
   const { currentWorkspace } = useUIStore()
   const { currentOrganization } = useWorkspaceStore()
 
-  // Parse path segments
+  // Parse path segments - extract locale outside memoization for use in JSX
   const segments = pathname.split("/").filter(Boolean)
   const locale = segments[0] || 'en'
-  const workspaceId = segments[2]
-  const moduleName = segments[3]
-  const tabSlug = segments[4]
-  
-  // Build breadcrumb items
-  const breadcrumbs = []
 
-  // Add module breadcrumb
-  if (moduleName && workspaceId) {
-    const moduleTabs = getModuleTabs(moduleName)
-    const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
+  // Memoize breadcrumbs to ensure they're recalculated only when pathname changes
+  const breadcrumbs = useMemo(() => {
+    const workspaceId = segments[2]
+    const moduleName = segments[3]
+    const tabSlug = segments[4]
     
-    breadcrumbs.push({
-      label: moduleName.charAt(0).toUpperCase() + moduleName.slice(1).replace(/-/g, " "),
-      href: `/${locale}/workspace/${workspaceId}/${moduleName}/${firstTabSlug}`,
-      icon: undefined,
-    })
-  }
+    // Build breadcrumb items - create fresh array each time
+    const items: Array<{
+      label: string
+      href: string
+      icon?: React.ReactNode
+    }> = []
 
-  // Add tab breadcrumb (if present)
-  if (tabSlug && moduleName && workspaceId) {
-    const moduleTabs = getModuleTabs(moduleName)
-    const currentTab = moduleTabs.find(tab => tab.slug === tabSlug)
-    
-    if (currentTab) {
-      breadcrumbs.push({
-        label: currentTab.name,
-        href: `/${locale}/workspace/${workspaceId}/${moduleName}/${tabSlug}`,
+    // Add module breadcrumb only if we have both module and workspace
+    if (moduleName && workspaceId) {
+      const moduleTabs = getModuleTabs(moduleName)
+      const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
+      
+      items.push({
+        label: moduleName.charAt(0).toUpperCase() + moduleName.slice(1).replace(/-/g, " "),
+        href: `/${locale}/workspace/${workspaceId}/${moduleName}/${firstTabSlug}`,
         icon: undefined,
       })
+
+      // Only add tab breadcrumb if we have a tab and it's different from the first tab
+      if (tabSlug && moduleTabs.length > 0) {
+        const currentTab = moduleTabs.find(tab => tab.slug === tabSlug)
+        
+        // Only show tab breadcrumb if it exists and is not the default first tab
+        if (currentTab && tabSlug !== firstTabSlug) {
+          items.push({
+            label: currentTab.name,
+            href: `/${locale}/workspace/${workspaceId}/${moduleName}/${tabSlug}`,
+            icon: undefined,
+          })
+        }
+      }
     }
-  }
+
+    return items
+  }, [pathname, segments, locale]) // Dependencies include all used variables
 
   if (breadcrumbs.length === 0) return null
 
@@ -64,7 +75,7 @@ export function BreadcrumbNav() {
       </Link>
       
       {breadcrumbs.map((crumb, index) => (
-        <div key={crumb.href} className="flex items-center gap-1 min-w-0">
+        <div key={`${crumb.href}-${index}`} className="flex items-center gap-1 min-w-0">
           <ChevronRight className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           <Link
             href={crumb.href}
@@ -84,3 +95,5 @@ export function BreadcrumbNav() {
     </nav>
   )
 }
+
+BreadcrumbNav.displayName = 'BreadcrumbNav'

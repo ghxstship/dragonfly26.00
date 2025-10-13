@@ -61,7 +61,7 @@ export function useTeams(workspaceId: string) {
         .from('teams')
         .select(`
           *,
-          lead:team_lead_id(first_name, last_name),
+          lead:personnel!leader_id(first_name, last_name),
           members:team_members(count)
         `)
         .eq('workspace_id', workspaceId)
@@ -106,7 +106,7 @@ export function useTimeEntries(workspaceId: string, personnelId?: string) {
         .from('time_entries')
         .select(`
           *,
-          personnel:personnel_id(first_name, last_name),
+          personnel:personnel!personnel_id(first_name, last_name),
           production:production_id(name)
         `)
         .eq('workspace_id', workspaceId)

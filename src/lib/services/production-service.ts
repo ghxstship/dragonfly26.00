@@ -199,7 +199,7 @@ export class ProductionService {
   private async notifyTeam(productionId: string, message: string) {
     const { data: production } = await supabase
       .from('productions')
-      .select('team_members, project_manager_id')
+      .select('team_members, project_manager_id, project_manager:profiles!project_manager_id(first_name, last_name)')
       .eq('id', productionId)
       .single()
 

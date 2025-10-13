@@ -89,7 +89,7 @@ export class BudgetService {
   private async checkBudgetAlerts(budgetId: string) {
     const { data: budget } = await supabase
       .from('budgets')
-      .select('*, production:production_id(project_manager_id)')
+      .select('*, production:production_id(project_manager_id, project_manager:profiles!project_manager_id(first_name, last_name))')
       .eq('id', budgetId)
       .single()
 

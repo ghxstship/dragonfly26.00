@@ -17,8 +17,8 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'my-expenses': { table: 'financial_transactions', orderBy: 'transaction_date' },
   
   // Projects
-  'productions': { table: 'productions', select: '*, workspaces!workspace_id(name), project_manager:project_manager_id(first_name, last_name)', orderBy: 'created_at' },
-  'tasks': { table: 'project_tasks', select: '*, production:production_id(name), assignee:assignee_id(first_name, last_name)', orderBy: 'due_date' },
+  'productions': { table: 'productions', select: '*, workspaces!workspace_id(name), project_manager:profiles!project_manager_id(first_name, last_name)', orderBy: 'created_at' },
+  'tasks': { table: 'project_tasks', select: '*, production:production_id(name), assignee:profiles!assignee_id(first_name, last_name)', orderBy: 'due_date' },
   'milestones': { table: 'project_milestones', select: '*, production:production_id(name)', orderBy: 'due_date' },
   'compliance': { table: 'compliance_requirements', select: '*, production:production_id(name)', orderBy: 'expires_at' },
   'safety': { table: 'safety_guidelines', select: '*, production:production_id(name)', orderBy: 'created_at' },
@@ -29,14 +29,14 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'bookings': { table: 'bookings', select: '*, event:event_id(name), location:location_id(name)', orderBy: 'check_in' },
   'incidents': { table: 'incidents', select: '*, event:event_id(name)', orderBy: 'incident_date' },
   'tours': { table: 'tours', select: '*, production:production_id(name)', orderBy: 'start_date' },
-  'itineraries': { table: 'travel_itineraries', select: '*, traveler:traveler_id(first_name, last_name)', orderBy: 'departure_date' },
+  'itineraries': { table: 'travel_itineraries', select: '*, traveler:personnel!traveler_id(first_name, last_name)', orderBy: 'departure_date' },
   'reservations': { table: 'hospitality_reservations', select: '*, event:event_id(name)', orderBy: 'reservation_date' },
   'shipping-receiving': { table: 'shipments', select: '*, production:production_id(name)', orderBy: 'ship_date' },
   
   // People
   'personnel': { table: 'personnel', select: '*', orderBy: 'last_name' },
-  'teams': { table: 'teams', select: '*, lead:team_lead_id(first_name, last_name)', orderBy: 'name' },
-  'timekeeping': { table: 'time_entries', select: '*, personnel:personnel_id(first_name, last_name)', orderBy: 'start_time' },
+  'teams': { table: 'teams', select: '*, lead:personnel!leader_id(first_name, last_name)', orderBy: 'name' },
+  'timekeeping': { table: 'time_entries', select: '*, personnel:personnel!personnel_id(first_name, last_name)', orderBy: 'start_time' },
   'training': { table: 'training_sessions', select: '*', orderBy: 'session_date' },
   'openings': { table: 'job_openings', select: '*', orderBy: 'created_at' },
   
@@ -69,23 +69,23 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'gl-codes': { table: 'gl_codes', select: '*', orderBy: 'code' },
   
   // Procurement
-  'orders': { table: 'purchase_orders', select: '*, company:vendor_id(name)', orderBy: 'order_date' },
+  'orders': { table: 'purchase_orders', select: '*, company:company_id(name)', orderBy: 'issue_date' },
   'agreements': { table: 'agreements', select: '*, company:company_id(name)', orderBy: 'start_date' },
-  'requisitions': { table: 'purchase_requisitions', select: '*, requested_by_user:requested_by(first_name, last_name)', orderBy: 'requested_date' },
+  'requisitions': { table: 'purchase_requisitions', select: '*, requested_by_user:profiles!requested_by(first_name, last_name)', orderBy: 'requested_date' },
   
   // Community
-  'activity': { table: 'community_posts', select: '*, author:author_id(first_name, last_name)', orderBy: 'created_at' },
+  'activity': { table: 'community_posts', select: '*, author:profiles!author_id(first_name, last_name)', orderBy: 'created_at' },
   'connections': { table: 'connections', select: '*', orderBy: 'created_at' },
   
   // Marketplace
   'shop': { table: 'marketplace_products', select: '*', orderBy: 'created_at' },
   'products': { table: 'marketplace_products', select: '*', orderBy: 'name' },
-  'purchases': { table: 'marketplace_orders', select: '*', orderBy: 'order_date' },
+  'purchases': { table: 'marketplace_orders', select: '*', orderBy: 'created_at' },
   
   // Resources
   'library': { table: 'resources', select: '*', orderBy: 'title' },
   'courses': { table: 'courses', select: '*', orderBy: 'title' },
-  'grants': { table: 'grants', select: '*', orderBy: 'deadline' },
+  'grants': { table: 'grants', select: '*', orderBy: 'application_deadline' },
   
   // Jobs
   'active': { table: 'job_contracts', select: '*', orderBy: 'start_date' },
@@ -100,7 +100,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'benchmarks': { table: 'benchmarks', select: '*', orderBy: 'name' },
   
   // Insights
-  'objectives': { table: 'objectives', select: '*, owner:owner_id(first_name, last_name)', orderBy: 'start_date' },
+  'objectives': { table: 'objectives', select: '*, owner:profiles!owner_id(first_name, last_name)', orderBy: 'start_date' },
   'key-results': { table: 'key_results', select: '*, objective:objective_id(title)', orderBy: 'created_at' },
   'priorities': { table: 'strategic_priorities', select: '*', orderBy: 'priority_rank' },
   'recommendations': { table: 'ai_recommendations', select: '*', orderBy: 'generated_at' },
