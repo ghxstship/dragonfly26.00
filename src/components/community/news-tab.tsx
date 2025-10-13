@@ -20,6 +20,11 @@ import {
   Filter
 } from "lucide-react"
 
+interface NewsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 interface NewsArticle {
   id: string
   title: string
@@ -37,11 +42,11 @@ interface NewsArticle {
   tags: string[]
 }
 
-export function NewsTab() {
+export function NewsTab({ data = [], loading = false }: NewsTabProps) {
   const [selectedCategory, setSelectedCategory] = useState<"all" | "industry" | "sponsored" | "curated">("all")
   const [searchQuery, setSearchQuery] = useState("")
 
-  const newsArticles: NewsArticle[] = [
+  const newsArticles: NewsArticle[] = data.length > 0 ? data : [
     {
       id: "1",
       title: "Broadway Shows Return with Record-Breaking Attendance",

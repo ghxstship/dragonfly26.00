@@ -52,7 +52,13 @@ const performanceAreas = [
   },
 ]
 
-export function AnalyticsPerformanceTab() {
+interface AnalyticsPerformanceTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsPerformanceTab({ data = [], loading = false }: AnalyticsPerformanceTabProps) {
+  const displayData = data.length > 0 ? data : performanceAreas
   return (
     <div className="space-y-6">
       <div className="grid gap-6">

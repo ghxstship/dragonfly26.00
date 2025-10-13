@@ -6,13 +6,18 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ShoppingCart, Heart, Star, Package, Filter, Search } from "lucide-react"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
+import { Heart, ShoppingCart, Star, Package, Filter, Search } from "lucide-react"
 import { MarketplaceCartDrawer } from "./marketplace-cart-drawer"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
-export function ShopTab() {
-  const shopItems = generateMarketplaceMockData('shop', 24)
+interface ShopTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ShopTab({ data = [], loading = false }: ShopTabProps) {
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  const productsData = data
   const [cart, setCart] = useState<Map<string, number>>(new Map())
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
   const [view, setView] = useState<"grid" | "list">("grid")
@@ -56,7 +61,7 @@ export function ShopTab() {
 
   // Convert cart Map to array for drawer
   const cartItems = Array.from(cart.entries()).map(([id, quantity]) => {
-    const item = shopItems.find(i => i.id === id)
+    const item = productsData.find((i: any) => i.id === id)
     return item ? { ...item, quantity } : null
   }).filter(Boolean) as any[]
 
@@ -135,7 +140,7 @@ export function ShopTab() {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {shopItems.map((item) => (
+        {productsData.map((item) => (
           <Card key={item.id} className="group overflow-hidden hover:shadow-lg transition-shadow">
             {/* Product Image */}
             <div className="relative aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">

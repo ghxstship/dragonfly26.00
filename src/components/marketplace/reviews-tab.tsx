@@ -8,10 +8,14 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Star, ThumbsUp, Flag, Search, Filter } from "lucide-react"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
 
-export function ReviewsTab() {
-  const reviewsData = generateMarketplaceMockData('reviews', 24)
+interface ReviewsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
+  const reviewsData = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {

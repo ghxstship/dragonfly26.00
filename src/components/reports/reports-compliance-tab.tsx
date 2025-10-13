@@ -68,7 +68,13 @@ const complianceReports = [
   },
 ]
 
-export function ReportsComplianceTab() {
+interface ReportsComplianceTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsComplianceTab({ data = [], loading = false }: ReportsComplianceTabProps) {
+  const displayReports = data.length > 0 ? data : complianceReports
   return (
     <div className="space-y-6">
       {/* Status Summary */}

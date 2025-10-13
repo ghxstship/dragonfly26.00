@@ -72,7 +72,13 @@ const operationalReports = [
   },
 ]
 
-export function ReportsOperationalTab() {
+interface ReportsOperationalTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsOperationalTab({ data = [], loading = false }: ReportsOperationalTabProps) {
+  const displayData = data.length > 0 ? data : []
   return (
     <div className="space-y-6">
       {/* Summary Cards */}

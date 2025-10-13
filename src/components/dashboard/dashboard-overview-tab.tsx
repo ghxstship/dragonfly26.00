@@ -24,9 +24,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export function DashboardOverviewTab() {
+interface DashboardOverviewTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardOverviewTab({ data = [], loading = false }: DashboardOverviewTabProps) {
   // Quick stats for user's personal dashboard
-  const stats = [
+  const stats = data.length > 0 ? data : [
     {
       label: "Tasks Due Today",
       value: "8",

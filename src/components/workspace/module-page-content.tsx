@@ -39,14 +39,7 @@ import { ModuleTabs } from "@/components/layout/module-tabs"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
 import { getCreateButtonLabel } from "@/lib/modules/form-fields-registry"
-import { generateProjectsMockData } from "@/lib/modules/projects-mock-data"
-import { generateEventsMockData } from "@/lib/modules/events-mock-data"
-import { generatePeopleMockData } from "@/lib/modules/people-mock-data"
-import { generateLocationsMockData } from "@/lib/modules/locations-mock-data"
-import { generateFilesMockData } from "@/lib/modules/files-mock-data"
-import { generateFinanceMockData } from "@/lib/modules/finance-mock-data"
-import { generateResourcesMockData } from "@/lib/modules/resources-mock-data"
-import { generateCompaniesMockData } from "@/lib/modules/companies-mock-data"
+import { useModuleData } from "@/hooks/use-module-data"
 import type { ViewType, DataItem } from "@/types"
 
 // Mock data generator
@@ -98,6 +91,13 @@ export function ModulePageContent() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
+  // Fetch live data from Supabase using universal hook
+  const { data: supabaseData, loading: dataLoading } = useModuleData(
+    moduleSlug,
+    moduleTabs[0]?.slug || 'overview',
+    workspaceId
+  )
+
   // Redirect to first tab if tabs exist
   useEffect(() => {
     if (moduleTabs.length > 0) {
@@ -105,25 +105,8 @@ export function ModulePageContent() {
     }
   }, [moduleTabs, moduleSlug, workspaceId, locale, router])
 
-  // Mock data - in real app, fetch from Supabase
-  // Use contextual mock data for Projects, Events, People, Locations, Files, Finance, Resources, and Companies modules
-  const mockData = moduleSlug === 'projects' 
-    ? generateProjectsMockData(moduleTabs[0]?.slug || '', 20)
-    : moduleSlug === 'events'
-    ? generateEventsMockData(moduleTabs[0]?.slug || '', 20)
-    : moduleSlug === 'people'
-    ? generatePeopleMockData(moduleTabs[0]?.slug || '', 20)
-    : moduleSlug === 'locations'
-    ? generateLocationsMockData(moduleTabs[0]?.slug || '', 20)
-    : moduleSlug === 'files'
-    ? generateFilesMockData(moduleTabs[0]?.slug || '', 20)
-    : moduleSlug === 'finance'
-    ? generateFinanceMockData(moduleTabs[0]?.slug || '', 20)
-    : moduleSlug === 'resources'
-    ? generateResourcesMockData(moduleTabs[0]?.slug || '', 20)
-    : moduleSlug === 'companies'
-    ? generateCompaniesMockData(moduleTabs[0]?.slug || '', 20)
-    : generateMockData(20)
+  // Use Supabase data or fallback to empty array
+  const mockData = supabaseData || []
 
   const handleItemClick = (item: DataItem) => {
     setSelectedItem(item)

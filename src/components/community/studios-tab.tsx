@@ -23,6 +23,11 @@ import {
   MoreHorizontal
 } from "lucide-react"
 
+interface StudiosTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 interface Studio {
   id: string
   name: string
@@ -41,11 +46,11 @@ interface Studio {
   joined?: boolean
 }
 
-export function StudiosTab() {
+export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [filter, setFilter] = useState<"all" | "my-studios" | "suggested">("all")
 
-  const [studios, setStudios] = useState<Studio[]>([
+  const [studios, setStudios] = useState<Studio[]>(data.length > 0 ? data : [
     {
       id: "1",
       name: "Live Production Professionals",

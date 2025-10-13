@@ -17,9 +17,14 @@ import {
   Truck
 } from "lucide-react"
 
-export function DashboardMyAdvancesTab() {
+interface DashboardMyAdvancesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyAdvancesTab({ data = [], loading = false }: DashboardMyAdvancesTabProps) {
   // User's production advances - equipment, credentials, materials
-  const advances = [
+  const advances = data.length > 0 ? data : [
     {
       id: "ADV-2024-001",
       title: "Lighting Package - Summer Festival",

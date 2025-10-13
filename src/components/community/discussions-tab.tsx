@@ -25,6 +25,11 @@ import {
   Eye
 } from "lucide-react"
 
+interface DiscussionsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 interface Discussion {
   id: string
   title: string
@@ -45,14 +50,15 @@ interface Discussion {
   tags: string[]
 }
 
-export function DiscussionsTab() {
+export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabProps) {
   const [searchQuery, setSearchQuery] = useState("")
+  const [categoryFilter, setCategoryFilter] = useState<"all" | Discussion["category"]>("all")
   const [sortBy, setSortBy] = useState<"hot" | "new" | "top">("hot")
   const [showNewPost, setShowNewPost] = useState(false)
   const [newPostTitle, setNewPostTitle] = useState("")
   const [newPostContent, setNewPostContent] = useState("")
 
-  const [discussions, setDiscussions] = useState<Discussion[]>([
+  const [discussions, setDiscussions] = useState<Discussion[]>(data.length > 0 ? data : [
     {
       id: "1",
       title: "Best practices for setting up outdoor festivals in unpredictable weather?",

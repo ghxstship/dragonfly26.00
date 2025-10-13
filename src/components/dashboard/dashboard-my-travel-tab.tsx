@@ -16,9 +16,14 @@ import {
   AlertCircle
 } from "lucide-react"
 
-export function DashboardMyTravelTab() {
+interface DashboardMyTravelTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyTravelTab({ data = [], loading = false }: DashboardMyTravelTabProps) {
   // User's travel arrangements and itineraries
-  const travels = [
+  const travels = data.length > 0 ? data : [
     {
       id: "TRV-2024-001",
       title: "Site Survey - Theater Revival",

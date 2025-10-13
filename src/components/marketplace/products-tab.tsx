@@ -7,12 +7,16 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Package, Heart, ShoppingCart, Star, Search, SlidersHorizontal, Grid3x3, List } from "lucide-react"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
 import { MarketplaceCartDrawer } from "./marketplace-cart-drawer"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
-export function ProductsTab() {
-  const productsData = generateMarketplaceMockData('products', 24)
+interface ProductsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
+  const productsData = data
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
   const [cart, setCart] = useState<Map<string, number>>(new Map())

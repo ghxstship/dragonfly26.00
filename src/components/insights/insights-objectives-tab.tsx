@@ -64,7 +64,13 @@ const objectives = [
   },
 ]
 
-export function InsightsObjectivesTab() {
+interface InsightsObjectivesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function InsightsObjectivesTab({ data = [], loading = false }: InsightsObjectivesTabProps) {
+  const displayObjectives = data.length > 0 ? data : objectives
   return (
     <div className="space-y-6">
       {/* Quick Stats */}

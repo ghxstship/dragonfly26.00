@@ -235,7 +235,7 @@ export function TabPageContent() {
     if (moduleSlug === "dashboard") {
       const DashboardComponent = getDashboardTabComponent(tabSlug)
       if (DashboardComponent) {
-        return <DashboardComponent />
+        return <DashboardComponent data={realData} loading={loading} />
       }
     }
 
@@ -243,7 +243,7 @@ export function TabPageContent() {
     if (moduleSlug === "projects") {
       const ProjectsComponent = getProjectsTabComponent(tabSlug)
       if (ProjectsComponent) {
-        return <ProjectsComponent />
+        return <ProjectsComponent data={realData} loading={loading} />
       }
     }
 
@@ -251,7 +251,7 @@ export function TabPageContent() {
     if (moduleSlug === "events") {
       const EventsComponent = getEventsTabComponent(tabSlug)
       if (EventsComponent) {
-        return <EventsComponent />
+        return <EventsComponent data={realData} loading={loading} />
       }
     }
 
@@ -259,7 +259,7 @@ export function TabPageContent() {
     if (moduleSlug === "locations") {
       const LocationsComponent = getLocationsTabComponent(tabSlug)
       if (LocationsComponent) {
-        return <LocationsComponent />
+        return <LocationsComponent data={realData} loading={loading} />
       }
     }
 
@@ -267,7 +267,7 @@ export function TabPageContent() {
     if (moduleSlug === "community") {
       const CommunityComponent = getCommunityTabComponent(tabSlug)
       if (CommunityComponent) {
-        return <CommunityComponent />
+        return <CommunityComponent data={realData} loading={loading} />
       }
     }
 
@@ -275,7 +275,7 @@ export function TabPageContent() {
     if (moduleSlug === "marketplace") {
       const MarketplaceComponent = getMarketplaceTabComponent(tabSlug)
       if (MarketplaceComponent) {
-        return <MarketplaceComponent />
+        return <MarketplaceComponent data={realData} loading={loading} />
       }
     }
 
@@ -283,7 +283,7 @@ export function TabPageContent() {
     if (moduleSlug === "reports") {
       const ReportsComponent = getReportsTabComponent(tabSlug)
       if (ReportsComponent) {
-        return <ReportsComponent />
+        return <ReportsComponent data={realData} loading={loading} />
       }
     }
 
@@ -291,7 +291,7 @@ export function TabPageContent() {
     if (moduleSlug === "analytics") {
       const AnalyticsComponent = getAnalyticsTabComponent(tabSlug)
       if (AnalyticsComponent) {
-        return <AnalyticsComponent />
+        return <AnalyticsComponent data={realData} loading={loading} />
       }
     }
 
@@ -299,7 +299,7 @@ export function TabPageContent() {
     if (moduleSlug === "insights") {
       const InsightsComponent = getInsightsTabComponent(tabSlug)
       if (InsightsComponent) {
-        return <InsightsComponent />
+        return <InsightsComponent data={realData} loading={loading} />
       }
     }
 

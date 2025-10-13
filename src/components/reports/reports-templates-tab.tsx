@@ -62,7 +62,13 @@ const templates = [
   },
 ]
 
-export function ReportsTemplatesTab() {
+interface ReportsTemplatesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTemplatesTabProps) {
+  const displayTemplates = data.length > 0 ? data : templates
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

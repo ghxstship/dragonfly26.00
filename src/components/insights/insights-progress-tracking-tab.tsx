@@ -41,7 +41,13 @@ const progressData = [
   },
 ]
 
-export function InsightsProgressTrackingTab() {
+interface InsightsProgressTrackingTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function InsightsProgressTrackingTab({ data = [], loading = false }: InsightsProgressTrackingTabProps) {
+  const displayProgress = data.length > 0 ? data : progressData
   return (
     <div className="space-y-6">
       {/* Overall Progress Summary */}

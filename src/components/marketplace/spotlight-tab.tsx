@@ -6,10 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Heart, MessageCircle, Share2, Bookmark, Sparkles, TrendingUp, Star, ChevronRight } from "lucide-react"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
 
-export function SpotlightTab() {
-  const spotlightItems = generateMarketplaceMockData('spotlight', 12)
+interface SpotlightTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) {
+  const spotlightItems = data
   const [likedItems, setLikedItems] = useState<Set<string>>(new Set())
   const [savedItems, setSavedItems] = useState<Set<string>>(new Set())
 

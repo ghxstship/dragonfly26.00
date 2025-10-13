@@ -8,11 +8,15 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Users, Star, MapPin, Briefcase, Clock, MessageCircle, Search, Award } from "lucide-react"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
-export function ServicesTab() {
-  const servicesData = generateMarketplaceMockData('services', 20)
+interface ServicesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
+  const servicesData = data
   const [detailsDrawerOpen, setDetailsDrawerOpen] = useState(false)
   const [selectedService, setSelectedService] = useState<MarketplaceProduct | null>(null)
   const [favorites, setFavorites] = useState<Set<string>>(new Set())

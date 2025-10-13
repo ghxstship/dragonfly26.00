@@ -11,10 +11,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
 
-export function ListsTab() {
-  const listsData = generateMarketplaceMockData('lists', 16)
+interface ListsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ListsTab({ data = [], loading = false }: ListsTabProps) {
+  const listsData = data
   
   const getListIcon = (name: string) => {
     if (name.includes("Shopping Cart")) return <ShoppingCart className="h-5 w-5 text-blue-500" />

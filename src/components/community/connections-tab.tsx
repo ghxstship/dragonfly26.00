@@ -23,6 +23,11 @@ import {
   Calendar
 } from "lucide-react"
 
+interface ConnectionsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 interface Connection {
   id: string
   name: string
@@ -38,11 +43,11 @@ interface Connection {
   verified?: boolean
 }
 
-export function ConnectionsTab() {
+export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [filterStatus, setFilterStatus] = useState<"all" | "connected" | "pending" | "suggested">("all")
 
-  const [connections, setConnections] = useState<Connection[]>([
+  const [connections, setConnections] = useState<Connection[]>(data.length > 0 ? data : [
     {
       id: "1",
       name: "Sarah Mitchell",

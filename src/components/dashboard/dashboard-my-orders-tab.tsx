@@ -14,9 +14,14 @@ import {
   Search
 } from "lucide-react"
 
-export function DashboardMyOrdersTab() {
+interface DashboardMyOrdersTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyOrdersTab({ data = [], loading = false }: DashboardMyOrdersTabProps) {
   // User's orders (to be integrated with marketplace)
-  const orders = [
+  const orders = data.length > 0 ? data : [
     {
       id: "ORD-2024-1234",
       item: "Wireless Microphone System Bundle",

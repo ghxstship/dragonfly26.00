@@ -4,6 +4,11 @@ import { TrendingUp, TrendingDown, Activity, Users, DollarSign, Target } from "l
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 
+interface AnalyticsOverviewTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 const metrics = [
   { 
     label: "Total Revenue", 
@@ -50,12 +55,13 @@ const kpis = [
   { name: "Quality Score", current: 92, target: 95, unit: "%" },
 ]
 
-export function AnalyticsOverviewTab() {
+export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOverviewTabProps) {
+  const displayMetrics = data.length > 0 ? data : metrics
   return (
     <div className="space-y-6">
       {/* Key Metrics Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {metrics.map((metric, index) => {
+        {displayMetrics.map((metric: any, index: number) => {
           const Icon = metric.icon
           const TrendIcon = metric.trend === "up" ? TrendingUp : TrendingDown
           

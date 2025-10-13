@@ -64,7 +64,13 @@ const trendData = [
   },
 ]
 
-export function AnalyticsTrendsTab() {
+interface AnalyticsTrendsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTrendsTabProps) {
+  const displayData = data.length > 0 ? data : trendData
   return (
     <div className="space-y-6">
       <Tabs defaultValue="6months" className="space-y-4">

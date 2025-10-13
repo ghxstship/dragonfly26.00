@@ -52,7 +52,13 @@ const scheduledReports = [
   },
 ]
 
-export function ReportsScheduledTab() {
+interface ReportsScheduledTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsScheduledTab({ data = [], loading = false }: ReportsScheduledTabProps) {
+  const displayReports = data.length > 0 ? data : scheduledReports
   return (
     <div className="space-y-6">
       <div className="grid gap-4">

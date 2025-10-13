@@ -52,7 +52,13 @@ const kpiSummary = [
   { name: "Operating Margin", value: "22%", target: "25%", progress: 88, status: "at_risk" },
 ]
 
-export function ReportsExecutiveTab() {
+interface ReportsExecutiveTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecutiveTabProps) {
+  const displayData = data.length > 0 ? data : executiveReports
   return (
     <div className="space-y-6">
       {/* KPI Summary Dashboard */}

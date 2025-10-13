@@ -16,9 +16,14 @@ import {
   PieChart
 } from "lucide-react"
 
-export function DashboardMyReportsTab() {
+interface DashboardMyReportsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyReportsTab({ data = [], loading = false }: DashboardMyReportsTabProps) {
   // User's custom, favorited, and recurring/subscribed reports
-  const reports = [
+  const reports = data.length > 0 ? data : [
     {
       id: "RPT-001",
       name: "Personal Task Performance",

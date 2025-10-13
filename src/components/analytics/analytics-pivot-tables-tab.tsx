@@ -14,7 +14,13 @@ const pivotData = [
   { region: "Asia Pacific", product: "Product B", q1: 150, q2: 180, q3: 210, q4: 250, total: 790 },
 ]
 
-export function AnalyticsPivotTablesTab() {
+interface AnalyticsPivotTablesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsPivotTablesTab({ data = [], loading = false }: AnalyticsPivotTablesTabProps) {
+  const displayData = data.length > 0 ? data : pivotData
   return (
     <div className="space-y-6">
       <div className="flex justify-end">

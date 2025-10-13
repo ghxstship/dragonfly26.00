@@ -80,7 +80,13 @@ const keyResults = [
   },
 ]
 
-export function InsightsKeyResultsTab() {
+interface InsightsKeyResultsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKeyResultsTabProps) {
+  const displayKeyResults = data.length > 0 ? data : keyResults
   return (
     <div className="space-y-6">
       {/* Summary Cards */}

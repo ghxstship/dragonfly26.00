@@ -68,7 +68,13 @@ const savedMetrics = [
   },
 ]
 
-export function AnalyticsMetricsLibraryTab() {
+interface AnalyticsMetricsLibraryTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: AnalyticsMetricsLibraryTabProps) {
+  const displayMetrics = data.length > 0 ? data : savedMetrics
   return (
     <div className="space-y-6">
       <div className="flex justify-end">

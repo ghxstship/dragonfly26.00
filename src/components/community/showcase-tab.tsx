@@ -17,6 +17,11 @@ import {
   Bookmark
 } from "lucide-react"
 
+interface ShowcaseTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 interface ShowcasePost {
   id: string
   author: string
@@ -37,8 +42,8 @@ interface ShowcasePost {
   isBookmarked?: boolean
 }
 
-export function ShowcaseTab() {
-  const [posts, setPosts] = useState<ShowcasePost[]>([
+export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
+  const [posts, setPosts] = useState<ShowcasePost[]>(data.length > 0 ? data : [
     {
       id: "1",
       author: "Sarah Mitchell",

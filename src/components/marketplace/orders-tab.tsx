@@ -6,10 +6,14 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ClipboardList, FileText, Package, Truck, AlertCircle, CheckCircle, Clock, XCircle, Search, Plus } from "lucide-react"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
 
-export function OrdersTab() {
-  const ordersData = generateMarketplaceMockData('orders', 20)
+interface OrdersTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
+  const ordersData = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {

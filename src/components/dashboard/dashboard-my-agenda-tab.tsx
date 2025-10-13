@@ -13,9 +13,14 @@ import {
   ChevronRight
 } from "lucide-react"
 
-export function DashboardMyAgendaTab() {
+interface DashboardMyAgendaTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMyAgendaTabProps) {
   // User's events including them or created by them
-  const upcomingEvents = [
+  const upcomingEvents = data.length > 0 ? data : [
     {
       title: "Production Meeting",
       date: "Today",

@@ -19,7 +19,13 @@ const stats = [
   { label: "Avg. Generation Time", value: "2.4s", change: "-0.3s", icon: TrendingUp, color: "text-orange-600" },
 ]
 
-export function ReportsOverviewTab() {
+interface ReportsOverviewTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsOverviewTab({ data = [], loading = false }: ReportsOverviewTabProps) {
+  const displayReports = data.length > 0 ? data : recentReports
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

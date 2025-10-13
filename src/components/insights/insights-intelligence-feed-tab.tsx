@@ -67,7 +67,13 @@ const insights = [
   },
 ]
 
-export function InsightsIntelligenceFeedTab() {
+interface InsightsIntelligenceFeedTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function InsightsIntelligenceFeedTab({ data = [], loading = false }: InsightsIntelligenceFeedTabProps) {
+  const displayInsights = data.length > 0 ? data : insights
   return (
     <div className="space-y-6">
       {/* Filter Badges */}

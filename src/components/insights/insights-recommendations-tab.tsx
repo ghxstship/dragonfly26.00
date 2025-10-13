@@ -78,7 +78,13 @@ const recommendations = [
   },
 ]
 
-export function InsightsRecommendationsTab() {
+interface InsightsRecommendationsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function InsightsRecommendationsTab({ data = [], loading = false }: InsightsRecommendationsTabProps) {
+  const displayRecommendations = data.length > 0 ? data : recommendations
   return (
     <div className="space-y-6">
       <div className="grid gap-6">

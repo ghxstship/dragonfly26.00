@@ -17,7 +17,13 @@ const archivedReports = [
   { id: "8", name: "Strategic Plan Review 2023", type: "Executive", archivedDate: "2023-12-31", size: "9.3 MB", year: "2023" },
 ]
 
-export function ReportsArchivedTab() {
+interface ReportsArchivedTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchivedTabProps) {
+  const displayReports = data.length > 0 ? data : archivedReports
   return (
     <div className="space-y-6">
       {/* Search and Filter Bar */}

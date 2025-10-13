@@ -5,10 +5,14 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Heart, ShoppingCart, Star, Eye, X, Package } from "lucide-react"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
 
-export function FavoritesTab() {
-  const [favorites, setFavorites] = useState(generateMarketplaceMockData('favorites', 16))
+interface FavoritesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) {
+  const [favorites, setFavorites] = useState(data)
 
   const removeFavorite = (id: string) => {
     setFavorites(favorites.filter(item => item.id !== id))

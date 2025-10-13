@@ -53,7 +53,13 @@ const dataSources = [
   },
 ]
 
-export function AnalyticsDataSourcesTab() {
+interface AnalyticsDataSourcesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsDataSourcesTab({ data = [], loading = false }: AnalyticsDataSourcesTabProps) {
+  const displaySources = data.length > 0 ? data : dataSources
   return (
     <div className="space-y-6">
       {/* Status Summary */}

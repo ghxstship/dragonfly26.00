@@ -15,9 +15,14 @@ import {
   Filter
 } from "lucide-react"
 
-export function DashboardMyExpensesTab() {
+interface DashboardMyExpensesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyExpensesTab({ data = [], loading = false }: DashboardMyExpensesTabProps) {
   // User's expense reports and submissions
-  const expenses = [
+  const expenses = data.length > 0 ? data : [
     {
       id: "EXP-2024-045",
       title: "Equipment Rental & Supplies",

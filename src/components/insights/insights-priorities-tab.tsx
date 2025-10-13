@@ -73,7 +73,13 @@ const priorities = [
   },
 ]
 
-export function InsightsPrioritiesTab() {
+interface InsightsPrioritiesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPrioritiesTabProps) {
+  const displayPriorities = data.length > 0 ? data : priorities
   return (
     <div className="space-y-6">
       {/* Prioritization Matrix */}

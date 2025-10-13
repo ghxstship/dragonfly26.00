@@ -45,7 +45,13 @@ const regionComparison = [
   { region: "Latin America", revenue: 5, growth: 15, customers: 700, color: "text-orange-600" },
 ]
 
-export function AnalyticsComparisonsTab() {
+interface AnalyticsComparisonsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsComparisonsTab({ data = [], loading = false }: AnalyticsComparisonsTabProps) {
+  const displayData = data.length > 0 ? data : comparisonData
   return (
     <div className="space-y-6">
       <Tabs defaultValue="quarterly">

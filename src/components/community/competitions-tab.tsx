@@ -25,6 +25,11 @@ import {
   Play
 } from "lucide-react"
 
+interface CompetitionsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 interface Competition {
   id: string
   title: string
@@ -51,11 +56,11 @@ interface LeaderboardEntry {
   streak: number
 }
 
-export function CompetitionsTab() {
+export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [competitionFilter, setCompetitionFilter] = useState<"all" | "active" | "upcoming" | "completed">("all")
 
-  const [competitions, setCompetitions] = useState<Competition[]>([
+  const [competitions, setCompetitions] = useState<Competition[]>(data.length > 0 ? data : [
     {
       id: "1",
       title: "Fastest Load-In Challenge",

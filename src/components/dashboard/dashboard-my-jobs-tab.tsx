@@ -14,9 +14,14 @@ import {
   Clock
 } from "lucide-react"
 
-export function DashboardMyJobsTab() {
+interface DashboardMyJobsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJobsTabProps) {
   // User's contracts and scopes of work
-  const jobs = [
+  const jobs = data.length > 0 ? data : [
     {
       title: "Technical Director - Summer Music Festival",
       client: "Festival Productions Inc.",

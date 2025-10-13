@@ -19,9 +19,14 @@ import {
   Clock
 } from "lucide-react"
 
-export function DashboardMyFilesTab() {
+interface DashboardMyFilesTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyFilesTab({ data = [], loading = false }: DashboardMyFilesTabProps) {
   // User's uploaded, downloaded, saved, and favorited files
-  const files = [
+  const files = data.length > 0 ? data : [
     {
       id: "FILE-001",
       name: "Summer_Festival_Tech_Rider.pdf",

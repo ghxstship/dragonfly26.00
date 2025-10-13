@@ -45,7 +45,13 @@ const objectives = [
   { name: "Improve Process Efficiency", progress: 78, target: 85, status: "on_track" },
 ]
 
-export function InsightsOverviewTab() {
+interface InsightsOverviewTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function InsightsOverviewTab({ data = [], loading = false }: InsightsOverviewTabProps) {
+  const displayGoals = data.length > 0 ? data : objectives
   return (
     <div className="space-y-6">
       {/* Header Stats */}

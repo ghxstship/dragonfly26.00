@@ -33,7 +33,13 @@ const sampleFields = [
   { id: "6", name: "Budget", type: "number" },
 ]
 
-export function ReportsCustomBuilderTab() {
+interface ReportsCustomBuilderTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsCustomBuilderTabProps) {
+  const displayData = data.length > 0 ? data : []
   return (
     <div className="space-y-6">
       <div className="flex justify-end">

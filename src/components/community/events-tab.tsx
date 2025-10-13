@@ -24,6 +24,11 @@ import {
   ExternalLink
 } from "lucide-react"
 
+interface EventsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 interface CommunityEvent {
   id: string
   title: string
@@ -48,12 +53,12 @@ interface CommunityEvent {
   featured?: boolean
 }
 
-export function EventsTab() {
+export function EventsTab({ data = [], loading = false }: EventsTabProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [dateFilter, setDateFilter] = useState<Date | undefined>()
   const [categoryFilter, setCategoryFilter] = useState<"all" | CommunityEvent["category"]>("all")
 
-  const [events, setEvents] = useState<CommunityEvent[]>([
+  const [events, setEvents] = useState<CommunityEvent[]>(data.length > 0 ? data : [
     {
       id: "1",
       title: "Global Music Awards 2024",

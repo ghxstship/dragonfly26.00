@@ -59,7 +59,13 @@ const pastReviews = [
   },
 ]
 
-export function InsightsReviewsTab() {
+interface InsightsReviewsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function InsightsReviewsTab({ data = [], loading = false }: InsightsReviewsTabProps) {
+  const displayReviews = data.length > 0 ? data : pastReviews
   return (
     <div className="space-y-6">
       {/* Upcoming Reviews */}

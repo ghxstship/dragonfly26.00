@@ -40,7 +40,13 @@ const customViews = [
   },
 ]
 
-export function AnalyticsCustomViewsTab() {
+interface AnalyticsCustomViewsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsCustomViewsTab({ data = [], loading = false }: AnalyticsCustomViewsTabProps) {
+  const displayViews = data.length > 0 ? data : customViews
   return (
     <div className="space-y-6">
       <div className="flex justify-end">

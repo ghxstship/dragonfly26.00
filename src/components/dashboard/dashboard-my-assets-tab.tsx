@@ -14,9 +14,14 @@ import {
   AlertCircle
 } from "lucide-react"
 
-export function DashboardMyAssetsTab() {
+interface DashboardMyAssetsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyAssetsTab({ data = [], loading = false }: DashboardMyAssetsTabProps) {
   // User's personal inventory of owned and rented/leased equipment
-  const assets = [
+  const assets = data.length > 0 ? data : [
     {
       id: "1",
       name: "Shure SM58 Microphone",

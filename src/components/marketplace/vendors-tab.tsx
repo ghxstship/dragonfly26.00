@@ -7,10 +7,14 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Store, Star, ShieldCheck, Award, TrendingUp, Clock, Search, MessageCircle } from "lucide-react"
-import { generateMarketplaceMockData } from "@/lib/modules/marketplace-mock-data"
 
-export function VendorsTab() {
-  const vendorsData = generateMarketplaceMockData('vendors', 20)
+interface VendorsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
+  const vendorsData = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {

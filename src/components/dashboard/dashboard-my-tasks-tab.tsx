@@ -14,9 +14,14 @@ import {
   User
 } from "lucide-react"
 
-export function DashboardMyTasksTab() {
+interface DashboardMyTasksTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function DashboardMyTasksTab({ data = [], loading = false }: DashboardMyTasksTabProps) {
   // User's assigned and created tasks
-  const tasks = [
+  const tasks = data.length > 0 ? data : [
     {
       id: "1",
       title: "Finalize lighting plot for main stage",

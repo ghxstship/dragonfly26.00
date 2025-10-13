@@ -18,6 +18,11 @@ import {
   MoreHorizontal
 } from "lucide-react"
 
+interface ActivityTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 interface ActivityPost {
   id: string
   author: string
@@ -33,9 +38,9 @@ interface ActivityPost {
   tags?: string[]
 }
 
-export function ActivityTab() {
+export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
   const [newPost, setNewPost] = useState("")
-  const [posts, setPosts] = useState<ActivityPost[]>([
+  const [posts, setPosts] = useState<ActivityPost[]>(data.length > 0 ? data : [
     {
       id: "1",
       author: "Jessica Martinez",

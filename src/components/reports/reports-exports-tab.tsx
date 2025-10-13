@@ -33,7 +33,13 @@ const getFileColor = (type: string) => {
   }
 }
 
-export function ReportsExportsTab() {
+interface ReportsExportsTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function ReportsExportsTab({ data = [], loading = false }: ReportsExportsTabProps) {
+  const displayData = data.length > 0 ? data : []
   return (
     <div className="space-y-6">
       <div className="grid gap-3">

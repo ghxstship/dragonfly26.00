@@ -22,7 +22,13 @@ const recentEvents = [
   { id: "8", type: "api_call", message: "Data export requested", time: "45 seconds ago", severity: "info" },
 ]
 
-export function AnalyticsRealtimeTab() {
+interface AnalyticsRealtimeTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRealtimeTabProps) {
+  const displayMetrics = data.length > 0 ? data : realtimeMetrics
   return (
     <div className="space-y-6">
       {/* Real-time Metrics */}

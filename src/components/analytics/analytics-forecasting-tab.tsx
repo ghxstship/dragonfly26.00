@@ -40,7 +40,13 @@ const forecasts = [
   },
 ]
 
-export function AnalyticsForecastingTab() {
+interface AnalyticsForecastingTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export function AnalyticsForecastingTab({ data = [], loading = false }: AnalyticsForecastingTabProps) {
+  const displayData = data.length > 0 ? data : forecasts
   return (
     <div className="space-y-6">
       <div className="grid gap-6">
