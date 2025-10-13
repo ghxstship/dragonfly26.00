@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -14,6 +14,8 @@ import { permissionService } from '@/lib/rbac/permission-service'
 
 export default function WorkspacePage() {
   const router = useRouter()
+  const params = useParams()
+  const locale = params.locale as string
   const { toast } = useToast()
   const supabase = createClient()
   
@@ -119,7 +121,7 @@ export default function WorkspacePage() {
       })
 
       // Move to plan selection
-      router.push(`/onboarding/plan?workspace=${workspace.id}`)
+      router.push(`/${locale}/onboarding/plan?workspace=${workspace.id}`)
     } catch (error: any) {
       toast({
         title: 'Error',
@@ -132,7 +134,7 @@ export default function WorkspacePage() {
   }
 
   const handleJoinWorkspace = async (workspaceId: string) => {
-    router.push(`/onboarding/plan?workspace=${workspaceId}`)
+    router.push(`/${locale}/onboarding/plan?workspace=${workspaceId}`)
   }
 
   return (

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams, useParams } from 'next/navigation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -22,6 +22,8 @@ interface Invite {
 
 export default function InviteColleaguesPage() {
   const router = useRouter()
+  const params = useParams()
+  const locale = params.locale as string
   const searchParams = useSearchParams()
   const { toast } = useToast()
   const supabase = createClient()
@@ -36,7 +38,7 @@ export default function InviteColleaguesPage() {
   useEffect(() => {
     const wId = searchParams.get('workspace')
     if (!wId) {
-      router.push('/onboarding/workspace')
+      router.push(`/${locale}/onboarding/workspace`)
       return
     }
     setWorkspaceId(wId)
@@ -79,7 +81,7 @@ export default function InviteColleaguesPage() {
       
       if (validInvites.length === 0) {
         // No invites to send, just continue
-        router.push(`/onboarding/complete?workspace=${workspaceId}`)
+        router.push(`/${locale}/onboarding/complete?workspace=${workspaceId}`)
         return
       }
 
@@ -102,7 +104,7 @@ export default function InviteColleaguesPage() {
         description: `${validInvites.length} invitation(s) sent successfully.`,
       })
 
-      router.push(`/onboarding/complete?workspace=${workspaceId}`)
+      router.push(`/${locale}/onboarding/complete?workspace=${workspaceId}`)
     } catch (error: any) {
       toast({
         title: 'Error',
@@ -115,7 +117,7 @@ export default function InviteColleaguesPage() {
   }
 
   const handleSkip = () => {
-    router.push(`/onboarding/complete?workspace=${workspaceId}`)
+    router.push(`/${locale}/onboarding/complete?workspace=${workspaceId}`)
   }
 
   // Available roles for invitation (excluding platform-level roles)

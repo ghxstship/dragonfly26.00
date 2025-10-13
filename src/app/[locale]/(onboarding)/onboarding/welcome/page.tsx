@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -14,6 +14,8 @@ import { useToast } from '@/lib/hooks/use-toast'
 
 export default function WelcomePage() {
   const router = useRouter()
+  const params = useParams()
+  const locale = params.locale as string
   const { toast } = useToast()
   const supabase = createClient()
   
@@ -33,7 +35,7 @@ export default function WelcomePage() {
     const { data: { user } } = await supabase.auth.getUser()
     
     if (!user) {
-      router.push('/login')
+      router.push(`/${locale}/login`)
       return
     }
 
@@ -82,7 +84,7 @@ export default function WelcomePage() {
       })
 
       // Move to next step
-      router.push('/onboarding/workspace')
+      router.push(`/${locale}/onboarding/workspace`)
     } catch (error: any) {
       toast({
         title: 'Error',
@@ -228,7 +230,7 @@ export default function WelcomePage() {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => router.push('/workspace')}
+                  onClick={() => router.push(`/${locale}/workspace`)}
                   disabled={loading}
                 >
                   Skip for now

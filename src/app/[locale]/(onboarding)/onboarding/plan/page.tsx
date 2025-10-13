@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams, useParams } from 'next/navigation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -12,6 +12,8 @@ import { createClient } from '@/lib/supabase/client'
 
 export default function SelectPlanPage() {
   const router = useRouter()
+  const params = useParams()
+  const locale = params.locale as string
   const searchParams = useSearchParams()
   const { toast } = useToast()
   const supabase = createClient()
@@ -27,7 +29,7 @@ export default function SelectPlanPage() {
         description: 'Please complete workspace setup first.',
         variant: 'destructive',
       })
-      router.push('/onboarding/workspace')
+      router.push(`/${locale}/onboarding/workspace`)
     }
   }, [workspaceId])
 
@@ -41,7 +43,7 @@ export default function SelectPlanPage() {
 
       if (planId === 'free') {
         // Free plan - just continue to next step
-        router.push(`/onboarding/invite?workspace=${workspaceId}`)
+        router.push(`/${locale}/onboarding/invite?workspace=${workspaceId}`)
       } else {
         // Paid plan - redirect to Stripe Checkout
         const response = await fetch('/api/subscriptions/create-checkout', {
@@ -182,7 +184,7 @@ export default function SelectPlanPage() {
           </p>
           <Button
             variant="ghost"
-            onClick={() => router.push(`/onboarding/invite?workspace=${workspaceId}`)}
+            onClick={() => router.push(`/${locale}/onboarding/invite?workspace=${workspaceId}`)}
           >
             Skip for now
           </Button>
