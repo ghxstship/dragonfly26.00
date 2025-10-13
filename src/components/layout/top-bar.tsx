@@ -14,6 +14,9 @@ import {
   Activity,
   Maximize2,
   Plane,
+  MessageSquare,
+  Clock,
+  HelpCircle,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -61,7 +64,7 @@ export function TopBar() {
   const [createObjectiveOpen, setCreateObjectiveOpen] = useState(false)
   const [createWebhookOpen, setCreateWebhookOpen] = useState(false)
   const [createTokenOpen, setCreateTokenOpen] = useState(false)
-  const { currentWorkspace, focusMode, toggleFocusMode, airplaneMode, toggleAirplaneMode } = useUIStore()
+  const { currentWorkspace, focusMode, toggleFocusMode, airplaneMode, toggleAirplaneMode, setRightSidebarOpen } = useUIStore()
   const { currentOrganization } = useWorkspaceStore()
   const router = useRouter()
   
@@ -170,53 +173,6 @@ export function TopBar() {
 
         {/* Right Section: Actions + Status + User */}
         <div className="flex items-center gap-1 flex-shrink-0">
-          {/* Status Indicators */}
-          <div className="hidden xl:flex items-center gap-2 mr-2">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="flex items-center">
-                  {isOnline ? (
-                    <Wifi className="h-4 w-4 text-green-500" />
-                  ) : (
-                    <WifiOff className="h-4 w-4 text-destructive" />
-                  )}
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{isOnline ? t('status.allChangesSynced') : t('status.workingOffline')}</p>
-              </TooltipContent>
-            </Tooltip>
-          </div>
-
-          {/* Airplane Mode Toggle */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant={airplaneMode ? "secondary" : "ghost"}
-                size="icon"
-                className="h-9 w-9 hidden lg:flex"
-                onClick={() => {
-                  toggleAirplaneMode()
-                  setIsOnline(!airplaneMode && navigator.onLine)
-                }}
-              >
-                <Plane className={cn(
-                  "h-4 w-4",
-                  airplaneMode && "text-orange-500"
-                )} />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{airplaneMode ? t('status.airplaneModeOn') : t('status.airplaneModeOff')}</p>
-            </TooltipContent>
-          </Tooltip>
-
-          {/* Quick Actions Toolbar */}
-          <QuickActions />
-
-          {/* Divider */}
-          <div className="hidden md:block h-6 w-px bg-border mx-1" />
-
           {/* Create Menu */}
           <CreateMenu
             onCreateItem={handleCreateItem}
@@ -225,25 +181,8 @@ export function TopBar() {
             onCreateToken={handleCreateToken}
           />
 
-          {/* Upgrade Button (for non-executive) */}
-          {currentOrganization?.subscription_tier !== "executive" && (
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  className="gap-2 h-9 hidden md:flex"
-                  onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/billing`)}
-                >
-                  <Sparkles className="h-4 w-4" />
-                  <span className="hidden lg:inline">{t('nav.upgrade')}</span>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{t('nav.upgradeToPro')}</p>
-              </TooltipContent>
-            </Tooltip>
-          )}
+          {/* Divider */}
+          <div className="hidden md:block h-6 w-px bg-border mx-1" />
 
           {/* Notifications */}
           <Tooltip>
@@ -276,29 +215,148 @@ export function TopBar() {
             </TooltipContent>
           </Tooltip>
 
-          {/* Language Switcher */}
-          <LanguageSwitcher />
+          {/* Comments */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-9 w-9"
+                onClick={() => setRightSidebarOpen(true, 'comments')}
+              >
+                <MessageSquare className="h-4 w-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Comments</p>
+            </TooltipContent>
+          </Tooltip>
+
+          {/* Activity */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-9 w-9"
+                onClick={() => setRightSidebarOpen(true, 'activity')}
+              >
+                <Activity className="h-4 w-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Activity</p>
+            </TooltipContent>
+          </Tooltip>
+
+          {/* Time */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-9 w-9"
+                onClick={() => setRightSidebarOpen(true, 'time')}
+              >
+                <Clock className="h-4 w-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Time Tracking</p>
+            </TooltipContent>
+          </Tooltip>
+
+          {/* Apps - from QuickActions */}
+          <QuickActions />
+
+          {/* Help & Shortcuts */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-9 w-9"
+                onClick={() => setShowCommandPalette(true)}
+              >
+                <HelpCircle className="h-4 w-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Help & Shortcuts</p>
+              <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⇧?</kbd>
+            </TooltipContent>
+          </Tooltip>
+
+          {/* Divider */}
+          <div className="hidden md:block h-6 w-px bg-border mx-1" />
+
+          {/* Online/Synced Status */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <div className="flex items-center">
+                {isOnline ? (
+                  <Wifi className="h-4 w-4 text-green-500" />
+                ) : (
+                  <WifiOff className="h-4 w-4 text-destructive" />
+                )}
+              </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{isOnline ? t('status.allChangesSynced') : t('status.workingOffline')}</p>
+            </TooltipContent>
+          </Tooltip>
+
+          {/* Airplane Mode Toggle */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant={airplaneMode ? "secondary" : "ghost"}
+                size="icon"
+                className="h-9 w-9"
+                onClick={() => {
+                  toggleAirplaneMode()
+                  setIsOnline(!airplaneMode && navigator.onLine)
+                }}
+              >
+                <Plane className={cn(
+                  "h-4 w-4",
+                  airplaneMode && "text-orange-500"
+                )} />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{airplaneMode ? t('status.airplaneModeOn') : t('status.airplaneModeOff')}</p>
+            </TooltipContent>
+          </Tooltip>
 
           {/* Theme Toggle */}
           <ThemeToggle />
 
-          {/* Focus Mode Toggle */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant={focusMode ? "secondary" : "ghost"}
-                size="icon"
-                className="h-9 w-9 hidden lg:flex"
-                onClick={toggleFocusMode}
-              >
-                <Maximize2 className="h-4 w-4" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{focusMode ? t('status.focusModeOn') : t('status.focusModeOff')}</p>
-              <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">F</kbd>
-            </TooltipContent>
-          </Tooltip>
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+
+          {/* Divider */}
+          <div className="hidden md:block h-6 w-px bg-border mx-1" />
+
+          {/* Upgrade Button (for non-executive) */}
+          {currentOrganization?.subscription_tier !== "executive" && (
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="gap-2 h-9 hidden md:flex"
+                  onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/billing`)}
+                >
+                  <Sparkles className="h-4 w-4" />
+                  <span className="hidden lg:inline">{t('nav.upgrade')}</span>
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t('nav.upgradeToPro')}</p>
+              </TooltipContent>
+            </Tooltip>
+          )}
 
           {/* User Menu */}
           <DropdownMenu>

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { LayoutGrid, MoreHorizontal, Eye, Edit, Star } from "lucide-react"
+import { LayoutGrid, MoreHorizontal, Eye, Edit, Star, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -18,9 +18,11 @@ import type { DataItem } from "@/types"
 interface BoxViewProps {
   data: DataItem[]
   onItemClick?: (item: DataItem) => void
+  createActionLabel?: string
+  onCreateAction?: () => void
 }
 
-export function BoxView({ data, onItemClick }: BoxViewProps) {
+export function BoxView({ data, onItemClick, createActionLabel, onCreateAction }: BoxViewProps) {
   const t = useTranslations()
   const [gridSize, setGridSize] = useState<"small" | "medium" | "large">("medium")
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
@@ -210,8 +212,17 @@ export function BoxView({ data, onItemClick }: BoxViewProps) {
         </div>
 
         {data.length === 0 && (
-          <div className="flex items-center justify-center h-64 text-muted-foreground">
-            No items to display
+          <div className="flex flex-col items-center justify-center h-64 text-center">
+            <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
+            <p className="text-sm text-muted-foreground mb-6 max-w-sm">
+              {t('views.emptyState.boxViewDescription')}
+            </p>
+            {(createActionLabel || onCreateAction) && (
+              <Button size="lg" onClick={onCreateAction}>
+                <Plus className="h-4 w-4 mr-2" />
+                {createActionLabel || t('views.emptyState.createFirstItem')}
+              </Button>
+            )}
           </div>
         )}
       </div>

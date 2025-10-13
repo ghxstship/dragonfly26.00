@@ -66,31 +66,31 @@ function generateProductionsData(count: number): DataItem[] {
     "Stadium Tour",
   ]
   const productionTypes = ["concert", "festival", "tour", "corporate", "theater", "broadcast"]
-  const phases = ["pre-production", "in_production", "load-in", "live", "post-production"]
-  const clients = ["Live Nation", "AEG Presents", "Madison Square Garden", "Coachella", "Corporate Client Inc", "Broadway Productions"]
+  const statuses = ["planning", "active", "on_hold", "completed", "cancelled"]
+  const healthStatuses = ["healthy", "at_risk", "critical"]
+  const projectManagers = ["David Williams", "Lisa Park", "James Taylor"]
   const venues = ["Madison Square Garden", "Staples Center", "Red Rocks", "Central Park", "Convention Center", "Downtown Arena"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `production-${i + 1}`,
     name: productions[i % productions.length],
-    production_type: productionTypes[i % productionTypes.length],
+    code: `PROD-${String(i + 1).padStart(4, '0')}`,
+    type: productionTypes[i % productionTypes.length],
     description: "Full-scale production project with complete crew and technical requirements",
-    client: clients[i % clients.length],
-    production_manager: i % 3 === 0 ? "David Williams" : i % 3 === 1 ? "Lisa Park" : "James Taylor",
-    phase: phases[i % phases.length],
-    status: phases[i % phases.length],
+    status: statuses[i % statuses.length],
     priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 3 === 0 ? "David Williams" : i % 3 === 1 ? "Lisa Park" : "James Taylor",
-    assignee_name: i % 3 === 0 ? "David Williams" : i % 3 === 1 ? "Lisa Park" : "James Taylor",
-    venue: venues[i % venues.length],
-    budget: (Math.random() * 500000 + 50000).toFixed(2),
-    crew_size: Math.floor(Math.random() * 50) + 10,
     start_date: getRandomPastDate(45),
     end_date: getRandomFutureDate(120),
-    due_date: getRandomFutureDate(120),
+    venue_id: venues[i % venues.length],
+    project_manager_id: projectManagers[i % projectManagers.length],
+    budget: parseFloat((Math.random() * 500000 + 50000).toFixed(2)),
+    budget_spent: parseFloat((Math.random() * 300000).toFixed(2)),
+    budget_currency: "USD",
+    health: healthStatuses[i % healthStatuses.length],
+    progress: Math.floor(Math.random() * 100),
+    tags: ["production", "live-event", productionTypes[i % productionTypes.length]],
     created_at: getRandomPastDate(90),
     updated_at: new Date().toISOString(),
-    tags: ["production", "live-event", productionTypes[i % productionTypes.length]],
     comments_count: Math.floor(Math.random() * 25),
     attachments_count: Math.floor(Math.random() * 12),
   }))
@@ -186,8 +186,10 @@ function generateTasksData(count: number): DataItem[] {
     "Prepare load-in schedule",
     "Review insurance certificates",
   ]
-  const statuses = ["todo", "in_progress", "review", "done"]
+  const statuses = ["todo", "in_progress", "review", "blocked", "done"]
   const priorities = ["urgent", "high", "normal", "low"]
+  const assignees = ["Rachel Kim", "Tom Wilson", "Nina Gupta", "Sean O'Brien"]
+  const productions = ["production-1", "production-2", "production-3"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `task-${i + 1}`,
@@ -195,13 +197,14 @@ function generateTasksData(count: number): DataItem[] {
     description: "Production task requiring completion and sign-off",
     status: statuses[i % statuses.length],
     priority: priorities[i % priorities.length],
-    assignee: i % 4 === 0 ? "Rachel Kim" : i % 4 === 1 ? "Tom Wilson" : i % 4 === 2 ? "Nina Gupta" : "Sean O'Brien",
-    assignee_name: i % 4 === 0 ? "Rachel Kim" : i % 4 === 1 ? "Tom Wilson" : i % 4 === 2 ? "Nina Gupta" : "Sean O'Brien",
-    due_date: getRandomFutureDate(14),
+    assignee_id: assignees[i % assignees.length],
     start_date: getRandomPastDate(3),
+    due_date: getRandomFutureDate(14),
+    estimated_hours: parseFloat((Math.random() * 16 + 2).toFixed(1)),
+    actual_hours: parseFloat((Math.random() * 12).toFixed(1)),
+    production_id: productions[i % productions.length],
     created_at: getRandomPastDate(21),
     updated_at: new Date().toISOString(),
-    tags: ["task", "action-item"],
     comments_count: Math.floor(Math.random() * 8),
     attachments_count: Math.floor(Math.random() * 4),
   }))
@@ -220,20 +223,19 @@ function generateMilestonesData(count: number): DataItem[] {
     "Final Reconciliation",
     "Project Closeout",
   ]
+  const statuses = ["pending", "in_progress", "completed", "missed"]
+  const productions = ["production-1", "production-2", "production-3"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `milestone-${i + 1}`,
     name: milestones[i % milestones.length],
     description: "Critical project milestone marking key deliverable or phase completion",
-    status: i % 3 === 0 ? "pending" : i % 3 === 1 ? "achieved" : "at_risk",
-    priority: i % 2 === 0 ? "urgent" : "high",
-    assignee: i % 3 === 0 ? "Jennifer Lee" : i % 3 === 1 ? "Carlos Rodriguez" : "Amanda White",
-    assignee_name: i % 3 === 0 ? "Jennifer Lee" : i % 3 === 1 ? "Carlos Rodriguez" : "Amanda White",
+    status: statuses[i % statuses.length],
     due_date: getRandomFutureDate(60),
-    start_date: getRandomPastDate(10),
+    production_id: productions[i % productions.length],
+    created_by: i % 3 === 0 ? "Jennifer Lee" : i % 3 === 1 ? "Carlos Rodriguez" : "Amanda White",
     created_at: getRandomPastDate(60),
     updated_at: new Date().toISOString(),
-    tags: ["milestone", "critical-path"],
     comments_count: Math.floor(Math.random() * 20),
     attachments_count: Math.floor(Math.random() * 10),
   }))
@@ -253,30 +255,23 @@ function generateComplianceData(count: number): DataItem[] {
     "ADA Accessibility Compliance",
   ]
   const types = ["permit", "license", "inspection", "certification", "insurance"]
-  const statuses = ["not_started", "pending", "submitted", "approved", "rejected", "expired"]
+  const statuses = ["pending", "approved", "denied", "expired"]
   const authorities = ["City Planning Dept", "Fire Marshal", "Health Department", "Building Authority", "State Licensing Board"]
-  const projects = ["Summer Festival 2024", "Corporate Event", "Arena Concert", "Theater Production"]
+  const productions = ["production-1", "production-2", "production-3"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `compliance-${i + 1}`,
     name: complianceItems[i % complianceItems.length],
-    compliance_type: types[i % types.length],
-    description: "Required licensing, permitting, or inspection for legal compliance",
-    project: projects[i % projects.length],
+    type: types[i % types.length],
     issuing_authority: authorities[i % authorities.length],
+    reference_number: `REF-${String(i + 1).padStart(5, '0')}`,
+    issue_date: getRandomPastDate(30),
+    expiry_date: getRandomFutureDate(365),
     status: statuses[i % statuses.length],
-    responsible_party: i % 3 === 0 ? "Patricia Moore" : i % 3 === 1 ? "Robert Chen" : "Diana Foster",
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 3 === 0 ? "Patricia Moore" : i % 3 === 1 ? "Robert Chen" : "Diana Foster",
-    assignee_name: i % 3 === 0 ? "Patricia Moore" : i % 3 === 1 ? "Robert Chen" : "Diana Foster",
-    application_date: getRandomPastDate(30),
-    due_date: getRandomFutureDate(45),
-    expiration_date: getRandomFutureDate(365),
-    fee: (Math.random() * 2000 + 100).toFixed(2),
-    start_date: getRandomPastDate(15),
+    document_url: null,
+    production_id: productions[i % productions.length],
     created_at: getRandomPastDate(50),
     updated_at: new Date().toISOString(),
-    tags: ["compliance", "legal", types[i % types.length]],
     comments_count: Math.floor(Math.random() * 12),
     attachments_count: Math.floor(Math.random() * 8),
   }))
@@ -295,29 +290,25 @@ function generateSafetyData(count: number): DataItem[] {
     "Fall Protection Protocol",
     "Hazardous Materials Handling",
   ]
-  const types = ["risk_assessment", "safety_plan", "emergency_procedure", "inspection", "protocol", "training"]
-  const riskLevels = ["low", "medium", "high", "critical"]
-  const statuses = ["draft", "review", "approved", "implemented"]
+  const types = ["risk_assessment", "safety_plan", "emergency_procedure", "incident_report"]
+  const severities = ["low", "medium", "high", "critical"]
+  const statuses = ["draft", "review", "approved", "archived"]
   const safetyOfficers = ["Michael Stone", "Linda Martinez", "Eric Thompson", "Sarah Johnson"]
-  const projects = ["Summer Festival 2024", "Corporate Event", "Arena Concert", "Theater Production"]
+  const productions = ["production-1", "production-2", "production-3"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `safety-${i + 1}`,
-    name: safetyItems[i % safetyItems.length],
-    safety_type: types[i % types.length],
+    title: safetyItems[i % safetyItems.length],
+    type: types[i % types.length],
     description: "Safety assessment, guideline, or emergency procedure documentation",
-    project: projects[i % projects.length],
-    risk_level: riskLevels[i % riskLevels.length],
+    severity: severities[i % severities.length],
     status: statuses[i % statuses.length],
-    safety_officer: safetyOfficers[i % safetyOfficers.length],
-    priority: i % 2 === 0 ? "urgent" : "high",
-    assignee: safetyOfficers[i % safetyOfficers.length],
-    assignee_name: safetyOfficers[i % safetyOfficers.length],
-    due_date: getRandomFutureDate(20),
-    start_date: getRandomPastDate(7),
+    mitigation_steps: "Follow standard safety protocols and report any issues immediately",
+    responsible_person_id: safetyOfficers[i % safetyOfficers.length],
+    document_url: null,
+    production_id: productions[i % productions.length],
     created_at: getRandomPastDate(30),
     updated_at: new Date().toISOString(),
-    tags: ["safety", "risk-management", types[i % types.length]],
     comments_count: Math.floor(Math.random() * 15),
     attachments_count: Math.floor(Math.random() * 10),
   }))

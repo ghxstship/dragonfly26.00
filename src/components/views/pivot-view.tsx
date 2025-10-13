@@ -19,12 +19,13 @@ import type { DataItem } from "@/types"
 
 interface PivotViewProps {
   data: DataItem[]
-  onItemClick?: (item: DataItem) => void
+  createActionLabel?: string
+  onCreateAction?: () => void
 }
 
 type AggregateFunction = "sum" | "avg" | "count" | "min" | "max"
 
-export function PivotView({ data, onItemClick }: PivotViewProps) {
+export function PivotView({ data, createActionLabel, onCreateAction }: PivotViewProps) {
   const t = useTranslations()
   const [rowField, setRowField] = useState<string>("status")
   const [columnField, setColumnField] = useState<string>("priority")
@@ -189,10 +190,12 @@ export function PivotView({ data, onItemClick }: PivotViewProps) {
             <p className="text-sm text-muted-foreground mb-6 max-w-sm">
               {t('views.emptyState.pivotViewDescription')}
             </p>
-            <Button size="lg">
-              <Plus className="h-4 w-4 mr-2" />
-              {t('views.emptyState.createFirstItem')}
-            </Button>
+            {(createActionLabel || onCreateAction) && (
+              <Button size="lg" onClick={onCreateAction}>
+                <Plus className="h-4 w-4 mr-2" />
+                {createActionLabel || t('views.emptyState.createFirstItem')}
+              </Button>
+            )}
           </div>
         ) : (
           <div className="inline-block min-w-full align-middle">

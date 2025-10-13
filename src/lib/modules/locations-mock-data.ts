@@ -29,35 +29,48 @@ export function generateLocationsMockData(tabSlug: string, count: number = 20): 
 }
 
 function generateDirectoryData(count: number): DataItem[] {
-  const locationTypes = ["Venue", "Office", "Warehouse", "Studio", "Theater", "Conference Center", "Workshop", "Storage Facility"]
-  const cities = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Nashville, TN", "Austin, TX", "Seattle, WA", "Boston, MA", "Miami, FL"]
-  const statuses = ["active", "inactive", "under_renovation", "seasonal"]
+  const locationTypes = ["venue", "office", "warehouse", "studio", "stage", "room", "facility", "site"]
+  const locationNames = ["Madison Square Garden", "Studio A", "Main Warehouse", "Creative Space", "Theater One", "Conference Room", "Production Facility", "Outdoor Site"]
+  const cities = ["New York", "Los Angeles", "Chicago", "Nashville", "Austin", "Seattle", "Boston", "Miami"]
+  const states = ["NY", "CA", "IL", "TN", "TX", "WA", "MA", "FL"]
+  const statuses = ["active", "inactive", "under_construction"]
+  const contactNames = ["John Smith", "Sarah Chen", "Marcus Johnson", "Elena Rodriguez"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `location-${i + 1}`,
-    name: `${locationTypes[i % locationTypes.length]} ${String.fromCharCode(65 + (i % 26))}`,
-    description: `Production facility located in ${cities[i % cities.length]} with full technical capabilities`,
+    name: `${locationNames[i % locationNames.length]} ${String.fromCharCode(65 + (i % 5))}`,
+    type: locationTypes[i % locationTypes.length],
+    description: `Production facility with full technical capabilities and modern amenities`,
+    address_line1: `${100 + i * 10} Main Street`,
+    address_line2: i % 3 === 0 ? `Suite ${100 + i}` : null,
+    city: cities[i % cities.length],
+    state: states[i % states.length],
+    postal_code: `${10000 + Math.floor(Math.random() * 90000)}`,
+    country: "US",
+    latitude: parseFloat((40 + Math.random() * 8).toFixed(6)),
+    longitude: parseFloat((-74 - Math.random() * 50).toFixed(6)),
+    timezone: "America/New_York",
+    capacity: Math.floor(Math.random() * 5000) + 500,
+    size_sqft: Math.floor(Math.random() * 50000) + 5000,
+    contact_name: contactNames[i % contactNames.length],
+    contact_phone: `+1-555-${String(Math.floor(Math.random() * 9000) + 1000).padStart(4, '0')}`,
+    contact_email: `contact@${locationNames[i % locationNames.length].toLowerCase().replace(/\s+/g, '')}.com`,
+    parent_location_id: i > 10 && i % 5 === 0 ? `location-${Math.floor(i / 5)}` : null,
     status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "high" : i % 3 === 1 ? "normal" : "low",
-    assignee: i % 3 === 0 ? "Sarah Chen" : i % 3 === 1 ? "Marcus Johnson" : "Elena Rodriguez",
-    assignee_name: i % 3 === 0 ? "Sarah Chen" : i % 3 === 1 ? "Marcus Johnson" : "Elena Rodriguez",
-    due_date: getRandomFutureDate(180),
-    start_date: getRandomPastDate(365),
+    amenities: ["parking", "wifi", "catering", "loading_dock"].slice(0, Math.floor(Math.random() * 4) + 1),
+    restrictions: i % 4 === 0 ? ["no_smoking", "restricted_hours"] : [],
+    tags: [locationTypes[i % locationTypes.length], cities[i % cities.length].toLowerCase()],
+    created_by: "person-1",
     created_at: getRandomPastDate(730),
     updated_at: new Date().toISOString(),
-    tags: [locationTypes[i % locationTypes.length].toLowerCase().replace(" ", "-"), "facility"],
     comments_count: Math.floor(Math.random() * 15),
     attachments_count: Math.floor(Math.random() * 20),
-    metadata: {
-      address: `${100 + i} Main Street, ${cities[i % cities.length]}`,
-      capacity: Math.floor(Math.random() * 5000) + 500,
-      squareFeet: `${Math.floor(Math.random() * 50000) + 5000} sq ft`,
-    }
   }))
 }
 
 function generateSiteMapsData(count: number): DataItem[] {
-  const mapTypes = [
+  const mapTypes = ["floor_plan", "site_plan", "rigging_plot", "electrical_plan", "emergency_exits"]
+  const mapNames = [
     "Main Stage Floor Plan",
     "Backstage Layout",
     "Load-In Route Map",
@@ -69,67 +82,58 @@ function generateSiteMapsData(count: number): DataItem[] {
     "Utility Distribution Map",
     "Rigging Plot",
   ]
-  const mapStatuses = ["current", "draft", "outdated", "under_review", "approved"]
+  const formats = ["pdf", "dwg", "image", "cad"]
+  const locationIds = ["location-1", "location-2", "location-3", "location-4"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `site-map-${i + 1}`,
-    name: `${mapTypes[i % mapTypes.length]} - v${Math.floor(i / mapTypes.length) + 1}.${i % 10}`,
-    description: "Detailed facility layout with measurements, access points, and technical infrastructure",
-    status: mapStatuses[i % mapStatuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 3 === 0 ? "David Park" : i % 3 === 1 ? "Lisa Thompson" : "James Wilson",
-    assignee_name: i % 3 === 0 ? "David Park" : i % 3 === 1 ? "Lisa Thompson" : "James Wilson",
-    due_date: getRandomFutureDate(90),
-    start_date: getRandomPastDate(30),
+    location_id: locationIds[i % locationIds.length],
+    name: mapNames[i % mapNames.length],
+    type: mapTypes[i % mapTypes.length],
+    file_url: `https://storage.example.com/maps/map-${i + 1}.${formats[i % formats.length]}`,
+    version: `${Math.floor(i / 10) + 1}.${i % 10}`,
+    scale: ["1:50", "1:100", "1:200", "1:500"][i % 4],
+    format: formats[i % formats.length],
+    notes: "Detailed facility layout with measurements, access points, and technical infrastructure",
+    uploaded_by: "person-1",
     created_at: getRandomPastDate(180),
     updated_at: new Date().toISOString(),
-    tags: ["site-map", "floor-plan", "facility"],
     comments_count: Math.floor(Math.random() * 12),
     attachments_count: Math.floor(Math.random() * 8),
-    metadata: {
-      scale: "1:100",
-      format: ["PDF", "DWG", "CAD"][i % 3],
-      lastUpdated: getRandomPastDate(60),
-    }
   }))
 }
 
 function generateAccessData(count: number): DataItem[] {
   const accessPoints = [
-    "Main Entrance - Front Lobby",
-    "Artist Entrance - Stage Door",
-    "Load-In Bay - Dock A",
-    "Load-In Bay - Dock B",
-    "Staff Entrance - North Side",
-    "VIP Entrance - West Wing",
-    "Emergency Exit - East Side",
-    "Service Entrance - Rear",
-    "Parking Gate - Main Lot",
-    "Parking Gate - VIP Lot",
+    "Main Entrance",
+    "Artist Entrance",
+    "Load-In Bay A",
+    "Load-In Bay B",
+    "Staff Entrance",
+    "VIP Entrance",
+    "Emergency Exit East",
+    "Service Entrance",
+    "Parking Gate Main",
+    "Parking Gate VIP",
   ]
-  const accessTypes = ["badge", "key", "code", "biometric", "manned"]
-  const accessStatuses = ["active", "restricted", "maintenance", "locked", "open"]
+  const accessTypes = ["badge", "key_card", "pin_code", "biometric", "manual"]
+  const locationIds = ["location-1", "location-2", "location-3", "location-4"]
+  const personnelIds = ["person-1", "person-2", "person-3", "person-4", "person-5"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `access-${i + 1}`,
-    name: accessPoints[i % accessPoints.length],
-    description: `Access point with ${accessTypes[i % accessTypes.length]} security system and 24/7 monitoring`,
-    status: accessStatuses[i % accessStatuses.length],
-    priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 4 === 0 ? "Michael Torres" : i % 4 === 1 ? "Amanda White" : i % 4 === 2 ? "Robert Lee" : "Jessica Brown",
-    assignee_name: i % 4 === 0 ? "Michael Torres" : i % 4 === 1 ? "Amanda White" : i % 4 === 2 ? "Robert Lee" : "Jessica Brown",
-    due_date: getRandomFutureDate(30),
-    start_date: getRandomPastDate(7),
+    location_id: locationIds[i % locationIds.length],
+    access_point_name: accessPoints[i % accessPoints.length],
+    access_type: accessTypes[i % accessTypes.length],
+    access_code: i % 3 === 0 ? `CODE-${String(Math.floor(Math.random() * 10000)).padStart(4, '0')}` : null,
+    authorized_personnel: Array.from({ length: Math.floor(Math.random() * 5) + 2 }, (_, j) => personnelIds[j % personnelIds.length]),
+    operating_hours: i % 2 === 0 ? "24/7" : "06:00-22:00",
+    requires_escort: i % 4 === 0,
+    notes: `Access control point with ${accessTypes[i % accessTypes.length]} security`,
     created_at: getRandomPastDate(365),
     updated_at: new Date().toISOString(),
-    tags: ["access", "security", accessTypes[i % accessTypes.length]],
     comments_count: Math.floor(Math.random() * 10),
     attachments_count: Math.floor(Math.random() * 6),
-    metadata: {
-      accessType: accessTypes[i % accessTypes.length],
-      operatingHours: i % 2 === 0 ? "24/7" : "8:00 AM - 10:00 PM",
-      authorizedPersonnel: Math.floor(Math.random() * 100) + 10,
-    }
   }))
 }
 
@@ -211,42 +215,40 @@ function generateLogisticsData(count: number): DataItem[] {
 }
 
 function generateUtilitiesData(count: number): DataItem[] {
-  const utilityTypes = [
-    "Main Power Distribution - 400A",
-    "Backup Generator - 250kW",
-    "Internet - Fiber 1Gbps",
-    "Water Supply - Main Line",
-    "HVAC System - Central",
-    "Emergency Lighting",
-    "Fire Suppression System",
-    "Stage Power - 200A",
-    "House Power - 100A",
-    "Network Infrastructure",
+  const utilityTypes = ["power", "water", "gas", "hvac", "internet", "compressed_air"]
+  const utilityNames = [
+    "Main Power Distribution 400A",
+    "Backup Generator 250kW",
+    "HVAC System Zone A",
+    "Water Supply Main",
+    "Gas Line Stage Area",
+    "Internet Fiber 1Gbps",
+    "Compressed Air Main",
+    "Fire Suppression Wet",
+    "Elevator System Main",
+    "Emergency Lighting Backup",
   ]
-  const utilityStatuses = ["operational", "maintenance", "offline", "reduced_capacity", "testing"]
-  const serviceProviders = ["Municipal Utilities", "Private Provider", "Backup System", "On-Site Generation", "Cloud Service"]
+  const statuses = ["active", "inactive", "maintenance"]
+  const locationIds = ["location-1", "location-2", "location-3", "location-4"]
+  const providers = ["Con Edison", "National Grid", "Local Water Authority", "Verizon", "Internal"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `utility-${i + 1}`,
-    name: `${utilityTypes[i % utilityTypes.length]} - Zone ${Math.floor(i / 3) + 1}`,
-    description: `Utility infrastructure with monitoring, maintenance schedule, and emergency protocols`,
-    status: utilityStatuses[i % utilityStatuses.length],
-    priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 3 === 0 ? "Christopher Lee" : i % 3 === 1 ? "Victoria Santos" : "Matthew Taylor",
-    assignee_name: i % 3 === 0 ? "Christopher Lee" : i % 3 === 1 ? "Victoria Santos" : "Matthew Taylor",
-    due_date: getRandomFutureDate(90),
-    start_date: getRandomPastDate(30),
-    created_at: getRandomPastDate(1825),
+    location_id: locationIds[i % locationIds.length],
+    utility_type: utilityTypes[i % utilityTypes.length],
+    name: utilityNames[i % utilityNames.length],
+    provider: providers[i % providers.length],
+    account_number: `ACC-${String(Math.floor(Math.random() * 1000000)).padStart(8, '0')}`,
+    capacity: `${Math.floor(Math.random() * 500) + 100} ${['kW', 'GPM', 'CFM', 'A', 'Mbps'][i % 5]}`,
+    monthly_cost: parseFloat((Math.random() * 5000 + 500).toFixed(2)),
+    status: statuses[i % statuses.length],
+    notes: "Critical building utility with regular maintenance schedule",
+    last_service_date: getRandomPastDate(90),
+    next_service_date: getRandomFutureDate(90),
+    created_at: getRandomPastDate(730),
     updated_at: new Date().toISOString(),
-    tags: ["utility", "infrastructure", "facility"],
-    comments_count: Math.floor(Math.random() * 18),
+    comments_count: Math.floor(Math.random() * 15),
     attachments_count: Math.floor(Math.random() * 10),
-    metadata: {
-      provider: serviceProviders[i % serviceProviders.length],
-      capacity: ["100A", "200A", "400A", "1Gbps", "250kW"][i % 5],
-      lastMaintenance: getRandomPastDate(90),
-      nextMaintenance: getRandomFutureDate(30),
-    }
   }))
 }
 

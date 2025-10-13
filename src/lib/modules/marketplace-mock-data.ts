@@ -61,39 +61,34 @@ function generateSpotlightData(count: number): DataItem[] {
 }
 
 function generateShopData(count: number): DataItem[] {
-  const productNames = [
-    "Professional LED Par Light",
-    "Wireless Audio System",
-    "Stage Truss Section",
-    "DMX Controller",
-    "Portable PA System",
-    "Video Projector 4K",
-    "Fog Machine Pro",
-    "Cable Management Kit",
-    "Lighting Console",
-    "Stage Monitor",
-  ]
-  const brands = ["Yamaha", "Shure", "QSC", "Martin", "Chauvet", "ETC", "Elation", "JBL", "Sennheiser", "Allen & Heath"]
-  const conditions = ["new", "like-new", "refurbished", "used-excellent"]
+  const productNames = ["LED Par Light", "Wireless Audio System", "Stage Truss Section", "DMX Controller", "Portable PA System", "4K Video Projector", "Fog Machine Pro", "Cable Kit", "Lighting Console", "Stage Monitor"]
+  const categories = ["Lighting", "Audio", "Rigging", "Control", "Video", "Effects", "Accessories"]
+  const vendors = ["company-1", "company-2", "company-3", "company-4"]
+  const statuses = ["active", "out_of_stock", "discontinued"]
+  const pricingModels = ["one_time", "recurring", "usage_based"]
   
   return Array.from({ length: count }, (_, i) => ({
-    id: `shop-${i + 1}`,
-    name: `${brands[i % brands.length]} ${productNames[i % productNames.length]}`,
-    description: "High-quality production equipment available for purchase. All items come with warranty and certified inspection.",
-    status: i % 3 === 0 ? "in-stock" : i % 3 === 1 ? "low-stock" : "pre-order",
-    priority: i % 4 === 0 ? "featured" : "normal",
-    assignee: brands[i % brands.length],
-    assignee_name: brands[i % brands.length],
-    due_date: getRandomFutureDate(14),
-    start_date: getRandomPastDate(30),
-    created_at: getRandomPastDate(60),
+    id: `product-${i + 1}`,
+    vendor_id: vendors[i % vendors.length],
+    name: productNames[i % productNames.length],
+    description: `Professional ${productNames[i % productNames.length].toLowerCase()} with industry-leading specifications`,
+    category: categories[i % categories.length],
+    subcategory: null,
+    price: parseFloat((Math.random() * 5000 + 100).toFixed(2)),
+    currency: "USD",
+    pricing_model: pricingModels[i % pricingModels.length],
+    sku: `SKU-${String(10000 + i).padStart(6, '0')}`,
+    stock_quantity: Math.floor(Math.random() * 100),
+    low_stock_threshold: 10,
+    images: [`https://example.com/images/product-${i + 1}-1.jpg`, `https://example.com/images/product-${i + 1}-2.jpg`],
+    status: statuses[i % statuses.length],
+    rating_avg: parseFloat((Math.random() * 2 + 3).toFixed(2)),
+    review_count: Math.floor(Math.random() * 50),
+    tags: [categories[i % categories.length].toLowerCase(), "marketplace"],
+    created_at: getRandomPastDate(180),
     updated_at: new Date().toISOString(),
-    tags: ["equipment", conditions[i % conditions.length], "available"],
-    comments_count: Math.floor(Math.random() * 30),
-    attachments_count: Math.floor(Math.random() * 10) + 3,
-    price: `$${(Math.random() * 10000 + 500).toFixed(2)}`,
-    rating: (Math.random() * 1.5 + 3.5).toFixed(1),
-    stock: Math.floor(Math.random() * 50) + 1,
+    comments_count: Math.floor(Math.random() * 20),
+    attachments_count: Math.floor(Math.random() * 5),
   }))
 }
 

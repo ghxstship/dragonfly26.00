@@ -19,9 +19,11 @@ import type { DataItem } from "@/types"
 interface MapViewProps {
   data: DataItem[]
   onItemClick?: (item: DataItem) => void
+  createActionLabel?: string
+  onCreateAction?: () => void
 }
 
-export function MapView({ data, onItemClick }: MapViewProps) {
+export function MapView({ data, onItemClick, createActionLabel, onCreateAction }: MapViewProps) {
   const t = useTranslations()
   const [selectedItem, setSelectedItem] = useState<DataItem | null>(null)
 
@@ -47,10 +49,12 @@ export function MapView({ data, onItemClick }: MapViewProps) {
               <p className="text-sm text-muted-foreground mb-6">
                 {t('views.emptyState.mapViewDescription')}
               </p>
-              <Button size="lg">
-                <Plus className="h-4 w-4 mr-2" />
-                {t('views.emptyState.createFirstItem')}
-              </Button>
+              {(createActionLabel || onCreateAction) && (
+                <Button size="lg" onClick={onCreateAction}>
+                  <Plus className="h-4 w-4 mr-2" />
+                  {createActionLabel || t('views.emptyState.createFirstItem')}
+                </Button>
+              )}
             </div>
           ) : (
             <div className="text-center space-y-4">

@@ -33,81 +33,89 @@ export function generateCompaniesMockData(tabSlug: string, count: number = 20): 
 }
 
 function generateOrganizationsData(count: number): DataItem[] {
-  const companies = [
-    "Atlas Productions LLC",
-    "Zenith Entertainment Group",
-    "Meridian Staging Solutions",
-    "Vertex Creative Services",
-    "Horizon Events Corporation",
-    "Pinnacle Production Partners",
-    "Catalyst Media Group",
-    "Summit Technical Services",
-    "Nexus Logistics Co.",
+  const companyNames = [
+    "Atlas Productions",
+    "Zenith Entertainment",
+    "Meridian Staging",
+    "Vertex Creative",
+    "Horizon Events",
+    "Pinnacle Production",
+    "Catalyst Media",
+    "Summit Technical",
+    "Nexus Logistics",
     "Vanguard Entertainment",
     "Phoenix Stage Design",
     "Eclipse Sound & Lighting",
-    "Nova Productions Inc.",
+    "Nova Productions",
     "Titan Event Services",
-    "Spectrum Creative Agency",
+    "Spectrum Creative",
   ]
-  const companyTypes = ["client", "vendor", "partner", "agency", "supplier"]
-  const statuses = ["active", "pending", "on_hold", "archived"]
+  const legalSuffixes = ["LLC", "Inc.", "Corp.", "Group", "Solutions"]
+  const companyTypes = ["vendor", "client", "partner", "supplier", "contractor"]
+  const industries = ["Entertainment", "Event Production", "Technical Services", "Logistics", "Creative Services"]
+  const statuses = ["active", "inactive", "suspended"]
+  const cities = ["New York", "Los Angeles", "Chicago", "Nashville", "Austin"]
+  const states = ["NY", "CA", "IL", "TN", "TX"]
   
   return Array.from({ length: count }, (_, i) => ({
-    id: `org-${i + 1}`,
-    name: companies[i % companies.length],
-    description: `${companyTypes[i % companyTypes.length].charAt(0).toUpperCase() + companyTypes[i % companyTypes.length].slice(1)} organization with multiple projects and agreements`,
+    id: `company-${i + 1}`,
+    name: companyNames[i % companyNames.length],
+    legal_name: `${companyNames[i % companyNames.length]} ${legalSuffixes[i % legalSuffixes.length]}`,
+    type: companyTypes[i % companyTypes.length],
+    industry: industries[i % industries.length],
+    email: `contact@${companyNames[i % companyNames.length].toLowerCase().replace(/\s+/g, '')}.com`,
+    phone: `+1-555-${String(Math.floor(Math.random() * 9000) + 1000).padStart(4, '0')}`,
+    website: `https://www.${companyNames[i % companyNames.length].toLowerCase().replace(/\s+/g, '')}.com`,
+    address_line1: `${100 + i * 10} Business Parkway`,
+    address_line2: i % 3 === 0 ? `Suite ${200 + i}` : null,
+    city: cities[i % cities.length],
+    state: states[i % states.length],
+    postal_code: `${10000 + Math.floor(Math.random() * 90000)}`,
+    country: "US",
+    tax_id: `${Math.floor(Math.random() * 90) + 10}-${Math.floor(Math.random() * 9000000) + 1000000}`,
+    payment_terms: ["Net 30", "Net 60", "Net 90", "Due on Receipt"][i % 4],
+    currency: "USD",
     status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "high" : i % 3 === 1 ? "normal" : "low",
-    assignee: i % 4 === 0 ? "Rachel Green" : i % 4 === 1 ? "Marcus Williams" : i % 4 === 2 ? "Emily Carter" : "David Chen",
-    assignee_name: i % 4 === 0 ? "Rachel Green" : i % 4 === 1 ? "Marcus Williams" : i % 4 === 2 ? "Emily Carter" : "David Chen",
-    due_date: getRandomFutureDate(180),
-    start_date: getRandomPastDate(365),
+    rating: Math.floor(Math.random() * 3) + 3,
+    tags: [companyTypes[i % companyTypes.length], industries[i % industries.length].toLowerCase().replace(/\s+/g, '-')],
+    created_by: "person-1",
     created_at: getRandomPastDate(500),
     updated_at: new Date().toISOString(),
-    tags: [companyTypes[i % companyTypes.length], "organization"],
     comments_count: Math.floor(Math.random() * 25),
     attachments_count: Math.floor(Math.random() * 15),
   }))
 }
 
 function generateContactsData(count: number): DataItem[] {
-  const roles = [
+  const firstNames = ["Sarah", "Michael", "Jennifer", "David", "Emily", "James", "Lisa", "Robert", "Amanda", "Daniel"]
+  const lastNames = ["Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Taylor"]
+  const titles = [
     "Production Manager",
     "Technical Director",
     "Account Executive",
     "Creative Director",
     "Operations Lead",
     "Project Coordinator",
-    "Business Development",
-    "Vendor Relations",
-    "Contract Manager",
-    "Logistics Coordinator",
-    "Quality Assurance Lead",
-    "Compliance Officer",
+    "Business Development Manager",
+    "Vendor Relations Specialist",
   ]
-  const companies = [
-    "Atlas Productions",
-    "Zenith Entertainment",
-    "Meridian Staging",
-    "Vertex Creative",
-    "Horizon Events",
-  ]
-  const statuses = ["active", "on_leave", "reassigned", "vacant", "filled"]
+  const departments = ["Production", "Sales", "Operations", "Finance", "Creative", "Logistics"]
+  const companyIds = ["company-1", "company-2", "company-3", "company-4", "company-5"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `contact-${i + 1}`,
-    name: `${roles[i % roles.length]} @ ${companies[i % companies.length]}`,
-    description: `Role-based contact position that can be filled by different personnel. Currently ${statuses[i % statuses.length]}`,
-    status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 5 === 0 ? "Sarah Mitchell" : i % 5 === 1 ? "Alex Turner" : i % 5 === 2 ? "Jordan Lee" : i % 5 === 3 ? "Maya Rodriguez" : "Chris Anderson",
-    assignee_name: i % 5 === 0 ? "Sarah Mitchell" : i % 5 === 1 ? "Alex Turner" : i % 5 === 2 ? "Jordan Lee" : i % 5 === 3 ? "Maya Rodriguez" : "Chris Anderson",
-    due_date: getRandomFutureDate(90),
-    start_date: getRandomPastDate(180),
+    company_id: companyIds[i % companyIds.length],
+    first_name: firstNames[i % firstNames.length],
+    last_name: lastNames[(i + 3) % lastNames.length],
+    title: titles[i % titles.length],
+    department: departments[i % departments.length],
+    email: `${firstNames[i % firstNames.length].toLowerCase()}.${lastNames[(i + 3) % lastNames.length].toLowerCase()}@company${(i % 5) + 1}.com`,
+    phone: `+1-555-${String(Math.floor(Math.random() * 9000) + 1000).padStart(4, '0')}`,
+    mobile: i % 2 === 0 ? `+1-555-${String(Math.floor(Math.random() * 9000) + 1000).padStart(4, '0')}` : null,
+    is_primary: i % 5 === 0,
+    notes: `${titles[i % titles.length]} at company. Main point of contact for ${departments[i % departments.length].toLowerCase()} matters.`,
     created_at: getRandomPastDate(365),
     updated_at: new Date().toISOString(),
-    tags: ["contact", "role", companies[i % companies.length].toLowerCase().split(' ')[0]],
     comments_count: Math.floor(Math.random() * 18),
     attachments_count: Math.floor(Math.random() * 8),
   }))
@@ -206,19 +214,23 @@ function generateScopesOfWorkData(count: number): DataItem[] {
     "Museum Exhibition Design & Installation",
     "Sports Venue LED Installation",
   ]
-  const scopeStatuses = ["planning", "approved", "in_progress", "on_hold", "completed", "change_order"]
-  const companies = ["Atlas Productions", "Zenith Entertainment", "Meridian Staging", "Vertex Creative"]
+  const scopeStatuses = ["draft", "submitted", "approved", "in_progress", "completed"]
+  const companyIds = ["company-1", "company-2", "company-3", "company-4"]
+  const productionIds = ["production-1", "production-2", "production-3"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `sow-${i + 1}`,
-    name: `${scopes[i % scopes.length]} - ${companies[i % companies.length]}`,
-    description: `Detailed scope of work outlining tasks, timelines, resources, and specifications`,
+    company_id: companyIds[i % companyIds.length],
+    production_id: i % 2 === 0 ? productionIds[i % productionIds.length] : null,
+    title: scopes[i % scopes.length],
+    description: `Detailed scope of work outlining tasks, timelines, resources, and specifications for ${scopes[i % scopes.length]}`,
+    deliverables: `Technical design, equipment list, crew manifest, production schedule`,
+    timeline: `${Math.floor(Math.random() * 12) + 1} weeks`,
+    estimated_cost: parseFloat((Math.random() * 500000 + 50000).toFixed(2)),
+    currency: "USD",
     status: scopeStatuses[i % scopeStatuses.length],
-    priority: i % 2 === 0 ? "urgent" : "high",
-    assignee: i % 4 === 0 ? "Megan Brown" : i % 4 === 1 ? "Lucas Martinez" : i % 4 === 2 ? "Olivia Taylor" : "Nina Patel",
-    assignee_name: i % 4 === 0 ? "Megan Brown" : i % 4 === 1 ? "Lucas Martinez" : i % 4 === 2 ? "Olivia Taylor" : "Nina Patel",
-    due_date: getRandomFutureDate(180),
-    start_date: getRandomFutureDate(90),
+    created_by: "person-1",
+    approved_by: i % 3 !== 2 ? "person-2" : null,
     created_at: getRandomPastDate(120),
     updated_at: new Date().toISOString(),
     tags: ["sow", "project", scopeStatuses[i % scopeStatuses.length]],
@@ -273,43 +285,33 @@ function generateDocumentsData(count: number): DataItem[] {
 }
 
 function generateBidsData(count: number): DataItem[] {
-  const projects = [
-    "Summer Music Festival 2024",
-    "Corporate Annual Gala",
-    "Stadium Concert Series",
-    "Trade Show Booth Design",
-    "Product Launch Event",
-    "Awards Show Production",
-    "Conference Technical Services",
-    "Theatre Season Rental Package",
-    "Outdoor Festival Infrastructure",
-    "Brand Activation Tour",
-  ]
-  const bidStatuses = ["draft", "submitted", "under_review", "shortlisted", "awarded", "declined", "withdrawn"]
-  const companies = [
-    "Atlas Productions LLC",
-    "Zenith Entertainment Group",
-    "Meridian Staging Solutions",
-    "Vertex Creative Services",
-    "Horizon Events Corporation",
-  ]
+  const companyIds = ["company-1", "company-2", "company-3", "company-4", "company-5"]
+  const scopeIds = ["sow-1", "sow-2", "sow-3", "sow-4"]
+  const bidStatuses = ["draft", "submitted", "under_review", "accepted", "rejected", "withdrawn"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `bid-${i + 1}`,
-    name: `Bid #${(10000 + i).toString()} - ${projects[i % projects.length]}`,
-    description: `Company bid from ${companies[i % companies.length]} with pricing, timeline, and proposed solution`,
-    status: bidStatuses[i % bidStatuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 4 === 0 ? "Carlos Rodriguez" : i % 4 === 1 ? "Emma Johnson" : i % 4 === 2 ? "Nathan Gray" : "Patrick O'Brien",
-    assignee_name: i % 4 === 0 ? "Carlos Rodriguez" : i % 4 === 1 ? "Emma Johnson" : i % 4 === 2 ? "Nathan Gray" : "Patrick O'Brien",
-    due_date: getRandomFutureDate(45),
-    start_date: getRandomPastDate(14),
-    created_at: getRandomPastDate(21),
-    updated_at: new Date().toISOString(),
-    tags: ["bid", "quote", companies[i % companies.length].toLowerCase().split(' ')[0]],
-    comments_count: Math.floor(Math.random() * 28),
-    attachments_count: Math.floor(Math.random() * 15),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const submissionDate = new Date(Date.now() - (30 - i) * 24 * 60 * 60 * 1000)
+    const validUntil = new Date(submissionDate.getTime() + 60 * 24 * 60 * 60 * 1000)
+    
+    return {
+      id: `bid-${i + 1}`,
+      scope_of_work_id: scopeIds[i % scopeIds.length],
+      company_id: companyIds[i % companyIds.length],
+      bid_number: `BID-${String(10000 + i).padStart(6, '0')}`,
+      bid_amount: parseFloat((Math.random() * 500000 + 50000).toFixed(2)),
+      currency: "USD",
+      submission_date: submissionDate.toISOString().split('T')[0],
+      valid_until: validUntil.toISOString().split('T')[0],
+      status: bidStatuses[i % bidStatuses.length],
+      notes: `Comprehensive bid proposal including detailed pricing, timeline, and resource allocation`,
+      submitted_by: "person-1",
+      reviewed_by: i % 3 !== 2 ? "person-2" : null,
+      created_at: submissionDate.toISOString(),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 28),
+      attachments_count: Math.floor(Math.random() * 15),
+    }
+  })
 }
 
 function generateRFPsData(count: number): DataItem[] {

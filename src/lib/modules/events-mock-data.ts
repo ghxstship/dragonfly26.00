@@ -45,25 +45,40 @@ export function generateEventsMockData(tabSlug: string, count: number = 20): Dat
 }
 
 function generateAllEventsData(count: number): DataItem[] {
-  const eventTypes = ["Performance", "Rehearsal", "Meeting", "Training", "Setup", "Breakdown", "Social Event", "Conference"]
-  const statuses = ["scheduled", "in_progress", "completed", "cancelled"]
+  const eventTypes = ["performance", "rehearsal", "class", "workshop", "recreation", "meeting", "booking", "tour_date", "training", "internal"]
+  const statuses = ["draft", "scheduled", "in_progress", "completed", "cancelled"]
+  const locations = ["location-1", "location-2", "location-3", "location-4"]
+  const organizers = ["person-1", "person-2", "person-3", "person-4"]
+  const productions = ["production-1", "production-2", "production-3"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `event-${i + 1}`,
-    name: `${eventTypes[i % eventTypes.length]} - ${new Date(Date.now() + i * 24 * 60 * 60 * 1000).toLocaleDateString()}`,
-    description: "Scheduled event with crew assignments and logistics",
-    status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 3 === 0 ? "Sarah Mitchell" : i % 3 === 1 ? "Alex Turner" : "Jordan Lee",
-    assignee_name: i % 3 === 0 ? "Sarah Mitchell" : i % 3 === 1 ? "Alex Turner" : "Jordan Lee",
-    due_date: getRandomFutureDate(90),
-    start_date: getRandomFutureDate(30),
-    created_at: getRandomPastDate(60),
-    updated_at: new Date().toISOString(),
-    tags: ["event", eventTypes[i % eventTypes.length].toLowerCase()],
-    comments_count: Math.floor(Math.random() * 12),
-    attachments_count: Math.floor(Math.random() * 6),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const startDate = new Date(Date.now() + (i * 2 + Math.random() * 5) * 24 * 60 * 60 * 1000)
+    const endDate = new Date(startDate.getTime() + (2 + Math.random() * 4) * 60 * 60 * 1000)
+    
+    return {
+      id: `event-${i + 1}`,
+      name: `${eventTypes[i % eventTypes.length].charAt(0).toUpperCase() + eventTypes[i % eventTypes.length].slice(1)} - ${startDate.toLocaleDateString()}`,
+      description: "Scheduled event with crew assignments and logistics",
+      type: eventTypes[i % eventTypes.length],
+      start_time: startDate.toISOString(),
+      end_time: endDate.toISOString(),
+      all_day: i % 7 === 0,
+      timezone: "America/New_York",
+      location_id: locations[i % locations.length],
+      location_details: null,
+      is_recurring: i % 10 === 0,
+      organizer_id: organizers[i % organizers.length],
+      attendees: Array.from({ length: Math.floor(Math.random() * 8) + 2 }, (_, j) => `person-${j + 1}`),
+      capacity: Math.floor(Math.random() * 200) + 50,
+      status: statuses[i % statuses.length],
+      production_id: i % 3 === 0 ? productions[i % productions.length] : null,
+      tags: ["event", eventTypes[i % eventTypes.length]],
+      created_at: getRandomPastDate(60),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 12),
+      attachments_count: Math.floor(Math.random() * 6),
+    }
+  })
 }
 
 function generateActivitiesData(count: number): DataItem[] {
@@ -114,24 +129,33 @@ function generateRunOfShowData(count: number): DataItem[] {
     "Curtain Call",
     "House Lights Up",
   ]
-  const cueTypes = ["lighting", "sound", "video", "stage", "actor", "technical"]
+  const cueTypes = ["lighting", "sound", "video", "stage_manager", "technical", "talent"]
+  const eventIds = ["event-1", "event-2", "event-3"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `ros-${i + 1}`,
-    name: `${i + 1}. ${rosItems[i % rosItems.length]} - ${(i * 5).toString().padStart(2, '0')}:${(i * 30 % 60).toString().padStart(2, '0')}`,
-    description: `Cue #${i + 1} - ${cueTypes[i % cueTypes.length]} cue with specific timing and execution notes`,
-    status: i % 5 === 0 ? "pending" : i % 5 === 1 ? "rehearsed" : i % 5 === 2 ? "locked" : i % 5 === 3 ? "live" : "revision_needed",
-    priority: i % 2 === 0 ? "urgent" : "high",
-    assignee: i % 3 === 0 ? "David Chen" : i % 3 === 1 ? "Lisa Morgan" : "Kevin Foster",
-    assignee_name: i % 3 === 0 ? "David Chen" : i % 3 === 1 ? "Lisa Morgan" : "Kevin Foster",
-    due_date: getRandomFutureDate(7),
-    start_date: getRandomPastDate(5),
-    created_at: getRandomPastDate(20),
-    updated_at: new Date().toISOString(),
-    tags: ["run-of-show", cueTypes[i % cueTypes.length], "cue"],
-    comments_count: Math.floor(Math.random() * 15),
-    attachments_count: Math.floor(Math.random() * 8),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const hours = Math.floor((i * 5) / 60)
+    const minutes = (i * 5) % 60
+    const timeCode = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:00`
+    
+    return {
+      id: `ros-${i + 1}`,
+      event_id: eventIds[i % eventIds.length],
+      sequence_number: i + 1,
+      time_code: timeCode,
+      cue_number: `Q${(i + 1).toString().padStart(3, '0')}`,
+      cue_type: cueTypes[i % cueTypes.length],
+      description: rosItems[i % rosItems.length],
+      action: `Execute ${cueTypes[i % cueTypes.length]} cue for ${rosItems[i % rosItems.length]}`,
+      responsible_person_id: i % 3 === 0 ? "person-1" : i % 3 === 1 ? "person-2" : "person-3",
+      duration_seconds: Math.floor(Math.random() * 300) + 30,
+      notes: `Technical notes and execution details for cue ${i + 1}`,
+      status: i % 4 === 0 ? "draft" : i % 4 === 1 ? "rehearsed" : i % 4 === 2 ? "locked" : "executed",
+      created_at: getRandomPastDate(20),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 15),
+      attachments_count: Math.floor(Math.random() * 8),
+    }
+  })
 }
 
 function generateRehearsalsData(count: number): DataItem[] {
@@ -201,36 +225,43 @@ function generateBlocksData(count: number): DataItem[] {
 }
 
 function generateBookingsData(count: number): DataItem[] {
-  const venues = [
-    "Madison Square Garden",
-    "Radio City Music Hall",
-    "Brooklyn Steel",
-    "The Apollo Theater",
-    "Barclays Center",
-    "Terminal 5",
-    "Beacon Theatre",
-    "Webster Hall",
-    "Forest Hills Stadium",
-    "Kings Theatre",
+  const bookingTypes = ["venue", "room_block", "dressing_room", "green_room", "studio", "hospitality", "entertainment"]
+  const bookingNames = [
+    "Main Venue Rental",
+    "Hotel Room Block",
+    "Artist Dressing Room",
+    "VIP Green Room",
+    "Recording Studio",
+    "Catering Services",
+    "Entertainment Package",
   ]
-  const bookingStatuses = ["inquiry", "option", "confirmed", "contracted", "cancelled"]
+  const bookingStatuses = ["pending", "confirmed", "cancelled"]
+  const locations = ["location-1", "location-2", "location-3", "location-4"]
+  const events = ["event-1", "event-2", "event-3"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `booking-${i + 1}`,
-    name: `${venues[i % venues.length]} - ${new Date(Date.now() + (i + 1) * 7 * 24 * 60 * 60 * 1000).toLocaleDateString()}`,
-    description: "Venue booking with contract details, capacity, and technical specifications",
-    status: bookingStatuses[i % bookingStatuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 3 === 0 ? "Tom Anderson" : i % 3 === 1 ? "Rebecca Lee" : "James Wilson",
-    assignee_name: i % 3 === 0 ? "Tom Anderson" : i % 3 === 1 ? "Rebecca Lee" : "James Wilson",
-    due_date: getRandomFutureDate(120),
-    start_date: getRandomFutureDate(90),
-    created_at: getRandomPastDate(60),
-    updated_at: new Date().toISOString(),
-    tags: ["venue", "booking", "contract"],
-    comments_count: Math.floor(Math.random() * 18),
-    attachments_count: Math.floor(Math.random() * 12),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const startDate = new Date(Date.now() + (i + 1) * 7 * 24 * 60 * 60 * 1000)
+    const endDate = new Date(startDate.getTime() + (3 + Math.random() * 7) * 24 * 60 * 60 * 1000)
+    
+    return {
+      id: `booking-${i + 1}`,
+      type: bookingTypes[i % bookingTypes.length],
+      name: bookingNames[i % bookingNames.length],
+      location_id: locations[i % locations.length],
+      start_time: startDate.toISOString(),
+      end_time: endDate.toISOString(),
+      status: bookingStatuses[i % bookingStatuses.length],
+      confirmation_number: `CONF-${String(i + 1).padStart(6, '0')}`,
+      cost: parseFloat((Math.random() * 5000 + 500).toFixed(2)),
+      notes: "Venue booking with contract details, capacity, and technical specifications",
+      event_id: i % 2 === 0 ? events[i % events.length] : null,
+      created_by: "person-1",
+      created_at: getRandomPastDate(60),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 18),
+      attachments_count: Math.floor(Math.random() * 12),
+    }
+  })
 }
 
 function generateToursData(count: number): DataItem[] {
@@ -442,22 +473,30 @@ function generateIncidentsData(count: number): DataItem[] {
     "Security Incident",
     "Fire Alarm Activation",
   ]
-  const severities = ["minor", "moderate", "major", "critical"]
-  const incidentStatuses = ["reported", "investigating", "resolved", "pending_action"]
+  const incidentTypes = ["injury", "equipment_failure", "safety_violation", "security", "other"]
+  const severities = ["minor", "moderate", "serious", "critical"]
+  const incidentStatuses = ["open", "investigating", "resolved", "closed"]
+  const locations = ["location-1", "location-2", "location-3", "location-4"]
+  const events = ["event-1", "event-2", "event-3"]
+  const reporters = ["person-1", "person-2", "person-3", "person-4"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `incident-${i + 1}`,
-    name: `INC-${(1000 + i).toString()} - ${incidents[i % incidents.length]}`,
-    description: "Incident report with details, severity assessment, and corrective actions",
+    title: `INC-${(1000 + i).toString()} - ${incidents[i % incidents.length]}`,
+    description: "Incident report with details, severity assessment, and corrective actions taken",
+    severity: severities[i % severities.length],
+    type: incidentTypes[i % incidentTypes.length],
+    occurred_at: getRandomPastDate(2),
+    location_id: locations[i % locations.length],
+    location_details: null,
+    reported_by: reporters[i % reporters.length],
+    witnesses: Array.from({ length: Math.floor(Math.random() * 3) }, (_, j) => `person-${j + 2}`),
+    actions_taken: "Immediate response taken, area secured, personnel notified",
+    follow_up_required: i % 3 === 0,
     status: incidentStatuses[i % incidentStatuses.length],
-    priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 3 === 0 ? "Robert Johnson" : i % 3 === 1 ? "Amanda Davis" : "Gregory Moore",
-    assignee_name: i % 3 === 0 ? "Robert Johnson" : i % 3 === 1 ? "Amanda Davis" : "Gregory Moore",
-    due_date: getRandomFutureDate(7),
-    start_date: getRandomPastDate(2),
+    event_id: i % 2 === 0 ? events[i % events.length] : null,
     created_at: getRandomPastDate(5),
     updated_at: new Date().toISOString(),
-    tags: ["incident", "safety", severities[i % severities.length]],
     comments_count: Math.floor(Math.random() * 20),
     attachments_count: Math.floor(Math.random() * 12),
   }))

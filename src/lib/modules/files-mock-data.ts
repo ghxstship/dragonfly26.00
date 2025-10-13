@@ -39,25 +39,39 @@ export function generateFilesMockData(tabSlug: string, count: number = 20): Data
 }
 
 function generateAllFilesData(count: number): DataItem[] {
-  const fileTypes = ["Contract", "Certificate", "Drawing", "Call Sheet", "Rider", "Brand Asset", "Media", "Template", "Report"]
-  const statuses = ["active", "pending_review", "approved", "archived"]
-  const fileExtensions = [".pdf", ".docx", ".xlsx", ".png", ".jpg", ".dwg"]
+  const fileNames = ["Contract", "Certificate", "Drawing", "Call_Sheet", "Rider", "Brand_Asset", "Media", "Template", "Report", "Technical_Specs", "Floor_Plan"]
+  const fileTypeEnums = ["document", "image", "video", "audio", "spreadsheet", "presentation", "cad", "other"]
+  const mimeTypes = ["application/pdf", "image/png", "image/jpeg", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "video/mp4", "application/vnd.ms-excel"]
+  const statuses = ["active", "archived", "deleted"]
+  const categories = ["category-1", "category-2", "category-3"]
+  const productions = ["production-1", "production-2", "production-3"]
+  const events = ["event-1", "event-2", "event-3"]
+  const extensions = [".pdf", ".png", ".jpg", ".docx", ".mp4", ".xlsx"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `file-${i + 1}`,
-    name: `${fileTypes[i % fileTypes.length]}_${new Date(Date.now() - i * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '-')}${fileExtensions[i % fileExtensions.length]}`,
-    description: `Production file - ${(Math.random() * 5 + 0.5).toFixed(2)} MB`,
+    name: `${fileNames[i % fileNames.length]}_${String(i + 1).padStart(3, '0')}${extensions[i % extensions.length]}`,
+    description: `Production file for ${fileNames[i % fileNames.length].replace(/_/g, ' ')}`,
+    type: mimeTypes[i % mimeTypes.length],
+    file_type: fileTypeEnums[i % fileTypeEnums.length],
+    category_id: categories[i % categories.length],
+    size_bytes: Math.floor(Math.random() * 10000000) + 100000,
+    file_path: `/uploads/files/${new Date().getFullYear()}/${String(i + 1).padStart(3, '0')}`,
+    version: Math.floor(i / 10) + 1,
+    is_latest: i % 10 < 8,
+    checksum: `md5-${Math.random().toString(36).substring(2, 15)}`,
     status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "high" : i % 3 === 1 ? "normal" : "low",
-    assignee: i % 3 === 0 ? "Sarah Mitchell" : i % 3 === 1 ? "Alex Turner" : "Jordan Lee",
-    assignee_name: i % 3 === 0 ? "Sarah Mitchell" : i % 3 === 1 ? "Alex Turner" : "Jordan Lee",
-    due_date: getRandomFutureDate(30),
-    start_date: getRandomPastDate(60),
+    production_id: i % 2 === 0 ? productions[i % productions.length] : null,
+    event_id: i % 3 === 0 ? events[i % events.length] : null,
+    parent_folder_id: i % 5 === 0 ? `folder-${Math.floor(i / 5)}` : null,
+    is_shared: i % 4 === 0,
+    shared_with: i % 4 === 0 ? ["person-1", "person-2"] : [],
+    tags: [fileNames[i % fileNames.length].toLowerCase().replace(/_/g, '-'), "production"],
+    uploaded_by: "person-1",
     created_at: getRandomPastDate(90),
     updated_at: new Date().toISOString(),
-    tags: [fileTypes[i % fileTypes.length].toLowerCase().replace(' ', '-'), "production"],
     comments_count: Math.floor(Math.random() * 8),
-    attachments_count: 1,
+    attachments_count: 0,
   }))
 }
 

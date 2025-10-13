@@ -14,6 +14,8 @@ import type { DataItem } from "@/types"
 interface FinancialViewProps {
   data: DataItem[]
   onItemClick?: (item: DataItem) => void
+  createActionLabel?: string
+  onCreateAction?: () => void
 }
 
 interface FinancialMetrics {
@@ -23,7 +25,7 @@ interface FinancialMetrics {
   budget: number
 }
 
-export function FinancialView({ data, onItemClick }: FinancialViewProps) {
+export function FinancialView({ data, onItemClick, createActionLabel, onCreateAction }: FinancialViewProps) {
   const t = useTranslations()
   const [period, setPeriod] = useState<"month" | "quarter" | "year">("month")
 
@@ -83,10 +85,12 @@ export function FinancialView({ data, onItemClick }: FinancialViewProps) {
             <p className="text-sm text-muted-foreground mb-6 max-w-sm">
               {t('views.emptyState.financialViewDescription')}
             </p>
-            <Button size="lg">
-              <Plus className="h-4 w-4 mr-2" />
-              {t('views.emptyState.createFirstItem')}
-            </Button>
+            {(createActionLabel || onCreateAction) && (
+              <Button size="lg" onClick={onCreateAction}>
+                <Plus className="h-4 w-4 mr-2" />
+                {createActionLabel || t('views.emptyState.createFirstItem')}
+              </Button>
+            )}
           </div>
         ) : (
           <div className="max-w-7xl mx-auto space-y-6">

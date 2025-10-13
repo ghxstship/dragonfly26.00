@@ -14,6 +14,8 @@ import type { DataItem } from "@/types"
 interface PortfolioViewProps {
   data: DataItem[]
   onItemClick?: (item: DataItem) => void
+  createActionLabel?: string
+  onCreateAction?: () => void
 }
 
 interface Project {
@@ -29,7 +31,7 @@ interface Project {
   endDate: string
 }
 
-export function PortfolioView({ data, onItemClick }: PortfolioViewProps) {
+export function PortfolioView({ data, onItemClick, createActionLabel, onCreateAction }: PortfolioViewProps) {
   const t = useTranslations()
   const [filterStatus, setFilterStatus] = useState<string | null>(null)
 
@@ -225,10 +227,12 @@ export function PortfolioView({ data, onItemClick }: PortfolioViewProps) {
               <p className="text-sm text-muted-foreground mb-6 max-w-sm">
                 {t('views.emptyState.portfolioViewDescription')}
               </p>
-              <Button size="lg">
-                <Plus className="h-4 w-4 mr-2" />
-                {t('views.emptyState.createFirstItem')}
-              </Button>
+              {(createActionLabel || onCreateAction) && (
+                <Button size="lg" onClick={onCreateAction}>
+                  <Plus className="h-4 w-4 mr-2" />
+                  {createActionLabel || t('views.emptyState.createFirstItem')}
+                </Button>
+              )}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

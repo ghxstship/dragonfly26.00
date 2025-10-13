@@ -109,39 +109,25 @@ function generateGuidesData(count: number): DataItem[] {
 }
 
 function generateCoursesData(count: number): DataItem[] {
-  const courses = [
-    "Production Management Certification Program",
-    "Technical Theater Fundamentals",
-    "Live Event Audio Engineering",
-    "Stage Lighting Design & Programming",
-    "Tour Management Professional Course",
-    "Concert Rigging & Safety",
-    "Event Production Planning",
-    "Venue Operations Management",
-    "Festival Production Intensive",
-    "Music Business Essentials",
-    "Stage Management Bootcamp",
-    "Video Production for Live Events",
-    "Budgeting & Financial Management",
-    "Crew Leadership Training",
-    "Advanced Show Calling",
-  ]
-  const courseTypes = ["certification", "bootcamp", "intensive", "professional", "fundamentals"]
-  const statuses = ["enrolling", "in_progress", "completed", "upcoming"]
+  const titles = ["Production Management Certification", "Technical Theater Fundamentals", "Live Event Audio Engineering", "Stage Lighting Design", "Tour Management", "Concert Rigging & Safety", "Event Production Planning", "Venue Operations", "Festival Production Intensive", "Music Business Essentials"]
+  const levels = ["beginner", "intermediate", "advanced"]
+  const statuses = ["draft", "published", "archived"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `course-${i + 1}`,
-    name: `${courses[i % courses.length]} - ${["Spring", "Summer", "Fall", "Winter"][i % 4]} 2024`,
-    description: `Multi-week course with lectures, assignments, and certification. Duration: ${Math.floor(Math.random() * 8) + 4} weeks`,
+    title: `${titles[i % titles.length]} - ${["Spring", "Summer", "Fall", "Winter"][i % 4]} 2024`,
+    description: `Multi-week course with lectures, assignments, and certification`,
+    syllabus: "Week 1: Introduction, Week 2-4: Core Topics, Week 5-6: Advanced Topics, Week 7-8: Final Project",
+    instructor_id: "person-1",
+    duration_hours: parseFloat((Math.random() * 40 + 20).toFixed(1)),
+    level: levels[i % levels.length],
+    price: parseFloat((Math.random() * 500 + 100).toFixed(2)),
+    currency: "USD",
     status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 4 === 0 ? "Course Director - David Chen" : i % 4 === 1 ? "Instructor - Lisa Morgan" : i % 4 === 2 ? "Program Lead - Kevin Foster" : "Education Manager - Rachel Green",
-    assignee_name: i % 4 === 0 ? "David Chen" : i % 4 === 1 ? "Lisa Morgan" : i % 4 === 2 ? "Kevin Foster" : "Rachel Green",
-    due_date: getRandomFutureDate(90),
-    start_date: getRandomFutureDate(30),
+    enrollment_count: Math.floor(Math.random() * 100),
+    rating_avg: parseFloat((Math.random() * 2 + 3).toFixed(2)),
     created_at: getRandomPastDate(120),
     updated_at: new Date().toISOString(),
-    tags: ["course", courseTypes[i % courseTypes.length], "education"],
     comments_count: Math.floor(Math.random() * 35),
     attachments_count: Math.floor(Math.random() * 20) + 5,
   }))

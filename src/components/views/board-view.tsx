@@ -17,9 +17,11 @@ import { BoardCard } from "./board-card"
 interface BoardViewProps {
   data: DataItem[]
   onItemClick?: (item: DataItem) => void
+  createActionLabel?: string
+  onCreateAction?: () => void
 }
 
-export function BoardView({ data, onItemClick }: BoardViewProps) {
+export function BoardView({ data, onItemClick, createActionLabel, onCreateAction }: BoardViewProps) {
   const t = useTranslations()
   const [activeId, setActiveId] = useState<string | null>(null)
 
@@ -85,10 +87,12 @@ export function BoardView({ data, onItemClick }: BoardViewProps) {
               <p className="text-sm text-muted-foreground mb-6">
                 {t('views.emptyState.boardViewDescription')}
               </p>
-              <Button size="lg">
-                <Plus className="h-4 w-4 mr-2" />
-                {t('views.emptyState.createFirstItem')}
-              </Button>
+              {(createActionLabel || onCreateAction) && (
+                <Button size="lg" onClick={onCreateAction}>
+                  <Plus className="h-4 w-4 mr-2" />
+                  {createActionLabel || t('views.emptyState.createFirstItem')}
+                </Button>
+              )}
             </div>
           </div>
         )}

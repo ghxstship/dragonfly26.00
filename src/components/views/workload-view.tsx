@@ -13,6 +13,8 @@ import type { DataItem } from "@/types"
 interface WorkloadViewProps {
   data: DataItem[]
   onItemClick?: (item: DataItem) => void
+  createActionLabel?: string
+  onCreateAction?: () => void
 }
 
 interface UserWorkload {
@@ -23,7 +25,7 @@ interface UserWorkload {
   items: DataItem[]
 }
 
-export function WorkloadView({ data, onItemClick }: WorkloadViewProps) {
+export function WorkloadView({ data, onItemClick, createActionLabel, onCreateAction }: WorkloadViewProps) {
   const t = useTranslations()
   const [expandedUsers, setExpandedUsers] = useState<Set<string>>(new Set())
 
@@ -78,10 +80,12 @@ export function WorkloadView({ data, onItemClick }: WorkloadViewProps) {
           <p className="text-sm text-muted-foreground mb-6 max-w-sm">
             {t('views.emptyState.workloadViewDescription')}
           </p>
-          <Button size="lg">
-            <Plus className="h-4 w-4 mr-2" />
-            {t('views.emptyState.createFirstItem')}
-          </Button>
+          {(createActionLabel || onCreateAction) && (
+            <Button size="lg" onClick={onCreateAction}>
+              <Plus className="h-4 w-4 mr-2" />
+              {createActionLabel || t('views.emptyState.createFirstItem')}
+            </Button>
+          )}
         </div>
       ) : (
         userWorkloads.map((workload) => {

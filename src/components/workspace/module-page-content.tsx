@@ -318,39 +318,6 @@ export function ModulePageContent() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-
-            <div className="flex items-center gap-1 ml-2 border-l pl-2">
-              <Button 
-                variant="ghost" 
-                size="icon"
-                onClick={() => {
-                  setRightSidebarOpen(true, 'activity')
-                }}
-                title="Activity"
-              >
-                <ActivityIcon className="h-4 w-4" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="icon"
-                onClick={() => {
-                  setRightSidebarOpen(true, 'comments')
-                }}
-                title="Comments"
-              >
-                <MessageSquare className="h-4 w-4" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="icon"
-                onClick={() => {
-                  setRightSidebarOpen(true, 'time')
-                }}
-                title="Time Tracking"
-              >
-                <Clock className="h-4 w-4" />
-              </Button>
-            </div>
           </div>
         </div>
       </div>

@@ -202,6 +202,10 @@ export function TabPageContent() {
     }
   }
 
+  // Get the contextual create button label for empty states
+  const createLabel = getCreateButtonLabel(moduleSlug, tabSlug)
+  const handleCreateClick = () => setCreateDialogOpen(true)
+
   const renderView = () => {
     // For admin module, check if there's a custom tab component
     if (moduleSlug === "admin") {
@@ -334,11 +338,11 @@ export function TabPageContent() {
     // Otherwise, render based on view type with REAL DATA
     switch (currentView) {
       case "list":
-        return <ListView data={filteredData} onItemClick={handleItemClick} />
+        return <ListView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "board":
-        return <BoardView data={filteredData} onItemClick={handleItemClick} />
+        return <BoardView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "table":
-        return <TableView data={filteredData} onItemClick={handleItemClick} />
+        return <TableView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "calendar":
         return <CalendarView data={filteredData} onItemClick={handleItemClick} />
       case "timeline":
@@ -346,9 +350,9 @@ export function TabPageContent() {
       case "dashboard":
         return <DashboardView data={filteredData} />
       case "workload":
-        return <WorkloadView data={filteredData} onItemClick={handleItemClick} />
+        return <WorkloadView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "map":
-        return <MapView data={filteredData} onItemClick={handleItemClick} />
+        return <MapView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "mind-map":
         return <MindMapView data={filteredData} onItemClick={handleItemClick} />
       case "form":
@@ -356,7 +360,7 @@ export function TabPageContent() {
       case "activity":
         return <ActivityView data={filteredData} />
       case "box":
-        return <BoxView data={filteredData} onItemClick={handleItemClick} />
+        return <BoxView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "embed":
         return <EmbedView data={filteredData} />
       case "chat":
@@ -364,11 +368,11 @@ export function TabPageContent() {
       case "doc":
         return <DocView data={filteredData} onItemClick={handleItemClick} />
       case "financial":
-        return <FinancialView data={filteredData} />
+        return <FinancialView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "portfolio":
-        return <PortfolioView data={filteredData} onItemClick={handleItemClick} />
+        return <PortfolioView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "pivot":
-        return <PivotView data={filteredData} />
+        return <PivotView data={filteredData} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       default:
         return (
           <div className="flex items-center justify-center h-full text-muted-foreground">

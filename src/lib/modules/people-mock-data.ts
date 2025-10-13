@@ -48,26 +48,33 @@ function generatePersonnelData(count: number): DataItem[] {
     "Sound Technician",
   ]
   const departments = ["Production", "Audio", "Lighting", "Video", "Rigging", "Stage", "Technical", "Management"]
-  const statuses = ["active", "on_leave", "contracted", "part_time"]
-  const names = [
-    "Sarah Johnson", "Mike Chen", "Lisa Anderson", "David Kim", 
-    "Emma Wilson", "James Taylor", "Maria Garcia", "Alex Thompson",
-    "Rachel Lee", "Chris Brown", "Jennifer Martinez", "Robert Taylor"
-  ]
+  const employmentStatuses = ["active", "inactive", "on_leave", "terminated"]
+  const employmentTypes = ["full_time", "part_time", "contractor", "freelance", "volunteer"]
+  const firstNames = ["Sarah", "Mike", "Lisa", "David", "Emma", "James", "Maria", "Alex", "Rachel", "Chris", "Jennifer", "Robert"]
+  const lastNames = ["Johnson", "Chen", "Anderson", "Kim", "Wilson", "Taylor", "Garcia", "Thompson", "Lee", "Brown", "Martinez", "Davis"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `person-${i + 1}`,
-    name: names[i % names.length],
-    description: `${roles[i % roles.length]} with ${Math.floor(Math.random() * 15) + 1} years experience`,
-    status: statuses[i % statuses.length],
-    priority: "normal",
-    assignee: roles[i % roles.length],
-    assignee_name: roles[i % roles.length],
-    due_date: new Date().toISOString(),
-    start_date: getRandomPastDate(365 * 5),
+    first_name: firstNames[i % firstNames.length],
+    last_name: lastNames[(i + 3) % lastNames.length],
+    email: `${firstNames[i % firstNames.length].toLowerCase()}.${lastNames[(i + 3) % lastNames.length].toLowerCase()}@example.com`,
+    phone: `+1-555-${String(Math.floor(Math.random() * 9000) + 1000).padStart(4, '0')}`,
+    photo_url: null,
+    role: roles[i % roles.length],
+    department: departments[i % departments.length],
+    title: roles[i % roles.length],
+    employee_id: `EMP-${String(i + 1).padStart(4, '0')}`,
+    employment_status: employmentStatuses[i % employmentStatuses.length],
+    employment_type: employmentTypes[i % employmentTypes.length],
+    hire_date: getRandomPastDate(365 * 5),
+    termination_date: null,
+    emergency_contact_name: null,
+    emergency_contact_phone: null,
+    skills: [roles[i % roles.length].toLowerCase().replace(/ /g, '_'), departments[i % departments.length].toLowerCase()],
+    certifications: null,
+    tags: [departments[i % departments.length].toLowerCase(), "crew"],
     created_at: getRandomPastDate(365 * 5),
     updated_at: new Date().toISOString(),
-    tags: [departments[i % departments.length].toLowerCase(), "crew"],
     comments_count: Math.floor(Math.random() * 5),
     attachments_count: Math.floor(Math.random() * 3),
   }))
@@ -86,82 +93,56 @@ function generateTeamsData(count: number): DataItem[] {
     "Load-In Crew",
     "Setup Team",
   ]
-  const leads = [
-    "Sarah Johnson", "Mike Chen", "Lisa Anderson", "David Kim",
-    "Emma Wilson", "James Taylor", "Maria Garcia", "Alex Thompson"
-  ]
-  const statuses = ["active", "planning", "on_project", "available", "archived"]
+  const teamTypeEnums = ["department", "crew", "project_team", "ad_hoc"]
+  const leaders = ["person-1", "person-2", "person-3", "person-4"]
+  const memberCounts = [5, 8, 12, 15, 20]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `team-${i + 1}`,
     name: `${teamTypes[i % teamTypes.length]} ${i > 9 ? Math.floor(i / 10) : ''}`.trim(),
-    description: `Dedicated ${teamTypes[i % teamTypes.length].toLowerCase()} with ${Math.floor(Math.random() * 15) + 5} members`,
-    status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "high" : "normal",
-    assignee: leads[i % leads.length],
-    assignee_name: leads[i % leads.length],
-    due_date: new Date().toISOString(),
-    start_date: getRandomPastDate(180),
+    description: `Dedicated ${teamTypes[i % teamTypes.length].toLowerCase()} with ${memberCounts[i % memberCounts.length]} members`,
+    type: teamTypeEnums[i % teamTypeEnums.length],
+    leader_id: leaders[i % leaders.length],
+    members: Array.from({ length: memberCounts[i % memberCounts.length] }, (_, j) => `person-${j + 1}`),
     created_at: getRandomPastDate(180),
     updated_at: new Date().toISOString(),
-    tags: [teamTypes[i % teamTypes.length].split(' ')[0].toLowerCase(), "team"],
     comments_count: Math.floor(Math.random() * 8),
     attachments_count: Math.floor(Math.random() * 4),
   }))
 }
 
 function generateAssignmentsData(count: number): DataItem[] {
-  const projects = [
-    "Summer Festival 2024",
-    "Corporate Event Series",
-    "Tour Production",
-    "Theater Season",
-    "Concert Series",
-    "Broadway Show",
-    "Award Ceremony",
-    "Music Video Shoot",
-  ]
-  const taskTypes = [
-    "Setup & Load-In",
-    "Strike & Load-Out",
-    "Technical Rehearsal",
-    "Performance",
-    "Equipment Prep",
-    "Site Survey",
-    "Design Review",
-    "Safety Inspection",
-  ]
-  const assignees = [
-    "Sarah Johnson", "Mike Chen", "Lisa Anderson", "David Kim",
-    "Emma Wilson", "James Taylor", "Maria Garcia", "Alex Thompson"
-  ]
-  const statuses = ["assigned", "in_progress", "completed", "pending", "overdue"]
+  const personnelIds = ["person-1", "person-2", "person-3", "person-4", "person-5", "person-6", "person-7", "person-8"]
+  const productions = ["production-1", "production-2", "production-3"]
+  const roles = ["Crew Chief", "Technician", "Assistant", "Lead", "Specialist", "Coordinator"]
+  const statuses = ["active", "completed", "cancelled"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `assignment-${i + 1}`,
-    name: `${taskTypes[i % taskTypes.length]} - ${projects[i % projects.length]}`,
-    description: `${taskTypes[i % taskTypes.length]} assignment for ${projects[i % projects.length]}`,
-    status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: assignees[i % assignees.length],
-    assignee_name: assignees[i % assignees.length],
-    due_date: getRandomFutureDate(45),
-    start_date: getRandomFutureDate(30),
-    created_at: getRandomPastDate(20),
-    updated_at: new Date().toISOString(),
-    tags: [taskTypes[i % taskTypes.length].split(' ')[0].toLowerCase(), "task"],
-    comments_count: Math.floor(Math.random() * 5),
-    attachments_count: Math.floor(Math.random() * 3),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const startDate = new Date(Date.now() + (i - 10) * 24 * 60 * 60 * 1000)
+    const endDate = new Date(startDate.getTime() + (5 + Math.random() * 30) * 24 * 60 * 60 * 1000)
+    
+    return {
+      id: `assignment-${i + 1}`,
+      personnel_id: personnelIds[i % personnelIds.length],
+      production_id: productions[i % productions.length],
+      role: roles[i % roles.length],
+      rate: parseFloat((25 + Math.random() * 75).toFixed(2)),
+      start_date: startDate.toISOString().split('T')[0],
+      end_date: endDate.toISOString().split('T')[0],
+      status: statuses[i % statuses.length],
+      notes: `${roles[i % roles.length]} assignment for production work`,
+      created_at: getRandomPastDate(20),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 5),
+      attachments_count: Math.floor(Math.random() * 3),
+    }
+  })
 }
 
 function generateTimekeepingData(count: number): DataItem[] {
-  const personnel = [
-    "Sarah Johnson", "Mike Chen", "Lisa Anderson", "David Kim",
-    "Emma Wilson", "James Taylor", "Maria Garcia", "Alex Thompson"
-  ]
-  const projects = ["Summer Festival", "Corporate Event", "Tour Production", "Theater Season"]
-  const statuses = ["submitted", "approved", "pending", "rejected", "paid"]
+  const personnelIds = ["person-1", "person-2", "person-3", "person-4", "person-5", "person-6", "person-7", "person-8"]
+  const productions = ["production-1", "production-2", "production-3"]
+  const types = ["regular", "overtime", "break"]
   
   return Array.from({ length: count }, (_, i) => {
     const date = new Date(Date.now() - (i + 1) * 24 * 60 * 60 * 1000)
@@ -169,20 +150,24 @@ function generateTimekeepingData(count: number): DataItem[] {
     clockIn.setHours(8 + Math.floor(Math.random() * 2), Math.floor(Math.random() * 60))
     const hoursWorked = 6 + Math.random() * 6
     const clockOut = new Date(clockIn.getTime() + hoursWorked * 60 * 60 * 1000)
+    const hourlyRate = 25 + Math.random() * 75
     
     return {
       id: `timesheet-${i + 1}`,
-      name: `${personnel[i % personnel.length]} - ${date.toLocaleDateString()}`,
-      description: `Time entry: ${hoursWorked.toFixed(2)} hours on ${projects[i % projects.length]}`,
-      status: statuses[i % statuses.length],
-      priority: "normal",
-      assignee: personnel[i % personnel.length],
-      assignee_name: personnel[i % personnel.length],
-      due_date: clockOut.toISOString(),
-      start_date: clockIn.toISOString(),
+      personnel_id: personnelIds[i % personnelIds.length],
+      start_time: clockIn.toISOString(),
+      end_time: clockOut.toISOString(),
+      duration: `${hoursWorked.toFixed(2)} hours`,
+      type: types[i % types.length],
+      billable: i % 3 !== 0,
+      rate: parseFloat(hourlyRate.toFixed(2)),
+      production_id: productions[i % productions.length],
+      task_id: i % 2 === 0 ? `task-${i + 1}` : null,
+      notes: `${hoursWorked.toFixed(2)} hours worked on ${date.toLocaleDateString()}`,
+      approved: i % 4 !== 3,
+      approved_by: i % 4 !== 3 ? "person-1" : null,
       created_at: clockIn.toISOString(),
       updated_at: new Date().toISOString(),
-      tags: [projects[i % projects.length].split(' ')[0].toLowerCase(), "timesheet"],
       comments_count: Math.floor(Math.random() * 3),
       attachments_count: 0,
     }
@@ -257,6 +242,49 @@ function generateTrainingData(count: number): DataItem[] {
   }))
 }
 
+function generateTrainingsData(count: number): DataItem[] {
+  const trainingNames = [
+    "Rigging Safety Certification",
+    "Electrical Code Training",
+    "OSHA 30-Hour Construction",
+    "Fall Protection Training",
+    "Forklift Operation",
+    "CPR & First Aid",
+    "Fire Safety & Extinguisher Use",
+    "Hazmat Handling",
+    "Confined Space Entry",
+    "Aerial Work Platform",
+  ]
+  const types = ["safety", "technical", "certification", "refresher", "compliance"]
+  const personnelIds = ["person-1", "person-2", "person-3", "person-4", "person-5", "person-6"]
+  const instructors = ["John Smith", "Emily Davis", "Robert Martinez", "Jennifer Lee"]
+  const statuses = ["valid", "expired", "pending", "revoked"]
+  
+  return Array.from({ length: count }, (_, i) => {
+    const completedDate = new Date(Date.now() - Math.random() * 365 * 2 * 24 * 60 * 60 * 1000)
+    const expiryMonths = [12, 24, 36, 60][i % 4]
+    const expiryDate = new Date(completedDate.getTime() + expiryMonths * 30 * 24 * 60 * 60 * 1000)
+    
+    return {
+      id: `training-${i + 1}`,
+      training_name: trainingNames[i % trainingNames.length],
+      type: types[i % types.length],
+      personnel_id: personnelIds[i % personnelIds.length],
+      completed_date: completedDate.toISOString().split('T')[0],
+      expiry_date: expiryDate.toISOString().split('T')[0],
+      certification_number: `CERT-${String(Math.floor(Math.random() * 1000000)).padStart(8, '0')}`,
+      instructor: instructors[i % instructors.length],
+      hours: [8, 16, 24, 30, 40][i % 5],
+      status: statuses[i % statuses.length],
+      notes: `${trainingNames[i % trainingNames.length]} certification`,
+      created_at: getRandomPastDate(30),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 6),
+      attachments_count: Math.floor(Math.random() * 4),
+    }
+  })
+}
+
 function generateOnboardingData(count: number): DataItem[] {
   const newHires = [
     "Alex Chen", "Jordan Smith", "Taylor Davis", "Morgan Wilson",
@@ -310,60 +338,60 @@ function generateOpeningsData(count: number): DataItem[] {
     "Electrician",
   ]
   const departments = ["Audio", "Lighting", "Production", "Video", "Rigging", "Technical", "Stage"]
-  const types = ["full_time", "part_time", "contract", "seasonal"]
-  const statuses = ["open", "interviewing", "on_hold", "filled", "cancelled"]
+  const employmentTypes = ["full_time", "part_time", "contractor", "freelance"]
+  const statuses = ["open", "on_hold", "filled", "cancelled"]
+  const locations = ["New York", "Los Angeles", "Chicago", "Remote"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `opening-${i + 1}`,
-    name: `${positions[i % positions.length]} - ${types[i % types.length].replace('_', ' ').toUpperCase()}`,
-    description: `Seeking experienced ${positions[i % positions.length].toLowerCase()} for ${departments[i % departments.length]} team`,
+    title: positions[i % positions.length],
+    department: departments[i % departments.length],
+    employment_type: employmentTypes[i % employmentTypes.length],
+    location: locations[i % locations.length],
+    description: `Seeking experienced ${positions[i % positions.length].toLowerCase()} for ${departments[i % departments.length]} team. Must have 3+ years experience.`,
+    requirements: `Professional experience in ${departments[i % departments.length].toLowerCase()}, strong technical skills, team player`,
+    salary_min: parseFloat((40000 + Math.random() * 30000).toFixed(2)),
+    salary_max: parseFloat((70000 + Math.random() * 50000).toFixed(2)),
+    salary_currency: "USD",
+    posted_date: getRandomPastDate(30),
+    closing_date: i % 3 === 0 ? getRandomFutureDate(60) : null,
     status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "high" : i % 3 === 1 ? "normal" : "low",
-    assignee: "HR Department",
-    assignee_name: "HR Department",
-    due_date: getRandomFutureDate(60),
-    start_date: getRandomPastDate(10),
-    created_at: getRandomPastDate(10),
+    hiring_manager_id: "person-1",
+    applicant_count: Math.floor(Math.random() * 50),
+    created_at: getRandomPastDate(30),
     updated_at: new Date().toISOString(),
-    tags: [departments[i % departments.length].toLowerCase(), "job-opening", types[i % types.length]],
     comments_count: Math.floor(Math.random() * 8),
     attachments_count: Math.floor(Math.random() * 3),
   }))
 }
 
 function generateApplicantsData(count: number): DataItem[] {
-  const names = [
-    "Jennifer Martinez", "Robert Taylor", "Patricia Anderson", "Michael Thomas",
-    "Linda Jackson", "William White", "Elizabeth Harris", "David Martin",
-    "Barbara Thompson", "Richard Garcia", "Susan Rodriguez", "Joseph Lee",
-    "Nancy Wilson", "Christopher Moore", "Karen Taylor"
-  ]
-  const positions = [
-    "Audio Engineer",
-    "Lighting Designer",
-    "Stage Manager",
-    "Production Assistant",
-    "Rigger",
-    "Video Technician",
-    "Carpenter",
-    "Electrician",
-  ]
-  const statuses = ["applied", "screening", "interviewing", "offer_sent", "hired", "rejected"]
-  const sources = ["Website", "LinkedIn", "Referral", "Job Board", "Indeed", "Company Career Page"]
+  const firstNames = ["Jennifer", "Robert", "Patricia", "Michael", "Linda", "William", "Elizabeth", "David", "Barbara", "Richard", "Susan", "Joseph", "Nancy", "Christopher", "Karen"]
+  const lastNames = ["Martinez", "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Garcia", "Rodriguez", "Lee", "Wilson", "Moore", "Davis"]
+  const statuses = ["applied", "screening", "phone_interview", "in_person_interview", "offer_extended", "hired", "rejected", "withdrawn"]
+  const sources = ["website", "linkedin", "referral", "job_board", "indeed", "career_page"]
+  const openingIds = ["opening-1", "opening-2", "opening-3", "opening-4", "opening-5"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `applicant-${i + 1}`,
-    name: `${names[i % names.length]} - ${positions[i % positions.length]}`,
-    description: `Applied for ${positions[i % positions.length]} via ${sources[i % sources.length]}`,
+    job_opening_id: openingIds[i % openingIds.length],
+    first_name: firstNames[i % firstNames.length],
+    last_name: lastNames[(i + 3) % lastNames.length],
+    email: `${firstNames[i % firstNames.length].toLowerCase()}.${lastNames[(i + 3) % lastNames.length].toLowerCase()}@email.com`,
+    phone: `+1-555-${String(Math.floor(Math.random() * 9000) + 1000).padStart(4, '0')}`,
+    resume_url: `https://storage.example.com/resumes/applicant-${i + 1}.pdf`,
+    cover_letter: `Experienced professional seeking to contribute skills and expertise to your team.`,
+    linkedin_url: i % 3 === 0 ? `https://linkedin.com/in/${firstNames[i % firstNames.length].toLowerCase()}-${lastNames[(i + 3) % lastNames.length].toLowerCase()}` : null,
+    portfolio_url: i % 4 === 0 ? `https://portfolio.example.com/${firstNames[i % firstNames.length].toLowerCase()}` : null,
+    years_experience: Math.floor(Math.random() * 15) + 1,
+    desired_salary: parseFloat((50000 + Math.random() * 70000).toFixed(2)),
+    available_start_date: getRandomFutureDate(60),
     status: statuses[i % statuses.length],
-    priority: i % 4 === 0 ? "high" : i % 4 === 1 ? "normal" : "low",
-    assignee: "HR Team",
-    assignee_name: "HR Team",
-    due_date: getRandomFutureDate(20),
-    start_date: getRandomPastDate(30 - i),
-    created_at: getRandomPastDate(30 - i),
+    source: sources[i % sources.length],
+    referral_source: i % 5 === 0 ? "person-1" : null,
+    applied_date: getRandomPastDate(30),
+    created_at: getRandomPastDate(30),
     updated_at: new Date().toISOString(),
-    tags: [positions[i % positions.length].split(' ')[0].toLowerCase(), "applicant", sources[i % sources.length].toLowerCase()],
     comments_count: Math.floor(Math.random() * 6),
     attachments_count: Math.floor(Math.random() * 4) + 1,
   }))

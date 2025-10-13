@@ -29,9 +29,11 @@ import type { DataItem } from "@/types"
 interface TableViewProps {
   data: DataItem[]
   onItemClick?: (item: DataItem) => void
+  createActionLabel?: string
+  onCreateAction?: () => void
 }
 
-export function TableView({ data, onItemClick }: TableViewProps) {
+export function TableView({ data, onItemClick, createActionLabel, onCreateAction }: TableViewProps) {
   const t = useTranslations()
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
@@ -199,10 +201,12 @@ export function TableView({ data, onItemClick }: TableViewProps) {
                     <p className="text-sm text-muted-foreground mb-6 max-w-sm">
                       {t('views.emptyState.tableViewDescription')}
                     </p>
-                    <Button size="lg">
-                      <Plus className="h-4 w-4 mr-2" />
-                      {t('views.emptyState.createFirstItem')}
-                    </Button>
+                    {(createActionLabel || onCreateAction) && (
+                      <Button size="lg" onClick={onCreateAction}>
+                        <Plus className="h-4 w-4 mr-2" />
+                        {createActionLabel || t('views.emptyState.createFirstItem')}
+                      </Button>
+                    )}
                   </div>
                 </td>
               </tr>

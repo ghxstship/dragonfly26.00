@@ -1,12 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useParams } from "next/navigation"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { Eye, EyeOff, GripVertical } from "lucide-react"
+import { getFieldsForTab, productionsFields, projectTasksFields } from "@/lib/modules/field-mappings"
 
 interface Field {
   id: string
@@ -15,24 +17,47 @@ interface Field {
   locked?: boolean
 }
 
-const mockFields = [
-  { id: "name", name: "Name", visible: true, locked: true },
-  { id: "status", name: "Status", visible: true },
-  { id: "priority", name: "Priority", visible: true },
-  { id: "assignee", name: "Assignee", visible: true },
-  { id: "due_date", name: "Due Date", visible: true },
-  { id: "start_date", name: "Start Date", visible: false },
-  { id: "created_at", name: "Created", visible: true },
-  { id: "updated_at", name: "Updated", visible: false },
-  { id: "tags", name: "Tags", visible: true },
-  { id: "description", name: "Description", visible: false },
-]
+// Convert FieldMapping to Field format
+function convertToFields(mappings: any[]): Field[] {
+  return mappings.map(mapping => ({
+    id: mapping.id,
+    name: mapping.label,
+    visible: mapping.visible,
+    locked: mapping.locked || false
+  }))
+}
 
 export function FieldConfigPanel() {
   const t = useTranslations()
-  const [fields, setFields] = useState<Field[]>(mockFields)
+  const params = useParams()
+  const moduleSlug = params?.module as string
+  const tabSlug = params?.tab as string
+  
+  // Get fields based on current module and tab
+  const getInitialFields = (): Field[] => {
+    if (moduleSlug === 'projects') {
+      if (tabSlug === 'productions') return convertToFields(productionsFields)
+      if (tabSlug === 'tasks') return convertToFields(projectTasksFields)
+    }
+    // Fallback to generic fields
+    return [
+      { id: "name", name: "Name", visible: true, locked: true },
+      { id: "status", name: "Status", visible: true },
+      { id: "priority", name: "Priority", visible: true },
+      { id: "due_date", name: "Due Date", visible: true },
+      { id: "created_at", name: "Created", visible: true },
+      { id: "updated_at", name: "Updated", visible: false },
+    ]
+  }
+  
+  const [fields, setFields] = useState<Field[]>(getInitialFields())
   const [searchQuery, setSearchQuery] = useState("")
   const [draggedItem, setDraggedItem] = useState<string | null>(null)
+  
+  // Update fields when module/tab changes
+  useEffect(() => {
+    setFields(getInitialFields())
+  }, [moduleSlug, tabSlug])
 
   const toggleFieldVisibility = (id: string) => {
     setFields((prev) =>

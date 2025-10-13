@@ -116,67 +116,61 @@ function generateForecastingData(count: number): DataItem[] {
 }
 
 function generateBudgetsData(count: number): DataItem[] {
-  const budgetTypes = [
-    "Production Budget - Q1 2024",
-    "Marketing & PR Budget",
-    "Crew & Talent Budget",
-    "Equipment Rental Budget",
-    "Travel & Logistics Budget",
-    "Venue & Facility Budget",
-    "Post-Production Budget",
-    "Contingency Reserve",
-    "Operations Budget",
-    "Capital Expenditure Budget",
-  ]
-  const statuses = ["draft", "approved", "active", "over_budget", "closed"]
+  const budgetNames = ["Production Budget", "Marketing Budget", "Crew Budget", "Equipment Budget", "Travel Budget", "Venue Budget", "Post-Production", "Contingency", "Operations", "CapEx"]
+  const statuses = ["draft", "approved", "active", "closed"]
+  const productions = ["production-1", "production-2", "production-3"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `budget-${i + 1}`,
-    name: `${budgetTypes[i % budgetTypes.length]} - $${randomAmount(50000, 500000)}`,
-    description: `Budget allocation with forecast vs. actual tracking and variance analysis`,
-    status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 4 === 0 ? "Budget Manager - Tom Anderson" : i % 4 === 1 ? "Production Accountant - Lisa Park" : i % 4 === 2 ? "Financial Analyst - James Liu" : "Finance Director - Rachel Green",
-    assignee_name: i % 4 === 0 ? "Tom Anderson" : i % 4 === 1 ? "Lisa Park" : i % 4 === 2 ? "James Liu" : "Rachel Green",
-    due_date: getRandomFutureDate(180),
-    start_date: getRandomPastDate(30),
-    created_at: getRandomPastDate(60),
-    updated_at: new Date().toISOString(),
-    tags: ["budget", "forecast", "allocation"],
-    comments_count: Math.floor(Math.random() * 15),
-    attachments_count: Math.floor(Math.random() * 8),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const total = parseFloat(randomAmount(50000, 500000))
+    const allocated = parseFloat((total * (Math.random() * 0.5 + 0.3)).toFixed(2))
+    const spent = parseFloat((allocated * (Math.random() * 0.8)).toFixed(2))
+    
+    return {
+      id: `budget-${i + 1}`,
+      production_id: i % 2 === 0 ? productions[i % productions.length] : null,
+      name: `${budgetNames[i % budgetNames.length]} Q${Math.floor(i / 4) % 4 + 1} 2024`,
+      description: "Budget allocation with forecast vs. actual tracking",
+      total_amount: total,
+      allocated_amount: allocated,
+      spent_amount: spent,
+      currency: "USD",
+      start_date: getRandomPastDate(60).split('T')[0],
+      end_date: getRandomFutureDate(180).split('T')[0],
+      status: statuses[i % statuses.length],
+      created_by: "person-1",
+      created_at: getRandomPastDate(60),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 15),
+      attachments_count: Math.floor(Math.random() * 8),
+    }
+  })
 }
 
 function generateTransactionsData(count: number): DataItem[] {
-  const transactionTypes = [
-    "Payment Received",
-    "Vendor Payment",
-    "Payroll Disbursement",
-    "Equipment Purchase",
-    "Expense Reimbursement",
-    "Invoice Payment",
-    "Bank Transfer",
-    "Credit Card Charge",
-    "Wire Transfer",
-    "ACH Payment",
-  ]
-  const statuses = ["completed", "pending", "processing", "failed", "reversed"]
-  const methods = ["Bank Transfer", "Credit Card", "ACH", "Wire", "Check", "Cash"]
+  const types = ["income", "expense", "transfer"]
+  const categories = ["Sales", "Vendor Payment", "Payroll", "Equipment", "Travel", "Materials", "Services"]
+  const statuses = ["pending", "cleared", "reconciled", "void"]
+  const methods = ["bank_transfer", "credit_card", "ach", "wire", "check", "cash"]
+  const productions = ["production-1", "production-2", "production-3"]
   
   return Array.from({ length: count }, (_, i) => ({
     id: `txn-${(10000 + i).toString()}`,
-    name: `${transactionTypes[i % transactionTypes.length]} - $${randomAmount(100, 25000)}`,
-    description: `${methods[i % methods.length]} transaction - Ref: ${Math.random().toString(36).substring(2, 10).toUpperCase()}`,
+    type: types[i % types.length],
+    category: categories[i % categories.length],
+    amount: parseFloat(randomAmount(100, 25000)),
+    currency: "USD",
+    description: `${categories[i % categories.length]} transaction`,
+    transaction_date: getRandomPastDate(14),
+    production_id: i % 3 === 0 ? productions[i % productions.length] : null,
+    budget_id: i % 4 === 0 ? `budget-${(i % 10) + 1}` : null,
+    company_id: i % 2 === 0 ? `company-${(i % 5) + 1}` : null,
+    payment_method: methods[i % methods.length],
+    reference_number: `REF-${Math.random().toString(36).substring(2, 10).toUpperCase()}`,
     status: statuses[i % statuses.length],
-    priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 3 === 0 ? "AP Clerk - Michael Torres" : i % 3 === 1 ? "AR Specialist - Jennifer Kim" : "Bookkeeper - David Chen",
-    assignee_name: i % 3 === 0 ? "Michael Torres" : i % 3 === 1 ? "Jennifer Kim" : "David Chen",
-    due_date: getRandomFutureDate(7),
-    start_date: getRandomPastDate(3),
+    gl_code: `${1000 + (i % 10) * 100}`,
+    created_by: "person-1",
     created_at: getRandomPastDate(14),
     updated_at: new Date().toISOString(),
-    tags: ["transaction", transactionTypes[i % transactionTypes.length].toLowerCase().replace(/\s+/g, '-'), methods[i % methods.length].toLowerCase()],
     comments_count: Math.floor(Math.random() * 8),
     attachments_count: Math.floor(Math.random() * 4),
   }))
@@ -216,33 +210,24 @@ function generateRevenueData(count: number): DataItem[] {
 }
 
 function generateExpensesData(count: number): DataItem[] {
-  const expenseCategories = [
-    "Crew Per Diem",
-    "Equipment Rental",
-    "Travel & Accommodation",
-    "Catering & Meals",
-    "Transportation Costs",
-    "Venue Rental Fee",
-    "Marketing Materials",
-    "Office Supplies",
-    "Insurance Premium",
-    "Professional Services",
-  ]
-  const statuses = ["submitted", "approved", "reimbursed", "rejected", "pending_review"]
+  const statuses = ["draft", "submitted", "approved", "rejected", "reimbursed"]
+  const productionIds = ["production-1", "production-2", "production-3"]
   
   return Array.from({ length: count }, (_, i) => ({
-    id: `expense-${i + 1}`,
-    name: `${expenseCategories[i % expenseCategories.length]} - $${randomAmount(50, 5000)}`,
-    description: `Expense report with receipts and approval workflow tracking`,
+    id: `expense-report-${i + 1}`,
+    submitted_by: "person-1",
+    production_id: i % 2 === 0 ? productionIds[i % productionIds.length] : null,
+    title: `Expense Report ${i + 1}`,
+    description: "Expense report with receipts and itemized costs",
+    total_amount: parseFloat(randomAmount(50, 5000)),
+    currency: "USD",
+    submitted_date: i % 3 !== 0 ? getRandomPastDate(7) : null,
+    approved_date: i % 4 === 0 ? getRandomPastDate(3) : null,
+    approved_by: i % 4 === 0 ? "person-2" : null,
     status: statuses[i % statuses.length],
-    priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 5 === 0 ? "Production Manager - Alex Rivera" : i % 5 === 1 ? "Tour Manager - Jordan Blake" : i % 5 === 2 ? "Stage Manager - Taylor Kim" : i % 5 === 3 ? "Technical Director - Sam Parker" : "Logistics Coordinator - Morgan Lee",
-    assignee_name: i % 5 === 0 ? "Alex Rivera" : i % 5 === 1 ? "Jordan Blake" : i % 5 === 2 ? "Taylor Kim" : i % 5 === 3 ? "Sam Parker" : "Morgan Lee",
-    due_date: getRandomFutureDate(14),
-    start_date: getRandomPastDate(5),
+    notes: "Submitted with all required receipts",
     created_at: getRandomPastDate(10),
     updated_at: new Date().toISOString(),
-    tags: ["expense", "reimbursement", expenseCategories[i % expenseCategories.length].toLowerCase().replace(/\s+/g, '-')],
     comments_count: Math.floor(Math.random() * 12),
     attachments_count: Math.floor(Math.random() * 7),
   }))
@@ -344,41 +329,44 @@ function generatePaymentsData(count: number): DataItem[] {
     updated_at: new Date().toISOString(),
     tags: ["payment", "vendor", methods[i % methods.length].toLowerCase().replace(/\s+/g, '-')],
     comments_count: Math.floor(Math.random() * 8),
-    attachments_count: Math.floor(Math.random() * 5),
+    attachments_count: Math.floor(Math.random() * 6),
   }))
 }
 
 function generateInvoicesData(count: number): DataItem[] {
-  const invoiceTypes = [
-    "Client Invoice - Production Services",
-    "Client Invoice - Equipment Rental",
-    "Client Invoice - Talent Management",
-    "Client Invoice - Technical Services",
-    "Client Invoice - Event Production",
-    "Vendor Invoice - Stage Construction",
-    "Vendor Invoice - Audio Equipment",
-    "Vendor Invoice - Lighting Gear",
-    "Vendor Invoice - Transportation",
-    "Vendor Invoice - Catering Services",
-  ]
-  const statuses = ["draft", "sent", "viewed", "partial_payment", "paid", "overdue", "cancelled"]
+  const statuses = ["draft", "sent", "viewed", "partial", "paid", "overdue", "cancelled"]
+  const companyIds = ["company-1", "company-2", "company-3", "company-4"]
+  const productionIds = ["production-1", "production-2", "production-3"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `inv-${(2000 + i).toString()}`,
-    name: `${invoiceTypes[i % invoiceTypes.length]} - $${randomAmount(1000, 75000)}`,
-    description: `Invoice with line items, payment terms (Net ${[15, 30, 45, 60][i % 4]}), and tax calculations`,
-    status: statuses[i % statuses.length],
-    priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 3 === 0 ? "Billing Manager - Hannah Lee" : i % 3 === 1 ? "Accounts Receivable - Ryan Clark" : "Invoice Specialist - Isabella White",
-    assignee_name: i % 3 === 0 ? "Hannah Lee" : i % 3 === 1 ? "Ryan Clark" : "Isabella White",
-    due_date: getRandomFutureDate(45),
-    start_date: getRandomPastDate(10),
-    created_at: getRandomPastDate(30),
-    updated_at: new Date().toISOString(),
-    tags: ["invoice", "billing", invoiceTypes[i % invoiceTypes.length].includes("Client") ? "client" : "vendor"],
-    comments_count: Math.floor(Math.random() * 12),
-    attachments_count: Math.floor(Math.random() * 8),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const subtotal = parseFloat(randomAmount(5000, 75000))
+    const tax = parseFloat((subtotal * 0.08).toFixed(2))
+    const total = parseFloat((subtotal + tax).toFixed(2))
+    const issueDate = new Date(Date.now() - (30 - i) * 24 * 60 * 60 * 1000)
+    const dueDate = new Date(issueDate.getTime() + 30 * 24 * 60 * 60 * 1000)
+    
+    return {
+      id: `invoice-${i + 1}`,
+      invoice_number: `INV-${String(202400 + i).padStart(8, '0')}`,
+      company_id: companyIds[i % companyIds.length],
+      production_id: i % 2 === 0 ? productionIds[i % productionIds.length] : null,
+      subtotal,
+      tax,
+      total,
+      currency: "USD",
+      issue_date: issueDate.toISOString().split('T')[0],
+      due_date: dueDate.toISOString().split('T')[0],
+      paid_date: i % 3 === 0 ? new Date(dueDate.getTime() - 5 * 24 * 60 * 60 * 1000).toISOString().split('T')[0] : null,
+      status: statuses[i % statuses.length],
+      notes: "Payment terms: Net 30",
+      terms: "Payment due within 30 days of invoice date",
+      created_by: "person-1",
+      created_at: issueDate.toISOString(),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 12),
+      attachments_count: Math.floor(Math.random() * 8),
+    }
+  })
 }
 
 function generateTaxesData(count: number): DataItem[] {

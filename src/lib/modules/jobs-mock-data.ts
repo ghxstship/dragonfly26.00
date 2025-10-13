@@ -55,34 +55,40 @@ function generateOverviewData(count: number): DataItem[] {
 }
 
 function generateActiveData(count: number): DataItem[] {
-  const activeScopes = [
-    "Lighting Design & Installation - Broadway Revival",
-    "Full Audio Package & Engineering - Arena Tour 2024",
-    "Stage Rigging & Truss System - Music Festival",
-    "Video Wall Rental & Operation - Corporate Conference",
-    "Waste Management & Sustainability - Festival Season",
-    "LED Screen Package & Tech Support - Concert Series",
-    "Scenic Fabrication & Installation - Theater Production",
-    "Power Distribution & Generator Services - Stadium Show",
-    "Catering Services - Multi-Week Residency",
-    "Transportation & Logistics - Touring Production",
+  const titles = [
+    "Lighting Design & Installation",
+    "Full Audio Package & Engineering",
+    "Stage Rigging & Truss System",
+    "Video Wall Rental & Operation",
+    "Waste Management Services",
+    "LED Screen Package & Support",
+    "Scenic Fabrication & Install",
+    "Power Distribution Services",
+    "Catering Services Contract",
+    "Transportation & Logistics",
   ]
-  const clients = ["Live Nation", "AEG Presents", "Madison Square Garden", "Coachella Music Festival", "SXSW", "Art Basel Miami", "Bonnaroo", "Electric Daisy Carnival"]
-  const statuses = ["in_progress", "installation", "operational", "active"]
+  const clientIds = ["company-1", "company-2", "company-3", "company-4", "company-5"]
+  const productionIds = ["production-1", "production-2", "production-3"]
+  const statuses = ["active", "active", "active", "completed"]
   
   return Array.from({ length: count }, (_, i) => ({
-    id: `job-active-${i + 1}`,
-    name: activeScopes[i % activeScopes.length],
-    description: `Active contract with ${clients[i % clients.length]} - Scope currently in execution`,
+    id: `job-contract-${i + 1}`,
+    contract_number: `JC-${String(20240001 + i).padStart(8, '0')}`,
+    title: titles[i % titles.length],
+    description: `Active contract - Scope currently in execution`,
+    client_id: clientIds[i % clientIds.length],
+    production_id: i % 2 === 0 ? productionIds[i % productionIds.length] : null,
+    scope_of_work: `Detailed scope including ${titles[i % titles.length].toLowerCase()} services`,
+    deliverables: ["Technical design", "Installation", "Operation support", "Documentation"],
+    contract_value: parseFloat((Math.random() * 500000 + 50000).toFixed(2)),
+    currency: "USD",
+    payment_terms: "Net 30",
+    start_date: getRandomPastDate(15).split('T')[0],
+    end_date: getRandomFutureDate(90).split('T')[0],
     status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: "Project Lead",
-    assignee_name: "Project Lead",
-    due_date: getRandomFutureDate(90),
-    start_date: getRandomPastDate(15),
+    created_by: "person-1",
     created_at: getRandomPastDate(60),
     updated_at: new Date().toISOString(),
-    tags: ["active", "contracted", clients[i % clients.length].toLowerCase().replace(/\s+/g, '-')],
     comments_count: Math.floor(Math.random() * 25),
     attachments_count: Math.floor(Math.random() * 15),
   }))
@@ -190,37 +196,45 @@ function generateShortlistsData(count: number): DataItem[] {
 }
 
 function generateRFPsData(count: number): DataItem[] {
-  const rfpScopes = [
-    "RFP: Lighting Design & Installation - Annual Conference",
-    "RFP: Full Audio Production Services - Multi-Day Festival",
-    "RFP: Technical Production Management - Theater Season",
-    "RFP: Complete Production Services - Product Launch Event",
-    "RFP: Video Production & LED Walls - Concert Series",
-    "RFP: Rigging Engineering & Truss - Exhibition Setup",
-    "RFP: Sound System Design & Installation - Permanent Install",
-    "RFP: Touring Lighting Package - National Tour Support",
-    "RFP: AV System Integration - Corporate Campus Upgrade",
-    "RFP: Production Management & Staffing - Event Series",
+  const titles = [
+    "Lighting Design & Installation - Annual Conference",
+    "Full Audio Production Services - Multi-Day Festival",
+    "Technical Production Management - Theater Season",
+    "Complete Production Services - Product Launch",
+    "Video Production & LED Walls - Concert Series",
+    "Rigging Engineering & Truss - Exhibition",
+    "Sound System Design & Installation",
+    "Touring Lighting Package - Tour Support",
+    "AV System Integration - Campus Upgrade",
+    "Production Management & Staffing",
   ]
-  const rfpStatuses = ["open", "preparing_bid", "submitted", "under_review", "finalist", "declined"]
-  const budgetRanges = ["$15K-25K", "$30K-50K", "$50K-75K", "$75K-100K", "$100K-150K", "$200K-300K", "$20K-35K"]
+  const rfpStatuses = ["draft", "open", "closed", "awarded"]
+  const issuerIds = ["company-1", "company-2", "company-3", "company-4"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `job-rfp-${i + 1}`,
-    name: rfpScopes[i % rfpScopes.length],
-    description: `Budget range: ${budgetRanges[i % budgetRanges.length]} - Proposal deadline: ${new Date(Date.now() + (7 + i % 14) * 24 * 60 * 60 * 1000).toLocaleDateString()}`,
-    status: rfpStatuses[i % rfpStatuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: "Bid Team",
-    assignee_name: "Bid Team",
-    due_date: getRandomFutureDate(21),
-    start_date: getRandomFutureDate(90),
-    created_at: getRandomPastDate(14),
-    updated_at: new Date().toISOString(),
-    tags: ["rfp", "bidding", budgetRanges[i % budgetRanges.length].includes('100K') || budgetRanges[i % budgetRanges.length].includes('200K') ? 'high-value' : 'standard'],
-    comments_count: Math.floor(Math.random() * 18),
-    attachments_count: Math.floor(Math.random() * 12),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const issueDate = new Date(Date.now() - (14 - i % 14) * 24 * 60 * 60 * 1000)
+    const submissionDeadline = new Date(issueDate.getTime() + (21 + i % 14) * 24 * 60 * 60 * 1000)
+    
+    return {
+      id: `rfp-${i + 1}`,
+      rfp_number: `RFP-${String(20240001 + i).padStart(8, '0')}`,
+      title: titles[i % titles.length],
+      description: `Request for proposal for ${titles[i % titles.length].toLowerCase()} services`,
+      requirements: "Detailed requirements including technical specifications, timeline, and budget",
+      issuer_id: issuerIds[i % issuerIds.length],
+      issue_date: issueDate.toISOString().split('T')[0],
+      submission_deadline: submissionDeadline.toISOString(),
+      budget_min: parseFloat((Math.random() * 50000 + 20000).toFixed(2)),
+      budget_max: parseFloat((Math.random() * 200000 + 100000).toFixed(2)),
+      currency: "USD",
+      status: rfpStatuses[i % rfpStatuses.length],
+      awarded_to: i % 4 === 0 && rfpStatuses[i % rfpStatuses.length] === "awarded" ? issuerIds[(i + 1) % issuerIds.length] : null,
+      created_at: issueDate.toISOString(),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 18),
+      attachments_count: Math.floor(Math.random() * 12),
+    }
+  })
 }
 
 function generateCompletedData(count: number): DataItem[] {

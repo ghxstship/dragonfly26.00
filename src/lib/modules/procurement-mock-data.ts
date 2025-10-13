@@ -85,34 +85,40 @@ function generateFulfillmentData(count: number): DataItem[] {
 }
 
 function generateOrdersData(count: number): DataItem[] {
-  const orderTypes = [
-    "Work Order",
-    "Purchase Order",
-    "Change Order",
-    "Talent Order",
-    "Equipment Order",
-    "Service Order",
-    "Rental Order",
-    "Repair Order"
-  ]
-  const statuses = ["draft", "submitted", "approved", "processing", "completed", "cancelled"]
+  const types = ["work_order", "purchase_order", "change_order", "talent_order"]
+  const statuses = ["draft", "pending_approval", "approved", "issued", "fulfilled", "cancelled"]
+  const companyIds = ["company-1", "company-2", "company-3", "company-4"]
+  const productionIds = ["production-1", "production-2", "production-3"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `order-${i + 1}`,
-    name: `${orderTypes[i % orderTypes.length]} #${20000 + i}`,
-    description: "Comprehensive order tracking for work orders, purchase orders, change orders, and talent orders",
-    status: statuses[i % statuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 5 === 0 ? "Emily Davis" : i % 5 === 1 ? "Michael Chen" : i % 5 === 2 ? "Sarah Johnson" : i % 5 === 3 ? "David Kim" : "Lisa Anderson",
-    assignee_name: i % 5 === 0 ? "Emily Davis" : i % 5 === 1 ? "Michael Chen" : i % 5 === 2 ? "Sarah Johnson" : i % 5 === 3 ? "David Kim" : "Lisa Anderson",
-    due_date: getRandomFutureDate(60),
-    start_date: getRandomPastDate(10),
-    created_at: getRandomPastDate(30),
-    updated_at: new Date().toISOString(),
-    tags: [orderTypes[i % orderTypes.length].toLowerCase().replace(/\s+/g, '-'), "procurement"],
-    comments_count: Math.floor(Math.random() * 20),
-    attachments_count: Math.floor(Math.random() * 12),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const subtotal = parseFloat((Math.random() * 50000 + 5000).toFixed(2))
+    const tax = parseFloat((subtotal * 0.08).toFixed(2))
+    const total = parseFloat((subtotal + tax).toFixed(2))
+    
+    return {
+      id: `po-${i + 1}`,
+      po_number: `PO-${String(202400 + i).padStart(8, '0')}`,
+      type: types[i % types.length],
+      company_id: companyIds[i % companyIds.length],
+      production_id: i % 2 === 0 ? productionIds[i % productionIds.length] : null,
+      subtotal,
+      tax,
+      total,
+      currency: "USD",
+      status: statuses[i % statuses.length],
+      issue_date: getRandomPastDate(10).split('T')[0],
+      delivery_date: getRandomFutureDate(60).split('T')[0],
+      requires_approval: i % 3 !== 0,
+      approved_by: i % 3 === 0 ? "person-1" : null,
+      approved_date: i % 3 === 0 ? getRandomPastDate(5) : null,
+      notes: "Order for production services and equipment",
+      created_by: "person-1",
+      created_at: getRandomPastDate(30),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 20),
+      attachments_count: Math.floor(Math.random() * 12),
+    }
+  })
 }
 
 function generateAgreementsData(count: number): DataItem[] {

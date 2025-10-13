@@ -76,31 +76,40 @@ function generateTrackingData(count: number): DataItem[] {
     "Midas M32 Console",
     "DJI Ronin 4D Gimbal",
   ]
-  const trackingStatuses = ["checked_out", "checked_in", "in_transit", "on_location", "returned"]
-  const locations = [
-    "Main Warehouse",
-    "Studio A",
-    "On Tour - Boston",
-    "Client Site - NYC",
-    "Production Office",
-    "Service Center",
-    "Venue - LA Forum",
-    "In Vehicle 205",
-  ]
+  const assetTypes = ["infrastructure", "equipment", "vehicle", "tool", "credential", "consumable"]
+  const categories = ["Video", "Lighting", "Audio", "Rigging", "Vehicles", "Lifts", "Computers", "Consoles"]
+  const assetStatuses = ["available", "in_use", "maintenance", "retired", "lost", "damaged"]
+  const conditions = ["excellent", "good", "fair", "poor"]
+  const ownerships = ["owned", "rented", "leased"]
+  const locations = ["location-1", "location-2", "location-3", "location-4"]
+  const manufacturers = ["Sony", "Arri", "Shure", "Prolyte", "Absen", "Ford", "Genie", "Apple", "Midas", "DJI"]
   
   return Array.from({ length: count }, (_, i) => ({
-    id: `tracking-${i + 1}`,
+    id: `asset-${i + 1}`,
     name: `${assetNames[i % assetNames.length]} - ${String.fromCharCode(65 + (i % 5))}${(i % 100) + 1}`,
-    description: `Location: ${locations[i % locations.length]} | Days in use: ${Math.floor(Math.random() * 180)} | Last check: ${new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000).toLocaleDateString()}`,
-    status: trackingStatuses[i % trackingStatuses.length],
-    priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 4 === 0 ? "Mike Torres" : i % 4 === 1 ? "Jessica Chen" : i % 4 === 2 ? "David Park" : "Emily Rivers",
-    assignee_name: i % 4 === 0 ? "Mike Torres" : i % 4 === 1 ? "Jessica Chen" : i % 4 === 2 ? "David Park" : "Emily Rivers",
-    due_date: getRandomFutureDate(14),
-    start_date: getRandomPastDate(30),
+    description: `Professional ${categories[i % categories.length].toLowerCase()} equipment with full specifications`,
+    type: assetTypes[i % assetTypes.length],
+    category: categories[i % categories.length],
+    subcategory: null,
+    asset_tag: `AST-${String(i + 1001).padStart(5, '0')}`,
+    serial_number: `SN${String(Math.floor(Math.random() * 1000000)).padStart(8, '0')}`,
+    model_number: `${assetNames[i % assetNames.length].split(' ')[0]}-${Math.floor(Math.random() * 9000) + 1000}`,
+    manufacturer: manufacturers[i % manufacturers.length],
+    purchase_price: parseFloat((Math.random() * 50000 + 1000).toFixed(2)),
+    purchase_date: getRandomPastDate(365 * 3),
+    current_value: parseFloat((Math.random() * 40000 + 800).toFixed(2)),
+    depreciation_rate: parseFloat((Math.random() * 15 + 5).toFixed(2)),
+    status: assetStatuses[i % assetStatuses.length],
+    condition: conditions[i % conditions.length],
+    location_id: locations[i % locations.length],
+    current_location: null,
+    ownership: ownerships[i % ownerships.length],
+    vendor_id: i % 3 === 0 ? `company-${(i % 5) + 1}` : null,
+    specifications: null,
+    tags: [categories[i % categories.length].toLowerCase(), assetTypes[i % assetTypes.length]],
+    created_by: "person-1",
     created_at: getRandomPastDate(365),
     updated_at: new Date().toISOString(),
-    tags: ["tracking", "location", locations[i % locations.length].toLowerCase().replace(/\s+/g, '-')],
     comments_count: Math.floor(Math.random() * 15),
     attachments_count: Math.floor(Math.random() * 8),
   }))
@@ -140,48 +149,37 @@ function generateInventoryData(count: number): DataItem[] {
 }
 
 function generateMaintenanceData(count: number): DataItem[] {
-  const maintenanceTypes = [
-    "Preventive Maintenance - Quarterly",
-    "Annual Inspection Required",
-    "Repair - Component Failure",
-    "Calibration Service",
-    "Firmware Update",
-    "Battery Replacement",
-    "Cleaning & Lubrication",
-    "Safety Inspection",
-    "Performance Test",
-    "Warranty Service",
-  ]
-  const equipmentItems = [
-    "Camera Package A",
-    "Lighting Console",
-    "Audio Rack System",
-    "Forklift Unit 3",
-    "Generator 15kW",
-    "Scissor Lift",
-    "Follow Spot",
-    "Moving Head Lights",
-    "Wireless Mic Set",
-    "Video Switcher",
-  ]
-  const maintenanceStatuses = ["scheduled", "in_service", "completed", "overdue", "cancelled"]
+  const maintenanceTypes = ["preventive", "corrective", "inspection", "calibration", "upgrade"]
+  const assetIds = ["asset-1", "asset-2", "asset-3", "asset-4", "asset-5", "asset-6", "asset-7", "asset-8"]
+  const maintenanceStatuses = ["scheduled", "in_progress", "completed", "cancelled"]
+  const technicians = ["person-1", "person-2", "person-3", "person-4"]
+  const vendors = ["company-1", "company-2", "company-3"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `maintenance-${i + 1}`,
-    name: `${equipmentItems[i % equipmentItems.length]} - ${maintenanceTypes[i % maintenanceTypes.length]}`,
-    description: `Service provider: ${['TechCare Pro', 'Asset Services Inc', 'Authorized Dealer', 'In-House Team'][i % 4]} | Last service: ${new Date(Date.now() - (Math.random() * 180 + 30) * 24 * 60 * 60 * 1000).toLocaleDateString()}`,
-    status: maintenanceStatuses[i % maintenanceStatuses.length],
-    priority: i % 3 === 0 ? "urgent" : i % 3 === 1 ? "high" : "normal",
-    assignee: i % 4 === 0 ? "Tom Bradley" : i % 4 === 1 ? "Sarah Connor" : i % 4 === 2 ? "James Mitchell" : "Lisa Anderson",
-    assignee_name: i % 4 === 0 ? "Tom Bradley" : i % 4 === 1 ? "Sarah Connor" : i % 4 === 2 ? "James Mitchell" : "Lisa Anderson",
-    due_date: getRandomFutureDate(45),
-    start_date: getRandomFutureDate(30),
-    created_at: getRandomPastDate(60),
-    updated_at: new Date().toISOString(),
-    tags: ["maintenance", "service", maintenanceTypes[i % maintenanceTypes.length].toLowerCase().split(' ')[0]],
-    comments_count: Math.floor(Math.random() * 12),
-    attachments_count: Math.floor(Math.random() * 10),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const scheduledDate = new Date(Date.now() + (i - 10) * 7 * 24 * 60 * 60 * 1000)
+    const completedDate = i % 3 === 0 ? new Date(scheduledDate.getTime() + 2 * 24 * 60 * 60 * 1000) : null
+    
+    return {
+      id: `maintenance-${i + 1}`,
+      asset_id: assetIds[i % assetIds.length],
+      type: maintenanceTypes[i % maintenanceTypes.length],
+      description: `${maintenanceTypes[i % maintenanceTypes.length].charAt(0).toUpperCase() + maintenanceTypes[i % maintenanceTypes.length].slice(1)} maintenance service`,
+      scheduled_date: scheduledDate.toISOString().split('T')[0],
+      completed_date: completedDate ? completedDate.toISOString().split('T')[0] : null,
+      performed_by: i % 2 === 0 ? technicians[i % technicians.length] : null,
+      vendor_id: i % 2 !== 0 ? vendors[i % vendors.length] : null,
+      cost: parseFloat((Math.random() * 2000 + 100).toFixed(2)),
+      labor_hours: parseFloat((Math.random() * 8 + 1).toFixed(1)),
+      parts_replaced: i % 3 === 0 ? `Part ${i + 1}, Component ${i + 2}` : null,
+      notes: `Maintenance work completed successfully. Equipment tested and operational.`,
+      next_service_date: new Date(scheduledDate.getTime() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+      status: maintenanceStatuses[i % maintenanceStatuses.length],
+      created_at: getRandomPastDate(60),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 12),
+      attachments_count: Math.floor(Math.random() * 10),
+    }
+  })
 }
 
 function generateApprovalsData(count: number): DataItem[] {
@@ -228,46 +226,40 @@ function generateApprovalsData(count: number): DataItem[] {
 }
 
 function generateAdvancesData(count: number): DataItem[] {
-  const advanceTypes = [
-    "Lighting Package Advance",
-    "Camera & Lens Kit Advance",
-    "Audio System Advance",
-    "Staging Materials Advance",
-    "Rigging Equipment Advance",
-    "Video Production Gear",
-    "Power & Distribution Advance",
-    "Specialty Tools Package",
-    "Safety Equipment Advance",
-    "Transportation Fleet Advance",
-  ]
-  const productions = [
-    "Winter Tour 2024",
-    "Corporate Event - Tech Summit",
-    "Festival Main Stage",
-    "TV Production - Season 5",
-    "Brand Activation NYC",
-    "Concert Series",
-    "Theater Production",
-    "Award Show Special",
-  ]
-  const advanceStatuses = ["active", "pending_return", "partially_returned", "completed", "extended"]
+  const productionIds = ["production-1", "production-2", "production-3"]
+  const purposes = ["Equipment advance for load-in", "Pre-production setup", "Tour advance", "Festival prep", "Special event advance"]
+  const advanceStatuses = ["pending", "approved", "issued", "returned", "closed"]
+  const requestedBy = ["person-1", "person-2", "person-3", "person-4"]
+  const approvedBy = ["person-1", "person-2"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `advance-${i + 1}`,
-    name: `${advanceTypes[i % advanceTypes.length]} - ${productions[i % productions.length]}`,
-    description: `Items: ${Math.floor(Math.random() * 20) + 5} | Value: $${(Math.random() * 100000 + 5000).toFixed(2)} | Days out: ${Math.floor(Math.random() * 90) + 1}`,
-    status: advanceStatuses[i % advanceStatuses.length],
-    priority: i % 4 === 0 ? "urgent" : i % 4 === 1 ? "high" : i % 4 === 2 ? "normal" : "low",
-    assignee: i % 4 === 0 ? "Alex Martinez" : i % 4 === 1 ? "Jordan Blake" : i % 4 === 2 ? "Taylor Swift" : "Morgan Freeman",
-    assignee_name: i % 4 === 0 ? "Alex Martinez" : i % 4 === 1 ? "Jordan Blake" : i % 4 === 2 ? "Taylor Swift" : "Morgan Freeman",
-    due_date: getRandomFutureDate(60),
-    start_date: getRandomPastDate(30),
-    created_at: getRandomPastDate(45),
-    updated_at: new Date().toISOString(),
-    tags: ["advance", "production", productions[i % productions.length].toLowerCase().replace(/\s+/g, '-')],
-    comments_count: Math.floor(Math.random() * 20),
-    attachments_count: Math.floor(Math.random() * 15),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const requestDate = new Date(Date.now() - (30 - i) * 24 * 60 * 60 * 1000)
+    const approvalDate = i % 3 !== 2 ? new Date(requestDate.getTime() + 24 * 60 * 60 * 1000) : null
+    const issueDate = approvalDate ? new Date(approvalDate.getTime() + 48 * 60 * 60 * 1000) : null
+    const expectedReturn = issueDate ? new Date(issueDate.getTime() + (14 + Math.random() * 30) * 24 * 60 * 60 * 1000) : null
+    const actualReturn = i % 4 === 0 && issueDate ? new Date(issueDate.getTime() + (15 + Math.random() * 25) * 24 * 60 * 60 * 1000) : null
+    
+    return {
+      id: `advance-${i + 1}`,
+      production_id: productionIds[i % productionIds.length],
+      requested_by: requestedBy[i % requestedBy.length],
+      approved_by: approvalDate ? approvedBy[i % approvedBy.length] : null,
+      amount: parseFloat((Math.random() * 50000 + 5000).toFixed(2)),
+      currency: "USD",
+      purpose: purposes[i % purposes.length],
+      request_date: requestDate.toISOString().split('T')[0],
+      approval_date: approvalDate ? approvalDate.toISOString().split('T')[0] : null,
+      issue_date: issueDate ? issueDate.toISOString().split('T')[0] : null,
+      expected_return_date: expectedReturn ? expectedReturn.toISOString().split('T')[0] : null,
+      actual_return_date: actualReturn ? actualReturn.toISOString().split('T')[0] : null,
+      status: advanceStatuses[i % advanceStatuses.length],
+      notes: `Production advance for ${purposes[i % purposes.length]}. All items accounted for.`,
+      created_at: requestDate.toISOString(),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 20),
+      attachments_count: Math.floor(Math.random() * 15),
+    }
+  })
 }
 
 function generateCatalogData(count: number): DataItem[] {
