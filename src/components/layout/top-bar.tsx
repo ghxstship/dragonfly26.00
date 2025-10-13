@@ -231,8 +231,8 @@ export function TopBar() {
             onCreateToken={handleCreateToken}
           />
 
-          {/* Upgrade Button (for non-enterprise) */}
-          {currentOrganization?.subscription_tier !== "enterprise" && (
+          {/* Upgrade Button (for non-executive) */}
+          {currentOrganization?.subscription_tier !== "executive" && (
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button 
