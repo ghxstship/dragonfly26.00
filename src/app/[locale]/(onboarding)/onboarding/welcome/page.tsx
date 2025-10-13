@@ -104,16 +104,19 @@ export default function WelcomePage() {
 
       const fileExt = file.name.split('.').pop()
       const fileName = `${user.id}-${Date.now()}.${fileExt}`
-      const filePath = `avatars/${fileName}`
+      const filePath = `${user.id}/${fileName}`
 
       const { error: uploadError } = await supabase.storage
-        .from('public')
-        .upload(filePath, file)
+        .from('avatars')
+        .upload(filePath, file, {
+          upsert: true,
+          contentType: file.type
+        })
 
       if (uploadError) throw uploadError
 
       const { data } = supabase.storage
-        .from('public')
+        .from('avatars')
         .getPublicUrl(filePath)
 
       setProfile({ ...profile, avatar_url: data.publicUrl })
