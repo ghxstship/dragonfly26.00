@@ -10,6 +10,8 @@ import { WifiOff, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
+export const dynamic = 'force-dynamic'
+
 export default function OfflinePage() {
   const handleRetry = () => {
     if (typeof window !== 'undefined') {
