@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle2, Sparkles, ArrowRight } from 'lucide-react'
@@ -105,9 +106,9 @@ export default function CompletePage() {
 
               <p className="text-xs text-muted-foreground">
                 Need help? Check out our{' '}
-                <a href="/help" className="text-primary hover:underline">
+                <Link href="/help" className="text-primary hover:underline">
                   getting started guide
-                </a>
+                </Link>
               </p>
             </div>
           </CardContent>

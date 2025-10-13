@@ -5,6 +5,7 @@
  * Shown when user is offline and page is not cached
  */
 
+import Link from "next/link"
 import { WifiOff, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -38,7 +39,7 @@ export default function OfflinePage() {
             </Button>
             
             <Button variant="outline" className="w-full" asChild>
-              <a href="/">Go to Dashboard</a>
+              <Link href="/">Go to Dashboard</Link>
             </Button>
           </div>
 
