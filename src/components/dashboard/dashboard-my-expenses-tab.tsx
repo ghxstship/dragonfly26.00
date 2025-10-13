@@ -15,6 +15,11 @@ import {
   Filter
 } from "lucide-react"
 
+interface ExpenseItem {
+  description: string
+  amount: string
+}
+
 interface DashboardMyExpensesTabProps {
   data?: any[]
   loading?: boolean
@@ -306,7 +311,7 @@ export function DashboardMyExpensesTab({ data = [], loading = false }: Dashboard
                         View {expense.itemCount} items
                       </summary>
                       <div className="mt-3 space-y-2">
-                        {expense.items.map((item, idx) => (
+                        {expense.items.map((item: ExpenseItem, idx: number) => (
                           <div key={idx} className="flex items-center justify-between text-sm pl-4">
                             <span className="text-muted-foreground">{item.description}</span>
                             <span className="font-medium">{item.amount}</span>
