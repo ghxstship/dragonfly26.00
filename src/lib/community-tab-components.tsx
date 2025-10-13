@@ -7,8 +7,13 @@ import { EventsTab } from "@/components/community/events-tab"
 import { DiscussionsTab } from "@/components/community/discussions-tab"
 import { CompetitionsTab } from "@/components/community/competitions-tab"
 
+interface CommunityTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
 export function getCommunityTabComponent(tabSlug: string) {
-  const components: Record<string, React.ComponentType> = {
+  const components: Record<string, React.ComponentType<CommunityTabProps>> = {
     'news': NewsTab,
     'showcase': ShowcaseTab,
     'activity': ActivityTab,

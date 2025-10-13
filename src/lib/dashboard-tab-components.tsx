@@ -10,7 +10,12 @@ import { DashboardMyExpensesTab } from "@/components/dashboard/dashboard-my-expe
 import { DashboardMyReportsTab } from "@/components/dashboard/dashboard-my-reports-tab"
 import { DashboardMyFilesTab } from "@/components/dashboard/dashboard-my-files-tab"
 
-export const DASHBOARD_TAB_COMPONENTS: Record<string, React.ComponentType> = {
+interface DashboardTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export const DASHBOARD_TAB_COMPONENTS: Record<string, React.ComponentType<DashboardTabProps>> = {
   "overview": DashboardOverviewTab,
   "my-agenda": DashboardMyAgendaTab,
   "my-jobs": DashboardMyJobsTab,

@@ -9,7 +9,12 @@ import { ServicesTab } from "@/components/marketplace/services-tab"
 import { VendorsTab } from "@/components/marketplace/vendors-tab"
 import { ReviewsTab } from "@/components/marketplace/reviews-tab"
 
-export const MARKETPLACE_TAB_COMPONENTS: Record<string, React.ComponentType> = {
+interface MarketplaceTabProps {
+  data?: any[]
+  loading?: boolean
+}
+
+export const MARKETPLACE_TAB_COMPONENTS: Record<string, React.ComponentType<MarketplaceTabProps>> = {
   "spotlight": SpotlightTab,
   "shop": ShopTab,
   "favorites": FavoritesTab,
