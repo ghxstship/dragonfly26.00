@@ -422,6 +422,5 @@ export interface PermissionConflict {
 export type {
   // Re-export for convenience
   RoleSlug as BrandedRole,
-  PermissionCategorySlug as PermissionCategory,
   AccessLevel as PermissionLevel,
 }
