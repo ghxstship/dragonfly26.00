@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
-import { Eye, EyeOff } from "lucide-react"
+import { Eye, EyeOff, GripVertical } from "lucide-react"
 
 interface Field {
   id: string
@@ -32,6 +32,7 @@ export function FieldConfigPanel() {
   const t = useTranslations()
   const [fields, setFields] = useState<Field[]>(mockFields)
   const [searchQuery, setSearchQuery] = useState("")
+  const [draggedItem, setDraggedItem] = useState<string | null>(null)
 
   const toggleFieldVisibility = (id: string) => {
     setFields((prev) =>
@@ -51,6 +52,29 @@ export function FieldConfigPanel() {
         field.locked ? field : { ...field, visible: false }
       )
     )
+  }
+
+  const handleDragStart = (id: string) => {
+    setDraggedItem(id)
+  }
+
+  const handleDragOver = (e: React.DragEvent, id: string) => {
+    e.preventDefault()
+    if (draggedItem && draggedItem !== id) {
+      const draggedIndex = fields.findIndex((f) => f.id === draggedItem)
+      const targetIndex = fields.findIndex((f) => f.id === id)
+
+      if (draggedIndex !== -1 && targetIndex !== -1) {
+        const newFields = [...fields]
+        const [removed] = newFields.splice(draggedIndex, 1)
+        newFields.splice(targetIndex, 0, removed)
+        setFields(newFields)
+      }
+    }
+  }
+
+  const handleDragEnd = () => {
+    setDraggedItem(null)
   }
 
   const filteredFields = fields.filter((field) =>
@@ -90,8 +114,15 @@ export function FieldConfigPanel() {
         {filteredFields.map((field) => (
           <div
             key={field.id}
-            className="flex items-center gap-3 p-3 rounded-md hover:bg-muted/50 transition-colors"
+            draggable
+            onDragStart={() => handleDragStart(field.id)}
+            onDragOver={(e) => handleDragOver(e, field.id)}
+            onDragEnd={handleDragEnd}
+            className={`flex items-center gap-3 p-3 rounded-md hover:bg-muted/50 transition-colors cursor-grab active:cursor-grabbing ${
+              draggedItem === field.id ? "opacity-50" : ""
+            }`}
           >
+            <GripVertical className="h-4 w-4 text-muted-foreground flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <div className="text-sm font-medium">{field.name}</div>
               {field.locked && (
