@@ -15,7 +15,7 @@ export class StripeService {
    * Get or create Stripe customer for user
    */
   async getOrCreateCustomer(userId: string, email: string): Promise<string> {
-    const supabase = createClient()
+    const supabase = await createClient()
     
     // Check if user already has a Stripe customer ID
     const { data: profile } = await supabase
