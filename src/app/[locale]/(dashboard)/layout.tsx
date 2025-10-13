@@ -6,6 +6,8 @@ import { Sidebar } from "@/components/layout/sidebar"
 import { RightSidebar } from "@/components/layout/right-sidebar"
 import { cleanupOldStorage } from "@/lib/storage-cleanup"
 
+export const dynamic = 'force-dynamic'
+
 export default function DashboardLayout({
   children,
 }: {

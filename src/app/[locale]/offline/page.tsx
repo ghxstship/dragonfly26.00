@@ -1,5 +1,8 @@
 "use client"
 
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+
 /**
  * Offline Page
  * Shown when user is offline and page is not cached
@@ -9,8 +12,6 @@ import Link from "next/link"
 import { WifiOff, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-
-export const dynamic = 'force-dynamic'
 
 export default function OfflinePage() {
   const handleRetry = () => {
