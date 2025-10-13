@@ -414,7 +414,7 @@ export function RightSidebar() {
                 {/* My Work Content */}
                 <TabsContent value="agenda" className="p-4 m-0 space-y-3">
                   <div className="flex items-center justify-between">
-                    <h4 className="text-sm font-medium">Today's Schedule</h4>
+                    <h4 className="text-sm font-medium">Today&apos;s Schedule</h4>
                     <Button size="sm" className="h-7 text-xs gap-1">
                       <Plus className="h-3 w-3" />
                       Add Event

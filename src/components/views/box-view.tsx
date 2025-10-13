@@ -101,6 +101,7 @@ export function BoxView({ data, onItemClick, createActionLabel, onCreateAction }
                 {/* Cover Image */}
                 {item.cover_image && (
                   <div className="aspect-video bg-muted overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={item.cover_image}
                       alt={item.name || "Cover"}

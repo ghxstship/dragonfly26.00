@@ -255,7 +255,7 @@ export function ActivityTab() {
             <div className="flex items-center justify-between">
               <div className="flex gap-2">
                 <Button variant="ghost" size="sm">
-                  <Image className="h-4 w-4 mr-2" />
+                  <Image className="h-4 w-4 mr-2" aria-hidden="true" />
                   Add Image
                 </Button>
               </div>

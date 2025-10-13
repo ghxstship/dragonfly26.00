@@ -561,6 +561,7 @@ export function CrudDrawer({
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center">
               {value ? (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img src={value} alt="Avatar" className="w-full h-full rounded-full object-cover" />
               ) : (
                 <User className="h-8 w-8 text-muted-foreground" />

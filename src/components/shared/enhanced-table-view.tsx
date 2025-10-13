@@ -423,6 +423,7 @@ function renderCellValue(value: any, field: FieldSchema) {
       return (
         <div className="w-8 h-8 rounded-full bg-muted overflow-hidden">
           {value ? (
+            // eslint-disable-next-line @next/next/no-img-element
             <img src={value} alt="Avatar" className="w-full h-full object-cover" />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-muted-foreground">
