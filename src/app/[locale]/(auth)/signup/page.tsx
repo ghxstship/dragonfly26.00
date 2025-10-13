@@ -99,7 +99,7 @@ export default function SignupPage() {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <h1 className="text-3xl font-bold">Create your account</h1>
+          <h1 className="text-3xl font-bold">Welcome Aboard!</h1>
           <p className="text-muted-foreground mt-2">Get started for free</p>
         </div>
 
