@@ -85,7 +85,6 @@ export default function WorkspacePage() {
         .from('workspaces')
         .insert({
           name: newWorkspace.name,
-          slug: newWorkspace.slug || newWorkspace.name.toLowerCase().replace(/\s+/g, '-'),
           description: newWorkspace.description,
           organization_id: org.id,
         })

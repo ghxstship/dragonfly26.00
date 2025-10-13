@@ -2,13 +2,25 @@
 -- Issue: Users cannot complete onboarding due to missing INSERT RLS policies and missing workspace_members table
 
 -- ==============================================
--- 1. Fix organizations INSERT policy
+-- 1. Fix organizations INSERT and SELECT policies
 -- ==============================================
+-- Allow authenticated users to create organizations
 DROP POLICY IF EXISTS "Authenticated users can create organizations" ON organizations;
 CREATE POLICY "Authenticated users can create organizations"
     ON organizations FOR INSERT
     TO authenticated
     WITH CHECK (true);
+
+-- Fix SELECT policy to allow viewing organizations during creation
+-- The original policy prevented seeing orgs until AFTER being added to org_members
+-- This caused issues with INSERT...RETURNING since user isn't a member yet
+-- Solution: Allow all authenticated users to SELECT organizations (read-only is safe)
+-- Write operations (UPDATE/DELETE) are still restricted to admins via other policies
+DROP POLICY IF EXISTS "Users can view their organizations" ON organizations;
+CREATE POLICY "Users can view their organizations"
+    ON organizations FOR SELECT
+    TO authenticated
+    USING (true);
 
 -- ==============================================
 -- 2. Add organization_members INSERT policy

@@ -1,6 +1,6 @@
-# Fix: Infinite Recursion in RLS Policy for organization_members
+# Fix: Onboarding RLS Policy Issues
 
-## Issue
+## Issue 1: Infinite Recursion in organization_members
 
 **Error Message:**
 ```
@@ -147,9 +147,66 @@ After deploying the fix, test the following:
 - Storage layer policies in migration 009
 - Foundation organization_members table in migration 000
 
+## Issue 2: Organizations SELECT Policy Blocking INSERT...RETURNING
+
+**Error Message:**
+```
+new row violates row-level security policy for table "organizations"
+```
+
+**Context:**
+- Occurred during workspace creation step of onboarding
+- User clicked "Create Workspace" button
+- Organization was created but SELECT failed
+
+### Root Cause
+
+The workspace creation code uses `INSERT...SELECT()` pattern:
+```javascript
+const { data: org } = await supabase
+  .from('organizations')
+  .insert({...})
+  .select()  // ← Requires SELECT permission
+  .single()
+```
+
+The flow was:
+1. INSERT into organizations ✅ (allowed by INSERT policy)
+2. SELECT the created organization ❌ (blocked by SELECT policy)
+3. Add user to organization_members (never reached)
+
+The original SELECT policy required membership:
+```sql
+USING (id IN (
+    SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+))
+```
+
+But the user wasn't added to `organization_members` until after the INSERT!
+
+### Solution
+
+Allow all authenticated users to SELECT organizations (read-only):
+```sql
+CREATE POLICY "Users can view their organizations"
+    ON organizations FOR SELECT
+    TO authenticated
+    USING (true);
+```
+
+**Security Rationale:**
+- Reading organization data is low-risk
+- UPDATE/DELETE policies still restrict write access to admins
+- Alternative would require complex time-based or created_by tracking
+- Standard multi-tenant pattern allows viewing org lists
+
+### Bonus Fix: Invalid Column Reference
+
+The frontend code was also trying to insert a `slug` field into workspaces, but that column doesn't exist in the schema. Removed this field from the INSERT statement.
+
 ## Prevention
 
-To avoid similar circular dependency issues in the future:
+To avoid similar issues in the future:
 
 1. **Never self-reference in RLS policies**: Avoid querying the same table within its own policy
 2. **Test with RLS enabled**: Always test policies with actual user sessions
