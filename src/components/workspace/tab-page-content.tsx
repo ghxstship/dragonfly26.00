@@ -283,7 +283,8 @@ export function TabPageContent() {
     if (moduleSlug === "reports") {
       const ReportsComponent = getReportsTabComponent(tabSlug)
       if (ReportsComponent) {
-        return <ReportsComponent data={realData} loading={loading} />
+        const Component = ReportsComponent as React.ComponentType<{ data?: any[]; loading?: boolean }>
+        return <Component data={realData} loading={loading} />
       }
     }
 
@@ -291,7 +292,8 @@ export function TabPageContent() {
     if (moduleSlug === "analytics") {
       const AnalyticsComponent = getAnalyticsTabComponent(tabSlug)
       if (AnalyticsComponent) {
-        return <AnalyticsComponent data={realData} loading={loading} />
+        const Component = AnalyticsComponent as React.ComponentType<{ data?: any[]; loading?: boolean }>
+        return <Component data={realData} loading={loading} />
       }
     }
 
@@ -299,7 +301,8 @@ export function TabPageContent() {
     if (moduleSlug === "insights") {
       const InsightsComponent = getInsightsTabComponent(tabSlug)
       if (InsightsComponent) {
-        return <InsightsComponent data={realData} loading={loading} />
+        const Component = InsightsComponent as React.ComponentType<{ data?: any[]; loading?: boolean }>
+        return <Component data={realData} loading={loading} />
       }
     }
 
