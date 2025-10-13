@@ -1,21 +1,495 @@
-MIT License
+TERMS OF SERVICE AND END USER LICENSE AGREEMENT
 
-Copyright (c) 2021 Supabase, Inc. and contributors
+LAST UPDATED: October 13, 2025
+EFFECTIVE DATE: October 13, 2025
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+IMPORTANT: READ THESE TERMS CAREFULLY BEFORE USING THE SERVICE
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+BY ACCESSING OR USING THIS SERVICE, YOU AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT USE THE SERVICE.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+================================================================================
+1. DEFINITIONS
+================================================================================
+
+1.1 "Service" means the software-as-a-service platform, including all features, functionality, content, and related services provided by the Company.
+
+1.2 "Company," "We," "Us," or "Our" means the legal entity providing the Service.
+
+1.3 "Customer," "You," or "Your" means the individual or legal entity accessing or using the Service.
+
+1.4 "User Data" means any data, content, or materials uploaded, submitted, or transmitted through the Service by Customer.
+
+1.5 "Authorized User" means any individual authorized by Customer to access and use the Service under Customer's account.
+
+1.6 "Documentation" means the technical specifications, user guides, and other documentation provided by Company.
+
+1.7 "Subscription Period" means the term during which Customer has paid access to the Service.
+
+1.8 "Intellectual Property Rights" means all patents, copyrights, trademarks, trade secrets, and other intellectual property rights worldwide.
+
+================================================================================
+2. LICENSE GRANT AND RESTRICTIONS
+================================================================================
+
+2.1 LICENSE GRANT
+Subject to Customer's compliance with these Terms and payment of applicable fees, Company grants Customer a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to access and use the Service solely for Customer's internal business purposes during the Subscription Period.
+
+2.2 LICENSE RESTRICTIONS
+Customer shall NOT:
+(a) Copy, modify, adapt, translate, or create derivative works of the Service;
+(b) Reverse engineer, decompile, disassemble, or attempt to discover source code;
+(c) Rent, lease, loan, sell, sublicense, distribute, or transfer the Service;
+(d) Remove, alter, or obscure any proprietary notices on the Service;
+(e) Use the Service to develop competing products or services;
+(f) Access the Service to build a similar or competitive service;
+(g) Scrape, spider, or harvest data from the Service using automated means;
+(h) Use the Service in any manner that violates applicable laws or regulations;
+(i) Interfere with or disrupt the integrity or performance of the Service;
+(j) Attempt to gain unauthorized access to the Service or related systems;
+(k) Share account credentials with unauthorized third parties;
+(l) Exceed usage limitations specified in Customer's subscription plan.
+
+2.3 RESERVATION OF RIGHTS
+Company retains all rights, title, and interest in and to the Service, including all Intellectual Property Rights. No rights are granted except as expressly set forth herein.
+
+================================================================================
+3. ACCEPTABLE USE POLICY
+================================================================================
+
+3.1 PROHIBITED ACTIVITIES
+Customer shall not use the Service to:
+(a) Violate any applicable laws, regulations, or third-party rights;
+(b) Transmit malware, viruses, or harmful code;
+(c) Engage in fraudulent, deceptive, or misleading practices;
+(d) Harass, abuse, threaten, or intimidate any person;
+(e) Infringe upon Intellectual Property Rights of others;
+(f) Distribute spam, unsolicited communications, or phishing content;
+(g) Engage in activities that compromise security or privacy;
+(h) Mine cryptocurrency or conduct resource-intensive operations;
+(i) Store or transmit illegal, offensive, or obscene content;
+(j) Facilitate money laundering, terrorism financing, or illegal activities;
+(k) Violate export control or sanctions regulations;
+(l) Impersonate any person or entity or misrepresent affiliations.
+
+3.2 ENFORCEMENT
+Company reserves the right to investigate violations and take appropriate action, including suspension or termination of access, without notice or liability.
+
+================================================================================
+4. DATA PROTECTION AND PRIVACY
+================================================================================
+
+4.1 GDPR COMPLIANCE
+Company complies with the EU General Data Protection Regulation (GDPR) and processes personal data as set forth in our Privacy Policy. Customer appoints Company as a data processor for User Data containing personal data.
+
+4.2 DATA PROCESSING AGREEMENT
+By accepting these Terms, Customer agrees to the Data Processing Agreement (DPA) incorporated herein, which governs the processing of personal data.
+
+4.3 CCPA COMPLIANCE
+Company complies with the California Consumer Privacy Act (CCPA) and provides California residents with required rights and disclosures.
+
+4.4 INTERNATIONAL DATA TRANSFERS
+Customer acknowledges that data may be transferred to and processed in jurisdictions outside Customer's country of residence. Company implements appropriate safeguards including Standard Contractual Clauses.
+
+4.5 DATA SECURITY
+Company implements industry-standard technical and organizational measures to protect User Data. However, no system is completely secure, and Company cannot guarantee absolute security.
+
+4.6 DATA RETENTION
+Company retains User Data for the duration of the Subscription Period and as required by applicable law. Upon termination, Company will delete or return User Data within 30 days unless legally required to retain it.
+
+4.7 DATA BREACH NOTIFICATION
+Company will notify Customer of any data breach affecting User Data within 72 hours of discovery, as required by applicable law.
+
+================================================================================
+5. CUSTOMER RESPONSIBILITIES
+================================================================================
+
+5.1 ACCOUNT SECURITY
+Customer is responsible for:
+(a) Maintaining confidentiality of account credentials;
+(b) All activities occurring under Customer's account;
+(c) Immediately notifying Company of unauthorized access;
+(d) Implementing appropriate access controls for Authorized Users.
+
+5.2 COMPLIANCE
+Customer represents, warrants, and covenants that:
+(a) Customer has all necessary rights to upload and process User Data;
+(b) User Data does not violate third-party rights or applicable laws;
+(c) Customer will comply with all applicable laws and regulations;
+(d) Customer will obtain necessary consents for data processing.
+
+5.3 BACKUP
+Customer is solely responsible for maintaining backups of User Data. Company is not liable for any loss or corruption of User Data.
+
+================================================================================
+6. FEES AND PAYMENT
+================================================================================
+
+6.1 SUBSCRIPTION FEES
+Customer shall pay all fees specified in the applicable subscription plan. Fees are non-refundable except as expressly provided herein.
+
+6.2 PAYMENT TERMS
+Payment is due in advance on a monthly or annual basis, as selected by Customer. Failure to pay may result in suspension or termination of access.
+
+6.3 PRICE CHANGES
+Company reserves the right to modify fees upon 30 days' prior written notice. Continued use after the effective date constitutes acceptance of new fees.
+
+6.4 TAXES
+All fees are exclusive of taxes, duties, and levies. Customer is responsible for all applicable taxes except those based on Company's net income.
+
+6.5 LATE PAYMENT
+Late payments accrue interest at 1.5% per month or the maximum rate permitted by law, whichever is lower.
+
+================================================================================
+7. INTELLECTUAL PROPERTY RIGHTS
+================================================================================
+
+7.1 COMPANY IP
+All Intellectual Property Rights in the Service, including software, algorithms, interfaces, documentation, and trademarks, are owned exclusively by Company or its licensors.
+
+7.2 CUSTOMER IP
+Customer retains all Intellectual Property Rights in User Data. Customer grants Company a limited license to host, process, and display User Data solely to provide the Service.
+
+7.3 FEEDBACK
+Any feedback, suggestions, or ideas provided by Customer become Company's property and may be used without restriction or compensation.
+
+7.4 TRADEMARK USAGE
+Neither party may use the other party's trademarks without prior written consent.
+
+================================================================================
+8. CONFIDENTIALITY
+================================================================================
+
+8.1 CONFIDENTIAL INFORMATION
+"Confidential Information" means non-public information disclosed by one party to the other, including technical, business, and financial information.
+
+8.2 OBLIGATIONS
+Receiving party shall:
+(a) Maintain confidentiality using reasonable care;
+(b) Not disclose to third parties without prior written consent;
+(c) Use Confidential Information solely for purposes of these Terms;
+(d) Return or destroy Confidential Information upon request or termination.
+
+8.3 EXCLUSIONS
+Confidential Information excludes information that:
+(a) Is publicly available through no fault of receiving party;
+(b) Was rightfully possessed prior to disclosure;
+(c) Is independently developed without use of Confidential Information;
+(d) Is rightfully received from a third party without confidentiality obligations.
+
+================================================================================
+9. WARRANTIES AND DISCLAIMERS
+================================================================================
+
+9.1 MUTUAL WARRANTIES
+Each party represents and warrants that:
+(a) It has full authority to enter into these Terms;
+(b) These Terms constitute valid and binding obligations;
+(c) Entering into these Terms does not violate any other agreement.
+
+9.2 COMPANY WARRANTIES
+Company warrants that the Service will perform materially in accordance with Documentation under normal use. Customer's sole remedy for breach is Service correction or, if Company cannot correct within 30 days, termination and pro-rata refund.
+
+9.3 DISCLAIMER OF WARRANTIES
+EXCEPT AS EXPRESSLY PROVIDED, THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:
+(a) MERCHANTABILITY;
+(b) FITNESS FOR A PARTICULAR PURPOSE;
+(c) NON-INFRINGEMENT;
+(d) TITLE;
+(e) ACCURACY;
+(f) QUIET ENJOYMENT;
+(g) UNINTERRUPTED OR ERROR-FREE OPERATION;
+(h) VIRUS-FREE OR SECURE OPERATION.
+
+COMPANY DOES NOT WARRANT THAT THE SERVICE WILL MEET CUSTOMER'S REQUIREMENTS OR THAT DEFECTS WILL BE CORRECTED.
+
+================================================================================
+10. LIMITATION OF LIABILITY
+================================================================================
+
+10.1 EXCLUSION OF DAMAGES
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL COMPANY BE LIABLE FOR:
+(a) INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES;
+(b) LOSS OF PROFITS, REVENUE, DATA, OR USE;
+(c) BUSINESS INTERRUPTION;
+(d) COST OF SUBSTITUTE SERVICES;
+(e) LOSS OF GOODWILL OR REPUTATION;
+(f) DAMAGES ARISING FROM THIRD-PARTY CLAIMS;
+
+WHETHER BASED ON CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR OTHERWISE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+10.2 CAP ON LIABILITY
+COMPANY'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS SHALL NOT EXCEED THE AMOUNT PAID BY CUSTOMER IN THE 12 MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY, OR $100 USD, WHICHEVER IS GREATER.
+
+10.3 ESSENTIAL PURPOSE
+THE LIMITATIONS IN THIS SECTION APPLY EVEN IF ANY REMEDY FAILS OF ITS ESSENTIAL PURPOSE.
+
+10.4 EXCEPTIONS
+These limitations do not apply to:
+(a) Company's gross negligence or willful misconduct;
+(b) Death or personal injury caused by Company's negligence;
+(c) Fraud or fraudulent misrepresentation;
+(d) Violations of Intellectual Property Rights;
+(e) Breaches of confidentiality obligations;
+(f) Liabilities that cannot be excluded under applicable law.
+
+================================================================================
+11. INDEMNIFICATION
+================================================================================
+
+11.1 CUSTOMER INDEMNIFICATION
+Customer shall indemnify, defend, and hold harmless Company, its affiliates, and their respective officers, directors, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from:
+(a) Customer's use or misuse of the Service;
+(b) Violation of these Terms by Customer or Authorized Users;
+(c) User Data, including infringement of third-party rights;
+(d) Violation of applicable laws or regulations;
+(e) Negligence or willful misconduct of Customer or Authorized Users.
+
+11.2 COMPANY INDEMNIFICATION
+Company shall indemnify Customer from third-party claims that the Service infringes Intellectual Property Rights, provided Customer:
+(a) Promptly notifies Company of the claim;
+(b) Grants Company sole control of defense and settlement;
+(c) Provides reasonable cooperation.
+
+11.3 REMEDIES
+If the Service becomes or is likely to become subject to an infringement claim, Company may, at its option:
+(a) Obtain rights for Customer to continue using the Service;
+(b) Replace or modify the Service to be non-infringing;
+(c) Terminate these Terms and refund prepaid fees pro-rata.
+
+11.4 EXCLUSIONS
+Company has no obligation for claims arising from:
+(a) Modification of the Service by anyone other than Company;
+(b) Combination of the Service with third-party products;
+(c) Use of the Service other than as specified in Documentation;
+(d) Customer's failure to use updates provided by Company.
+
+================================================================================
+12. SERVICE LEVEL AGREEMENT (SLA)
+================================================================================
+
+12.1 UPTIME COMMITMENT
+Company will use commercially reasonable efforts to maintain 99.9% uptime availability, measured monthly, excluding scheduled maintenance.
+
+12.2 SCHEDULED MAINTENANCE
+Company may perform scheduled maintenance with at least 48 hours' notice. Scheduled maintenance is excluded from uptime calculations.
+
+12.3 SERVICE CREDITS
+If uptime falls below 99.9%, Customer may request service credits:
+- 99.0% - 99.9%: 10% monthly fee credit
+- 95.0% - 98.9%: 25% monthly fee credit
+- Below 95.0%: 50% monthly fee credit
+
+Service credits are Customer's sole remedy for availability failures.
+
+12.4 EXCLUSIONS
+SLA does not apply to unavailability caused by:
+(a) Customer's acts or omissions;
+(b) Third-party services or connectivity;
+(c) Force majeure events;
+(d) Scheduled maintenance;
+(e) Suspension due to Terms violations.
+
+================================================================================
+13. TERM AND TERMINATION
+================================================================================
+
+13.1 TERM
+These Terms commence upon Customer's acceptance and continue for the Subscription Period, automatically renewing unless either party provides 30 days' written notice of non-renewal.
+
+13.2 TERMINATION FOR CAUSE
+Either party may terminate immediately upon written notice if the other party:
+(a) Materially breaches these Terms and fails to cure within 30 days;
+(b) Becomes insolvent or subject to bankruptcy proceedings;
+(c) Ceases business operations.
+
+13.3 TERMINATION FOR CONVENIENCE
+Company may terminate for convenience upon 30 days' written notice. Customer may terminate at the end of the current Subscription Period.
+
+13.4 SUSPENSION
+Company may suspend access immediately without notice if:
+(a) Customer breaches Acceptable Use Policy;
+(b) Customer's account poses security risks;
+(c) Required by law or legal process;
+(d) Customer fails to pay fees when due.
+
+13.5 EFFECTS OF TERMINATION
+Upon termination:
+(a) All licenses and rights granted to Customer terminate immediately;
+(b) Customer shall cease all use of the Service;
+(c) Customer shall pay all outstanding fees;
+(d) Company shall delete or return User Data within 30 days;
+(e) Sections surviving termination remain in effect.
+
+13.6 SURVIVAL
+The following sections survive termination: Definitions, License Restrictions, Intellectual Property Rights, Confidentiality, Warranties and Disclaimers, Limitation of Liability, Indemnification, and General Provisions.
+
+================================================================================
+14. EXPORT CONTROL AND SANCTIONS
+================================================================================
+
+14.1 EXPORT COMPLIANCE
+Customer shall comply with all applicable export control laws and regulations, including U.S. Export Administration Regulations (EAR) and International Traffic in Arms Regulations (ITAR).
+
+14.2 SANCTIONS
+Customer represents that it is not:
+(a) Located in or a national of a sanctioned country;
+(b) On any government restricted parties list;
+(c) Owned or controlled by sanctioned persons;
+(d) Engaging in prohibited activities.
+
+14.3 PROHIBITED USE
+Customer shall not use the Service in violation of export controls or sanctions, including providing access to prohibited persons or countries.
+
+================================================================================
+15. DISPUTE RESOLUTION
+================================================================================
+
+15.1 INFORMAL RESOLUTION
+Parties shall attempt to resolve disputes informally for 30 days before initiating formal proceedings.
+
+15.2 ARBITRATION
+Any dispute not resolved informally shall be resolved by binding arbitration administered by [ARBITRATION BODY] under its rules. Arbitration shall be conducted in English at a location mutually agreed by the parties.
+
+15.3 CLASS ACTION WAIVER
+CUSTOMER WAIVES THE RIGHT TO PARTICIPATE IN CLASS ACTIONS, CLASS ARBITRATIONS, OR REPRESENTATIVE ACTIONS. DISPUTES MUST BE BROUGHT INDIVIDUALLY.
+
+15.4 GOVERNING LAW
+These Terms are governed by the laws of [JURISDICTION], without regard to conflict of law principles.
+
+15.5 EQUITABLE RELIEF
+Either party may seek equitable relief (including injunctions) in any court of competent jurisdiction to protect Intellectual Property Rights or Confidential Information.
+
+15.6 JURISDICTION
+Subject to the arbitration provision, parties consent to exclusive jurisdiction in the courts of [JURISDICTION].
+
+================================================================================
+16. FORCE MAJEURE
+================================================================================
+
+Neither party shall be liable for failure to perform due to causes beyond reasonable control, including natural disasters, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, pandemic, or infrastructure failures. The affected party shall promptly notify the other party and use reasonable efforts to resume performance.
+
+================================================================================
+17. COMPLIANCE WITH LAWS
+================================================================================
+
+17.1 REGULATORY COMPLIANCE
+Customer shall comply with all applicable laws and regulations, including but not limited to:
+(a) Data protection and privacy laws (GDPR, CCPA, PIPEDA, LGPD);
+(b) Anti-money laundering (AML) and counter-terrorism financing (CTF) laws;
+(c) Export control and sanctions regulations;
+(d) Consumer protection laws;
+(e) Electronic communications laws;
+(f) Accessibility requirements (WCAG, ADA, Section 508).
+
+17.2 INDUSTRY-SPECIFIC REGULATIONS
+If Customer operates in regulated industries, Customer is solely responsible for compliance with industry-specific requirements (HIPAA, PCI-DSS, SOX, GLBA, FERPA, etc.).
+
+17.3 AUDIT RIGHTS
+Company reserves the right to audit Customer's compliance with these Terms upon reasonable notice.
+
+================================================================================
+18. MODIFICATIONS
+================================================================================
+
+18.1 CHANGES TO TERMS
+Company may modify these Terms at any time by posting updated Terms and notifying Customer via email or through the Service. Changes become effective 30 days after notification.
+
+18.2 ACCEPTANCE
+Continued use of the Service after the effective date constitutes acceptance. If Customer does not agree, Customer must discontinue use and may terminate for a pro-rata refund.
+
+18.3 CHANGES TO SERVICE
+Company may modify, suspend, or discontinue any aspect of the Service with reasonable notice. Company is not liable for modifications, suspension, or discontinuation.
+
+================================================================================
+19. GENERAL PROVISIONS
+================================================================================
+
+19.1 ENTIRE AGREEMENT
+These Terms, together with the Privacy Policy and DPA, constitute the entire agreement and supersede all prior agreements, understandings, and communications regarding the subject matter.
+
+19.2 AMENDMENTS
+No amendment or modification is valid unless in writing and signed by authorized representatives of both parties.
+
+19.3 ASSIGNMENT
+Customer may not assign these Terms without Company's prior written consent. Company may assign these Terms freely. Any unauthorized assignment is void.
+
+19.4 NO WAIVER
+Failure to enforce any provision does not constitute a waiver. Waivers must be in writing and signed by the waiving party.
+
+19.5 SEVERABILITY
+If any provision is found invalid or unenforceable, the remaining provisions remain in full force and effect, and the invalid provision shall be modified to achieve the intended purpose to the maximum extent permitted by law.
+
+19.6 NOTICES
+All notices must be in writing and delivered via email to the address on record. Notices are effective upon receipt.
+
+19.7 RELATIONSHIP
+The parties are independent contractors. These Terms do not create a partnership, joint venture, employment, or agency relationship.
+
+19.8 THIRD-PARTY BENEFICIARIES
+These Terms do not confer rights or benefits upon any third party except as expressly provided.
+
+19.9 HEADINGS
+Section headings are for convenience only and do not affect interpretation.
+
+19.10 LANGUAGE
+These Terms are executed in English. Any translations are for convenience only, and the English version controls.
+
+19.11 COUNTERPARTS
+These Terms may be executed in counterparts, each constituting an original, all together constituting one agreement.
+
+19.12 ELECTRONIC SIGNATURES
+Electronic signatures have the same legal effect as handwritten signatures.
+
+19.13 NO IMPLIED LICENSES
+No licenses or rights are granted except as expressly provided. All rights not expressly granted are reserved.
+
+19.14 GOVERNMENT USERS
+If Customer is a U.S. government entity, the Service is "Commercial Computer Software" and "Commercial Computer Software Documentation" under FAR and DFARS provisions.
+
+19.15 ANTI-BRIBERY
+Customer shall comply with all anti-bribery and anti-corruption laws, including the U.S. Foreign Corrupt Practices Act (FCPA) and UK Bribery Act.
+
+19.16 CONTACT INFORMATION
+For questions about these Terms, contact: [INSERT COMPANY CONTACT INFORMATION]
+
+================================================================================
+20. SPECIAL PROVISIONS FOR SPECIFIC JURISDICTIONS
+================================================================================
+
+20.1 EUROPEAN UNION
+For customers in the EU, the following additional terms apply:
+(a) Customers have statutory rights under EU consumer protection laws;
+(b) Company provides 14-day cooling-off period for consumer contracts;
+(c) Unfair contract terms may be unenforceable under EU Directive 93/13/EEC;
+(d) Dispute resolution may utilize EU Online Dispute Resolution platform.
+
+20.2 CALIFORNIA USERS
+California Civil Code Section 1789.3 requires certain disclosures. Complaints may be directed to the California Department of Consumer Affairs.
+
+20.3 AUSTRALIA
+For Australian customers, nothing in these Terms excludes guarantees under the Australian Consumer Law. Our liability is limited to the extent permitted by law.
+
+20.4 CANADA
+Quebec customers have additional rights under Quebec consumer protection laws, and arbitration provisions may not apply to Quebec residents.
+
+================================================================================
+ACKNOWLEDGMENT
+================================================================================
+
+BY USING THE SERVICE, CUSTOMER ACKNOWLEDGES THAT:
+
+1. CUSTOMER HAS READ AND UNDERSTOOD THESE TERMS;
+2. CUSTOMER AGREES TO BE BOUND BY THESE TERMS;
+3. CUSTOMER HAS AUTHORITY TO ENTER INTO THESE TERMS;
+4. THESE TERMS CONSTITUTE A LEGALLY BINDING AGREEMENT;
+5. CUSTOMER ACCEPTS THE LIMITATIONS OF LIABILITY AND WARRANTY DISCLAIMERS;
+6. CUSTOMER WAIVES THE RIGHT TO JURY TRIAL AND CLASS ACTIONS;
+7. CUSTOMER CONSENTS TO ELECTRONIC COMMUNICATIONS AND SIGNATURES.
+
+IF YOU DO NOT AGREE TO THESE TERMS, YOU MUST IMMEDIATELY CEASE USING THE SERVICE.
+
+================================================================================
+END OF TERMS OF SERVICE
+================================================================================
+
+© 2025. All Rights Reserved. These Terms are proprietary and confidential.

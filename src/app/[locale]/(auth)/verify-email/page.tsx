@@ -41,9 +41,9 @@ export default function VerifyEmailPage() {
           setError(error.message)
         } else {
           setStatus('success')
-          // Redirect to dashboard after 3 seconds
+          // Redirect to root after 3 seconds - it will check onboarding status
           setTimeout(() => {
-            router.push(`/${locale}/workspace/personal/dashboard/overview`)
+            window.location.href = `/${locale}`
           }, 3000)
         }
       } else {
@@ -127,7 +127,7 @@ export default function VerifyEmailPage() {
             </p>
             <Button
               className="w-full"
-              onClick={() => router.push(`/${locale}/workspace/personal/dashboard/overview`)}
+              onClick={() => window.location.href = `/${locale}`}
             >
               Continue to workspace
             </Button>

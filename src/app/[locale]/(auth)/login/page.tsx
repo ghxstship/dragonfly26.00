@@ -37,8 +37,8 @@ export default function LoginPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      // Redirect to root - it will handle onboarding check and proper routing
-      router.push(`/${locale}`)
+      // Use full page reload to ensure session cookies are properly set on server
+      window.location.href = `/${locale}`
     }
   }
 
