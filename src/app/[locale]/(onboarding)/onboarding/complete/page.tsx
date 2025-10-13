@@ -1,19 +1,25 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle2, Sparkles, ArrowRight } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
 
 export default function CompletePage() {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const supabase = createClient()
+  const [isCompleting, setIsCompleting] = useState(false)
   
   const workspaceId = searchParams.get('workspace')
 
   useEffect(() => {
+    // Mark onboarding as complete
+    markOnboardingComplete()
+
     // Auto-redirect after 10 seconds
     const timer = setTimeout(() => {
       handleContinue()
@@ -21,6 +27,24 @@ export default function CompletePage() {
 
     return () => clearTimeout(timer)
   }, [])
+
+  const markOnboardingComplete = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) return
+
+      // Call the database function to mark onboarding as complete
+      const { error } = await supabase.rpc('complete_user_onboarding', {
+        user_id: user.id
+      })
+
+      if (error) {
+        console.error('Error completing onboarding:', error)
+      }
+    } catch (error) {
+      console.error('Error marking onboarding complete:', error)
+    }
+  }
 
   const handleContinue = () => {
     // Redirect to dashboard
