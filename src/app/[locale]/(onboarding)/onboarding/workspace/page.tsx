@@ -57,12 +57,35 @@ export default function WorkspacePage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) throw new Error('Not authenticated')
 
+      // Generate slug
+      let slug = newWorkspace.slug || newWorkspace.name.toLowerCase().replace(/\s+/g, '-')
+      
+      // Check if slug exists and find an available one
+      let slugExists = true
+      let counter = 1
+      let finalSlug = slug
+      
+      while (slugExists) {
+        const { data: existingOrg } = await supabase
+          .from('organizations')
+          .select('id')
+          .eq('slug', finalSlug)
+          .maybeSingle()
+        
+        if (!existingOrg) {
+          slugExists = false
+        } else {
+          counter++
+          finalSlug = `${slug}-${counter}`
+        }
+      }
+
       // Step 1: Create organization
       const { data: org, error: orgError } = await supabase
         .from('organizations')
         .insert({
           name: newWorkspace.name,
-          slug: newWorkspace.slug || newWorkspace.name.toLowerCase().replace(/\s+/g, '-'),
+          slug: finalSlug,
         })
         .select()
         .single()
@@ -121,7 +144,7 @@ export default function WorkspacePage() {
         .insert({
           organization_id: org.id,
           workspace_id: workspace.id,
-          plan_id: 'free',
+          plan_id: 'network',
           status: 'active',
         })
 
