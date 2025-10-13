@@ -82,7 +82,7 @@ export default function LoginPage() {
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
                 <Link
-                  href="/forgot-password"
+                  href={`/${locale}/forgot-password`}
                   className="text-sm text-primary hover:underline"
                 >
                   Forgot password?
@@ -148,7 +148,7 @@ export default function LoginPage() {
 
         <p className="text-center text-sm text-muted-foreground">
           Don&apos;t have an account?{" "}
-          <Link href="/signup" className="text-primary hover:underline">
+          <Link href={`/${locale}/signup`} className="text-primary hover:underline">
             Sign up
           </Link>
         </p>
