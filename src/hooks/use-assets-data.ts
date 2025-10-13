@@ -11,6 +11,8 @@ export function useAssets(workspaceId: string) {
 
   useEffect(() => {
     async function fetchAssets() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('assets')
         .select(`
@@ -54,6 +56,8 @@ export function useAssetTransactions(workspaceId: string, assetId?: string) {
 
   useEffect(() => {
     async function fetchTransactions() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('asset_transactions')
         .select(`
@@ -104,6 +108,8 @@ export function useMaintenance(workspaceId: string) {
 
   useEffect(() => {
     async function fetchMaintenance() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('asset_maintenance')
         .select(`
@@ -146,6 +152,8 @@ export function useAdvances(workspaceId: string) {
 
   useEffect(() => {
     async function fetchAdvances() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('production_advances')
         .select(`

@@ -124,10 +124,12 @@ export function TabPageContent() {
   const params = useParams()
   const moduleSlug = params.module as string
   const tabSlug = params.tab as string
-  const workspaceId = params.workspaceId as string
   const currentModule = getModuleBySlug(moduleSlug)
   const currentTab = getTabBySlug(moduleSlug, tabSlug)
-  const { setRightSidebarOpen, focusMode } = useUIStore()
+  const { setRightSidebarOpen, focusMode, currentWorkspace } = useUIStore()
+  
+  // Use resolved workspace ID from store (handles "personal" -> UUID conversion)
+  const workspaceId = currentWorkspace?.id || ''
   
   // Check if this is an admin, settings, profile, dashboard, projects, events, locations, community, reports, analytics, or insights tab with custom component
   const isAdminCustomTab = moduleSlug === "admin" && getAdminTabComponent(tabSlug) !== undefined

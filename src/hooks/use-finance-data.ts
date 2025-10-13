@@ -11,6 +11,8 @@ export function useBudgets(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchBudgets() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('budgets')
         .select(`
@@ -59,6 +61,8 @@ export function useTransactions(workspaceId: string, budgetId?: string) {
 
   useEffect(() => {
     async function fetchTransactions() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('financial_transactions')
         .select(`
@@ -107,6 +111,8 @@ export function useInvoices(workspaceId: string) {
 
   useEffect(() => {
     async function fetchInvoices() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('invoices')
         .select(`
@@ -151,6 +157,8 @@ export function usePayroll(workspaceId: string) {
 
   useEffect(() => {
     async function fetchPayroll() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('payroll')
         .select(`
@@ -221,6 +229,8 @@ export function useGLCodes(workspaceId: string) {
 
   useEffect(() => {
     async function fetchGLCodes() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('gl_codes')
         .select('*')

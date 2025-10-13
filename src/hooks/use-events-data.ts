@@ -11,6 +11,8 @@ export function useEvents(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchEvents() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('events')
         .select(`
@@ -66,6 +68,8 @@ export function useRunOfShow(workspaceId: string, eventId?: string) {
 
   useEffect(() => {
     async function fetchRunOfShow() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('run_of_show')
         .select(`
@@ -119,6 +123,8 @@ export function useBookings(workspaceId: string) {
 
   useEffect(() => {
     async function fetchBookings() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('bookings')
         .select(`
@@ -168,6 +174,8 @@ export function useIncidents(workspaceId: string, eventId?: string) {
 
   useEffect(() => {
     async function fetchIncidents() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('incidents')
         .select(`
@@ -222,6 +230,8 @@ export function useTours(workspaceId: string) {
 
   useEffect(() => {
     async function fetchTours() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('tours')
         .select(`
@@ -272,6 +282,8 @@ export function useShipments(workspaceId: string) {
 
   useEffect(() => {
     async function fetchShipments() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('shipments')
         .select(`

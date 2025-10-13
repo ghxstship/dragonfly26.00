@@ -17,7 +17,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'my-expenses': { table: 'financial_transactions', orderBy: 'transaction_date' },
   
   // Projects
-  'productions': { table: 'productions', select: '*, workspace:workspace_id(name), project_manager:project_manager_id(first_name, last_name)', orderBy: 'created_at' },
+  'productions': { table: 'productions', select: '*, workspaces!workspace_id(name), project_manager:project_manager_id(first_name, last_name)', orderBy: 'created_at' },
   'tasks': { table: 'project_tasks', select: '*, production:production_id(name), assignee:assignee_id(first_name, last_name)', orderBy: 'due_date' },
   'milestones': { table: 'project_milestones', select: '*, production:production_id(name)', orderBy: 'due_date' },
   'compliance': { table: 'compliance_requirements', select: '*, production:production_id(name)', orderBy: 'expires_at' },
@@ -122,6 +122,12 @@ export function useModuleData(
       try {
         setLoading(true)
         
+        // Don't query if workspaceId is not yet available
+        if (!workspaceId) {
+          setLoading(false)
+          return
+        }
+        
         const config = TAB_TO_TABLE_MAP[tabSlug]
         if (!config) {
           console.warn(`No table mapping for tab: ${tabSlug}`)
@@ -168,6 +174,8 @@ export function useModuleData(
     }
 
     // Real-time subscription
+    if (!workspaceId) return
+    
     const config = TAB_TO_TABLE_MAP[tabSlug]
     if (!config) return
 

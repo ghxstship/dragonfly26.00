@@ -84,7 +84,10 @@ export function useMyAgenda(workspaceId: string, userId: string) {
   const supabase = createClient()
 
   useEffect(() => {
-    async function fetchEvents() {
+    async function fetchUpcomingEvents() {
+      if (!workspaceId) return
+      
+      const { data: { user } } = await supabase.auth.getUser()
       const { data, error } = await supabase
         .from('events')
         .select('*, location:location_id(name)')
@@ -100,7 +103,7 @@ export function useMyAgenda(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
-    fetchEvents()
+    fetchUpcomingEvents()
 
     // Real-time subscription
     const channel = supabase
@@ -113,7 +116,7 @@ export function useMyAgenda(workspaceId: string, userId: string) {
           table: 'events',
           filter: `workspace_id=eq.${workspaceId}`
         },
-        () => fetchEvents()
+        () => fetchUpcomingEvents()
       )
       .subscribe()
 
@@ -132,7 +135,10 @@ export function useMyTasks(workspaceId: string, userId: string) {
   const supabase = createClient()
 
   useEffect(() => {
-    async function fetchTasks() {
+    async function fetchMyTasks() {
+      if (!workspaceId) return
+      
+      const { data: { user } } = await supabase.auth.getUser()
       const { data, error } = await supabase
         .from('project_tasks')
         .select('*, production:production_id(name)')
@@ -148,7 +154,7 @@ export function useMyTasks(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
-    fetchTasks()
+    fetchMyTasks()
 
     // Real-time subscription
     const channel = supabase
@@ -161,7 +167,7 @@ export function useMyTasks(workspaceId: string, userId: string) {
           table: 'project_tasks',
           filter: `workspace_id=eq.${workspaceId}`
         },
-        () => fetchTasks()
+        () => fetchMyTasks()
       )
       .subscribe()
 
@@ -180,7 +186,10 @@ export function useMyExpenses(workspaceId: string, userId: string) {
   const supabase = createClient()
 
   useEffect(() => {
-    async function fetchExpenses() {
+    async function fetchMyExpenses() {
+      if (!workspaceId) return
+      
+      const { data: { user } } = await supabase.auth.getUser()
       const { data, error } = await supabase
         .from('financial_transactions')
         .select('*')
@@ -196,7 +205,7 @@ export function useMyExpenses(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
-    fetchExpenses()
+    fetchMyExpenses()
 
     // Real-time subscription
     const channel = supabase
@@ -209,7 +218,7 @@ export function useMyExpenses(workspaceId: string, userId: string) {
           table: 'financial_transactions',
           filter: `workspace_id=eq.${workspaceId}`
         },
-        () => fetchExpenses()
+        () => fetchMyExpenses()
       )
       .subscribe()
 

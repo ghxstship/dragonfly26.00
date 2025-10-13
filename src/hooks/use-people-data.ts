@@ -11,6 +11,8 @@ export function usePersonnel(workspaceId: string) {
 
   useEffect(() => {
     async function fetchPersonnel() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('personnel')
         .select(`
@@ -53,6 +55,8 @@ export function useTeams(workspaceId: string) {
 
   useEffect(() => {
     async function fetchTeams() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('teams')
         .select(`
@@ -96,6 +100,8 @@ export function useTimeEntries(workspaceId: string, personnelId?: string) {
 
   useEffect(() => {
     async function fetchTimeEntries() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('time_entries')
         .select(`
@@ -143,7 +149,9 @@ export function useTraining(workspaceId: string) {
   const supabase = createClient()
 
   useEffect(() => {
-    async function fetchTraining() {
+    async function fetchTrainingSessions() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('training_sessions')
         .select('*')
@@ -156,14 +164,14 @@ export function useTraining(workspaceId: string) {
       setLoading(false)
     }
 
-    fetchTraining()
+    fetchTrainingSessions()
 
     const channel = supabase
       .channel(`training:${workspaceId}`)
       .on(
         'postgres_changes',
         { event: '*', schema: 'public', table: 'training_sessions', filter: `workspace_id=eq.${workspaceId}` },
-        () => fetchTraining()
+        () => fetchTrainingSessions()
       )
       .subscribe()
 
@@ -182,7 +190,9 @@ export function useJobOpenings(workspaceId: string) {
   const supabase = createClient()
 
   useEffect(() => {
-    async function fetchOpenings() {
+    async function fetchJobOpenings() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('job_openings')
         .select('*')
@@ -195,14 +205,14 @@ export function useJobOpenings(workspaceId: string) {
       setLoading(false)
     }
 
-    fetchOpenings()
+    fetchJobOpenings()
 
     const channel = supabase
       .channel(`openings:${workspaceId}`)
       .on(
         'postgres_changes',
         { event: '*', schema: 'public', table: 'job_openings', filter: `workspace_id=eq.${workspaceId}` },
-        () => fetchOpenings()
+        () => fetchJobOpenings()
       )
       .subscribe()
 

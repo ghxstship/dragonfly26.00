@@ -45,12 +45,14 @@ export default function ModuleTabPage() {
   const params = useParams()
   const moduleSlug = params.module as string
   const tabSlug = params.tab as string
-  const workspaceId = params.workspaceId as string
   const locale = params.locale as string
   
   const currentModule = getModuleBySlug(moduleSlug)
   const currentTab = getTabBySlug(moduleSlug, tabSlug)
-  const { setRightSidebarOpen, focusMode } = useUIStore()
+  const { setRightSidebarOpen, focusMode, currentWorkspace } = useUIStore()
+  
+  // Use resolved workspace ID from store (handles "personal" -> UUID conversion)
+  const workspaceId = currentWorkspace?.id || ''
 
   const [currentView, setCurrentView] = useState<ViewType>(currentTab?.default_view || "list")
   const [searchQuery, setSearchQuery] = useState("")

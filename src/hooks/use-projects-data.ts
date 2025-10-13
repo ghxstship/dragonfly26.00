@@ -11,11 +11,13 @@ export function useProductions(workspaceId: string) {
 
   useEffect(() => {
     async function fetchProductions() {
+      if (!workspaceId) return
+      
       const { data, error } = await supabase
         .from('productions')
         .select(`
           *,
-          workspace:workspace_id(name),
+          workspaces!workspace_id(name),
           project_manager:project_manager_id(first_name, last_name),
           tasks:project_tasks(count),
           milestones:project_milestones(count)
@@ -62,6 +64,8 @@ export function useTasks(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchTasks() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('project_tasks')
         .select(`
@@ -117,6 +121,8 @@ export function useMilestones(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchMilestones() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('project_milestones')
         .select(`
@@ -171,6 +177,8 @@ export function useCompliance(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchCompliance() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('compliance_requirements')
         .select(`
@@ -224,6 +232,8 @@ export function useSafety(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchSafety() {
+      if (!workspaceId) return
+      
       let query = supabase
         .from('safety_guidelines')
         .select(`
