@@ -1,5 +1,7 @@
 "use client"
 
+export const dynamic = 'force-dynamic'
+
 import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getModuleTabs } from "@/lib/modules/tabs-registry"
