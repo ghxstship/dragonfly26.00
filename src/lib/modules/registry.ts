@@ -263,6 +263,18 @@ export const MODULES: Module[] = [
     color: '#3b82f6',
     has_tabs: true,
   },
+  {
+    id: 'invite',
+    name: 'Invite',
+    slug: 'invite',
+    description: 'Invite team members to workspace',
+    icon: 'UserPlus',
+    category: 'system' as any,
+    order: 102,
+    enabled: true,
+    color: '#10b981',
+    has_tabs: false,
+  },
 
   // Insights Module (Phase 2)
   {
@@ -345,6 +357,11 @@ export const MODULE_CATEGORIES = {
     label: 'Intelligence Hub',
     description: 'Analytics and reporting',
     color: '#0284c7',
+  },
+  system: {
+    label: 'System',
+    description: 'System administration and configuration',
+    color: '#64748b',
   },
 }
 

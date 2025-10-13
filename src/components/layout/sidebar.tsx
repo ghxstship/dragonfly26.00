@@ -10,10 +10,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Star,
-  Settings,
-  User,
-  Shield,
-  UserPlus,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -59,8 +55,11 @@ export function Sidebar() {
   const groupedModules = Object.entries(MODULE_CATEGORIES).map(([category, info]) => ({
     category,
     ...info,
-    modules: MODULES.filter((m) => m.category === category && m.enabled),
+    modules: MODULES.filter((m) => m.category === category && m.enabled && m.id !== 'profile'),
   }))
+
+  // Get profile module separately (to anchor at bottom)
+  const profileModule = MODULES.find((m) => m.id === 'profile')
 
   return (
     <TooltipProvider>
@@ -164,6 +163,33 @@ export function Sidebar() {
                     const moduleTabs = getModuleTabs(moduleItem.slug)
                     const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
 
+                    // Special handling for invite module - opens dialog instead of navigating
+                    if (moduleItem.id === 'invite') {
+                      return (
+                        <div
+                          key={moduleItem.id}
+                          className="group relative flex items-center"
+                        >
+                          <button
+                            onClick={() => setInviteDialogOpen(true)}
+                            className={cn(
+                              "flex flex-1 items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+                              sidebarCollapsed && "justify-center px-2"
+                            )}
+                            title={sidebarCollapsed ? moduleItem.name : undefined}
+                          >
+                            {Icon && (
+                              <Icon
+                                className="h-4 w-4 flex-shrink-0"
+                                style={{ color: moduleItem.color }}
+                              />
+                            )}
+                            {!sidebarCollapsed && <span>{moduleItem.name}</span>}
+                          </button>
+                        </div>
+                      )
+                    }
+
                     return (
                       <div
                         key={moduleItem.id}
@@ -212,56 +238,37 @@ export function Sidebar() {
         </div>
       </ScrollArea>
 
-      {/* User & Settings - Anchored to Bottom */}
-      <div className="border-t p-2 space-y-1 bg-background">
-        <Link
-          href={`/${locale}/workspace/${currentWorkspace?.id}/profile/basic-info`}
-          className={cn(
-            "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2",
-            pathname.includes('/profile') && "bg-accent"
-          )}
-          title={sidebarCollapsed ? t('sidebar.profile') : undefined}
-        >
-          <User className="h-4 w-4 flex-shrink-0" style={{ color: "#3b82f6" }} />
-          {!sidebarCollapsed && <span>{t('sidebar.profile')}</span>}
-        </Link>
-        <Link
-          href={`/${locale}/workspace/${currentWorkspace?.id}/settings/appearance`}
-          className={cn(
-            "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2",
-            pathname.includes('/settings') && "bg-accent"
-          )}
-          title={sidebarCollapsed ? t('sidebar.settings') : undefined}
-        >
-          <Settings className="h-4 w-4 flex-shrink-0" style={{ color: "#6366f1" }} />
-          {!sidebarCollapsed && <span>{t('sidebar.settings')}</span>}
-        </Link>
-        <Link
-          href={`/${locale}/workspace/${currentWorkspace?.id}/admin/overview`}
-          className={cn(
-            "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2",
-            pathname.includes('/admin') && "bg-accent"
-          )}
-          title={sidebarCollapsed ? t('sidebar.admin') : undefined}
-        >
-          <Shield className="h-4 w-4 flex-shrink-0" style={{ color: "#64748b" }} />
-          {!sidebarCollapsed && <span>{t('sidebar.admin')}</span>}
-        </Link>
-        <button
-          onClick={() => setInviteDialogOpen(true)}
-          className={cn(
-            "flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
-            sidebarCollapsed && "justify-center px-2"
-          )}
-          title={sidebarCollapsed ? t('sidebar.invite') : undefined}
-        >
-          <UserPlus className="h-4 w-4 flex-shrink-0" style={{ color: "#10b981" }} />
-          {!sidebarCollapsed && <span>{t('sidebar.invite')}</span>}
-        </button>
-      </div>
+      {/* Profile - Anchored to Bottom */}
+      {profileModule && (
+        <div className="border-t p-2 bg-background">
+          {(() => {
+            const Icon = iconMap[profileModule.icon]
+            const moduleTabs = getModuleTabs(profileModule.slug)
+            const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
+            const isActive = pathname.includes(profileModule.slug)
+
+            return (
+              <Link
+                href={`/${locale}/workspace/${currentWorkspace?.id}/${profileModule.slug}/${firstTabSlug}`}
+                className={cn(
+                  "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
+                  sidebarCollapsed && "justify-center px-2",
+                  isActive && "bg-accent"
+                )}
+                title={sidebarCollapsed ? profileModule.name : undefined}
+              >
+                {Icon && (
+                  <Icon
+                    className="h-4 w-4 flex-shrink-0"
+                    style={{ color: profileModule.color }}
+                  />
+                )}
+                {!sidebarCollapsed && <span>{profileModule.name}</span>}
+              </Link>
+            )
+          })()}
+        </div>
+      )}
       
         {/* Invite Dialog */}
         <InviteDialog open={inviteDialogOpen} onOpenChange={setInviteDialogOpen} />
