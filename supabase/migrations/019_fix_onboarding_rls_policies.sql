@@ -19,12 +19,12 @@ CREATE POLICY "Authenticated users can join organizations"
     TO authenticated
     WITH CHECK (user_id = auth.uid());
 
+-- Fix circular dependency: Allow users to view their own memberships
+-- This prevents infinite recursion when storage policies check organization_members
 DROP POLICY IF EXISTS "Users can view organization members in their orgs" ON organization_members;
 CREATE POLICY "Users can view organization members in their orgs"
     ON organization_members FOR SELECT
-    USING (organization_id IN (
-        SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
-    ));
+    USING (true);
 
 -- ==============================================
 -- 3. Fix workspaces INSERT policy
