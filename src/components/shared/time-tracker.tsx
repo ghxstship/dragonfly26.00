@@ -304,7 +304,7 @@ export function TimeTracker() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 [&>*:first-child]:mt-0">
       {/* Timer Display */}
       <div className="text-center">
         <div className="text-3xl font-mono font-bold">{formatTime(time)}</div>

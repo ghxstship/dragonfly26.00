@@ -264,7 +264,7 @@ export function RightSidebar() {
 
           {/* Capture Tabs Content */}
           <TabsContent value="scan" className="p-6 m-0">
-            <div className="space-y-4">
+            <div className="space-y-4 [&>*:first-child]:mt-0">
               <div className="flex items-center justify-center h-48 border-2 border-dashed rounded-lg">
                 <div className="text-center">
                   <ScanLine className="h-12 w-12 mx-auto text-muted-foreground mb-2" />
@@ -282,7 +282,7 @@ export function RightSidebar() {
           </TabsContent>
 
           <TabsContent value="photo" className="p-6 m-0">
-            <div className="space-y-4">
+            <div className="space-y-4 [&>*:first-child]:mt-0">
               <div className="flex items-center justify-center h-48 border-2 border-dashed rounded-lg">
                 <div className="text-center">
                   <Camera className="h-12 w-12 mx-auto text-muted-foreground mb-2" />
