@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
+import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -19,10 +20,12 @@ interface InvitationData {
   expires_at: string
 }
 
-export default function AcceptInvitationPage({ params }: { params: { token: string } }) {
+export default function AcceptInvitationPage() {
   const router = useRouter()
+  const params = useParams<{ token: string }>()
   const { toast } = useToast()
   const supabase = createClient()
+  const token = params.token
   
   const [loading, setLoading] = useState(true)
   const [accepting, setAccepting] = useState(false)
@@ -44,7 +47,7 @@ export default function AcceptInvitationPage({ params }: { params: { token: stri
       const { data, error: inviteError } = await supabase
         .from('invitations')
         .select('*, workspace:workspaces(name), organization:organizations(name)')
-        .eq('token', params.token)
+        .eq('token', token)
         .eq('status', 'pending')
         .single()
 
@@ -70,7 +73,7 @@ export default function AcceptInvitationPage({ params }: { params: { token: stri
       
       if (!user) {
         // Redirect to signup with invitation context
-        router.push(`/signup?invite=${params.token}`)
+        router.push(`/signup?invite=${token}`)
         return
       }
 
@@ -78,7 +81,7 @@ export default function AcceptInvitationPage({ params }: { params: { token: stri
       const response = await fetch('/api/invitations/accept', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: params.token }),
+        body: JSON.stringify({ token }),
       })
 
       if (!response.ok) {
@@ -232,12 +235,12 @@ export default function AcceptInvitationPage({ params }: { params: { token: stri
               {!isAuthenticated && (
                 <p className="text-xs text-center text-muted-foreground">
                   Already have an account?{' '}
-                  <a
-                    href={`/login?invite=${params.token}`}
+                  <Link
+                    href={`/login?invite=${token}`}
                     className="text-primary hover:underline"
                   >
                     Sign in
-                  </a>
+                  </Link>
                 </p>
               )}
             </div>
