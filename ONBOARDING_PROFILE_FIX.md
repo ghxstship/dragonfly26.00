@@ -48,6 +48,29 @@ To test the fix:
 3. Click "Continue"
 4. The form should save successfully without schema errors
 
+## Additional Fix: Locale Routing
+
+### Issue
+After the profile fix, onboarding navigation was throwing 404 errors because routes were missing the locale prefix.
+
+### Root Cause
+The app uses `[locale]` dynamic routing (e.g., `/en/`, `/es/`), but all `router.push()` calls in onboarding were navigating to routes without the locale prefix (e.g., `/onboarding/workspace` instead of `/en/onboarding/workspace`).
+
+### Solution
+Updated all onboarding pages to:
+1. Import `useParams` from `next/navigation`
+2. Extract the `locale` from params
+3. Include `/${locale}` prefix in all router.push() calls
+
+**Files Updated:**
+- `src/app/[locale]/(onboarding)/onboarding/welcome/page.tsx`
+- `src/app/[locale]/(onboarding)/onboarding/workspace/page.tsx`
+- `src/app/[locale]/(onboarding)/onboarding/plan/page.tsx`
+- `src/app/[locale]/(onboarding)/onboarding/invite/page.tsx`
+- `src/app/[locale]/(onboarding)/onboarding/complete/page.tsx`
+
 ## Status
-✅ All fixes applied and verified
-✅ No other instances of incorrect profile column names found in the codebase
+✅ Profile schema fixes applied and verified
+✅ Locale routing fixes applied and verified
+✅ All onboarding routes tested and passing
+✅ Complete end-to-end onboarding flow functional
