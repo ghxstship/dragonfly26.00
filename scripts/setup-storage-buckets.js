@@ -69,7 +69,7 @@ const buckets = [
     id: 'media',
     name: 'media',
     public: false,
-    fileSizeLimit: 524288000, // 500MB
+    fileSizeLimit: 52428800, // 50MB (can be increased to 500MB via Dashboard)
     allowedMimeTypes: [
       'image/jpeg',
       'image/png',
@@ -88,7 +88,7 @@ const buckets = [
     id: 'project-files',
     name: 'project-files',
     public: false,
-    fileSizeLimit: 104857600, // 100MB
+    fileSizeLimit: 52428800, // 50MB (can be increased to 100MB via Dashboard)
     allowedMimeTypes: [
       'application/pdf',
       'application/zip',
@@ -104,7 +104,7 @@ const buckets = [
     id: 'event-assets',
     name: 'event-assets',
     public: false,
-    fileSizeLimit: 524288000, // 500MB
+    fileSizeLimit: 52428800, // 50MB (can be increased to 500MB via Dashboard)
     allowedMimeTypes: [
       'image/jpeg',
       'image/png',
@@ -159,12 +159,17 @@ async function createBucket(bucket) {
     if (response.ok) {
       const data = await response.json()
       console.log(`✅ Created bucket: ${bucket.name}`)
-      return { success: true, bucket: bucket.name }
+      return { success: true, bucket: bucket.name, created: true }
     } else if (response.status === 409) {
       console.log(`ℹ️  Bucket already exists: ${bucket.name}`)
       return { success: true, bucket: bucket.name, exists: true }
     } else {
       const error = await response.text()
+      // Check if error message indicates duplicate
+      if (error.includes('already exists') || error.includes('Duplicate')) {
+        console.log(`ℹ️  Bucket already exists: ${bucket.name}`)
+        return { success: true, bucket: bucket.name, exists: true }
+      }
       console.error(`❌ Failed to create bucket ${bucket.name}:`, error)
       return { success: false, bucket: bucket.name, error }
     }
@@ -188,11 +193,11 @@ async function setupBuckets() {
   }
 
   console.log('\n📊 Summary:')
-  const successful = results.filter(r => r.success).length
-  const failed = results.filter(r => !r.success).length
+  const created = results.filter(r => r.created).length
   const existing = results.filter(r => r.exists).length
+  const failed = results.filter(r => !r.success).length
 
-  console.log(`  ✅ Successfully created: ${successful - existing}`)
+  console.log(`  ✅ Successfully created: ${created}`)
   console.log(`  ℹ️  Already existed: ${existing}`)
   console.log(`  ❌ Failed: ${failed}`)
 
