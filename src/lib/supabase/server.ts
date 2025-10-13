@@ -54,13 +54,13 @@ export const checkOnboardingStatus = async (userId: string) => {
   
   const { data: profile } = await supabase
     .from('profiles')
-    .select('name, onboarding_completed')
+    .select('full_name, onboarding_completed')
     .eq('id', userId)
     .single()
 
   return {
     hasProfile: !!profile,
-    hasName: !!profile?.name,
+    hasName: !!profile?.full_name,
     isOnboarded: profile?.onboarding_completed === true
   }
 }

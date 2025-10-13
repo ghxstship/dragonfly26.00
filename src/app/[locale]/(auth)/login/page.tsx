@@ -37,8 +37,8 @@ export default function LoginPage() {
       setError(error.message)
       setLoading(false)
     } else {
-      // Use full page reload to ensure session cookies are properly set on server
-      window.location.href = `/${locale}`
+      // Redirect to auth-check page which will handle routing based on auth state
+      router.push(`/${locale}/auth-check`)
     }
   }
 
