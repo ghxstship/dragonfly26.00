@@ -66,7 +66,7 @@ export function RightSidebar() {
   const moduleSlug = params.module as string | undefined
   const { rightSidebarOpen, setRightSidebarOpen, rightSidebarTab, setRightSidebarTab, currentWorkspace } = useUIStore()
   const [activeGroup, setActiveGroup] = useState<TabGroup>('mywork')
-  const [isExpanded, setIsExpanded] = useState(true)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   // Extract locale from pathname
   const locale = pathname.split('/')[1] || 'en'

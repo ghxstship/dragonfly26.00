@@ -159,6 +159,7 @@ import {
   Utensils,
   CalendarCheck,
   ReceiptText,
+  Settings,
 } from "lucide-react"
 
 export const iconMap: Record<string, any> = {
@@ -334,4 +335,5 @@ export const iconMap: Record<string, any> = {
   Utensils,
   CalendarCheck,
   ReceiptText,
+  Settings,
 }

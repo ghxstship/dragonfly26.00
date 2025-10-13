@@ -34,7 +34,7 @@ export const useUIStore = create<UIStore>()(
   persist(
     (set, get) => ({
       sidebarCollapsed: true,
-      rightSidebarOpen: false,
+      rightSidebarOpen: true,
       rightSidebarTab: 'activity',
       density: 'comfortable',
       theme: 'light',
