@@ -120,7 +120,7 @@ const getTableNameForTab = (moduleSlug: string, tabSlug: string): string => {
   return tableMap[tabSlug] || 'productions'
 }
 
-export default function ModuleTabPage() {
+export function TabPageContent() {
   const params = useParams()
   const moduleSlug = params.module as string
   const tabSlug = params.tab as string
