@@ -131,7 +131,7 @@ export default function WelcomePage() {
       <div className="w-full space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold">Welcome aboard! 🎉</h1>
+          <h1 className="text-4xl font-bold">Welcome aboard! 🏴‍☠️</h1>
           <p className="text-muted-foreground text-lg">
             Let&apos;s get your profile set up
           </p>
