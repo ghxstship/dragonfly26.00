@@ -1,8 +1,46 @@
 # Storage Buckets Setup - Required
 
-⚠️ **IMPORTANT**: Storage buckets cannot be created via SQL migrations. You must create them manually.
+⚠️ **IMPORTANT**: Storage buckets cannot be created via SQL migrations.
 
-## Required Immediate Setup
+## ✅ Good News: RLS Policies Already Applied!
+
+The storage RLS (Row Level Security) policies are **already in your database** via migration `009_storage_layer.sql`. You just need to create the actual buckets.
+
+## 🚀 Automated Setup (Recommended)
+
+Run the automated setup script to create all buckets at once:
+
+### Step 1: Get Your Service Role Key
+
+1. Go to your Supabase Dashboard
+2. Navigate to **Settings** → **API**
+3. Copy your **service_role key** (keep it secret!)
+
+### Step 2: Run the Setup Script
+
+```bash
+# Set environment variables
+export SUPABASE_SERVICE_ROLE_KEY="your_service_role_key_here"
+
+# Run the script (it will use NEXT_PUBLIC_SUPABASE_URL from .env)
+node scripts/setup-storage-buckets.js
+```
+
+The script will create all 8 buckets with proper MIME type restrictions:
+- ✅ avatars (JPEG, PNG, WebP, GIF)
+- ✅ logos (JPEG, PNG, SVG, WebP)
+- ✅ documents (PDF, Office docs, Text, CSV)
+- ✅ media (Images, Video, Audio)
+- ✅ project-files (PDF, ZIP, Images, Office docs)
+- ✅ event-assets (Images, Video, PDF)
+- ✅ contracts (PDF, Word docs)
+- ✅ reports (PDF, Excel, CSV)
+
+---
+
+## 📱 Manual Setup (Alternative)
+
+If you prefer to create buckets manually:
 
 ### 1. Create Avatars Bucket (REQUIRED FOR ONBOARDING)
 
@@ -16,50 +54,7 @@
    - **File size limit**: 5 MB (5242880 bytes)
    - **Allowed MIME types**: image/jpeg, image/png, image/webp, image/gif
 
-### 2. Configure Bucket Policies
-
-After creating the bucket, set up the following RLS policies:
-
-**Policy 1: Allow authenticated users to upload their own avatar**
-```sql
-CREATE POLICY "Users can upload their own avatar"
-ON storage.objects FOR INSERT
-TO authenticated
-WITH CHECK (
-  bucket_id = 'avatars' 
-  AND (storage.foldername(name))[1] = auth.uid()::text
-);
-```
-
-**Policy 2: Allow authenticated users to update their own avatar**
-```sql
-CREATE POLICY "Users can update their own avatar"
-ON storage.objects FOR UPDATE
-TO authenticated
-USING (
-  bucket_id = 'avatars' 
-  AND (storage.foldername(name))[1] = auth.uid()::text
-);
-```
-
-**Policy 3: Allow authenticated users to delete their own avatar**
-```sql
-CREATE POLICY "Users can delete their own avatar"
-ON storage.objects FOR DELETE
-TO authenticated
-USING (
-  bucket_id = 'avatars' 
-  AND (storage.foldername(name))[1] = auth.uid()::text
-);
-```
-
-**Policy 4: Allow public read access**
-```sql
-CREATE POLICY "Public can view avatars"
-ON storage.objects FOR SELECT
-TO public
-USING (bucket_id = 'avatars');
-```
+**✅ RLS Policies**: Already applied via migrations! No manual SQL needed.
 
 ## Additional Buckets (Optional - Create as needed)
 
