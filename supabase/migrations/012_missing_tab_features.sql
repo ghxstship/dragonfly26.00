@@ -331,7 +331,8 @@ CREATE TABLE purchase_requisitions (
     approved_date TIMESTAMPTZ,
     rejection_reason TEXT,
     
-    po_id UUID REFERENCES purchase_orders(id) ON DELETE SET NULL,
+    -- Foreign key to purchase_orders will be added in migration 015
+    po_id UUID,
     
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()

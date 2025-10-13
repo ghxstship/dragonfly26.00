@@ -22,11 +22,11 @@ export function BillingTab() {
 
   // Current plan data
   const currentPlan = {
-    name: "Enterprise",
-    price: 99,
+    name: "Executive",
+    price: 100,
     billingCycle: "monthly",
     nextBillingDate: "2024-02-20",
-    seats: 50,
+    seats: -1, // unlimited
     usedSeats: 42,
     storage: 1000,
     usedStorage: 640,
@@ -39,9 +39,9 @@ export function BillingTab() {
       invoice_number: "INV-001", 
       billing_date: "2024-01-20", 
       due_date: "2024-02-20",
-      amount: 99.00, 
+      amount: 100.00, 
       status: "paid",
-      plan: "enterprise",
+      plan: "executive-monthly",
       payment_method: "Visa •••• 4242",
       created_at: "2024-01-20T10:00:00Z",
       updated_at: "2024-01-20T10:00:00Z"
@@ -51,9 +51,9 @@ export function BillingTab() {
       invoice_number: "INV-002", 
       billing_date: "2023-12-20", 
       due_date: "2024-01-20",
-      amount: 99.00, 
+      amount: 100.00, 
       status: "paid",
-      plan: "enterprise",
+      plan: "executive-monthly",
       payment_method: "Visa •••• 4242",
       created_at: "2023-12-20T10:00:00Z",
       updated_at: "2023-12-20T10:00:00Z"
@@ -63,9 +63,9 @@ export function BillingTab() {
       invoice_number: "INV-003", 
       billing_date: "2023-11-20", 
       due_date: "2023-12-20",
-      amount: 99.00, 
+      amount: 100.00, 
       status: "paid",
-      plan: "enterprise",
+      plan: "executive-monthly",
       payment_method: "Visa •••• 4242",
       created_at: "2023-11-20T10:00:00Z",
       updated_at: "2023-11-20T10:00:00Z"
@@ -126,10 +126,16 @@ export function BillingTab() {
                 <Users className="h-4 w-4" />
                 Team Seats
               </div>
-              <p className="text-2xl font-bold">{currentPlan.usedSeats} / {currentPlan.seats}</p>
-              <div className="h-2 bg-muted rounded-full overflow-hidden mt-2">
-                <div className="h-full bg-primary" style={{ width: `${(currentPlan.usedSeats / currentPlan.seats) * 100}%` }} />
-              </div>
+              <p className="text-2xl font-bold">
+                {currentPlan.seats === -1 
+                  ? `${currentPlan.usedSeats} / Unlimited` 
+                  : `${currentPlan.usedSeats} / ${currentPlan.seats}`}
+              </p>
+              {currentPlan.seats !== -1 && (
+                <div className="h-2 bg-muted rounded-full overflow-hidden mt-2">
+                  <div className="h-full bg-primary" style={{ width: `${(currentPlan.usedSeats / currentPlan.seats) * 100}%` }} />
+                </div>
+              )}
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">

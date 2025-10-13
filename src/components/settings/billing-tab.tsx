@@ -40,6 +40,7 @@ export function BillingTab() {
   const { toast } = useToast()
   const [upgradeDialogOpen, setUpgradeDialogOpen] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null)
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly")
 
   const currentPlan = {
     name: "Professional",
@@ -76,44 +77,96 @@ export function BillingTab() {
 
   const plans = [
     {
-      id: "starter",
-      name: "Starter",
-      price: 19,
-      description: "Perfect for individuals and small teams",
+      id: "network",
+      name: "Network",
+      price: 0,
+      annualPrice: 0,
+      description: "Free Forever - Perfect for individuals getting started",
       features: [
         "Up to 5 users",
-        "25GB storage",
-        "Basic integrations",
+        "5GB storage",
+        "Ambassador & Passenger roles",
+        "Basic projects & events",
         "Email support",
       ],
     },
     {
-      id: "professional",
-      name: "Professional",
-      price: 49,
-      description: "For growing teams and businesses",
+      id: "crew",
+      name: "Crew",
+      price: 10,
+      annualPrice: 12,
+      description: "For small teams and freelancers",
       features: [
-        "Up to 20 users",
-        "100GB storage",
+        "Up to 15 users",
+        "25GB storage",
+        "Merchant, Raider & Visitor roles",
+        "Projects, events, assets & files",
+        "Integrations",
+        "Email support",
+      ],
+    },
+    {
+      id: "team",
+      name: "Team",
+      price: 20,
+      annualPrice: 24,
+      description: "For growing teams",
+      features: [
+        "Up to 30 users",
+        "50GB storage",
+        "Deviator role + all lower roles",
+        "Analytics & reporting",
         "Advanced integrations",
         "Priority support",
-        "Custom automations",
       ],
       popular: true,
     },
     {
-      id: "enterprise",
-      name: "Enterprise",
-      price: 99,
-      description: "For large organizations",
+      id: "pro",
+      name: "Pro",
+      price: 30,
+      annualPrice: 36,
+      description: "For professional teams with advanced needs",
+      features: [
+        "Up to 50 users",
+        "100GB storage",
+        "Navigator role + all lower roles",
+        "Finance & procurement modules",
+        "Advanced reporting",
+        "Priority support",
+      ],
+    },
+    {
+      id: "core",
+      name: "Core",
+      price: 50,
+      annualPrice: 60,
+      description: "Core capabilities for established organizations",
+      features: [
+        "Up to 100 users",
+        "250GB storage",
+        "Aviator role + all lower roles",
+        "All modules included",
+        "Custom branding",
+        "Custom workflows",
+        "Priority support",
+      ],
+    },
+    {
+      id: "executive",
+      name: "Executive",
+      price: 100,
+      annualPrice: 120,
+      description: "For large organizations with executive oversight",
       features: [
         "Unlimited users",
         "1TB storage",
-        "All integrations",
-        "24/7 phone support",
-        "Custom automations",
+        "Phantom role + all roles",
+        "White-label options",
         "SSO & SAML",
-        "Dedicated account manager",
+        "API access",
+        "24/7 dedicated support",
+        "Custom integrations",
       ],
     },
   ]
@@ -233,46 +286,76 @@ export function BillingTab() {
       {/* Available Plans */}
       <Card>
         <CardHeader>
-          <CardTitle>Available Plans</CardTitle>
-          <CardDescription>
-            Choose the plan that&apos;s right for you
-          </CardDescription>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle>Available Plans</CardTitle>
+              <CardDescription>
+                Choose the plan that&apos;s right for you
+              </CardDescription>
+            </div>
+            <div className="flex items-center gap-2 p-1 bg-muted rounded-lg">
+              <Button
+                variant={billingCycle === "monthly" ? "default" : "ghost"}
+                size="sm"
+                onClick={() => setBillingCycle("monthly")}
+              >
+                Monthly
+              </Button>
+              <Button
+                variant={billingCycle === "annual" ? "default" : "ghost"}
+                size="sm"
+                onClick={() => setBillingCycle("annual")}
+              >
+                Annual
+              </Button>
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {plans.map((plan) => (
-              <Card key={plan.id} className={plan.popular ? "border-primary shadow-lg" : ""}>
-                <CardHeader>
-                  {plan.popular && (
-                    <Badge className="w-fit mb-2">Most Popular</Badge>
-                  )}
-                  <CardTitle className="text-xl">{plan.name}</CardTitle>
-                  <CardDescription className="mt-2">{plan.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-3xl font-bold">${plan.price}</span>
-                    <span className="text-muted-foreground">/month</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-2">
-                    {plan.features.map((feature, index) => (
-                      <li key={index} className="flex items-center gap-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    className="w-full"
-                    variant={plan.id === "professional" ? "default" : "outline"}
-                    onClick={() => handleUpgrade(plan.id)}
-                    disabled={plan.id === "professional"}
-                  >
-                    {plan.id === "professional" ? "Current Plan" : "Upgrade"}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {plans.map((plan) => {
+              const displayPrice = billingCycle === "annual" ? plan.annualPrice : plan.price
+              const isCurrentPlan = plan.id === "professional"
+              
+              return (
+                <Card key={plan.id} className={plan.popular ? "border-primary shadow-lg" : ""}>
+                  <CardHeader>
+                    {plan.popular && (
+                      <Badge className="w-fit mb-2">Most Popular</Badge>
+                    )}
+                    {plan.price === 0 && (
+                      <Badge variant="secondary" className="w-fit mb-2">Free Forever</Badge>
+                    )}
+                    <CardTitle className="text-xl">{plan.name}</CardTitle>
+                    <CardDescription className="mt-2">{plan.description}</CardDescription>
+                    <div className="mt-4">
+                      <span className="text-3xl font-bold">${displayPrice}</span>
+                      <span className="text-muted-foreground">
+                        /{billingCycle === "annual" ? "year" : "month"}
+                      </span>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <ul className="space-y-2">
+                      {plan.features.map((feature, index) => (
+                        <li key={index} className="flex items-center gap-2 text-sm">
+                          <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button 
+                      className="w-full"
+                      variant={isCurrentPlan ? "default" : "outline"}
+                      onClick={() => handleUpgrade(plan.id)}
+                      disabled={isCurrentPlan}
+                    >
+                      {isCurrentPlan ? "Current Plan" : plan.price === 0 ? "Downgrade" : "Upgrade"}
+                    </Button>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </CardContent>
       </Card>
@@ -375,8 +458,12 @@ export function BillingTab() {
                     {plans.find(p => p.id === selectedPlan)?.name}
                   </p>
                   <p className="text-2xl font-bold mt-2">
-                    ${plans.find(p => p.id === selectedPlan)?.price}
-                    <span className="text-sm text-muted-foreground font-normal">/month</span>
+                    ${billingCycle === "annual" 
+                      ? plans.find(p => p.id === selectedPlan)?.annualPrice 
+                      : plans.find(p => p.id === selectedPlan)?.price}
+                    <span className="text-sm text-muted-foreground font-normal">
+                      /{billingCycle === "annual" ? "year" : "month"}
+                    </span>
                   </p>
                 </div>
 

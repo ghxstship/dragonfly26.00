@@ -167,8 +167,7 @@ CREATE TABLE IF NOT EXISTS invitations (
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW(),
   
-  CONSTRAINT valid_status CHECK (status IN ('pending', 'accepted', 'expired', 'revoked')),
-  CONSTRAINT unique_pending_invite UNIQUE(email, workspace_id, status) WHERE status = 'pending'
+  CONSTRAINT valid_status CHECK (status IN ('pending', 'accepted', 'expired', 'revoked'))
 );
 
 -- Indexes
@@ -177,6 +176,9 @@ CREATE INDEX idx_invitations_token ON invitations(token);
 CREATE INDEX idx_invitations_status ON invitations(status) WHERE status = 'pending';
 CREATE INDEX idx_invitations_workspace ON invitations(workspace_id);
 CREATE INDEX idx_invitations_expires ON invitations(expires_at) WHERE status = 'pending';
+
+-- Unique constraint for pending invitations (partial unique index)
+CREATE UNIQUE INDEX unique_pending_invite ON invitations(email, workspace_id) WHERE status = 'pending';
 
 -- =====================================================
 -- 5. PROFILES TABLE UPDATES
@@ -324,8 +326,8 @@ BEGIN
     SELECT COUNT(*) INTO v_current_count FROM projects WHERE organization_id = p_organization_id;
   ELSIF p_limit_type = 'members' THEN
     SELECT max_members INTO v_limit FROM subscription_plans WHERE id = v_plan_id;
-    SELECT COUNT(*) INTO v_current_count FROM workspace_members 
-    WHERE workspace_id IN (SELECT id FROM workspaces WHERE organization_id = p_organization_id);
+    SELECT COUNT(*) INTO v_current_count FROM organization_members 
+    WHERE organization_id = p_organization_id;
   ELSE
     RETURN true; -- Unknown limit type, allow
   END IF;
@@ -425,7 +427,7 @@ CREATE POLICY "Users can view subscriptions in their organization"
   ON subscriptions FOR SELECT
   USING (
     organization_id IN (
-      SELECT organization_id FROM workspace_members 
+      SELECT organization_id FROM organization_members 
       WHERE user_id = auth.uid()
     )
   );
@@ -434,11 +436,11 @@ CREATE POLICY "Organization admins can manage subscriptions"
   ON subscriptions FOR ALL
   USING (
     organization_id IN (
-      SELECT wm.organization_id 
-      FROM workspace_members wm
-      JOIN user_role_assignments ura ON wm.user_id = ura.user_id
+      SELECT om.organization_id 
+      FROM organization_members om
+      JOIN user_role_assignments ura ON om.user_id = ura.user_id
       JOIN roles r ON ura.role_id = r.id
-      WHERE wm.user_id = auth.uid()
+      WHERE om.user_id = auth.uid()
         AND r.level <= 2 -- Phantom or Legend only
     )
   );
@@ -452,7 +454,7 @@ CREATE POLICY "Users can view usage in their subscription"
     subscription_id IN (
       SELECT s.id FROM subscriptions s
       WHERE s.organization_id IN (
-        SELECT organization_id FROM workspace_members WHERE user_id = auth.uid()
+        SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
       )
     )
   );
@@ -474,8 +476,8 @@ CREATE POLICY "Users with permission can send invitations"
   ON invitations FOR INSERT
   WITH CHECK (
     invited_by = auth.uid()
-    AND workspace_id IN (
-      SELECT workspace_id FROM workspace_members WHERE user_id = auth.uid()
+    AND organization_id IN (
+      SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
     )
   );
 
