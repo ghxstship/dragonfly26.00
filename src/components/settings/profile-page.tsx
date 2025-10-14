@@ -34,9 +34,11 @@ export function ProfilePage() {
     title: "",
     bio: "",
     company: "",
+    location: "",
     website: "",
     linkedin: "",
     twitter: "",
+    github: "",
   })
   const [avatarUrl, setAvatarUrl] = useState("")
 
@@ -48,9 +50,11 @@ export function ProfilePage() {
         title: profile.job_title || "",
         bio: profile.bio || "",
         company: profile.company || "",
+        location: profile.location || "",
         website: profile.website_url || "",
         linkedin: profile.linkedin_url || "",
         twitter: profile.twitter_url || "",
+        github: profile.github_url || "",
       })
       setAvatarUrl(profile.avatar_url || "")
     }
@@ -64,9 +68,11 @@ export function ProfilePage() {
         job_title: formData.title,
         bio: formData.bio,
         company: formData.company,
+        location: formData.location,
         website_url: formData.website,
         linkedin_url: formData.linkedin,
         twitter_url: formData.twitter,
+        github_url: formData.github,
       })
       
       toast({

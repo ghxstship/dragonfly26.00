@@ -27,6 +27,7 @@ export interface ProfileData {
   state: string | null
   zip_code: string | null
   country: string | null
+  location: string | null
   
   // Emergency Contact
   emergency_contact_name: string | null
@@ -67,6 +68,7 @@ export interface ProfileData {
   linkedin_url: string | null
   twitter_url: string | null
   instagram_url: string | null
+  github_url: string | null
   website_url: string | null
   
   // Preferences
