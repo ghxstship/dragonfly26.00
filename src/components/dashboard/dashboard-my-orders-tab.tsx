@@ -93,6 +93,9 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
     total: `$${order.total || 0}`,
     trackingNumber: order.tracking_number || 'Pending',
     project: order.production?.name || 'No Project',
+    deliveryDate: order.delivered_at ? new Date(order.delivered_at).toLocaleDateString() : undefined,
+    estimatedDelivery: order.estimated_delivery ? new Date(order.estimated_delivery).toLocaleDateString() : undefined,
+    cancellationReason: order.cancellation_reason || undefined,
   })) : mockOrders
   
   if (loading) {
