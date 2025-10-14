@@ -156,7 +156,7 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
       const transformed = data.map((item: any) => ({
         id: item.id,
         author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Unknown',
-        authorTitle: item.author?.title || 'Community Member',
+        authorTitle: item.author?.job_title || 'Community Member',
         authorImage: item.author?.avatar_url,
         content: item.content || '',
         image: item.media_urls?.[0],

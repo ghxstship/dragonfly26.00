@@ -161,7 +161,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
       const transformed: ShowcasePost[] = data.map((item: any) => ({
         id: item.id,
         author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Anonymous',
-        authorTitle: item.author?.title || 'Community Member',
+        authorTitle: item.author?.job_title || 'Community Member',
         authorImage: item.author?.avatar_url,
         company: item.author?.company || 'Company',
         content: item.content || '',

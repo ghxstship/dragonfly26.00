@@ -198,7 +198,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
         content: item.content || '',
         author: item.author ? `${item.author.first_name}_${item.author.last_name}`.toLowerCase() : 'anonymous',
         authorImage: item.author?.avatar_url,
-        authorFlair: item.author?.title,
+        authorFlair: item.author?.job_title,
         category: item.tags?.[0] || 'General',
         timestamp: item.created_at,
         upvotes: item.likes_count || 0,

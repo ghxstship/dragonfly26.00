@@ -70,7 +70,18 @@ interface InsightsObjectivesTabProps {
 }
 
 export function InsightsObjectivesTab({ data = [], loading = false }: InsightsObjectivesTabProps) {
-  const displayObjectives = data.length > 0 ? data : objectives
+  // Transform data to ensure owner has name field
+  const transformedData = data.length > 0 ? data.map((item: any) => ({
+    ...item,
+    owner: item.owner ? {
+      ...item.owner,
+      name: item.owner.first_name && item.owner.last_name 
+        ? `${item.owner.first_name} ${item.owner.last_name}`
+        : item.owner.name || 'Unknown'
+    } : null
+  })) : objectives
+  
+  const displayObjectives = transformedData
   return (
     <div className="space-y-6">
       {/* Quick Stats */}

@@ -187,9 +187,9 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
           name: connectedUser.first_name && connectedUser.last_name 
             ? `${connectedUser.first_name} ${connectedUser.last_name}` 
             : 'Unknown User',
-          title: connectedUser.title || 'Professional',
+          title: connectedUser.job_title || 'Professional',
           company: connectedUser.company || 'Company',
-          location: connectedUser.location || 'Location',
+          location: [connectedUser.city, connectedUser.state].filter(Boolean).join(', ') || 'Location',
           image: connectedUser.avatar_url,
           connectionDate: item.status === 'accepted' ? (item.accepted_at || item.requested_at) : item.requested_at,
           mutualConnections: 0, // Not yet tracked

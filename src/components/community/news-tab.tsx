@@ -175,6 +175,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
         sourceImage: item.author?.avatar_url,
         category: item.is_sponsored ? 'sponsored' : (item.is_featured ? 'curated' : 'industry'),
         author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Anonymous',
+        authorTitle: item.author?.job_title || 'Community Member',
         publishedAt: item.created_at,
         image: item.media_urls?.[0],
         url: '#',
