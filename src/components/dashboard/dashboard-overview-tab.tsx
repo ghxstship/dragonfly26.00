@@ -118,7 +118,8 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       change: "+2",
       trend: "up",
       icon: CheckSquare,
-      color: "text-blue-600",
+      color: "text-purple-600",
+      bgColor: "bg-purple-100 dark:bg-purple-950",
     },
     {
       label: "Upcoming Events",
@@ -126,7 +127,8 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       change: "+1",
       trend: "up",
       icon: Calendar,
-      color: "text-green-600",
+      color: "text-red-600",
+      bgColor: "bg-red-100 dark:bg-red-950",
     },
     {
       label: "Active Jobs",
@@ -134,7 +136,8 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       change: "0",
       trend: "neutral",
       icon: Briefcase,
-      color: "text-orange-600",
+      color: "text-blue-600",
+      bgColor: "bg-blue-100 dark:bg-blue-950",
     },
     {
       label: "Pending Expenses",
@@ -142,25 +145,26 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       change: "-1",
       trend: "down",
       icon: Receipt,
-      color: "text-purple-600",
+      color: "text-green-600",
+      bgColor: "bg-green-100 dark:bg-green-950",
     },
   ] : mockStats
 
   // Widget suggestions for customizable dashboard
   const widgetTypes = [
-    { id: 1, name: "My Tasks", icon: CheckSquare, route: `/workspace/${workspaceId}/dashboard/my-tasks` },
-    { id: 2, name: "My Agenda", icon: Calendar, route: `/workspace/${workspaceId}/dashboard/my-agenda` },
-    { id: 3, name: "My Jobs", icon: Briefcase, route: `/workspace/${workspaceId}/dashboard/my-jobs` },
-    { id: 4, name: "My Assets", icon: Package, route: `/workspace/${workspaceId}/dashboard/my-assets` },
-    { id: 5, name: "My Expenses", icon: Receipt, route: `/workspace/${workspaceId}/dashboard/my-expenses` },
-    { id: 6, name: "My Reports", icon: FileBarChart, route: `/workspace/${workspaceId}/dashboard/my-reports` },
+    { id: 1, name: "My Tasks", icon: CheckSquare, color: "bg-purple-500", route: `/workspace/${workspaceId}/dashboard/my-tasks` },
+    { id: 2, name: "My Agenda", icon: Calendar, color: "bg-red-500", route: `/workspace/${workspaceId}/dashboard/my-agenda` },
+    { id: 3, name: "My Jobs", icon: Briefcase, color: "bg-blue-500", route: `/workspace/${workspaceId}/dashboard/my-jobs` },
+    { id: 4, name: "My Assets", icon: Package, color: "bg-orange-500", route: `/workspace/${workspaceId}/dashboard/my-assets` },
+    { id: 5, name: "My Expenses", icon: Receipt, color: "bg-green-500", route: `/workspace/${workspaceId}/dashboard/my-expenses` },
+    { id: 6, name: "My Reports", icon: FileBarChart, color: "bg-cyan-500", route: `/workspace/${workspaceId}/dashboard/my-reports` },
   ]
 
   const quickActions = [
-    { label: "Log Expense", icon: Receipt, action: () => router.push(`/workspace/${workspaceId}/finance/expenses`) },
-    { label: "Book Travel", icon: Plane, action: () => {} },
-    { label: "Create Task", icon: CheckSquare, action: () => router.push(`/workspace/${workspaceId}/projects/tasks`) },
-    { label: "Upload File", icon: FolderOpen, action: () => router.push(`/workspace/${workspaceId}/files/all-documents`) },
+    { label: "Log Expense", icon: Receipt, color: "text-green-600", action: () => router.push(`/workspace/${workspaceId}/finance/expenses`) },
+    { label: "Book Travel", icon: Plane, color: "text-blue-600", action: () => {} },
+    { label: "Create Task", icon: CheckSquare, color: "text-purple-600", action: () => router.push(`/workspace/${workspaceId}/projects/tasks`) },
+    { label: "Upload File", icon: FolderOpen, color: "text-orange-600", action: () => router.push(`/workspace/${workspaceId}/files/all-documents`) },
   ]
 
   return (
