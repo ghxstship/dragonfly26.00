@@ -107,6 +107,7 @@ Historical bug fixes and resolutions:
 
 - [ONBOARDING_FIXES_HISTORY.md](fixes/ONBOARDING_FIXES_HISTORY.md) - Complete onboarding bug fix history | Status: ✅ All resolved
 - [HEADER_RESPONSIVE_FIX.md](fixes/HEADER_RESPONSIVE_FIX.md) - Header responsive layout fix | Status: ✅ Complete
+- [RELATIONSHIP_FIX_SUMMARY.md](RELATIONSHIP_FIX_SUMMARY.md) - Database relationship query fixes | Status: ✅ Complete
 
 ---
 
@@ -127,6 +128,11 @@ Development and operational guides:
 - [RESPONSIVE_TEST_GUIDE.md](guides/RESPONSIVE_TEST_GUIDE.md) - Responsive testing
 - [LANGUAGE_TESTING_GUIDE.md](guides/LANGUAGE_TESTING_GUIDE.md) - i18n testing
 
+### Implementation
+- [STORAGE_SETUP.md](STORAGE_SETUP.md) - Supabase storage configuration | Status: ✅ Complete
+- [RESPONSIVE_OPTIMIZATION_IMPLEMENTATION.md](RESPONSIVE_OPTIMIZATION_IMPLEMENTATION.md) - Mobile responsive optimizations | Status: ✅ Complete
+- [ICON_AUDIT_SUMMARY.md](ICON_AUDIT_SUMMARY.md) - Icon usage audit and guidelines | Status: ✅ Complete
+
 ---
 
 ## 📊 Project Status
@@ -137,12 +143,22 @@ Development and operational guides:
 - **UI Components**: ✅ 95% Complete - Mock data ready for real data
 - **Internationalization**: 🟡 70% Complete - Infrastructure done, strings in progress
 - **Documentation**: ✅ 100% Complete - Fully consolidated and organized
+- **Supabase Integration**: ✅ 100% Complete - All modules connected
+- **Field Mapping**: ✅ 100% Complete - All 500+ fields aligned
 
 ### Module Status
 All 20 modules implemented with full tab support (174 tabs total).
 
 ### Layer Status
 All 8 architectural layers complete and deployed.
+
+### Integration Status
+- [SUPABASE_INTEGRATION_STATUS.md](../SUPABASE_INTEGRATION_STATUS.md) - Complete integration status | Status: ✅ Production Ready
+- [FIELD_MAPPING_STATUS.md](../FIELD_MAPPING_STATUS.md) - Field mapping reference | Status: ✅ 100% Complete
+
+### Business Documents
+- [ENTERPRISE_READINESS_CHECKLIST.md](ENTERPRISE_READINESS_CHECKLIST.md) - Enterprise feature checklist
+- [PRICING_STRUCTURE.md](PRICING_STRUCTURE.md) - Product pricing tiers
 
 ---
 
