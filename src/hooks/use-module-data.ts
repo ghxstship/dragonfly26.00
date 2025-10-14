@@ -117,14 +117,14 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'approvals': { table: 'production_advances', select: '*, production:productions!production_id(name, status), requested_by_user:profiles!requested_by(first_name, last_name)', orderBy: 'created_at' },
   
   // Community
-  'news': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, title, company)', orderBy: 'created_at' },
-  'showcase': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, title, company)', orderBy: 'created_at' },
-  'activity': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, title, company)', orderBy: 'created_at' },
-  'connections': { table: 'connections', select: '*, user:profiles!user_id(id, first_name, last_name, avatar_url, title, company, location), connected_user:profiles!connected_user_id(id, first_name, last_name, avatar_url, title, company, location)', orderBy: 'requested_at' },
+  'news': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, job_title, company)', orderBy: 'created_at' },
+  'showcase': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, job_title, company)', orderBy: 'created_at' },
+  'activity': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, job_title, company)', orderBy: 'created_at' },
+  'connections': { table: 'connections', select: '*, user:profiles!user_id(id, first_name, last_name, avatar_url, job_title, company, city, state), connected_user:profiles!connected_user_id(id, first_name, last_name, avatar_url, job_title, company, city, state)', orderBy: 'requested_at' },
   'studios': { table: 'companies', select: '*, industry, website, description, logo_url', orderBy: 'name' },
   'community-events': { table: 'events', select: '*, location:locations!location_id(name, city, state), production:productions!production_id(name)', orderBy: 'start_time' },
-  'discussions': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, title, company)', orderBy: 'created_at' },
-  'competitions': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, title, company)', orderBy: 'created_at' },
+  'discussions': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, job_title, company)', orderBy: 'created_at' },
+  'competitions': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, job_title, company)', orderBy: 'created_at' },
   
   // Marketplace
   'spotlight': { table: 'marketplace_products', select: '*, vendor:companies!vendor_id(name)', orderBy: 'created_at' },
