@@ -56,7 +56,7 @@ const kpis = [
 ]
 
 export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOverviewTabProps) {
-  const displayMetrics = data.length > 0 ? data : metrics
+  const displayMetrics = data || []
   return (
     <div className="space-y-6">
       {/* Key Metrics Grid */}

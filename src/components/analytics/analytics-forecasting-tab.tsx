@@ -46,7 +46,7 @@ interface AnalyticsForecastingTabProps {
 }
 
 export function AnalyticsForecastingTab({ data = [], loading = false }: AnalyticsForecastingTabProps) {
-  const displayData = data.length > 0 ? data : forecasts
+  const displayData = data || []
   return (
     <div className="space-y-6">
       <div className="grid gap-6">

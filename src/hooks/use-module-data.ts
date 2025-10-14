@@ -53,10 +53,10 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'assignments': { table: 'personnel_assignments', select: '*, personnel:personnel!personnel_id(first_name, last_name), production:productions!production_id(name)', orderBy: 'created_at' },
   'timekeeping': { table: 'time_entries', select: '*, personnel:personnel!personnel_id(first_name, last_name)', orderBy: 'start_time' },
   'scheduling': { table: 'events', select: '*, location:locations!location_id(name, city)', orderBy: 'start_time' },
-  'training': { table: 'training_records', select: '*, personnel:personnel!personnel_id(first_name, last_name)', orderBy: 'completion_date' },
+  'training': { table: 'training_records', select: '*, personnel:personnel!personnel_id(first_name, last_name)', orderBy: 'completed_date' },
   'onboarding': { table: 'personnel', select: '*', orderBy: 'created_at' },
   'openings': { table: 'job_openings', select: '*', orderBy: 'created_at' },
-  'applicants': { table: 'job_applicants', select: '*, job_opening:job_openings!job_opening_id(title)', orderBy: 'created_at' },
+  'applicants': { table: 'job_applicants', select: '*, job_opening:job_openings!job_opening_id(title)', orderBy: 'applied_at' },
   
   // Assets
   'tracking': { table: 'asset_transactions', select: '*, asset:assets!asset_id(name, type), checked_out_person:personnel!checked_out_to(first_name, last_name)', orderBy: 'created_at' },

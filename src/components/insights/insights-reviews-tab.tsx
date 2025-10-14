@@ -65,7 +65,7 @@ interface InsightsReviewsTabProps {
 }
 
 export function InsightsReviewsTab({ data = [], loading = false }: InsightsReviewsTabProps) {
-  const displayReviews = data.length > 0 ? data : pastReviews
+  const displayReviews = data || []
   return (
     <div className="space-y-6">
       {/* Upcoming Reviews */}

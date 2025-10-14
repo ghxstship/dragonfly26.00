@@ -58,7 +58,7 @@ interface ReportsExecutiveTabProps {
 }
 
 export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecutiveTabProps) {
-  const displayData = data.length > 0 ? data : executiveReports
+  const displayData = data || []
   return (
     <div className="space-y-6">
       {/* KPI Summary Dashboard */}

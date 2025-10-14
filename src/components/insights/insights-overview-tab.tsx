@@ -51,7 +51,7 @@ interface InsightsOverviewTabProps {
 }
 
 export function InsightsOverviewTab({ data = [], loading = false }: InsightsOverviewTabProps) {
-  const displayGoals = data.length > 0 ? data : objectives
+  const displayGoals = data || []
   return (
     <div className="space-y-6">
       {/* Header Stats */}

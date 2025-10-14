@@ -47,7 +47,7 @@ interface InsightsProgressTrackingTabProps {
 }
 
 export function InsightsProgressTrackingTab({ data = [], loading = false }: InsightsProgressTrackingTabProps) {
-  const displayProgress = data.length > 0 ? data : progressData
+  const displayProgress = data || []
   return (
     <div className="space-y-6">
       {/* Overall Progress Summary */}

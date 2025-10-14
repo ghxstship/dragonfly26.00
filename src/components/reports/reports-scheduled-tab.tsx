@@ -58,7 +58,7 @@ interface ReportsScheduledTabProps {
 }
 
 export function ReportsScheduledTab({ data = [], loading = false }: ReportsScheduledTabProps) {
-  const displayReports = data.length > 0 ? data : scheduledReports
+  const displayReports = data || []
   return (
     <div className="space-y-6">
       <div className="grid gap-4">

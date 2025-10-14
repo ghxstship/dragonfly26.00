@@ -72,7 +72,7 @@ interface AnalyticsTrendsTabProps {
 
 export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTrendsTabProps) {
   const isMobile = useIsMobile()
-  const displayData = data.length > 0 ? data : trendData
+  const displayData = data || []
   
   return (
     <div className="space-y-6">

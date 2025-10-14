@@ -73,7 +73,7 @@ interface InsightsIntelligenceFeedTabProps {
 }
 
 export function InsightsIntelligenceFeedTab({ data = [], loading = false }: InsightsIntelligenceFeedTabProps) {
-  const displayInsights = data.length > 0 ? data : insights
+  const displayInsights = data || []
   return (
     <div className="space-y-6">
       {/* Filter Badges */}

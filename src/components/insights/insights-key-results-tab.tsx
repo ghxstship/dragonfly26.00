@@ -86,7 +86,7 @@ interface InsightsKeyResultsTabProps {
 }
 
 export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKeyResultsTabProps) {
-  const displayKeyResults = data.length > 0 ? data : keyResults
+  const displayKeyResults = data || []
   return (
     <div className="space-y-6">
       {/* Summary Cards */}

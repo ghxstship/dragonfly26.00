@@ -62,7 +62,7 @@ interface InsightsBenchmarksTabProps {
 }
 
 export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBenchmarksTabProps) {
-  const displayData = data.length > 0 ? data : benchmarks
+  const displayData = data || []
   return (
     <div className="space-y-6">
       <div className="grid gap-6">

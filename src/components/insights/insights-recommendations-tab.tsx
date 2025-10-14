@@ -84,7 +84,7 @@ interface InsightsRecommendationsTabProps {
 }
 
 export function InsightsRecommendationsTab({ data = [], loading = false }: InsightsRecommendationsTabProps) {
-  const displayRecommendations = data.length > 0 ? data : recommendations
+  const displayRecommendations = data || []
   return (
     <div className="space-y-6">
       <div className="grid gap-6">

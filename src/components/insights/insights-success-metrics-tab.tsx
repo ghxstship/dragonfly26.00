@@ -44,7 +44,7 @@ interface InsightsSuccessMetricsTabProps {
 }
 
 export function InsightsSuccessMetricsTab({ data = [], loading = false }: InsightsSuccessMetricsTabProps) {
-  const displayMetrics = data.length > 0 ? data : successMetrics
+  const displayMetrics = data || []
   const totalScore = Math.round(
     successMetrics.reduce((sum, cat) => sum + cat.overallScore, 0) / successMetrics.length
   )

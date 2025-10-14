@@ -74,7 +74,7 @@ interface ReportsComplianceTabProps {
 }
 
 export function ReportsComplianceTab({ data = [], loading = false }: ReportsComplianceTabProps) {
-  const displayReports = data.length > 0 ? data : complianceReports
+  const displayReports = data || []
   return (
     <div className="space-y-6">
       {/* Status Summary */}

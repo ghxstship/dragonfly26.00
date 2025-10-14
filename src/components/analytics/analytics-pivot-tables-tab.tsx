@@ -20,7 +20,7 @@ interface AnalyticsPivotTablesTabProps {
 }
 
 export function AnalyticsPivotTablesTab({ data = [], loading = false }: AnalyticsPivotTablesTabProps) {
-  const displayData = data.length > 0 ? data : pivotData
+  const displayData = data || []
   return (
     <div className="space-y-6">
       <div className="flex justify-end">

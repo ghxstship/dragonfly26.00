@@ -28,7 +28,7 @@ interface AnalyticsRealtimeTabProps {
 }
 
 export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRealtimeTabProps) {
-  const displayMetrics = data.length > 0 ? data : realtimeMetrics
+  const displayMetrics = data || []
   return (
     <div className="space-y-6">
       {/* Real-time Metrics */}

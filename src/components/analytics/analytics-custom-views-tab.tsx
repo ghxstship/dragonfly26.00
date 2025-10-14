@@ -46,7 +46,7 @@ interface AnalyticsCustomViewsTabProps {
 }
 
 export function AnalyticsCustomViewsTab({ data = [], loading = false }: AnalyticsCustomViewsTabProps) {
-  const displayViews = data.length > 0 ? data : customViews
+  const displayViews = data || []
   return (
     <div className="space-y-6">
       <div className="flex justify-end">

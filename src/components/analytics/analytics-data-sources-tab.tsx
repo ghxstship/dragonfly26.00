@@ -59,7 +59,7 @@ interface AnalyticsDataSourcesTabProps {
 }
 
 export function AnalyticsDataSourcesTab({ data = [], loading = false }: AnalyticsDataSourcesTabProps) {
-  const displaySources = data.length > 0 ? data : dataSources
+  const displaySources = data || []
   return (
     <div className="space-y-6">
       {/* Status Summary */}

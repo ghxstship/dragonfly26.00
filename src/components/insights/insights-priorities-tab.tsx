@@ -79,7 +79,7 @@ interface InsightsPrioritiesTabProps {
 }
 
 export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPrioritiesTabProps) {
-  const displayPriorities = data.length > 0 ? data : priorities
+  const displayPriorities = data || []
   return (
     <div className="space-y-6">
       {/* Prioritization Matrix */}

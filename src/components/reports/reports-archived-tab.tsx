@@ -23,7 +23,7 @@ interface ReportsArchivedTabProps {
 }
 
 export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchivedTabProps) {
-  const displayReports = data.length > 0 ? data : archivedReports
+  const displayReports = data || []
   return (
     <div className="space-y-6">
       {/* Search and Filter Bar */}

@@ -51,7 +51,7 @@ interface AnalyticsComparisonsTabProps {
 }
 
 export function AnalyticsComparisonsTab({ data = [], loading = false }: AnalyticsComparisonsTabProps) {
-  const displayData = data.length > 0 ? data : comparisonData
+  const displayData = data || []
   return (
     <div className="space-y-6">
       <Tabs defaultValue="quarterly">

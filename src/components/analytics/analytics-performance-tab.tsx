@@ -58,7 +58,7 @@ interface AnalyticsPerformanceTabProps {
 }
 
 export function AnalyticsPerformanceTab({ data = [], loading = false }: AnalyticsPerformanceTabProps) {
-  const displayData = data.length > 0 ? data : performanceAreas
+  const displayData = data || []
   return (
     <div className="space-y-6">
       <div className="grid gap-6">
