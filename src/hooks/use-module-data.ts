@@ -44,7 +44,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'reservations': { table: 'hospitality_reservations', select: '*, event:events!event_id(name)', orderBy: 'reservation_date' },
   'equipment': { table: 'assets', select: '*, location:locations!location_id(name, city)', orderBy: 'name' },
   'shipping-receiving': { table: 'shipments', select: '*, production:productions!production_id(name)', orderBy: 'ship_date' },
-  'incidents': { table: 'incidents', select: '*, event:events!event_id(name), reported_by_user:profiles!reported_by(first_name, last_name)', orderBy: 'incident_date' },
+  'incidents': { table: 'incidents', select: '*, event:events!event_id(name), reported_by_user:profiles!reported_by(first_name, last_name)', orderBy: 'occurred_at' },
   'internal': { table: 'events', select: '*, location:locations!location_id(name, city), production:productions!production_id(name)', orderBy: 'start_time' },
   
   // People

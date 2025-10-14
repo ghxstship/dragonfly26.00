@@ -52,7 +52,7 @@ export function FilesTabContent() {
       
       try {
         const { data, error } = await supabase
-          .from('attachments')
+          .from('files')
           .select('*')
           .eq('workspace_id', currentWorkspace.id)
           .order('created_at', { ascending: false })
@@ -63,10 +63,10 @@ export function FilesTabContent() {
         // Transform to FileItem format
         const fileItems: FileItem[] = (data || []).map((item: any) => ({
           id: item.id,
-          name: item.file_name || 'Untitled',
-          size: item.file_size || 0,
-          type: item.file_type || 'application/octet-stream',
-          url: item.file_url || '',
+          name: item.name || 'Untitled',
+          size: item.size_bytes || 0,
+          type: item.type || 'application/octet-stream',
+          url: item.storage_path || '',
           created_at: item.created_at,
         }))
         
@@ -98,25 +98,25 @@ export function FilesTabContent() {
       const fileName = `${currentUser.id}/${Date.now()}.${fileExt}`
       
       const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('attachments')
+        .from('documents')
         .upload(fileName, file)
 
       if (uploadError) throw uploadError
 
       // Get public URL
       const { data: { publicUrl } } = supabase.storage
-        .from('attachments')
+        .from('documents')
         .getPublicUrl(fileName)
 
-      // Create attachment record
+      // Create file record
       const { data: attachmentData, error: attachmentError } = await supabase
-        .from('attachments')
+        .from('files')
         .insert({
           workspace_id: currentWorkspace.id,
-          file_name: file.name,
-          file_type: file.type,
-          file_size: file.size,
-          file_url: publicUrl,
+          name: file.name,
+          type: file.type,
+          size_bytes: file.size,
+          storage_path: publicUrl,
           uploaded_by: currentUser.id,
         })
         .select()
@@ -156,19 +156,19 @@ export function FilesTabContent() {
   const handleDelete = async (id: string, url: string) => {
     try {
       // Extract file path from URL
-      const urlParts = url.split('/attachments/')
+      const urlParts = url.split('/documents/')
       const filePath = urlParts[1]
 
       // Delete from storage
       if (filePath) {
         await supabase.storage
-          .from('attachments')
+          .from('documents')
           .remove([filePath])
       }
 
       // Delete from database
       const { error } = await supabase
-        .from('attachments')
+        .from('files')
         .delete()
         .eq('id', id)
 

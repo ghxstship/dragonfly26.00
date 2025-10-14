@@ -51,7 +51,7 @@ export function AgendaTabContent() {
 
         // Fetch tasks due today
         const { data: tasks, error: tasksError } = await supabase
-          .from('tasks')
+          .from('project_tasks')
           .select('id, name, due_date, status, priority')
           .eq('workspace_id', currentWorkspace.id)
           .gte('due_date', today.toISOString())
@@ -68,7 +68,7 @@ export function AgendaTabContent() {
           type: 'task' as const,
           start_time: task.due_date,
           end_time: null,
-          completed: task.status === 'completed',
+          completed: task.status === 'done',
           priority: task.priority,
         }))
 
@@ -91,8 +91,8 @@ export function AgendaTabContent() {
   const toggleComplete = async (id: string, completed: boolean) => {
     try {
       const { error } = await supabase
-        .from('tasks')
-        .update({ status: completed ? 'in_progress' : 'completed' })
+        .from('project_tasks')
+        .update({ status: completed ? 'in_progress' : 'done' })
         .eq('id', id)
 
       if (error) throw error

@@ -52,6 +52,7 @@ import { getInitials, cn } from "@/lib/utils"
 import { useUIStore } from "@/store/ui-store"
 import { useWorkspaceStore } from "@/store/workspace-store"
 import { ItemType, getModuleTabForItemType } from "@/lib/modules/item-type-to-module-mapper"
+import { createClient } from "@/lib/supabase/client"
 
 export function TopBar() {
   const t = useTranslations()
@@ -125,6 +126,16 @@ export function TopBar() {
 
   const handleCreateToken = () => {
     setCreateTokenOpen(true)
+  }
+
+  const handleLogout = async () => {
+    try {
+      const supabase = createClient()
+      await supabase.auth.signOut()
+      router.push('/login')
+    } catch (error) {
+      console.error("Error logging out:", error)
+    }
   }
 
   return (
@@ -408,7 +419,7 @@ export function TopBar() {
                 <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/billing`)}>
                   {t('nav.billing')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/invite`)}>
+                <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/settings/team`)}>
                   {t('nav.team')}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/invite`)}>
@@ -418,11 +429,7 @@ export function TopBar() {
               <DropdownMenuSeparator />
               <DropdownMenuItem 
                 className="text-destructive"
-                onClick={() => {
-                  // TODO: Implement logout logic
-                  console.log("Logging out...")
-                  router.push('/login')
-                }}
+                onClick={handleLogout}
               >
                 {t('nav.logout')}
               </DropdownMenuItem>

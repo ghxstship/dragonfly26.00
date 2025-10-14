@@ -189,7 +189,7 @@ export function useIncidents(workspaceId: string, eventId?: string) {
         query = query.eq('event_id', eventId)
       }
 
-      const { data, error } = await query.order('incident_date', { ascending: false })
+      const { data, error } = await query.order('occurred_at', { ascending: false })
 
       if (!error && data) {
         setIncidents(data)

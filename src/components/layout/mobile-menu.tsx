@@ -57,9 +57,7 @@ export function MobileMenu() {
     {
       label: "Help",
       icon: HelpCircle,
-      action: () => {
-        // Open help
-      },
+      action: () => setRightSidebarOpen(true, 'help'),
     },
   ]
 

@@ -45,7 +45,7 @@ export function TasksTabContent() {
       
       try {
         const { data, error } = await supabase
-          .from('tasks')
+          .from('project_tasks')
           .select('id, name, status, priority, due_date, created_at')
           .eq('workspace_id', currentWorkspace.id)
           .order('created_at', { ascending: false })
@@ -79,7 +79,7 @@ export function TasksTabContent() {
         {
           event: '*',
           schema: 'public',
-          table: 'tasks',
+          table: 'project_tasks',
           filter: `workspace_id=eq.${currentWorkspace.id}`,
         },
         (payload) => {
@@ -102,11 +102,11 @@ export function TasksTabContent() {
   }, [supabase, currentWorkspace?.id])
 
   const toggleComplete = async (id: string, currentStatus: string) => {
-    const newStatus = currentStatus === 'completed' ? 'in_progress' : 'completed'
+    const newStatus = currentStatus === 'done' ? 'in_progress' : 'done'
     
     try {
       const { error } = await supabase
-        .from('tasks')
+        .from('project_tasks')
         .update({ status: newStatus })
         .eq('id', id)
 
@@ -127,8 +127,8 @@ export function TasksTabContent() {
     }
   }
 
-  const activeTasks = tasks.filter(t => t.status !== 'completed')
-  const completedTasks = tasks.filter(t => t.status === 'completed')
+  const activeTasks = tasks.filter(t => t.status !== 'done')
+  const completedTasks = tasks.filter(t => t.status === 'done')
   const overdueTasks = activeTasks.filter(t => 
     t.due_date && new Date(t.due_date) < new Date()
   )
@@ -267,7 +267,7 @@ function TaskCard({
   onToggleComplete: (id: string, status: string) => void
   showOverdue?: boolean
 }) {
-  const isCompleted = task.status === 'completed'
+  const isCompleted = task.status === 'done'
   const isOverdue = task.due_date && new Date(task.due_date) < new Date() && !isCompleted
 
   return (

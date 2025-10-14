@@ -275,26 +275,27 @@ export const eventsForms: Record<string, TabFormConfig> = {
     description: 'Document incident or safety issue',
     submitLabel: 'Report Incident',
     fields: [
-      { name: 'incident_type', label: 'Type', type: 'select', required: true, options: [
+      { name: 'title', label: 'Title', type: 'text', required: true },
+      { name: 'type', label: 'Type', type: 'select', required: true, options: [
         { value: 'injury', label: 'Injury' },
-        { value: 'equipment_damage', label: 'Equipment Damage' },
+        { value: 'equipment_failure', label: 'Equipment Failure' },
         { value: 'safety_violation', label: 'Safety Violation' },
         { value: 'security', label: 'Security Incident' },
         { value: 'other', label: 'Other' }
       ]},
       { name: 'event', label: 'Event', type: 'autocomplete' },
-      { name: 'incident_date', label: 'Date & Time', type: 'datetime', required: true },
+      { name: 'occurred_at', label: 'Date & Time', type: 'datetime', required: true },
       { name: 'location', label: 'Location', type: 'location', required: true },
       { name: 'reported_by', label: 'Reported By', type: 'user', required: true },
-      { name: 'involved_parties', label: 'Involved Parties', type: 'multiuser' },
+      { name: 'witnesses', label: 'Witnesses', type: 'multiuser' },
       { name: 'description', label: 'Description', type: 'richtext', required: true },
       { name: 'severity', label: 'Severity', type: 'select', required: true, options: [
-        { value: 'low', label: 'Low' },
-        { value: 'medium', label: 'Medium' },
-        { value: 'high', label: 'High' },
+        { value: 'minor', label: 'Minor' },
+        { value: 'moderate', label: 'Moderate' },
+        { value: 'serious', label: 'Serious' },
         { value: 'critical', label: 'Critical' }
       ]},
-      { name: 'action_taken', label: 'Immediate Action Taken', type: 'textarea' },
+      { name: 'actions_taken', label: 'Immediate Actions Taken', type: 'textarea' },
       { name: 'follow_up_required', label: 'Follow-up Required', type: 'switch' },
       { name: 'attachments', label: 'Photos/Documents', type: 'file' }
     ]
