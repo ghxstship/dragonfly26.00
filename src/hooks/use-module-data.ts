@@ -234,7 +234,13 @@ export function useModuleData(
         let query = supabase
           .from(config.table)
           .select(config.select || '*')
-          .eq('workspace_id', workspaceId)
+        
+        // For workspaces table, query by id instead of workspace_id
+        if (config.table === 'workspaces') {
+          query = query.eq('id', workspaceId)
+        } else {
+          query = query.eq('workspace_id', workspaceId)
+        }
 
         // Apply additional filters
         Object.entries(filters).forEach(([key, value]) => {
@@ -282,6 +288,9 @@ export function useModuleData(
     
     if (!config) return
 
+    // For workspaces table, filter by id instead of workspace_id
+    const filterColumn = config.table === 'workspaces' ? 'id' : 'workspace_id'
+    
     const channel = supabase
       .channel(`${moduleSlug}:${tabSlug}:${workspaceId}`)
       .on(
@@ -290,7 +299,7 @@ export function useModuleData(
           event: '*',
           schema: 'public',
           table: config.table,
-          filter: `workspace_id=eq.${workspaceId}`
+          filter: `${filterColumn}=eq.${workspaceId}`
         },
         () => {
           fetchData()
