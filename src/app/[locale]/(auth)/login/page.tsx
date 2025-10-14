@@ -41,7 +41,7 @@ export default function LoginPage() {
       setLoading(false)
     } else {
       // Redirect to auth-check page which will handle routing based on auth state
-      router.push(`/${locale}/auth-check`)
+      router.push('/auth-check')
     }
   }
 

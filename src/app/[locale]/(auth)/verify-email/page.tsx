@@ -44,7 +44,7 @@ export default function VerifyEmailPage() {
           setStatus('success')
           // Redirect to auth-check after 3 seconds - it will handle routing
           setTimeout(() => {
-            router.push(`/${locale}/auth-check`)
+            router.push('/auth-check')
           }, 3000)
         }
       } else {
@@ -128,7 +128,7 @@ export default function VerifyEmailPage() {
             </p>
             <Button
               className="w-full"
-              onClick={() => router.push(`/${locale}/auth-check`)}
+              onClick={() => router.push('/auth-check')}
             >
               Continue to workspace
             </Button>
