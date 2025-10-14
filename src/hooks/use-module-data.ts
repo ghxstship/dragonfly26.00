@@ -235,10 +235,15 @@ export function useModuleData(
           .from(config.table)
           .select(config.select || '*')
         
-        // For workspaces table, query by id instead of workspace_id
+        // Handle tables with special filtering logic
         if (config.table === 'workspaces') {
+          // Workspaces table: filter by id (not workspace_id)
           query = query.eq('id', workspaceId)
+        } else if (config.table === 'connections') {
+          // Connections table: user-to-user, no workspace_id
+          // Don't filter by workspace - connections are global per user
         } else {
+          // Standard case: filter by workspace_id
           query = query.eq('workspace_id', workspaceId)
         }
 
@@ -288,23 +293,28 @@ export function useModuleData(
     
     if (!config) return
 
-    // For workspaces table, filter by id instead of workspace_id
-    const filterColumn = config.table === 'workspaces' ? 'id' : 'workspace_id'
+    // Handle real-time subscription filters based on table type
+    let filterConfig: any = {
+      event: '*',
+      schema: 'public',
+      table: config.table,
+    }
+    
+    // Apply appropriate filter based on table
+    if (config.table === 'workspaces') {
+      filterConfig.filter = `id=eq.${workspaceId}`
+    } else if (config.table === 'connections') {
+      // Connections are global per user, no workspace filter needed
+      // We'll filter by user_id in the query itself
+    } else {
+      filterConfig.filter = `workspace_id=eq.${workspaceId}`
+    }
     
     const channel = supabase
       .channel(`${moduleSlug}:${tabSlug}:${workspaceId}`)
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: config.table,
-          filter: `${filterColumn}=eq.${workspaceId}`
-        },
-        () => {
-          fetchData()
-        }
-      )
+      .on('postgres_changes', filterConfig, () => {
+        fetchData()
+      })
       .subscribe()
 
     return () => {
