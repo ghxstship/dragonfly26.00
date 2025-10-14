@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "@/i18n/navigation"
-import { usePathname } from "next/navigation"
+import { useLocale } from "next-intl"
 import { Eye, EyeOff } from "lucide-react"
 
 export const dynamic = 'force-dynamic'
@@ -20,11 +20,8 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [showPassword, setShowPassword] = useState(false)
   const router = useRouter()
-  const pathname = usePathname()
+  const locale = useLocale()
   const supabase = createClient()
-  
-  // Extract locale from pathname (e.g., /en/login -> en)
-  const locale = pathname.split('/')[1] || 'en'
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()

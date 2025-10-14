@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 import { useState, useEffect } from "react"
 import { Link } from "@/i18n/navigation"
 import { useRouter } from "@/i18n/navigation"
-import { usePathname } from "next/navigation"
+import { useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -20,12 +20,9 @@ export default function ResetPasswordPage() {
   const [success, setSuccess] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const pathname = usePathname()
   const router = useRouter()
+  const locale = useLocale()
   const supabase = createClient()
-  
-  // Extract locale from pathname
-  const locale = pathname.split('/')[1] || 'en'
 
   // Check if user has a valid recovery session
   useEffect(() => {

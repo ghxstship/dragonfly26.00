@@ -73,7 +73,7 @@ export default async function LocalizedNotFound({
         {/* Actions */}
         <div className="flex flex-wrap gap-3 justify-center pt-4">
           <Link
-            href={`/${locale}`}
+            href="/"
             className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
           >
             <Home className="w-4 h-4" />

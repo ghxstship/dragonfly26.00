@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from '@/i18n/navigation'
-import { useSearchParams, useParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -23,8 +24,7 @@ interface Invite {
 
 export default function InviteColleaguesPage() {
   const router = useRouter()
-  const params = useParams()
-  const locale = params.locale as string
+  const locale = useLocale()
   const searchParams = useSearchParams()
   const { toast } = useToast()
   const supabase = createClient()
@@ -105,7 +105,7 @@ export default function InviteColleaguesPage() {
         description: `${validInvites.length} invitation(s) sent successfully.`,
       })
 
-      router.push(`/${locale}/onboarding/complete?workspace=${workspaceId}`)
+      router.push(`/onboarding/complete?workspace=${workspaceId}`)
     } catch (error: any) {
       toast({
         title: 'Error',

@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 import { useState, useEffect } from "react"
 import { Link } from "@/i18n/navigation"
 import { useRouter } from "@/i18n/navigation"
+import { useLocale } from "next-intl"
 import { usePathname, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { createClient } from "@/lib/supabase/client"
@@ -17,12 +18,10 @@ export default function VerifyEmailPage() {
   const [resending, setResending] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
+  const locale = useLocale()
   const searchParams = useSearchParams()
   const supabase = createClient()
   
-  // Extract locale from pathname
-  const locale = pathname.split('/')[1] || 'en'
-
   useEffect(() => {
     const checkVerification = async () => {
       // Check if there's a token in the URL (from email link)

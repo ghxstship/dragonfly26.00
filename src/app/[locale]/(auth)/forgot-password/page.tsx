@@ -4,7 +4,8 @@ export const dynamic = 'force-dynamic'
 
 import { useState } from "react"
 import { Link } from "@/i18n/navigation"
-import { usePathname } from "next/navigation"
+import { useRouter } from "@/i18n/navigation"
+import { useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -16,12 +17,10 @@ export default function ForgotPasswordPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
-  const pathname = usePathname()
+  const router = useRouter()
+  const locale = useLocale()
   const supabase = createClient()
   
-  // Extract locale from pathname
-  const locale = pathname.split('/')[1] || 'en'
-
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)

@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useRouter, usePathname } from "@/i18n/navigation"
-import { useTranslations } from "next-intl"
+import { useRouter } from "@/i18n/navigation"
+import { useTranslations, useLocale } from "next-intl"
 import { useUIStore } from "@/store/ui-store"
 import {
   CommandDialog,
@@ -33,12 +33,9 @@ interface CommandPaletteProps {
 export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPaletteProps) {
   const t = useTranslations()
   const router = useRouter()
-  const pathname = usePathname()
+  const locale = useLocale()
   const { currentWorkspace } = useUIStore()
   const [search, setSearch] = useState("")
-  
-  // Extract locale from pathname
-  const locale = pathname.split('/')[1] || 'en'
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -89,15 +86,15 @@ export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPale
         <CommandSeparator />
 
         <CommandGroup heading={t('commandPalette.navigation')}>
-          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/projects/overview`))}>
+          <CommandItem onSelect={() => runCommand(() => router.push(`/workspace/${currentWorkspace?.id}/projects/overview`))}>
             <Folder className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.projects')}</span>
           </CommandItem>
-          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/people/personnel`))}>
+          <CommandItem onSelect={() => runCommand(() => router.push(`/workspace/${currentWorkspace?.id}/people/personnel`))}>
             <Users className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.people')}</span>
           </CommandItem>
-          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/events/all-events`))}>
+          <CommandItem onSelect={() => runCommand(() => router.push(`/workspace/${currentWorkspace?.id}/events/all-events`))}>
             <Calendar className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.events')}</span>
           </CommandItem>
@@ -106,7 +103,7 @@ export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPale
         <CommandSeparator />
 
         <CommandGroup heading="Settings">
-          <CommandItem onSelect={() => runCommand(() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/overview`))}>
+          <CommandItem onSelect={() => runCommand(() => router.push(`/workspace/${currentWorkspace?.id}/admin/overview`))}>
             <Settings className="mr-2 h-4 w-4" />
             <span>Workspace settings</span>
           </CommandItem>

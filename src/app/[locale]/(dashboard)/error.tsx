@@ -1,12 +1,11 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import Link from 'next/link'
-import { useParams } from 'next/navigation'
+import { Link } from '@/i18n/navigation'
 
 export default function DashboardError({
   error,
@@ -16,8 +15,7 @@ export default function DashboardError({
   reset: () => void
 }) {
   const t = useTranslations('errors')
-  const params = useParams()
-  const locale = params.locale as string
+  const locale = useLocale()
 
   useEffect(() => {
     console.error('Dashboard error:', error)
@@ -79,7 +77,7 @@ export default function DashboardError({
               {t('tryAgain')}
             </Button>
             <Button variant="outline" asChild className="gap-2">
-              <Link href={`/${locale}`}>
+              <Link href="/">
                 <Home className="w-4 h-4" />
                 {t('goBackHome')}
               </Link>

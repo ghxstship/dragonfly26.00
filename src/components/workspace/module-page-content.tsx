@@ -81,7 +81,6 @@ export function ModulePageContent() {
   const router = useRouter()
   const moduleSlug = params.module as string
   const workspaceId = params.workspaceId as string
-  const locale = params.locale as string
   const currentModule = getModuleBySlug(moduleSlug)
   const moduleTabs = getModuleTabs(moduleSlug)
   const { setRightSidebarOpen, toggleRightSidebar, focusMode } = useUIStore()
@@ -102,9 +101,9 @@ export function ModulePageContent() {
   // Redirect to first tab if tabs exist
   useEffect(() => {
     if (moduleTabs.length > 0) {
-      router.replace(`/${locale}/workspace/${workspaceId}/${moduleSlug}/${moduleTabs[0].slug}`)
+      router.replace(`/workspace/${workspaceId}/${moduleSlug}/${moduleTabs[0].slug}`)
     }
-  }, [moduleTabs, moduleSlug, workspaceId, locale, router])
+  }, [moduleTabs, moduleSlug, workspaceId, router])
 
   // Use Supabase data or fallback to empty array
   const mockData = supabaseData || []

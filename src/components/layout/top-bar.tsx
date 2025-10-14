@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useRouter, usePathname } from "@/i18n/navigation"
-import { useTranslations } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 import {
   Search,
   Plus,
@@ -66,10 +66,7 @@ export function TopBar() {
   const { currentWorkspace, focusMode, toggleFocusMode, airplaneMode, toggleAirplaneMode, setRightSidebarOpen } = useUIStore()
   const { currentOrganization } = useWorkspaceStore()
   const router = useRouter()
-  
-  // Extract locale from pathname
-  const pathname = usePathname()
-  const locale = pathname.split('/')[1] || 'en'
+  const locale = useLocale()
 
   // Simulate unread notifications count
   const unreadCount = 3
@@ -351,7 +348,7 @@ export function TopBar() {
                   variant="ghost" 
                   size="sm" 
                   className="gap-2 h-9 hidden md:flex"
-                  onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/billing`)}
+                  onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/billing`)}
                 >
                   <Sparkles className="h-4 w-4" />
                   <span className="hidden lg:inline">{t('nav.upgrade')}</span>
@@ -394,11 +391,11 @@ export function TopBar() {
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/profile/basic-info`)}>
+                <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/profile/basic-info`)}>
                   {t('nav.profile')}
                   <kbd className="ml-auto inline-flex items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">⌘P</kbd>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/settings/appearance`)}>
+                <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/settings/appearance`)}>
                   {t('nav.settings')}
                   <kbd className="ml-auto inline-flex items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">⌘,</kbd>
                 </DropdownMenuItem>
@@ -408,13 +405,13 @@ export function TopBar() {
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/billing`)}>
+                <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/billing`)}>
                   {t('nav.billing')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/invite`)}>
+                <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/invite`)}>
                   {t('nav.team')}
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/invite`)}>
+                <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/invite`)}>
                   {t('nav.inviteUsers')}
                 </DropdownMenuItem>
               </DropdownMenuGroup>

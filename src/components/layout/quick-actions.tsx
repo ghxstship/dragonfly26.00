@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter, usePathname } from "@/i18n/navigation"
+import { useRouter } from "@/i18n/navigation"
+import { useLocale } from "next-intl"
 import {
   Calendar,
   ClipboardList,
@@ -29,12 +30,9 @@ import { useUIStore } from "@/store/ui-store"
 
 export function QuickActions() {
   const router = useRouter()
-  const pathname = usePathname()
+  const locale = useLocale()
   const { currentWorkspace } = useUIStore()
   const [showHelp, setShowHelp] = useState(false)
-  
-  // Extract locale from pathname
-  const locale = pathname.split('/')[1] || 'en'
   return (
     <TooltipProvider delayDuration={300}>
       {/* Apps */}
@@ -54,15 +52,15 @@ export function QuickActions() {
         <DropdownMenuContent align="end" className="w-64">
           <DropdownMenuLabel>Quick Access</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/integrations`)}>
+          <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/integrations`)}>
             <LayoutGrid className="mr-2 h-4 w-4" />
             Integrations
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/automations`)}>
+          <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/automations`)}>
             <Zap className="mr-2 h-4 w-4" />
             Automations
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => router.push(`/${locale}/workspace/${currentWorkspace?.id}/admin/templates`)}>
+          <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/templates`)}>
             <FileText className="mr-2 h-4 w-4" />
             Templates
           </DropdownMenuItem>

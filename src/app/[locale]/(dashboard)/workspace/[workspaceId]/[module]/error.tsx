@@ -5,7 +5,8 @@ import { useTranslations } from 'next-intl'
 import { AlertTriangle, RefreshCw, ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
 
 export default function ModuleError({
   error,
@@ -17,7 +18,6 @@ export default function ModuleError({
   const t = useTranslations('errors')
   const params = useParams()
   const router = useRouter()
-  const locale = params.locale as string
   const workspaceId = params.workspaceId as string
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function ModuleError({
             </Button>
             <Button 
               variant="outline" 
-              onClick={() => router.push(`/${locale}/workspace/${workspaceId}/dashboard/overview`)}
+              onClick={() => router.push(`/workspace/${workspaceId}/dashboard/overview`)}
               className="gap-2"
             >
               <ArrowLeft className="w-4 h-4" />

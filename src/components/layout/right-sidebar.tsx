@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useRouter, usePathname } from "@/i18n/navigation"
+import { useRouter } from "@/i18n/navigation"
+import { useLocale } from "next-intl"
 import { 
   X, MessageSquare, Activity, Clock, Upload, Download, Share2, Filter, Columns3, 
   ArrowUpDown, Bell, Camera, ScanLine, Calendar, ClipboardList, FileText, 
@@ -66,14 +67,11 @@ const tabGroups = {
 export function RightSidebar() {
   const params = useParams()
   const router = useRouter()
-  const pathname = usePathname()
+  const locale = useLocale()
   const moduleSlug = params.module as string | undefined
   const { rightSidebarOpen, setRightSidebarOpen, rightSidebarTab, setRightSidebarTab, currentWorkspace } = useUIStore()
   const [activeGroup, setActiveGroup] = useState<TabGroup>('mywork')
   const [isExpanded, setIsExpanded] = useState(false)
-
-  // Extract locale from pathname
-  const locale = pathname.split('/')[1] || 'en'
 
   // Determine which group the current tab belongs to
   const getCurrentGroup = (): TabGroup => {

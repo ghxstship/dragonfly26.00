@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from '@/i18n/navigation'
-import { useSearchParams, useParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -11,8 +12,7 @@ import { createClient } from '@/lib/supabase/client'
 
 export default function CompletePage() {
   const router = useRouter()
-  const params = useParams()
-  const locale = params.locale as string
+  const locale = useLocale()
   const searchParams = useSearchParams()
   const supabase = createClient()
   const [isCompleting, setIsCompleting] = useState(false)
@@ -53,8 +53,8 @@ export default function CompletePage() {
     // Redirect to dashboard
     // If workspaceId is available, use it; otherwise use 'personal' to load user's default workspace
     const targetPath = workspaceId 
-      ? `/${locale}/workspace/${workspaceId}/dashboard/overview` 
-      : `/${locale}/workspace/personal/dashboard/overview`
+      ? `/workspace/${workspaceId}/dashboard/overview` 
+      : `/workspace/personal/dashboard/overview`
     router.push(targetPath)
   }
 

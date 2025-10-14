@@ -15,7 +15,6 @@ export function ModuleTabs({ moduleSlug }: ModuleTabsProps) {
   const params = useParams()
   const pathname = usePathname()
   const workspaceId = params.workspaceId as string
-  const locale = params.locale as string
   const { getTabConfig } = useUIStore()
   
   // Get tabs from registry
@@ -42,7 +41,7 @@ export function ModuleTabs({ moduleSlug }: ModuleTabsProps) {
       <div className="flex items-center gap-1 px-4 min-w-max">
         {tabs.map((tab) => {
           const Icon = iconMap[tab.icon]
-          const href = `/${locale}/workspace/${workspaceId}/${moduleSlug}/${tab.slug}`
+          const href = `/workspace/${workspaceId}/${moduleSlug}/${tab.slug}`
           const isActive = pathname === href || pathname?.endsWith(`/${tab.slug}`)
 
           return (

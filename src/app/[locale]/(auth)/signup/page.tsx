@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 import { useState } from "react"
 import { Link } from "@/i18n/navigation"
 import { useRouter } from "@/i18n/navigation"
-import { usePathname } from "next/navigation"
+import { useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -19,13 +19,10 @@ export default function SignupPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [showPassword, setShowPassword] = useState(false)
-  const pathname = usePathname()
   const router = useRouter()
+  const locale = useLocale()
   const supabase = createClient()
   
-  // Extract locale from pathname (e.g., /en/signup -> en)
-  const locale = pathname.split('/')[1] || 'en'
-
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)

@@ -15,15 +15,14 @@ export function BreadcrumbNav() {
   const { currentWorkspace } = useUIStore()
   const { currentOrganization } = useWorkspaceStore()
 
-  // Parse path segments - extract locale outside memoization for use in JSX
+  // Parse path segments
   const segments = pathname.split("/").filter(Boolean)
-  const locale = segments[0] || 'en'
 
   // Memoize breadcrumbs to ensure they're recalculated only when pathname changes
   const breadcrumbs = useMemo(() => {
-    const workspaceId = segments[2]
-    const moduleName = segments[3]
-    const tabSlug = segments[4]
+    const workspaceId = segments[1]
+    const moduleName = segments[2]
+    const tabSlug = segments[3]
     
     // Build breadcrumb items - create fresh array each time
     const items: Array<{
@@ -39,7 +38,7 @@ export function BreadcrumbNav() {
       
       items.push({
         label: moduleName.charAt(0).toUpperCase() + moduleName.slice(1).replace(/-/g, " "),
-        href: `/${locale}/workspace/${workspaceId}/${moduleName}/${firstTabSlug}`,
+        href: `/workspace/${workspaceId}/${moduleName}/${firstTabSlug}`,
         icon: undefined,
       })
 
@@ -51,7 +50,7 @@ export function BreadcrumbNav() {
         if (currentTab && tabSlug !== firstTabSlug) {
           items.push({
             label: currentTab.name,
-            href: `/${locale}/workspace/${workspaceId}/${moduleName}/${tabSlug}`,
+            href: `/workspace/${workspaceId}/${moduleName}/${tabSlug}`,
             icon: undefined,
           })
         }
@@ -59,14 +58,14 @@ export function BreadcrumbNav() {
     }
 
     return items
-  }, [pathname, segments, locale]) // Dependencies include all used variables
+  }, [pathname, segments]) // Dependencies include all used variables
 
   if (breadcrumbs.length === 0) return null
 
   return (
     <nav className="flex items-center gap-1 text-sm min-w-0">
       <Link
-        href={`/${locale}`}
+        href="/"
         className="p-1.5 rounded-md hover:bg-accent transition-colors flex-shrink-0"
         title={t('breadcrumb.home')}
       >
