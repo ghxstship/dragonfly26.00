@@ -17,7 +17,7 @@ export function useProductions(workspaceId: string) {
         .from('productions')
         .select(`
           *,
-          workspaces!workspace_id(name),
+          workspace:workspaces!workspace_id(name),
           project_manager:profiles!project_manager_id(first_name, last_name),
           tasks:project_tasks(count),
           milestones:project_milestones(count)
@@ -71,8 +71,7 @@ export function useTasks(workspaceId: string, productionId?: string) {
         .select(`
           *,
           production:production_id(name),
-          assignee:profiles!assignee_id(first_name, last_name),
-          milestone:milestone_id(name)
+          assignee:profiles!assignee_id(first_name, last_name)
         `)
         .eq('workspace_id', workspaceId)
 
@@ -180,7 +179,7 @@ export function useCompliance(workspaceId: string, productionId?: string) {
       if (!workspaceId) return
       
       let query = supabase
-        .from('compliance_requirements')
+        .from('project_compliance')
         .select(`
           *,
           production:production_id(name)
@@ -191,7 +190,7 @@ export function useCompliance(workspaceId: string, productionId?: string) {
         query = query.eq('production_id', productionId)
       }
 
-      const { data, error } = await query.order('expires_at', { ascending: true })
+      const { data, error } = await query.order('expiry_date', { ascending: true })
 
       if (!error && data) {
         setCompliance(data)
@@ -209,7 +208,7 @@ export function useCompliance(workspaceId: string, productionId?: string) {
         {
           event: '*',
           schema: 'public',
-          table: 'compliance_requirements',
+          table: 'project_compliance',
           filter: `workspace_id=eq.${workspaceId}`
         },
         () => fetchCompliance()
@@ -235,7 +234,7 @@ export function useSafety(workspaceId: string, productionId?: string) {
       if (!workspaceId) return
       
       let query = supabase
-        .from('safety_guidelines')
+        .from('project_safety')
         .select(`
           *,
           production:production_id(name)
@@ -264,7 +263,7 @@ export function useSafety(workspaceId: string, productionId?: string) {
         {
           event: '*',
           schema: 'public',
-          table: 'safety_guidelines',
+          table: 'project_safety',
           filter: `workspace_id=eq.${workspaceId}`
         },
         () => fetchSafety()

@@ -48,7 +48,7 @@ export default function WelcomePage() {
 
     if (data) {
       setProfile({
-        name: data.full_name || '',
+        name: data.full_name || data.first_name || '',
         title: data.job_title || '',
         bio: data.bio || '',
         avatar_url: data.avatar_url || '',

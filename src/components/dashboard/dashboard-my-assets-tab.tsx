@@ -13,15 +13,15 @@ import {
   TrendingUp,
   AlertCircle
 } from "lucide-react"
+import { useMyAssets } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyAssetsTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyAssetsTab({ data = [], loading = false }: DashboardMyAssetsTabProps) {
-  // User's personal inventory of owned and rented/leased equipment
-  const assets = data.length > 0 ? data : [
+export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { assets, loading } = useMyAssets(workspaceId, userId)
+  
+  const mockAssets = [
     {
       id: "1",
       name: "Shure SM58 Microphone",
@@ -101,6 +101,30 @@ export function DashboardMyAssetsTab({ data = [], loading = false }: DashboardMy
       maintenanceDate: "Feb 1, 2025",
     },
   ]
+  
+  const assetsList = assets.length > 0 ? assets.map(asset => ({
+    id: asset.id,
+    name: asset.name || asset.title,
+    category: asset.category?.name || 'Uncategorized',
+    type: asset.ownership_type || 'Owned',
+    quantity: asset.quantity || 1,
+    condition: asset.condition || 'Good',
+    lastUsed: asset.last_used ? new Date(asset.last_used).toLocaleDateString() : 'Never',
+    project: asset.current_production || 'Available',
+    value: asset.purchase_price ? `$${asset.purchase_price}` : 'N/A',
+    location: asset.location?.name || 'Unknown',
+  })) : mockAssets
+  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading assets...</p>
+        </div>
+      </div>
+    )
+  }
 
   const summary = {
     owned: 24,
@@ -149,11 +173,15 @@ export function DashboardMyAssetsTab({ data = [], loading = false }: DashboardMy
     <div className="space-y-6">
       <div className="flex justify-end">
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2" disabled>
             <Search className="h-4 w-4" />
             Search
           </Button>
-          <Button size="sm" className="gap-2">
+          <Button 
+            size="sm" 
+            className="gap-2"
+            onClick={() => router.push(`/workspace/${workspaceId}/assets/inventory`)}
+          >
             <Plus className="h-4 w-4" />
             Add Asset
           </Button>
@@ -243,10 +271,11 @@ export function DashboardMyAssetsTab({ data = [], loading = false }: DashboardMy
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {assets.map((asset) => (
+            {assetsList.map((asset) => (
               <div
                 key={asset.id}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                onClick={() => router.push(`/workspace/${workspaceId}/assets/inventory?id=${asset.id}`)}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 space-y-2">

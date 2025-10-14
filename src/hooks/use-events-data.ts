@@ -181,7 +181,7 @@ export function useIncidents(workspaceId: string, eventId?: string) {
         .select(`
           *,
           event:event_id(name),
-          reported_by_user:reported_by(first_name, last_name)
+          reported_by_user:profiles!reported_by(first_name, last_name)
         `)
         .eq('workspace_id', workspaceId)
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -58,7 +58,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
   const [newPostTitle, setNewPostTitle] = useState("")
   const [newPostContent, setNewPostContent] = useState("")
 
-  const [discussions, setDiscussions] = useState<Discussion[]>(data.length > 0 ? data : [
+  const [discussions, setDiscussions] = useState<Discussion[]>([
     {
       id: "1",
       title: "Best practices for setting up outdoor festivals in unpredictable weather?",
@@ -188,6 +188,32 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
       tags: ["burnout", "mental health", "work-life balance"]
     }
   ])
+
+  // Transform and update discussions when data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const transformed: Discussion[] = data.map((item: any) => ({
+        id: item.id,
+        title: item.title || 'Untitled Discussion',
+        content: item.content || '',
+        author: item.author ? `${item.author.first_name}_${item.author.last_name}`.toLowerCase() : 'anonymous',
+        authorImage: item.author?.avatar_url,
+        authorFlair: item.author?.title,
+        category: item.tags?.[0] || 'General',
+        timestamp: item.created_at,
+        upvotes: item.likes_count || 0,
+        downvotes: 0, // Not tracked yet
+        comments: item.comments_count || 0,
+        views: 0, // Not tracked yet
+        pinned: item.is_featured || false,
+        locked: false,
+        awarded: (item.likes_count || 0) > 100,
+        userVote: null,
+        tags: item.tags || []
+      }))
+      setDiscussions(transformed)
+    }
+  }, [data])
 
   const handleVote = (discussionId: string, voteType: "up" | "down") => {
     setDiscussions(discussions.map(discussion => {

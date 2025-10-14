@@ -17,8 +17,7 @@ export function useAssets(workspaceId: string) {
         .from('assets')
         .select(`
           *,
-          current_location:current_location_id(name),
-          transactions:asset_transactions(count)
+          location:locations!location_id(name, city, address)
         `)
         .eq('workspace_id', workspaceId)
         .order('name', { ascending: true })
@@ -62,10 +61,11 @@ export function useAssetTransactions(workspaceId: string, assetId?: string) {
         .from('asset_transactions')
         .select(`
           *,
-          asset:asset_id(name, asset_type),
-          from_location:from_location_id(name),
-          to_location:to_location_id(name),
-          checked_out_by_user:checked_out_by(first_name, last_name)
+          asset:assets!asset_id(name, type),
+          checked_out_person:personnel!checked_out_to(first_name, last_name),
+          production:productions!production_id(name),
+          event:events!event_id(name),
+          performed_by_user:profiles!performed_by(first_name, last_name)
         `)
         .eq('workspace_id', workspaceId)
 
@@ -73,7 +73,7 @@ export function useAssetTransactions(workspaceId: string, assetId?: string) {
         query = query.eq('asset_id', assetId)
       }
 
-      const { data, error } = await query.order('transaction_date', { ascending: false })
+      const { data, error } = await query.order('created_at', { ascending: false })
 
       if (!error && data) {
         setTransactions(data)
@@ -114,7 +114,8 @@ export function useMaintenance(workspaceId: string) {
         .from('asset_maintenance')
         .select(`
           *,
-          asset:asset_id(name, asset_type)
+          asset:assets!asset_id(name, type, status),
+          performed_by_person:personnel!performed_by(first_name, last_name)
         `)
         .eq('workspace_id', workspaceId)
         .order('scheduled_date', { ascending: true })
@@ -158,11 +159,12 @@ export function useAdvances(workspaceId: string) {
         .from('production_advances')
         .select(`
           *,
-          production:production_id(name),
-          requested_by_user:requested_by(first_name, last_name)
+          production:productions!production_id(name, status),
+          requested_by_user:profiles!requested_by(first_name, last_name),
+          approved_by_user:profiles!approved_by(first_name, last_name)
         `)
         .eq('workspace_id', workspaceId)
-        .order('requested_date', { ascending: false })
+        .order('created_at', { ascending: false })
 
       if (!error && data) {
         setAdvances(data)

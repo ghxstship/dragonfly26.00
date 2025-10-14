@@ -1,10 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { formatDate } from "@/lib/utils"
@@ -12,13 +10,6 @@ import { CheckCheck, MessageSquare, AtSign, UserPlus, Clock, CheckCircle2, Loade
 import { cn } from "@/lib/utils"
 import { getSupabaseClient } from "@/lib/supabase/hooks-client"
 import { useToast } from "@/lib/hooks/use-toast"
-
-interface NotificationsPanelProps {
-  open: boolean
-  onOpenChange: (open: boolean) => void
-}
-
-type NotificationType = "mention" | "comment" | "assignment" | "update" | "system"
 
 interface NotificationData {
   id: string
@@ -39,7 +30,7 @@ const notificationIcons: Record<string, any> = {
   system: CheckCircle2,
 }
 
-export function NotificationsPanel({ open, onOpenChange }: NotificationsPanelProps) {
+export function NotificationsTabContent() {
   const supabase = getSupabaseClient()
   const { toast } = useToast()
   
@@ -205,8 +196,9 @@ export function NotificationsPanel({ open, onOpenChange }: NotificationsPanelPro
           !notification.read && "bg-accent/50"
         )}
         onClick={() => {
-          // Handle notification click
-          onOpenChange(false)
+          if (!notification.read) {
+            markAsRead(notification.id)
+          }
         }}
       >
         <div className="flex gap-3">
@@ -268,121 +260,112 @@ export function NotificationsPanel({ open, onOpenChange }: NotificationsPanelPro
     )
   }
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
+  }
+
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="w-96">
-        <SheetHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <SheetTitle>Notifications</SheetTitle>
-              {unreadCount > 0 && (
-                <p className="text-sm text-muted-foreground mt-1">
-                  {unreadCount} unread
-                </p>
+    <div className="flex flex-col h-full">
+      {/* Header Actions */}
+      {unreadCount > 0 && (
+        <div className="px-4 py-2 border-b">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="w-full gap-2 justify-center"
+            onClick={markAllAsRead}
+          >
+            <CheckCheck className="h-4 w-4" />
+            Mark all as read ({unreadCount})
+          </Button>
+        </div>
+      )}
+
+      <Tabs defaultValue="all" className="flex-1 flex flex-col min-h-0">
+        <TabsList className="w-full grid grid-cols-3 mx-4 mt-4">
+          <TabsTrigger value="all">All</TabsTrigger>
+          <TabsTrigger value="unread">Unread</TabsTrigger>
+          <TabsTrigger value="mentions">Mentions</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="all" className="flex-1 mt-4 m-0">
+          <ScrollArea className="h-full px-4">
+            <div className="space-y-4 pb-4">
+              {groupedNotifications.today.length > 0 && (
+                <div>
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase mb-2 px-3">
+                    Today
+                  </h3>
+                  <div className="space-y-1">
+                    {groupedNotifications.today.map(renderNotification)}
+                  </div>
+                </div>
+              )}
+              {groupedNotifications.earlier.length > 0 && (
+                <div>
+                  <h3 className="text-xs font-semibold text-muted-foreground uppercase mb-2 px-3">
+                    Earlier
+                  </h3>
+                  <div className="space-y-1">
+                    {groupedNotifications.earlier.map(renderNotification)}
+                  </div>
+                </div>
+              )}
+              {notifications.length === 0 && (
+                <div className="text-center py-12">
+                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <p className="text-sm font-medium">All caught up!</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    No new notifications
+                  </p>
+                </div>
               )}
             </div>
-            {unreadCount > 0 && (
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="gap-2"
-                onClick={markAllAsRead}
-              >
-                <CheckCheck className="h-4 w-4" />
-                <span className="hidden sm:inline">Mark all read</span>
-              </Button>
-            )}
-          </div>
-        </SheetHeader>
+          </ScrollArea>
+        </TabsContent>
 
-        {isLoading ? (
-          <div className="flex items-center justify-center py-12">
-            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-          </div>
-        ) : (
-        <Tabs defaultValue="all" className="mt-4">
-          <TabsList className="w-full grid grid-cols-3">
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="unread">Unread</TabsTrigger>
-            <TabsTrigger value="mentions">Mentions</TabsTrigger>
-          </TabsList>
+        <TabsContent value="unread" className="flex-1 mt-4 m-0">
+          <ScrollArea className="h-full px-4">
+            <div className="space-y-1 pb-4">
+              {notifications
+                .filter((n) => !n.read)
+                .map(renderNotification)}
+              {notifications.filter((n) => !n.read).length === 0 && (
+                <div className="text-center py-12">
+                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <p className="text-sm font-medium">All caught up!</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    No unread notifications
+                  </p>
+                </div>
+              )}
+            </div>
+          </ScrollArea>
+        </TabsContent>
 
-          <TabsContent value="all" className="mt-4">
-            <ScrollArea className="h-[calc(100vh-12rem)]">
-              <div className="space-y-4">
-                {groupedNotifications.today.length > 0 && (
-                  <div>
-                    <h3 className="text-xs font-semibold text-muted-foreground uppercase mb-2 px-3">
-                      Today
-                    </h3>
-                    <div className="space-y-1">
-                      {groupedNotifications.today.map(renderNotification)}
-                    </div>
-                  </div>
-                )}
-                {groupedNotifications.earlier.length > 0 && (
-                  <div>
-                    <h3 className="text-xs font-semibold text-muted-foreground uppercase mb-2 px-3">
-                      Earlier
-                    </h3>
-                    <div className="space-y-1">
-                      {groupedNotifications.earlier.map(renderNotification)}
-                    </div>
-                  </div>
-                )}
-                {notifications.length === 0 && (
-                  <div className="text-center py-12">
-                    <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                    <p className="text-sm font-medium">All caught up!</p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      No new notifications
-                    </p>
-                  </div>
-                )}
-              </div>
-            </ScrollArea>
-          </TabsContent>
-
-          <TabsContent value="unread" className="mt-4">
-            <ScrollArea className="h-[calc(100vh-12rem)]">
-              <div className="space-y-1">
-                {notifications
-                  .filter((n) => !n.read)
-                  .map(renderNotification)}
-                {notifications.filter((n) => !n.read).length === 0 && (
-                  <div className="text-center py-12">
-                    <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                    <p className="text-sm font-medium">All caught up!</p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      No unread notifications
-                    </p>
-                  </div>
-                )}
-              </div>
-            </ScrollArea>
-          </TabsContent>
-
-          <TabsContent value="mentions" className="mt-4">
-            <ScrollArea className="h-[calc(100vh-12rem)]">
-              <div className="space-y-1">
-                {notifications
-                  .filter((n) => n.type === "mention")
-                  .map(renderNotification)}
-                {notifications.filter((n) => n.type === "mention").length === 0 && (
-                  <div className="text-center py-12">
-                    <AtSign className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                    <p className="text-sm font-medium">No mentions</p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      You haven&apos;t been mentioned recently
-                    </p>
-                  </div>
-                )}
-              </div>
-            </ScrollArea>
-          </TabsContent>
-        </Tabs>
-        )}
-      </SheetContent>
-    </Sheet>
+        <TabsContent value="mentions" className="flex-1 mt-4 m-0">
+          <ScrollArea className="h-full px-4">
+            <div className="space-y-1 pb-4">
+              {notifications
+                .filter((n) => n.type === "mention")
+                .map(renderNotification)}
+              {notifications.filter((n) => n.type === "mention").length === 0 && (
+                <div className="text-center py-12">
+                  <AtSign className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <p className="text-sm font-medium">No mentions</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    You haven&apos;t been mentioned recently
+                  </p>
+                </div>
+              )}
+            </div>
+          </ScrollArea>
+        </TabsContent>
+      </Tabs>
+    </div>
   )
 }

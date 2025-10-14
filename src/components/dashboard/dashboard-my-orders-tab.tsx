@@ -13,15 +13,15 @@ import {
   Plus,
   Search
 } from "lucide-react"
+import { useMyOrders } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyOrdersTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyOrdersTab({ data = [], loading = false }: DashboardMyOrdersTabProps) {
-  // User's orders (to be integrated with marketplace)
-  const orders = data.length > 0 ? data : [
+export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { orders, loading } = useMyOrders(workspaceId, userId)
+  
+  const mockOrders = [
     {
       id: "ORD-2024-1234",
       item: "Wireless Microphone System Bundle",
@@ -82,6 +82,29 @@ export function DashboardMyOrdersTab({ data = [], loading = false }: DashboardMy
       project: "Theater Revival",
     },
   ]
+  
+  const ordersList = orders.length > 0 ? orders.map(order => ({
+    id: order.id,
+    item: order.product_name || 'Item',
+    vendor: 'Vendor',
+    orderDate: new Date(order.created_at).toLocaleDateString(),
+    status: order.status || 'pending',
+    quantity: order.items?.[0]?.quantity || 1,
+    total: `$${order.total || 0}`,
+    trackingNumber: order.tracking_number || 'Pending',
+    project: order.production?.name || 'No Project',
+  })) : mockOrders
+  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading orders...</p>
+        </div>
+      </div>
+    )
+  }
 
   const summary = {
     totalOrders: 28,
@@ -132,11 +155,15 @@ export function DashboardMyOrdersTab({ data = [], loading = false }: DashboardMy
     <div className="space-y-6">
       <div className="flex justify-end">
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2" disabled>
             <Search className="h-4 w-4" />
             Search
           </Button>
-          <Button size="sm" className="gap-2">
+          <Button 
+            size="sm" 
+            className="gap-2"
+            onClick={() => router.push(`/workspace/${workspaceId}/marketplace/shop`)}
+          >
             <Plus className="h-4 w-4" />
             New Order
           </Button>
@@ -217,12 +244,13 @@ export function DashboardMyOrdersTab({ data = [], loading = false }: DashboardMy
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {orders.map((order) => {
+            {ordersList.map((order) => {
               const StatusIcon = getStatusIcon(order.status)
               return (
                 <div
                   key={order.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                  onClick={() => router.push(`/workspace/${workspaceId}/marketplace/purchases?id=${order.id}`)}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 space-y-2">

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -45,8 +45,7 @@ interface NewsArticle {
 export function NewsTab({ data = [], loading = false }: NewsTabProps) {
   const [selectedCategory, setSelectedCategory] = useState<"all" | "industry" | "sponsored" | "curated">("all")
   const [searchQuery, setSearchQuery] = useState("")
-
-  const newsArticles: NewsArticle[] = data.length > 0 ? data : [
+  const [newsArticles, setNewsArticles] = useState<NewsArticle[]>([
     {
       id: "1",
       title: "Broadway Shows Return with Record-Breaking Attendance",
@@ -163,7 +162,30 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
       comments: 112,
       tags: ["Sustainability", "Environment", "Best Practices"]
     }
-  ]
+  ])
+
+  // Transform and update articles when data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const transformed: NewsArticle[] = data.map((item: any) => ({
+        id: item.id,
+        title: item.title || 'Untitled',
+        summary: item.content || '',
+        source: item.author?.company || 'Community',
+        sourceImage: item.author?.avatar_url,
+        category: item.is_sponsored ? 'sponsored' : (item.is_featured ? 'curated' : 'industry'),
+        author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Anonymous',
+        publishedAt: item.created_at,
+        image: item.media_urls?.[0],
+        url: '#',
+        likes: item.likes_count || 0,
+        comments: item.comments_count || 0,
+        trending: item.is_featured || false,
+        tags: item.tags || []
+      }))
+      setNewsArticles(transformed)
+    }
+  }, [data])
 
   const filteredArticles = newsArticles.filter(article => {
     const matchesCategory = selectedCategory === "all" || article.category === selectedCategory

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -47,7 +47,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
   const [searchQuery, setSearchQuery] = useState("")
   const [filterStatus, setFilterStatus] = useState<"all" | "connected" | "pending" | "suggested">("all")
 
-  const [connections, setConnections] = useState<Connection[]>(data.length > 0 ? data : [
+  const [connections, setConnections] = useState<Connection[]>([
     {
       id: "1",
       name: "Sarah Mitchell",
@@ -176,6 +176,32 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
       status: "pending"
     }
   ])
+
+  // Transform and update connections when data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const transformed: Connection[] = data.map((item: any) => {
+        const connectedUser = item.connected_user || {}
+        return {
+          id: item.id,
+          name: connectedUser.first_name && connectedUser.last_name 
+            ? `${connectedUser.first_name} ${connectedUser.last_name}` 
+            : 'Unknown User',
+          title: connectedUser.title || 'Professional',
+          company: connectedUser.company || 'Company',
+          location: connectedUser.location || 'Location',
+          image: connectedUser.avatar_url,
+          connectionDate: item.status === 'accepted' ? (item.accepted_at || item.requested_at) : item.requested_at,
+          mutualConnections: 0, // Not yet tracked
+          skills: [], // Not yet tracked
+          recentActivity: undefined,
+          status: item.status === 'accepted' ? 'connected' : (item.status === 'pending' ? 'pending' : 'suggested'),
+          verified: false
+        }
+      })
+      setConnections(transformed)
+    }
+  }, [data])
 
   const handleConnect = (connectionId: string) => {
     setConnections(connections.map(conn =>

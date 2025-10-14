@@ -1,9 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CalendarDays, Briefcase, FolderKanban } from "lucide-react"
+import { CalendarDays, Briefcase, FolderKanban, Loader2 } from "lucide-react"
+import { useProfileData } from "@/hooks/use-profile-data"
+import { format } from "date-fns"
 import {
   Table,
   TableBody,
@@ -28,8 +30,30 @@ interface ProjectHistory {
 }
 
 export function HistoryTab() {
+  const { profile, loading } = useProfileData()
   const [searchQuery, setSearchQuery] = useState("")
-  const [projectHistory] = useState<ProjectHistory[]>([
+  const [projectHistory, setProjectHistory] = useState<ProjectHistory[]>([])
+
+  // Sync with profile work experience
+  useEffect(() => {
+    if (profile?.work_experience) {
+      // Convert work experience to project history format
+      const history: ProjectHistory[] = profile.work_experience.map((exp: any, index: number) => ({
+        id: exp.id || `exp-${index}`,
+        name: `${exp.title} at ${exp.company}`,
+        role: exp.title || 'N/A',
+        projectType: 'Professional Experience',
+        startDate: exp.startDate || '',
+        endDate: exp.current ? '' : (exp.endDate || ''),
+        status: (exp.current ? 'ongoing' : 'completed') as 'completed' | 'ongoing' | 'cancelled',
+        hoursWorked: 0, // Can be calculated or added later
+      }))
+      setProjectHistory(history)
+    }
+  }, [profile])
+
+  // Mock project history for display (will show alongside real data)
+  const mockHistory: ProjectHistory[] = [
     {
       id: "1",
       name: "Summer Music Festival 2024",
@@ -73,7 +97,18 @@ export function HistoryTab() {
       status: "ongoing",
       hoursWorked: 120,
     },
-  ])
+  ]
+
+  // Display combined history (profile data + mock data for demo)
+  const displayHistory = projectHistory.length > 0 ? projectHistory : mockHistory
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
+  }
 
   const getStatusBadge = (status: string) => {
     const variants: Record<string, "default" | "secondary" | "destructive"> = {
@@ -88,20 +123,22 @@ export function HistoryTab() {
     )
   }
 
-  const filteredProjects = projectHistory.filter(
+  const filteredProjects = displayHistory.filter(
     (project) =>
       project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.projectType.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
-  const totalHoursWorked = projectHistory.reduce((sum, p) => sum + p.hoursWorked, 0)
-  const completedProjects = projectHistory.filter((p) => p.status === "completed").length
+  const totalHoursWorked = displayHistory.reduce((sum, p) => sum + p.hoursWorked, 0)
+  const completedProjects = displayHistory.filter((p) => p.status === "completed").length
   const averageRating =
-    projectHistory
-      .filter((p) => p.rating)
-      .reduce((sum, p) => sum + (p.rating || 0), 0) /
-    projectHistory.filter((p) => p.rating).length
+    displayHistory.filter((p) => p.rating).length > 0
+      ? displayHistory
+          .filter((p) => p.rating)
+          .reduce((sum, p) => sum + (p.rating || 0), 0) /
+        displayHistory.filter((p) => p.rating).length
+      : 0
 
   return (
     <div className="space-y-6">
@@ -112,7 +149,7 @@ export function HistoryTab() {
             <FolderKanban className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{projectHistory.length}</div>
+            <div className="text-2xl font-bold">{displayHistory.length}</div>
             <p className="text-xs text-muted-foreground">{completedProjects} completed</p>
           </CardContent>
         </Card>

@@ -1,26 +1,31 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Save } from "lucide-react"
+import { Save, Loader2 } from "lucide-react"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
+import { useProfileData } from "@/hooks/use-profile-data"
+import { useToast } from "@/lib/hooks/use-toast"
 
 export function TravelProfileTab() {
+  const { profile, loading, updateProfile } = useProfileData()
+  const { toast } = useToast()
+  const [saving, setSaving] = useState(false)
+
   const [travelData, setTravelData] = useState({
     passportNumber: "",
     passportExpiry: "",
     passportCountry: "",
-    travelDocumentImage: "",
     visaInformation: "",
     tsaPreCheck: "",
     globalEntry: "",
     knownTravelerNumber: "",
-    seatPreference: "window",
+    seatPreference: "no-preference",
     mealPreference: "",
     frequentFlyerPrograms: "",
     hotelPreferences: "",
@@ -30,9 +35,71 @@ export function TravelProfileTab() {
     otherTravelNeeds: "",
   })
 
-  const handleSave = () => {
-    console.log("Saving travel data:", travelData)
-    // TODO: Save to Supabase
+  // Sync with profile data
+  useEffect(() => {
+    if (profile) {
+      setTravelData({
+        passportNumber: profile.passport_number || "",
+        passportExpiry: profile.passport_expiry || "",
+        passportCountry: profile.passport_country || "",
+        visaInformation: profile.visa_information || "",
+        tsaPreCheck: profile.tsa_precheck || "",
+        globalEntry: profile.global_entry || "",
+        knownTravelerNumber: profile.known_traveler_number || "",
+        seatPreference: profile.seat_preference || "no-preference",
+        mealPreference: profile.meal_preference || "",
+        frequentFlyerPrograms: profile.frequent_flyer_programs || "",
+        hotelPreferences: profile.hotel_preferences || "",
+        loyaltyPrograms: profile.loyalty_programs || "",
+        mobilityAssistance: profile.mobility_assistance || false,
+        wheelchairRequired: profile.wheelchair_required || false,
+        otherTravelNeeds: profile.other_travel_needs || "",
+      })
+    }
+  }, [profile])
+
+  const handleSave = async () => {
+    setSaving(true)
+    try {
+      await updateProfile({
+        passport_number: travelData.passportNumber,
+        passport_expiry: travelData.passportExpiry,
+        passport_country: travelData.passportCountry,
+        visa_information: travelData.visaInformation,
+        tsa_precheck: travelData.tsaPreCheck,
+        global_entry: travelData.globalEntry,
+        known_traveler_number: travelData.knownTravelerNumber,
+        seat_preference: travelData.seatPreference,
+        meal_preference: travelData.mealPreference,
+        frequent_flyer_programs: travelData.frequentFlyerPrograms,
+        hotel_preferences: travelData.hotelPreferences,
+        loyalty_programs: travelData.loyaltyPrograms,
+        mobility_assistance: travelData.mobilityAssistance,
+        wheelchair_required: travelData.wheelchairRequired,
+        other_travel_needs: travelData.otherTravelNeeds,
+      })
+      
+      toast({
+        title: "Travel profile updated",
+        description: "Your travel information has been saved successfully.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
   }
 
   return (
@@ -269,8 +336,12 @@ export function TravelProfileTab() {
       </Card>
 
       <div className="flex justify-end">
-        <Button onClick={handleSave}>
-          <Save className="h-4 w-4 mr-2" />
+        <Button onClick={handleSave} disabled={saving}>
+          {saving ? (
+            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+          ) : (
+            <Save className="h-4 w-4 mr-2" />
+          )}
           Save Changes
         </Button>
       </div>

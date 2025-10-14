@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -10,7 +10,7 @@ import {
   MessageCircle, 
   Heart, 
   Share2, 
-  Image,
+  Image as ImageIcon,
   Send,
   TrendingUp,
   Users,
@@ -40,7 +40,8 @@ interface ActivityPost {
 
 export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
   const [newPost, setNewPost] = useState("")
-  const [posts, setPosts] = useState<ActivityPost[]>(data.length > 0 ? data : [
+  
+  const [posts, setPosts] = useState<ActivityPost[]>([
     {
       id: "1",
       author: "Jessica Martinez",
@@ -148,6 +149,27 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
       tags: ["design", "creative"]
     }
   ])
+  
+  // Update posts when data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const transformed = data.map((item: any) => ({
+        id: item.id,
+        author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Unknown',
+        authorTitle: item.author?.title || 'Community Member',
+        authorImage: item.author?.avatar_url,
+        content: item.content || '',
+        image: item.media_urls?.[0],
+        timestamp: item.created_at,
+        likes: item.likes_count || 0,
+        comments: item.comments_count || 0,
+        shares: item.shares_count || 0,
+        isLiked: false,
+        tags: item.tags || []
+      }))
+      setPosts(transformed)
+    }
+  }, [data])
 
   const characterLimit = 500
   const charactersRemaining = characterLimit - newPost.length
@@ -260,7 +282,7 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
             <div className="flex items-center justify-between">
               <div className="flex gap-2">
                 <Button variant="ghost" size="sm">
-                  <Image className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <ImageIcon className="h-4 w-4 mr-2" aria-hidden="true" />
                   Add Image
                 </Button>
               </div>

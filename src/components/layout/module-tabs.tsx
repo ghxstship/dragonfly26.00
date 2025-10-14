@@ -1,7 +1,7 @@
 "use client"
 
-import Link from "next/link"
-import { useParams, usePathname } from "next/navigation"
+import { Link, usePathname } from "@/i18n/navigation"
+import { useParams } from "next/navigation"
 import { getModuleTabs } from "@/lib/modules/tabs-registry"
 import { cn } from "@/lib/utils"
 import { iconMap } from "@/lib/modules/icon-map"

@@ -1,12 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { Save, Plus, Trash2, Upload, Download, ExternalLink } from "lucide-react"
+import { Save, Plus, Trash2, Loader2, ExternalLink, Upload, Download } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { useProfileData } from "@/hooks/use-profile-data"
+import { useToast } from "@/lib/hooks/use-toast"
 
 interface Certification {
   id: string
@@ -21,7 +23,17 @@ interface Certification {
 }
 
 export function CertificationsTab() {
+  const { profile, loading, updateProfile } = useProfileData()
+  const { toast } = useToast()
+  const [saving, setSaving] = useState(false)
   const [certifications, setCertifications] = useState<Certification[]>([])
+
+  // Sync with profile data
+  useEffect(() => {
+    if (profile) {
+      setCertifications(profile.certifications || [])
+    }
+  }, [profile])
 
   const addCertification = () => {
     const newCert: Certification = {
@@ -61,9 +73,34 @@ export function CertificationsTab() {
     }
   }
 
-  const handleSave = () => {
-    console.log("Saving certifications:", certifications)
-    // TODO: Save to Supabase
+  const handleSave = async () => {
+    setSaving(true)
+    try {
+      await updateProfile({
+        certifications: certifications,
+      })
+      
+      toast({
+        title: "Certifications updated",
+        description: "Your certifications have been saved successfully.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
   }
 
   return (
@@ -243,8 +280,12 @@ export function CertificationsTab() {
 
       {certifications.length > 0 && (
         <div className="flex justify-end">
-          <Button onClick={handleSave}>
-            <Save className="h-4 w-4 mr-2" />
+          <Button onClick={handleSave} disabled={saving}>
+            {saving ? (
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+            ) : (
+              <Save className="h-4 w-4 mr-2" />
+            )}
             Save Changes
           </Button>
         </div>

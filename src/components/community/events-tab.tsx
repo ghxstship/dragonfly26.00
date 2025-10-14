@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -58,7 +58,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
   const [dateFilter, setDateFilter] = useState<Date | undefined>()
   const [categoryFilter, setCategoryFilter] = useState<"all" | CommunityEvent["category"]>("all")
 
-  const [events, setEvents] = useState<CommunityEvent[]>(data.length > 0 ? data : [
+  const [events, setEvents] = useState<CommunityEvent[]>([
     {
       id: "1",
       title: "Global Music Awards 2024",
@@ -224,6 +224,41 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
       isAttending: false
     }
   ])
+
+  // Transform and update events when data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const transformed: CommunityEvent[] = data.map((item: any) => {
+        const startDate = new Date(item.start_time)
+        const endDate = item.end_time ? new Date(item.end_time) : undefined
+        
+        return {
+          id: item.id,
+          title: item.name || 'Untitled Event',
+          description: item.description || '',
+          organizer: item.production?.name || 'Community',
+          organizerImage: undefined,
+          category: item.event_type || 'conference',
+          date: startDate.toISOString().split('T')[0],
+          time: startDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
+          endDate: endDate?.toISOString().split('T')[0],
+          venue: item.location?.name || 'TBA',
+          location: item.location ? `${item.location.city}, ${item.location.state}` : 'TBA',
+          image: undefined,
+          attendees: 0, // Not tracked yet
+          capacity: item.capacity || 1000,
+          price: 'free', // Not tracked yet
+          priceAmount: undefined,
+          visibility: item.is_public ? 'public' : 'public',
+          tags: [],
+          isAttending: false,
+          isInterested: false,
+          featured: false
+        }
+      })
+      setEvents(transformed)
+    }
+  }, [data])
 
   const handleAttend = (eventId: string) => {
     setEvents(events.map(event =>

@@ -15,15 +15,15 @@ import {
   BarChart3,
   PieChart
 } from "lucide-react"
+import { useMyReports } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyReportsTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyReportsTab({ data = [], loading = false }: DashboardMyReportsTabProps) {
-  // User's custom, favorited, and recurring/subscribed reports
-  const reports = data.length > 0 ? data : [
+export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { reports, loading } = useMyReports(workspaceId, userId)
+  
+  const mockReports = [
     {
       id: "RPT-001",
       name: "Personal Task Performance",
@@ -117,6 +117,32 @@ export function DashboardMyReportsTab({ data = [], loading = false }: DashboardM
       views: 18,
     },
   ]
+  
+  const reportsList = reports.length > 0 ? reports.map(report => ({
+    id: report.id,
+    name: report.name || 'Report',
+    type: 'custom',
+    category: report.category || 'General',
+    isFavorite: false,
+    isRecurring: false,
+    lastGenerated: new Date(report.created_at).toLocaleDateString(),
+    format: 'PDF',
+    icon: FileBarChart,
+    description: report.description || '',
+    fileSize: '1 MB',
+    views: 0,
+  })) : mockReports
+  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading reports...</p>
+        </div>
+      </div>
+    )
+  }
 
   const summary = {
     totalReports: 24,
@@ -163,7 +189,11 @@ export function DashboardMyReportsTab({ data = [], loading = false }: DashboardM
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
-        <Button size="sm" className="gap-2">
+        <Button 
+          size="sm" 
+          className="gap-2"
+          onClick={() => router.push(`/workspace/${workspaceId}/reports/templates`)}
+        >
           <Plus className="h-4 w-4" />
           Create Report
         </Button>
@@ -241,12 +271,13 @@ export function DashboardMyReportsTab({ data = [], loading = false }: DashboardM
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {reports.map((report) => {
+            {reportsList.map((report) => {
               const Icon = report.icon
               return (
                 <div
                   key={report.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                  onClick={() => router.push(`/workspace/${workspaceId}/reports/templates?id=${report.id}`)}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 space-y-2">

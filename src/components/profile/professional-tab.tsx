@@ -1,12 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Save, Plus, Trash2, Upload } from "lucide-react"
+import { Save, Plus, Trash2, Loader2 } from "lucide-react"
+import { useProfileData } from "@/hooks/use-profile-data"
+import { useToast } from "@/lib/hooks/use-toast"
 
 interface Experience {
   id: string
@@ -28,19 +30,35 @@ interface Education {
 }
 
 export function ProfessionalTab() {
+  const { profile, loading, updateProfile } = useProfileData()
+  const { toast } = useToast()
+  const [saving, setSaving] = useState(false)
+
   const [professionalData, setProfessionalData] = useState({
     title: "",
-    headline: "",
     bio: "",
-    skills: "",
-    languages: "",
-    pressKit: "",
-    resumeFile: "",
+    company: "",
+    department: "",
     portfolioUrl: "",
   })
 
   const [experiences, setExperiences] = useState<Experience[]>([])
   const [education, setEducation] = useState<Education[]>([])
+
+  // Sync with profile data
+  useEffect(() => {
+    if (profile) {
+      setProfessionalData({
+        title: profile.job_title || "",
+        bio: profile.bio || "",
+        company: profile.company || "",
+        department: profile.department || "",
+        portfolioUrl: profile.website_url || "",
+      })
+      setExperiences(profile.work_experience || [])
+      setEducation(profile.education || [])
+    }
+  }, [profile])
 
   const addExperience = () => {
     const newExp: Experience = {
@@ -87,9 +105,40 @@ export function ProfessionalTab() {
     )
   }
 
-  const handleSave = () => {
-    console.log("Saving professional data:", { professionalData, experiences, education })
-    // TODO: Save to Supabase
+  const handleSave = async () => {
+    setSaving(true)
+    try {
+      await updateProfile({
+        job_title: professionalData.title,
+        bio: professionalData.bio,
+        company: professionalData.company,
+        department: professionalData.department,
+        website_url: professionalData.portfolioUrl,
+        work_experience: experiences,
+        education: education,
+      })
+      
+      toast({
+        title: "Professional profile updated",
+        description: "Your professional information has been saved successfully.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
   }
 
   return (
@@ -110,17 +159,29 @@ export function ProfessionalTab() {
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="headline">Professional Headline</Label>
-            <Input
-              id="headline"
-              value={professionalData.headline}
-              onChange={(e) =>
-                setProfessionalData({ ...professionalData, headline: e.target.value })
-              }
-              placeholder="Brief professional statement (120 characters)"
-              maxLength={120}
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="company">Company</Label>
+              <Input
+                id="company"
+                value={professionalData.company}
+                onChange={(e) =>
+                  setProfessionalData({ ...professionalData, company: e.target.value })
+                }
+                placeholder="Current employer"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="department">Department</Label>
+              <Input
+                id="department"
+                value={professionalData.department}
+                onChange={(e) =>
+                  setProfessionalData({ ...professionalData, department: e.target.value })
+                }
+                placeholder="e.g., Production, Operations"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -134,28 +195,6 @@ export function ProfessionalTab() {
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="skills">Skills & Expertise</Label>
-            <Textarea
-              id="skills"
-              value={professionalData.skills}
-              onChange={(e) => setProfessionalData({ ...professionalData, skills: e.target.value })}
-              placeholder="List your professional skills and areas of expertise (comma-separated)"
-              rows={3}
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="languages">Languages</Label>
-            <Input
-              id="languages"
-              value={professionalData.languages}
-              onChange={(e) =>
-                setProfessionalData({ ...professionalData, languages: e.target.value })
-              }
-              placeholder="e.g., English (Native), Spanish (Fluent)"
-            />
-          </div>
         </CardContent>
       </Card>
 
@@ -356,46 +395,15 @@ export function ProfessionalTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Press Kit & Portfolio</CardTitle>
-          <CardDescription>Resume, press kit, and portfolio materials</CardDescription>
+          <CardTitle>Portfolio</CardTitle>
+          <CardDescription>Your professional portfolio or website</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="resume">Resume/CV</Label>
-            <div className="flex gap-2">
-              <Input
-                id="resume"
-                value={professionalData.resumeFile}
-                onChange={(e) =>
-                  setProfessionalData({ ...professionalData, resumeFile: e.target.value })
-                }
-                placeholder="No file uploaded"
-                disabled
-              />
-              <Button variant="outline">
-                <Upload className="h-4 w-4 mr-2" />
-                Upload
-              </Button>
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="pressKit">Press Kit</Label>
-            <Textarea
-              id="pressKit"
-              value={professionalData.pressKit}
-              onChange={(e) =>
-                setProfessionalData({ ...professionalData, pressKit: e.target.value })
-              }
-              placeholder="Links to press materials, media kit, headshots, etc."
-              rows={3}
-            />
-          </div>
-
           <div className="space-y-2">
             <Label htmlFor="portfolio">Portfolio URL</Label>
             <Input
               id="portfolio"
+              type="url"
               value={professionalData.portfolioUrl}
               onChange={(e) =>
                 setProfessionalData({ ...professionalData, portfolioUrl: e.target.value })
@@ -407,8 +415,12 @@ export function ProfessionalTab() {
       </Card>
 
       <div className="flex justify-end">
-        <Button onClick={handleSave}>
-          <Save className="h-4 w-4 mr-2" />
+        <Button onClick={handleSave} disabled={saving}>
+          {saving ? (
+            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+          ) : (
+            <Save className="h-4 w-4 mr-2" />
+          )}
           Save Changes
         </Button>
       </div>

@@ -13,15 +13,16 @@ import {
   Filter,
   User
 } from "lucide-react"
+import { useMyTasks } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyTasksTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyTasksTab({ data = [], loading = false }: DashboardMyTasksTabProps) {
-  // User's assigned and created tasks
-  const tasks = data.length > 0 ? data : [
+export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { tasks, loading } = useMyTasks(workspaceId, userId)
+  
+  // Mock data fallback
+  const mockTasks = [
     {
       id: "1",
       title: "Finalize lighting plot for main stage",
@@ -107,6 +108,32 @@ export function DashboardMyTasksTab({ data = [], loading = false }: DashboardMyT
       subtasks: { total: 6, completed: 4 },
     },
   ]
+  
+  // Transform real data
+  const tasksList = tasks.length > 0 ? tasks.map(task => ({
+    id: task.id,
+    title: task.title || task.name,
+    project: task.production?.name || 'No Project',
+    dueDate: task.due_date ? new Date(task.due_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : 'No due date',
+    priority: task.priority || 'medium',
+    status: task.status || 'pending',
+    assignedBy: task.created_by === userId ? 'You' : 'Team',
+    isCreator: task.created_by === userId,
+    completed: task.status === 'completed',
+    subtasks: { total: 0, completed: 0 },
+  })) : mockTasks.map(t => ({ ...t, id: t.id || 'mock-' + Math.random() }))
+  
+  // Loading state
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading tasks...</p>
+        </div>
+      </div>
+    )
+  }
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
@@ -142,11 +169,15 @@ export function DashboardMyTasksTab({ data = [], loading = false }: DashboardMyT
     <div className="space-y-6">
       <div className="flex justify-end">
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2" disabled>
             <Filter className="h-4 w-4" />
             Filter
           </Button>
-          <Button size="sm" className="gap-2">
+          <Button 
+            size="sm" 
+            className="gap-2"
+            onClick={() => router.push(`/workspace/${workspaceId}/projects/tasks`)}
+          >
             <Plus className="h-4 w-4" />
             New Task
           </Button>
@@ -196,10 +227,11 @@ export function DashboardMyTasksTab({ data = [], loading = false }: DashboardMyT
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {tasks.map((task) => (
+            {tasksList.map((task) => (
               <div
                 key={task.id}
-                className="p-4 border rounded-lg hover:bg-accent transition-colors"
+                className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                onClick={() => router.push(`/workspace/${workspaceId}/projects/tasks?id=${task.id}`)}
               >
                 <div className="flex items-start gap-4">
                   <Checkbox 

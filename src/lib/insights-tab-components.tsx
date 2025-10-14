@@ -1,5 +1,16 @@
-// Insights tabs - to be implemented
-// For now, return undefined to use default view system
+// Insights tab components registry
+import {
+  InsightsOverviewTab,
+  InsightsObjectivesTab,
+  InsightsKeyResultsTab,
+  InsightsBenchmarksTab,
+  InsightsRecommendationsTab,
+  InsightsPrioritiesTab,
+  InsightsProgressTrackingTab,
+  InsightsReviewsTab,
+  InsightsIntelligenceFeedTab,
+  InsightsSuccessMetricsTab,
+} from '@/components/insights'
 
 interface InsightsTabProps {
   data?: any[]
@@ -7,7 +18,16 @@ interface InsightsTabProps {
 }
 
 export const INSIGHTS_TAB_COMPONENTS: Record<string, React.ComponentType<InsightsTabProps> | undefined> = {
-  // Add custom insights tab components here when needed
+  'overview': InsightsOverviewTab,
+  'objectives': InsightsObjectivesTab,
+  'key-results': InsightsKeyResultsTab,
+  'benchmarks': InsightsBenchmarksTab,
+  'recommendations': InsightsRecommendationsTab,
+  'priorities': InsightsPrioritiesTab,
+  'progress-tracking': InsightsProgressTrackingTab,
+  'reviews': InsightsReviewsTab,
+  'intelligence-feed': InsightsIntelligenceFeedTab,
+  'success-metrics': InsightsSuccessMetricsTab,
 }
 
 export function getInsightsTabComponent(tabSlug: string): React.ComponentType<InsightsTabProps> | undefined {

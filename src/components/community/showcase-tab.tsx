@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -43,7 +43,7 @@ interface ShowcasePost {
 }
 
 export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
-  const [posts, setPosts] = useState<ShowcasePost[]>(data.length > 0 ? data : [
+  const [posts, setPosts] = useState<ShowcasePost[]>([
     {
       id: "1",
       author: "Sarah Mitchell",
@@ -154,6 +154,31 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
       isBookmarked: true
     }
   ])
+
+  // Transform and update posts when data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const transformed: ShowcasePost[] = data.map((item: any) => ({
+        id: item.id,
+        author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Anonymous',
+        authorTitle: item.author?.title || 'Community Member',
+        authorImage: item.author?.avatar_url,
+        company: item.author?.company || 'Company',
+        content: item.content || '',
+        images: item.media_urls || [],
+        category: item.is_featured ? 'featured' : (item.is_sponsored ? 'sponsored' : 'achievement'),
+        likes: item.likes_count || 0,
+        comments: item.comments_count || 0,
+        shares: item.shares_count || 0,
+        views: 0, // Not tracked yet
+        timestamp: item.created_at,
+        tags: item.tags || [],
+        isLiked: false,
+        isBookmarked: false
+      }))
+      setPosts(transformed)
+    }
+  }, [data])
 
   const handleLike = (postId: string) => {
     setPosts(posts.map(post => 

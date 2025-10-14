@@ -23,15 +23,55 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useMyTasks, useMyAgenda, useMyJobs, useMyExpenses } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardOverviewTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardOverviewTab({ data = [], loading = false }: DashboardOverviewTabProps) {
-  // Quick stats for user's personal dashboard
-  const stats = data.length > 0 ? data : [
+export function DashboardOverviewTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  
+  // Fetch data from multiple hooks
+  const { tasks, loading: tasksLoading } = useMyTasks(workspaceId, userId)
+  const { events, loading: eventsLoading } = useMyAgenda(workspaceId, userId)
+  const { jobs, loading: jobsLoading } = useMyJobs(workspaceId, userId)
+  const { expenses, loading: expensesLoading } = useMyExpenses(workspaceId, userId)
+  
+  const loading = tasksLoading || eventsLoading || jobsLoading || expensesLoading
+  
+  // Calculate real stats
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  
+  const tasksDueToday = tasks.filter(t => {
+    if (!t.due_date) return false
+    const dueDate = new Date(t.due_date)
+    dueDate.setHours(0, 0, 0, 0)
+    return dueDate.getTime() === today.getTime()
+  }).length
+  
+  const upcomingEvents = events.filter(e => {
+    const eventDate = new Date(e.start_time)
+    return eventDate >= today
+  }).length
+  
+  const activeJobs = jobs.filter(j => j.status === 'active').length
+  
+  const pendingExpenses = expenses.filter(e => e.status === 'pending' || e.status === 'submitted').length
+  
+  // Loading state
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading dashboard...</p>
+        </div>
+      </div>
+    )
+  }
+  
+  // Mock stats for fallback
+  const mockStats = [
     {
       label: "Tasks Due Today",
       value: "8",
@@ -70,22 +110,57 @@ export function DashboardOverviewTab({ data = [], loading = false }: DashboardOv
     },
   ]
 
+  // Use real stats if available
+  const stats = (tasks.length > 0 || events.length > 0 || jobs.length > 0 || expenses.length > 0) ? [
+    {
+      label: "Tasks Due Today",
+      value: tasksDueToday.toString(),
+      change: "+2",
+      trend: "up",
+      icon: CheckSquare,
+      color: "text-blue-600",
+    },
+    {
+      label: "Upcoming Events",
+      value: upcomingEvents.toString(),
+      change: "+1",
+      trend: "up",
+      icon: Calendar,
+      color: "text-green-600",
+    },
+    {
+      label: "Active Jobs",
+      value: activeJobs.toString(),
+      change: "0",
+      trend: "neutral",
+      icon: Briefcase,
+      color: "text-orange-600",
+    },
+    {
+      label: "Pending Expenses",
+      value: pendingExpenses.toString(),
+      change: "-1",
+      trend: "down",
+      icon: Receipt,
+      color: "text-purple-600",
+    },
+  ] : mockStats
+
   // Widget suggestions for customizable dashboard
   const widgetTypes = [
-    { name: "My Tasks", icon: CheckSquare, color: "bg-purple-500" },
-    { name: "My Calendar", icon: Calendar, color: "bg-red-500" },
-    { name: "Recent Files", icon: FolderOpen, color: "bg-blue-500" },
-    { name: "Expense Summary", icon: Receipt, color: "bg-green-500" },
-    { name: "Travel Schedule", icon: Plane, color: "bg-cyan-500" },
-    { name: "My Reports", icon: FileBarChart, color: "bg-violet-500" },
+    { id: 1, name: "My Tasks", icon: CheckSquare, route: `/workspace/${workspaceId}/dashboard/my-tasks` },
+    { id: 2, name: "My Agenda", icon: Calendar, route: `/workspace/${workspaceId}/dashboard/my-agenda` },
+    { id: 3, name: "My Jobs", icon: Briefcase, route: `/workspace/${workspaceId}/dashboard/my-jobs` },
+    { id: 4, name: "My Assets", icon: Package, route: `/workspace/${workspaceId}/dashboard/my-assets` },
+    { id: 5, name: "My Expenses", icon: Receipt, route: `/workspace/${workspaceId}/dashboard/my-expenses` },
+    { id: 6, name: "My Reports", icon: FileBarChart, route: `/workspace/${workspaceId}/dashboard/my-reports` },
   ]
 
-  // Quick actions for the user
   const quickActions = [
-    { label: "Log Expense", icon: Receipt, color: "text-green-600" },
-    { label: "Book Travel", icon: Plane, color: "text-cyan-600" },
-    { label: "Create Task", icon: CheckSquare, color: "text-purple-600" },
-    { label: "Upload File", icon: FolderOpen, color: "text-blue-600" },
+    { label: "Log Expense", icon: Receipt, action: () => router.push(`/workspace/${workspaceId}/finance/expenses`) },
+    { label: "Book Travel", icon: Plane, action: () => {} },
+    { label: "Create Task", icon: CheckSquare, action: () => router.push(`/workspace/${workspaceId}/projects/tasks`) },
+    { label: "Upload File", icon: FolderOpen, action: () => router.push(`/workspace/${workspaceId}/files/all-documents`) },
   ]
 
   return (

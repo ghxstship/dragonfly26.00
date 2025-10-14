@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -22,26 +22,74 @@ import {
   Globe
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 export function ProfilePage() {
   const { toast } = useToast()
+  const { profile, loading, updateProfile, uploadAvatar } = useProfileData()
+  const [saving, setSaving] = useState(false)
+  
   const [formData, setFormData] = useState({
-    displayName: "John Doe",
-    title: "Production Manager",
-    bio: "Experienced production manager specializing in live events and experiential marketing. 10+ years in the industry.",
-    company: "Acme Productions",
-    location: "Los Angeles, CA",
-    website: "https://johndoe.com",
-    linkedin: "johndoe",
-    twitter: "@johndoe",
-    github: "johndoe",
+    displayName: "",
+    title: "",
+    bio: "",
+    company: "",
+    website: "",
+    linkedin: "",
+    twitter: "",
   })
+  const [avatarUrl, setAvatarUrl] = useState("")
 
-  const handleSave = () => {
-    toast({
-      title: "Profile updated",
-      description: "Your profile has been saved successfully.",
-    })
+  // Sync with profile data
+  useEffect(() => {
+    if (profile) {
+      setFormData({
+        displayName: profile.full_name || "",
+        title: profile.job_title || "",
+        bio: profile.bio || "",
+        company: profile.company || "",
+        website: profile.website_url || "",
+        linkedin: profile.linkedin_url || "",
+        twitter: profile.twitter_url || "",
+      })
+      setAvatarUrl(profile.avatar_url || "")
+    }
+  }, [profile])
+
+  const handleSave = async () => {
+    setSaving(true)
+    try {
+      await updateProfile({
+        full_name: formData.displayName,
+        job_title: formData.title,
+        bio: formData.bio,
+        company: formData.company,
+        website_url: formData.website,
+        linkedin_url: formData.linkedin,
+        twitter_url: formData.twitter,
+      })
+      
+      toast({
+        title: "Profile updated",
+        description: "Your profile has been saved successfully.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <span>Loading...</span>
+      </div>
+    )
   }
 
   const skills = [
@@ -81,8 +129,10 @@ export function ProfilePage() {
               {/* Profile Picture */}
               <div className="flex items-start gap-6">
                 <Avatar className="h-32 w-32">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback className="text-2xl">JD</AvatarFallback>
+                  <AvatarImage src={avatarUrl} />
+                  <AvatarFallback className="text-2xl">
+                    {formData.displayName?.charAt(0) || "?"}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="flex-1 space-y-4">
                   <div>
@@ -266,9 +316,9 @@ export function ProfilePage() {
 
           {/* Save Button */}
           <div className="flex justify-end">
-            <Button onClick={handleSave} size="lg">
+            <Button onClick={handleSave} disabled={saving} size="lg">
               <Save className="h-4 w-4 mr-2" />
-              Save Profile
+              {saving ? "Saving..." : "Save Profile"}
             </Button>
           </div>
         </div>

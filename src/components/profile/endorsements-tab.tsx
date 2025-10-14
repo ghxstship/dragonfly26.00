@@ -1,12 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ThumbsUp, MessageSquare, UserPlus } from "lucide-react"
+import { ThumbsUp, MessageSquare, UserPlus, Loader2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
+import { useProfileData } from "@/hooks/use-profile-data"
+import { useToast } from "@/lib/hooks/use-toast"
 
 interface Endorsement {
   id: string
@@ -26,9 +28,20 @@ interface SkillEndorsement {
 }
 
 export function EndorsementsTab() {
+  const { profile, loading } = useProfileData()
+  const { toast } = useToast()
   const [searchQuery, setSearchQuery] = useState("")
-  
-  const [endorsements] = useState<Endorsement[]>([
+  const [endorsements, setEndorsements] = useState<Endorsement[]>([])
+
+  // Sync with profile data
+  useEffect(() => {
+    if (profile) {
+      setEndorsements(profile.endorsements || [])
+    }
+  }, [profile])
+
+  // Mock endorsements for display (will be replaced with real data)
+  const mockEndorsements: Endorsement[] = [
     {
       id: "1",
       endorserName: "Sarah Johnson",
@@ -77,7 +90,10 @@ export function EndorsementsTab() {
         "Creative and technically proficient. Has a great eye for lighting design and understands how to create the perfect atmosphere for any production.",
       date: "2024-05-18",
     },
-  ])
+  ]
+
+  // Display endorsements (use profile data if available, otherwise mock)
+  const displayEndorsements = endorsements.length > 0 ? endorsements : mockEndorsements
 
   const skillEndorsements: SkillEndorsement[] = [
     {
@@ -112,12 +128,20 @@ export function EndorsementsTab() {
     },
   ]
 
-  const filteredEndorsements = endorsements.filter(
+  const filteredEndorsements = displayEndorsements.filter(
     (endorsement) =>
       endorsement.endorserName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       endorsement.skill.toLowerCase().includes(searchQuery.toLowerCase()) ||
       endorsement.message.toLowerCase().includes(searchQuery.toLowerCase())
   )
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
+  }
 
   return (
     <div className="space-y-6">
@@ -128,7 +152,7 @@ export function EndorsementsTab() {
             <ThumbsUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{endorsements.length}</div>
+            <div className="text-2xl font-bold">{displayEndorsements.length}</div>
             <p className="text-xs text-muted-foreground">From colleagues and managers</p>
           </CardContent>
         </Card>

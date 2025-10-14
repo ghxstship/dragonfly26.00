@@ -16,15 +16,15 @@ import {
   Wrench,
   Truck
 } from "lucide-react"
+import { useMyAdvances } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyAdvancesTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyAdvancesTab({ data = [], loading = false }: DashboardMyAdvancesTabProps) {
-  // User's production advances - equipment, credentials, materials
-  const advances = data.length > 0 ? data : [
+export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { advances, loading } = useMyAdvances(workspaceId, userId)
+  
+  const mockAdvances = [
     {
       id: "ADV-2024-001",
       title: "Lighting Package - Summer Festival",
@@ -103,6 +103,30 @@ export function DashboardMyAdvancesTab({ data = [], loading = false }: Dashboard
       reconciledDate: "Sep 30, 2024",
     },
   ]
+  
+  const advancesList = advances.length > 0 ? advances.map(adv => ({
+    id: adv.id,
+    title: adv.title || adv.description || 'Advance Request',
+    project: adv.production?.name || 'No Project',
+    type: adv.type || 'Equipment',
+    requestDate: new Date(adv.created_at).toLocaleDateString(),
+    status: adv.status || 'pending',
+    items: adv.quantity || 0,
+    purpose: adv.description || '',
+    returned: 0,
+    pending: adv.quantity || 0,
+  })) : mockAdvances
+  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading advances...</p>
+        </div>
+      </div>
+    )
+  }
 
   const summary = {
     totalAdvances: 12,
@@ -177,7 +201,11 @@ export function DashboardMyAdvancesTab({ data = [], loading = false }: Dashboard
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
-        <Button size="sm" className="gap-2">
+        <Button 
+          size="sm" 
+          className="gap-2"
+          onClick={() => router.push(`/workspace/${workspaceId}/assets/advances`)}
+        >
           <Plus className="h-4 w-4" />
           Request Advance
         </Button>
@@ -226,13 +254,14 @@ export function DashboardMyAdvancesTab({ data = [], loading = false }: Dashboard
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {advances.map((advance) => {
+            {advancesList.map((advance) => {
               const StatusIcon = getStatusIcon(advance.status)
               const TypeIcon = getTypeIcon(advance.type)
               return (
                 <div
                   key={advance.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                  onClick={() => router.push(`/workspace/${workspaceId}/assets/advances?id=${advance.id}`)}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 space-y-2">

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -60,7 +60,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
   const [searchQuery, setSearchQuery] = useState("")
   const [competitionFilter, setCompetitionFilter] = useState<"all" | "active" | "upcoming" | "completed">("all")
 
-  const [competitions, setCompetitions] = useState<Competition[]>(data.length > 0 ? data : [
+  const [competitions, setCompetitions] = useState<Competition[]>([
     {
       id: "1",
       title: "Fastest Load-In Challenge",
@@ -140,6 +140,40 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       joined: false
     }
   ])
+
+  // Transform and update competitions when data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const transformed: Competition[] = data.map((item: any) => {
+        // Try to extract dates and prize info from content
+        const now = new Date()
+        const startDate = item.created_at
+        const endDate = item.created_at // Placeholder
+        
+        const start = new Date(startDate)
+        const end = new Date(endDate)
+        
+        let status: "active" | "upcoming" | "completed" = "active"
+        if (now < start) status = "upcoming"
+        else if (now > end) status = "completed"
+        
+        return {
+          id: item.id,
+          title: item.title || 'Untitled Competition',
+          description: item.content || '',
+          category: 'innovation', // Default category
+          startDate: start.toISOString().split('T')[0],
+          endDate: end.toISOString().split('T')[0],
+          status,
+          participants: item.comments_count || 0,
+          prize: 'TBA',
+          image: item.media_urls?.[0],
+          joined: false
+        }
+      })
+      setCompetitions(transformed)
+    }
+  }, [data])
 
   const [leaderboard] = useState<LeaderboardEntry[]>([
     {

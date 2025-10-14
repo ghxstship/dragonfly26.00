@@ -13,6 +13,8 @@ import { DashboardMyFilesTab } from "@/components/dashboard/dashboard-my-files-t
 interface DashboardTabProps {
   data?: any[]
   loading?: boolean
+  workspaceId?: string
+  userId?: string
 }
 
 export const DASHBOARD_TAB_COMPONENTS: Record<string, React.ComponentType<DashboardTabProps>> = {
@@ -32,3 +34,5 @@ export const DASHBOARD_TAB_COMPONENTS: Record<string, React.ComponentType<Dashbo
 export function getDashboardTabComponent(tabSlug: string): React.ComponentType<DashboardTabProps> | undefined {
   return DASHBOARD_TAB_COMPONENTS[tabSlug]
 }
+
+export type { DashboardTabProps }

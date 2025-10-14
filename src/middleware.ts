@@ -1,15 +1,10 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { updateSession } from '@/lib/supabase/middleware'
 import createIntlMiddleware from 'next-intl/middleware'
-import { locales, defaultLocale } from '@/i18n/config'
+import { routing } from '@/i18n/navigation'
 
 // Create the i18n middleware with locale detection from cookies
-const intlMiddleware = createIntlMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: 'always',
-  localeDetection: true
-})
+const intlMiddleware = createIntlMiddleware(routing)
 
 export async function middleware(request: NextRequest) {
   // First, handle i18n routing

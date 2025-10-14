@@ -12,16 +12,19 @@ import {
   Plus,
   ChevronRight
 } from "lucide-react"
+import { useMyAgenda } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyAgendaTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMyAgendaTabProps) {
-  // User's events including them or created by them
-  const upcomingEvents = data.length > 0 ? data : [
+export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  
+  // Use real data hook
+  const { events, loading } = useMyAgenda(workspaceId, userId)
+  // Mock data fallback for development/testing
+  const mockEvents = [
     {
+      id: 'mock-1',
       title: "Production Meeting",
       date: "Today",
       time: "10:00 AM - 11:00 AM",
@@ -33,6 +36,7 @@ export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMy
       isOrganizer: true,
     },
     {
+      id: 'mock-2',
       title: "Tech Rehearsal - Summer Festival",
       date: "Today",
       time: "2:00 PM - 6:00 PM",
@@ -44,6 +48,7 @@ export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMy
       isOrganizer: false,
     },
     {
+      id: 'mock-3',
       title: "Budget Review Call",
       date: "Tomorrow",
       time: "9:00 AM - 10:00 AM",
@@ -55,6 +60,7 @@ export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMy
       isOrganizer: true,
     },
     {
+      id: 'mock-4',
       title: "Load-In Coordination",
       date: "Tomorrow",
       time: "1:00 PM - 3:00 PM",
@@ -66,6 +72,7 @@ export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMy
       isOrganizer: false,
     },
     {
+      id: 'mock-5',
       title: "Crew Check-In",
       date: "Wed, Oct 16",
       time: "8:00 AM - 9:00 AM",
@@ -77,6 +84,7 @@ export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMy
       isOrganizer: true,
     },
     {
+      id: 'mock-6',
       title: "Client Presentation",
       date: "Thu, Oct 17",
       time: "11:00 AM - 12:00 PM",
@@ -88,6 +96,32 @@ export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMy
       isOrganizer: true,
     },
   ]
+  
+  // Use real events if available, otherwise fall back to mock data
+  const upcomingEvents = events.length > 0 ? events.map(event => ({
+    title: event.title || event.name,
+    date: new Date(event.start_time).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+    time: `${new Date(event.start_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })} - ${new Date(event.end_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`,
+    location: event.location?.name || event.location_name || 'TBD',
+    type: event.type || 'Event',
+    attendees: event.attendees?.length || 0,
+    status: event.status || 'confirmed',
+    isVirtual: event.is_virtual || false,
+    isOrganizer: event.created_by === userId,
+    id: event.id,
+  })) : mockEvents
+  
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading your agenda...</p>
+        </div>
+      </div>
+    )
+  }
 
   const weekSummary = [
     { day: "Mon", events: 3 },
@@ -128,7 +162,11 @@ export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMy
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
-        <Button size="sm" className="gap-2">
+        <Button 
+          size="sm" 
+          className="gap-2"
+          onClick={() => router.push(`/workspace/${workspaceId}/events/all-events`)}
+        >
           <Plus className="h-4 w-4" />
           New Event
         </Button>
@@ -166,8 +204,9 @@ export function DashboardMyAgendaTab({ data = [], loading = false }: DashboardMy
           <div className="space-y-3">
             {upcomingEvents.map((event, index) => (
               <div
-                key={index}
+                key={event.id || index}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                onClick={() => event.id && router.push(`/workspace/${workspaceId}/events/all-events?id=${event.id}`)}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 space-y-2">

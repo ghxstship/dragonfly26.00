@@ -1,13 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Search, X, Plus, Info } from "lucide-react"
+import { Search, X, Plus, Info, Save, Loader2 } from "lucide-react"
+import { useProfileData } from "@/hooks/use-profile-data"
+import { useToast } from "@/lib/hooks/use-toast"
 import {
   Table,
   TableBody,
@@ -37,13 +39,18 @@ const SYSTEM_TAGS = [
 ]
 
 export function TagsTab() {
+  const { profile, loading, updateProfile } = useProfileData()
+  const { toast } = useToast()
+  const [saving, setSaving] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedTags, setSelectedTags] = useState<string[]>([
-    "Stage Management",
-    "Lighting Design",
-    "Corporate Events",
-    "Travel Available",
-  ])
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+
+  // Sync with profile data
+  useEffect(() => {
+    if (profile) {
+      setSelectedTags(profile.tags || [])
+    }
+  }, [profile])
 
   const filteredTags = SYSTEM_TAGS.filter((tag) =>
     tag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -58,9 +65,34 @@ export function TagsTab() {
     }
   }
 
-  const handleSave = () => {
-    console.log("Saving tags:", selectedTags)
-    // TODO: Save to Supabase
+  const handleSave = async () => {
+    setSaving(true)
+    try {
+      await updateProfile({
+        tags: selectedTags,
+      })
+      
+      toast({
+        title: "Tags updated",
+        description: "Your profile tags have been saved successfully.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
   }
 
   const groupedTags = SYSTEM_TAGS.reduce((acc, tag) => {
@@ -226,7 +258,12 @@ export function TagsTab() {
 
       {/* Save Button */}
       <div className="flex justify-end">
-        <Button onClick={handleSave} size="lg">
+        <Button onClick={handleSave} size="lg" disabled={saving}>
+          {saving ? (
+            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+          ) : (
+            <Save className="h-4 w-4 mr-2" />
+          )}
           Save Tags
         </Button>
       </div>

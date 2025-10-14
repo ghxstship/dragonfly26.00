@@ -13,16 +13,17 @@ import {
   ChevronRight,
   Clock
 } from "lucide-react"
+import { useMyJobs } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyJobsTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJobsTabProps) {
-  // User's contracts and scopes of work
-  const jobs = data.length > 0 ? data : [
+export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { jobs, loading } = useMyJobs(workspaceId, userId)
+  
+  const mockJobs = [
     {
+      id: 'mock-1',
       title: "Technical Director - Summer Music Festival",
       client: "Festival Productions Inc.",
       type: "Contract",
@@ -35,6 +36,7 @@ export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJo
       daysRemaining: 18,
     },
     {
+      id: 'mock-2',
       title: "Lighting Designer - Corporate Gala",
       client: "TechCorp Events",
       type: "Freelance",
@@ -47,6 +49,7 @@ export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJo
       daysRemaining: 9,
     },
     {
+      id: 'mock-3',
       title: "Production Manager - Theater Revival",
       client: "Broadway Theater Group",
       type: "Contract",
@@ -59,6 +62,7 @@ export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJo
       daysRemaining: 21,
     },
     {
+      id: 'mock-4',
       title: "Audio Engineer - Concert Series",
       client: "Live Nation",
       type: "Freelance",
@@ -71,6 +75,7 @@ export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJo
       daysRemaining: 0,
     },
     {
+      id: 'mock-5',
       title: "Stage Manager - Fashion Week",
       client: "Fashion Events Ltd",
       type: "Contract",
@@ -83,6 +88,31 @@ export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJo
       daysRemaining: 14,
     },
   ]
+  
+  const jobsList = jobs.length > 0 ? jobs.map(job => ({
+    id: job.id,
+    title: job.role || job.title || 'Untitled',
+    client: 'Client',
+    type: job.type || 'Contract',
+    status: job.status || 'active',
+    startDate: job.start_date ? new Date(job.start_date).toLocaleDateString() : 'TBD',
+    endDate: job.end_date ? new Date(job.end_date).toLocaleDateString() : 'TBD',
+    location: job.location || 'Remote',
+    rate: job.rate || 'TBD',
+    progress: 50,
+    daysRemaining: job.end_date ? Math.ceil((new Date(job.end_date).getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : 0,
+  })) : mockJobs
+  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading jobs...</p>
+        </div>
+      </div>
+    )
+  }
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -104,7 +134,11 @@ export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJo
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
-        <Button size="sm" className="gap-2">
+        <Button 
+          size="sm" 
+          className="gap-2"
+          onClick={() => router.push(`/workspace/${workspaceId}/people/personnel`)}
+        >
           <Plus className="h-4 w-4" />
           New Contract
         </Button>
@@ -153,10 +187,11 @@ export function DashboardMyJobsTab({ data = [], loading = false }: DashboardMyJo
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {jobs.map((job, index) => (
+            {jobsList.map((job, index) => (
               <div
-                key={index}
+                key={job.id || index}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                onClick={() => job.id && router.push(`/workspace/${workspaceId}/people/personnel?id=${job.id}`)}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 space-y-3">

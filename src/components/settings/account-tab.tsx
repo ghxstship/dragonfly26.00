@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -29,70 +29,117 @@ import {
   Shield,
   Trash2,
   AlertTriangle,
-  Download
+  Download,
+  Loader2
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 export function AccountTab() {
   const { toast } = useToast()
-  const [profilePicture, setProfilePicture] = useState("https://github.com/shadcn.png")
+  const { profile, loading, updateProfile, uploadAvatar } = useProfileData()
+  const [saving, setSaving] = useState(false)
+  const [uploading, setUploading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  
   const [formData, setFormData] = useState({
-    firstName: "John",
-    lastName: "Doe",
-    email: "john.doe@example.com",
-    phone: "+1 (555) 123-4567",
-    address: "123 Main St",
-    city: "San Francisco",
-    state: "CA",
-    zipCode: "94102",
-    country: "United States",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    country: "",
   })
+  const [profilePicture, setProfilePicture] = useState("")
 
-  const handleSave = () => {
-    // Save to localStorage for persistence
-    localStorage.setItem('account-data', JSON.stringify({
-      ...formData,
-      profilePicture
-    }))
-    
-    toast({
-      title: "Account updated",
-      description: "Your account information has been saved successfully.",
-    })
+  // Sync with profile data
+  useEffect(() => {
+    if (profile) {
+      setFormData({
+        firstName: profile.first_name || "",
+        lastName: profile.last_name || "",
+        email: profile.email || "",
+        phone: profile.phone || "",
+        address: profile.address || "",
+        city: profile.city || "",
+        state: profile.state || "",
+        zipCode: profile.zip_code || "",
+        country: profile.country || "",
+      })
+      setProfilePicture(profile.avatar_url || "")
+    }
+  }, [profile])
+
+  const handleSave = async () => {
+    setSaving(true)
+    try {
+      await updateProfile({
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        state: formData.state,
+        zip_code: formData.zipCode,
+        country: formData.country,
+      })
+      
+      toast({
+        title: "Account updated",
+        description: "Your account information has been saved successfully.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setSaving(false)
+    }
   }
 
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
-    if (file) {
-      if (file.size > 2 * 1024 * 1024) { // 2MB limit
-        toast({
-          title: "File too large",
-          description: "Please select an image under 2MB.",
-          variant: "destructive",
-        })
-        return
-      }
-      
-      if (!file.type.startsWith('image/')) {
-        toast({
-          title: "Invalid file type",
-          description: "Please select an image file (JPG, PNG, or GIF).",
-          variant: "destructive",
-        })
-        return
-      }
-      
-      const reader = new FileReader()
-      reader.onload = (event) => {
-        const dataUrl = event.target?.result as string
-        setProfilePicture(dataUrl)
-        toast({
-          title: "Photo uploaded",
-          description: "Your profile picture has been updated.",
-        })
-      }
-      reader.readAsDataURL(file)
+    if (!file) return
+
+    if (file.size > 2 * 1024 * 1024) { // 2MB limit
+      toast({
+        title: "File too large",
+        description: "Please select an image under 2MB.",
+        variant: "destructive",
+      })
+      return
+    }
+    
+    if (!file.type.startsWith('image/')) {
+      toast({
+        title: "Invalid file type",
+        description: "Please select an image file (JPG, PNG, or GIF).",
+        variant: "destructive",
+      })
+      return
+    }
+    
+    setUploading(true)
+    try {
+      const url = await uploadAvatar(file)
+      setProfilePicture(url)
+      toast({
+        title: "Photo uploaded",
+        description: "Your profile picture has been updated.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Upload failed",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setUploading(false)
     }
   }
 
@@ -116,6 +163,14 @@ export function AccountTab() {
       description: "Your account will be deleted within 30 days. You can cancel this at any time.",
       variant: "destructive",
     })
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
   }
 
   return (
@@ -150,8 +205,13 @@ export function AccountTab() {
                 variant="outline" 
                 size="sm"
                 onClick={() => fileInputRef.current?.click()}
+                disabled={uploading}
               >
-                <Upload className="h-4 w-4 mr-2" />
+                {uploading ? (
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                ) : (
+                  <Upload className="h-4 w-4 mr-2" />
+                )}
                 Upload New Photo
               </Button>
               <p className="text-xs text-muted-foreground">
@@ -253,8 +313,12 @@ export function AccountTab() {
           </div>
 
           <div className="flex justify-end">
-            <Button onClick={handleSave}>
-              <Save className="h-4 w-4 mr-2" />
+            <Button onClick={handleSave} disabled={saving}>
+              {saving ? (
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+              ) : (
+                <Save className="h-4 w-4 mr-2" />
+              )}
               Save Changes
             </Button>
           </div>

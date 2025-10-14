@@ -1,15 +1,23 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Camera, Save } from "lucide-react"
+import { Camera, Save, Loader2 } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
+import { useProfileData } from "@/hooks/use-profile-data"
+import { useToast } from "@/lib/hooks/use-toast"
 
 export function BasicInfoTab() {
+  const { profile, loading, updateProfile, uploadAvatar } = useProfileData()
+  const { toast } = useToast()
+  const [saving, setSaving] = useState(false)
+  const [uploading, setUploading] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+  
   const [profileData, setProfileData] = useState({
     firstName: "",
     lastName: "",
@@ -24,9 +32,93 @@ export function BasicInfoTab() {
     country: "",
   })
 
-  const handleSave = () => {
-    console.log("Saving profile data:", profileData)
-    // TODO: Save to Supabase
+  // Sync profile data when loaded
+  useEffect(() => {
+    if (profile) {
+      setProfileData({
+        firstName: profile.first_name || "",
+        lastName: profile.last_name || "",
+        email: profile.email || "",
+        phone: profile.phone || "",
+        dateOfBirth: profile.date_of_birth || "",
+        profileImage: profile.avatar_url || "",
+        address: profile.address || "",
+        city: profile.city || "",
+        state: profile.state || "",
+        zipCode: profile.zip_code || "",
+        country: profile.country || "",
+      })
+    }
+  }, [profile])
+
+  const handleSave = async () => {
+    setSaving(true)
+    try {
+      await updateProfile({
+        first_name: profileData.firstName,
+        last_name: profileData.lastName,
+        phone: profileData.phone,
+        date_of_birth: profileData.dateOfBirth,
+        address: profileData.address,
+        city: profileData.city,
+        state: profileData.state,
+        zip_code: profileData.zipCode,
+        country: profileData.country,
+      })
+      
+      toast({
+        title: "Profile updated",
+        description: "Your basic information has been saved successfully.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    if (file.size > 5 * 1024 * 1024) {
+      toast({
+        title: "File too large",
+        description: "Please select an image under 5MB.",
+        variant: "destructive",
+      })
+      return
+    }
+
+    setUploading(true)
+    try {
+      const url = await uploadAvatar(file)
+      setProfileData({ ...profileData, profileImage: url })
+      toast({
+        title: "Photo uploaded",
+        description: "Your profile picture has been updated.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Upload failed",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setUploading(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
   }
 
   return (
@@ -45,8 +137,24 @@ export function BasicInfoTab() {
               </AvatarFallback>
             </Avatar>
             <div>
-              <Button variant="outline" size="sm">
-                <Camera className="h-4 w-4 mr-2" />
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handlePhotoUpload}
+                className="hidden"
+              />
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploading}
+              >
+                {uploading ? (
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                ) : (
+                  <Camera className="h-4 w-4 mr-2" />
+                )}
                 Upload Photo
               </Button>
               <p className="text-xs text-muted-foreground mt-2">
@@ -181,8 +289,12 @@ export function BasicInfoTab() {
       </Card>
 
       <div className="flex justify-end">
-        <Button onClick={handleSave}>
-          <Save className="h-4 w-4 mr-2" />
+        <Button onClick={handleSave} disabled={saving}>
+          {saving ? (
+            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+          ) : (
+            <Save className="h-4 w-4 mr-2" />
+          )}
           Save Changes
         </Button>
       </div>

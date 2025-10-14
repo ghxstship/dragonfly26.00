@@ -15,15 +15,15 @@ import {
   CheckCircle2,
   AlertCircle
 } from "lucide-react"
+import { useMyTravel } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyTravelTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyTravelTab({ data = [], loading = false }: DashboardMyTravelTabProps) {
-  // User's travel arrangements and itineraries
-  const travels = data.length > 0 ? data : [
+export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { travels, loading } = useMyTravel(workspaceId, userId)
+  
+  const mockTravels = [
     {
       id: "TRV-2024-001",
       title: "Site Survey - Theater Revival",
@@ -132,6 +132,33 @@ export function DashboardMyTravelTab({ data = [], loading = false }: DashboardMy
       purpose: "Pick up specialized equipment from vendor",
     },
   ]
+  
+  const travelsList = travels.length > 0 ? travels.map(travel => ({
+    id: travel.id,
+    title: travel.title || 'Travel',
+    destination: travel.destination || 'TBD',
+    departureDate: new Date(travel.departure_date).toLocaleDateString(),
+    returnDate: new Date(travel.return_date).toLocaleDateString(),
+    status: travel.status || 'pending',
+    type: travel.type || 'Other',
+    purpose: travel.purpose || '',
+    totalCost: `$${travel.total_cost || 0}`,
+    flights: travel.flight_details || {},
+    hotel: travel.hotel_details,
+    groundTransport: travel.ground_transport || {},
+    project: travel.production?.name || 'No Project',
+  })) : mockTravels
+  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading travel...</p>
+        </div>
+      </div>
+    )
+  }
 
   const summary = {
     upcomingTrips: 4,
@@ -173,7 +200,11 @@ export function DashboardMyTravelTab({ data = [], loading = false }: DashboardMy
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
-        <Button size="sm" className="gap-2">
+        <Button 
+          size="sm" 
+          className="gap-2"
+          disabled
+        >
           <Plus className="h-4 w-4" />
           Book Travel
         </Button>
@@ -222,10 +253,11 @@ export function DashboardMyTravelTab({ data = [], loading = false }: DashboardMy
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {travels.map((travel) => (
+            {travelsList.map((travel) => (
               <div
                 key={travel.id}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                onClick={() => console.log('Travel details:', travel.id)}
               >
                 <div className="space-y-3">
                   {/* Header */}

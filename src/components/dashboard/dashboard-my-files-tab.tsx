@@ -18,15 +18,15 @@ import {
   Search,
   Clock
 } from "lucide-react"
+import { useMyFiles } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
-interface DashboardMyFilesTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyFilesTab({ data = [], loading = false }: DashboardMyFilesTabProps) {
-  // User's uploaded, downloaded, saved, and favorited files
-  const files = data.length > 0 ? data : [
+export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { files, loading } = useMyFiles(workspaceId, userId)
+  
+  const mockFiles = [
     {
       id: "FILE-001",
       name: "Summer_Festival_Tech_Rider.pdf",
@@ -148,6 +148,33 @@ export function DashboardMyFilesTab({ data = [], loading = false }: DashboardMyF
       views: 32,
     },
   ]
+  
+  const filesList = files.length > 0 ? files.map(file => ({
+    id: file.id,
+    name: file.name || file.title || 'Untitled',
+    type: file.type || 'document',
+    category: file.category || 'General',
+    size: file.size ? `${(file.size / 1024 / 1024).toFixed(1)} MB` : '0 MB',
+    uploadedDate: new Date(file.created_at).toLocaleDateString(),
+    lastAccessed: new Date(file.updated_at || file.created_at).toLocaleDateString(),
+    project: file.production?.name || 'No Project',
+    isFavorite: false,
+    action: 'uploaded',
+    icon: File,
+    downloads: 0,
+    views: 0,
+  })) : mockFiles
+  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading files...</p>
+        </div>
+      </div>
+    )
+  }
 
   const summary = {
     totalFiles: 156,
@@ -200,11 +227,15 @@ export function DashboardMyFilesTab({ data = [], loading = false }: DashboardMyF
     <div className="space-y-6">
       <div className="flex justify-end">
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2" disabled>
             <Search className="h-4 w-4" />
             Search
           </Button>
-          <Button size="sm" className="gap-2">
+          <Button 
+            size="sm" 
+            className="gap-2"
+            onClick={() => router.push(`/workspace/${workspaceId}/files/all-documents`)}
+          >
             <Plus className="h-4 w-4" />
             Upload File
           </Button>
@@ -295,12 +326,13 @@ export function DashboardMyFilesTab({ data = [], loading = false }: DashboardMyF
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {files.map((file) => {
+            {filesList.map((file) => {
               const Icon = file.icon
               return (
                 <div
                   key={file.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                  onClick={() => router.push(`/workspace/${workspaceId}/files/all-documents?id=${file.id}`)}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 space-y-2">

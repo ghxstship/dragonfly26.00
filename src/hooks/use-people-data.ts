@@ -149,14 +149,17 @@ export function useTraining(workspaceId: string) {
   const supabase = createClient()
 
   useEffect(() => {
-    async function fetchTrainingSessions() {
+    async function fetchTrainingRecords() {
       if (!workspaceId) return
       
       const { data, error } = await supabase
-        .from('training_sessions')
-        .select('*')
+        .from('training_records')
+        .select(`
+          *,
+          personnel:personnel!personnel_id(first_name, last_name)
+        `)
         .eq('workspace_id', workspaceId)
-        .order('session_date', { ascending: false })
+        .order('completion_date', { ascending: false })
 
       if (!error && data) {
         setTraining(data)
@@ -164,14 +167,14 @@ export function useTraining(workspaceId: string) {
       setLoading(false)
     }
 
-    fetchTrainingSessions()
+    fetchTrainingRecords()
 
     const channel = supabase
       .channel(`training:${workspaceId}`)
       .on(
         'postgres_changes',
-        { event: '*', schema: 'public', table: 'training_sessions', filter: `workspace_id=eq.${workspaceId}` },
-        () => fetchTrainingSessions()
+        { event: '*', schema: 'public', table: 'training_records', filter: `workspace_id=eq.${workspaceId}` },
+        () => fetchTrainingRecords()
       )
       .subscribe()
 
@@ -181,6 +184,56 @@ export function useTraining(workspaceId: string) {
   }, [workspaceId])
 
   return { training, loading }
+}
+
+// Hook for Personnel Assignments
+export function useAssignments(workspaceId: string, personnelId?: string) {
+  const [assignments, setAssignments] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+  const supabase = createClient()
+
+  useEffect(() => {
+    async function fetchAssignments() {
+      if (!workspaceId) return
+      
+      let query = supabase
+        .from('personnel_assignments')
+        .select(`
+          *,
+          personnel:personnel!personnel_id(first_name, last_name),
+          production:productions!production_id(name)
+        `)
+        .eq('workspace_id', workspaceId)
+
+      if (personnelId) {
+        query = query.eq('personnel_id', personnelId)
+      }
+
+      const { data, error } = await query.order('created_at', { ascending: false })
+
+      if (!error && data) {
+        setAssignments(data)
+      }
+      setLoading(false)
+    }
+
+    fetchAssignments()
+
+    const channel = supabase
+      .channel(`assignments:${workspaceId}:${personnelId || 'all'}`)
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'personnel_assignments', filter: `workspace_id=eq.${workspaceId}` },
+        () => fetchAssignments()
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [workspaceId, personnelId])
+
+  return { assignments, loading }
 }
 
 // Hook for Job Openings
@@ -222,4 +275,53 @@ export function useJobOpenings(workspaceId: string) {
   }, [workspaceId])
 
   return { openings, loading }
+}
+
+// Hook for Job Applicants
+export function useJobApplicants(workspaceId: string, jobOpeningId?: string) {
+  const [applicants, setApplicants] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+  const supabase = createClient()
+
+  useEffect(() => {
+    async function fetchApplicants() {
+      if (!workspaceId) return
+      
+      let query = supabase
+        .from('job_applicants')
+        .select(`
+          *,
+          job_opening:job_openings!job_opening_id(title)
+        `)
+        .eq('workspace_id', workspaceId)
+
+      if (jobOpeningId) {
+        query = query.eq('job_opening_id', jobOpeningId)
+      }
+
+      const { data, error } = await query.order('created_at', { ascending: false })
+
+      if (!error && data) {
+        setApplicants(data)
+      }
+      setLoading(false)
+    }
+
+    fetchApplicants()
+
+    const channel = supabase
+      .channel(`applicants:${workspaceId}:${jobOpeningId || 'all'}`)
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'job_applicants', filter: `workspace_id=eq.${workspaceId}` },
+        () => fetchApplicants()
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [workspaceId, jobOpeningId])
+
+  return { applicants, loading }
 }

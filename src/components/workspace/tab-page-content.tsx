@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "next/navigation"
 import { Filter, Search, Columns3, MessageSquare, Activity as ActivityIcon, Clock, ArrowUpDown, Upload, Download, Share2, MoreHorizontal, Camera, QrCode } from "lucide-react"
+import { createClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -48,6 +49,7 @@ import { getEventsTabComponent } from "@/lib/events-tab-components"
 import { getLocationsTabComponent } from "@/lib/locations-tab-components"
 import { getCommunityTabComponent } from "@/lib/community-tab-components"
 import { getMarketplaceTabComponent } from "@/lib/marketplace-tab-components"
+import { getFinanceTabComponent } from "@/lib/finance-tab-components"
 import { getReportsTabComponent } from "@/lib/reports-tab-components"
 import { getAnalyticsTabComponent } from "@/lib/analytics-tab-components"
 import { getInsightsTabComponent } from "@/lib/insights-tab-components"
@@ -61,8 +63,8 @@ const getTableNameForTab = (moduleSlug: string, tabSlug: string): string => {
     'activations': 'productions',
     'tasks': 'project_tasks',
     'milestones': 'project_milestones',
-    'compliance': 'compliance_requirements',
-    'safety': 'safety_guidelines',
+    'compliance': 'project_compliance',
+    'safety': 'project_safety',
     'all-events': 'events',
     'activities': 'events',
     'run-of-show': 'run_of_show',
@@ -75,7 +77,11 @@ const getTableNameForTab = (moduleSlug: string, tabSlug: string): string => {
     'personnel': 'personnel',
     'teams': 'teams',
     'timekeeping': 'time_entries',
-    'training': 'training_sessions',
+    'training': 'training_records',
+    'assignments': 'personnel_assignments',
+    'scheduling': 'events',
+    'onboarding': 'personnel',
+    'applicants': 'job_applicants',
     'openings': 'job_openings',
     'tracking': 'asset_transactions',
     'inventory': 'assets',
@@ -87,6 +93,7 @@ const getTableNameForTab = (moduleSlug: string, tabSlug: string): string => {
     'contracts': 'files',
     'organizations': 'companies',
     'contacts': 'company_contacts',
+    'deliverables': 'scopes_of_work',
     'scopes-of-work': 'scopes_of_work',
     'bids': 'bids',
     'budgets': 'budgets',
@@ -95,29 +102,59 @@ const getTableNameForTab = (moduleSlug: string, tabSlug: string): string => {
     'expenses': 'financial_transactions',
     'payroll': 'payroll',
     'gl-codes': 'gl_codes',
+    'fulfillment': 'purchase_orders',
     'orders': 'purchase_orders',
-    'agreements': 'agreements',
+    'agreements': 'procurement_agreements',
     'requisitions': 'purchase_requisitions',
+    'line-items': 'po_line_items',
+    'audits': 'purchase_orders',
     'activity': 'community_posts',
     'connections': 'connections',
     'shop': 'marketplace_products',
     'products': 'marketplace_products',
     'purchases': 'marketplace_orders',
     'library': 'resources',
+    'guides': 'resources',
     'courses': 'courses',
     'grants': 'grants',
+    'publications': 'resources',
+    'glossary': 'resources',
+    'troubleshooting': 'resources',
     'active': 'job_contracts',
+    'pipeline': 'job_contracts',
+    'offers': 'job_contracts',
+    'shortlists': 'job_contracts',
     'rfps': 'rfps',
+    'completed': 'job_contracts',
+    'archived': 'job_contracts',
     'templates': 'report_templates',
+    'custom-builder': 'report_templates',
+    'scheduled': 'report_templates',
+    'exports': 'report_templates',
+    'executive': 'report_templates',
+    'operational': 'report_templates',
     'data-sources': 'data_sources',
     'custom-views': 'analytics_views',
+    'pivot-tables': 'analytics_views',
+    'metrics-library': 'analytics_views',
     'benchmarks': 'benchmarks',
     'objectives': 'objectives',
     'key-results': 'key_results',
     'priorities': 'strategic_priorities',
     'recommendations': 'ai_recommendations',
+    'intelligence-feed': 'intelligence_feed',
+    'reviews': 'strategic_reviews',
   }
-  return tableMap[tabSlug] || 'productions'
+  
+  // Check for module-specific mapping first (for conflicting tab slugs)
+  const moduleSpecificKey = `${moduleSlug}-${tabSlug}`
+  const moduleSpecificMap: Record<string, string> = {
+    'reports-overview': 'report_templates',
+    'reports-compliance': 'report_templates',
+    'reports-archived': 'report_templates',
+  }
+  
+  return moduleSpecificMap[moduleSpecificKey] || tableMap[tabSlug] || 'productions'
 }
 
 export function TabPageContent() {
@@ -127,11 +164,23 @@ export function TabPageContent() {
   const currentModule = getModuleBySlug(moduleSlug)
   const currentTab = getTabBySlug(moduleSlug, tabSlug)
   const { setRightSidebarOpen, focusMode, currentWorkspace } = useUIStore()
+  const supabase = createClient()
   
   // Use resolved workspace ID from store (handles "personal" -> UUID conversion)
   const workspaceId = currentWorkspace?.id || ''
   
-  // Check if this is an admin, settings, profile, dashboard, projects, events, locations, community, reports, analytics, or insights tab with custom component
+  // Get current user ID
+  const [userId, setUserId] = useState<string>('')
+  
+  useEffect(() => {
+    async function getCurrentUser() {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user) setUserId(user.id)
+    }
+    getCurrentUser()
+  }, [])
+  
+  // Check if this is an admin, settings, profile, dashboard, projects, events, locations, community, finance, reports, analytics, or insights tab with custom component
   const isAdminCustomTab = moduleSlug === "admin" && getAdminTabComponent(tabSlug) !== undefined
   const isSettingsCustomTab = moduleSlug === "settings" && getSettingsTabComponent(tabSlug) !== undefined
   const isProfileCustomTab = moduleSlug === "profile" && getProfileTabComponent(tabSlug) !== undefined
@@ -141,6 +190,7 @@ export function TabPageContent() {
   const isLocationsCustomTab = moduleSlug === "locations" && getLocationsTabComponent(tabSlug) !== undefined
   const isCommunityCustomTab = moduleSlug === "community" && getCommunityTabComponent(tabSlug) !== undefined
   const isMarketplaceCustomTab = moduleSlug === "marketplace" && getMarketplaceTabComponent(tabSlug) !== undefined
+  const isFinanceCustomTab = moduleSlug === "finance" && getFinanceTabComponent(tabSlug) !== undefined
   const isReportsCustomTab = moduleSlug === "reports" && getReportsTabComponent(tabSlug) !== undefined
   const isAnalyticsCustomTab = moduleSlug === "analytics" && getAnalyticsTabComponent(tabSlug) !== undefined
   const isInsightsCustomTab = moduleSlug === "insights" && getInsightsTabComponent(tabSlug) !== undefined
@@ -235,7 +285,12 @@ export function TabPageContent() {
     if (moduleSlug === "dashboard") {
       const DashboardComponent = getDashboardTabComponent(tabSlug)
       if (DashboardComponent) {
-        return <DashboardComponent data={realData} loading={loading} />
+        return <DashboardComponent 
+          data={realData} 
+          loading={loading}
+          workspaceId={workspaceId}
+          userId={userId}
+        />
       }
     }
 
@@ -276,6 +331,14 @@ export function TabPageContent() {
       const MarketplaceComponent = getMarketplaceTabComponent(tabSlug)
       if (MarketplaceComponent) {
         return <MarketplaceComponent data={realData} loading={loading} />
+      }
+    }
+
+    // For finance module, check if there's a custom tab component
+    if (moduleSlug === "finance") {
+      const FinanceComponent = getFinanceTabComponent(tabSlug)
+      if (FinanceComponent) {
+        return <FinanceComponent data={realData} loading={loading} />
       }
     }
 
@@ -427,7 +490,7 @@ export function TabPageContent() {
                   {currentModule.description}
                 </p>
                 {/* Real-time indicator */}
-                {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+                {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isMarketplaceCustomTab && !isFinanceCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
                   <div className="flex items-center gap-2 mt-2">
                     <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
                     <span className="text-xs text-muted-foreground">
@@ -436,7 +499,7 @@ export function TabPageContent() {
                   </div>
                 )}
               </div>
-              {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+              {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isMarketplaceCustomTab && !isFinanceCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
                 <Button onClick={() => setCreateDialogOpen(true)}>
                   + {getCreateButtonLabel(moduleSlug, tabSlug) || `New ${getNewItemLabel(moduleSlug, currentModule.name)}`}
                 </Button>
@@ -449,8 +512,8 @@ export function TabPageContent() {
       {/* Module Tabs */}
       <ModuleTabs moduleSlug={moduleSlug} />
 
-      {/* View Controls - Hidden for admin, settings, profile, dashboard, projects, events, locations, community, reports, analytics, and insights custom tabs */}
-      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+      {/* View Controls - Hidden for admin, settings, profile, dashboard, projects, events, locations, community, marketplace, finance, reports, analytics, and insights custom tabs */}
+      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isMarketplaceCustomTab && !isFinanceCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
         <div className="border-b bg-background p-4">
           <div className="flex items-center gap-2">
             <ViewSwitcher
@@ -606,7 +669,7 @@ export function TabPageContent() {
       </div>
 
       {/* Item Detail Drawer - Only for standard views */}
-      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isMarketplaceCustomTab && !isFinanceCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
         <ItemDetailDrawer
           item={selectedItem}
           open={drawerOpen}
@@ -617,7 +680,7 @@ export function TabPageContent() {
       )}
 
       {/* Create Item Dialog - Only for standard views */}
-      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
+      {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isMarketplaceCustomTab && !isFinanceCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
         <CreateItemDialogEnhanced
           open={createDialogOpen}
           onOpenChange={setCreateDialogOpen}

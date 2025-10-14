@@ -2,8 +2,7 @@
 
 import { useTranslations } from "next-intl"
 import { ChevronRight, Home } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { Link, usePathname } from "@/i18n/navigation"
 import { cn } from "@/lib/utils"
 import { useUIStore } from "@/store/ui-store"
 import { useWorkspaceStore } from "@/store/workspace-store"

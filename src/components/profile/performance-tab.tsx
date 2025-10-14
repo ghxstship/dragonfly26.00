@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { TrendingUp, Star, Clock, Target, Award, CheckCircle2 } from "lucide-react"
+import { TrendingUp, Star, Clock, Target, Award, CheckCircle2, Loader2 } from "lucide-react"
+import { useProfileData } from "@/hooks/use-profile-data"
 import { Progress } from "@/components/ui/progress"
 import {
   Select,
@@ -21,7 +22,24 @@ interface PerformanceMetric {
 }
 
 export function PerformanceTab() {
+  const { profile, loading } = useProfileData()
   const [timePeriod, setTimePeriod] = useState("last-90-days")
+  const [profileSkills, setProfileSkills] = useState<string[]>([])
+
+  // Sync with profile skills
+  useEffect(() => {
+    if (profile?.skills) {
+      setProfileSkills(profile.skills)
+    }
+  }, [profile])
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
+  }
 
   const performanceMetrics: PerformanceMetric[] = [
     {

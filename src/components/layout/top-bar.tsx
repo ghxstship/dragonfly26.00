@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter, usePathname } from "@/i18n/navigation"
 import { useTranslations } from "next-intl"
 import {
   Search,
@@ -38,7 +38,6 @@ import {
 } from "@/components/ui/tooltip"
 import { WorkspaceSwitcher } from "./workspace-switcher"
 import { CommandPalette } from "./command-palette"
-import { NotificationsPanel } from "./notifications-panel"
 import { BreadcrumbNav } from "./breadcrumb-nav"
 import { QuickActions } from "./quick-actions"
 import { ThemeToggle } from "./theme-toggle"
@@ -57,7 +56,6 @@ import { ItemType, getModuleTabForItemType } from "@/lib/modules/item-type-to-mo
 export function TopBar() {
   const t = useTranslations()
   const [showCommandPalette, setShowCommandPalette] = useState(false)
-  const [showNotifications, setShowNotifications] = useState(false)
   const [showUpgrade, setShowUpgrade] = useState(false)
   const [isOnline, setIsOnline] = useState(true)
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
@@ -192,7 +190,7 @@ export function TopBar() {
                 variant="ghost"
                 size="icon"
                 className="relative h-9 w-9"
-                onClick={() => setShowNotifications(true)}
+                onClick={() => setRightSidebarOpen(true, 'notifications')}
               >
                 <Bell className="h-4 w-4" />
                 {unreadCount > 0 && (
@@ -441,12 +439,6 @@ export function TopBar() {
         open={showCommandPalette}
         onOpenChange={setShowCommandPalette}
         onCreateItem={handleCreateItem}
-      />
-
-      {/* Notifications Panel */}
-      <NotificationsPanel
-        open={showNotifications}
-        onOpenChange={setShowNotifications}
       />
 
       {/* Create Item Dialog */}

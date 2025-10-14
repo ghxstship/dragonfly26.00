@@ -1,53 +1,77 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { Save } from "lucide-react"
+import { Save, Loader2 } from "lucide-react"
 import { Switch } from "@/components/ui/switch"
+import { useProfileData } from "@/hooks/use-profile-data"
+import { useToast } from "@/lib/hooks/use-toast"
 
 export function SocialMediaTab() {
+  const { profile, loading, updateProfile } = useProfileData()
+  const { toast } = useToast()
+  const [saving, setSaving] = useState(false)
+  
   const [socialData, setSocialData] = useState({
     linkedin: "",
-    linkedinPublic: true,
     twitter: "",
-    twitterPublic: true,
     instagram: "",
-    instagramPublic: true,
-    facebook: "",
-    facebookPublic: false,
-    youtube: "",
-    youtubePublic: true,
-    tiktok: "",
-    tiktokPublic: true,
-    github: "",
-    githubPublic: true,
     website: "",
-    websitePublic: true,
-    behance: "",
-    behancePublic: true,
-    dribbble: "",
-    dribbblePublic: true,
   })
 
-  const handleSave = () => {
-    console.log("Saving social media data:", socialData)
-    // TODO: Save to Supabase
+  // Sync with profile data
+  useEffect(() => {
+    if (profile) {
+      setSocialData({
+        linkedin: profile.linkedin_url || "",
+        twitter: profile.twitter_url || "",
+        instagram: profile.instagram_url || "",
+        website: profile.website_url || "",
+      })
+    }
+  }, [profile])
+
+  const handleSave = async () => {
+    setSaving(true)
+    try {
+      await updateProfile({
+        linkedin_url: socialData.linkedin,
+        twitter_url: socialData.twitter,
+        instagram_url: socialData.instagram,
+        website_url: socialData.website,
+      })
+      
+      toast({
+        title: "Social media updated",
+        description: "Your social media links have been saved successfully.",
+      })
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      })
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
   }
 
   const platforms = [
-    { key: "linkedin", label: "LinkedIn", placeholder: "linkedin.com/in/username" },
-    { key: "twitter", label: "Twitter/X", placeholder: "@username" },
-    { key: "instagram", label: "Instagram", placeholder: "@username" },
-    { key: "facebook", label: "Facebook", placeholder: "facebook.com/username" },
-    { key: "youtube", label: "YouTube", placeholder: "youtube.com/@channel" },
-    { key: "tiktok", label: "TikTok", placeholder: "@username" },
-    { key: "github", label: "GitHub", placeholder: "github.com/username" },
+    { key: "linkedin", label: "LinkedIn", placeholder: "https://linkedin.com/in/username" },
+    { key: "twitter", label: "Twitter/X", placeholder: "https://twitter.com/username" },
+    { key: "instagram", label: "Instagram", placeholder: "https://instagram.com/username" },
     { key: "website", label: "Personal Website", placeholder: "https://example.com" },
-    { key: "behance", label: "Behance", placeholder: "behance.net/username" },
-    { key: "dribbble", label: "Dribbble", placeholder: "dribbble.com/username" },
   ]
 
   return (
@@ -62,24 +86,7 @@ export function SocialMediaTab() {
         <CardContent className="space-y-6">
           {platforms.map((platform) => (
             <div key={platform.key} className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor={platform.key}>{platform.label}</Label>
-                <div className="flex items-center gap-2">
-                  <Label
-                    htmlFor={`${platform.key}-public`}
-                    className="text-sm text-muted-foreground font-normal"
-                  >
-                    Public
-                  </Label>
-                  <Switch
-                    id={`${platform.key}-public`}
-                    checked={socialData[`${platform.key}Public` as keyof typeof socialData] as boolean}
-                    onCheckedChange={(checked) =>
-                      setSocialData({ ...socialData, [`${platform.key}Public`]: checked })
-                    }
-                  />
-                </div>
-              </div>
+              <Label htmlFor={platform.key}>{platform.label}</Label>
               <Input
                 id={platform.key}
                 value={socialData[platform.key as keyof typeof socialData] as string}
@@ -87,6 +94,7 @@ export function SocialMediaTab() {
                   setSocialData({ ...socialData, [platform.key]: e.target.value })
                 }
                 placeholder={platform.placeholder}
+                type="url"
               />
             </div>
           ))}
@@ -102,8 +110,12 @@ export function SocialMediaTab() {
       </div>
 
       <div className="flex justify-end">
-        <Button onClick={handleSave}>
-          <Save className="h-4 w-4 mr-2" />
+        <Button onClick={handleSave} disabled={saving}>
+          {saving ? (
+            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+          ) : (
+            <Save className="h-4 w-4 mr-2" />
+          )}
           Save Changes
         </Button>
       </div>

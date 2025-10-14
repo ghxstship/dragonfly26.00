@@ -14,20 +14,20 @@ import {
   Plus,
   Filter
 } from "lucide-react"
+import { useMyExpenses } from "@/hooks/use-dashboard-data"
+import { useRouter } from "next/navigation"
+import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 interface ExpenseItem {
   description: string
   amount: string
 }
 
-interface DashboardMyExpensesTabProps {
-  data?: any[]
-  loading?: boolean
-}
-
-export function DashboardMyExpensesTab({ data = [], loading = false }: DashboardMyExpensesTabProps) {
-  // User's expense reports and submissions
-  const expenses = data.length > 0 ? data : [
+export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
+  const router = useRouter()
+  const { expenses, loading } = useMyExpenses(workspaceId, userId)
+  
+  const mockExpenses = [
     {
       id: "EXP-2024-045",
       title: "Equipment Rental & Supplies",
@@ -123,6 +123,34 @@ export function DashboardMyExpensesTab({ data = [], loading = false }: Dashboard
       ],
     },
   ]
+  
+  const expensesList = expenses.length > 0 ? expenses.map(exp => ({
+    id: exp.id,
+    title: exp.title || 'Expense Report',
+    project: exp.production?.name || 'No Project',
+    date: exp.transaction_date || exp.created_at,
+    submittedDate: exp.submitted_date,
+    status: exp.status || 'pending',
+    category: exp.category || 'General',
+    amount: `$${exp.total_amount || 0}`,
+    itemCount: exp.items?.length || 0,
+    items: exp.items || [],
+    approver: exp.approved_by_name || null,
+    approvedDate: exp.approved_date || null,
+    reimbursementDate: null,
+    rejectionReason: exp.notes || null,
+  })) : mockExpenses
+  
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading expenses...</p>
+        </div>
+      </div>
+    )
+  }
 
   const summary = {
     totalExpenses: 48,
@@ -184,11 +212,15 @@ export function DashboardMyExpensesTab({ data = [], loading = false }: Dashboard
     <div className="space-y-6">
       <div className="flex justify-end">
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2" disabled>
             <Filter className="h-4 w-4" />
             Filter
           </Button>
-          <Button size="sm" className="gap-2">
+          <Button 
+            size="sm" 
+            className="gap-2"
+            onClick={() => router.push(`/workspace/${workspaceId}/finance/expenses`)}
+          >
             <Plus className="h-4 w-4" />
             New Expense
           </Button>
@@ -238,12 +270,13 @@ export function DashboardMyExpensesTab({ data = [], loading = false }: Dashboard
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {expenses.map((expense) => {
+            {expensesList.map((expense) => {
               const StatusIcon = getStatusIcon(expense.status)
               return (
                 <div
                   key={expense.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                  onClick={() => router.push(`/workspace/${workspaceId}/finance/expenses?id=${expense.id}`)}
                 >
                   <div className="space-y-3">
                     {/* Header */}

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -50,7 +50,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [filter, setFilter] = useState<"all" | "my-studios" | "suggested">("all")
 
-  const [studios, setStudios] = useState<Studio[]>(data.length > 0 ? data : [
+  const [studios, setStudios] = useState<Studio[]>([
     {
       id: "1",
       name: "Live Production Professionals",
@@ -203,6 +203,30 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
       joined: true
     }
   ])
+
+  // Transform and update studios when data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const transformed: Studio[] = data.map((item: any) => ({
+        id: item.id,
+        name: item.name || 'Unnamed Studio',
+        type: 'page', // Companies are treated as pages
+        category: item.industry || 'Professional',
+        description: item.description || 'No description available',
+        image: item.logo_url,
+        coverImage: undefined,
+        members: 0, // Not tracked yet
+        posts: 0, // Not tracked yet
+        visibility: 'public',
+        verified: false,
+        role: undefined,
+        recentActivity: item.updated_at ? `Updated ${new Date(item.updated_at).toLocaleDateString()}` : 'No recent activity',
+        tags: item.industry ? [item.industry] : [],
+        joined: false
+      }))
+      setStudios(transformed)
+    }
+  }, [data])
 
   const handleJoin = (studioId: string) => {
     setStudios(studios.map(studio =>

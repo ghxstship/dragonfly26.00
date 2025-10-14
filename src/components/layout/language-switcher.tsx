@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react"
 import { useLocale, useTranslations } from "next-intl"
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter, usePathname } from "@/i18n/navigation"
 import { Languages, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -35,12 +35,9 @@ export function LanguageSwitcher() {
     setStoredLanguage(newLocale)
     
     startTransition(() => {
-      // Remove the current locale from the pathname if it exists
-      const pathnameWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '')
-      // Add the new locale to the pathname
-      const newPath = `/${newLocale}${pathnameWithoutLocale}`
-      router.push(newPath)
-      router.refresh()
+      // The next-intl router automatically handles locale prefixing
+      // We just need to replace the locale parameter in the URL
+      router.replace(pathname, { locale: newLocale })
     })
   }
 

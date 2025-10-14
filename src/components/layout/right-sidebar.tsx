@@ -1,11 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter, usePathname } from "@/i18n/navigation"
 import { 
   X, MessageSquare, Activity, Clock, Upload, Download, Share2, Filter, Columns3, 
   ArrowUpDown, Bell, Camera, ScanLine, Calendar, ClipboardList, FileText, 
-  ChevronLeft, ChevronRight, Plus, Edit2, Trash2, MoreHorizontal
+  ChevronLeft, ChevronRight, Plus, Edit2, Trash2, MoreHorizontal, Image
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -15,6 +15,10 @@ import { useUIStore } from "@/store/ui-store"
 import { ActivityFeed } from "@/components/shared/activity-feed"
 import { CommentsSection } from "@/components/shared/comments-section"
 import { TimeTracker } from "@/components/shared/time-tracker"
+import { NotificationsTabContent } from "@/components/shared/notifications-tab-content"
+import { AgendaTabContent } from "@/components/shared/agenda-tab-content"
+import { TasksTabContent } from "@/components/shared/tasks-tab-content"
+import { FilesTabContent } from "@/components/shared/files-tab-content"
 import { ImportPanel } from "@/components/shared/import-panel"
 import { ExportPanel } from "@/components/shared/export-panel"
 import { SharePanel } from "@/components/shared/share-panel"
@@ -412,50 +416,21 @@ export function RightSidebar() {
 
               <ScrollArea className="flex-1">
                 {/* My Work Content */}
-                <TabsContent value="agenda" className="p-4 m-0 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-sm font-medium">Today&apos;s Schedule</h4>
-                    <Button size="sm" className="h-7 text-xs gap-1">
-                      <Plus className="h-3 w-3" />
-                      Add Event
-                    </Button>
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Your agenda and calendar events will appear here. Click the + button to create new events or navigate to the calendar view.
-                  </div>
+                <TabsContent value="agenda" className="m-0 h-full flex flex-col">
+                  <AgendaTabContent />
                 </TabsContent>
 
-                <TabsContent value="tasks" className="p-4 m-0 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-sm font-medium">My Tasks</h4>
-                    <Button size="sm" className="h-7 text-xs gap-1">
-                      <Plus className="h-3 w-3" />
-                      Add Task
-                    </Button>
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Your assigned tasks and to-dos will appear here. Click the + button to create new tasks.
-                  </div>
+                <TabsContent value="tasks" className="m-0 h-full flex flex-col">
+                  <TasksTabContent />
                 </TabsContent>
 
-                <TabsContent value="files" className="p-4 m-0 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-sm font-medium">My Files</h4>
-                    <Button size="sm" className="h-7 text-xs gap-1">
-                      <Upload className="h-3 w-3" />
-                      Upload
-                    </Button>
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Your files and documents will appear here. Click the upload button to add new files.
-                  </div>
+                <TabsContent value="files" className="m-0 h-full flex flex-col">
+                  <FilesTabContent />
                 </TabsContent>
 
                 {/* Collaboration Tabs Content */}
-                <TabsContent value="notifications" className="p-4 m-0">
-                  <div className="text-sm text-muted-foreground">
-                    Notifications are displayed in the top bar bell icon. This panel could show notification settings or preferences.
-                  </div>
+                <TabsContent value="notifications" className="m-0 h-full flex flex-col">
+                  <NotificationsTabContent />
                 </TabsContent>
 
                 <TabsContent value="comments" className="p-4 m-0">
@@ -499,37 +474,67 @@ export function RightSidebar() {
                 {/* Capture Tabs Content */}
                 <TabsContent value="scan" className="p-4 m-0">
                   <div className="space-y-4">
-                    <div className="flex items-center justify-center h-48 border-2 border-dashed rounded-lg">
+                    <div className="bg-muted/50 rounded-lg p-4 mb-4">
+                      <p className="text-sm font-medium mb-2">Document Scanner</p>
+                      <p className="text-xs text-muted-foreground">
+                        Use your device camera to scan documents, receipts, business cards, and more. Scanned documents are automatically saved to your workspace.
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-lg bg-muted/20">
                       <div className="text-center">
-                        <ScanLine className="h-12 w-12 mx-auto text-muted-foreground mb-2" />
-                        <p className="text-sm font-medium">Scan Document</p>
-                        <p className="text-xs text-muted-foreground mt-1">
-                          Use your device camera to scan documents
+                        <ScanLine className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
+                        <p className="text-sm font-medium mb-1">Ready to Scan</p>
+                        <p className="text-xs text-muted-foreground max-w-xs">
+                          Position your document in view and tap the button below to begin scanning
                         </p>
                       </div>
                     </div>
-                    <Button className="w-full">
+                    <Button className="w-full" size="lg">
                       <ScanLine className="h-4 w-4 mr-2" />
                       Start Scanning
                     </Button>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button variant="outline" size="sm">
+                        <Upload className="h-4 w-4 mr-2" />
+                        Upload PDF
+                      </Button>
+                      <Button variant="outline" size="sm">
+                        View Scans
+                      </Button>
+                    </div>
                   </div>
                 </TabsContent>
 
                 <TabsContent value="photo" className="p-4 m-0">
                   <div className="space-y-4">
-                    <div className="flex items-center justify-center h-48 border-2 border-dashed rounded-lg">
+                    <div className="bg-muted/50 rounded-lg p-4 mb-4">
+                      <p className="text-sm font-medium mb-2">Photo Capture</p>
+                      <p className="text-xs text-muted-foreground">
+                        Take photos directly from your device and attach them to your workspace items. Perfect for site visits, meetings, and visual documentation.
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-lg bg-muted/20">
                       <div className="text-center">
-                        <Camera className="h-12 w-12 mx-auto text-muted-foreground mb-2" />
-                        <p className="text-sm font-medium">Take Photo</p>
-                        <p className="text-xs text-muted-foreground mt-1">
-                          Capture photos for your workspace
+                        <Camera className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
+                        <p className="text-sm font-medium mb-1">Camera Ready</p>
+                        <p className="text-xs text-muted-foreground max-w-xs">
+                          Capture images for your workspace items and documentation
                         </p>
                       </div>
                     </div>
-                    <Button className="w-full">
+                    <Button className="w-full" size="lg">
                       <Camera className="h-4 w-4 mr-2" />
                       Open Camera
                     </Button>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button variant="outline" size="sm">
+                        <Image className="h-4 w-4 mr-2" />
+                        Upload Image
+                      </Button>
+                      <Button variant="outline" size="sm">
+                        View Gallery
+                      </Button>
+                    </div>
                   </div>
                 </TabsContent>
               </ScrollArea>
