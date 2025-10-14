@@ -30,7 +30,7 @@ export default function SelectPlanPage() {
         description: 'Please complete workspace setup first.',
         variant: 'destructive',
       })
-      router.push(`/${locale}/onboarding/workspace`)
+      router.push('/onboarding/workspace')
     }
   }, [workspaceId])
 
@@ -44,7 +44,7 @@ export default function SelectPlanPage() {
 
       if (planId === 'network') {
         // Free plan - just continue to next step
-        router.push(`/${locale}/onboarding/invite?workspace=${workspaceId}`)
+        router.push(`/onboarding/invite?workspace=${workspaceId}`)
       } else {
         // Paid plan - redirect to Stripe Checkout
         const response = await fetch('/api/subscriptions/create-checkout', {
@@ -185,7 +185,7 @@ export default function SelectPlanPage() {
           </p>
           <Button
             variant="ghost"
-            onClick={() => router.push(`/${locale}/onboarding/invite?workspace=${workspaceId}`)}
+            onClick={() => router.push(`/onboarding/invite?workspace=${workspaceId}`)}
           >
             Skip for now
           </Button>

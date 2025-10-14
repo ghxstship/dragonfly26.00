@@ -36,7 +36,7 @@ export default function WelcomePage() {
     const { data: { user } } = await supabase.auth.getUser()
     
     if (!user) {
-      router.push(`/${locale}/login`)
+      router.push('/login')
       return
     }
 
@@ -85,7 +85,7 @@ export default function WelcomePage() {
       })
 
       // Move to next step
-      router.push(`/${locale}/onboarding/workspace`)
+      router.push('/onboarding/workspace')
     } catch (error: any) {
       toast({
         title: 'Error',
@@ -231,7 +231,7 @@ export default function WelcomePage() {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => router.push(`/${locale}/workspace`)}
+                  onClick={() => router.push('/workspace')}
                   disabled={loading}
                 >
                   Skip for now

@@ -33,7 +33,7 @@ export default function ResetPasswordPage() {
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) {
         // No valid session, redirect to forgot password
-        router.push(`/${locale}/forgot-password`)
+        router.push('/forgot-password')
       }
     }
     checkSession()
@@ -82,7 +82,7 @@ export default function ResetPasswordPage() {
       
       // Redirect to login after 3 seconds
       setTimeout(() => {
-        router.push(`/${locale}/login`)
+        router.push('/login')
       }, 3000)
     }
   }
@@ -112,7 +112,7 @@ export default function ResetPasswordPage() {
             </p>
             <Button
               className="w-full"
-              onClick={() => router.push(`/${locale}/login`)}
+              onClick={() => router.push('/login')}
             >
               Continue to login
             </Button>

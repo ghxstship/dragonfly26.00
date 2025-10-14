@@ -179,7 +179,7 @@ export default function VerifyEmailPage() {
 
           <div className="text-center">
             <Link
-              href={`/${locale}/login`}
+              href="/login"
               className="text-sm text-primary hover:underline"
             >
               Back to login
@@ -235,7 +235,7 @@ export default function VerifyEmailPage() {
 
         <div className="text-center space-y-2">
           <Link
-            href={`/${locale}/login`}
+            href="/login"
             className="text-sm text-primary hover:underline inline-block"
           >
             Back to login

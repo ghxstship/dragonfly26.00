@@ -155,7 +155,7 @@ export default function WorkspacePage() {
       })
 
       // Move to plan selection
-      router.push(`/${locale}/onboarding/plan?workspace=${workspace.id}`)
+      router.push(`/onboarding/plan?workspace=${workspace.id}`)
     } catch (error: any) {
       toast({
         title: 'Error',
@@ -168,7 +168,7 @@ export default function WorkspacePage() {
   }
 
   const handleJoinWorkspace = async (workspaceId: string) => {
-    router.push(`/${locale}/onboarding/plan?workspace=${workspaceId}`)
+    router.push(`/onboarding/plan?workspace=${workspaceId}`)
   }
 
   return (

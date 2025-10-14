@@ -78,7 +78,7 @@ export default function SignupPage() {
         setLoading(false)
       } else {
         // Redirect to verify email page
-        router.push(`/${locale}/verify-email`)
+        router.push('/verify-email')
       }
     }
   }

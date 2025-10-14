@@ -33,9 +33,6 @@ export function Sidebar() {
   const [favorites, setFavorites] = useState<string[]>([])
   const [collapsedHubs, setCollapsedHubs] = useState<Record<string, boolean>>({})
   const [inviteDialogOpen, setInviteDialogOpen] = useState(false)
-  
-  // Extract locale from pathname
-  const locale = pathname.split('/')[1] || 'en'
 
   const toggleFavorite = (moduleId: string) => {
     setFavorites((prev) =>
@@ -122,7 +119,7 @@ export function Sidebar() {
                     return (
                       <Link
                         key={favModule.id}
-                        href={`/${locale}/workspace/${currentWorkspace?.id}/${favModule.slug}/${firstTabSlug}`}
+                        href={`/workspace/${currentWorkspace?.id}/${favModule.slug}/${firstTabSlug}`}
                         className={cn(
                           "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
                           pathname.includes(favModule.slug) && "bg-accent"
@@ -196,7 +193,7 @@ export function Sidebar() {
                         className="group relative flex items-center"
                       >
                         <Link
-                          href={`/${locale}/workspace/${currentWorkspace?.id}/${moduleItem.slug}/${firstTabSlug}`}
+                          href={`/workspace/${currentWorkspace?.id}/${moduleItem.slug}/${firstTabSlug}`}
                           className={cn(
                             "flex flex-1 items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
                             isActive && "bg-accent",
@@ -249,7 +246,7 @@ export function Sidebar() {
 
             return (
               <Link
-                href={`/${locale}/workspace/${currentWorkspace?.id}/${profileModule.slug}/${firstTabSlug}`}
+                href={`/workspace/${currentWorkspace?.id}/${profileModule.slug}/${firstTabSlug}`}
                 className={cn(
                   "flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium hover:bg-accent transition-colors",
                   sidebarCollapsed && "justify-center px-2",

@@ -39,7 +39,7 @@ export default function InviteColleaguesPage() {
   useEffect(() => {
     const wId = searchParams.get('workspace')
     if (!wId) {
-      router.push(`/${locale}/onboarding/workspace`)
+      router.push('/onboarding/workspace')
       return
     }
     setWorkspaceId(wId)
@@ -82,7 +82,7 @@ export default function InviteColleaguesPage() {
       
       if (validInvites.length === 0) {
         // No invites to send, just continue
-        router.push(`/${locale}/onboarding/complete?workspace=${workspaceId}`)
+        router.push(`/onboarding/complete?workspace=${workspaceId}`)
         return
       }
 
