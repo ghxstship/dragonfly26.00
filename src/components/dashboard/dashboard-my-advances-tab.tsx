@@ -17,7 +17,7 @@ import {
   Truck
 } from "lucide-react"
 import { useMyAdvances } from "@/hooks/use-dashboard-data"
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: DashboardTabProps) {

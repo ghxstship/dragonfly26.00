@@ -14,7 +14,7 @@ import {
   Search
 } from "lucide-react"
 import { useMyOrders } from "@/hooks/use-dashboard-data"
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: DashboardTabProps) {

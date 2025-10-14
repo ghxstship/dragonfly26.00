@@ -14,7 +14,7 @@ import {
   Clock
 } from "lucide-react"
 import { useMyJobs } from "@/hooks/use-dashboard-data"
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardTabProps) {

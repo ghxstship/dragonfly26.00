@@ -16,7 +16,7 @@ import {
   AlertCircle
 } from "lucide-react"
 import { useMyTravel } from "@/hooks/use-dashboard-data"
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: DashboardTabProps) {

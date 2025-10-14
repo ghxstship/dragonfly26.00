@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { createClient } from "@/lib/supabase/client"
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter } from "@/i18n/navigation"
+import { usePathname } from "next/navigation"
 import { Eye, EyeOff } from "lucide-react"
 
 export const dynamic = 'force-dynamic'

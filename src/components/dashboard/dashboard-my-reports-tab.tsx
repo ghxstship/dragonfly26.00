@@ -16,7 +16,7 @@ import {
   PieChart
 } from "lucide-react"
 import { useMyReports } from "@/hooks/use-dashboard-data"
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
