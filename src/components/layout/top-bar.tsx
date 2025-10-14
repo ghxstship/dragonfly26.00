@@ -44,6 +44,7 @@ import { QuickActions } from "./quick-actions"
 import { ThemeToggle } from "./theme-toggle"
 import { LanguageSwitcher } from "./language-switcher"
 import { CreateMenu } from "./create-menu"
+import { MobileMenu } from "./mobile-menu"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { CreateObjectiveDialog } from "@/components/insights/create-objective-dialog"
 import { CreateWebhookDialog } from "@/components/webhooks/create-webhook-dialog"
@@ -215,77 +216,83 @@ export function TopBar() {
             </TooltipContent>
           </Tooltip>
 
-          {/* Comments */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-9 w-9"
-                onClick={() => setRightSidebarOpen(true, 'comments')}
-              >
-                <MessageSquare className="h-4 w-4" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Comments</p>
-            </TooltipContent>
-          </Tooltip>
+          {/* Desktop Actions - Hidden on Mobile */}
+          <div className="hidden lg:flex items-center gap-1">
+            {/* Comments */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9"
+                  onClick={() => setRightSidebarOpen(true, 'comments')}
+                >
+                  <MessageSquare className="h-4 w-4" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Comments</p>
+              </TooltipContent>
+            </Tooltip>
 
-          {/* Activity */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-9 w-9"
-                onClick={() => setRightSidebarOpen(true, 'activity')}
-              >
-                <Activity className="h-4 w-4" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Activity</p>
-            </TooltipContent>
-          </Tooltip>
+            {/* Activity */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9"
+                  onClick={() => setRightSidebarOpen(true, 'activity')}
+                >
+                  <Activity className="h-4 w-4" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Activity</p>
+              </TooltipContent>
+            </Tooltip>
 
-          {/* Time */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-9 w-9"
-                onClick={() => setRightSidebarOpen(true, 'time')}
-              >
-                <Clock className="h-4 w-4" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Time Tracking</p>
-            </TooltipContent>
-          </Tooltip>
+            {/* Time */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9"
+                  onClick={() => setRightSidebarOpen(true, 'time')}
+                >
+                  <Clock className="h-4 w-4" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Time Tracking</p>
+              </TooltipContent>
+            </Tooltip>
 
-          {/* Apps - from QuickActions */}
-          <QuickActions />
+            {/* Apps - from QuickActions */}
+            <QuickActions />
 
-          {/* Help & Shortcuts */}
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-9 w-9"
-                onClick={() => setShowCommandPalette(true)}
-              >
-                <HelpCircle className="h-4 w-4" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Help & Shortcuts</p>
-              <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⇧?</kbd>
-            </TooltipContent>
-          </Tooltip>
+            {/* Help & Shortcuts */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9"
+                  onClick={() => setShowCommandPalette(true)}
+                >
+                  <HelpCircle className="h-4 w-4" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Help & Shortcuts</p>
+                <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⇧?</kbd>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+
+          {/* Mobile Menu */}
+          <MobileMenu />
 
           {/* Divider */}
           <div className="hidden md:block h-6 w-px bg-border mx-1" />

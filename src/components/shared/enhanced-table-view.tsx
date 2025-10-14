@@ -11,13 +11,15 @@ import {
   type SortingState,
   type ColumnFiltersState,
 } from "@tanstack/react-table"
-import { ArrowUpDown, Plus } from "lucide-react"
+import { ArrowUpDown, Plus, Grid3x3, List } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
 import { RecordActionsMenu } from "./record-actions-menu"
 import { BulkActionsToolbar } from "./bulk-actions-toolbar"
 import { CrudDrawer } from "./crud-drawer"
+import { MobileTableCard } from "./mobile-table-card"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 import type { DataItem } from "@/types"
 import type { FieldSchema } from "@/lib/data-schemas"
 
@@ -42,11 +44,13 @@ export function EnhancedTableView({
   onBulkDelete,
   loading = false,
 }: EnhancedTableViewProps) {
+  const isMobile = useIsMobile()
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [rowSelection, setRowSelection] = useState({})
   const [drawerMode, setDrawerMode] = useState<'view' | 'create' | 'edit' | null>(null)
   const [selectedItem, setSelectedItem] = useState<DataItem | null>(null)
+  const [viewMode, setViewMode] = useState<'table' | 'card'>('table')
 
   // Get list fields from schema
   const listFields = schema.filter(f => f.showInList !== false).sort((a, b) => (a.order || 99) - (b.order || 99))
@@ -166,15 +170,74 @@ export function EnhancedTableView({
           <div className="text-sm text-muted-foreground">
             {data.length} {data.length === 1 ? 'item' : 'items'}
           </div>
-          <Button onClick={() => setDrawerMode('create')} size="sm">
-            <Plus className="h-4 w-4 mr-2" />
-            Add New
-          </Button>
+          <div className="flex items-center gap-2">
+            {/* View Toggle - Desktop Only */}
+            {!isMobile && (
+              <div className="hidden md:flex items-center border rounded-md">
+                <Button
+                  variant={viewMode === 'table' ? 'secondary' : 'ghost'}
+                  size="sm"
+                  className="h-8 px-3"
+                  onClick={() => setViewMode('table')}
+                >
+                  <List className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant={viewMode === 'card' ? 'secondary' : 'ghost'}
+                  size="sm"
+                  className="h-8 px-3"
+                  onClick={() => setViewMode('card')}
+                >
+                  <Grid3x3 className="h-4 w-4" />
+                </Button>
+              </div>
+            )}
+            <Button onClick={() => setDrawerMode('create')} size="sm" className="h-9">
+              <Plus className="h-4 w-4 mr-2" />
+              <span className="hidden sm:inline">Add New</span>
+              <span className="sm:hidden">Add</span>
+            </Button>
+          </div>
         </div>
 
-        {/* Table */}
-        <div className="rounded-md border">
-          <table className="w-full">
+        {/* Mobile Card View */}
+        {(isMobile || viewMode === 'card') && (
+          <div className="space-y-3">
+            {loading ? (
+              <div className="text-center py-12 text-muted-foreground">
+                Loading...
+              </div>
+            ) : data.length > 0 ? (
+              data.map((item) => (
+                <MobileTableCard
+                  key={item.id}
+                  item={item}
+                  schema={schema}
+                  onViewDetails={() => {
+                    setSelectedItem(item)
+                    setDrawerMode('view')
+                  }}
+                  onEdit={() => {
+                    setSelectedItem(item)
+                    setDrawerMode('edit')
+                  }}
+                  onDuplicate={handleDuplicate}
+                  onDelete={handleDeleteSingle}
+                />
+              ))
+            ) : (
+              <div className="text-center py-12 text-muted-foreground">
+                No data found
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Desktop Table View */}
+        {!isMobile && viewMode === 'table' && (
+          <div className="rounded-md border overflow-x-auto">
+            <div className="min-w-[640px]">
+              <table className="w-full">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id} className="border-b bg-muted/50">
@@ -222,10 +285,12 @@ export function EnhancedTableView({
               )}
             </tbody>
           </table>
-        </div>
+            </div>
+          </div>
+        )}
 
         {/* Selection Info */}
-        {selectedRows.length > 0 && (
+        {selectedRows.length > 0 && !isMobile && (
           <div className="text-sm text-muted-foreground">
             {selectedRows.length} of {table.getFilteredRowModel().rows.length} row(s) selected
           </div>
@@ -292,10 +357,10 @@ function renderCellValue(value: any, field: FieldSchema) {
 
     case 'priority':
       const priorityColors: Record<string, string> = {
-        urgent: '#dc2626',
-        high: '#ea580c',
-        normal: '#2563eb',
-        low: '#64748b'
+        'urgent': '#dc2626',
+        'high': '#ea580c',
+        'normal': '#2563eb',
+        'low': '#64748b'
       }
       return (
         <Badge 

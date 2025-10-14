@@ -4,6 +4,7 @@ import { LineChart, TrendingUp, TrendingDown, Calendar } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 
 const trendData = [
   {
@@ -70,15 +71,23 @@ interface AnalyticsTrendsTabProps {
 }
 
 export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTrendsTabProps) {
+  const isMobile = useIsMobile()
   const displayData = data.length > 0 ? data : trendData
+  
   return (
     <div className="space-y-6">
       <Tabs defaultValue="6months" className="space-y-4">
-        <TabsList>
-          <TabsTrigger value="3months">Last 3 Months</TabsTrigger>
-          <TabsTrigger value="6months">Last 6 Months</TabsTrigger>
-          <TabsTrigger value="12months">Last 12 Months</TabsTrigger>
-          <TabsTrigger value="ytd">Year to Date</TabsTrigger>
+        <TabsList className="w-full grid grid-cols-2 sm:grid-cols-4 h-auto">
+          <TabsTrigger value="3months" className="text-xs sm:text-sm">
+            <span className="hidden sm:inline">Last</span> 3M
+          </TabsTrigger>
+          <TabsTrigger value="6months" className="text-xs sm:text-sm">
+            <span className="hidden sm:inline">Last</span> 6M
+          </TabsTrigger>
+          <TabsTrigger value="12months" className="text-xs sm:text-sm">
+            <span className="hidden sm:inline">Last</span> 12M
+          </TabsTrigger>
+          <TabsTrigger value="ytd" className="text-xs sm:text-sm">YTD</TabsTrigger>
         </TabsList>
 
         <TabsContent value="6months" className="space-y-4">
@@ -87,17 +96,22 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
             const trendColor = data.trend === "up" ? "text-green-600" : "text-red-600"
             const bgColor = data.trend === "up" ? "bg-green-100" : "bg-red-100"
             
+            // Show fewer periods on mobile
+            const periodsToShow = isMobile ? data.periods.slice(-3) : data.periods
+            
             return (
               <Card key={index}>
                 <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <CardTitle>{data.metric}</CardTitle>
-                      <CardDescription>6-month trend analysis</CardDescription>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <div className="flex-1">
+                      <CardTitle className="text-base sm:text-lg">{data.metric}</CardTitle>
+                      <CardDescription className="text-xs sm:text-sm">
+                        {isMobile ? '3-month trend' : '6-month trend analysis'}
+                      </CardDescription>
                     </div>
-                    <div className="text-right">
-                      <p className="text-2xl font-bold">{data.current}</p>
-                      <Badge variant="outline" className={`${bgColor} ${trendColor} mt-2`}>
+                    <div className="text-left sm:text-right">
+                      <p className="text-xl sm:text-2xl font-bold">{data.current}</p>
+                      <Badge variant="outline" className={`${bgColor} ${trendColor} mt-2 text-xs`}>
                         <TrendIcon className="h-3 w-3 mr-1" />
                         {data.change}
                       </Badge>
@@ -107,28 +121,34 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
                 <CardContent>
                   <div className="space-y-4">
                     {/* Simple bar chart representation */}
-                    <div className="flex items-end gap-2 h-40">
-                      {data.periods.map((period, idx) => {
-                        const maxValue = Math.max(...data.periods.map(p => p.value))
-                        const height = (period.value / maxValue) * 100
-                        
-                        return (
-                          <div key={idx} className="flex-1 flex flex-col items-center gap-2">
-                            <div className="w-full bg-accent rounded-t-lg flex items-end justify-center relative" style={{ height: `${height}%` }}>
-                              <div className="absolute -top-6 text-xs font-medium">{period.value}</div>
-                              <div className="w-full h-full bg-blue-600 rounded-t-lg hover:bg-blue-700 transition-colors"></div>
+                    <div className="overflow-x-auto -mx-2 px-2">
+                      <div className="flex items-end gap-2 h-32 sm:h-40 min-w-[280px]">
+                        {periodsToShow.map((period, idx) => {
+                          const maxValue = Math.max(...periodsToShow.map(p => p.value))
+                          const height = (period.value / maxValue) * 100
+                          
+                          return (
+                            <div key={idx} className="flex-1 flex flex-col items-center gap-2 min-w-[40px]">
+                              <div className="w-full bg-accent rounded-t-lg flex items-end justify-center relative" style={{ height: `${height}%` }}>
+                                <div className="absolute -top-6 text-[10px] sm:text-xs font-medium whitespace-nowrap">
+                                  {period.value}
+                                </div>
+                                <div className="w-full h-full bg-blue-600 rounded-t-lg hover:bg-blue-700 transition-colors touch-manipulation"></div>
+                              </div>
+                              <span className="text-[10px] sm:text-xs text-muted-foreground">
+                                {period.period}
+                              </span>
                             </div>
-                            <span className="text-xs text-muted-foreground">{period.period}</span>
-                          </div>
-                        )
-                      })}
+                          )
+                        })}
+                      </div>
                     </div>
 
                     {/* Insights */}
-                    <div className="flex items-center gap-2 p-3 bg-accent rounded-lg text-sm">
-                      <Calendar className="h-4 w-4 text-muted-foreground" />
-                      <p>
-                        {data.trend === "up" ? "Positive trend" : "Negative trend"} over the last 6 months with 
+                    <div className="flex items-start sm:items-center gap-2 p-3 bg-accent rounded-lg text-xs sm:text-sm">
+                      <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5 sm:mt-0" />
+                      <p className="leading-relaxed">
+                        {data.trend === "up" ? "Positive" : "Negative"} trend over the last {isMobile ? '3' : '6'} months with 
                         <span className="font-medium"> {data.change} </span>
                         change from starting period
                       </p>

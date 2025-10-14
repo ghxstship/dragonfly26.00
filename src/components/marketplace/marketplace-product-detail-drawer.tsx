@@ -81,7 +81,7 @@ export function MarketplaceProductDetailDrawer({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-[700px] sm:max-w-[700px] p-0 flex flex-col">
+      <SheetContent side="right" className="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] max-w-full p-0 flex flex-col">
         {/* Header */}
         <SheetHeader className="border-b px-6 py-4">
           <div className="flex items-center justify-between">

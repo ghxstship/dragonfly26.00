@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
+import { useIsMobile } from "@/hooks/use-is-mobile"
 import type { DataItem } from "@/types"
 import { BoardColumn } from "./board-column"
 import { BoardCard } from "./board-card"
@@ -23,6 +24,7 @@ interface BoardViewProps {
 
 export function BoardView({ data, onItemClick, createActionLabel, onCreateAction }: BoardViewProps) {
   const t = useTranslations()
+  const isMobile = useIsMobile()
   const [activeId, setActiveId] = useState<string | null>(null)
 
   const defaultColumns = [
@@ -61,23 +63,31 @@ export function BoardView({ data, onItemClick, createActionLabel, onCreateAction
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <div className="flex gap-4 h-full overflow-x-auto pb-4 relative">
+      <div className={cn(
+        "h-full pb-4 relative",
+        isMobile 
+          ? "flex flex-col space-y-4 overflow-y-auto" 
+          : "flex gap-4 overflow-x-auto"
+      )}>
         {columnData.map((column) => (
-          <BoardColumn
-            key={column.id}
-            column={column}
-            items={column.items}
-            onItemClick={onItemClick}
-          />
+          <div key={column.id} className={isMobile ? "w-full" : "w-80 flex-shrink-0"}>
+            <BoardColumn
+              column={column}
+              items={column.items}
+              onItemClick={onItemClick}
+            />
+          </div>
         ))}
 
         {/* Add Column */}
-        <div className="flex-shrink-0 w-80">
-          <Button variant="ghost" className="w-full justify-start gap-2 h-10">
-            <Plus className="h-4 w-4" />
-            Add column
-          </Button>
-        </div>
+        {!isMobile && (
+          <div className="flex-shrink-0 w-80">
+            <Button variant="ghost" className="w-full justify-start gap-2 h-10">
+              <Plus className="h-4 w-4" />
+              Add column
+            </Button>
+          </div>
+        )}
 
         {/* Empty State Overlay when no data */}
         {data.length === 0 && (

@@ -18,6 +18,12 @@ const config = {
       },
     },
     extend: {
+      minHeight: {
+        'touch': '44px',
+      },
+      minWidth: {
+        'touch': '44px',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
