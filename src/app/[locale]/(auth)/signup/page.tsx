@@ -3,7 +3,7 @@
 export const dynamic = 'force-dynamic'
 
 import { useState } from "react"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { useRouter } from "@/i18n/navigation"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -206,7 +206,7 @@ export default function SignupPage() {
         </div>
 
         <p className="text-center text-sm text-muted-foreground">
-          Already have an account? <Link href={`/${locale}/login`} className="text-primary hover:underline">Sign in</Link>
+          Already have an account? <Link href="/login" className="text-primary hover:underline">Sign in</Link>
         </p>
       </div>
     </div>

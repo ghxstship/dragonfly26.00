@@ -3,7 +3,7 @@
 export const dynamic = 'force-dynamic'
 
 import { useState } from "react"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -127,7 +127,7 @@ export default function ForgotPasswordPage() {
 
         <div className="text-center space-y-2">
           <Link
-            href={`/${locale}/login`}
+            href="/login"
             className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -135,7 +135,7 @@ export default function ForgotPasswordPage() {
           </Link>
           <p className="text-sm text-muted-foreground">
             Don&apos;t have an account?{" "}
-            <Link href={`/${locale}/signup`} className="text-primary hover:underline">
+            <Link href="/signup" className="text-primary hover:underline">
               Sign up
             </Link>
           </p>

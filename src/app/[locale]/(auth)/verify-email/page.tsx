@@ -3,7 +3,7 @@
 export const dynamic = 'force-dynamic'
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { useRouter } from "@/i18n/navigation"
 import { usePathname, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"

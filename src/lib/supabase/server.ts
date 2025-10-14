@@ -1,6 +1,7 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
+import { redirect as nextRedirect } from 'next/navigation'
+import { getLocale } from 'next-intl/server'
 
 export const createClient = async () => {
   const cookieStore = await cookies()
@@ -35,12 +36,13 @@ export const createClient = async () => {
 /**
  * Get the currently authenticated user or redirect to login
  */
-export const requireAuth = async (locale: string = 'en') => {
+export const requireAuth = async () => {
   const supabase = await createClient()
   const { data: { user }, error } = await supabase.auth.getUser()
 
   if (error || !user) {
-    redirect(`/${locale}/login`)
+    const locale = await getLocale()
+    nextRedirect(`/${locale}/login`)
   }
 
   return user
@@ -68,12 +70,13 @@ export const checkOnboardingStatus = async (userId: string) => {
 /**
  * Require authenticated user with completed onboarding or redirect
  */
-export const requireOnboarding = async (locale: string = 'en') => {
-  const user = await requireAuth(locale)
+export const requireOnboarding = async () => {
+  const user = await requireAuth()
   const status = await checkOnboardingStatus(user.id)
 
   if (!status.isOnboarded || !status.hasName) {
-    redirect(`/${locale}/onboarding/welcome`)
+    const locale = await getLocale()
+    nextRedirect(`/${locale}/onboarding/welcome`)
   }
 
   return user
