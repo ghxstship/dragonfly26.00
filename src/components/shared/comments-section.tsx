@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { formatDate, getInitials } from "@/lib/utils"
-import { Send, Smile, Loader2 } from "lucide-react"
+import { Send, Smile, Loader2, MessageSquare } from "lucide-react"
 import { getSupabaseClient } from "@/lib/supabase/hooks-client"
 import { useUIStore } from "@/store/ui-store"
 import { useCollaborationStore, type CommentData } from "@/store/collaboration-store"
@@ -43,7 +43,10 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
   // Fetch comments
   useEffect(() => {
     const fetchComments = async () => {
-      if (!currentWorkspace?.id) return
+      if (!currentWorkspace?.id || !entityId || entityId === 'no-workspace') {
+        setIsFetching(false)
+        return
+      }
       
       try {
         const { data, error } = await supabase
@@ -173,7 +176,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
   }, [supabase, currentWorkspace?.id, entityType, entityId, addComment])
 
   const handleSubmit = async () => {
-    if (!newComment.trim() || !currentUser || !currentWorkspace?.id) return
+    if (!newComment.trim() || !currentUser || !currentWorkspace?.id || !entityId || entityId === 'no-workspace') return
     
     setIsLoading(true)
     try {
@@ -217,6 +220,19 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
     return (
       <div className="flex items-center justify-center py-8">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+      </div>
+    )
+  }
+
+  // Show message if no valid workspace context
+  if (!currentWorkspace?.id || !entityId || entityId === 'no-workspace') {
+    return (
+      <div className="flex flex-col items-center justify-center py-8 text-center">
+        <MessageSquare className="h-12 w-12 text-muted-foreground mb-3" />
+        <p className="text-sm font-medium mb-1">No workspace selected</p>
+        <p className="text-xs text-muted-foreground">
+          Please select a workspace to view and add comments
+        </p>
       </div>
     )
   }

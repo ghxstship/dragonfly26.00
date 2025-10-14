@@ -73,6 +73,17 @@ export function RightSidebar() {
   const [activeGroup, setActiveGroup] = useState<TabGroup>('mywork')
   const [isExpanded, setIsExpanded] = useState(false)
 
+  // Determine the entity type and ID for comments/activity based on current context
+  const getEntityContext = () => {
+    // Default to workspace-level comments if no specific entity is selected
+    return {
+      entityType: 'workspace',
+      entityId: currentWorkspace?.id || 'no-workspace',
+    }
+  }
+
+  const { entityType, entityId } = getEntityContext()
+
   // Determine which group the current tab belongs to
   const getCurrentGroup = (): TabGroup => {
     for (const [group, config] of Object.entries(tabGroups)) {
@@ -432,7 +443,7 @@ export function RightSidebar() {
                 </TabsContent>
 
                 <TabsContent value="comments" className="p-4 m-0">
-                  <CommentsSection entityType="task" entityId="example-id" />
+                  <CommentsSection entityType={entityType} entityId={entityId} />
                 </TabsContent>
 
                 <TabsContent value="time" className="p-4 m-0">
