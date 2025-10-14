@@ -10,26 +10,25 @@ export async function middleware(request: NextRequest) {
   // First, handle i18n routing
   const intlResponse = intlMiddleware(request)
   
+  // If i18n middleware returns a redirect, return it immediately
+  if (intlResponse && intlResponse.status === 307) {
+    return intlResponse
+  }
+  
   // Then handle Supabase session
   const supabaseResponse = await updateSession(request)
   
-  // Merge headers if both middlewares return responses
-  if (intlResponse && supabaseResponse) {
-    const response = NextResponse.next({
-      request: {
-        headers: intlResponse.headers,
-      },
+  // If there's an i18n response (locale was added to the path), merge with Supabase
+  if (intlResponse) {
+    // Copy Supabase session cookies to the i18n response
+    supabaseResponse?.cookies.getAll().forEach((cookie) => {
+      intlResponse.cookies.set(cookie)
     })
     
-    // Copy Supabase session cookies to the response
-    supabaseResponse.cookies.getAll().forEach((cookie) => {
-      response.cookies.set(cookie)
-    })
-    
-    return response
+    return intlResponse
   }
   
-  return intlResponse || supabaseResponse
+  return supabaseResponse
 }
 
 export const config = {
