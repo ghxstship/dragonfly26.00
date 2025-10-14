@@ -110,11 +110,16 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
     project: adv.production?.name || 'No Project',
     type: adv.type || 'Equipment',
     requestDate: new Date(adv.created_at).toLocaleDateString(),
+    approvedDate: adv.approved_at ? new Date(adv.approved_at).toLocaleDateString() : undefined,
     status: adv.status || 'pending',
     items: adv.quantity || 0,
     purpose: adv.description || '',
+    approver: adv.approver?.name || undefined,
+    dateNeeded: adv.date_needed ? new Date(adv.date_needed).toLocaleDateString() : undefined,
+    returnDate: adv.return_date ? new Date(adv.return_date).toLocaleDateString() : undefined,
     returned: 0,
     pending: adv.quantity || 0,
+    reconciledDate: adv.reconciled_at ? new Date(adv.reconciled_at).toLocaleDateString() : undefined,
   })) : mockAdvances
   
   if (loading) {
