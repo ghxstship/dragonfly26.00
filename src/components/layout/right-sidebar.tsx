@@ -5,7 +5,7 @@ import { useRouter, usePathname } from "@/i18n/navigation"
 import { 
   X, MessageSquare, Activity, Clock, Upload, Download, Share2, Filter, Columns3, 
   ArrowUpDown, Bell, Camera, ScanLine, Calendar, ClipboardList, FileText, 
-  ChevronLeft, ChevronRight, Plus, Edit2, Trash2, MoreHorizontal, Image
+  ChevronLeft, ChevronRight, Plus, Edit2, Trash2, MoreHorizontal, Image as ImageIcon
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -528,7 +528,7 @@ export function RightSidebar() {
                     </Button>
                     <div className="grid grid-cols-2 gap-2">
                       <Button variant="outline" size="sm">
-                        <Image className="h-4 w-4 mr-2" />
+                        <ImageIcon className="h-4 w-4 mr-2" />
                         Upload Image
                       </Button>
                       <Button variant="outline" size="sm">

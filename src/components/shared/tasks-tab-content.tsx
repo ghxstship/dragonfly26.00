@@ -213,7 +213,7 @@ export function TasksTabContent() {
                   <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">Nothing overdue</p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    You're on track!
+                    You&apos;re on track!
                   </p>
                 </div>
               ) : (

@@ -150,7 +150,7 @@ export function AgendaTabContent() {
       <div className="px-4 py-3 border-b">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <h3 className="font-semibold text-sm">Today's Agenda</h3>
+            <h3 className="font-semibold text-sm">Today&apos;s Agenda</h3>
             <p className="text-xs text-muted-foreground">
               {new Date().toLocaleDateString('en-US', { 
                 weekday: 'long', 
