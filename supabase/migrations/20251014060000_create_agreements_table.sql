@@ -128,4 +128,4 @@ CREATE POLICY "Users can delete agreements in their workspace"
 CREATE TRIGGER update_agreements_updated_at
     BEFORE UPDATE ON agreements
     FOR EACH ROW
-    EXECUTE FUNCTION update_updated_at_column();
+    EXECUTE FUNCTION update_updated_at();
