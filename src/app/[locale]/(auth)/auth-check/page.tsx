@@ -1,15 +1,13 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Loader2 } from 'lucide-react'
 
 export default function AuthCheckPage() {
   const router = useRouter()
-  const pathname = usePathname()
   const supabase = createClient()
-  const locale = pathname.split('/')[1] || 'en'
 
   useEffect(() => {
     const checkAuthAndRedirect = async () => {
@@ -20,7 +18,7 @@ export default function AuthCheckPage() {
       
       if (!user) {
         // Not authenticated, go back to login
-        router.push(`/${locale}/login`)
+        router.push('/login')
         return
       }
 
@@ -34,15 +32,15 @@ export default function AuthCheckPage() {
       // Determine where to send the user
       if (!profile?.onboarding_completed || !profile?.full_name) {
         // Need to complete onboarding
-        window.location.replace(`/${locale}/onboarding/welcome`)
+        router.push('/onboarding/welcome')
       } else {
         // All set, go to dashboard
-        window.location.replace(`/${locale}/workspace/personal/dashboard/overview`)
+        router.push('/workspace/personal/dashboard/overview')
       }
     }
 
     checkAuthAndRedirect()
-  }, [supabase, router, locale])
+  }, [supabase, router])
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
