@@ -113,6 +113,9 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
     project: asset.current_production || 'Available',
     value: asset.purchase_price ? `$${asset.purchase_price}` : 'N/A',
     location: asset.location?.name || 'Unknown',
+    returnDate: asset.return_date ? new Date(asset.return_date).toLocaleDateString() : undefined,
+    leaseEnd: asset.lease_end_date ? new Date(asset.lease_end_date).toLocaleDateString() : undefined,
+    maintenanceDate: asset.next_maintenance_date ? new Date(asset.next_maintenance_date).toLocaleDateString() : undefined,
   })) : mockAssets
   
   if (loading) {
