@@ -10,11 +10,6 @@ ALTER TABLE assets ADD COLUMN IF NOT EXISTS related_names TEXT[] DEFAULT '{}';
 -- Create GIN index for efficient array searching
 CREATE INDEX IF NOT EXISTS idx_assets_related_names_gin ON assets USING gin (related_names);
 
--- Create trigram index for fuzzy searching on related names
-CREATE INDEX IF NOT EXISTS idx_assets_related_names_trgm ON assets USING gin (
-    array_to_string(related_names, ' ') gin_trgm_ops
-);
-
 -- Update existing assets to extract related names from descriptions
 UPDATE assets
 SET related_names = (
