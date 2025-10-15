@@ -15,24 +15,30 @@ import {
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
+import { getDisplayValue, getStatusValue, getAssigneeValue, getDateValue, getDescriptionValue, getGroupingField } from "@/lib/schema-helpers"
 
 interface ListViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
   createActionLabel?: string
   onCreateAction?: () => void
 }
 
-export function ListView({ data, onItemClick, createActionLabel, onCreateAction }: ListViewProps) {
+export function ListView({ data, schema, onItemClick, createActionLabel, onCreateAction }: ListViewProps) {
   const t = useTranslations()
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set(["todo"]))
   const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set())
 
-  // Group data by status (example grouping)
+  // Get the field to group by from schema
+  const groupingField = getGroupingField(schema)
+
+  // Group data by the schema-defined grouping field
   const groupedData = data.reduce((acc, item) => {
-    const status = item.status || "todo"
-    if (!acc[status]) acc[status] = []
-    acc[status].push(item)
+    const groupValue = item[groupingField] || "ungrouped"
+    if (!acc[groupValue]) acc[groupValue] = []
+    acc[groupValue].push(item)
     return acc
   }, {} as Record<string, DataItem[]>)
 
@@ -125,23 +131,23 @@ export function ListView({ data, onItemClick, createActionLabel, onCreateAction 
                     />
                     
                     <div className="flex-1 min-w-0">
-                      <div className="font-medium">{item.name || item.title || "Untitled"}</div>
-                      {item.description && (
+                      <div className="font-medium">{getDisplayValue(item, schema)}</div>
+                      {getDescriptionValue(item, schema) && (
                         <div className="text-sm text-muted-foreground truncate">
-                          {item.description}
+                          {getDescriptionValue(item, schema)}
                         </div>
                       )}
                     </div>
 
-                    {item.assignee && (
+                    {getAssigneeValue(item, schema) && (
                       <div className="text-sm text-muted-foreground">
-                        {item.assignee}
+                        {getAssigneeValue(item, schema)}
                       </div>
                     )}
 
-                    {item.due_date && (
+                    {getDateValue(item, schema) && (
                       <div className="text-sm text-muted-foreground">
-                        {new Date(item.due_date).toLocaleDateString()}
+                        {new Date(getDateValue(item, schema)!).toLocaleDateString()}
                       </div>
                     )}
 

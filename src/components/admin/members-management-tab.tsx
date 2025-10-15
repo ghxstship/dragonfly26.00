@@ -57,7 +57,7 @@ interface Member {
   name: string
   email: string
   avatar?: string
-  role: "owner" | "admin" | "member" | "viewer"
+  role: "legend" | "phantom" | "aviator" | "gladiator" | "navigator" | "deviator" | "raider" | "merchant" | "visitor" | "passenger" | "ambassador"
   department: string
   status: "active" | "pending" | "suspended"
   joinedAt: string
@@ -68,7 +68,7 @@ export function MembersManagementTab() {
   const { toast } = useToast()
   const [inviteDialogOpen, setInviteDialogOpen] = useState(false)
   const [inviteEmail, setInviteEmail] = useState("")
-  const [inviteRole, setInviteRole] = useState("member")
+  const [inviteRole, setInviteRole] = useState("raider")
   const [searchQuery, setSearchQuery] = useState("")
   
   // CRUD drawer state
@@ -84,7 +84,7 @@ export function MembersManagementTab() {
       name: "John Doe",
       email: "john.doe@example.com",
       avatar: "https://github.com/shadcn.png",
-      role: "owner",
+      role: "phantom",
       department: "Leadership",
       status: "active",
       joinedAt: "2023-01-15",
@@ -94,7 +94,7 @@ export function MembersManagementTab() {
       id: "2",
       name: "Jane Smith",
       email: "jane.smith@example.com",
-      role: "admin",
+      role: "aviator",
       department: "Production",
       status: "active",
       joinedAt: "2023-02-20",
@@ -104,7 +104,7 @@ export function MembersManagementTab() {
       id: "3",
       name: "Bob Wilson",
       email: "bob.wilson@example.com",
-      role: "member",
+      role: "raider",
       department: "Audio",
       status: "active",
       joinedAt: "2023-03-10",
@@ -114,7 +114,7 @@ export function MembersManagementTab() {
       id: "4",
       name: "Alice Johnson",
       email: "alice.johnson@example.com",
-      role: "member",
+      role: "raider",
       department: "Lighting",
       status: "pending",
       joinedAt: "2024-01-18",
@@ -124,7 +124,7 @@ export function MembersManagementTab() {
       id: "5",
       name: "Mike Chen",
       email: "mike.chen@example.com",
-      role: "viewer",
+      role: "passenger",
       department: "Finance",
       status: "active",
       joinedAt: "2023-11-05",
@@ -215,10 +215,17 @@ export function MembersManagementTab() {
 
   const getRoleBadgeColor = (role: Member["role"]) => {
     switch (role) {
-      case "owner": return "default"
-      case "admin": return "secondary"
-      case "member": return "outline"
-      case "viewer": return "outline"
+      case "legend": return "default"
+      case "phantom": return "default"
+      case "aviator": return "secondary"
+      case "gladiator": return "secondary"
+      case "navigator": return "outline"
+      case "deviator": return "outline"
+      case "raider": return "outline"
+      case "merchant": return "outline"
+      case "visitor": return "outline"
+      case "passenger": return "outline"
+      case "ambassador": return "outline"
       default: return "outline"
     }
   }
@@ -275,9 +282,9 @@ export function MembersManagementTab() {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Admins</CardDescription>
+            <CardDescription>High-Level Roles</CardDescription>
             <CardTitle className="text-3xl">
-              {members.filter(m => m.role === "admin" || m.role === "owner").length}
+              {members.filter(m => ['legend', 'phantom', 'aviator', 'gladiator'].includes(m.role)).length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -347,7 +354,7 @@ export function MembersManagementTab() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <p className="font-medium truncate">{member.name}</p>
-                      {member.role === "owner" && (
+                      {(member.role === "legend" || member.role === "phantom") && (
                         <Crown className="h-4 w-4 text-yellow-500" />
                       )}
                       {getStatusIcon(member.status)}
@@ -405,38 +412,38 @@ export function MembersManagementTab() {
                           Duplicate
                         </DropdownMenuItem>
                         
-                        {member.role !== "owner" && (
+                        {!['legend', 'phantom'].includes(member.role) && (
                           <>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem
                               onClick={(e) => {
                                 e.stopPropagation()
-                                handleChangeRole(member.id, "admin")
+                                handleChangeRole(member.id, "aviator")
                               }}
-                              disabled={member.role === "admin"}
+                              disabled={member.role === "aviator"}
                             >
                               <Shield className="h-4 w-4 mr-2" />
-                              Make Admin
+                              Make Aviator
                             </DropdownMenuItem>
                             <DropdownMenuItem
                               onClick={(e) => {
                                 e.stopPropagation()
-                                handleChangeRole(member.id, "member")
+                                handleChangeRole(member.id, "raider")
                               }}
-                              disabled={member.role === "member"}
+                              disabled={member.role === "raider"}
                             >
                               <Users className="h-4 w-4 mr-2" />
-                              Make Member
+                              Make Raider
                             </DropdownMenuItem>
                             <DropdownMenuItem
                               onClick={(e) => {
                                 e.stopPropagation()
-                                handleChangeRole(member.id, "viewer")
+                                handleChangeRole(member.id, "passenger")
                               }}
-                              disabled={member.role === "viewer"}
+                              disabled={member.role === "passenger"}
                             >
                               <Users className="h-4 w-4 mr-2" />
-                              Make Viewer
+                              Make Passenger
                             </DropdownMenuItem>
                           </>
                         )}

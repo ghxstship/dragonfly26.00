@@ -18,9 +18,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface ActivityViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
@@ -34,7 +36,7 @@ interface ActivityItem {
   metadata?: any
 }
 
-export function ActivityView({ data, onItemClick }: ActivityViewProps) {
+export function ActivityView({ data, schema, onItemClick }: ActivityViewProps) {
   const t = useTranslations()
   const [filterByUser, setFilterByUser] = useState<string[]>([])
   const [filterByAction, setFilterByAction] = useState<string[]>([])

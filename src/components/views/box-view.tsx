@@ -14,15 +14,17 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface BoxViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
   createActionLabel?: string
   onCreateAction?: () => void
 }
 
-export function BoxView({ data, onItemClick, createActionLabel, onCreateAction }: BoxViewProps) {
+export function BoxView({ data, schema, onItemClick, createActionLabel, onCreateAction }: BoxViewProps) {
   const t = useTranslations()
   const [gridSize, setGridSize] = useState<"small" | "medium" | "large">("medium")
   const [favorites, setFavorites] = useState<Set<string>>(new Set())

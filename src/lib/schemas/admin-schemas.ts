@@ -1,10 +1,19 @@
 import { ModuleSchema, commonFields, type FieldSchema } from '../data-schemas'
+import { BRANDED_ROLES } from '../rbac/role-definitions'
 
+// Convert branded roles to select options
 const roleOptions = [
-  { label: 'Owner', value: 'owner', color: '#dc2626' },
-  { label: 'Admin', value: 'admin', color: '#ea580c' },
-  { label: 'Member', value: 'member', color: '#2563eb' },
-  { label: 'Guest', value: 'guest', color: '#64748b' },
+  { label: 'Legend', value: 'legend', color: '#8B5CF6' },
+  { label: 'Phantom', value: 'phantom', color: '#7C3AED' },
+  { label: 'Aviator', value: 'aviator', color: '#6D28D9' },
+  { label: 'Gladiator', value: 'gladiator', color: '#5B21B6' },
+  { label: 'Navigator', value: 'navigator', color: '#4C1D95' },
+  { label: 'Deviator', value: 'deviator', color: '#3B0764' },
+  { label: 'Raider', value: 'raider', color: '#2E1065' },
+  { label: 'Merchant', value: 'merchant', color: '#059669' },
+  { label: 'Visitor', value: 'visitor', color: '#0891B2' },
+  { label: 'Passenger', value: 'passenger', color: '#6366F1' },
+  { label: 'Ambassador', value: 'ambassador', color: '#EC4899' },
 ]
 
 const statusOptions = [

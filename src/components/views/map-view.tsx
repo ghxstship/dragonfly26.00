@@ -15,15 +15,17 @@ import {
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface MapViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
   createActionLabel?: string
   onCreateAction?: () => void
 }
 
-export function MapView({ data, onItemClick, createActionLabel, onCreateAction }: MapViewProps) {
+export function MapView({ data, schema, onItemClick, createActionLabel, onCreateAction }: MapViewProps) {
   const t = useTranslations()
   const [selectedItem, setSelectedItem] = useState<DataItem | null>(null)
 

@@ -25,15 +25,17 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { EmptyState } from "@/components/shared/empty-state"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface TableViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
   createActionLabel?: string
   onCreateAction?: () => void
 }
 
-export function TableView({ data, onItemClick, createActionLabel, onCreateAction }: TableViewProps) {
+export function TableView({ data, schema, onItemClick, createActionLabel, onCreateAction }: TableViewProps) {
   const t = useTranslations()
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])

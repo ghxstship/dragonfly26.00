@@ -12,20 +12,26 @@ import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-is-mobile"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
+import { getGroupingField } from "@/lib/schema-helpers"
 import { BoardColumn } from "./board-column"
 import { BoardCard } from "./board-card"
 
 interface BoardViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
   createActionLabel?: string
   onCreateAction?: () => void
 }
 
-export function BoardView({ data, onItemClick, createActionLabel, onCreateAction }: BoardViewProps) {
+export function BoardView({ data, schema, onItemClick, createActionLabel, onCreateAction }: BoardViewProps) {
   const t = useTranslations()
   const isMobile = useIsMobile()
   const [activeId, setActiveId] = useState<string | null>(null)
+
+  // Get the field to group by from schema
+  const groupingField = getGroupingField(schema)
 
   const defaultColumns = [
     { id: "todo", title: "To Do", color: "#94a3b8" },
@@ -34,10 +40,10 @@ export function BoardView({ data, onItemClick, createActionLabel, onCreateAction
     { id: "done", title: "Done", color: "#10b981" },
   ]
 
-  // Group data by status
+  // Group data by schema-defined grouping field
   const columnData = defaultColumns.map((column) => ({
     ...column,
-    items: data.filter((item) => item.status === column.id),
+    items: data.filter((item) => item[groupingField] === column.id),
   }))
 
   const handleDragStart = (event: any) => {
@@ -74,6 +80,7 @@ export function BoardView({ data, onItemClick, createActionLabel, onCreateAction
             <BoardColumn
               column={column}
               items={column.items}
+              schema={schema}
               onItemClick={onItemClick}
             />
           </div>

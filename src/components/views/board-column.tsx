@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 import { BoardCard } from "./board-card"
 
 interface BoardColumnProps {
@@ -23,10 +24,11 @@ interface BoardColumnProps {
     color: string
   }
   items: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
-export function BoardColumn({ column, items, onItemClick }: BoardColumnProps) {
+export function BoardColumn({ column, items, schema, onItemClick }: BoardColumnProps) {
   const t = useTranslations()
   const { setNodeRef } = useDroppable({ id: column.id })
 
@@ -66,6 +68,7 @@ export function BoardColumn({ column, items, onItemClick }: BoardColumnProps) {
               <BoardCard
                 key={item.id}
                 item={item}
+                schema={schema}
                 onClick={() => onItemClick?.(item)}
               />
             ))}

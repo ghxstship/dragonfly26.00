@@ -24,9 +24,11 @@ import {
 } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface EmbedViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
@@ -37,7 +39,7 @@ interface EmbedItem {
   type: "iframe" | "video" | "document"
 }
 
-export function EmbedView({ data, onItemClick }: EmbedViewProps) {
+export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
   const t = useTranslations()
   const [embeds, setEmbeds] = useState<EmbedItem[]>([
     {

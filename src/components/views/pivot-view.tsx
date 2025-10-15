@@ -16,16 +16,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface PivotViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   createActionLabel?: string
   onCreateAction?: () => void
 }
 
 type AggregateFunction = "sum" | "avg" | "count" | "min" | "max"
 
-export function PivotView({ data, createActionLabel, onCreateAction }: PivotViewProps) {
+export function PivotView({ data, schema, createActionLabel, onCreateAction }: PivotViewProps) {
   const t = useTranslations()
   const [rowField, setRowField] = useState<string>("status")
   const [columnField, setColumnField] = useState<string>("priority")

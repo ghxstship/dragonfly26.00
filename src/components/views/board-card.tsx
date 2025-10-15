@@ -7,14 +7,17 @@ import { GripVertical, MessageSquare, Paperclip } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { cn, getInitials } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
+import { getDisplayValue, getPriorityValue, getAssigneeValue, getDateValue, getDescriptionValue } from "@/lib/schema-helpers"
 
 interface BoardCardProps {
   item: DataItem
+  schema?: FieldSchema[]
   onClick?: () => void
   isDragging?: boolean
 }
 
-export function BoardCard({ item, onClick, isDragging }: BoardCardProps) {
+export function BoardCard({ item, schema, onClick, isDragging }: BoardCardProps) {
   const t = useTranslations()
   const {
     attributes,
@@ -52,13 +55,13 @@ export function BoardCard({ item, onClick, isDragging }: BoardCardProps) {
         <div className="flex-1 min-w-0 space-y-2">
           {/* Title */}
           <div className="font-medium">
-            {item.name || item.title || "Untitled"}
+            {getDisplayValue(item, schema)}
           </div>
 
           {/* Description */}
-          {item.description && (
+          {getDescriptionValue(item, schema) && (
             <div className="text-sm text-muted-foreground line-clamp-2">
-              {item.description}
+              {getDescriptionValue(item, schema)}
             </div>
           )}
 
@@ -94,20 +97,20 @@ export function BoardCard({ item, onClick, isDragging }: BoardCardProps) {
             </div>
 
             {/* Assignee */}
-            {item.assignee_name && (
+            {getAssigneeValue(item, schema) && (
               <Avatar className="h-6 w-6">
                 <AvatarImage src={item.assignee_avatar} />
                 <AvatarFallback className="text-xs">
-                  {getInitials(item.assignee_name)}
+                  {getInitials(getAssigneeValue(item, schema)!)}
                 </AvatarFallback>
               </Avatar>
             )}
           </div>
 
           {/* Due Date */}
-          {item.due_date && (
+          {getDateValue(item, schema) && (
             <div className="text-xs text-muted-foreground">
-              Due {new Date(item.due_date).toLocaleDateString()}
+              Due {new Date(getDateValue(item, schema)!).toLocaleDateString()}
             </div>
           )}
         </div>

@@ -10,9 +10,11 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface PortfolioViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
   createActionLabel?: string
   onCreateAction?: () => void
@@ -21,17 +23,17 @@ interface PortfolioViewProps {
 interface Project {
   id: string
   name: string
-  status: "on-track" | "at-risk" | "delayed" | "completed"
+  status: string
   progress: number
-  health: "healthy" | "warning" | "critical"
+  health: string
   budget: number
   spent: number
-  team: string[]
+  team: any[]
   startDate: string
   endDate: string
 }
 
-export function PortfolioView({ data, onItemClick, createActionLabel, onCreateAction }: PortfolioViewProps) {
+export function PortfolioView({ data, schema, onItemClick, createActionLabel, onCreateAction }: PortfolioViewProps) {
   const t = useTranslations()
   const [filterStatus, setFilterStatus] = useState<string | null>(null)
 

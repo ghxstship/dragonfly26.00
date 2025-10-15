@@ -19,6 +19,7 @@ import { ViewSwitcher } from "@/components/views/view-switcher"
 import { ListView } from "@/components/views/list-view"
 import { BoardView } from "@/components/views/board-view"
 import { TableView } from "@/components/views/table-view"
+import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
 import { CalendarView } from "@/components/views/calendar-view"
 import { TimelineView } from "@/components/views/timeline-view"
 import { DashboardView } from "@/components/views/dashboard-view"
@@ -41,6 +42,7 @@ import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog
 import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
 import { getCreateButtonLabel } from "@/lib/modules/form-fields-registry"
 import { useModuleData } from "@/hooks/use-module-data"
+import { getSchemaForTab } from "@/lib/data-schemas"
 import type { ViewType, DataItem } from "@/types"
 
 // Mock data generator
@@ -114,43 +116,57 @@ export function ModulePageContent() {
   }
 
   const renderView = () => {
+    // Get schema for current tab to enable schema-driven table views
+    const schema = getSchemaForTab(moduleSlug, moduleTabs[0]?.slug || 'overview')
+
     switch (currentView) {
       case "list":
-        return <ListView data={mockData} onItemClick={handleItemClick} />
+        return <ListView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "board":
-        return <BoardView data={mockData} onItemClick={handleItemClick} />
+        return <BoardView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "table":
-        return <TableView data={mockData} onItemClick={handleItemClick} />
+        // Use schema-driven EnhancedTableView if schema available
+        if (schema?.fields) {
+          return (
+            <EnhancedTableView
+              data={mockData}
+              schema={schema.fields}
+              onRefresh={() => {/* TODO: Implement refresh */}}
+              loading={dataLoading}
+            />
+          )
+        }
+        return <TableView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "calendar":
-        return <CalendarView data={mockData} onItemClick={handleItemClick} />
+        return <CalendarView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "timeline":
-        return <TimelineView data={mockData} onItemClick={handleItemClick} />
+        return <TimelineView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "dashboard":
-        return <DashboardView data={mockData} />
+        return <DashboardView data={mockData} schema={schema?.fields} />
       case "workload":
-        return <WorkloadView data={mockData} onItemClick={handleItemClick} />
+        return <WorkloadView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "map":
-        return <MapView data={mockData} onItemClick={handleItemClick} />
+        return <MapView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "mind-map":
-        return <MindMapView data={mockData} onItemClick={handleItemClick} />
+        return <MindMapView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "form":
-        return <FormView data={mockData} />
+        return <FormView data={mockData} schema={schema?.fields} />
       case "activity":
-        return <ActivityView data={mockData} />
+        return <ActivityView data={mockData} schema={schema?.fields} />
       case "box":
-        return <BoxView data={mockData} onItemClick={handleItemClick} />
+        return <BoxView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "embed":
-        return <EmbedView data={mockData} />
+        return <EmbedView data={mockData} schema={schema?.fields} />
       case "chat":
-        return <ChatView data={mockData} />
+        return <ChatView data={mockData} schema={schema?.fields} />
       case "doc":
-        return <DocView data={mockData} onItemClick={handleItemClick} />
+        return <DocView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "financial":
-        return <FinancialView data={mockData} />
+        return <FinancialView data={mockData} schema={schema?.fields} />
       case "portfolio":
-        return <PortfolioView data={mockData} onItemClick={handleItemClick} />
+        return <PortfolioView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "pivot":
-        return <PivotView data={mockData} />
+        return <PivotView data={mockData} schema={schema?.fields} />
       default:
         return (
           <div className="flex items-center justify-center h-full text-muted-foreground">

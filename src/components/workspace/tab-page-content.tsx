@@ -19,6 +19,7 @@ import { ViewSwitcher } from "@/components/views/view-switcher"
 import { ListView } from "@/components/views/list-view"
 import { BoardView } from "@/components/views/board-view"
 import { TableView } from "@/components/views/table-view"
+import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
 import { CalendarView } from "@/components/views/calendar-view"
 import { TimelineView } from "@/components/views/timeline-view"
 import { DashboardView } from "@/components/views/dashboard-view"
@@ -54,6 +55,7 @@ import { getReportsTabComponent } from "@/lib/reports-tab-components"
 import { getAnalyticsTabComponent } from "@/lib/analytics-tab-components"
 import { getInsightsTabComponent } from "@/lib/insights-tab-components"
 import { useModuleData, useCreateItem, useUpdateItem, useDeleteItem } from "@/hooks/use-module-data"
+import { getSchemaForTab } from "@/lib/data-schemas"
 import type { ViewType, DataItem } from "@/types"
 
 // Table mapping for CRUD operations
@@ -401,44 +403,61 @@ export function TabPageContent() {
         )
       : realData
 
+    // Get schema for current tab to enable schema-driven table views
+    const schema = getSchemaForTab(moduleSlug, tabSlug)
+
     // Otherwise, render based on view type with REAL DATA
     switch (currentView) {
       case "list":
-        return <ListView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <ListView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "board":
-        return <BoardView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <BoardView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "table":
-        return <TableView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        // Use schema-driven EnhancedTableView if schema available, otherwise fall back to generic TableView
+        if (schema?.fields) {
+          return (
+            <EnhancedTableView
+              data={filteredData}
+              schema={schema.fields}
+              onRefresh={() => {/* Real-time updates handled automatically */}}
+              onCreate={handleCreateItem}
+              onUpdate={updateItem}
+              onDelete={deleteItem}
+              loading={loading}
+            />
+          )
+        }
+        return <TableView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "calendar":
-        return <CalendarView data={filteredData} onItemClick={handleItemClick} />
+        return <CalendarView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "timeline":
-        return <TimelineView data={filteredData} onItemClick={handleItemClick} />
+        return <TimelineView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "dashboard":
-        return <DashboardView data={filteredData} />
+        return <DashboardView data={filteredData} schema={schema?.fields} />
       case "workload":
-        return <WorkloadView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <WorkloadView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "map":
-        return <MapView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <MapView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "mind-map":
-        return <MindMapView data={filteredData} onItemClick={handleItemClick} />
+        return <MindMapView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "form":
-        return <FormView data={filteredData} />
+        return <FormView data={filteredData} schema={schema?.fields} />
       case "activity":
-        return <ActivityView data={filteredData} />
+        return <ActivityView data={filteredData} schema={schema?.fields} />
       case "box":
-        return <BoxView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <BoxView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "embed":
-        return <EmbedView data={filteredData} />
+        return <EmbedView data={filteredData} schema={schema?.fields} />
       case "chat":
-        return <ChatView data={filteredData} />
+        return <ChatView data={filteredData} schema={schema?.fields} />
       case "doc":
-        return <DocView data={filteredData} onItemClick={handleItemClick} />
+        return <DocView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "financial":
-        return <FinancialView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <FinancialView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "portfolio":
-        return <PortfolioView data={filteredData} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <PortfolioView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "pivot":
-        return <PivotView data={filteredData} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <PivotView data={filteredData} schema={schema?.fields} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       default:
         return (
           <div className="flex items-center justify-center h-full text-muted-foreground">

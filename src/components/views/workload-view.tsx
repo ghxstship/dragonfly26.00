@@ -9,15 +9,19 @@ import { Badge } from "@/components/ui/badge"
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
+import { getDisplayValue, getAssigneeValue, getStatusValue, getPriorityValue } from "@/lib/schema-helpers"
 
 interface WorkloadViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
   createActionLabel?: string
   onCreateAction?: () => void
 }
 
 interface UserWorkload {
+  user: string
   userId: string
   userName: string
   capacity: number
@@ -25,18 +29,19 @@ interface UserWorkload {
   items: DataItem[]
 }
 
-export function WorkloadView({ data, onItemClick, createActionLabel, onCreateAction }: WorkloadViewProps) {
+export function WorkloadView({ data, schema, onItemClick, createActionLabel, onCreateAction }: WorkloadViewProps) {
   const t = useTranslations()
   const [expandedUsers, setExpandedUsers] = useState<Set<string>>(new Set())
 
   // Group data by assignee
   const userWorkloads: UserWorkload[] = data.reduce((acc, item) => {
-    const userId = item.assignee || "unassigned"
+    const userId = getAssigneeValue(item, schema) || "unassigned"
     const userName = item.assignee_name || "Unassigned"
     
     let userWorkload = acc.find((w) => w.userId === userId)
     if (!userWorkload) {
       userWorkload = {
+        user: userId,
         userId,
         userName,
         capacity: 40, // hours per week
@@ -159,7 +164,7 @@ export function WorkloadView({ data, onItemClick, createActionLabel, onCreateAct
                     onClick={() => onItemClick?.(item)}
                   >
                     <div className="flex-1 min-w-0">
-                      <div className="font-medium">{item.name || item.title || "Untitled"}</div>
+                      <div className="font-medium">{getDisplayValue(item, schema)}</div>
                       {item.description && (
                         <div className="text-sm text-muted-foreground truncate">
                           {item.description}

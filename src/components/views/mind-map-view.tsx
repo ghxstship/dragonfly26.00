@@ -13,9 +13,11 @@ import {
 } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface MindMapViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
@@ -26,7 +28,7 @@ interface TreeNode {
   collapsed: boolean
 }
 
-export function MindMapView({ data, onItemClick }: MindMapViewProps) {
+export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
   const t = useTranslations()
   const [zoom, setZoom] = useState(100)
   const [layout, setLayout] = useState<"radial" | "tree">("radial")

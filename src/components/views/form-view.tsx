@@ -12,13 +12,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface FormViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
-export function FormView({ data, onItemClick }: FormViewProps) {
+export function FormView({ data, schema, onItemClick }: FormViewProps) {
   const t = useTranslations()
   const [activeTab, setActiveTab] = useState<"build" | "preview" | "settings">("build")
   const [copied, setCopied] = useState(false)

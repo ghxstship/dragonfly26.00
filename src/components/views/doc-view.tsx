@@ -24,9 +24,11 @@ import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface DocViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
@@ -37,7 +39,7 @@ interface Collaborator {
   cursor?: { x: number; y: number }
 }
 
-export function DocView({ data, onItemClick }: DocViewProps) {
+export function DocView({ data, schema, onItemClick }: DocViewProps) {
   const t = useTranslations()
   const [content, setContent] = useState(
     data[0]?.content ||

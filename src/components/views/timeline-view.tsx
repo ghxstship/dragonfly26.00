@@ -13,15 +13,18 @@ import {
 } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
+import { getDisplayValue, getStartDateValue, getEndDateValue, getStatusValue } from "@/lib/schema-helpers"
 
 interface TimelineViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
 type ZoomLevel = "days" | "weeks" | "months" | "quarters"
 
-export function TimelineView({ data, onItemClick }: TimelineViewProps) {
+export function TimelineView({ data, schema, onItemClick }: TimelineViewProps) {
   const t = useTranslations()
   const [currentDate, setCurrentDate] = useState(new Date())
   const [zoomLevel, setZoomLevel] = useState<ZoomLevel>("weeks")
@@ -37,9 +40,11 @@ export function TimelineView({ data, onItemClick }: TimelineViewProps) {
   const { start, end } = getVisibleRange()
 
   const filteredData = data.filter((item) => {
-    if (!item.start_date && !item.due_date) return false
-    const itemStart = item.start_date ? new Date(item.start_date) : new Date(item.due_date!)
-    const itemEnd = item.due_date ? new Date(item.due_date) : itemStart
+    const startDate = getStartDateValue(item, schema)
+    const endDate = getEndDateValue(item, schema)
+    if (!startDate && !endDate) return false
+    const itemStart = startDate ? new Date(startDate) : new Date(endDate!)
+    const itemEnd = endDate ? new Date(endDate) : itemStart
     return itemEnd >= start && itemStart <= end
   })
 
@@ -54,8 +59,10 @@ export function TimelineView({ data, onItemClick }: TimelineViewProps) {
   }
 
   const getItemPosition = (item: DataItem) => {
-    const itemStart = item.start_date ? new Date(item.start_date) : new Date(item.due_date!)
-    const itemEnd = item.due_date ? new Date(item.due_date) : itemStart
+    const startDate = getStartDateValue(item, schema)
+    const endDate = getEndDateValue(item, schema)
+    const itemStart = startDate ? new Date(startDate) : new Date(endDate!)
+    const itemEnd = endDate ? new Date(endDate) : itemStart
     
     const totalDays = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24))
     const startOffset = Math.ceil((itemStart.getTime() - start.getTime()) / (1000 * 60 * 60 * 24))
@@ -194,7 +201,7 @@ export function TimelineView({ data, onItemClick }: TimelineViewProps) {
                 return (
                   <div key={item.id} className="flex h-12 items-center hover:bg-accent/50">
                     <div className="w-48 flex-shrink-0 border-r px-4 text-sm font-medium truncate">
-                      {item.name || item.title || "Untitled"}
+                      {getDisplayValue(item, schema)}
                     </div>
                     <div className="flex-1 relative h-full">
                       <div
@@ -202,7 +209,7 @@ export function TimelineView({ data, onItemClick }: TimelineViewProps) {
                         style={position}
                         onClick={() => onItemClick?.(item)}
                       >
-                        <span className="truncate">{item.name || item.title}</span>
+                        <span className="truncate">{getDisplayValue(item, schema)}</span>
                       </div>
                     </div>
                   </div>

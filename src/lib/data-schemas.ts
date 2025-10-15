@@ -79,8 +79,148 @@ export const commonFields = {
 
 export function getSchemaForTab(moduleId: string, tabId: string): ModuleSchema | null {
   const schemaKey = `${moduleId}-${tabId}`
-  return DATA_SCHEMAS[schemaKey] || null
+  
+  // First check if we have a manually defined schema
+  if (DATA_SCHEMAS[schemaKey]) {
+    return DATA_SCHEMAS[schemaKey]
+  }
+  
+  // Otherwise, try to convert from form field config
+  return convertFormConfigToSchema(moduleId, tabId)
+}
+
+/**
+ * Convert a form config to a ModuleSchema for use in table views
+ * This allows automatic table column generation from form field definitions
+ */
+import { getFormConfig } from './modules/form-fields-registry'
+
+export function convertFormConfigToSchema(moduleId: string, tabId: string): ModuleSchema | null {
+  const formConfig = getFormConfig(moduleId, tabId)
+  if (!formConfig) return null
+  
+  // Convert form fields to FieldSchema, adding order based on array position
+  const fields: FieldSchema[] = formConfig.fields.map((field, index) => ({
+    ...convertFormFieldToFieldSchema(field),
+    order: index + 1
+  }))
+  
+  // Add common system fields if not already present
+  const hasId = fields.some(f => f.id === 'id')
+  const hasCreatedAt = fields.some(f => f.id === 'created_at')
+  
+  if (!hasId) {
+    fields.unshift(commonFields.id)
+  }
+  if (!hasCreatedAt) {
+    fields.push(commonFields.createdAt)
+  }
+  
+  return {
+    moduleId,
+    tabId,
+    tableName: tabId, // Will be resolved by table mapping
+    primaryKey: 'id',
+    displayField: fields.find(f => f.id === 'name' || f.id === 'title')?.id || 'id',
+    fields
+  }
 }
 
 // Schema registry - will be populated with all module schemas
 export const DATA_SCHEMAS: Record<string, ModuleSchema> = {}
+
+/**
+ * Convert FormFieldConfig to FieldSchema for table views
+ * This allows us to reuse form field definitions for table columns
+ */
+import type { FormFieldConfig } from './modules/form-fields-registry'
+
+export function convertFormFieldToFieldSchema(formField: FormFieldConfig): FieldSchema {
+  return {
+    id: formField.name,
+    label: formField.label,
+    type: mapFormFieldType(formField.type),
+    required: formField.required,
+    placeholder: formField.placeholder,
+    description: formField.description,
+    defaultValue: formField.defaultValue,
+    options: formField.options?.map(opt => ({
+      label: opt.label,
+      value: opt.value,
+      color: undefined
+    })),
+    validation: formField.validation,
+    showInList: shouldShowInList(formField.type, formField.name),
+    showInDetail: true,
+    showInForm: true,
+    showInCreate: true,
+    sortable: isSortableType(formField.type),
+    filterable: isFilterableType(formField.type),
+    order: 99, // Will be overridden by field order in array
+  }
+}
+
+/**
+ * Map form field types to FieldSchema types
+ */
+function mapFormFieldType(formType: string): FieldType {
+  const typeMap: Record<string, FieldType> = {
+    'text': 'text',
+    'textarea': 'textarea',
+    'richtext': 'richtext',
+    'email': 'email',
+    'phone': 'phone',
+    'url': 'url',
+    'number': 'number',
+    'currency': 'currency',
+    'percentage': 'percent',
+    'date': 'date',
+    'datetime': 'datetime',
+    'time': 'time',
+    'select': 'select',
+    'multiselect': 'multiselect',
+    'radio': 'radio',
+    'checkbox': 'checkbox',
+    'switch': 'toggle',
+    'file': 'file',
+    'color': 'color',
+    'rating': 'rating',
+    'slider': 'progress',
+    'tags': 'tags',
+    'autocomplete': 'relation',
+    'location': 'location',
+    'user': 'user',
+    'multiuser': 'users',
+  }
+  return typeMap[formType] || 'text'
+}
+
+/**
+ * Determine if field should show in list view by default
+ */
+function shouldShowInList(type: string, fieldName: string): boolean {
+  // Hide these in list view by default
+  const hideInList = ['textarea', 'richtext', 'file']
+  const hideFields = ['description', 'notes', 'content', 'details']
+  
+  if (hideInList.includes(type)) return false
+  if (hideFields.includes(fieldName.toLowerCase())) return false
+  
+  return true
+}
+
+/**
+ * Determine if field type is sortable
+ */
+function isSortableType(type: string): boolean {
+  const sortableTypes = ['text', 'number', 'currency', 'date', 'datetime', 'time', 'percentage']
+  return sortableTypes.includes(type)
+}
+
+/**
+ * Determine if field type is filterable
+ */
+function isFilterableType(type: string): boolean {
+  const filterableTypes = ['text', 'select', 'multiselect', 'checkbox', 'switch', 'tags', 'user', 'multiuser']
+  return filterableTypes.includes(type)
+}

@@ -22,9 +22,11 @@ import {
 } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface ChatViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
@@ -39,7 +41,7 @@ interface Message {
   replies?: Message[]
 }
 
-export function ChatView({ data, onItemClick }: ChatViewProps) {
+export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
   const t = useTranslations()
   const [message, setMessage] = useState("")
   const [activeThread, setActiveThread] = useState<string | null>(null)

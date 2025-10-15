@@ -10,9 +10,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { EmptyState } from "@/components/shared/empty-state"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
+import { getDisplayValue } from "@/lib/schema-helpers"
 
 interface FinancialViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
   createActionLabel?: string
   onCreateAction?: () => void
@@ -25,7 +28,14 @@ interface FinancialMetrics {
   budget: number
 }
 
-export function FinancialView({ data, onItemClick, createActionLabel, onCreateAction }: FinancialViewProps) {
+interface FinancialSummary {
+  total: number
+  income: number
+  expenses: number
+  budget: number
+}
+
+export function FinancialView({ data, schema, onItemClick, createActionLabel, onCreateAction }: FinancialViewProps) {
   const t = useTranslations()
   const [period, setPeriod] = useState<"month" | "quarter" | "year">("month")
 

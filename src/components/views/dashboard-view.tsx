@@ -12,9 +12,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
 import type { DataItem } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
 
 interface DashboardViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
 }
 
 interface Widget {
@@ -28,7 +30,7 @@ interface Widget {
   data?: any
 }
 
-export function DashboardView({ data }: DashboardViewProps) {
+export function DashboardView({ data, schema }: DashboardViewProps) {
   const t = useTranslations()
   const [widgets, setWidgets] = useState<Widget[]>([
     {

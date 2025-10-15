@@ -12,13 +12,16 @@ import {
 } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import type { DataItem, CalendarMode } from "@/types"
+import type { FieldSchema } from "@/lib/data-schemas"
+import { getDisplayValue, getDateValue, getPriorityValue, getAssigneeValue, getStatusValue } from "@/lib/schema-helpers"
 
 interface CalendarViewProps {
   data: DataItem[]
+  schema?: FieldSchema[]
   onItemClick?: (item: DataItem) => void
 }
 
-export function CalendarView({ data, onItemClick }: CalendarViewProps) {
+export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
   const t = useTranslations()
   const [currentDate, setCurrentDate] = useState(new Date())
   const [mode, setMode] = useState<CalendarMode>("month")
@@ -55,8 +58,9 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
 
   const getItemsForDate = (day: number) => {
     return data.filter((item) => {
-      if (!item.due_date) return false
-      const itemDate = new Date(item.due_date)
+      const dateValue = getDateValue(item, schema)
+      if (!dateValue) return false
+      const itemDate = new Date(dateValue)
       return (
         itemDate.getFullYear() === year &&
         itemDate.getMonth() === month &&
@@ -77,8 +81,9 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
 
   const getItemsForWeekDate = (date: Date) => {
     return data.filter((item) => {
-      if (!item.due_date) return false
-      const itemDate = new Date(item.due_date)
+      const dateValue = getDateValue(item, schema)
+      if (!dateValue) return false
+      const itemDate = new Date(dateValue)
       return (
         itemDate.getFullYear() === date.getFullYear() &&
         itemDate.getMonth() === date.getMonth() &&
@@ -90,8 +95,9 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
   const getTodayItems = () => {
     const today = new Date()
     return data.filter((item) => {
-      if (!item.due_date) return false
-      const itemDate = new Date(item.due_date)
+      const dateValue = getDateValue(item, schema)
+      if (!dateValue) return false
+      const itemDate = new Date(dateValue)
       return (
         itemDate.getFullYear() === today.getFullYear() &&
         itemDate.getMonth() === today.getMonth() &&
@@ -104,8 +110,15 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
     return data
-      .filter((item) => item.due_date && new Date(item.due_date) >= today)
-      .sort((a, b) => new Date(a.due_date).getTime() - new Date(b.due_date).getTime())
+      .filter((item) => {
+        const dateValue = getDateValue(item, schema)
+        return dateValue && new Date(dateValue) >= today
+      })
+      .sort((a, b) => {
+        const aDate = getDateValue(a, schema)
+        const bDate = getDateValue(b, schema)
+        return new Date(aDate!).getTime() - new Date(bDate!).getTime()
+      })
   }
 
   const renderCalendarDays = () => {
@@ -149,7 +162,7 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
                     className="text-xs p-1 rounded bg-primary/10 hover:bg-primary/20 cursor-pointer truncate"
                     onClick={() => onItemClick?.(item)}
                   >
-                    {item.name || item.title}
+                    {getDisplayValue(item, schema)}
                   </div>
                 ))}
                 {dayItems.length > 3 && (
@@ -273,10 +286,10 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
                         className="text-sm p-2 rounded bg-primary/10 hover:bg-primary/20 cursor-pointer"
                         onClick={() => onItemClick?.(item)}
                       >
-                        <div className="font-medium truncate">{item.name || item.title}</div>
-                        {item.priority && (
+                        <div className="font-medium truncate">{getDisplayValue(item, schema)}</div>
+                        {getPriorityValue(item, schema) && (
                           <div className="text-xs text-muted-foreground mt-1 capitalize">
-                            {item.priority}
+                            {getPriorityValue(item, schema)}
                           </div>
                         )}
                       </div>
@@ -313,14 +326,14 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
                     className="p-4 rounded-lg border bg-card hover:bg-accent cursor-pointer transition-colors"
                     onClick={() => onItemClick?.(item)}
                   >
-                    <div className="font-medium">{item.name || item.title}</div>
+                    <div className="font-medium">{getDisplayValue(item, schema)}</div>
                     {item.description && (
                       <div className="text-sm text-muted-foreground mt-1">{item.description}</div>
                     )}
                     <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground">
-                      {item.priority && <span className="capitalize">Priority: {item.priority}</span>}
-                      {item.assignee_name && <span>Assigned to: {item.assignee_name}</span>}
-                      {item.status && <span className="capitalize">Status: {item.status}</span>}
+                      {getPriorityValue(item, schema) && <span className="capitalize">Priority: {getPriorityValue(item, schema)}</span>}
+                      {getAssigneeValue(item, schema) && <span>Assigned to: {getAssigneeValue(item, schema)}</span>}
+                      {getStatusValue(item, schema) && <span className="capitalize">Status: {getStatusValue(item, schema)}</span>}
                     </div>
                   </div>
                 ))
@@ -342,7 +355,9 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
                 </div>
               ) : (
                 getAllUpcomingItems().reduce((acc, item) => {
-                  const dateKey = new Date(item.due_date).toLocaleDateString("en-US", {
+                  const dateValue = getDateValue(item, schema)
+                  if (!dateValue) return acc
+                  const dateKey = new Date(dateValue).toLocaleDateString("en-US", {
                     weekday: "long",
                     year: "numeric",
                     month: "long",
@@ -369,30 +384,30 @@ export function CalendarView({ data, onItemClick }: CalendarViewProps) {
                         >
                           <div className="flex items-start justify-between">
                             <div className="flex-1">
-                              <div className="font-medium">{item.name || item.title}</div>
+                              <div className="font-medium">{getDisplayValue(item, schema)}</div>
                               {item.description && (
                                 <div className="text-sm text-muted-foreground mt-1 line-clamp-2">
                                   {item.description}
                                 </div>
                               )}
                             </div>
-                            {item.priority && (
+                            {getPriorityValue(item, schema) && (
                               <span
                                 className={cn(
                                   "text-xs px-2 py-1 rounded-full capitalize",
-                                  item.priority === "urgent" && "bg-red-100 text-red-700",
-                                  item.priority === "high" && "bg-orange-100 text-orange-700",
-                                  item.priority === "normal" && "bg-blue-100 text-blue-700",
-                                  item.priority === "low" && "bg-gray-100 text-gray-700"
+                                  getPriorityValue(item, schema) === "urgent" && "bg-red-100 text-red-700",
+                                  getPriorityValue(item, schema) === "high" && "bg-orange-100 text-orange-700",
+                                  getPriorityValue(item, schema) === "normal" && "bg-blue-100 text-blue-700",
+                                  getPriorityValue(item, schema) === "low" && "bg-gray-100 text-gray-700"
                                 )}
                               >
-                                {item.priority}
+                                {getPriorityValue(item, schema)}
                               </span>
                             )}
                           </div>
                           <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
-                            {item.assignee_name && <span>{item.assignee_name}</span>}
-                            {item.status && <span className="capitalize">{item.status.replace(/_/g, " ")}</span>}
+                            {getAssigneeValue(item, schema) && <span>{getAssigneeValue(item, schema)}</span>}
+                            {getStatusValue(item, schema) && <span className="capitalize">{String(getStatusValue(item, schema)).replace(/_/g, " ")}</span>}
                           </div>
                         </div>
                       ))}
