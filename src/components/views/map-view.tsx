@@ -46,17 +46,15 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
       <div className="flex-1 relative bg-muted/30 rounded-lg border overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center">
           {data.length === 0 ? (
-            <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg p-8 text-center max-w-md">
-              <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
-              <p className="text-sm text-muted-foreground mb-6">
-                {t('views.emptyState.mapViewDescription')}
-              </p>
-              {(createActionLabel || onCreateAction) && (
-                <Button size="lg" onClick={onCreateAction}>
-                  <Plus className="h-4 w-4 mr-2" />
-                  {createActionLabel || t('views.emptyState.createFirstItem')}
-                </Button>
-              )}
+            <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg">
+              <EmptyState
+                variant="inline"
+                icon={MapPin}
+                mainMessage={t('views.emptyState.nothingToSeeYet')}
+                description={t('views.emptyState.mapViewDescription')}
+                actionLabel={createActionLabel || t('views.emptyState.createFirstItem')}
+                onAction={onCreateAction}
+              />
             </div>
           ) : (
             <div className="text-center space-y-4">
@@ -127,13 +125,12 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
         </div>
         <div className="flex-1 overflow-y-auto">
           {itemsWithLocation.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-              <MapPin className="h-8 w-8 text-muted-foreground mb-3" />
-              <p className="text-sm font-medium mb-1">{t('views.emptyState.nothingToSeeYet')}</p>
-              <p className="text-xs text-muted-foreground">
-                {t('views.emptyState.mapViewDescription')}
-              </p>
-            </div>
+            <EmptyState
+              variant="compact"
+              icon={MapPin}
+              mainMessage={t('views.emptyState.nothingToSeeYet')}
+              description={t('views.emptyState.mapViewDescription')}
+            />
           ) : (
             <div className="divide-y">
               {itemsWithLocation.map((item) => (

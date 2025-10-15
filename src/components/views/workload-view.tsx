@@ -80,17 +80,14 @@ export function WorkloadView({ data, schema, onItemClick, createActionLabel, onC
   return (
     <div className="space-y-4">
       {data.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-16 text-center border rounded-lg">
-          <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
-          <p className="text-sm text-muted-foreground mb-6 max-w-sm">
-            {t('views.emptyState.workloadViewDescription')}
-          </p>
-          {(createActionLabel || onCreateAction) && (
-            <Button size="lg" onClick={onCreateAction}>
-              <Plus className="h-4 w-4 mr-2" />
-              {createActionLabel || t('views.emptyState.createFirstItem')}
-            </Button>
-          )}
+        <div className="border rounded-lg">
+          <EmptyState
+            variant="inline"
+            mainMessage={t('views.emptyState.nothingToSeeYet')}
+            description={t('views.emptyState.workloadViewDescription')}
+            actionLabel={createActionLabel || t('views.emptyState.createFirstItem')}
+            onAction={onCreateAction}
+          />
         </div>
       ) : (
         userWorkloads.map((workload) => {

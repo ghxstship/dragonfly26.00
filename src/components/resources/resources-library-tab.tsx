@@ -16,8 +16,10 @@ import {
   Star,
   Clock,
   Users,
-  Download
+  Download,
+  Share2
 } from "lucide-react"
+import { EmptyState } from "@/components/shared/empty-state"
 import { useState } from "react"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
@@ -66,14 +68,11 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Actions */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Resource Library</h2>
-          <p className="text-muted-foreground">
-            Educational resources, guides, courses, and industry knowledge
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          Educational resources, guides, courses, and industry knowledge
+        </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <Filter className="h-4 w-4 mr-2" />
@@ -269,23 +268,15 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
       {filteredResources.length === 0 && (
         <Card>
-          <CardContent className="flex flex-col items-center justify-center py-12">
-            <BookOpen className="h-12 w-12 text-muted-foreground mb-4" />
-            <h3 className="text-lg font-semibold mb-2">
-              {searchQuery ? 'No resources found' : 'No Resources Yet'}
-            </h3>
-            <p className="text-muted-foreground text-center mb-4">
-              {searchQuery
-                ? 'Try adjusting your search terms'
-                : 'Start building your resource library'
-              }
-            </p>
-            {!searchQuery && (
-              <Button>
-                <Plus className="h-4 w-4 mr-2" />
-                Add Resource
-              </Button>
-            )}
+          <CardContent className="p-0">
+            <EmptyState
+              variant="inline"
+              icon={BookOpen}
+              mainMessage={searchQuery ? "No resources found" : "NOTHING TO SEE HERE... (YET)"}
+              description={searchQuery ? "Try adjusting your search criteria" : "Add resources to build your library"}
+              actionLabel={!searchQuery ? "Add Resource" : undefined}
+              onAction={!searchQuery ? () => {} : undefined}
+            />
           </CardContent>
         </Card>
       )}

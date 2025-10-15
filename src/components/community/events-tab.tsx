@@ -23,6 +23,7 @@ import {
   Ticket,
   ExternalLink
 } from "lucide-react"
+import { EmptyState } from "@/components/shared/empty-state"
 
 interface EventsTabProps {
   data?: any[]
@@ -236,9 +237,15 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
       <div className="space-y-4">
         {filteredEvents.length === 0 ? (
           <Card>
-            <CardContent className="py-12 text-center">
-              <CalendarDays className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">No events found matching your criteria</p>
+            <CardContent className="p-0">
+              <EmptyState
+                variant="inline"
+                icon={CalendarDays}
+                mainMessage={searchQuery || categoryFilter !== "all" ? "No events found" : "NOTHING TO SEE HERE... (YET)"}
+                description={searchQuery || categoryFilter !== "all" ? "Try adjusting your filters" : "Create community events to bring people together"}
+                actionLabel={!searchQuery && categoryFilter === "all" ? "Create Event" : undefined}
+                onAction={!searchQuery && categoryFilter === "all" ? () => {} : undefined}
+              />
             </CardContent>
           </Card>
         ) : (

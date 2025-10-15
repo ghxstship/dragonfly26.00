@@ -35,6 +35,7 @@ import {
   Clock,
   AlertTriangle
 } from "lucide-react"
+import { EmptyState } from "@/components/shared/empty-state"
 import { useToast } from "@/lib/hooks/use-toast"
 
 interface Automation {
@@ -232,16 +233,15 @@ export function AutomationsTab() {
 
       {automations.length === 0 && (
         <Card>
-          <CardContent className="flex flex-col items-center justify-center py-12">
-            <Bot className="h-12 w-12 text-muted-foreground mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No automations yet</h3>
-            <p className="text-muted-foreground text-center mb-4">
-              Create your first automation to start saving time
-            </p>
-            <Button onClick={handleCreateNew}>
-              <Plus className="h-4 w-4 mr-2" />
-              Create Automation
-            </Button>
+          <CardContent className="p-0">
+            <EmptyState
+              variant="inline"
+              icon={Bot}
+              mainMessage="NOTHING TO SEE HERE... (YET)"
+              description="Create automated workflows to save time and reduce manual work"
+              actionLabel="Create Automation"
+              onAction={() => {}}
+            />
           </CardContent>
         </Card>
       )}

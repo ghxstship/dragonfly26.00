@@ -18,6 +18,55 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: [
+          'var(--font-sans)',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+        mono: [
+          'ui-monospace',
+          'SFMono-Regular',
+          '"SF Mono"',
+          'Consolas',
+          '"Liberation Mono"',
+          'Menlo',
+          'monospace',
+        ],
+      },
+      fontSize: {
+        // Display styles
+        'display-2xl': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-xl': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-lg': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'display-md': ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'display-sm': ['1.875rem', { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '600' }],
+        
+        // Heading styles
+        'heading-xl': ['1.5rem', { lineHeight: '1.4', letterSpacing: '-0.01em', fontWeight: '600' }],
+        'heading-lg': ['1.25rem', { lineHeight: '1.4', letterSpacing: '-0.005em', fontWeight: '600' }],
+        'heading-md': ['1.125rem', { lineHeight: '1.5', fontWeight: '600' }],
+        'heading-sm': ['1rem', { lineHeight: '1.5', fontWeight: '600' }],
+        'heading-xs': ['0.875rem', { lineHeight: '1.5', fontWeight: '600' }],
+        
+        // Body styles
+        'body-xl': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'body-lg': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
+        'body-md': ['0.875rem', { lineHeight: '1.5', fontWeight: '400' }],
+        'body-sm': ['0.8125rem', { lineHeight: '1.5', fontWeight: '400' }],
+        'body-xs': ['0.75rem', { lineHeight: '1.5', fontWeight: '400' }],
+        
+        // Label styles
+        'label-lg': ['0.875rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'label-md': ['0.8125rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'label-sm': ['0.75rem', { lineHeight: '1.4', fontWeight: '500' }],
+        'label-xs': ['0.6875rem', { lineHeight: '1.4', fontWeight: '500' }],
+      },
       minHeight: {
         'touch': '44px',
       },

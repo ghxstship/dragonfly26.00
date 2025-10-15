@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { EmptyState } from "@/components/shared/empty-state"
 import { 
   Newspaper, 
   Bookmark, 
@@ -168,9 +169,13 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
       <div className="space-y-4">
         {filteredArticles.length === 0 ? (
           <Card>
-            <CardContent className="py-12 text-center">
-              <Newspaper className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">No articles found matching your criteria</p>
+            <CardContent className="p-0">
+              <EmptyState
+                variant="inline"
+                icon={Newspaper}
+                mainMessage={searchQuery || selectedCategory !== "all" ? "No articles found" : "NOTHING TO SEE HERE... (YET)"}
+                description={searchQuery || selectedCategory !== "all" ? "Try adjusting your filters" : "Stay updated with industry news and announcements"}
+              />
             </CardContent>
           </Card>
         ) : (

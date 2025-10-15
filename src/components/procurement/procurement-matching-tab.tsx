@@ -121,14 +121,6 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Three-Way Matching</h2>
-        <p className="text-muted-foreground">
-          Verify PO + Receipt + Invoice alignment before payment approval
-        </p>
-      </div>
-
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
         <Card>

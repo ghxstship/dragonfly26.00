@@ -88,14 +88,11 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Actions */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Maintenance Calendar</h2>
-          <p className="text-muted-foreground">
-            Schedule and track equipment maintenance
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          Schedule and track equipment maintenance
+        </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <Filter className="h-4 w-4 mr-2" />

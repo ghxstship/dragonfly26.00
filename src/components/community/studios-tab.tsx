@@ -3,25 +3,28 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { 
   Building2, 
+  MapPin,
   Users, 
+  Star,
+  Search,
+  Filter,
   Plus,
   Bell,
   Settings,
-  Search,
   TrendingUp,
   MessageSquare,
   Calendar,
   Lock,
   Globe,
-  Star,
   MoreHorizontal
 } from "lucide-react"
+import { EmptyState } from "@/components/shared/empty-state"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 interface StudiosTabProps {
   data?: any[]
@@ -200,9 +203,13 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
       <div className="space-y-4">
         {filteredStudios.length === 0 ? (
           <Card>
-            <CardContent className="py-12 text-center">
-              <Building2 className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">No studios found matching your criteria</p>
+            <CardContent className="p-0">
+              <EmptyState
+                variant="inline"
+                icon={Building2}
+                mainMessage={searchQuery || filter !== "all" ? "No studios found" : "NOTHING TO SEE HERE... (YET)"}
+                description={searchQuery || filter !== "all" ? "Try adjusting your search criteria" : "Discover and connect with production studios"}
+              />
             </CardContent>
           </Card>
         ) : (

@@ -18,6 +18,7 @@ import {
   Search,
   ExternalLink
 } from "lucide-react"
+import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
@@ -66,14 +67,11 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Actions */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Organizations</h2>
-          <p className="text-muted-foreground">
-            Manage all companies, vendors, clients, and partners
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          Manage all companies, vendors, clients, and partners
+        </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <Filter className="h-4 w-4 mr-2" />
@@ -259,16 +257,15 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
 
       {companies.length === 0 && (
         <Card>
-          <CardContent className="flex flex-col items-center justify-center py-12">
-            <Building2 className="h-12 w-12 text-muted-foreground mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No Companies Yet</h3>
-            <p className="text-muted-foreground text-center mb-4">
-              Start by adding your first company, vendor, or client
-            </p>
-            <Button>
-              <Plus className="h-4 w-4 mr-2" />
-              Add Company
-            </Button>
+          <CardContent className="p-0">
+            <EmptyState
+              variant="inline"
+              icon={Building2}
+              mainMessage="NOTHING TO SEE HERE... (YET)"
+              description="Start by adding your first company or organization"
+              actionLabel="Add Company"
+              onAction={() => {}}
+            />
           </CardContent>
         </Card>
       )}

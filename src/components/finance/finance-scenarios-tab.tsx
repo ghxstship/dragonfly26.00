@@ -92,14 +92,6 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Budget Scenarios</h2>
-        <p className="text-muted-foreground">
-          Compare different financial outcomes and plan for multiple possibilities
-        </p>
-      </div>
-
       {/* Summary Metrics */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

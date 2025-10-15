@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { shouldUseMockData } from '@/lib/demo-mode'
+import { GLOBAL_CATALOG_WORKSPACE_ID } from '@/lib/api/asset-catalog'
 
 /**
  * Universal hook for fetching module data
@@ -114,9 +115,9 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'approvals': { table: 'approval_steps', select: '*, approval_chain:approval_chains!approval_chain_id(chain_name, target_type), approver:profiles!approver_id(first_name, last_name)', orderBy: 'due_date' },
   'scenarios': { table: 'budget_scenarios', select: '*, budget:budgets!budget_id(name, total_amount)', orderBy: 'created_at' },
   'variance': { table: 'budget_variance_tracking', select: '*, budget:budgets!budget_id(name)', orderBy: 'tracking_period_start' },
-  'cash-flow': { table: 'cash_flow_projections', select: '*, production:productions!production_id(name)', orderBy: 'projection_date' },
-  'forecasts': { table: 'financial_forecasts', select: '*, budget:budgets!budget_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'forecast_date' },
-  'forecasting': { table: 'financial_forecasts', select: '*, budget:budgets!budget_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'forecast_date' },
+  'cash-flow': { table: 'cash_flow_projections', select: '*, production:productions!production_id(name)', orderBy: 'created_at' },
+  'forecasts': { table: 'financial_forecasts', select: '*, production:productions!production_id(name), budget:budgets!budget_id(name)', orderBy: 'created_at' },
+  'forecasting': { table: 'financial_forecasts', select: '*, production:productions!production_id(name), budget:budgets!budget_id(name)', orderBy: 'created_at' },
   'transactions': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
   'revenue': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
   'expenses': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
@@ -125,7 +126,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'payments': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
   'invoices': { table: 'invoices', select: '*, company:companies!company_id(name), production:productions!production_id(name)', orderBy: 'issue_date' },
   'taxes': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
-  'policies': { table: 'spending_policies', select: '*, created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'created_at' },
+  'policies': { table: 'spending_policies', select: '*', orderBy: 'created_at' },
   'accounts': { table: 'gl_codes', select: '*', orderBy: 'code' },
   'gl-codes': { table: 'gl_codes', select: '*', orderBy: 'code' },
   
@@ -299,6 +300,10 @@ export function useModuleData(
           .from(config.table)
           .select(config.select || '*')
         
+        // Determine which workspace ID to use
+        // Catalog tab always uses the global catalog workspace ID
+        const effectiveWorkspaceId = tabSlug === 'catalog' ? GLOBAL_CATALOG_WORKSPACE_ID : workspaceId
+        
         // Handle tables with special filtering logic
         if (config.table === 'workspaces') {
           // Workspaces table: filter by id (not workspace_id)
@@ -308,7 +313,8 @@ export function useModuleData(
           // Don't filter by workspace - connections are global per user
         } else {
           // Standard case: filter by workspace_id
-          query = query.eq('workspace_id', workspaceId)
+          // For catalog tab, this uses GLOBAL_CATALOG_WORKSPACE_ID
+          query = query.eq('workspace_id', effectiveWorkspaceId)
         }
 
         // Apply additional filters
@@ -369,6 +375,10 @@ export function useModuleData(
       table: config.table,
     }
     
+    // Determine which workspace ID to use for subscription
+    // Catalog tab always uses the global catalog workspace ID
+    const effectiveWorkspaceId = tabSlug === 'catalog' ? GLOBAL_CATALOG_WORKSPACE_ID : workspaceId
+    
     // Apply appropriate filter based on table
     if (config.table === 'workspaces') {
       filterConfig.filter = `id=eq.${workspaceId}`
@@ -376,7 +386,7 @@ export function useModuleData(
       // Connections are global per user, no workspace filter needed
       // We'll filter by user_id in the query itself
     } else {
-      filterConfig.filter = `workspace_id=eq.${workspaceId}`
+      filterConfig.filter = `workspace_id=eq.${effectiveWorkspaceId}`
     }
     
     const channel = supabase

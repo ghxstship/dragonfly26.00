@@ -75,18 +75,14 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
             <List className="h-4 w-4 text-muted-foreground" />
             <span className="font-semibold text-muted-foreground">Items</span>
           </div>
-          <div className="flex flex-col items-center justify-center py-16 px-6 text-center">
-            <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
-            <p className="text-sm text-muted-foreground mb-6 max-w-sm">
-              {t('views.emptyState.listViewDescription')}
-            </p>
-            {(createActionLabel || onCreateAction) && (
-              <Button size="lg" onClick={onCreateAction}>
-                <Plus className="h-4 w-4 mr-2" />
-                {createActionLabel || t('views.emptyState.createFirstItem')}
-              </Button>
-            )}
-          </div>
+          <EmptyState
+            variant="inline"
+            icon={List}
+            mainMessage={t('views.emptyState.nothingToSeeYet')}
+            description={t('views.emptyState.listViewDescription')}
+            actionLabel={createActionLabel || t('views.emptyState.createFirstItem')}
+            onAction={onCreateAction}
+          />
         </div>
       ) : (
         Object.entries(groupedData).map(([group, items]) => {

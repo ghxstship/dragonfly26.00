@@ -50,14 +50,11 @@ export function RolesPermissionsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Description */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold">Branded Role System</h2>
-          <p className="text-sm text-muted-foreground mt-1">
-            11 distinct roles with comprehensive permission matrix
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          11 distinct roles with comprehensive permission matrix
+        </p>
       </div>
 
       {/* Role Hierarchy Stats */}

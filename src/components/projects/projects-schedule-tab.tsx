@@ -17,6 +17,7 @@ import {
   Plus,
   Download
 } from "lucide-react"
+import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
@@ -24,6 +25,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
   const { data: tasks, loading } = useModuleData(workspaceId, 'projects', 'schedule')
   const [viewMode, setViewMode] = useState<'day' | 'week' | 'month'>('month')
   const [currentDate, setCurrentDate] = useState(new Date())
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -80,20 +82,17 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Actions */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Project Schedule</h2>
-          <p className="text-muted-foreground">
-            Gantt chart timeline with dependencies and critical path
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          Gantt chart timeline with dependencies and critical path
+        </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <Download className="h-4 w-4 mr-2" />
             Export
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
             Add Task
           </Button>
@@ -298,16 +297,15 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
       {tasks.length === 0 && (
         <Card>
-          <CardContent className="flex flex-col items-center justify-center py-12">
-            <Calendar className="h-12 w-12 text-muted-foreground mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No Schedule Yet</h3>
-            <p className="text-muted-foreground text-center mb-4">
-              Start by adding tasks to create your project timeline
-            </p>
-            <Button>
-              <Plus className="h-4 w-4 mr-2" />
-              Add First Task
-            </Button>
+          <CardContent className="p-0">
+            <EmptyState
+              variant="inline"
+              icon={Calendar}
+              mainMessage="NOTHING TO SEE HERE... (YET)"
+              description="Add items with dates to visualize them on the timeline"
+              actionLabel="Create First Item"
+              onAction={() => setCreateDialogOpen(true)}
+            />
           </CardContent>
         </Card>
       )}

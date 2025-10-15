@@ -10,15 +10,22 @@ import {
   User,
   Mail,
   Phone,
-  Calendar,
-  MessageSquare,
-  Building2,
+  Briefcase,
   Plus,
   Search,
   Filter,
+  Download,
+  Upload,
+  MoreHorizontal,
+  Edit,
+  Trash2,
   Star,
-  Clock
+  Clock,
+  MessageSquare,
+  Building2,
+  Calendar
 } from "lucide-react"
+import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
@@ -72,14 +79,11 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Actions */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Company Contacts</h2>
-          <p className="text-muted-foreground">
-            Manage relationships and communication history
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          Manage relationships and communication history
+        </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <Filter className="h-4 w-4 mr-2" />
@@ -226,23 +230,15 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
           {filteredContacts.length === 0 && (
             <Card>
-              <CardContent className="flex flex-col items-center justify-center py-12">
-                <User className="h-12 w-12 text-muted-foreground mb-4" />
-                <h3 className="text-lg font-semibold mb-2">
-                  {searchQuery ? 'No contacts found' : 'No Contacts Yet'}
-                </h3>
-                <p className="text-muted-foreground text-center mb-4">
-                  {searchQuery 
-                    ? 'Try adjusting your search terms'
-                    : 'Start by adding your first contact'
-                  }
-                </p>
-                {!searchQuery && (
-                  <Button>
-                    <Plus className="h-4 w-4 mr-2" />
-                    Add Contact
-                  </Button>
-                )}
+              <CardContent className="p-0">
+                <EmptyState
+                  variant="inline"
+                  icon={User}
+                  mainMessage={searchQuery ? 'No contacts found' : 'NOTHING TO SEE HERE... (YET)'}
+                  description={searchQuery ? 'Try adjusting your search criteria' : 'Add your first contact to get started'}
+                  actionLabel={!searchQuery ? 'Add Contact' : undefined}
+                  onAction={!searchQuery ? () => {} : undefined}
+                />
               </CardContent>
             </Card>
           )}
@@ -357,11 +353,12 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         ) : (
           <div className="md:col-span-1">
             <Card>
-              <CardContent className="flex items-center justify-center py-12 text-muted-foreground">
-                <div className="text-center">
-                  <User className="h-12 w-12 mx-auto mb-4" />
-                  <p>Select a contact to view details</p>
-                </div>
+              <CardContent className="p-0">
+                <EmptyState
+                  variant="compact"
+                  icon={User}
+                  mainMessage="Select a contact to view details"
+                />
               </CardContent>
             </Card>
           </div>

@@ -81,24 +81,16 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Financial Overview</h2>
-          <p className="text-muted-foreground">
-            Real-time financial metrics and performance indicators
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <RefreshCw className="h-4 w-4 mr-2" />
-            Refresh
-          </Button>
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
-            Export
-          </Button>
-        </div>
+      {/* Action Buttons */}
+      <div className="flex items-center justify-end gap-2">
+        <Button variant="outline" size="sm">
+          <RefreshCw className="h-4 w-4 mr-2" />
+          Refresh
+        </Button>
+        <Button variant="outline" size="sm">
+          <Download className="h-4 w-4 mr-2" />
+          Export
+        </Button>
       </div>
 
       {/* Key Metrics */}

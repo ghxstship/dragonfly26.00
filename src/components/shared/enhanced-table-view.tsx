@@ -19,6 +19,7 @@ import { RecordActionsMenu } from "./record-actions-menu"
 import { BulkActionsToolbar } from "./bulk-actions-toolbar"
 import { CrudDrawer } from "./crud-drawer"
 import { MobileTableCard } from "./mobile-table-card"
+import { EmptyState } from "./empty-state"
 import { useIsMobile } from "@/hooks/use-is-mobile"
 import type { DataItem } from "@/types"
 import type { FieldSchema } from "@/lib/data-schemas"
@@ -226,9 +227,13 @@ export function EnhancedTableView({
                 />
               ))
             ) : (
-              <div className="text-center py-12 text-muted-foreground">
-                No data found
-              </div>
+              <EmptyState
+                variant="compact"
+                mainMessage="No data found"
+                description="Add your first item to get started"
+                actionLabel="Add Item"
+                onAction={onCreate ? () => setDrawerMode('create') : undefined}
+              />
             )}
           </div>
         )}
@@ -278,8 +283,14 @@ export function EnhancedTableView({
                 ))
               ) : (
                 <tr>
-                  <td colSpan={columns.length} className="h-24 text-center text-muted-foreground">
-                    No data found
+                  <td colSpan={columns.length} className="p-0">
+                    <EmptyState
+                      variant="compact"
+                      mainMessage="No data found"
+                      description="Add your first item to get started"
+                      actionLabel="Add Item"
+                      onAction={onCreate ? () => setDrawerMode('create') : undefined}
+                    />
                   </td>
                 </tr>
               )}

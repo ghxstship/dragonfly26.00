@@ -115,14 +115,6 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Approvals</h2>
-        <p className="text-muted-foreground">
-          Review and approve pending requests across the organization
-        </p>
-      </div>
-
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

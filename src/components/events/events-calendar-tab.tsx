@@ -86,14 +86,11 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Actions */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Events Calendar</h2>
-          <p className="text-muted-foreground">
-            View and manage all scheduled events and activities
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          View and manage all scheduled events and activities
+        </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <Filter className="h-4 w-4 mr-2" />

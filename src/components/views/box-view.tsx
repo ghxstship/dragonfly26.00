@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { LayoutGrid, MoreHorizontal, Eye, Edit, Star, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { EmptyState } from "@/components/shared/empty-state"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -215,18 +216,13 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
         </div>
 
         {data.length === 0 && (
-          <div className="flex flex-col items-center justify-center h-64 text-center">
-            <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
-            <p className="text-sm text-muted-foreground mb-6 max-w-sm">
-              {t('views.emptyState.boxViewDescription')}
-            </p>
-            {(createActionLabel || onCreateAction) && (
-              <Button size="lg" onClick={onCreateAction}>
-                <Plus className="h-4 w-4 mr-2" />
-                {createActionLabel || t('views.emptyState.createFirstItem')}
-              </Button>
-            )}
-          </div>
+          <EmptyState
+            variant="inline"
+            mainMessage={t('views.emptyState.nothingToSeeYet')}
+            description="Start by creating your first item"
+            actionLabel={createActionLabel || t('views.emptyState.createFirstItem')}
+            onAction={onCreateAction}
+          />
         )}
       </div>
     </div>

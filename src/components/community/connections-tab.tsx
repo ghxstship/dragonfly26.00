@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { EmptyState } from "@/components/shared/empty-state"
 import { 
   Users, 
   UserPlus, 
@@ -181,9 +182,15 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
       <div className="grid md:grid-cols-2 gap-4">
         {filteredConnections.length === 0 ? (
           <Card className="col-span-2">
-            <CardContent className="py-12 text-center">
-              <Users className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">No connections found matching your criteria</p>
+            <CardContent className="p-0">
+              <EmptyState
+                variant="inline"
+                icon={Users}
+                mainMessage={searchQuery || filterStatus !== "all" ? "No connections found" : "NOTHING TO SEE HERE... (YET)"}
+                description={searchQuery || filterStatus !== "all" ? "Try adjusting your search criteria" : "Connect with other professionals in the industry"}
+                actionLabel={!searchQuery && filterStatus === "all" ? "Find Connections" : undefined}
+                onAction={!searchQuery && filterStatus === "all" ? () => {} : undefined}
+              />
             </CardContent>
           </Card>
         ) : (

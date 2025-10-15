@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { EmptyState } from "@/components/shared/empty-state"
 import {
   Tooltip,
   TooltipContent,
@@ -316,9 +317,11 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
             </div>
             <div className="space-y-3">
               {getTodayItems().length === 0 ? (
-                <div className="text-center py-12 text-muted-foreground">
-                  No items scheduled for this day
-                </div>
+                <EmptyState
+                  variant="compact"
+                  mainMessage="No items scheduled for this day"
+                  showIcon={false}
+                />
               ) : (
                 getTodayItems().map((item) => (
                   <div

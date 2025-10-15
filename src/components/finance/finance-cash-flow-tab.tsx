@@ -66,14 +66,6 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Cash Flow</h2>
-        <p className="text-muted-foreground">
-          Monitor cash position, runway, and liquidity management
-        </p>
-      </div>
-
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

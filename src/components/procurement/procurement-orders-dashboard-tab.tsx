@@ -69,14 +69,11 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Actions */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Orders Dashboard</h2>
-          <p className="text-muted-foreground">
-            Purchase order tracking and management
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          Purchase order tracking and management
+        </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <Download className="h-4 w-4 mr-2" />

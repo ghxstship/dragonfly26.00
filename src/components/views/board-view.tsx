@@ -99,17 +99,14 @@ export function BoardView({ data, schema, onItemClick, createActionLabel, onCrea
         {/* Empty State Overlay when no data */}
         {data.length === 0 && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg p-8 text-center max-w-md pointer-events-auto">
-              <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
-              <p className="text-sm text-muted-foreground mb-6">
-                {t('views.emptyState.boardViewDescription')}
-              </p>
-              {(createActionLabel || onCreateAction) && (
-                <Button size="lg" onClick={onCreateAction}>
-                  <Plus className="h-4 w-4 mr-2" />
-                  {createActionLabel || t('views.emptyState.createFirstItem')}
-                </Button>
-              )}
+            <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg pointer-events-auto">
+              <EmptyState
+                variant="inline"
+                mainMessage={t('views.emptyState.nothingToSeeYet')}
+                description={t('views.emptyState.boardViewDescription')}
+                actionLabel={createActionLabel || t('views.emptyState.createFirstItem')}
+                onAction={onCreateAction}
+              />
             </div>
           </div>
         )}

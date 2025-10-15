@@ -26,6 +26,8 @@ import { SharePanel } from "@/components/shared/share-panel"
 import { FilterPanel } from "@/components/shared/filter-panel"
 import { SortPanel } from "@/components/shared/sort-panel"
 import { FieldConfigPanel } from "@/components/shared/field-config-panel"
+import { ScanTabContent } from "@/components/shared/scan-tab-content"
+import { PhotoTabContent } from "@/components/shared/photo-tab-content"
 import { useParams } from "next/navigation"
 import {
   Tooltip,
@@ -190,6 +192,13 @@ export function RightSidebar() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rightSidebarTab])
+
+  // Auto-expand sidebar when opened
+  useEffect(() => {
+    if (rightSidebarOpen && !isExpanded) {
+      setIsExpanded(true)
+    }
+  }, [rightSidebarOpen])
 
   if (!rightSidebarOpen) return null
 
@@ -482,69 +491,11 @@ export function RightSidebar() {
 
                 {/* Capture Tabs Content */}
                 <TabsContent value="scan" className="p-4 m-0">
-                  <div className="space-y-4">
-                    <div className="bg-muted/50 rounded-lg p-4 mb-4">
-                      <p className="text-sm font-medium mb-2">Document Scanner</p>
-                      <p className="text-xs text-muted-foreground">
-                        Use your device camera to scan documents, receipts, business cards, and more. Scanned documents are automatically saved to your workspace.
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-lg bg-muted/20">
-                      <div className="text-center">
-                        <ScanLine className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
-                        <p className="text-sm font-medium mb-1">Ready to Scan</p>
-                        <p className="text-xs text-muted-foreground max-w-xs">
-                          Position your document in view and tap the button below to begin scanning
-                        </p>
-                      </div>
-                    </div>
-                    <Button className="w-full" size="lg">
-                      <ScanLine className="h-4 w-4 mr-2" />
-                      Start Scanning
-                    </Button>
-                    <div className="grid grid-cols-2 gap-2">
-                      <Button variant="outline" size="sm">
-                        <Upload className="h-4 w-4 mr-2" />
-                        Upload PDF
-                      </Button>
-                      <Button variant="outline" size="sm">
-                        View Scans
-                      </Button>
-                    </div>
-                  </div>
+                  <ScanTabContent />
                 </TabsContent>
 
                 <TabsContent value="photo" className="p-4 m-0">
-                  <div className="space-y-4">
-                    <div className="bg-muted/50 rounded-lg p-4 mb-4">
-                      <p className="text-sm font-medium mb-2">Photo Capture</p>
-                      <p className="text-xs text-muted-foreground">
-                        Take photos directly from your device and attach them to your workspace items. Perfect for site visits, meetings, and visual documentation.
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-lg bg-muted/20">
-                      <div className="text-center">
-                        <Camera className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
-                        <p className="text-sm font-medium mb-1">Camera Ready</p>
-                        <p className="text-xs text-muted-foreground max-w-xs">
-                          Capture images for your workspace items and documentation
-                        </p>
-                      </div>
-                    </div>
-                    <Button className="w-full" size="lg">
-                      <Camera className="h-4 w-4 mr-2" />
-                      Open Camera
-                    </Button>
-                    <div className="grid grid-cols-2 gap-2">
-                      <Button variant="outline" size="sm">
-                        <ImageIcon className="h-4 w-4 mr-2" />
-                        Upload Image
-                      </Button>
-                      <Button variant="outline" size="sm">
-                        View Gallery
-                      </Button>
-                    </div>
-                  </div>
+                  <PhotoTabContent />
                 </TabsContent>
               </ScrollArea>
             </Tabs>

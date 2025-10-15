@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { EmptyState } from "@/components/shared/empty-state"
 import { 
   Trophy, 
   Medal,
@@ -403,9 +404,13 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       <div className="grid md:grid-cols-2 gap-6">
         {filteredCompetitions.length === 0 ? (
           <Card className="col-span-2">
-            <CardContent className="py-12 text-center">
-              <Trophy className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">No competitions found matching your criteria</p>
+            <CardContent className="p-0">
+              <EmptyState
+                variant="inline"
+                icon={Trophy}
+                mainMessage={searchQuery || competitionFilter !== "all" ? "No competitions found" : "NOTHING TO SEE HERE... (YET)"}
+                description={searchQuery || competitionFilter !== "all" ? "Try adjusting your filters" : "Join competitions to showcase your talent"}
+              />
             </CardContent>
           </Card>
         ) : (

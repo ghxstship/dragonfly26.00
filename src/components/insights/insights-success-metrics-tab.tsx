@@ -56,12 +56,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
         <CardContent className="p-8">
           <div className="text-center">
             <Trophy className="h-16 w-16 mx-auto mb-4 text-yellow-600" />
-            <h2 className="text-3xl font-bold mb-2">Overall Success Score</h2>
-            <div className="text-6xl font-bold mb-4" style={{ 
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}>
+            <div className="text-6xl font-bold mb-4 text-gradient-purple">
               {totalScore}%
             </div>
             <p className="text-muted-foreground">Composite score across all success criteria</p>

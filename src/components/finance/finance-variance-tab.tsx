@@ -102,14 +102,6 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Budget Variance</h2>
-        <p className="text-muted-foreground">
-          Track budget vs actual performance and identify areas requiring attention
-        </p>
-      </div>
-
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

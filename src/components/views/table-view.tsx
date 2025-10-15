@@ -193,23 +193,15 @@ export function TableView({ data, schema, onItemClick, createActionLabel, onCrea
                 </tr>
               ))
             ) : (
-              <tr>
-                <td
-                  colSpan={columns.length}
-                  className="py-16 text-center"
-                >
-                  <div className="flex flex-col items-center justify-center">
-                    <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
-                    <p className="text-sm text-muted-foreground mb-6 max-w-sm">
-                      {t('views.emptyState.tableViewDescription')}
-                    </p>
-                    {(createActionLabel || onCreateAction) && (
-                      <Button size="lg" onClick={onCreateAction}>
-                        <Plus className="h-4 w-4 mr-2" />
-                        {createActionLabel || t('views.emptyState.createFirstItem')}
-                      </Button>
-                    )}
-                  </div>
+              <tr key="empty-state">
+                <td colSpan={table.getAllColumns().length} className="p-0">
+                  <EmptyState
+                    variant="inline"
+                    mainMessage={t('views.emptyState.nothingToSeeYet')}
+                    description={t('views.emptyState.tableViewDescription')}
+                    actionLabel={createActionLabel || t('views.emptyState.createFirstItem')}
+                    onAction={onCreateAction}
+                  />
                 </td>
               </tr>
             )}

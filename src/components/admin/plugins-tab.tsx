@@ -17,6 +17,7 @@ import {
   ExternalLink,
   Package
 } from "lucide-react"
+import { EmptyState } from "@/components/shared/empty-state"
 import { useToast } from "@/lib/hooks/use-toast"
 
 interface Plugin {
@@ -283,12 +284,13 @@ export function PluginsTab() {
             filteredPlugins(installedPlugins).map(renderPluginCard)
           ) : (
             <Card>
-              <CardContent className="flex flex-col items-center justify-center py-12">
-                <Package className="h-12 w-12 text-muted-foreground mb-4" />
-                <h3 className="text-lg font-semibold mb-2">No installed plugins</h3>
-                <p className="text-muted-foreground text-center">
-                  Browse the marketplace to find plugins for your organization
-                </p>
+              <CardContent className="p-0">
+                <EmptyState
+                  variant="inline"
+                  icon={Package}
+                  mainMessage="NOTHING TO SEE HERE... (YET)"
+                  description="Browse available plugins to extend functionality"
+                />
               </CardContent>
             </Card>
           )}

@@ -187,18 +187,12 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
       {/* Pivot Table */}
       <div className="flex-1 overflow-auto p-6">
         {data.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-full py-16 text-center">
-            <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
-            <p className="text-sm text-muted-foreground mb-6 max-w-sm">
-              {t('views.emptyState.pivotViewDescription')}
-            </p>
-            {(createActionLabel || onCreateAction) && (
-              <Button size="lg" onClick={onCreateAction}>
-                <Plus className="h-4 w-4 mr-2" />
-                {createActionLabel || t('views.emptyState.createFirstItem')}
-              </Button>
-            )}
-          </div>
+          <EmptyState
+            mainMessage={t('views.emptyState.nothingToSeeYet')}
+            description={t('views.emptyState.pivotViewDescription')}
+            actionLabel={createActionLabel || t('views.emptyState.createFirstItem')}
+            onAction={onCreateAction}
+          />
         ) : (
           <div className="inline-block min-w-full align-middle">
             <div className="overflow-hidden border rounded-lg">

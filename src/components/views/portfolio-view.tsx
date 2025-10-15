@@ -224,18 +224,13 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
 
           {/* Project Cards */}
           {data.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-16 text-center">
-              <h3 className="text-xl font-bold mb-2">{t('views.emptyState.nothingToSeeYet')}</h3>
-              <p className="text-sm text-muted-foreground mb-6 max-w-sm">
-                {t('views.emptyState.portfolioViewDescription')}
-              </p>
-              {(createActionLabel || onCreateAction) && (
-                <Button size="lg" onClick={onCreateAction}>
-                  <Plus className="h-4 w-4 mr-2" />
-                  {createActionLabel || t('views.emptyState.createFirstItem')}
-                </Button>
-              )}
-            </div>
+            <EmptyState
+              variant="inline"
+              mainMessage={t('views.emptyState.nothingToSeeYet')}
+              description={t('views.emptyState.portfolioViewDescription')}
+              actionLabel={createActionLabel || t('views.emptyState.createFirstItem')}
+              onAction={onCreateAction}
+            />
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredProjects.map((project) => (

@@ -73,14 +73,11 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Actions */}
       <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Jobs Pipeline</h2>
-          <p className="text-muted-foreground">
-            Track opportunities through the sales pipeline
-          </p>
-        </div>
+        <p className="text-muted-foreground">
+          Track opportunities through the sales pipeline
+        </p>
         <Button size="sm">
           <Plus className="h-4 w-4 mr-2" />
           New Opportunity

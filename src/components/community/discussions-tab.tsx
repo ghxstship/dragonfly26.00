@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { EmptyState } from "@/components/shared/empty-state"
 import { 
   MessageSquare, 
   ArrowUp, 
@@ -287,9 +288,15 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
       <div className="space-y-4">
         {filteredDiscussions.length === 0 ? (
           <Card>
-            <CardContent className="py-12 text-center">
-              <MessageSquare className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">No discussions found matching your search</p>
+            <CardContent className="p-0">
+              <EmptyState
+                variant="inline"
+                icon={MessageSquare}
+                mainMessage={searchQuery ? "No discussions found" : "NOTHING TO SEE HERE... (YET)"}
+                description={searchQuery ? "Try adjusting your search criteria" : "Start a discussion to engage with the community"}
+                actionLabel={!searchQuery ? "Start Discussion" : undefined}
+                onAction={!searchQuery ? () => {} : undefined}
+              />
             </CardContent>
           </Card>
         ) : (

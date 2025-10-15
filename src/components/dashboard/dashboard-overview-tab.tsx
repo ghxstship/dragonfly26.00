@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -24,19 +25,34 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useMyTasks, useMyAgenda, useMyJobs, useMyExpenses } from "@/hooks/use-dashboard-data"
+import { useDashboardWidgets } from "@/hooks/use-dashboard-widgets"
 import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
+import { LogExpenseDialog, BookTravelDialog, CreateTaskDialog, UploadFileDialog } from "./quick-actions"
+import { WidgetCustomizationDialog } from "./widget-customization-dialog"
 
 export function DashboardOverviewTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  
+  // Quick action dialog states
+  const [logExpenseOpen, setLogExpenseOpen] = useState(false)
+  const [bookTravelOpen, setBookTravelOpen] = useState(false)
+  const [createTaskOpen, setCreateTaskOpen] = useState(false)
+  const [uploadFileOpen, setUploadFileOpen] = useState(false)
+  const [widgetCustomizationOpen, setWidgetCustomizationOpen] = useState(false)
   
   // Fetch data from multiple hooks
   const { tasks, loading: tasksLoading } = useMyTasks(workspaceId, userId)
   const { events, loading: eventsLoading } = useMyAgenda(workspaceId, userId)
   const { jobs, loading: jobsLoading } = useMyJobs(workspaceId, userId)
   const { expenses, loading: expensesLoading } = useMyExpenses(workspaceId, userId)
+  const { widgets, toggleWidget, availableWidgets, resetToDefaults } = useDashboardWidgets(workspaceId, userId)
   
   const loading = tasksLoading || eventsLoading || jobsLoading || expensesLoading
+  
+  // Force refresh by incrementing a key
+  const [refreshKey, setRefreshKey] = useState(0)
+  const handleRefresh = () => setRefreshKey(prev => prev + 1)
   
   // Calculate real stats
   const today = new Date()
@@ -121,15 +137,53 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
   ]
 
   const quickActions = [
-    { label: "Log Expense", icon: Receipt, color: "text-green-600", action: () => router.push(`/workspace/${workspaceId}/finance/expenses`) },
-    { label: "Book Travel", icon: Plane, color: "text-blue-600", action: () => {} },
-    { label: "Create Task", icon: CheckSquare, color: "text-purple-600", action: () => router.push(`/workspace/${workspaceId}/projects/tasks`) },
-    { label: "Upload File", icon: FolderOpen, color: "text-orange-600", action: () => router.push(`/workspace/${workspaceId}/files/all-documents`) },
+    { label: "Log Expense", icon: Receipt, color: "text-green-600", action: () => setLogExpenseOpen(true) },
+    { label: "Book Travel", icon: Plane, color: "text-blue-600", action: () => setBookTravelOpen(true) },
+    { label: "Create Task", icon: CheckSquare, color: "text-purple-600", action: () => setCreateTaskOpen(true) },
+    { label: "Upload File", icon: FolderOpen, color: "text-orange-600", action: () => setUploadFileOpen(true) },
   ]
 
   return (
-    <div className="space-y-6">
-      {/* Stats Grid */}
+    <>
+      {/* Quick Action Dialogs */}
+      <LogExpenseDialog
+        open={logExpenseOpen}
+        onOpenChange={setLogExpenseOpen}
+        workspaceId={workspaceId}
+        userId={userId}
+        onSuccess={handleRefresh}
+      />
+      <BookTravelDialog
+        open={bookTravelOpen}
+        onOpenChange={setBookTravelOpen}
+        workspaceId={workspaceId}
+        userId={userId}
+        onSuccess={handleRefresh}
+      />
+      <CreateTaskDialog
+        open={createTaskOpen}
+        onOpenChange={setCreateTaskOpen}
+        workspaceId={workspaceId}
+        userId={userId}
+        onSuccess={handleRefresh}
+      />
+      <UploadFileDialog
+        open={uploadFileOpen}
+        onOpenChange={setUploadFileOpen}
+        workspaceId={workspaceId}
+        userId={userId}
+        onSuccess={handleRefresh}
+      />
+      <WidgetCustomizationDialog
+        open={widgetCustomizationOpen}
+        onOpenChange={setWidgetCustomizationOpen}
+        widgets={widgets}
+        onToggle={toggleWidget}
+        onReset={resetToDefaults}
+      />
+
+      <div className="space-y-6">
+        {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat) => {
           const Icon = stat.icon
@@ -170,6 +224,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                     key={action.label}
                     variant="outline"
                     className="h-auto py-4 flex flex-col items-center gap-2"
+                    onClick={action.action}
                   >
                     <Icon className={`h-5 w-5 ${action.color}`} />
                     <span className="text-sm">{action.label}</span>
@@ -183,30 +238,64 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
         {/* Customize Dashboard */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">Customize Dashboard</CardTitle>
-            <CardDescription>Add widgets to personalize your view</CardDescription>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="text-base">Customize Dashboard</CardTitle>
+                <CardDescription>Add widgets to personalize your view</CardDescription>
+              </div>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => setWidgetCustomizationOpen(true)}
+              >
+                <MoreHorizontal className="h-4 w-4 mr-2" />
+                Manage All
+              </Button>
+            </div>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              {widgetTypes.map((widget) => {
-                const Icon = widget.icon
-                return (
-                  <div
-                    key={widget.name}
-                    className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent cursor-pointer transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded ${widget.color}`}>
-                        <Icon className="h-4 w-4 text-white" />
+              {availableWidgets.length === 0 ? (
+                <div className="text-center py-8 text-muted-foreground text-sm">
+                  <p>All widgets are currently enabled!</p>
+                  <p className="text-xs mt-1">Check your dashboard tabs above</p>
+                </div>
+              ) : (
+                availableWidgets.slice(0, 3).map((widget) => {
+                  const widgetType = widgetTypes.find(w => w.name === widget.name)
+                  if (!widgetType) return null
+                  const Icon = widgetType.icon
+                  return (
+                    <div
+                      key={widget.id}
+                      className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent transition-colors"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded ${widgetType.color}`}>
+                          <Icon className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-sm font-medium">{widget.name}</span>
                       </div>
-                      <span className="text-sm font-medium">{widget.name}</span>
+                      <Button 
+                        size="sm" 
+                        variant="ghost"
+                        onClick={() => toggleWidget(widget.id)}
+                      >
+                        <Plus className="h-4 w-4" />
+                      </Button>
                     </div>
-                    <Button size="sm" variant="ghost">
-                      <Plus className="h-4 w-4" />
-                    </Button>
-                  </div>
-                )
-              })}
+                  )
+                })
+              )}
+              {availableWidgets.length > 3 && (
+                <Button 
+                  variant="ghost" 
+                  className="w-full text-xs"
+                  onClick={() => setWidgetCustomizationOpen(true)}
+                >
+                  View {availableWidgets.length - 3} more...
+                </Button>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -238,6 +327,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
           </div>
         </CardContent>
       </Card>
-    </div>
+      </div>
+    </>
   )
 }
