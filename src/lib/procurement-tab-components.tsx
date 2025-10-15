@@ -1,11 +1,13 @@
 // Procurement module tab components registry
 import { ProcurementReceivingTab } from '@/components/procurement/procurement-receiving-tab'
 import { ProcurementMatchingTab } from '@/components/procurement/procurement-matching-tab'
+import { ProcurementOrdersDashboardTab } from '@/components/procurement/procurement-orders-dashboard-tab'
 import type { TabComponentProps } from '@/types'
 
 export const PROCUREMENT_TAB_COMPONENTS: Record<string, React.ComponentType<TabComponentProps> | undefined> = {
   'receiving': ProcurementReceivingTab,
   'matching': ProcurementMatchingTab,
+  'overview': ProcurementOrdersDashboardTab,
   // Other Procurement tabs use generic views (table, list, etc.)
 }
 

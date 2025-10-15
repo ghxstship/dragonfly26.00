@@ -33,6 +33,7 @@ import { format } from "date-fns"
 import { cn } from "@/lib/utils"
 import { getFormConfig } from "@/lib/modules/form-fields-registry"
 import type { FormFieldConfig } from "@/lib/modules/form-fields-registry"
+import { AssetCatalogAutocomplete } from "@/components/shared/asset-catalog-autocomplete"
 
 interface CreateItemDialogEnhancedProps {
   open: boolean
@@ -305,6 +306,28 @@ export function CreateItemDialogEnhanced({
         )
 
       case 'autocomplete':
+        // Use AssetCatalogAutocomplete for asset_item field
+        if (field.name === 'asset_item') {
+          const assetCategory = formData['asset_category']
+          return (
+            <AssetCatalogAutocomplete
+              key={field.name}
+              label={field.label}
+              description={field.description}
+              required={field.required}
+              value={value || ''}
+              assetCategory={assetCategory}
+              onChange={(newValue, selectedItem) => {
+                updateField(field.name, newValue)
+                // Store the full catalog item data if selected
+                if (selectedItem) {
+                  updateField('_catalog_item', selectedItem)
+                }
+              }}
+            />
+          )
+        }
+        // Fall through to default autocomplete for other fields
       case 'user':
       case 'multiuser':
       case 'location':

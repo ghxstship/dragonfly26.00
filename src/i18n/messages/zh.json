@@ -308,5 +308,9 @@
     "lastMonth": "上月",
     "nextMonth": "下月",
     "pickDate": "选择日期"
+  },
+  "quickActions": {
+    "createWorkspace": "创建工作区",
+    "createNewWorkspace": "为您的团队创建新的工作区"
   }
 }

@@ -8,6 +8,7 @@ import { ProductsTab } from "@/components/marketplace/products-tab"
 import { ServicesTab } from "@/components/marketplace/services-tab"
 import { VendorsTab } from "@/components/marketplace/vendors-tab"
 import { ReviewsTab } from "@/components/marketplace/reviews-tab"
+import { OrdersTab } from "@/components/marketplace/orders-tab"
 
 interface MarketplaceTabProps {
   data?: any[]
@@ -25,6 +26,7 @@ export const MARKETPLACE_TAB_COMPONENTS: Record<string, React.ComponentType<Mark
   "services": ServicesTab,
   "vendors": VendorsTab,
   "reviews": ReviewsTab,
+  "orders": OrdersTab,
 }
 
 export function getMarketplaceTabComponent(tabSlug: string): React.ComponentType<MarketplaceTabProps> | undefined {

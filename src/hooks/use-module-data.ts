@@ -23,7 +23,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'my-tasks': { table: 'project_tasks', orderBy: 'due_date' },
   'my-assets': { table: 'assets', select: '*, location:locations!location_id(name, city)', orderBy: 'name' },
   'my-orders': { table: 'marketplace_orders', select: '*, buyer:profiles!buyer_id(first_name, last_name)', orderBy: 'created_at' },
-  'my-advances': { table: 'production_advances', select: '*, production:productions!production_id(name, status), requested_by_user:profiles!requested_by(first_name, last_name)', orderBy: 'created_at' },
+  'my-advances': { table: 'production_advances', select: '*, production:productions!production_id(name, status), requestor:profiles!requestor_id(first_name, last_name)', orderBy: 'created_at' },
   'my-travel': { table: 'travel_itineraries', select: '*, traveler:personnel!traveler_id(first_name, last_name)', orderBy: 'departure_date' },
   'my-expenses': { table: 'financial_transactions', orderBy: 'transaction_date' },
   'my-reports': { table: 'report_templates', select: '*', orderBy: 'name' },
@@ -71,7 +71,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'tracking': { table: 'asset_transactions', select: '*, asset:assets!asset_id(name, type), checked_out_person:personnel!checked_out_to(first_name, last_name)', orderBy: 'created_at' },
   'inventory': { table: 'assets', select: '*, location:locations!location_id(name, city)', orderBy: 'name' },
   'maintenance': { table: 'asset_maintenance', select: '*, asset:assets!asset_id(name, type, status)', orderBy: 'scheduled_date' },
-  'advances': { table: 'production_advances', select: '*, production:productions!production_id(name, status), requested_by_user:profiles!requested_by(first_name, last_name)', orderBy: 'created_at' },
+  'advances': { table: 'production_advances', select: '*, production:productions!production_id(name, status), requestor:profiles!requestor_id(first_name, last_name)', orderBy: 'created_at' },
   'catalog': { table: 'assets', select: '*, location:locations!location_id(name, city)', orderBy: 'name' },
   
   // Locations
@@ -112,7 +112,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   
   // Finance
   'budgets': { table: 'budgets', select: '*, production:productions!production_id(name)', orderBy: 'created_at' },
-  'approvals': { table: 'approval_steps', select: '*, approval_chain:approval_chains!approval_chain_id(chain_name, target_type), approver:profiles!approver_id(first_name, last_name)', orderBy: 'due_date' },
+  'approvals': { table: 'approval_steps', select: '*, approval_chain:approval_chains!approval_chain_id(name, triggers_on), approver:profiles!approver_id(first_name, last_name)', orderBy: 'due_date' },
   'scenarios': { table: 'budget_scenarios', select: '*, budget:budgets!budget_id(name, total_amount)', orderBy: 'created_at' },
   'variance': { table: 'budget_variance_tracking', select: '*, budget:budgets!budget_id(name)', orderBy: 'tracking_period_start' },
   'cash-flow': { table: 'cash_flow_projections', select: '*, production:productions!production_id(name)', orderBy: 'created_at' },
@@ -139,7 +139,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'audits': { table: 'purchase_orders', select: '*, company:companies!company_id(name)', orderBy: 'created_at' },
   'receiving': { table: 'goods_receipts', select: '*, purchase_order:purchase_orders!po_id(po_number), received_by_user:profiles!received_by(first_name, last_name)', orderBy: 'received_date' },
   'matching': { table: 'three_way_matches', select: '*, purchase_order:purchase_orders!po_id(po_number), receipt:goods_receipts!receipt_id(receipt_number), invoice:invoices!invoice_id(invoice_number)', orderBy: 'created_at' },
-  'procurement-approvals': { table: 'approval_steps', select: '*, approval_chain:approval_chains!approval_chain_id(chain_name, target_type), approver:profiles!approver_id(first_name, last_name)', orderBy: 'due_date' },
+  'procurement-approvals': { table: 'approval_steps', select: '*, approval_chain:approval_chains!approval_chain_id(name, triggers_on), approver:profiles!approver_id(first_name, last_name)', orderBy: 'due_date' },
   
   // Community
   'news': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, job_title, company)', orderBy: 'created_at' },

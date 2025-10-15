@@ -9,6 +9,10 @@ import { AutomationsTab } from "@/components/admin/automations-tab"
 import { IntegrationsTab } from "@/components/admin/integrations-tab"
 import { WebhooksTab } from "@/components/admin/webhooks-tab"
 import { ApiTokensTab } from "@/components/admin/api-tokens-tab"
+import { ChecklistTemplatesTab } from "@/components/admin/checklist-templates-tab"
+import { CustomStatusesTab } from "@/components/admin/custom-statuses-tab"
+import { PluginsTab } from "@/components/admin/plugins-tab"
+import { RecurrenceRulesTab } from "@/components/admin/recurrence-rules-tab"
 
 export const ADMIN_TAB_COMPONENTS: Record<string, React.ComponentType> = {
   "overview": AdminOverviewTab,
@@ -22,6 +26,10 @@ export const ADMIN_TAB_COMPONENTS: Record<string, React.ComponentType> = {
   "integrations": IntegrationsTab,
   "webhooks": WebhooksTab,
   "api-tokens": ApiTokensTab,
+  "checklist-templates": ChecklistTemplatesTab,
+  "custom-statuses": CustomStatusesTab,
+  "plugins": PluginsTab,
+  "recurrence-rules": RecurrenceRulesTab,
 }
 
 export function getAdminTabComponent(tabSlug: string) {

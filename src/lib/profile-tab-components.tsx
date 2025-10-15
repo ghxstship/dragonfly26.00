@@ -9,6 +9,7 @@ import { PerformanceTab } from "@/components/profile/performance-tab"
 import { EndorsementsTab } from "@/components/profile/endorsements-tab"
 import { TagsTab } from "@/components/profile/tags-tab"
 import { HistoryTab } from "@/components/profile/history-tab"
+import { AccessTab } from "@/components/profile/access-tab"
 
 export const PROFILE_TAB_COMPONENTS: Record<string, React.ComponentType> = {
   "basic-info": BasicInfoTab,
@@ -22,6 +23,7 @@ export const PROFILE_TAB_COMPONENTS: Record<string, React.ComponentType> = {
   "endorsements": EndorsementsTab,
   "tags": TagsTab,
   "history": HistoryTab,
+  "access": AccessTab,
 }
 
 export function getProfileTabComponent(tabSlug: string) {

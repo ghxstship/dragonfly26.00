@@ -326,7 +326,13 @@ export function TabPageContent() {
     if (moduleSlug === "projects") {
       const ProjectsComponent = getProjectsTabComponent(tabSlug)
       if (ProjectsComponent) {
-        return <ProjectsComponent data={realData} loading={loading} />
+        return <ProjectsComponent 
+          data={realData} 
+          loading={loading}
+          workspaceId={workspaceId}
+          moduleId={moduleSlug}
+          tabSlug={tabSlug}
+        />
       }
     }
 
@@ -334,7 +340,13 @@ export function TabPageContent() {
     if (moduleSlug === "events") {
       const EventsComponent = getEventsTabComponent(tabSlug)
       if (EventsComponent) {
-        return <EventsComponent data={realData} loading={loading} />
+        return <EventsComponent 
+          data={realData} 
+          loading={loading}
+          workspaceId={workspaceId}
+          moduleId={moduleSlug}
+          tabSlug={tabSlug}
+        />
       }
     }
 
@@ -350,7 +362,8 @@ export function TabPageContent() {
     if (moduleSlug === "locations") {
       const LocationsComponent = getLocationsTabComponent(tabSlug)
       if (LocationsComponent) {
-        return <LocationsComponent data={realData} loading={loading} />
+        const Component = LocationsComponent as React.ComponentType<any>
+        return <Component data={realData} loading={loading} />
       }
     }
 
@@ -358,7 +371,8 @@ export function TabPageContent() {
     if (moduleSlug === "community") {
       const CommunityComponent = getCommunityTabComponent(tabSlug)
       if (CommunityComponent) {
-        return <CommunityComponent data={realData} loading={loading} />
+        const Component = CommunityComponent as React.ComponentType<any>
+        return <Component data={realData} loading={loading} />
       }
     }
 
@@ -366,7 +380,8 @@ export function TabPageContent() {
     if (moduleSlug === "marketplace") {
       const MarketplaceComponent = getMarketplaceTabComponent(tabSlug)
       if (MarketplaceComponent) {
-        return <MarketplaceComponent data={realData} loading={loading} />
+        const Component = MarketplaceComponent as React.ComponentType<any>
+        return <Component data={realData} loading={loading} />
       }
     }
 

@@ -1,15 +1,14 @@
-// Projects module uses generic view system with contextual mock data
-// No custom tab components are defined - all tabs use the standard view components
+// Projects module tab components registry
+import { ProjectsProductionsTab } from '@/components/projects/projects-productions-tab'
+import { ProjectsScheduleTab } from '@/components/projects/projects-schedule-tab'
+import type { TabComponentProps } from '@/types'
 
-interface ProjectsTabProps {
-  data?: any[]
-  loading?: boolean
+export const PROJECTS_TAB_COMPONENTS: Record<string, React.ComponentType<TabComponentProps> | undefined> = {
+  'productions': ProjectsProductionsTab,
+  'schedule': ProjectsScheduleTab,
+  // Other projects tabs use generic views (table, timeline, etc.)
 }
 
-export const PROJECTS_TAB_COMPONENTS: Record<string, React.ComponentType<ProjectsTabProps> | undefined> = {
-  // Projects uses generic views with contextual mock data
-}
-
-export function getProjectsTabComponent(tabSlug: string): React.ComponentType<ProjectsTabProps> | undefined {
+export function getProjectsTabComponent(tabSlug: string): React.ComponentType<TabComponentProps> | undefined {
   return PROJECTS_TAB_COMPONENTS[tabSlug]
 }

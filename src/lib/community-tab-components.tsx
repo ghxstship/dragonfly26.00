@@ -12,17 +12,17 @@ interface CommunityTabProps {
   loading?: boolean
 }
 
-export function getCommunityTabComponent(tabSlug: string): React.ComponentType<CommunityTabProps> | undefined {
-  const components: Record<string, React.ComponentType<CommunityTabProps>> = {
-    'news': NewsTab,
-    'showcase': ShowcaseTab,
-    'activity': ActivityTab,
-    'connections': ConnectionsTab,
-    'studios': StudiosTab,
-    'events': EventsTab,
-    'discussions': DiscussionsTab,
-    'competitions': CompetitionsTab,
-  }
+export const COMMUNITY_TAB_COMPONENTS: Record<string, React.ComponentType<CommunityTabProps>> = {
+  'news': NewsTab,
+  'showcase': ShowcaseTab,
+  'activity': ActivityTab,
+  'connections': ConnectionsTab,
+  'studios': StudiosTab,
+  'events': EventsTab,
+  'discussions': DiscussionsTab,
+  'competitions': CompetitionsTab,
+}
 
-  return components[tabSlug]
+export function getCommunityTabComponent(tabSlug: string): React.ComponentType<CommunityTabProps> | undefined {
+  return COMMUNITY_TAB_COMPONENTS[tabSlug]
 }

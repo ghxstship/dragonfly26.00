@@ -394,5 +394,9 @@
     "createNewDocument": "Create a new document",
     "createNewListView": "Create a new list view",
     "createNewWorkspace": "Create a new workspace for your team"
+  },
+  "quickActions": {
+    "createWorkspace": "Tạo không gian làm việc",
+    "createNewWorkspace": "Tạo không gian làm việc mới cho nhóm của bạn"
   }
 }
