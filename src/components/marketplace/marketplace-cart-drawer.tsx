@@ -1,11 +1,14 @@
 "use client"
 
+import { useState } from "react"
 import { X, Trash2, Plus, Minus, ShoppingCart } from "lucide-react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
+import { DiscountInput, type AppliedDiscount } from "./marketplace-discount-input"
+import { GiftCardInput, type AppliedGiftCard } from "./marketplace-gift-card"
 
 interface CartItem {
   id: string
@@ -33,6 +36,9 @@ export function MarketplaceCartDrawer({
   onRemoveItem,
   onCheckout,
 }: MarketplaceCartDrawerProps) {
+  const [appliedDiscount, setAppliedDiscount] = useState<AppliedDiscount | null>(null)
+  const [appliedGiftCard, setAppliedGiftCard] = useState<AppliedGiftCard | null>(null)
+
   const calculateSubtotal = () => {
     return cartItems.reduce((total, item) => {
       const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""))
@@ -41,9 +47,13 @@ export function MarketplaceCartDrawer({
   }
 
   const subtotal = calculateSubtotal()
-  const tax = subtotal * 0.08 // 8% tax
-  const shipping = subtotal > 500 ? 0 : 25
-  const total = subtotal + tax + shipping
+  const discountAmount = appliedDiscount?.discount_amount || 0
+  const subtotalAfterDiscount = Math.max(0, subtotal - discountAmount)
+  const tax = subtotalAfterDiscount * 0.08 // 8% tax
+  const shipping = appliedDiscount?.discount_type === 'free_shipping' ? 0 : (subtotal > 500 ? 0 : 25)
+  const totalBeforeGiftCard = subtotalAfterDiscount + tax + shipping
+  const giftCardAmount = appliedGiftCard?.amount_applied || 0
+  const total = Math.max(0, totalBeforeGiftCard - giftCardAmount)
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -151,11 +161,33 @@ export function MarketplaceCartDrawer({
               {/* Summary */}
               <div className="border-t">
                 <div className="p-6 space-y-4">
+                  {/* Discount Code Input */}
+                  <DiscountInput
+                    cartTotal={subtotal}
+                    onDiscountApplied={setAppliedDiscount}
+                    appliedDiscount={appliedDiscount}
+                  />
+
+                  {/* Gift Card Input */}
+                  <GiftCardInput
+                    cartTotal={totalBeforeGiftCard}
+                    onApply={setAppliedGiftCard}
+                    appliedGiftCard={appliedGiftCard}
+                  />
+
+                  <Separator />
+
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Subtotal</span>
                       <span className="font-medium">${subtotal.toFixed(2)}</span>
                     </div>
+                    {discountAmount > 0 && (
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Discount</span>
+                        <span className="font-medium text-green-600">-${discountAmount.toFixed(2)}</span>
+                      </div>
+                    )}
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Tax (8%)</span>
                       <span className="font-medium">${tax.toFixed(2)}</span>
@@ -169,6 +201,12 @@ export function MarketplaceCartDrawer({
                       </div>
                       <span className="font-medium">${shipping.toFixed(2)}</span>
                     </div>
+                    {giftCardAmount > 0 && (
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-muted-foreground">Gift Card</span>
+                        <span className="font-medium text-purple-600">-${giftCardAmount.toFixed(2)}</span>
+                      </div>
+                    )}
                     <Separator />
                     <div className="flex items-center justify-between">
                       <span className="font-semibold text-lg">Total</span>

@@ -218,6 +218,4 @@ ARRAY['safety-vest', 'ppe', 'hi-vis', 'class-2', 'reflective'],
 ARRAY['class 3 vest', 'heavy duty safety vest', 'surveyor vest', 'premium safety vest'], 
 ARRAY['safety-vest', 'class-3', 'heavy-duty'], 
 '{"class": "ANSI Class 3", "material": "heavy duty polyester", "reflective": "360° visibility", "sizes": "S-5XL", "features": "zipper closure, multiple pockets", "accessories": ["d-ring for fall protection", "mic tab", "radio pocket"]}'::jsonb, 
-'00000000-0000-0000-0000-000000000001'),
-
--- Continuing in next section due to length...
+'00000000-0000-0000-0000-000000000001');

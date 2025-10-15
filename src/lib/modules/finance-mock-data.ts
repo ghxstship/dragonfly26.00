@@ -18,6 +18,15 @@ export function generateFinanceMockData(tabSlug: string, count: number = 20): Da
   switch (tabSlug) {
     case 'overview':
       return generateOverviewData(count)
+    case 'approvals':
+      return generateApprovalsData(count)
+    case 'scenarios':
+      return generateScenariosData(count)
+    case 'variance':
+      return generateVarianceData(count)
+    case 'cash-flow':
+      return generateCashFlowData(count)
+    case 'forecasts':
     case 'forecasting':
       return generateForecastingData(count)
     case 'budgets':
@@ -38,6 +47,8 @@ export function generateFinanceMockData(tabSlug: string, count: number = 20): Da
       return generateInvoicesData(count)
     case 'taxes':
       return generateTaxesData(count)
+    case 'policies':
+      return generatePoliciesData(count)
     case 'accounts':
       return generateAccountsData(count)
     case 'gl-codes':
@@ -476,6 +487,125 @@ function generateGLCodesData(count: number): DataItem[] {
     tags: ["gl-code", "accounting", "ledger"],
     comments_count: Math.floor(Math.random() * 5),
     attachments_count: Math.floor(Math.random() * 2),
+  }))
+}
+
+function generateApprovalsData(count: number): DataItem[] {
+  const approvalTypes = ["Purchase Order", "Budget Change", "Expense Report", "Contract Approval", "Payment Authorization"]
+  const statuses = ["pending", "approved", "rejected", "escalated"]
+  const urgencies = ["low", "medium", "high"]
+  
+  return Array.from({ length: count }, (_, i) => ({
+    id: `approval-${i + 1}`,
+    name: `${approvalTypes[i % approvalTypes.length]} - ${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+    description: `Approval request for ${approvalTypes[i % approvalTypes.length].toLowerCase()}`,
+    status: statuses[i % statuses.length],
+    priority: urgencies[i % urgencies.length],
+    assignee: i % 3 === 0 ? "Finance Manager - Sarah Chen" : i % 3 === 1 ? "CFO - Marcus Webb" : "Director - Elena Rodriguez",
+    assignee_name: i % 3 === 0 ? "Sarah Chen" : i % 3 === 1 ? "Marcus Webb" : "Elena Rodriguez",
+    amount: parseFloat(randomAmount(500, 50000)),
+    due_date: getRandomFutureDate(7),
+    created_at: getRandomPastDate(5),
+    updated_at: new Date().toISOString(),
+    tags: ["approval", "pending-review"],
+    comments_count: Math.floor(Math.random() * 5),
+    attachments_count: Math.floor(Math.random() * 3),
+  }))
+}
+
+function generateScenariosData(count: number): DataItem[] {
+  const scenarioTypes = ["optimistic", "expected", "pessimistic", "conservative", "aggressive"]
+  const statuses = ["active", "archived", "draft"]
+  
+  return Array.from({ length: count }, (_, i) => ({
+    id: `scenario-${i + 1}`,
+    name: `${scenarioTypes[i % scenarioTypes.length].charAt(0).toUpperCase() + scenarioTypes[i % scenarioTypes.length].slice(1)} Case Scenario`,
+    description: `Budget scenario for ${scenarioTypes[i % scenarioTypes.length]} planning`,
+    status: statuses[i % statuses.length],
+    priority: i % 2 === 0 ? "high" : "normal",
+    projected_revenue: parseFloat(randomAmount(300000, 600000)),
+    projected_expenses: parseFloat(randomAmount(250000, 500000)),
+    projected_net: parseFloat(randomAmount(-50000, 200000)),
+    probability: Math.floor(Math.random() * 30) + 10,
+    created_at: getRandomPastDate(30),
+    updated_at: new Date().toISOString(),
+    tags: ["scenario", "planning", scenarioTypes[i % scenarioTypes.length]],
+    comments_count: Math.floor(Math.random() * 8),
+    attachments_count: Math.floor(Math.random() * 5),
+  }))
+}
+
+function generateVarianceData(count: number): DataItem[] {
+  const categories = ["Equipment Rental", "Post Production", "Travel & Accommodation", "Catering", "Crew Labor", "Venue Costs"]
+  const varianceTypes = ["favorable", "unfavorable"]
+  
+  return Array.from({ length: count }, (_, i) => {
+    const budgeted = parseFloat(randomAmount(20000, 100000))
+    const actual = i % 2 === 0 ? budgeted * (1 + Math.random() * 0.3) : budgeted * (1 - Math.random() * 0.2)
+    const variance = actual - budgeted
+    
+    return {
+      id: `variance-${i + 1}`,
+      name: categories[i % categories.length],
+      description: `Budget variance analysis for ${categories[i % categories.length]}`,
+      status: i % 3 === 0 ? "requires_action" : "reviewed",
+      priority: Math.abs(variance) > budgeted * 0.15 ? "high" : "normal",
+      budgeted_amount: budgeted,
+      actual_amount: actual,
+      variance_amount: variance,
+      variance_percent: ((variance / budgeted) * 100).toFixed(1),
+      variance_type: variance < 0 ? "favorable" : "unfavorable",
+      period: `Q${Math.floor(i / 4) % 4 + 1} 2024`,
+      created_at: getRandomPastDate(30),
+      updated_at: new Date().toISOString(),
+      tags: ["variance", variance < 0 ? "favorable" : "unfavorable"],
+      comments_count: Math.floor(Math.random() * 10),
+      attachments_count: Math.floor(Math.random() * 4),
+    }
+  })
+}
+
+function generateCashFlowData(count: number): DataItem[] {
+  const categories = ["Client Payments", "Grants & Funding", "Payroll", "Vendors", "Equipment", "Operating Expenses"]
+  const types = ["inflow", "outflow"]
+  
+  return Array.from({ length: count }, (_, i) => ({
+    id: `cashflow-${i + 1}`,
+    name: `${categories[i % categories.length]} - ${new Date(Date.now() + i * 7 * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}`,
+    description: `Cash flow ${types[i % 2]} for ${categories[i % categories.length]}`,
+    status: i % 3 === 0 ? "projected" : i % 3 === 1 ? "actual" : "scheduled",
+    priority: i % 4 === 0 ? "critical" : "normal",
+    amount: parseFloat(randomAmount(5000, 150000)),
+    type: types[i % 2],
+    category: categories[i % categories.length],
+    period_date: new Date(Date.now() + i * 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+    created_at: getRandomPastDate(7),
+    updated_at: new Date().toISOString(),
+    tags: ["cash-flow", types[i % 2]],
+    comments_count: Math.floor(Math.random() * 6),
+    attachments_count: Math.floor(Math.random() * 3),
+  }))
+}
+
+function generatePoliciesData(count: number): DataItem[] {
+  const policyTypes = ["Travel Expense Policy", "Equipment Purchase Policy", "Meal & Entertainment", "Corporate Card Policy", "Approval Workflow"]
+  const statuses = ["active", "inactive", "under_review"]
+  
+  return Array.from({ length: count }, (_, i) => ({
+    id: `policy-${i + 1}`,
+    name: policyTypes[i % policyTypes.length],
+    description: `Spending policy for ${policyTypes[i % policyTypes.length].toLowerCase()}`,
+    status: statuses[i % statuses.length],
+    priority: i % 2 === 0 ? "high" : "normal",
+    max_amount: parseFloat(randomAmount(100, 10000)),
+    requires_approval: i % 3 !== 0,
+    applicable_to: i % 2 === 0 ? "All Employees" : "Department Heads",
+    violations_count: Math.floor(Math.random() * 10),
+    created_at: getRandomPastDate(180),
+    updated_at: new Date().toISOString(),
+    tags: ["policy", "compliance", "spending"],
+    comments_count: Math.floor(Math.random() * 8),
+    attachments_count: Math.floor(Math.random() * 5),
   }))
 }
 

@@ -9,6 +9,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { VariantSelector, type ProductVariant, type ProductOption } from "./marketplace-variant-selector"
+import { InventoryBadge } from "./marketplace-inventory-badge"
+import { WishlistButton } from "./marketplace-wishlist-button"
+import { ReviewForm } from "./marketplace-review-form"
 
 export interface MarketplaceProduct {
   id: string
@@ -21,6 +25,7 @@ export interface MarketplaceProduct {
   assignee_name?: string
   category?: string
   stock?: string
+  stock_quantity?: number
   rental_rate?: string
   tags?: string[]
   priority?: string
@@ -33,6 +38,11 @@ export interface MarketplaceProduct {
     comment: string
     date: string
   }>
+  // New Shopify fields
+  variants?: ProductVariant[]
+  options?: ProductOption[]
+  compare_at_price?: number
+  orderId?: string
 }
 
 interface MarketplaceProductDetailDrawerProps {
@@ -53,11 +63,18 @@ export function MarketplaceProductDetailDrawer({
   isFavorite = false,
 }: MarketplaceProductDetailDrawerProps) {
   const [quantity, setQuantity] = useState(1)
+  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null)
+  const [reviewFormOpen, setReviewFormOpen] = useState(false)
 
   if (!product) return null
 
   const handleAddToCart = () => {
     onAddToCart?.(product.id, quantity)
+  }
+
+  const handleReviewSubmit = async (review: any) => {
+    // In real implementation, submit to product_reviews table
+    console.log('Review submitted:', review)
   }
 
   const getStockBadge = (status: string) => {
@@ -90,13 +107,11 @@ export function MarketplaceProductDetailDrawer({
               <h2 className="text-xl font-semibold">Product Details</h2>
             </div>
             <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => onToggleFavorite?.(product.id)}
-              >
-                <Heart className={`h-4 w-4 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
-              </Button>
+              <WishlistButton
+                productId={product.id}
+                productName={product.name}
+                variant="icon"
+              />
               <Button variant="ghost" size="icon">
                 <Share2 className="h-4 w-4" />
               </Button>
@@ -185,12 +200,24 @@ export function MarketplaceProductDetailDrawer({
                     Rental: {product.rental_rate} per day
                   </p>
                 )}
-                {product.stock && (
-                  <p className="text-sm text-muted-foreground">
-                    {product.stock} units available
-                  </p>
-                )}
               </div>
+
+              {/* Product Variants */}
+              {product.options && product.options.length > 0 && product.variants && (
+                <VariantSelector
+                  productId={product.id}
+                  options={product.options}
+                  variants={product.variants}
+                  onVariantChange={setSelectedVariant}
+                />
+              )}
+
+              {/* Inventory Status */}
+              <InventoryBadge
+                inventoryQuantity={selectedVariant?.inventory_quantity ?? product.stock_quantity}
+                lowStockThreshold={10}
+                showQuantity={true}
+              />
 
               {/* Quantity and Add to Cart */}
               <div className="flex items-center gap-4">
@@ -282,6 +309,16 @@ export function MarketplaceProductDetailDrawer({
               </TabsContent>
 
               <TabsContent value="reviews" className="space-y-4 mt-4">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={() => setReviewFormOpen(true)}
+                  className="w-full"
+                >
+                  <Star className="h-4 w-4 mr-2" />
+                  Write a Review
+                </Button>
+
                 {product.reviews && product.reviews.length > 0 ? (
                   <div className="space-y-4">
                     {product.reviews.map((review) => (
@@ -319,7 +356,6 @@ export function MarketplaceProductDetailDrawer({
                   <div className="text-center py-8 space-y-2">
                     <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/30" />
                     <p className="text-sm text-muted-foreground">No reviews yet</p>
-                    <Button variant="outline" size="sm">Be the first to review</Button>
                   </div>
                 )}
               </TabsContent>
@@ -327,6 +363,16 @@ export function MarketplaceProductDetailDrawer({
           </div>
         </ScrollArea>
       </SheetContent>
+
+      {/* Review Form Modal */}
+      <ReviewForm
+        productId={product.id}
+        productName={product.name}
+        orderId={product.orderId}
+        open={reviewFormOpen}
+        onClose={() => setReviewFormOpen(false)}
+        onSubmit={handleReviewSubmit}
+      />
     </Sheet>
   )
 }

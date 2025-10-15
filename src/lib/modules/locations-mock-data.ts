@@ -23,6 +23,12 @@ export function generateLocationsMockData(tabSlug: string, count: number = 20): 
       return generateLogisticsData(count)
     case 'utilities':
       return generateUtilitiesData(count)
+    case 'bim-models':
+      return generateBimModelsData(count)
+    case 'coordination':
+      return generateCoordinationData(count)
+    case 'spatial-features':
+      return generateSpatialFeaturesData(count)
     default:
       return generateGenericData(count)
   }
@@ -249,6 +255,147 @@ function generateUtilitiesData(count: number): DataItem[] {
     updated_at: new Date().toISOString(),
     comments_count: Math.floor(Math.random() * 15),
     attachments_count: Math.floor(Math.random() * 10),
+  }))
+}
+
+function generateBimModelsData(count: number): DataItem[] {
+  const modelTypes = ["ifc", "revit", "archicad", "sketchup", "rhino"]
+  const modelNames = [
+    "Building A - Architecture",
+    "Building A - Structure",
+    "Building A - MEP",
+    "Building B - Architecture",
+    "Building B - Structure",
+    "Site Master Plan",
+    "Parking Structure",
+    "Mechanical Room Detail",
+    "Electrical Distribution",
+    "Plumbing Risers",
+  ]
+  const disciplines = ["architecture", "structure", "mep", "civil"]
+  const lodLevels = ["LOD100", "LOD200", "LOD300", "LOD350", "LOD400", "LOD500"]
+  const ifcSchemas = ["IFC2x3", "IFC4", "IFC4x3"]
+  const locationIds = ["location-1", "location-2", "location-3", "location-4"]
+  
+  return Array.from({ length: count }, (_, i) => ({
+    id: `bim-model-${i + 1}`,
+    name: modelNames[i % modelNames.length],
+    model_type: modelTypes[i % modelTypes.length],
+    location_id: locationIds[i % locationIds.length],
+    discipline: disciplines[i % disciplines.length],
+    lod: lodLevels[i % lodLevels.length],
+    ifc_schema: ifcSchemas[i % ifcSchemas.length],
+    version: `${Math.floor(i / 10) + 1}.${i % 10}`,
+    is_current: i % 10 === 0,
+    file_url: `https://storage.example.com/models/model-${i + 1}.ifc`,
+    file_size_mb: Math.floor(Math.random() * 500) + 10,
+    software_name: i % 2 === 0 ? "Revit 2024" : "ArchiCAD 27",
+    units: i % 3 === 0 ? "meters" : "feet",
+    uploaded_by: "person-1",
+    created_at: getRandomPastDate(180),
+    updated_at: new Date().toISOString(),
+    comments_count: Math.floor(Math.random() * 8),
+    attachments_count: Math.floor(Math.random() * 5),
+    metadata: {
+      element_count: Math.floor(Math.random() * 10000) + 1000,
+      level_count: Math.floor(Math.random() * 20) + 1,
+      space_count: Math.floor(Math.random() * 200) + 10,
+    }
+  }))
+}
+
+function generateCoordinationData(count: number): DataItem[] {
+  const clashTypes = ["hard", "soft", "clearance", "workflow", "duplicate"]
+  const severities = ["critical", "high", "medium", "low", "info"]
+  const statuses = ["active", "reviewed", "approved", "resolved", "ignored"]
+  const clashNames = [
+    "Duct vs Beam - Level 2",
+    "Pipe vs Structural Column",
+    "Cable Tray vs HVAC",
+    "Door Clearance Issue",
+    "Window vs MEP Riser",
+    "Sprinkler Head vs Ceiling",
+    "Electrical Panel vs Wall",
+    "Plumbing Fixture Conflict",
+    "Structural Brace vs Duct",
+    "Fire Alarm vs Lighting",
+  ]
+  const elements = [
+    "Wall-001", "Beam-B12", "Column-C3", "Duct-HVAC-01",
+    "Pipe-P-2A", "Cable Tray-CT-5", "Door-D101", "Window-W203",
+    "Sprinkler-SP-44", "Panel-EP-12"
+  ]
+  const locationIds = ["location-1", "location-2", "location-3"]
+  const assignees = ["person-1", "person-2", "person-3", "person-4"]
+  
+  return Array.from({ length: count }, (_, i) => ({
+    id: `clash-${i + 1}`,
+    name: clashNames[i % clashNames.length],
+    clash_type: clashTypes[i % clashTypes.length],
+    severity: severities[i % severities.length],
+    status: statuses[i % statuses.length],
+    location_id: locationIds[i % locationIds.length],
+    element_a: elements[i % elements.length],
+    element_b: elements[(i + 3) % elements.length],
+    element_a_type: i % 2 === 0 ? "architectural" : "mep",
+    element_b_type: i % 2 === 0 ? "structural" : "mep",
+    clash_distance_m: parseFloat((Math.random() * 0.5).toFixed(3)),
+    detected_at: getRandomPastDate(30),
+    detected_by: "Clash Detection Tool v3.2",
+    assigned_to: assignees[i % assignees.length],
+    assignee_name: `Team Member ${(i % assignees.length) + 1}`,
+    resolution_notes: i % 3 === 0 ? "Reroute duct to avoid beam" : null,
+    resolved_at: i % 4 === 0 ? getRandomPastDate(5) : null,
+    created_at: getRandomPastDate(30),
+    updated_at: new Date().toISOString(),
+    comments_count: Math.floor(Math.random() * 12),
+    attachments_count: Math.floor(Math.random() * 6),
+  }))
+}
+
+function generateSpatialFeaturesData(count: number): DataItem[] {
+  const featureTypes = [
+    "point", "marker", "line", "polyline", "polygon", 
+    "circle", "rectangle", "annotation"
+  ]
+  const featureNames = [
+    "Equipment Location A",
+    "Cable Run - Stage to Tech",
+    "Safety Zone - Stage Front",
+    "Loading Path - Main Entrance",
+    "Restricted Area - Backstage",
+    "Emergency Assembly Point",
+    "Lighting Position 1",
+    "Camera Position Main",
+    "Speaker Coverage Zone",
+    "Access Route - VIP",
+  ]
+  const layerNames = ["Equipment", "Infrastructure", "Safety", "Access", "Annotations"]
+  const locationIds = ["location-1", "location-2", "location-3", "location-4"]
+  const colors = ["#ef4444", "#3b82f6", "#10b981", "#f59e0b", "#8b5cf6"]
+  
+  return Array.from({ length: count }, (_, i) => ({
+    id: `feature-${i + 1}`,
+    name: featureNames[i % featureNames.length],
+    feature_type: featureTypes[i % featureTypes.length],
+    layer_name: layerNames[i % layerNames.length],
+    location_id: locationIds[i % locationIds.length],
+    stroke_color: colors[i % colors.length],
+    stroke_width: Math.floor(Math.random() * 5) + 1,
+    fill_color: colors[(i + 2) % colors.length],
+    fill_opacity: parseFloat((Math.random() * 0.7 + 0.3).toFixed(2)),
+    description: "Spatial feature with geometry and styling properties",
+    length_m: featureTypes[i % featureTypes.length].includes('line') ? 
+      parseFloat((Math.random() * 100 + 10).toFixed(2)) : null,
+    area_sqm: featureTypes[i % featureTypes.length].includes('polygon') || 
+               featureTypes[i % featureTypes.length].includes('circle') ?
+      parseFloat((Math.random() * 500 + 50).toFixed(2)) : null,
+    tags: ["gis", layerNames[i % layerNames.length].toLowerCase()],
+    created_by: "person-1",
+    created_at: getRandomPastDate(90),
+    updated_at: new Date().toISOString(),
+    comments_count: Math.floor(Math.random() * 8),
+    attachments_count: Math.floor(Math.random() * 4),
   }))
 }
 

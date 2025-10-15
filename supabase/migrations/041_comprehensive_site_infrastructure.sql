@@ -4,6 +4,42 @@
 -- Based on: ULine, Conex, ModSpace, Mobile Mini, Temps Only, Temps Unlimited
 -- =============================================
 
+-- Create global catalog organization and workspace for system-wide asset data
+-- First, create system user for created_by reference
+INSERT INTO auth.users (id, email, encrypted_password, email_confirmed_at, created_at, updated_at, raw_app_meta_data, raw_user_meta_data, is_super_admin, role)
+VALUES (
+    '00000000-0000-0000-0000-000000000001',
+    'system@globalcatalog.internal',
+    '',
+    NOW(),
+    NOW(),
+    NOW(),
+    '{"provider":"system","providers":["system"]}',
+    '{}',
+    false,
+    'authenticated'
+)
+ON CONFLICT (id) DO NOTHING;
+
+INSERT INTO organizations (id, name, slug, created_at) 
+VALUES (
+    '00000000-0000-0000-0000-000000000001',
+    'Global Catalog System',
+    'global-catalog',
+    NOW()
+)
+ON CONFLICT (id) DO NOTHING;
+
+INSERT INTO workspaces (id, organization_id, name, created_at) 
+VALUES (
+    '00000000-0000-0000-0000-000000000001',
+    '00000000-0000-0000-0000-000000000001',
+    'Global Asset Catalog',
+    NOW()
+)
+ON CONFLICT (id) DO NOTHING;
+
+-- Insert asset catalog data
 INSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES
 
 -- =============================================

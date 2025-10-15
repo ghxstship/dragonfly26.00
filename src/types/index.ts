@@ -91,6 +91,15 @@ export interface ModuleTab {
   badge?: number | string
 }
 
+// Component Props
+export interface TabComponentProps {
+  workspaceId: string
+  moduleId: string
+  tabSlug: string
+  data?: any[]
+  loading?: boolean
+}
+
 export interface Module {
   id: string
   name: string

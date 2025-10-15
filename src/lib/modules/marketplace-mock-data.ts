@@ -67,29 +67,81 @@ function generateShopData(count: number): DataItem[] {
   const statuses = ["active", "out_of_stock", "discontinued"]
   const pricingModels = ["one_time", "recurring", "usage_based"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `product-${i + 1}`,
-    vendor_id: vendors[i % vendors.length],
-    name: productNames[i % productNames.length],
-    description: `Professional ${productNames[i % productNames.length].toLowerCase()} with industry-leading specifications`,
-    category: categories[i % categories.length],
-    subcategory: null,
-    price: parseFloat((Math.random() * 5000 + 100).toFixed(2)),
-    currency: "USD",
-    pricing_model: pricingModels[i % pricingModels.length],
-    sku: `SKU-${String(10000 + i).padStart(6, '0')}`,
-    stock_quantity: Math.floor(Math.random() * 100),
-    low_stock_threshold: 10,
-    images: [`https://example.com/images/product-${i + 1}-1.jpg`, `https://example.com/images/product-${i + 1}-2.jpg`],
-    status: statuses[i % statuses.length],
-    rating_avg: parseFloat((Math.random() * 2 + 3).toFixed(2)),
-    review_count: Math.floor(Math.random() * 50),
-    tags: [categories[i % categories.length].toLowerCase(), "marketplace"],
-    created_at: getRandomPastDate(180),
-    updated_at: new Date().toISOString(),
-    comments_count: Math.floor(Math.random() * 20),
-    attachments_count: Math.floor(Math.random() * 5),
-  }))
+  // Generate variants for products with options
+  const generateVariants = (productId: string, basePrice: number, hasVariants: boolean) => {
+    if (!hasVariants) return undefined
+    
+    const colors = ["Black", "Silver", "White"]
+    const sizes = ["Small", "Medium", "Large"]
+    const variants = []
+    
+    for (let colorIndex = 0; colorIndex < colors.length; colorIndex++) {
+      for (let sizeIndex = 0; sizeIndex < sizes.length; sizeIndex++) {
+        const variantPrice = basePrice + (colorIndex * 50) + (sizeIndex * 30)
+        variants.push({
+          id: `${productId}-var-${colorIndex}-${sizeIndex}`,
+          title: `${colors[colorIndex]} / ${sizes[sizeIndex]}`,
+          option1: colors[colorIndex],
+          option2: sizes[sizeIndex],
+          option3: null,
+          price: variantPrice,
+          compare_at_price: Math.random() > 0.7 ? variantPrice + 100 : null,
+          sku: `SKU-${productId}-${colorIndex}${sizeIndex}`,
+          barcode: null,
+          inventory_quantity: Math.floor(Math.random() * 50),
+          available_for_sale: true,
+          image_url: null
+        })
+      }
+    }
+    return variants
+  }
+  
+  const generateOptions = (hasVariants: boolean) => {
+    if (!hasVariants) return undefined
+    return [
+      { id: 'opt-1', name: 'Color', position: 1, values: ["Black", "Silver", "White"] },
+      { id: 'opt-2', name: 'Size', position: 2, values: ["Small", "Medium", "Large"] }
+    ]
+  }
+  
+  return Array.from({ length: count }, (_, i) => {
+    const basePrice = parseFloat((Math.random() * 5000 + 100).toFixed(2))
+    const hasVariants = i % 3 === 0 // Every 3rd product has variants
+    const productId = `product-${i + 1}`
+    
+    return {
+      id: productId,
+      vendor_id: vendors[i % vendors.length],
+      name: productNames[i % productNames.length],
+      description: `Professional ${productNames[i % productNames.length].toLowerCase()} with industry-leading specifications`,
+      category: categories[i % categories.length],
+      subcategory: null,
+      price: basePrice,
+      compare_at_price: Math.random() > 0.8 ? basePrice + 200 : undefined,
+      currency: "USD",
+      pricing_model: pricingModels[i % pricingModels.length],
+      sku: `SKU-${String(10000 + i).padStart(6, '0')}`,
+      stock_quantity: Math.floor(Math.random() * 100),
+      low_stock_threshold: 10,
+      images: [`https://example.com/images/product-${i + 1}-1.jpg`, `https://example.com/images/product-${i + 1}-2.jpg`],
+      status: statuses[i % statuses.length],
+      rating_avg: parseFloat((Math.random() * 2 + 3).toFixed(2)),
+      review_count: Math.floor(Math.random() * 50),
+      tags: [categories[i % categories.length].toLowerCase(), "marketplace"],
+      created_at: getRandomPastDate(180),
+      updated_at: new Date().toISOString(),
+      comments_count: Math.floor(Math.random() * 20),
+      attachments_count: Math.floor(Math.random() * 5),
+      // New Shopify-compatible fields
+      variants: generateVariants(productId, basePrice, hasVariants),
+      options: generateOptions(hasVariants),
+      handle: productNames[i % productNames.length].toLowerCase().replace(/\s+/g, '-'),
+      published: true,
+      requires_shipping: true,
+      is_taxable: true
+    }
+  })
 }
 
 function generateFavoritesData(count: number): DataItem[] {

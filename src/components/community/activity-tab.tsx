@@ -15,17 +15,19 @@ import {
   TrendingUp,
   Users,
   Activity as ActivityIcon,
-  MoreHorizontal
+  MoreHorizontal,
+  Paperclip,
+  File
 } from "lucide-react"
-
-interface ActivityTabProps {
-  data?: any[]
-  loading?: boolean
-}
+import { FileAttachmentButton } from "@/components/files/file-attachment-button"
+import { LevelBadge } from "./level-badge"
+import { Poll } from "./poll"
+import { useMemberLevel } from "@/hooks/use-member-level"
 
 interface ActivityPost {
   id: string
   author: string
+  author_id?: string
   authorTitle: string
   authorImage?: string
   content: string
@@ -36,10 +38,21 @@ interface ActivityPost {
   shares: number
   isLiked?: boolean
   tags?: string[]
+  poll_options?: string[]
+  poll_votes?: Record<string, string[]>
+  poll_expires_at?: string | null
+  poll_allow_multiple?: boolean
 }
 
-export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
+interface ActivityTabProps {
+  data?: any[]
+  loading?: boolean
+  workspaceId?: string
+}
+
+export function ActivityTab({ data = [], loading = false, workspaceId }: ActivityTabProps) {
   const [newPost, setNewPost] = useState("")
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([])
   
   const [posts, setPosts] = useState<ActivityPost[]>([])
   
@@ -49,6 +62,7 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
       const transformed = data.map((item: any) => ({
         id: item.id,
         author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Unknown',
+        author_id: item.author_id,
         authorTitle: item.author?.job_title || 'Community Member',
         authorImage: item.author?.avatar_url,
         content: item.content || '',
@@ -58,7 +72,11 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
         comments: item.comments_count || 0,
         shares: item.shares_count || 0,
         isLiked: false,
-        tags: item.tags || []
+        tags: item.tags || [],
+        poll_options: item.poll_options || null,
+        poll_votes: item.poll_votes || {},
+        poll_expires_at: item.poll_expires_at || null,
+        poll_allow_multiple: item.poll_allow_multiple || false
       }))
       setPosts(transformed)
     }
@@ -174,10 +192,11 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
             />
             <div className="flex items-center justify-between">
               <div className="flex gap-2">
-                <Button variant="ghost" size="sm">
-                  <ImageIcon className="h-4 w-4 mr-2" aria-hidden="true" />
-                  Add Image
-                </Button>
+                <FileAttachmentButton 
+                  onFilesSelected={setAttachedFiles}
+                  maxFiles={3}
+                  acceptedTypes="image/*,.pdf,.doc,.docx"
+                />
               </div>
               <div className="flex items-center gap-4">
                 <span className={`text-sm ${
@@ -211,7 +230,10 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
                     <AvatarFallback>{post.author.split(" ").map(n => n[0]).join("")}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-semibold text-sm">{post.author}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="font-semibold text-sm">{post.author}</p>
+                      {post.author_id && <PostAuthorLevel authorId={post.author_id} workspaceId={workspaceId} />}
+                    </div>
                     <p className="text-xs text-muted-foreground">{post.authorTitle}</p>
                     <p className="text-xs text-muted-foreground">{timeAgo(post.timestamp)}</p>
                   </div>
@@ -230,6 +252,22 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
                   <div 
                     className="h-64 bg-cover bg-center"
                     style={{ backgroundImage: `url(${post.image})` }}
+                  />
+                </div>
+              )}
+
+              {/* Poll */}
+              {post.poll_options && post.poll_options.length > 0 && (
+                <div className="mb-3">
+                  <Poll 
+                    options={post.poll_options}
+                    votes={post.poll_votes}
+                    expiresAt={post.poll_expires_at}
+                    allowMultiple={post.poll_allow_multiple}
+                    onVote={(optionIndex) => {
+                      console.log('Voted for option:', optionIndex)
+                      // TODO: Implement vote submission to Supabase
+                    }}
                   />
                 </div>
               )}
@@ -285,4 +323,13 @@ export function ActivityTab({ data = [], loading = false }: ActivityTabProps) {
       </div>
     </div>
   )
+}
+
+// Helper component to fetch and display author level
+function PostAuthorLevel({ authorId, workspaceId }: { authorId: string; workspaceId?: string }) {
+  const { level } = useMemberLevel(workspaceId || '', authorId)
+  
+  if (!level) return null
+  
+  return <LevelBadge level={level.level} points={level.points} size="sm" />
 }

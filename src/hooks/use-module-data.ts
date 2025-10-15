@@ -27,10 +27,13 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'productions': { table: 'productions', select: '*', orderBy: 'created_at' },
   'activations': { table: 'productions', select: '*', orderBy: 'created_at' },
   'schedule': { table: 'project_milestones', select: '*, production:productions!production_id(name)', orderBy: 'due_date' },
-  'tasks': { table: 'project_tasks', select: '*, production:productions!production_id(name), assignee:profiles!assignee_id(first_name, last_name)', orderBy: 'due_date' },
+  'tasks': { table: 'project_tasks', select: '*, production:productions!production_id(name), assignee:profiles!assignee_id(first_name, last_name)', orderBy: 'created_at' },
   'milestones': { table: 'project_milestones', select: '*, production:productions!production_id(name)', orderBy: 'due_date' },
   'compliance': { table: 'project_compliance', select: '*, production:productions!production_id(name)', orderBy: 'expiry_date' },
   'safety': { table: 'project_safety', select: '*, production:productions!production_id(name)', orderBy: 'created_at' },
+  'projects-work-orders': { table: 'work_orders', select: '*, company:companies!company_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'scheduled_start' },
+  'costs': { table: 'project_costs', select: '*, production:productions!production_id(name), category:project_cost_categories!category_id(name, code), company:companies!company_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'cost_date' },
+  'projects-checklists': { table: 'checklists', select: '*, template:checklist_templates!template_id(name)', orderBy: 'created_at' },
   
   // Events
   'all-events': { table: 'events', select: '*, location:locations!location_id(name, city), production:productions!production_id(name)', orderBy: 'start_time' },
@@ -71,19 +74,22 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'access': { table: 'locations', select: '*', orderBy: 'name' },
   'warehousing': { table: 'locations', select: '*', orderBy: 'name' },
   'logistics': { table: 'shipments', select: '*, production:productions!production_id(name)', orderBy: 'ship_date' },
-  'utilities': { table: 'locations', select: '*', orderBy: 'name' },
+  'utilities': { table: 'location_utilities', select: '*, location:locations!location_id(name, city)', orderBy: 'name' },
+  'bim-models': { table: 'location_bim_models', select: '*, location:locations!location_id(name, city)', orderBy: 'created_at' },
+  'coordination': { table: 'location_bim_clashes', select: '*, location:locations!location_id(name, city)', orderBy: 'detected_at' },
+  'spatial-features': { table: 'location_features', select: '*, location:locations!location_id(name, city), layer:location_layers!layer_id(name)', orderBy: 'created_at' },
   
-  // Files (files table doesn't have uploaded_by field - remove the relationship)
-  'all-documents': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'contracts': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'riders': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'tech-specs': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'call-sheets': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'insurance-permits': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'media-assets': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'production-reports': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'shared': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
-  'archive': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
+  // Files - Enhanced with collaboration features
+  'all-documents': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url), folder:file_folders!folder_id(name, path)', orderBy: 'created_at' },
+  'contracts': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
+  'riders': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
+  'tech-specs': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
+  'call-sheets': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
+  'insurance-permits': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
+  'media-assets': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
+  'production-reports': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
+  'shared': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
+  'archive': { table: 'files', select: '*, category:file_categories!category_id(name), uploader:profiles!uploaded_by(first_name, last_name, avatar_url)', orderBy: 'created_at' },
   
   // Companies
   'organizations': { table: 'companies', select: '*', orderBy: 'name' },
@@ -92,10 +98,20 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'scopes-of-work': { table: 'scopes_of_work', select: '*, company:companies!company_id(name), production:productions!production_id(name)', orderBy: 'created_at' },
   'documents': { table: 'files', select: '*, category:file_categories!category_id(name)', orderBy: 'created_at' },
   'bids': { table: 'bids', select: '*, company:companies!company_id(name), production:productions!production_id(name)', orderBy: 'submitted_date' },
+  'companies-compliance': { table: 'subcontractor_compliance_docs', select: '*, company:companies!company_id(name), verified_by_user:profiles!verified_by(first_name, last_name)', orderBy: 'expiration_date' },
+  'companies-work-orders': { table: 'work_orders', select: '*, company:companies!company_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'scheduled_start' },
+  'companies-invoices': { table: 'subcontractor_invoices', select: '*, company:companies!company_id(name), work_order:work_orders!work_order_id(work_order_number)', orderBy: 'invoice_date' },
+  'companies-reviews': { table: 'subcontractor_reviews', select: '*, company:companies!company_id(name), work_order:work_orders!work_order_id(work_order_number), reviewed_by_user:profiles!reviewed_by(first_name, last_name)', orderBy: 'created_at' },
+  'subcontractor-profile': { table: 'subcontractor_profiles', select: '*, company:companies!company_id(name)', orderBy: 'company_id' },
   
   // Finance
   'budgets': { table: 'budgets', select: '*, production:productions!production_id(name)', orderBy: 'created_at' },
-  'forecasting': { table: 'budgets', select: '*, production:productions!production_id(name)', orderBy: 'created_at' },
+  'approvals': { table: 'approval_steps', select: '*, approval_chain:approval_chains!approval_chain_id(chain_name, target_type), approver:profiles!approver_id(first_name, last_name)', orderBy: 'due_date' },
+  'scenarios': { table: 'budget_scenarios', select: '*, budget:budgets!budget_id(name, total_amount)', orderBy: 'created_at' },
+  'variance': { table: 'budget_variance_tracking', select: '*, budget:budgets!budget_id(name)', orderBy: 'tracking_period_start' },
+  'cash-flow': { table: 'cash_flow_projections', select: '*, production:productions!production_id(name)', orderBy: 'projection_date' },
+  'forecasts': { table: 'financial_forecasts', select: '*, budget:budgets!budget_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'forecast_date' },
+  'forecasting': { table: 'financial_forecasts', select: '*, budget:budgets!budget_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'forecast_date' },
   'transactions': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
   'revenue': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
   'expenses': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
@@ -104,6 +120,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'payments': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
   'invoices': { table: 'invoices', select: '*, company:companies!company_id(name), production:productions!production_id(name)', orderBy: 'issue_date' },
   'taxes': { table: 'financial_transactions', select: '*, budget:budgets!budget_id(name), production:productions!production_id(name), company:companies!company_id(name)', orderBy: 'transaction_date' },
+  'policies': { table: 'spending_policies', select: '*, created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'created_at' },
   'accounts': { table: 'gl_codes', select: '*', orderBy: 'code' },
   'gl-codes': { table: 'gl_codes', select: '*', orderBy: 'code' },
   
@@ -111,10 +128,12 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'fulfillment': { table: 'purchase_orders', select: '*, company:companies!company_id(name)', orderBy: 'issue_date' },
   'orders': { table: 'purchase_orders', select: '*, company:companies!company_id(name)', orderBy: 'issue_date' },
   'agreements': { table: 'procurement_agreements', select: '*, company:companies!company_id(name)', orderBy: 'start_date' },
-  'requisitions': { table: 'purchase_requisitions', select: '*, requested_by_user:profiles!requested_by(first_name, last_name)', orderBy: 'requested_date' },
+  'requisitions': { table: 'purchase_requisitions', select: '*, requested_by_user:profiles!requested_by(first_name, last_name)', orderBy: 'created_at' },
   'line-items': { table: 'purchase_orders', select: '*, company:companies!company_id(name)', orderBy: 'created_at' },
   'audits': { table: 'purchase_orders', select: '*, company:companies!company_id(name)', orderBy: 'created_at' },
-  'approvals': { table: 'production_advances', select: '*, production:productions!production_id(name, status), requested_by_user:profiles!requested_by(first_name, last_name)', orderBy: 'created_at' },
+  'receiving': { table: 'goods_receipts', select: '*, purchase_order:purchase_orders!po_id(po_number), received_by_user:profiles!received_by(first_name, last_name)', orderBy: 'received_date' },
+  'matching': { table: 'three_way_matches', select: '*, purchase_order:purchase_orders!po_id(po_number), receipt:goods_receipts!receipt_id(receipt_number), invoice:invoices!invoice_id(invoice_number)', orderBy: 'created_at' },
+  'procurement-approvals': { table: 'approval_steps', select: '*, approval_chain:approval_chains!approval_chain_id(chain_name, target_type), approver:profiles!approver_id(first_name, last_name)', orderBy: 'due_date' },
   
   // Community
   'news': { table: 'community_posts', select: '*, author:profiles!author_id(id, first_name, last_name, avatar_url, job_title, company)', orderBy: 'created_at' },
@@ -147,7 +166,7 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'glossary': { table: 'resources', select: '*, published_by_user:profiles!published_by(first_name, last_name)', orderBy: 'title' },
   'troubleshooting': { table: 'resources', select: '*, published_by_user:profiles!published_by(first_name, last_name)', orderBy: 'title' },
   
-  // Jobs
+  // Jobs - Contracts & RFPs
   'active': { table: 'job_contracts', select: '*, client:companies!client_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'start_date' },
   'pipeline': { table: 'job_contracts', select: '*, client:companies!client_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'created_at' },
   'offers': { table: 'job_contracts', select: '*, client:companies!client_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'created_at' },
@@ -155,6 +174,36 @@ const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy
   'rfps': { table: 'rfps', select: '*, issuer:companies!issuer_id(name), awarded_company:companies!awarded_to(name)', orderBy: 'submission_deadline' },
   'completed': { table: 'job_contracts', select: '*, client:companies!client_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'end_date' },
   'archived': { table: 'job_contracts', select: '*, client:companies!client_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'end_date' },
+  
+  // Jobs - Work Orders & Scheduling (using general work_orders table)
+  'work-orders': { table: 'work_orders', select: '*, company:companies!company_id(name), production:productions!production_id(name), job_contract:job_contracts!job_contract_id(title, contract_number), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'scheduled_start' },
+  'dispatch': { table: 'work_orders', select: '*, company:companies!company_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'created_at' },
+  
+  // Jobs - Estimates & Quotes (using general estimates table)
+  'estimates': { table: 'estimates', select: '*, client_company:companies!client_company_id(name), production:productions!production_id(name), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'created_at' },
+  
+  // Jobs - Invoices & Payments (using general subcontractor_invoices table)
+  'jobs-invoices': { table: 'subcontractor_invoices', select: '*, company:companies!company_id(name), work_order:work_orders!work_order_id(title, work_order_number), job_contract:job_contracts!job_contract_id(title, contract_number), created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'invoice_date' },
+  'jobs-invoice-approvals': { table: 'subcontractor_invoices', select: '*, company:companies!company_id(name), approved_by_user:profiles!approved_by(first_name, last_name)', orderBy: 'submitted_at' },
+  
+  // Jobs - Compliance (using general subcontractor_compliance_docs table)
+  'jobs-compliance': { table: 'subcontractor_compliance_docs', select: '*, company:companies!company_id(name), verified_by_user:profiles!verified_by(first_name, last_name)', orderBy: 'expiration_date' },
+  'authorization-rules': { table: 'work_authorization_rules', select: '*', orderBy: 'work_category' },
+  
+  // Jobs - Checklists (using general checklists table)
+  'checklists': { table: 'checklists', select: '*, template:checklist_templates!template_id(name)', orderBy: 'created_at' },
+  'checklist-templates': { table: 'checklist_templates', select: '*, created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'name' },
+  
+  // Jobs - Communication (using general communication_threads table)
+  'communications': { table: 'communication_threads', select: '*, created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'created_at' },
+  
+  // Jobs - Approval Workflows (using general approval_workflows table)
+  'approval-workflows': { table: 'approval_workflows', select: '*, created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'name' },
+  'approval-requests': { table: 'approval_requests', select: '*, workflow:approval_workflows!workflow_id(name), requested_by_user:profiles!requested_by(first_name, last_name)', orderBy: 'requested_at' },
+  
+  // Jobs - Recruiting (using general hiring_applications table)
+  'recruiting': { table: 'hiring_applications', select: '*, created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'created_at' },
+  'applications': { table: 'hiring_application_responses', select: '*, company:companies!company_id(name), hiring_application:hiring_applications!hiring_application_id(title)', orderBy: 'created_at' },
   
   // Reports (using module-specific keys to avoid conflicts)
   'reports-overview': { table: 'report_templates', select: '*, created_by_user:profiles!created_by(first_name, last_name)', orderBy: 'updated_at' },

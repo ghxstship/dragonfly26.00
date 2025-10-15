@@ -106,6 +106,15 @@
 --   - application/pdf
 --   - image/jpeg, image/png, image/webp
 
+-- 11. INVENTORY-PHOTOS
+-- Name: inventory-photos
+-- Public: No (workspace-scoped access)
+-- File size limit: 10MB per photo (10485760 bytes)
+-- Allowed MIME types:
+--   - image/jpeg, image/png, image/webp, image/heic
+-- Max photos per item: 8 (Sortly standard)
+-- Features: Visual inventory tracking, barcode label photos, condition documentation
+
 -- =============================================
 -- FOLDER STRUCTURE REFERENCE
 -- =============================================
@@ -136,3 +145,6 @@
 -- reports/{workspace_id}/analytics/
 -- reports/{workspace_id}/compliance/
 -- receipts/{workspace_id}/{expense_report_id}/
+-- inventory-photos/{workspace_id}/{inventory_item_id}/photo-{index}.jpg
+-- inventory-photos/{workspace_id}/{inventory_item_id}/barcode-label.png
+-- inventory-photos/{workspace_id}/{inventory_item_id}/condition-{timestamp}.jpg

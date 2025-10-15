@@ -27,6 +27,10 @@ export function generateProcurementMockData(tabSlug: string, count: number = 20)
       return generateLineItemsData(count)
     case 'audits':
       return generateAuditsData(count)
+    case 'receiving':
+      return generateReceivingData(count)
+    case 'matching':
+      return generateMatchingData(count)
     default:
       return generateGenericData(count)
   }
@@ -276,6 +280,101 @@ function generateAuditsData(count: number): DataItem[] {
     comments_count: Math.floor(Math.random() * 25),
     attachments_count: Math.floor(Math.random() * 20),
   }))
+}
+
+function generateReceivingData(count: number): DataItem[] {
+  const inspectionStatuses = ["pass", "fail", "pending", "not_required"]
+  const receiptStatuses = ["received", "partially_received", "inspection", "accepted", "rejected"]
+  const vendors = ["Global Supplies Inc", "TechVendor Co", "Equipment Central", "Premium Materials LLC", "FastShip Distributors"]
+  
+  return Array.from({ length: count }, (_, i) => {
+    const quantityOrdered = Math.floor(Math.random() * 100) + 10
+    const quantityReceived = i % 5 === 0 ? quantityOrdered - Math.floor(Math.random() * 5) : quantityOrdered
+    const hasDiscrepancy = quantityReceived !== quantityOrdered
+    const inspectionStatus = inspectionStatuses[i % inspectionStatuses.length]
+    
+    return {
+      id: `receipt-${i + 1}`,
+      name: `Receipt #REC-${String(20251015 + i).padStart(8, '0')}`,
+      description: `PO-${String(202400 + i).padStart(8, '0')} • ${vendors[i % vendors.length]} • ${quantityReceived} of ${quantityOrdered} units received`,
+      status: receiptStatuses[i % receiptStatuses.length],
+      priority: hasDiscrepancy ? "high" : inspectionStatus === "fail" ? "urgent" : "normal",
+      assignee: i % 4 === 0 ? "Receiving Manager" : i % 4 === 1 ? "Quality Inspector" : i % 4 === 2 ? "Warehouse Lead" : "Logistics Coordinator",
+      assignee_name: i % 4 === 0 ? "Receiving Manager" : i % 4 === 1 ? "Quality Inspector" : i % 4 === 2 ? "Warehouse Lead" : "Logistics Coordinator",
+      due_date: null,
+      start_date: getRandomPastDate(7),
+      created_at: getRandomPastDate(10),
+      updated_at: new Date().toISOString(),
+      tags: [
+        "receiving",
+        inspectionStatus,
+        hasDiscrepancy ? "discrepancy" : "complete",
+        vendors[i % vendors.length].toLowerCase().replace(/\s+/g, '-')
+      ],
+      comments_count: hasDiscrepancy ? Math.floor(Math.random() * 8) + 2 : Math.floor(Math.random() * 3),
+      attachments_count: i % 3 === 0 ? Math.floor(Math.random() * 4) + 1 : 0, // Packing slip photos
+      // Custom fields for receiving
+      inspection_status: inspectionStatus,
+      quantity_ordered: quantityOrdered,
+      quantity_received: quantityReceived,
+      has_discrepancy: hasDiscrepancy,
+      po_number: `PO-${String(202400 + i).padStart(8, '0')}`,
+      vendor: vendors[i % vendors.length],
+    }
+  })
+}
+
+function generateMatchingData(count: number): DataItem[] {
+  const matchStatuses = ["pending", "matched", "partial_match", "no_match", "approved", "rejected"]
+  const vendors = ["Global Supplies Inc", "TechVendor Co", "Equipment Central", "Premium Materials LLC", "FastShip Distributors"]
+  
+  return Array.from({ length: count }, (_, i) => {
+    const poAmount = parseFloat((Math.random() * 50000 + 5000).toFixed(2))
+    const variance = i % 4 === 0 ? parseFloat((Math.random() * 1000).toFixed(2)) : 0
+    const invoiceAmount = poAmount + (i % 3 === 0 ? variance : -variance)
+    const variancePercent = variance > 0 ? parseFloat(((variance / poAmount) * 100).toFixed(2)) : 0
+    const matchStatus = matchStatuses[i % matchStatuses.length]
+    
+    const hasQuantityDiscrepancy = i % 5 === 0
+    const hasPriceDiscrepancy = variance > 0
+    
+    return {
+      id: `match-${i + 1}`,
+      name: `Invoice #INV-${String(50000 + i).padStart(6, '0')} • PO-${String(202400 + i).padStart(8, '0')}`,
+      description: `${vendors[i % vendors.length]} • PO: $${poAmount.toLocaleString()} • Invoice: $${invoiceAmount.toLocaleString()} • Variance: ${variance > 0 ? '+' : ''}$${variance.toLocaleString()} (${variancePercent}%)`,
+      status: matchStatus,
+      priority: matchStatus === 'no_match' ? "urgent" : variancePercent > 5 ? "high" : variancePercent > 2 ? "normal" : "low",
+      assignee: i % 4 === 0 ? "AP Manager" : i % 4 === 1 ? "Procurement Lead" : i % 4 === 2 ? "Finance Controller" : "Accounts Payable",
+      assignee_name: i % 4 === 0 ? "AP Manager" : i % 4 === 1 ? "Procurement Lead" : i % 4 === 2 ? "Finance Controller" : "Accounts Payable",
+      due_date: matchStatus === 'pending' || matchStatus === 'partial_match' ? getRandomFutureDate(14) : null,
+      start_date: getRandomPastDate(30),
+      created_at: getRandomPastDate(45),
+      updated_at: new Date().toISOString(),
+      tags: [
+        "three-way-match",
+        matchStatus,
+        variancePercent > 5 ? "high-variance" : variancePercent > 0 ? "variance" : "exact-match",
+        hasQuantityDiscrepancy ? "qty-discrepancy" : "",
+        hasPriceDiscrepancy ? "price-discrepancy" : ""
+      ].filter(Boolean),
+      comments_count: variance > 0 ? Math.floor(Math.random() * 12) + 3 : Math.floor(Math.random() * 4),
+      attachments_count: Math.floor(Math.random() * 6) + 1, // PO, Receipt, Invoice docs
+      // Custom fields for matching
+      match_status: matchStatus,
+      po_amount: poAmount,
+      invoice_amount: invoiceAmount,
+      receipt_amount: poAmount, // Assume receipt matches PO for simplicity
+      total_variance: variance,
+      variance_percentage: variancePercent,
+      quantity_discrepancy: hasQuantityDiscrepancy,
+      price_discrepancy: hasPriceDiscrepancy,
+      approved_for_payment: matchStatus === 'approved' || matchStatus === 'matched',
+      po_number: `PO-${String(202400 + i).padStart(8, '0')}`,
+      invoice_number: `INV-${String(50000 + i).padStart(6, '0')}`,
+      receipt_number: `REC-${String(20251015 + i).padStart(8, '0')}`,
+      vendor: vendors[i % vendors.length],
+    }
+  })
 }
 
 function generateGenericData(count: number): DataItem[] {

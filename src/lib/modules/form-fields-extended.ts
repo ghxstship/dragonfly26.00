@@ -471,6 +471,105 @@ export const locationsForms: Record<string, TabFormConfig> = {
       { name: 'monthly_cost', label: 'Monthly Cost', type: 'currency' },
       { name: 'notes', label: 'Notes', type: 'textarea' }
     ]
+  },
+  'bim-models': {
+    title: 'Upload BIM Model',
+    description: 'Import IFC, Revit, or other 3D building model',
+    submitLabel: 'Upload Model',
+    fields: [
+      { name: 'model_name', label: 'Model Name', type: 'text', required: true },
+      { name: 'location', label: 'Location', type: 'autocomplete', required: true },
+      { name: 'model_type', label: 'Model Type', type: 'select', required: true, options: [
+        { value: 'ifc', label: 'IFC' },
+        { value: 'revit', label: 'Revit' },
+        { value: 'archicad', label: 'ArchiCAD' },
+        { value: 'sketchup', label: 'SketchUp' },
+        { value: 'other', label: 'Other' }
+      ]},
+      { name: 'model_file', label: 'Model File', type: 'file', required: true },
+      { name: 'ifc_schema', label: 'IFC Schema', type: 'select', options: [
+        { value: 'IFC2x3', label: 'IFC2x3' },
+        { value: 'IFC4', label: 'IFC4' },
+        { value: 'IFC4x3', label: 'IFC4x3' }
+      ]},
+      { name: 'discipline', label: 'Discipline', type: 'select', options: [
+        { value: 'architecture', label: 'Architecture' },
+        { value: 'structure', label: 'Structure' },
+        { value: 'mep', label: 'MEP' },
+        { value: 'civil', label: 'Civil' }
+      ]},
+      { name: 'lod', label: 'Level of Development', type: 'select', options: [
+        { value: 'LOD100', label: 'LOD 100 - Conceptual' },
+        { value: 'LOD200', label: 'LOD 200 - Approximate' },
+        { value: 'LOD300', label: 'LOD 300 - Precise' },
+        { value: 'LOD350', label: 'LOD 350 - Coordination' },
+        { value: 'LOD400', label: 'LOD 400 - Fabrication' },
+        { value: 'LOD500', label: 'LOD 500 - As-Built' }
+      ]},
+      { name: 'version', label: 'Version', type: 'text', defaultValue: '1.0' },
+      { name: 'software_name', label: 'Software Name', type: 'text' },
+      { name: 'units', label: 'Units', type: 'select', defaultValue: 'meters', options: [
+        { value: 'meters', label: 'Meters' },
+        { value: 'feet', label: 'Feet' },
+        { value: 'inches', label: 'Inches' }
+      ]},
+      { name: 'notes', label: 'Notes', type: 'textarea' }
+    ]
+  },
+  'coordination': {
+    title: 'Record Coordination Issue',
+    description: 'Log clash or coordination issue',
+    submitLabel: 'Record Issue',
+    fields: [
+      { name: 'issue_name', label: 'Issue Name', type: 'text', required: true },
+      { name: 'location', label: 'Location', type: 'autocomplete', required: true },
+      { name: 'clash_type', label: 'Clash Type', type: 'select', required: true, options: [
+        { value: 'hard', label: 'Hard Clash' },
+        { value: 'soft', label: 'Soft Clash' },
+        { value: 'clearance', label: 'Clearance Issue' },
+        { value: 'workflow', label: 'Workflow Conflict' },
+        { value: 'duplicate', label: 'Duplicate Element' }
+      ]},
+      { name: 'severity', label: 'Severity', type: 'select', required: true, options: [
+        { value: 'critical', label: 'Critical' },
+        { value: 'high', label: 'High' },
+        { value: 'medium', label: 'Medium' },
+        { value: 'low', label: 'Low' },
+        { value: 'info', label: 'Info' }
+      ]},
+      { name: 'element_a', label: 'Element A', type: 'text', required: true },
+      { name: 'element_b', label: 'Element B', type: 'text', required: true },
+      { name: 'description', label: 'Description', type: 'richtext', required: true },
+      { name: 'assigned_to', label: 'Assign To', type: 'user' },
+      { name: 'detection_tool', label: 'Detection Tool', type: 'text' },
+      { name: 'attachments', label: 'Attachments', type: 'file' }
+    ]
+  },
+  'spatial-features': {
+    title: 'Add Spatial Feature',
+    description: 'Draw point, line, or polygon on map',
+    submitLabel: 'Add Feature',
+    fields: [
+      { name: 'feature_name', label: 'Feature Name', type: 'text', required: true },
+      { name: 'location', label: 'Location', type: 'autocomplete', required: true },
+      { name: 'layer', label: 'Layer', type: 'autocomplete', required: true },
+      { name: 'feature_type', label: 'Feature Type', type: 'select', required: true, options: [
+        { value: 'point', label: 'Point' },
+        { value: 'marker', label: 'Marker' },
+        { value: 'line', label: 'Line' },
+        { value: 'polyline', label: 'Polyline' },
+        { value: 'polygon', label: 'Polygon' },
+        { value: 'circle', label: 'Circle' },
+        { value: 'rectangle', label: 'Rectangle' },
+        { value: 'annotation', label: 'Annotation' }
+      ]},
+      { name: 'stroke_color', label: 'Stroke Color', type: 'color', defaultValue: '#000000' },
+      { name: 'stroke_width', label: 'Stroke Width', type: 'number', defaultValue: 2 },
+      { name: 'fill_color', label: 'Fill Color', type: 'color', defaultValue: '#ffffff' },
+      { name: 'fill_opacity', label: 'Fill Opacity', type: 'number', defaultValue: 0.5 },
+      { name: 'description', label: 'Description', type: 'textarea' },
+      { name: 'tags', label: 'Tags', type: 'tags' }
+    ]
   }
 }
 

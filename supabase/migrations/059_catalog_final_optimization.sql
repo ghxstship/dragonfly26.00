@@ -197,6 +197,9 @@ ARRAY['corporate-events', 'weddings', 'galleries'],
 -- PART 5: Enhanced Search Function with Industry Tags
 -- =============================================
 
+-- Drop old version of function (has different signature)
+DROP FUNCTION IF EXISTS search_assets(TEXT, TEXT, UUID);
+
 CREATE OR REPLACE FUNCTION search_assets(
     search_query TEXT,
     category_filter TEXT DEFAULT NULL,

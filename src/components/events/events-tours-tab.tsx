@@ -1,0 +1,328 @@
+"use client"
+
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress"
+import { 
+  MapPin,
+  Calendar,
+  Plane,
+  Hotel,
+  Truck,
+  DollarSign,
+  Users,
+  Clock,
+  Plus,
+  Download,
+  Navigation
+} from "lucide-react"
+import { useModuleData } from "@/hooks/use-module-data"
+import type { TabComponentProps } from "@/types"
+
+export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const { data: tourStops, loading } = useModuleData(workspaceId, 'events', 'tours')
+  const [selectedStop, setSelectedStop] = useState<any>(null)
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading tour schedule...</p>
+        </div>
+      </div>
+    )
+  }
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(amount)
+  }
+
+  const formatDate = (date: string) => {
+    return new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+  }
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'confirmed': return 'bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-400'
+      case 'tentative': return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-950 dark:text-yellow-400'
+      case 'cancelled': return 'bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-400'
+      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-950 dark:text-gray-400'
+    }
+  }
+
+  const totalShows = tourStops.filter((s: any) => s.type === 'show').length
+  const totalTravelDays = tourStops.filter((s: any) => s.type === 'travel').length
+  const totalBudget = tourStops.reduce((sum: number, s: any) => sum + (s.budget || 0), 0)
+  const completedStops = tourStops.filter((s: any) => s.status === 'completed').length
+
+  return (
+    <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight">Tour Schedule</h2>
+          <p className="text-muted-foreground">
+            Multi-city tour timeline and logistics
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm">
+            <Download className="h-4 w-4 mr-2" />
+            Export
+          </Button>
+          <Button size="sm">
+            <Plus className="h-4 w-4 mr-2" />
+            Add Stop
+          </Button>
+        </div>
+      </div>
+
+      {/* Tour Stats */}
+      <div className="grid gap-4 md:grid-cols-4">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Total Shows</CardTitle>
+            <MapPin className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{totalShows}</div>
+            <p className="text-xs text-muted-foreground">
+              {completedStops} completed
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Travel Days</CardTitle>
+            <Truck className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{totalTravelDays}</div>
+            <p className="text-xs text-muted-foreground">Between venues</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Total Budget</CardTitle>
+            <DollarSign className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">{formatCurrency(totalBudget)}</div>
+            <p className="text-xs text-muted-foreground">Across all stops</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Progress</CardTitle>
+            <Calendar className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">
+              {tourStops.length > 0 ? Math.round((completedStops / tourStops.length) * 100) : 0}%
+            </div>
+            <p className="text-xs text-muted-foreground">Tour completion</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Tour Timeline */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Tour Route & Timeline</CardTitle>
+          <CardDescription>City-by-city schedule with travel days</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border" />
+            
+            {/* Tour stops */}
+            <div className="space-y-6">
+              {tourStops.map((stop: any, index: number) => {
+                const isShow = stop.type === 'show'
+                const isTravel = stop.type === 'travel'
+                
+                return (
+                  <div key={stop.id} className="relative pl-16">
+                    {/* Timeline dot */}
+                    <div className={`absolute left-6 w-5 h-5 rounded-full border-4 border-background ${
+                      isShow ? 'bg-primary' : 'bg-muted-foreground'
+                    }`} />
+                    
+                    <Card 
+                      className={`cursor-pointer transition-shadow hover:shadow-lg ${
+                        selectedStop?.id === stop.id ? 'border-primary border-2' : ''
+                      }`}
+                      onClick={() => setSelectedStop(stop)}
+                    >
+                      <CardContent className="pt-6">
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            {/* Header */}
+                            <div className="flex items-center gap-3 mb-3">
+                              {isShow ? (
+                                <MapPin className="h-5 w-5 text-primary" />
+                              ) : (
+                                <Truck className="h-5 w-5 text-muted-foreground" />
+                              )}
+                              <div>
+                                <h3 className="font-semibold text-lg">{stop.city}, {stop.state || stop.country}</h3>
+                                <p className="text-sm text-muted-foreground">{stop.venue_name}</p>
+                              </div>
+                            </div>
+
+                            {/* Details Grid */}
+                            <div className="grid gap-3 md:grid-cols-3">
+                              <div className="flex items-center gap-2 text-sm">
+                                <Calendar className="h-4 w-4 text-muted-foreground" />
+                                <span>{formatDate(stop.date)}</span>
+                              </div>
+                              
+                              {stop.load_in_time && (
+                                <div className="flex items-center gap-2 text-sm">
+                                  <Clock className="h-4 w-4 text-muted-foreground" />
+                                  <span>Load-in: {stop.load_in_time}</span>
+                                </div>
+                              )}
+                              
+                              {stop.capacity && (
+                                <div className="flex items-center gap-2 text-sm">
+                                  <Users className="h-4 w-4 text-muted-foreground" />
+                                  <span>Capacity: {stop.capacity.toLocaleString()}</span>
+                                </div>
+                              )}
+                              
+                              {stop.distance_from_previous && (
+                                <div className="flex items-center gap-2 text-sm">
+                                  <Navigation className="h-4 w-4 text-muted-foreground" />
+                                  <span>{stop.distance_from_previous} miles</span>
+                                </div>
+                              )}
+                              
+                              {stop.hotel && (
+                                <div className="flex items-center gap-2 text-sm">
+                                  <Hotel className="h-4 w-4 text-muted-foreground" />
+                                  <span>{stop.hotel}</span>
+                                </div>
+                              )}
+                              
+                              {stop.budget && (
+                                <div className="flex items-center gap-2 text-sm">
+                                  <DollarSign className="h-4 w-4 text-muted-foreground" />
+                                  <span>{formatCurrency(stop.budget)}</span>
+                                </div>
+                              )}
+                            </div>
+
+                            {/* Tags and Status */}
+                            <div className="flex items-center gap-2 mt-3">
+                              <Badge className={getStatusColor(stop.status)}>
+                                {stop.status}
+                              </Badge>
+                              {isShow && (
+                                <Badge variant="outline">Show Day</Badge>
+                              )}
+                              {isTravel && (
+                                <Badge variant="outline">Travel Day</Badge>
+                              )}
+                              {stop.is_festival && (
+                                <Badge variant="secondary">Festival</Badge>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Quick Actions */}
+                          <div className="flex flex-col gap-2">
+                            <Button variant="outline" size="sm">
+                              Details
+                            </Button>
+                            {isShow && (
+                              <Button variant="ghost" size="sm">
+                                Run of Show
+                              </Button>
+                            )}
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Selected Stop Details */}
+      {selectedStop && (
+        <Card className="border-primary">
+          <CardHeader>
+            <CardTitle>Stop Details: {selectedStop.city}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div>
+                <h4 className="font-semibold mb-2">Venue Information</h4>
+                <div className="space-y-1 text-sm">
+                  <div><span className="text-muted-foreground">Name:</span> {selectedStop.venue_name}</div>
+                  <div><span className="text-muted-foreground">Address:</span> {selectedStop.venue_address}</div>
+                  <div><span className="text-muted-foreground">Capacity:</span> {selectedStop.capacity?.toLocaleString()}</div>
+                  <div><span className="text-muted-foreground">Contact:</span> {selectedStop.venue_contact}</div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Logistics</h4>
+                <div className="space-y-1 text-sm">
+                  <div><span className="text-muted-foreground">Load-in:</span> {selectedStop.load_in_time}</div>
+                  <div><span className="text-muted-foreground">Sound Check:</span> {selectedStop.sound_check_time}</div>
+                  <div><span className="text-muted-foreground">Doors:</span> {selectedStop.doors_time}</div>
+                  <div><span className="text-muted-foreground">Show Time:</span> {selectedStop.show_time}</div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Accommodation</h4>
+                <div className="space-y-1 text-sm">
+                  <div><span className="text-muted-foreground">Hotel:</span> {selectedStop.hotel}</div>
+                  <div><span className="text-muted-foreground">Check-in:</span> {selectedStop.hotel_checkin}</div>
+                  <div><span className="text-muted-foreground">Check-out:</span> {selectedStop.hotel_checkout}</div>
+                  <div><span className="text-muted-foreground">Rooms:</span> {selectedStop.rooms_booked}</div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-2">Notes</h4>
+                <p className="text-sm text-muted-foreground">
+                  {selectedStop.notes || 'No additional notes'}
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {tourStops.length === 0 && (
+        <Card>
+          <CardContent className="flex flex-col items-center justify-center py-12">
+            <MapPin className="h-12 w-12 text-muted-foreground mb-4" />
+            <h3 className="text-lg font-semibold mb-2">No Tour Stops Yet</h3>
+            <p className="text-muted-foreground text-center mb-4">
+              Create your first tour stop to start planning your route
+            </p>
+            <Button>
+              <Plus className="h-4 w-4 mr-2" />
+              Add First Stop
+            </Button>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  )
+}
