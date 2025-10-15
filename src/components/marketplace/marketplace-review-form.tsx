@@ -1,12 +1,20 @@
 "use client"
 
 import { useState } from "react"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 import { Star, Upload, X, CheckCircle2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -211,11 +219,13 @@ export function ReviewForm({
             
             <div className="flex flex-wrap gap-2">
               {photos.map((photo, index) => (
-                <div key={index} className="relative group">
-                  <img
+                <div key={index} className="relative group h-20 w-20">
+                  <Image
                     src={photo}
                     alt={`Upload ${index + 1}`}
-                    className="h-20 w-20 object-cover rounded-lg"
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="80px"
                   />
                   <button
                     type="button"

@@ -2,11 +2,16 @@
 
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { shouldUseMockData } from '@/lib/demo-mode'
 
 /**
  * Universal hook for fetching module data
  * Maps tab slugs to database tables and handles real-time subscriptions
+ * Supports demo mode with mock data
  */
+
+// Simulate data loading delay for demo mode
+const simulateDelay = (ms: number = 500) => new Promise(resolve => setTimeout(resolve, ms))
 
 // Table mapping for all modules
 const TAB_TO_TABLE_MAP: Record<string, { table: string; select?: string; orderBy?: string }> = {
@@ -264,6 +269,16 @@ export function useModuleData(
           return
         }
         
+        // Demo mode: return empty array for now (can be enhanced with specific mock data later)
+        if (shouldUseMockData()) {
+          await simulateDelay(300)
+          console.log(`[Demo Mode] Showing demo data for ${moduleSlug}/${tabSlug}`)
+          setData([]) // Demo data would go here
+          setError(null)
+          setLoading(false)
+          return
+        }
+        
         // Check for module-specific mapping first, then fall back to tab-only mapping
         const moduleSpecificKey = `${moduleSlug}-${tabSlug}`
         let config = TAB_TO_TABLE_MAP[moduleSpecificKey] || TAB_TO_TABLE_MAP[tabSlug]
@@ -326,6 +341,11 @@ export function useModuleData(
 
     if (workspaceId && tabSlug) {
       fetchData()
+    }
+
+    // Skip real-time subscription in demo mode
+    if (shouldUseMockData()) {
+      return
     }
 
     // Real-time subscription

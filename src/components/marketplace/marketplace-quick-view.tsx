@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -83,10 +84,12 @@ export function QuickView({
           <div className="bg-muted/30 p-6">
             <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex items-center justify-center relative overflow-hidden">
               {images[imageIndex] ? (
-                <img
+                <Image
                   src={images[imageIndex]}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               ) : (
                 <Package className="h-32 w-32 text-muted-foreground/30" />
@@ -105,7 +108,9 @@ export function QuickView({
                     }`}
                   >
                     {img ? (
-                      <img src={img} alt="" className="w-full h-full object-cover rounded-lg" />
+                      <div className="relative w-full h-full">
+                        <Image src={img} alt="" fill className="object-cover rounded-lg" sizes="64px" />
+                      </div>
                     ) : (
                       <Package className="h-8 w-8 text-muted-foreground/30" />
                     )}
