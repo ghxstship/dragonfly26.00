@@ -74,6 +74,8 @@ MIGRATIONS=(
     "057_catalog_subcategories_optimization"
     "058_site_power_nema_electrical"
     "059_catalog_final_optimization"
+    "060_it_equipment"
+    "061_communications_equipment"
 )
 
 TOTAL=${#MIGRATIONS[@]}

@@ -23,102 +23,9 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
   const router = useRouter()
   const { reports, loading } = useMyReports(workspaceId, userId)
   
-  const mockReports = [
-    {
-      id: "RPT-001",
-      name: "Personal Task Performance",
-      type: "custom",
-      category: "Performance",
-      isFavorite: true,
-      isRecurring: true,
-      frequency: "Weekly",
-      lastGenerated: "Oct 11, 2024",
-      nextScheduled: "Oct 18, 2024",
-      format: "PDF",
-      icon: TrendingUp,
-      description: "Weekly summary of task completion rates and efficiency",
-      fileSize: "2.4 MB",
-      views: 24,
-    },
-    {
-      id: "RPT-002",
-      name: "My Expense Summary",
-      type: "subscribed",
-      category: "Financial",
-      isFavorite: true,
-      isRecurring: true,
-      frequency: "Monthly",
-      lastGenerated: "Oct 1, 2024",
-      nextScheduled: "Nov 1, 2024",
-      format: "Excel",
-      icon: PieChart,
-      description: "Monthly breakdown of personal expenses by category",
-      fileSize: "1.8 MB",
-      views: 12,
-    },
-    {
-      id: "RPT-003",
-      name: "Project Contribution Analysis",
-      type: "custom",
-      category: "Performance",
-      isFavorite: false,
-      isRecurring: false,
-      lastGenerated: "Oct 8, 2024",
-      format: "PDF",
-      icon: BarChart3,
-      description: "Analysis of contributions across all active projects",
-      fileSize: "3.2 MB",
-      views: 8,
-    },
-    {
-      id: "RPT-004",
-      name: "Equipment Utilization Report",
-      type: "custom",
-      category: "Assets",
-      isFavorite: true,
-      isRecurring: true,
-      frequency: "Bi-weekly",
-      lastGenerated: "Oct 10, 2024",
-      nextScheduled: "Oct 24, 2024",
-      format: "PDF",
-      icon: BarChart3,
-      description: "Personal equipment usage and availability tracking",
-      fileSize: "1.5 MB",
-      views: 16,
-    },
-    {
-      id: "RPT-005",
-      name: "Travel & Time Away Report",
-      type: "subscribed",
-      category: "Travel",
-      isFavorite: false,
-      isRecurring: true,
-      frequency: "Monthly",
-      lastGenerated: "Oct 1, 2024",
-      nextScheduled: "Nov 1, 2024",
-      format: "Excel",
-      icon: PieChart,
-      description: "Monthly travel statistics and time allocation",
-      fileSize: "890 KB",
-      views: 6,
-    },
-    {
-      id: "RPT-006",
-      name: "Job Revenue Analysis",
-      type: "custom",
-      category: "Financial",
-      isFavorite: true,
-      isRecurring: false,
-      lastGenerated: "Oct 5, 2024",
-      format: "PDF",
-      icon: TrendingUp,
-      description: "Year-to-date revenue from all contracts and jobs",
-      fileSize: "2.1 MB",
-      views: 18,
-    },
-  ]
+
   
-  const reportsList = reports.length > 0 ? reports.map(report => ({
+  const reportsList = reports.map(report => ({
     id: report.id,
     name: report.name || 'Report',
     type: 'custom',
@@ -133,7 +40,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
     description: report.description || '',
     fileSize: '1 MB',
     views: 0,
-  })) : mockReports
+  }))
   
   if (loading) {
     return (

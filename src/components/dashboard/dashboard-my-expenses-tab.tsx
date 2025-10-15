@@ -27,104 +27,9 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
   const router = useRouter()
   const { expenses, loading } = useMyExpenses(workspaceId, userId)
   
-  const mockExpenses = [
-    {
-      id: "EXP-2024-045",
-      title: "Equipment Rental & Supplies",
-      project: "Summer Music Festival",
-      date: "Oct 8, 2024",
-      submittedDate: "Oct 9, 2024",
-      status: "approved",
-      category: "Equipment",
-      amount: "$1,245.50",
-      itemCount: 8,
-      approver: "Sarah Johnson",
-      approvedDate: "Oct 10, 2024",
-      reimbursementDate: "Oct 12, 2024",
-      items: [
-        { description: "Wireless mic batteries", amount: "$125.00" },
-        { description: "Gaffer tape (10 rolls)", amount: "$85.50" },
-        { description: "Equipment rental deposit", amount: "$500.00" },
-        { description: "Cable adapters", amount: "$235.00" },
-        { description: "Stage markers", amount: "$45.00" },
-        { description: "Tools & hardware", amount: "$155.00" },
-        { description: "Safety equipment", amount: "$75.00" },
-        { description: "Misc supplies", amount: "$25.00" },
-      ],
-    },
-    {
-      id: "EXP-2024-046",
-      title: "Client Meeting & Travel",
-      project: "Corporate Gala",
-      date: "Oct 10, 2024",
-      submittedDate: "Oct 11, 2024",
-      status: "pending",
-      category: "Travel",
-      amount: "$385.75",
-      itemCount: 5,
-      items: [
-        { description: "Taxi to airport", amount: "$45.00" },
-        { description: "Flight ticket", amount: "$220.00" },
-        { description: "Taxi from airport", amount: "$40.00" },
-        { description: "Lunch with client", amount: "$65.75" },
-        { description: "Parking", amount: "$15.00" },
-      ],
-    },
-    {
-      id: "EXP-2024-047",
-      title: "Emergency Equipment Purchase",
-      project: "Fashion Week",
-      date: "Oct 11, 2024",
-      submittedDate: "Oct 11, 2024",
-      status: "under_review",
-      category: "Equipment",
-      amount: "$820.00",
-      itemCount: 3,
-      items: [
-        { description: "Replacement lighting fixtures", amount: "$650.00" },
-        { description: "Cables and connectors", amount: "$120.00" },
-        { description: "Rush shipping", amount: "$50.00" },
-      ],
-    },
-    {
-      id: "EXP-2024-048",
-      title: "Crew Meals & Catering",
-      project: "Theater Revival",
-      date: "Oct 9, 2024",
-      submittedDate: "Oct 10, 2024",
-      status: "approved",
-      category: "Meals",
-      amount: "$480.25",
-      itemCount: 4,
-      approver: "Mike Chen",
-      approvedDate: "Oct 11, 2024",
-      reimbursementDate: "Oct 13, 2024",
-      items: [
-        { description: "Lunch catering - Day 1", amount: "$145.50" },
-        { description: "Dinner catering - Day 1", amount: "$185.00" },
-        { description: "Lunch catering - Day 2", amount: "$125.75" },
-        { description: "Coffee & snacks", amount: "$24.00" },
-      ],
-    },
-    {
-      id: "EXP-2024-044",
-      title: "Software & Subscriptions",
-      project: "Multiple Projects",
-      date: "Oct 1, 2024",
-      submittedDate: "Oct 2, 2024",
-      status: "rejected",
-      category: "Software",
-      amount: "$199.00",
-      itemCount: 2,
-      rejectionReason: "Personal use subscription not eligible for reimbursement",
-      items: [
-        { description: "Design software monthly", amount: "$99.00" },
-        { description: "Cloud storage", amount: "$100.00" },
-      ],
-    },
-  ]
+
   
-  const expensesList = expenses.length > 0 ? expenses.map(exp => ({
+  const expensesList = expenses.map(exp => ({
     id: exp.id,
     title: exp.title || 'Expense Report',
     project: exp.production?.name || 'No Project',
@@ -139,7 +44,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
     approvedDate: exp.approved_date || null,
     reimbursementDate: null,
     rejectionReason: exp.notes || null,
-  })) : mockExpenses
+  }))
   
   if (loading) {
     return (

@@ -2,6 +2,20 @@
 
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { shouldUseMockData } from '@/lib/demo-mode'
+import { 
+  mockEvents, 
+  mockTasks, 
+  mockJobs, 
+  mockAssets, 
+  mockExpenses, 
+  mockOrders, 
+  mockAdvances, 
+  mockFiles, 
+  mockReports, 
+  mockTravels,
+  simulateDelay 
+} from '@/lib/mock-data'
 
 export function useDashboardData(workspaceId: string, userId: string) {
   const [data, setData] = useState<any>(null)
@@ -87,6 +101,15 @@ export function useMyAgenda(workspaceId: string, userId: string) {
     async function fetchUpcomingEvents() {
       if (!workspaceId) return
       
+      // Demo mode: use mock data
+      if (shouldUseMockData()) {
+        await simulateDelay(300)
+        setEvents(mockEvents)
+        setLoading(false)
+        return
+      }
+      
+      // Production mode: use Supabase
       const { data: { user } } = await supabase.auth.getUser()
       const { data, error } = await supabase
         .from('events')
@@ -105,7 +128,12 @@ export function useMyAgenda(workspaceId: string, userId: string) {
 
     fetchUpcomingEvents()
 
-    // Real-time subscription
+    // Skip real-time subscription in demo mode
+    if (shouldUseMockData()) {
+      return
+    }
+
+    // Real-time subscription (production only)
     const channel = supabase
       .channel(`events:${workspaceId}:${userId}`)
       .on(
@@ -403,10 +431,14 @@ export function useMyAdvances(workspaceId: string, userId: string) {
         .from('production_advances')
         .select(`
           *,
-          production:production_id(name)
+          production:production_id(id, name),
+          company:company_id(id, name),
+          asset:asset_id(id, name),
+          requestor:requestor_id(id, name, email),
+          approver:approver_id(id, name, email)
         `)
         .eq('workspace_id', workspaceId)
-        .eq('requested_by', userId)
+        .eq('requestor_id', userId)
         .order('created_at', { ascending: false })
         .limit(50)
 

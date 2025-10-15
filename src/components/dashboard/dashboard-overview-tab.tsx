@@ -70,48 +70,8 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
     )
   }
   
-  // Mock stats for fallback
-  const mockStats = [
-    {
-      label: "Tasks Due Today",
-      value: "8",
-      change: "+2",
-      trend: "up",
-      icon: CheckSquare,
-      color: "text-purple-600",
-      bgColor: "bg-purple-100 dark:bg-purple-950",
-    },
-    {
-      label: "Upcoming Events",
-      value: "5",
-      change: "This week",
-      trend: "neutral",
-      icon: Calendar,
-      color: "text-red-600",
-      bgColor: "bg-red-100 dark:bg-red-950",
-    },
-    {
-      label: "Active Jobs",
-      value: "3",
-      change: "In progress",
-      trend: "neutral",
-      icon: Briefcase,
-      color: "text-blue-600",
-      bgColor: "bg-blue-100 dark:bg-blue-950",
-    },
-    {
-      label: "Pending Expenses",
-      value: "$1,240",
-      change: "Awaiting approval",
-      trend: "neutral",
-      icon: Receipt,
-      color: "text-green-600",
-      bgColor: "bg-green-100 dark:bg-green-950",
-    },
-  ]
-
-  // Use real stats if available
-  const stats = (tasks.length > 0 || events.length > 0 || jobs.length > 0 || expenses.length > 0) ? [
+  // Use real stats from Supabase data
+  const stats = [
     {
       label: "Tasks Due Today",
       value: tasksDueToday.toString(),
@@ -148,7 +108,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       color: "text-green-600",
       bgColor: "bg-green-100 dark:bg-green-950",
     },
-  ] : mockStats
+  ]
 
   // Widget suggestions for customizable dashboard
   const widgetTypes = [

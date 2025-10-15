@@ -24,103 +24,27 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
   const router = useRouter()
   const { advances, loading } = useMyAdvances(workspaceId, userId)
   
-  const mockAdvances = [
-    {
-      id: "ADV-2024-001",
-      title: "Lighting Package - Summer Festival",
-      project: "Summer Music Festival",
-      type: "Equipment",
-      requestDate: "Sep 20, 2024",
-      approvedDate: "Sep 22, 2024",
-      status: "active",
-      items: 12,
-      purpose: "Main stage lighting package including moving heads and LED panels",
-      approver: "Sarah Johnson",
-      dateNeeded: "Oct 1, 2024",
-      returnDate: "Oct 15, 2024",
-      returned: 8,
-      pending: 4,
-    },
-    {
-      id: "ADV-2024-002",
-      title: "Access Credentials - Corporate Gala",
-      project: "Corporate Gala",
-      type: "Credentials",
-      requestDate: "Oct 5, 2024",
-      approvedDate: "Oct 6, 2024",
-      status: "active",
-      items: 5,
-      purpose: "Backstage passes and load-in credentials for production crew",
-      approver: "Mike Chen",
-      dateNeeded: "Oct 12, 2024",
-      returnDate: "Oct 13, 2024",
-      returned: 5,
-      pending: 0,
-    },
-    {
-      id: "ADV-2024-003",
-      title: "Camera & Audio Kit - Theater Revival",
-      project: "Theater Revival",
-      type: "Equipment",
-      requestDate: "Oct 10, 2024",
-      status: "pending",
-      items: 8,
-      purpose: "Multi-camera setup and wireless audio system for documentation",
-      dateNeeded: "Oct 20, 2024",
-      returnDate: "Oct 25, 2024",
-      returned: 0,
-      pending: 8,
-    },
-    {
-      id: "ADV-2024-004",
-      title: "Staging Materials - Fashion Week",
-      project: "Fashion Week",
-      type: "Materials",
-      requestDate: "Oct 11, 2024",
-      status: "pending",
-      items: 25,
-      purpose: "Runway materials, truss sections, and decorative elements",
-      dateNeeded: "Oct 13, 2024",
-      returnDate: "Oct 16, 2024",
-      returned: 0,
-      pending: 25,
-    },
-    {
-      id: "ADV-2024-005",
-      title: "Vehicle Fleet - Concert Series",
-      project: "Concert Series",
-      type: "Transportation",
-      requestDate: "Aug 15, 2024",
-      approvedDate: "Aug 16, 2024",
-      status: "completed",
-      items: 3,
-      purpose: "Production trucks and crew vans for multi-city tour",
-      approver: "David Kim",
-      dateNeeded: "Aug 20, 2024",
-      returnDate: "Sep 30, 2024",
-      returned: 3,
-      pending: 0,
-      reconciledDate: "Sep 30, 2024",
-    },
-  ]
+
   
-  const advancesList = advances.length > 0 ? advances.map(adv => ({
+  const advancesList = advances.map(adv => ({
     id: adv.id,
-    title: adv.title || adv.description || 'Advance Request',
+    title: adv.asset_item || 'Advance Request',
     project: adv.production?.name || 'No Project',
-    type: adv.type || 'Equipment',
+    category: adv.asset_category || 'equipment',
     requestDate: new Date(adv.created_at).toLocaleDateString(),
     approvedDate: adv.approved_at ? new Date(adv.approved_at).toLocaleDateString() : undefined,
     status: adv.status || 'pending',
-    items: adv.quantity || 0,
-    purpose: adv.description || '',
+    quantity: adv.quantity || 0,
+    purpose: adv.operational_purpose || '',
+    location: adv.site_location_name || 'TBD',
     approver: adv.approver?.name || undefined,
-    dateNeeded: adv.date_needed ? new Date(adv.date_needed).toLocaleDateString() : undefined,
-    returnDate: adv.return_date ? new Date(adv.return_date).toLocaleDateString() : undefined,
+    startDate: adv.start_date ? new Date(adv.start_date).toLocaleDateString() : undefined,
+    endDate: adv.end_date ? new Date(adv.end_date).toLocaleDateString() : undefined,
+    assignedUsers: adv.assigned_users?.length || 0,
+    accessories: adv.accessories || [],
     returned: 0,
     pending: adv.quantity || 0,
-    reconciledDate: adv.reconciled_at ? new Date(adv.reconciled_at).toLocaleDateString() : undefined,
-  })) : mockAdvances
+  }))
   
   if (loading) {
     return (
@@ -173,34 +97,81 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
     }
   }
 
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case "Materials":
-        return "text-purple-600"
-      case "Equipment":
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case "site_infrastructure":
+        return "text-gray-600"
+      case "site_services":
         return "text-blue-600"
-      case "Credentials":
-        return "text-cyan-600"
-      case "Transportation":
+      case "site_safety":
+        return "text-red-600"
+      case "site_vehicles":
         return "text-orange-600"
+      case "heavy_equipment":
+        return "text-yellow-600"
+      case "consumables":
+        return "text-purple-600"
+      case "event_rentals":
+        return "text-green-600"
+      case "signage":
+        return "text-pink-600"
+      case "backline":
+        return "text-indigo-600"
+      case "access":
+        return "text-cyan-600"
+      case "credentials":
+        return "text-teal-600"
+      case "parking":
+        return "text-slate-600"
+      case "meals":
+        return "text-amber-600"
+      case "flights":
+        return "text-sky-600"
+      case "lodging":
+        return "text-violet-600"
+      case "rental_cars":
+        return "text-emerald-600"
       default:
         return "text-gray-600"
     }
   }
 
-  const getTypeIcon = (type: string) => {
-    switch (type) {
-      case "Materials":
-        return Wrench
-      case "Equipment":
-        return Package
-      case "Credentials":
-        return Tag
-      case "Transportation":
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case "site_vehicles":
         return Truck
+      case "heavy_equipment":
+        return Wrench
+      case "consumables":
+      case "event_rentals":
+        return Package
+      case "signage":
+        return Tag
       default:
         return Package
     }
+  }
+
+  const getCategoryLabel = (category: string) => {
+    const labels: Record<string, string> = {
+      site_infrastructure: 'Site Infrastructure',
+      site_services: 'Site Services',
+      site_safety: 'Site Safety',
+      site_vehicles: 'Site Vehicles',
+      heavy_equipment: 'Heavy Equipment',
+      consumables: 'Consumables',
+      event_rentals: 'Event Rentals',
+      signage: 'Signage',
+      backline: 'Backline',
+      access: 'Access',
+      credentials: 'Credentials',
+      parking: 'Parking',
+      meals: 'Meals',
+      flights: 'Flights',
+      lodging: 'Lodging',
+      rental_cars: 'Rental Cars'
+    }
+    return labels[category] || category
   }
 
   return (
@@ -261,7 +232,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
           <div className="space-y-3">
             {advancesList.map((advance) => {
               const StatusIcon = getStatusIcon(advance.status)
-              const TypeIcon = getTypeIcon(advance.type)
+              const CategoryIcon = getCategoryIcon(advance.category)
               return (
                 <div
                   key={advance.id}
@@ -274,33 +245,51 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                         <div>
                           <h3 className="font-semibold">{advance.title}</h3>
                           <p className="text-sm text-muted-foreground mt-1">
-                            {advance.id} • {advance.project}
+                            {advance.project} • {advance.location}
                           </p>
                         </div>
                         <div className="text-right">
-                          <p className="font-semibold text-lg">{advance.items} items</p>
+                          <p className="font-semibold text-lg">{advance.quantity}x</p>
+                          <p className="text-xs text-muted-foreground">quantity</p>
                         </div>
                       </div>
 
-                      <p className="text-sm text-muted-foreground">{advance.purpose}</p>
+                      <p className="text-sm text-muted-foreground line-clamp-2">{advance.purpose}</p>
 
                       <div className="flex flex-wrap items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(advance.status)}>
                           <StatusIcon className="h-3 w-3 mr-1" />
                           {advance.status}
                         </Badge>
-                        <Badge variant="outline" className={getTypeColor(advance.type)}>
-                          <TypeIcon className="h-3 w-3 mr-1" />
-                          {advance.type}
+                        <Badge variant="outline" className={getCategoryColor(advance.category)}>
+                          <CategoryIcon className="h-3 w-3 mr-1" />
+                          {getCategoryLabel(advance.category)}
                         </Badge>
+                        {advance.assignedUsers > 0 && (
+                          <Badge variant="outline">
+                            {advance.assignedUsers} user{advance.assignedUsers > 1 ? 's' : ''}
+                          </Badge>
+                        )}
                       </div>
 
                       <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
                         <span>Requested: {advance.requestDate}</span>
+                        {advance.startDate && (
+                          <>
+                            <span>•</span>
+                            <span>Start: {advance.startDate}</span>
+                          </>
+                        )}
+                        {advance.endDate && (
+                          <>
+                            <span>•</span>
+                            <span>End: {advance.endDate}</span>
+                          </>
+                        )}
                         {advance.approvedDate && (
                           <>
                             <span>•</span>
-                            <span>Approved: {advance.approvedDate}</span>
+                            <span className="text-green-600">Approved: {advance.approvedDate}</span>
                           </>
                         )}
                         {advance.approver && (
@@ -309,34 +298,20 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                             <span>By: {advance.approver}</span>
                           </>
                         )}
-                        <span>•</span>
-                        <span>Needed: {advance.dateNeeded}</span>
-                        {advance.returnDate && (
-                          <>
-                            <span>•</span>
-                            <span>Return: {advance.returnDate}</span>
-                          </>
-                        )}
-                        {advance.reconciledDate && (
-                          <>
-                            <span>•</span>
-                            <span className="text-blue-600">Completed: {advance.reconciledDate}</span>
-                          </>
-                        )}
                       </div>
 
-                      {(advance.status === "active" || advance.status === "completed") && (
+                      {(advance.status === "active" || advance.status === "returned" || advance.status === "partially_returned") && (
                         <div className="flex items-center gap-4 pt-2">
                           <div className="flex-1">
                             <div className="flex items-center justify-between text-xs mb-1">
                               <span className="text-muted-foreground">Items Returned</span>
-                              <span className="font-medium">{advance.returned} / {advance.items}</span>
+                              <span className="font-medium">{advance.returned} / {advance.quantity}</span>
                             </div>
                             <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
                               <div 
                                 className="h-full bg-green-500 transition-all"
                                 style={{ 
-                                  width: `${(advance.returned / advance.items) * 100}%` 
+                                  width: `${(advance.returned / advance.quantity) * 100}%` 
                                 }}
                               />
                             </div>

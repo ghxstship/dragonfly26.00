@@ -17,10 +17,12 @@ import {
   MessageSquare,
   Clock,
   HelpCircle,
+  Database,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { Switch } from "@/components/ui/switch"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -64,10 +66,17 @@ export function TopBar() {
   const [createObjectiveOpen, setCreateObjectiveOpen] = useState(false)
   const [createWebhookOpen, setCreateWebhookOpen] = useState(false)
   const [createTokenOpen, setCreateTokenOpen] = useState(false)
+  const [demoMode, setDemoMode] = useState(false)
   const { currentWorkspace, focusMode, toggleFocusMode, airplaneMode, toggleAirplaneMode, setRightSidebarOpen } = useUIStore()
   const { currentOrganization } = useWorkspaceStore()
   const router = useRouter()
   const locale = useLocale()
+
+  // Load demo mode from localStorage on mount
+  useEffect(() => {
+    const isDemoMode = localStorage.getItem('DEMO_MODE') === 'true'
+    setDemoMode(isDemoMode)
+  }, [])
 
   // Simulate unread notifications count
   const unreadCount = 3
@@ -138,6 +147,14 @@ export function TopBar() {
     }
   }
 
+  const handleToggleDemoMode = () => {
+    const newDemoMode = !demoMode
+    setDemoMode(newDemoMode)
+    localStorage.setItem('DEMO_MODE', newDemoMode.toString())
+    // Reload the page to apply demo mode changes
+    window.location.reload()
+  }
+
   return (
     <TooltipProvider delayDuration={300}>
       <header className="sticky top-0 z-50 flex h-14 items-center gap-2 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
@@ -147,6 +164,14 @@ export function TopBar() {
           <div className="flex items-center justify-center h-8 w-8 rounded-md bg-primary text-primary-foreground font-bold text-sm flex-shrink-0">
             DF
           </div>
+
+          {/* Demo Mode Badge */}
+          {demoMode && (
+            <Badge variant="secondary" className="hidden md:flex gap-1 items-center">
+              <Database className="h-3 w-3" />
+              Demo Mode
+            </Badge>
+          )}
 
           {/* Workspace Switcher */}
           <div className="flex-shrink-0">
@@ -412,6 +437,24 @@ export function TopBar() {
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setShowCommandPalette(true)}>
                   {t('nav.keyboardShortcuts')}
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem 
+                  onClick={handleToggleDemoMode}
+                  className="flex items-center justify-between"
+                >
+                  <div className="flex items-center gap-2">
+                    <Database className="h-4 w-4" />
+                    <span>Demo Mode</span>
+                  </div>
+                  <Switch
+                    checked={demoMode}
+                    onCheckedChange={handleToggleDemoMode}
+                    onClick={(e) => e.stopPropagation()}
+                    className="ml-auto"
+                  />
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />

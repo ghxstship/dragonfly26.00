@@ -21,88 +21,9 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
   const router = useRouter()
   const { assets, loading } = useMyAssets(workspaceId, userId)
   
-  const mockAssets = [
-    {
-      id: "1",
-      name: "Shure SM58 Microphone",
-      category: "Audio",
-      type: "Owned",
-      quantity: 4,
-      condition: "Excellent",
-      lastUsed: "Oct 8, 2024",
-      project: "Concert Series",
-      value: "$400",
-      location: "Home Studio",
-      maintenanceDate: "Dec 15, 2024",
-    },
-    {
-      id: "2",
-      name: "Martin MAC Viper Profile",
-      category: "Lighting",
-      type: "Rented",
-      quantity: 8,
-      condition: "Excellent",
-      lastUsed: "Oct 10, 2024",
-      project: "Summer Festival",
-      value: "$2,400/week",
-      location: "Festival Site",
-      returnDate: "Oct 30, 2024",
-    },
-    {
-      id: "3",
-      name: "Barco HDX-W20 Projector",
-      category: "Video",
-      type: "Leased",
-      quantity: 2,
-      condition: "Good",
-      lastUsed: "Oct 9, 2024",
-      project: "Corporate Gala",
-      value: "$1,200/month",
-      location: "Convention Center",
-      leaseEnd: "Nov 30, 2024",
-    },
-    {
-      id: "4",
-      name: "Sennheiser EW-D Wireless System",
-      category: "Audio",
-      type: "Owned",
-      quantity: 6,
-      condition: "Excellent",
-      lastUsed: "Oct 5, 2024",
-      project: "Theater Revival",
-      value: "$3,600",
-      location: "Home Studio",
-      maintenanceDate: "Jan 10, 2025",
-    },
-    {
-      id: "5",
-      name: "Chauvet Rogue R2X Wash",
-      category: "Lighting",
-      type: "Owned",
-      quantity: 12,
-      condition: "Good",
-      lastUsed: "Oct 7, 2024",
-      project: "Fashion Week",
-      value: "$8,400",
-      location: "Warehouse Unit B",
-      maintenanceDate: "Nov 20, 2024",
-    },
-    {
-      id: "6",
-      name: "Blackmagic ATEM Mini Pro",
-      category: "Video",
-      type: "Owned",
-      quantity: 2,
-      condition: "Excellent",
-      lastUsed: "Oct 6, 2024",
-      project: "Corporate Gala",
-      value: "$600",
-      location: "Home Studio",
-      maintenanceDate: "Feb 1, 2025",
-    },
-  ]
+
   
-  const assetsList = assets.length > 0 ? assets.map(asset => ({
+  const assetsList = assets.map(asset => ({
     id: asset.id,
     name: asset.name || asset.title,
     category: asset.category?.name || 'Uncategorized',
@@ -116,7 +37,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
     returnDate: asset.return_date ? new Date(asset.return_date).toLocaleDateString() : undefined,
     leaseEnd: asset.lease_end_date ? new Date(asset.lease_end_date).toLocaleDateString() : undefined,
     maintenanceDate: asset.next_maintenance_date ? new Date(asset.next_maintenance_date).toLocaleDateString() : undefined,
-  })) : mockAssets
+  }))
   
   if (loading) {
     return (

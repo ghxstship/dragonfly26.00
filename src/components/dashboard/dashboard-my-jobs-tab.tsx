@@ -21,87 +21,25 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
   const router = useRouter()
   const { jobs, loading } = useMyJobs(workspaceId, userId)
   
-  const mockJobs = [
-    {
-      id: 'mock-1',
-      title: "Technical Director - Summer Music Festival",
-      client: "Festival Productions Inc.",
-      type: "Contract",
-      status: "active",
-      startDate: "Sep 15, 2024",
-      endDate: "Oct 30, 2024",
-      location: "Central Park, NY",
-      rate: "$8,500/week",
-      progress: 65,
-      daysRemaining: 18,
-    },
-    {
-      id: 'mock-2',
-      title: "Lighting Designer - Corporate Gala",
-      client: "TechCorp Events",
-      type: "Freelance",
-      status: "active",
-      startDate: "Oct 5, 2024",
-      endDate: "Oct 20, 2024",
-      location: "Convention Center",
-      rate: "$5,000 flat",
-      progress: 40,
-      daysRemaining: 9,
-    },
-    {
-      id: 'mock-3',
-      title: "Production Manager - Theater Revival",
-      client: "Broadway Theater Group",
-      type: "Contract",
-      status: "pending",
-      startDate: "Nov 1, 2024",
-      endDate: "Dec 31, 2024",
-      location: "Broadway District",
-      rate: "$12,000/month",
-      progress: 0,
-      daysRemaining: 21,
-    },
-    {
-      id: 'mock-4',
-      title: "Audio Engineer - Concert Series",
-      client: "Live Nation",
-      type: "Freelance",
-      status: "completed",
-      startDate: "Aug 1, 2024",
-      endDate: "Sep 30, 2024",
-      location: "Various Venues",
-      rate: "$6,500/show",
-      progress: 100,
-      daysRemaining: 0,
-    },
-    {
-      id: 'mock-5',
-      title: "Stage Manager - Fashion Week",
-      client: "Fashion Events Ltd",
-      type: "Contract",
-      status: "active",
-      startDate: "Oct 10, 2024",
-      endDate: "Oct 25, 2024",
-      location: "Multiple Locations, NY",
-      rate: "$4,200/week",
-      progress: 55,
-      daysRemaining: 14,
-    },
-  ]
-  
-  const jobsList = jobs.length > 0 ? jobs.map(job => ({
+  // Transform real jobs data
+  const jobsList = jobs.map(job => ({
     id: job.id,
     title: job.role || job.title || 'Untitled',
-    client: 'Client',
+    client: job.company?.name || 'Client',
     type: job.type || 'Contract',
     status: job.status || 'active',
     startDate: job.start_date ? new Date(job.start_date).toLocaleDateString() : 'TBD',
     endDate: job.end_date ? new Date(job.end_date).toLocaleDateString() : 'TBD',
     location: job.location || 'Remote',
     rate: job.rate || 'TBD',
-    progress: 50,
+    progress: job.progress || 50,
     daysRemaining: job.end_date ? Math.ceil((new Date(job.end_date).getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : 0,
-  })) : mockJobs
+  }))
+  
+  // Calculate stats from real data
+  const activeJobs = jobsList.filter(j => j.status === 'active').length
+  const pendingJobs = jobsList.filter(j => j.status === 'pending').length
+  const completedJobs = jobsList.filter(j => j.status === 'completed').length
   
   if (loading) {
     return (
@@ -149,7 +87,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-3xl font-bold text-green-600">3</p>
+              <p className="text-3xl font-bold text-green-600">{activeJobs}</p>
               <p className="text-xs text-muted-foreground mt-1">Active Jobs</p>
             </div>
           </CardContent>
@@ -157,7 +95,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-3xl font-bold text-yellow-600">1</p>
+              <p className="text-3xl font-bold text-yellow-600">{pendingJobs}</p>
               <p className="text-xs text-muted-foreground mt-1">Pending</p>
             </div>
           </CardContent>
@@ -165,16 +103,16 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-3xl font-bold text-blue-600">$31.7k</p>
-              <p className="text-xs text-muted-foreground mt-1">Active Value</p>
+              <p className="text-3xl font-bold text-blue-600">{completedJobs}</p>
+              <p className="text-xs text-muted-foreground mt-1">Completed</p>
             </div>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-3xl font-bold">12</p>
-              <p className="text-xs text-muted-foreground mt-1">This Year</p>
+              <p className="text-3xl font-bold">{jobsList.length}</p>
+              <p className="text-xs text-muted-foreground mt-1">Total Jobs</p>
             </div>
           </CardContent>
         </Card>
@@ -186,8 +124,22 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
           <CardTitle className="text-base">All Jobs</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-4">
-            {jobsList.map((job, index) => (
+          {jobsList.length === 0 ? (
+            <div className="text-center py-12">
+              <Briefcase className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-lg font-semibold mb-2">No Jobs Found</h3>
+              <p className="text-muted-foreground mb-4">You don&apos;t have any jobs or contracts yet.</p>
+              <Button 
+                size="sm"
+                onClick={() => router.push(`/workspace/${workspaceId}/people/personnel`)}
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                Add Contract
+              </Button>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {jobsList.map((job, index) => (
               <div
                 key={job.id || index}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
@@ -257,31 +209,9 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Revenue Overview */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Revenue This Year</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-3 gap-4 text-center">
-            <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">$142.5k</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Earned</p>
+              ))}
             </div>
-            <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">$31.7k</p>
-              <p className="text-xs text-muted-foreground mt-1">In Progress</p>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">$24.0k</p>
-              <p className="text-xs text-muted-foreground mt-1">Pending</p>
-            </div>
-          </div>
+          )}
         </CardContent>
       </Card>
     </div>

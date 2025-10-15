@@ -21,96 +21,8 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
   const router = useRouter()
   const { tasks, loading } = useMyTasks(workspaceId, userId)
   
-  // Mock data fallback
-  const mockTasks = [
-    {
-      id: "1",
-      title: "Finalize lighting plot for main stage",
-      project: "Summer Music Festival",
-      dueDate: "Today, 5:00 PM",
-      priority: "high",
-      status: "in_progress",
-      assignedBy: "Sarah Johnson",
-      isCreator: false,
-      completed: false,
-      subtasks: { total: 4, completed: 2 },
-    },
-    {
-      id: "2",
-      title: "Review and approve equipment rental quotes",
-      project: "Corporate Gala",
-      dueDate: "Today, 6:00 PM",
-      priority: "high",
-      status: "pending",
-      assignedBy: "Mike Chen",
-      isCreator: false,
-      completed: false,
-      subtasks: { total: 3, completed: 0 },
-    },
-    {
-      id: "3",
-      title: "Update production schedule",
-      project: "Theater Revival",
-      dueDate: "Tomorrow",
-      priority: "medium",
-      status: "in_progress",
-      assignedBy: "You",
-      isCreator: true,
-      completed: false,
-      subtasks: { total: 2, completed: 1 },
-    },
-    {
-      id: "4",
-      title: "Coordinate with audio team for sound check",
-      project: "Concert Series",
-      dueDate: "Tomorrow",
-      priority: "high",
-      status: "pending",
-      assignedBy: "David Kim",
-      isCreator: false,
-      completed: false,
-      subtasks: { total: 5, completed: 1 },
-    },
-    {
-      id: "5",
-      title: "Submit expense report for last week",
-      project: "Fashion Week",
-      dueDate: "Oct 15",
-      priority: "medium",
-      status: "pending",
-      assignedBy: "You",
-      isCreator: true,
-      completed: false,
-      subtasks: { total: 1, completed: 0 },
-    },
-    {
-      id: "6",
-      title: "Review safety protocols with crew",
-      project: "Summer Music Festival",
-      dueDate: "Oct 16",
-      priority: "low",
-      status: "pending",
-      assignedBy: "Lisa Anderson",
-      isCreator: false,
-      completed: false,
-      subtasks: { total: 3, completed: 3 },
-    },
-    {
-      id: "7",
-      title: "Confirm vendor deliveries for next week",
-      project: "Corporate Gala",
-      dueDate: "Oct 18",
-      priority: "medium",
-      status: "in_progress",
-      assignedBy: "You",
-      isCreator: true,
-      completed: false,
-      subtasks: { total: 6, completed: 4 },
-    },
-  ]
-  
   // Transform real data
-  const tasksList = tasks.length > 0 ? tasks.map(task => ({
+  const tasksList = tasks.map(task => ({
     id: task.id,
     title: task.title || task.name,
     project: task.production?.name || 'No Project',
@@ -121,7 +33,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
     isCreator: task.created_by === userId,
     completed: task.status === 'completed',
     subtasks: { total: 0, completed: 0 },
-  })) : mockTasks.map(t => ({ ...t, id: t.id || 'mock-' + Math.random() }))
+  }))
   
   // Loading state
   if (loading) {

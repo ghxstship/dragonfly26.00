@@ -9,7 +9,7 @@
 
 ### What's Being Deployed
 
-**21 Total Migrations:**
+**23 Total Migrations:**
 1. Schema enhancement with `related_names` and search function
 2. 10 comprehensive equipment category migrations (Phase 1)
 3. 5 food service, office, janitorial expansions (Phase 2)
@@ -17,8 +17,10 @@
 5. 1 subcategory organization system
 6. 1 NEMA electrical equipment (power distribution)
 7. 1 final optimization with industry tags
+8. 1 IT equipment (networking, computers, UPS)
+9. 1 communications equipment (radios, intercoms)
 
-**Total Catalog Items:** 650+ professionally researched items
+**Total Catalog Items:** 695+ professionally researched items
 
 **Coverage:**
 - ✅ Film/TV Production: 95%

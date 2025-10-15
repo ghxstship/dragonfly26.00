@@ -1087,3 +1087,128 @@ export interface SyncConflict {
   resolution?: 'server' | 'client' | 'merge'
   resolved_at?: string
 }
+
+// =============================================
+// ASSETS & PRODUCTION ADVANCES
+// =============================================
+
+export type AssetCategory =
+  | 'site_infrastructure'
+  | 'site_services'
+  | 'site_safety'
+  | 'site_vehicles'
+  | 'heavy_equipment'
+  | 'consumables'
+  | 'event_rentals'
+  | 'signage'
+  | 'backline'
+  | 'access'
+  | 'credentials'
+  | 'parking'
+  | 'meals'
+  | 'flights'
+  | 'lodging'
+  | 'rental_cars'
+
+export type AssetType = 
+  | 'infrastructure'
+  | 'equipment'
+  | 'vehicle'
+  | 'tool'
+  | 'credential'
+  | 'consumable'
+
+export type AssetStatus = 
+  | 'available'
+  | 'in_use'
+  | 'maintenance'
+  | 'retired'
+  | 'lost'
+  | 'damaged'
+
+export type AssetCondition = 'excellent' | 'good' | 'fair' | 'poor'
+
+export type AssetOwnership = 'owned' | 'rented' | 'leased'
+
+export interface Asset {
+  id: string
+  workspace_id: string
+  name: string
+  description?: string
+  type: AssetType
+  category?: string
+  subcategory?: string
+  asset_category?: AssetCategory
+  asset_tag?: string
+  serial_number?: string
+  model_number?: string
+  manufacturer?: string
+  purchase_price?: number
+  purchase_date?: string
+  current_value?: number
+  depreciation_rate?: number
+  status: AssetStatus
+  condition?: AssetCondition
+  location_id?: string
+  current_location?: string
+  ownership?: AssetOwnership
+  vendor_id?: string
+  specifications?: Record<string, any>
+  tags?: string[]
+  custom_fields?: Record<string, any>
+  created_by: string
+  created_at: string
+  updated_at: string
+}
+
+export type ProductionAdvanceStatus =
+  | 'pending'
+  | 'approved'
+  | 'fulfilled'
+  | 'active'
+  | 'returned'
+  | 'partially_returned'
+  | 'overdue'
+  | 'cancelled'
+  | 'denied'
+
+export interface ProductionAdvance {
+  id: string
+  workspace_id: string
+  production_id?: string
+  company_id?: string
+  department_team?: string
+  asset_category: AssetCategory
+  asset_id?: string
+  asset_item: string
+  accessories?: string[]
+  quantity: number
+  start_date: string
+  end_date?: string
+  site_location_id?: string
+  site_location_name?: string
+  operational_purpose: string
+  special_considerations?: string
+  additional_information?: string
+  requestor_id: string
+  assigned_user_ids?: string[]
+  approver_id?: string
+  status: ProductionAdvanceStatus
+  approved_at?: string
+  fulfilled_at?: string
+  checked_out_at?: string
+  returned_at?: string
+  notes?: string
+  tags?: string[]
+  custom_fields?: Record<string, any>
+  created_by: string
+  created_at: string
+  updated_at: string
+  // Relations
+  production?: { id: string; name: string }
+  company?: { id: string; name: string }
+  asset?: Asset
+  requestor?: User
+  approver?: User
+  assigned_users?: User[]
+}

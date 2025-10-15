@@ -21,84 +21,9 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
   
   // Use real data hook
   const { events, loading } = useMyAgenda(workspaceId, userId)
-  // Mock data fallback for development/testing
-  const mockEvents = [
-    {
-      id: 'mock-1',
-      title: "Production Meeting",
-      date: "Today",
-      time: "10:00 AM - 11:00 AM",
-      location: "Conference Room A",
-      type: "Meeting",
-      attendees: 8,
-      status: "confirmed",
-      isVirtual: false,
-      isOrganizer: true,
-    },
-    {
-      id: 'mock-2',
-      title: "Tech Rehearsal - Summer Festival",
-      date: "Today",
-      time: "2:00 PM - 6:00 PM",
-      location: "Main Stage",
-      type: "Rehearsal",
-      attendees: 24,
-      status: "confirmed",
-      isVirtual: false,
-      isOrganizer: false,
-    },
-    {
-      id: 'mock-3',
-      title: "Budget Review Call",
-      date: "Tomorrow",
-      time: "9:00 AM - 10:00 AM",
-      location: "Zoom",
-      type: "Meeting",
-      attendees: 5,
-      status: "confirmed",
-      isVirtual: true,
-      isOrganizer: true,
-    },
-    {
-      id: 'mock-4',
-      title: "Load-In Coordination",
-      date: "Tomorrow",
-      time: "1:00 PM - 3:00 PM",
-      location: "Loading Dock B",
-      type: "Logistics",
-      attendees: 12,
-      status: "tentative",
-      isVirtual: false,
-      isOrganizer: false,
-    },
-    {
-      id: 'mock-5',
-      title: "Crew Check-In",
-      date: "Wed, Oct 16",
-      time: "8:00 AM - 9:00 AM",
-      location: "Backstage",
-      type: "Check-in",
-      attendees: 30,
-      status: "confirmed",
-      isVirtual: false,
-      isOrganizer: true,
-    },
-    {
-      id: 'mock-6',
-      title: "Client Presentation",
-      date: "Thu, Oct 17",
-      time: "11:00 AM - 12:00 PM",
-      location: "Client Office",
-      type: "Presentation",
-      attendees: 6,
-      status: "confirmed",
-      isVirtual: false,
-      isOrganizer: true,
-    },
-  ]
   
-  // Use real events if available, otherwise fall back to mock data
-  const upcomingEvents = events.length > 0 ? events.map(event => ({
+  // Transform real events data
+  const upcomingEvents = events.map(event => ({
     title: event.title || event.name,
     date: new Date(event.start_time).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
     time: `${new Date(event.start_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })} - ${new Date(event.end_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`,
@@ -109,7 +34,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
     isVirtual: event.is_virtual || false,
     isOrganizer: event.created_by === userId,
     id: event.id,
-  })) : mockEvents
+  }))
   
   // Show loading state
   if (loading) {
@@ -123,13 +48,22 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
     )
   }
 
+  // Calculate week summary from real data
   const weekSummary = [
-    { day: "Mon", events: 3 },
-    { day: "Tue", events: 5 },
-    { day: "Wed", events: 4 },
-    { day: "Thu", events: 6 },
-    { day: "Fri", events: 2 },
+    { day: "Mon", events: 0 },
+    { day: "Tue", events: 0 },
+    { day: "Wed", events: 0 },
+    { day: "Thu", events: 0 },
+    { day: "Fri", events: 0 },
   ]
+  
+  // Count events per day
+  events.forEach(event => {
+    const dayOfWeek = new Date(event.start_time).getDay()
+    if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+      weekSummary[dayOfWeek - 1].events++
+    }
+  })
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -201,8 +135,22 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           <CardTitle className="text-base">Upcoming Events</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
-            {upcomingEvents.map((event, index) => (
+          {upcomingEvents.length === 0 ? (
+            <div className="text-center py-12">
+              <Calendar className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-lg font-semibold mb-2">No Upcoming Events</h3>
+              <p className="text-muted-foreground mb-4">You don&apos;t have any events scheduled yet.</p>
+              <Button 
+                size="sm"
+                onClick={() => router.push(`/workspace/${workspaceId}/events/all-events`)}
+              >
+                <Plus className="h-4 w-4 mr-2" />
+                Create Event
+              </Button>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {upcomingEvents.map((event, index) => (
               <div
                 key={event.id || index}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
@@ -262,8 +210,9 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                   </Button>
                 </div>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -272,15 +221,15 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-3xl font-bold">23</p>
-              <p className="text-xs text-muted-foreground mt-1">Events This Month</p>
+              <p className="text-3xl font-bold">{events.length}</p>
+              <p className="text-xs text-muted-foreground mt-1">Total Events</p>
             </div>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-3xl font-bold">8</p>
+              <p className="text-3xl font-bold">{events.filter(e => e.created_by === userId).length}</p>
               <p className="text-xs text-muted-foreground mt-1">As Organizer</p>
             </div>
           </CardContent>
@@ -288,7 +237,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-3xl font-bold">15</p>
+              <p className="text-3xl font-bold">{events.filter(e => e.created_by !== userId).length}</p>
               <p className="text-xs text-muted-foreground mt-1">As Attendee</p>
             </div>
           </CardContent>
@@ -296,7 +245,13 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-3xl font-bold">42</p>
+              <p className="text-3xl font-bold">
+                {events.reduce((total, e) => {
+                  const start = new Date(e.start_time)
+                  const end = new Date(e.end_time)
+                  return total + Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60))
+                }, 0)}
+              </p>
               <p className="text-xs text-muted-foreground mt-1">Hours Scheduled</p>
             </div>
           </CardContent>

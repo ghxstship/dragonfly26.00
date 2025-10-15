@@ -23,117 +23,9 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
   const router = useRouter()
   const { travels, loading } = useMyTravel(workspaceId, userId)
   
-  const mockTravels = [
-    {
-      id: "TRV-2024-001",
-      title: "Site Survey - Theater Revival",
-      project: "Theater Revival",
-      destination: "Los Angeles, CA",
-      departureDate: "Oct 18, 2024",
-      returnDate: "Oct 20, 2024",
-      status: "confirmed",
-      type: "Site Visit",
-      flights: {
-        departure: "JFK → LAX • AA 123 • 9:00 AM",
-        return: "LAX → JFK • AA 456 • 6:00 PM",
-        cost: "$450",
-      },
-      hotel: {
-        name: "Marriott Downtown LA",
-        checkIn: "Oct 18, 3:00 PM",
-        checkOut: "Oct 20, 11:00 AM",
-        cost: "$320",
-      },
-      groundTransport: {
-        type: "Rental Car",
-        details: "Economy • Enterprise",
-        cost: "$120",
-      },
-      totalCost: "$890",
-      purpose: "Technical site survey and venue assessment",
-    },
-    {
-      id: "TRV-2024-002",
-      title: "Load-In Supervision - Festival",
-      project: "Summer Music Festival",
-      destination: "Nashville, TN",
-      departureDate: "Oct 25, 2024",
-      returnDate: "Oct 28, 2024",
-      status: "confirmed",
-      type: "Production",
-      flights: {
-        departure: "JFK → BNA • DL 789 • 7:30 AM",
-        return: "BNA → JFK • DL 101 • 8:15 PM",
-        cost: "$380",
-      },
-      hotel: {
-        name: "Hilton Nashville Downtown",
-        checkIn: "Oct 25, 2:00 PM",
-        checkOut: "Oct 28, 12:00 PM",
-        cost: "$450",
-      },
-      groundTransport: {
-        type: "Uber/Lyft",
-        details: "As needed",
-        cost: "$80",
-      },
-      totalCost: "$910",
-      purpose: "Oversee load-in and equipment setup",
-    },
-    {
-      id: "TRV-2024-003",
-      title: "Client Meeting - Corporate Gala",
-      project: "Corporate Gala",
-      destination: "Boston, MA",
-      departureDate: "Nov 5, 2024",
-      returnDate: "Nov 5, 2024",
-      status: "pending",
-      type: "Meeting",
-      flights: {
-        departure: "JFK → BOS • B6 234 • 8:00 AM",
-        return: "BOS → JFK • B6 567 • 7:00 PM",
-        cost: "$220",
-      },
-      hotel: null,
-      groundTransport: {
-        type: "Taxi",
-        details: "Airport to venue",
-        cost: "$60",
-      },
-      totalCost: "$280",
-      purpose: "Final planning meeting with client",
-    },
-    {
-      id: "TRV-2024-004",
-      title: "Equipment Pickup - Multi-City",
-      project: "Concert Series",
-      destination: "Chicago, IL",
-      departureDate: "Nov 12, 2024",
-      returnDate: "Nov 14, 2024",
-      status: "pending",
-      type: "Logistics",
-      flights: {
-        departure: "JFK → ORD • UA 890 • 10:00 AM",
-        return: "ORD → JFK • UA 345 • 5:30 PM",
-        cost: "$340",
-      },
-      hotel: {
-        name: "Hampton Inn O'Hare",
-        checkIn: "Nov 12, 3:00 PM",
-        checkOut: "Nov 14, 11:00 AM",
-        cost: "$280",
-      },
-      groundTransport: {
-        type: "Rental Truck",
-        details: "Box Truck • U-Haul",
-        cost: "$200",
-      },
-      totalCost: "$820",
-      purpose: "Pick up specialized equipment from vendor",
-    },
-  ]
+
   
-  const travelsList = travels.length > 0 ? travels.map(travel => ({
+  const travelsList = travels.map(travel => ({
     id: travel.id,
     title: travel.title || 'Travel',
     destination: travel.destination || 'TBD',
@@ -147,7 +39,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
     hotel: travel.hotel_details,
     groundTransport: travel.ground_transport || {},
     project: travel.production?.name || 'No Project',
-  })) : mockTravels
+  }))
   
   if (loading) {
     return (

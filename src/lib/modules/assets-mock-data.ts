@@ -227,99 +227,235 @@ function generateApprovalsData(count: number): DataItem[] {
 
 function generateAdvancesData(count: number): DataItem[] {
   const productionIds = ["production-1", "production-2", "production-3"]
-  const purposes = ["Equipment advance for load-in", "Pre-production setup", "Tour advance", "Festival prep", "Special event advance"]
-  const advanceStatuses = ["pending", "approved", "issued", "returned", "closed"]
-  const requestedBy = ["person-1", "person-2", "person-3", "person-4"]
-  const approvedBy = ["person-1", "person-2"]
+  const companyIds = ["company-1", "company-2", "company-3", null]
+  const departments = ["Audio", "Lighting", "Video", "Staging", "Production Office", null]
+  const assetCategories = [
+    "site_infrastructure",
+    "site_services", 
+    "site_safety",
+    "site_vehicles",
+    "heavy_equipment",
+    "consumables",
+    "event_rentals",
+    "signage",
+    "backline",
+    "access",
+    "credentials",
+    "parking",
+    "meals",
+    "flights",
+    "lodging",
+    "rental_cars"
+  ]
+  const assetItems = [
+    "Office Container 20ft",
+    "Generator 100kW",
+    "Fire Extinguishers (Set of 10)",
+    "Golf Cart - Electric",
+    "Forklift - Toyota 8FGU25",
+    "Gaffer Tape (Case of 24)",
+    "Round Tables 60\" (Set of 20)",
+    "Standing Signs 24x36 (Set of 50)",
+    "Drum Kit - Pearl Export Series",
+    "Asana Project Management License",
+    "All-Access Badge (3-Day Pass)",
+    "VIP Parking Pass (Lot A)",
+    "Catering Package - Production Crew (25 people)",
+    "Flight Ticket LAX to JFK (Round Trip)",
+    "Hotel Room - Hilton Downtown (2 Nights)",
+    "Rental Car - SUV Ford Explorer"
+  ]
+  const locations = ["Stage Left", "Loading Dock", "Production Office", "Back of House", "Stage Right", "Security Office", "Catering Area"]
+  const purposes = [
+    "Load-in equipment setup and staging",
+    "Event day operations and site services",
+    "Safety compliance and emergency equipment",
+    "Transportation and logistics support",
+    "Heavy lifting and rigging operations",
+    "General production consumables",
+    "Guest services and event furniture",
+    "Wayfinding and directional signage",
+    "Backline equipment for performances",
+    "Team collaboration and project management software",
+    "Crew access and security clearances",
+    "Staff parking allocation for event days",
+    "Production crew meal services",
+    "Travel arrangements for touring crew",
+    "Lodging for out-of-town personnel",
+    "Ground transportation for equipment and crew"
+  ]
+  const advanceStatuses = ["pending", "approved", "fulfilled", "active", "returned", "partially_returned", "overdue"]
+  const requestedBy = ["user-1", "user-2", "user-3", "user-4"]
+  const approvedBy = ["user-1", "user-2"]
   
   return Array.from({ length: count }, (_, i) => {
     const requestDate = new Date(Date.now() - (30 - i) * 24 * 60 * 60 * 1000)
     const approvalDate = i % 3 !== 2 ? new Date(requestDate.getTime() + 24 * 60 * 60 * 1000) : null
-    const issueDate = approvalDate ? new Date(approvalDate.getTime() + 48 * 60 * 60 * 1000) : null
-    const expectedReturn = issueDate ? new Date(issueDate.getTime() + (14 + Math.random() * 30) * 24 * 60 * 60 * 1000) : null
-    const actualReturn = i % 4 === 0 && issueDate ? new Date(issueDate.getTime() + (15 + Math.random() * 25) * 24 * 60 * 60 * 1000) : null
+    const startDate = approvalDate ? new Date(approvalDate.getTime() + 48 * 60 * 60 * 1000) : new Date(requestDate.getTime() + 7 * 24 * 60 * 60 * 1000)
+    const endDate = new Date(startDate.getTime() + (7 + Math.random() * 14) * 24 * 60 * 60 * 1000)
+    const fulfilledDate = approvalDate && i % 3 === 0 ? new Date(approvalDate.getTime() + 72 * 60 * 60 * 1000) : null
+    
+    const categoryIndex = i % assetCategories.length
+    const quantity = Math.floor(Math.random() * 20) + 1
+    const accessories = i % 3 === 0 ? ["Cables", "Adapters", "Cases"] : i % 3 === 1 ? ["Stands", "Mounts"] : []
     
     return {
       id: `advance-${i + 1}`,
+      name: `ADV-${String(i + 1001).padStart(5, '0')}`,
       production_id: productionIds[i % productionIds.length],
-      requested_by: requestedBy[i % requestedBy.length],
-      approved_by: approvalDate ? approvedBy[i % approvedBy.length] : null,
-      amount: parseFloat((Math.random() * 50000 + 5000).toFixed(2)),
-      currency: "USD",
-      purpose: purposes[i % purposes.length],
-      request_date: requestDate.toISOString().split('T')[0],
-      approval_date: approvalDate ? approvalDate.toISOString().split('T')[0] : null,
-      issue_date: issueDate ? issueDate.toISOString().split('T')[0] : null,
-      expected_return_date: expectedReturn ? expectedReturn.toISOString().split('T')[0] : null,
-      actual_return_date: actualReturn ? actualReturn.toISOString().split('T')[0] : null,
+      company_id: companyIds[i % companyIds.length],
+      department_team: departments[i % departments.length],
+      asset_category: assetCategories[categoryIndex],
+      asset_id: i % 4 === 0 ? `asset-${i + 1}` : null,
+      asset_item: assetItems[categoryIndex],
+      accessories: accessories,
+      quantity: quantity,
+      start_date: startDate.toISOString().split('T')[0],
+      end_date: endDate.toISOString().split('T')[0],
+      site_location_id: i % 3 === 0 ? `location-${(i % 3) + 1}` : null,
+      site_location_name: locations[i % locations.length],
+      operational_purpose: purposes[categoryIndex],
+      special_considerations: i % 2 === 0 ? "Requires forklift access and loading dock clearance" : null,
+      additional_information: i % 5 === 0 ? "Contact production office 24hrs in advance for pickup" : null,
+      requestor_id: requestedBy[i % requestedBy.length],
+      assigned_user_ids: i % 2 === 0 ? [requestedBy[i % requestedBy.length], requestedBy[(i + 1) % requestedBy.length]] : [requestedBy[i % requestedBy.length]],
+      approver_id: approvalDate ? approvedBy[i % approvedBy.length] : null,
       status: advanceStatuses[i % advanceStatuses.length],
-      notes: `Production advance for ${purposes[i % purposes.length]}. All items accounted for.`,
+      approved_at: approvalDate ? approvalDate.toISOString() : null,
+      fulfilled_at: fulfilledDate ? fulfilledDate.toISOString() : null,
+      checked_out_at: fulfilledDate && i % 2 === 0 ? new Date(fulfilledDate.getTime() + 12 * 60 * 60 * 1000).toISOString() : null,
+      returned_at: i % 5 === 0 && fulfilledDate ? new Date(endDate.getTime() + 24 * 60 * 60 * 1000).toISOString() : null,
+      notes: `Production advance for ${assetItems[categoryIndex]}. ${purposes[categoryIndex]}.`,
+      tags: ["advance", assetCategories[categoryIndex], advanceStatuses[i % advanceStatuses.length]],
       created_at: requestDate.toISOString(),
       updated_at: new Date().toISOString(),
-      comments_count: Math.floor(Math.random() * 20),
-      attachments_count: Math.floor(Math.random() * 15),
+      created_by: requestedBy[i % requestedBy.length],
+      comments_count: Math.floor(Math.random() * 12),
+      attachments_count: Math.floor(Math.random() * 8),
     }
   })
 }
 
 function generateCatalogData(count: number): DataItem[] {
-  const assetTypes = [
-    "Infrastructure",
-    "Production Equipment",
-    "Audio Equipment",
-    "Video Equipment",
-    "Lighting Equipment",
-    "Staging Equipment",
-    "Rigging Hardware",
-    "Tools",
-    "Vehicles",
-    "Heavy Machinery",
+  const assetCategories = [
+    "site_infrastructure",
+    "site_services", 
+    "site_safety",
+    "site_vehicles",
+    "heavy_equipment",
+    "consumables",
+    "event_rentals",
+    "signage",
+    "backline",
+    "access",
+    "credentials",
+    "parking",
+    "meals",
+    "flights",
+    "lodging",
+    "rental_cars"
+  ]
+  const categoryLabels = [
+    "Site Infrastructure",
+    "Site Services",
+    "Site Safety",
+    "Site Vehicles",
+    "Heavy Equipment",
+    "Consumables",
+    "Event Rentals",
+    "Signage",
+    "Backline",
+    "Access",
     "Credentials",
-    "Furnishings",
-    "Safety Equipment",
-    "IT Equipment",
-    "Communication Systems",
+    "Parking",
+    "Meals",
+    "Flights",
+    "Lodging",
+    "Rental Cars"
   ]
   const items = [
-    "Truss System - 12\" Box Truss",
-    "Moving Head Light - Clay Paky Sharpy",
-    "Digital Audio Console - Yamaha CL5",
-    "LED Video Wall - ROE Black Pearl",
-    "Camera - ARRI Alexa Mini LF",
+    "Office Container 20ft",
+    "Generator 100kW Diesel",
+    "Fire Extinguisher Kit",
+    "Golf Cart Electric 4-Seater",
     "Forklift - Toyota 8FGU25",
-    "Generator - 100kW Diesel",
+    "Gaffer Tape Roll 2\" x 60yd",
+    "Round Table 60\" with Linen",
+    "Standing Sign 24x36 with Holder",
+    "Drum Kit - Pearl Export Series",
+    "Asana Team License (Annual)",
+    "All-Access Crew Badge",
+    "VIP Parking Pass - Lot A",
+    "Catering Package - 25 People",
+    "Flight LAX to JFK Round Trip",
+    "Hotel Room Hilton (2 Nights)",
+    "Rental Car SUV Ford Explorer",
+    "Storage Container 40ft",
+    "Lighting Tower Diesel",
+    "First Aid Kit Complete",
+    "Utility Cart Gas-Powered",
     "Scissor Lift - Genie GS-3246",
-    "Wireless Intercom - Clear-Com FreeSpeak",
-    "Staging Deck - 4x8 ft",
-    "Rigging Motor - Chain Hoist 1 Ton",
-    "Production Desk - Mobile Workstation",
-    "Safety Harness - Full Body",
-    "Laptop - MacBook Pro 16\"",
-    "Walkie Talkie - Motorola CP200d",
+    "Zip Ties Assorted Pack",
+    "Chair Chiavari Gold",
+    "Directional Sign 18x24",
+    "Guitar Amp - Fender Twin"
   ]
-  const catalogStatuses = ["active", "discontinued", "seasonal", "restricted", "archived"]
-  const regions = ["North America", "Europe", "Asia Pacific", "Latin America", "Middle East", "Global"]
+  const manufacturers = [
+    "ULine",
+    "Generac",
+    "Amerex",
+    "Club Car",
+    "Toyota",
+    "ProTapes",
+    "Lifetime",
+    "ULine",
+    "Pearl",
+    "Conex",
+    "Atlas Copco",
+    "MediTac",
+    "Yamaha",
+    "Genie",
+    "Gardner Bender",
+    "Chiavari",
+    "Brady",
+    "Fender"
+  ]
+  const catalogStatuses = ["in_stock", "limited", "out_of_stock", "discontinued"]
+  const availability = ["Available", "Limited Stock", "Order Required", "Seasonal"]
   
-  return Array.from({ length: count }, (_, i) => ({
-    id: `catalog-${i + 1}`,
-    name: `${items[i % items.length]} - ${assetTypes[i % assetTypes.length]}`,
-    description: `Region: ${regions[i % regions.length]} | Model: ${Math.random().toString(36).substring(2, 8).toUpperCase()} | Available units: ${Math.floor(Math.random() * 100) + 1} | Includes: ${['accessories', 'upgrades', 'add-ons', 'warranty', 'support'][i % 5]}`,
-    status: catalogStatuses[i % catalogStatuses.length],
-    priority: i % 3 === 0 ? "high" : i % 3 === 1 ? "normal" : "low",
-    assignee: i % 3 === 0 ? "Catalog Manager" : i % 3 === 1 ? "Asset Specialist" : "Inventory Lead",
-    assignee_name: i % 3 === 0 ? "Catalog Manager" : i % 3 === 1 ? "Asset Specialist" : "Inventory Lead",
-    due_date: getRandomFutureDate(90),
-    start_date: getRandomPastDate(365),
-    created_at: getRandomPastDate(730),
-    updated_at: new Date().toISOString(),
-    tags: [
-      "catalog",
-      assetTypes[i % assetTypes.length].toLowerCase().replace(/\s+/g, '-'),
-      regions[i % regions.length].toLowerCase().replace(/\s+/g, '-')
-    ],
-    comments_count: Math.floor(Math.random() * 10),
-    attachments_count: Math.floor(Math.random() * 8),
-  }))
+  return Array.from({ length: count }, (_, i) => {
+    const categoryIndex = i % assetCategories.length
+    const dailyRate = parseFloat((Math.random() * 500 + 50).toFixed(2))
+    const unitCost = parseFloat((Math.random() * 5000 + 100).toFixed(2))
+    
+    return {
+      id: `catalog-${i + 1}`,
+      name: items[i % items.length],
+      description: `${categoryLabels[categoryIndex]} item | Model: ${Math.random().toString(36).substring(2, 8).toUpperCase()} | Stock: ${Math.floor(Math.random() * 100) + 1} units`,
+      asset_category: assetCategories[categoryIndex],
+      category: categoryLabels[categoryIndex],
+      manufacturer: manufacturers[i % manufacturers.length],
+      model_number: `${manufacturers[i % manufacturers.length]}-${Math.floor(Math.random() * 9000) + 1000}`,
+      unit_cost: unitCost,
+      rental_rate_daily: dailyRate,
+      availability: availability[i % availability.length],
+      status: catalogStatuses[i % catalogStatuses.length],
+      priority: i % 3 === 0 ? "high" : i % 3 === 1 ? "normal" : "low",
+      assignee: i % 3 === 0 ? "Catalog Manager" : i % 3 === 1 ? "Asset Specialist" : "Inventory Lead",
+      assignee_name: i % 3 === 0 ? "Catalog Manager" : i % 3 === 1 ? "Asset Specialist" : "Inventory Lead",
+      due_date: getRandomFutureDate(90),
+      start_date: getRandomPastDate(365),
+      created_at: getRandomPastDate(730),
+      updated_at: new Date().toISOString(),
+      tags: [
+        "catalog",
+        assetCategories[categoryIndex],
+        catalogStatuses[i % catalogStatuses.length]
+      ],
+      comments_count: Math.floor(Math.random() * 10),
+      attachments_count: Math.floor(Math.random() * 8),
+    }
+  })
 }
 
 function generateGenericData(count: number): DataItem[] {

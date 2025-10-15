@@ -1,0 +1,152 @@
+/**
+ * Mock Data for Assets Module
+ */
+
+export const mockAssetItems = [
+  {
+    id: 'demo-asset-1',
+    name: 'Martin MAC Viper Profile',
+    asset_code: 'LT-001',
+    category: { name: 'Lighting Fixtures', id: 'cat-lighting' },
+    manufacturer: 'Martin Professional',
+    model: 'MAC Viper Profile',
+    serial_number: 'MVP-123456',
+    purchase_date: new Date(Date.now() - 47304000000).toISOString(), // 18 months ago
+    purchase_price: 12500,
+    current_value: 10000,
+    condition: 'Good',
+    status: 'in_use',
+    location: { name: 'Main Warehouse', id: 'loc-1' },
+    assigned_to_production: 'demo-prod-1',
+    last_maintenance: new Date(Date.now() - 2592000000).toISOString(),
+    next_maintenance: new Date(Date.now() + 5184000000).toISOString(),
+    notes: 'Excellent condition, recently serviced',
+    workspace_id: 'demo-workspace',
+  },
+  {
+    id: 'demo-asset-2',
+    name: 'Shure Axient Digital Wireless System',
+    asset_code: 'AU-045',
+    category: { name: 'Audio Equipment', id: 'cat-audio' },
+    manufacturer: 'Shure',
+    model: 'Axient Digital ADX5D',
+    serial_number: 'ADX-789012',
+    purchase_date: new Date(Date.now() - 31536000000).toISOString(),
+    purchase_price: 8500,
+    current_value: 7500,
+    condition: 'Excellent',
+    status: 'available',
+    location: { name: 'Audio Storage', id: 'loc-2' },
+    assigned_to_production: null,
+    last_maintenance: new Date(Date.now() - 5184000000).toISOString(),
+    next_maintenance: new Date(Date.now() + 2592000000).toISOString(),
+    notes: 'Complete system with 2 handheld and 2 bodypack transmitters',
+    workspace_id: 'demo-workspace',
+  },
+  {
+    id: 'demo-asset-3',
+    name: 'ROE Visual CB5 LED Panel',
+    asset_code: 'VD-120',
+    category: { name: 'Video Equipment', id: 'cat-video' },
+    manufacturer: 'ROE Visual',
+    model: 'Black Pearl CB5',
+    serial_number: 'CB5-345678',
+    purchase_date: new Date(Date.now() - 15552000000).toISOString(),
+    purchase_price: 3500,
+    current_value: 3200,
+    condition: 'Good',
+    status: 'in_use',
+    location: { name: 'Video Storage', id: 'loc-3' },
+    assigned_to_production: 'demo-prod-2',
+    last_maintenance: new Date(Date.now() - 1296000000).toISOString(),
+    next_maintenance: new Date(Date.now() + 7776000000).toISOString(),
+    notes: 'Part of 20-panel inventory, this is panel 1 of 20',
+    workspace_id: 'demo-workspace',
+  },
+]
+
+export const mockAssetCategories = [
+  {
+    id: 'cat-lighting',
+    name: 'Lighting Fixtures',
+    description: 'Moving lights, LED fixtures, conventionals',
+    total_items: 145,
+    total_value: 485000,
+  },
+  {
+    id: 'cat-audio',
+    name: 'Audio Equipment',
+    description: 'Consoles, speakers, wireless systems, microphones',
+    total_items: 289,
+    total_value: 625000,
+  },
+  {
+    id: 'cat-video',
+    name: 'Video Equipment',
+    description: 'LED walls, projectors, cameras, processors',
+    total_items: 78,
+    total_value: 425000,
+  },
+  {
+    id: 'cat-rigging',
+    name: 'Rigging Equipment',
+    description: 'Truss, motors, chain hoists, hardware',
+    total_items: 456,
+    total_value: 385000,
+  },
+]
+
+export const mockStorageLocations = [
+  {
+    id: 'loc-1',
+    name: 'Main Warehouse',
+    address: '1500 Equipment Dr, Los Angeles, CA',
+    type: 'warehouse',
+    capacity: 10000, // sq ft
+    current_usage: 7500,
+    items_count: 458,
+  },
+  {
+    id: 'loc-2',
+    name: 'Audio Storage',
+    address: '1500 Equipment Dr, Building B, Los Angeles, CA',
+    type: 'storage',
+    capacity: 2000,
+    current_usage: 1450,
+    items_count: 289,
+  },
+  {
+    id: 'loc-3',
+    name: 'Video Storage',
+    address: '1500 Equipment Dr, Building C, Los Angeles, CA',
+    type: 'storage',
+    capacity: 1500,
+    current_usage: 980,
+    items_count: 78,
+  },
+]
+
+export const mockMaintenanceRecords = [
+  {
+    id: 'maint-1',
+    asset_id: 'demo-asset-1',
+    asset: { name: 'Martin MAC Viper Profile' },
+    date: new Date(Date.now() - 2592000000).toISOString(),
+    type: 'scheduled',
+    description: 'Lamp replacement and general service',
+    technician: 'Service Tech Inc.',
+    cost: 450,
+    status: 'completed',
+  },
+  {
+    id: 'maint-2',
+    asset_id: 'demo-asset-2',
+    asset: { name: 'Shure Axient Digital Wireless System' },
+    date: new Date(Date.now() - 5184000000).toISOString(),
+    type: 'scheduled',
+    description: 'Firmware update and frequency coordination check',
+    technician: 'In-house',
+    cost: 0,
+    status: 'completed',
+  },
+]

@@ -21,69 +21,9 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
   const router = useRouter()
   const { orders, loading } = useMyOrders(workspaceId, userId)
   
-  const mockOrders = [
-    {
-      id: "ORD-2024-1234",
-      item: "Wireless Microphone System Bundle",
-      vendor: "Audio Pro Supplies",
-      orderDate: "Oct 8, 2024",
-      status: "delivered",
-      quantity: 2,
-      total: "$2,400",
-      deliveryDate: "Oct 10, 2024",
-      trackingNumber: "1Z999AA10123456784",
-      project: "Concert Series",
-    },
-    {
-      id: "ORD-2024-1235",
-      item: "LED Par Light Set (12 units)",
-      vendor: "Stage Lighting Co.",
-      orderDate: "Oct 9, 2024",
-      status: "in_transit",
-      quantity: 1,
-      total: "$1,800",
-      estimatedDelivery: "Oct 13, 2024",
-      trackingNumber: "1Z999AA10123456785",
-      project: "Fashion Week",
-    },
-    {
-      id: "ORD-2024-1236",
-      item: "Professional Video Cables (assorted)",
-      vendor: "Tech Gear Direct",
-      orderDate: "Oct 10, 2024",
-      status: "processing",
-      quantity: 1,
-      total: "$345",
-      estimatedDelivery: "Oct 15, 2024",
-      trackingNumber: "Pending",
-      project: "Corporate Gala",
-    },
-    {
-      id: "ORD-2024-1237",
-      item: "Road Case for Lighting Equipment",
-      vendor: "Case Warehouse",
-      orderDate: "Oct 11, 2024",
-      status: "pending",
-      quantity: 3,
-      total: "$1,200",
-      estimatedDelivery: "Oct 18, 2024",
-      trackingNumber: "Not yet assigned",
-      project: "Summer Festival",
-    },
-    {
-      id: "ORD-2024-1233",
-      item: "Wireless Intercom System",
-      vendor: "Clear-Com",
-      orderDate: "Oct 3, 2024",
-      status: "cancelled",
-      quantity: 1,
-      total: "$3,500",
-      cancellationReason: "Found alternative solution",
-      project: "Theater Revival",
-    },
-  ]
+
   
-  const ordersList = orders.length > 0 ? orders.map(order => ({
+  const ordersList = orders.map(order => ({
     id: order.id,
     item: order.product_name || 'Item',
     vendor: 'Vendor',
@@ -96,7 +36,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
     deliveryDate: order.delivered_at ? new Date(order.delivered_at).toLocaleDateString() : undefined,
     estimatedDelivery: order.estimated_delivery ? new Date(order.estimated_delivery).toLocaleDateString() : undefined,
     cancellationReason: order.cancellation_reason || undefined,
-  })) : mockOrders
+  }))
   
   if (loading) {
     return (

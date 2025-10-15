@@ -1,0 +1,133 @@
+/**
+ * Mock Data for People Module
+ */
+
+export const mockPersonnel = [
+  {
+    id: 'demo-person-1',
+    first_name: 'Alex',
+    last_name: 'Rodriguez',
+    email: 'alex.rodriguez@example.com',
+    phone: '+1 (555) 123-4567',
+    job_title: 'Lighting Designer',
+    department: 'Production',
+    employment_type: 'full_time',
+    status: 'active',
+    hire_date: new Date(Date.now() - 31536000000).toISOString(), // 1 year ago
+    skills: ['Lighting Design', 'MA2 Console', 'AutoCAD'],
+    certifications: ['ETCP Certified Rigger'],
+    hourly_rate: 75,
+    workspace_id: 'demo-workspace',
+  },
+  {
+    id: 'demo-person-2',
+    first_name: 'Maria',
+    last_name: 'Garcia',
+    email: 'maria.garcia@example.com',
+    phone: '+1 (555) 234-5678',
+    job_title: 'Audio Engineer',
+    department: 'Audio',
+    employment_type: 'contractor',
+    status: 'active',
+    hire_date: new Date(Date.now() - 15552000000).toISOString(),
+    skills: ['Live Sound Mixing', 'DiGiCo', 'RF Coordination'],
+    certifications: ['Dante Certified'],
+    hourly_rate: 85,
+    workspace_id: 'demo-workspace',
+  },
+  {
+    id: 'demo-person-3',
+    first_name: 'James',
+    last_name: 'Kim',
+    email: 'james.kim@example.com',
+    phone: '+1 (555) 345-6789',
+    job_title: 'Video Engineer',
+    department: 'Video',
+    employment_type: 'full_time',
+    status: 'active',
+    hire_date: new Date(Date.now() - 23328000000).toISOString(),
+    skills: ['LED Wall Operation', 'Resolume', 'Barco Processors'],
+    certifications: [],
+    hourly_rate: 70,
+    workspace_id: 'demo-workspace',
+  },
+]
+
+export const mockCrews = [
+  {
+    id: 'demo-crew-1',
+    name: 'Main Stage Lighting',
+    description: 'Primary lighting crew for main stage',
+    lead: { name: 'Alex Rodriguez', id: 'demo-person-1' },
+    members: ['demo-person-1', 'demo-person-4', 'demo-person-5'],
+    production_id: 'demo-prod-1',
+    workspace_id: 'demo-workspace',
+  },
+  {
+    id: 'demo-crew-2',
+    name: 'Audio Team',
+    description: 'Front of house and monitor engineers',
+    lead: { name: 'Maria Garcia', id: 'demo-person-2' },
+    members: ['demo-person-2', 'demo-person-6'],
+    production_id: 'demo-prod-1',
+    workspace_id: 'demo-workspace',
+  },
+]
+
+export const mockVendors = [
+  {
+    id: 'demo-vendor-1',
+    name: 'Pro Audio Rentals LLC',
+    type: 'Audio Equipment',
+    contact_name: 'David Brown',
+    contact_email: 'david@proaudiorentals.com',
+    contact_phone: '+1 (555) 111-2222',
+    address: '123 Equipment Lane, Los Angeles, CA',
+    rating: 4.8,
+    services: ['Audio Equipment Rental', 'Installation', 'Support'],
+    workspace_id: 'demo-workspace',
+  },
+  {
+    id: 'demo-vendor-2',
+    name: 'Bright Lights Co',
+    type: 'Lighting Equipment',
+    contact_name: 'Susan White',
+    contact_email: 'susan@brightlights.com',
+    contact_phone: '+1 (555) 222-3333',
+    address: '456 Light Street, New York, NY',
+    rating: 4.9,
+    services: ['Lighting Rental', 'Design Services', 'Installation'],
+    workspace_id: 'demo-workspace',
+  },
+]
+
+export const mockCompanies = [
+  {
+    id: 'demo-company-1',
+    name: 'Festival Productions Inc.',
+    type: 'client',
+    industry: 'Entertainment',
+    contact_name: 'Jennifer Taylor',
+    contact_email: 'jennifer@festivalproductions.com',
+    contact_phone: '+1 (555) 333-4444',
+    address: '789 Festival Way, Austin, TX',
+    website: 'https://festivalproductions.com',
+    active_projects: 2,
+    total_value: 500000,
+    workspace_id: 'demo-workspace',
+  },
+  {
+    id: 'demo-company-2',
+    name: 'TechCorp Events',
+    type: 'client',
+    industry: 'Corporate',
+    contact_name: 'Michael Johnson',
+    contact_email: 'michael@techcorpevents.com',
+    contact_phone: '+1 (555) 444-5555',
+    address: '321 Business Blvd, San Francisco, CA',
+    website: 'https://techcorpevents.com',
+    active_projects: 1,
+    total_value: 85000,
+    workspace_id: 'demo-workspace',
+  },
+]
