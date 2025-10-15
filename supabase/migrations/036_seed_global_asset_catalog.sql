@@ -4,6 +4,15 @@
 -- Purpose: Pre-populate comprehensive multi-industry asset catalog
 -- =============================================
 
+-- Create a global organization for catalog items (if not exists)
+INSERT INTO organizations (id, name, slug)
+VALUES (
+    '00000000-0000-0000-0000-000000000001',
+    'Global Catalog System',
+    'global-catalog'
+)
+ON CONFLICT (id) DO NOTHING;
+
 -- Create a global workspace for catalog items (if not exists)
 INSERT INTO workspaces (id, organization_id, name, description, is_default)
 VALUES (
