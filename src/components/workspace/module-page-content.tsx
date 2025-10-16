@@ -18,7 +18,6 @@ import { ItemDetailDrawer } from "@/components/shared/item-detail-drawer"
 import { ViewSwitcher } from "@/components/views/view-switcher"
 import { ListView } from "@/components/views/list-view"
 import { BoardView } from "@/components/views/board-view"
-import { TableView } from "@/components/views/table-view"
 import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
 import { CalendarView } from "@/components/views/calendar-view"
 import { TimelineView } from "@/components/views/timeline-view"
@@ -125,21 +124,18 @@ export function ModulePageContent() {
       case "board":
         return <BoardView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "table":
-        // Use schema-driven EnhancedTableView if schema available
-        if (schema?.fields) {
-          return (
-            <EnhancedTableView
-              data={mockData}
-              schema={schema.fields}
-              moduleId={moduleSlug}
-              tabSlug={moduleTabs[0]?.slug || 'overview'}
-              workspaceId={workspaceId}
-              onRefresh={() => {/* TODO: Implement refresh */}}
-              loading={dataLoading}
-            />
-          )
-        }
-        return <TableView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
+        // Use schema-driven EnhancedTableView (schema auto-generated from form configs)
+        return (
+          <EnhancedTableView
+            data={mockData}
+            schema={schema?.fields || []}
+            moduleId={moduleSlug}
+            tabSlug={moduleTabs[0]?.slug || 'overview'}
+            workspaceId={workspaceId}
+            onRefresh={() => {/* TODO: Implement refresh */}}
+            loading={dataLoading}
+          />
+        )
       case "calendar":
         return <CalendarView data={mockData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "timeline":

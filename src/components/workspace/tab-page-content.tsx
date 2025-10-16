@@ -18,7 +18,6 @@ import { ItemDetailDrawer } from "@/components/shared/item-detail-drawer"
 import { ViewSwitcher } from "@/components/views/view-switcher"
 import { ListView } from "@/components/views/list-view"
 import { BoardView } from "@/components/views/board-view"
-import { TableView } from "@/components/views/table-view"
 import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
 import { CalendarView } from "@/components/views/calendar-view"
 import { TimelineView } from "@/components/views/timeline-view"
@@ -470,24 +469,21 @@ export function TabPageContent() {
       case "board":
         return <BoardView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "table":
-        // Use schema-driven EnhancedTableView if schema available, otherwise fall back to generic TableView
-        if (schema?.fields) {
-          return (
-            <EnhancedTableView
-              data={filteredData}
-              schema={schema.fields}
-              moduleId={moduleSlug}
-              tabSlug={tabSlug}
-              workspaceId={workspaceId}
-              onRefresh={() => {/* Real-time updates handled automatically */}}
-              onCreate={handleCreateItem}
-              onUpdate={updateItem}
-              onDelete={deleteItem}
-              loading={loading}
-            />
-          )
-        }
-        return <TableView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        // Use schema-driven EnhancedTableView (schema auto-generated from form configs if not manually defined)
+        return (
+          <EnhancedTableView
+            data={filteredData}
+            schema={schema?.fields || []}
+            moduleId={moduleSlug}
+            tabSlug={tabSlug}
+            workspaceId={workspaceId}
+            onRefresh={() => {/* Real-time updates handled automatically */}}
+            onCreate={handleCreateItem}
+            onUpdate={updateItem}
+            onDelete={deleteItem}
+            loading={loading}
+          />
+        )
       case "calendar":
         return <CalendarView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "timeline":
