@@ -42,7 +42,7 @@ export function OnboardingTab({ data, loading }: OnboardingTabProps) {
         </div>
       </div>
     )
-}
+  }
 
   return (
     <main role="main" aria-label={t('title')}>

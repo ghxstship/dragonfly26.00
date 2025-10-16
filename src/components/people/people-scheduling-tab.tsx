@@ -39,9 +39,8 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-        </div>
-         )
-}
+    )
+  }
 
   const getShiftTypeColor = (type: string) => {
     const colors: Record<string, string> = {

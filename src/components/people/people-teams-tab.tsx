@@ -42,7 +42,7 @@ export function TeamsTab({ data, loading }: TeamsTabProps) {
         </div>
       </div>
     )
-}
+  }
 
   return (
     <main role="main" aria-label={t('title')}>

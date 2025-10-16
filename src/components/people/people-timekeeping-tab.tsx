@@ -42,7 +42,7 @@ export function TimekeepingTab({ data, loading }: TimekeepingTabProps) {
         </div>
       </div>
     )
-}
+  }
 
   return (
     <main role="main" aria-label={t('title')}>

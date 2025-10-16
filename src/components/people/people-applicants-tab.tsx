@@ -42,7 +42,7 @@ export function ApplicantsTab({ data, loading }: ApplicantsTabProps) {
         </div>
       </div>
     )
-}
+  }
 
   return (
     <main role="main" aria-label={t('title')}>

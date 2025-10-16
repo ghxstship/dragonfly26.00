@@ -42,7 +42,7 @@ export function OpeningsTab({ data, loading }: OpeningsTabProps) {
         </div>
       </div>
     )
-}
+  }
 
   return (
     <main role="main" aria-label={t('title')}>

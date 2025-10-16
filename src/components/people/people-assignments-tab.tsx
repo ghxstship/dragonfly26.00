@@ -42,7 +42,7 @@ export function AssignmentsTab({ data, loading }: AssignmentsTabProps) {
         </div>
       </div>
     )
-}
+  }
 
   return (
     <main role="main" aria-label={t('title')}>

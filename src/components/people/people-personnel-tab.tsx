@@ -42,7 +42,7 @@ export function PersonnelTab({ data, loading }: PersonnelTabProps) {
         </div>
       </div>
     )
-}
+  }
 
   return (
     <main role="main" aria-label={t('title')}>
