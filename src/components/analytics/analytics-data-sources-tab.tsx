@@ -5,8 +5,6 @@ import { Database, CheckCircle, AlertCircle, RefreshCw, Plus } from "lucide-reac
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-
 import { useTranslations } from "next-intl"
 const dataSources = [
   {
@@ -65,7 +63,6 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
   const t = useTranslations('intelligence.analytics.analyticsdatasources')
   const tCommon = useTranslations('common')
 
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displaySources = data || []
   
   return (
@@ -75,10 +72,6 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
         <p className="text-muted-foreground" role="doc-subtitle">
           {t('description')}
         </p>
-        <Button onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          Connect Data Source
-        </Button>
       </div>
 
       {/* Status Summary */}
@@ -162,16 +155,6 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
         ))}
       </div>
 
-      {/* Create Data Source Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId="analytics"
-        tabSlug="data-sources"
-        onSuccess={(item) => {
-          console.log("Created data source:", item)
-        }}
-      />
     </div>
   )
 }

@@ -16,15 +16,12 @@ import { Package,
   Plus,
   Download } from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-import { useState } from "react"
 import type { TabComponentProps } from "@/types"
 
 export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.assets.overview')
   const tCommon = useTranslations('common')
   const { data: assets, loading } = useModuleData(workspaceId, 'assets', 'overview')
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -92,10 +89,6 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
           <Button variant="outline" size="sm">
             <Download className="h-4 w-4 mr-2" aria-hidden="true" />
             Export
-          </Button>
-          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            New Asset
           </Button>
         </div>
       </div>
@@ -293,17 +286,6 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </CardContent>
       </Card>
 
-      {/* Create Asset Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        workspaceId={workspaceId}
-        onSuccess={(item) => {
-          window.location.reload()
-        }}
-      />
     </div>
     </main>
   )

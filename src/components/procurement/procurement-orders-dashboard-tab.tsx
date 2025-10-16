@@ -17,8 +17,6 @@ import {
   Download
 } from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-import { useState } from "react"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
@@ -29,7 +27,6 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
   const { data: orders, loading } = useModuleData(workspaceId, 'procurement', 'orders')
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -93,10 +90,6 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
           <Button variant="outline" size="sm">
             <Download className="h-4 w-4" aria-hidden="true"  />
             Export
-          </Button>
-          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4" aria-hidden="true"  />
-            New Purchase Order
           </Button>
         </div>
       </div>
@@ -336,17 +329,6 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         </Card>
       )}
 
-      {/* Create Purchase Order Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        workspaceId={workspaceId}
-        onSuccess={(item) => {
-          window.location.reload()
-        }}
-      />
     </div>
   )
 }

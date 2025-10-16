@@ -1,12 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import { BookMarked, Plus, Star, TrendingUp } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-
 import { useTranslations } from "next-intl"
 const savedMetrics = [
   {
@@ -80,7 +77,6 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
   const t = useTranslations('intelligence.analytics.analyticsmetricslibrary')
   const tCommon = useTranslations('common')
 
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displayMetrics = data || []
   
   return (
@@ -90,10 +86,6 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
         <p className="text-muted-foreground" role="doc-subtitle">
           {t('description')}
         </p>
-        <Button onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          New Metric
-        </Button>
       </div>
 
       {/* Favorites */}
@@ -165,15 +157,6 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
         </div>
       </div>
 
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId="analytics"
-        tabSlug="metrics-library"
-        onSuccess={(item) => {
-          console.log("Created metric:", item)
-        }}
-      />
     </div>
   )
 }

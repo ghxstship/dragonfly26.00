@@ -21,14 +21,12 @@ import {
 } from "lucide-react"
 import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
 import { useModuleData } from "@/hooks/use-module-data"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import type { TabComponentProps } from "@/types"
 
 export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.assets.tracking')
   const tCommon = useTranslations('common')
   const { data: trackingData, loading } = useModuleData(workspaceId, 'assets', 'tracking')
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const [scannerOpen, setScannerOpen] = useState(false)
   const [statusFilter, setStatusFilter] = useState<string | null>(null)
 
@@ -174,10 +172,6 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
             <Download className="h-4 w-4 mr-2" />
             Export
           </Button>
-          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" />
-            Check Out
-          </Button>
         </div>
       </div>
 
@@ -237,7 +231,6 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
         tabSlug={tabSlug}
         workspaceId={workspaceId}
         onRefresh={() => window.location.reload()}
-        onCreate={async () => { setCreateDialogOpen(true) }}
         onUpdate={async (id: string, updates: any) => {
           // Update logic here
           console.log('Update:', id, updates)
@@ -282,17 +275,6 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
         </CardContent>
       </Card>
 
-      {/* Create Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        workspaceId={workspaceId}
-        onSuccess={(item) => {
-          window.location.reload()
-        }}
-      />
     </div>
   )
 }

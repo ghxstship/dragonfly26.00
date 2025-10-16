@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardDescription, CardTitle } from "@/components/ui/card"
 import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
 import { createClient } from "@/lib/supabase/client"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { useToast } from "@/lib/hooks/use-toast"
 
 interface CountsTabProps {
@@ -29,7 +28,6 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
   const t = useTranslations('production.assets.counts')
   const tCommon = useTranslations('common')
   const [statusFilter, setStatusFilter] = useState<string | null>(null)
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const { toast } = useToast()
   const supabase = createClient()
 
@@ -300,10 +298,6 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
           <Download className="h-4 w-4 mr-2" aria-hidden="true" />
           Export
         </Button>
-        <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          New Count
-        </Button>
       </div>
 
       {/* Counts Table */}
@@ -329,18 +323,6 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         />
       )}
 
-      {/* Create Count Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId="assets"
-        tabSlug="counts"
-        workspaceId={workspaceId}
-        onSuccess={(item) => {
-          handleCreateCount(item)
-          window.location.reload()
-        }}
-      />
     </div>
     </main>
   )

@@ -5,9 +5,8 @@ import { Sliders, Plus, Edit, Trash2, Star } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-
 import { useTranslations } from "next-intl"
+
 const customViews = [
   {
     id: "1",
@@ -53,7 +52,6 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
   const tCommon = useTranslations('common')
 
   const displayViews = data || []
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   
   return (
     <div className="space-y-6">
@@ -62,10 +60,6 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
         <p className="text-muted-foreground" role="doc-subtitle">
           {t('description')}
         </p>
-        <Button onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')} {t('customView')}
-        </Button>
       </div>
 
       <div className="grid grid-cols-2 gap-4">
@@ -128,23 +122,9 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
           <p className="text-sm text-muted-foreground mb-4">
             {t('buildPersonalizedDashboard')}
           </p>
-          <Button onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            Get Started
-          </Button>
         </CardContent>
       </Card>
 
-      {/* Create Custom View Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId="analytics"
-        tabSlug="custom-views"
-        onSuccess={(item) => {
-          console.log("Created custom view:", item)
-        }}
-      />
     </div>
   )
 }

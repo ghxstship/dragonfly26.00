@@ -20,7 +20,6 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import type { TabComponentProps } from "@/types"
 
 export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
@@ -29,7 +28,6 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
   const { data: tasks, loading } = useModuleData(workspaceId, 'projects', 'schedule')
   const [viewMode, setViewMode] = useState<'day' | 'week' | 'month'>('month')
   const [currentDate, setCurrentDate] = useState(new Date())
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -109,16 +107,10 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <p className="text-muted-foreground">
           {t('ganttDescription')}
         </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
-            {tCommon('export')}
-          </Button>
-          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            {t('addTask')}
-          </Button>
-        </div>
+        <Button variant="outline" size="sm">
+          <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('export')}
+        </Button>
       </div>
 
       {/* Stats */}
@@ -321,27 +313,14 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardContent className="p-0">
             <EmptyState
-              variant="inline"
               icon={Calendar}
               mainMessage={t('emptyMainMessage')}
               description={t('emptyStateMessage')}
-              actionLabel={t('createFirstItem')}
-              onAction={() => setCreateDialogOpen(true)}
             />
           </CardContent>
         </Card>
       )}
 
-      {/* Create Task Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        onSuccess={(item) => {
-          console.log("Created task:", item)
-        }}
-      />
     </div>
     </main>
   )

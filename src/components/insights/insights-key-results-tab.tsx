@@ -6,8 +6,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-
 import { useTranslations } from "next-intl"
 const keyResults = [
   {
@@ -93,21 +91,14 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
   const t = useTranslations('intelligence.insights.insightskeyresults')
   const tCommon = useTranslations('common')
 
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displayKeyResults = data || []
   
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <Button onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          New Key Result
-        </Button>
-      </div>
+      {/* Description */}
+      <p className="text-muted-foreground" role="doc-subtitle">
+        {t('description')}
+      </p>
 
       {/* Summary Cards */}
       <div className="grid grid-cols-4 gap-4">
@@ -182,16 +173,6 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
         </div>
       ))}
 
-      {/* Create Key Result Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId="insights"
-        tabSlug="key-results"
-        onSuccess={(item) => {
-          console.log("Created key result:", item)
-        }}
-      />
     </div>
   )
 }

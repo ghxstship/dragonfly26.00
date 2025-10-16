@@ -6,9 +6,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-
 import { useTranslations } from "next-intl"
+
 const objectives = [
   {
     id: "1",
@@ -75,8 +74,6 @@ interface InsightsObjectivesTabProps {
 export function InsightsObjectivesTab({ data = [], loading = false }: InsightsObjectivesTabProps) {
   const t = useTranslations('intelligence.insights.insightsobjectives')
   const tCommon = useTranslations('common')
-
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   
   // Transform data to ensure owner has name field
   const transformedData = data.length > 0 ? data.map((item: any) => ({
@@ -142,7 +139,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
         {objectives.map((objective) => (
           <Card key={objective.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="flex items-start justify-between mb-4">
+              <div className="flex items-start justify-between">
                 <div className="flex items-start gap-3 flex-1">
                   <Target className="h-6 w-6 text-blue-600 mt-1" aria-hidden="true" />
                   <div className="flex-1">
@@ -196,31 +193,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
         ))}
       </div>
 
-      {/* Add New Objective */}
-      <Card className="border-2 border-dashed">
-        <CardContent className="p-8 text-center">
-          <Target className="h-12 w-12 mx-auto mb-3 text-muted-foreground opacity-50" aria-hidden="true" />
-          <h3 className="font-semibold mb-2">{t('createNewObjective')}</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Define a strategic objective to track progress and align your team
-          </p>
-          <Button onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            New Objective
-          </Button>
-        </CardContent>
-      </Card>
 
-      {/* Create Objective Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId="insights"
-        tabSlug="objectives"
-        onSuccess={(item) => {
-          console.log("Created objective:", item)
-        }}
-      />
     </div>
   )
 }

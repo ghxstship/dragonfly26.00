@@ -20,8 +20,6 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-import { useState } from "react"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
@@ -32,7 +30,6 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
   const { data: companies, loading } = useModuleData(workspaceId, 'companies', 'organizations')
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -107,14 +104,6 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
           >
             <Search className="h-4 w-4 mr-2" aria-hidden="true" />
             {tCommon('buttons.search')}
-          </Button>
-          <Button 
-            size="sm" 
-            onClick={() => setCreateDialogOpen(true)}
-            aria-label={tCommon('aria.createButton', { type: t('title') })}
-          >
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            {tCommon('buttons.create')} {t('title')}
           </Button>
         </div>
       </div>
@@ -312,24 +301,12 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
               mainMessage={t('emptyState.title')}
               description={t('emptyState.description')}
               actionLabel={tCommon('buttons.create') + ' ' + t('title')}
-              onAction={() => setCreateDialogOpen(true)}
+              onAction={() => {}}
             />
           </CardContent>
         </Card>
       )}
 
-      {/* Create Organization Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        workspaceId={workspaceId}
-        onSuccess={(item) => {
-          // Refresh data or update local state
-          window.location.reload()
-        }}
-      />
     </div>
   )
 }

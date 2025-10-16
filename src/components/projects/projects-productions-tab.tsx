@@ -21,14 +21,12 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import type { TabComponentProps } from "@/types"
 
 export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.projects.productions')
   const tCommon = useTranslations('common')
   const { data: productions, loading } = useModuleData(workspaceId, 'projects', 'productions')
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -90,10 +88,6 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
           <Button variant="outline" size="sm">
             <Search className="h-4 w-4 mr-2" aria-hidden="true" />
             {tCommon('search')}
-          </Button>
-          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            {t('create')}
           </Button>
         </div>
       </div>
@@ -240,29 +234,14 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         <Card>
           <CardContent className="p-0">
             <EmptyState
-              variant="inline"
               icon={Clapperboard}
               mainMessage={t('emptyMainMessage')}
               description={t('emptyDescription')}
-              actionLabel={t('createProduction')}
-              onAction={() => setCreateDialogOpen(true)}
             />
           </CardContent>
         </Card>
       )}
 
-      {/* Create Production Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        workspaceId={workspaceId}
-        onSuccess={(item) => {
-          // Refresh data or update local state
-          window.location.reload()
-        }}
-      />
     </div>
     </main>
   )

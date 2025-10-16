@@ -16,8 +16,6 @@ import {
   RefreshCw
 } from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
-import { useState } from "react"
 import { Plus } from "lucide-react"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
@@ -29,7 +27,6 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
   const { data: financeData, loading } = useModuleData(workspaceId, 'finance', 'overview')
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -102,10 +99,6 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
           <Button variant="outline" size="sm">
             <Download className="h-4 w-4" aria-hidden="true"  />
             Export
-          </Button>
-          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4" aria-hidden="true"  />
-            New Transaction
           </Button>
         </div>
       </div>
@@ -328,17 +321,6 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </CardContent>
       </Card>
 
-      {/* Create Transaction Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        workspaceId={workspaceId}
-        onSuccess={(item) => {
-          window.location.reload()
-        }}
-      />
     </div>
   )
 }

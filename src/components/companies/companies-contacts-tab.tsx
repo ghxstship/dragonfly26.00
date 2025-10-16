@@ -27,7 +27,6 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
@@ -40,7 +39,6 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
   const { data: contacts, loading } = useModuleData(workspaceId, 'companies', 'contacts')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedContact, setSelectedContact] = useState<any>(null)
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -110,14 +108,6 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
           >
             <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
             {tCommon('buttons.filter')}
-          </Button>
-          <Button 
-            size="sm" 
-            onClick={() => setCreateDialogOpen(true)}
-            aria-label={tCommon('aria.createButton', { type: 'contact' })}
-          >
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            {tCommon('buttons.create')} Contact
           </Button>
         </div>
       </div>
@@ -411,17 +401,6 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         )}
       </div>
 
-      {/* Create Contact Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        workspaceId={workspaceId}
-        onSuccess={(item) => {
-          window.location.reload()
-        }}
-      />
     </div>
   )
 }

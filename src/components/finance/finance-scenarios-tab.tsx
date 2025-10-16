@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { GitCompare, TrendingUp, TrendingDown, Minus, Plus, AlertCircle } from "lucide-react"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
@@ -57,7 +56,6 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
   const t = useTranslations('business.finance.scenarios')
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
-  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   
   if (loading) {
     return (
@@ -386,16 +384,6 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </CardContent>
       </Card>
 
-      {/* Create Scenario Dialog */}
-      <CreateItemDialogEnhanced
-        open={createDialogOpen}
-        onOpenChange={setCreateDialogOpen}
-        moduleId="finance"
-        tabSlug="scenarios"
-        onSuccess={(item) => {
-          console.log("Created scenario:", item)
-        }}
-      />
     </div>
   )
 }

@@ -10,7 +10,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { EmptyState } from "@/components/shared/empty-state"
-import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { 
   MessageSquare, 
   ArrowUp, 
@@ -59,9 +58,6 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
   const [searchQuery, setSearchQuery] = useState("")
   const [categoryFilter, setCategoryFilter] = useState<"all" | Discussion["category"]>("all")
   const [sortBy, setSortBy] = useState<"hot" | "new" | "top">("hot")
-  const [showNewPost, setShowNewPost] = useState(false)
-  const [newPostTitle, setNewPostTitle] = useState("")
-  const [newPostContent, setNewPostContent] = useState("")
 
   const [discussions, setDiscussions] = useState<Discussion[]>([])
 
@@ -209,51 +205,6 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
         </Card>
       </div>
 
-      {/* Create Post Button */}
-      <Card className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-primary/20">
-        <CardContent className="p-4">
-          <Button 
-            className="w-full" 
-            size="lg"
-            onClick={() => setShowNewPost(!showNewPost)}
-          >
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            Start a New Discussion
-          </Button>
-        </CardContent>
-      </Card>
-
-      {/* New Post Form */}
-      {showNewPost && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Create New Discussion</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Input
-                placeholder={t('discussionTitle')}
-                value={newPostTitle}
-                onChange={(e) => setNewPostTitle(e.target.value)}
-              />
-            </div>
-            <div className="space-y-2">
-              <Textarea
-                placeholder={t('shareThoughts')}
-                value={newPostContent}
-                onChange={(e) => setNewPostContent(e.target.value)}
-                className="min-h-[150px]"
-              />
-            </div>
-            <div className="flex justify-end gap-2">
-              <Button variant="outline" onClick={() => setShowNewPost(false)}>
-                Cancel
-              </Button>
-              <Button>Post Discussion</Button>
-            </div>
-          </CardContent>
-        </Card>
-      )}
 
       {/* Search and Sort */}
       <Card>
@@ -409,17 +360,6 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
         )}
       </div>
 
-      {/* Create Discussion Dialog */}
-      <CreateItemDialogEnhanced
-        open={showNewPost}
-        onOpenChange={setShowNewPost}
-        moduleId="community"
-        tabSlug="discussions"
-        onSuccess={(item) => {
-          console.log("Created discussion:", item)
-          setShowNewPost(false)
-        }}
-      />
     </div>
   )
 }
