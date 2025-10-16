@@ -1,0 +1,4115 @@
+{
+  "compliant": [
+    {
+      "module": "profile",
+      "file": "emergency-contact-tab.tsx",
+      "status": "COMPLIANT"
+    },
+    {
+      "module": "profile",
+      "file": "social-media-tab.tsx",
+      "status": "COMPLIANT"
+    },
+    {
+      "module": "profile",
+      "file": "travel-profile-tab.tsx",
+      "status": "COMPLIANT"
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-matching-tab.tsx",
+      "status": "COMPLIANT"
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-overview-tab.tsx",
+      "status": "COMPLIANT"
+    }
+  ],
+  "violations": [
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-advances-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { TrendingUp, Package, Calendar, CheckCircle2, Clock, ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"icon\">\n                      <FileText className=\"h-4 w-4\" aria-hidden=",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"icon\">\n                      <FileText className=\"h-4 w-4\" aria-hidden",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-agenda-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Calendar,\n  Clock,\n  MapPin,\n  Users,\n  Video,\n  ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "button\"\n                tabIndex={0}\n                className=\"p-4 border rounded-lg hover:bg-accen",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"icon\">\n                    <ChevronRight className=\"h-4 w-4\" />\n      ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-assets-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Package,\n  Music,\n  Lightbulb,\n  Video,\n  Plus,\n ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-expenses-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Receipt,\n  DollarSign,\n  Calendar,\n  CheckCircle2",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-files-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { FolderOpen, File, FileText, FileImage, FileVideo, Fi",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\" className=\"gap-2\">\n                        <Download className=\"h",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\" className=\"gap-2\">\n                        <Download className=\"",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-jobs-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Briefcase,\n  Calendar,\n  DollarSign,\n  FileText,\n",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"icon\">\n                      <ChevronRight className=\"h-4 w-4\" />\n     ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"icon\">\n                      <ChevronRight className=\"h-4 w-4\" />\n    ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-orders-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { ShoppingCart, Package, Truck, CheckCircle2, Clock, X",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-reports-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { FileBarChart, Star, Calendar, Download, Eye, Plus, C",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\" className=\"gap-2\">\n                        <Download className=\"h",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\" className=\"gap-2\">\n                        <Download className=\"",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-tasks-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Checkbox } from \"@/components/ui/checkbox\"\nimport { ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "button\"\n                tabIndex={0}\n                className=\"p-4 border rounded-lg hover:bg-accen",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-travel-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Plane, Hotel, Car, MapPin, Calendar, Clock, DollarSi",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { \n  Lay",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button \n                  variant=\"ghost\" \n                  className=\"w-full text-xs\"\n            ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                  variant=\"ghost\" \n                  className=\"w-full text-xs\"\n           ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "projects",
+      "file": "projects-activations-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "projects",
+      "file": "projects-compliance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "projects",
+      "file": "projects-costs-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "projects",
+      "file": "projects-milestones-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "projects",
+      "file": "projects-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "projects",
+      "file": "projects-productions-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Progress } from \"@/components/ui/progress\"\nimport { ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button className=\"w-full\" variant=\"outline\" size=\"sm\">\n                  {t('viewDetails')}\n        ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"w-full\" variant=\"outline\" size=\"sm\">\n                  {t('viewDetails')}\n       ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "projects",
+      "file": "projects-projects-checklists-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "projects",
+      "file": "projects-projects-work-orders-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "projects",
+      "file": "projects-safety-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "projects",
+      "file": "projects-schedule-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Calendar,\n  ZoomIn,\n  ZoomOut,\n  ChevronLeft,\n  C",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\" onClick={() => setViewMode('day')}>\n                {t('day')}\n  ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\" onClick={() => setViewMode('day')}>\n                {t('day')}\n ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "projects",
+      "file": "projects-tasks-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-activities-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-all-events-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-blocks-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-bookings-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-calendar-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Calendar as CalendarIcon, ChevronLeft, ChevronRight,",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"sm\">View</Button>\n                  </div>\n                </div>\n     ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"sm\">View</Button>\n                  </div>\n                </div>\n    ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "events",
+      "file": "events-equipment-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-incidents-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-internal-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-itineraries-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-rehearsals-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-reservations-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-run-of-show-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Progress } from \"@/components/ui/progress\"\nimport { ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                size=\"lg\" \n                variant={isRunning ? \"outline\" : \"default\"}\n    ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "events",
+      "file": "events-shipping-receiving-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "events",
+      "file": "events-tours-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Progress } from \"@/components/ui/progress\"\nimport { ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">\n                              {t('details')}\n                   ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n                              {t('details')}\n                  ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "events",
+      "file": "events-trainings-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "people",
+      "file": "people-applicants-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "people",
+      "file": "people-assignments-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "people",
+      "file": "people-onboarding-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "people",
+      "file": "people-openings-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "people",
+      "file": "people-personnel-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "people",
+      "file": "people-scheduling-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Calendar,\n  Clock,\n  Users,\n  AlertTriangle,\n  Ch",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button size=\"sm\" variant=\"outline\">{tCommon('resolve')}</Button>\n                </div>\n            ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button size=\"sm\" variant=\"outline\">{tCommon('resolve')}</Button>\n                </div>\n           ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "people",
+      "file": "people-teams-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "people",
+      "file": "people-timekeeping-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "people",
+      "file": "people-training-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "assets",
+      "file": "assets-advances-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from '@/components/ui/button'\nimport { Plus, Package, Calendar, MapPin } from 'lucide-react",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "assets",
+      "file": "assets-approvals-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from '@/components/ui/button'\nimport { Plus, CheckCircle, XCircle, Clock } from 'lucide-rea",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "assets",
+      "file": "assets-maintenance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Wrench,\n  Calendar,\n  AlertCircle,\n  CheckCircle2",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button size=\"sm\">Complete</Button>\n                  </div>\n                </div>\n              ))}",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button size=\"sm\">Complete</Button>\n                  </div>\n                </div>\n              ))",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "assets",
+      "file": "assets-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Progress } from \"@/components/ui/progress\"\nimport { ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\">View Inventory</Button>\n            <Button variant=\"outline\">Schedule Main",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\">View Inventory</Button>\n            <Button variant=\"outline\">Schedule Mai",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "assets",
+      "file": "assets-tracking-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "assets",
+      "file": "catalog-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Badge ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "assets",
+      "file": "counts-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Card, ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"sm\" onClick={() => setStatusFilter(null)}>\n            Clear\n          ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"sm\" onClick={() => setStatusFilter(null)}>\n            Clear\n         ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center gap-1\">\n            <Users className=\"h-4 w-4 text-muted-foreground\" aria-hidden=\"true\" />\n            <span classNa",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "assets",
+      "file": "inventory-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Card, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "assets",
+      "file": "tracking-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { \n  Sca",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"sm\" onClick={() => setStatusFilter(null)}>\n            Clear\n          ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"sm\" onClick={() => setStatusFilter(null)}>\n            Clear\n         ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-center h-full\">\n        <div className=\"text-center\">\n          <div className=\"animate-spin rounded-full h-",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "locations",
+      "file": "locations-access-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "locations",
+      "file": "locations-bim-models-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "locations",
+      "file": "locations-coordination-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "locations",
+      "file": "locations-directory-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { \n  Map",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button className=\"flex-1\" variant=\"outline\" size=\"sm\">\n                    View Details\n            ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\" variant=\"outline\" size=\"sm\">\n                    View Details\n           ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        className=\"flex items-center justify-center h-full\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-busy=\"true\"\n      >\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "locations",
+      "file": "locations-logistics-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "locations",
+      "file": "locations-site-maps-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Map,\n  ZoomIn,\n  ZoomOut,\n  Layers,\n  MapPin,\n  Z",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">\n            <Upload className=\"h-4 w-4 mr-2\" aria-hidden=\"true\" ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n            <Upload className=\"h-4 w-4 mr-2\" aria-hidden=\"true\"",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "locations",
+      "file": "locations-spatial-features-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "locations",
+      "file": "locations-utilities-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "locations",
+      "file": "locations-warehousing-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-all-documents-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-archive-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-call-sheets-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-contracts-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-insurance-permits-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-media-assets-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-production-reports-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-riders-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-shared-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "files",
+      "file": "files-tech-specs-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "admin",
+      "file": "admin-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { \n  Use",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "admin",
+      "file": "api-tokens-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n                          variant=\"ghost\"\n                          size=\"icon\"\n             ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n                      variant=\"outline\"\n                      size=\"sm\"\n                     ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              {t('common.cancel')}\n  ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n\n      {/* New",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n                  variant=\"outline\"\n                  size=\"icon\"\n                  onClick={",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n    \n\n      {/* Create",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n                          variant=\"ghost\"\n                          size=\"icon\"\n            ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n                      variant=\"outline\"\n                      size=\"sm\"\n                    ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              {t('common.cancel')}\n ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n                  variant=\"outline\"\n                  size=\"icon\"\n                  onClick=",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center gap-4 text-xs text-muted-foreground\">\n                        <span>{t('admin.apiTokensTab.created')} {token.created",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg\">\n              <AlertCircle className=\"h-4 w-4 text-amber-600 fle",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 13
+    },
+    {
+      "module": "admin",
+      "file": "automations-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Switch",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"icon\" aria-label={t('common.settings')}>\n                    <Settings",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "admin",
+      "file": "billing-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Separa",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button className=\"w-full\" variant=\"outline\" size=\"sm\" aria-label={t('admin.billingTab.viewAllPlans')",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"w-full\" variant=\"outline\" size=\"sm\" aria-label={t('admin.billingTab.viewAllPlans'",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-start justify-between\">\n            <div>\n              <h3 className=\"text-2xl font-bold\">{t(currentPlan.nameKey)}</h3>\n  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "admin",
+      "file": "checklist-templates-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Card, CardContent, CardDescription, CardHeader, Card",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"icon\" className=\"h-8 w-8\" aria-label=\"Template actions\">\n              ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"icon\" className=\"h-8 w-8\" aria-label=\"Template actions\">\n             ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-between\">\n            <div>\n              <CardTitle>{t('admin.checklistTemplates.title')}</CardTitle>\n     ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "admin",
+      "file": "custom-statuses-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Card, CardContent, CardDescription, CardHeader, Card",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "button\n                          key={color.value}\n                          className={`h-10 rounde",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "button\"\n                          tabIndex={0}\n                          onKeyDown={(e) => {\n       ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setIsCreating(false)} className=\"w-full\">\n                  ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<button\n                          key={color.value}\n                          className={`h-10 round",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setIsCreating(false)} className=\"w-full\">\n                 ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-between\">\n            <div>\n              <CardTitle>Custom Statuses</CardTitle>\n              <CardDescript",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 7
+    },
+    {
+      "module": "admin",
+      "file": "integrations-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Zap, C",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "admin",
+      "file": "members-management-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Badge ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\">\n              <Filter className=\"h-4 w-4 mr-2\" aria-hidden=\"true\" />\n     ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setInviteDialogOpen(false)}>\n              Cancel\n          ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\">\n              <Filter className=\"h-4 w-4 mr-2\" aria-hidden=\"true\" />\n    ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setInviteDialogOpen(false)}>\n              Cancel\n         ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 5
+    },
+    {
+      "module": "admin",
+      "file": "organization-settings-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Select, SelectContent, SelectItem, SelectTrigger, Se",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button */}\n      <div className=\"flex justify-end\">\n        <Button onClick={handleSave} disabled={l",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button onClick={handleSave} disabled={loading}>\n          {loading ? \"Saving...\" : \"Save Changes\"}\n",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-between\">\n            <div className=\"space-y-0.5\">\n              <Label>Multiple Assignees</Label>\n        ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "admin",
+      "file": "plugins-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Badge ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "admin",
+      "file": "recurrence-rules-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n                    variant=\"outline\"\n                    size=\"sm\"\n                    onCli",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              Cancel\n            </Bu",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n    \n\n      {/* Create",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n                    variant=\"outline\"\n                    size=\"sm\"\n                    onCl",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              Cancel\n            </B",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-start justify-between\">\n                <div className=\"flex-1\">\n                  <div className=\"flex items-center gap-3 ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 7
+    },
+    {
+      "module": "admin",
+      "file": "roles-permissions-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setSelectedRole(null)}>\n                Close\n              ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setSelectedRole(null)}>\n                Close\n             ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "admin",
+      "file": "security-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\" onClick={handleExportLogs}>\n              <Download className=\"h",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "admin",
+      "file": "templates-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nexport function TemplatesTab() {\n  const t = useTranslations",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "admin",
+      "file": "webhooks-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n                      variant=\"outline\"\n                      size=\"icon\"\n                   ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              {t('common.cancel')}\n  ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n    \n\n      {/* Create",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n                      variant=\"outline\"\n                      size=\"icon\"\n                  ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              {t('common.cancel')}\n ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-start gap-2 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg\">\n              <AlertCircle className=\"h-4 w-4 text-blue-600 flex-s",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 7
+    },
+    {
+      "module": "settings",
+      "file": "account-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button \n                variant=\"outline\" \n                size=\"sm\"\n                onClick={() => ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button onClick={handleSave} disabled={saving}>\n              {saving ? (\n                <Loader2 cl",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                variant=\"outline\" \n                size=\"sm\"\n                onClick={() =>",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button onClick={handleSave} disabled={saving}>\n              {saving ? (\n                <Loader2 c",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 5
+    },
+    {
+      "module": "settings",
+      "file": "appearance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Textar",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "settings",
+      "file": "automations-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Switch",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n                    variant=\"outline\"\n                    size=\"sm\"\n                    onCli",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              Cancel\n            </Bu",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n    \n\n      {/* Create",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n                    variant=\"outline\"\n                    size=\"sm\"\n                    onCl",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              Cancel\n            </B",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 6
+    },
+    {
+      "module": "settings",
+      "file": "billing-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Separa",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">Update</Button>\n          </div>\n        </CardHeader>\n        <C",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setUpgradeDialogOpen(false)}>\n              Cancel\n         ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">Update</Button>\n          </div>\n        </CardHeader>\n        <",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setUpgradeDialogOpen(false)}>\n              Cancel\n        ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-start justify-between\">\n            <div>\n              <h3 className=\"text-2xl font-bold\">{currentPlan.name}</h3>\n        ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center gap-4 p-4 border rounded-lg\">\n            <div className=\"h-10 w-16 bg-gradient-to-br from-blue-600 to-blue-400 roun",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 7
+    },
+    {
+      "module": "settings",
+      "file": "integrations-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              Cancel\n            </Bu",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setDialogOpen(false)}>\n              Cancel\n            </B",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "settings",
+      "file": "team-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Badge ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"icon\">\n                            <MoreVertical className=\"h-4 w-4\" />",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" onClick={() => setInviteDialogOpen(false)}>\n              Cancel\n          ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"icon\">\n                            <MoreVertical className=\"h-4 w-4\" /",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" onClick={() => setInviteDialogOpen(false)}>\n              Cancel\n         ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div\n                key={member.id}\n                className=\"flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex gap-3 p-3 border rounded-lg\">\n              <Crown className=\"h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5\" />\n              <div",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 7
+    },
+    {
+      "module": "profile",
+      "file": "access-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Save, Shield, Key, Lock } from \"lucide-react\"\nimport",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center gap-2\">\n            <Key className=\"h-5 w-5\" aria-hidden=\"true\" />\n            <div>\n              <CardTitle>{t('ac",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "profile",
+      "file": "basic-info-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/compon",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button \n                variant=\"outline\" \n                size=\"sm\"\n                onClick={() => ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button onClick={handleSave} disabled={saving}>\n          {saving ? (\n            <Loader2 className=",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                variant=\"outline\" \n                size=\"sm\"\n                onClick={() =>",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button onClick={handleSave} disabled={saving}>\n          {saving ? (\n            <Loader2 className",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-center h-64\">\n        <Loader2 className=\"h-8 w-8 animate-spin text-muted-foreground\" />\n      </div>\n    )\n",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 6
+    },
+    {
+      "module": "profile",
+      "file": "certifications-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport {Save, Plus, Trash2, Loader2, ExternalLink, Upload, Do",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">\n                          <Download className=\"h-4 w-4 mr-2\" ari",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button>\n                      )}\n                    </div>\n                  </div>\n               ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n                          <Download className=\"h-4 w-4 mr-2\" ar",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button onClick={handleSave} disabled={saving}>\n            {saving ? (\n              <Loader2 class",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 5
+    },
+    {
+      "module": "profile",
+      "file": "endorsements-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Thumbs",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n              <UserPlus className=\"h-4 w-4 mr-2\" />\n           ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex gap-4\">\n                  <Avatar className=\"h-12 w-12\">\n                    <AvatarImage src={endorsement.endorserImage} />\n    ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "profile",
+      "file": "health-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport {S",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "button\n                    onClick={() => removeDietaryRestriction(index)}\n                    class",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<button\n                    onClick={() => removeDietaryRestriction(index)}\n                    clas",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "profile",
+      "file": "history-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\ninterface ProjectHistory {\n  id: string\n  name: string\n  rol",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "profile",
+      "file": "performance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTri",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "profile",
+      "file": "professional-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport {S",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n                    variant=\"ghost\"\n                    size=\"icon\"\n                    onCli",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n                    variant=\"ghost\"\n                    size=\"icon\"\n                    onCl",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "profile",
+      "file": "tags-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Label ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "button\n                      onClick={() => toggleTag(tagName)}\n                      className=\"ml-",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "button>\n                        )\n                      })}\n                    </div>\n             ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<button\n                      onClick={() => toggleTag(tagName)}\n                      className=\"ml",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "companies",
+      "file": "companies-bids-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "companies",
+      "file": "companies-companies-compliance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "companies",
+      "file": "companies-companies-invoices-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "companies",
+      "file": "companies-companies-reviews-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "companies",
+      "file": "companies-companies-work-orders-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "companies",
+      "file": "companies-contacts-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Avatar",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "button', { resource: 'Contact' }) : undefined}\n                  onAction={!searchQuery ? () => {} :",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                    className=\"w-full\"\n                    aria-label={t('aria.sendEmail', ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        role=\"status\" \n        aria-live=\"polite\" \n        aria-atomic=\"true\"\n        className=\"flex items-center justify-center h-full\"\n      ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "companies",
+      "file": "companies-deliverables-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "companies",
+      "file": "companies-documents-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "companies",
+      "file": "companies-organizations-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/compon",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                  className=\"flex-1\" \n                  variant=\"outline\" \n                ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "companies",
+      "file": "companies-scopes-of-work-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "companies",
+      "file": "companies-subcontractor-profile-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "community",
+      "file": "activity-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Textarea } from \"@/components/ui/textarea\"\nimport { ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button \n                  onFilesSelected={setAttachedFiles}\n                  maxFiles={3}\n        ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button>\n              </div>\n            </div>\n          </div>\n        </CardContent>\n      </Card",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                  onClick={handlePostSubmit}\n                  disabled={!newPost.trim() ||",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "community",
+      "file": "competitions-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">{t('viewFullRankings')}</Button>\n          </div>\n        </CardH",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">{t('viewFullRankings')}</Button>\n          </div>\n        </Card",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex flex-col items-center min-w-[60px]\">\n                    <RankIcon className={`h-6 w-6 ${rankBadge.color}`} />\n                  ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "community",
+      "file": "connections-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"sm\">\n                        <MoreHorizontal className=\"h-4 w-4\" aria-",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "community",
+      "file": "discussions-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button */}\n      <Card className=\"bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-primary/",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button \n                      variant={discussion.userVote === \"up\" ? \"default\" : \"ghost\"} \n        ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                      variant={discussion.userVote === \"up\" ? \"default\" : \"ghost\"} \n       ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex flex-col md:flex-row gap-4\">\n            <div className=\"flex-1 relative\">\n              <Search className=\"absolute left-3 top-3",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 5
+    },
+    {
+      "module": "community",
+      "file": "events-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button \n                variant=\"outline\" \n                size=\"sm\" \n                className=\"w-f",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Buttons */}\n                    <div className=\"flex flex-wrap gap-2\">\n                      {event.",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                variant=\"outline\" \n                size=\"sm\" \n                className=\"w-",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"default\" size=\"sm\" disabled>\n                          <Ticket className=\"h-4 w-4 m",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"md:flex\">\n                  {/* Event Image */}\n                  {event.image && (\n                    <div className=\"md:w-80 h-56 r",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 6
+    },
+    {
+      "module": "community",
+      "file": "news-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"sm\" className=\"h-8\">\n                          <ThumbsUp className=\"h-4",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"sm\" className=\"h-8\">\n                          <ThumbsUp className=\"h-",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex flex-col md:flex-row gap-4\">\n            <div className=\"flex-1 relative\">\n              <Search className=\"absolute left-3 top-3",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "community",
+      "file": "showcase-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { \n  Spa",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-start justify-between mb-4\">\n                  <div className=\"flex items-center gap-3\">\n                    <Avatar classN",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "community",
+      "file": "studios-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button */}\n      <Card className=\"bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-primary/",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">\n                              View Details\n                     ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n                              View Details\n                    ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-between\">\n            <div>\n              <h3 className=\"font-semibold mb-1\">Create Your Own Studio</h3>\n   ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 5
+    },
+    {
+      "module": "marketplace",
+      "file": "favorites-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Heart,",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"icon\">\n                  <Eye className=\"h-4 w-4\" />\n               ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "marketplace",
+      "file": "lists-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button className=\"flex-1\" size=\"sm\">\n                  View Items\n                </Button>\n        ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"icon\" className=\"h-8 w-8\">\n                      <MoreHorizontal class",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\" size=\"sm\">\n                  View Items\n                </Button>\n       ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-between\">\n                {getStatusBadge(list.status)}\n                <p className=\"text-xs text-muted-for",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 5
+    },
+    {
+      "module": "marketplace",
+      "file": "orders-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">{tCommon('view')}</Button>\n                  <Button size=\"sm\">Ed",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">{tCommon('view')}</Button>\n                  <Button size=\"sm\">E",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex flex-col sm:flex-row gap-4\">\n        <div className=\"flex-1 relative\">\n          <Search className=\"absolute left-3 top-1/2 trans",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "marketplace",
+      "file": "products-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "marketplace",
+      "file": "purchases-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">Track</Button>\n                  <Button size=\"sm\">{tCommon('deta",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">Track</Button>\n                  <Button size=\"sm\">{tCommon('det",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex flex-col sm:flex-row gap-4\">\n        <div className=\"flex-1 relative\">\n          <Search className=\"absolute left-3 top-1/2 trans",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "marketplace",
+      "file": "reviews-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Avatar",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"ghost\" size=\"icon\">\n                    <Flag className=\"h-4 w-4\" aria-hidden=\"true\"",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\">\n          <Filter className=\"h-4 w-4 mr-2\" aria-hidden=\"true\" />{t('moreF",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"ghost\" size=\"icon\">\n                    <Flag className=\"h-4 w-4\" aria-hidden=\"true",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-start justify-between\">\n                  <div className=\"flex items-start gap-3\">\n                    <Avatar>\n           ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 5
+    },
+    {
+      "module": "marketplace",
+      "file": "sales-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\">{tCommon('view')}</Button>\n                    <Button size=\"sm\">",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\">\n          <Download className=\"h-4 w-4 mr-2\" aria-hidden=\"true\" />\n      ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">{tCommon('view')}</Button>\n                    <Button size=\"sm\"",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-start justify-between\">\n                  <div className=\"space-y-1\">\n                    <CardTitle className=\"text-lg\">{s",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 5
+    },
+    {
+      "module": "marketplace",
+      "file": "services-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Avatar",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\" onClick={() => handleViewProfile(service)}>\n                    V",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\" onClick={() => handleViewProfile(service)}>\n                    ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "marketplace",
+      "file": "shop-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Input ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\">\n          <Filter className=\"h-4 w-4 mr-2\" aria-hidden=\"true\" />\n         ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\">\n          <Filter className=\"h-4 w-4 mr-2\" aria-hidden=\"true\" />\n        ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex flex-col sm:flex-row gap-4\">\n        <div className=\"flex-1 relative\">\n          <Search className=\"absolute left-3 top-1/2 trans",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "marketplace",
+      "file": "spotlight-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Avatar",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "marketplace",
+      "file": "vendors-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Avatar",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\">\n                  View Store\n                </Button>\n                <",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "resources",
+      "file": "resources-courses-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { \n  Gra",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\" size=\"sm\">\n                  {course.is_enrolled ? 'Continue Learning' : ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "resources",
+      "file": "resources-glossary-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { \n  Boo",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n          variant={selectedLetter === null ? \"default\" : \"outline\"}\n          size=\"sm\"\n     ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n          variant={selectedLetter === null ? \"default\" : \"outline\"}\n          size=\"sm\"\n    ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-center h-full\">\n        <div className=\"text-center\">\n          <div className=\"animate-spin rounded-full h-",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "resources",
+      "file": "resources-grants-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { \n  Cir",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button className=\"flex-1\" size=\"sm\">\n                    {grant.status === 'applied' ? 'View Applica",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\" size=\"sm\">\n                    {grant.status === 'applied' ? 'View Applic",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-center h-full\">\n        <div className=\"text-center\">\n          <div className=\"animate-spin rounded-full h-",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "resources",
+      "file": "resources-guides-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { \n  Boo",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\" size=\"sm\">\n                  View Guide\n                </Button>\n       ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "resources",
+      "file": "resources-library-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { \n  Boo",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\" variant=\"outline\" size=\"sm\">\n                    View Details\n           ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "resources",
+      "file": "resources-publications-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { \n  Fil",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button className=\"flex-1\" size=\"sm\">\n                  <ExternalLink className=\"h-4 w-4 mr-2\" />\n   ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\" size=\"sm\">\n                  <ExternalLink className=\"h-4 w-4 mr-2\" />\n  ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div className=\"flex items-center justify-center h-full\">\n        <div className=\"text-center\">\n          <div className=\"animate-spin rounded-full h-",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "resources",
+      "file": "resources-troubleshooting-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { HelpCi",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n                  <ThumbsUp className=\"h-4 w-4 mr-2\" />\n       ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "finance",
+      "file": "finance-accounts-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-approvals-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Clipbo",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button\n                            size=\"sm\"\n                            variant=\"outline\"\n         ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button\n                            size=\"sm\"\n                            variant=\"outline\"\n        ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        role=\"status\" \n        aria-live=\"polite\" \n        aria-atomic=\"true\"\n        className=\"flex items-center justify-center h-full\"\n      ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "finance",
+      "file": "finance-budgets-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-cash-flow-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Waves, TrendingUp, TrendingDown, AlertCircle, Dollar",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n              Export Projection\n            </Button>\n         ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "finance",
+      "file": "finance-expenses-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-forecasts-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-gl-codes-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-invoices-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Progress } from \"@/components/ui/progress\"\nimport { ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\">View Cash Flow</Button>\n            <Button variant=\"outline\">Budget Scena",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "finance",
+      "file": "finance-payments-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-payroll-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-policies-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Shield",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\" className=\"flex-1\">\n                            Adjust Limit\n   ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "finance",
+      "file": "finance-reconciliation-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-revenue-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-scenarios-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { GitCom",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\" className=\"flex-1\">\n                      Edit\n                 ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "finance",
+      "file": "finance-taxes-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-transactions-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "finance",
+      "file": "finance-variance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Trendi",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-agreements-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-audits-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-fulfillment-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-line-items-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-orders-dashboard-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Progress } from \"@/components/ui/progress\"\nimport { ",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button size=\"sm\" variant=\"outline\">Reject</Button>\n                    <Button size=\"sm\">Approve</Bu",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button size=\"sm\" variant=\"outline\">Reject</Button>\n                    <Button size=\"sm\">Approve</B",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB_HEADER",
+          "match": "<div \n        role=\"status\" \n        aria-live=\"polite\" \n        aria-atomic=\"true\"\n        className=\"flex items-center justify-center h-full\"\n      ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 4
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-orders-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-procurement-approvals-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-receiving-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Input } from \"@/components/ui/input\"\nimport { Packag",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button variant=\"outline\" size=\"sm\" className=\"gap-2\">\n                <Filter className=\"h-4 w-4\" ar",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\" className=\"gap-2\">\n                <Filter className=\"h-4 w-4\" a",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-requisitions-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-active-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-archived-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-checklists-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-completed-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-dispatch-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-estimates-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-jobs-compliance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-jobs-invoices-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-offers-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-pipeline-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { \n  Briefcase,\n  DollarSign,\n  Calendar,\n  Building2,",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                            variant=\"ghost\" \n                            size=\"icon\" \n     ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-recruiting-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-rfps-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-shortlists-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-work-orders-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Plus, ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "reports",
+      "file": "reports-archived-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { useTra",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"icon\" aria-label={tCommon('filter')}>\n              <Filter classNam",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "reports",
+      "file": "reports-compliance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { useTra",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button size=\"sm\" className=\"flex-1\" aria-label={`${t('generate')} ${t(report.nameKey)}`}>\n         ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "reports",
+      "file": "reports-custom-builder-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Label } from \"@/components/ui/label\"\nimport { Input ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "reports",
+      "file": "reports-executive-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Progre",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button aria-label={`${t('viewReport')}: ${t(report.titleKey)}`}>\n                    <Target classN",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "reports",
+      "file": "reports-exports-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { useTra",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button size=\"sm\" aria-label={`Download ${t(file.nameKey)}`}>\n                      <Download classNa",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button size=\"sm\" aria-label={`Download ${t(file.nameKey)}`}>\n                      <Download classN",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "reports",
+      "file": "reports-operational-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { useTranslations } from \"next-intl\"\n\nconst operationa",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "reports",
+      "file": "reports-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { useTranslations } from \"next-intl\"\n\nconst recentRepo",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button \n                    size=\"sm\" \n                    variant=\"outline\"\n                    ari",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button \n                    size=\"sm\" \n                    variant=\"outline\"\n                    ar",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 3
+    },
+    {
+      "module": "reports",
+      "file": "reports-scheduled-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { useTranslations } from \"next-intl\"\n\nconst scheduledR",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "reports",
+      "file": "reports-templates-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { useTra",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button className=\"flex-1\" size=\"sm\" aria-label={`${t('useTemplate')}: ${t(template.nameKey)}`}>\n   ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-comparisons-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst useCompari",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-custom-views-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Create",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-data-sources-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Create",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n                    <RefreshCw className=\"h-4 w-4 mr-2\" aria-hi",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-forecasting-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst forecasts ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-metrics-library-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Create",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-performance-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { useTranslations } from \"next-intl\"\n\nconst performanc",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-pivot-tables-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Create",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-realtime-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst realtimeMe",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-trends-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst trendData ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "insights",
+      "file": "insights-benchmarks-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst benchmarks",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "insights",
+      "file": "insights-intelligence-feed-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst insights =",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "insights",
+      "file": "insights-key-results-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Progress } from \"@/components/ui/progress\"\nimport { ",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "insights",
+      "file": "insights-objectives-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\nimport { Badge } from \"@/components/ui/badge\"\nimport { Progre",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n                  <Edit className=\"h-4 w-4 mr-2\" aria-hidden=\"t",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "insights",
+      "file": "insights-overview-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst strategicI",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "insights",
+      "file": "insights-priorities-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst priorities",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "insights",
+      "file": "insights-progress-tracking-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst progressDa",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "module": "insights",
+      "file": "insights-recommendations-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst recommenda",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button>\n                      View Details\n                      <ArrowRight className=\"h-4 w-4 ml-",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "insights",
+      "file": "insights-reviews-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst upcomingRe",
+          "severity": "HIGH"
+        },
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/<button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "<Button variant=\"outline\" size=\"sm\">\n                    <FileText className=\"h-4 w-4 mr-2\" aria-hid",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "module": "insights",
+      "file": "insights-success-metrics-tab.tsx",
+      "violations": [
+        {
+          "type": "CREATE_BUTTON_IN_TAB",
+          "pattern": "/Button[^>]*>[\\s\\S]*?(?:Create|New|\\+ New|Add)/gi",
+          "match": "Button } from \"@/components/ui/button\"\n\nimport { useTranslations } from \"next-intl\"\nconst successMet",
+          "severity": "HIGH"
+        }
+      ],
+      "count": 1
+    }
+  ],
+  "summary": {
+    "total": 217,
+    "compliant": 5,
+    "violations": 212
+  }
+}
