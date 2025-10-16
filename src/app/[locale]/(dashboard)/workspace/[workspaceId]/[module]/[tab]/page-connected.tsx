@@ -34,6 +34,7 @@ import { PortfolioView } from "@/components/views/portfolio-view"
 import { PivotView } from "@/components/views/pivot-view"
 import { getModuleBySlug } from "@/lib/modules/registry"
 import { getTabBySlug } from "@/lib/modules/tabs-registry"
+import { getSchemaForTab } from "@/lib/data-schemas"
 import { ModuleTabs } from "@/components/layout/module-tabs"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
@@ -159,6 +160,9 @@ export default function ModuleTabPage() {
         )
       : realData
 
+    // Get schema for current tab
+    const schema = getSchemaForTab(moduleSlug, tabSlug)
+
     // Render appropriate view with REAL data
     switch (currentView) {
       case "list":
@@ -166,7 +170,20 @@ export default function ModuleTabPage() {
       case "board":
         return <BoardView data={filteredData} onItemClick={handleItemClick} />
       case "table":
-        return <TableView data={filteredData} onItemClick={handleItemClick} />
+        return (
+          <EnhancedTableView
+            data={filteredData}
+            schema={schema?.fields || []}
+            moduleId={moduleSlug}
+            tabSlug={tabSlug}
+            workspaceId={workspaceId}
+            onCreate={createItem}
+            onUpdate={updateItem}
+            onDelete={deleteItem}
+            onRefresh={() => {/* Real-time updates handled automatically */}}
+            loading={loading}
+          />
+        )
       case "calendar":
         return <CalendarView data={filteredData} onItemClick={handleItemClick} />
       case "timeline":

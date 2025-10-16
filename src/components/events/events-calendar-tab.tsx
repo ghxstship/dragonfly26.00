@@ -86,7 +86,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
 
   return (
     <div className="space-y-6">
-      {/* Actions */}
+      {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
           View and manage all scheduled events and activities
