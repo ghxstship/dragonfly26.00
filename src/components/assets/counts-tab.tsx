@@ -306,6 +306,9 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         <EnhancedTableView
           data={filteredData}
           schema={countsSchema}
+          moduleId="assets"
+          tabSlug="counts"
+          workspaceId={workspaceId}
           onRefresh={() => {}}
           onCreate={handleCreateCount}
           onUpdate={handleUpdateCount}

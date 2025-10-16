@@ -280,6 +280,9 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
           <EnhancedTableView
             data={displayData}
             schema={catalogSchema}
+            moduleId="assets"
+            tabSlug="catalog"
+            workspaceId={currentWorkspace?.id || ''}
             loading={isLoading}
             onRefresh={() => {}}
           />

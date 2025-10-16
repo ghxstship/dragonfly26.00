@@ -271,6 +271,9 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
           <EnhancedTableView
             data={filteredByFolder}
             schema={inventorySchema}
+            moduleId="assets"
+            tabSlug="inventory"
+            workspaceId={workspaceId}
             onRefresh={() => {}}
             onCreate={handleCreateItem}
             onUpdate={handleUpdateItem}

@@ -9,3 +9,6 @@ export * from './use-assets-data'
 
 // Dashboard Data Hooks
 export * from './use-dashboard-data'
+
+// Notifications Hooks
+export * from './use-notifications'

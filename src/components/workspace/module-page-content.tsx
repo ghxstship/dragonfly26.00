@@ -131,6 +131,9 @@ export function ModulePageContent() {
             <EnhancedTableView
               data={mockData}
               schema={schema.fields}
+              moduleId={moduleSlug}
+              tabSlug={moduleTabs[0]?.slug || 'overview'}
+              workspaceId={workspaceId}
               onRefresh={() => {/* TODO: Implement refresh */}}
               loading={dataLoading}
             />

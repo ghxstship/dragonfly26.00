@@ -199,10 +199,13 @@ export function BillingTab() {
           <EnhancedTableView
             data={invoices}
             schema={billingSchema.fields}
+            moduleId="admin"
+            tabSlug="billing"
+            workspaceId={''}
             onCreate={handleCreate}
             onUpdate={handleUpdate}
             onDelete={handleDelete}
-            onBulkDelete={handleBulkDelete}
+            loading={false}
           />
         </CardContent>
       </Card>

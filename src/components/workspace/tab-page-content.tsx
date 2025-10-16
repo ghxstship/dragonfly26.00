@@ -476,6 +476,9 @@ export function TabPageContent() {
             <EnhancedTableView
               data={filteredData}
               schema={schema.fields}
+              moduleId={moduleSlug}
+              tabSlug={tabSlug}
+              workspaceId={workspaceId}
               onRefresh={() => {/* Real-time updates handled automatically */}}
               onCreate={handleCreateItem}
               onUpdate={updateItem}

@@ -55,6 +55,7 @@ import { useUIStore } from "@/store/ui-store"
 import { useWorkspaceStore } from "@/store/workspace-store"
 import { ItemType, getModuleTabForItemType } from "@/lib/modules/item-type-to-module-mapper"
 import { createClient } from "@/lib/supabase/client"
+import { useNotifications } from "@/hooks"
 
 export function TopBar() {
   const t = useTranslations()
@@ -71,15 +72,15 @@ export function TopBar() {
   const { currentOrganization } = useWorkspaceStore()
   const router = useRouter()
   const locale = useLocale()
+  
+  // Get real-time notifications count
+  const { unreadCount } = useNotifications()
 
   // Load demo mode from localStorage on mount
   useEffect(() => {
     const isDemoMode = localStorage.getItem('DEMO_MODE') === 'true'
     setDemoMode(isDemoMode)
   }, [])
-
-  // Simulate unread notifications count
-  const unreadCount = 3
 
   // Monitor online/offline status and sync with airplane mode
   useEffect(() => {

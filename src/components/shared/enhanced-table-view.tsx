@@ -20,6 +20,8 @@ import { BulkActionsToolbar } from "./bulk-actions-toolbar"
 import { CrudDrawer } from "./crud-drawer"
 import { MobileTableCard } from "./mobile-table-card"
 import { EmptyState } from "./empty-state"
+import { CreateItemDialogEnhanced } from "./create-item-dialog-enhanced"
+import { getFormConfig } from "@/lib/modules/form-fields-registry"
 import { useIsMobile } from "@/hooks/use-is-mobile"
 import type { DataItem } from "@/types"
 import type { FieldSchema } from "@/lib/data-schemas"
@@ -27,6 +29,9 @@ import type { FieldSchema } from "@/lib/data-schemas"
 interface EnhancedTableViewProps {
   data: DataItem[]
   schema: FieldSchema[]
+  moduleId: string
+  tabSlug: string
+  workspaceId: string
   onRefresh?: () => void
   onCreate?: (data: Record<string, any>) => Promise<void>
   onUpdate?: (id: string, updates: Record<string, any>) => Promise<void>
@@ -38,6 +43,9 @@ interface EnhancedTableViewProps {
 export function EnhancedTableView({
   data,
   schema,
+  moduleId,
+  tabSlug,
+  workspaceId,
   onRefresh,
   onCreate,
   onUpdate,
@@ -49,9 +57,14 @@ export function EnhancedTableView({
   const [sorting, setSorting] = useState<SortingState>([])
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [rowSelection, setRowSelection] = useState({})
-  const [drawerMode, setDrawerMode] = useState<'view' | 'create' | 'edit' | null>(null)
+  const [drawerMode, setDrawerMode] = useState<'view' | 'edit' | null>(null)
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const [selectedItem, setSelectedItem] = useState<DataItem | null>(null)
   const [viewMode, setViewMode] = useState<'table' | 'card'>('table')
+  
+  // Get contextualized button text from form config
+  const formConfig = getFormConfig(moduleId, tabSlug)
+  const createButtonText = formConfig?.title?.replace('Create ', '').replace('Add ', '')  || 'New'
 
   // Get list fields from schema
   const listFields = schema.filter(f => f.showInList !== false).sort((a, b) => (a.order || 99) - (b.order || 99))
@@ -193,10 +206,10 @@ export function EnhancedTableView({
                 </Button>
               </div>
             )}
-            <Button onClick={() => setDrawerMode('create')} size="sm" className="h-9">
+            <Button onClick={() => setCreateDialogOpen(true)} size="sm" className="h-9">
               <Plus className="h-4 w-4 mr-2" />
-              <span className="hidden sm:inline">Add New</span>
-              <span className="sm:hidden">Add</span>
+              <span className="hidden sm:inline">{createButtonText}</span>
+              <span className="sm:hidden">{createButtonText}</span>
             </Button>
           </div>
         </div>
@@ -232,7 +245,7 @@ export function EnhancedTableView({
                 mainMessage="No data found"
                 description="Add your first item to get started"
                 actionLabel="Add Item"
-                onAction={onCreate ? () => setDrawerMode('create') : undefined}
+                onAction={onCreate ? () => setCreateDialogOpen(true) : undefined}
               />
             )}
           </div>
@@ -289,7 +302,7 @@ export function EnhancedTableView({
                       mainMessage="No data found"
                       description="Add your first item to get started"
                       actionLabel="Add Item"
-                      onAction={onCreate ? () => setDrawerMode('create') : undefined}
+                      onAction={onCreate ? () => setCreateDialogOpen(true) : undefined}
                     />
                   </td>
                 </tr>
@@ -317,7 +330,7 @@ export function EnhancedTableView({
         onArchive={() => {/* Bulk archive */}}
       />
 
-      {/* CRUD Drawer */}
+      {/* CRUD Drawer - for View/Edit only */}
       <CrudDrawer
         mode={drawerMode || 'view'}
         item={selectedItem}
@@ -343,6 +356,19 @@ export function EnhancedTableView({
         }}
         onDuplicate={handleDuplicate}
         loading={loading}
+      />
+
+      {/* Create Item Dialog - Dialog not Drawer */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId={moduleId}
+        tabSlug={tabSlug}
+        workspaceId={workspaceId}
+        onSuccess={async (item) => {
+          await onCreate?.(item)
+          onRefresh?.()
+        }}
       />
     </>
   )
