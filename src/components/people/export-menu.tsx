@@ -59,7 +59,7 @@ export function ExportMenu({
     } catch (error) {
       toast({
         title: "Export failed",
-        description: "There was an error exporting your data",
+        description: t('people.toast.exportError'),
         variant: "destructive"
       })
     } finally {

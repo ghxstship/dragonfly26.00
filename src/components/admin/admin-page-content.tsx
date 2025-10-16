@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getModuleTabs } from "@/lib/modules/tabs-registry"
 import { iconMap } from "@/lib/modules/icon-map"
@@ -30,6 +31,7 @@ const tabComponents: Record<string, React.ComponentType> = {
 }
 
 export function AdminPageContent() {
+  const t = useTranslations()
   const adminTabs = getModuleTabs("admin").filter(tab => tab.enabled)
   const [activeTab, setActiveTab] = useState(adminTabs[0]?.slug || "overview")
 
@@ -37,9 +39,9 @@ export function AdminPageContent() {
     <div className="flex flex-col h-full">
       {/* Header */}
       <div className="border-b bg-background p-6">
-        <h1 className="text-3xl font-bold">Admin Settings</h1>
+        <h1 className="text-3xl font-bold">{t('admin.settings')}</h1>
         <p className="text-muted-foreground mt-2">
-          Manage organization-wide settings and configurations
+          {t('admin.manageOrganizationSettings')}
         </p>
       </div>
 
@@ -56,8 +58,8 @@ export function AdminPageContent() {
                   className="gap-2 data-[state=active]:bg-background"
                   style={activeTab === tab.slug ? { color: tab.color } : undefined}
                 >
-                  {Icon && <Icon className="h-4 w-4" style={{ color: tab.color }} />}
-                  {tab.name}
+                  {Icon && <Icon className="h-4 w-4" style={{ color: tab.color }} aria-hidden="true" />}
+                  {t(`admin.${tab.slug}`)}
                 </TabsTrigger>
               )
             })}

@@ -7,35 +7,36 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
+import { useTranslations } from "next-intl"
 const customViews = [
   {
     id: "1",
-    name: "Executive Dashboard",
-    description: "High-level KPIs for leadership",
+    nameKey: "executive_dashboard",
+    descriptionKey: "highlevel_kpis_for_leadership",
     widgets: ["Revenue Chart", "Customer Growth", "Market Share", "Profit Margin"],
     isDefault: true,
     lastModified: "2025-10-08"
   },
   {
     id: "2",
-    name: "Sales Performance",
-    description: "Detailed sales metrics and pipeline",
+    nameKey: "sales_performance",
+    descriptionKey: "detailed_sales_metrics_and_pipeline",
     widgets: ["Conversion Rate", "Deal Pipeline", "Sales by Region", "Top Performers"],
     isDefault: false,
     lastModified: "2025-10-05"
   },
   {
     id: "3",
-    name: "Operations Overview",
-    description: "Operational efficiency metrics",
+    nameKey: "operations_overview",
+    descriptionKey: "operational_efficiency_metrics",
     widgets: ["Task Completion", "Resource Utilization", "Project Status", "Team Velocity"],
     isDefault: false,
     lastModified: "2025-09-28"
   },
   {
     id: "4",
-    name: "Customer Analytics",
-    description: "Customer behavior and satisfaction",
+    nameKey: "customer_analytics",
+    descriptionKey: "customer_behavior_and_satisfaction",
     widgets: ["Satisfaction Score", "Churn Rate", "LTV Analysis", "Support Tickets"],
     isDefault: false,
     lastModified: "2025-10-02"
@@ -48,15 +49,22 @@ interface AnalyticsCustomViewsTabProps {
 }
 
 export function AnalyticsCustomViewsTab({ data = [], loading = false }: AnalyticsCustomViewsTabProps) {
+  const t = useTranslations('intelligence.analytics.analyticscustomviews')
+  const tCommon = useTranslations('common')
+
   const displayViews = data || []
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
   
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
         <Button onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" />
-          New Custom View
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')} {t('customView')}
         </Button>
       </div>
 
@@ -67,22 +75,22 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <CardTitle className="text-lg">{view.name}</CardTitle>
+                    <CardTitle className="text-lg">{t(view.nameKey)}</CardTitle>
                     {view.isDefault && (
                       <Badge variant="outline" className="bg-yellow-100 text-yellow-800 border-yellow-200">
-                        <Star className="h-3 w-3 mr-1 fill-current" />
-                        Default
+                        <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" />
+                        {t('default')}
                       </Badge>
                     )}
                   </div>
-                  <p className="text-sm text-muted-foreground">{view.description}</p>
+                  <p className="text-sm text-muted-foreground">{t(view.descriptionKey)}</p>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <p className="text-sm font-medium mb-2">Widgets ({view.widgets.length})</p>
+                  <p className="text-sm font-medium mb-2">{t('widgets')} ({view.widgets.length})</p>
                   <div className="flex flex-wrap gap-2">
                     {view.widgets.map((widget, idx) => (
                       <Badge key={idx} variant="secondary" className="text-xs">
@@ -94,11 +102,11 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
 
                 <div className="pt-3 border-t flex items-center justify-between">
                   <p className="text-xs text-muted-foreground">
-                    Modified {view.lastModified}
+                    {t('modified')} {view.lastModified}
                   </p>
                   <div className="flex gap-2">
                     <Button variant="outline" size="sm">
-                      <Edit className="h-3 w-3 mr-1" />
+                      <Edit className="h-3 w-3 mr-1" aria-hidden="true" />
                       Edit
                     </Button>
                     <Button variant="outline" size="sm">
@@ -115,13 +123,13 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
       {/* Create New View Card */}
       <Card className="border-2 border-dashed">
         <CardContent className="p-12 text-center">
-          <Sliders className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" />
-          <h3 className="font-semibold mb-2">Create Custom View</h3>
+          <Sliders className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" aria-hidden="true" />
+          <h3 className="font-semibold mb-2">{t('createCustomView')}</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            Build a personalized analytics dashboard with the metrics that matter most to you
+            {t('buildPersonalizedDashboard')}
           </p>
           <Button onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             Get Started
           </Button>
         </CardContent>

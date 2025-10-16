@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ClipboardList, FileText, Package, Truck, CheckCircle, Clock, XCircle, Search, Plus } from "lucide-react"
+import { useTranslations } from 'next-intl'
 
 interface PurchasesTabProps {
   data?: any[]
@@ -13,22 +14,24 @@ interface PurchasesTabProps {
 }
 
 export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) {
+  const t = useTranslations('marketplace.purchases')
+  const tCommon = useTranslations('common')
   const purchasesData = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" />Completed</Badge>
+        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('completed')}</Badge>
       case "delivered":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" />Delivered</Badge>
+        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />Delivered</Badge>
       case "shipped":
-        return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" />Shipped</Badge>
+        return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" aria-hidden="true" />Shipped</Badge>
       case "processing":
-        return <Badge className="bg-cyan-600"><Package className="h-3 w-3 mr-1" />Processing</Badge>
+        return <Badge className="bg-cyan-600"><Package className="h-3 w-3 mr-1" aria-hidden="true" />Processing</Badge>
       case "pending":
-        return <Badge variant="outline"><Clock className="h-3 w-3 mr-1" />Pending</Badge>
+        return <Badge variant="outline"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />Pending</Badge>
       case "cancelled":
-        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" />Cancelled</Badge>
+        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('cancelled')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -48,18 +51,22 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
   }
 
   const getPurchaseTypeIcon = (name: string) => {
-    if (name.includes("Product Order")) return <Package className="h-5 w-5 text-blue-500" />
-    if (name.includes("Service Order")) return <FileText className="h-5 w-5 text-purple-500" />
-    if (name.includes("Equipment Rental")) return <Truck className="h-5 w-5 text-green-500" />
-    if (name.includes("Software License")) return <ClipboardList className="h-5 w-5 text-orange-500" />
-    return <Package className="h-5 w-5 text-gray-500" />
+    if (name.includes("Product Order")) return <Package className="h-5 w-5 text-blue-500" aria-hidden="true" />
+    if (name.includes("Service Order")) return <FileText className="h-5 w-5 text-purple-500" aria-hidden="true" />
+    if (name.includes("Equipment Rental")) return <Truck className="h-5 w-5 text-green-500" aria-hidden="true" />
+    if (name.includes("Software License")) return <ClipboardList className="h-5 w-5 text-orange-500" aria-hidden="true" />
+    return <Package className="h-5 w-5 text-gray-500" aria-hidden="true" />
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
         <Button>
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           New Purchase
         </Button>
       </div>
@@ -100,7 +107,7 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Completed</CardDescription>
+            <CardDescription className="text-xs">{t('completed')}</CardDescription>
             <CardTitle className="text-2xl">
               {purchasesData.filter(p => p.status === 'completed').length}
             </CardTitle>
@@ -111,12 +118,12 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search purchases..." className="pl-9" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Input placeholder={t('searchPurchases')} className="pl-9" />
         </div>
         <Select defaultValue="all">
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder="Purchase Type" />
+            <SelectValue placeholder={t('purchaseType')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Types</SelectItem>
@@ -128,15 +135,15 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
         </Select>
         <Select defaultValue="all-status">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Status" />
+            <SelectValue placeholder={t('status')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all-status">All Status</SelectItem>
+            <SelectItem value="all-status">{t('allStatus')}</SelectItem>
             <SelectItem value="pending">Pending</SelectItem>
             <SelectItem value="processing">Processing</SelectItem>
             <SelectItem value="shipped">Shipped</SelectItem>
             <SelectItem value="delivered">Delivered</SelectItem>
-            <SelectItem value="completed">Completed</SelectItem>
+            <SelectItem value="completed">{t('completed')}</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -182,7 +189,7 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
                 </div>
                 <div className="flex items-end justify-end gap-2">
                   <Button variant="outline" size="sm">Track</Button>
-                  <Button size="sm">Details</Button>
+                  <Button size="sm">{tCommon('details')}</Button>
                 </div>
               </div>
             </CardContent>

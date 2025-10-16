@@ -3,8 +3,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ClipboardCheck, CheckCircle2, XCircle, Clock, AlertTriangle, ChevronRight, User } from "lucide-react"
+import { ClipboardCheck, CheckCircle2, XCircle, Clock, AlertTriangle, ChevronRight, User, Plus } from "lucide-react"
 import { useState } from "react"
+import { createClient } from "@/lib/supabase/client"
+import { useToast } from "@/lib/hooks/use-toast"
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
+import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinanceApprovalsTabProps {
   data?: any[]
@@ -19,7 +24,7 @@ const MOCK_APPROVALS = [
     reference: 'PO-2024-001',
     amount: 5000,
     requester: 'John Smith',
-    category: 'Equipment',
+    categoryKey: 'mockData.categories.equipment',
     urgency: 'high',
     dueDate: '2024-10-16',
     description: 'Camera equipment rental',
@@ -30,7 +35,7 @@ const MOCK_APPROVALS = [
     reference: 'BCR-2024-015',
     amount: 15000,
     requester: 'Sarah Johnson',
-    category: 'Production',
+    categoryKey: 'mockData.categories.production',
     urgency: 'medium',
     dueDate: '2024-10-18',
     description: 'Increase post-production budget',
@@ -41,7 +46,7 @@ const MOCK_APPROVALS = [
     reference: 'EXP-2024-234',
     amount: 1250,
     requester: 'Mike Chen',
-    category: 'Travel',
+    categoryKey: 'mockData.categories.travel',
     urgency: 'low',
     dueDate: '2024-10-20',
     description: 'Location scouting expenses',
@@ -49,14 +54,28 @@ const MOCK_APPROVALS = [
 ]
 
 export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps) {
+  const t = useTranslations('business.finance.approvals')
+  const tCommon = useTranslations('business.common')
+  const locale = useLocale()
   const [actionLoading, setActionLoading] = useState<string | null>(null)
+  const { toast } = useToast()
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="flex items-center justify-center h-full"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading approvals...</p>
+          <div 
+            className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"
+            aria-hidden="true"
+          ></div>
+          <p className="text-muted-foreground">
+            {tCommon('loading', { resource: t('title') })}
+          </p>
         </div>
       </div>
     )
@@ -64,14 +83,70 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
 
   const handleApprove = async (approvalId: string) => {
     setActionLoading(approvalId)
-    // TODO: Implement approval logic
-    setTimeout(() => setActionLoading(null), 1000)
+    try {
+      const supabase = createClient()
+      const { error } = await supabase
+        .from('finance_approvals')
+        .update({ 
+          status: 'approved',
+          approved_at: new Date().toISOString(),
+          approved_by: (await supabase.auth.getUser()).data.user?.id
+        })
+        .eq('id', approvalId)
+      
+      if (error) throw error
+      
+      toast({
+        title: 'Approval successful',
+        description: 'The request has been approved'
+      })
+      
+      // Refresh data if needed
+      window.location.reload()
+    } catch (error) {
+      console.error('Approval error:', error)
+      toast({
+        title: 'Approval failed',
+        description: 'Unable to approve this request',
+        variant: 'destructive'
+      })
+    } finally {
+      setActionLoading(null)
+    }
   }
 
   const handleReject = async (approvalId: string) => {
     setActionLoading(approvalId)
-    // TODO: Implement rejection logic
-    setTimeout(() => setActionLoading(null), 1000)
+    try {
+      const supabase = createClient()
+      const { error } = await supabase
+        .from('finance_approvals')
+        .update({ 
+          status: 'rejected',
+          rejected_at: new Date().toISOString(),
+          rejected_by: (await supabase.auth.getUser()).data.user?.id
+        })
+        .eq('id', approvalId)
+      
+      if (error) throw error
+      
+      toast({
+        title: 'Request rejected',
+        description: 'The request has been rejected'
+      })
+      
+      // Refresh data if needed
+      window.location.reload()
+    } catch (error) {
+      console.error('Rejection error:', error)
+      toast({
+        title: 'Rejection failed',
+        description: 'Unable to reject this request',
+        variant: 'destructive'
+      })
+    } finally {
+      setActionLoading(null)
+    }
   }
 
   // ✅ Use real data if available, otherwise fall back to mock data
@@ -82,45 +157,48 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
   const approvalChains = [
     {
       id: 'chain-1',
-      name: 'Major Equipment Purchase',
+      name: t('mockData.chains.majorEquipment'),
       totalSteps: 4,
       completedSteps: 2,
-      currentStep: 'Finance Manager Review',
+      currentStep: t('mockData.chains.financeManagerReview'),
       status: 'in_progress',
     },
     {
       id: 'chain-2',
-      name: 'Production Budget Approval',
+      name: t('mockData.chains.productionBudget'),
       totalSteps: 3,
       completedSteps: 1,
-      currentStep: 'Department Head Review',
+      currentStep: t('mockData.chains.departmentHeadReview'),
       status: 'in_progress',
     },
   ]
 
   const recentActivity = [
     { action: 'Approved', item: 'PO-2024-098', by: 'You', date: '2 hours ago' },
-    { action: 'Rejected', item: 'EXP-2024-220', by: 'You', date: '5 hours ago' },
-    { action: 'Approved', item: 'BCR-2024-012', by: 'You', date: '1 day ago' },
+    { action: 'Rejected', item: 'INV-2024-234', by: 'You', date: '5 hours ago' },
+    { action: 'Pending', item: 'EXP-2024-456', by: 'Sarah Chen', date: '1 day ago' },
   ]
-
-  const getUrgencyColor = (urgency: string) => {
-    switch (urgency) {
-      case 'high': return 'destructive'
-      case 'medium': return 'default'
-      case 'low': return 'secondary'
-      default: return 'default'
-    }
-  }
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Financial approvals workflow
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4" aria-hidden="true"  />
+          Create
+        </Button>
+      </div>
+
+
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Pending</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" />
+            <Clock className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{pendingApprovals.length}</div>
@@ -133,7 +211,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Urgent</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-destructive" />
+            <AlertTriangle className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-destructive">
@@ -148,7 +226,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Approved Today</CardTitle>
-            <CheckCircle2 className="h-4 w-4 text-green-600" />
+            <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">1</div>
@@ -161,7 +239,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Chains</CardTitle>
-            <ClipboardCheck className="h-4 w-4 text-muted-foreground" />
+            <ClipboardCheck className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{approvalChains.length}</div>
@@ -196,10 +274,10 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                         <p className="text-sm text-muted-foreground">{approval.description}</p>
                         <div className="flex items-center gap-4 text-xs text-muted-foreground mt-2">
                           <span className="flex items-center gap-1">
-                            <User className="h-3 w-3" />
+                            <User className="h-3 w-3" aria-hidden="true"  />
                             {approval.requester}
                           </span>
-                          <span>Category: {approval.category}</span>
+                          <span>Category: {approval.categoryKey ? t(approval.categoryKey) : approval.category}</span>
                           <span>Due: {approval.dueDate}</span>
                         </div>
                       </div>
@@ -214,7 +292,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                             onClick={() => handleReject(approval.id)}
                             disabled={actionLoading === approval.id}
                           >
-                            <XCircle className="h-4 w-4 mr-1" />
+                            <XCircle className="h-4 w-4" aria-hidden="true"  />
                             Reject
                           </Button>
                           <Button
@@ -222,7 +300,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                             onClick={() => handleApprove(approval.id)}
                             disabled={actionLoading === approval.id}
                           >
-                            <CheckCircle2 className="h-4 w-4 mr-1" />
+                            <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
                             Approve
                           </Button>
                         </div>
@@ -234,7 +312,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
             ) : (
               <div className="flex items-center justify-center h-32 text-muted-foreground">
                 <div className="text-center">
-                  <CheckCircle2 className="h-8 w-8 mx-auto mb-2 opacity-50" />
+                  <CheckCircle2 className="h-8 w-8" aria-hidden="true"  />
                   <p className="text-sm">No pending approvals</p>
                   <p className="text-xs mt-1">You&apos;re all caught up!</p>
                 </div>
@@ -258,7 +336,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                 <div key={chain.id} className="space-y-2">
                   <div className="flex items-center justify-between">
                     <h4 className="font-medium text-sm">{chain.name}</h4>
-                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true"  />
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
@@ -297,9 +375,9 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                       : 'bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300'
                   }`}>
                     {activity.action === 'Approved' ? (
-                      <CheckCircle2 className="h-4 w-4" />
+                      <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
                     ) : (
-                      <XCircle className="h-4 w-4" />
+                      <XCircle className="h-4 w-4" aria-hidden="true"  />
                     )}
                   </div>
                   <div className="flex-1">

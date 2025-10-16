@@ -1,61 +1,62 @@
 "use client"
 
-import { FileStack, Star, Download, Eye } from "lucide-react"
+import { FileStack, Star, Download, Eye, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { useTranslations } from "next-intl"
 
 const templates = [
   { 
     id: "1", 
-    name: "Executive Summary Template", 
-    description: "High-level overview for stakeholders",
-    category: "Executive",
+    nameKey: "executive_summary_template", 
+    descriptionKey: "highlevel_overview_for_stakeholders",
+    categoryKey: "executive",
     uses: 234,
     rating: 4.8,
     tags: ["Performance", "KPIs", "Summary"]
   },
   { 
     id: "2", 
-    name: "Operational Daily Report", 
-    description: "Day-to-day operations tracking",
-    category: "Operational",
+    nameKey: "operational_daily_report", 
+    descriptionKey: "daytoday_operations_tracking",
+    categoryKey: "operational",
     uses: 567,
     rating: 4.9,
     tags: ["Daily", "Operations", "Metrics"]
   },
   { 
     id: "3", 
-    name: "Compliance Audit Report", 
-    description: "Regulatory compliance documentation",
-    category: "Compliance",
+    nameKey: "compliance_audit_report", 
+    descriptionKey: "regulatory_compliance_documentation",
+    categoryKey: "compliance",
     uses: 89,
     rating: 4.7,
     tags: ["Audit", "Compliance", "Legal"]
   },
   { 
     id: "4", 
-    name: "Financial Performance", 
-    description: "Revenue, expenses, and profitability",
-    category: "Executive",
+    nameKey: "financial_performance", 
+    descriptionKey: "revenue_expenses_and_profitability",
+    categoryKey: "executive",
     uses: 445,
     rating: 4.9,
     tags: ["Finance", "Revenue", "P&L"]
   },
   { 
     id: "5", 
-    name: "Customer Insights Report", 
-    description: "Customer behavior and satisfaction",
-    category: "Custom",
+    nameKey: "customer_insights_report", 
+    descriptionKey: "customer_behavior_and_satisfaction",
+    categoryKey: "custom",
     uses: 178,
     rating: 4.6,
     tags: ["Customer", "Analytics", "Insights"]
   },
   { 
     id: "6", 
-    name: "Project Status Update", 
-    description: "Project progress and milestones",
-    category: "Operational",
+    nameKey: "project_status_update", 
+    descriptionKey: "project_progress_and_milestones",
+    categoryKey: "operational",
     uses: 312,
     rating: 4.8,
     tags: ["Projects", "Status", "Timeline"]
@@ -68,19 +69,33 @@ interface ReportsTemplatesTabProps {
 }
 
 export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTemplatesTabProps) {
+  const t = useTranslations('intelligence.reports.templates')
+  const tCommon = useTranslations('common')
   const displayTemplates = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} template`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {templates.map((template) => (
-          <Card key={template.id} className="hover:shadow-md transition-shadow">
+          <Card key={template.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Template: ${t(template.nameKey)}`}>
             <CardHeader>
               <div className="flex items-start justify-between">
-                <FileStack className="h-8 w-8 text-blue-600" />
-                <Badge variant="secondary">{template.category}</Badge>
+                <FileStack className="h-8 w-8 text-blue-600" aria-hidden="true" />
+                <Badge variant="secondary" aria-label={`Category: ${t(template.categoryKey)}`}>{t(template.categoryKey)}</Badge>
               </div>
-              <CardTitle className="mt-4">{template.name}</CardTitle>
-              <CardDescription>{template.description}</CardDescription>
+              <CardTitle className="mt-4" id={`template-${template.id}`}>{t(template.nameKey)}</CardTitle>
+              <CardDescription>{t(template.descriptionKey)}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -93,22 +108,22 @@ export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTempl
                 </div>
                 
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <div className="flex items-center gap-1" aria-label={`Rating: ${template.rating} out of 5`}>
+                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                     <span>{template.rating}</span>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <Download className="h-4 w-4" />
-                    <span>{template.uses} uses</span>
+                  <div className="flex items-center gap-1" aria-label={`${template.uses} uses`}>
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    <span>{template.uses} {t('uses')}</span>
                   </div>
                 </div>
 
                 <div className="flex gap-2">
-                  <Button className="flex-1" size="sm">
-                    Use Template
+                  <Button className="flex-1" size="sm" aria-label={`${t('useTemplate')}: ${t(template.nameKey)}`}>
+                    {t('useTemplate')}
                   </Button>
-                  <Button variant="outline" size="sm">
-                    <Eye className="h-4 w-4" />
+                  <Button variant="outline" size="sm" aria-label={`${t('previewTemplate')}: ${t(template.nameKey)}`}>
+                    <Eye className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>

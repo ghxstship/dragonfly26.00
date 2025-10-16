@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -21,6 +22,8 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.my-travel')
+  const tCommon = useTranslations('common')
   const { travels, loading } = useMyTravel(workspaceId, userId)
   
 
@@ -43,10 +46,15 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading travel...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -90,14 +98,19 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Manage your travel arrangements and itineraries
+        </p>
         <Button 
           size="sm" 
           className="gap-2"
           disabled
         >
-          <Plus className="h-4 w-4" />
+          <Plus className="h-4 w-4" aria-hidden="true" />
           Book Travel
         </Button>
       </div>
@@ -116,7 +129,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold text-green-600">{summary.confirmed}</p>
-              <p className="text-xs text-muted-foreground mt-1">Confirmed</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('confirmed')}</p>
             </div>
           </CardContent>
         </Card>
@@ -162,9 +175,9 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                       <p className="font-semibold text-lg">{travel.totalCost}</p>
                       <Badge variant="secondary" className={getStatusColor(travel.status)}>
                         {travel.status === "confirmed" ? (
-                          <CheckCircle2 className="h-3 w-3 mr-1" />
+                          <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="mr-1" />
                         ) : (
-                          <AlertCircle className="h-3 w-3 mr-1" />
+                          <AlertCircle className="h-4 w-4" aria-hidden="true" className="mr-1" />
                         )}
                         {travel.status}
                       </Badge>
@@ -192,7 +205,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                   <div className="space-y-2 pt-2 border-t">
                     {/* Flights */}
                     <div className="flex items-start gap-2">
-                      <Plane className="h-4 w-4 text-blue-600 mt-0.5" />
+                      <Plane className="h-4 w-4 text-blue-600 mt-0.5" aria-hidden="true" />
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
                           <p className="text-sm font-medium">Flights</p>
@@ -206,7 +219,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                     {/* Hotel */}
                     {travel.hotel && (
                       <div className="flex items-start gap-2">
-                        <Hotel className="h-4 w-4 text-purple-600 mt-0.5" />
+                        <Hotel className="h-4 w-4 text-purple-600 mt-0.5" aria-hidden="true" />
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
                             <p className="text-sm font-medium">{travel.hotel.name}</p>
@@ -221,7 +234,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
 
                     {/* Ground Transport */}
                     <div className="flex items-start gap-2">
-                      <Car className="h-4 w-4 text-orange-600 mt-0.5" />
+                      <Car className="h-4 w-4 text-orange-600 mt-0.5" aria-hidden="true" />
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
                           <p className="text-sm font-medium">{travel.groundTransport.type}</p>
@@ -261,5 +274,6 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
         </CardContent>
       </Card>
     </div>
+    </main>
   )
 }

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -65,6 +66,7 @@ interface Member {
 }
 
 export function MembersManagementTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [inviteDialogOpen, setInviteDialogOpen] = useState(false)
   const [inviteEmail, setInviteEmail] = useState("")
@@ -81,7 +83,7 @@ export function MembersManagementTab() {
   const [members, setMembers] = useState<Member[]>([
     {
       id: "1",
-      name: "John Doe",
+      name: t('admin.mockData.member1Name'),
       email: "john.doe@example.com",
       avatar: "https://github.com/shadcn.png",
       role: "phantom",
@@ -92,7 +94,7 @@ export function MembersManagementTab() {
     },
     {
       id: "2",
-      name: "Jane Smith",
+      name: t('admin.mockData.member2Name'),
       email: "jane.smith@example.com",
       role: "aviator",
       department: "Production",
@@ -102,7 +104,7 @@ export function MembersManagementTab() {
     },
     {
       id: "3",
-      name: "Bob Wilson",
+      name: t('admin.mockData.member3Name'),
       email: "bob.wilson@example.com",
       role: "raider",
       department: "Audio",
@@ -112,7 +114,7 @@ export function MembersManagementTab() {
     },
     {
       id: "4",
-      name: "Alice Johnson",
+      name: t('admin.mockData.member4Name'),
       email: "alice.johnson@example.com",
       role: "raider",
       department: "Lighting",
@@ -122,7 +124,7 @@ export function MembersManagementTab() {
     },
     {
       id: "5",
-      name: "Mike Chen",
+      nameKey: "mike_chen",
       email: "mike.chen@example.com",
       role: "passenger",
       department: "Finance",
@@ -134,7 +136,7 @@ export function MembersManagementTab() {
 
   const handleInvite = () => {
     toast({
-      title: "Invitation sent",
+      title: t('admin.toast.invitationSent'),
       description: `An invitation has been sent to ${inviteEmail}`,
     })
     setInviteDialogOpen(false)
@@ -145,8 +147,8 @@ export function MembersManagementTab() {
   const handleRemoveMember = (memberId: string) => {
     setMembers(members.filter(m => m.id !== memberId))
     toast({
-      title: "Member removed",
-      description: "The team member has been removed successfully.",
+      title: t('admin.toast.memberRemoved'),
+      description: t('admin.toast.memberRemovedDesc'),
       variant: "destructive",
     })
   }
@@ -165,12 +167,12 @@ export function MembersManagementTab() {
       lastActive: 'Never',
     }
     setMembers([...members, newMember])
-    toast({ title: "Member added successfully" })
+    toast({ title: t('admin.toast.memberAdded') })
   }
 
   const handleUpdate = async (id: string, updates: Record<string, any>) => {
     setMembers(members.map(m => m.id === id ? { ...m, ...updates } : m))
-    toast({ title: "Member updated successfully" })
+    toast({ title: t('admin.toast.memberUpdated') })
   }
 
   const handleDelete = async (id: string) => {
@@ -185,7 +187,7 @@ export function MembersManagementTab() {
 
   const handleDuplicate = async (member: DataItem) => {
     const { id, ...rest } = member
-    await handleCreate({ ...rest, name: `${member.name} (Copy)` })
+    await handleCreate({ ...rest, name: `${t(member.nameKey)} (Copy)` })
   }
 
   // Selection handlers
@@ -208,8 +210,8 @@ export function MembersManagementTab() {
       m.id === memberId ? { ...m, role: newRole as Member["role"] } : m
     ))
     toast({
-      title: "Role updated",
-      description: "The member's role has been changed successfully.",
+      title: t('admin.toast.roleUpdated'),
+      description: t('admin.toast.roleUpdatedDesc'),
     })
   }
 
@@ -233,11 +235,11 @@ export function MembersManagementTab() {
   const getStatusIcon = (status: Member["status"]) => {
     switch (status) {
       case "active":
-        return <CheckCircle2 className="h-4 w-4 text-green-500" />
+        return <CheckCircle2 className="h-4 w-4 text-green-500" aria-hidden="true" />
       case "pending":
-        return <Clock className="h-4 w-4 text-yellow-500" />
+        return <Clock className="h-4 w-4 text-yellow-500" aria-hidden="true" />
       case "suspended":
-        return <XCircle className="h-4 w-4 text-red-500" />
+        return <XCircle className="h-4 w-4 text-red-500" aria-hidden="true" />
     }
   }
 
@@ -249,18 +251,28 @@ export function MembersManagementTab() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button onClick={() => setInviteDialogOpen(true)}>
-          <UserPlus className="h-4 w-4 mr-2" />
-          Invite Member
-        </Button>
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('members.subtitle')}
+        </p>
+        <div className="flex gap-2">
+          <Button onClick={() => setInviteDialogOpen(true)}>
+            <UserPlus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('members.inviteTab.sendInvites')} Member
+          </Button>
+          <Button onClick={() => setDrawerMode('create')}>
+            <UserPlus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('admin.members.addMember')}
+          </Button>
+        </div>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Members</CardDescription>
+            <CardDescription>{t('admin.members.totalMembers')}</CardDescription>
             <CardTitle className="text-3xl">{members.length}</CardTitle>
           </CardHeader>
         </Card>
@@ -297,14 +309,14 @@ export function MembersManagementTab() {
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search members..."
+                placeholder={t('admin.members.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
             </div>
             <Button variant="outline">
-              <Filter className="h-4 w-4 mr-2" />
+              <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
               Filter
             </Button>
           </div>
@@ -353,14 +365,14 @@ export function MembersManagementTab() {
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <p className="font-medium truncate">{member.name}</p>
+                      <p className="font-medium truncate">{t(member.nameKey)}</p>
                       {(member.role === "legend" || member.role === "phantom") && (
-                        <Crown className="h-4 w-4 text-yellow-500" />
+                        <Crown className="h-4 w-4 text-yellow-500" aria-hidden="true" />
                       )}
                       {getStatusIcon(member.status)}
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Mail className="h-3 w-3" />
+                      <Mail className="h-3 w-3" aria-hidden="true" />
                       <span className="truncate">{member.email}</span>
                       <span>•</span>
                       <span>{member.department}</span>
@@ -377,8 +389,8 @@ export function MembersManagementTab() {
 
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
-                        <Button variant="ghost" size="icon">
-                          <MoreVertical className="h-4 w-4" />
+                        <Button variant="ghost" size="icon" aria-label="Member actions">
+                          <MoreVertical className="h-4 w-4" aria-hidden="true" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
@@ -389,7 +401,7 @@ export function MembersManagementTab() {
                             setDrawerMode('view')
                           }}
                         >
-                          <Eye className="h-4 w-4 mr-2" />
+                          <Eye className="h-4 w-4 mr-2" aria-hidden="true" />
                           View Details
                         </DropdownMenuItem>
                         <DropdownMenuItem
@@ -399,7 +411,7 @@ export function MembersManagementTab() {
                             setDrawerMode('edit')
                           }}
                         >
-                          <Edit className="h-4 w-4 mr-2" />
+                          <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
                           Edit
                         </DropdownMenuItem>
                         <DropdownMenuItem
@@ -408,7 +420,7 @@ export function MembersManagementTab() {
                             handleDuplicate(member as any)
                           }}
                         >
-                          <Copy className="h-4 w-4 mr-2" />
+                          <Copy className="h-4 w-4 mr-2" aria-hidden="true" />
                           Duplicate
                         </DropdownMenuItem>
                         
@@ -422,7 +434,7 @@ export function MembersManagementTab() {
                               }}
                               disabled={member.role === "aviator"}
                             >
-                              <Shield className="h-4 w-4 mr-2" />
+                              <Shield className="h-4 w-4 mr-2" aria-hidden="true" />
                               Make Aviator
                             </DropdownMenuItem>
                             <DropdownMenuItem
@@ -432,7 +444,7 @@ export function MembersManagementTab() {
                               }}
                               disabled={member.role === "raider"}
                             >
-                              <Users className="h-4 w-4 mr-2" />
+                              <Users className="h-4 w-4 mr-2" aria-hidden="true" />
                               Make Raider
                             </DropdownMenuItem>
                             <DropdownMenuItem
@@ -442,7 +454,7 @@ export function MembersManagementTab() {
                               }}
                               disabled={member.role === "passenger"}
                             >
-                              <Users className="h-4 w-4 mr-2" />
+                              <Users className="h-4 w-4 mr-2" aria-hidden="true" />
                               Make Passenger
                             </DropdownMenuItem>
                           </>
@@ -456,7 +468,7 @@ export function MembersManagementTab() {
                           }}
                           className="text-destructive"
                         >
-                          <Trash2 className="h-4 w-4 mr-2" />
+                          <Trash2 className="h-4 w-4 mr-2" aria-hidden="true" />
                           Remove
                         </DropdownMenuItem>
                       </DropdownMenuContent>
@@ -484,7 +496,7 @@ export function MembersManagementTab() {
               <label className="text-sm font-medium">Email Address</label>
               <Input
                 type="email"
-                placeholder="colleague@example.com"
+                placeholder={t('admin.members.emailPlaceholder')}
                 value={inviteEmail}
                 onChange={(e) => setInviteEmail(e.target.value)}
               />
@@ -497,8 +509,8 @@ export function MembersManagementTab() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="admin">Admin</SelectItem>
-                  <SelectItem value="member">Member</SelectItem>
+                  <TabsTrigger value="invite">{t('members.invite')}</TabsTrigger>
+                  <TabsTrigger value="create">{t('members.create')}</TabsTrigger>
                   <SelectItem value="viewer">Viewer</SelectItem>
                 </SelectContent>
               </Select>

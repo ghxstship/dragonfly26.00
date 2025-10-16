@@ -1,57 +1,59 @@
 "use client"
 
-import { BarChart3, TrendingUp, Award, Building2 } from "lucide-react"
+import { BarChart3, TrendingUp, Award, Building2, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const benchmarks = [
   {
-    category: "Customer Satisfaction",
+    categoryKey: "customer_satisfaction",
     yourScore: 87,
     industryAvg: 82,
     topPerformer: 94,
     percentile: 78,
     metrics: [
-      { name: "Response Time", yours: "1.2 hrs", industry: "2.5 hrs", status: "above" },
-      { name: "Resolution Rate", yours: "94%", industry: "87%", status: "above" },
-      { name: "NPS Score", yours: "45", industry: "38", status: "above" },
+      { nameKey: "response_time", yours: "1.2 hrs", industry: "2.5 hrs", status: "above" },
+      { nameKey: "resolution_rate", yours: "94%", industry: "87%", status: "above" },
+      { nameKey: "nps_score", yours: "45", industry: "38", status: "above" },
     ]
   },
   {
-    category: "Operational Efficiency",
+    categoryKey: "operational_efficiency",
     yourScore: 84,
     industryAvg: 80,
     topPerformer: 92,
     percentile: 72,
     metrics: [
-      { name: "Process Completion Time", yours: "2.3 days", industry: "3.1 days", status: "above" },
-      { name: "Error Rate", yours: "1.2%", industry: "2.5%", status: "above" },
-      { name: "Resource Utilization", yours: "84%", industry: "75%", status: "above" },
+      { nameKey: "process_completion_time", yours: "2.3 days", industry: "3.1 days", status: "above" },
+      { nameKey: "error_rate", yours: "1.2%", industry: "2.5%", status: "above" },
+      { nameKey: "resource_utilization", yours: "84%", industry: "75%", status: "above" },
     ]
   },
   {
-    category: "Financial Performance",
+    categoryKey: "financial_performance",
     yourScore: 78,
     industryAvg: 85,
     topPerformer: 96,
     percentile: 45,
     metrics: [
-      { name: "Revenue Growth", yours: "12%", industry: "15%", status: "below" },
-      { name: "Profit Margin", yours: "18%", industry: "22%", status: "below" },
-      { name: "ROI", yours: "24%", industry: "28%", status: "below" },
+      { nameKey: "revenue_growth", yours: "12%", industry: "15%", status: "below" },
+      { nameKey: "profit_margin", yours: "18%", industry: "22%", status: "below" },
+      { nameKey: "roi", yours: "24%", industry: "28%", status: "below" },
     ]
   },
   {
-    category: "Innovation & Growth",
+    categoryKey: "innovation__growth",
     yourScore: 91,
     industryAvg: 76,
     topPerformer: 95,
     percentile: 89,
     metrics: [
-      { name: "New Product Development", yours: "12", industry: "8", status: "above" },
-      { name: "Market Expansion", yours: "3 regions", industry: "2 regions", status: "above" },
-      { name: "R&D Investment", yours: "8.5%", industry: "5.2%", status: "above" },
+      { nameKey: "new_product_development", yours: "12", industry: "8", status: "above" },
+      { nameKey: "market_expansion", yours: "3 regions", industry: "2 regions", status: "above" },
+      { nameKey: "rd_investment", yours: "8.5%", industry: "5.2%", status: "above" },
     ]
   },
 ]
@@ -62,22 +64,37 @@ interface InsightsBenchmarksTabProps {
 }
 
 export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBenchmarksTabProps) {
+  const t = useTranslations('intelligence.insights.insightsbenchmarks')
+  const tCommon = useTranslations('common')
+
   const displayData = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       <div className="grid gap-6">
         {benchmarks.map((benchmark, index) => {
           const isAboveAvg = benchmark.yourScore > benchmark.industryAvg
           const gapToTop = benchmark.topPerformer - benchmark.yourScore
           
           return (
-            <Card key={index}>
+            <Card key={index} role="article">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div>
                     <CardTitle className="flex items-center gap-2">
-                      <Award className="h-5 w-5 text-purple-600" />
-                      {benchmark.category}
+                      <Award className="h-5 w-5 text-purple-600" aria-hidden="true" />
+                      {t(benchmark.categoryKey)}
                     </CardTitle>
                     <CardDescription className="mt-2 flex items-center gap-4">
                       <span>Your Score: <span className="font-bold text-lg text-foreground">{benchmark.yourScore}</span></span>
@@ -96,7 +113,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="font-medium">Your Performance</span>
+                        <span className="font-medium">{t('yourPerformance')}</span>
                         <span className="font-bold">{benchmark.yourScore}</span>
                       </div>
                       <Progress value={benchmark.yourScore} className="h-2" />
@@ -105,7 +122,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-muted-foreground flex items-center gap-1">
-                          <Building2 className="h-3 w-3" />
+                          <Building2 className="h-3 w-3" aria-hidden="true" />
                           Industry Average
                         </span>
                         <span>{benchmark.industryAvg}</span>
@@ -116,7 +133,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-muted-foreground flex items-center gap-1">
-                          <TrendingUp className="h-3 w-3" />
+                          <TrendingUp className="h-3 w-3" aria-hidden="true" />
                           Top Performer
                         </span>
                         <span>{benchmark.topPerformer}</span>
@@ -127,15 +144,15 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
 
                   {/* Detailed Metrics */}
                   <div className="pt-4 border-t">
-                    <p className="text-sm font-medium mb-3">Detailed Breakdown</p>
+                    <p className="text-sm font-medium mb-3">{t('detailedBreakdown')}</p>
                     <div className="grid grid-cols-3 gap-4">
                       {benchmark.metrics.map((metric, idx) => (
                         <div key={idx} className="space-y-1">
-                          <p className="text-xs text-muted-foreground">{metric.name}</p>
+                          <p className="text-xs text-muted-foreground">{t(metric.nameKey)}</p>
                           <p className="text-sm font-bold">{metric.yours}</p>
                           <p className="text-xs text-muted-foreground">
                             Industry: {metric.industry}
-                            {metric.status === "above" && <TrendingUp className="inline h-3 w-3 ml-1 text-green-600" />}
+                            {metric.status === "above" && <TrendingUp className="inline h-3 w-3 ml-1 text-green-600" aria-hidden="true" />}
                           </p>
                         </div>
                       ))}

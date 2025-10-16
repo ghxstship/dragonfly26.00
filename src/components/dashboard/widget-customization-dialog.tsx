@@ -67,13 +67,13 @@ export function WidgetCustomizationDialog({
       await onToggle(widgetId)
       toast({
         title: "Widget updated",
-        description: "Your dashboard has been customized.",
+        description: t('dashboard.toast.customized'),
       })
     } catch (error) {
       console.error('Error toggling widget:', error)
       toast({
         title: "Failed to update widget",
-        description: "Please try again.",
+        description: t('common.toast.tryAgain'),
         variant: "destructive",
       })
     } finally {
@@ -88,13 +88,13 @@ export function WidgetCustomizationDialog({
       await onReset()
       toast({
         title: "Dashboard reset",
-        description: "Your dashboard has been reset to defaults.",
+        description: t('dashboard.toast.resetToDefaults'),
       })
     } catch (error) {
       console.error('Error resetting widgets:', error)
       toast({
         title: "Failed to reset",
-        description: "Please try again.",
+        description: t('common.toast.tryAgain'),
         variant: "destructive",
       })
     } finally {

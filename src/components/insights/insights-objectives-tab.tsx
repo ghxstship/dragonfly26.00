@@ -8,11 +8,12 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
+import { useTranslations } from "next-intl"
 const objectives = [
   {
     id: "1",
-    name: "Increase Customer Satisfaction Score",
-    description: "Improve overall customer satisfaction from 85% to 90%",
+    nameKey: "increase_customer_satisfaction_score",
+    descriptionKey: "improve_overall_customer_satisfaction_from_85_to_90",
     owner: "Customer Success Team",
     progress: 87,
     target: 90,
@@ -22,8 +23,8 @@ const objectives = [
   },
   {
     id: "2",
-    name: "Reduce Operational Costs",
-    description: "Decrease operational expenses by 15% through process optimization",
+    nameKey: "reduce_operational_costs",
+    descriptionKey: "decrease_operational_expenses_by_15_through_process_optimiza",
     owner: "Operations Team",
     progress: 53,
     target: 100,
@@ -33,8 +34,8 @@ const objectives = [
   },
   {
     id: "3",
-    name: "Expand Market Presence",
-    description: "Enter 3 new geographic markets and establish local operations",
+    nameKey: "expand_market_presence",
+    descriptionKey: "enter_3_new_geographic_markets_and_establish_local_operation",
     owner: "Business Development",
     progress: 33,
     target: 100,
@@ -44,8 +45,8 @@ const objectives = [
   },
   {
     id: "4",
-    name: "Improve Product Quality",
-    description: "Reduce defect rate to below 1% and increase quality scores",
+    nameKey: "improve_product_quality",
+    descriptionKey: "reduce_defect_rate_to_below_1_and_increase_quality_scores",
     owner: "Product Team",
     progress: 78,
     target: 85,
@@ -55,8 +56,8 @@ const objectives = [
   },
   {
     id: "5",
-    name: "Enhance Employee Engagement",
-    description: "Increase employee satisfaction score to 4.5/5.0",
+    nameKey: "enhance_employee_engagement",
+    descriptionKey: "increase_employee_satisfaction_score_to_4550",
     owner: "HR Team",
     progress: 82,
     target: 90,
@@ -72,6 +73,9 @@ interface InsightsObjectivesTabProps {
 }
 
 export function InsightsObjectivesTab({ data = [], loading = false }: InsightsObjectivesTabProps) {
+  const t = useTranslations('intelligence.insights.insightsobjectives')
+  const tCommon = useTranslations('common')
+
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
   
   // Transform data to ensure owner has name field
@@ -88,34 +92,45 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
   const displayObjectives = transformedData
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
       {/* Quick Stats */}
       <div className="grid grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Total Objectives</p>
-            <p className="text-2xl font-bold mt-1">{objectives.length}</p>
+            <p className="text-sm text-muted-foreground">{t('totalObjectives')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">{objectives.length}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">On Track</p>
-            <p className="text-2xl font-bold mt-1 text-green-600">
+            <p className="text-sm text-muted-foreground">{t('onTrack')}</p>
+            <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
               {objectives.filter(o => o.status === "on_track").length}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">At Risk</p>
-            <p className="text-2xl font-bold mt-1 text-yellow-600">
+            <p className="text-sm text-muted-foreground">{t('atRisk')}</p>
+            <p className="text-2xl font-bold mt-1 text-yellow-600" aria-live="polite">
               {objectives.filter(o => o.status === "at_risk").length}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Avg Progress</p>
-            <p className="text-2xl font-bold mt-1">
+            <p className="text-sm text-muted-foreground">{t('avgProgress')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">
               {Math.round(objectives.reduce((sum, o) => sum + o.progress, 0) / objectives.length)}%
             </p>
           </CardContent>
@@ -129,41 +144,41 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
             <CardContent className="p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-start gap-3 flex-1">
-                  <Target className="h-6 w-6 text-blue-600 mt-1" />
+                  <Target className="h-6 w-6 text-blue-600 mt-1" aria-hidden="true" />
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <h3 className="font-semibold text-lg">{objective.name}</h3>
+                      <h3 className="font-semibold text-lg">{t(objective.nameKey)}</h3>
                       <Badge 
                         variant={objective.status === "on_track" ? "default" : "secondary"}
                         className={objective.status === "on_track" ? "bg-green-600" : "bg-yellow-600"}
                       >
                         {objective.status === "on_track" ? (
-                          <><CheckCircle2 className="h-3 w-3 mr-1" /> On Track</>
+                          <><CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" /> On Track</>
                         ) : (
                           "At Risk"
                         )}
                       </Badge>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-3">{objective.description}</p>
+                    <p className="text-sm text-muted-foreground mb-3">{t(objective.descriptionKey)}</p>
                     
                     <div className="grid grid-cols-3 gap-4 text-sm mb-4">
                       <div>
-                        <p className="text-muted-foreground">Owner</p>
+                        <p className="text-muted-foreground">{t('owner')}</p>
                         <p className="font-medium">{objective.owner}</p>
                       </div>
                       <div>
-                        <p className="text-muted-foreground">Key Results</p>
+                        <p className="text-muted-foreground">{t('keyResults')}</p>
                         <p className="font-medium">{objective.keyResults} KRs</p>
                       </div>
                       <div>
-                        <p className="text-muted-foreground">Due Date</p>
+                        <p className="text-muted-foreground">{t('dueDate')}</p>
                         <p className="font-medium">{objective.dueDate}</p>
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-muted-foreground">Progress</span>
+                        <span className="text-muted-foreground">{t('progress')}</span>
                         <span className="font-bold">{objective.progress}% / {objective.target}%</span>
                       </div>
                       <Progress value={objective.progress} className="h-2" />
@@ -172,7 +187,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
                 </div>
                 
                 <Button variant="outline" size="sm">
-                  <Edit className="h-4 w-4 mr-2" />
+                  <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
                   Edit
                 </Button>
               </div>
@@ -184,13 +199,13 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
       {/* Add New Objective */}
       <Card className="border-2 border-dashed">
         <CardContent className="p-8 text-center">
-          <Target className="h-12 w-12 mx-auto mb-3 text-muted-foreground opacity-50" />
-          <h3 className="font-semibold mb-2">Create New Objective</h3>
+          <Target className="h-12 w-12 mx-auto mb-3 text-muted-foreground opacity-50" aria-hidden="true" />
+          <h3 className="font-semibold mb-2">{t('createNewObjective')}</h3>
           <p className="text-sm text-muted-foreground mb-4">
             Define a strategic objective to track progress and align your team
           </p>
           <Button onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             New Objective
           </Button>
         </CardContent>

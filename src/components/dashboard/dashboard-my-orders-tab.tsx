@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -19,6 +20,8 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.my-orders')
+  const tCommon = useTranslations('common')
   const { orders, loading } = useMyOrders(workspaceId, userId)
   
 
@@ -40,10 +43,15 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading orders...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -95,11 +103,16 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Track your marketplace orders and deliveries
+        </p>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" className="gap-2" disabled>
-            <Search className="h-4 w-4" />
+            <Search className="h-4 w-4" aria-hidden="true" />
             Search
           </Button>
           <Button 
@@ -107,7 +120,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
             className="gap-2"
             onClick={() => router.push(`/workspace/${workspaceId}/marketplace/shop`)}
           >
-            <Plus className="h-4 w-4" />
+            <Plus className="h-4 w-4" aria-hidden="true" />
             New Order
           </Button>
         </div>
@@ -158,23 +171,23 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
           <div className="grid grid-cols-5 gap-4">
             <div className="text-center p-4 border rounded-lg">
               <p className="text-xl font-bold text-gray-600">{summary.pending}</p>
-              <p className="text-xs text-muted-foreground mt-1">Pending</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('pending')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
               <p className="text-xl font-bold text-yellow-600">{summary.processing}</p>
-              <p className="text-xs text-muted-foreground mt-1">Processing</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('processing')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
               <p className="text-xl font-bold text-blue-600">{summary.inTransit}</p>
-              <p className="text-xs text-muted-foreground mt-1">In Transit</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('inTransit')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
               <p className="text-xl font-bold text-green-600">{summary.delivered}</p>
-              <p className="text-xs text-muted-foreground mt-1">Delivered</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('delivered')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
               <p className="text-xl font-bold text-red-600">{summary.cancelled}</p>
-              <p className="text-xs text-muted-foreground mt-1">Cancelled</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('cancelled')}</p>
             </div>
           </div>
         </CardContent>
@@ -183,7 +196,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Orders List */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Recent Orders</CardTitle>
+          <CardTitle className="text-base">{t('recentOrders')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -201,18 +214,18 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
                         <div>
                           <h3 className="font-semibold">{order.item}</h3>
                           <p className="text-sm text-muted-foreground mt-1">
-                            Order #{order.id} • {order.vendor}
+                            {t('orderNumber', {number: order.id})} • {order.vendor}
                           </p>
                         </div>
                         <div className="text-right">
                           <p className="font-semibold">{order.total}</p>
-                          <p className="text-xs text-muted-foreground mt-1">Qty: {order.quantity}</p>
+                          <p className="text-xs text-muted-foreground mt-1">{t('qty')}: {order.quantity}</p>
                         </div>
                       </div>
 
                       <div className="flex items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(order.status)}>
-                          <StatusIcon className="h-3 w-3 mr-1" />
+                          <StatusIcon className="h-4 w-4" aria-hidden="true" className="mr-1" />
                           {order.status.replace('_', ' ')}
                         </Badge>
                         <Badge variant="outline">
@@ -221,25 +234,25 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
                       </div>
 
                       <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-                        <span>Ordered: {order.orderDate}</span>
+                        <span>{t('ordered')}: {order.orderDate}</span>
                         {order.deliveryDate && (
                           <>
                             <span>•</span>
                             <span className="text-green-600 font-medium">
-                              Delivered: {order.deliveryDate}
+                              {t('delivered')}: {order.deliveryDate}
                             </span>
                           </>
                         )}
                         {order.estimatedDelivery && (
                           <>
                             <span>•</span>
-                            <span>Est. Delivery: {order.estimatedDelivery}</span>
+                            <span>{t('estDelivery')}: {order.estimatedDelivery}</span>
                           </>
                         )}
                         {order.trackingNumber !== "Not yet assigned" && order.trackingNumber !== "Pending" && (
                           <>
                             <span>•</span>
-                            <span>Tracking: {order.trackingNumber}</span>
+                            <span>{t('tracking')}: {order.trackingNumber}</span>
                           </>
                         )}
                         {order.cancellationReason && (
@@ -281,5 +294,6 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
         </CardContent>
       </Card>
     </div>
+    </main>
   )
 }

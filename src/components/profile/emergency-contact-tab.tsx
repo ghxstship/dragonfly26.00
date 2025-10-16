@@ -1,15 +1,17 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { Save, Loader2 } from "lucide-react"
+import {Save, Loader2} from "lucide-react"
 import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function EmergencyContactTab() {
+  const t = useTranslations()
   const { profile, loading, updateProfile } = useProfileData()
   const { toast } = useToast()
   const [saving, setSaving] = useState(false)
@@ -44,12 +46,12 @@ export function EmergencyContactTab() {
       })
       
       toast({
-        title: "Emergency contact updated",
-        description: "Your emergency contact information has been saved successfully.",
+        title: t('profile.success.emergencyUpdated'),
+        description: t('profile.success.emergencySaved'),
       })
     } catch (error: any) {
       toast({
-        title: "Error",
+        title: t('profile.errors.error'),
         description: error.message,
         variant: "destructive",
       })
@@ -68,54 +70,74 @@ export function EmergencyContactTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('profile.descriptions.emergency')}
+        </p>
+        <Button size="sm" onClick={handleSave} disabled={saving}>
+          {saving ? (
+            <>
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+              {t('actions.saving')}
+            </>
+          ) : (
+            <>
+              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t('profile.actions.saveChanges')}
+            </>
+          )}
+        </Button>
+      </div>
+
       <Card>
         <CardHeader>
-          <CardTitle>Primary Emergency Contact</CardTitle>
+          <CardTitle>{t('profile.emergency.primary')}</CardTitle>
           <CardDescription>
-            Person to contact in case of emergency
+            {t('emergency.contactDescription')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
+              <Label htmlFor="name">{t('emergency.name')}</Label>
               <Input
                 id="name"
                 value={contact.name}
                 onChange={(e) => setContact({ ...contact, name: e.target.value })}
-                placeholder="Enter full name"
+                placeholder={t('emergency.namePlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="relationship">Relationship</Label>
+              <Label htmlFor="relationship">{t('emergency.relationship')}</Label>
               <Input
                 id="relationship"
                 value={contact.relationship}
                 onChange={(e) => setContact({ ...contact, relationship: e.target.value })}
-                placeholder="e.g., Spouse, Parent, Sibling"
+                placeholder={t('emergency.relationshipPlaceholder')}
               />
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">{t('emergency.phone')}</Label>
               <Input
                 id="phone"
                 type="tel"
                 value={contact.phone}
                 onChange={(e) => setContact({ ...contact, phone: e.target.value })}
-                placeholder="+1 (555) 000-0000"
+                placeholder={t('emergency.phonePlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('emergency.email')}</Label>
               <Input
                 id="email"
                 type="email"
                 value={contact.email}
                 onChange={(e) => setContact({ ...contact, email: e.target.value })}
-                placeholder="email@example.com"
+                placeholder={t('emergency.emailPlaceholder')}
               />
             </div>
           </div>
@@ -127,9 +149,9 @@ export function EmergencyContactTab() {
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />
           ) : (
-            <Save className="h-4 w-4 mr-2" />
+            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
           )}
-          Save Changes
+          {t('profile.actions.saveChanges')}
         </Button>
       </div>
     </div>

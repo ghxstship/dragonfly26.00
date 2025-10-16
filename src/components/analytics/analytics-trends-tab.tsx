@@ -1,11 +1,13 @@
 "use client"
 
-import { LineChart, TrendingUp, TrendingDown, Calendar } from "lucide-react"
+import { LineChart, TrendingUp, TrendingDown, Calendar, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useIsMobile } from "@/hooks/use-is-mobile"
+import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const trendData = [
   {
     metric: "Revenue",
@@ -71,21 +73,36 @@ interface AnalyticsTrendsTabProps {
 }
 
 export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTrendsTabProps) {
+  const t = useTranslations('intelligence.analytics.analyticstrends')
+  const tCommon = useTranslations('common')
+
   const isMobile = useIsMobile()
   const displayData = data || []
   
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       <Tabs defaultValue="6months" className="space-y-4">
         <TabsList className="w-full grid grid-cols-2 sm:grid-cols-4 h-auto">
           <TabsTrigger value="3months" className="text-xs sm:text-sm">
-            <span className="hidden sm:inline">Last</span> 3M
+            <span className="hidden sm:inline">{t('last')}</span> 3M
           </TabsTrigger>
           <TabsTrigger value="6months" className="text-xs sm:text-sm">
-            <span className="hidden sm:inline">Last</span> 6M
+            <span className="hidden sm:inline">{t('last')}</span> 6M
           </TabsTrigger>
           <TabsTrigger value="12months" className="text-xs sm:text-sm">
-            <span className="hidden sm:inline">Last</span> 12M
+            <span className="hidden sm:inline">{t('last')}</span> 12M
           </TabsTrigger>
           <TabsTrigger value="ytd" className="text-xs sm:text-sm">YTD</TabsTrigger>
         </TabsList>
@@ -100,7 +117,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
             const periodsToShow = isMobile ? data.periods.slice(-3) : data.periods
             
             return (
-              <Card key={index}>
+              <Card key={index} role="article">
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                     <div className="flex-1">
@@ -112,7 +129,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
                     <div className="text-left sm:text-right">
                       <p className="text-xl sm:text-2xl font-bold">{data.current}</p>
                       <Badge variant="outline" className={`${bgColor} ${trendColor} mt-2 text-xs`}>
-                        <TrendIcon className="h-3 w-3 mr-1" />
+                        <TrendIcon className="h-3 w-3 mr-1" aria-hidden="true" />
                         {data.change}
                       </Badge>
                     </div>
@@ -146,7 +163,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
 
                     {/* Insights */}
                     <div className="flex items-start sm:items-center gap-2 p-3 bg-accent rounded-lg text-xs sm:text-sm">
-                      <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5 sm:mt-0" />
+                      <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5 sm:mt-0" aria-hidden="true" />
                       <p className="leading-relaxed">
                         {data.trend === "up" ? "Positive" : "Negative"} trend over the last {isMobile ? '3' : '6'} months with 
                         <span className="font-medium"> {data.change} </span>

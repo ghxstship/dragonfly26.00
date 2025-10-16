@@ -1,18 +1,20 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Save, Loader2 } from "lucide-react"
+import {Save, Loader2} from "lucide-react"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function TravelProfileTab() {
+  const t = useTranslations()
   const { profile, loading, updateProfile } = useProfileData()
   const { toast } = useToast()
   const [saving, setSaving] = useState(false)
@@ -80,12 +82,12 @@ export function TravelProfileTab() {
       })
       
       toast({
-        title: "Travel profile updated",
-        description: "Your travel information has been saved successfully.",
+        title: t('profile.success.travelUpdated'),
+        description: t('profile.success.travelSaved'),
       })
     } catch (error: any) {
       toast({
-        title: "Error",
+        title: t('profile.errors.error'),
         description: error.message,
         variant: "destructive",
       })
@@ -104,33 +106,51 @@ export function TravelProfileTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('profile.descriptions.travel')}
+        </p>
+        <Button size="sm" onClick={handleSave} disabled={saving}>
+          {saving ? (
+            <>
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />{t('profile.actions.saving')}</>
+          ) : (
+            <>
+              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t('profile.actions.saveChanges')}
+            </>
+          )}
+        </Button>
+      </div>
+
       <Card>
         <CardHeader>
-          <CardTitle>Passport & Travel Documents</CardTitle>
-          <CardDescription>Your passport and travel document information</CardDescription>
+          <CardTitle>{t('profile.travel.passport')}</CardTitle>
+          <CardDescription>{t('profile.travel.passportDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-3 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="passportNumber">Passport Number</Label>
+              <Label htmlFor="passportNumber">{t('profile.travel.passportNumber')}</Label>
               <Input
                 id="passportNumber"
                 value={travelData.passportNumber}
                 onChange={(e) => setTravelData({ ...travelData, passportNumber: e.target.value })}
-                placeholder="Enter passport number"
+                placeholder={t('profile.travel.passportNumberPlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="passportCountry">Issuing Country</Label>
+              <Label htmlFor="passportCountry">{t('profile.travel.issuingCountry')}</Label>
               <Input
                 id="passportCountry"
                 value={travelData.passportCountry}
                 onChange={(e) => setTravelData({ ...travelData, passportCountry: e.target.value })}
-                placeholder="Country"
+                placeholder={t('profile.travel.issuingCountryPlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="passportExpiry">Expiry Date</Label>
+              <Label htmlFor="passportExpiry">{t('profile.travel.expiryDate')}</Label>
               <Input
                 id="passportExpiry"
                 type="date"
@@ -141,12 +161,12 @@ export function TravelProfileTab() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="visaInformation">Visa Information</Label>
+            <Label htmlFor="visaInformation">{t('profile.travel.visaInformation')}</Label>
             <Textarea
               id="visaInformation"
               value={travelData.visaInformation}
               onChange={(e) => setTravelData({ ...travelData, visaInformation: e.target.value })}
-              placeholder="List any valid visas and their expiry dates"
+              placeholder={t('profile.travel.visaPlaceholder')}
               rows={3}
             />
           </div>
@@ -155,40 +175,40 @@ export function TravelProfileTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Trusted Traveler Programs</CardTitle>
-          <CardDescription>TSA PreCheck, Global Entry, and other programs</CardDescription>
+          <CardTitle>{t('profile.travel.trustedTraveler')}</CardTitle>
+          <CardDescription>{t('profile.travel.trustedTravelerDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="tsa">TSA PreCheck Number</Label>
+              <Label htmlFor="tsa">{t('profile.travel.tsaPrecheck')}</Label>
               <Input
                 id="tsa"
                 value={travelData.tsaPreCheck}
                 onChange={(e) => setTravelData({ ...travelData, tsaPreCheck: e.target.value })}
-                placeholder="TSA PreCheck #"
+                placeholder={t('profile.travel.tsaPrecheckPlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="globalEntry">Global Entry Number</Label>
+              <Label htmlFor="globalEntry">{t('profile.travel.globalEntry')}</Label>
               <Input
                 id="globalEntry"
                 value={travelData.globalEntry}
                 onChange={(e) => setTravelData({ ...travelData, globalEntry: e.target.value })}
-                placeholder="Global Entry #"
+                placeholder={t('profile.travel.globalEntryPlaceholder')}
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="knownTraveler">Known Traveler Number</Label>
+            <Label htmlFor="knownTraveler">{t('profile.travel.knownTraveler')}</Label>
             <Input
               id="knownTraveler"
               value={travelData.knownTravelerNumber}
               onChange={(e) =>
                 setTravelData({ ...travelData, knownTravelerNumber: e.target.value })
               }
-              placeholder="Known Traveler Number"
+              placeholder={t('profile.travel.knownTravelerPlaceholder')}
             />
           </div>
         </CardContent>
@@ -196,12 +216,12 @@ export function TravelProfileTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Travel Preferences</CardTitle>
-          <CardDescription>Your travel and accommodation preferences</CardDescription>
+          <CardTitle>{t('profile.travel.preferences')}</CardTitle>
+          <CardDescription>{t('profile.travel.preferencesDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label>Seat Preference</Label>
+            <Label>{t('profile.travel.seatPreference')}</Label>
             <RadioGroup
               value={travelData.seatPreference}
               onValueChange={(value) => setTravelData({ ...travelData, seatPreference: value })}
@@ -209,47 +229,47 @@ export function TravelProfileTab() {
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="window" id="window" />
                 <Label htmlFor="window" className="font-normal">
-                  Window
+                  {t('profile.travel.seatWindow')}
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="aisle" id="aisle" />
                 <Label htmlFor="aisle" className="font-normal">
-                  Aisle
+                  {t('profile.travel.seatAisle')}
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="middle" id="middle" />
                 <Label htmlFor="middle" className="font-normal">
-                  Middle
+                  {t('profile.travel.seatMiddle')}
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="no-preference" id="no-preference" />
                 <Label htmlFor="no-preference" className="font-normal">
-                  No Preference
+                  {t('profile.travel.seatNoPreference')}
                 </Label>
               </div>
             </RadioGroup>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="mealPreference">Meal Preference</Label>
+            <Label htmlFor="mealPreference">{t('profile.travel.mealPreference')}</Label>
             <Input
               id="mealPreference"
               value={travelData.mealPreference}
               onChange={(e) => setTravelData({ ...travelData, mealPreference: e.target.value })}
-              placeholder="e.g., Vegetarian, Kosher, Halal"
+              placeholder={t('profile.travel.mealPlaceholder')}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="hotelPreferences">Hotel Preferences</Label>
+            <Label htmlFor="hotelPreferences">{t('profile.travel.hotelPreferences')}</Label>
             <Textarea
               id="hotelPreferences"
               value={travelData.hotelPreferences}
               onChange={(e) => setTravelData({ ...travelData, hotelPreferences: e.target.value })}
-              placeholder="Room type, floor level, amenities, etc."
+              placeholder={t('profile.travel.hotelPlaceholder')}
               rows={3}
             />
           </div>
@@ -258,30 +278,30 @@ export function TravelProfileTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Loyalty Programs</CardTitle>
-          <CardDescription>Frequent flyer and hotel loyalty programs</CardDescription>
+          <CardTitle>{t('profile.travel.loyaltyPrograms')}</CardTitle>
+          <CardDescription>{t('profile.travel.loyaltyDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="frequentFlyer">Frequent Flyer Programs</Label>
+            <Label htmlFor="frequentFlyer">{t('profile.travel.frequentFlyer')}</Label>
             <Textarea
               id="frequentFlyer"
               value={travelData.frequentFlyerPrograms}
               onChange={(e) =>
                 setTravelData({ ...travelData, frequentFlyerPrograms: e.target.value })
               }
-              placeholder="List airlines and membership numbers"
+              placeholder={t('profile.travel.frequentFlyerPlaceholder')}
               rows={3}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="loyaltyPrograms">Hotel Loyalty Programs</Label>
+            <Label htmlFor="loyaltyPrograms">{t('profile.travel.hotelLoyalty')}</Label>
             <Textarea
               id="loyaltyPrograms"
               value={travelData.loyaltyPrograms}
               onChange={(e) => setTravelData({ ...travelData, loyaltyPrograms: e.target.value })}
-              placeholder="List hotel chains and membership numbers"
+              placeholder={t('profile.travel.hotelLoyaltyPlaceholder')}
               rows={3}
             />
           </div>
@@ -290,8 +310,8 @@ export function TravelProfileTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Special Travel Needs</CardTitle>
-          <CardDescription>Mobility assistance and other special requirements</CardDescription>
+          <CardTitle>{t('profile.travel.specialNeeds')}</CardTitle>
+          <CardDescription>{t('profile.travel.specialNeedsDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-3">
@@ -304,7 +324,7 @@ export function TravelProfileTab() {
                 }
               />
               <Label htmlFor="mobilityAssistance" className="font-normal">
-                Require mobility assistance at airports
+                {t('profile.travel.mobilityPlaceholder')}
               </Label>
             </div>
 
@@ -317,18 +337,18 @@ export function TravelProfileTab() {
                 }
               />
               <Label htmlFor="wheelchairRequired" className="font-normal">
-                Wheelchair required
+                {t('profile.travel.wheelchairRequired')}
               </Label>
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="otherTravelNeeds">Other Travel Needs</Label>
+            <Label htmlFor="otherTravelNeeds">{t('profile.travel.otherNeeds')}</Label>
             <Textarea
               id="otherTravelNeeds"
               value={travelData.otherTravelNeeds}
               onChange={(e) => setTravelData({ ...travelData, otherTravelNeeds: e.target.value })}
-              placeholder="Any other special requirements or accommodations"
+              placeholder={t('profile.travel.otherNeedsPlaceholder')}
               rows={3}
             />
           </div>
@@ -340,9 +360,9 @@ export function TravelProfileTab() {
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />
           ) : (
-            <Save className="h-4 w-4 mr-2" />
+            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
           )}
-          Save Changes
+          {t('profile.actions.saveChanges')}
         </Button>
       </div>
     </div>

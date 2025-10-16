@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -19,6 +20,8 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.jobs')
+  const tCommon = useTranslations('common')
   const { jobs, loading } = useMyJobs(workspaceId, userId)
   
   // Transform real jobs data
@@ -43,10 +46,15 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading jobs...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -70,25 +78,35 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button 
-          size="sm" 
-          className="gap-2"
-          onClick={() => router.push(`/workspace/${workspaceId}/people/personnel`)}
-        >
-          <Plus className="h-4 w-4" />
-          New Contract
-        </Button>
-      </div>
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <section role="region" aria-labelledby="jobs-actions">
+        <h2 id="jobs-actions" className="sr-only">{t('description')}</h2>
+        <div className="flex items-center justify-between">
+          <p className="text-muted-foreground">
+            {t('description')}
+          </p>
+          <Button 
+            size="sm" 
+            onClick={() => router.push(`/workspace/${workspaceId}/people/personnel`)}
+            aria-label={t('newContract')}
+          >
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('newContract')}
+          </Button>
+        </div>
+      </section>
 
       {/* Summary Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <section role="region" aria-labelledby="jobs-stats">
+        <h2 id="jobs-stats" className="sr-only">Job Statistics</h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-3xl font-bold text-green-600">{activeJobs}</p>
-              <p className="text-xs text-muted-foreground mt-1">Active Jobs</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('activeJobs')}</p>
             </div>
           </CardContent>
         </Card>
@@ -96,7 +114,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-3xl font-bold text-yellow-600">{pendingJobs}</p>
-              <p className="text-xs text-muted-foreground mt-1">Pending</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('pendingJobs')}</p>
             </div>
           </CardContent>
         </Card>
@@ -104,7 +122,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-3xl font-bold text-blue-600">{completedJobs}</p>
-              <p className="text-xs text-muted-foreground mt-1">Completed</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('completedJobs')}</p>
             </div>
           </CardContent>
         </Card>
@@ -112,11 +130,12 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-3xl font-bold">{jobsList.length}</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Jobs</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('totalJobs')}</p>
             </div>
           </CardContent>
         </Card>
       </div>
+      </section>
 
       {/* Jobs List */}
       <Card>
@@ -214,6 +233,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
           )}
         </CardContent>
       </Card>
-    </div>
+      </div>
+    </main>
   )
 }

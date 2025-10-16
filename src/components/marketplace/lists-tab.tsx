@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { ListChecks, ShoppingCart, Heart, BarChart3, Users, Archive, Plus, Search, MoreHorizontal } from "lucide-react"
+import { useTranslations } from 'next-intl'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,26 +19,28 @@ interface ListsTabProps {
 }
 
 export function ListsTab({ data = [], loading = false }: ListsTabProps) {
+  const t = useTranslations('marketplace.lists')
+  const tCommon = useTranslations('common')
   const listsData = data
   
   const getListIcon = (name: string) => {
-    if (name.includes("Shopping Cart")) return <ShoppingCart className="h-5 w-5 text-blue-500" />
-    if (name.includes("Wishlist")) return <Heart className="h-5 w-5 text-pink-500" />
-    if (name.includes("Project List")) return <ListChecks className="h-5 w-5 text-purple-500" />
-    if (name.includes("Comparison")) return <BarChart3 className="h-5 w-5 text-green-500" />
-    return <ListChecks className="h-5 w-5 text-gray-500" />
+    if (name.includes("Shopping Cart")) return <ShoppingCart className="h-5 w-5 text-blue-500" aria-hidden="true" />
+    if (name.includes("Wishlist")) return <Heart className="h-5 w-5 text-pink-500" aria-hidden="true" />
+    if (name.includes("Project List")) return <ListChecks className="h-5 w-5 text-purple-500" aria-hidden="true" />
+    if (name.includes("Comparison")) return <BarChart3 className="h-5 w-5 text-green-500" aria-hidden="true" />
+    return <ListChecks className="h-5 w-5 text-gray-500" aria-hidden="true" />
   }
 
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "active":
-        return <Badge className="bg-green-600">Active</Badge>
+        return <Badge className="bg-green-600">{t('active')}</Badge>
       case "saved":
         return <Badge className="bg-blue-600">Saved</Badge>
       case "shared":
-        return <Badge className="bg-purple-600"><Users className="h-3 w-3 mr-1" />Shared</Badge>
+        return <Badge className="bg-purple-600"><Users className="h-3 w-3 mr-1" aria-hidden="true" />Shared</Badge>
       case "archived":
-        return <Badge variant="outline"><Archive className="h-3 w-3 mr-1" />Archived</Badge>
+        return <Badge variant="outline"><Archive className="h-3 w-3 mr-1" aria-hidden="true" />Archived</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -45,24 +48,26 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
         <Button>
-          <Plus className="h-4 w-4 mr-2" />
-          Create List
-        </Button>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{t('createList')}</Button>
       </div>
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">
-            <CardDescription>Total Lists</CardDescription>
+            <CardDescription>{t('totalLists')}</CardDescription>
             <CardTitle className="text-3xl">{listsData.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">
-            <CardDescription>Active Lists</CardDescription>
+            <CardDescription>{t('activeLists')}</CardDescription>
             <CardTitle className="text-3xl">
               {listsData.filter(l => l.status === 'active').length}
             </CardTitle>
@@ -70,7 +75,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
         </Card>
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">
-            <CardDescription>Shared Lists</CardDescription>
+            <CardDescription>{t('sharedLists')}</CardDescription>
             <CardTitle className="text-3xl">
               {listsData.filter(l => l.status === 'shared').length}
             </CardTitle>
@@ -78,7 +83,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
         </Card>
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">
-            <CardDescription>Total Value</CardDescription>
+            <CardDescription>{t('totalValue')}</CardDescription>
             <CardTitle className="text-3xl">
               ${Math.floor(listsData.reduce((sum, l) => sum + parseFloat(l.total_value?.replace(/[$,]/g, '') || '0'), 0) / 1000)}k
             </CardTitle>
@@ -88,8 +93,8 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input placeholder="Search lists..." className="pl-9" />
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Input placeholder={t('searchLists')} className="pl-9" />
       </div>
 
       {/* Lists Grid */}
@@ -110,7 +115,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <MoreHorizontal className="h-4 w-4" />
+                      <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
@@ -130,7 +135,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
                   <p className="text-2xl font-bold">{list.items_count}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Total Value</p>
+                  <p className="text-sm text-muted-foreground">{t('totalValue')}</p>
                   <p className="text-lg font-bold">{list.total_value}</p>
                 </div>
               </div>
@@ -149,7 +154,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
                   View Items
                 </Button>
                 <Button variant="outline" size="sm">
-                  <ShoppingCart className="h-4 w-4" />
+                  <ShoppingCart className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
             </CardContent>

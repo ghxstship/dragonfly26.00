@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { useProfileData } from "@/hooks/use-profile-data"
-import { Loader2 } from "lucide-react"
+import {Loader2} from "lucide-react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -38,11 +39,12 @@ interface Clearance {
 }
 
 export function AccessTab() {
+  const t = useTranslations('profile')
   const [credentials, setCredentials] = useState<Credential[]>([
     {
       id: "1",
       type: "Venue Access",
-      name: "Madison Square Garden - Backstage Pass",
+      nameKey: "madison_square_garden__backstage_pass",
       issueDate: "2024-01-15",
       expiryDate: "2024-12-31",
       status: "active",
@@ -51,7 +53,7 @@ export function AccessTab() {
     {
       id: "2",
       type: "Equipment Authorization",
-      name: "Forklift Operator License",
+      nameKey: "forklift_operator_license",
       issueDate: "2023-06-01",
       expiryDate: "2025-06-01",
       status: "active",
@@ -91,14 +93,21 @@ export function AccessTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('descriptions.access')}
+        </p>
+      </div>
+
       <Card>
         <CardHeader>
           <div className="flex items-center gap-2">
-            <Key className="h-5 w-5" />
+            <Key className="h-5 w-5" aria-hidden="true" />
             <div>
-              <CardTitle>Active Credentials</CardTitle>
+              <CardTitle>{t('access.credentials')}</CardTitle>
               <CardDescription>
-                Current access credentials, badges, and authorizations
+                {t('access.credentialsDescription')}
               </CardDescription>
             </div>
           </div>
@@ -106,25 +115,25 @@ export function AccessTab() {
         <CardContent>
           {credentials.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-8">
-              No active credentials on file
+              {t('access.noCredentials')}
             </p>
           ) : (
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Name</TableHead>
-                  <TableHead>Access Level</TableHead>
-                  <TableHead>Issue Date</TableHead>
-                  <TableHead>Expiry Date</TableHead>
-                  <TableHead>Status</TableHead>
+                  <TableHead>{t('access.type')}</TableHead>
+                  <TableHead>{t('access.name')}</TableHead>
+                  <TableHead>{t('access.accessLevel')}</TableHead>
+                  <TableHead>{t('access.issueDate')}</TableHead>
+                  <TableHead>{t('access.expiryDate')}</TableHead>
+                  <TableHead>{t('access.status')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {credentials.map((cred) => (
                   <TableRow key={cred.id}>
                     <TableCell className="font-medium">{cred.type}</TableCell>
-                    <TableCell>{cred.name}</TableCell>
+                    <TableCell>{t(cred.nameKey)}</TableCell>
                     <TableCell>{cred.accessLevel}</TableCell>
                     <TableCell>{new Date(cred.issueDate).toLocaleDateString()}</TableCell>
                     <TableCell>{new Date(cred.expiryDate).toLocaleDateString()}</TableCell>
@@ -140,11 +149,11 @@ export function AccessTab() {
       <Card>
         <CardHeader>
           <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5" />
+            <Shield className="h-5 w-5" aria-hidden="true" />
             <div>
-              <CardTitle>Security Clearances</CardTitle>
+              <CardTitle>{t('access.clearances')}</CardTitle>
               <CardDescription>
-                Government and organization security clearances
+                {t('access.clearancesDescription')}
               </CardDescription>
             </div>
           </div>
@@ -152,17 +161,17 @@ export function AccessTab() {
         <CardContent>
           {clearances.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-8">
-              No security clearances on file
+              {t('access.noClearances')}
             </p>
           ) : (
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Level</TableHead>
-                  <TableHead>Issued By</TableHead>
-                  <TableHead>Valid Until</TableHead>
-                  <TableHead>Status</TableHead>
+                  <TableHead>{t('access.type')}</TableHead>
+                  <TableHead>{t('access.level')}</TableHead>
+                  <TableHead>{t('access.issuedBy')}</TableHead>
+                  <TableHead>{t('access.validUntil')}</TableHead>
+                  <TableHead>{t('access.status')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -184,37 +193,36 @@ export function AccessTab() {
       <Card>
         <CardHeader>
           <div className="flex items-center gap-2">
-            <Lock className="h-5 w-5" />
+            <Lock className="h-5 w-5" aria-hidden="true" />
             <div>
-              <CardTitle>Access Management</CardTitle>
+              <CardTitle>{t('access.management')}</CardTitle>
               <CardDescription>
-                Manage your credential requests and access permissions
+                {t('access.managementDescription')}
               </CardDescription>
             </div>
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label>Request New Credential</Label>
+            <Label>{t('access.requestCredential')}</Label>
             <p className="text-sm text-muted-foreground mb-3">
-              Need access to a venue, equipment, or secure area? Submit a credential request to
-              your organization administrator.
+              {t('access.requestDescription')}
             </p>
             <Button variant="outline">
-              <Key className="h-4 w-4 mr-2" />
-              Request Credential
+              <Key className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t('access.requestButton')}
             </Button>
           </div>
 
           <div className="space-y-2">
-            <Label>Background Check Status</Label>
+            <Label>{t('access.backgroundCheck')}</Label>
             <p className="text-sm text-muted-foreground mb-3">
-              View the status of your background check and security screening.
+              {t('access.backgroundCheckDescription')}
             </p>
             <div className="flex items-center gap-2">
-              <Badge variant="default">Completed</Badge>
+              <Badge variant="default">{t('profile.access.completed')}</Badge>
               <span className="text-sm text-muted-foreground">
-                Last updated: January 15, 2024
+                {t('profile.access.lastUpdated')} January 15, 2024
               </span>
             </div>
           </div>
@@ -223,16 +231,14 @@ export function AccessTab() {
 
       <div className="bg-muted/50 rounded-lg p-4">
         <p className="text-sm text-muted-foreground">
-          <strong>Note:</strong> Credentials and clearances are managed by your organization
-          administrators. Contact your admin team if you need to update or renew any access
-          credentials. Some credentials may require periodic renewal or re-verification.
+          <strong>{t('access.note')}</strong> {t('access.noteDescription')}
         </p>
       </div>
 
       <div className="flex justify-end">
         <Button onClick={handleSave}>
           <Save className="h-4 w-4 mr-2" />
-          Save Changes
+          {t('actions.saveChanges')}
         </Button>
       </div>
     </div>

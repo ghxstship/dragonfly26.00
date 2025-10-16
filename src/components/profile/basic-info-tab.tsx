@@ -1,17 +1,19 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Camera, Save, Loader2 } from "lucide-react"
+import {Camera, Save, Loader2, Plus} from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
 import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function BasicInfoTab() {
+  const t = useTranslations()
   const { profile, loading, updateProfile, uploadAvatar } = useProfileData()
   const { toast } = useToast()
   const [saving, setSaving] = useState(false)
@@ -67,12 +69,12 @@ export function BasicInfoTab() {
       })
       
       toast({
-        title: "Profile updated",
-        description: "Your basic information has been saved successfully.",
+        title: t('profile.success.profileUpdated'),
+        description: t('profile.success.basicInfoSaved'),
       })
     } catch (error: any) {
       toast({
-        title: "Error",
+        title: t('profile.errors.error'),
         description: error.message,
         variant: "destructive",
       })
@@ -87,8 +89,8 @@ export function BasicInfoTab() {
 
     if (file.size > 5 * 1024 * 1024) {
       toast({
-        title: "File too large",
-        description: "Please select an image under 5MB.",
+        title: t('profile.errors.fileTooLarge'),
+        description: t('profile.errors.fileTooLargeDescription'),
         variant: "destructive",
       })
       return
@@ -99,12 +101,12 @@ export function BasicInfoTab() {
       const url = await uploadAvatar(file)
       setProfileData({ ...profileData, profileImage: url })
       toast({
-        title: "Photo uploaded",
-        description: "Your profile picture has been updated.",
+        title: t('profile.success.photoUploaded'),
+        description: t('profile.success.photoSaved'),
       })
     } catch (error: any) {
       toast({
-        title: "Upload failed",
+        title: t('profile.errors.uploadFailed'),
         description: error.message,
         variant: "destructive",
       })
@@ -123,10 +125,17 @@ export function BasicInfoTab() {
 
   return (
     <div className="space-y-6">
+      {/* Description - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('profile.descriptions.basicInfo')}
+        </p>
+      </div>
+
       <Card>
         <CardHeader>
-          <CardTitle>Profile Photo</CardTitle>
-          <CardDescription>Upload your profile picture</CardDescription>
+          <CardTitle>{t('profile.basicInfo.profilePhoto')}</CardTitle>
+          <CardDescription>{t('profile.basicInfo.uploadDescription')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex items-center gap-6">
@@ -153,12 +162,12 @@ export function BasicInfoTab() {
                 {uploading ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
-                  <Camera className="h-4 w-4 mr-2" />
+                  <Camera className="h-4 w-4 mr-2" aria-hidden="true" />
                 )}
-                Upload Photo
+                {t('profile.actions.uploadPhoto')}
               </Button>
               <p className="text-xs text-muted-foreground mt-2">
-                JPG, PNG or GIF. Max size 5MB.
+                {t('profile.basicInfo.uploadDescription')}
               </p>
             </div>
           </div>
@@ -167,56 +176,56 @@ export function BasicInfoTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Personal Information</CardTitle>
-          <CardDescription>Your basic personal details</CardDescription>
+          <CardTitle>{t('profile.basicInfo.personalInfo')}</CardTitle>
+          <CardDescription>{t('profile.basicInfo.personalDetails')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="firstName">First Name</Label>
+              <Label htmlFor="firstName">{t('profile.basicInfo.firstName')}</Label>
               <Input
                 id="firstName"
                 value={profileData.firstName}
                 onChange={(e) => setProfileData({ ...profileData, firstName: e.target.value })}
-                placeholder="Enter first name"
+                placeholder={t('profile.basicInfo.firstNamePlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="lastName">Last Name</Label>
+              <Label htmlFor="lastName">{t('profile.basicInfo.lastName')}</Label>
               <Input
                 id="lastName"
                 value={profileData.lastName}
                 onChange={(e) => setProfileData({ ...profileData, lastName: e.target.value })}
-                placeholder="Enter last name"
+                placeholder={t('profile.basicInfo.lastNamePlaceholder')}
               />
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('profile.basicInfo.email')}</Label>
               <Input
                 id="email"
                 type="email"
                 value={profileData.email}
                 onChange={(e) => setProfileData({ ...profileData, email: e.target.value })}
-                placeholder="email@example.com"
+                placeholder={t('profile.basicInfo.emailPlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">{t('profile.basicInfo.phone')}</Label>
               <Input
                 id="phone"
                 type="tel"
                 value={profileData.phone}
                 onChange={(e) => setProfileData({ ...profileData, phone: e.target.value })}
-                placeholder="+1 (555) 000-0000"
+                placeholder={t('profile.basicInfo.phonePlaceholder')}
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="dateOfBirth">Date of Birth</Label>
+            <Label htmlFor="dateOfBirth">{t('profile.basicInfo.dateOfBirth')}</Label>
             <Input
               id="dateOfBirth"
               type="date"
@@ -229,59 +238,59 @@ export function BasicInfoTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Mailing Address</CardTitle>
-          <CardDescription>Your primary mailing address</CardDescription>
+          <CardTitle>{t('profile.basicInfo.mailingAddress')}</CardTitle>
+          <CardDescription>{t('profile.basicInfo.mailingAddressDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="address">Street Address</Label>
+            <Label htmlFor="address">{t('profile.basicInfo.streetAddress')}</Label>
             <Textarea
               id="address"
               value={profileData.address}
               onChange={(e) => setProfileData({ ...profileData, address: e.target.value })}
-              placeholder="Enter street address"
+              placeholder={t('profile.basicInfo.streetAddressPlaceholder')}
               rows={2}
             />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="city">City</Label>
+              <Label htmlFor="city">{t('profile.basicInfo.city')}</Label>
               <Input
                 id="city"
                 value={profileData.city}
                 onChange={(e) => setProfileData({ ...profileData, city: e.target.value })}
-                placeholder="Enter city"
+                placeholder={t('profile.basicInfo.cityPlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="state">State/Province</Label>
+              <Label htmlFor="state">{t('profile.basicInfo.state')}</Label>
               <Input
                 id="state"
                 value={profileData.state}
                 onChange={(e) => setProfileData({ ...profileData, state: e.target.value })}
-                placeholder="Enter state"
+                placeholder={t('profile.basicInfo.statePlaceholder')}
               />
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="zipCode">ZIP/Postal Code</Label>
+              <Label htmlFor="zipCode">{t('profile.basicInfo.zipCode')}</Label>
               <Input
                 id="zipCode"
                 value={profileData.zipCode}
                 onChange={(e) => setProfileData({ ...profileData, zipCode: e.target.value })}
-                placeholder="Enter ZIP code"
+                placeholder={t('profile.basicInfo.zipCodePlaceholder')}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="country">Country</Label>
+              <Label htmlFor="country">{t('profile.basicInfo.country')}</Label>
               <Input
                 id="country"
                 value={profileData.country}
                 onChange={(e) => setProfileData({ ...profileData, country: e.target.value })}
-                placeholder="Enter country"
+                placeholder={t('profile.basicInfo.countryPlaceholder')}
               />
             </div>
           </div>
@@ -293,9 +302,9 @@ export function BasicInfoTab() {
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />
           ) : (
-            <Save className="h-4 w-4 mr-2" />
+            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
           )}
-          Save Changes
+          {t('profile.actions.saveChanges')}
         </Button>
       </div>
     </div>

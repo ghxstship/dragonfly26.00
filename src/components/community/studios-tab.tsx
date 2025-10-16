@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { 
@@ -51,6 +52,8 @@ interface Studio {
 }
 
 export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
+  const t = useTranslations('community.studios')
+  const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
   const [filter, setFilter] = useState<"all" | "my-studios" | "suggested">("all")
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
@@ -126,7 +129,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Total Reach</div>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{(totalMembers / 1000).toFixed(1)}K</div>
@@ -137,7 +140,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Suggestions</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -170,7 +173,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
               </p>
             </div>
             <Button onClick={() => setCreateDialogOpen(true)}>
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
               New Studio
             </Button>
           </div>
@@ -182,9 +185,9 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
         <CardContent className="pt-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
-                placeholder="Search studios, pages, and groups..."
+                placeholder={t('searchStudios')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -192,7 +195,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
             </div>
             <Tabs value={filter} onValueChange={(v) => setFilter(v as any)}>
               <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
+                <TabsTrigger value="all">{t('all')}</TabsTrigger>
                 <TabsTrigger value="my-studios">My Studios</TabsTrigger>
                 <TabsTrigger value="suggested">Suggested</TabsTrigger>
               </TabsList>
@@ -209,8 +212,8 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
               <EmptyState
                 variant="inline"
                 icon={Building2}
-                mainMessage={searchQuery || filter !== "all" ? "No studios found" : "NOTHING TO SEE HERE... (YET)"}
-                description={searchQuery || filter !== "all" ? "Try adjusting your search criteria" : "Discover and connect with production studios"}
+                mainMessage={searchQuery || filter !== "all" ? t('noStudiosFound') : t('nothingToSeeYet')}
+                description={searchQuery || filter !== "all" ? t('tryAdjustingSearch') : t('discoverStudios')}
               />
             </CardContent>
           </Card>
@@ -244,7 +247,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
                             <h3 className="text-xl font-semibold truncate">{studio.name}</h3>
                             {studio.verified && (
                               <Badge variant="secondary" className="h-5">
-                                <Star className="h-3 w-3 mr-1 fill-current" />
+                                <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" />
                                 Verified
                               </Badge>
                             )}
@@ -259,14 +262,14 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
                               ) : (
                                 <Lock className="h-3 w-3" />
                               )}
-                              {studio.visibility === "public" ? "Public" : "Private"}
+                              {studio.visibility === "public" ? t('public') : t('private')}
                             </span>
                             <span>{studio.category}</span>
                           </div>
                         </div>
                         {studio.joined && (
                           <Button variant="ghost" size="sm">
-                            <MoreHorizontal className="h-4 w-4" />
+                            <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
                           </Button>
                         )}
                       </div>
@@ -278,7 +281,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
                       {/* Stats */}
                       <div className="flex items-center gap-4 text-sm mb-3">
                         <div className="flex items-center gap-1">
-                          <Users className="h-4 w-4 text-muted-foreground" />
+                          <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                           <span className="font-medium">{studio.members.toLocaleString()}</span>
                           <span className="text-muted-foreground">members</span>
                         </div>
@@ -305,7 +308,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
 
                       {/* Activity */}
                       <p className="text-xs text-muted-foreground mb-4">
-                        <Calendar className="h-3 w-3 inline mr-1" />
+                        <Calendar className="h-3 w-3 inline mr-1" aria-hidden="true" />
                         {studio.recentActivity}
                       </p>
 
@@ -343,7 +346,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
                               size="sm"
                               onClick={() => handleJoin(studio.id)}
                             >
-                              <Plus className="h-4 w-4 mr-2" />
+                              <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
                               Join
                             </Button>
                             <Button variant="outline" size="sm">

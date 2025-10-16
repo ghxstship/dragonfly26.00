@@ -1,8 +1,9 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import Image from "next/image"
-import { Package, Camera, QrCode, FolderTree, AlertCircle, Grid3x3, List } from "lucide-react"
+import { Package, Camera, QrCode, FolderTree, AlertCircle, Grid3x3, List , Plus} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardDescription, CardTitle } from "@/components/ui/card"
@@ -23,6 +24,8 @@ interface InventoryTabProps {
 }
 
 export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) {
+  const t = useTranslations('production.assets.inventory')
+  const tCommon = useTranslations('common')
   const [viewMode, setViewMode] = useState<'table' | 'grid'>('table')
   const [selectedFolderId, setSelectedFolderId] = useState<string | null>(null)
   const [selectedItem, setSelectedItem] = useState<any>(null)
@@ -54,7 +57,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       render: (value: string[]) => {
         if (!value || value.length === 0) {
           return <div className="w-12 h-12 bg-muted rounded flex items-center justify-center">
-            <Package className="h-6 w-6 text-muted-foreground" />
+            <Package className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </div>
         }
         return <div className="w-12 h-12 bg-muted rounded overflow-hidden relative">
@@ -71,7 +74,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       type: 'text',
       render: (value: string) => value ? (
         <div className="flex items-center gap-1 text-xs">
-          <QrCode className="h-3 w-3" />
+          <QrCode className="h-4 w-4" aria-hidden="true" />
           {value}
         </div>
       ) : '-'
@@ -85,7 +88,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         <div className="flex items-center gap-2">
           <span className="font-medium">{value || 0}</span>
           {item.low_stock_threshold && value <= item.low_stock_threshold && (
-            <AlertCircle className="h-4 w-4 text-orange-500" />
+            <AlertCircle className="h-4 w-4 text-orange-500" aria-hidden="true" />
           )}
         </div>
       )
@@ -163,32 +166,51 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
   }
 
   return (
-    <div className="flex h-full">
-      {/* Left Sidebar - Folder Tree */}
-      {showFolderTree && (
-        <div className="w-64 border-r">
-          <InventoryFolderTree
-            workspaceId={workspaceId}
-            onFolderSelect={setSelectedFolderId}
-            selectedFolderId={selectedFolderId}
-          />
-        </div>
-      )}
-
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col space-y-4 p-4">
-        {/* Top Bar with Alerts */}
-        <div className="flex items-center justify-between">
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={() => setShowFolderTree(!showFolderTree)}
-          >
-            <FolderTree className="h-4 w-4 mr-2" />
-            {showFolderTree ? 'Hide' : 'Show'} Folders
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Manage current asset inventory and stock levels
+        </p>
+        <div className="flex items-center gap-2">
+          <Button variant="outline" size="sm" onClick={() => setScannerOpen(true)}>
+            <QrCode className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            Scan Barcode
           </Button>
-          <InventoryAlertsPanel workspaceId={workspaceId} />
+          <Button size="sm">
+            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            Add Item
+          </Button>
         </div>
+      </div>
+
+      <div className="flex h-[calc(100vh-200px)]">
+        {/* Left Sidebar - Folder Tree */}
+        {showFolderTree && (
+          <div className="w-64 border-r">
+            <InventoryFolderTree
+              workspaceId={workspaceId}
+              onFolderSelect={setSelectedFolderId}
+              selectedFolderId={selectedFolderId}
+            />
+          </div>
+        )}
+
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col space-y-4 p-4">
+          {/* Top Bar with Alerts */}
+          <div className="flex items-center justify-between">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => setShowFolderTree(!showFolderTree)}
+            >
+              <FolderTree className="h-4 w-4" aria-hidden="true" className="mr-2" />
+              {showFolderTree ? 'Hide' : 'Show'} Folders
+            </Button>
+            <InventoryAlertsPanel workspaceId={workspaceId} />
+          </div>
 
         {/* Bulk Actions Toolbar */}
         <BulkActionsToolbar
@@ -206,13 +228,13 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Card>
             <CardHeader className="pb-3">
-              <CardDescription>Total Items</CardDescription>
+              <CardDescription>{t('totalItems')}</CardDescription>
               <CardTitle className="text-2xl">{totalItems}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="pb-3">
-              <CardDescription>Total Value</CardDescription>
+              <CardDescription>{t('totalValue')}</CardDescription>
               <CardTitle className="text-2xl">${totalValue.toLocaleString()}</CardTitle>
             </CardHeader>
           </Card>
@@ -233,11 +255,11 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         {/* Quick Actions */}
         <div className="flex items-center gap-2 flex-wrap">
           <Button onClick={() => setRightSidebarOpen(true, 'photo-upload')} variant="outline">
-            <Camera className="h-4 w-4 mr-2" />
+            <Camera className="h-4 w-4" aria-hidden="true" className="mr-2" />
             Upload Photos
           </Button>
           <Button onClick={() => setScannerOpen(true)} variant="outline">
-            <QrCode className="h-4 w-4 mr-2" />
+            <QrCode className="h-4 w-4" aria-hidden="true" className="mr-2" />
             Scan Barcode
           </Button>
           <div className="flex-1" />
@@ -247,14 +269,14 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
               size="sm"
               onClick={() => setViewMode('table')}
             >
-              <List className="h-4 w-4" />
+              <List className="h-4 w-4" aria-hidden="true" />
             </Button>
             <Button 
               variant={viewMode === 'grid' ? 'secondary' : 'ghost'} 
               size="sm"
               onClick={() => setViewMode('grid')}
             >
-              <Grid3x3 className="h-4 w-4" />
+              <Grid3x3 className="h-4 w-4" aria-hidden="true" />
             </Button>
           </div>
         </div>
@@ -289,6 +311,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
             onCreateAction={() => {}}
           />
         )}
+        </div>
       </div>
 
       {/* Item Detail Drawer */}
@@ -314,5 +337,6 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         workspaceId={workspaceId}
       />
     </div>
+    </main>
   )
 }

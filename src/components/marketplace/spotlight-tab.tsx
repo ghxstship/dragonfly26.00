@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Heart, MessageCircle, Share2, Bookmark, Sparkles, TrendingUp, Star, ChevronRight } from "lucide-react"
+import { Heart, MessageCircle, Share2, Bookmark, Sparkles, TrendingUp, Star, ChevronRight , Plus} from "lucide-react"
 
 interface SpotlightTabProps {
   data?: any[]
@@ -13,6 +14,8 @@ interface SpotlightTabProps {
 }
 
 export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) {
+  const t = useTranslations('marketplace.spotlight')
+  const tCommon = useTranslations('common')
   const spotlightItems = data
   const [likedItems, setLikedItems] = useState<Set<string>>(new Set())
   const [savedItems, setSavedItems] = useState<Set<string>>(new Set())
@@ -50,20 +53,28 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "sponsored": return <Sparkles className="h-3 w-3" />
-      case "trending": return <TrendingUp className="h-3 w-3" />
-      case "featured": return <Star className="h-3 w-3" />
+      case "trending": return <TrendingUp className="h-3 w-3" aria-hidden="true" />
+      case "featured": return <Star className="h-3 w-3" aria-hidden="true" />
       default: return null
     }
   }
 
   return (
-    <div className="container max-w-4xl py-6 space-y-8">
-      {/* Filter Pills */}
-      <div className="flex gap-2 overflow-x-auto pb-2">
-        <Button variant="default" size="sm">All</Button>
+    <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
+      </div>
+
+      <div className="container max-w-4xl space-y-8">
+        {/* Filter Pills */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+        <Button variant="default" size="sm">{t('all')}</Button>
         <Button variant="outline" size="sm">Sponsored</Button>
         <Button variant="outline" size="sm">Featured</Button>
-        <Button variant="outline" size="sm">Trending</Button>
+        <Button variant="outline" size="sm">{t('trending')}</Button>
         <Button variant="outline" size="sm">Curated</Button>
       </div>
 
@@ -127,10 +138,10 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
                     />
                   </Button>
                   <Button variant="ghost" size="sm" className="h-auto p-0">
-                    <MessageCircle className="h-6 w-6" />
+                    <MessageCircle className="h-6 w-6" aria-hidden="true" />
                   </Button>
                   <Button variant="ghost" size="sm" className="h-auto p-0">
-                    <Share2 className="h-6 w-6" />
+                    <Share2 className="h-6 w-6" aria-hidden="true" />
                   </Button>
                 </div>
                 <Button
@@ -168,7 +179,7 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
                 <div className="flex items-center gap-4">
                   <p className="text-2xl font-bold">{item.price}</p>
                   <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                     <span className="font-semibold">{item.rating}</span>
                   </div>
                 </div>
@@ -198,11 +209,12 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
         ))}
       </div>
 
-      {/* Load More */}
-      <div className="flex justify-center pt-4">
-        <Button variant="outline" size="lg">
-          Load More
-        </Button>
+        {/* Load More */}
+        <div className="flex justify-center pt-4">
+          <Button variant="outline" size="lg">
+            Load More
+          </Button>
+        </div>
       </div>
     </div>
   )

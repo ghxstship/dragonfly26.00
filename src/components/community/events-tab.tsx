@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -55,6 +56,8 @@ interface CommunityEvent {
 }
 
 export function EventsTab({ data = [], loading = false }: EventsTabProps) {
+  const t = useTranslations('community.events')
+  const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
   const [dateFilter, setDateFilter] = useState<Date | undefined>()
   const [categoryFilter, setCategoryFilter] = useState<"all" | CommunityEvent["category"]>("all")
@@ -134,7 +137,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Upcoming</div>
+            <div className="text-sm font-medium">{t('upcoming')}</div>
             <CalendarDays className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -157,7 +160,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Interested</div>
-            <Star className="h-4 w-4 text-muted-foreground" />
+            <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -170,7 +173,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Featured</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -186,9 +189,9 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
         <Card className="md:col-span-2">
           <CardContent className="pt-6 space-y-4">
             <div className="relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
-                placeholder="Search events by title, location, or description..."
+                placeholder={t('searchEvents')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -196,7 +199,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
             </div>
             <Tabs value={categoryFilter} onValueChange={(v) => setCategoryFilter(v as any)}>
               <TabsList className="w-full grid grid-cols-4 lg:grid-cols-7">
-                <TabsTrigger value="all">All</TabsTrigger>
+                <TabsTrigger value="all">{t('all')}</TabsTrigger>
                 <TabsTrigger value="concert">Concert</TabsTrigger>
                 <TabsTrigger value="festival">Festival</TabsTrigger>
                 <TabsTrigger value="theater">Theater</TabsTrigger>
@@ -241,8 +244,8 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
               <EmptyState
                 variant="inline"
                 icon={CalendarDays}
-                mainMessage={searchQuery || categoryFilter !== "all" ? "No events found" : "NOTHING TO SEE HERE... (YET)"}
-                description={searchQuery || categoryFilter !== "all" ? "Try adjusting your filters" : "Create community events to bring people together"}
+                mainMessage={searchQuery || categoryFilter !== "all" ? t('noEventsFound') : t('nothingToSeeYet')}
+                description={searchQuery || categoryFilter !== "all" ? t('tryAdjustingFilters') : t('createCommunityEvents')}
                 actionLabel={!searchQuery && categoryFilter === "all" ? "Create Event" : undefined}
                 onAction={!searchQuery && categoryFilter === "all" ? () => {} : undefined}
               />
@@ -262,7 +265,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                       />
                       {event.featured && (
                         <Badge className="absolute top-3 left-3 bg-orange-500">
-                          <Star className="h-3 w-3 mr-1 fill-current" />
+                          <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" />
                           Featured
                         </Badge>
                       )}
@@ -284,7 +287,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                             {event.category}
                           </Badge>
                           <Badge variant={event.price === "free" ? "secondary" : "default"}>
-                            {event.price === "free" ? "Free" : `$${event.priceAmount}`}
+                            {event.price === "free" ? t('free') : `$${event.priceAmount}`}
                           </Badge>
                         </div>
                         <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
@@ -322,7 +325,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <Clock className="h-4 w-4" />
+                        <Clock className="h-4 w-4" aria-hidden="true" />
                         <span>{event.time}</span>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
@@ -330,7 +333,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                         <span>{event.venue}, {event.location}</span>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <Users className="h-4 w-4" />
+                        <Users className="h-4 w-4" aria-hidden="true" />
                         <span>
                           {event.attendees.toLocaleString()} attending · {event.capacity.toLocaleString()} capacity
                         </span>
@@ -372,13 +375,11 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                         Interested
                       </Button>
                       <Button variant="outline" size="sm">
-                        <Share2 className="h-4 w-4 mr-2" />
+                        <Share2 className="h-4 w-4 mr-2" aria-hidden="true" />
                         Share
                       </Button>
                       <Button variant="outline" size="sm">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Details
-                      </Button>
+                        <ExternalLink className="h-4 w-4 mr-2" />{tCommon('details')}</Button>
                     </div>
                   </div>
                 </div>

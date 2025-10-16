@@ -1,15 +1,17 @@
 "use client"
 
-import { ListOrdered, ArrowUp, ArrowRight, ArrowDown } from "lucide-react"
+import { ListOrdered, ArrowUp, ArrowRight, ArrowDown, Plus } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const priorities = [
   {
     id: "1",
     rank: 1,
-    title: "Customer Retention Initiative",
-    description: "Focus on reducing churn and increasing customer lifetime value",
+    titleKey: "customer_retention_initiative",
+    descriptionKey: "focus_on_reducing_churn_and_increasing_customer_lifetime_val",
     impact: "high",
     effort: "medium",
     score: 9.2,
@@ -19,8 +21,8 @@ const priorities = [
   {
     id: "2",
     rank: 2,
-    title: "Process Automation",
-    description: "Automate manual workflows to improve efficiency",
+    titleKey: "process_automation",
+    descriptionKey: "automate_manual_workflows_to_improve_efficiency",
     impact: "high",
     effort: "low",
     score: 8.8,
@@ -30,8 +32,8 @@ const priorities = [
   {
     id: "3",
     rank: 3,
-    title: "Market Expansion - Southeast Region",
-    description: "Enter new geographic market with high growth potential",
+    titleKey: "market_expansion__southeast_region",
+    descriptionKey: "enter_new_geographic_market_with_high_growth_potential",
     impact: "high",
     effort: "high",
     score: 8.5,
@@ -41,8 +43,8 @@ const priorities = [
   {
     id: "4",
     rank: 4,
-    title: "Product Quality Improvements",
-    description: "Reduce defects and enhance product reliability",
+    titleKey: "product_quality_improvements",
+    descriptionKey: "reduce_defects_and_enhance_product_reliability",
     impact: "medium",
     effort: "medium",
     score: 7.9,
@@ -52,8 +54,8 @@ const priorities = [
   {
     id: "5",
     rank: 5,
-    title: "Employee Development Program",
-    description: "Invest in training and career growth opportunities",
+    titleKey: "employee_development_program",
+    descriptionKey: "invest_in_training_and_career_growth_opportunities",
     impact: "medium",
     effort: "medium",
     score: 7.5,
@@ -63,8 +65,8 @@ const priorities = [
   {
     id: "6",
     rank: 6,
-    title: "Technology Infrastructure Upgrade",
-    description: "Modernize legacy systems for better performance",
+    titleKey: "technology_infrastructure_upgrade",
+    descriptionKey: "modernize_legacy_systems_for_better_performance",
     impact: "medium",
     effort: "high",
     score: 7.2,
@@ -79,19 +81,34 @@ interface InsightsPrioritiesTabProps {
 }
 
 export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPrioritiesTabProps) {
+  const t = useTranslations('intelligence.insights.insightspriorities')
+  const tCommon = useTranslations('common')
+
   const displayPriorities = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       {/* Prioritization Matrix */}
       <Card>
         <CardContent className="p-6">
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <h3 className="font-semibold mb-3">Impact vs Effort Matrix</h3>
+              <h3 className="font-semibold mb-3">{t('impactVsEffortMatrix')}</h3>
               <div className="grid grid-cols-2 gap-2 h-64">
                 <div className="border-2 border-green-200 bg-green-50 rounded-lg p-3 flex flex-col">
                   <div className="flex items-center gap-1 text-xs font-medium text-green-800 mb-2">
-                    <ArrowUp className="h-3 w-3" />
+                    <ArrowUp className="h-3 w-3" aria-hidden="true" />
                     High Impact, Low Effort
                   </div>
                   <div className="flex-1 flex items-center justify-center">
@@ -100,7 +117,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
                 </div>
                 <div className="border-2 border-blue-200 bg-blue-50 rounded-lg p-3 flex flex-col">
                   <div className="flex items-center gap-1 text-xs font-medium text-blue-800 mb-2">
-                    <ArrowUp className="h-3 w-3" />
+                    <ArrowUp className="h-3 w-3" aria-hidden="true" />
                     High Impact, High Effort
                   </div>
                   <div className="flex-1 flex items-center justify-center">
@@ -109,7 +126,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
                 </div>
                 <div className="border-2 border-yellow-200 bg-yellow-50 rounded-lg p-3 flex flex-col">
                   <div className="flex items-center gap-1 text-xs font-medium text-yellow-800 mb-2">
-                    <ArrowRight className="h-3 w-3" />
+                    <ArrowRight className="h-3 w-3" aria-hidden="true" />
                     Medium Impact, Low Effort
                   </div>
                   <div className="flex-1 flex items-center justify-center">
@@ -118,7 +135,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
                 </div>
                 <div className="border-2 border-gray-200 bg-gray-50 rounded-lg p-3 flex flex-col">
                   <div className="flex items-center gap-1 text-xs font-medium text-gray-800 mb-2">
-                    <ArrowDown className="h-3 w-3" />
+                    <ArrowDown className="h-3 w-3" aria-hidden="true" />
                     Medium Impact, High Effort
                   </div>
                   <div className="flex-1 flex items-center justify-center">
@@ -128,7 +145,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-3">Priority Score Distribution</h3>
+              <h3 className="font-semibold mb-3">{t('priorityScoreDistribution')}</h3>
               <div className="space-y-3">
                 {priorities.slice(0, 3).map((priority) => (
                   <div key={priority.id} className="flex items-center gap-3">
@@ -162,7 +179,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <h3 className="font-semibold text-lg">{priority.title}</h3>
+                    <h3 className="font-semibold text-lg">{t(priority.titleKey)}</h3>
                     <Badge variant="outline" className={
                       priority.impact === "high" && priority.effort === "low" ? "bg-green-100 text-green-800 border-green-200" :
                       priority.impact === "high" && priority.effort === "high" ? "bg-blue-100 text-blue-800 border-blue-200" :
@@ -171,7 +188,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
                       Score: {priority.score}
                     </Badge>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-3">{priority.description}</p>
+                  <p className="text-sm text-muted-foreground mb-3">{t(priority.descriptionKey)}</p>
                   
                   <div className="flex items-center gap-6 text-sm mb-3">
                     <div>

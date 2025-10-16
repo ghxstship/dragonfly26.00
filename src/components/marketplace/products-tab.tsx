@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -16,6 +17,8 @@ interface ProductsTabProps {
 }
 
 export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
+  const t = useTranslations('marketplace.products')
+  const tCommon = useTranslations('common')
   const productsData = data
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
@@ -77,13 +80,13 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "available":
-        return <Badge className="bg-green-600">Available</Badge>
+        return <Badge className="bg-green-600">{t('available')}</Badge>
       case "rented":
-        return <Badge className="bg-blue-600">Rented</Badge>
+        return <Badge className="bg-blue-600">{t('rented')}</Badge>
       case "maintenance":
-        return <Badge variant="outline" className="bg-orange-500/10 text-orange-600">Maintenance</Badge>
+        return <Badge variant="outline" className="bg-orange-500/10 text-orange-600">{t('maintenance')}</Badge>
       case "reserved":
-        return <Badge variant="outline" className="bg-purple-500/10 text-purple-600">Reserved</Badge>
+        return <Badge variant="outline" className="bg-purple-500/10 text-purple-600">{t('reserved')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -91,21 +94,25 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
         <div className="flex gap-2">
           <Button
             variant={viewMode === "grid" ? "default" : "outline"}
             size="icon"
             onClick={() => setViewMode("grid")}
           >
-            <Grid3x3 className="h-4 w-4" />
+            <Grid3x3 className="h-4 w-4" aria-hidden="true" />
           </Button>
           <Button
             variant={viewMode === "list" ? "default" : "outline"}
             size="icon"
             onClick={() => setViewMode("list")}
           >
-            <List className="h-4 w-4" />
+            <List className="h-4 w-4" aria-hidden="true" />
           </Button>
         </div>
       </div>
@@ -113,38 +120,36 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search products..." className="pl-9" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Input placeholder={t('searchProducts')} className="pl-9" />
         </div>
         <Select defaultValue="all">
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder="Category" />
+            <SelectValue placeholder={t('category')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Categories</SelectItem>
-            <SelectItem value="audio">Audio</SelectItem>
-            <SelectItem value="lighting">Lighting</SelectItem>
-            <SelectItem value="video">Video</SelectItem>
-            <SelectItem value="staging">Staging</SelectItem>
-            <SelectItem value="rigging">Rigging</SelectItem>
-            <SelectItem value="accessories">Accessories</SelectItem>
+            <SelectItem value="all">{t('allCategories')}</SelectItem>
+            <SelectItem value="audio">{t('audio')}</SelectItem>
+            <SelectItem value="lighting">{t('lighting')}</SelectItem>
+            <SelectItem value="video">{t('video')}</SelectItem>
+            <SelectItem value="staging">{t('staging')}</SelectItem>
+            <SelectItem value="rigging">{t('rigging')}</SelectItem>
+            <SelectItem value="accessories">{t('accessories')}</SelectItem>
           </SelectContent>
         </Select>
         <Select defaultValue="all-status">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Status" />
+            <SelectValue placeholder={t('status')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all-status">All Status</SelectItem>
-            <SelectItem value="available">Available</SelectItem>
-            <SelectItem value="rented">Rented</SelectItem>
-            <SelectItem value="reserved">Reserved</SelectItem>
+            <SelectItem value="all-status">{t('allStatus')}</SelectItem>
+            <SelectItem value="available">{t('available')}</SelectItem>
+            <SelectItem value="rented">{t('rented')}</SelectItem>
+            <SelectItem value="reserved">{t('reserved')}</SelectItem>
           </SelectContent>
         </Select>
         <Button variant="outline">
-          <SlidersHorizontal className="h-4 w-4 mr-2" />
-          More Filters
-        </Button>
+          <SlidersHorizontal className="h-4 w-4 mr-2" aria-hidden="true" />{t('moreFilters')}</Button>
       </div>
 
       {/* Products Grid */}
@@ -155,7 +160,7 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
               <>
                 {/* Product Image */}
                 <div className="relative aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
-                  <Package className="h-20 w-20 text-muted-foreground/30" />
+                  <Package className="h-20 w-20 text-muted-foreground/30" aria-hidden="true" />
                   
                   {/* Quick Actions */}
                   <Button
@@ -215,10 +220,8 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
 
                 <CardFooter className="p-4 pt-0 gap-2">
                   <Button className="flex-1" onClick={() => addToCart(product.id)}>
-                    <ShoppingCart className="h-4 w-4 mr-2" />
-                    Add
-                  </Button>
-                  <Button variant="outline" onClick={() => handleViewDetails(product)}>Details</Button>
+                    <ShoppingCart className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('add')}</Button>
+                  <Button variant="outline" onClick={() => handleViewDetails(product)}>{tCommon('details')}</Button>
                 </CardFooter>
               </>
             ) : (
@@ -226,7 +229,7 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-4 flex-1">
                     <div className="w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded flex items-center justify-center flex-shrink-0">
-                      <Package className="h-12 w-12 text-muted-foreground/30" />
+                      <Package className="h-12 w-12 text-muted-foreground/30" aria-hidden="true" />
                     </div>
                     <div className="space-y-2 flex-1">
                       <div className="flex items-start justify-between gap-2">
@@ -261,10 +264,8 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
                   </div>
                   <div className="flex gap-2">
                     <Button size="sm" onClick={() => addToCart(product.id)}>
-                      <ShoppingCart className="h-4 w-4 mr-2" />
-                      Add
-                    </Button>
-                    <Button variant="outline" size="sm" onClick={() => handleViewDetails(product)}>Details</Button>
+                      <ShoppingCart className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('add')}</Button>
+                    <Button variant="outline" size="sm" onClick={() => handleViewDetails(product)}>{tCommon('details')}</Button>
                   </div>
                 </div>
               </CardHeader>

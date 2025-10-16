@@ -21,10 +21,13 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useState } from "react"
+import { useTranslations } from 'next-intl'
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('resources.library')
+  const tCommon = useTranslations('common')
   const { data: resources, loading } = useModuleData(workspaceId, 'resources', 'library')
   const [searchQuery, setSearchQuery] = useState('')
 
@@ -68,20 +71,26 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('create')}</Button>
+      </div>
+
+
       {/* Actions */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
-          Educational resources, guides, courses, and industry knowledge
+          {t('description')}
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
-            Filter
-          </Button>
+            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('filter')}</Button>
           <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
-            Add Resource
-          </Button>
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{t('addResource')}</Button>
         </div>
       </div>
 
@@ -90,18 +99,18 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Resources</CardTitle>
-            <BookOpen className="h-4 w-4 text-muted-foreground" />
+            <BookOpen className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{resources.length}</div>
-            <p className="text-xs text-muted-foreground">Available</p>
+            <p className="text-xs text-muted-foreground">{t('available')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Courses</CardTitle>
-            <GraduationCap className="h-4 w-4 text-muted-foreground" />
+            <GraduationCap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -114,7 +123,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Guides</CardTitle>
-            <Book className="h-4 w-4 text-muted-foreground" />
+            <Book className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -127,7 +136,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Grants</CardTitle>
-            <CircleDollarSign className="h-4 w-4 text-muted-foreground" />
+            <CircleDollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -141,9 +150,9 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
       {/* Search */}
       <div className="flex gap-2">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
           <Input
-            placeholder="Search resources by title, description, or category..."
+            placeholder={t('searchResources')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-9"
@@ -176,7 +185,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   </Badge>
                   {resource.is_featured && (
                     <Badge variant="secondary">
-                      <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" />
+                      <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                       Featured
                     </Badge>
                   )}
@@ -195,13 +204,13 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                   {resource.duration && (
                     <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                      <Clock className="h-3 w-3" aria-hidden="true" />
                       <span>{resource.duration}</span>
                     </div>
                   )}
                   {resource.author && (
                     <div className="flex items-center gap-1">
-                      <Users className="h-3 w-3" />
+                      <Users className="h-3 w-3" aria-hidden="true" />
                       <span className="truncate">{resource.author}</span>
                     </div>
                   )}
@@ -256,7 +265,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   </Button>
                   {resource.downloadable && (
                     <Button variant="ghost" size="icon">
-                      <Download className="h-4 w-4" />
+                      <Download className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   )}
                 </div>
@@ -272,9 +281,9 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
             <EmptyState
               variant="inline"
               icon={BookOpen}
-              mainMessage={searchQuery ? "No resources found" : "NOTHING TO SEE HERE... (YET)"}
-              description={searchQuery ? "Try adjusting your search criteria" : "Add resources to build your library"}
-              actionLabel={!searchQuery ? "Add Resource" : undefined}
+              mainMessage={searchQuery ? "No resources found" : t('nothingToSeeYet')}
+              description={searchQuery ? t('tryAdjustingSearch') : t('addResources')}
+              actionLabel={!searchQuery ? t('addResource') : undefined}
               onAction={!searchQuery ? () => {} : undefined}
             />
           </CardContent>

@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState, useEffect } from "react"
 import { BookOpen, Search, Filter, Plus, Copy } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -31,6 +32,8 @@ interface CatalogTabProps {
 }
 
 export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
+  const t = useTranslations('production.assets.catalog')
+  const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
   const [categoryFilter, setCategoryFilter] = useState<string>()
   const [copiedItemId, setCopiedItemId] = useState<string | null>(null)
@@ -171,7 +174,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
           onClick={() => handleCopyToWorkspace(item)}
           disabled={copiedItemId === item.id}
         >
-          <Copy className="h-3 w-3 mr-1" />
+          <Copy className="h-4 w-4 mr-1" aria-hidden="true" />
           {copiedItemId === item.id ? 'Copied!' : 'Copy to Inventory'}
         </Button>
       )
@@ -179,12 +182,24 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
   ]
 
   return (
-    <div className="space-y-4">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Browse and copy items from the complete asset catalog
+        </p>
+        <Button size="sm" variant="outline" disabled>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          Request New Item
+        </Button>
+      </div>
+
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Items</CardDescription>
+            <CardDescription>{t('totalItems')}</CardDescription>
             <CardTitle className="text-3xl">{statistics?.total_items || 0}</CardTitle>
           </CardHeader>
         </Card>
@@ -215,7 +230,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search catalog by name, category, manufacturer, or tags..."
+                placeholder={t('assets.catalog.searchPlaceholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -223,7 +238,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
             </div>
             <Select value={categoryFilter} onValueChange={setCategoryFilter}>
               <SelectTrigger className="w-[200px]">
-                <SelectValue placeholder="All Categories" />
+                <SelectValue placeholder={t('assets.catalog.allCategories')} />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
@@ -263,7 +278,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="flex items-center gap-2">
-                <BookOpen className="h-5 w-5" />
+                <BookOpen className="h-4 w-4" aria-hidden="true" />
                 Asset Catalog
               </CardTitle>
               <CardDescription>
@@ -271,7 +286,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
               </CardDescription>
             </div>
             <Button variant="outline" size="sm">
-              <Plus className="h-4 w-4 mr-1" />
+              <Plus className="h-4 w-4 mr-1" aria-hidden="true" />
               Request New Item
             </Button>
           </div>
@@ -289,5 +304,6 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
         </CardContent>
       </Card>
     </div>
+    </main>
   )
 }

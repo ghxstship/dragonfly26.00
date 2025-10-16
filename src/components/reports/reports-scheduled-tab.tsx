@@ -1,14 +1,16 @@
 "use client"
 
-import { Calendar, Clock, Mail, Users } from "lucide-react"
+import { Calendar, Clock, Mail, Users, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Switch } from "@/components/ui/switch"
+import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 
 const scheduledReports = [
   {
     id: "1",
-    name: "Weekly Performance Summary",
+    nameKey: "weekly_performance_summary",
     frequency: "Weekly",
     schedule: "Every Monday at 9:00 AM",
     recipients: ["executive@company.com", "managers@company.com"],
@@ -19,7 +21,7 @@ const scheduledReports = [
   },
   {
     id: "2",
-    name: "Daily Operations Report",
+    nameKey: "daily_operations_report",
     frequency: "Daily",
     schedule: "Every day at 8:00 AM",
     recipients: ["operations@company.com"],
@@ -30,7 +32,7 @@ const scheduledReports = [
   },
   {
     id: "3",
-    name: "Monthly Financial Report",
+    nameKey: "monthly_financial_report",
     frequency: "Monthly",
     schedule: "1st of every month at 7:00 AM",
     recipients: ["finance@company.com", "cfo@company.com"],
@@ -41,7 +43,7 @@ const scheduledReports = [
   },
   {
     id: "4",
-    name: "Quarterly Board Report",
+    nameKey: "quarterly_board_report",
     frequency: "Quarterly",
     schedule: "First Monday of quarter at 10:00 AM",
     recipients: ["board@company.com"],
@@ -58,32 +60,46 @@ interface ReportsScheduledTabProps {
 }
 
 export function ReportsScheduledTab({ data = [], loading = false }: ReportsScheduledTabProps) {
+  const t = useTranslations('intelligence.reports.scheduled')
+  const tCommon = useTranslations('common')
   const displayReports = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} scheduled report`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       <div className="grid gap-4">
         {scheduledReports.map((report) => (
-          <Card key={report.id}>
+          <Card key={report.id} role="article" aria-label={`Scheduled report: ${t(report.nameKey)}`}>
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
-                  <CardTitle>{report.name}</CardTitle>
+                  <CardTitle id={`report-${report.id}`}>{t(report.nameKey)}</CardTitle>
                   <CardDescription className="flex items-center gap-4">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
+                    <span className="flex items-center gap-1" aria-label={`Frequency: ${report.frequency}`}>
+                      <Calendar className="h-3 w-3" aria-hidden="true" />
                       {report.frequency}
                     </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                    <span className="flex items-center gap-1" aria-label={`Schedule: ${report.schedule}`}>
+                      <Clock className="h-3 w-3" aria-hidden="true" />
                       {report.schedule}
                     </span>
                   </CardDescription>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Badge variant={report.enabled ? "default" : "secondary"}>
-                    {report.enabled ? "Active" : "Paused"}
+                  <Badge variant={report.enabled ? "default" : "secondary"} aria-label={`Status: ${report.enabled ? t('active') : t('paused')}`}>
+                    {report.enabled ? t('active') : t('paused')}
                   </Badge>
-                  <Switch checked={report.enabled} />
+                  <Switch checked={report.enabled} aria-label={`Toggle ${t(report.nameKey)}`} />
                 </div>
               </div>
             </CardHeader>
@@ -91,24 +107,24 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
               <div className="grid gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground">Last Run</p>
-                    <p className="text-sm">{report.lastRun}</p>
+                    <p className="text-sm font-medium text-muted-foreground">{t('lastRun')}</p>
+                    <p className="text-sm" aria-label={`Last run: ${report.lastRun}`}>{report.lastRun}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground">Next Run</p>
-                    <p className="text-sm">{report.nextRun}</p>
+                    <p className="text-sm font-medium text-muted-foreground">{t('nextRun')}</p>
+                    <p className="text-sm" aria-label={`Next run: ${report.nextRun}`}>{report.nextRun}</p>
                   </div>
                 </div>
 
                 <div>
                   <p className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-2">
-                    <Users className="h-4 w-4" />
-                    Recipients ({report.recipients.length})
+                    <Users className="h-4 w-4" aria-hidden="true" />
+                    {t('recipients')} ({report.recipients.length})
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2" role="list" aria-label="Report recipients">
                     {report.recipients.map((email, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        <Mail className="h-3 w-3 mr-1" />
+                      <Badge key={index} variant="outline" className="text-xs" role="listitem">
+                        <Mail className="h-3 w-3 mr-1" aria-hidden="true" />
                         {email}
                       </Badge>
                     ))}
@@ -117,7 +133,7 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
 
                 <div>
                   <p className="text-sm text-muted-foreground">
-                    Format: <span className="font-medium text-foreground">{report.format}</span>
+                    {t('format')}: <span className="font-medium text-foreground">{report.format}</span>
                   </p>
                 </div>
               </div>

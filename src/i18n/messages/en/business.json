@@ -1,0 +1,484 @@
+{
+  "business": {
+    "common": {
+      "buttons": {
+        "create": "Create",
+        "search": "Search",
+        "export": "Export",
+        "import": "Import",
+        "filter": "Filter",
+        "edit": "Edit",
+        "delete": "Delete",
+        "save": "Save",
+        "cancel": "Cancel",
+        "approve": "Approve",
+        "reject": "Reject",
+        "close": "Close",
+        "view": "View",
+        "details": "Details",
+        "actions": "Actions"
+      },
+      "loading": "Loading {resource}...",
+      "emptyState": {
+        "title": "No {resource} found",
+        "description": "Get started by creating your first item",
+        "button": "Create {resource}"
+      },
+      "summaryCards": {
+        "totalItems": "Total Items",
+        "active": "Active",
+        "pending": "Pending",
+        "completed": "Completed"
+      },
+      "aria": {
+        "searchButton": "Search {context}",
+        "createButton": "Create new {type}",
+        "filterButton": "Filter {type}",
+        "loadingStatus": "Loading {resource}, please wait",
+        "searchInput": "Search {type}",
+        "dataTable": "{type} data table",
+        "avatar": "Avatar for {name}"
+      }
+    },
+    "companies": {
+      "module": "Companies",
+      "tabs": {
+        "bids": "Bids",
+        "compliance": "Compliance",
+        "invoices": "Invoices",
+        "reviews": "Reviews",
+        "workOrders": "Work Orders",
+        "contacts": "Contacts",
+        "deliverables": "Deliverables",
+        "documents": "Documents",
+        "organizations": "Organizations",
+        "scopesOfWork": "Scopes of Work",
+        "subcontractorProfile": "Subcontractor Profile"
+      },
+      "descriptions": {
+        "bids": "Manage bids",
+        "compliance": "Manage compliance",
+        "invoices": "Manage invoices",
+        "reviews": "Manage reviews",
+        "workOrders": "Manage work orders",
+        "contacts": "Company contacts and communication",
+        "deliverables": "Manage deliverables",
+        "documents": "Manage documents",
+        "organizations": "Company organizations and profiles",
+        "scopesOfWork": "Manage scopes of work",
+        "subcontractorProfile": "Manage subcontractor profile"
+      },
+      "contacts": {
+        "stats": {
+          "totalContacts": "Total Contacts",
+          "activeThreads": "Active Threads",
+          "pendingResponses": "Pending Responses",
+          "avgResponseTime": "Avg Response Time"
+        },
+        "lastContact": "Last contact: {date}",
+        "viewProfile": "View full profile"
+      },
+      "organizations": {
+        "verified": "Verified",
+        "rating": "Rating",
+        "website": "Visit website"
+      }
+    },
+    "jobs": {
+      "module": "Jobs",
+      "tabs": {
+        "active": "Active",
+        "archived": "Archived",
+        "checklists": "Checklists",
+        "completed": "Completed",
+        "dispatch": "Dispatch",
+        "estimates": "Estimates",
+        "compliance": "Compliance",
+        "invoices": "Invoices",
+        "offers": "Offers",
+        "overview": "Overview",
+        "pipeline": "Pipeline",
+        "recruiting": "Recruiting",
+        "rfps": "RFPs",
+        "shortlists": "Shortlists",
+        "workOrders": "Work Orders"
+      },
+      "descriptions": {
+        "active": "Manage active jobs",
+        "archived": "Manage archived jobs",
+        "checklists": "Manage checklists",
+        "completed": "Manage completed jobs",
+        "dispatch": "Manage dispatch",
+        "estimates": "Manage estimates",
+        "compliance": "Manage compliance",
+        "invoices": "Manage invoices",
+        "offers": "Manage offers",
+        "overview": "Manage overview",
+        "pipeline": "Job pipeline and opportunities",
+        "recruiting": "Manage recruiting",
+        "rfps": "Manage RFPs",
+        "shortlists": "Manage shortlists",
+        "workOrders": "Manage work orders"
+      },
+      "pipeline": {
+        "stats": {
+          "totalPipeline": "Total Pipeline",
+          "inNegotiation": "In Negotiation",
+          "winRate": "Win Rate",
+          "avgDealSize": "Avg Deal Size"
+        },
+        "opportunities": "{count} opportunities",
+        "deals": "{count} deals",
+        "overallConversion": "Overall conversion",
+        "perOpportunity": "Per opportunity",
+        "stages": {
+          "lead": "Lead",
+          "qualification": "Qualification",
+          "proposal": "Proposal",
+          "negotiation": "Negotiation",
+          "closedWon": "Closed Won"
+        },
+        "noOpportunities": "No opportunities in this stage",
+        "expected": "Expected",
+        "close": "Close: {date}"
+      }
+    },
+    "procurement": {
+      "module": "Procurement",
+      "tabs": {
+        "agreements": "Agreements",
+        "audits": "Audits",
+        "fulfillment": "Fulfillment",
+        "lineItems": "Line Items",
+        "matching": "Matching",
+        "ordersDashboard": "Orders Dashboard",
+        "orders": "Orders",
+        "overview": "Overview",
+        "approvals": "Approvals",
+        "receiving": "Receiving",
+        "requisitions": "Requisitions"
+      },
+      "descriptions": {
+        "agreements": "Manage agreements",
+        "audits": "Manage audits",
+        "fulfillment": "Manage fulfillment",
+        "lineItems": "Manage line items",
+        "matching": "Invoice matching and reconciliation",
+        "ordersDashboard": "Purchase order tracking and management",
+        "orders": "Manage orders",
+        "overview": "Manage overview",
+        "approvals": "Manage approvals",
+        "receiving": "Receiving and delivery tracking",
+        "requisitions": "Manage requisitions"
+      },
+      "matching": {
+        "stats": {
+          "totalMatches": "Total Matches",
+          "matched": "Matched",
+          "partialMatch": "Partial Match",
+          "noMatch": "No Match",
+          "approved": "Approved",
+          "totalVariance": "Total Variance"
+        },
+        "allRecords": "All records",
+        "perfectAlignment": "Perfect alignment",
+        "minorVariances": "Minor variances",
+        "needsResolution": "Needs resolution",
+        "readyForPayment": "Ready for payment",
+        "acrossAllRecords": "Across all records",
+        "searchPlaceholder": "Search invoices, POs, vendors...",
+        "filterByStatus": "Filter by Match Status",
+        "allStatuses": "All Statuses",
+        "exportReport": "Export Report",
+        "matchingRecords": "Matching Records",
+        "reviewApprove": "Review and approve invoice payments",
+        "statuses": {
+          "matched": "Matched",
+          "partialMatch": "Partial Match",
+          "noMatch": "No Match",
+          "pending": "Pending",
+          "approved": "Approved",
+          "rejected": "Rejected"
+        },
+        "variance": {
+          "exactMatch": "Exact Match",
+          "lowVariance": "Low Variance",
+          "moderateVariance": "Moderate Variance",
+          "highVariance": "High Variance"
+        }
+      },
+      "ordersDashboard": {
+        "stats": {
+          "totalOrders": "Total Orders",
+          "totalValue": "Total Value",
+          "pendingApproval": "Pending Approval",
+          "overdue": "Overdue"
+        },
+        "activeOrders": "Active purchase orders",
+        "acrossAllOrders": "Across all orders",
+        "awaitingReview": "Awaiting review",
+        "pastExpectedDelivery": "Past expected delivery",
+        "newPurchaseOrder": "New Purchase Order",
+        "orderStatusPipeline": "Order Status Pipeline",
+        "trackOrders": "Track orders through the procurement process",
+        "topVendors": "Top Vendors",
+        "byOrderVolume": "By order volume",
+        "expectedDeliveries": "Expected Deliveries",
+        "next30Days": "Next 30 days",
+        "pendingApprovals": "Pending Approvals",
+        "ordersAwaitingApproval": "{count} orders awaiting approval",
+        "stages": {
+          "pendingApproval": "Pending Approval",
+          "approved": "Approved",
+          "ordered": "Ordered",
+          "inTransit": "In Transit",
+          "received": "Received"
+        }
+      },
+      "receiving": {
+        "stats": {
+          "totalReceipts": "Total Receipts",
+          "received": "Received",
+          "inInspection": "In Inspection",
+          "accepted": "Accepted",
+          "discrepancies": "Discrepancies"
+        },
+        "allTime": "All time",
+        "awaitingInspection": "Awaiting inspection",
+        "underReview": "Under review",
+        "qualityPassed": "Quality passed",
+        "requireAttention": "Require attention",
+        "searchPlaceholder": "Search receipts, POs, vendors...",
+        "filterByStatus": "Filter by Status",
+        "scanPackingSlip": "Scan Packing Slip",
+        "recordReceipt": "Record Receipt",
+        "recentReceipts": "Recent Receipts",
+        "trackInspect": "Track and inspect received goods",
+        "inspection": {
+          "pass": "Pass",
+          "fail": "Fail",
+          "pending": "Pending",
+          "notRequired": "Not Required"
+        },
+        "discrepancy": "Discrepancy"
+      }
+    },
+    "finance": {
+      "module": "Finance",
+      "tabs": {
+        "accounts": "Accounts",
+        "approvals": "Approvals",
+        "budgets": "Budgets",
+        "cashFlow": "Cash Flow",
+        "expenses": "Expenses",
+        "forecasts": "Forecasts",
+        "glCodes": "GL Codes",
+        "invoices": "Invoices",
+        "overview": "Overview",
+        "payments": "Payments",
+        "payroll": "Payroll",
+        "policies": "Policies",
+        "reconciliation": "Reconciliation",
+        "revenue": "Revenue",
+        "scenarios": "Scenarios",
+        "taxes": "Taxes",
+        "transactions": "Transactions",
+        "variance": "Variance"
+      },
+      "descriptions": {
+        "accounts": "Manage accounts",
+        "approvals": "Financial approvals workflow",
+        "budgets": "Manage budgets",
+        "cashFlow": "Cash flow management",
+        "expenses": "Manage expenses",
+        "forecasts": "Manage forecasts",
+        "glCodes": "Manage GL codes",
+        "invoices": "Manage invoices",
+        "overview": "Overview of financial performance and health",
+        "payments": "Manage payments",
+        "payroll": "Manage payroll",
+        "policies": "Spending policies, corporate cards & policy violations",
+        "reconciliation": "Manage reconciliation",
+        "revenue": "Manage revenue",
+        "scenarios": "Create and compare financial scenarios",
+        "taxes": "Manage taxes",
+        "transactions": "Manage transactions",
+        "variance": "Analyze budget vs actual variances"
+      },
+      "approvals": {
+        "stats": {
+          "pending": "Pending",
+          "urgent": "Urgent",
+          "approvedToday": "Approved Today",
+          "activeChains": "Active Chains"
+        },
+        "requireYourApproval": "Require your approval",
+        "dueWithin24Hours": "Due within 24 hours",
+        "totalValue": "Total value: {amount}",
+        "multiStepApprovals": "Multi-step approvals",
+        "myPendingApprovals": "My Pending Approvals",
+        "itemsAwaitingReview": "Items awaiting your review and approval",
+        "approvalChains": "Approval Chains",
+        "multiStepWorkflows": "Multi-step approval workflows in progress",
+        "recentActivity": "Recent Activity",
+        "yourRecentActions": "Your recent approval actions",
+        "noPendingApprovals": "No pending approvals",
+        "allCaughtUp": "You're all caught up!",
+        "approved": "Approved",
+        "rejected": "Rejected"
+      },
+      "cashFlow": {
+        "stats": {
+          "currentBalance": "Current Balance",
+          "projected30d": "Projected (30d)",
+          "cashRunway": "Cash Runway",
+          "burnRate": "Burn Rate"
+        },
+        "asOfToday": "As of today",
+        "change": "{amount} change",
+        "atCurrentBurnRate": "At current burn rate",
+        "perWeekAverage": "Per week average",
+        "sixMonthProjection": "6-Month Cash Flow Projection",
+        "projectedFlows": "Projected inflows, outflows, and ending balance",
+        "exportProjection": "Export Projection",
+        "net": "{amount} net",
+        "inflows": "Inflows",
+        "outflows": "Outflows",
+        "balance": "Balance",
+        "inflowBreakdown": "Inflow Breakdown",
+        "sourcesThisMonth": "Sources of cash inflows this month",
+        "outflowBreakdown": "Outflow Breakdown",
+        "categoriesThisMonth": "Cash outflows by category this month",
+        "upcomingPayments": "Upcoming Payments",
+        "scheduledNext30Days": "Scheduled payments in the next 30 days",
+        "totalDue30Days": "Total Due (30 days)",
+        "cashRunwayAlert": "Cash Runway Alert",
+        "runwayAlertMessage": "Your current cash runway is {weeks} weeks. Consider the following actions:",
+        "runwayActions": [
+          "Accelerate receivables collection from clients",
+          "Review and defer non-critical expenses",
+          "Explore additional funding sources or credit lines",
+          "Negotiate extended payment terms with vendors"
+        ]
+      },
+      "overview": {
+        "stats": {
+          "totalRevenue": "Total Revenue",
+          "totalExpenses": "Total Expenses",
+          "netIncome": "Net Income",
+          "cashOnHand": "Cash on Hand"
+        },
+        "vsLastPeriod": "vs last period",
+        "profitMargin": "{percent}% profit margin",
+        "monthsRunway": "{months} months runway",
+        "newTransaction": "New Transaction",
+        "revenueVsExpenses": "Revenue vs Expenses",
+        "monthlyComparison": "Monthly comparison (Last 6 months)",
+        "spendingByCategory": "Spending by Category",
+        "ytdExpenseBreakdown": "YTD expense breakdown",
+        "budgetHealth": "Budget Health",
+        "overallUtilization": "Overall budget utilization",
+        "onTrack": "On track",
+        "underBudget": "Under Budget",
+        "overBudget": "Over Budget",
+        "alertsNotifications": "Alerts & Notifications",
+        "itemsRequiringAttention": "Items requiring attention",
+        "priority": "{level} priority",
+        "quickActions": "Quick Actions"
+      },
+      "policies": {
+        "stats": {
+          "activePolicies": "Active Policies",
+          "corporateCards": "Corporate Cards",
+          "policyViolations": "Policy Violations",
+          "complianceRate": "Compliance Rate"
+        },
+        "totalPolicies": "{count} total policies",
+        "totalCards": "{count} total cards",
+        "totalThisMonth": "{count} total this month",
+        "transactionsInCompliance": "Transactions in compliance",
+        "newPolicy": "New Policy",
+        "spendingPolicies": "Spending Policies",
+        "configureControls": "Configure and manage organizational spending controls",
+        "corporateCardsSection": "Corporate Cards",
+        "manageCardLimits": "Manage card assignments and spending limits",
+        "issueCard": "Issue Card",
+        "utilized": "utilized",
+        "spent": "Spent: {amount}",
+        "limit": "Limit: {amount}",
+        "remaining": "Remaining: {amount}",
+        "adjustLimit": "Adjust Limit",
+        "viewTransactions": "View Transactions",
+        "suspend": "Suspend",
+        "policyViolationsSection": "Policy Violations",
+        "reviewResolve": "Review and resolve policy exceptions",
+        "noPolicyViolations": "No policy violations",
+        "allSpendingCompliant": "All spending is in compliance",
+        "complianceTrends": "Compliance Trends",
+        "policyAdherence": "Policy adherence over time",
+        "topViolatedPolicies": "Top Violated Policies",
+        "policiesMostExceptions": "Policies with most exceptions",
+        "violations": "{count} violations"
+      },
+      "scenarios": {
+        "stats": {
+          "activeScenarios": "Active Scenarios",
+          "weightedAverage": "Weighted Average",
+          "bestCase": "Best Case",
+          "worstCase": "Worst Case"
+        },
+        "acrossBudgets": "Across all budgets",
+        "probabilityWeighted": "Probability-weighted net",
+        "probability": "{percent}% probability",
+        "scenarioComparison": "Scenario Comparison",
+        "sideByAnalysis": "Side-by-side analysis of financial projections",
+        "newScenario": "New Scenario",
+        "baseline": "Baseline",
+        "projectedRevenue": "Projected Revenue",
+        "projectedExpenses": "Projected Expenses",
+        "netProfit": "Net Profit",
+        "win": "{percent}% win",
+        "edit": "Edit",
+        "metricsComparison": "Financial Metrics Comparison",
+        "visualComparison": "Visual comparison across all scenarios",
+        "revenueProjections": "Revenue Projections",
+        "expenseProjections": "Expense Projections",
+        "netProfitLoss": "Net Profit/Loss",
+        "scenarioInsights": "Scenario Insights",
+        "probabilityWeightedOutcome": "Probability-weighted outcome: {amount} net profit",
+        "riskRange": "Risk range: {amount} between best and worst case",
+        "recommendation": "Recommendation: Maintain contingency reserves of at least {amount} to cover worst-case scenario"
+      },
+      "variance": {
+        "stats": {
+          "totalVariance": "Total Variance",
+          "favorable": "Favorable",
+          "unfavorable": "Unfavorable",
+          "actionRequired": "Action Required"
+        },
+        "vsBudget": "{percent}% vs budget",
+        "total": "{amount} total",
+        "itemsNeedReview": "Items need review",
+        "varianceByCategory": "Variance by Category",
+        "detailedBreakdown": "Detailed breakdown of budget vs actual performance",
+        "rootCause": "Root Cause",
+        "addCorrectiveAction": "Add Corrective Action",
+        "markReviewed": "Mark Reviewed",
+        "rootCauseAnalysis": "Root Cause Analysis",
+        "primaryDrivers": "Primary drivers of budget variances",
+        "item": "{count} item",
+        "items": "{count} items",
+        "ofUnfavorable": "{percent}% of unfavorable",
+        "varianceTrends": "Variance Trends",
+        "historicalPatterns": "Historical variance patterns",
+        "averageVariance": "Average variance: {amount}",
+        "trending": "Trending: {trend}",
+        "overallBudgetPerformance": "Overall Budget Performance",
+        "cumulativeComparison": "Cumulative budget vs actual comparison",
+        "budgeted": "Budgeted",
+        "actual": "Actual",
+        "budgetUtilization": "Budget Utilization"
+      }
+    }
+  }
+}

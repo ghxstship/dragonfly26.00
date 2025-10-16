@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -18,11 +19,12 @@ import { billingSchema } from "@/lib/schemas/admin-schemas"
 import type { DataItem } from "@/types"
 
 export function BillingTab() {
+  const t = useTranslations()
   const { toast } = useToast()
 
   // Current plan data
   const currentPlan = {
-    name: "Executive",
+    nameKey: "executive",
     price: 100,
     billingCycle: "monthly",
     nextBillingDate: "2024-02-20",
@@ -82,17 +84,17 @@ export function BillingTab() {
       updated_at: now,
     }
     setInvoices([...invoices, newInvoice])
-    toast({ title: "Invoice created successfully" })
+    toast({ title: t('admin.toast.invoiceCreated') })
   }
 
   const handleUpdate = async (id: string, updates: Record<string, any>) => {
     setInvoices(invoices.map(inv => inv.id === id ? { ...inv, ...updates } : inv))
-    toast({ title: "Invoice updated successfully" })
+    toast({ title: t('admin.toast.invoiceUpdated') })
   }
 
   const handleDelete = async (id: string) => {
     setInvoices(invoices.filter(inv => inv.id !== id))
-    toast({ title: "Invoice deleted successfully" })
+    toast({ title: t('admin.toast.invoiceDeleted') })
   }
 
   const handleBulkDelete = async (ids: string[]) => {
@@ -102,20 +104,31 @@ export function BillingTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.billingTab.description')}
+        </p>
+        <Button variant="outline" size="sm" aria-label={t('admin.billingTab.upgradePlan')}>
+          <TrendingUp className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('admin.billingTab.upgradePlan')}
+        </Button>
+      </div>
+
       {/* Current Plan */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Current Plan</CardTitle>
+          <CardTitle className="text-base">{t('admin.billingTab.currentPlan')}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-start justify-between">
             <div>
-              <h3 className="text-2xl font-bold">{currentPlan.name}</h3>
+              <h3 className="text-2xl font-bold">{t(currentPlan.nameKey)}</h3>
               <p className="text-muted-foreground mt-1">
                 ${currentPlan.price}/{currentPlan.billingCycle}
               </p>
             </div>
-            <Badge variant="default" className="text-base px-4 py-1">Active</Badge>
+            <Badge variant="default" className="text-base px-4 py-1">{t('admin.billingTab.active')}</Badge>
           </div>
 
           <Separator />
@@ -123,8 +136,8 @@ export function BillingTab() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Users className="h-4 w-4" />
-                Team Seats
+                <Users className="h-4 w-4" aria-hidden="true" />
+                {t('admin.billingTab.teamSeats')}
               </div>
               <p className="text-2xl font-bold">
                 {currentPlan.seats === -1 
@@ -139,8 +152,8 @@ export function BillingTab() {
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Database className="h-4 w-4" />
-                Storage
+                <Database className="h-4 w-4" aria-hidden="true" />
+                {t('admin.billingTab.storage')}
               </div>
               <p className="text-2xl font-bold">{currentPlan.usedStorage} / {currentPlan.storage}GB</p>
               <div className="h-2 bg-muted rounded-full overflow-hidden mt-2">
@@ -149,8 +162,8 @@ export function BillingTab() {
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" />
-                Next Billing
+                <Calendar className="h-4 w-4" aria-hidden="true" />
+                {t('admin.billingTab.nextBilling')}
               </div>
               <p className="text-2xl font-bold">
                 {new Date(currentPlan.nextBillingDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
@@ -158,9 +171,8 @@ export function BillingTab() {
             </div>
           </div>
 
-          <Button className="w-full" variant="outline">
-            <TrendingUp className="h-4 w-4 mr-2" />
-            Upgrade Plan
+          <Button className="w-full" variant="outline" size="sm" aria-label={t('admin.billingTab.viewAllPlans')}>
+            {t('admin.billingTab.viewAllPlans')}
           </Button>
         </CardContent>
       </Card>
@@ -169,8 +181,8 @@ export function BillingTab() {
       <Card>
         <CardHeader>
           <div className="flex items-start justify-between">
-            <CardTitle className="text-base">Payment Method</CardTitle>
-            <Button variant="outline" size="sm">Update</Button>
+            <CardTitle className="text-base">{t('admin.billingTab.paymentMethod')}</CardTitle>
+            <Button variant="outline" size="sm">{t('admin.billingTab.update')}</Button>
           </div>
         </CardHeader>
         <CardContent>
@@ -179,10 +191,10 @@ export function BillingTab() {
               <CreditCard className="h-6 w-6 text-white" />
             </div>
             <div className="flex-1">
-              <p className="font-medium">Visa ending in 4242</p>
-              <p className="text-sm text-muted-foreground">Expires 12/2025</p>
+              <p className="font-medium">{t('admin.billingTab.cardEnding', { last4: '4242' })}</p>
+              <p className="text-sm text-muted-foreground">{t('admin.billingTab.expires', { date: '12/2025' })}</p>
             </div>
-            <Badge variant="outline">Default</Badge>
+            <Badge variant="outline">{t('admin.billingTab.default')}</Badge>
           </div>
         </CardContent>
       </Card>
@@ -190,9 +202,9 @@ export function BillingTab() {
       {/* Billing History with CRUD */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Billing History</CardTitle>
+          <CardTitle className="text-base">{t('admin.billingTab.billingHistory')}</CardTitle>
           <CardDescription>
-            Manage invoices and billing records
+            {t('admin.billingTab.manageInvoices')}
           </CardDescription>
         </CardHeader>
         <CardContent>

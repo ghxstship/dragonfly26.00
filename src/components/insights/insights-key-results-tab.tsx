@@ -8,11 +8,12 @@ import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
+import { useTranslations } from "next-intl"
 const keyResults = [
   {
     id: "1",
     objective: "Increase Customer Satisfaction Score",
-    name: "Achieve NPS score of 50+",
+    nameKey: "achieve_nps_score_of_50",
     current: 45,
     target: 50,
     unit: "points",
@@ -24,7 +25,7 @@ const keyResults = [
   {
     id: "2",
     objective: "Increase Customer Satisfaction Score",
-    name: "Reduce response time to under 1 hour",
+    nameKey: "reduce_response_time_to_under_1_hour",
     current: 1.2,
     target: 1.0,
     unit: "hours",
@@ -36,7 +37,7 @@ const keyResults = [
   {
     id: "3",
     objective: "Reduce Operational Costs",
-    name: "Decrease overhead by $500K annually",
+    nameKey: "decrease_overhead_by_500k_annually",
     current: 265,
     target: 500,
     unit: "K saved",
@@ -48,7 +49,7 @@ const keyResults = [
   {
     id: "4",
     objective: "Reduce Operational Costs",
-    name: "Improve resource utilization to 85%",
+    nameKey: "improve_resource_utilization_to_85",
     current: 78,
     target: 85,
     unit: "%",
@@ -60,7 +61,7 @@ const keyResults = [
   {
     id: "5",
     objective: "Expand Market Presence",
-    name: "Launch in 3 new markets",
+    nameKey: "launch_in_3_new_markets",
     current: 1,
     target: 3,
     unit: "markets",
@@ -72,7 +73,7 @@ const keyResults = [
   {
     id: "6",
     objective: "Expand Market Presence",
-    name: "Achieve $2M revenue from new markets",
+    nameKey: "achieve_2m_revenue_from_new_markets",
     current: 0.4,
     target: 2.0,
     unit: "M",
@@ -89,15 +90,21 @@ interface InsightsKeyResultsTabProps {
 }
 
 export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKeyResultsTabProps) {
+  const t = useTranslations('intelligence.insights.insightskeyresults')
+  const tCommon = useTranslations('common')
+
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displayKeyResults = data || []
   
   return (
     <div className="space-y-6">
-      {/* Actions */}
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
         <Button onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           New Key Result
         </Button>
       </div>
@@ -106,30 +113,30 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
       <div className="grid grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Total Key Results</p>
-            <p className="text-2xl font-bold mt-1">{keyResults.length}</p>
+            <p className="text-sm text-muted-foreground">{t('totalKeyResults')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">{keyResults.length}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">On Track</p>
-            <p className="text-2xl font-bold mt-1 text-green-600">
+            <p className="text-sm text-muted-foreground">{t('onTrack')}</p>
+            <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
               {keyResults.filter(kr => kr.status === "on_track").length}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">At Risk</p>
-            <p className="text-2xl font-bold mt-1 text-yellow-600">
+            <p className="text-sm text-muted-foreground">{t('atRisk')}</p>
+            <p className="text-2xl font-bold mt-1 text-yellow-600" aria-live="polite">
               {keyResults.filter(kr => kr.status === "at_risk").length}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Avg Progress</p>
-            <p className="text-2xl font-bold mt-1">
+            <p className="text-sm text-muted-foreground">{t('avgProgress')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">
               {Math.round(keyResults.reduce((sum, kr) => sum + kr.progress, 0) / keyResults.length)}%
             </p>
           </CardContent>
@@ -148,14 +155,14 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
                     <div className="flex items-center gap-3 flex-1">
                       <CheckCircle2 className={`h-5 w-5 ${kr.status === "on_track" ? "text-green-600" : "text-yellow-600"}`} />
                       <div className="flex-1">
-                        <h4 className="font-medium">{kr.name}</h4>
+                        <h4 className="font-medium">{t(kr.nameKey)}</h4>
                         <p className="text-sm text-muted-foreground mt-1">
                           Owner: {kr.owner} • Due: {kr.dueDate}
                         </p>
                       </div>
                     </div>
                     <div className="text-right mr-4">
-                      <p className="text-2xl font-bold">
+                      <p className="text-2xl font-bold" aria-live="polite">
                         {kr.current}<span className="text-sm font-normal text-muted-foreground">/{kr.target}</span>
                       </p>
                       <p className="text-xs text-muted-foreground">{kr.unit}</p>

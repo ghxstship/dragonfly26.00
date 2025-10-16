@@ -39,13 +39,13 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
       if (success) {
         toast({
           title: "File restored",
-          description: "The file has been restored successfully"
+          description: t('files.toast.fileRestored')
         })
         refetch()
       } else {
         toast({
           title: "Restore failed",
-          description: "Unable to restore the file",
+          description: t('files.toast.restoreFailed'),
           variant: "destructive"
         })
       }
@@ -53,7 +53,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
       console.error("Error restoring file:", error)
       toast({
         title: "Error",
-        description: "An error occurred while restoring the file",
+        description: t('files.toast.restoreError'),
         variant: "destructive"
       })
     } finally {
@@ -75,14 +75,14 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
       
       toast({
         title: "File permanently deleted",
-        description: "The file has been permanently removed"
+        description: t('files.toast.fileDeleted')
       })
       refetch()
     } catch (error) {
       console.error("Error deleting file:", error)
       toast({
         title: "Error",
-        description: "An error occurred while deleting the file",
+        description: t('files.toast.deleteError'),
         variant: "destructive"
       })
     } finally {

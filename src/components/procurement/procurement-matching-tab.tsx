@@ -6,6 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { GitCompare, CheckCircle2, XCircle, AlertTriangle, Clock, Search, Filter, FileText, Receipt, Package } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
+import { formatCurrency as formatCurrencyLocale } from "@/lib/utils/locale-formatting"
 import {
   Table,
   TableBody,
@@ -30,12 +33,12 @@ interface ProcurementMatchingTabProps {
 
 const getMatchStatusBadge = (status: string) => {
   const variants: Record<string, { variant: any, icon: any, label: string }> = {
-    matched: { variant: "default", icon: CheckCircle2, label: "Matched" },
-    partial_match: { variant: "secondary", icon: AlertTriangle, label: "Partial Match" },
-    no_match: { variant: "destructive", icon: XCircle, label: "No Match" },
-    pending: { variant: "outline", icon: Clock, label: "Pending" },
-    approved: { variant: "default", icon: CheckCircle2, label: "Approved" },
-    rejected: { variant: "destructive", icon: XCircle, label: "Rejected" },
+    matched: { variant: "default", icon: CheckCircle2, labelKey: "matched" },
+    partial_match: { variant: "secondary", icon: AlertTriangle, labelKey: "partial_match" },
+    no_match: { variant: "destructive", icon: XCircle, labelKey: "no_match" },
+    pending: { variant: "outline", icon: Clock, labelKey: "pending" },
+    approved: { variant: "default", icon: CheckCircle2, labelKey: "approved" },
+    rejected: { variant: "destructive", icon: XCircle, labelKey: "rejected" },
   }
   const config = variants[status] || variants.pending
   const Icon = config.icon
@@ -43,7 +46,7 @@ const getMatchStatusBadge = (status: string) => {
   return (
     <Badge variant={config.variant as any} className="gap-1">
       <Icon className="h-3 w-3" />
-      {config.label}
+      {t(config.labelKey)}
     </Badge>
   )
 }
@@ -62,34 +65,42 @@ const getVarianceBadge = (variancePercent: number) => {
 
 const getPriorityBadge = (priority: string) => {
   const variants: Record<string, { variant: any, label: string }> = {
-    urgent: { variant: "destructive", label: "Urgent" },
-    high: { variant: "default", label: "High" },
-    normal: { variant: "secondary", label: "Normal" },
-    low: { variant: "outline", label: "Low" },
+    urgent: { variant: "destructive", labelKey: "urgent" },
+    high: { variant: "default", labelKey: "high" },
+    normal: { variant: "secondary", labelKey: "normal" },
+    low: { variant: "outline", labelKey: "low" },
   }
   const config = variants[priority] || variants.normal
-  return <Badge variant={config.variant as any}>{config.label}</Badge>
-}
-
-const formatCurrency = (amount: number) => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(amount)
+  return <Badge variant={config.variant as any}>{t(config.labelKey)}</Badge>
 }
 
 export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchingTabProps) {
+  const t = useTranslations('business.procurement.matching')
+  const tCommon = useTranslations('business.common')
+  const locale = useLocale()
   const [searchQuery, setSearchQuery] = useState("")
   const [statusFilter, setStatusFilter] = useState<string>("all")
 
+  const formatCurrency = (amount: number) => {
+    return formatCurrencyLocale(amount, locale)
+  }
+
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="flex items-center justify-center h-64"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading matching records...</p>
+          <div 
+            className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"
+            aria-hidden="true"
+          ></div>
+          <p className="text-muted-foreground">
+            {tCommon('loading', { resource: t('title') })}
+          </p>
         </div>
       </div>
     )
@@ -125,67 +136,67 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Matches</CardTitle>
-            <GitCompare className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('stats.totalMatches')}</CardTitle>
+            <GitCompare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.total}</div>
-            <p className="text-xs text-muted-foreground">All records</p>
+            <p className="text-xs text-muted-foreground">{t('allRecords')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Matched</CardTitle>
-            <CheckCircle2 className="h-4 w-4 text-green-600" />
+            <CardTitle className="text-sm font-medium">{t('stats.matched')}</CardTitle>
+            <CheckCircle2 className="h-4 w-4 text-green-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.matched}</div>
-            <p className="text-xs text-muted-foreground">Perfect alignment</p>
+            <p className="text-xs text-muted-foreground">{t('perfectAlignment')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Partial Match</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-yellow-600" />
+            <CardTitle className="text-sm font-medium">{t('stats.partialMatch')}</CardTitle>
+            <AlertTriangle className="h-4 w-4 text-yellow-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.partialMatch}</div>
-            <p className="text-xs text-muted-foreground">Minor variances</p>
+            <p className="text-xs text-muted-foreground">{t('minorVariances')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">No Match</CardTitle>
-            <XCircle className="h-4 w-4 text-red-600" />
+            <CardTitle className="text-sm font-medium">{t('stats.noMatch')}</CardTitle>
+            <XCircle className="h-4 w-4 text-red-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.noMatch}</div>
-            <p className="text-xs text-muted-foreground">Needs resolution</p>
+            <p className="text-xs text-muted-foreground">{t('needsResolution')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Approved</CardTitle>
-            <CheckCircle2 className="h-4 w-4 text-blue-600" />
+            <CardTitle className="text-sm font-medium">{t('stats.approved')}</CardTitle>
+            <CheckCircle2 className="h-4 w-4 text-blue-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.approvedForPayment}</div>
-            <p className="text-xs text-muted-foreground">Ready for payment</p>
+            <p className="text-xs text-muted-foreground">{t('readyForPayment')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Variance</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-orange-600" />
+            <CardTitle className="text-sm font-medium">{t('stats.totalVariance')}</CardTitle>
+            <AlertTriangle className="h-4 w-4 text-orange-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{formatCurrency(stats.totalVariance)}</div>
-            <p className="text-xs text-muted-foreground">Across all records</p>
+            <p className="text-xs text-muted-foreground">{t('acrossAllRecords')}</p>
           </CardContent>
         </Card>
       </div>
@@ -194,26 +205,32 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 flex-1">
           <div className="relative flex-1 max-w-sm">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <Input
-              placeholder="Search invoices, POs, vendors..."
+              placeholder={t('searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-8"
+              aria-label={t('aria.searchMatching')}
             />
           </div>
           
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="gap-2">
-                <Filter className="h-4 w-4" />
-                Status: {statusFilter === 'all' ? 'All' : statusFilter.replace('_', ' ')}
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="gap-2"
+                aria-label={t('filterByStatus')}
+              >
+                <Filter className="h-4 w-4" aria-hidden="true" />
+                {t('filterByStatus')}: {statusFilter === 'all' ? t('allStatuses') : statusFilter.replace('_', ' ')}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuLabel>Filter by Match Status</DropdownMenuLabel>
+              <DropdownMenuLabel>{t('filterByStatus')}</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => setStatusFilter('all')}>All Statuses</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setStatusFilter('all')}>{t('allStatuses')}</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setStatusFilter('pending')}>Pending</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setStatusFilter('matched')}>Matched</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setStatusFilter('partial_match')}>Partial Match</DropdownMenuItem>
@@ -224,18 +241,24 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
         </div>
 
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm">Export Report</Button>
+          <Button 
+            variant="outline" 
+            size="sm"
+            aria-label={t('exportReport')}
+          >
+            {t('exportReport')}
+          </Button>
         </div>
       </div>
 
       {/* Matching Records Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Matching Records ({filteredData.length})</CardTitle>
-          <CardDescription>Review and approve invoice payments</CardDescription>
+          <CardTitle>{t('matchingRecords')} ({filteredData.length})</CardTitle>
+          <CardDescription>{t('reviewApprove')}</CardDescription>
         </CardHeader>
         <CardContent>
-          <Table>
+          <Table role="table" aria-label={t('aria.matchingTable')}>
             <TableHeader>
               <TableRow>
                 <TableHead>Invoice / PO</TableHead>
@@ -254,7 +277,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
               {filteredData.length === 0 ? (
                 <TableRow>
                   <TableCell colSpan={10} className="text-center text-muted-foreground py-8">
-                    No matching records found. Try adjusting your filters.
+                    {tCommon('emptyState.title', { resource: t('matchingRecords') })}. {tCommon('emptyState.description')}.
                   </TableCell>
                 </TableRow>
               ) : (

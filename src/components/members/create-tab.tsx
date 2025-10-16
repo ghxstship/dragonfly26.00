@@ -19,6 +19,9 @@ import {
   Users,
   AlertCircle
 } from "lucide-react"
+import { Plus } from "lucide-react"
+import { Plus } from "lucide-react"
+import { Plus } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
@@ -181,6 +184,18 @@ export function CreateTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Create member profiles
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" />
+          Create
+        </Button>
+      </div>
+
+
       {/* Info Alert */}
       <Alert>
         <AlertCircle className="h-4 w-4" />

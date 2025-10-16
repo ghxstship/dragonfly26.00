@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -17,7 +18,8 @@ import {
   Activity as ActivityIcon,
   MoreHorizontal,
   Paperclip,
-  File
+  File,
+  Plus
 } from "lucide-react"
 import { FileAttachmentButton } from "@/components/files/file-attachment-button"
 import { LevelBadge } from "./level-badge"
@@ -51,6 +53,8 @@ interface ActivityTabProps {
 }
 
 export function ActivityTab({ data = [], loading = false, workspaceId }: ActivityTabProps) {
+  const t = useTranslations('community.activity')
+  const tCommon = useTranslations('common')
   const [newPost, setNewPost] = useState("")
   const [attachedFiles, setAttachedFiles] = useState<File[]>([])
   
@@ -122,53 +126,64 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('createPost')}
+        </Button>
+      </div>
+
       {/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Activity Feed</div>
-            <ActivityIcon className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('activityFeed')}</div>
+            <ActivityIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{posts.length}</div>
-            <p className="text-xs text-muted-foreground">Recent posts</p>
+            <p className="text-xs text-muted-foreground">{t('recentPosts')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Engagement</div>
-            <Heart className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('engagement')}</div>
+            <Heart className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {posts.reduce((acc, p) => acc + p.likes, 0)}
             </div>
-            <p className="text-xs text-muted-foreground">Total likes</p>
+            <p className="text-xs text-muted-foreground">{t('totalLikes')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Trending</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('trending')}</div>
+            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {posts.filter(p => p.likes > 500).length}
             </div>
-            <p className="text-xs text-muted-foreground">Popular posts</p>
+            <p className="text-xs text-muted-foreground">{t('popularPosts')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Active Users</div>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('activeUsers')}</div>
+            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">1.2K</div>
-            <p className="text-xs text-muted-foreground">Online now</p>
+            <p className="text-xs text-muted-foreground">{t('onlineNow')}</p>
           </CardContent>
         </Card>
       </div>
@@ -176,12 +191,12 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
       {/* Create Post */}
       <Card>
         <CardHeader>
-          <CardTitle>Share an Update</CardTitle>
+          <CardTitle>{t('shareUpdate')}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Textarea
-              placeholder="What's happening in your production world? Share your thoughts, wins, or lessons learned..."
+              placeholder={t('placeholder')}
               value={newPost}
               onChange={(e) => {
                 if (e.target.value.length <= characterLimit) {
@@ -208,8 +223,8 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
                   onClick={handlePostSubmit}
                   disabled={!newPost.trim() || newPost.length > characterLimit}
                 >
-                  <Send className="h-4 w-4 mr-2" />
-                  Post
+                  <Send className="h-4 w-4 mr-2" aria-hidden="true" />
+                  {t('post')}
                 </Button>
               </div>
             </div>
@@ -239,7 +254,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
                   </div>
                 </div>
                 <Button variant="ghost" size="sm">
-                  <MoreHorizontal className="h-4 w-4" />
+                  <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
 
@@ -286,32 +301,12 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
               {/* Engagement Stats */}
               <div className="flex items-center justify-between py-2 border-t text-xs text-muted-foreground">
                 <div className="flex items-center gap-3">
-                  <span>{post.likes} likes</span>
-                  <span>{post.comments} comments</span>
-                  <span>{post.shares} shares</span>
+                  <span>{post.likes} {t('likes')}</span>
+                  <span>{post.comments} {t('comments')}</span>
+                  <span>{post.shares} {t('shares')}</span>
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex items-center gap-1 pt-2 border-t">
-                <Button 
-                  variant={post.isLiked ? "default" : "ghost"} 
-                  size="sm"
-                  className="flex-1"
-                  onClick={() => handleLike(post.id)}
-                >
-                  <Heart className={`h-4 w-4 mr-2 ${post.isLiked ? 'fill-current' : ''}`} />
-                  Like
-                </Button>
-                <Button variant="ghost" size="sm" className="flex-1">
-                  <MessageCircle className="h-4 w-4 mr-2" />
-                  Comment
-                </Button>
-                <Button variant="ghost" size="sm" className="flex-1">
-                  <Share2 className="h-4 w-4 mr-2" />
-                  Share
-                </Button>
-              </div>
             </CardContent>
           </Card>
         ))}
@@ -319,7 +314,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
 
       {/* Load More */}
       <div className="text-center">
-        <Button variant="outline">Load More Activity</Button>
+        <Button variant="outline">{t('loadMore')}</Button>
       </div>
     </div>
   )

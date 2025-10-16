@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -15,7 +16,8 @@ import {
   Settings,
   Trash2,
   ExternalLink,
-  Package
+  Package,
+  Plus
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useToast } from "@/lib/hooks/use-toast"
@@ -34,14 +36,15 @@ interface Plugin {
 }
 
 export function PluginsTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [searchQuery, setSearchQuery] = useState("")
 
   const [plugins, setPlugins] = useState<Plugin[]>([
     {
       id: "1",
-      name: "Slack Integration",
-      description: "Send notifications and updates to Slack channels",
+      name: t('admin.mockData.plugin1Name'),
+      description: t('admin.mockData.plugin1Desc'),
       author: "Dragonfly Team",
       version: "2.1.0",
       rating: 4.8,
@@ -52,8 +55,8 @@ export function PluginsTab() {
     },
     {
       id: "2",
-      name: "Advanced Analytics",
-      description: "Enhanced analytics and reporting capabilities",
+      name: t('admin.mockData.plugin2Name'),
+      description: t('admin.mockData.plugin2Desc'),
       author: "Analytics Pro",
       version: "1.5.2",
       rating: 4.6,
@@ -64,8 +67,8 @@ export function PluginsTab() {
     },
     {
       id: "3",
-      name: "Timesheet Tracker",
-      description: "Track time spent on projects and tasks",
+      name: t('admin.mockData.plugin3Name'),
+      description: t('admin.mockData.plugin3Desc'),
       author: "Time Solutions",
       version: "3.0.1",
       rating: 4.5,
@@ -76,8 +79,8 @@ export function PluginsTab() {
     },
     {
       id: "4",
-      name: "Custom Fields Pro",
-      description: "Add unlimited custom fields to any module",
+      name: t('admin.mockData.plugin4Name'),
+      description: t('admin.mockData.plugin4Desc'),
       author: "Extensibility Labs",
       version: "2.3.0",
       rating: 4.9,
@@ -88,8 +91,8 @@ export function PluginsTab() {
     },
     {
       id: "5",
-      name: "Email Templates",
-      description: "Beautiful, customizable email templates",
+      name: t('admin.mockData.plugin5Name'),
+      description: t('admin.mockData.plugin5Desc'),
       author: "Design Studio",
       version: "1.8.4",
       rating: 4.7,
@@ -100,8 +103,8 @@ export function PluginsTab() {
     },
     {
       id: "6",
-      name: "Budget Forecasting",
-      description: "AI-powered budget predictions and insights",
+      name: t('admin.mockData.plugin6Name'),
+      description: t('admin.mockData.plugin6Desc'),
       author: "Finance AI",
       version: "1.2.0",
       rating: 4.4,
@@ -118,7 +121,7 @@ export function PluginsTab() {
     ))
     const plugin = plugins.find(p => p.id === pluginId)
     toast({
-      title: "Plugin installed",
+      title: t('admin.toast.pluginInstalled'),
       description: `${plugin?.name} has been installed successfully.`,
     })
   }
@@ -129,7 +132,7 @@ export function PluginsTab() {
     ))
     const plugin = plugins.find(p => p.id === pluginId)
     toast({
-      title: "Plugin uninstalled",
+      title: t('admin.toast.pluginUninstalled'),
       description: `${plugin?.name} has been removed.`,
       variant: "destructive",
     })
@@ -158,7 +161,7 @@ export function PluginsTab() {
                 <CardTitle className="text-base">{plugin.name}</CardTitle>
                 {plugin.installed && (
                   <Badge variant="default">
-                    <CheckCircle2 className="h-3 w-3 mr-1" />
+                    <CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" />
                     Installed
                   </Badge>
                 )}
@@ -170,12 +173,12 @@ export function PluginsTab() {
                 <span>v{plugin.version}</span>
                 <span>•</span>
                 <div className="flex items-center gap-1">
-                  <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                  <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   <span>{plugin.rating}</span>
                 </div>
                 <span>•</span>
                 <div className="flex items-center gap-1">
-                  <Download className="h-3 w-3" />
+                  <Download className="h-3 w-3" aria-hidden="true" />
                   <span>{plugin.downloads.toLocaleString()}</span>
                 </div>
               </div>
@@ -188,7 +191,7 @@ export function PluginsTab() {
           {plugin.installed ? (
             <>
               <Button variant="outline" size="sm">
-                <Settings className="h-4 w-4 mr-2" />
+                <Settings className="h-4 w-4 mr-2" aria-hidden="true" />
                 Configure
               </Button>
               <Button
@@ -196,18 +199,18 @@ export function PluginsTab() {
                 size="sm"
                 onClick={() => handleUninstall(plugin.id)}
               >
-                <Trash2 className="h-4 w-4 mr-2" />
+                <Trash2 className="h-4 w-4 mr-2" aria-hidden="true" />
                 Uninstall
               </Button>
             </>
           ) : (
             <>
               <Button variant="outline" size="sm">
-                <ExternalLink className="h-4 w-4 mr-2" />
+                <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
                 Learn More
               </Button>
               <Button size="sm" onClick={() => handleInstall(plugin.id)}>
-                <Download className="h-4 w-4 mr-2" />
+                <Download className="h-4 w-4 mr-2" aria-hidden="true" />
                 Install
               </Button>
             </>
@@ -219,17 +222,28 @@ export function PluginsTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.plugins')}
+        </p>
+        <Button size="sm" aria-label="Create new plugin">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          Create
+        </Button>
+      </div>
+
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Installed Plugins</CardDescription>
+            <CardDescription>{t('plugins.installed')}</CardDescription>
             <CardTitle className="text-3xl">{installedPlugins.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Available Plugins</CardDescription>
+            <CardDescription>{t('common.active')}</CardDescription>
             <CardTitle className="text-3xl">{availablePlugins.length}</CardTitle>
           </CardHeader>
         </Card>
@@ -249,7 +263,7 @@ export function PluginsTab() {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search plugins..."
+              placeholder={t('admin.plugins.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9"
@@ -262,15 +276,15 @@ export function PluginsTab() {
       <Tabs defaultValue="all">
         <TabsList>
           <TabsTrigger value="all">
-            <Package className="h-4 w-4 mr-2" />
-            All Plugins ({plugins.length})
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('plugins.install')}s ({plugins.length})
           </TabsTrigger>
           <TabsTrigger value="installed">
-            <CheckCircle2 className="h-4 w-4 mr-2" />
+            <CheckCircle2 className="h-4 w-4 mr-2" aria-hidden="true" />
             Installed ({installedPlugins.length})
           </TabsTrigger>
           <TabsTrigger value="available">
-            <Download className="h-4 w-4 mr-2" />
+            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
             Available ({availablePlugins.length})
           </TabsTrigger>
         </TabsList>

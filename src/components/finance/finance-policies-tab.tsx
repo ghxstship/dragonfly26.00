@@ -4,56 +4,72 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ShieldCheck, CreditCard, AlertTriangle, CheckCircle2, XCircle, Plus, Settings } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
+import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinancePoliciesTabProps {
   data?: any[]
   loading?: boolean
 }
 
-// Mock data for demo/fallback
+// Mock data for demo/fallback - will be replaced with t() calls in component
 const MOCK_POLICIES = [
   {
     id: '1',
-    name: 'Travel Expense Policy',
-    description: 'Maximum limits for travel and accommodation expenses',
+    nameKey: 'mockData.policies.travelExpense.name',
+    descriptionKey: 'mockData.policies.travelExpense.description',
     type: 'expense',
     maxAmount: 500,
     requiresApproval: true,
     isActive: true,
-    applicableTo: 'All Employees',
+    applicableToKey: 'mockData.policies.applicableTo.allEmployees',
     violations: 2,
   },
   {
     id: '2',
-    name: 'Equipment Purchase Policy',
-    description: 'Approval required for equipment purchases over threshold',
+    nameKey: 'mockData.policies.equipmentPurchase.name',
+    descriptionKey: 'mockData.policies.equipmentPurchase.description',
     type: 'purchase',
     maxAmount: 1000,
     requiresApproval: true,
     isActive: true,
-    applicableTo: 'Department Heads',
+    applicableToKey: 'mockData.policies.applicableTo.departmentHeads',
     violations: 0,
   },
   {
     id: '3',
-    name: 'Meal & Entertainment',
-    description: 'Per diem rates and entertainment expense limits',
+    nameKey: 'mockData.policies.mealEntertainment.name',
+    descriptionKey: 'mockData.policies.mealEntertainment.description',
     type: 'expense',
     maxAmount: 100,
     requiresApproval: false,
     isActive: true,
-    applicableTo: 'All Employees',
+    applicableToKey: 'mockData.policies.applicableTo.allEmployees',
     violations: 5,
   },
 ]
 
 export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
+  const t = useTranslations('business.finance.policies')
+  const tCommon = useTranslations('business.common')
+  const locale = useLocale()
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="flex items-center justify-center h-full"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading policies...</p>
+          <div 
+            className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"
+            aria-hidden="true"
+          ></div>
+          <p className="text-muted-foreground">
+            {tCommon('loading', { resource: t('title') })}
+          </p>
         </div>
       </div>
     )
@@ -160,7 +176,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </p>
         <div className="flex gap-2">
           <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4" aria-hidden="true"  />
             New Policy
           </Button>
         </div>
@@ -171,7 +187,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Policies</CardTitle>
-            <ShieldCheck className="h-4 w-4 text-muted-foreground" />
+            <ShieldCheck className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{activePolicies}</div>
@@ -184,7 +200,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Corporate Cards</CardTitle>
-            <CreditCard className="h-4 w-4 text-muted-foreground" />
+            <CreditCard className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -199,7 +215,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Policy Violations</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-orange-600" />
+            <AlertTriangle className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-orange-600">{pendingViolations}</div>
@@ -212,7 +228,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Compliance Rate</CardTitle>
-            <CheckCircle2 className="h-4 w-4 text-green-600" />
+            <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">94%</div>
@@ -237,7 +253,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                   <div className="flex items-start justify-between">
                     <div className="space-y-2 flex-1">
                       <div className="flex items-center gap-2">
-                        <h4 className="font-semibold">{policy.name}</h4>
+                        <h4 className="font-semibold">{policy.nameKey ? t(policy.nameKey) : policy.name}</h4>
                         <Badge variant={policy.isActive ? 'default' : 'secondary'}>
                           {policy.isActive ? 'Active' : 'Inactive'}
                         </Badge>
@@ -247,20 +263,20 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                           </Badge>
                         )}
                       </div>
-                      <p className="text-sm text-muted-foreground">{policy.description}</p>
+                      <p className="text-sm text-muted-foreground">{policy.descriptionKey ? t(policy.descriptionKey) : policy.description}</p>
                       <div className="flex items-center gap-4 text-xs text-muted-foreground">
                         <span>Type: {policy.type}</span>
                         <span>•</span>
                         <span>Max Amount: ${policy.maxAmount.toLocaleString()}</span>
                         <span>•</span>
-                        <span>Applies to: {policy.applicableTo}</span>
+                        <span>Applies to: {policy.applicableToKey ? t(policy.applicableToKey) : policy.applicableTo}</span>
                         <span>•</span>
                         <span>{policy.requiresApproval ? 'Requires Approval' : 'Auto-approved'}</span>
                       </div>
                     </div>
                     <div className="flex gap-2 ml-4">
                       <Button variant="outline" size="sm">
-                        <Settings className="h-4 w-4 mr-1" />
+                        <Settings className="h-4 w-4" aria-hidden="true"  />
                         Edit
                       </Button>
                     </div>
@@ -281,7 +297,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
               <CardDescription>Manage card assignments and spending limits</CardDescription>
             </div>
             <Button variant="outline">
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus className="h-4 w-4" aria-hidden="true"  />
               Issue Card
             </Button>
           </div>
@@ -405,11 +421,11 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                         {violation.status === 'pending' && (
                           <div className="flex gap-2 mt-3">
                             <Button size="sm" variant="outline">
-                              <CheckCircle2 className="h-4 w-4 mr-1" />
+                              <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
                               Approve
                             </Button>
                             <Button size="sm" variant="outline">
-                              <XCircle className="h-4 w-4 mr-1" />
+                              <XCircle className="h-4 w-4" aria-hidden="true"  />
                               Reject
                             </Button>
                           </div>
@@ -422,7 +438,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
             ) : (
               <div className="flex items-center justify-center h-32 text-muted-foreground">
                 <div className="text-center">
-                  <CheckCircle2 className="h-8 w-8 mx-auto mb-2 opacity-50 text-green-600" />
+                  <CheckCircle2 className="h-8 w-8" aria-hidden="true"  />
                   <p className="text-sm">No policy violations</p>
                   <p className="text-xs mt-1">All spending is in compliance</p>
                 </div>

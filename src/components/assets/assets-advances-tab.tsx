@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import { useModuleData } from '@/hooks/use-module-data'
 import { Button } from '@/components/ui/button'
@@ -16,6 +17,8 @@ import { Badge } from '@/components/ui/badge'
 import { format } from 'date-fns'
 
 export default function AssetsAdvancesTab() {
+  const t = useTranslations('production.assets.advances')
+  const tCommon = useTranslations('common')
   const params = useParams()
   const workspaceId = params?.workspaceId as string
 
@@ -25,9 +28,9 @@ export default function AssetsAdvancesTab() {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="text-muted-foreground">Loading production advances...</div>
-      </div>
-    )
-  }
+          </div>
+   )
+}
 
   if (error) {
     return (
@@ -66,25 +69,28 @@ export default function AssetsAdvancesTab() {
   }
 
   return (
-    <div className="space-y-4">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Button variant="default">
-            <Plus className="h-4 w-4 mr-2" />
-            Create Production Advance
-          </Button>
-        </div>
+        <p className="text-muted-foreground">
+          Manage production advances for equipment and materials
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          Create Advance
+        </Button>
       </div>
 
       <div className="rounded-lg border bg-card">
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Asset/Item</TableHead>
-              <TableHead>Category</TableHead>
-              <TableHead>Production</TableHead>
-              <TableHead>Requestor</TableHead>
-              <TableHead>Period</TableHead>
+              <TableHead>{t('assetItem')}</TableHead>
+              <TableHead>{t('category')}</TableHead>
+              <TableHead>{t('production')}</TableHead>
+              <TableHead>{t('requestor')}</TableHead>
+              <TableHead>{t('period')}</TableHead>
               <TableHead>Quantity</TableHead>
               <TableHead>Status</TableHead>
             </TableRow>
@@ -101,7 +107,7 @@ export default function AssetsAdvancesTab() {
                 <TableRow key={advance.id}>
                   <TableCell>
                     <div className="flex items-start gap-2">
-                      <Package className="h-4 w-4 mt-1 text-muted-foreground" />
+                      <Package className="h-4 w-4 mt-1 text-muted-foreground" aria-hidden="true" />
                       <div>
                         <div className="font-medium">{advance.asset_item}</div>
                         {advance.operational_purpose && (
@@ -136,7 +142,7 @@ export default function AssetsAdvancesTab() {
                   </TableCell>
                   <TableCell>
                     <div className="flex items-center gap-1 text-sm">
-                      <Calendar className="h-3 w-3 text-muted-foreground" />
+                      <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                       <div>
                         {format(new Date(advance.start_date), 'MMM d')}
                         {advance.end_date && ` - ${format(new Date(advance.end_date), 'MMM d')}`}
@@ -154,5 +160,6 @@ export default function AssetsAdvancesTab() {
         </Table>
       </div>
     </div>
+    </main>
   )
 }

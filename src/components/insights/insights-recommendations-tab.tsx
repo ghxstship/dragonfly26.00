@@ -1,16 +1,17 @@
 "use client"
 
-import { Sparkles, TrendingUp, AlertTriangle, Lightbulb, ArrowRight } from "lucide-react"
+import { Sparkles, TrendingUp, AlertTriangle, Lightbulb, ArrowRight, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const recommendations = [
   {
     id: "1",
-    category: "Revenue Optimization",
-    title: "Implement Dynamic Pricing Strategy",
-    description: "Our analysis shows that adjusting pricing by time/demand could increase revenue by 15-18%",
+    categoryKey: "revenue_optimization",
+    titleKey: "implement_dynamic_pricing_strategy",
+    descriptionKey: "our_analysis_shows_that_adjusting_pricing_by_timedemand_coul",
     impact: "High",
     effort: "Medium",
     confidence: 89,
@@ -22,9 +23,9 @@ const recommendations = [
   },
   {
     id: "2",
-    category: "Process Improvement",
-    title: "Automate Manual Approval Workflows",
-    description: "56% of approval processes are manual. Automation could save 240 hours/month",
+    categoryKey: "process_improvement",
+    titleKey: "automate_manual_approval_workflows",
+    descriptionKey: "56_of_approval_processes_are_manual_automation_could_save_24",
     impact: "High",
     effort: "Low",
     confidence: 94,
@@ -36,9 +37,9 @@ const recommendations = [
   },
   {
     id: "3",
-    category: "Risk Mitigation",
-    title: "Diversify Supplier Base",
-    description: "72% of critical materials from single source presents supply chain risk",
+    categoryKey: "risk_mitigation",
+    titleKey: "diversify_supplier_base",
+    descriptionKey: "72_of_critical_materials_from_single_source_presents_supply_",
     impact: "Medium",
     effort: "High",
     confidence: 87,
@@ -50,9 +51,9 @@ const recommendations = [
   },
   {
     id: "4",
-    category: "Customer Experience",
-    title: "Launch Customer Self-Service Portal",
-    description: "68% of support requests could be resolved via self-service, reducing costs by $180K/year",
+    categoryKey: "customer_experience",
+    titleKey: "launch_customer_selfservice_portal",
+    descriptionKey: "68_of_support_requests_could_be_resolved_via_selfservice_red",
     impact: "High",
     effort: "Medium",
     confidence: 91,
@@ -64,9 +65,9 @@ const recommendations = [
   },
   {
     id: "5",
-    category: "Resource Allocation",
-    title: "Redistribute Project Resources",
-    description: "Team A is at 92% capacity while Team B is at 64%. Rebalancing could improve delivery by 20%",
+    categoryKey: "resource_allocation",
+    titleKey: "redistribute_project_resources",
+    descriptionKey: "team_a_is_at_92_capacity_while_team_b_is_at_64_rebalancing_c",
     impact: "Medium",
     effort: "Low",
     confidence: 86,
@@ -84,9 +85,24 @@ interface InsightsRecommendationsTabProps {
 }
 
 export function InsightsRecommendationsTab({ data = [], loading = false }: InsightsRecommendationsTabProps) {
+  const t = useTranslations('intelligence.insights.insightsrecommendations')
+  const tCommon = useTranslations('common')
+
   const displayRecommendations = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       <div className="grid gap-6">
         {recommendations.map((rec) => {
           const Icon = rec.icon
@@ -99,9 +115,9 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
                       <Icon className={`h-6 w-6 ${rec.color}`} />
                     </div>
                     <div>
-                      <Badge variant="outline" className="mb-2">{rec.category}</Badge>
-                      <CardTitle className="text-xl">{rec.title}</CardTitle>
-                      <CardDescription className="mt-2 text-base">{rec.description}</CardDescription>
+                      <Badge variant="outline" className="mb-2">{t(rec.categoryKey)}</Badge>
+                      <CardTitle className="text-xl">{t(rec.titleKey)}</CardTitle>
+                      <CardDescription className="mt-2 text-base">{t(rec.descriptionKey)}</CardDescription>
                     </div>
                   </div>
                   <div className="text-right space-y-1">
@@ -116,15 +132,15 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
                   {/* Key Metrics */}
                   <div className="grid grid-cols-3 gap-4 p-4 bg-accent rounded-lg">
                     <div>
-                      <p className="text-xs text-muted-foreground">Estimated Benefit</p>
+                      <p className="text-xs text-muted-foreground">{t('estimatedBenefit')}</p>
                       <p className="text-sm font-bold mt-1">{rec.estimatedBenefit}</p>
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">Implementation Effort</p>
+                      <p className="text-xs text-muted-foreground">{t('implementationEffort')}</p>
                       <p className="text-sm font-bold mt-1">{rec.effort}</p>
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">Confidence Level</p>
+                      <p className="text-xs text-muted-foreground">{t('confidenceLevel')}</p>
                       <p className="text-sm font-bold mt-1">{rec.confidence}%</p>
                     </div>
                   </div>
@@ -148,7 +164,7 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
                     </p>
                     <Button>
                       View Details
-                      <ArrowRight className="h-4 w-4 ml-2" />
+                      <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
                     </Button>
                   </div>
                 </div>

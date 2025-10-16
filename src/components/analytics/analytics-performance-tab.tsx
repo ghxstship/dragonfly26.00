@@ -1,53 +1,55 @@
 "use client"
 
-import { Award, TrendingUp, AlertCircle, CheckCircle } from "lucide-react"
+import { Award, TrendingUp, AlertCircle, CheckCircle, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 
 const performanceAreas = [
   { 
-    name: "Operational Efficiency", 
+    nameKey: "operational_efficiency", 
     score: 87, 
     benchmark: 82, 
     status: "above",
     metrics: [
-      { label: "Process Completion Time", value: "2.3 days", benchmark: "3.1 days", status: "good" },
-      { label: "Error Rate", value: "1.2%", benchmark: "2.5%", status: "good" },
-      { label: "Resource Utilization", value: "84%", benchmark: "75%", status: "good" },
+      { labelKey: "process_completion_time", value: "2.3 days", benchmark: "3.1 days", status: "good" },
+      { labelKey: "error_rate", value: "1.2%", benchmark: "2.5%", status: "good" },
+      { labelKey: "resource_utilization", value: "84%", benchmark: "75%", status: "good" },
     ]
   },
   { 
-    name: "Customer Experience", 
+    nameKey: "customer_experience", 
     score: 92, 
     benchmark: 88, 
     status: "above",
     metrics: [
-      { label: "Satisfaction Score", value: "4.6/5.0", benchmark: "4.2/5.0", status: "good" },
-      { label: "Response Time", value: "1.2 hrs", benchmark: "2.5 hrs", status: "good" },
-      { label: "Resolution Rate", value: "94%", benchmark: "87%", status: "good" },
+      { labelKey: "satisfaction_score", value: "4.6/5.0", benchmark: "4.2/5.0", status: "good" },
+      { labelKey: "response_time", value: "1.2 hrs", benchmark: "2.5 hrs", status: "good" },
+      { labelKey: "resolution_rate", value: "94%", benchmark: "87%", status: "good" },
     ]
   },
   { 
-    name: "Financial Performance", 
+    nameKey: "financial_performance", 
     score: 78, 
     benchmark: 85, 
     status: "below",
     metrics: [
-      { label: "Revenue Growth", value: "12%", benchmark: "15%", status: "warning" },
-      { label: "Profit Margin", value: "18%", benchmark: "22%", status: "warning" },
-      { label: "Cost Efficiency", value: "76%", benchmark: "82%", status: "warning" },
+      { labelKey: "revenue_growth", value: "12%", benchmark: "15%", status: "warning" },
+      { labelKey: "profit_margin", value: "18%", benchmark: "22%", status: "warning" },
+      { labelKey: "cost_efficiency", value: "76%", benchmark: "82%", status: "warning" },
     ]
   },
   { 
-    name: "Innovation & Growth", 
+    nameKey: "innovation__growth", 
     score: 85, 
     benchmark: 80, 
     status: "above",
     metrics: [
-      { label: "New Initiatives", value: "12", benchmark: "10", status: "good" },
-      { label: "Market Expansion", value: "3 regions", benchmark: "2 regions", status: "good" },
-      { label: "Product Development", value: "89%", benchmark: "75%", status: "good" },
+      { labelKey: "new_initiatives", value: "12", benchmark: "10", status: "good" },
+      { labelKey: "market_expansion", value: "3 regions", benchmark: "2 regions", status: "good" },
+      { labelKey: "product_development", value: "89%", benchmark: "75%", status: "good" },
     ]
   },
 ]
@@ -58,18 +60,32 @@ interface AnalyticsPerformanceTabProps {
 }
 
 export function AnalyticsPerformanceTab({ data = [], loading = false }: AnalyticsPerformanceTabProps) {
+  const t = useTranslations('intelligence.analytics.performance')
+  const tCommon = useTranslations('common')
   const displayData = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} performance metric`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       <div className="grid gap-6">
         {performanceAreas.map((area, index) => (
-          <Card key={index}>
+          <Card key={index} role="region" aria-label={`${t(area.nameKey)} performance`}>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
                   <CardTitle className="flex items-center gap-2">
                     <Award className="h-5 w-5 text-blue-600" />
-                    {area.name}
+                    {t(area.nameKey)}
                   </CardTitle>
                   <CardDescription className="mt-2">
                     Performance Score: <span className="font-bold text-lg text-foreground">{area.score}</span> / 100
@@ -99,7 +115,7 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
                 <div className="grid grid-cols-3 gap-4 pt-4 border-t">
                   {area.metrics.map((metric, idx) => (
                     <div key={idx} className="space-y-1">
-                      <p className="text-xs text-muted-foreground">{metric.label}</p>
+                      <p className="text-xs text-muted-foreground">{t(metric.labelKey)}</p>
                       <p className="text-sm font-bold">{metric.value}</p>
                       <p className="text-xs text-muted-foreground">
                         Benchmark: {metric.benchmark}

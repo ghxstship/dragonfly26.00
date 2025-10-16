@@ -1,17 +1,19 @@
 "use client"
 
-import { Lightbulb, Target, TrendingUp, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react"
+import { Lightbulb, Target, TrendingUp, AlertTriangle, CheckCircle2, Sparkles, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const strategicInsights = [
   {
     id: "1",
     type: "opportunity",
     priority: "high",
-    title: "Market Expansion Opportunity",
-    description: "Analysis shows 23% untapped market potential in Southeast region",
+    titleKey: "market_expansion_opportunity",
+    descriptionKey: "analysis_shows_23_untapped_market_potential_in_southeast_reg",
     impact: "High Revenue Impact",
     confidence: 87,
     recommendation: "Allocate resources to regional expansion in Q1 2026"
@@ -20,8 +22,8 @@ const strategicInsights = [
     id: "2",
     type: "risk",
     priority: "medium",
-    title: "Resource Utilization Below Target",
-    description: "Team capacity at 68%, 17% below optimal utilization rate",
+    titleKey: "resource_utilization_below_target",
+    descriptionKey: "team_capacity_at_68_17_below_optimal_utilization_rate",
     impact: "Efficiency Loss",
     confidence: 92,
     recommendation: "Redistribute workload and consider strategic hiring"
@@ -30,8 +32,8 @@ const strategicInsights = [
     id: "3",
     type: "achievement",
     priority: "low",
-    title: "Customer Satisfaction Milestone",
-    description: "Exceeded quarterly satisfaction target by 12%",
+    titleKey: "customer_satisfaction_milestone",
+    descriptionKey: "exceeded_quarterly_satisfaction_target_by_12",
     impact: "Positive Brand Impact",
     confidence: 95,
     recommendation: "Document and replicate successful practices"
@@ -39,10 +41,10 @@ const strategicInsights = [
 ]
 
 const objectives = [
-  { name: "Increase Customer Satisfaction", progress: 87, target: 90, status: "on_track" },
-  { name: "Reduce Operational Costs", progress: 53, target: 100, status: "at_risk" },
-  { name: "Expand Market Presence", progress: 33, target: 100, status: "on_track" },
-  { name: "Improve Process Efficiency", progress: 78, target: 85, status: "on_track" },
+  { nameKey: "increase_customer_satisfaction", progress: 87, target: 90, status: "on_track" },
+  { nameKey: "reduce_operational_costs", progress: 53, target: 100, status: "at_risk" },
+  { nameKey: "expand_market_presence", progress: 33, target: 100, status: "on_track" },
+  { nameKey: "improve_process_efficiency", progress: 78, target: 85, status: "on_track" },
 ]
 
 interface InsightsOverviewTabProps {
@@ -51,19 +53,34 @@ interface InsightsOverviewTabProps {
 }
 
 export function InsightsOverviewTab({ data = [], loading = false }: InsightsOverviewTabProps) {
+  const t = useTranslations('intelligence.insights.insightsoverview')
+  const tCommon = useTranslations('common')
+
   const displayGoals = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       {/* Header Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">Active Objectives</p>
-                <p className="text-2xl font-bold mt-2">12</p>
+                <p className="text-sm text-muted-foreground">{t('activeObjectives')}</p>
+                <p className="text-2xl font-bold mt-2" aria-live="polite">12</p>
               </div>
-              <Target className="h-8 w-8 text-blue-600" />
+              <Target className="h-8 w-8 text-blue-600" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
@@ -71,10 +88,10 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">On Track</p>
-                <p className="text-2xl font-bold mt-2 text-green-600">9</p>
+                <p className="text-sm text-muted-foreground">{t('onTrack')}</p>
+                <p className="text-2xl font-bold mt-2 text-green-600" aria-live="polite">9</p>
               </div>
-              <CheckCircle2 className="h-8 w-8 text-green-600" />
+              <CheckCircle2 className="h-8 w-8 text-green-600" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
@@ -82,10 +99,10 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">At Risk</p>
-                <p className="text-2xl font-bold mt-2 text-yellow-600">3</p>
+                <p className="text-sm text-muted-foreground">{t('atRisk')}</p>
+                <p className="text-2xl font-bold mt-2 text-yellow-600" aria-live="polite">3</p>
               </div>
-              <AlertTriangle className="h-8 w-8 text-yellow-600" />
+              <AlertTriangle className="h-8 w-8 text-yellow-600" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
@@ -93,10 +110,10 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">Insights Generated</p>
-                <p className="text-2xl font-bold mt-2">47</p>
+                <p className="text-sm text-muted-foreground">{t('insightsGenerated')}</p>
+                <p className="text-2xl font-bold mt-2" aria-live="polite">47</p>
               </div>
-              <Sparkles className="h-8 w-8 text-purple-600" />
+              <Sparkles className="h-8 w-8 text-purple-600" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
@@ -106,10 +123,10 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Lightbulb className="h-5 w-5 text-yellow-500" />
-            Strategic Insights & Recommendations
+            <Lightbulb className="h-5 w-5 text-yellow-500" aria-hidden="true" />
+            {t('strategicInsightsRecommendations')}
           </CardTitle>
-          <CardDescription>AI-powered analysis of your performance data</CardDescription>
+          <CardDescription>{t('aiPoweredAnalysisDesc')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -117,16 +134,16 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
               <div key={insight.id} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-start gap-3">
-                    {insight.type === "opportunity" && <TrendingUp className="h-5 w-5 text-green-600 mt-1" />}
-                    {insight.type === "risk" && <AlertTriangle className="h-5 w-5 text-yellow-600 mt-1" />}
-                    {insight.type === "achievement" && <CheckCircle2 className="h-5 w-5 text-blue-600 mt-1" />}
+                    {insight.type === "opportunity" && <TrendingUp className="h-5 w-5 text-green-600 mt-1" aria-hidden="true" />}
+                    {insight.type === "risk" && <AlertTriangle className="h-5 w-5 text-yellow-600 mt-1" aria-hidden="true" />}
+                    {insight.type === "achievement" && <CheckCircle2 className="h-5 w-5 text-blue-600 mt-1" aria-hidden="true" />}
                     <div>
-                      <h4 className="font-semibold">{insight.title}</h4>
-                      <p className="text-sm text-muted-foreground mt-1">{insight.description}</p>
+                      <h4 className="font-semibold">{t(insight.titleKey)}</h4>
+                      <p className="text-sm text-muted-foreground mt-1">{t(insight.descriptionKey)}</p>
                     </div>
                   </div>
                   <Badge variant={insight.priority === "high" ? "destructive" : insight.priority === "medium" ? "default" : "secondary"}>
-                    {insight.priority} priority
+                    {insight.priority} {t('priority')}
                   </Badge>
                 </div>
                 
@@ -134,12 +151,12 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
                   <span className="text-muted-foreground">{insight.impact}</span>
                   <span className="text-muted-foreground">•</span>
                   <span className="flex items-center gap-1">
-                    Confidence: <span className="font-medium">{insight.confidence}%</span>
+                    {t('confidence')}: <span className="font-medium">{insight.confidence}%</span>
                   </span>
                 </div>
                 
                 <div className="mt-3 p-3 bg-accent rounded-md">
-                  <p className="text-sm"><span className="font-medium">Recommendation:</span> {insight.recommendation}</p>
+                  <p className="text-sm"><span className="font-medium">{t('recommendation')}:</span> {insight.recommendation}</p>
                 </div>
               </div>
             ))}
@@ -150,15 +167,15 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
       {/* Objectives Progress */}
       <Card>
         <CardHeader>
-          <CardTitle>Active Objectives Progress</CardTitle>
-          <CardDescription>Track progress against your strategic goals</CardDescription>
+          <CardTitle>{t('activeObjectivesProgress')}</CardTitle>
+          <CardDescription>{t('trackProgressDesc')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {objectives.map((obj, index) => (
               <div key={index} className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <p className="font-medium">{obj.name}</p>
+                  <p className="font-medium">{t(obj.nameKey)}</p>
                   <div className="flex items-center gap-2">
                     <Badge variant={obj.status === "on_track" ? "default" : "secondary"} className={obj.status === "on_track" ? "bg-green-600" : "bg-yellow-600"}>
                       {obj.status === "on_track" ? "On Track" : "At Risk"}

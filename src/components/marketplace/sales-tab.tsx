@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { TrendingUp, DollarSign, Package, Clock, CheckCircle2, XCircle, AlertCircle, Search, Download } from "lucide-react"
+import { TrendingUp, DollarSign, Package, Clock, CheckCircle2, XCircle, AlertCircle, Search, Download, Plus } from "lucide-react"
+import { useTranslations } from 'next-intl'
 
 interface SalesTabProps {
   data?: any[]
@@ -13,20 +14,22 @@ interface SalesTabProps {
 }
 
 export function SalesTab({ data = [], loading = false }: SalesTabProps) {
+  const t = useTranslations('marketplace.sales')
+  const tCommon = useTranslations('common')
   const salesData = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle2 className="h-3 w-3 mr-1" />Completed</Badge>
+        return <Badge className="bg-green-600"><CheckCircle2 className="h-3 w-3 mr-1" />{t('completed')}</Badge>
       case "in-progress":
-        return <Badge className="bg-blue-600"><Clock className="h-3 w-3 mr-1" />In Progress</Badge>
+        return <Badge className="bg-blue-600"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />{t('inProgress')}</Badge>
       case "confirmed":
         return <Badge className="bg-purple-600"><CheckCircle2 className="h-3 w-3 mr-1" />Confirmed</Badge>
       case "pending":
-        return <Badge variant="outline"><AlertCircle className="h-3 w-3 mr-1" />Pending</Badge>
+        return <Badge variant="outline"><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" />Pending</Badge>
       case "cancelled":
-        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" />Cancelled</Badge>
+        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('cancelled')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -53,6 +56,16 @@ export function SalesTab({ data = [], loading = false }: SalesTabProps) {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('create')}</Button>
+      </div>
+
+
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
@@ -77,7 +90,7 @@ export function SalesTab({ data = [], loading = false }: SalesTabProps) {
           <CardHeader className="pb-3">
             <CardDescription>Pending Sales</CardDescription>
             <CardTitle className="text-3xl flex items-center gap-2">
-              <Clock className="h-6 w-6 text-yellow-600" />
+              <Clock className="h-6 w-6 text-yellow-600" aria-hidden="true" />
               {pendingSales}
             </CardTitle>
           </CardHeader>
@@ -87,11 +100,11 @@ export function SalesTab({ data = [], loading = false }: SalesTabProps) {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search sales..." className="pl-9" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Input placeholder={t('searchSales')} className="pl-9" />
         </div>
         <Button variant="outline">
-          <Download className="h-4 w-4 mr-2" />
+          <Download className="h-4 w-4 mr-2" aria-hidden="true" />
           Export
         </Button>
       </div>
@@ -101,8 +114,8 @@ export function SalesTab({ data = [], loading = false }: SalesTabProps) {
         <TabsList>
           <TabsTrigger value="all">All Sales</TabsTrigger>
           <TabsTrigger value="pending">Pending</TabsTrigger>
-          <TabsTrigger value="in-progress">In Progress</TabsTrigger>
-          <TabsTrigger value="completed">Completed</TabsTrigger>
+          <TabsTrigger value="in-progress">{t('inProgress')}</TabsTrigger>
+          <TabsTrigger value="completed">{t('completed')}</TabsTrigger>
         </TabsList>
 
         <TabsContent value="all" className="space-y-4 mt-4">
@@ -137,7 +150,7 @@ export function SalesTab({ data = [], loading = false }: SalesTabProps) {
                     <p className="text-sm">{new Date(sale.due_date).toLocaleDateString()}</p>
                   </div>
                   <div className="flex items-end justify-end gap-2">
-                    <Button variant="outline" size="sm">View</Button>
+                    <Button variant="outline" size="sm">{tCommon('view')}</Button>
                     <Button size="sm">Manage</Button>
                   </div>
                 </div>

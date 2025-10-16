@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -46,6 +47,7 @@ interface ApiToken {
 }
 
 export function ApiTokensTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState(false)
   const [newTokenDialogOpen, setNewTokenDialogOpen] = useState(false)
@@ -55,7 +57,7 @@ export function ApiTokensTab() {
   const [tokens, setTokens] = useState<ApiToken[]>([
     {
       id: "1",
-      name: "Production API",
+      name: t('admin.mockData.token1Name'),
       token: "dfsk_live_abc123def456ghi789jkl012mno345pqr678",
       scope: "read:write",
       createdAt: "2024-01-15",
@@ -64,7 +66,7 @@ export function ApiTokensTab() {
     },
     {
       id: "2",
-      name: "Analytics Integration",
+      name: t('admin.mockData.token2Name'),
       token: "dfsk_live_xyz789abc123def456ghi789jkl012mno345",
       scope: "read",
       createdAt: "2024-01-10",
@@ -73,7 +75,7 @@ export function ApiTokensTab() {
     },
     {
       id: "3",
-      name: "Mobile App (Legacy)",
+      name: t('admin.mockData.token3Name'),
       token: "dfsk_live_def456ghi789jkl012mno345pqr678stu901",
       scope: "read:write",
       createdAt: "2023-11-20",
@@ -94,8 +96,8 @@ export function ApiTokensTab() {
       t.id === tokenId ? { ...t, status: "revoked" as const } : t
     ))
     toast({
-      title: "Token revoked",
-      description: "The API token has been revoked and can no longer be used.",
+      title: t('admin.toast.tokenRevoked'),
+      description: t('admin.toast.tokenRevokedDesc'),
       variant: "destructive",
     })
   }
@@ -103,8 +105,8 @@ export function ApiTokensTab() {
   const handleDeleteToken = (tokenId: string) => {
     setTokens(tokens.filter(t => t.id !== tokenId))
     toast({
-      title: "Token deleted",
-      description: "The API token has been permanently deleted.",
+      title: t('admin.toast.tokenDeleted'),
+      description: t('admin.toast.tokenDeletedDesc'),
       variant: "destructive",
     })
   }
@@ -112,8 +114,8 @@ export function ApiTokensTab() {
   const handleCopyToken = (token: string) => {
     navigator.clipboard.writeText(token)
     toast({
-      title: "Token copied",
-      description: "API token has been copied to clipboard.",
+      title: t('admin.toast.tokenCopied'),
+      description: t('admin.toast.tokenCopiedDesc'),
     })
   }
 
@@ -135,10 +137,14 @@ export function ApiTokensTab() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button onClick={() => setDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" />
-          Generate Token
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.apiTokensTab.description')}
+        </p>
+        <Button onClick={() => setDialogOpen(true)} aria-label={t('admin.apiTokensTab.generateToken')}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('admin.apiTokensTab.generateToken')}
         </Button>
       </div>
 
@@ -146,13 +152,13 @@ export function ApiTokensTab() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Tokens</CardDescription>
+            <CardDescription>{t('admin.apiTokensTab.totalTokens')}</CardDescription>
             <CardTitle className="text-3xl">{tokens.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Active Tokens</CardDescription>
+            <CardDescription>{t('admin.apiTokensTab.activeTokens')}</CardDescription>
             <CardTitle className="text-3xl">
               {tokens.filter(t => t.status === "active").length}
             </CardTitle>
@@ -160,7 +166,7 @@ export function ApiTokensTab() {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>API Calls (30 days)</CardDescription>
+            <CardDescription>{t('admin.apiTokensTab.apiCallsMonth')}</CardDescription>
             <CardTitle className="text-3xl">12.4k</CardTitle>
           </CardHeader>
         </Card>
@@ -196,36 +202,38 @@ export function ApiTokensTab() {
                           variant="ghost"
                           size="icon"
                           onClick={() => toggleTokenVisibility(token.id)}
+                          aria-label={isVisible ? t('admin.apiTokensTab.hideToken') : t('admin.apiTokensTab.showToken')}
                         >
                           {isVisible ? (
-                            <EyeOff className="h-4 w-4" />
+                            <EyeOff className="h-4 w-4" aria-hidden="true" />
                           ) : (
-                            <Eye className="h-4 w-4" />
+                            <Eye className="h-4 w-4" aria-hidden="true" />
                           )}
                         </Button>
                         <Button
                           variant="outline"
                           size="icon"
                           onClick={() => handleCopyToken(token.token)}
+                          aria-label={t('admin.apiTokensTab.copyToken')}
                         >
-                          <Copy className="h-4 w-4" />
+                          <Copy className="h-4 w-4" aria-hidden="true" />
                         </Button>
                       </div>
                       <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <span>Created {token.createdAt}</span>
+                        <span>{t('admin.apiTokensTab.created')} {token.createdAt}</span>
                         {token.lastUsed && (
                           <>
                             <span>•</span>
                             <div className="flex items-center gap-1">
-                              <Clock className="h-3 w-3" />
-                              Last used {token.lastUsed}
+                              <Clock className="h-3 w-3" aria-hidden="true" />
+                              {t('admin.apiTokensTab.lastUsed')} {token.lastUsed}
                             </div>
                           </>
                         )}
                         {token.expiresAt && (
                           <>
                             <span>•</span>
-                            <span>Expires {token.expiresAt}</span>
+                            <span>{t('admin.apiTokensTab.expires')} {token.expiresAt}</span>
                           </>
                         )}
                       </div>
@@ -240,17 +248,19 @@ export function ApiTokensTab() {
                       variant="outline"
                       size="sm"
                       onClick={() => handleRevokeToken(token.id)}
+                      aria-label={`${t('admin.apiTokensTab.revoke')} ${token.name}`}
                     >
-                      Revoke
+                      {t('admin.apiTokensTab.revoke')}
                     </Button>
                   )}
                   <Button
                     variant="destructive"
                     size="sm"
                     onClick={() => handleDeleteToken(token.id)}
+                    aria-label={`${t('admin.apiTokensTab.delete')} ${token.name}`}
                   >
-                    <Trash2 className="h-4 w-4 mr-2" />
-                    Delete
+                    <Trash2 className="h-4 w-4 mr-2" aria-hidden="true" />
+                    {t('admin.apiTokensTab.delete')}
                   </Button>
                 </div>
               </CardContent>
@@ -262,19 +272,19 @@ export function ApiTokensTab() {
       {/* Security Notice */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Security Best Practices</CardTitle>
+          <CardTitle className="text-base">{t('admin.apiTokensTab.securityBestPractices')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
             <div className="flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
-              <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
+              <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <div className="text-xs text-amber-900 dark:text-amber-100">
-                <p className="font-medium mb-1">Keep your tokens secure</p>
+                <p className="font-medium mb-1">{t('admin.apiTokensTab.warningTitle')}</p>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Never commit tokens to version control</li>
-                  <li>Rotate tokens regularly</li>
-                  <li>Use read-only scopes when possible</li>
-                  <li>Revoke tokens immediately if compromised</li>
+                  <li>{t('admin.apiTokensTab.warningItem1')}</li>
+                  <li>{t('admin.apiTokensTab.warningItem2')}</li>
+                  <li>{t('admin.apiTokensTab.warningItem3')}</li>
+                  <li>{t('admin.apiTokensTab.warningItem4')}</li>
                 </ul>
               </div>
             </div>
@@ -286,50 +296,50 @@ export function ApiTokensTab() {
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Generate New API Token</DialogTitle>
+            <DialogTitle>{t('admin.apiTokensTab.createToken')}</DialogTitle>
             <DialogDescription>
-              Create a new token for API access
+              {t('admin.apiTokensTab.createTokenDescription')}
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-4 py-4">
             <div className="space-y-2">
-              <Label>Token Name</Label>
-              <Input placeholder="e.g., Production API" />
+              <Label>{t('admin.apiTokensTab.tokenName')}</Label>
+              <Input placeholder={t('admin.apiTokensTab.tokenNamePlaceholder')} aria-required="true" />
               <p className="text-xs text-muted-foreground">
-                A descriptive name to identify this token
+                {t('admin.apiTokensTab.tokenNameDescription')}
               </p>
             </div>
 
             <div className="space-y-2">
-              <Label>Scope</Label>
+              <Label>{t('admin.apiTokensTab.scope')}</Label>
               <Select defaultValue="read">
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="read">Read Only</SelectItem>
-                  <SelectItem value="read:write">Read & Write</SelectItem>
-                  <SelectItem value="admin">Admin (Full Access)</SelectItem>
+                  <SelectItem value="read">{t('admin.apiTokensTab.scopeRead')}</SelectItem>
+                  <SelectItem value="read:write">{t('admin.apiTokensTab.scopeReadWrite')}</SelectItem>
+                  <SelectItem value="admin">{t('admin.apiTokensTab.scopeAdmin')}</SelectItem>
                 </SelectContent>
               </Select>
               <p className="text-xs text-muted-foreground">
-                Define what this token can access
+                {t('admin.apiTokensTab.scopeDescription')}
               </p>
             </div>
 
             <div className="space-y-2">
-              <Label>Expiration (Optional)</Label>
+              <Label>{t('admin.apiTokensTab.expiry')}</Label>
               <Select defaultValue="never">
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="7">7 days</SelectItem>
-                  <SelectItem value="30">30 days</SelectItem>
-                  <SelectItem value="90">90 days</SelectItem>
-                  <SelectItem value="365">1 year</SelectItem>
-                  <SelectItem value="never">Never</SelectItem>
+                  <SelectItem value="7">{t('admin.apiTokensTab.expiry7days')}</SelectItem>
+                  <SelectItem value="30">{t('admin.apiTokensTab.expiry30days')}</SelectItem>
+                  <SelectItem value="90">{t('admin.apiTokensTab.expiry90days')}</SelectItem>
+                  <SelectItem value="365">{t('admin.apiTokensTab.expiry1year')}</SelectItem>
+                  <SelectItem value="never">{t('admin.apiTokensTab.expiryNever')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -337,11 +347,11 @@ export function ApiTokensTab() {
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setDialogOpen(false)}>
-              Cancel
+              {t('common.cancel')}
             </Button>
             <Button onClick={handleCreateToken}>
-              <Key className="h-4 w-4 mr-2" />
-              Generate Token
+              <Key className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t('admin.apiTokensTab.generateToken')}
             </Button>
           </DialogFooter>
         </DialogContent>

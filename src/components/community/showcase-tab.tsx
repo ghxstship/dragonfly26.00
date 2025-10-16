@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -43,6 +44,8 @@ interface ShowcasePost {
 }
 
 export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
+  const t = useTranslations('community.showcase')
+  const tCommon = useTranslations('common')
   const [posts, setPosts] = useState<ShowcasePost[]>([])
 
   // Transform and update posts when data changes
@@ -88,9 +91,9 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
 
   const getCategoryBadge = (category: ShowcasePost["category"]) => {
     const configs = {
-      featured: { icon: Sparkles, label: "Featured", color: "text-purple-500" },
-      sponsored: { icon: TrendingUp, label: "Sponsored", color: "text-blue-500" },
-      achievement: { icon: Award, label: "Achievement", color: "text-yellow-500" }
+      featured: { icon: Sparkles, label: t('featured'), color: "text-purple-500" },
+      sponsored: { icon: TrendingUp, label: t('sponsored'), color: "text-blue-500" },
+      achievement: { icon: Award, label: t('achievement'), color: "text-yellow-500" }
     }
     return configs[category]
   }
@@ -125,14 +128,14 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Engagement</div>
-            <Heart className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('engagement')}</div>
+            <Heart className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {posts.reduce((acc, p) => acc + p.likes, 0)}
             </div>
-            <p className="text-xs text-muted-foreground">Total likes</p>
+            <p className="text-xs text-muted-foreground">{t('totalLikes')}</p>
           </CardContent>
         </Card>
 
@@ -180,7 +183,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
                       {categoryConfig.label}
                     </Badge>
                     <Button variant="ghost" size="sm">
-                      <MoreHorizontal className="h-4 w-4" />
+                      <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </div>
                 </div>
@@ -253,11 +256,11 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
                       Like
                     </Button>
                     <Button variant="ghost" size="sm">
-                      <MessageCircle className="h-4 w-4 mr-2" />
+                      <MessageCircle className="h-4 w-4 mr-2" aria-hidden="true" />
                       Comment
                     </Button>
                     <Button variant="ghost" size="sm">
-                      <Share2 className="h-4 w-4 mr-2" />
+                      <Share2 className="h-4 w-4 mr-2" aria-hidden="true" />
                       Share
                     </Button>
                   </div>

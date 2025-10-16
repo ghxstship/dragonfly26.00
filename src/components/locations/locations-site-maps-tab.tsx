@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -15,13 +16,16 @@ import {
   Square,
   Download,
   Upload,
-  Maximize2
+  Maximize2,
+  Plus
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('production.locations.site_maps')
+  const tCommon = useTranslations('common')
   const { data: siteMaps, loading } = useModuleData(workspaceId, 'locations', 'site-maps')
   const [selectedMap, setSelectedMap] = useState<any>(null)
   const [activeLayers, setActiveLayers] = useState<string[]>(['floor-plan'])
@@ -29,14 +33,19 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading site maps...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
-  }
+}
 
   const toggleLayer = (layer: string) => {
     setActiveLayers(prev =>
@@ -55,7 +64,20 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
   const connections = selectedMap?.connections || []
 
   return (
-    <div className="space-y-6">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Site maps and layouts
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          Create
+        </Button>
+      </div>
+
+
       {/* Actions */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
@@ -63,11 +85,11 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Upload className="h-4 w-4 mr-2" />
+            <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
             Upload Map
           </Button>
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
+            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
             Export
           </Button>
         </div>
@@ -114,14 +136,14 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
               </div>
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="icon" onClick={() => setZoom(Math.max(50, zoom - 10))}>
-                  <ZoomOut className="h-4 w-4" />
+                  <ZoomOut className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <span className="text-sm text-muted-foreground w-12 text-center">{zoom}%</span>
                 <Button variant="outline" size="icon" onClick={() => setZoom(Math.min(200, zoom + 10))}>
-                  <ZoomIn className="h-4 w-4" />
+                  <ZoomIn className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <Button variant="outline" size="icon">
-                  <Maximize2 className="h-4 w-4" />
+                  <Maximize2 className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
             </div>
@@ -138,7 +160,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-muted-foreground">
                       <Map className="h-16 w-16 mx-auto mb-4" />
-                      <p>Map visualization would appear here</p>
+                      <p>{t('mapVisualization')}</p>
                       <p className="text-sm mt-2">
                         {selectedMap.dimensions?.width} x {selectedMap.dimensions?.height} sq ft
                       </p>
@@ -169,7 +191,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                       className="absolute"
                       style={{ left: `${point.x}%`, top: `${point.y}%` }}
                     >
-                      <Zap className="h-4 w-4 text-yellow-600" />
+                      <Zap className="h-4 w-4 text-yellow-600" aria-hidden="true" />
                     </div>
                   ))}
 
@@ -180,7 +202,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                       className="absolute"
                       style={{ left: `${point.x}%`, top: `${point.y}%` }}
                     >
-                      <Wifi className="h-4 w-4 text-purple-600" />
+                      <Wifi className="h-4 w-4 text-purple-600" aria-hidden="true" />
                     </div>
                   ))}
                 </div>
@@ -235,7 +257,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
               <div className="flex items-center justify-center h-[500px] text-muted-foreground">
                 <div className="text-center">
                   <Map className="h-16 w-16 mx-auto mb-4" />
-                  <p>Select a map from the list to view</p>
+                  <p>{t('selectMap')}</p>
                 </div>
               </div>
             )}
@@ -248,7 +270,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
         <Card>
           <CardHeader>
             <CardTitle className="text-base flex items-center gap-2">
-              <Layers className="h-4 w-4" />
+              <Layers className="h-4 w-4" aria-hidden="true" />
               Map Layers
             </CardTitle>
           </CardHeader>
@@ -289,5 +311,6 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
       )}
     </div>
+    </main>
   )
 }

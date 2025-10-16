@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -23,6 +24,8 @@ import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog
 import type { TabComponentProps } from "@/types"
 
 export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('production.projects.schedule')
+  const tCommon = useTranslations('common')
   const { data: tasks, loading } = useModuleData(workspaceId, 'projects', 'schedule')
   const [viewMode, setViewMode] = useState<'day' | 'week' | 'month'>('month')
   const [currentDate, setCurrentDate] = useState(new Date())
@@ -30,10 +33,15 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading schedule...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -82,20 +90,33 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
   const completedTasks = tasks.filter((t: any) => t.status === 'completed')
 
   return (
-    <div className="space-y-6">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('create')}
+        </Button>
+      </div>
+
+
       {/* Actions */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
-          Gantt chart timeline with dependencies and critical path
+          {t('ganttDescription')}
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
-            Export
+            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+            {tCommon('export')}
           </Button>
           <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" />
-            Add Task
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('addTask')}
           </Button>
         </div>
       </div>
@@ -104,49 +125,49 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Tasks</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('totalTasks')}</CardTitle>
+            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{tasks.length}</div>
             <p className="text-xs text-muted-foreground">
-              {completedTasks.length} completed
+              {completedTasks.length} {t('completed')}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Critical Path</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('criticalPath')}</CardTitle>
+            <AlertTriangle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{criticalPath.length}</div>
-            <p className="text-xs text-muted-foreground">Tasks on critical path</p>
+            <p className="text-xs text-muted-foreground">{t('tasksOnCriticalPath')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Blocked</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('blocked')}</CardTitle>
+            <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">{blockedTasks.length}</div>
-            <p className="text-xs text-muted-foreground">Need attention</p>
+            <p className="text-xs text-muted-foreground">{t('needAttention')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Progress</CardTitle>
-            <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('progress')}</CardTitle>
+            <CheckCircle2 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {tasks.length > 0 ? Math.round((completedTasks.length / tasks.length) * 100) : 0}%
             </div>
-            <p className="text-xs text-muted-foreground">Overall completion</p>
+            <p className="text-xs text-muted-foreground">{t('overallCompletion')}</p>
           </CardContent>
         </Card>
       </div>
@@ -155,34 +176,34 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle>Timeline View</CardTitle>
+            <CardTitle>{t('timelineView')}</CardTitle>
             <div className="flex items-center gap-2">
               <Button variant="outline" size="sm" onClick={() => setViewMode('day')}>
-                Day
+                {t('day')}
               </Button>
               <Button variant="outline" size="sm" onClick={() => setViewMode('week')}>
-                Week
+                {t('week')}
               </Button>
               <Button variant="outline" size="sm" onClick={() => setViewMode('month')}>
-                Month
+                {t('month')}
               </Button>
               <div className="border-l pl-2 ml-2 flex gap-1">
                 <Button variant="ghost" size="icon">
-                  <ZoomOut className="h-4 w-4" />
+                  <ZoomOut className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <Button variant="ghost" size="icon">
-                  <ZoomIn className="h-4 w-4" />
+                  <ZoomIn className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
               <div className="border-l pl-2 ml-2 flex gap-1">
                 <Button variant="ghost" size="icon">
-                  <ChevronLeft className="h-4 w-4" />
+                  <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <Button variant="outline" size="sm">
-                  Today
+                  {t('today')}
                 </Button>
                 <Button variant="ghost" size="icon">
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
             </div>
@@ -212,7 +233,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                             </Badge>
                             {task.is_critical_path && (
                               <Badge variant="outline" className="text-xs border-red-500 text-red-500">
-                                Critical
+                                {t('critical')}
                               </Badge>
                             )}
                           </div>
@@ -223,7 +244,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                           <div className="space-y-1">
                             <div className="flex justify-between text-xs text-muted-foreground">
                               <span>{new Date(task.start_date).toLocaleDateString()}</span>
-                              <span>{duration} days</span>
+                              <span>{duration} {t('days')}</span>
                               <span>{new Date(task.end_date).toLocaleDateString()}</span>
                             </div>
                             <div className="relative h-6 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
@@ -242,7 +263,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                         {task.assignee && (
                           <div className="flex-shrink-0 w-32">
                             <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                              <Users className="h-3 w-3" />
+                              <Users className="h-4 w-4" aria-hidden="true" />
                               <span className="truncate">{task.assignee}</span>
                             </div>
                           </div>
@@ -252,7 +273,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                         {task.dependencies && task.dependencies.length > 0 && (
                           <div className="flex-shrink-0">
                             <Badge variant="outline" className="text-xs">
-                              {task.dependencies.length} deps
+                              {task.dependencies.length} {t('deps')}
                             </Badge>
                           </div>
                         )}
@@ -271,11 +292,11 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card className="border-red-200 dark:border-red-900">
           <CardHeader>
             <CardTitle className="text-red-600 flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5" />
-              Critical Path Items
+              <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+              {t('criticalPathItems')}
             </CardTitle>
             <CardDescription>
-              These tasks directly impact the project end date
+              {t('criticalPathDescription')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -302,9 +323,9 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
             <EmptyState
               variant="inline"
               icon={Calendar}
-              mainMessage="NOTHING TO SEE HERE... (YET)"
-              description="Add items with dates to visualize them on the timeline"
-              actionLabel="Create First Item"
+              mainMessage={t('emptyMainMessage')}
+              description={t('emptyStateMessage')}
+              actionLabel={t('createFirstItem')}
               onAction={() => setCreateDialogOpen(true)}
             />
           </CardContent>
@@ -322,5 +343,6 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
         }}
       />
     </div>
+    </main>
   )
 }

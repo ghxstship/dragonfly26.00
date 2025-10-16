@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -21,6 +22,8 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.my-reports')
+  const tCommon = useTranslations('common')
   const { reports, loading } = useMyReports(workspaceId, userId)
   
 
@@ -44,10 +47,15 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading reports...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -62,11 +70,11 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
   }
 
   const categories = [
-    { name: "Performance", count: 8, color: "bg-purple-500" },
-    { name: "Financial", count: 6, color: "bg-green-500" },
-    { name: "Assets", count: 4, color: "bg-blue-500" },
-    { name: "Travel", count: 3, color: "bg-cyan-500" },
-    { name: "Other", count: 3, color: "bg-gray-500" },
+    { nameKey: "performance", count: 8, color: "bg-purple-500" },
+    { nameKey: "financial", count: 6, color: "bg-green-500" },
+    { nameKey: "assets", count: 4, color: "bg-blue-500" },
+    { nameKey: "travel", count: 3, color: "bg-cyan-500" },
+    { nameKey: "other", count: 3, color: "bg-gray-500" },
   ]
 
   const getTypeColor = (type: string) => {
@@ -96,15 +104,16 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button 
-          size="sm" 
-          className="gap-2"
-          onClick={() => router.push(`/workspace/${workspaceId}/reports/templates`)}
-        >
-          <Plus className="h-4 w-4" />
-          Create Report
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Access your reports and analytics
+        </p>
+        <Button size="sm" onClick={() => router.push(`/workspace/${workspaceId}/reports/custom-builder`)}>
+          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          New Report
         </Button>
       </div>
 
@@ -161,12 +170,12 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
           <div className="grid grid-cols-5 gap-4">
             {categories.map((category) => (
               <div
-                key={category.name}
+                key={t(category.nameKey)}
                 className="p-4 border rounded-lg text-center hover:bg-accent transition-colors cursor-pointer"
               >
                 <div className={`w-12 h-12 ${category.color} rounded-lg mx-auto mb-2`} />
                 <p className="font-semibold">{category.count}</p>
-                <p className="text-xs text-muted-foreground">{category.name}</p>
+                <p className="text-xs text-muted-foreground">{t(category.nameKey)}</p>
               </div>
             ))}
           </div>
@@ -193,17 +202,17 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-2">
                           <div className="p-2 bg-primary/10 rounded">
-                            <Icon className="h-4 w-4 text-primary" />
+                            <Icon className="h-4 w-4" aria-hidden="true" className="text-primary" />
                           </div>
                           <div>
                             <div className="flex items-center gap-2">
-                              <h3 className="font-semibold">{report.name}</h3>
+                              <h3 className="font-semibold">{t(report.nameKey)}</h3>
                               {report.isFavorite && (
-                                <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                                <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                               )}
                             </div>
                             <p className="text-sm text-muted-foreground mt-1">
-                              {report.description}
+                              {t(report.descriptionKey)}
                             </p>
                           </div>
                         </div>
@@ -221,26 +230,26 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                         </Badge>
                         {report.isRecurring && (
                           <Badge variant="outline" className="text-blue-600">
-                            <Clock className="h-3 w-3 mr-1" />
+                            <Clock className="h-4 w-4" aria-hidden="true" className="mr-1" />
                             {report.frequency}
                           </Badge>
                         )}
                       </div>
 
                       <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-                        <span>Last generated: {report.lastGenerated}</span>
+                        <span>{t('lastGenerated')}: {report.lastGenerated}</span>
                         {report.nextScheduled && (
                           <>
                             <span>•</span>
-                            <span>Next: {report.nextScheduled}</span>
+                            <span>{t('next')}: {report.nextScheduled}</span>
                           </>
                         )}
                         <span>•</span>
                         <span>{report.fileSize}</span>
                         <span>•</span>
                         <div className="flex items-center gap-1">
-                          <Eye className="h-3 w-3" />
-                          {report.views} views
+                          <Eye className="h-4 w-4" aria-hidden="true" />
+                          {report.views} {t('views')}
                         </div>
                       </div>
                     </div>
@@ -248,11 +257,11 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                     <div className="flex flex-col gap-2">
                       <Button variant="outline" size="sm" className="gap-2">
                         <Download className="h-3.5 w-3.5" />
-                        Download
+                        {tCommon('download')}
                       </Button>
                       <Button variant="outline" size="sm" className="gap-2">
                         <Eye className="h-3.5 w-3.5" />
-                        View
+                        {tCommon('view')}
                       </Button>
                     </div>
                   </div>
@@ -266,29 +275,30 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
       {/* Quick Actions */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Quick Actions</CardTitle>
+          <CardTitle className="text-base">{t('quickActions')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-purple-600" />
-              <span className="text-sm">Performance Report</span>
+              <TrendingUp className="h-4 w-4" aria-hidden="true" className="text-purple-600" />
+              <span className="text-sm">{t('performanceReport')}</span>
             </Button>
             <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
-              <PieChart className="h-5 w-5 text-green-600" />
-              <span className="text-sm">Financial Report</span>
+              <PieChart className="h-4 w-4" aria-hidden="true" className="text-green-600" />
+              <span className="text-sm">{t('financialReport')}</span>
             </Button>
             <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
-              <BarChart3 className="h-5 w-5 text-blue-600" />
-              <span className="text-sm">Assets Report</span>
+              <BarChart3 className="h-4 w-4" aria-hidden="true" className="text-blue-600" />
+              <span className="text-sm">{t('assetsReport')}</span>
             </Button>
             <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
-              <Calendar className="h-5 w-5 text-cyan-600" />
-              <span className="text-sm">Time Report</span>
+              <Calendar className="h-4 w-4" aria-hidden="true" className="text-cyan-600" />
+              <span className="text-sm">{t('timeReport')}</span>
             </Button>
           </div>
         </CardContent>
       </Card>
     </div>
+    </main>
   )
 }

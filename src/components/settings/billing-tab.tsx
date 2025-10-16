@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -24,7 +25,8 @@ import {
   Zap,
   Users,
   Database,
-  Shield
+  Shield,
+  Plus
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 
@@ -37,13 +39,14 @@ interface Invoice {
 }
 
 export function BillingTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [upgradeDialogOpen, setUpgradeDialogOpen] = useState(false)
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null)
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly")
 
   const currentPlan = {
-    name: "Professional",
+    name: t('settings.billing.plans.professional'),
     price: 49,
     billingCycle: "monthly",
     nextBillingDate: "2024-02-20",
@@ -57,31 +60,31 @@ export function BillingTab() {
       date: "2024-01-20",
       amount: 49.00,
       status: "paid",
-      description: "Professional Plan - January 2024",
+      description: t('settings.mockData.invoice1Desc'),
     },
     {
       id: "INV-002",
       date: "2023-12-20",
       amount: 49.00,
       status: "paid",
-      description: "Professional Plan - December 2023",
+      description: t('settings.mockData.invoice2Desc'),
     },
     {
       id: "INV-003",
       date: "2023-11-20",
       amount: 49.00,
       status: "paid",
-      description: "Professional Plan - November 2023",
+      description: t('settings.mockData.invoice3Desc'),
     },
   ])
 
   const plans = [
     {
       id: "network",
-      name: "Network",
+      name: t('settings.billing.plans.network'),
       price: 0,
       annualPrice: 0,
-      description: "Free Forever - Perfect for individuals getting started",
+      description: t('settings.billing.plans.networkDesc'),
       features: [
         "Up to 5 users",
         "5GB storage",
@@ -92,10 +95,10 @@ export function BillingTab() {
     },
     {
       id: "crew",
-      name: "Crew",
+      name: t('settings.billing.plans.crew'),
       price: 10,
       annualPrice: 12,
-      description: "For small teams and freelancers",
+      description: t('settings.billing.plans.crewDesc'),
       features: [
         "Up to 15 users",
         "25GB storage",
@@ -107,10 +110,10 @@ export function BillingTab() {
     },
     {
       id: "team",
-      name: "Team",
+      name: t('settings.billing.plans.team'),
       price: 20,
       annualPrice: 24,
-      description: "For growing teams",
+      description: t('settings.billing.plans.teamDesc'),
       features: [
         "Up to 30 users",
         "50GB storage",
@@ -123,10 +126,10 @@ export function BillingTab() {
     },
     {
       id: "pro",
-      name: "Pro",
+      name: t('settings.billing.plans.pro'),
       price: 30,
       annualPrice: 36,
-      description: "For professional teams with advanced needs",
+      description: t('settings.billing.plans.proDesc'),
       features: [
         "Up to 50 users",
         "100GB storage",
@@ -138,10 +141,10 @@ export function BillingTab() {
     },
     {
       id: "core",
-      name: "Core",
+      name: t('settings.billing.plans.core'),
       price: 50,
       annualPrice: 60,
-      description: "Core capabilities for established organizations",
+      description: t('settings.billing.plans.coreDesc'),
       features: [
         "Up to 100 users",
         "250GB storage",
@@ -154,10 +157,10 @@ export function BillingTab() {
     },
     {
       id: "executive",
-      name: "Executive",
+      name: t('settings.billing.plans.executive'),
       price: 100,
       annualPrice: 120,
-      description: "For large organizations with executive oversight",
+      description: t('settings.mockData.enterprisePlanDesc'),
       features: [
         "Unlimited users",
         "1TB storage",
@@ -178,7 +181,7 @@ export function BillingTab() {
 
   const handleConfirmUpgrade = () => {
     toast({
-      title: "Plan upgraded",
+      title: t('settings.toast.planUpgraded'),
       description: `Successfully upgraded to ${plans.find(p => p.id === selectedPlan)?.name} plan.`,
     })
     setUpgradeDialogOpen(false)
@@ -186,7 +189,7 @@ export function BillingTab() {
 
   const handleDownloadInvoice = (invoice: Invoice) => {
     toast({
-      title: "Download started",
+      title: t('settings.toast.downloadStarted'),
       description: `Downloading invoice ${invoice.id}`,
     })
   }
@@ -194,21 +197,33 @@ export function BillingTab() {
   const getStatusBadge = (status: Invoice["status"]) => {
     switch (status) {
       case "paid":
-        return <Badge variant="default" className="bg-green-500"><CheckCircle2 className="h-3 w-3 mr-1" />Paid</Badge>
+        return <Badge variant="default" className="bg-green-500"><CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" />Paid</Badge>
       case "pending":
-        return <Badge variant="secondary"><AlertCircle className="h-3 w-3 mr-1" />Pending</Badge>
+        return <Badge variant="secondary"><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" />Pending</Badge>
       case "failed":
-        return <Badge variant="destructive"><AlertCircle className="h-3 w-3 mr-1" />Failed</Badge>
+        return <Badge variant="destructive"><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" />Failed</Badge>
     }
   }
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('settings.billingTab.description')}
+        </p>
+        <Button size="sm" aria-label="Create new billing item">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          Create
+        </Button>
+      </div>
+
+
       {/* Current Plan */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Zap className="h-5 w-5" />
+            <Zap className="h-5 w-5" aria-hidden="true" />
             Current Plan
           </CardTitle>
         </CardHeader>
@@ -228,21 +243,21 @@ export function BillingTab() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Users className="h-4 w-4" />
+                <Users className="h-4 w-4" aria-hidden="true" />
                 Users
               </div>
               <p className="text-2xl font-bold">{currentPlan.users}</p>
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Database className="h-4 w-4" />
+                <Database className="h-4 w-4" aria-hidden="true" />
                 Storage
               </div>
               <p className="text-2xl font-bold">{currentPlan.storage}GB</p>
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" />
+                <Calendar className="h-4 w-4" aria-hidden="true" />
                 Next Billing
               </div>
               <p className="text-2xl font-bold">
@@ -259,7 +274,7 @@ export function BillingTab() {
           <div className="flex items-start justify-between">
             <div>
               <CardTitle className="flex items-center gap-2">
-                <CreditCard className="h-5 w-5" />
+                <CreditCard className="h-5 w-5" aria-hidden="true" />
                 Payment Method
               </CardTitle>
               <CardDescription className="mt-2">
@@ -272,7 +287,7 @@ export function BillingTab() {
         <CardContent>
           <div className="flex items-center gap-4 p-4 border rounded-lg">
             <div className="h-10 w-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded flex items-center justify-center">
-              <CreditCard className="h-6 w-6 text-white" />
+              <CreditCard className="h-6 w-6 text-white" aria-hidden="true" />
             </div>
             <div className="flex-1">
               <p className="font-medium">Visa ending in 4242</p>
@@ -288,7 +303,7 @@ export function BillingTab() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle>Available Plans</CardTitle>
+              <CardTitle>{t('settings.billingTab.availablePlans')}</CardTitle>
               <CardDescription>
                 Choose the plan that&apos;s right for you
               </CardDescription>
@@ -339,7 +354,7 @@ export function BillingTab() {
                     <ul className="space-y-2">
                       {plan.features.map((feature, index) => (
                         <li key={index} className="flex items-center gap-2 text-sm">
-                          <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" aria-hidden="true" />
                           {feature}
                         </li>
                       ))}
@@ -350,7 +365,7 @@ export function BillingTab() {
                       onClick={() => handleUpgrade(plan.id)}
                       disabled={isCurrentPlan}
                     >
-                      {isCurrentPlan ? "Current Plan" : plan.price === 0 ? "Downgrade" : "Upgrade"}
+                      {isCurrentPlan ? t('settings.billing.currentPlan') : plan.price === 0 ? "Downgrade" : "Upgrade"}
                     </Button>
                   </CardContent>
                 </Card>
@@ -363,7 +378,7 @@ export function BillingTab() {
       {/* Billing History */}
       <Card>
         <CardHeader>
-          <CardTitle>Billing History</CardTitle>
+          <CardTitle>{t('settings.billingTab.billingHistory')}</CardTitle>
           <CardDescription>
             Download your past invoices and receipts
           </CardDescription>
@@ -377,7 +392,7 @@ export function BillingTab() {
               >
                 <div className="flex items-center gap-4 flex-1">
                   <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <DollarSign className="h-5 w-5 text-primary" />
+                    <DollarSign className="h-5 w-5 text-primary" aria-hidden="true" />
                   </div>
                   <div className="flex-1">
                     <p className="font-medium">{invoice.description}</p>
@@ -398,7 +413,7 @@ export function BillingTab() {
                     size="icon"
                     onClick={() => handleDownloadInvoice(invoice)}
                   >
-                    <Download className="h-4 w-4" />
+                    <Download className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
@@ -411,7 +426,7 @@ export function BillingTab() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <TrendingUp className="h-5 w-5" />
+            <TrendingUp className="h-5 w-5" aria-hidden="true" />
             Usage This Month
           </CardTitle>
         </CardHeader>
@@ -443,9 +458,9 @@ export function BillingTab() {
       <Dialog open={upgradeDialogOpen} onOpenChange={setUpgradeDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Upgrade Plan</DialogTitle>
+            <CardTitle>{t('settings.billingTab.upgradePlan')}</CardTitle>
             <DialogDescription>
-              Confirm your plan upgrade
+              {t('settings.billingTab.confirmPlanUpgrade')}
             </DialogDescription>
           </DialogHeader>
 
@@ -472,7 +487,7 @@ export function BillingTab() {
                   <ul className="space-y-1">
                     {plans.find(p => p.id === selectedPlan)?.features.map((feature, index) => (
                       <li key={index} className="flex items-center gap-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-green-500" />
+                        <CheckCircle2 className="h-4 w-4 text-green-500" aria-hidden="true" />
                         {feature}
                       </li>
                     ))}

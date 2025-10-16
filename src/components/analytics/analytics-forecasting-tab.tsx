@@ -1,9 +1,11 @@
 "use client"
 
-import { TrendingUp, Target, AlertCircle } from "lucide-react"
+import { TrendingUp, Target, AlertCircle, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const forecasts = [
   {
     metric: "Revenue",
@@ -46,12 +48,27 @@ interface AnalyticsForecastingTabProps {
 }
 
 export function AnalyticsForecastingTab({ data = [], loading = false }: AnalyticsForecastingTabProps) {
+  const t = useTranslations('intelligence.analytics.analyticsforecasting')
+  const tCommon = useTranslations('common')
+
   const displayData = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       <div className="grid gap-6">
         {forecasts.map((forecast, index) => (
-          <Card key={index}>
+          <Card key={index} role="article">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
@@ -74,7 +91,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
                   {forecast.forecast.map((item, idx) => (
                     <div key={idx} className="p-4 border rounded-lg hover:bg-accent transition-colors">
                       <p className="text-sm font-medium text-muted-foreground mb-2">{item.period}</p>
-                      <p className="text-2xl font-bold mb-2">{item.value.toLocaleString()}</p>
+                      <p className="text-2xl font-bold mb-2" aria-live="polite">{item.value.toLocaleString()}</p>
                       <div className="flex items-center gap-2">
                         <div className="flex-1 h-2 bg-accent rounded-full overflow-hidden">
                           <div 
@@ -91,9 +108,9 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
 
                 {/* Insights */}
                 <div className="p-4 bg-accent rounded-lg flex items-start gap-3">
-                  <Target className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <Target className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
                   <div>
-                    <p className="font-medium mb-1">Forecast Insight</p>
+                    <p className="font-medium mb-1">{t('forecastInsight')}</p>
                     <p className="text-sm text-muted-foreground">
                       Based on historical trends and current data, {forecast.metric.toLowerCase()} is projected to {
                         forecast.trend === "up" ? "increase" : "decrease"
@@ -106,7 +123,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
                 {/* Warning for low confidence */}
                 {forecast.forecast[3].confidence < 85 && (
                   <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg flex items-start gap-2">
-                    <AlertCircle className="h-4 w-4 text-yellow-600 mt-0.5" />
+                    <AlertCircle className="h-4 w-4 text-yellow-600 mt-0.5" aria-hidden="true" />
                     <p className="text-sm text-yellow-800">
                       Long-term forecast confidence is below 85%. Consider reviewing assumptions and market conditions.
                     </p>

@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -19,6 +20,8 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.my-assets')
+  const tCommon = useTranslations('common')
   const { assets, loading } = useMyAssets(workspaceId, userId)
   
 
@@ -41,10 +44,15 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading assets...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -60,9 +68,9 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
   }
 
   const categoryStats = [
-    { name: "Audio", count: 10, icon: Music, color: "text-purple-600" },
-    { name: "Lighting", count: 20, icon: Lightbulb, color: "text-yellow-600" },
-    { name: "Video", count: 4, icon: Video, color: "text-blue-600" },
+    { nameKey: "audio", count: 10, icon: Music, color: "text-purple-600" },
+    { nameKey: "lighting", count: 20, icon: Lightbulb, color: "text-yellow-600" },
+    { nameKey: "video", count: 4, icon: Video, color: "text-blue-600" },
   ]
 
   const getTypeColor = (type: string) => {
@@ -94,11 +102,16 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Manage your owned and rented equipment
+        </p>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" className="gap-2" disabled>
-            <Search className="h-4 w-4" />
+            <Search className="h-4 w-4" aria-hidden="true" />
             Search
           </Button>
           <Button 
@@ -106,7 +119,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
             className="gap-2"
             onClick={() => router.push(`/workspace/${workspaceId}/assets/inventory`)}
           >
-            <Plus className="h-4 w-4" />
+            <Plus className="h-4 w-4" aria-hidden="true" />
             Add Asset
           </Button>
         </div>
@@ -142,7 +155,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold">{summary.totalValue}</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Value</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('totalValue')}</p>
             </div>
           </CardContent>
         </Card>
@@ -158,7 +171,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold text-cyan-600">{summary.available}</p>
-              <p className="text-xs text-muted-foreground mt-1">Available</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('available')}</p>
             </div>
           </CardContent>
         </Card>
@@ -175,12 +188,12 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
               const Icon = category.icon
               return (
                 <div
-                  key={category.name}
+                  key={t(category.nameKey)}
                   className="p-4 border rounded-lg text-center hover:bg-accent transition-colors cursor-pointer"
                 >
                   <Icon className={`h-8 w-8 mx-auto mb-2 ${category.color}`} />
                   <p className="font-semibold">{category.count}</p>
-                  <p className="text-xs text-muted-foreground">{category.name}</p>
+                  <p className="text-xs text-muted-foreground">{t(category.nameKey)}</p>
                 </div>
               )
             })}
@@ -205,7 +218,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
                   <div className="flex-1 space-y-2">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="font-semibold">{asset.name}</h3>
+                        <h3 className="font-semibold">{t(asset.nameKey)}</h3>
                         <p className="text-sm text-muted-foreground mt-1">
                           Qty: {asset.quantity} • {asset.location}
                         </p>
@@ -226,7 +239,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
                     </div>
 
                     <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-                      <span>Last used: {asset.lastUsed}</span>
+                      <span>{t('lastUsed')}: {asset.lastUsed}</span>
                       <span>•</span>
                       <span>Project: {asset.project}</span>
                       <span>•</span>
@@ -262,7 +275,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
       <Card>
         <CardHeader>
           <CardTitle className="text-base flex items-center gap-2">
-            <TrendingUp className="h-4 w-4" />
+            <TrendingUp className="h-4 w-4" aria-hidden="true" />
             Asset Value
           </CardTitle>
         </CardHeader>
@@ -284,5 +297,6 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
         </CardContent>
       </Card>
     </div>
+    </main>
   )
 }

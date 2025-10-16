@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -25,6 +26,8 @@ import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('production.events.run_of_show')
+  const tCommon = useTranslations('common')
   const { data: runOfShow, loading } = useModuleData(workspaceId, 'events', 'run-of-show')
   const [currentCue, setCurrentCue] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
@@ -32,10 +35,15 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading run of show...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -91,23 +99,36 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
   const progress = runOfShow.length > 0 ? (completedCues / runOfShow.length) * 100 : 0
 
   return (
-    <div className="space-y-6">
-      {/* Controls */}
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
           Real-time show execution and cue management
         </p>
         <div className="flex gap-2">
+          <Button 
+            size="lg" 
+            variant={isRunning ? "outline" : "default"}
+            onClick={() => setIsRunning(!isRunning)}
+          >
+            {isRunning ? <Pause className="h-4 w-4" aria-hidden="true" className="mr-2" /> : <Play className="h-4 w-4" aria-hidden="true" className="mr-2" />}
+            {isRunning ? 'Pause' : 'Start'}
+          </Button>
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
+            <SkipForward className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            Next Cue
+          </Button>
+          <Button variant="outline" size="sm">
+            <Download className="h-4 w-4" aria-hidden="true" className="mr-2" />
             Export
           </Button>
           <Button variant="outline" size="sm">
-            <Edit className="h-4 w-4 mr-2" />
+            <Edit className="h-4 w-4" aria-hidden="true" className="mr-2" />
             Edit
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
             Add Cue
           </Button>
         </div>
@@ -128,11 +149,11 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 variant={isRunning ? "outline" : "default"}
                 onClick={() => setIsRunning(!isRunning)}
               >
-                {isRunning ? <Pause className="h-5 w-5 mr-2" /> : <Play className="h-5 w-5 mr-2" />}
+                {isRunning ? <Pause className="h-4 w-4" aria-hidden="true" className="mr-2" /> : <Play className="h-4 w-4" aria-hidden="true" className="mr-2" />}
                 {isRunning ? 'Pause' : 'Start'}
               </Button>
               <Button size="lg" variant="outline">
-                <SkipForward className="h-5 w-5 mr-2" />
+                <SkipForward className="h-4 w-4" aria-hidden="true" className="mr-2" />
                 Next Cue
               </Button>
             </div>
@@ -177,17 +198,17 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                           {cue.number || index + 1}
                         </div>
                         {cue.status === 'completed' && (
-                          <CheckCircle2 className="h-4 w-4 mx-auto" />
+                          <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="mx-auto" />
                         )}
                         {cue.status === 'warning' && (
-                          <AlertCircle className="h-4 w-4 mx-auto" />
+                          <AlertCircle className="h-4 w-4" aria-hidden="true" className="mx-auto" />
                         )}
                       </div>
 
                       {/* Time */}
                       <div className="flex-shrink-0 w-24">
                         <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                          <Clock className="h-3 w-3" />
+                          <Clock className="h-4 w-4" aria-hidden="true" />
                           <span className="font-mono">{cue.time || '--:--'}</span>
                         </div>
                         {cue.duration && (
@@ -200,7 +221,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                       {/* Cue Type */}
                       <div className="flex-shrink-0">
                         <Badge variant="secondary" className={getCueTypeColor(cue.type)}>
-                          <CueIcon className="h-3 w-3 mr-1" />
+                          <CueIcon className="h-4 w-4" aria-hidden="true" className="mr-1" />
                           {cue.type}
                         </Badge>
                       </div>
@@ -219,7 +240,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                       {cue.assignedTo && (
                         <div className="flex-shrink-0">
                           <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                            <Users className="h-3 w-3" />
+                            <Users className="h-4 w-4" aria-hidden="true" />
                             <span className="truncate max-w-32">{cue.assignedTo}</span>
                           </div>
                         </div>
@@ -302,5 +323,6 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
       )}
     </div>
+    </main>
   )
 }

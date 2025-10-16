@@ -193,7 +193,7 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
               <input
                 name="code"
                 type="text"
-                placeholder="Or enter barcode manually..."
+                placeholder={t('assets.barcode.manualPlaceholder')}
                 className="flex-1 px-3 py-2 text-sm border rounded-md"
                 autoComplete="off"
               />

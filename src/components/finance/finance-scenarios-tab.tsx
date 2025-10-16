@@ -6,59 +6,75 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { GitCompare, TrendingUp, TrendingDown, Minus, Plus, AlertCircle } from "lucide-react"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
+import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinanceScenariosTabProps {
   data?: any[]
   loading?: boolean
 }
 
-// Mock data for demo/fallback
+// Mock data for demo/fallback - will be replaced with t() calls in component
 const MOCK_SCENARIOS = [
   {
     id: '1',
     type: 'optimistic',
-    name: 'Best Case',
+    nameKey: 'mockData.scenarios.bestCase.name',
     probability: 20,
     projectedRevenue: 500000,
     projectedExpenses: 350000,
     projectedNet: 150000,
     variance: 30,
-    description: 'All deals close, minimal overruns',
+    descriptionKey: 'mockData.scenarios.bestCase.description',
   },
   {
     id: '2',
     type: 'expected',
-    name: 'Expected Case',
+    nameKey: 'mockData.scenarios.expectedCase.name',
     probability: 60,
     projectedRevenue: 400000,
     projectedExpenses: 320000,
     projectedNet: 80000,
     variance: 0,
-    description: 'Standard performance metrics',
+    descriptionKey: 'mockData.scenarios.expectedCase.description',
     isBaseline: true,
   },
   {
     id: '3',
     type: 'pessimistic',
-    name: 'Worst Case',
+    nameKey: 'mockData.scenarios.worstCase.name',
     probability: 20,
     projectedRevenue: 300000,
     projectedExpenses: 310000,
     projectedNet: -10000,
     variance: -22.5,
-    description: 'Deals delayed, cost overruns',
+    descriptionKey: 'mockData.scenarios.worstCase.description',
   },
 ]
 
 export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps) {
+  const t = useTranslations('business.finance.scenarios')
+  const tCommon = useTranslations('business.common')
+  const locale = useLocale()
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="flex items-center justify-center h-full"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading scenarios...</p>
+          <div 
+            className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"
+            aria-hidden="true"
+          ></div>
+          <p className="text-muted-foreground">
+            {tCommon('loading', { resource: t('title') })}
+          </p>
         </div>
       </div>
     )
@@ -80,9 +96,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
   }
 
   const getVarianceIcon = (variance: number) => {
-    if (variance > 0) return <TrendingUp className="h-4 w-4" />
-    if (variance < 0) return <TrendingDown className="h-4 w-4" />
-    return <Minus className="h-4 w-4" />
+    if (variance > 0) return <TrendingUp className="h-4 w-4" aria-hidden="true"  />
+    if (variance < 0) return <TrendingDown className="h-4 w-4" aria-hidden="true"  />
+    return <Minus className="h-4 w-4" aria-hidden="true"  />
   }
 
   const getScenarioColor = (type: string) => {
@@ -96,12 +112,24 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Create and compare financial scenarios
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4" aria-hidden="true"  />
+          Create
+        </Button>
+      </div>
+
+
       {/* Summary Metrics */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Active Scenarios</CardTitle>
-            <GitCompare className="h-4 w-4 text-muted-foreground" />
+            <GitCompare className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{scenarios.length}</div>
@@ -114,7 +142,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Weighted Average</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <TrendingUp className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${weightedAverage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
@@ -129,7 +157,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Best Case</CardTitle>
-            <TrendingUp className="h-4 w-4 text-green-600" />
+            <TrendingUp className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
@@ -144,7 +172,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Worst Case</CardTitle>
-            <TrendingDown className="h-4 w-4 text-red-600" />
+            <TrendingDown className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">
@@ -166,7 +194,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               <CardDescription>Side-by-side analysis of financial projections</CardDescription>
             </div>
             <Button>
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus className="h-4 w-4" aria-hidden="true"  />
               New Scenario
             </Button>
           </div>
@@ -182,12 +210,12 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               >
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{scenario.name}</CardTitle>
+                    <CardTitle className="text-lg">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</CardTitle>
                     {scenario.isBaseline && (
                       <Badge variant="secondary">Baseline</Badge>
                     )}
                   </div>
-                  <CardDescription>{scenario.description}</CardDescription>
+                  <CardDescription>{scenario.descriptionKey ? t(scenario.descriptionKey) : scenario.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {/* Probability */}
@@ -271,7 +299,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               <h4 className="text-sm font-medium">Revenue Projections</h4>
               {scenarios.map((scenario) => (
                 <div key={scenario.id} className="flex items-center gap-3">
-                  <div className="w-32 text-sm text-muted-foreground">{scenario.name}</div>
+                  <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
                     <div className="w-full bg-secondary rounded-full h-6 relative">
                       <div
@@ -293,7 +321,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               <h4 className="text-sm font-medium">Expense Projections</h4>
               {scenarios.map((scenario) => (
                 <div key={scenario.id} className="flex items-center gap-3">
-                  <div className="w-32 text-sm text-muted-foreground">{scenario.name}</div>
+                  <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
                     <div className="w-full bg-secondary rounded-full h-6 relative">
                       <div
@@ -315,7 +343,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               <h4 className="text-sm font-medium">Net Profit/Loss</h4>
               {scenarios.map((scenario) => (
                 <div key={scenario.id} className="flex items-center gap-3">
-                  <div className="w-32 text-sm text-muted-foreground">{scenario.name}</div>
+                  <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
                     <div className="w-full bg-secondary rounded-full h-6 relative">
                       <div
@@ -339,7 +367,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
       <Card className="border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <AlertCircle className="h-5 w-5" />
+            <AlertCircle className="h-5 w-5" aria-hidden="true"  />
             Scenario Insights
           </CardTitle>
         </CardHeader>

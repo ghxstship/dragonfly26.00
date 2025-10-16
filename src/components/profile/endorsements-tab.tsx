@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -28,6 +29,7 @@ interface SkillEndorsement {
 }
 
 export function EndorsementsTab() {
+  const t = useTranslations()
   const { profile, loading } = useProfileData()
   const { toast } = useToast()
   const [searchQuery, setSearchQuery] = useState("")
@@ -44,50 +46,45 @@ export function EndorsementsTab() {
   const mockEndorsements: Endorsement[] = [
     {
       id: "1",
-      endorserName: "Sarah Johnson",
-      endorserTitle: "Production Director",
-      skill: "Production Management",
-      message:
-        "I've worked with this professional on multiple large-scale events. Their organizational skills and ability to manage complex productions under pressure is exceptional. They consistently deliver high-quality results.",
+      endorserName: t('profile.endorsements.mock1-name'),
+      endorserTitle: t('profile.endorsements.mock1-title'),
+      skill: t('profile.endorsements.mock1-skill'),
+      message: t('profile.endorsements.mock1-message'),
       date: "2024-09-15",
-      projectName: "Summer Music Festival 2024",
+      projectName: t('profile.endorsements.mock1-project'),
     },
     {
       id: "2",
-      endorserName: "Michael Chen",
-      endorserTitle: "Event Coordinator",
-      skill: "Audio Engineering",
-      message:
-        "Outstanding audio engineer with deep technical knowledge. Always ensures perfect sound quality and is quick to troubleshoot any issues. A pleasure to work with.",
+      endorserName: t('profile.endorsements.mock2-name'),
+      endorserTitle: t('profile.endorsements.mock2-title'),
+      skill: t('profile.endorsements.mock2-skill'),
+      message: t('profile.endorsements.mock2-message'),
       date: "2024-08-22",
-      projectName: "Corporate Conference",
+      projectName: t('profile.endorsements.mock2-project'),
     },
     {
       id: "3",
-      endorserName: "Robert Williams",
-      endorserTitle: "Technical Director",
-      skill: "Team Leadership",
-      message:
-        "Excellent team player and natural leader. Great at motivating crew members and maintaining positive energy even during challenging production schedules.",
+      endorserName: t('profile.endorsements.mock3-name'),
+      endorserTitle: t('profile.endorsements.mock3-title'),
+      skill: t('profile.endorsements.mock3-skill'),
+      message: t('profile.endorsements.mock3-message'),
       date: "2024-07-10",
-      projectName: "Broadway Production Setup",
+      projectName: t('profile.endorsements.mock3-project'),
     },
     {
       id: "4",
-      endorserName: "Emily Rodriguez",
-      endorserTitle: "Stage Manager",
-      skill: "Problem Solving",
-      message:
-        "Incredibly resourceful and thinks on their feet. I've seen them solve complex technical challenges that saved us time and money. Highly recommend!",
+      endorserName: t('profile.endorsements.mock4-name'),
+      endorserTitle: t('profile.endorsements.mock4-title'),
+      skill: t('profile.endorsements.mock4-skill'),
+      message: t('profile.endorsements.mock4-message'),
       date: "2024-06-05",
     },
     {
       id: "5",
-      endorserName: "David Kim",
-      endorserTitle: "Lighting Designer",
-      skill: "Lighting Design",
-      message:
-        "Creative and technically proficient. Has a great eye for lighting design and understands how to create the perfect atmosphere for any production.",
+      endorserName: t('profile.endorsements.mock5-name'),
+      endorserTitle: t('profile.endorsements.mock5-title'),
+      skill: t('profile.endorsements.mock5-skill'),
+      message: t('profile.endorsements.mock5-message'),
       date: "2024-05-18",
     },
   ]
@@ -97,34 +94,34 @@ export function EndorsementsTab() {
 
   const skillEndorsements: SkillEndorsement[] = [
     {
-      skill: "Production Management",
+      skill: t('profile.endorsements.skill1-name'),
       count: 12,
-      endorsers: ["Sarah Johnson", "Michael Chen", "+10 others"],
+      endorsers: t('profile.endorsements.skill1-endorsers') as any,
     },
     {
-      skill: "Team Leadership",
+      skill: t('profile.endorsements.skill2-name'),
       count: 10,
-      endorsers: ["Robert Williams", "Emily Rodriguez", "+8 others"],
+      endorsers: t('profile.endorsements.skill2-endorsers') as any,
     },
     {
-      skill: "Audio Engineering",
+      skill: t('profile.endorsements.skill3-name'),
       count: 8,
-      endorsers: ["Michael Chen", "David Kim", "+6 others"],
+      endorsers: t('profile.endorsements.skill3-endorsers') as any,
     },
     {
-      skill: "Problem Solving",
+      skill: t('profile.endorsements.skill4-name'),
       count: 15,
-      endorsers: ["Emily Rodriguez", "Sarah Johnson", "+13 others"],
+      endorsers: t('profile.endorsements.skill4-endorsers') as any,
     },
     {
-      skill: "Lighting Design",
+      skill: t('profile.endorsements.skill5-name'),
       count: 6,
-      endorsers: ["David Kim", "Robert Williams", "+4 others"],
+      endorsers: t('profile.endorsements.skill5-endorsers') as any,
     },
     {
-      skill: "Stage Management",
+      skill: t('profile.endorsements.skill6-name'),
       count: 9,
-      endorsers: ["Emily Rodriguez", "Sarah Johnson", "+7 others"],
+      endorsers: t('profile.endorsements.skill6-endorsers') as any,
     },
   ]
 
@@ -138,40 +135,51 @@ export function EndorsementsTab() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     )
   }
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('profile.descriptions.endorsements')}
+        </p>
+        <Button size="sm" variant="outline">
+          <UserPlus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('profile.endorsements.requestEndorsement')}
+        </Button>
+      </div>
+
       <div className="grid md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Endorsements</CardTitle>
-            <ThumbsUp className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('profile.endorsements.totalEndorsements')}</CardTitle>
+            <ThumbsUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{displayEndorsements.length}</div>
-            <p className="text-xs text-muted-foreground">From colleagues and managers</p>
+            <p className="text-xs text-muted-foreground">{t('profile.endorsements.total')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Skills Endorsed</CardTitle>
-            <Badge className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('profile.endorsements.skillsEndorsed')}</CardTitle>
+            <Badge className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{skillEndorsements.length}</div>
-            <p className="text-xs text-muted-foreground">Different skills validated</p>
+            <p className="text-xs text-muted-foreground">{t('profile.endorsements.skillsEndorsed')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Top Skill</CardTitle>
-            <MessageSquare className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('profile.endorsements.topSkill')}</CardTitle>
+            <MessageSquare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -186,8 +194,8 @@ export function EndorsementsTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Skills & Endorsements</CardTitle>
-          <CardDescription>Skills validated by your colleagues</CardDescription>
+          <CardTitle>{t('profile.endorsements.skillsAndEndorsements')}</CardTitle>
+          <CardDescription>{t('profile.endorsements.skillsEndorsed')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-2 gap-4">
@@ -199,7 +207,7 @@ export function EndorsementsTab() {
                 <div className="space-y-1">
                   <p className="font-medium">{skillEndorsement.skill}</p>
                   <p className="text-sm text-muted-foreground">
-                    Endorsed by {skillEndorsement.endorsers.join(", ")}
+                    {t('profile.endorsements.endorsedBy')} {skillEndorsement.endorsers.join(", ")}
                   </p>
                 </div>
                 <Badge variant="secondary">{skillEndorsement.count}</Badge>
@@ -213,17 +221,17 @@ export function EndorsementsTab() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle>Recommendations</CardTitle>
-              <CardDescription>Detailed recommendations from colleagues</CardDescription>
+              <CardTitle>{t('profile.endorsements.recommendations')}</CardTitle>
+              <CardDescription>{t('profile.endorsements.detailedRecommendations')}</CardDescription>
             </div>
             <Button variant="outline" size="sm">
               <UserPlus className="h-4 w-4 mr-2" />
-              Request Endorsement
+              {t('profile.endorsements.requestEndorsement')}
             </Button>
           </div>
           <div className="pt-4">
             <Input
-              placeholder="Search endorsements..."
+              placeholder={t('profile.endorsements.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -232,7 +240,7 @@ export function EndorsementsTab() {
         <CardContent className="space-y-6">
           {filteredEndorsements.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-8">
-              No endorsements found matching your search
+              {t('profile.endorsements.noEndorsements')}
             </p>
           ) : (
             filteredEndorsements.map((endorsement) => (
@@ -272,12 +280,12 @@ export function EndorsementsTab() {
 
                     <div className="flex gap-2 pt-2">
                       <Button variant="ghost" size="sm">
-                        <ThumbsUp className="h-3 w-3 mr-1" />
-                        Thank
+                        <ThumbsUp className="h-3 w-3 mr-1" aria-hidden="true" />
+                        {t('profile.endorsements.thank')}
                       </Button>
                       <Button variant="ghost" size="sm">
-                        <MessageSquare className="h-3 w-3 mr-1" />
-                        Reply
+                        <MessageSquare className="h-3 w-3 mr-1" aria-hidden="true" />
+                        {t('profile.endorsements.reply')}
                       </Button>
                     </div>
                   </div>
@@ -290,20 +298,20 @@ export function EndorsementsTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Give Endorsements</CardTitle>
+          <CardTitle>{t('profile.endorsements.giveEndorsements')}</CardTitle>
           <CardDescription>
-            Endorse your colleagues for their skills and contributions
+            {t('profile.endorsements.giveDescription')}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="text-center py-8">
-            <UserPlus className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+            <UserPlus className="h-12 w-12 mx-auto text-muted-foreground mb-4" aria-hidden="true" />
             <p className="text-sm text-muted-foreground mb-4">
-              Help your colleagues by endorsing their skills and writing recommendations
+              {t('profile.endorsements.helpColleagues')}
             </p>
             <Button>
               <UserPlus className="h-4 w-4 mr-2" />
-              Endorse a Colleague
+              {t('profile.endorsements.endorseColleague')}
             </Button>
           </div>
         </CardContent>
@@ -311,9 +319,7 @@ export function EndorsementsTab() {
 
       <div className="bg-muted/50 rounded-lg p-4">
         <p className="text-sm text-muted-foreground">
-          <strong>Tip:</strong> Endorsements help build trust and credibility. Request endorsements
-          from colleagues you&apos;ve worked with closely, and be sure to return the favor by endorsing
-          others for their valuable contributions.
+          <strong>{t('profile.endorsements.tip')}</strong> {t('profile.endorsements.tipDescription')}
         </p>
       </div>
     </div>

@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -18,15 +19,22 @@ import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('production.events.calendar')
+  const tCommon = useTranslations('common')
   const { data: events, loading } = useModuleData(workspaceId, 'events', 'all-events')
   const [currentDate, setCurrentDate] = useState(new Date())
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading events...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -85,7 +93,8 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
   }
 
   return (
-    <div className="space-y-6">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
       {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
@@ -93,11 +102,11 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
+            <Filter className="h-4 w-4" aria-hidden="true" className="mr-2" />
             Filter
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
             New Event
           </Button>
         </div>
@@ -108,7 +117,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">This Month</CardTitle>
-            <CalendarIcon className="h-4 w-4 text-muted-foreground" />
+            <CalendarIcon className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{events.length}</div>
@@ -118,7 +127,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Today</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" />
+            <Clock className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -130,7 +139,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Performances</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <Users className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -142,7 +151,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Rehearsals</CardTitle>
-            <MapPin className="h-4 w-4 text-muted-foreground" />
+            <MapPin className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -160,7 +169,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
             <CardTitle>{getMonthName(currentDate)}</CardTitle>
             <div className="flex gap-2">
               <Button variant="outline" size="icon" onClick={previousMonth}>
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               </Button>
               <Button 
                 variant="outline" 
@@ -170,7 +179,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
                 Today
               </Button>
               <Button variant="outline" size="icon" onClick={nextMonth}>
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
           </div>
@@ -250,7 +259,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
                     <div className="flex flex-col">
                       <span className="font-medium">{event.name}</span>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Clock className="h-3 w-3" />
+                        <Clock className="h-4 w-4" aria-hidden="true" />
                         <span>
                           {new Date(event.start_time || event.start_date).toLocaleTimeString('en-US', {
                             hour: 'numeric',
@@ -260,7 +269,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
                         </span>
                         {event.location && (
                           <>
-                            <MapPin className="h-3 w-3 ml-2" />
+                            <MapPin className="h-4 w-4" aria-hidden="true" className="ml-2" />
                             <span>{event.location}</span>
                           </>
                         )}
@@ -280,5 +289,6 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </Card>
       )}
     </div>
+    </main>
   )
 }

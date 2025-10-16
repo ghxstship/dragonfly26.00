@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -22,6 +23,8 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.my-advances')
+  const tCommon = useTranslations('common')
   const { advances, loading } = useMyAdvances(workspaceId, userId)
   
 
@@ -48,10 +51,15 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading advances...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -175,14 +183,15 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button 
-          size="sm" 
-          className="gap-2"
-          onClick={() => router.push(`/workspace/${workspaceId}/assets/advances`)}
-        >
-          <Plus className="h-4 w-4" />
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Track expense advances and reimbursements
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
           Request Advance
         </Button>
       </div>
@@ -209,7 +218,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold">{summary.totalItems}</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Items</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('totalItems')}</p>
             </div>
           </CardContent>
         </Card>
@@ -258,11 +267,11 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
 
                       <div className="flex flex-wrap items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(advance.status)}>
-                          <StatusIcon className="h-3 w-3 mr-1" />
+                          <StatusIcon className="h-4 w-4" aria-hidden="true" className="mr-1" />
                           {advance.status}
                         </Badge>
                         <Badge variant="outline" className={getCategoryColor(advance.category)}>
-                          <CategoryIcon className="h-3 w-3 mr-1" />
+                          <CategoryIcon className="h-4 w-4" aria-hidden="true" className="mr-1" />
                           {getCategoryLabel(advance.category)}
                         </Badge>
                         {advance.assignedUsers > 0 && (
@@ -273,17 +282,17 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                       </div>
 
                       <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-                        <span>Requested: {advance.requestDate}</span>
+                        <span>{t('requested')}: {advance.requestDate}</span>
                         {advance.startDate && (
                           <>
                             <span>•</span>
-                            <span>Start: {advance.startDate}</span>
+                            <span>{t('start')}: {advance.startDate}</span>
                           </>
                         )}
                         {advance.endDate && (
                           <>
                             <span>•</span>
-                            <span>End: {advance.endDate}</span>
+                            <span>{t('end')}: {advance.endDate}</span>
                           </>
                         )}
                         {advance.approvedDate && (
@@ -295,7 +304,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                         {advance.approver && (
                           <>
                             <span>•</span>
-                            <span>By: {advance.approver}</span>
+                            <span>{t('by')}: {advance.approver}</span>
                           </>
                         )}
                       </div>
@@ -325,7 +334,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                     </div>
 
                     <Button variant="ghost" size="icon">
-                      <FileText className="h-4 w-4" />
+                      <FileText className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </div>
                 </div>
@@ -339,7 +348,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
       <Card>
         <CardHeader>
           <CardTitle className="text-base flex items-center gap-2">
-            <Package className="h-4 w-4" />
+            <Package className="h-4 w-4" aria-hidden="true" />
             Items Overview
           </CardTitle>
         </CardHeader>
@@ -347,7 +356,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
           <div className="grid grid-cols-3 gap-4 text-center">
             <div className="p-4 border rounded-lg">
               <p className="text-2xl font-bold">{summary.totalItems}</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Items</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('totalItems')}</p>
             </div>
             <div className="p-4 border rounded-lg">
               <p className="text-2xl font-bold text-yellow-600">{summary.itemsOut}</p>
@@ -361,5 +370,6 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
         </CardContent>
       </Card>
     </div>
+    </main>
   )
 }

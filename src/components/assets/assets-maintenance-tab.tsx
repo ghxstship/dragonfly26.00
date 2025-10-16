@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -19,15 +20,22 @@ import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('production.assets.maintenance')
+  const tCommon = useTranslations('common')
   const { data: maintenanceItems, loading } = useModuleData(workspaceId, 'assets', 'maintenance')
   const [currentDate, setCurrentDate] = useState(new Date())
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading maintenance schedule...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -87,19 +95,20 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
   })
 
   return (
-    <div className="space-y-6">
-      {/* Actions */}
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
           Schedule and track equipment maintenance
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
+            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
             Filter
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             Schedule Maintenance
           </Button>
         </div>
@@ -110,7 +119,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Scheduled</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{maintenanceItems.length}</div>
@@ -120,8 +129,8 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
 
         <Card className="border-red-200 dark:border-red-900">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Overdue</CardTitle>
-            <AlertCircle className="h-4 w-4 text-red-600" />
+            <CardTitle className="text-sm font-medium">{t('overdue')}</CardTitle>
+            <AlertCircle className="h-4 w-4 text-red-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">{overdueMaintenance.length}</div>
@@ -132,7 +141,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
         <Card className="border-yellow-200 dark:border-yellow-900">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Due This Week</CardTitle>
-            <Clock className="h-4 w-4 text-yellow-600" />
+            <Clock className="h-4 w-4 text-yellow-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-yellow-600">{upcomingMaintenance.length}</div>
@@ -142,8 +151,8 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Completed</CardTitle>
-            <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('completed')}</CardTitle>
+            <CheckCircle2 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -163,7 +172,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
             </CardTitle>
             <div className="flex gap-2">
               <Button variant="outline" size="icon" onClick={previousMonth}>
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               </Button>
               <Button 
                 variant="outline" 
@@ -173,7 +182,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
                 Today
               </Button>
               <Button variant="outline" size="icon" onClick={nextMonth}>
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
           </div>
@@ -222,7 +231,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
                               : getMaintenanceTypeColor(item.type)
                           }`}
                         >
-                          <Wrench className="h-3 w-3 inline mr-1" />
+                          <Wrench className="h-4 w-4 inline mr-1" aria-hidden="true" />
                           {item.asset_name}
                         </div>
                       )
@@ -245,7 +254,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
         <Card className="border-red-200 dark:border-red-900">
           <CardHeader>
             <CardTitle className="text-red-600 flex items-center gap-2">
-              <AlertCircle className="h-5 w-5" />
+              <AlertCircle className="h-4 w-4" aria-hidden="true" />
               Overdue Maintenance
             </CardTitle>
             <CardDescription>{overdueMaintenance.length} items need immediate attention</CardDescription>
@@ -255,7 +264,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
               {overdueMaintenance.map((item: any) => (
                 <div key={item.id} className="flex items-center justify-between p-3 border rounded-lg">
                   <div className="flex items-center gap-3">
-                    <Wrench className="h-4 w-4 text-red-600" />
+                    <Wrench className="h-4 w-4 text-red-600" aria-hidden="true" />
                     <div>
                       <div className="font-medium">{item.asset_name}</div>
                       <div className="text-sm text-muted-foreground">{item.description}</div>
@@ -277,5 +286,6 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
       )}
     </div>
+    </main>
   )
 }

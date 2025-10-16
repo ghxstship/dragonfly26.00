@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -16,6 +17,8 @@ interface ShopTabProps {
 }
 
 export function ShopTab({ data = [], loading = false }: ShopTabProps) {
+  const t = useTranslations('marketplace.shop')
+  const tCommon = useTranslations('common')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const productsData = data
   const [cart, setCart] = useState<Map<string, number>>(new Map())
@@ -84,16 +87,20 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
       case "pre-order":
         return <Badge variant="outline" className="bg-blue-500/10 text-blue-600 border-blue-500/20">Pre-order</Badge>
       default:
-        return <Badge variant="outline">Available</Badge>
+        return <Badge variant="outline">{t('available')}</Badge>
     }
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
         <div className="flex items-center gap-2">
           <Badge variant="secondary" className="text-sm">
-            <ShoppingCart className="h-3 w-3 mr-1" />
+            <ShoppingCart className="h-3 w-3 mr-1" aria-hidden="true" />
             {cart.size} items
           </Badge>
           <Button onClick={() => setCartDrawerOpen(true)}>
@@ -105,24 +112,24 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
       {/* Filters and Search */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search products..." className="pl-9" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Input placeholder={t('searchProducts')} className="pl-9" />
         </div>
         <Select defaultValue="all">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Category" />
+            <SelectValue placeholder={t('category')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Categories</SelectItem>
+            <SelectItem value="all">{t('allCategories')}</SelectItem>
             <SelectItem value="audio">Audio Equipment</SelectItem>
-            <SelectItem value="lighting">Lighting</SelectItem>
-            <SelectItem value="video">Video</SelectItem>
-            <SelectItem value="staging">Staging</SelectItem>
+            <SelectItem value="lighting">{t('lighting')}</SelectItem>
+            <SelectItem value="video">{t('video')}</SelectItem>
+            <SelectItem value="staging">{t('staging')}</SelectItem>
           </SelectContent>
         </Select>
         <Select defaultValue="featured">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Sort by" />
+            <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="featured">Featured</SelectItem>
@@ -133,7 +140,7 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
           </SelectContent>
         </Select>
         <Button variant="outline">
-          <Filter className="h-4 w-4 mr-2" />
+          <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
           Filters
         </Button>
       </div>
@@ -144,7 +151,7 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
           <Card key={item.id} className="group overflow-hidden hover:shadow-lg transition-shadow">
             {/* Product Image */}
             <div className="relative aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
-              <Package className="h-20 w-20 text-muted-foreground/30" />
+              <Package className="h-20 w-20 text-muted-foreground/30" aria-hidden="true" />
               
               {/* Quick Actions */}
               <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -216,12 +223,8 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
                 className="flex-1"
                 onClick={() => addToCart(item.id)}
               >
-                <ShoppingCart className="h-4 w-4 mr-2" />
-                Add
-              </Button>
-              <Button variant="outline" onClick={() => handleViewDetails(item)}>
-                Details
-              </Button>
+                <ShoppingCart className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('add')}</Button>
+              <Button variant="outline" onClick={() => handleViewDetails(item)}>{tCommon('details')}</Button>
             </CardFooter>
           </Card>
         ))}

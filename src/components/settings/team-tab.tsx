@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -53,6 +54,7 @@ interface TeamMember {
 }
 
 export function TeamTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [inviteDialogOpen, setInviteDialogOpen] = useState(false)
   const [inviteEmail, setInviteEmail] = useState("")
@@ -61,7 +63,7 @@ export function TeamTab() {
   const [members, setMembers] = useState<TeamMember[]>([
     {
       id: "1",
-      name: "John Doe",
+      nameKey: "john_doe",
       email: "john.doe@example.com",
       avatar: "https://github.com/shadcn.png",
       role: "owner",
@@ -70,7 +72,7 @@ export function TeamTab() {
     },
     {
       id: "2",
-      name: "Jane Smith",
+      nameKey: "jane_smith",
       email: "jane.smith@example.com",
       role: "admin",
       status: "active",
@@ -78,7 +80,7 @@ export function TeamTab() {
     },
     {
       id: "3",
-      name: "Bob Wilson",
+      nameKey: "bob_wilson",
       email: "bob.wilson@example.com",
       role: "member",
       status: "active",
@@ -86,7 +88,7 @@ export function TeamTab() {
     },
     {
       id: "4",
-      name: "Alice Johnson",
+      nameKey: "alice_johnson",
       email: "alice.johnson@example.com",
       role: "member",
       status: "pending",
@@ -96,7 +98,7 @@ export function TeamTab() {
 
   const handleInvite = () => {
     toast({
-      title: "Invitation sent",
+      title: t('settings.toast.invitationSent'),
       description: `An invitation has been sent to ${inviteEmail}`,
     })
     setInviteDialogOpen(false)
@@ -107,8 +109,8 @@ export function TeamTab() {
   const handleRemoveMember = (memberId: string) => {
     setMembers(members.filter(m => m.id !== memberId))
     toast({
-      title: "Member removed",
-      description: "The team member has been removed successfully.",
+      title: t('settings.toast.memberRemoved'),
+      description: t('settings.toast.memberRemovedDesc'),
       variant: "destructive",
     })
   }
@@ -118,8 +120,8 @@ export function TeamTab() {
       m.id === memberId ? { ...m, role: newRole as TeamMember["role"] } : m
     ))
     toast({
-      title: "Role updated",
-      description: "The member's role has been changed successfully.",
+      title: t('settings.toast.roleUpdated'),
+      description: t('settings.toast.roleUpdatedDesc'),
     })
   }
 
@@ -151,11 +153,14 @@ export function TeamTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header Actions */}
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('settings.teamTab.description')}
+        </p>
         <Button onClick={() => setInviteDialogOpen(true)}>
-          <UserPlus className="h-4 w-4 mr-2" />
-          Invite Member
+          <UserPlus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('settings.teamTab.inviteMember')}
         </Button>
       </div>
 
@@ -163,13 +168,13 @@ export function TeamTab() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Members</CardDescription>
+            <CardDescription>{t('settings.teamTab.totalMembers')}</CardDescription>
             <CardTitle className="text-3xl">{members.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Active</CardDescription>
+            <CardDescription>{t('settings.teamTab.active')}</CardDescription>
             <CardTitle className="text-3xl">
               {members.filter(m => m.status === "active").length}
             </CardTitle>
@@ -177,7 +182,7 @@ export function TeamTab() {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Pending</CardDescription>
+            <CardDescription>{t('settings.teamTab.pending')}</CardDescription>
             <CardTitle className="text-3xl">
               {members.filter(m => m.status === "pending").length}
             </CardTitle>
@@ -185,7 +190,7 @@ export function TeamTab() {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Admins</CardDescription>
+            <CardDescription>{t('settings.teamTab.admins')}</CardDescription>
             <CardTitle className="text-3xl">
               {members.filter(m => m.role === "admin" || m.role === "owner").length}
             </CardTitle>
@@ -196,7 +201,7 @@ export function TeamTab() {
       {/* Members List */}
       <Card>
         <CardHeader>
-          <CardTitle>All Members</CardTitle>
+          <CardTitle>{t('settings.teamTab.allMembers')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -215,7 +220,7 @@ export function TeamTab() {
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <p className="font-medium truncate">{member.name}</p>
+                      <p className="font-medium truncate">{t(member.nameKey)}</p>
                       {member.role === "owner" && (
                         <Crown className="h-4 w-4 text-yellow-500" />
                       )}
@@ -246,23 +251,23 @@ export function TeamTab() {
                             onClick={() => handleChangeRole(member.id, "admin")}
                             disabled={member.role === "admin"}
                           >
-                            <Shield className="h-4 w-4 mr-2" />
-                            Make Admin
+                            <Shield className="h-4 w-4 mr-2" aria-hidden="true" />
+                            {t('settings.teamTab.makeAdmin')}
                           </DropdownMenuItem>
                           <DropdownMenuItem
                             onClick={() => handleChangeRole(member.id, "member")}
                             disabled={member.role === "member"}
                           >
-                            <Users className="h-4 w-4 mr-2" />
-                            Make Member
+                            <Users className="h-4 w-4 mr-2" aria-hidden="true" />
+                            {t('settings.teamTab.makeMember')}
                           </DropdownMenuItem>
                           <DropdownMenuSeparator />
                           <DropdownMenuItem
                             onClick={() => handleRemoveMember(member.id)}
                             className="text-destructive"
                           >
-                            <Trash2 className="h-4 w-4 mr-2" />
-                            Remove
+                            <Trash2 className="h-4 w-4 mr-2" aria-hidden="true" />
+                            {t('settings.teamTab.remove')} Remove
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -278,7 +283,7 @@ export function TeamTab() {
       {/* Role Descriptions */}
       <Card>
         <CardHeader>
-          <CardTitle>Role Permissions</CardTitle>
+          <CardTitle>{t('settings.teamTab.rolePermissions')}</CardTitle>
           <CardDescription>
             Understanding team member roles and their permissions
           </CardDescription>
@@ -320,7 +325,7 @@ export function TeamTab() {
       <Dialog open={inviteDialogOpen} onOpenChange={setInviteDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Invite Team Member</DialogTitle>
+            <DialogTitle>{t('settings.teamTab.inviteTeamMember')}</DialogTitle>
             <DialogDescription>
               Send an invitation to join your team
             </DialogDescription>

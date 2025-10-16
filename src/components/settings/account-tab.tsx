@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -30,12 +31,14 @@ import {
   Trash2,
   AlertTriangle,
   Download,
-  Loader2
+  Loader2,
+  Plus
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 import { useProfileData } from "@/hooks/use-profile-data"
 
 export function AccountTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const { profile, loading, updateProfile, uploadAvatar } = useProfileData()
   const [saving, setSaving] = useState(false)
@@ -88,12 +91,12 @@ export function AccountTab() {
       })
       
       toast({
-        title: "Account updated",
-        description: "Your account information has been saved successfully.",
+        title: t('settings.toast.accountUpdated'),
+        description: t('settings.toast.accountUpdatedDesc'),
       })
     } catch (error: any) {
       toast({
-        title: "Error",
+        title: t('common.error'),
         description: error.message,
         variant: "destructive",
       })
@@ -108,8 +111,8 @@ export function AccountTab() {
 
     if (file.size > 2 * 1024 * 1024) { // 2MB limit
       toast({
-        title: "File too large",
-        description: "Please select an image under 2MB.",
+        title: t('settings.toast.fileTooLarge'),
+        description: t('settings.toast.fileTooLargeDesc'),
         variant: "destructive",
       })
       return
@@ -117,8 +120,8 @@ export function AccountTab() {
     
     if (!file.type.startsWith('image/')) {
       toast({
-        title: "Invalid file type",
-        description: "Please select an image file (JPG, PNG, or GIF).",
+        title: t('settings.toast.invalidFileType'),
+        description: t('settings.toast.invalidFileTypeDesc'),
         variant: "destructive",
       })
       return
@@ -129,12 +132,12 @@ export function AccountTab() {
       const url = await uploadAvatar(file)
       setProfilePicture(url)
       toast({
-        title: "Photo uploaded",
-        description: "Your profile picture has been updated.",
+        title: t('settings.toast.photoUploaded'),
+        description: t('settings.toast.photoUploadedDesc'),
       })
     } catch (error: any) {
       toast({
-        title: "Upload failed",
+        title: t('settings.toast.uploadFailed'),
         description: error.message,
         variant: "destructive",
       })
@@ -145,22 +148,22 @@ export function AccountTab() {
 
   const handleChangePassword = () => {
     toast({
-      title: "Password change requested",
-      description: "Check your email for password reset instructions.",
+      title: t('settings.toast.passwordChangeRequested'),
+      description: t('settings.toast.passwordChangeRequestedDesc'),
     })
   }
 
   const handleExportData = () => {
     toast({
-      title: "Data export started",
-      description: "We'll email you when your data export is ready to download.",
+      title: t('settings.toast.dataExportStarted'),
+      description: t('settings.toast.dataExportStartedDesc'),
     })
   }
 
   const handleDeleteAccount = () => {
     toast({
-      title: "Account deletion requested",
-      description: "Your account will be deleted within 30 days. You can cancel this at any time.",
+      title: t('settings.toast.accountDeletionRequested'),
+      description: t('settings.toast.accountDeletionRequestedDesc'),
       variant: "destructive",
     })
   }
@@ -175,15 +178,26 @@ export function AccountTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('settings.accountTab.description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('common.create')}
+        </Button>
+      </div>
+
       {/* Profile Information */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <UserCircle className="h-5 w-5" />
-            Profile Information
+            <UserCircle className="h-5 w-5" aria-hidden="true" />
+            {t('settings.accountTab.profileInfo')}
           </CardTitle>
           <CardDescription>
-            Update your personal information and profile picture
+            {t('settings.accountTab.updateInfo')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -210,12 +224,12 @@ export function AccountTab() {
                 {uploading ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
-                  <Upload className="h-4 w-4 mr-2" />
+                  <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
                 )}
-                Upload New Photo
+                {t('settings.accountTab.uploadPhoto')}
               </Button>
               <p className="text-xs text-muted-foreground">
-                JPG, PNG or GIF. Max size 2MB.
+                {t('settings.accountTab.photoRequirements')}
               </p>
             </div>
           </div>
@@ -225,7 +239,7 @@ export function AccountTab() {
           {/* Name Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="firstName">First Name</Label>
+              <Label htmlFor="firstName">{t('settings.accountTab.firstName')}</Label>
               <Input
                 id="firstName"
                 value={formData.firstName}
@@ -233,7 +247,7 @@ export function AccountTab() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="lastName">Last Name</Label>
+              <Label htmlFor="lastName">{t('settings.accountTab.lastName')}</Label>
               <Input
                 id="lastName"
                 value={formData.lastName}
@@ -246,8 +260,8 @@ export function AccountTab() {
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email" className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                Email Address
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                {t('settings.accountTab.emailAddress')}
               </Label>
               <Input
                 id="email"
@@ -259,8 +273,8 @@ export function AccountTab() {
 
             <div className="space-y-2">
               <Label htmlFor="phone" className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                Phone Number
+                <Phone className="h-4 w-4" aria-hidden="true" />
+                {t('settings.accountTab.phoneNumber')}
               </Label>
               <Input
                 id="phone"
@@ -276,35 +290,35 @@ export function AccountTab() {
           {/* Address */}
           <div className="space-y-4">
             <Label className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              Address
+                <MapPin className="h-4 w-4" aria-hidden="true" />
+                {t('settings.accountTab.address')}
             </Label>
             <div className="space-y-4">
               <Input
-                placeholder="Street Address"
+                placeholder={t('settings.account.streetAddress')}
                 value={formData.address}
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
               />
               <div className="grid grid-cols-2 gap-4">
                 <Input
-                  placeholder="City"
+                  placeholder={t('common.city')}
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                 />
                 <Input
-                  placeholder="State"
+                  placeholder={t('common.state')}
                   value={formData.state}
                   onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <Input
-                  placeholder="ZIP Code"
+                  placeholder={t('common.zipCode')}
                   value={formData.zipCode}
                   onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
                 />
                 <Input
-                  placeholder="Country"
+                  placeholder={t('common.country')}
                   value={formData.country}
                   onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                 />
@@ -317,9 +331,9 @@ export function AccountTab() {
               {saving ? (
                 <Loader2 className="h-4 w-4 mr-2 animate-spin" />
               ) : (
-                <Save className="h-4 w-4 mr-2" />
+                <Save className="h-4 w-4 mr-2" aria-hidden="true" />
               )}
-              Save Changes
+              {t('common.save')}
             </Button>
           </div>
         </CardContent>
@@ -329,11 +343,11 @@ export function AccountTab() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Shield className="h-5 w-5" />
-            Security
+            <Shield className="h-5 w-5" aria-hidden="true" />
+            {t('settings.accountTab.security')}
           </CardTitle>
           <CardDescription>
-            Manage your password and security settings
+            {t('settings.accountTab.managePassword')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -341,14 +355,14 @@ export function AccountTab() {
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <Key className="h-4 w-4" />
-                <span className="font-medium">Password</span>
+                <span className="font-medium">{t('settings.accountTab.password')}</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Last changed 3 months ago
+                {t('settings.accountTab.lastChanged')}
               </p>
             </div>
             <Button variant="outline" onClick={handleChangePassword}>
-              Change Password
+              {t('settings.accountTab.changePassword')}
             </Button>
           </div>
 
@@ -356,14 +370,14 @@ export function AccountTab() {
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <Shield className="h-4 w-4" />
-                <span className="font-medium">Two-Factor Authentication</span>
+                <span className="font-medium">{t('settings.accountTab.twoFactorAuth')}</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Not enabled
+                {t('settings.accountTab.notEnabled')}
               </p>
             </div>
             <Button variant="outline">
-              Enable 2FA
+              {t('settings.accountTab.enable2FA')}
             </Button>
           </div>
         </CardContent>
@@ -372,9 +386,9 @@ export function AccountTab() {
       {/* Data & Privacy */}
       <Card>
         <CardHeader>
-          <CardTitle>Data & Privacy</CardTitle>
+          <CardTitle>{t('settings.accountTab.dataPrivacy')}</CardTitle>
           <CardDescription>
-            Export your data or delete your account
+            {t('settings.accountTab.exportDelete')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -382,14 +396,14 @@ export function AccountTab() {
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <Download className="h-4 w-4" />
-                <span className="font-medium">Export Your Data</span>
+                <span className="font-medium">{t('settings.accountTab.exportData')}</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Download a copy of all your data
+                {t('settings.accountTab.downloadCopy')}
               </p>
             </div>
             <Button variant="outline" onClick={handleExportData}>
-              Export Data
+              {t('settings.accountTab.exportData')}
             </Button>
           </div>
 
@@ -399,9 +413,9 @@ export function AccountTab() {
             <div className="flex gap-2">
               <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
               <div className="space-y-2 flex-1">
-                <h4 className="font-semibold text-destructive">Danger Zone</h4>
+                <h4 className="font-semibold text-destructive">{t('settings.accountTab.dangerZone')}</h4>
                 <p className="text-sm text-muted-foreground">
-                  Once you delete your account, there is no going back. Please be certain.
+                  {t('settings.accountTab.deleteWarning')}
                 </p>
               </div>
             </div>
@@ -409,16 +423,15 @@ export function AccountTab() {
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button variant="destructive" className="w-full">
-                  <Trash2 className="h-4 w-4 mr-2" />
-                  Delete Account
+                  <Trash2 className="h-4 w-4 mr-2" aria-hidden="true" />
+                  {t('settings.accountTab.deleteAccount')}
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogTitle>{t('settings.accountTab.confirmDelete')}</AlertDialogTitle>
                   <AlertDialogDescription>
-                    This action cannot be undone. This will permanently delete your
-                    account and remove your data from our servers.
+                    {t('settings.accountTab.deleteDescription')}
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

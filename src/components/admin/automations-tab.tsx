@@ -1,36 +1,38 @@
 "use client"
 
+import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Switch } from "@/components/ui/switch"
 import { Bot, Plus, Play, Pause, Settings } from "lucide-react"
-import { useState } from "react"
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function AutomationsTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [automations, setAutomations] = useState([
     {
       id: "1",
-      name: "New Member Welcome",
-      description: "Send welcome email when member joins",
+      name: t('admin.mockData.automation1Name'),
+      description: t('admin.mockData.automation1Desc'),
       trigger: "Member Added",
       enabled: true,
       runsCount: 42,
     },
     {
       id: "2",
-      name: "Project Milestone Alerts",
-      description: "Notify team when milestones are completed",
+      name: t('admin.mockData.automation2Name'),
+      description: t('admin.mockData.automation2Desc'),
       trigger: "Milestone Completed",
       enabled: true,
       runsCount: 156,
     },
     {
       id: "3",
-      name: "Budget Threshold Warning",
-      description: "Alert when project budget exceeds 80%",
+      name: t('admin.mockData.automation3Name'),
+      description: t('admin.mockData.automation3Desc'),
       trigger: "Budget Threshold",
       enabled: false,
       runsCount: 8,
@@ -45,23 +47,29 @@ export function AutomationsTab() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button>
-          <Plus className="h-4 w-4 mr-2" />
-          New Automation
-        </Button>
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.automationsTab.description')}
+        </p>
+        <div className="flex gap-2">
+          <Button aria-label={t('admin.automationsTab.newAutomation')}>
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('admin.automationsTab.newAutomation')}
+          </Button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Automations</CardDescription>
+            <CardDescription>{t('admin.automationsTab.totalAutomations')}</CardDescription>
             <CardTitle className="text-3xl">{automations.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Active</CardDescription>
+            <CardDescription>{t('admin.automationsTab.active')}</CardDescription>
             <CardTitle className="text-3xl">
               {automations.filter(a => a.enabled).length}
             </CardTitle>
@@ -69,7 +77,7 @@ export function AutomationsTab() {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Runs</CardDescription>
+            <CardDescription>{t('admin.automationsTab.totalRuns')}</CardDescription>
             <CardTitle className="text-3xl">
               {automations.reduce((sum, a) => sum + a.runsCount, 0)}
             </CardTitle>
@@ -87,15 +95,15 @@ export function AutomationsTab() {
                     <CardTitle className="text-base">{automation.name}</CardTitle>
                     <Badge variant={automation.enabled ? "default" : "secondary"}>
                       {automation.enabled ? (
-                        <><Play className="h-3 w-3 mr-1" />Active</>
+                        <><Play className="h-3 w-3 mr-1" aria-hidden="true" />{t('admin.automationsTab.active')}</>
                       ) : (
-                        <><Pause className="h-3 w-3 mr-1" />Paused</>
+                        <><Pause className="h-3 w-3 mr-1" aria-hidden="true" />{t('admin.automationsTab.paused')}</>
                       )}
                     </Badge>
                   </div>
                   <CardDescription>{automation.description}</CardDescription>
                   <p className="text-xs text-muted-foreground mt-2">
-                    Trigger: {automation.trigger} • {automation.runsCount} total runs
+                    {t('admin.automationsTab.trigger')}: {automation.trigger} • {automation.runsCount} {t('admin.automationsTab.totalRunsCount')}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
@@ -103,8 +111,8 @@ export function AutomationsTab() {
                     checked={automation.enabled}
                     onCheckedChange={() => handleToggle(automation.id)}
                   />
-                  <Button variant="ghost" size="icon">
-                    <Settings className="h-4 w-4" />
+                  <Button variant="ghost" size="icon" aria-label={t('common.settings')}>
+                    <Settings className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>

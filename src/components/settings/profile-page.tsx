@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,6 +26,7 @@ import { useToast } from "@/lib/hooks/use-toast"
 import { useProfileData } from "@/hooks/use-profile-data"
 
 export function ProfilePage() {
+  const t = useTranslations()
   const { toast } = useToast()
   const { profile, loading, updateProfile, uploadAvatar } = useProfileData()
   const [saving, setSaving] = useState(false)
@@ -76,12 +78,12 @@ export function ProfilePage() {
       })
       
       toast({
-        title: "Profile updated",
-        description: "Your profile has been saved successfully.",
+        title: t('settings.toast.profileUpdated'),
+        description: t('settings.toast.profileUpdatedDesc'),
       })
     } catch (error: any) {
       toast({
-        title: "Error",
+        title: t('common.error'),
         description: error.message,
         variant: "destructive",
       })
@@ -111,9 +113,9 @@ export function ProfilePage() {
     <div className="flex flex-col h-full">
       {/* Header */}
       <div className="border-b bg-background p-6">
-        <h1 className="text-3xl font-bold">Profile</h1>
+        <h1 className="text-3xl font-bold">{t('nav.profile')}</h1>
         <p className="text-muted-foreground mt-2">
-          Manage your public profile and professional information
+          {t('profile.descriptions.professional')}
         </p>
       </div>
 
@@ -124,8 +126,8 @@ export function ProfilePage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <UserCircle className="h-5 w-5" />
-                Public Profile
+                <UserCircle className="h-5 w-5" aria-hidden="true" />
+                {t('profile.basicInfo.personalInfo')}
               </CardTitle>
               <CardDescription>
                 This information will be displayed on your profile
@@ -143,8 +145,8 @@ export function ProfilePage() {
                 <div className="flex-1 space-y-4">
                   <div>
                     <Button variant="outline">
-                      <Upload className="h-4 w-4 mr-2" />
-                      Upload New Photo
+                      <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
+                      {t('profile.actions.uploadPhoto')}
                     </Button>
                     <p className="text-xs text-muted-foreground mt-2">
                       JPG, PNG or GIF. Max size 2MB. Recommended: 400x400px
@@ -181,7 +183,7 @@ export function ProfilePage() {
                   id="bio"
                   value={formData.bio}
                   onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
-                  placeholder="Tell us about yourself..."
+                  placeholder={t('settings.profilePage.bioPlaceholder')}
                   className="min-h-[100px]"
                 />
                 <p className="text-xs text-muted-foreground">
@@ -323,8 +325,8 @@ export function ProfilePage() {
           {/* Save Button */}
           <div className="flex justify-end">
             <Button onClick={handleSave} disabled={saving} size="lg">
-              <Save className="h-4 w-4 mr-2" />
-              {saving ? "Saving..." : "Save Profile"}
+              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+              {saving ? t('profile.actions.saving') : t('profile.actions.saveChanges')}
             </Button>
           </div>
         </div>

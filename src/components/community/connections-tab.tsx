@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -45,6 +46,8 @@ interface Connection {
 }
 
 export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabProps) {
+  const t = useTranslations('community.connections')
+  const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
   const [filterStatus, setFilterStatus] = useState<"all" | "connected" | "pending" | "suggested">("all")
 
@@ -111,7 +114,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Connections</div>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{connectedCount}</div>
@@ -133,7 +136,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Suggestions</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{suggestedCount}</div>
@@ -144,7 +147,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Growth</div>
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+12</div>
@@ -158,9 +161,9 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
         <CardContent className="pt-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
-                placeholder="Search connections by name, title, or company..."
+                placeholder={t('searchConnections')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -168,7 +171,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
             </div>
             <Tabs value={filterStatus} onValueChange={(v) => setFilterStatus(v as any)}>
               <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
+                <TabsTrigger value="all">{t('all')}</TabsTrigger>
                 <TabsTrigger value="connected">Connected</TabsTrigger>
                 <TabsTrigger value="pending">Pending</TabsTrigger>
                 <TabsTrigger value="suggested">Suggested</TabsTrigger>
@@ -186,9 +189,9 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
               <EmptyState
                 variant="inline"
                 icon={Users}
-                mainMessage={searchQuery || filterStatus !== "all" ? "No connections found" : "NOTHING TO SEE HERE... (YET)"}
-                description={searchQuery || filterStatus !== "all" ? "Try adjusting your search criteria" : "Connect with other professionals in the industry"}
-                actionLabel={!searchQuery && filterStatus === "all" ? "Find Connections" : undefined}
+                mainMessage={searchQuery || filterStatus !== "all" ? t('noConnectionsFound') : t('nothingToSeeYet')}
+                description={searchQuery || filterStatus !== "all" ? t('tryAdjustingSearch') : t('connectWithProfessionals')}
+                actionLabel={!searchQuery && filterStatus === "all" ? t('findConnections') : undefined}
                 onAction={!searchQuery && filterStatus === "all" ? () => {} : undefined}
               />
             </CardContent>
@@ -221,7 +224,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
                         <p className="text-sm text-muted-foreground truncate">{connection.title}</p>
                       </div>
                       <Button variant="ghost" size="sm">
-                        <MoreHorizontal className="h-4 w-4" />
+                        <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
                       </Button>
                     </div>
 
@@ -235,7 +238,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
                         <span className="truncate">{connection.location}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Users className="h-3 w-3" />
+                        <Users className="h-3 w-3" aria-hidden="true" />
                         <span>{connection.mutualConnections} mutual connections</span>
                       </div>
                     </div>
@@ -321,7 +324,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Award className="h-5 w-5" />
+            <Award className="h-5 w-5" aria-hidden="true" />
             Grow Your Network
           </CardTitle>
           <CardDescription>Tips to expand your professional connections</CardDescription>

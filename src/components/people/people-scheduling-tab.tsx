@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -19,20 +20,28 @@ import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('production.people.scheduling')
+  const tCommon = useTranslations('common')
   const { data: shifts, loading } = useModuleData(workspaceId, 'people', 'scheduling')
   const [viewMode, setViewMode] = useState<'week' | 'month'>('week')
   const [currentDate, setCurrentDate] = useState(new Date())
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading schedule...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-    )
-  }
+        </div>
+         )
+}
 
   const getShiftTypeColor = (type: string) => {
     const colors: Record<string, string> = {
@@ -75,7 +84,20 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
   const totalHours = shifts.reduce((sum: number, s: any) => sum + (s.hours || 8), 0)
 
   return (
-    <div className="space-y-6">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Personnel scheduling
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          Create
+        </Button>
+      </div>
+
+
       {/* Actions */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
@@ -83,11 +105,11 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
+            <Download className="h-4 w-4" aria-hidden="true" className="mr-2" />
             Export
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
             Add Shift
           </Button>
         </div>
@@ -98,7 +120,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Shifts</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <Calendar className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{shifts.length}</div>
@@ -109,7 +131,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Hours</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" />
+            <Clock className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{totalHours}</div>
@@ -120,7 +142,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card className={conflicts > 0 ? "border-yellow-200 dark:border-yellow-900" : ""}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Conflicts</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-muted-foreground" />
+            <AlertTriangle className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${conflicts > 0 ? 'text-yellow-600' : ''}`}>
@@ -133,7 +155,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Overtime</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <Users className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{overtimeShifts}</div>
@@ -168,7 +190,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   newDate.setDate(newDate.getDate() - 7)
                   setCurrentDate(newDate)
                 }}>
-                  <ChevronLeft className="h-4 w-4" />
+                  <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <Button variant="outline" size="sm" onClick={() => setCurrentDate(new Date())}>
                   Today
@@ -178,7 +200,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   newDate.setDate(newDate.getDate() + 7)
                   setCurrentDate(newDate)
                 }}>
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
             </div>
@@ -190,7 +212,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="border p-2 bg-muted font-medium text-sm w-32">Personnel</th>
+                  <th className="border p-2 bg-muted font-medium text-sm w-32">{t('title')}</th>
                   {weekDays.map((day, index) => {
                     const isToday = day.toDateString() === new Date().toDateString()
                     return (
@@ -239,10 +261,10 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                                     <Badge variant="outline" className="text-[10px] px-1 py-0">OT</Badge>
                                   )}
                                   {shift.has_conflict && (
-                                    <AlertTriangle className="h-3 w-3 text-yellow-600" />
+                                    <AlertTriangle className="h-4 w-4" aria-hidden="true" className="text-yellow-600" />
                                   )}
                                   {shift.is_confirmed && (
-                                    <CheckCircle2 className="h-3 w-3 text-green-600" />
+                                    <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="text-green-600" />
                                   )}
                                 </div>
                               </div>
@@ -261,23 +283,23 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           <div className="flex items-center gap-4 mt-4 pt-4 border-t text-sm">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-yellow-100 dark:bg-yellow-950 rounded" />
-              <span>Morning</span>
+              <span>{t('morning')}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-blue-100 dark:bg-blue-950 rounded" />
-              <span>Afternoon</span>
+              <span>{t('afternoon')}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-purple-100 dark:bg-purple-950 rounded" />
-              <span>Evening</span>
+              <span>{t('evening')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <AlertTriangle className="h-3 w-3 text-yellow-600" />
-              <span>Conflict</span>
+              <AlertTriangle className="h-4 w-4" aria-hidden="true" className="text-yellow-600" />
+              <span>{t('conflict')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-3 w-3 text-green-600" />
-              <span>Confirmed</span>
+              <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="text-green-600" />
+              <span>{t('confirmed')}</span>
             </div>
           </div>
         </CardContent>
@@ -287,10 +309,10 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card className="border-yellow-200 dark:border-yellow-900">
           <CardHeader>
             <CardTitle className="text-yellow-600 flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5" />
+              <AlertTriangle className="h-4 w-4" aria-hidden="true" />
               Scheduling Conflicts
             </CardTitle>
-            <CardDescription>These shifts need attention</CardDescription>
+            <CardDescription>{t('needsAttention')}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
@@ -302,7 +324,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                       {new Date(shift.date).toLocaleDateString()} {shift.start_time}-{shift.end_time}
                     </span>
                   </div>
-                  <Button size="sm" variant="outline">Resolve</Button>
+                  <Button size="sm" variant="outline">{tCommon('resolve')}</Button>
                 </div>
               ))}
             </div>
@@ -310,5 +332,6 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
       )}
     </div>
+    </main>
   )
 }

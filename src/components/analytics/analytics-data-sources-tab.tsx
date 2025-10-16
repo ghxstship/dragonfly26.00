@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
+import { useTranslations } from "next-intl"
 const dataSources = [
   {
     id: "1",
-    name: "Primary Database",
+    nameKey: "primary_database",
     type: "PostgreSQL",
     status: "connected",
     lastSync: "2 minutes ago",
@@ -19,7 +20,7 @@ const dataSources = [
   },
   {
     id: "2",
-    name: "CRM System",
+    nameKey: "crm_system",
     type: "Salesforce",
     status: "connected",
     lastSync: "5 minutes ago",
@@ -28,7 +29,7 @@ const dataSources = [
   },
   {
     id: "3",
-    name: "Analytics Warehouse",
+    nameKey: "analytics_warehouse",
     type: "BigQuery",
     status: "connected",
     lastSync: "1 hour ago",
@@ -37,7 +38,7 @@ const dataSources = [
   },
   {
     id: "4",
-    name: "Marketing Platform",
+    nameKey: "marketing_platform",
     type: "HubSpot",
     status: "warning",
     lastSync: "3 hours ago",
@@ -46,7 +47,7 @@ const dataSources = [
   },
   {
     id: "5",
-    name: "Payment Gateway",
+    nameKey: "payment_gateway",
     type: "Stripe",
     status: "connected",
     lastSync: "15 minutes ago",
@@ -61,15 +62,21 @@ interface AnalyticsDataSourcesTabProps {
 }
 
 export function AnalyticsDataSourcesTab({ data = [], loading = false }: AnalyticsDataSourcesTabProps) {
+  const t = useTranslations('intelligence.analytics.analyticsdatasources')
+  const tCommon = useTranslations('common')
+
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displaySources = data || []
   
   return (
     <div className="space-y-6">
-      {/* Actions */}
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
         <Button onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           Connect Data Source
         </Button>
       </div>
@@ -78,28 +85,28 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
       <div className="grid grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Total Sources</p>
-            <p className="text-2xl font-bold mt-1">{dataSources.length}</p>
+            <p className="text-sm text-muted-foreground">{t('totalSources')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">{dataSources.length}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Connected</p>
-            <p className="text-2xl font-bold mt-1 text-green-600">
+            <p className="text-sm text-muted-foreground">{t('connected')}</p>
+            <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
               {dataSources.filter(d => d.status === "connected").length}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Total Records</p>
-            <p className="text-2xl font-bold mt-1">11.6M</p>
+            <p className="text-sm text-muted-foreground">{t('totalRecords')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">11.6M</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Total Tables</p>
-            <p className="text-2xl font-bold mt-1">94</p>
+            <p className="text-sm text-muted-foreground">{t('totalTables')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">94</p>
           </CardContent>
         </Card>
       </div>
@@ -111,9 +118,9 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Database className="h-8 w-8 text-blue-600" />
+                  <Database className="h-8 w-8 text-blue-600" aria-hidden="true" />
                   <div>
-                    <CardTitle className="text-lg">{source.name}</CardTitle>
+                    <CardTitle className="text-lg">{t(source.nameKey)}</CardTitle>
                     <p className="text-sm text-muted-foreground">{source.type}</p>
                   </div>
                 </div>
@@ -123,13 +130,13 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
                     className={source.status === "connected" ? "bg-green-600" : "bg-yellow-600"}
                   >
                     {source.status === "connected" ? (
-                      <><CheckCircle className="h-3 w-3 mr-1" /> Connected</>
+                      <><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Connected</>
                     ) : (
-                      <><AlertCircle className="h-3 w-3 mr-1" /> Warning</>
+                      <><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Warning</>
                     )}
                   </Badge>
                   <Button variant="outline" size="sm">
-                    <RefreshCw className="h-4 w-4 mr-2" />
+                    <RefreshCw className="h-4 w-4 mr-2" aria-hidden="true" />
                     Sync Now
                   </Button>
                 </div>
@@ -138,15 +145,15 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
             <CardContent>
               <div className="grid grid-cols-3 gap-4">
                 <div>
-                  <p className="text-sm text-muted-foreground">Last Sync</p>
+                  <p className="text-sm text-muted-foreground">{t('lastSync')}</p>
                   <p className="font-medium mt-1">{source.lastSync}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Records</p>
+                  <p className="text-sm text-muted-foreground">{t('records')}</p>
                   <p className="font-medium mt-1">{source.records}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Tables</p>
+                  <p className="text-sm text-muted-foreground">{t('tables')}</p>
                   <p className="font-medium mt-1">{source.tables}</p>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -46,12 +47,13 @@ interface Integration {
 }
 
 export function IntegrationsTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [integrations, setIntegrations] = useState<Integration[]>([
     {
       id: "slack",
-      name: "Slack",
-      description: "Team communication and notifications",
+      name: t('settings.integrations.slack'),
+      description: t('settings.integrations.slackDesc'),
       icon: MessageSquare,
       category: "communication",
       connected: false,
@@ -59,8 +61,8 @@ export function IntegrationsTab() {
     },
     {
       id: "google-calendar",
-      name: "Google Calendar",
-      description: "Sync events and schedules",
+      name: t('settings.integrations.googleCalendar'),
+      description: t('settings.integrations.googleCalendarDesc'),
       icon: Calendar,
       category: "productivity",
       connected: true,
@@ -69,8 +71,8 @@ export function IntegrationsTab() {
     },
     {
       id: "gmail",
-      name: "Gmail",
-      description: "Email integration and notifications",
+      name: t('settings.integrations.gmail'),
+      description: t('settings.integrations.gmailDesc'),
       icon: Mail,
       category: "communication",
       connected: false,
@@ -78,8 +80,8 @@ export function IntegrationsTab() {
     },
     {
       id: "zapier",
-      name: "Zapier",
-      description: "Automate workflows with 5000+ apps",
+      name: t('settings.integrations.zapier'),
+      description: t('settings.integrations.zapierDesc'),
       icon: Zap,
       category: "automation",
       connected: true,
@@ -88,8 +90,8 @@ export function IntegrationsTab() {
     },
     {
       id: "airtable",
-      name: "Airtable",
-      description: "Database and spreadsheet integration",
+      name: t('settings.integrations.airtable'),
+      description: t('settings.integrations.airtableDesc'),
       icon: Database,
       category: "data",
       connected: false,
@@ -97,8 +99,8 @@ export function IntegrationsTab() {
     },
     {
       id: "dropbox",
-      name: "Dropbox",
-      description: "Cloud storage and file sharing",
+      name: t('settings.integrations.dropbox'),
+      description: t('settings.integrations.dropboxDesc'),
       icon: Cloud,
       category: "storage",
       connected: false,
@@ -116,7 +118,7 @@ export function IntegrationsTab() {
         : i
     ))
     toast({
-      title: "Integration connected",
+      title: t('settings.toast.integrationConnected'),
       description: `${integration.name} has been successfully connected.`,
     })
     setDialogOpen(false)
@@ -129,7 +131,7 @@ export function IntegrationsTab() {
         : i
     ))
     toast({
-      title: "Integration disconnected",
+      title: t('settings.toast.integrationDisconnected'),
       description: `${integration.name} has been disconnected.`,
       variant: "destructive",
     })
@@ -161,10 +163,10 @@ export function IntegrationsTab() {
               {integration.connected ? (
                 <>
                   <Check className="h-3 w-3 mr-1" />
-                  Connected
+                  {t('settings.integrationsTab.connected')}
                 </>
               ) : (
-                "Not connected"
+                t('settings.integrationsTab.notConnected')
               )}
             </Badge>
           </div>
@@ -198,8 +200,8 @@ export function IntegrationsTab() {
                     size="sm"
                     onClick={() => openConfigDialog(integration)}
                   >
-                    <Settings className="h-4 w-4 mr-2" />
-                    Configure
+                    <Settings className="h-4 w-4 mr-2" aria-hidden="true" />
+                    {t('settings.integrationsTab.configureIntegration')}
                   </Button>
                   <Button
                     variant="destructive"
@@ -215,8 +217,8 @@ export function IntegrationsTab() {
                   size="sm"
                   onClick={() => openConfigDialog(integration)}
                 >
-                  <Plus className="h-4 w-4 mr-2" />
-                  Connect
+                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+                  {t('settings.integrationsTab.connectIntegration')}
                 </Button>
               )}
             </div>
@@ -231,16 +233,28 @@ export function IntegrationsTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('settings.integrationsTab.description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('common.create')}
+        </Button>
+      </div>
+
+
       <Tabs defaultValue="all" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="all">All Integrations</TabsTrigger>
+          <TabsTrigger value="all">{t('settings.integrationsTab.allIntegrations')}</TabsTrigger>
           <TabsTrigger value="organization">
-            <Building2 className="h-4 w-4 mr-2" />
-            Organization ({organizationIntegrations.length})
+            <Building2 className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('settings.integrationsTab.organization')} ({organizationIntegrations.length})
           </TabsTrigger>
           <TabsTrigger value="personal">
-            <User className="h-4 w-4 mr-2" />
-            Personal ({personalIntegrations.length})
+            <User className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('settings.integrationsTab.personal')} ({personalIntegrations.length})
           </TabsTrigger>
         </TabsList>
 
@@ -297,7 +311,7 @@ export function IntegrationsTab() {
               <Input
                 id="api-key"
                 type="password"
-                placeholder="Enter your API key"
+                placeholder={t('settings.integrationsTab.apiKeyPlaceholder')}
               />
             </div>
             <div className="space-y-2">

@@ -67,7 +67,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
             </div>
           )}
           <Textarea
-            placeholder="Add a comment..."
+            placeholder={t('files.comments.placeholder')}
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
             rows={3}

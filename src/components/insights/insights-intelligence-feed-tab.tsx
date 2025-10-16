@@ -1,14 +1,16 @@
 "use client"
 
-import { Sparkles, TrendingUp, AlertTriangle, Lightbulb, Target } from "lucide-react"
+import { Sparkles, TrendingUp, AlertTriangle, Lightbulb, Target, Plus } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const insights = [
   {
     id: "1",
     type: "opportunity",
-    title: "Untapped Market Segment Identified",
+    titleKey: "untapped_market_segment_identified",
     message: "Analysis shows 18% of your target demographic is underserved. Consider targeted marketing campaign.",
     source: "Customer Analytics",
     confidence: 89,
@@ -18,7 +20,7 @@ const insights = [
   {
     id: "2",
     type: "trend",
-    title: "Customer Satisfaction Trending Upward",
+    titleKey: "customer_satisfaction_trending_upward",
     message: "NPS score has increased 12% over last 3 months. Current initiatives are driving positive results.",
     source: "Customer Success Data",
     confidence: 94,
@@ -28,7 +30,7 @@ const insights = [
   {
     id: "3",
     type: "risk",
-    title: "Resource Utilization Below Optimal",
+    titleKey: "resource_utilization_below_optimal",
     message: "Team capacity at 68% for 3rd consecutive week. Consider workload redistribution or strategic hiring.",
     source: "Operations Analytics",
     confidence: 91,
@@ -38,7 +40,7 @@ const insights = [
   {
     id: "4",
     type: "recommendation",
-    title: "Automate Approval Workflows",
+    titleKey: "automate_approval_workflows",
     message: "56% of approval processes are manual, taking average of 4.2 hours. Automation could save 240 hrs/month.",
     source: "Process Mining",
     confidence: 87,
@@ -48,7 +50,7 @@ const insights = [
   {
     id: "5",
     type: "benchmark",
-    title: "Above Industry Average in Quality Metrics",
+    titleKey: "above_industry_average_in_quality_metrics",
     message: "Your quality score (92%) exceeds industry average (85%) by 7 points. Strong competitive advantage.",
     source: "Industry Benchmarks",
     confidence: 96,
@@ -58,7 +60,7 @@ const insights = [
   {
     id: "6",
     type: "opportunity",
-    title: "Cross-Sell Potential Detected",
+    titleKey: "crosssell_potential_detected",
     message: "23% of customers using Product A show high propensity for Product B based on usage patterns.",
     source: "Product Analytics",
     confidence: 82,
@@ -73,9 +75,24 @@ interface InsightsIntelligenceFeedTabProps {
 }
 
 export function InsightsIntelligenceFeedTab({ data = [], loading = false }: InsightsIntelligenceFeedTabProps) {
+  const t = useTranslations('intelligence.insights.insightsintelligencefeed')
+  const tCommon = useTranslations('common')
+
   const displayInsights = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       {/* Filter Badges */}
       <div className="flex gap-2">
         <Badge variant="outline" className="cursor-pointer hover:bg-accent">All ({insights.length})</Badge>
@@ -123,7 +140,7 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-3 mb-2">
-                      <h4 className="font-semibold text-lg">{insight.title}</h4>
+                      <h4 className="font-semibold text-lg">{t(insight.titleKey)}</h4>
                       <div className="flex items-center gap-2 flex-shrink-0">
                         <Badge 
                           variant={insight.priority === "high" ? "destructive" : insight.priority === "medium" ? "default" : "secondary"}

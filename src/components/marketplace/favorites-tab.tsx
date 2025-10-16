@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -12,6 +13,8 @@ interface FavoritesTabProps {
 }
 
 export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) {
+  const t = useTranslations('marketplace.favorites')
+  const tCommon = useTranslations('common')
   const [favorites, setFavorites] = useState(data)
 
   const removeFavorite = (id: string) => {
@@ -21,7 +24,7 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
   const getAvailabilityBadge = (status: string) => {
     switch (status) {
       case "available":
-        return <Badge className="bg-green-600">Available</Badge>
+        return <Badge className="bg-green-600">{t('available')}</Badge>
       case "low-stock":
         return <Badge className="bg-yellow-600">Low Stock</Badge>
       case "watchlist":
@@ -33,7 +36,11 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
         <div className="flex gap-2">
           <Button variant="outline">
             Create List from Favorites
@@ -61,7 +68,7 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
 
               {/* Product Image */}
               <div className="relative aspect-square bg-gradient-to-br from-pink-500/10 to-red-500/10 flex items-center justify-center">
-                <Package className="h-20 w-20 text-muted-foreground/30" />
+                <Package className="h-20 w-20 text-muted-foreground/30" aria-hidden="true" />
                 
                 {/* Status Badge */}
                 <div className="absolute top-2 left-2">
@@ -105,7 +112,7 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
 
               <CardFooter className="p-4 pt-0 gap-2">
                 <Button className="flex-1">
-                  <ShoppingCart className="h-4 w-4 mr-2" />
+                  <ShoppingCart className="h-4 w-4 mr-2" aria-hidden="true" />
                   Add to Cart
                 </Button>
                 <Button variant="outline" size="icon">
@@ -118,7 +125,7 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
       ) : (
         <Card className="p-12">
           <div className="text-center space-y-4">
-            <Heart className="h-16 w-16 mx-auto text-muted-foreground/30" />
+            <Heart className="h-16 w-16 mx-auto text-muted-foreground/30" aria-hidden="true" />
             <div>
               <h3 className="text-xl font-semibold">No favorites yet</h3>
               <p className="text-muted-foreground mt-2">

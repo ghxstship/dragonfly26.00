@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -32,6 +33,7 @@ import {
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function SecurityTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(false)
   const [ssoEnabled, setSsoEnabled] = useState(false)
@@ -39,8 +41,8 @@ export function SecurityTab() {
   const [sessionTimeout, setSessionTimeout] = useState("24")
 
   const [ipWhitelist] = useState([
-    { id: "1", ip: "192.168.1.0/24", description: "Office Network", addedAt: "2024-01-15" },
-    { id: "2", ip: "203.0.113.0/24", description: "VPN Network", addedAt: "2024-01-20" },
+    { id: "1", ip: "192.168.1.0/24", description: t('admin.mockData.network1Desc'), addedAt: "2024-01-15" },
+    { id: "2", ip: "203.0.113.0/24", description: t('admin.mockData.network2Desc'), addedAt: "2024-01-20" },
   ])
 
   const [auditLogs] = useState([
@@ -53,29 +55,40 @@ export function SecurityTab() {
 
   const handleSaveChanges = () => {
     toast({
-      title: "Security settings updated",
-      description: "Your security configuration has been saved.",
+      title: t('admin.toast.securityUpdated'),
+      description: t('admin.toast.securityUpdatedDesc'),
     })
   }
 
   const handleExportLogs = () => {
     toast({
-      title: "Export started",
-      description: "Audit logs are being exported to CSV.",
+      title: t('admin.toast.exportStarted'),
+      description: t('admin.toast.exportStartedDesc'),
     })
   }
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.configureAuth')}
+        </p>
+        <Button variant="outline" size="sm" onClick={handleSaveChanges}>
+          <Shield className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('admin.securityTab.saveChanges')}
+        </Button>
+      </div>
+
       {/* Authentication */}
       <Card>
         <CardHeader>
           <CardTitle className="text-base flex items-center gap-2">
-            <Key className="h-5 w-5" />
-            Authentication
+            <Key className="h-5 w-5" aria-hidden="true" />
+            {t('admin.securityTab.authentication')}
           </CardTitle>
           <CardDescription>
-            Configure authentication requirements and policies
+            {t('admin.securityTab.authDescription')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -83,10 +96,10 @@ export function SecurityTab() {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <Lock className="h-4 w-4" />
-                <span className="font-medium">Two-Factor Authentication</span>
+                <span className="font-medium">{t('admin.securityTab.twoFactor')}</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Require all members to enable 2FA for enhanced security
+                {t('admin.securityTab.twoFactorDescription')}
               </p>
             </div>
             <Switch
@@ -99,10 +112,10 @@ export function SecurityTab() {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <Key className="h-4 w-4" />
-                <span className="font-medium">Single Sign-On (SSO)</span>
+                <span className="font-medium">{t('admin.securityTab.sso')}</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Enable SAML-based SSO for enterprise authentication
+                {t('admin.securityTab.ssoDescription')}
               </p>
             </div>
             <Switch
@@ -114,7 +127,7 @@ export function SecurityTab() {
           <Separator />
 
           <div className="space-y-2">
-            <Label>Session Timeout</Label>
+            <Label>{t('admin.securityTab.sessionTimeout')}</Label>
             <Select value={sessionTimeout} onValueChange={setSessionTimeout}>
               <SelectTrigger>
                 <SelectValue />
@@ -128,7 +141,7 @@ export function SecurityTab() {
               </SelectContent>
             </Select>
             <p className="text-xs text-muted-foreground">
-              Automatically log out inactive users after this duration
+              {t('admin.securityTab.sessionTimeoutDescription')}
             </p>
           </div>
 
@@ -162,22 +175,22 @@ export function SecurityTab() {
           <div className="flex items-start justify-between">
             <div>
               <CardTitle className="text-base flex items-center gap-2">
-                <Globe className="h-5 w-5" />
-                IP Restrictions
+                <Globe className="h-5 w-5" aria-hidden="true" />
+                {t('admin.securityTab.ipRestrictions')}
               </CardTitle>
               <CardDescription className="mt-2">
-                Restrict access to specific IP addresses or ranges
+                {t('admin.securityTab.restrictAccess')}
               </CardDescription>
             </div>
             <div className="flex items-center gap-2">
+              <Button size="sm">
+                <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+                {t('admin.securityTab.addIp')}
+              </Button>
               <Switch
                 checked={ipRestrictionEnabled}
                 onCheckedChange={setIpRestrictionEnabled}
               />
-              <Button size="sm">
-                <Plus className="h-4 w-4 mr-2" />
-                Add IP
-              </Button>
             </div>
           </div>
         </CardHeader>
@@ -211,16 +224,16 @@ export function SecurityTab() {
           <div className="flex items-start justify-between">
             <div>
               <CardTitle className="text-base flex items-center gap-2">
-                <Eye className="h-5 w-5" />
-                Audit Logs
+                <Eye className="h-5 w-5" aria-hidden="true" />
+                {t('admin.securityTab.auditLogs')}
               </CardTitle>
               <CardDescription className="mt-2">
-                Security event history and access logs
+                {t('admin.securityTab.securityEvents')}
               </CardDescription>
             </div>
             <Button variant="outline" size="sm" onClick={handleExportLogs}>
-              <Download className="h-4 w-4 mr-2" />
-              Export Logs
+              <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t('admin.securityTab.exportLogs')}
             </Button>
           </div>
         </CardHeader>
@@ -262,8 +275,8 @@ export function SecurityTab() {
       <Card>
         <CardHeader>
           <CardTitle className="text-base flex items-center gap-2">
-            <AlertTriangle className="h-5 w-5" />
-            Security Alerts
+            <AlertTriangle className="h-5 w-5" aria-hidden="true" />
+            {t('admin.securityTab.securityAlerts')}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -284,8 +297,8 @@ export function SecurityTab() {
       {/* Save Button */}
       <div className="flex justify-end">
         <Button onClick={handleSaveChanges}>
-          <Shield className="h-4 w-4 mr-2" />
-          Save Security Settings
+          <Shield className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('admin.securityTab.saveSecuritySettings')}
         </Button>
       </div>
     </div>

@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -24,6 +25,8 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.my-files')
+  const tCommon = useTranslations('common')
   const { files, loading } = useMyFiles(workspaceId, userId)
   
 
@@ -46,10 +49,15 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading files...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -65,11 +73,11 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
   }
 
   const storageByCategory = [
-    { name: "Technical", size: "680 MB", percentage: 28, color: "bg-purple-500" },
-    { name: "Design", size: "540 MB", percentage: 22, color: "bg-blue-500" },
-    { name: "Media", size: "480 MB", percentage: 20, color: "bg-red-500" },
-    { name: "Assets", size: "420 MB", percentage: 18, color: "bg-green-500" },
-    { name: "Other", size: "280 MB", percentage: 12, color: "bg-gray-500" },
+    { nameKey: "technical", size: "680 MB", percentage: 28, color: "bg-purple-500" },
+    { nameKey: "design", size: "540 MB", percentage: 22, color: "bg-blue-500" },
+    { nameKey: "media", size: "480 MB", percentage: 20, color: "bg-red-500" },
+    { nameKey: "assets", size: "420 MB", percentage: 18, color: "bg-green-500" },
+    { nameKey: "other", size: "280 MB", percentage: 12, color: "bg-gray-500" },
   ]
 
   const getTypeColor = (type: string) => {
@@ -103,22 +111,17 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2" disabled>
-            <Search className="h-4 w-4" />
-            Search
-          </Button>
-          <Button 
-            size="sm" 
-            className="gap-2"
-            onClick={() => router.push(`/workspace/${workspaceId}/files/all-documents`)}
-          >
-            <Plus className="h-4 w-4" />
-            Upload File
-          </Button>
-        </div>
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          View and manage your files and documents
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          Upload File
+        </Button>
       </div>
 
       {/* Summary Stats */}
@@ -159,7 +162,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold">{summary.totalSize}</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Size</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('totalSize')}</p>
             </div>
           </CardContent>
         </Card>
@@ -167,7 +170,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold text-purple-600">{summary.thisMonth}</p>
-              <p className="text-xs text-muted-foreground mt-1">This Month</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('thisMonth')}</p>
             </div>
           </CardContent>
         </Card>
@@ -176,14 +179,14 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
       {/* Storage Breakdown */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Storage by Category</CardTitle>
+          <CardTitle className="text-base">{t('storageByCategory')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {storageByCategory.map((category) => (
-              <div key={category.name} className="space-y-2">
+              <div key={t(category.nameKey)} className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="font-medium">{category.name}</span>
+                  <span className="font-medium">{t(category.nameKey)}</span>
                   <span className="text-muted-foreground">{category.size} ({category.percentage}%)</span>
                 </div>
                 <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
@@ -201,7 +204,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
       {/* Files List */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Recent Files</CardTitle>
+          <CardTitle className="text-base">{t('recentFiles')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -217,13 +220,13 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
                     <div className="flex-1 space-y-2">
                       <div className="flex items-start gap-3">
                         <div className={`p-2 bg-gray-100 dark:bg-gray-800 rounded ${getTypeColor(file.type)}`}>
-                          <Icon className="h-5 w-5" />
+                          <Icon className="h-4 w-4" aria-hidden="true" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
-                            <h3 className="font-semibold text-sm">{file.name}</h3>
+                            <h3 className="font-semibold text-sm">{t(file.nameKey)}</h3>
                             {file.isFavorite && (
-                              <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                              <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                             )}
                           </div>
                           <p className="text-xs text-muted-foreground mt-1">{file.project}</p>
@@ -242,22 +245,22 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
 
                       <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
                         <div className="flex items-center gap-1">
-                          <Upload className="h-3 w-3" />
-                          Uploaded: {file.uploadedDate}
+                          <Upload className="h-4 w-4" aria-hidden="true" />
+                          {t('uploaded')}: {file.uploadedDate}
                         </div>
                         <span>•</span>
                         <div className="flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          Accessed: {file.lastAccessed}
+                          <Clock className="h-4 w-4" aria-hidden="true" />
+                          {t('accessed')}: {file.lastAccessed}
                         </div>
                         <span>•</span>
                         <div className="flex items-center gap-1">
-                          <Download className="h-3 w-3" />
-                          {file.downloads} downloads
+                          <Download className="h-4 w-4" aria-hidden="true" />
+                          {file.downloads} {t('downloads')}
                         </div>
                         <span>•</span>
                         <div className="flex items-center gap-1">
-                          <Eye className="h-3 w-3" />
+                          <Eye className="h-4 w-4" aria-hidden="true" />
                           {file.views} views
                         </div>
                       </div>
@@ -290,19 +293,20 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           <div className="grid grid-cols-3 gap-4 text-center">
             <div className="p-4 border rounded-lg">
               <p className="text-2xl font-bold text-blue-600">18</p>
-              <p className="text-xs text-muted-foreground mt-1">Files Uploaded</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('filesUploaded')}</p>
             </div>
             <div className="p-4 border rounded-lg">
               <p className="text-2xl font-bold text-green-600">6</p>
-              <p className="text-xs text-muted-foreground mt-1">Files Downloaded</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('filesDownloaded')}</p>
             </div>
             <div className="p-4 border rounded-lg">
               <p className="text-2xl font-bold">342 MB</p>
-              <p className="text-xs text-muted-foreground mt-1">Storage Added</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('storageAdded')}</p>
             </div>
           </div>
         </CardContent>
       </Card>
     </div>
+    </main>
   )
 }

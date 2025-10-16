@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -58,6 +59,8 @@ interface LeaderboardEntry {
 }
 
 export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabProps) {
+  const t = useTranslations('community.competitions')
+  const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
   const [competitionFilter, setCompetitionFilter] = useState<"all" | "active" | "upcoming" | "completed">("all")
 
@@ -102,8 +105,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 1,
       previousRank: 1,
       userId: "1",
-      name: "Sarah Mitchell",
-      title: "Production Director",
+      nameKey: "sarah_mitchell",
+      titleKey: "production_director",
       image: "/api/placeholder/40/40",
       score: 9845,
       badges: ["Champion", "Innovator", "Team Player"],
@@ -113,8 +116,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 2,
       previousRank: 3,
       userId: "2",
-      name: "Marcus Chen",
-      title: "Lighting Designer",
+      nameKey: "marcus_chen",
+      titleKey: "lighting_designer",
       image: "/api/placeholder/40/40",
       score: 9234,
       badges: ["Design Master", "Speed Demon"],
@@ -124,8 +127,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 3,
       previousRank: 2,
       userId: "3",
-      name: "Emily Rodriguez",
-      title: "Festival Director",
+      nameKey: "emily_rodriguez",
+      titleKey: "festival_director",
       image: "/api/placeholder/40/40",
       score: 8976,
       badges: ["Team Leader", "Organizer"],
@@ -135,8 +138,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 4,
       previousRank: 5,
       userId: "4",
-      name: "David Park",
-      title: "Technical Director",
+      nameKey: "david_park",
+      titleKey: "technical_director",
       image: "/api/placeholder/40/40",
       score: 8543,
       badges: ["Tech Wizard", "Problem Solver"],
@@ -146,8 +149,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 5,
       previousRank: 4,
       userId: "5",
-      name: "Jessica Martinez",
-      title: "Stage Manager",
+      nameKey: "jessica_martinez",
+      titleKey: "stage_manager",
       image: "/api/placeholder/40/40",
       score: 8321,
       badges: ["Coordinator", "Speed Demon"],
@@ -157,8 +160,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 6,
       previousRank: 7,
       userId: "6",
-      name: "Robert Williams",
-      title: "Audio Engineer",
+      nameKey: "robert_williams",
+      titleKey: "audio_engineer",
       image: "/api/placeholder/40/40",
       score: 7894,
       badges: ["Audio Expert"],
@@ -168,8 +171,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 7,
       previousRank: 6,
       userId: "7",
-      name: "Lisa Johnson",
-      title: "Tour Manager",
+      nameKey: "lisa_johnson",
+      titleKey: "tour_manager",
       image: "/api/placeholder/40/40",
       score: 7654,
       badges: ["Tour Pro", "Organizer"],
@@ -179,8 +182,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 8,
       previousRank: 9,
       userId: "8",
-      name: "Michael Thompson",
-      title: "Lighting Technician",
+      nameKey: "michael_thompson",
+      titleKey: "lighting_technician",
       image: "/api/placeholder/40/40",
       score: 7432,
       badges: ["Team Player"],
@@ -190,8 +193,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 9,
       previousRank: 8,
       userId: "9",
-      name: "Amanda Garcia",
-      title: "Video Engineer",
+      nameKey: "amanda_garcia",
+      titleKey: "video_engineer",
       image: "/api/placeholder/40/40",
       score: 7123,
       badges: ["Visual Expert", "Innovator"],
@@ -201,8 +204,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 10,
       previousRank: 11,
       userId: "10",
-      name: "Kevin Lee",
-      title: "Production Coordinator",
+      nameKey: "kevin_lee",
+      titleKey: "production_coordinator",
       image: "/api/placeholder/40/40",
       score: 6945,
       badges: ["Coordinator"],
@@ -246,49 +249,49 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Active</div>
-            <Trophy className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('active')}</div>
+            <Trophy className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {competitions.filter(c => c.status === "active").length}
             </div>
-            <p className="text-xs text-muted-foreground">Competitions</p>
+            <p className="text-xs text-muted-foreground">{t('competitions')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Participating</div>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('participating')}</div>
+            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {competitions.filter(c => c.joined).length}
             </div>
-            <p className="text-xs text-muted-foreground">Your entries</p>
+            <p className="text-xs text-muted-foreground">{t('yourEntries')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Your Rank</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('yourRank')}</div>
+            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">#247</div>
-            <p className="text-xs text-muted-foreground">Global ranking</p>
+            <p className="text-xs text-muted-foreground">{t('globalRanking')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Total Points</div>
-            <Star className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('totalPoints')}</div>
+            <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">3,456</div>
-            <p className="text-xs text-muted-foreground">Competition points</p>
+            <p className="text-xs text-muted-foreground">{t('competitionPoints')}</p>
           </CardContent>
         </Card>
       </div>
@@ -299,14 +302,10 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="flex items-center gap-2">
-                <Trophy className="h-5 w-5 text-yellow-500" />
-                Global Leaderboard
-              </CardTitle>
-              <CardDescription>Top performers across all competitions</CardDescription>
+                <Trophy className="h-5 w-5 text-yellow-500" aria-hidden="true" />{t('globalLeaderboard')}</CardTitle>
+              <CardDescription>{t('topPerformers')}</CardDescription>
             </div>
-            <Button variant="outline" size="sm">
-              View Full Rankings
-            </Button>
+            <Button variant="outline" size="sm">{t('viewFullRankings')}</Button>
           </div>
         </CardHeader>
         <CardContent>
@@ -348,8 +347,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                   </Avatar>
 
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold truncate">{entry.name}</p>
-                    <p className="text-sm text-muted-foreground truncate">{entry.title}</p>
+                    <p className="font-semibold truncate">{t(entry.nameKey)}</p>
+                    <p className="text-sm text-muted-foreground truncate">{t(entry.titleKey)}</p>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {entry.badges.map((badge) => (
                         <Badge key={badge} variant="secondary" className="text-xs">
@@ -362,9 +361,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                   {/* Score & Streak */}
                   <div className="text-right">
                     <div className="text-xl font-bold">{entry.score.toLocaleString()}</div>
-                    <div className="text-xs text-muted-foreground">points</div>
+                    <div className="text-xs text-muted-foreground">{t('points')}</div>
                     <div className="flex items-center justify-end gap-1 mt-1 text-orange-500">
-                      <Zap className="h-3 w-3 fill-current" />
+                      <Zap className="h-3 w-3 fill-current" aria-hidden="true" />
                       <span className="text-xs font-semibold">{entry.streak} day streak</span>
                     </div>
                   </div>
@@ -380,9 +379,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
         <CardContent className="pt-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
-                placeholder="Search competitions..."
+                placeholder={t('searchCompetitions')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -390,10 +389,10 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
             </div>
             <Tabs value={competitionFilter} onValueChange={(v) => setCompetitionFilter(v as any)}>
               <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
-                <TabsTrigger value="active">Active</TabsTrigger>
-                <TabsTrigger value="upcoming">Upcoming</TabsTrigger>
-                <TabsTrigger value="completed">Completed</TabsTrigger>
+                <TabsTrigger value="all">{t('all')}</TabsTrigger>
+                <TabsTrigger value="active">{t('active')}</TabsTrigger>
+                <TabsTrigger value="upcoming">{t('upcoming')}</TabsTrigger>
+                <TabsTrigger value="completed">{t('completed')}</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
@@ -408,8 +407,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
               <EmptyState
                 variant="inline"
                 icon={Trophy}
-                mainMessage={searchQuery || competitionFilter !== "all" ? "No competitions found" : "NOTHING TO SEE HERE... (YET)"}
-                description={searchQuery || competitionFilter !== "all" ? "Try adjusting your filters" : "Join competitions to showcase your talent"}
+                mainMessage={searchQuery || competitionFilter !== "all" ? t('noCompetitionsFound') : t('nothingToSeeYet')}
+                description={searchQuery || competitionFilter !== "all" ? t('tryAdjustingFilters') : t('joinCompetitions')}
               />
             </CardContent>
           </Card>
@@ -452,7 +451,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                         <CategoryIcon className="h-5 w-5 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold text-lg mb-1">{competition.title}</h3>
+                        <h3 className="font-semibold text-lg mb-1">{t(competition.titleKey)}</h3>
                         <Badge variant="outline" className="capitalize text-xs">
                           {competition.category}
                         </Badge>
@@ -461,23 +460,23 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
 
                     {/* Description */}
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                      {competition.description}
+                      {t(competition.descriptionKey)}
                     </p>
 
                     {/* Details */}
                     <div className="space-y-2 mb-4 text-sm">
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
+                        <Calendar className="h-4 w-4" aria-hidden="true" />
                         <span>
                           {new Date(competition.startDate).toLocaleDateString()} - {new Date(competition.endDate).toLocaleDateString()}
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <Users className="h-4 w-4" />
+                        <Users className="h-4 w-4" aria-hidden="true" />
                         <span>{competition.participants} participants</span>
                       </div>
                       <div className="flex items-center gap-2 text-primary font-medium">
-                        <Trophy className="h-4 w-4" />
+                        <Trophy className="h-4 w-4" aria-hidden="true" />
                         <span>{competition.prize}</span>
                       </div>
                     </div>
@@ -486,7 +485,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                     {competition.status === "active" && (
                       <div className="mb-4">
                         <div className="flex items-center justify-between text-xs text-muted-foreground mb-1">
-                          <span>Time Remaining</span>
+                          <span>{t('timeRemaining')}</span>
                           <span>
                             {Math.ceil(
                               (new Date(competition.endDate).getTime() - new Date().getTime()) / 
@@ -503,12 +502,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                       {competition.joined ? (
                         <>
                           <Button variant="default" size="sm" className="flex-1" disabled>
-                            <Flag className="h-4 w-4 mr-2" />
-                            Participating
-                          </Button>
-                          <Button variant="outline" size="sm">
-                            View
-                          </Button>
+                            <Flag className="h-4 w-4 mr-2" aria-hidden="true" />{t('participating')}</Button>
+                          <Button variant="outline" size="sm">{tCommon('view')}</Button>
                         </>
                       ) : (
                         <>
@@ -519,12 +514,10 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                             onClick={() => handleJoin(competition.id)}
                             disabled={competition.status === "completed"}
                           >
-                            <Play className="h-4 w-4 mr-2" />
-                            {competition.status === "upcoming" ? "Register" : "Join Now"}
+                            <Play className="h-4 w-4 mr-2" aria-hidden="true" />
+                            {competition.status === "upcoming" ? t('register') : t('joinNow')}
                           </Button>
-                          <Button variant="outline" size="sm">
-                            Details
-                          </Button>
+                          <Button variant="outline" size="sm">{tCommon('details')}</Button>
                         </>
                       )}
                     </div>

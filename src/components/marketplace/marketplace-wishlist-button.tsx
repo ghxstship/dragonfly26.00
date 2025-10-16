@@ -186,7 +186,7 @@ export function WishlistButton({
                 <Label htmlFor="wishlist-description">Description (Optional)</Label>
                 <Input
                   id="wishlist-description"
-                  placeholder="Add a description..."
+                  placeholder={t('marketplace.wishlist.descriptionPlaceholder')}
                   value={newWishlistDescription}
                   onChange={(e) => setNewWishlistDescription(e.target.value)}
                 />

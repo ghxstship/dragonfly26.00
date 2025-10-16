@@ -23,7 +23,7 @@ export function ChecklistTemplatesTab() {
     {
       id: "1",
       organization_id: "org-1",
-      name: "New Project Checklist",
+      nameKey: "new_project_checklist",
       description: t('templates.standardChecklist'),
       items: [
         { content: t('templates.createProjectPlan'), completed: false, order: 0 },
@@ -76,15 +76,13 @@ export function ChecklistTemplatesTab() {
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle>Checklist Templates</CardTitle>
-              <CardDescription>
-                Create reusable checklist templates for your organization
-              </CardDescription>
+              <CardTitle>{t('admin.checklistTemplates.title')}</CardTitle>
+              <CardDescription>{t('admin.checklistTemplates.description')}</CardDescription>
             </div>
             <Dialog open={isCreating} onOpenChange={setIsCreating}>
               <DialogTrigger asChild>
-                <Button className="gap-2">
-                  <Plus className="h-4 w-4" />
+                <Button className="gap-2" aria-label="Add new checklist template">
+                  <Plus className="h-4 w-4" aria-hidden="true" />
                   Add Template
                 </Button>
               </DialogTrigger>
@@ -96,8 +94,8 @@ export function ChecklistTemplatesTab() {
                   <div className="space-y-2">
                     <Label>Template Name</Label>
                     <Input
-                      placeholder="e.g., New Project Checklist"
-                      value={newTemplate.name}
+                      placeholder={t('admin.templates.namePlaceholder')}
+                      value={t(newTemplate.nameKey)}
                       onChange={(e) =>
                         setNewTemplate({ ...newTemplate, name: e.target.value })
                       }
@@ -108,7 +106,7 @@ export function ChecklistTemplatesTab() {
                     <Label>Description</Label>
                     <Textarea
                       placeholder={t('templates.describeUsage')}
-                      value={newTemplate.description}
+                      value={t(newTemplate.descriptionKey)}
                       onChange={(e) =>
                         setNewTemplate({ ...newTemplate, description: e.target.value })
                       }
@@ -138,8 +136,9 @@ export function ChecklistTemplatesTab() {
                                 items: [...newTemplate.items, ""],
                               })
                             }
+                            aria-label="Add another checklist item"
                           >
-                            <Plus className="h-4 w-4" />
+                            <Plus className="h-4 w-4" aria-hidden="true" />
                           </Button>
                         )}
                       </div>
@@ -172,12 +171,12 @@ export function ChecklistTemplatesTab() {
               >
                 <div className="flex items-start justify-between">
                   <div className="flex gap-3 flex-1">
-                    <ListChecks className="h-5 w-5 text-muted-foreground mt-0.5" />
+                    <ListChecks className="h-5 w-5 text-muted-foreground mt-0.5" aria-hidden="true" />
                     <div className="flex-1">
-                      <div className="font-medium">{template.name}</div>
+                      <div className="font-medium">{t(template.nameKey)}</div>
                       {template.description && (
                         <div className="text-sm text-muted-foreground mt-1">
-                          {template.description}
+                          {t(template.descriptionKey)}
                         </div>
                       )}
                       <div className="text-xs text-muted-foreground mt-2">
@@ -188,8 +187,8 @@ export function ChecklistTemplatesTab() {
 
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <MoreHorizontal className="h-4 w-4" />
+                      <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Template actions">
+                        <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">

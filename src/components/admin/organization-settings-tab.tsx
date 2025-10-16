@@ -8,6 +8,7 @@ import { Switch } from "@/components/ui/switch"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Plus } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 import type { OrganizationSettings } from "@/types"
 
@@ -39,12 +40,12 @@ export function OrganizationSettingsTab() {
       // TODO: Save to Supabase
       toast({
         title: t('success.saved'),
-        description: "Organization settings have been updated successfully.",
+        descriptionKey: "tadminorganizationsettingsdescription_have_been_updated_succ",
       })
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to save settings. Please try again.",
+        title: t('common.error'),
+        description: t('admin.toast.settingsFailedDesc'),
         variant: "destructive",
       })
     } finally {
@@ -54,10 +55,22 @@ export function OrganizationSettingsTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.organizationSettings.description')}
+        </p>
+        <Button size="sm" aria-label="Create organization setting">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          Create
+        </Button>
+      </div>
+
+
       {/* Feature Toggles */}
       <Card>
         <CardHeader>
-          <CardTitle>Feature Controls</CardTitle>
+          <CardTitle>{t('admin.organizationSettings.featureControls')}</CardTitle>
           <CardDescription>
             Enable or disable features for your entire organization
           </CardDescription>

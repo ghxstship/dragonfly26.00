@@ -7,63 +7,64 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
+import { useTranslations } from "next-intl"
 const savedMetrics = [
   {
     id: "1",
-    name: "Monthly Recurring Revenue (MRR)",
-    description: "Total predictable revenue generated per month",
+    nameKey: "monthly_recurring_revenue_mrr",
+    descriptionKey: "total_predictable_revenue_generated_per_month",
     formula: "SUM(subscription_revenue) WHERE status='active'",
-    category: "Financial",
+    categoryKey: "financial",
     isFavorite: true,
     lastValue: "$2.4M",
     trend: "+12%"
   },
   {
     id: "2",
-    name: "Customer Acquisition Cost (CAC)",
-    description: "Average cost to acquire a new customer",
+    nameKey: "customer_acquisition_cost_cac",
+    descriptionKey: "average_cost_to_acquire_a_new_customer",
     formula: "SUM(marketing_spend + sales_spend) / COUNT(new_customers)",
-    category: "Marketing",
+    categoryKey: "marketing",
     isFavorite: true,
     lastValue: "$245",
     trend: "-8%"
   },
   {
     id: "3",
-    name: "Net Promoter Score (NPS)",
-    description: "Customer loyalty and satisfaction metric",
+    nameKey: "net_promoter_score_nps",
+    descriptionKey: "customer_loyalty_and_satisfaction_metric",
     formula: "% Promoters - % Detractors",
-    category: "Customer Success",
+    categoryKey: "customer_success",
     isFavorite: false,
     lastValue: "45",
     trend: "+5"
   },
   {
     id: "4",
-    name: "Employee Productivity Index",
-    description: "Output per employee over time",
+    nameKey: "employee_productivity_index",
+    descriptionKey: "output_per_employee_over_time",
     formula: "SUM(completed_tasks) / COUNT(active_employees)",
-    category: "Operations",
+    categoryKey: "operations",
     isFavorite: true,
     lastValue: "87%",
     trend: "+3%"
   },
   {
     id: "5",
-    name: "Gross Profit Margin",
-    description: "Revenue minus cost of goods sold",
+    nameKey: "gross_profit_margin",
+    descriptionKey: "revenue_minus_cost_of_goods_sold",
     formula: "(Revenue - COGS) / Revenue * 100",
-    category: "Financial",
+    categoryKey: "financial",
     isFavorite: false,
     lastValue: "68%",
     trend: "+2%"
   },
   {
     id: "6",
-    name: "Customer Lifetime Value (LTV)",
-    description: "Total revenue expected from a customer",
+    nameKey: "customer_lifetime_value_ltv",
+    descriptionKey: "total_revenue_expected_from_a_customer",
     formula: "AVG(purchase_value) * AVG(purchase_frequency) * AVG(customer_lifespan)",
-    category: "Marketing",
+    categoryKey: "marketing",
     isFavorite: true,
     lastValue: "$12,450",
     trend: "+18%"
@@ -76,14 +77,21 @@ interface AnalyticsMetricsLibraryTabProps {
 }
 
 export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: AnalyticsMetricsLibraryTabProps) {
+  const t = useTranslations('intelligence.analytics.analyticsmetricslibrary')
+  const tCommon = useTranslations('common')
+
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displayMetrics = data || []
   
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
         <Button onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           New Metric
         </Button>
       </div>
@@ -91,7 +99,7 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
       {/* Favorites */}
       <div>
         <h3 className="font-semibold mb-3 flex items-center gap-2">
-          <Star className="h-4 w-4 text-yellow-600 fill-current" />
+          <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />
           Favorite Metrics
         </h3>
         <div className="grid grid-cols-2 gap-4">
@@ -101,22 +109,22 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <CardTitle className="text-base">{metric.name}</CardTitle>
-                      <Star className="h-4 w-4 text-yellow-600 fill-current" />
+                      <CardTitle className="text-base">{t(metric.nameKey)}</CardTitle>
+                      <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />
                     </div>
-                    <Badge variant="outline" className="text-xs">{metric.category}</Badge>
+                    <Badge variant="outline" className="text-xs">{t(metric.categoryKey)}</Badge>
                   </div>
                   <div className="text-right">
-                    <p className="text-2xl font-bold">{metric.lastValue}</p>
+                    <p className="text-2xl font-bold" aria-live="polite">{metric.lastValue}</p>
                     <p className="text-xs text-green-600 flex items-center gap-1">
-                      <TrendingUp className="h-3 w-3" />
+                      <TrendingUp className="h-3 w-3" aria-hidden="true" />
                       {metric.trend}
                     </p>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-3">{metric.description}</p>
+                <p className="text-sm text-muted-foreground mb-3">{t(metric.descriptionKey)}</p>
                 <div className="p-2 bg-muted rounded text-xs font-mono">
                   {metric.formula}
                 </div>
@@ -128,7 +136,7 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
 
       {/* All Metrics */}
       <div>
-        <h3 className="font-semibold mb-3">All Metrics</h3>
+        <h3 className="font-semibold mb-3">{t('allMetrics')}</h3>
         <div className="space-y-2">
           {savedMetrics.map((metric) => (
             <Card key={metric.id} className="hover:shadow-md transition-shadow">
@@ -136,18 +144,18 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <h4 className="font-semibold">{metric.name}</h4>
-                      <Badge variant="secondary" className="text-xs">{metric.category}</Badge>
-                      {metric.isFavorite && <Star className="h-4 w-4 text-yellow-600 fill-current" />}
+                      <h4 className="font-semibold">{t(metric.nameKey)}</h4>
+                      <Badge variant="secondary" className="text-xs">{t(metric.categoryKey)}</Badge>
+                      {metric.isFavorite && <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />}
                     </div>
-                    <p className="text-sm text-muted-foreground mb-2">{metric.description}</p>
+                    <p className="text-sm text-muted-foreground mb-2">{t(metric.descriptionKey)}</p>
                     <div className="p-2 bg-muted rounded text-xs font-mono inline-block">
                       {metric.formula}
                     </div>
                   </div>
                   <div className="text-right ml-4">
-                    <p className="text-sm text-muted-foreground">Current Value</p>
-                    <p className="text-2xl font-bold">{metric.lastValue}</p>
+                    <p className="text-sm text-muted-foreground">{t('currentValue')}</p>
+                    <p className="text-2xl font-bold" aria-live="polite">{metric.lastValue}</p>
                     <p className="text-sm text-green-600 mt-1">{metric.trend}</p>
                   </div>
                 </div>

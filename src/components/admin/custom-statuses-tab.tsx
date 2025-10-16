@@ -18,14 +18,14 @@ import {
 import type { CustomStatus } from "@/types"
 
 const STATUS_COLORS = [
-  { name: "Slate", value: "#94a3b8" },
-  { name: "Red", value: "#ef4444" },
-  { name: "Orange", value: "#f97316" },
-  { name: "Yellow", value: "#eab308" },
-  { name: "Green", value: "#22c55e" },
-  { name: "Blue", value: "#3b82f6" },
-  { name: "Purple", value: "#a855f7" },
-  { name: "Pink", value: "#ec4899" },
+  { name: t('admin.mockData.colorSlate'), value: "#94a3b8" },
+  { name: t('admin.mockData.colorRed'), value: "#ef4444" },
+  { name: t('admin.mockData.colorOrange'), value: "#f97316" },
+  { name: t('admin.mockData.colorYellow'), value: "#eab308" },
+  { name: t('admin.mockData.colorGreen'), value: "#22c55e" },
+  { name: t('admin.mockData.colorBlue'), value: "#3b82f6" },
+  { name: t('admin.mockData.colorPurple'), value: "#a855f7" },
+  { name: t('admin.mockData.colorPink'), value: "#ec4899" },
 ]
 
 export function CustomStatusesTab() {
@@ -34,7 +34,7 @@ export function CustomStatusesTab() {
     {
       id: "1",
       organization_id: "org-1",
-      name: "To Do",
+      name: t('admin.mockData.statusTodo'),
       color: "#94a3b8",
       type: "open",
       order: 0,
@@ -56,7 +56,7 @@ export function CustomStatusesTab() {
     {
       id: "3",
       organization_id: "org-1",
-      name: "Done",
+      name: t('admin.mockData.statusDone'),
       color: "#22c55e",
       type: "closed",
       order: 2,
@@ -77,7 +77,7 @@ export function CustomStatusesTab() {
     const status: CustomStatus = {
       id: `status-${Date.now()}`,
       organization_id: "org-1",
-      name: newStatus.name || "New Status",
+      name: newStatus.name || "{t('admin.customStatuses.newStatus')}",
       color: newStatus.color || "#94a3b8",
       type: newStatus.type as any || "custom",
       order: statuses.length,
@@ -108,8 +108,8 @@ export function CustomStatusesTab() {
             </div>
             <Dialog open={isCreating} onOpenChange={setIsCreating}>
               <DialogTrigger asChild>
-                <Button className="gap-2">
-                  <Plus className="h-4 w-4" />
+                <Button className="gap-2" aria-label="Add new custom status">
+                  <Plus className="h-4 w-4" aria-hidden="true" />
                   Add Status
                 </Button>
               </DialogTrigger>
@@ -140,6 +140,7 @@ export function CustomStatusesTab() {
                           }`}
                           style={{ backgroundColor: color.value }}
                           onClick={() => setNewStatus({ ...newStatus, color: color.value })}
+                          aria-label={`Select ${color.name} color`}
                         />
                       ))}
                     </div>
@@ -183,7 +184,7 @@ export function CustomStatusesTab() {
                 key={status.id}
                 className="flex items-center gap-3 p-3 border rounded-lg hover:bg-accent/50"
               >
-                <GripVertical className="h-4 w-4 text-muted-foreground cursor-grab" />
+                <GripVertical className="h-4 w-4 text-muted-foreground cursor-grab" aria-hidden="true" />
                 
                 <div
                   className="h-3 w-3 rounded-full flex-shrink-0"
@@ -200,8 +201,8 @@ export function CustomStatusesTab() {
 
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <MoreHorizontal className="h-4 w-4" />
+                    <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Status actions">
+                      <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">

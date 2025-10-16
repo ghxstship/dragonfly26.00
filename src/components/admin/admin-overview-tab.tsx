@@ -1,6 +1,8 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { 
   Users, 
@@ -13,13 +15,15 @@ import {
   CheckCircle2,
   Clock,
   ArrowUpRight,
-  ArrowDownRight
+  ArrowDownRight,
+  Plus
 } from "lucide-react"
 
 export function AdminOverviewTab() {
+  const t = useTranslations()
   const stats = [
     {
-      label: "Total Members",
+      label: t('admin.totalMembers'),
       value: "42",
       change: "+3",
       trend: "up",
@@ -28,7 +32,7 @@ export function AdminOverviewTab() {
       bgColor: "bg-blue-100 dark:bg-blue-950",
     },
     {
-      label: "Active Projects",
+      label: t('admin.activeProjects'),
       value: "18",
       change: "+2",
       trend: "up",
@@ -37,7 +41,7 @@ export function AdminOverviewTab() {
       bgColor: "bg-purple-100 dark:bg-purple-950",
     },
     {
-      label: "Events This Month",
+      label: t('admin.eventsThisMonth'),
       value: "127",
       change: "-5",
       trend: "down",
@@ -46,7 +50,7 @@ export function AdminOverviewTab() {
       bgColor: "bg-red-100 dark:bg-red-950",
     },
     {
-      label: "Monthly Spend",
+      label: t('admin.monthlySpend'),
       value: "$24.5k",
       change: "+12%",
       trend: "up",
@@ -57,24 +61,39 @@ export function AdminOverviewTab() {
   ]
 
   const recentActivity = [
-    { user: "Sarah Johnson", action: "created a new project", project: "Summer Festival 2024", time: "5 minutes ago", type: "create" },
-    { user: "Mike Chen", action: "updated budget for", project: "Corporate Gala", time: "12 minutes ago", type: "update" },
-    { user: "Emily Rodriguez", action: "completed milestone in", project: "Product Launch", time: "1 hour ago", type: "complete" },
-    { user: "David Kim", action: "added 3 new members to", project: "Tour 2024", time: "2 hours ago", type: "member" },
-    { user: "Lisa Anderson", action: "scheduled event for", project: "Conference Setup", time: "3 hours ago", type: "event" },
+    { user: t('admin.mockData.user1'), action: t('admin.mockData.action1'), project: t('admin.mockData.project1'), time: "5 minutes ago", type: "create" },
+    { user: t('admin.mockData.user2'), action: t('admin.mockData.action2'), project: t('admin.mockData.project2'), time: "12 minutes ago", type: "update" },
+    { user: t('admin.mockData.user3'), action: t('admin.mockData.action3'), project: t('admin.mockData.project3'), time: "1 hour ago", type: "complete" },
+    { user: t('admin.mockData.user4'), action: t('admin.mockData.action4'), project: t('admin.mockData.project4'), time: "2 hours ago", type: "member" },
+    { user: t('admin.mockData.user5'), action: t('admin.mockData.action5'), project: t('admin.mockData.project5'), time: "3 hours ago", type: "event" },
   ]
 
   const systemHealth = [
-    { metric: "API Response Time", value: "145ms", status: "healthy", icon: Clock },
-    { metric: "Storage Used", value: "64%", status: "warning", icon: AlertCircle },
-    { metric: "Active Sessions", value: "38", status: "healthy", icon: Activity },
-    { metric: "Uptime", value: "99.9%", status: "healthy", icon: CheckCircle2 },
+    { metric: t('admin.systemHealth.apiResponseTime'), value: "145ms", status: "healthy", icon: Clock },
+    { metric: t('admin.systemHealth.storageUsed'), value: "64%", status: "warning", icon: AlertCircle },
+    { metric: t('admin.systemHealth.activeSessions'), value: "38", status: "healthy", icon: Activity },
+    { metric: t('admin.systemHealth.uptime'), value: "99.9%", status: "healthy", icon: CheckCircle2 },
   ]
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.overviewDescription')}
+        </p>
+        <Button size="sm" aria-label={t('admin.viewAll')}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('admin.viewAll')}
+        </Button>
+      </div>
+
+
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {t('admin.overview.statsUpdated')}
+      </div>
         {stats.map((stat) => {
           const Icon = stat.icon
           return (
@@ -83,7 +102,7 @@ export function AdminOverviewTab() {
                 <div className="flex items-center justify-between">
                   <CardDescription className="text-xs">{stat.label}</CardDescription>
                   <div className={`p-2 rounded-lg ${stat.bgColor}`}>
-                    <Icon className={`h-4 w-4 ${stat.color}`} />
+                    <Icon className={`h-4 w-4 ${stat.color}`} aria-hidden="true" />
                   </div>
                 </div>
                 <div className="flex items-end justify-between">
@@ -92,9 +111,9 @@ export function AdminOverviewTab() {
                     stat.trend === "up" ? "text-green-600" : "text-red-600"
                   }`}>
                     {stat.trend === "up" ? (
-                      <ArrowUpRight className="h-4 w-4 mr-1" />
+                      <ArrowUpRight className="h-4 w-4 mr-1" aria-hidden="true" />
                     ) : (
-                      <ArrowDownRight className="h-4 w-4 mr-1" />
+                      <ArrowDownRight className="h-4 w-4 mr-1" aria-hidden="true" />
                     )}
                     {stat.change}
                   </div>
@@ -109,8 +128,8 @@ export function AdminOverviewTab() {
         {/* Recent Activity */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">Recent Activity</CardTitle>
-            <CardDescription>Latest actions across your organization</CardDescription>
+            <CardTitle className="text-base">{t('admin.recentActivity')}</CardTitle>
+            <CardDescription>{t('admin.recentActivityDescription')}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -140,8 +159,8 @@ export function AdminOverviewTab() {
         {/* System Health */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">System Health</CardTitle>
-            <CardDescription>Current system status and metrics</CardDescription>
+            <CardTitle className="text-base">{t('admin.systemHealth')}</CardTitle>
+            <CardDescription>{t('admin.systemHealthDescription')}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -150,7 +169,7 @@ export function AdminOverviewTab() {
                 return (
                   <div key={item.metric} className="flex items-center justify-between p-3 border rounded-lg">
                     <div className="flex items-center gap-3">
-                      <Icon className="h-4 w-4 text-muted-foreground" />
+                      <Icon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                       <div>
                         <p className="text-sm font-medium">{item.metric}</p>
                         <p className="text-xs text-muted-foreground">{item.value}</p>
@@ -159,8 +178,8 @@ export function AdminOverviewTab() {
                     <Badge variant={item.status === "healthy" ? "default" : "secondary"}>
                       {item.status === "healthy" ? (
                         <>
-                          <CheckCircle2 className="h-3 w-3 mr-1" />
-                          Healthy
+                          <CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" />
+                          {t('admin.healthy')}
                         </>
                       ) : (
                         <>

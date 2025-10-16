@@ -7,7 +7,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Star, ThumbsUp, Flag, Search, Filter } from "lucide-react"
+import { Star, ThumbsUp, Flag, Search, Filter, Plus } from "lucide-react"
+import { useTranslations } from 'next-intl'
 
 interface ReviewsTabProps {
   data?: any[]
@@ -15,6 +16,8 @@ interface ReviewsTabProps {
 }
 
 export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
+  const t = useTranslations('marketplace.reviews')
+  const tCommon = useTranslations('common')
   const reviewsData = data
   
   const getStatusBadge = (status: string) => {
@@ -61,6 +64,16 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('create')}</Button>
+      </div>
+
+
       {/* Overview Card */}
       <Card>
         <CardHeader>
@@ -85,7 +98,7 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
                 <div key={rating} className="flex items-center gap-3">
                   <div className="flex items-center gap-1 w-16">
                     <span className="text-sm font-medium">{rating}</span>
-                    <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
+                    <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                   </div>
                   <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
                     <div
@@ -106,12 +119,12 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search reviews..." className="pl-9" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Input placeholder={t('searchReviews')} className="pl-9" />
         </div>
         <Select defaultValue="all">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Item Type" />
+            <SelectValue placeholder={t('itemType')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Types</SelectItem>
@@ -123,7 +136,7 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
         </Select>
         <Select defaultValue="recent">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Sort by" />
+            <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="recent">Most Recent</SelectItem>
@@ -133,9 +146,7 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
           </SelectContent>
         </Select>
         <Button variant="outline">
-          <Filter className="h-4 w-4 mr-2" />
-          More Filters
-        </Button>
+          <Filter className="h-4 w-4 mr-2" aria-hidden="true" />{t('moreFilters')}</Button>
       </div>
 
       {/* Tabs */}
@@ -173,7 +184,7 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
                     </div>
                   </div>
                   <Button variant="ghost" size="icon">
-                    <Flag className="h-4 w-4" />
+                    <Flag className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </CardHeader>

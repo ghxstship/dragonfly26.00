@@ -6,7 +6,8 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Store, Star, ShieldCheck, Award, TrendingUp, Clock, Search, MessageCircle } from "lucide-react"
+import { Store, Star, ShieldCheck, Award, TrendingUp, Clock, Search, MessageCircle, Plus } from "lucide-react"
+import { useTranslations } from 'next-intl'
 
 interface VendorsTabProps {
   data?: any[]
@@ -14,6 +15,8 @@ interface VendorsTabProps {
 }
 
 export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
+  const t = useTranslations('marketplace.vendors')
+  const tCommon = useTranslations('common')
   const vendorsData = data
   
   const getStatusBadge = (status: string) => {
@@ -21,11 +24,11 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
       case "verified":
         return <Badge className="bg-green-600"><ShieldCheck className="h-3 w-3 mr-1" />Verified</Badge>
       case "certified":
-        return <Badge className="bg-blue-600"><Award className="h-3 w-3 mr-1" />Certified</Badge>
+        return <Badge className="bg-blue-600"><Award className="h-3 w-3 mr-1" aria-hidden="true" />Certified</Badge>
       case "featured":
-        return <Badge className="bg-purple-600"><Star className="h-3 w-3 mr-1" />Featured</Badge>
+        return <Badge className="bg-purple-600"><Star className="h-3 w-3 mr-1" aria-hidden="true" />Featured</Badge>
       case "active":
-        return <Badge variant="outline">Active</Badge>
+        return <Badge variant="outline">{t('active')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -33,28 +36,38 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('create')}</Button>
+      </div>
+
+
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search vendors..." className="pl-9" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Input placeholder={t('searchVendors')} className="pl-9" />
         </div>
         <Select defaultValue="all">
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder="Vendor Type" />
+            <SelectValue placeholder={t('vendorType')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Types</SelectItem>
             <SelectItem value="equipment">Equipment Rental</SelectItem>
             <SelectItem value="production">Production Services</SelectItem>
             <SelectItem value="av">Audio/Visual</SelectItem>
-            <SelectItem value="staging">Staging</SelectItem>
-            <SelectItem value="lighting">Lighting</SelectItem>
+            <SelectItem value="staging">{t('staging')}</SelectItem>
+            <SelectItem value="lighting">{t('lighting')}</SelectItem>
           </SelectContent>
         </Select>
         <Select defaultValue="verified">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Filter" />
+            <SelectValue placeholder={t('filter')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="verified">Verified Only</SelectItem>
@@ -65,7 +78,7 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
         </Select>
         <Select defaultValue="rating">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Sort by" />
+            <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="rating">Highest Rated</SelectItem>
@@ -110,31 +123,31 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
               <div className="grid grid-cols-4 gap-4 p-4 bg-muted/50 rounded-lg">
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    <Star className="h-3 w-3" />
+                    <Star className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">Rating</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                     <span className="font-semibold">{vendor.rating}</span>
                   </div>
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    <TrendingUp className="h-3 w-3" />
+                    <TrendingUp className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">Sales</span>
                   </div>
                   <p className="font-semibold">{vendor.total_sales}</p>
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    <MessageCircle className="h-3 w-3" />
+                    <MessageCircle className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">Reviews</span>
                   </div>
                   <p className="font-semibold">{vendor.comments_count}</p>
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    <Clock className="h-3 w-3" />
+                    <Clock className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">Response</span>
                   </div>
                   <p className="font-semibold text-xs">{vendor.response_time}</p>

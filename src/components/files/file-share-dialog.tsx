@@ -92,7 +92,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
             <Label>Share with people</Label>
             <div className="flex gap-2">
               <Input
-                placeholder="Enter email address"
+                placeholder={t('files.share.emailPlaceholder')}
                 value={shareEmail}
                 onChange={(e) => setShareEmail(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleShare()}

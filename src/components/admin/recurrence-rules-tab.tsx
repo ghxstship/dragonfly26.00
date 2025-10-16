@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -41,6 +42,7 @@ interface RecurrenceRule {
 }
 
 export function RecurrenceRulesTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState(false)
   const [selectedRule, setSelectedRule] = useState<RecurrenceRule | null>(null)
@@ -48,33 +50,33 @@ export function RecurrenceRulesTab() {
   const [rules, setRules] = useState<RecurrenceRule[]>([
     {
       id: "1",
-      name: "Weekly Team Meeting",
+      nameKey: "weekly_team_meeting",
       pattern: "Every Monday at 10:00 AM",
-      description: "Standard weekly team sync",
+      description: t('admin.mockData.rule1Desc'),
       usageCount: 24,
       createdAt: "2023-12-01",
     },
     {
       id: "2",
-      name: "Monthly All-Hands",
+      nameKey: "monthly_allhands",
       pattern: "First Friday of every month at 2:00 PM",
-      description: "Company-wide monthly meeting",
+      description: t('admin.mockData.rule2Desc'),
       usageCount: 12,
       createdAt: "2023-11-15",
     },
     {
       id: "3",
-      name: "Quarterly Reviews",
+      nameKey: "quarterly_reviews",
       pattern: "Last day of quarter at 3:00 PM",
-      description: "End of quarter performance reviews",
+      description: t('admin.mockData.rule3Desc'),
       usageCount: 4,
       createdAt: "2023-10-01",
     },
     {
       id: "4",
-      name: "Daily Stand-up",
+      nameKey: "daily_standup",
       pattern: "Every weekday at 9:30 AM",
-      description: "Daily team check-in",
+      description: t('admin.mockData.rule4Desc'),
       usageCount: 156,
       createdAt: "2024-01-02",
     },
@@ -93,19 +95,25 @@ export function RecurrenceRulesTab() {
   const handleDeleteRule = (ruleId: string) => {
     setRules(rules.filter(r => r.id !== ruleId))
     toast({
-      title: "Rule deleted",
-      description: "The recurrence rule has been removed.",
+      title: t('admin.toast.ruleDeleted'),
+      description: t('admin.toast.ruleDeletedDesc'),
       variant: "destructive",
     })
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button onClick={handleCreateRule}>
-          <Plus className="h-4 w-4 mr-2" />
-          New Rule
-        </Button>
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('recurrence.description')}
+        </p>
+        <div className="flex gap-2">
+          <Button onClick={handleCreateRule}>
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('recurrence.newRule')}
+          </Button>
+        </div>
       </div>
 
       {/* Stats */}
@@ -144,13 +152,13 @@ export function RecurrenceRulesTab() {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
-                    <CardTitle className="text-base">{rule.name}</CardTitle>
+                    <CardTitle className="text-base">{t(rule.nameKey)}</CardTitle>
                     <Badge variant="outline">
                       <Clock className="h-3 w-3 mr-1" />
                       {rule.usageCount} uses
                     </Badge>
                   </div>
-                  <CardDescription>{rule.description}</CardDescription>
+                  <CardDescription>{t(rule.descriptionKey)}</CardDescription>
                   <div className="flex items-center gap-2 mt-2 text-sm">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
                     <span className="font-medium">{rule.pattern}</span>
@@ -165,16 +173,16 @@ export function RecurrenceRulesTab() {
                     size="sm"
                     onClick={() => handleEditRule(rule)}
                   >
-                    <Edit className="h-4 w-4 mr-2" />
-                    Edit
+                    <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
+                    {t('common.edit')}
                   </Button>
                   <Button
                     variant="destructive"
                     size="sm"
                     onClick={() => handleDeleteRule(rule.id)}
                   >
-                    <Trash2 className="h-4 w-4 mr-2" />
-                    Delete
+                    <Trash2 className="h-4 w-4 mr-2" aria-hidden="true" />
+                    {t('common.delete')}
                   </Button>
                 </div>
               </div>
@@ -207,7 +215,7 @@ export function RecurrenceRulesTab() {
             <div className="space-y-2">
               <Label>Description</Label>
               <Input
-                placeholder="Brief description of this rule"
+                placeholder={t('admin.recurrenceRules.descriptionPlaceholder')}
                 defaultValue={selectedRule?.description}
               />
             </div>
@@ -262,8 +270,8 @@ export function RecurrenceRulesTab() {
             <Button
               onClick={() => {
                 toast({
-                  title: "Rule saved",
-                  description: "The recurrence rule has been saved successfully.",
+                  title: t('admin.toast.ruleSaved'),
+                  description: t('admin.toast.ruleSavedDesc'),
                 })
                 setDialogOpen(false)
               }}

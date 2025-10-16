@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -44,6 +45,8 @@ interface NewsArticle {
 }
 
 export function NewsTab({ data = [], loading = false }: NewsTabProps) {
+  const t = useTranslations('community.news')
+  const tCommon = useTranslations('common')
   const [selectedCategory, setSelectedCategory] = useState<"all" | "industry" | "sponsored" | "curated">("all")
   const [searchQuery, setSearchQuery] = useState("")
   const [newsArticles, setNewsArticles] = useState<NewsArticle[]>([])
@@ -82,9 +85,9 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
 
   const getCategoryBadge = (category: NewsArticle["category"]) => {
     const variants: Record<NewsArticle["category"], { label: string, variant: "default" | "secondary" | "outline" }> = {
-      industry: { label: "Industry News", variant: "default" },
-      sponsored: { label: "Sponsored", variant: "secondary" },
-      curated: { label: "Curated", variant: "outline" }
+      industry: { labelKey: "industry_news", variant: "default" },
+      sponsored: { label: t('sponsored'), variant: "secondary" },
+      curated: { labelKey: "curated", variant: "outline" }
     }
     return variants[category]
   }
@@ -106,8 +109,8 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Trending</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('trending')}</div>
+            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -131,7 +134,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">This Week</div>
-            <Star className="h-4 w-4 text-muted-foreground" />
+            <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">47</div>
@@ -145,9 +148,9 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
         <CardContent className="pt-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
-                placeholder="Search news articles..."
+                placeholder={t('searchNews')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -155,7 +158,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
             </div>
             <Tabs value={selectedCategory} onValueChange={(v) => setSelectedCategory(v as any)}>
               <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
+                <TabsTrigger value="all">{t('all')}</TabsTrigger>
                 <TabsTrigger value="industry">Industry</TabsTrigger>
                 <TabsTrigger value="sponsored">Sponsored</TabsTrigger>
                 <TabsTrigger value="curated">Curated</TabsTrigger>
@@ -173,8 +176,8 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
               <EmptyState
                 variant="inline"
                 icon={Newspaper}
-                mainMessage={searchQuery || selectedCategory !== "all" ? "No articles found" : "NOTHING TO SEE HERE... (YET)"}
-                description={searchQuery || selectedCategory !== "all" ? "Try adjusting your filters" : "Stay updated with industry news and announcements"}
+                mainMessage={searchQuery || selectedCategory !== "all" ? t('noArticlesFound') : t('nothingToSeeYet')}
+                description={searchQuery || selectedCategory !== "all" ? t('tryAdjustingFilters') : t('stayUpdated')}
               />
             </CardContent>
           </Card>
@@ -192,9 +195,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
                       />
                       {article.trending && (
                         <Badge className="absolute top-3 left-3 bg-orange-500">
-                          <TrendingUp className="h-3 w-3 mr-1" />
-                          Trending
-                        </Badge>
+                          <TrendingUp className="h-3 w-3 mr-1" aria-hidden="true" />{t('trending')}</Badge>
                       )}
                     </div>
                   )}
@@ -219,7 +220,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
                       </Badge>
                     </div>
 
-                    <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2">{t(article.titleKey)}</h3>
                     <p className="text-muted-foreground mb-4">We&apos;re excited to announce {article.summary}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -238,7 +239,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
                           {article.likes}
                         </Button>
                         <Button variant="ghost" size="sm" className="h-8">
-                          <MessageCircle className="h-4 w-4 mr-1" />
+                          <MessageCircle className="h-4 w-4 mr-1" aria-hidden="true" />
                           {article.comments}
                         </Button>
                       </div>
@@ -248,7 +249,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
                           <Bookmark className="h-4 w-4" />
                         </Button>
                         <Button variant="ghost" size="sm">
-                          <Share2 className="h-4 w-4" />
+                          <Share2 className="h-4 w-4" aria-hidden="true" />
                         </Button>
                         <Button variant="outline" size="sm">
                           <ExternalLink className="h-4 w-4 mr-2" />

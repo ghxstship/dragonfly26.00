@@ -214,7 +214,7 @@ export function DiscountInput({
             <div className="relative flex-1">
               <Tag className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Enter discount code"
+                placeholder={t('marketplace.discount.placeholder')}
                 value={code}
                 onChange={(e) => setCode(e.target.value.toUpperCase())}
                 onKeyPress={handleKeyPress}

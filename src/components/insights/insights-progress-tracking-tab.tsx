@@ -1,10 +1,12 @@
 "use client"
 
-import { TrendingUp, Calendar, Target } from "lucide-react"
+import { TrendingUp, Calendar, Target, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const progressData = [
   {
     objective: "Increase Customer Satisfaction",
@@ -47,28 +49,43 @@ interface InsightsProgressTrackingTabProps {
 }
 
 export function InsightsProgressTrackingTab({ data = [], loading = false }: InsightsProgressTrackingTabProps) {
+  const t = useTranslations('intelligence.insights.insightsprogresstracking')
+  const tCommon = useTranslations('common')
+
   const displayProgress = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       {/* Overall Progress Summary */}
       <div className="grid grid-cols-3 gap-4">
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Overall Progress</p>
-            <p className="text-2xl font-bold mt-1">58%</p>
+            <p className="text-sm text-muted-foreground">{t('overallProgress')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">58%</p>
             <p className="text-xs text-green-600 mt-1">+12% this quarter</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Objectives On Track</p>
-            <p className="text-2xl font-bold mt-1 text-green-600">2/3</p>
+            <p className="text-sm text-muted-foreground">{t('objectivesOnTrack')}</p>
+            <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">2/3</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
-            <p className="text-sm text-muted-foreground">Avg Velocity</p>
-            <p className="text-2xl font-bold mt-1">+6.2%</p>
+            <p className="text-sm text-muted-foreground">{t('avgVelocity')}</p>
+            <p className="text-2xl font-bold mt-1" aria-live="polite">+6.2%</p>
             <p className="text-xs text-muted-foreground mt-1">per month</p>
           </CardContent>
         </Card>
@@ -76,7 +93,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
 
       {/* Progress Charts */}
       {progressData.map((data, index) => (
-        <Card key={index}>
+        <Card key={index} role="article">
           <CardHeader>
             <div className="flex items-center justify-between">
               <div>
@@ -132,7 +149,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
               {/* Current Status */}
               <div className="p-4 bg-accent rounded-lg">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium">Current vs Target</span>
+                  <span className="text-sm font-medium">{t('currentVsTarget')}</span>
                   <span className="text-sm font-bold">
                     {data.timeline[3].progress}% / {data.timeline[3].target}%
                   </span>

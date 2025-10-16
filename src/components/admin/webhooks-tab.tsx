@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -49,25 +50,26 @@ interface WebhookConfig {
 }
 
 export function WebhooksTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState(false)
   const [selectedWebhook, setSelectedWebhook] = useState<WebhookConfig | null>(null)
 
   const availableEvents = [
-    { id: "project.created", label: "Project Created", description: "Triggered when a new project is created" },
-    { id: "project.updated", label: "Project Updated", description: "Triggered when a project is updated" },
-    { id: "project.deleted", label: "Project Deleted", description: "Triggered when a project is deleted" },
-    { id: "member.added", label: "Member Added", description: "Triggered when a member joins" },
-    { id: "member.removed", label: "Member Removed", description: "Triggered when a member leaves" },
-    { id: "event.created", label: "Event Created", description: "Triggered when an event is scheduled" },
-    { id: "task.completed", label: "Task Completed", description: "Triggered when a task is completed" },
-    { id: "invoice.paid", label: "Invoice Paid", description: "Triggered when an invoice is paid" },
+    { id: "project.created", label: t('admin.mockData.webhook1Label'), description: t('admin.mockData.webhook1Desc') },
+    { id: "project.updated", label: t('admin.mockData.webhook2Label'), description: t('admin.mockData.webhook2Desc') },
+    { id: "project.deleted", label: t('admin.mockData.webhook3Label'), description: t('admin.mockData.webhook3Desc') },
+    { id: "member.added", label: t('admin.mockData.webhook4Label'), description: t('admin.mockData.webhook4Desc') },
+    { id: "member.removed", label: t('admin.mockData.webhook5Label'), description: t('admin.mockData.webhook5Desc') },
+    { id: "event.created", label: t('admin.mockData.webhook6Label'), description: t('admin.mockData.webhook6Desc') },
+    { id: "task.completed", label: t('admin.mockData.webhook7Label'), description: t('admin.mockData.webhook7Desc') },
+    { id: "invoice.paid", label: t('admin.mockData.webhook8Label'), description: t('admin.mockData.webhook8Desc') },
   ]
 
   const [webhooks, setWebhooks] = useState<WebhookConfig[]>([
     {
       id: "1",
-      name: "Slack Notifications",
+      name: t('admin.mockData.webhookConfig1Name'),
       url: "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXX",
       events: ["project.created", "member.added", "task.completed"],
       active: true,
@@ -78,7 +80,7 @@ export function WebhooksTab() {
     },
     {
       id: "2",
-      name: "Project Management System",
+      name: t('admin.mockData.webhookConfig2Name'),
       url: "https://api.example.com/webhooks/dragonfly",
       events: ["project.created", "project.updated", "event.created"],
       active: true,
@@ -89,7 +91,7 @@ export function WebhooksTab() {
     },
     {
       id: "3",
-      name: "Analytics Tracker",
+      name: t('admin.mockData.webhookConfig3Name'),
       url: "https://analytics.example.com/webhook",
       events: ["task.completed", "invoice.paid"],
       active: false,
@@ -113,8 +115,8 @@ export function WebhooksTab() {
   const handleDeleteWebhook = (webhookId: string) => {
     setWebhooks(webhooks.filter(w => w.id !== webhookId))
     toast({
-      title: "Webhook deleted",
-      description: "The webhook has been removed successfully.",
+      title: t('admin.toast.webhookDeleted'),
+      description: t('admin.toast.webhookDeletedDesc'),
       variant: "destructive",
     })
   }
@@ -125,39 +127,45 @@ export function WebhooksTab() {
     ))
     const webhook = webhooks.find(w => w.id === webhookId)
     toast({
-      title: webhook?.active ? "Webhook disabled" : "Webhook enabled",
-      description: `${webhook?.name} has been ${webhook?.active ? "disabled" : "enabled"}.`,
+      title: webhook?.active ? t('admin.toast.webhookDisabled') : t('admin.toast.webhookEnabled'),
+      description: webhook?.active ? t('admin.toast.webhookDisabledDesc', { name: webhook.name }) : t('admin.toast.webhookEnabledDesc', { name: webhook.name }),
     })
   }
 
   const handleCopySecret = (secret: string) => {
     navigator.clipboard.writeText(secret)
     toast({
-      title: "Secret copied",
-      description: "Webhook secret has been copied to clipboard.",
+      title: t('admin.toast.secretCopied'),
+      description: t('admin.toast.secretCopiedDesc'),
     })
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button onClick={handleCreateWebhook}>
-          <Plus className="h-4 w-4 mr-2" />
-          Create Webhook
-        </Button>
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.webhooksTab.description')}
+        </p>
+        <div className="flex gap-2">
+          <Button onClick={handleCreateWebhook}>
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('admin.webhooksTab.newWebhook')}
+          </Button>
+        </div>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Webhooks</CardDescription>
+            <CardDescription>{t('admin.webhooksTab.totalWebhooks')}</CardDescription>
             <CardTitle className="text-3xl">{webhooks.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Active Webhooks</CardDescription>
+            <CardDescription>{t('admin.webhooksTab.activeWebhooks')}</CardDescription>
             <CardTitle className="text-3xl">
               {webhooks.filter(w => w.active).length}
             </CardTitle>
@@ -165,7 +173,7 @@ export function WebhooksTab() {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Calls (30 days)</CardDescription>
+            <CardDescription>{t('admin.webhooksTab.totalCalls')}</CardDescription>
             <CardTitle className="text-3xl">
               {webhooks.reduce((sum, w) => sum + w.totalCalls, 0).toLocaleString()}
             </CardTitle>
@@ -262,23 +270,23 @@ export function WebhooksTab() {
                     size="sm"
                     onClick={() => handleEditWebhook(webhook)}
                   >
-                    <Edit className="h-4 w-4 mr-2" />
-                    Edit
+                    <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
+                    {t('common.edit')}
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
                   >
-                    <Activity className="h-4 w-4 mr-2" />
-                    View Logs
+                    <Activity className="h-4 w-4 mr-2" aria-hidden="true" />
+                    {t('admin.webhooksTab.viewLogs')}
                   </Button>
                   <Button
                     variant="destructive"
                     size="sm"
                     onClick={() => handleDeleteWebhook(webhook.id)}
                   >
-                    <Trash2 className="h-4 w-4 mr-2" />
-                    Delete
+                    <Trash2 className="h-4 w-4 mr-2" aria-hidden="true" />
+                    {t('common.delete')}
                   </Button>
                 </div>
               </div>
@@ -313,16 +321,16 @@ export function WebhooksTab() {
         <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle>
-              {selectedWebhook ? "Edit Webhook" : "Create New Webhook"}
+              {selectedWebhook ? t('admin.webhooksTab.editWebhook') : t('admin.webhooksTab.createWebhook')}
             </DialogTitle>
             <DialogDescription>
-              Configure webhook endpoint and event subscriptions
+              {t('admin.webhooksTab.description')}
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-4 py-4">
             <div className="space-y-2">
-              <Label>Webhook Name</Label>
+              <Label>{t('admin.webhooksTab.webhookName')}</Label>
               <Input
                 placeholder="e.g., Slack Notifications"
                 defaultValue={selectedWebhook?.name}
@@ -330,7 +338,7 @@ export function WebhooksTab() {
             </div>
 
             <div className="space-y-2">
-              <Label>Endpoint URL</Label>
+              <Label>{t('admin.webhooksTab.endpointUrl')}</Label>
               <Input
                 type="url"
                 placeholder="https://example.com/webhook"
@@ -342,7 +350,7 @@ export function WebhooksTab() {
             </div>
 
             <div className="space-y-2">
-              <Label>Events to Subscribe</Label>
+              <Label>{t('admin.webhooksTab.eventsToSubscribe')}</Label>
               <div className="max-h-[300px] overflow-y-auto space-y-2 p-3 border rounded-lg">
                 {availableEvents.map((event) => (
                   <div key={event.id} className="flex items-start gap-3 p-2 hover:bg-accent rounded">
@@ -364,18 +372,18 @@ export function WebhooksTab() {
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setDialogOpen(false)}>
-              Cancel
+              {t('common.cancel')}
             </Button>
             <Button
               onClick={() => {
                 toast({
-                  title: "Webhook saved",
-                  description: "The webhook has been configured successfully.",
+                  title: t('admin.toast.webhookSaved'),
+                  description: t('admin.toast.webhookSavedDesc'),
                 })
                 setDialogOpen(false)
               }}
             >
-              {selectedWebhook ? "Save Changes" : "Create Webhook"}
+              {selectedWebhook ? t('common.save') : t('admin.webhooksTab.createWebhook')}
             </Button>
           </DialogFooter>
         </DialogContent>

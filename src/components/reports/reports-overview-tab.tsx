@@ -1,22 +1,23 @@
 "use client"
 
-import { FileText, Download, Calendar, TrendingUp } from "lucide-react"
+import { FileText, Download, Calendar, TrendingUp, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 
 const recentReports = [
-  { id: "1", name: "Q4 Performance Summary", type: "Executive", generated: "2025-10-10", size: "2.4 MB", downloads: 45 },
-  { id: "2", name: "Weekly Operations Report", type: "Operational", generated: "2025-10-09", size: "1.8 MB", downloads: 23 },
-  { id: "3", name: "Compliance Audit 2025", type: "Compliance", generated: "2025-10-08", size: "5.2 MB", downloads: 12 },
-  { id: "4", name: "Customer Satisfaction Analysis", type: "Custom", generated: "2025-10-07", size: "3.1 MB", downloads: 34 },
-  { id: "5", name: "Monthly Financial Report", type: "Executive", generated: "2025-10-05", size: "4.6 MB", downloads: 67 },
+  { id: "1", nameKey: "q4_performance_summary", type: "Executive", generated: "2025-10-10", size: "2.4 MB", downloads: 45 },
+  { id: "2", nameKey: "weekly_operations_report", type: "Operational", generated: "2025-10-09", size: "1.8 MB", downloads: 23 },
+  { id: "3", nameKey: "compliance_audit_2025", type: "Compliance", generated: "2025-10-08", size: "5.2 MB", downloads: 12 },
+  { id: "4", nameKey: "customer_satisfaction_analysis", type: "Custom", generated: "2025-10-07", size: "3.1 MB", downloads: 34 },
+  { id: "5", nameKey: "monthly_financial_report", type: "Executive", generated: "2025-10-05", size: "4.6 MB", downloads: 67 },
 ]
 
-const stats = [
-  { label: "Reports Generated", value: "142", change: "+12%", icon: FileText, color: "text-blue-600" },
-  { label: "Total Downloads", value: "1,284", change: "+8%", icon: Download, color: "text-green-600" },
-  { label: "Scheduled Reports", value: "28", change: "+3", icon: Calendar, color: "text-purple-600" },
-  { label: "Avg. Generation Time", value: "2.4s", change: "-0.3s", icon: TrendingUp, color: "text-orange-600" },
+const useStats = (t: any) => [
+  { labelKey: "reportsGenerated", value: "142", change: "+12%", icon: FileText, color: "text-blue-600" },
+  { labelKey: "totalDownloads", value: "1,284", change: "+8%", icon: Download, color: "text-green-600" },
+  { labelKey: "scheduledReports", value: "28", change: "+3", icon: Calendar, color: "text-purple-600" },
+  { labelKey: "avgGenerationTime", value: "2.4s", change: "-0.3s", icon: TrendingUp, color: "text-orange-600" },
 ]
 
 interface ReportsOverviewTabProps {
@@ -25,22 +26,42 @@ interface ReportsOverviewTabProps {
 }
 
 export function ReportsOverviewTab({ data = [], loading = false }: ReportsOverviewTabProps) {
+  const t = useTranslations('intelligence.reports.overview')
+  const tCommon = useTranslations('common')
+  const stats = useStats(t)
   const displayReports = data || []
+  
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle" aria-label={t('description')}>
+          {t('description')}
+        </p>
+        <Button 
+          size="sm"
+          aria-label={t('createAction')}
+          onClick={() => {}}
+        >
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat, index) => {
           const Icon = stat.icon
           return (
-            <Card key={index}>
+            <Card key={index} role="region" aria-label={`${t(stat.labelKey)} metric`}>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-muted-foreground">{stat.label}</p>
-                    <p className="text-2xl font-bold mt-2">{stat.value}</p>
-                    <p className="text-sm text-green-600 mt-1">{stat.change}</p>
+                    <p className="text-sm text-muted-foreground" id={`stat-label-${index}`}>{t(stat.labelKey)}</p>
+                    <p className="text-2xl font-bold mt-2" aria-labelledby={`stat-label-${index}`} aria-live="polite">{stat.value}</p>
+                    <p className="text-sm text-green-600 mt-1" aria-label={`Change: ${stat.change}`}>{stat.change}</p>
                   </div>
-                  <Icon className={`h-8 w-8 ${stat.color}`} />
+                  <Icon className={`h-8 w-8 ${stat.color}`} aria-hidden="true" />
                 </div>
               </CardContent>
             </Card>
@@ -49,31 +70,41 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
       </div>
 
       {/* Recent Reports */}
-      <Card>
+      <Card role="region" aria-labelledby="recent-reports-title">
         <CardHeader>
-          <CardTitle>Recent Reports</CardTitle>
-          <CardDescription>Recently generated and accessed reports</CardDescription>
+          <CardTitle id="recent-reports-title">{t('recentReports')}</CardTitle>
+          <CardDescription>{t('recentReportsDesc')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {recentReports.map((report) => (
-              <div key={report.id} className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent transition-colors">
+              <div 
+                key={report.id} 
+                className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent transition-colors"
+                role="article"
+                aria-label={`Report: ${t(report.nameKey)}`}
+              >
                 <div className="flex items-center gap-4">
-                  <FileText className="h-8 w-8 text-muted-foreground" />
+                  <FileText className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
                   <div>
-                    <p className="font-medium">{report.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {report.type} • Generated {report.generated} • {report.size}
+                    <p className="font-medium" id={`report-name-${report.id}`}>{t(report.nameKey)}</p>
+                    <p className="text-sm text-muted-foreground" aria-label={`Type: ${report.type}, Generated: ${report.generated}, Size: ${report.size}`}>
+                      {report.type} • {t('generated')} {report.generated} • {report.size}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="text-right">
-                    <p className="text-sm text-muted-foreground">{report.downloads} downloads</p>
+                    <p className="text-sm text-muted-foreground" aria-label={`${report.downloads} downloads`}>{report.downloads} {t('downloads')}</p>
                   </div>
-                  <Button size="sm" variant="outline">
-                    <Download className="h-4 w-4 mr-2" />
-                    Download
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    aria-label={`Download ${t(report.nameKey)}`}
+                    onClick={() => {}}
+                  >
+                    <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                    {t('downloadAction')}
                   </Button>
                 </div>
               </div>

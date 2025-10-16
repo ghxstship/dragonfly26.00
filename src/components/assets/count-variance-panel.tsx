@@ -101,7 +101,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                   <label className="text-sm font-medium mb-2 block">Possible reason:</label>
                   <Select>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select reason..." />
+                      <SelectValue placeholder={t('assets.variance.selectReason')} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="lost">Lost/Missing</SelectItem>

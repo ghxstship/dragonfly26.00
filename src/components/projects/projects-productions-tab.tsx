@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -24,15 +25,22 @@ import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog
 import type { TabComponentProps } from "@/types"
 
 export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('production.projects.productions')
+  const tCommon = useTranslations('common')
   const { data: productions, loading } = useModuleData(workspaceId, 'projects', 'productions')
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading productions...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -67,24 +75,25 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
   }
 
   return (
-    <div className="space-y-6">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
       {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
-          Manage all production projects including shows, tours, and events
+          {t('description')}
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
-            Filter
+            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
+            {tCommon('filter')}
           </Button>
           <Button variant="outline" size="sm">
-            <Search className="h-4 w-4 mr-2" />
-            Search
+            <Search className="h-4 w-4 mr-2" aria-hidden="true" />
+            {tCommon('search')}
           </Button>
           <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" />
-            New Production
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('create')}
           </Button>
         </div>
       </div>
@@ -93,60 +102,60 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Productions</CardTitle>
-            <Clapperboard className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('activeProductions')}</CardTitle>
+            <Clapperboard className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {productions.filter((p: any) => p.status === 'active').length}
             </div>
             <p className="text-xs text-muted-foreground">
-              {productions.filter((p: any) => p.health === 'healthy').length} healthy
+              {productions.filter((p: any) => p.health === 'healthy').length} {t('healthy')}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Budget</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('totalBudget')}</CardTitle>
+            <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {formatCurrency(productions.reduce((sum: number, p: any) => sum + (p.budget || 0), 0))}
             </div>
             <p className="text-xs text-muted-foreground">
-              Across all productions
+              {t('acrossAllProductions')}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">In Planning</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('inPlanning')}</CardTitle>
+            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {productions.filter((p: any) => p.status === 'planning').length}
             </div>
             <p className="text-xs text-muted-foreground">
-              Upcoming projects
+              {t('upcomingProjects')}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">At Risk</CardTitle>
-            <AlertCircle className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('atRisk')}</CardTitle>
+            <AlertCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-yellow-600">
               {productions.filter((p: any) => p.health === 'at_risk' || p.health === 'critical').length}
             </div>
             <p className="text-xs text-muted-foreground">
-              Need attention
+              {t('needAttention')}
             </p>
           </CardContent>
         </Card>
@@ -166,9 +175,9 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
                     <CardDescription className="mt-1">{production.code}</CardDescription>
                   </div>
                   <Badge variant="secondary" className={getHealthColor(production.health)}>
-                    {production.health === 'healthy' && <CheckCircle2 className="h-3 w-3 mr-1" />}
-                    {production.health === 'at_risk' && <AlertCircle className="h-3 w-3 mr-1" />}
-                    {production.health === 'critical' && <AlertCircle className="h-3 w-3 mr-1" />}
+                    {production.health === 'healthy' && <CheckCircle2 className="h-4 w-4 mr-1" aria-hidden="true" />}
+                    {production.health === 'at_risk' && <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />}
+                    {production.health === 'critical' && <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />}
                     {production.health}
                   </Badge>
                 </div>
@@ -184,7 +193,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
                 {/* Progress */}
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Progress</span>
+                    <span className="text-muted-foreground">{t('progress')}</span>
                     <span className="font-medium">{production.progress}%</span>
                   </div>
                   <Progress value={production.progress} className="h-2" />
@@ -193,8 +202,8 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
                 {/* Budget */}
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Budget</span>
-                    <span className="font-medium">{budgetPercentage.toFixed(0)}% spent</span>
+                    <span className="text-muted-foreground">{t('budget')}</span>
+                    <span className="font-medium">{budgetPercentage.toFixed(0)}{t('spentPercent')}</span>
                   </div>
                   <Progress 
                     value={budgetPercentage} 
@@ -209,17 +218,17 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
                 {/* Metadata */}
                 <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2 border-t">
                   <div className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
+                    <Calendar className="h-4 w-4" aria-hidden="true" />
                     <span>{formatDate(production.start_date)}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Users className="h-3 w-3" />
+                    <Users className="h-4 w-4" aria-hidden="true" />
                     <span>{production.project_manager_id}</span>
                   </div>
                 </div>
 
                 <Button className="w-full" variant="outline" size="sm">
-                  View Details
+                  {t('viewDetails')}
                 </Button>
               </CardContent>
             </Card>
@@ -233,9 +242,9 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
             <EmptyState
               variant="inline"
               icon={Clapperboard}
-              mainMessage="NOTHING TO SEE HERE... (YET)"
-              description="Get started by creating your first production project"
-              actionLabel="Create Production"
+              mainMessage={t('emptyMainMessage')}
+              description={t('emptyDescription')}
+              actionLabel={t('createProduction')}
               onAction={() => setCreateDialogOpen(true)}
             />
           </CardContent>
@@ -255,5 +264,6 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         }}
       />
     </div>
+    </main>
   )
 }

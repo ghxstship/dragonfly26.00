@@ -183,7 +183,7 @@ export function ReviewForm({
             <Label htmlFor="title">Review Title (Optional)</Label>
             <Input
               id="title"
-              placeholder="Sum up your experience"
+              placeholder={t('marketplace.review.titlePlaceholder')}
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               maxLength={100}
@@ -198,7 +198,7 @@ export function ReviewForm({
             <Label htmlFor="body">Your Review *</Label>
             <Textarea
               id="body"
-              placeholder="Tell us more about your experience with this product..."
+              placeholder={t('marketplace.review.descriptionPlaceholder')}
               value={body}
               onChange={(e) => setBody(e.target.value)}
               rows={6}

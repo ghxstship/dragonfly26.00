@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ClipboardList, FileText, Package, Truck, AlertCircle, CheckCircle, Clock, XCircle, Search, Plus } from "lucide-react"
+import { useTranslations } from 'next-intl'
 
 interface OrdersTabProps {
   data?: any[]
@@ -13,22 +14,24 @@ interface OrdersTabProps {
 }
 
 export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
+  const t = useTranslations('marketplace.orders')
+  const tCommon = useTranslations('common')
   const ordersData = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" />Completed</Badge>
+        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('completed')}</Badge>
       case "in-progress":
-        return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" />In Progress</Badge>
+        return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" aria-hidden="true" />{t('inProgress')}</Badge>
       case "approved":
-        return <Badge className="bg-purple-600"><CheckCircle className="h-3 w-3 mr-1" />Approved</Badge>
+        return <Badge className="bg-purple-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('approved')}</Badge>
       case "submitted":
-        return <Badge className="bg-cyan-600"><FileText className="h-3 w-3 mr-1" />Submitted</Badge>
+        return <Badge className="bg-cyan-600"><FileText className="h-3 w-3 mr-1" aria-hidden="true" />{t('submitted')}</Badge>
       case "draft":
-        return <Badge variant="outline"><Clock className="h-3 w-3 mr-1" />Draft</Badge>
+        return <Badge variant="outline"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />{t('draft')}</Badge>
       case "cancelled":
-        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" />Cancelled</Badge>
+        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('cancelled')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -37,38 +40,40 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
   const getApprovalBadge = (approvalStatus: string) => {
     switch (approvalStatus) {
       case "approved":
-        return <Badge variant="outline" className="bg-green-500/10 text-green-600 border-green-500/20">Approved</Badge>
+        return <Badge variant="outline" className="bg-green-500/10 text-green-600 border-green-500/20">{t('approved')}</Badge>
       case "pending":
-        return <Badge variant="outline" className="bg-yellow-500/10 text-yellow-600 border-yellow-500/20">Pending Approval</Badge>
+        return <Badge variant="outline" className="bg-yellow-500/10 text-yellow-600 border-yellow-500/20">{t('pendingApproval')}</Badge>
       case "needs-review":
-        return <Badge variant="outline" className="bg-orange-500/10 text-orange-600 border-orange-500/20">Needs Review</Badge>
+        return <Badge variant="outline" className="bg-orange-500/10 text-orange-600 border-orange-500/20">{t('needsReview')}</Badge>
       default:
         return null
     }
   }
 
   const getOrderTypeIcon = (name: string) => {
-    if (name.includes("Purchase Order")) return <Package className="h-5 w-5 text-blue-500" />
-    if (name.includes("Work Order")) return <ClipboardList className="h-5 w-5 text-purple-500" />
-    if (name.includes("Rental Order")) return <Truck className="h-5 w-5 text-green-500" />
-    if (name.includes("Change Order")) return <AlertCircle className="h-5 w-5 text-orange-500" />
-    return <FileText className="h-5 w-5 text-gray-500" />
+    if (name.includes("Purchase Order")) return <Package className="h-5 w-5 text-blue-500" aria-hidden="true" />
+    if (name.includes("Work Order")) return <ClipboardList className="h-5 w-5 text-purple-500" aria-hidden="true" />
+    if (name.includes("Rental Order")) return <Truck className="h-5 w-5 text-green-500" aria-hidden="true" />
+    if (name.includes("Change Order")) return <AlertCircle className="h-5 w-5 text-orange-500" aria-hidden="true" />
+    return <FileText className="h-5 w-5 text-gray-500" aria-hidden="true" />
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
         <Button>
-          <Plus className="h-4 w-4 mr-2" />
-          Create Order
-        </Button>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{t('createOrder')}</Button>
       </div>
 
       {/* Quick Stats */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Draft</CardDescription>
+            <CardDescription className="text-xs">{t('draft')}</CardDescription>
             <CardTitle className="text-2xl">
               {ordersData.filter(o => o.status === 'draft').length}
             </CardTitle>
@@ -76,7 +81,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Submitted</CardDescription>
+            <CardDescription className="text-xs">{t('submitted')}</CardDescription>
             <CardTitle className="text-2xl">
               {ordersData.filter(o => o.status === 'submitted').length}
             </CardTitle>
@@ -84,7 +89,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Approved</CardDescription>
+            <CardDescription className="text-xs">{t('approved')}</CardDescription>
             <CardTitle className="text-2xl">
               {ordersData.filter(o => o.status === 'approved').length}
             </CardTitle>
@@ -92,7 +97,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">In Progress</CardDescription>
+            <CardDescription className="text-xs">{t('inProgress')}</CardDescription>
             <CardTitle className="text-2xl">
               {ordersData.filter(o => o.status === 'in-progress').length}
             </CardTitle>
@@ -100,7 +105,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Completed</CardDescription>
+            <CardDescription className="text-xs">{t('completed')}</CardDescription>
             <CardTitle className="text-2xl">
               {ordersData.filter(o => o.status === 'completed').length}
             </CardTitle>
@@ -111,12 +116,12 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search orders..." className="pl-9" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Input placeholder={t('searchOrders')} className="pl-9" />
         </div>
         <Select defaultValue="all">
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder="Order Type" />
+            <SelectValue placeholder={t('orderType')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Types</SelectItem>
@@ -128,15 +133,15 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
         </Select>
         <Select defaultValue="all-status">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Status" />
+            <SelectValue placeholder={t('status')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all-status">All Status</SelectItem>
-            <SelectItem value="draft">Draft</SelectItem>
-            <SelectItem value="submitted">Submitted</SelectItem>
-            <SelectItem value="approved">Approved</SelectItem>
-            <SelectItem value="in-progress">In Progress</SelectItem>
-            <SelectItem value="completed">Completed</SelectItem>
+            <SelectItem value="all-status">{t('allStatus')}</SelectItem>
+            <SelectItem value="draft">{t('draft')}</SelectItem>
+            <SelectItem value="submitted">{t('submitted')}</SelectItem>
+            <SelectItem value="approved">{t('approved')}</SelectItem>
+            <SelectItem value="in-progress">{t('inProgress')}</SelectItem>
+            <SelectItem value="completed">{t('completed')}</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -181,7 +186,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
                   <Badge variant="outline" className="capitalize">{order.priority}</Badge>
                 </div>
                 <div className="flex items-end justify-end gap-2">
-                  <Button variant="outline" size="sm">View</Button>
+                  <Button variant="outline" size="sm">{tCommon('view')}</Button>
                   <Button size="sm">Edit</Button>
                 </div>
               </div>

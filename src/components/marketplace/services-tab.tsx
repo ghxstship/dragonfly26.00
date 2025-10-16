@@ -1,13 +1,14 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Users, Star, MapPin, Briefcase, Clock, MessageCircle, Search, Award } from "lucide-react"
+import { Users, Star, MapPin, Briefcase, Clock, MessageCircle, Search, Award, Plus } from "lucide-react"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
 interface ServicesTabProps {
@@ -16,6 +17,8 @@ interface ServicesTabProps {
 }
 
 export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
+  const t = useTranslations('marketplace.services')
+  const tCommon = useTranslations('common')
   const servicesData = data
   const [detailsDrawerOpen, setDetailsDrawerOpen] = useState(false)
   const [selectedService, setSelectedService] = useState<MarketplaceProduct | null>(null)
@@ -24,7 +27,7 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
   const getAvailabilityBadge = (status: string) => {
     switch (status) {
       case "available":
-        return <Badge className="bg-green-600">Available</Badge>
+        return <Badge className="bg-green-600">{t('available')}</Badge>
       case "busy":
         return <Badge className="bg-red-600">Busy</Badge>
       case "limited-availability":
@@ -64,15 +67,25 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('description')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('create')}</Button>
+      </div>
+
+
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Search services..." className="pl-9" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Input placeholder={t('searchServices')} className="pl-9" />
         </div>
         <Select defaultValue="all">
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder="Service Type" />
+            <SelectValue placeholder={t('serviceType')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Services</SelectItem>
@@ -85,7 +98,7 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
         </Select>
         <Select defaultValue="all-level">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Experience Level" />
+            <SelectValue placeholder={t('experienceLevel')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all-level">All Levels</SelectItem>
@@ -97,7 +110,7 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
         </Select>
         <Select defaultValue="rating">
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Sort by" />
+            <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="rating">Highest Rated</SelectItem>
@@ -144,11 +157,11 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
               <div className="grid grid-cols-3 gap-4">
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    <Star className="h-3 w-3" />
+                    <Star className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">Rating</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                     <span className="font-semibold">{service.rating}</span>
                   </div>
                 </div>
@@ -161,7 +174,7 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    <MessageCircle className="h-3 w-3" />
+                    <MessageCircle className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">Reviews</span>
                   </div>
                   <p className="font-semibold">{service.comments_count}</p>

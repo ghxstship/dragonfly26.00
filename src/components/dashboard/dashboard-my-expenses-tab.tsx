@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -25,6 +26,8 @@ interface ExpenseItem {
 
 export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.expenses')
+  const tCommon = useTranslations('common')
   const { expenses, loading } = useMyExpenses(workspaceId, userId)
   
 
@@ -48,10 +51,15 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
   
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading expenses...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -114,12 +122,17 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('trackAndSubmitExpenseReports')}
+        </p>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" className="gap-2" disabled>
             <Filter className="h-4 w-4" />
-            Filter
+            {t('filter')}
           </Button>
           <Button 
             size="sm" 
@@ -127,7 +140,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
             onClick={() => router.push(`/workspace/${workspaceId}/finance/expenses`)}
           >
             <Plus className="h-4 w-4" />
-            New Expense
+            {t('newExpense')}
           </Button>
         </div>
       </div>
@@ -138,7 +151,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold">{summary.totalExpenses}</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Reports</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('totalReports')}</p>
             </div>
           </CardContent>
         </Card>
@@ -146,7 +159,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold text-yellow-600">{summary.pending + summary.underReview}</p>
-              <p className="text-xs text-muted-foreground mt-1">Pending Review</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('pendingReview')}</p>
             </div>
           </CardContent>
         </Card>
@@ -154,7 +167,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
           <CardContent className="pt-6">
             <div className="text-center">
               <p className="text-2xl font-bold">{summary.totalAmount}</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Amount</p>
+              <p className="text-xs text-muted-foreground mt-1">{t('totalAmount')}</p>
             </div>
           </CardContent>
         </Card>
@@ -216,11 +229,11 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
                         Date: {expense.date}
                       </div>
                       <span>•</span>
-                      <span>Submitted: {expense.submittedDate}</span>
+                      <span>{t('submitted')}: {expense.submittedDate}</span>
                       {expense.approver && (
                         <>
                           <span>•</span>
-                          <span>Approver: {expense.approver}</span>
+                          <span>{t('approver')}: {expense.approver}</span>
                         </>
                       )}
                       {expense.approvedDate && (
@@ -294,6 +307,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
           </div>
         </CardContent>
       </Card>
-    </div>
+      </div>
+    </main>
   )
 }

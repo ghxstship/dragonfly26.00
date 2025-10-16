@@ -1,13 +1,15 @@
 "use client"
 
-import { Activity, Clock, CheckCircle2, AlertTriangle } from "lucide-react"
+import { Activity, Clock, CheckCircle2, AlertTriangle, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 
 const operationalReports = [
   {
     id: "1",
-    title: "Daily Operations Summary",
+    titleKey: "daily_operations_summary",
     frequency: "Daily at 6:00 PM",
     metrics: {
       completed: 45,
@@ -20,7 +22,7 @@ const operationalReports = [
   },
   {
     id: "2",
-    title: "Team Performance Report",
+    titleKey: "team_performance_report",
     frequency: "Weekly on Monday",
     metrics: {
       completed: 234,
@@ -33,7 +35,7 @@ const operationalReports = [
   },
   {
     id: "3",
-    title: "Resource Utilization",
+    titleKey: "resource_utilization",
     frequency: "Daily at 8:00 AM",
     metrics: {
       completed: 156,
@@ -46,7 +48,7 @@ const operationalReports = [
   },
   {
     id: "4",
-    title: "Project Status Updates",
+    titleKey: "project_status_updates",
     frequency: "Weekly on Friday",
     metrics: {
       completed: 18,
@@ -59,7 +61,7 @@ const operationalReports = [
   },
   {
     id: "5",
-    title: "Quality Metrics Dashboard",
+    titleKey: "quality_metrics_dashboard",
     frequency: "Daily at 5:00 PM",
     metrics: {
       completed: 89,
@@ -78,61 +80,75 @@ interface ReportsOperationalTabProps {
 }
 
 export function ReportsOperationalTab({ data = [], loading = false }: ReportsOperationalTabProps) {
+  const t = useTranslations('intelligence.reports.operational')
+  const tCommon = useTranslations('common')
   const displayData = data.length > 0 ? data : []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} operational report`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       {/* Summary Cards */}
       <div className="grid grid-cols-4 gap-4">
-        <Card>
+        <Card role="region" aria-label={`${t('totalReports')} metric`}>
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">Total Reports</p>
-                <p className="text-2xl font-bold mt-1">{operationalReports.length}</p>
+                <p className="text-sm text-muted-foreground">{t('totalReports')}</p>
+                <p className="text-2xl font-bold mt-1" aria-live="polite">{operationalReports.length}</p>
               </div>
-              <Activity className="h-8 w-8 text-muted-foreground" />
+              <Activity className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
         
-        <Card>
+        <Card role="region" aria-label={`${t('avgEfficiency')} metric`}>
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">Avg Efficiency</p>
-                <p className="text-2xl font-bold mt-1 text-green-600">
+                <p className="text-sm text-muted-foreground">{t('avgEfficiency')}</p>
+                <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
                   {Math.round(operationalReports.reduce((sum, r) => sum + r.metrics.efficiency, 0) / operationalReports.length)}%
                 </p>
               </div>
-              <CheckCircle2 className="h-8 w-8 text-green-600" />
+              <CheckCircle2 className="h-8 w-8 text-green-600" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card role="region" aria-label={`${t('itemsBlocked')} metric`}>
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">Items Blocked</p>
-                <p className="text-2xl font-bold mt-1 text-red-600">
+                <p className="text-sm text-muted-foreground">{t('itemsBlocked')}</p>
+                <p className="text-2xl font-bold mt-1 text-red-600" aria-live="polite">
                   {operationalReports.reduce((sum, r) => sum + r.metrics.blocked, 0)}
                 </p>
               </div>
-              <AlertTriangle className="h-8 w-8 text-red-600" />
+              <AlertTriangle className="h-8 w-8 text-red-600" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card role="region" aria-label={`${t('inProgress')} metric`}>
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-muted-foreground">In Progress</p>
-                <p className="text-2xl font-bold mt-1 text-blue-600">
+                <p className="text-sm text-muted-foreground">{t('inProgress')}</p>
+                <p className="text-2xl font-bold mt-1 text-blue-600" aria-live="polite">
                   {operationalReports.reduce((sum, r) => sum + r.metrics.inProgress, 0)}
                 </p>
               </div>
-              <Clock className="h-8 w-8 text-blue-600" />
+              <Clock className="h-8 w-8 text-blue-600" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
@@ -141,13 +157,13 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
       {/* Operational Reports Grid */}
       <div className="grid gap-4">
         {operationalReports.map((report) => (
-          <Card key={report.id} className="hover:shadow-md transition-shadow">
+          <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Operational report: ${t(report.titleKey)}`}>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
-                  <CardTitle className="text-lg">{report.title}</CardTitle>
-                  <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1">
-                    <Clock className="h-3 w-3" />
+                  <CardTitle className="text-lg" id={`report-${report.id}`}>{t(report.titleKey)}</CardTitle>
+                  <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1" aria-label={`Frequency: ${report.frequency}`}>
+                    <Clock className="h-3 w-3" aria-hidden="true" />
                     {report.frequency}
                   </p>
                 </div>
@@ -156,32 +172,32 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
                     report.trend === "up" ? "bg-green-100 text-green-800 border-green-200" :
                     report.trend === "down" ? "bg-red-100 text-red-800 border-red-200" :
                     "bg-gray-100 text-gray-800 border-gray-200"
-                  }>
-                    {report.trend === "up" ? "↑ Improving" : report.trend === "down" ? "↓ Declining" : "→ Stable"}
+                  } aria-label={`Trend: ${report.trend === "up" ? t('improving') : report.trend === "down" ? t('declining') : t('stable')}`}>
+                    {report.trend === "up" ? `↑ ${t('improving')}` : report.trend === "down" ? `↓ ${t('declining')}` : `→ ${t('stable')}`}
                   </Badge>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-5 gap-4">
-                <div className="text-center">
+                <div className="text-center" aria-label={`${report.metrics.completed} ${t('completed')}`}>
                   <p className="text-2xl font-bold text-green-600">{report.metrics.completed}</p>
-                  <p className="text-xs text-muted-foreground mt-1">Completed</p>
+                  <p className="text-xs text-muted-foreground mt-1">{t('completed')}</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" aria-label={`${report.metrics.inProgress} ${t('inProgress')}`}>
                   <p className="text-2xl font-bold text-blue-600">{report.metrics.inProgress}</p>
-                  <p className="text-xs text-muted-foreground mt-1">In Progress</p>
+                  <p className="text-xs text-muted-foreground mt-1">{t('inProgress')}</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" aria-label={`${report.metrics.blocked} ${t('blocked')}`}>
                   <p className="text-2xl font-bold text-red-600">{report.metrics.blocked}</p>
-                  <p className="text-xs text-muted-foreground mt-1">Blocked</p>
+                  <p className="text-xs text-muted-foreground mt-1">{t('blocked')}</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" aria-label={`${report.metrics.efficiency}% ${t('efficiency')}`}>
                   <p className="text-2xl font-bold text-purple-600">{report.metrics.efficiency}%</p>
-                  <p className="text-xs text-muted-foreground mt-1">Efficiency</p>
+                  <p className="text-xs text-muted-foreground mt-1">{t('efficiency')}</p>
                 </div>
                 <div className="text-center border-l pl-4">
-                  <p className="text-sm font-medium">Last Run</p>
+                  <p className="text-sm font-medium">{t('lastRun')}</p>
                   <p className="text-xs text-muted-foreground mt-1">{report.lastRun}</p>
                 </div>
               </div>

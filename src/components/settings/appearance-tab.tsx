@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
@@ -21,6 +22,7 @@ import {
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function AppearanceTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [theme, setTheme] = useState("system")
   const [accentColor, setAccentColor] = useState("#8b5cf6")
@@ -99,12 +101,12 @@ export function AppearanceTab() {
   }
 
   const themePresets = [
-    { id: "default", name: "Default Purple", color: "#8b5cf6" },
-    { id: "ocean", name: "Ocean Blue", color: "#0ea5e9" },
-    { id: "forest", name: "Forest Green", color: "#10b981" },
-    { id: "sunset", name: "Sunset Orange", color: "#f97316" },
-    { id: "rose", name: "Rose Pink", color: "#f43f5e" },
-    { id: "midnight", name: "Midnight", color: "#1e1b4b" },
+    { id: "default", name: t('settings.appearance.themes.defaultPurple'), color: "#8b5cf6" },
+    { id: "ocean", name: t('settings.appearance.themes.oceanBlue'), color: "#0ea5e9" },
+    { id: "forest", name: t('settings.appearance.themes.forestGreen'), color: "#10b981" },
+    { id: "sunset", name: t('settings.appearance.themes.sunsetOrange'), color: "#f97316" },
+    { id: "rose", name: t('settings.appearance.themes.rosePink'), color: "#f43f5e" },
+    { id: "midnight", name: t('settings.appearance.themes.midnight'), color: "#1e1b4b" },
   ]
 
   const handleSave = () => {
@@ -119,8 +121,8 @@ export function AppearanceTab() {
     }))
     
     toast({
-      title: "Settings saved",
-      description: "Your appearance preferences have been updated.",
+      title: t('settings.toast.settingsSaved'),
+      description: t('settings.toast.settingsSavedDesc'),
     })
   }
 
@@ -129,8 +131,8 @@ export function AppearanceTab() {
     if (file) {
       if (file.size > 5 * 1024 * 1024) { // 5MB limit
         toast({
-          title: "File too large",
-          description: "Please select an image under 5MB.",
+          title: t('settings.toast.fileTooLarge'),
+          description: t('settings.toast.fileTooLarge5mbDesc'),
           variant: "destructive",
         })
         return
@@ -141,8 +143,8 @@ export function AppearanceTab() {
         const dataUrl = event.target?.result as string
         setBackgroundImage(dataUrl)
         toast({
-          title: "Background uploaded",
-          description: "Your background image has been set.",
+          title: t('settings.toast.backgroundUploaded'),
+          description: t('settings.toast.backgroundUploadedDesc'),
         })
       }
       reader.readAsDataURL(file)
@@ -157,23 +159,38 @@ export function AppearanceTab() {
     setEnableAnimations(true)
     setEnableParticles(false)
     toast({
-      title: "Settings reset",
-      description: "Your appearance preferences have been reset to default.",
+      title: t('settings.toast.settingsReset'),
+      description: t('settings.toast.appearanceResetDesc'),
     })
   }
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('settings.appearanceTab.description')}
+        </p>
+        <div className="flex items-center gap-2">
+          <Button variant="outline" size="sm" onClick={handleReset}>
+            <RotateCcw className="h-4 w-4 mr-2" aria-hidden="true" />
+            Reset
+          </Button>
+          <Button size="sm" onClick={handleSave}>
+            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+            Save Changes
+          </Button>
+        </div>
+      </div>
+
       {/* Theme Mode */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Palette className="h-5 w-5" />
+            <Palette className="h-5 w-5" aria-hidden="true" />
             Theme Mode
           </CardTitle>
-          <CardDescription>
-            Choose your preferred theme mode
-          </CardDescription>
+          <CardDescription>{t('settings.appearanceTab.chooseTheme')}</CardDescription>
         </CardHeader>
         <CardContent>
           <RadioGroup value={theme} onValueChange={setTheme}>
@@ -197,12 +214,10 @@ export function AppearanceTab() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Sparkles className="h-5 w-5" />
-            Accent Color & Themes
+            <Sparkles className="h-5 w-5" aria-hidden="true" />
+            {t('settings.appearanceTab.accentColor')}
           </CardTitle>
-          <CardDescription>
-            Customize your interface colors with preset themes or a custom color
-          </CardDescription>
+          <CardDescription>{t('settings.appearanceTab.customizeColors')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -253,11 +268,11 @@ export function AppearanceTab() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Upload className="h-5 w-5" />
-            Custom Background
+            <Upload className="h-5 w-5" aria-hidden="true" />
+            {t('settings.appearanceTab.customBackground')}
           </CardTitle>
           <CardDescription>
-            Add a custom background image to personalize your workspace (MySpace style!)
+            {t('settings.appearanceTab.backgroundDescription')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -276,7 +291,7 @@ export function AppearanceTab() {
               onClick={() => backgroundFileInputRef.current?.click()}
               className="w-full"
             >
-              <Upload className="h-4 w-4 mr-2" />
+              <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
               Choose Image File
             </Button>
             <p className="text-xs text-muted-foreground">
@@ -311,7 +326,7 @@ export function AppearanceTab() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Code className="h-5 w-5" />
+            <Code className="h-5 w-5" aria-hidden="true" />
             Custom CSS
           </CardTitle>
           <CardDescription>
@@ -335,8 +350,8 @@ export function AppearanceTab() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Sparkles className="h-5 w-5" />
-            Animation & Effects
+            <Sparkles className="h-5 w-5" aria-hidden="true" />
+            {t('settings.appearanceTab.animationEffects')}
           </CardTitle>
           <CardDescription>
             Control visual effects and animations
@@ -378,12 +393,12 @@ export function AppearanceTab() {
       {/* Action Buttons */}
       <div className="flex justify-end gap-2">
         <Button variant="outline" onClick={handleReset}>
-          <RotateCcw className="h-4 w-4 mr-2" />
-          Reset to Default
+          <RotateCcw className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('settings.appearanceTab.resetToDefault')}
         </Button>
         <Button onClick={handleSave}>
-          <Save className="h-4 w-4 mr-2" />
-          Save Changes
+          <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('common.save')}
         </Button>
       </div>
     </div>

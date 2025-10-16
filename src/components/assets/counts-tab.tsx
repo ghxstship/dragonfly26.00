@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { ClipboardCheck, Plus, Calendar, Users, AlertTriangle, CheckCircle2, Clock, Download, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -17,6 +18,8 @@ interface CountsTabProps {
 }
 
 export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
+  const t = useTranslations('production.assets.counts')
+  const tCommon = useTranslations('common')
   const [statusFilter, setStatusFilter] = useState<string | null>(null)
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const { toast } = useToast()
@@ -68,9 +71,9 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
           cancelled: 'bg-gray-500/10 text-gray-700 border-gray-200',
         }
         const icons: Record<string, any> = {
-          planned: <Calendar className="h-3 w-3 mr-1" />,
-          in_progress: <Clock className="h-3 w-3 mr-1" />,
-          completed: <CheckCircle2 className="h-3 w-3 mr-1" />,
+          planned: <Calendar className="h-4 w-4" aria-hidden="true" className="mr-1" />,
+          in_progress: <Clock className="h-4 w-4" aria-hidden="true" className="mr-1" />,
+          completed: <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="mr-1" />,
         }
         return (
           <Badge variant="outline" className={`${colors[value] || ''} flex items-center w-fit`}>
@@ -96,7 +99,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         if (!value || value.length === 0) return <span className="text-muted-foreground">-</span>
         return (
           <div className="flex items-center gap-1">
-            <Users className="h-3 w-3 text-muted-foreground" />
+            <Users className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
             <span className="text-sm">{value.length} team {value.length === 1 ? 'member' : 'members'}</span>
           </div>
         )
@@ -138,7 +141,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         if (!value || value === 0) return <span className="text-muted-foreground">-</span>
         return (
           <div className="flex items-center gap-1 text-orange-600">
-            <AlertTriangle className="h-4 w-4" />
+            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
             <span className="font-medium">{value}</span>
           </div>
         )
@@ -188,15 +191,15 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
     if (error) {
       console.error('Error deleting count:', error)
       toast({
-        title: "Error",
-        description: "Failed to delete count",
+        titleKey: "error",
+        description: t('assets.toast.deleteCountFailed'),
         variant: "destructive",
       })
       throw error
     }
     toast({
-      title: "Success",
-      description: "Count deleted successfully",
+      titleKey: "success",
+      description: t('assets.toast.countDeleted'),
     })
   }
 
@@ -224,13 +227,14 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
     a.click()
     URL.revokeObjectURL(url)
     toast({
-      title: "Export Complete",
-      description: "Count data exported successfully",
+      titleKey: "export_complete",
+      description: t('assets.toast.countExported'),
     })
   }
 
   return (
-    <div className="space-y-4">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
       {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
@@ -247,7 +251,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Completed</CardDescription>
+            <CardDescription>{t('completed')}</CardDescription>
             <CardTitle className="text-2xl text-green-600">{completedCounts}</CardTitle>
           </CardHeader>
         </Card>
@@ -270,9 +274,9 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
             onClick={() => setStatusFilter(statusFilter === option.value ? null : option.value)}
           >
             <div className={`w-2 h-2 rounded-full ${option.color} mr-1.5`} />
-            {option.label}
+            {t(option.labelKey)}
             <span className="ml-1 text-xs opacity-70">({option.count})</span>
-            {statusFilter === option.value && <X className="h-3 w-3 ml-1" />}
+            {statusFilter === option.value && <X className="h-4 w-4" aria-hidden="true" className="ml-1" />}
           </Badge>
         ))}
         {statusFilter && (
@@ -285,11 +289,11 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
       {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-end gap-2">
         <Button variant="outline" size="sm" onClick={handleExport}>
-          <Download className="h-4 w-4 mr-2" />
+          <Download className="h-4 w-4" aria-hidden="true" className="mr-2" />
           Export
         </Button>
         <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
           New Count
         </Button>
       </div>
@@ -330,5 +334,6 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         }}
       />
     </div>
+    </main>
   )
 }

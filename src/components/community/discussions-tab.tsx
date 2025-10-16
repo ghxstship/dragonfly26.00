@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -53,6 +54,8 @@ interface Discussion {
 }
 
 export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabProps) {
+  const t = useTranslations('community.discussions')
+  const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
   const [categoryFilter, setCategoryFilter] = useState<"all" | Discussion["category"]>("all")
   const [sortBy, setSortBy] = useState<"hot" | "new" | "top">("hot")
@@ -171,7 +174,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Comments</div>
-            <MessageCircle className="h-4 w-4 text-muted-foreground" />
+            <MessageCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -184,20 +187,20 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Hot Topics</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {discussions.filter(d => d.upvotes > 200).length}
             </div>
-            <p className="text-xs text-muted-foreground">Trending</p>
+            <p className="text-xs text-muted-foreground">{t('trending')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Your Posts</div>
-            <Award className="h-4 w-4 text-muted-foreground" />
+            <Award className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">7</div>
@@ -214,7 +217,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
             size="lg"
             onClick={() => setShowNewPost(!showNewPost)}
           >
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             Start a New Discussion
           </Button>
         </CardContent>
@@ -229,14 +232,14 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Input
-                placeholder="Discussion title..."
+                placeholder={t('discussionTitle')}
                 value={newPostTitle}
                 onChange={(e) => setNewPostTitle(e.target.value)}
               />
             </div>
             <div className="space-y-2">
               <Textarea
-                placeholder="Share your thoughts, ask a question, or start a conversation..."
+                placeholder={t('shareThoughts')}
                 value={newPostContent}
                 onChange={(e) => setNewPostContent(e.target.value)}
                 className="min-h-[150px]"
@@ -257,9 +260,9 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
         <CardContent className="pt-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
-                placeholder="Search discussions..."
+                placeholder={t('searchDiscussions')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
@@ -268,11 +271,11 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
             <Tabs value={sortBy} onValueChange={(v) => setSortBy(v as any)}>
               <TabsList>
                 <TabsTrigger value="hot">
-                  <TrendingUp className="h-4 w-4 mr-2" />
+                  <TrendingUp className="h-4 w-4 mr-2" aria-hidden="true" />
                   Hot
                 </TabsTrigger>
                 <TabsTrigger value="new">
-                  <Clock className="h-4 w-4 mr-2" />
+                  <Clock className="h-4 w-4 mr-2" aria-hidden="true" />
                   New
                 </TabsTrigger>
                 <TabsTrigger value="top">
@@ -293,9 +296,9 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
               <EmptyState
                 variant="inline"
                 icon={MessageSquare}
-                mainMessage={searchQuery ? "No discussions found" : "NOTHING TO SEE HERE... (YET)"}
-                description={searchQuery ? "Try adjusting your search criteria" : "Start a discussion to engage with the community"}
-                actionLabel={!searchQuery ? "Start Discussion" : undefined}
+                mainMessage={searchQuery ? t('noDiscussionsFound') : t('nothingToSeeYet')}
+                description={searchQuery ? t('tryAdjustingSearch') : t('engageWithCommunity')}
+                actionLabel={!searchQuery ? t('startDiscussion') : undefined}
                 onAction={!searchQuery ? () => {} : undefined}
               />
             </CardContent>
@@ -352,7 +355,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
                           {discussion.awarded && (
                             <>
                               <span>•</span>
-                              <Award className="h-3 w-3 text-yellow-500 fill-current" />
+                              <Award className="h-3 w-3 text-yellow-500 fill-current" aria-hidden="true" />
                             </>
                           )}
                           {discussion.locked && (
@@ -382,11 +385,11 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
                     {/* Action Bar */}
                     <div className="flex items-center gap-4">
                       <Button variant="ghost" size="sm" className="h-8">
-                        <MessageCircle className="h-4 w-4 mr-2" />
+                        <MessageCircle className="h-4 w-4 mr-2" aria-hidden="true" />
                         {discussion.comments} Comments
                       </Button>
                       <Button variant="ghost" size="sm" className="h-8">
-                        <Share2 className="h-4 w-4 mr-2" />
+                        <Share2 className="h-4 w-4 mr-2" aria-hidden="true" />
                         Share
                       </Button>
                       <Button variant="ghost" size="sm" className="h-8">

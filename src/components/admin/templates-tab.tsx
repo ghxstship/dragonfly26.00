@@ -1,8 +1,9 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { FileText, ListChecks, Layout, Workflow } from "lucide-react"
+import { FileText, ListChecks, Layout, Workflow, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 export function TemplatesTab() {
   const t = useTranslations()
@@ -10,29 +11,29 @@ export function TemplatesTab() {
   const templateCategories = [
     {
       id: "checklist",
-      name: "Checklist Templates",
-      description: "Reusable checklists for standard workflows and procedures",
+      name: t('admin.templates.checklists'),
+      description: t('admin.templates.checklistsDesc'),
       icon: ListChecks,
       count: 12,
     },
     {
       id: "document",
-      name: "Document Templates",
-      description: "Pre-formatted documents for contracts, reports, and forms",
+      name: t('admin.templates.documents'),
+      description: t('admin.templates.documentsDesc'),
       icon: FileText,
       count: 8,
     },
     {
       id: "project",
-      name: "Project Templates",
-      description: "Complete project structures with tasks and workflows",
+      name: t('admin.templates.projects'),
+      description: t('admin.templates.projectsDesc'),
       icon: Layout,
       count: 5,
     },
     {
       id: "workflow",
-      name: "Workflow Templates",
-      description: "Automated workflow patterns for common processes",
+      name: t('admin.templates.workflows'),
+      description: t('admin.templates.workflowsDesc'),
       icon: Workflow,
       count: 6,
     },
@@ -40,6 +41,18 @@ export function TemplatesTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.templates.description')}
+        </p>
+        <Button size="sm" aria-label="Create new template">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          Create
+        </Button>
+      </div>
+
+
       <Card>
         <CardHeader>
           <CardTitle>Templates</CardTitle>
@@ -58,7 +71,7 @@ export function TemplatesTab() {
                 >
                   <div className="flex items-start gap-3">
                     <div className="p-2 rounded-md bg-primary/10">
-                      <Icon className="h-5 w-5 text-primary" />
+                      <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
                     </div>
                     <div className="flex-1">
                       <div className="font-medium">{category.name}</div>
@@ -89,7 +102,7 @@ export function TemplatesTab() {
             <div className="p-3 border rounded-lg hover:bg-accent/50 transition-colors">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <ListChecks className="h-4 w-4 text-muted-foreground" />
+                  <ListChecks className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                   <div>
                     <div className="font-medium text-sm">New Project Checklist</div>
                     <div className="text-xs text-muted-foreground">Updated 2 days ago</div>
@@ -101,7 +114,7 @@ export function TemplatesTab() {
             <div className="p-3 border rounded-lg hover:bg-accent/50 transition-colors">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <FileText className="h-4 w-4 text-muted-foreground" />
+                  <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                   <div>
                     <div className="font-medium text-sm">Vendor Contract Template</div>
                     <div className="text-xs text-muted-foreground">Updated 5 days ago</div>
@@ -113,7 +126,7 @@ export function TemplatesTab() {
             <div className="p-3 border rounded-lg hover:bg-accent/50 transition-colors">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <Layout className="h-4 w-4 text-muted-foreground" />
+                  <Layout className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                   <div>
                     <div className="font-medium text-sm">Live Event Production</div>
                     <div className="text-xs text-muted-foreground">Updated 1 week ago</div>

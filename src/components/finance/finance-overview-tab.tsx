@@ -20,28 +20,36 @@ import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog
 import { useState } from "react"
 import { Plus } from "lucide-react"
 import type { TabComponentProps } from "@/types"
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
+import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('business.finance.overview')
+  const tCommon = useTranslations('business.common')
+  const locale = useLocale()
   const { data: financeData, loading } = useModuleData(workspaceId, 'finance', 'overview')
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="flex items-center justify-center h-full"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading financial data...</p>
+          <div 
+            className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"
+            aria-hidden="true"
+          ></div>
+          <p className="text-muted-foreground">
+            {tCommon('loading', { resource: t('title') })}
+          </p>
         </div>
       </div>
     )
-  }
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(amount)
-  }
-
-  const formatPercentage = (value: number) => {
-    return `${value > 0 ? '+' : ''}${value.toFixed(1)}%`
   }
 
   // Sample data structure
@@ -66,17 +74,17 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
   ]
 
   const spendingByCategory = [
-    { category: 'Payroll', amount: 680000, percentage: 36 },
-    { category: 'Equipment', amount: 450000, percentage: 24 },
-    { category: 'Venues', amount: 340000, percentage: 18 },
-    { category: 'Marketing', amount: 230000, percentage: 12 },
-    { category: 'Other', amount: 190000, percentage: 10 },
+    { category: t('mockData.categories.payroll'), amount: 680000, percentage: 36 },
+    { category: t('mockData.categories.equipment'), amount: 450000, percentage: 24 },
+    { category: t('mockData.categories.venues'), amount: 340000, percentage: 18 },
+    { category: t('mockData.categories.marketing'), amount: 230000, percentage: 12 },
+    { category: t('mockData.categories.other'), amount: 190000, percentage: 10 },
   ]
 
   const alerts = [
-    { id: 1, type: 'warning', message: 'Budget variance exceeds 15% in Equipment category', priority: 'high' },
-    { id: 2, type: 'info', message: '3 invoices pending approval', priority: 'medium' },
-    { id: 3, type: 'success', message: 'Cash flow forecast positive for next quarter', priority: 'low' },
+    { id: 1, type: 'warning', message: t('mockData.alerts.budgetVariance'), priority: 'high' },
+    { id: 2, type: 'info', message: t('mockData.alerts.invoicesPending'), priority: 'medium' },
+    { id: 3, type: 'success', message: t('mockData.alerts.cashFlowPositive'), priority: 'low' },
   ]
 
   const maxRevenue = Math.max(...monthlyData.map(d => d.revenue))
@@ -86,19 +94,20 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
   return (
     <div className="space-y-6">
       {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-end gap-2">
-        <Button variant="outline" size="sm">
-          <RefreshCw className="h-4 w-4 mr-2" />
-          Refresh
-        </Button>
-        <Button variant="outline" size="sm">
-          <Download className="h-4 w-4 mr-2" />
-          Export
-        </Button>
-        <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4 mr-2" />
-          New Transaction
-        </Button>
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Overview of financial performance and health
+        </p>
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm">
+            <Download className="h-4 w-4" aria-hidden="true"  />
+            Export
+          </Button>
+          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
+            <Plus className="h-4 w-4" aria-hidden="true"  />
+            New Transaction
+          </Button>
+        </div>
       </div>
 
       {/* Key Metrics */}
@@ -106,12 +115,12 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <DollarSign className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(overview.totalRevenue)}</div>
+            <div className="text-2xl font-bold">{formatCurrency(overview.totalRevenue, locale)}</div>
             <div className="flex items-center text-xs text-green-600">
-              <TrendingUp className="h-3 w-3 mr-1" />
+              <TrendingUp className="h-3 w-3" aria-hidden="true"  />
               {formatPercentage(overview.revenueChange)} vs last period
             </div>
           </CardContent>
@@ -120,12 +129,12 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Expenses</CardTitle>
-            <ArrowDownRight className="h-4 w-4 text-muted-foreground" />
+            <ArrowDownRight className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(overview.totalExpenses)}</div>
+            <div className="text-2xl font-bold">{formatCurrency(overview.totalExpenses, locale)}</div>
             <div className="flex items-center text-xs text-green-600">
-              <TrendingDown className="h-3 w-3 mr-1" />
+              <TrendingDown className="h-3 w-3" aria-hidden="true"  />
               {formatPercentage(overview.expenseChange)} vs last period
             </div>
           </CardContent>
@@ -134,10 +143,10 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Net Income</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            <TrendingUp className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">{formatCurrency(overview.netIncome)}</div>
+            <div className="text-2xl font-bold text-green-600">{formatCurrency(overview.netIncome, locale)}</div>
             <div className="text-xs text-muted-foreground">
               {((overview.netIncome / overview.totalRevenue) * 100).toFixed(1)}% profit margin
             </div>
@@ -147,10 +156,10 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Cash on Hand</CardTitle>
-            <Wallet className="h-4 w-4 text-muted-foreground" />
+            <Wallet className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(overview.cashOnHand)}</div>
+            <div className="text-2xl font-bold">{formatCurrency(overview.cashOnHand, locale)}</div>
             <div className="text-xs text-muted-foreground">
               {(overview.cashOnHand / overview.burnRate).toFixed(1)} months runway
             </div>
@@ -172,7 +181,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
                   <div className="flex justify-between text-sm">
                     <span className="font-medium">{data.month}</span>
                     <span className="text-muted-foreground">
-                      {formatCurrency(data.revenue - data.expenses)}
+                      {formatCurrency(data.revenue - data.expenses, locale)}
                     </span>
                   </div>
                   <div className="space-y-1">
@@ -182,7 +191,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
                         style={{ width: `${(data.revenue / maxValue) * 100}%` }}
                       >
                         <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-white font-medium">
-                          {formatCurrency(data.revenue)}
+                          {formatCurrency(data.revenue, locale)}
                         </span>
                       </div>
                     </div>
@@ -192,7 +201,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
                         style={{ width: `${(data.expenses / maxValue) * 100}%` }}
                       >
                         <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-white font-medium">
-                          {formatCurrency(data.expenses)}
+                          {formatCurrency(data.expenses, locale)}
                         </span>
                       </div>
                     </div>
@@ -226,7 +235,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
                   <div className="flex justify-between text-sm">
                     <span className="font-medium">{category.category}</span>
                     <span className="text-muted-foreground">
-                      {formatCurrency(category.amount)} ({category.percentage}%)
+                      {formatCurrency(category.amount, locale)} ({category.percentage}%)
                     </span>
                   </div>
                   <Progress value={category.percentage} className="h-2" />

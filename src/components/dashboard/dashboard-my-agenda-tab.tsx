@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -18,6 +19,8 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 
 export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
+  const t = useTranslations('dashboard.agenda')
+  const tCommon = useTranslations('common')
   
   // Use real data hook
   const { events, loading } = useMyAgenda(workspaceId, userId)
@@ -39,10 +42,15 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
   // Show loading state
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        className="flex items-center justify-center h-full"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading your agenda...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
+          <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
     )
@@ -94,23 +102,28 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
-        <Button 
-          size="sm" 
-          className="gap-2"
-          onClick={() => router.push(`/workspace/${workspaceId}/events/all-events`)}
-        >
-          <Plus className="h-4 w-4" />
-          New Event
-        </Button>
-      </div>
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <section role="region" aria-labelledby="agenda-actions">
+        <h2 id="agenda-actions" className="sr-only">{t('description')}</h2>
+        <div className="flex items-center justify-between">
+          <p className="text-muted-foreground">
+            {t('description')}
+          </p>
+          <Button size="sm" onClick={() => router.push(`/workspace/${workspaceId}/events/calendar`)} aria-label={t('newEvent')}>
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {t('newEvent')}
+          </Button>
+        </div>
+      </section>
 
       {/* Week Overview */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">This Week</CardTitle>
-        </CardHeader>
+      <section role="region" aria-labelledby="week-overview">
+        <Card>
+          <CardHeader>
+            <CardTitle id="week-overview" className="text-base">{t('thisWeek')}</CardTitle>
+          </CardHeader>
         <CardContent>
           <div className="flex items-end justify-between gap-2">
             {weekSummary.map((day) => (
@@ -128,33 +141,45 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           </div>
         </CardContent>
       </Card>
+      </section>
 
       {/* Upcoming Events */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Upcoming Events</CardTitle>
-        </CardHeader>
-        <CardContent>
-          {upcomingEvents.length === 0 ? (
-            <div className="text-center py-12">
-              <Calendar className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">No Upcoming Events</h3>
-              <p className="text-muted-foreground mb-4">You don&apos;t have any events scheduled yet.</p>
-              <Button 
-                size="sm"
-                onClick={() => router.push(`/workspace/${workspaceId}/events/all-events`)}
+      <section role="region" aria-labelledby="upcoming-events">
+        <Card>
+          <CardHeader>
+            <CardTitle id="upcoming-events" className="text-base">{t('upcomingEvents')}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {upcomingEvents.length === 0 ? (
+              <div className="text-center py-12">
+                <Calendar className="h-12 w-12 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
+                <h3 className="text-lg font-semibold mb-2">{t('noUpcomingEvents')}</h3>
+                <p className="text-muted-foreground mb-4">{t('noEventsMessage')}</p>
+                <Button 
+                  size="sm"
+                  onClick={() => router.push(`/workspace/${workspaceId}/events/all-events`)}
+                  aria-label={t('createEvent')}
               >
                 <Plus className="h-4 w-4 mr-2" />
-                Create Event
+                {t('createEvent')}
               </Button>
             </div>
           ) : (
             <div className="space-y-3">
               {upcomingEvents.map((event, index) => (
               <div
-                key={event.id || index}
-                className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
-                onClick={() => event.id && router.push(`/workspace/${workspaceId}/events/all-events?id=${event.id}`)}
+                key={event.id}
+                role="button"
+                tabIndex={0}
+                className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer focus:ring-2 focus:ring-primary focus:outline-none"
+                onClick={() => router.push(`/workspace/${workspaceId}/events/all-events?id=${event.id}`)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    router.push(`/workspace/${workspaceId}/events/all-events?id=${event.id}`)
+                  }
+                }}
+                aria-label={t('viewEvent', { title: event.title })}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 space-y-2">
@@ -162,7 +187,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                       <h3 className="font-semibold">{event.title}</h3>
                       {event.isOrganizer && (
                         <Badge variant="outline" className="text-xs">
-                          Organizer
+                          {t('organizer')}
                         </Badge>
                       )}
                     </div>
@@ -190,8 +215,8 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                         )}
                       </div>
                       <div className="flex items-center gap-1">
-                        <Users className="h-3.5 w-3.5" />
-                        {event.attendees} attendees
+                        <Users className="h-3.5 w-3.5" aria-hidden="true" />
+                        {event.attendees} {t('attendees')}
                       </div>
                     </div>
 
@@ -215,48 +240,53 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           )}
         </CardContent>
       </Card>
+      </section>
 
-      {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <p className="text-3xl font-bold">{events.length}</p>
-              <p className="text-xs text-muted-foreground mt-1">Total Events</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <p className="text-3xl font-bold">{events.filter(e => e.created_by === userId).length}</p>
-              <p className="text-xs text-muted-foreground mt-1">As Organizer</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <p className="text-3xl font-bold">{events.filter(e => e.created_by !== userId).length}</p>
-              <p className="text-xs text-muted-foreground mt-1">As Attendee</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <p className="text-3xl font-bold">
-                {events.reduce((total, e) => {
-                  const start = new Date(e.start_time)
-                  const end = new Date(e.end_time)
-                  return total + Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60))
-                }, 0)}
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">Hours Scheduled</p>
-            </div>
-          </CardContent>
-        </Card>
+      {/* Summary Stats */}
+      <section role="region" aria-labelledby="stats-heading">
+        <h2 id="stats-heading" className="sr-only">Event Statistics</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <p className="text-3xl font-bold">{events.length}</p>
+                <p className="text-xs text-muted-foreground mt-1">Total Events</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <p className="text-3xl font-bold">{events.filter(e => e.created_by === userId).length}</p>
+                <p className="text-xs text-muted-foreground mt-1">As Organizer</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <p className="text-3xl font-bold">{events.filter(e => e.created_by !== userId).length}</p>
+                <p className="text-xs text-muted-foreground mt-1">As Attendee</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-6">
+              <div className="text-center">
+                <p className="text-3xl font-bold">
+                  {events.reduce((total, e) => {
+                    const start = new Date(e.start_time)
+                    const end = new Date(e.end_time)
+                    return total + Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60))
+                  }, 0)}
+                </p>
+                <p className="text-xs text-muted-foreground mt-1">{t('hoursScheduled')}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
       </div>
-    </div>
+    </main>
   )
 }

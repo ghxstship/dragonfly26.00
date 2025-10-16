@@ -20,17 +20,33 @@ import { useModuleData } from "@/hooks/use-module-data"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { useState } from "react"
 import type { TabComponentProps } from "@/types"
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
+import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('business.procurement.ordersDashboard')
+  const tCommon = useTranslations('business.common')
+  const locale = useLocale()
   const { data: orders, loading } = useModuleData(workspaceId, 'procurement', 'orders')
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="flex items-center justify-center h-full"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading orders...</p>
+          <div 
+            className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"
+            aria-hidden="true"
+          ></div>
+          <p className="text-muted-foreground">
+            {tCommon('loading', { resource: t('title') })}
+          </p>
         </div>
       </div>
     )
@@ -53,11 +69,11 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
 
   // Group orders by status for pipeline
   const stages = [
-    { id: 'pending', name: 'Pending Approval', icon: Clock },
-    { id: 'approved', name: 'Approved', icon: CheckCircle2 },
-    { id: 'ordered', name: 'Ordered', icon: FileEdit },
-    { id: 'in_transit', name: 'In Transit', icon: Truck },
-    { id: 'received', name: 'Received', icon: Package },
+    { id: 'pending', name: t('stages.pendingApproval'), icon: Clock },
+    { id: 'approved', name: t('stages.approved'), icon: CheckCircle2 },
+    { id: 'ordered', name: t('stages.ordered'), icon: FileEdit },
+    { id: 'in_transit', name: t('stages.inTransit'), icon: Truck },
+    { id: 'received', name: t('stages.received'), icon: Package },
   ]
 
   const getOrdersByStage = (stage: string) => {
@@ -79,11 +95,11 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
+            <Download className="h-4 w-4" aria-hidden="true"  />
             Export
           </Button>
           <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus className="h-4 w-4" aria-hidden="true"  />
             New Purchase Order
           </Button>
         </div>
@@ -94,7 +110,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Orders</CardTitle>
-            <FileEdit className="h-4 w-4 text-muted-foreground" />
+            <FileEdit className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{orders.length}</div>
@@ -105,10 +121,10 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Value</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <DollarSign className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(totalValue)}</div>
+            <div className="text-2xl font-bold">{formatCurrency(totalValue, locale)}</div>
             <p className="text-xs text-muted-foreground">Across all orders</p>
           </CardContent>
         </Card>
@@ -116,7 +132,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         <Card className={pendingApprovals > 0 ? "border-yellow-200 dark:border-yellow-900" : ""}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Pending Approval</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" />
+            <Clock className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${pendingApprovals > 0 ? 'text-yellow-600' : ''}`}>
@@ -129,7 +145,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         <Card className={overdueOrders > 0 ? "border-red-200 dark:border-red-900" : ""}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Overdue</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-muted-foreground" />
+            <AlertTriangle className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${overdueOrders > 0 ? 'text-red-600' : ''}`}>
@@ -159,10 +175,10 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                     <CardHeader className="pb-3">
                       <div className="flex items-center justify-between">
                         <CardTitle className="text-sm font-medium">{stage.name}</CardTitle>
-                        <StageIcon className="h-4 w-4 text-muted-foreground" />
+                        <StageIcon className="h-4 w-4" aria-hidden="true"  />
                       </div>
                       <div className="text-xs text-muted-foreground">
-                        {stageOrders.length} orders · {formatCurrency(stageValue)}
+                        {stageOrders.length} orders · {formatCurrency(stageValue, locale)}
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-2 max-h-96 overflow-y-auto">
@@ -176,7 +192,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                               </div>
                             </div>
                             <div className="flex items-center justify-between text-xs">
-                              <span className="font-medium">{formatCurrency(order.total)}</span>
+                              <span className="font-medium">{formatCurrency(order.total, locale)}</span>
                               <Badge variant="secondary" className={getStatusColor(order.status)}>
                                 {order.status}
                               </Badge>
@@ -234,7 +250,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                       <div className="flex justify-between text-sm">
                         <span className="font-medium">{vendor.vendor}</span>
                         <span className="text-muted-foreground">
-                          {vendor.count} orders · {formatCurrency(vendor.total)}
+                          {vendor.count} orders · {formatCurrency(vendor.total, locale)}
                         </span>
                       </div>
                       <Progress value={(vendor.count / orders.length) * 100} className="h-2" />
@@ -300,7 +316,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         <Card className="border-yellow-200 dark:border-yellow-900">
           <CardHeader>
             <CardTitle className="text-yellow-600 flex items-center gap-2">
-              <Clock className="h-5 w-5" />
+              <Clock className="h-5 w-5" aria-hidden="true"  />
               Pending Approvals
             </CardTitle>
             <CardDescription>{pendingApprovals} orders awaiting approval</CardDescription>
@@ -311,7 +327,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                 <div key={order.id} className="flex items-center justify-between p-3 border rounded">
                   <div>
                     <div className="font-medium">{order.title || order.po_number}</div>
-                    <div className="text-sm text-muted-foreground">{order.vendor} · {formatCurrency(order.total)}</div>
+                    <div className="text-sm text-muted-foreground">{order.vendor} · {formatCurrency(order.total, locale)}</div>
                   </div>
                   <div className="flex gap-2">
                     <Button size="sm" variant="outline">Reject</Button>

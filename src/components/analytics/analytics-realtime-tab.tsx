@@ -1,14 +1,16 @@
 "use client"
 
-import { Waves, Activity, Users, Zap } from "lucide-react"
+import { Waves, Activity, Users, Zap, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const realtimeMetrics = [
-  { label: "Active Users", value: "1,234", change: "+45 in last minute", status: "up" },
-  { label: "Requests/sec", value: "847", change: "+12% vs avg", status: "up" },
-  { label: "Response Time", value: "124ms", change: "-8ms vs avg", status: "down" },
-  { label: "Error Rate", value: "0.03%", change: "Normal", status: "stable" },
+  { labelKey: "active_users", value: "1,234", change: "+45 in last minute", status: "up" },
+  { labelKey: "requestssec", value: "847", change: "+12% vs avg", status: "up" },
+  { labelKey: "response_time", value: "124ms", change: "-8ms vs avg", status: "down" },
+  { labelKey: "error_rate", value: "0.03%", change: "Normal", status: "stable" },
 ]
 
 const recentEvents = [
@@ -28,18 +30,33 @@ interface AnalyticsRealtimeTabProps {
 }
 
 export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRealtimeTabProps) {
+  const t = useTranslations('intelligence.analytics.analyticsrealtime')
+  const tCommon = useTranslations('common')
+
   const displayMetrics = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
+
       {/* Real-time Metrics */}
       <div className="grid grid-cols-4 gap-4">
         {realtimeMetrics.map((metric, index) => (
           <Card key={index} className="border-2">
             <CardContent className="p-6">
               <div className="flex items-start justify-between mb-2">
-                <p className="text-sm text-muted-foreground">{metric.label}</p>
-                {metric.status === "up" && <Activity className="h-4 w-4 text-green-600" />}
-                {metric.status === "down" && <Zap className="h-4 w-4 text-blue-600" />}
+                <p className="text-sm text-muted-foreground">{t(metric.labelKey)}</p>
+                {metric.status === "up" && <Activity className="h-4 w-4 text-green-600" aria-hidden="true" />}
+                {metric.status === "down" && <Zap className="h-4 w-4 text-blue-600" aria-hidden="true" />}
                 {metric.status === "stable" && <div className="h-2 w-2 rounded-full bg-gray-400"></div>}
               </div>
               <p className="text-3xl font-bold mb-2">{metric.value}</p>
@@ -59,7 +76,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Activity className="h-5 w-5" />
+            <Activity className="h-5 w-5" aria-hidden="true" />
             Live Activity Feed
           </CardTitle>
         </CardHeader>
@@ -90,14 +107,14 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
       {/* System Status */}
       <Card>
         <CardHeader>
-          <CardTitle>System Status</CardTitle>
+          <CardTitle>{t('systemStatus')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-3 gap-4">
             <div className="p-4 border rounded-lg">
               <div className="flex items-center justify-between mb-2">
-                <p className="text-sm font-medium">Database</p>
-                <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">Healthy</Badge>
+                <p className="text-sm font-medium">{t('database')}</p>
+                <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">{t('healthy')}</Badge>
               </div>
               <div className="space-y-1 text-sm text-muted-foreground">
                 <p>Latency: 12ms</p>
@@ -106,8 +123,8 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
             </div>
             <div className="p-4 border rounded-lg">
               <div className="flex items-center justify-between mb-2">
-                <p className="text-sm font-medium">API Server</p>
-                <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">Healthy</Badge>
+                <p className="text-sm font-medium">{t('apiServer')}</p>
+                <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">{t('healthy')}</Badge>
               </div>
               <div className="space-y-1 text-sm text-muted-foreground">
                 <p>Uptime: 99.98%</p>
@@ -116,8 +133,8 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
             </div>
             <div className="p-4 border rounded-lg">
               <div className="flex items-center justify-between mb-2">
-                <p className="text-sm font-medium">Cache</p>
-                <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">Healthy</Badge>
+                <p className="text-sm font-medium">{t('cache')}</p>
+                <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">{t('healthy')}</Badge>
               </div>
               <div className="space-y-1 text-sm text-muted-foreground">
                 <p>Hit Rate: 94%</p>

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -26,6 +27,7 @@ const ROLE_ICONS: Record<string, any> = {
 }
 
 export function RolesPermissionsTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [brandedRoles, setBrandedRoles] = useState<RoleMetadata[]>([])
   const [selectedRole, setSelectedRole] = useState<RoleSlug | null>(null)
@@ -50,6 +52,18 @@ export function RolesPermissionsTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('admin.rolesPermissions')}
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('roles.createRole')}
+        </Button>
+      </div>
+
+
       {/* Description */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
@@ -167,7 +181,7 @@ export function RolesPermissionsTab() {
                         <Icon className="h-6 w-6" style={{ color: role.color }} />
                       </div>
                       <div>
-                        <CardTitle>{role.name}</CardTitle>
+                        <CardTitle>{t('roles.userRoles')}</CardTitle>
                         <CardDescription>{role.description}</CardDescription>
                       </div>
                     </>

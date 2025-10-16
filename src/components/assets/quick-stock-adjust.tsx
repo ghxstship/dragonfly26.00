@@ -111,7 +111,7 @@ export function QuickStockAdjust({ item, onAdjusted }: QuickStockAdjustProps) {
               <Input
                 id="quantity"
                 type="number"
-                placeholder="Enter quantity"
+                placeholder={t('assets.stock.enterQuantity')}
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
                 min="1"

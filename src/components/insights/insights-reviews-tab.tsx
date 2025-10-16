@@ -1,14 +1,15 @@
 "use client"
 
-import { Calendar, Users, FileText, CheckCircle } from "lucide-react"
+import { Calendar, Users, FileText, CheckCircle , Plus} from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
+import { useTranslations } from "next-intl"
 const upcomingReviews = [
   {
     id: "1",
-    title: "Q4 2025 Business Review",
+    titleKey: "q4_2025_business_review",
     date: "2025-10-15",
     time: "2:00 PM",
     type: "Quarterly",
@@ -18,7 +19,7 @@ const upcomingReviews = [
   },
   {
     id: "2",
-    title: "Monthly Operations Check-in",
+    titleKey: "monthly_operations_checkin",
     date: "2025-10-20",
     time: "10:00 AM",
     type: "Monthly",
@@ -28,7 +29,7 @@ const upcomingReviews = [
   },
   {
     id: "3",
-    title: "Customer Success Sprint Retro",
+    titleKey: "customer_success_sprint_retro",
     date: "2025-10-25",
     time: "3:00 PM",
     type: "Sprint",
@@ -41,7 +42,7 @@ const upcomingReviews = [
 const pastReviews = [
   {
     id: "1",
-    title: "Q3 2025 Strategic Review",
+    titleKey: "q3_2025_strategic_review",
     date: "2025-09-30",
     type: "Quarterly",
     outcomes: ["Approved market expansion", "Adjusted budget allocations", "Updated OKRs"],
@@ -50,7 +51,7 @@ const pastReviews = [
   },
   {
     id: "2",
-    title: "September Operations Review",
+    titleKey: "september_operations_review",
     date: "2025-09-25",
     type: "Monthly",
     outcomes: ["Identified automation opportunities", "Resource reallocation", "Process updates"],
@@ -65,44 +66,58 @@ interface InsightsReviewsTabProps {
 }
 
 export function InsightsReviewsTab({ data = [], loading = false }: InsightsReviewsTabProps) {
+  const t = useTranslations('intelligence.insights.insightsreviews')
+  const tCommon = useTranslations('common')
+
   const displayReviews = data || []
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground" role="doc-subtitle">
+          {t('description')}
+        </p>
+        <Button size="sm" aria-label={`${tCommon('create')} item`}>
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {tCommon('create')}
+        </Button>
+      </div>
+
       {/* Upcoming Reviews */}
       <div>
-        <h3 className="font-semibold mb-4">Upcoming Reviews</h3>
+        <h3 className="font-semibold mb-4">{t('upcomingReviews')}</h3>
         <div className="space-y-3">
           {upcomingReviews.map((review) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-4 flex-1">
-                    <Calendar className="h-8 w-8 text-blue-600 mt-1" />
+                    <Calendar className="h-8 w-8 text-blue-600 mt-1" aria-hidden="true" />
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <h4 className="font-semibold text-lg">{review.title}</h4>
+                        <h4 className="font-semibold text-lg">{t(review.titleKey)}</h4>
                         <Badge variant="outline">{review.type}</Badge>
                       </div>
                       
                       <div className="grid grid-cols-2 gap-4 text-sm mb-3">
                         <div>
-                          <p className="text-muted-foreground">Date & Time</p>
+                          <p className="text-muted-foreground">{t('dateTime')}</p>
                           <p className="font-medium flex items-center gap-1">
-                            <Calendar className="h-3 w-3" />
+                            <Calendar className="h-3 w-3" aria-hidden="true" />
                             {review.date} at {review.time}
                           </p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Attendees</p>
+                          <p className="text-muted-foreground">{t('attendees')}</p>
                           <p className="font-medium flex items-center gap-1">
-                            <Users className="h-3 w-3" />
+                            <Users className="h-3 w-3" aria-hidden="true" />
                             {review.attendees.join(", ")}
                           </p>
                         </div>
                       </div>
 
                       <div>
-                        <p className="text-sm font-medium text-muted-foreground mb-2">Agenda</p>
+                        <p className="text-sm font-medium text-muted-foreground mb-2">{t('agenda')}</p>
                         <div className="flex flex-wrap gap-2">
                           {review.agenda.map((item, idx) => (
                             <Badge key={idx} variant="secondary" className="text-xs">
@@ -116,7 +131,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                   
                   <div className="flex flex-col gap-2">
                     <Button>
-                      <FileText className="h-4 w-4 mr-2" />
+                      <FileText className="h-4 w-4 mr-2" aria-hidden="true" />
                       View Details
                     </Button>
                     <Button variant="outline">
@@ -132,16 +147,16 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
 
       {/* Past Reviews */}
       <div>
-        <h3 className="font-semibold mb-4">Recent Reviews</h3>
+        <h3 className="font-semibold mb-4">{t('recentReviews')}</h3>
         <div className="space-y-3">
           {pastReviews.map((review) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <CheckCircle className="h-8 w-8 text-green-600 mt-1" />
+                  <CheckCircle className="h-8 w-8 text-green-600 mt-1" aria-hidden="true" />
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <h4 className="font-semibold">{review.title}</h4>
+                      <h4 className="font-semibold">{t(review.titleKey)}</h4>
                       <Badge variant="outline">{review.type}</Badge>
                       <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">
                         Completed
@@ -157,11 +172,11 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                     </div>
 
                     <div>
-                      <p className="text-sm font-medium mb-2">Key Outcomes</p>
+                      <p className="text-sm font-medium mb-2">{t('keyOutcomes')}</p>
                       <ul className="space-y-1">
                         {review.outcomes.map((outcome, idx) => (
                           <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
                             {outcome}
                           </li>
                         ))}
@@ -170,7 +185,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                   </div>
                   
                   <Button variant="outline" size="sm">
-                    <FileText className="h-4 w-4 mr-2" />
+                    <FileText className="h-4 w-4 mr-2" aria-hidden="true" />
                     View Notes
                   </Button>
                 </div>

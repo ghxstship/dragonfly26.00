@@ -4,6 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Waves, TrendingUp, TrendingDown, AlertCircle, DollarSign, Calendar } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
+import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinanceCashFlowTabProps {
   data?: any[]
@@ -21,12 +24,25 @@ const MOCK_MONTHLY_DATA = [
 ]
 
 export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
+  const t = useTranslations('business.finance.cashFlow')
+  const tCommon = useTranslations('business.common')
+  const locale = useLocale()
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="flex items-center justify-center h-full"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading cash flow...</p>
+          <div 
+            className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"
+            aria-hidden="true"
+          ></div>
+          <p className="text-muted-foreground">
+            {tCommon('loading', { resource: t('title') })}
+          </p>
         </div>
       </div>
     )
@@ -42,36 +58,38 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
   const cashRunway = 16 // weeks
 
   const inflowCategories = [
-    { name: 'Client Payments', amount: 85000, percent: 57 },
-    { name: 'Grants & Funding', amount: 40000, percent: 27 },
-    { name: 'Ticket Sales', amount: 15000, percent: 10 },
-    { name: 'Other Income', amount: 10000, percent: 6 },
+    { name: t('mockData.inflows.clientPayments'), amount: 85000, percent: 57 },
+    { name: t('mockData.inflows.grantsFunding'), amount: 40000, percent: 27 },
+    { name: t('mockData.inflows.ticketSales'), amount: 15000, percent: 10 },
+    { name: t('mockData.inflows.otherIncome'), amount: 10000, percent: 6 },
   ]
 
   const outflowCategories = [
-    { name: 'Payroll', amount: 60000, percent: 48 },
-    { name: 'Vendors', amount: 35000, percent: 28 },
-    { name: 'Equipment', amount: 18000, percent: 14 },
-    { name: 'Operating Expenses', amount: 12000, percent: 10 },
-  ]
-
-  const upcomingPayments = [
-    { description: 'Crew Payroll', amount: 45000, date: 'Oct 18', category: 'Payroll', critical: true },
-    { description: 'Equipment Rental', amount: 12500, date: 'Oct 20', category: 'Vendors', critical: false },
-    { description: 'Insurance Premium', amount: 8000, date: 'Oct 25', category: 'Operating', critical: false },
-    { description: 'Subcontractor Payment', amount: 22000, date: 'Oct 28', category: 'Vendors', critical: true },
+    { name: t('mockData.outflows.payroll'), amount: 60000, percent: 48 },
   ]
 
   const maxAmount = Math.max(...monthlyData.map(d => Math.max(d.inflows, d.outflows)))
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Cash flow management
+        </p>
+        <Button size="sm">
+          <Plus className="h-4 w-4" aria-hidden="true"  />
+          Create
+        </Button>
+      </div>
+
+
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Current Balance</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <DollarSign className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">${currentBalance.toLocaleString()}</div>
@@ -84,7 +102,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Projected (30d)</CardTitle>
-            <Waves className="h-4 w-4 text-muted-foreground" />
+            <Waves className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${projectedBalance < currentBalance ? 'text-red-600' : 'text-green-600'}`}>
@@ -99,7 +117,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Cash Runway</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+            <Calendar className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{cashRunway} weeks</div>
@@ -112,7 +130,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Burn Rate</CardTitle>
-            <TrendingDown className="h-4 w-4 text-red-600" />
+            <TrendingDown className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">$7,800</div>
@@ -207,7 +225,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-green-600" />
+              <TrendingUp className="h-5 w-5" aria-hidden="true"  />
               Inflow Breakdown
             </CardTitle>
             <CardDescription>Sources of cash inflows this month</CardDescription>
@@ -251,7 +269,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <TrendingDown className="h-5 w-5 text-red-600" />
+              <TrendingDown className="h-5 w-5" aria-hidden="true"  />
               Outflow Breakdown
             </CardTitle>
             <CardDescription>Cash outflows by category this month</CardDescription>
@@ -309,7 +327,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
               >
                 <div className="flex items-center gap-3">
                   {payment.critical && (
-                    <AlertCircle className="h-4 w-4 text-red-600 flex-shrink-0" />
+                    <AlertCircle className="h-4 w-4" aria-hidden="true"  />
                   )}
                   <div>
                     <p className="font-medium text-sm">{payment.description}</p>
@@ -342,7 +360,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         <Card className="border-orange-200 bg-orange-50 dark:border-orange-900 dark:bg-orange-950">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <AlertCircle className="h-5 w-5 text-orange-600" />
+              <AlertCircle className="h-5 w-5" aria-hidden="true"  />
               Cash Runway Alert
             </CardTitle>
           </CardHeader>

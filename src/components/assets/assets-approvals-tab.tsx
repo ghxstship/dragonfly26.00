@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 import { useModuleData } from '@/hooks/use-module-data'
 import { Button } from '@/components/ui/button'
@@ -16,6 +17,8 @@ import { Badge } from '@/components/ui/badge'
 import { formatDistanceToNow } from 'date-fns'
 
 export default function AssetsApprovalsTab() {
+  const t = useTranslations('production.assets.approvals')
+  const tCommon = useTranslations('common')
   const params = useParams()
   const workspaceId = params?.workspaceId as string
 
@@ -25,9 +28,9 @@ export default function AssetsApprovalsTab() {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="text-muted-foreground">Loading approvals...</div>
-      </div>
-    )
-  }
+          </div>
+   )
+}
 
   if (error) {
     return (
@@ -40,11 +43,11 @@ export default function AssetsApprovalsTab() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'approved':
-        return <CheckCircle className="h-4 w-4 text-green-600" />
+        return <CheckCircle className="h-4 w-4" aria-hidden="true" className="text-green-600" />
       case 'rejected':
-        return <XCircle className="h-4 w-4 text-red-600" />
+        return <XCircle className="h-4 w-4" aria-hidden="true" className="text-red-600" />
       case 'pending':
-        return <Clock className="h-4 w-4 text-yellow-600" />
+        return <Clock className="h-4 w-4" aria-hidden="true" className="text-yellow-600" />
       default:
         return null
     }
@@ -66,7 +69,19 @@ export default function AssetsApprovalsTab() {
   }
 
   return (
-    <div className="space-y-4">
+    <main role="main" aria-label={t('title')}>
+      <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          Review and manage approval workflows for production advances
+        </p>
+        <Button size="sm" disabled>
+          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          Create Approval Chain
+        </Button>
+      </div>
+
       <div className="rounded-lg border bg-card">
         <Table>
           <TableHeader>
@@ -135,7 +150,7 @@ export default function AssetsApprovalsTab() {
                         )}
                       </div>
                     ) : (
-                      <span className="text-muted-foreground">Pending</span>
+                      <span className="text-muted-foreground">{t('pending')}</span>
                     )}
                   </TableCell>
                 </TableRow>
@@ -145,5 +160,6 @@ export default function AssetsApprovalsTab() {
         </Table>
       </div>
     </div>
+    </main>
   )
 }

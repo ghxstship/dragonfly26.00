@@ -23,17 +23,33 @@ import { useModuleData } from "@/hooks/use-module-data"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { useState } from "react"
 import type { TabComponentProps } from "@/types"
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
+import { formatNumber } from "@/lib/utils/locale-formatting"
 
 export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
+  const t = useTranslations('business.companies.organizations')
+  const tCommon = useTranslations('business.common')
+  const locale = useLocale()
   const { data: companies, loading } = useModuleData(workspaceId, 'companies', 'organizations')
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div 
+        role="status" 
+        aria-live="polite" 
+        aria-atomic="true"
+        className="flex items-center justify-center h-full"
+      >
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading organizations...</p>
+          <div 
+            className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"
+            aria-hidden="true"
+          ></div>
+          <p className="text-muted-foreground">
+            {tCommon('loading', { resource: t('title') })}
+          </p>
         </div>
       </div>
     )
@@ -73,20 +89,32 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
       {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
-          Manage all companies, vendors, clients, and partners
+          {t('description')}
         </p>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" />
-            Filter
+          <Button 
+            variant="outline" 
+            size="sm"
+            aria-label={tCommon('aria.filterButton', { type: t('title') })}
+          >
+            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
+            {tCommon('buttons.filter')}
           </Button>
-          <Button variant="outline" size="sm">
-            <Search className="h-4 w-4 mr-2" />
-            Search
+          <Button 
+            variant="outline" 
+            size="sm"
+            aria-label={tCommon('aria.searchButton', { context: t('title') })}
+          >
+            <Search className="h-4 w-4 mr-2" aria-hidden="true" />
+            {tCommon('buttons.search')}
           </Button>
-          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4 mr-2" />
-            New Organization
+          <Button 
+            size="sm" 
+            onClick={() => setCreateDialogOpen(true)}
+            aria-label={tCommon('aria.createButton', { type: t('title') })}
+          >
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            {tCommon('buttons.create')} {t('title')}
           </Button>
         </div>
       </div>
@@ -95,53 +123,53 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Companies</CardTitle>
-            <Building2 className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('stats.totalCompanies')}</CardTitle>
+            <Building2 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{companies.length}</div>
             <p className="text-xs text-muted-foreground">
-              {companies.filter((c: any) => c.status === 'active').length} active
+              {t('stats.activeCount', { count: companies.filter((c: any) => c.status === 'active').length })}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Vendors</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('stats.vendors')}</CardTitle>
+            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {companies.filter((c: any) => c.type === 'vendor').length}
             </div>
-            <p className="text-xs text-muted-foreground">Service providers</p>
+            <p className="text-xs text-muted-foreground">{t('stats.serviceProviders')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Clients</CardTitle>
-            <Star className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('stats.clients')}</CardTitle>
+            <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {companies.filter((c: any) => c.type === 'client').length}
             </div>
-            <p className="text-xs text-muted-foreground">Active clients</p>
+            <p className="text-xs text-muted-foreground">{t('stats.activeClients')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Partners</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('stats.partners')}</CardTitle>
+            <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {companies.filter((c: any) => c.type === 'partner').length}
             </div>
-            <p className="text-xs text-muted-foreground">Strategic partners</p>
+            <p className="text-xs text-muted-foreground">{t('stats.strategicPartners')}</p>
           </CardContent>
         </Card>
       </div>
@@ -153,7 +181,10 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
             <CardHeader>
               <div className="flex items-start gap-4">
                 <Avatar className="h-12 w-12">
-                  <AvatarImage src={company.logo} alt={company.name} />
+                  <AvatarImage 
+                    src={company.logo} 
+                    alt={tCommon('aria.avatar', { name: company.name })} 
+                  />
                   <AvatarFallback>{getInitials(company.name)}</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 min-w-0">
@@ -210,7 +241,11 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
               {/* Rating */}
               {company.rating && (
                 <div className="flex items-center gap-2 pt-2 border-t">
-                  <div className="flex items-center">
+                  <div 
+                    className="flex items-center"
+                    role="img"
+                    aria-label={t('aria.rating', { rating: company.rating.toFixed(1), max: 5 })}
+                  >
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
@@ -219,11 +254,12 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
                             ? 'fill-yellow-400 text-yellow-400'
                             : 'text-gray-300'
                         }`}
+                        aria-hidden="true"
                       />
                     ))}
                   </div>
                   <span className="text-sm text-muted-foreground">
-                    {company.rating.toFixed(1)}
+                    {formatNumber(company.rating, locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 })}
                   </span>
                 </div>
               )}
@@ -231,26 +267,35 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
               {/* Stats */}
               <div className="flex justify-between pt-2 border-t text-sm">
                 <div>
-                  <div className="text-muted-foreground">Contacts</div>
+                  <div className="text-muted-foreground">{t('stats.contacts')}</div>
                   <div className="font-medium">{company.contacts_count || 0}</div>
                 </div>
                 <div>
-                  <div className="text-muted-foreground">Projects</div>
+                  <div className="text-muted-foreground">{t('stats.projects')}</div>
                   <div className="font-medium">{company.projects_count || 0}</div>
                 </div>
                 <div>
-                  <div className="text-muted-foreground">Orders</div>
+                  <div className="text-muted-foreground">{t('stats.orders')}</div>
                   <div className="font-medium">{company.orders_count || 0}</div>
                 </div>
               </div>
 
               {/* Actions */}
               <div className="flex gap-2 pt-2">
-                <Button className="flex-1" variant="outline" size="sm">
-                  View Details
+                <Button 
+                  className="flex-1" 
+                  variant="outline" 
+                  size="sm"
+                  aria-label={t('aria.viewDetails', { name: company.name })}
+                >
+                  {tCommon('buttons.details')}
                 </Button>
-                <Button variant="ghost" size="icon">
-                  <ExternalLink className="h-4 w-4" />
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  aria-label={t('aria.visitWebsite', { name: company.name })}
+                >
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
             </CardContent>
@@ -264,9 +309,9 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
             <EmptyState
               variant="inline"
               icon={Building2}
-              mainMessage="NOTHING TO SEE HERE... (YET)"
-              description="Start by adding your first company or organization"
-              actionLabel="New Organization"
+              mainMessage={t('emptyState.title')}
+              description={t('emptyState.description')}
+              actionLabel={tCommon('buttons.create') + ' ' + t('title')}
               onAction={() => setCreateDialogOpen(true)}
             />
           </CardContent>

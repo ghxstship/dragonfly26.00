@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CalendarDays, Briefcase, FolderKanban, Loader2 } from "lucide-react"
@@ -30,6 +31,7 @@ interface ProjectHistory {
 }
 
 export function HistoryTab() {
+  const t = useTranslations()
   const { profile, loading } = useProfileData()
   const [searchQuery, setSearchQuery] = useState("")
   const [projectHistory, setProjectHistory] = useState<ProjectHistory[]>([])
@@ -40,7 +42,7 @@ export function HistoryTab() {
       // Convert work experience to project history format
       const history: ProjectHistory[] = profile.work_experience.map((exp: any, index: number) => ({
         id: exp.id || `exp-${index}`,
-        name: `${exp.title} at ${exp.company}`,
+        name: `${t(exp.titleKey)} at ${exp.company}`,
         role: exp.title || 'N/A',
         projectType: 'Professional Experience',
         startDate: exp.startDate || '',
@@ -56,7 +58,7 @@ export function HistoryTab() {
   const mockHistory: ProjectHistory[] = [
     {
       id: "1",
-      name: "Summer Music Festival 2024",
+      nameKey: "summer_music_festival_2024",
       role: "Production Manager",
       projectType: "Event",
       startDate: "2024-06-01",
@@ -67,7 +69,7 @@ export function HistoryTab() {
     },
     {
       id: "2",
-      name: "Corporate Conference - Tech Summit",
+      nameKey: "corporate_conference__tech_summit",
       role: "Audio Engineer",
       projectType: "Conference",
       startDate: "2024-03-15",
@@ -78,7 +80,7 @@ export function HistoryTab() {
     },
     {
       id: "3",
-      name: "Broadway Production Setup",
+      nameKey: "broadway_production_setup",
       role: "Lighting Technician",
       projectType: "Theater",
       startDate: "2024-01-10",
@@ -89,7 +91,7 @@ export function HistoryTab() {
     },
     {
       id: "4",
-      name: "Holiday Concert Series",
+      nameKey: "holiday_concert_series",
       role: "Stage Manager",
       projectType: "Concert",
       startDate: "2024-10-01",
@@ -105,7 +107,7 @@ export function HistoryTab() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     )
   }
@@ -142,50 +144,57 @@ export function HistoryTab() {
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('profile.descriptions.history')}
+        </p>
+      </div>
+
       <div className="grid grid-cols-3 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Projects</CardTitle>
-            <FolderKanban className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('profile.history.totalProjects')}</CardTitle>
+            <FolderKanban className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{displayHistory.length}</div>
-            <p className="text-xs text-muted-foreground">{completedProjects} completed</p>
+            <p className="text-xs text-muted-foreground">{completedProjects} {t('profile.history.completedLowercase')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Hours Worked</CardTitle>
-            <CalendarDays className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('profile.history.hoursWorked')}</CardTitle>
+            <CalendarDays className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{totalHoursWorked.toLocaleString()}</div>
-            <p className="text-xs text-muted-foreground">Across all projects</p>
+            <p className="text-xs text-muted-foreground">{t('profile.history.acrossAllProjects')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Average Rating</CardTitle>
-            <Briefcase className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('profile.history.averageRating')}</CardTitle>
+            <Briefcase className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{averageRating.toFixed(1)}</div>
-            <p className="text-xs text-muted-foreground">Out of 5.0</p>
+            <p className="text-xs text-muted-foreground">{t('profile.history.outOf5')}</p>
           </CardContent>
         </Card>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>Project History</CardTitle>
+          <CardTitle>{t('profile.history.projectHistory')}</CardTitle>
           <CardDescription>
-            All jobs and projects you&apos;ve worked on in this application
+            {t('profile.history.allJobsAndProjects')}
           </CardDescription>
           <div className="pt-4">
             <Input
-              placeholder="Search projects, roles, or types..."
+              placeholder={t('profile.history.searchProjectsRolesOrTypes')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -194,26 +203,26 @@ export function HistoryTab() {
         <CardContent>
           {filteredProjects.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-8">
-              No projects found matching your search
+              {t('profile.history.noProjectsFound')}
             </p>
           ) : (
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Project Name</TableHead>
-                  <TableHead>Role</TableHead>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Start Date</TableHead>
-                  <TableHead>End Date</TableHead>
-                  <TableHead>Hours</TableHead>
-                  <TableHead>Rating</TableHead>
-                  <TableHead>Status</TableHead>
+                  <TableHead>{t('profile.history.projectName')}</TableHead>
+                  <TableHead>{t('profile.history.role')}</TableHead>
+                  <TableHead>{t('profile.history.type')}</TableHead>
+                  <TableHead>{t('profile.history.startDate')}</TableHead>
+                  <TableHead>{t('profile.history.endDate')}</TableHead>
+                  <TableHead>{t('profile.history.hours')}</TableHead>
+                  <TableHead>{t('profile.history.rating')}</TableHead>
+                  <TableHead>{t('profile.history.status')}</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredProjects.map((project) => (
                   <TableRow key={project.id} className="cursor-pointer hover:bg-muted/50">
-                    <TableCell className="font-medium">{project.name}</TableCell>
+                    <TableCell className="font-medium">{t(project.nameKey)}</TableCell>
                     <TableCell>{project.role}</TableCell>
                     <TableCell>
                       <Badge variant="outline">{project.projectType}</Badge>
@@ -222,14 +231,14 @@ export function HistoryTab() {
                     <TableCell>
                       {project.endDate
                         ? new Date(project.endDate).toLocaleDateString()
-                        : "Ongoing"}
+                        : t('profile.history.ongoing')}
                     </TableCell>
                     <TableCell>{project.hoursWorked}</TableCell>
                     <TableCell>
                       {project.rating ? (
                         <div className="flex items-center gap-1">
                           <span className="font-medium">{project.rating.toFixed(1)}</span>
-                          <span className="text-xs text-muted-foreground">/ 5.0</span>
+                          <span className="text-xs text-muted-foreground">{t('profile.history.outOf5')}</span>
                         </div>
                       ) : (
                         <span className="text-muted-foreground">-</span>
@@ -246,8 +255,8 @@ export function HistoryTab() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Role Distribution</CardTitle>
-          <CardDescription>Breakdown of your work by role type</CardDescription>
+          <CardTitle>{t('profile.history.roleDistribution')}</CardTitle>
+          <CardDescription>{t('profile.history.breakdownOfWorkByRole')}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -278,8 +287,7 @@ export function HistoryTab() {
 
       <div className="bg-muted/50 rounded-lg p-4">
         <p className="text-sm text-muted-foreground">
-          <strong>Note:</strong> This history only includes jobs and projects managed within this
-          application. For a complete work history, see the Professional tab.
+          <strong>{t('profile.history.note')}</strong> {t('profile.history.noteDescription')}
         </p>
       </div>
     </div>

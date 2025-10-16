@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
 import {
   Dialog,
   DialogContent,
@@ -17,28 +18,32 @@ interface Shortcut {
   category: "navigation" | "actions" | "general"
 }
 
-const shortcuts: Shortcut[] = [
-  // Navigation
-  { keys: ["/"], description: "Focus search", category: "navigation" },
-  { keys: ["Cmd", "K"], description: "Quick search", category: "navigation" },
-  { keys: ["G", "then", "P"], description: "Go to People", category: "navigation" },
-  { keys: ["G", "then", "S"], description: "Go to Schedule", category: "navigation" },
-  { keys: ["G", "then", "A"], description: "Go to Approvals", category: "navigation" },
+function useKeyboardShortcuts() {
+  const t = useTranslations()
   
-  // Actions
-  { keys: ["N"], description: "New employee", category: "actions" },
-  { keys: ["C"], description: "Clock in/out", category: "actions" },
-  { keys: ["P"], description: "Request PTO", category: "actions" },
-  { keys: ["S"], description: "View schedule", category: "actions" },
-  { keys: ["A"], description: "Open approvals", category: "actions" },
-  { keys: ["E"], description: "Export data", category: "actions" },
-  
-  // General
-  { keys: ["?"], description: "Show shortcuts", category: "general" },
-  { keys: ["Esc"], description: "Close dialog/Cancel", category: "general" },
-  { keys: ["Cmd", "S"], description: "Save", category: "general" },
-  { keys: ["Cmd", "Enter"], description: "Submit form", category: "general" },
-]
+  return [
+    // Navigation
+    { keys: ["/"], description: t('people.shortcuts.focusSearch'), category: "navigation" as const },
+    { keys: ["Cmd", "K"], description: t('people.shortcuts.quickSearch'), category: "navigation" as const },
+    { keys: ["G", "then", "P"], description: t('people.shortcuts.goToPeople'), category: "navigation" as const },
+    { keys: ["G", "then", "S"], description: t('people.shortcuts.goToSchedule'), category: "navigation" as const },
+    { keys: ["G", "then", "A"], description: t('people.shortcuts.goToApprovals'), category: "navigation" as const },
+    
+    // Actions
+    { keys: ["N"], description: t('people.shortcuts.newEmployee'), category: "actions" as const },
+    { keys: ["C"], description: t('people.shortcuts.clockInOut'), category: "actions" as const },
+    { keys: ["P"], description: t('people.shortcuts.requestPTO'), category: "actions" as const },
+    { keys: ["S"], description: t('people.shortcuts.viewSchedule'), category: "actions" as const },
+    { keys: ["A"], description: t('people.shortcuts.openApprovals'), category: "actions" as const },
+    { keys: ["E"], description: t('people.shortcuts.exportData'), category: "actions" as const },
+    
+    // General
+    { keys: ["?"], description: t('people.shortcuts.showShortcuts'), category: "general" as const },
+    { keys: ["Esc"], description: t('people.shortcuts.closeDialog'), category: "general" as const },
+    { keys: ["Cmd", "S"], description: t('people.shortcuts.save'), category: "general" as const },
+    { keys: ["Cmd", "Enter"], description: t('people.shortcuts.submitForm'), category: "general" as const },
+  ]
+}
 
 export function KeyboardShortcutsProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -71,6 +76,8 @@ function KeyboardShortcutsDialog({
   open: boolean
   onOpenChange: (open: boolean) => void
 }) {
+  const shortcuts = useKeyboardShortcuts()
+  
   const categories = {
     navigation: "Navigation",
     actions: "Actions",
@@ -90,7 +97,7 @@ function KeyboardShortcutsDialog({
         <ScrollArea className="max-h-[500px] pr-4">
           <div className="space-y-6">
             {Object.entries(categories).map(([key, title]) => {
-              const categoryShortcuts = shortcuts.filter(s => s.category === key)
+              const categoryShortcuts = shortcuts.filter((s: Shortcut) => s.category === key)
               
               return (
                 <div key={key}>

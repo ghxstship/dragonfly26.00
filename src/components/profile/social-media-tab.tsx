@@ -1,16 +1,17 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { Save, Loader2 } from "lucide-react"
-import { Switch } from "@/components/ui/switch"
+import {Save, Loader2} from "lucide-react"
 import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function SocialMediaTab() {
+  const t = useTranslations()
   const { profile, loading, updateProfile } = useProfileData()
   const { toast } = useToast()
   const [saving, setSaving] = useState(false)
@@ -45,12 +46,12 @@ export function SocialMediaTab() {
       })
       
       toast({
-        title: "Social media updated",
-        description: "Your social media links have been saved successfully.",
+        title: t('profile.success.socialUpdated'),
+        description: t('profile.success.socialSaved'),
       })
     } catch (error: any) {
       toast({
-        title: "Error",
+        title: t('profile.errors.error'),
         description: error.message,
         variant: "destructive",
       })
@@ -68,19 +69,39 @@ export function SocialMediaTab() {
   }
 
   const platforms = [
-    { key: "linkedin", label: "LinkedIn", placeholder: "https://linkedin.com/in/username" },
-    { key: "twitter", label: "Twitter/X", placeholder: "https://twitter.com/username" },
-    { key: "instagram", label: "Instagram", placeholder: "https://instagram.com/username" },
-    { key: "website", label: "Personal Website", placeholder: "https://example.com" },
+    { key: "linkedin", label: t('profile.social.linkedin'), placeholder: t('profile.social.linkedinPlaceholder') },
+    { key: "twitter", label: t('profile.social.twitter'), placeholder: t('profile.social.twitterPlaceholder') },
+    { key: "instagram", label: t('profile.social.instagram'), placeholder: t('profile.social.instagramPlaceholder') },
+    { key: "website", label: t('profile.social.website'), placeholder: t('profile.social.websitePlaceholder') },
   ]
 
   return (
     <div className="space-y-6">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('profile.descriptions.social')}
+        </p>
+        <Button size="sm" onClick={handleSave} disabled={saving}>
+          {saving ? (
+            <>
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+              {t('actions.saving')}
+            </>
+          ) : (
+            <>
+              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+              {t('profile.actions.saveChanges')}
+            </>
+          )}
+        </Button>
+      </div>
+
       <Card>
         <CardHeader>
-          <CardTitle>Social Media Profiles</CardTitle>
+          <CardTitle>{t('profile.social.profiles')}</CardTitle>
           <CardDescription>
-            Link your social media accounts and control their visibility
+            {t('profile.social.visibility')}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -103,22 +124,10 @@ export function SocialMediaTab() {
 
       <div className="bg-muted/50 rounded-lg p-4">
         <p className="text-sm text-muted-foreground">
-          <strong>Privacy Note:</strong> Public profiles will be visible to other users and can be
-          included in your professional portfolio. Private profiles are only visible to you and
-          organization administrators.
+          <strong>{t('social.privacyNote')}</strong> {t('social.privacyDescription')}
         </p>
       </div>
 
-      <div className="flex justify-end">
-        <Button onClick={handleSave} disabled={saving}>
-          {saving ? (
-            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-          ) : (
-            <Save className="h-4 w-4 mr-2" />
-          )}
-          Save Changes
-        </Button>
-      </div>
     </div>
   )
 }

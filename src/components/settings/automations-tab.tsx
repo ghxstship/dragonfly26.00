@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -50,34 +51,35 @@ interface Automation {
 }
 
 export function AutomationsTab() {
+  const t = useTranslations()
   const { toast } = useToast()
   const [automations, setAutomations] = useState<Automation[]>([
     {
       id: "1",
-      name: "Daily Task Summary",
-      description: "Send an email summary of tasks due today",
-      trigger: "Every day at 9:00 AM",
-      action: "Send email notification",
+      name: t('settings.automations.dailyTaskSummary'),
+      description: t('settings.automations.dailyTaskSummaryDesc'),
+      trigger: t('settings.automations.everyDayAt9am'),
+      action: t('settings.automations.sendEmailNotification'),
       enabled: true,
       lastRun: "2024-01-20 09:00",
       runsCount: 45,
     },
     {
       id: "2",
-      name: "New Project Notifications",
-      description: "Notify team when a new project is created",
-      trigger: "When project is created",
-      action: "Send Slack message",
+      name: t('settings.automations.newProjectNotifications'),
+      description: t('settings.automations.newProjectNotificationsDesc'),
+      trigger: t('settings.automations.whenProjectCreated'),
+      action: t('settings.automations.sendSlackMessage'),
       enabled: true,
       lastRun: "2024-01-19 14:23",
       runsCount: 12,
     },
     {
       id: "3",
-      name: "Overdue Task Reminders",
-      description: "Send reminders for overdue tasks",
-      trigger: "Every 3 hours",
-      action: "Send push notification",
+      name: t('settings.automations.overdueTaskReminders'),
+      description: t('settings.automations.overdueTaskRemindersDesc'),
+      trigger: t('settings.automations.every3Hours'),
+      action: t('settings.automations.sendPushNotification'),
       enabled: false,
       runsCount: 0,
     },
@@ -100,8 +102,8 @@ export function AutomationsTab() {
   const handleDelete = (id: string) => {
     setAutomations(automations.filter(a => a.id !== id))
     toast({
-      title: "Automation deleted",
-      description: "The automation has been removed.",
+      title: t('settings.toast.automationDeleted'),
+      description: t('settings.toast.automationDeletedDesc'),
       variant: "destructive",
     })
   }
@@ -118,11 +120,14 @@ export function AutomationsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Header Actions */}
-      <div className="flex justify-end">
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-between">
+        <p className="text-muted-foreground">
+          {t('settings.automationsTab.description')}
+        </p>
         <Button onClick={handleCreateNew}>
-          <Plus className="h-4 w-4 mr-2" />
-          New Automation
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          {t('settings.automationsTab.newAutomation')}
         </Button>
       </div>
 
@@ -130,7 +135,7 @@ export function AutomationsTab() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Active Automations</CardDescription>
+            <CardDescription>{t('settings.automationsTab.activeAutomations')}</CardDescription>
             <CardTitle className="text-3xl">
               {automations.filter(a => a.enabled).length}
             </CardTitle>
@@ -138,7 +143,7 @@ export function AutomationsTab() {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Total Runs (This Month)</CardDescription>
+            <CardDescription>{t('settings.automationsTab.totalRuns')}</CardDescription>
             <CardTitle className="text-3xl">
               {automations.reduce((sum, a) => sum + a.runsCount, 0)}
             </CardTitle>
@@ -146,7 +151,7 @@ export function AutomationsTab() {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Time Saved (Estimated)</CardDescription>
+            <CardDescription>{t('settings.automationsTab.timeSaved')}</CardDescription>
             <CardTitle className="text-3xl">12h</CardTitle>
           </CardHeader>
         </Card>
@@ -273,7 +278,7 @@ export function AutomationsTab() {
               <Label>Trigger</Label>
               <Select defaultValue={selectedAutomation?.trigger || ""}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select a trigger" />
+                  <SelectValue placeholder={t('settings.automationsTab.selectTrigger')} />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="schedule">On a schedule</SelectItem>
@@ -289,7 +294,7 @@ export function AutomationsTab() {
               <Label>Action</Label>
               <Select defaultValue={selectedAutomation?.action || ""}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select an action" />
+                  <SelectValue placeholder={t('settings.automationsTab.selectAction')} />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="email">Send email notification</SelectItem>
@@ -316,8 +321,8 @@ export function AutomationsTab() {
             </Button>
             <Button onClick={() => {
               toast({
-                title: "Automation saved",
-                description: "Your automation has been configured successfully.",
+                title: t('settings.toast.automationSaved'),
+                description: t('settings.toast.automationSavedDesc'),
               })
               setDialogOpen(false)
             }}>
