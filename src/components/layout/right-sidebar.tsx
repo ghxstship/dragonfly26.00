@@ -193,12 +193,12 @@ export function RightSidebar() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rightSidebarTab])
 
-  // Auto-expand sidebar when opened
+  // Auto-expand sidebar when opened or tab changes
   useEffect(() => {
     if (rightSidebarOpen && !isExpanded) {
       setIsExpanded(true)
     }
-  }, [rightSidebarOpen])
+  }, [rightSidebarOpen, rightSidebarTab])
 
   if (!rightSidebarOpen) return null
 

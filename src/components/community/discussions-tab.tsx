@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { EmptyState } from "@/components/shared/empty-state"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { 
   MessageSquare, 
   ArrowUp, 
@@ -404,6 +405,18 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
           ))
         )}
       </div>
+
+      {/* Create Discussion Dialog */}
+      <CreateItemDialogEnhanced
+        open={showNewPost}
+        onOpenChange={setShowNewPost}
+        moduleId="community"
+        tabSlug="discussions"
+        onSuccess={(item) => {
+          console.log("Created discussion:", item)
+          setShowNewPost(false)
+        }}
+      />
     </div>
   )
 }

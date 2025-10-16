@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
 interface StudiosTabProps {
   data?: any[]
@@ -52,6 +53,7 @@ interface Studio {
 export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
   const [searchQuery, setSearchQuery] = useState("")
   const [filter, setFilter] = useState<"all" | "my-studios" | "suggested">("all")
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   const [studios, setStudios] = useState<Studio[]>([])
 
@@ -167,9 +169,9 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
                 Start a page for your company or a group for your community
               </p>
             </div>
-            <Button>
+            <Button onClick={() => setCreateDialogOpen(true)}>
               <Plus className="h-4 w-4 mr-2" />
-              Create Studio
+              New Studio
             </Button>
           </div>
         </CardContent>
@@ -358,6 +360,17 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
           ))
         )}
       </div>
+
+      {/* Create Studio Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId="community"
+        tabSlug="studios"
+        onSuccess={(item) => {
+          console.log("Created studio:", item)
+        }}
+      />
     </div>
   )
 }

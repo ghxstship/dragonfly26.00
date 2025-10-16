@@ -20,10 +20,13 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
+import { useState } from "react"
 import type { TabComponentProps } from "@/types"
 
 export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const { data: companies, loading } = useModuleData(workspaceId, 'companies', 'organizations')
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -67,7 +70,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
 
   return (
     <div className="space-y-6">
-      {/* Actions */}
+      {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
           Manage all companies, vendors, clients, and partners
@@ -81,9 +84,9 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
             <Search className="h-4 w-4 mr-2" />
             Search
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
-            Add Company
+            New Organization
           </Button>
         </div>
       </div>
@@ -263,12 +266,25 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
               icon={Building2}
               mainMessage="NOTHING TO SEE HERE... (YET)"
               description="Start by adding your first company or organization"
-              actionLabel="Add Company"
-              onAction={() => {}}
+              actionLabel="New Organization"
+              onAction={() => setCreateDialogOpen(true)}
             />
           </CardContent>
         </Card>
       )}
+
+      {/* Create Organization Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId={moduleId}
+        tabSlug={tabSlug}
+        workspaceId={workspaceId}
+        onSuccess={(item) => {
+          // Refresh data or update local state
+          window.location.reload()
+        }}
+      />
     </div>
   )
 }

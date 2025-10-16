@@ -17,10 +17,13 @@ import {
   Download
 } from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
+import { useState } from "react"
 import type { TabComponentProps } from "@/types"
 
 export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const { data: orders, loading } = useModuleData(workspaceId, 'procurement', 'orders')
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -69,7 +72,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
 
   return (
     <div className="space-y-6">
-      {/* Actions */}
+      {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
           Purchase order tracking and management
@@ -79,9 +82,9 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
             <Download className="h-4 w-4 mr-2" />
             Export
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
-            New Order
+            New Purchase Order
           </Button>
         </div>
       </div>
@@ -320,6 +323,18 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
           </CardContent>
         </Card>
       )}
+
+      {/* Create Purchase Order Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId={moduleId}
+        tabSlug={tabSlug}
+        workspaceId={workspaceId}
+        onSuccess={(item) => {
+          window.location.reload()
+        }}
+      />
     </div>
   )
 }

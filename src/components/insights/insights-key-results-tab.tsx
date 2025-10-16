@@ -1,9 +1,12 @@
 "use client"
 
-import { CheckCircle2, TrendingUp, Calendar } from "lucide-react"
+import { useState } from "react"
+import { CheckCircle2, TrendingUp, Calendar, Plus } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
 const keyResults = [
   {
@@ -86,9 +89,19 @@ interface InsightsKeyResultsTabProps {
 }
 
 export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKeyResultsTabProps) {
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displayKeyResults = data || []
+  
   return (
     <div className="space-y-6">
+      {/* Actions */}
+      <div className="flex justify-end">
+        <Button onClick={() => setCreateDialogOpen(true)}>
+          <Plus className="h-4 w-4 mr-2" />
+          New Key Result
+        </Button>
+      </div>
+
       {/* Summary Cards */}
       <div className="grid grid-cols-4 gap-4">
         <Card>
@@ -161,6 +174,17 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
           </div>
         </div>
       ))}
+
+      {/* Create Key Result Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId="insights"
+        tabSlug="key-results"
+        onSuccess={(item) => {
+          console.log("Created key result:", item)
+        }}
+      />
     </div>
   )
 }

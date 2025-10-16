@@ -34,12 +34,16 @@ import { cn } from "@/lib/utils"
 import { getFormConfig } from "@/lib/modules/form-fields-registry"
 import type { FormFieldConfig } from "@/lib/modules/form-fields-registry"
 import { AssetCatalogAutocomplete } from "@/components/shared/asset-catalog-autocomplete"
+import { getTableMapping } from "@/lib/modules/table-mapping"
+import { createClient } from "@/lib/supabase/client"
+import { useToast } from "@/lib/hooks/use-toast"
 
 interface CreateItemDialogEnhancedProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   moduleId: string
   tabSlug: string
+  workspaceId?: string
   onSuccess?: (item: any) => void
 }
 
@@ -48,13 +52,17 @@ export function CreateItemDialogEnhanced({
   onOpenChange,
   moduleId,
   tabSlug,
+  workspaceId,
   onSuccess,
 }: CreateItemDialogEnhancedProps) {
   const t = useTranslations()
+  const { toast } = useToast()
   const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState<Record<string, any>>({})
+  const supabase = createClient()
 
   const config = getFormConfig(moduleId, tabSlug)
+  const tableMapping = getTableMapping(moduleId, tabSlug)
 
   if (!config) {
     return null
@@ -75,22 +83,73 @@ export function CreateItemDialogEnhanced({
     e.preventDefault()
     setIsLoading(true)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      // Get current user
+      const { data: { user } } = await supabase.auth.getUser()
+      
+      if (!user) {
+        throw new Error('User not authenticated')
+      }
 
-    const newItem = {
-      id: Math.random().toString(36).substr(2, 9),
-      ...formData,
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
+      // Prepare data for insertion
+      const insertData: Record<string, any> = {
+        ...formData,
+      }
+
+      // Add workspace_id if required
+      if (tableMapping?.requiresWorkspaceId && workspaceId) {
+        insertData.workspace_id = workspaceId
+      }
+
+      // Add created_by user_id if required
+      if (tableMapping?.requiresUserId) {
+        insertData.created_by = user.id
+      }
+
+      // Insert into database if table mapping exists
+      if (tableMapping) {
+        const { data: newItem, error } = await supabase
+          .from(tableMapping.tableName)
+          .insert(insertData)
+          .select()
+          .single()
+
+        if (error) {
+          console.error('Database error:', error)
+          throw error
+        }
+
+        toast({
+          title: "Success",
+          description: `${config.title} created successfully`,
+        })
+
+        onSuccess?.(newItem)
+      } else {
+        // Fallback for tabs without table mapping (legacy support)
+        const newItem = {
+          id: Math.random().toString(36).substr(2, 9),
+          ...insertData,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        }
+        onSuccess?.(newItem)
+      }
+
+      setIsLoading(false)
+      onOpenChange(false)
+      
+      // Reset form
+      setFormData(initializeDefaults())
+    } catch (error: any) {
+      console.error('Error creating item:', error)
+      toast({
+        title: "Error",
+        description: error.message || "Failed to create item. Please try again.",
+        variant: "destructive",
+      })
+      setIsLoading(false)
     }
-
-    onSuccess?.(newItem)
-    setIsLoading(false)
-    onOpenChange(false)
-    
-    // Reset form
-    setFormData(initializeDefaults())
   }
 
   const updateField = (fieldName: string, value: any) => {

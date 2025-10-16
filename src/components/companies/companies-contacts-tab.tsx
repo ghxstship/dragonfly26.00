@@ -27,12 +27,14 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import type { TabComponentProps } from "@/types"
 
 export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const { data: contacts, loading } = useModuleData(workspaceId, 'companies', 'contacts')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedContact, setSelectedContact] = useState<any>(null)
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
   if (loading) {
     return (
@@ -79,7 +81,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   return (
     <div className="space-y-6">
-      {/* Actions */}
+      {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
           Manage relationships and communication history
@@ -89,9 +91,9 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
             <Filter className="h-4 w-4 mr-2" />
             Filter
           </Button>
-          <Button size="sm">
+          <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
-            Add Contact
+            New Contact
           </Button>
         </div>
       </div>
@@ -364,6 +366,18 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
           </div>
         )}
       </div>
+
+      {/* Create Contact Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId={moduleId}
+        tabSlug={tabSlug}
+        workspaceId={workspaceId}
+        onSuccess={(item) => {
+          window.location.reload()
+        }}
+      />
     </div>
   )
 }

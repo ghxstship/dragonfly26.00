@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardDescription, CardTitle } from "@/components/ui/card"
 import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
 import { createClient } from "@/lib/supabase/client"
-import { useUIStore } from "@/store/ui-store"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { useToast } from "@/lib/hooks/use-toast"
 
 interface CountsTabProps {
@@ -18,7 +18,7 @@ interface CountsTabProps {
 
 export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
   const [statusFilter, setStatusFilter] = useState<string | null>(null)
-  const { setRightSidebarOpen } = useUIStore()
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const { toast } = useToast()
   const supabase = createClient()
 
@@ -282,23 +282,15 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         )}
       </div>
 
-      {/* Quick Actions */}
-      <div className="flex items-center gap-2">
-        <Button onClick={() => setRightSidebarOpen(true, 'create-count')}>
-          <Plus className="h-4 w-4 mr-2" />
-          New Count
-        </Button>
-        <Button variant="outline" onClick={() => setRightSidebarOpen(true, 'schedule-counts')}>
-          <Calendar className="h-4 w-4 mr-2" />
-          Schedule Count
-        </Button>
-        <Button variant="outline" onClick={() => setRightSidebarOpen(true, 'count-reports')}>
-          <ClipboardCheck className="h-4 w-4 mr-2" />
-          View Reports
-        </Button>
-        <Button variant="outline" onClick={handleExport}>
+      {/* Action Buttons - Standard Positioning */}
+      <div className="flex items-center justify-end gap-2">
+        <Button variant="outline" size="sm" onClick={handleExport}>
           <Download className="h-4 w-4 mr-2" />
           Export
+        </Button>
+        <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
+          <Plus className="h-4 w-4 mr-2" />
+          New Count
         </Button>
       </div>
 
@@ -321,6 +313,19 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
           loading={loading}
         />
       )}
+
+      {/* Create Count Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId="assets"
+        tabSlug="counts"
+        workspaceId={workspaceId}
+        onSuccess={(item) => {
+          handleCreateCount(item)
+          window.location.reload()
+        }}
+      />
     </div>
   )
 }

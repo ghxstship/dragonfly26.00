@@ -1,9 +1,11 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { GitCompare, TrendingUp, TrendingDown, Minus, Plus, AlertCircle } from "lucide-react"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
 interface FinanceScenariosTabProps {
   data?: any[]
@@ -49,6 +51,8 @@ const MOCK_SCENARIOS = [
 ]
 
 export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps) {
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
+  
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
@@ -353,6 +357,17 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
           </div>
         </CardContent>
       </Card>
+
+      {/* Create Scenario Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId="finance"
+        tabSlug="scenarios"
+        onSuccess={(item) => {
+          console.log("Created scenario:", item)
+        }}
+      />
     </div>
   )
 }

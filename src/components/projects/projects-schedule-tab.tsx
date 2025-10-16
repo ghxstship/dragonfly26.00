@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import type { TabComponentProps } from "@/types"
 
 export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
@@ -309,6 +310,17 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
           </CardContent>
         </Card>
       )}
+
+      {/* Create Task Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId={moduleId}
+        tabSlug={tabSlug}
+        onSuccess={(item) => {
+          console.log("Created task:", item)
+        }}
+      />
     </div>
   )
 }

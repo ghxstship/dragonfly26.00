@@ -20,6 +20,7 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import type { TabComponentProps } from "@/types"
 
 export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
@@ -67,7 +68,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
 
   return (
     <div className="space-y-6">
-      {/* Actions */}
+      {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
           Manage all production projects including shows, tours, and events
@@ -240,6 +241,19 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
           </CardContent>
         </Card>
       )}
+
+      {/* Create Production Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId={moduleId}
+        tabSlug={tabSlug}
+        workspaceId={workspaceId}
+        onSuccess={(item) => {
+          // Refresh data or update local state
+          window.location.reload()
+        }}
+      />
     </div>
   )
 }

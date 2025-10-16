@@ -1,9 +1,11 @@
 "use client"
 
+import { useState } from "react"
 import { Sliders, Plus, Edit, Trash2, Star } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
 const customViews = [
   {
@@ -47,12 +49,14 @@ interface AnalyticsCustomViewsTabProps {
 
 export function AnalyticsCustomViewsTab({ data = [], loading = false }: AnalyticsCustomViewsTabProps) {
   const displayViews = data || []
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
+  
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
-        <Button>
+        <Button onClick={() => setCreateDialogOpen(true)}>
           <Plus className="h-4 w-4 mr-2" />
-          Create New View
+          New Custom View
         </Button>
       </div>
 
@@ -116,12 +120,23 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
           <p className="text-sm text-muted-foreground mb-4">
             Build a personalized analytics dashboard with the metrics that matter most to you
           </p>
-          <Button>
+          <Button onClick={() => setCreateDialogOpen(true)}>
             <Plus className="h-4 w-4 mr-2" />
             Get Started
           </Button>
         </CardContent>
       </Card>
+
+      {/* Create Custom View Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId="analytics"
+        tabSlug="custom-views"
+        onSuccess={(item) => {
+          console.log("Created custom view:", item)
+        }}
+      />
     </div>
   )
 }

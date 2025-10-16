@@ -1,9 +1,11 @@
 "use client"
 
-import { Table, Filter, Download } from "lucide-react"
+import { useState } from "react"
+import { Table, Filter, Download, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
 const pivotData = [
   { region: "North America", product: "Product A", q1: 450, q2: 520, q3: 580, q4: 620, total: 2170 },
@@ -20,7 +22,9 @@ interface AnalyticsPivotTablesTabProps {
 }
 
 export function AnalyticsPivotTablesTab({ data = [], loading = false }: AnalyticsPivotTablesTabProps) {
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displayData = data || []
+  
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
@@ -32,6 +36,10 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
           <Button variant="outline">
             <Download className="h-4 w-4 mr-2" />
             Export
+          </Button>
+          <Button onClick={() => setCreateDialogOpen(true)}>
+            <Plus className="h-4 w-4 mr-2" />
+            New Pivot Table
           </Button>
         </div>
       </div>
@@ -115,6 +123,16 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
           </div>
         </CardContent>
       </Card>
+
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId="analytics"
+        tabSlug="pivot-tables"
+        onSuccess={(item) => {
+          console.log("Created pivot table:", item)
+        }}
+      />
     </div>
   )
 }

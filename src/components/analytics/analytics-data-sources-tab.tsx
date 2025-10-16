@@ -1,9 +1,11 @@
 "use client"
 
-import { Database, CheckCircle, AlertCircle, RefreshCw } from "lucide-react"
+import { useState } from "react"
+import { Database, CheckCircle, AlertCircle, RefreshCw, Plus } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
 const dataSources = [
   {
@@ -59,9 +61,19 @@ interface AnalyticsDataSourcesTabProps {
 }
 
 export function AnalyticsDataSourcesTab({ data = [], loading = false }: AnalyticsDataSourcesTabProps) {
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displaySources = data || []
+  
   return (
     <div className="space-y-6">
+      {/* Actions */}
+      <div className="flex justify-end">
+        <Button onClick={() => setCreateDialogOpen(true)}>
+          <Plus className="h-4 w-4 mr-2" />
+          Connect Data Source
+        </Button>
+      </div>
+
       {/* Status Summary */}
       <div className="grid grid-cols-4 gap-4">
         <Card>
@@ -142,6 +154,17 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
           </Card>
         ))}
       </div>
+
+      {/* Create Data Source Dialog */}
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId="analytics"
+        tabSlug="data-sources"
+        onSuccess={(item) => {
+          console.log("Created data source:", item)
+        }}
+      />
     </div>
   )
 }

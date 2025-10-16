@@ -1,9 +1,11 @@
 "use client"
 
+import { useState } from "react"
 import { BookMarked, Plus, Star, TrendingUp } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 
 const savedMetrics = [
   {
@@ -74,13 +76,15 @@ interface AnalyticsMetricsLibraryTabProps {
 }
 
 export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: AnalyticsMetricsLibraryTabProps) {
+  const [createDialogOpen, setCreateDialogOpen] = useState(false)
   const displayMetrics = data || []
+  
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
-        <Button>
+        <Button onClick={() => setCreateDialogOpen(true)}>
           <Plus className="h-4 w-4 mr-2" />
-          Create Metric
+          New Metric
         </Button>
       </div>
 
@@ -152,6 +156,16 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
           ))}
         </div>
       </div>
+
+      <CreateItemDialogEnhanced
+        open={createDialogOpen}
+        onOpenChange={setCreateDialogOpen}
+        moduleId="analytics"
+        tabSlug="metrics-library"
+        onSuccess={(item) => {
+          console.log("Created metric:", item)
+        }}
+      />
     </div>
   )
 }
