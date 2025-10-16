@@ -137,17 +137,6 @@ export function ApiTokensTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('admin.apiTokensTab.description')}
-        </p>
-        <Button onClick={() => setDialogOpen(true)} aria-label={t('admin.apiTokensTab.generateToken')}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('admin.apiTokensTab.generateToken')}
-        </Button>
-      </div>
-
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>

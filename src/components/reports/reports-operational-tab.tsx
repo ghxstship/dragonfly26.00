@@ -85,18 +85,6 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
   const displayData = data.length > 0 ? data : []
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <Button size="sm" aria-label={`${tCommon('create')} operational report`}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')}
-        </Button>
-      </div>
-
-
       {/* Summary Cards */}
       <div className="grid grid-cols-4 gap-4">
         <Card role="region" aria-label={`${t('totalReports')} metric`}>

@@ -83,31 +83,6 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <div className="flex gap-2">
-          <Button 
-            variant="outline" 
-            size="sm"
-            aria-label={tCommon('aria.filterButton', { type: t('title') })}
-          >
-            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
-            {tCommon('buttons.filter')}
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm"
-            aria-label={tCommon('aria.searchButton', { context: t('title') })}
-          >
-            <Search className="h-4 w-4 mr-2" aria-hidden="true" />
-            {tCommon('buttons.search')}
-          </Button>
-        </div>
-      </div>
-
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

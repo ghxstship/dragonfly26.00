@@ -233,18 +233,7 @@ export function IntegrationsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('settings.integrationsTab.description')}
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('common.create')}
-        </Button>
-      </div>
-
-
+      {/* Connected Integrations */}
       <Tabs defaultValue="all" className="space-y-4">
         <TabsList>
           <TabsTrigger value="all">{t('settings.integrationsTab.allIntegrations')}</TabsTrigger>

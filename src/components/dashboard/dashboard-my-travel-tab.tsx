@@ -89,21 +89,6 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Manage your travel arrangements and itineraries
-        </p>
-        <Button 
-          size="sm" 
-          className="gap-2"
-          disabled
-        >
-          <Plus className="h-4 w-4" aria-hidden="true" />
-          Book Travel
-        </Button>
-      </div>
-
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>

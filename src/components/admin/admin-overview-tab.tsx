@@ -77,18 +77,6 @@ export function AdminOverviewTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('admin.overviewDescription')}
-        </p>
-        <Button size="sm" aria-label={t('admin.viewAll')}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('admin.viewAll')}
-        </Button>
-      </div>
-
-
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <div className="sr-only" aria-live="polite" aria-atomic="true">

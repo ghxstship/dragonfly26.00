@@ -191,25 +191,6 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       />
 
       <div className="space-y-6">
-        {/* Action Buttons - Standard Positioning */}
-        <section role="region" aria-labelledby="dashboard-actions">
-          <h2 id="dashboard-actions" className="sr-only">{t('description')}</h2>
-          <div className="flex items-center justify-between">
-            <p className="text-muted-foreground">
-              {t('description')}
-            </p>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={() => setWidgetCustomizationOpen(true)}
-              aria-label={t('customizeLabel')}
-            >
-              <MoreHorizontal className="h-4 w-4 mr-2" aria-hidden="true" />
-              {t('customize')}
-            </Button>
-          </div>
-        </section>
-
         {/* Stats Grid */}
       <section role="region" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="sr-only">Dashboard Statistics</h2>

@@ -104,20 +104,6 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <section role="region" aria-labelledby="agenda-actions">
-        <h2 id="agenda-actions" className="sr-only">{t('description')}</h2>
-        <div className="flex items-center justify-between">
-          <p className="text-muted-foreground">
-            {t('description')}
-          </p>
-          <Button size="sm" onClick={() => router.push(`/workspace/${workspaceId}/events/calendar`)} aria-label={t('newEvent')}>
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            {t('newEvent')}
-          </Button>
-        </div>
-      </section>
-
       {/* Week Overview */}
       <section role="region" aria-labelledby="week-overview">
         <Card>

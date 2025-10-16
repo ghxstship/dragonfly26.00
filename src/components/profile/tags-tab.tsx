@@ -106,26 +106,6 @@ export function TagsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('profile.descriptions.tags')}
-        </p>
-        <Button size="sm" onClick={handleSave} disabled={saving}>
-          {saving ? (
-            <>
-              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              {t('actions.saving')}
-            </>
-          ) : (
-            <>
-              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
-              {t('profile.actions.saveChanges')} 
-            </>
-          )}
-        </Button>
-      </div>
-
       {/* Info Banner */}
       <div className="flex items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950">
         <Info className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" />

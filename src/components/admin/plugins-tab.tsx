@@ -222,17 +222,6 @@ export function PluginsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('admin.plugins')}
-        </p>
-        <Button size="sm" aria-label="Create new plugin">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          Create
-        </Button>
-      </div>
-
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>

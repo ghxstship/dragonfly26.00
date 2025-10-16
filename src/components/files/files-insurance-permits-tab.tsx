@@ -47,24 +47,7 @@ export function InsurancePermitsTab({ data, loading }: InsurancePermitsTabProps)
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Manage insurance & permits
-        </p>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2">
-            <Search className="h-4 w-4" aria-hidden="true" />
-            Search
-          </Button>
-          <Button size="sm" className="gap-2">
-            <Plus className="h-4 w-4" aria-hidden="true" />
-            Create Insurance & Permits
-          </Button>
-        </div>
-      </div>
-
-      {/* Summary Cards */}
+      {/* 1634 Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>
           <CardContent className="pt-6">

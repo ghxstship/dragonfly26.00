@@ -61,13 +61,6 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-      </div>
-
       <div className="container max-w-4xl space-y-8">
         {/* Filter Pills */}
         <div className="flex gap-2 overflow-x-auto pb-2">

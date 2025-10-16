@@ -64,17 +64,7 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('create')}</Button>
-      </div>
-
-
-      {/* Overview Card */}
+{/* Overview Card */}
       <Card>
         <CardHeader>
           <CardTitle>Rating Overview</CardTitle>

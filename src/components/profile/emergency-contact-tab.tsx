@@ -70,26 +70,6 @@ export function EmergencyContactTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('profile.descriptions.emergency')}
-        </p>
-        <Button size="sm" onClick={handleSave} disabled={saving}>
-          {saving ? (
-            <>
-              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              {t('actions.saving')}
-            </>
-          ) : (
-            <>
-              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
-              {t('profile.actions.saveChanges')}
-            </>
-          )}
-        </Button>
-      </div>
-
       <Card>
         <CardHeader>
           <CardTitle>{t('profile.emergency.primary')}</CardTitle>

@@ -33,22 +33,6 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
   
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle" aria-label={t('description')}>
-          {t('description')}
-        </p>
-        <Button 
-          size="sm"
-          aria-label={t('createAction')}
-          onClick={() => {}}
-        >
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')}
-        </Button>
-      </div>
-
-
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat: any, index: number) => {
           const Icon = stat.icon

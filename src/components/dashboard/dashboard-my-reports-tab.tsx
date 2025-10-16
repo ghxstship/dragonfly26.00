@@ -95,17 +95,6 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Access your reports and analytics
-        </p>
-        <Button size="sm" onClick={() => router.push(`/workspace/${workspaceId}/reports/custom-builder`)}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          New Report
-        </Button>
-      </div>
-
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         <Card>

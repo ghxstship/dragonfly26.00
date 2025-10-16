@@ -84,20 +84,6 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <Button 
-          size="sm"
-          aria-label={tCommon('aria.createButton', { type: t('title') })}
-        >
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('buttons.create')}
-        </Button>
-      </div>
-
       {/* Pipeline Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

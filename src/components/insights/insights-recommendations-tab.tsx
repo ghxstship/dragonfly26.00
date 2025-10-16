@@ -91,19 +91,7 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
   const displayRecommendations = data || []
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <Button size="sm" aria-label={`${tCommon('create')} item`}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')}
-        </Button>
-      </div>
-
-
-      <div className="grid gap-6">
+      <div className="space-y-4">
         {recommendations.map((rec) => {
           const Icon = rec.icon
           return (

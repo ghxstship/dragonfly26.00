@@ -120,18 +120,7 @@ export function AutomationsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('settings.automationsTab.description')}
-        </p>
-        <Button onClick={handleCreateNew}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('settings.automationsTab.newAutomation')}
-        </Button>
-      </div>
-
-      {/* Stats */}
+      {/* Automations List */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-3">

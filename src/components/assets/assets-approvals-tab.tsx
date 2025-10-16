@@ -71,17 +71,6 @@ export default function AssetsApprovalsTab() {
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Review and manage approval workflows for production advances
-        </p>
-        <Button size="sm" disabled>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          Create Approval Chain
-        </Button>
-      </div>
-
       <div className="rounded-lg border bg-card">
         <Table>
           <TableHeader>

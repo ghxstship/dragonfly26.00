@@ -55,18 +55,6 @@ export function OrganizationSettingsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('admin.organizationSettings.description')}
-        </p>
-        <Button size="sm" aria-label="Create organization setting">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          Create
-        </Button>
-      </div>
-
-
       {/* Feature Toggles */}
       <Card>
         <CardHeader>

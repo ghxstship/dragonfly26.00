@@ -52,19 +52,7 @@ export function RolesPermissionsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('admin.rolesPermissions')}
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('roles.createRole')}
-        </Button>
-      </div>
-
-
-      {/* Description */}
+      {/* Roles List */}
       <div className="flex items-center justify-between">
         <p className="text-muted-foreground">
           11 distinct roles with comprehensive permission matrix

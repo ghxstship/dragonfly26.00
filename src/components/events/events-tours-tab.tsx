@@ -58,24 +58,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Multi-city tour timeline and logistics
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
-            Export
-          </Button>
-          <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            Add Stop
-          </Button>
-        </div>
-      </div>
-
-      {/* Tour Stats */}
+      {/* Summary Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

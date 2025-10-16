@@ -56,18 +56,6 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <Button size="sm" aria-label={`${tCommon('create')} item`}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')}
-        </Button>
-      </div>
-
-
       {/* Overall Success Score */}
       <Card className="border-2">
         <CardContent className="p-8">

@@ -93,22 +93,6 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <div className="flex items-center gap-2">
-          <Badge variant="secondary" className="text-sm">
-            <ShoppingCart className="h-3 w-3 mr-1" aria-hidden="true" />
-            {cart.size} items
-          </Badge>
-          <Button onClick={() => setCartDrawerOpen(true)}>
-            View Cart
-          </Button>
-        </div>
-      </div>
-
       {/* Filters and Search */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">

@@ -107,17 +107,6 @@ export function CertificationsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('profile.descriptions.certifications')}
-        </p>
-        <Button size="sm" onClick={addCertification}>
-          <Plus className="h-4 w-4 mr-2" />
-          {t('profile.certifications.addCertification')}
-        </Button>
-      </div>
-
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">

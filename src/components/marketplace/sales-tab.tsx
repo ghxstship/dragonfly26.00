@@ -56,17 +56,7 @@ export function SalesTab({ data = [], loading = false }: SalesTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('create')}</Button>
-      </div>
-
-
-      {/* Stats Cards */}
+{/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-3">

@@ -80,19 +80,6 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
-            Export
-          </Button>
-        </div>
-      </div>
-
       {/* Key Metrics */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

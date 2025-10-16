@@ -45,18 +45,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
   const displayData = data.length > 0 ? data : []
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" aria-label={t('saveAsTemplate')}>{t('saveAsTemplate')}</Button>
-          <Button aria-label={t('generateReport')}>{t('generateReport')}</Button>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Configuration Panel */}
         <div className="col-span-1 space-y-4">
           <Card role="region" aria-labelledby="config-title">

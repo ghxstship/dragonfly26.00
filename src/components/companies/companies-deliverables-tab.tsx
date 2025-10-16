@@ -53,31 +53,6 @@ export function DeliverablesTab({ data, loading }: DeliverablesTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('descriptions.deliverables')}</p>
-        <div className="flex items-center gap-2">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="gap-2"
-            aria-label={tCommon('aria.searchButton', { context: t('tabs.deliverables') })}
-          >
-            <Search className="h-4 w-4" aria-hidden="true" />
-            {tCommon('buttons.search')}
-          </Button>
-          <Button 
-            size="sm" 
-            className="gap-2"
-            aria-label={tCommon('aria.createButton', { type: t('tabs.deliverables') })}
-          >
-            <Plus className="h-4 w-4" aria-hidden="true" />
-            {tCommon('buttons.create')} {t('tabs.deliverables')}
-          </Button>
-        </div>
-      </div>
-
       {/* Summary Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>

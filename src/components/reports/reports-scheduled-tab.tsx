@@ -65,19 +65,7 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
   const displayReports = data || []
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <Button size="sm" aria-label={`${tCommon('create')} scheduled report`}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')}
-        </Button>
-      </div>
-
-
-      <div className="grid gap-4">
+      <div className="space-y-4">
         {scheduledReports.map((report) => (
           <Card key={report.id} role="article" aria-label={`Scheduled report: ${t(report.nameKey)}`}>
             <CardHeader>

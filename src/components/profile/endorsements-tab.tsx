@@ -142,17 +142,7 @@ export function EndorsementsTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('profile.descriptions.endorsements')}
-        </p>
-        <Button size="sm" variant="outline">
-          <UserPlus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('profile.endorsements.requestEndorsement')}
-        </Button>
-      </div>
-
+      {/* Stats */}
       <div className="grid md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

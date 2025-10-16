@@ -104,27 +104,6 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Manage your owned and rented equipment
-        </p>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2" disabled>
-            <Search className="h-4 w-4" aria-hidden="true" />
-            Search
-          </Button>
-          <Button 
-            size="sm" 
-            className="gap-2"
-            onClick={() => router.push(`/workspace/${workspaceId}/assets/inventory`)}
-          >
-            <Plus className="h-4 w-4" aria-hidden="true" />
-            Add Asset
-          </Button>
-        </div>
-      </div>
-
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         <Card>

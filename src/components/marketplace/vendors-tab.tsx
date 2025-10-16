@@ -36,17 +36,7 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('create')}</Button>
-      </div>
-
-
-      {/* Filters */}
+{/* Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />

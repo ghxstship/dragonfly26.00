@@ -81,19 +81,6 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Purchase order tracking and management
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4" aria-hidden="true"  />
-            Export
-          </Button>
-        </div>
-      </div>
-
       {/* Key Metrics */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

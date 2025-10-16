@@ -55,14 +55,7 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
   
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {customViews.map((view) => (
           <Card key={view.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>

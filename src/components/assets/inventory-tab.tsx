@@ -168,23 +168,6 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Manage current asset inventory and stock levels
-        </p>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => setScannerOpen(true)}>
-            <QrCode className="h-4 w-4 mr-2" aria-hidden="true" />
-            Scan Barcode
-          </Button>
-          <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            Add Item
-          </Button>
-        </div>
-      </div>
-
       <div className="flex h-[calc(100vh-200px)]">
         {/* Left Sidebar - Folder Tree */}
         {showFolderTree && (

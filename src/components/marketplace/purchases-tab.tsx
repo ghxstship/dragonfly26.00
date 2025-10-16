@@ -60,18 +60,7 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <Button>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          New Purchase
-        </Button>
-      </div>
-
-      {/* Quick Stats */}
+{/* Quick Stats */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         <Card>
           <CardHeader className="pb-2">

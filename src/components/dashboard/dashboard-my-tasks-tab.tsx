@@ -88,31 +88,6 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <section role="region" aria-labelledby="tasks-actions">
-        <h2 id="tasks-actions" className="sr-only">{t('description')}</h2>
-        <div className="flex items-center justify-between">
-          <p className="text-muted-foreground">
-            {t('description')}
-          </p>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="gap-2" disabled aria-label={t('filterLabel')}>
-              <Filter className="h-4 w-4" aria-hidden="true" />
-              {t('filter')}
-            </Button>
-            <Button 
-              size="sm" 
-              className="gap-2"
-              onClick={() => router.push(`/workspace/${workspaceId}/projects/tasks`)}
-              aria-label={t('newTask')}
-            >
-              <Plus className="h-4 w-4" aria-hidden="true" />
-              {t('newTask')}
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Summary Stats */}
       <section role="region" aria-labelledby="tasks-stats">
         <h2 id="tasks-stats" className="sr-only">{t('summaryStats')}</h2>

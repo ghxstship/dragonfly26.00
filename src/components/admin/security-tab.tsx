@@ -69,17 +69,6 @@ export function SecurityTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('admin.configureAuth')}
-        </p>
-        <Button variant="outline" size="sm" onClick={handleSaveChanges}>
-          <Shield className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('admin.securityTab.saveChanges')}
-        </Button>
-      </div>
-
       {/* Authentication */}
       <Card>
         <CardHeader>

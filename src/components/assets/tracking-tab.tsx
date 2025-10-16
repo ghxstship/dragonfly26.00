@@ -158,23 +158,6 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Track asset locations, check-in/out, and lifecycle management
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm" onClick={() => setScannerOpen(true)}>
-            <QrCode className="h-4 w-4 mr-2" />
-            Scan
-          </Button>
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
-            Export
-          </Button>
-        </div>
-      </div>
-
       {/* Quick Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

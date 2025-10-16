@@ -90,20 +90,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Overview of financial performance and health
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4" aria-hidden="true"  />
-            Export
-          </Button>
-        </div>
-      </div>
-
-      {/* Key Metrics */}
+      {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

@@ -178,17 +178,6 @@ export function AccountTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('settings.accountTab.description')}
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('common.create')}
-        </Button>
-      </div>
-
       {/* Profile Information */}
       <Card>
         <CardHeader>

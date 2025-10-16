@@ -80,24 +80,6 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <section role="region" aria-labelledby="jobs-actions">
-        <h2 id="jobs-actions" className="sr-only">{t('description')}</h2>
-        <div className="flex items-center justify-between">
-          <p className="text-muted-foreground">
-            {t('description')}
-          </p>
-          <Button 
-            size="sm" 
-            onClick={() => router.push(`/workspace/${workspaceId}/people/personnel`)}
-            aria-label={t('newContract')}
-          >
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            {t('newContract')}
-          </Button>
-        </div>
-      </section>
-
       {/* Summary Stats */}
       <section role="region" aria-labelledby="jobs-stats">
         <h2 id="jobs-stats" className="sr-only">Job Statistics</h2>

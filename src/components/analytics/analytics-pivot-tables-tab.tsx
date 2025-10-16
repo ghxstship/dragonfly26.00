@@ -27,23 +27,6 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
   
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline">
-            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
-            Configure
-          </Button>
-          <Button variant="outline">
-            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
-            Export
-          </Button>
-        </div>
-      </div>
-
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">

@@ -292,14 +292,6 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         )}
       </div>
 
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-end gap-2">
-        <Button variant="outline" size="sm" onClick={handleExport}>
-          <Download className="h-4 w-4 mr-2" aria-hidden="true" />
-          Export
-        </Button>
-      </div>
-
       {/* Counts Table */}
       {loading ? (
         <div className="flex items-center justify-center h-64">

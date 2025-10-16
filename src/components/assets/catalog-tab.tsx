@@ -184,17 +184,6 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Browse and copy items from the complete asset catalog
-        </p>
-        <Button size="sm" variant="outline" disabled>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          Request New Item
-        </Button>
-      </div>
-
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

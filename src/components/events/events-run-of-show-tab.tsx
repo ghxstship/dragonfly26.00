@@ -99,39 +99,6 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Real-time show execution and cue management
-        </p>
-        <div className="flex gap-2">
-          <Button 
-            size="lg" 
-            variant={isRunning ? "outline" : "default"}
-            onClick={() => setIsRunning(!isRunning)}
-          >
-            {isRunning ? <Pause className="h-4 w-4 mr-2" aria-hidden="true" /> : <Play className="h-4 w-4 mr-2" aria-hidden="true" />}
-            {isRunning ? 'Pause' : 'Start'}
-          </Button>
-          <Button variant="outline" size="sm">
-            <SkipForward className="h-4 w-4 mr-2" aria-hidden="true" />
-            Next Cue
-          </Button>
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
-            Export
-          </Button>
-          <Button variant="outline" size="sm">
-            <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
-            Edit
-          </Button>
-          <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            Add Cue
-          </Button>
-        </div>
-      </div>
-
       {/* Show Clock and Progress */}
       <Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950">
         <CardContent className="pt-6">

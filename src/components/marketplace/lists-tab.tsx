@@ -48,16 +48,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <Button>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{t('createList')}</Button>
-      </div>
-
-      {/* Quick Actions */}
+{/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">

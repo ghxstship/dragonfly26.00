@@ -45,19 +45,7 @@ export function ReportsExportsTab({ data = [], loading = false }: ReportsExports
   const displayData = data.length > 0 ? data : []
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <Button size="sm" aria-label={`${tCommon('create')} export`}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')}
-        </Button>
-      </div>
-
-
-      <div className="grid gap-3">
+      <div className="space-y-4">
         {exports.map((file) => {
           const Icon = getFileIcon(file.type)
           const colorClass = getFileColor(file.type)

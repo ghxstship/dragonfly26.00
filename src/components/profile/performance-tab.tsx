@@ -128,13 +128,6 @@ export function PerformanceTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('profile.descriptions.performance')}
-        </p>
-      </div>
-
       <div className="flex justify-end">
         <Select value={timePeriod} onValueChange={setTimePeriod}>
           <SelectTrigger className="w-[180px]">

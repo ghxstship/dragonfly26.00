@@ -36,21 +36,6 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline">
-            Create List from Favorites
-          </Button>
-          <Button>
-            Add All to Cart
-          </Button>
-        </div>
-      </div>
-
       {/* Favorites Grid */}
       {favorites.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

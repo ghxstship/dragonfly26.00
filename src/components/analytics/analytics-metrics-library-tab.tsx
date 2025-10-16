@@ -81,14 +81,6 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
   
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-      </div>
-
-      {/* Favorites */}
       <div>
         <h3 className="font-semibold mb-3 flex items-center gap-2">
           <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />

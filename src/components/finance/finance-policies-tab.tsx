@@ -169,19 +169,6 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Spending policies, corporate cards & policy violations
-        </p>
-        <div className="flex gap-2">
-          <Button size="sm">
-            <Plus className="h-4 w-4" aria-hidden="true"  />
-            New Policy
-          </Button>
-        </div>
-      </div>
-
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

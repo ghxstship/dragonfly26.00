@@ -105,19 +105,6 @@ export function RecurrenceRulesTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('recurrence.description')}
-        </p>
-        <div className="flex gap-2">
-          <Button onClick={handleCreateRule}>
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            {t('recurrence.newRule')}
-          </Button>
-        </div>
-      </div>
-
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>

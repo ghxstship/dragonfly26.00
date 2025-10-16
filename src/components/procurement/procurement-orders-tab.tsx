@@ -53,31 +53,6 @@ export function OrdersTab({ data, loading }: OrdersTabProps) {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('descriptions.orders')}</p>
-        <div className="flex items-center gap-2">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="gap-2"
-            aria-label={tCommon('aria.searchButton', { context: t('tabs.orders') })}
-          >
-            <Search className="h-4 w-4" aria-hidden="true" />
-            {tCommon('buttons.search')}
-          </Button>
-          <Button 
-            size="sm" 
-            className="gap-2"
-            aria-label={tCommon('aria.createButton', { type: t('tabs.orders') })}
-          >
-            <Plus className="h-4 w-4" aria-hidden="true" />
-            {tCommon('buttons.create')} {t('tabs.orders')}
-          </Button>
-        </div>
-      </div>
-
       {/* Summary Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>

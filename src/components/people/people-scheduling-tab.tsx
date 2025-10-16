@@ -85,35 +85,6 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Personnel scheduling
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" />
-          Create
-        </Button>
-      </div>
-
-
-      {/* Actions */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Shift assignments and availability management
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
-            Export
-          </Button>
-          <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" />
-            Add Shift
-          </Button>
-        </div>
-      </div>
-
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

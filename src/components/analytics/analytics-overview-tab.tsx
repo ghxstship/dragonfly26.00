@@ -62,13 +62,6 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
   const displayMetrics = data.length > 0 ? data : metrics
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-      </div>
-
       {/* Key Metrics Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {displayMetrics.map((metric: any, index: number) => {

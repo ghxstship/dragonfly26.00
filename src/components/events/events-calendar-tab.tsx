@@ -86,23 +86,6 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          View and manage all scheduled events and activities
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
-            Filter
-          </Button>
-          <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-            New Event
-          </Button>
-        </div>
-      </div>
-
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

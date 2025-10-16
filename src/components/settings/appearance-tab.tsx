@@ -166,22 +166,6 @@ export function AppearanceTab() {
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('settings.appearanceTab.description')}
-        </p>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={handleReset}>
-            <RotateCcw className="h-4 w-4 mr-2" aria-hidden="true" />
-            Reset
-          </Button>
-          <Button size="sm" onClick={handleSave}>
-            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
-            Save Changes
-          </Button>
-        </div>
-      </div>
 
       {/* Theme Mode */}
       <Card>

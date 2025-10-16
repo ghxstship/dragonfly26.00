@@ -194,18 +194,6 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          Financial approvals workflow
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4" aria-hidden="true"  />
-          Create
-        </Button>
-      </div>
-
-
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

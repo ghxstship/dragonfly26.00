@@ -81,18 +81,6 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
   const displayInsights = data || []
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <Button size="sm" aria-label={`${tCommon('create')} item`}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')}
-        </Button>
-      </div>
-
-
       {/* Filter Badges */}
       <div className="flex gap-2">
         <Badge variant="outline" className="cursor-pointer hover:bg-accent">All ({insights.length})</Badge>

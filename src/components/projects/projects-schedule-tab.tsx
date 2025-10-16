@@ -90,29 +90,6 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('create')}
-        </Button>
-      </div>
-
-
-      {/* Actions */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('ganttDescription')}
-        </p>
-        <Button variant="outline" size="sm">
-          <Download className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('export')}
-        </Button>
-      </div>
-
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>

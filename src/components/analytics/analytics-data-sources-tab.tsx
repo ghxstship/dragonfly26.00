@@ -67,13 +67,6 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
   
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-      </div>
-
       {/* Status Summary */}
       <div className="grid grid-cols-4 gap-4">
         <Card>

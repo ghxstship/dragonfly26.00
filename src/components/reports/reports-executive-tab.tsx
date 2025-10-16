@@ -64,18 +64,6 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
   const displayData = data || []
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground" role="doc-subtitle">
-          {t('description')}
-        </p>
-        <Button size="sm" aria-label={`${tCommon('create')} executive report`}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {tCommon('create')}
-        </Button>
-      </div>
-
-
       {/* KPI Summary Dashboard */}
       <Card role="region" aria-labelledby="kpi-summary-title">
         <CardHeader>

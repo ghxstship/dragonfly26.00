@@ -126,18 +126,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
 
   return (
     <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
-          {t('createPost')}
-        </Button>
-      </div>
-
-      {/* Header Stats */}
+{/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

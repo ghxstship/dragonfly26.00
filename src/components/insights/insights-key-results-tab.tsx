@@ -95,12 +95,6 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
   
   return (
     <div className="space-y-6">
-      {/* Description */}
-      <p className="text-muted-foreground" role="doc-subtitle">
-        {t('description')}
-      </p>
-
-      {/* Summary Cards */}
       <div className="grid grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4">

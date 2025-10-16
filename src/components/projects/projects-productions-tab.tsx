@@ -75,23 +75,6 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
   return (
     <main role="main" aria-label={t('title')}>
       <div className="space-y-6">
-      {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
-        <p className="text-muted-foreground">
-          {t('description')}
-        </p>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
-            {tCommon('filter')}
-          </Button>
-          <Button variant="outline" size="sm">
-            <Search className="h-4 w-4 mr-2" aria-hidden="true" />
-            {tCommon('search')}
-          </Button>
-        </div>
-      </div>
-
       {/* Stats Overview */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
