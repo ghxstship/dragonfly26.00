@@ -27,6 +27,8 @@ interface Credential {
   expiryDate: string
   status: "active" | "expired" | "suspended"
   accessLevel: string
+
+  nameKey?: string
 }
 
 interface Clearance {
@@ -44,6 +46,7 @@ export function AccessTab() {
     {
       id: "1",
       type: "Venue Access",
+      name: "Madison Square Garden - Backstage Pass",
       nameKey: "madison_square_garden__backstage_pass",
       issueDate: "2024-01-15",
       expiryDate: "2024-12-31",
@@ -53,6 +56,7 @@ export function AccessTab() {
     {
       id: "2",
       type: "Equipment Authorization",
+      name: "Forklift Operator License",
       nameKey: "forklift_operator_license",
       issueDate: "2023-06-01",
       expiryDate: "2025-06-01",
@@ -86,7 +90,7 @@ export function AccessTab() {
     )
   }
 
-  const handleSave = () => {
+  const handleSave = async () => {
     console.log("Saving access data:", { credentials, clearances })
     // TODO: Save to Supabase
   }
@@ -133,7 +137,7 @@ export function AccessTab() {
                 {credentials.map((cred) => (
                   <TableRow key={cred.id}>
                     <TableCell className="font-medium">{cred.type}</TableCell>
-                    <TableCell>{t(cred.nameKey)}</TableCell>
+                    <TableCell>{(cred.nameKey ? t(cred.nameKey) : cred.name)}</TableCell>
                     <TableCell>{cred.accessLevel}</TableCell>
                     <TableCell>{new Date(cred.issueDate).toLocaleDateString()}</TableCell>
                     <TableCell>{new Date(cred.expiryDate).toLocaleDateString()}</TableCell>

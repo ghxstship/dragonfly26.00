@@ -17,6 +17,14 @@ interface CountsTabProps {
   workspaceId: string
 }
 
+interface StatusOption {
+  value: string
+  label: string
+  labelKey?: string
+  color: string
+  count: number
+}
+
 export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
   const t = useTranslations('production.assets.counts')
   const tCommon = useTranslations('common')
@@ -34,10 +42,10 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
   const activeCounts = data.filter(c => c.status === 'in_progress').length
   const plannedCounts = data.filter(c => c.status === 'planned').length
   const completedCounts = data.filter(c => c.status === 'completed').length
-  const totalDiscrepancies = data.reduce((sum, c) => sum + (c.discrepancies_found || 0), 0)
+  const totalDiscrepancies = data.reduce((sum: number, c) => sum + (c.discrepancies_found || 0), 0)
 
   // Filter options
-  const filterOptions = [
+  const filterOptions: StatusOption[] = [
     { value: 'planned', label: 'Planned', color: 'bg-blue-500', count: plannedCounts },
     { value: 'in_progress', label: 'In Progress', color: 'bg-orange-500', count: activeCounts },
     { value: 'completed', label: 'Completed', color: 'bg-green-500', count: completedCounts },
@@ -71,9 +79,9 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
           cancelled: 'bg-gray-500/10 text-gray-700 border-gray-200',
         }
         const icons: Record<string, any> = {
-          planned: <Calendar className="h-4 w-4" aria-hidden="true" className="mr-1" />,
-          in_progress: <Clock className="h-4 w-4" aria-hidden="true" className="mr-1" />,
-          completed: <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="mr-1" />,
+          planned: <Calendar className="h-4 w-4 mr-1" aria-hidden="true" />,
+          in_progress: <Clock className="h-4 w-4 mr-1" aria-hidden="true" />,
+          completed: <CheckCircle2 className="h-4 w-4 mr-1" aria-hidden="true" />,
         }
         return (
           <Badge variant="outline" className={`${colors[value] || ''} flex items-center w-fit`}>
@@ -99,7 +107,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         if (!value || value.length === 0) return <span className="text-muted-foreground">-</span>
         return (
           <div className="flex items-center gap-1">
-            <Users className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <span className="text-sm">{value.length} team {value.length === 1 ? 'member' : 'members'}</span>
           </div>
         )
@@ -203,7 +211,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
     })
   }
 
-  const handleExport = () => {
+  const handleExport = async () => {
     const csv = []
     csv.push(['Count Name', 'Type', 'Status', 'Scheduled Date', 'Progress', 'Variances', 'Completed'])
     filteredData.forEach(count => {
@@ -274,9 +282,9 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
             onClick={() => setStatusFilter(statusFilter === option.value ? null : option.value)}
           >
             <div className={`w-2 h-2 rounded-full ${option.color} mr-1.5`} />
-            {t(option.labelKey)}
+            {option.labelKey ? t(option.labelKey) : option.label}
             <span className="ml-1 text-xs opacity-70">({option.count})</span>
-            {statusFilter === option.value && <X className="h-4 w-4" aria-hidden="true" className="ml-1" />}
+            {statusFilter === option.value && <X className="h-4 w-4 ml-1" aria-hidden="true" />}
           </Badge>
         ))}
         {statusFilter && (
@@ -289,11 +297,11 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
       {/* Action Buttons - Standard Positioning */}
       <div className="flex items-center justify-end gap-2">
         <Button variant="outline" size="sm" onClick={handleExport}>
-          <Download className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          <Download className="h-4 w-4 mr-2" aria-hidden="true" />
           Export
         </Button>
         <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           New Count
         </Button>
       </div>

@@ -120,7 +120,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
                         fill="#8884d8"
                         dataKey="value"
                       >
-                        {mockPieData.map((entry, index) => (
+                        {mockPieData.map((entry: any, index: number) => (
                           <Cell key={`cell-${index}`} fill={entry.color} />
                         ))}
                       </Pie>

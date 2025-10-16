@@ -14,17 +14,16 @@ interface AllDocumentsTabProps {
   loading?: boolean
 }
 
-export function AllDocumentsTab({
-  const t = useTranslations('production.files.all_documents')
+export function AllDocumentsTab({ data, loading }: AllDocumentsTabProps) {
+  const t = useTranslations('common')
   const tCommon = useTranslations('common')
- data, loading }: AllDocumentsTabProps) {
   const params = useParams()
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('files', 'all-documents', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'files', 'all-documents')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading
@@ -42,9 +41,8 @@ export function AllDocumentsTab({
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-        </div>
-         )
-}
+    )
+  }
 
   return (
     <main role="main" aria-label={t('title')}>
@@ -115,7 +113,7 @@ export function AllDocumentsTab({
                 <p className="text-lg font-semibold mb-2">No all documents found</p>
                 <p className="text-sm mb-4">{t('emptyStateMessage')}</p>
                 <Button>
-                  <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
                   Create All Documents
                 </Button>
               </div>

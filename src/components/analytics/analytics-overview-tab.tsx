@@ -105,7 +105,7 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
-            {kpis.map((kpi, index) => {
+            {kpis.map((kpi: any, index: number) => {
               const percentage = (kpi.current / kpi.target) * 100
               const isOnTrack = kpi.current >= kpi.target * 0.9
               

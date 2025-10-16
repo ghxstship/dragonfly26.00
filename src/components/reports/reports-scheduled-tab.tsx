@@ -122,7 +122,7 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
                     {t('recipients')} ({report.recipients.length})
                   </p>
                   <div className="flex flex-wrap gap-2" role="list" aria-label="Report recipients">
-                    {report.recipients.map((email, index) => (
+                    {report.recipients.map((email: any, index: number) => (
                       <Badge key={index} variant="outline" className="text-xs" role="listitem">
                         <Mail className="h-3 w-3 mr-1" aria-hidden="true" />
                         {email}

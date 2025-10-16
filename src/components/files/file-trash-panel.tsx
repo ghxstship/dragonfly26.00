@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -25,6 +26,7 @@ interface FileTrashPanelProps {
 }
 
 export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) {
+  const t = useTranslations('files')
   const { trashedFiles, loading, refetch } = useFileTrash(workspaceId)
   const { toast } = useToast()
   const [restoringId, setRestoringId] = useState<string | null>(null)

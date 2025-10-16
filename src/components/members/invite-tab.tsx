@@ -17,11 +17,9 @@ import {
   UserPlus, 
   X,
   FileText,
-  Users
+  Users,
+  Plus
 } from "lucide-react"
-import { Plus } from "lucide-react"
-import { Plus } from "lucide-react"
-import { Plus } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function InviteTab() {
@@ -33,7 +31,7 @@ export function InviteTab() {
   const [invites, setInvites] = useState<Array<{ email: string; role: string }>>([])
   const [bulkEmails, setBulkEmails] = useState("")
 
-  const handleAddInvite = () => {
+  const handleAddInvite = async () => {
     if (!email) {
       toast({
         title: "Email required",
@@ -61,7 +59,7 @@ export function InviteTab() {
     setInvites(invites.filter((_, i) => i !== index))
   }
 
-  const handleSendInvites = () => {
+  const handleSendInvites = async () => {
     if (invites.length === 0) {
       toast({
         title: "No invites to send",
@@ -80,7 +78,7 @@ export function InviteTab() {
     setMessage("")
   }
 
-  const handleBulkImport = () => {
+  const handleBulkImport = async () => {
     if (!bulkEmails.trim()) {
       toast({
         title: "No emails provided",
@@ -188,7 +186,7 @@ export function InviteTab() {
                   Pending Invites ({invites.length})
                 </Label>
                 <div className="space-y-2 max-h-[200px] overflow-auto border rounded-md p-3">
-                  {invites.map((invite, index) => (
+                  {invites.map((invite: any, index: number) => (
                     <div key={index} className="flex items-center justify-between gap-2 p-2 bg-muted rounded-md">
                       <div className="flex-1 flex items-center gap-2">
                         <Mail className="h-4 w-4 text-muted-foreground" />

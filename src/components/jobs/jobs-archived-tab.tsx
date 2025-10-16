@@ -23,9 +23,9 @@ export function ArchivedTab({ data, loading }: ArchivedTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('jobs', 'archived', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'jobs', 'archived')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

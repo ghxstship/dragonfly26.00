@@ -52,18 +52,18 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
   }))
 
   const filteredProjects = filterStatus
-    ? projects.filter((p) => p.status === filterStatus)
+    ? projects.filter((p: any) => p.status === filterStatus)
     : projects
 
   // Calculate overview metrics
   const totalProjects = projects.length
-  const onTrack = projects.filter((p) => p.status === "on-track").length
-  const atRisk = projects.filter((p) => p.status === "at-risk").length
-  const delayed = projects.filter((p) => p.status === "delayed").length
-  const completed = projects.filter((p) => p.status === "completed").length
+  const onTrack = projects.filter((p: any) => p.status === "on-track").length
+  const atRisk = projects.filter((p: any) => p.status === "at-risk").length
+  const delayed = projects.filter((p: any) => p.status === "delayed").length
+  const completed = projects.filter((p: any) => p.status === "completed").length
 
-  const totalBudget = projects.reduce((sum, p) => sum + p.budget, 0)
-  const totalSpent = projects.reduce((sum, p) => sum + p.spent, 0)
+  const totalBudget = projects.reduce((sum: number, p) => sum + p.budget, 0)
+  const totalSpent = projects.reduce((sum: number, p) => sum + p.spent, 0)
   const budgetUtilization = (totalSpent / totalBudget) * 100
 
   const getStatusColor = (status: string) => {

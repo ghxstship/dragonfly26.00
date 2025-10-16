@@ -248,8 +248,8 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
             <EmptyState
               variant="inline"
               icon={FileText}
-              mainMessage={searchQuery ? "No publications found" : {t('nothingToSeeYet')}}
-              description={searchQuery ? {t('tryAdjustingSearch')} : t('addPublications')}
+              mainMessage={searchQuery ? t('searchNoResults') : t('nothingToSeeYet')}
+              description={searchQuery ? t('tryAdjustingSearch') : t('addPublications')}
               actionLabel={!searchQuery ? t('addPublication') : undefined}
               onAction={!searchQuery ? () => {} : undefined}
             />

@@ -21,9 +21,9 @@ export function ProjectsChecklistsTab({ data, loading }: ProjectsChecklistsTabPr
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('projects', 'projects-checklists', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'projects', 'projects-checklists')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

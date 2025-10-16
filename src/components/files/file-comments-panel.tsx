@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
@@ -16,6 +17,7 @@ interface FileCommentsPanelProps {
 }
 
 export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps) {
+  const t = useTranslations('files')
   const [newComment, setNewComment] = useState("")
   const [replyTo, setReplyTo] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)

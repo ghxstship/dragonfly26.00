@@ -21,9 +21,9 @@ export function AllEventsTab({ data, loading }: AllEventsTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('events', 'all-events', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'events', 'all-events')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

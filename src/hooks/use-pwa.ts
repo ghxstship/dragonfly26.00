@@ -35,17 +35,17 @@ export function usePWA() {
     }
 
     // Listen for successful install
-    const handleAppInstalled = () => {
+    const handleAppInstalled = async () => {
       setState((prev) => ({ ...prev, isInstalled: true, isInstallable: false }))
       setDeferredPrompt(null)
     }
 
     // Listen for online/offline
-    const handleOnline = () => {
+    const handleOnline = async () => {
       setState((prev) => ({ ...prev, isOffline: false }))
     }
 
-    const handleOffline = () => {
+    const handleOffline = async () => {
       setState((prev) => ({ ...prev, isOffline: true }))
     }
 

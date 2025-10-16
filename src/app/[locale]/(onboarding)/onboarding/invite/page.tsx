@@ -117,7 +117,7 @@ export default function InviteColleaguesPage() {
     }
   }
 
-  const handleSkip = () => {
+  const handleSkip = async () => {
     router.push(`/${locale}/onboarding/complete?workspace=${workspaceId}`)
   }
 
@@ -157,7 +157,7 @@ export default function InviteColleaguesPage() {
           <CardContent className="space-y-6">
             {/* Invites list */}
             <div className="space-y-4">
-              {invites.map((invite, index) => (
+              {invites.map((invite: any, index: number) => (
                 <div key={index} className="space-y-3 p-4 border rounded-lg">
                   <div className="flex items-start gap-2">
                     <div className="flex-1 space-y-3">
@@ -202,7 +202,7 @@ export default function InviteColleaguesPage() {
                           </SelectContent>
                         </Select>
                         <p className="text-xs text-muted-foreground">
-                          {BRANDED_ROLES[invite.role].description}
+                          {BRANDED_ROLES[invite.role as RoleSlug]?.description}
                         </p>
                       </div>
 

@@ -50,7 +50,7 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
 
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map((stat, index) => {
+        {stats.map((stat: any, index: number) => {
           const Icon = stat.icon
           return (
             <Card key={index} role="region" aria-label={`${t(stat.labelKey)} metric`}>

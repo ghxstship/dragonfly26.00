@@ -6,8 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { 
-  Play,
+import { Play,
   Pause,
   SkipForward,
   Clock,
@@ -19,8 +18,7 @@ import {
   CheckCircle2,
   Plus,
   Download,
-  Edit
-} from "lucide-react"
+  Edit } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
@@ -112,23 +110,23 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
             variant={isRunning ? "outline" : "default"}
             onClick={() => setIsRunning(!isRunning)}
           >
-            {isRunning ? <Pause className="h-4 w-4" aria-hidden="true" className="mr-2" /> : <Play className="h-4 w-4" aria-hidden="true" className="mr-2" />}
+            {isRunning ? <Pause className="h-4 w-4 mr-2" aria-hidden="true" /> : <Play className="h-4 w-4 mr-2" aria-hidden="true" />}
             {isRunning ? 'Pause' : 'Start'}
           </Button>
           <Button variant="outline" size="sm">
-            <SkipForward className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <SkipForward className="h-4 w-4 mr-2" aria-hidden="true" />
             Next Cue
           </Button>
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
             Export
           </Button>
           <Button variant="outline" size="sm">
-            <Edit className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
             Edit
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             Add Cue
           </Button>
         </div>
@@ -149,11 +147,11 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 variant={isRunning ? "outline" : "default"}
                 onClick={() => setIsRunning(!isRunning)}
               >
-                {isRunning ? <Pause className="h-4 w-4" aria-hidden="true" className="mr-2" /> : <Play className="h-4 w-4" aria-hidden="true" className="mr-2" />}
+                {isRunning ? <Pause className="h-4 w-4 mr-2" aria-hidden="true" /> : <Play className="h-4 w-4 mr-2" aria-hidden="true" />}
                 {isRunning ? 'Pause' : 'Start'}
               </Button>
               <Button size="lg" variant="outline">
-                <SkipForward className="h-4 w-4" aria-hidden="true" className="mr-2" />
+                <SkipForward className="h-4 w-4 mr-2" aria-hidden="true" />
                 Next Cue
               </Button>
             </div>
@@ -198,10 +196,10 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                           {cue.number || index + 1}
                         </div>
                         {cue.status === 'completed' && (
-                          <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="mx-auto" />
+                          <CheckCircle2 className="h-4 w-4 mx-auto" aria-hidden="true" />
                         )}
                         {cue.status === 'warning' && (
-                          <AlertCircle className="h-4 w-4" aria-hidden="true" className="mx-auto" />
+                          <AlertCircle className="h-4 w-4 mx-auto" aria-hidden="true" />
                         )}
                       </div>
 
@@ -221,7 +219,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                       {/* Cue Type */}
                       <div className="flex-shrink-0">
                         <Badge variant="secondary" className={getCueTypeColor(cue.type)}>
-                          <CueIcon className="h-4 w-4" aria-hidden="true" className="mr-1" />
+                          <CueIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                           {cue.type}
                         </Badge>
                       </div>

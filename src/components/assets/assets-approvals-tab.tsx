@@ -43,11 +43,11 @@ export default function AssetsApprovalsTab() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'approved':
-        return <CheckCircle className="h-4 w-4" aria-hidden="true" className="text-green-600" />
+        return <CheckCircle className="h-4 w-4 text-green-600" aria-hidden="true" />
       case 'rejected':
-        return <XCircle className="h-4 w-4" aria-hidden="true" className="text-red-600" />
+        return <XCircle className="h-4 w-4 text-red-600" aria-hidden="true" />
       case 'pending':
-        return <Clock className="h-4 w-4" aria-hidden="true" className="text-yellow-600" />
+        return <Clock className="h-4 w-4 text-yellow-600" aria-hidden="true" />
       default:
         return null
     }
@@ -77,7 +77,7 @@ export default function AssetsApprovalsTab() {
           Review and manage approval workflows for production advances
         </p>
         <Button size="sm" disabled>
-          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           Create Approval Chain
         </Button>
       </div>

@@ -14,17 +14,16 @@ interface ContractsTabProps {
   loading?: boolean
 }
 
-export function ContractsTab({
+export function ContractsTab({ data, loading }: ContractsTabProps) {
   const t = useTranslations('production.files.contracts')
   const tCommon = useTranslations('common')
- data, loading }: ContractsTabProps) {
   const params = useParams()
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('files', 'contracts', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'files', 'contracts')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading
@@ -42,9 +41,8 @@ export function ContractsTab({
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-        </div>
-         )
-}
+    )
+  }
 
   return (
     <main role="main" aria-label={t('title')}>
@@ -115,7 +113,7 @@ export function ContractsTab({
                 <p className="text-lg font-semibold mb-2">No contracts found</p>
                 <p className="text-sm mb-4">{t('emptyStateMessage')}</p>
                 <Button>
-                  <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
                   Create Contracts
                 </Button>
               </div>

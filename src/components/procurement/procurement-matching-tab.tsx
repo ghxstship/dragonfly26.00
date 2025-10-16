@@ -31,8 +31,8 @@ interface ProcurementMatchingTabProps {
   loading?: boolean
 }
 
-const getMatchStatusBadge = (status: string) => {
-  const variants: Record<string, { variant: any, icon: any, label: string }> = {
+const getMatchStatusBadge = (status: string, t: any) => {
+  const variants: Record<string, { variant: any, icon: any, labelKey: string }> = {
     matched: { variant: "default", icon: CheckCircle2, labelKey: "matched" },
     partial_match: { variant: "secondary", icon: AlertTriangle, labelKey: "partial_match" },
     no_match: { variant: "destructive", icon: XCircle, labelKey: "no_match" },
@@ -63,8 +63,8 @@ const getVarianceBadge = (variancePercent: number) => {
   }
 }
 
-const getPriorityBadge = (priority: string) => {
-  const variants: Record<string, { variant: any, label: string }> = {
+const getPriorityBadge = (priority: string, t: any) => {
+  const variants: Record<string, { variant: any, labelKey: string }> = {
     urgent: { variant: "destructive", labelKey: "urgent" },
     high: { variant: "default", labelKey: "high" },
     normal: { variant: "secondary", labelKey: "normal" },
@@ -333,7 +333,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                         {getVarianceBadge(item.variance_percentage)}
                       </div>
                     </TableCell>
-                    <TableCell>{getMatchStatusBadge(item.match_status)}</TableCell>
+                    <TableCell>{getMatchStatusBadge(item.match_status, t)}</TableCell>
                     <TableCell>
                       {item.approved_for_payment ? (
                         <Badge variant="default" className="gap-1">
@@ -344,7 +344,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                         <Badge variant="outline">Pending</Badge>
                       )}
                     </TableCell>
-                    <TableCell>{getPriorityBadge(item.priority)}</TableCell>
+                    <TableCell>{getPriorityBadge(item.priority, t)}</TableCell>
                     <TableCell className="text-sm text-muted-foreground">{item.assignee_name}</TableCell>
                     <TableCell className="text-right">
                       <DropdownMenu>

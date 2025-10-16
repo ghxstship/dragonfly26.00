@@ -84,7 +84,7 @@ export function TopBar() {
 
   // Monitor online/offline status and sync with airplane mode
   useEffect(() => {
-    const handleOnline = () => {
+    const handleOnline = async () => {
       if (!airplaneMode) {
         setIsOnline(true)
       }
@@ -126,15 +126,15 @@ export function TopBar() {
     setCreateDialogOpen(true)
   }
 
-  const handleCreateObjective = () => {
+  const handleCreateObjective = async () => {
     setCreateObjectiveOpen(true)
   }
 
-  const handleCreateWebhook = () => {
+  const handleCreateWebhook = async () => {
     setCreateWebhookOpen(true)
   }
 
-  const handleCreateToken = () => {
+  const handleCreateToken = async () => {
     setCreateTokenOpen(true)
   }
 
@@ -148,7 +148,7 @@ export function TopBar() {
     }
   }
 
-  const handleToggleDemoMode = () => {
+  const handleToggleDemoMode = async () => {
     const newDemoMode = !demoMode
     setDemoMode(newDemoMode)
     localStorage.setItem('DEMO_MODE', newDemoMode.toString())

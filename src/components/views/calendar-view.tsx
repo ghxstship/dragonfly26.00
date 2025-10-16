@@ -357,7 +357,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                   No upcoming items
                 </div>
               ) : (
-                getAllUpcomingItems().reduce((acc, item) => {
+                getAllUpcomingItems().reduce((acc: any, item: any) => {
                   const dateValue = getDateValue(item, schema)
                   if (!dateValue) return acc
                   const dateKey = new Date(dateValue).toLocaleDateString("en-US", {
@@ -366,20 +366,20 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                     month: "long",
                     day: "numeric",
                   })
-                  const existingGroup = acc.find((g) => g.date === dateKey)
+                  const existingGroup = acc.find((g: { date: string; items: DataItem[] }) => g.date === dateKey)
                   if (existingGroup) {
                     existingGroup.items.push(item)
                   } else {
                     acc.push({ date: dateKey, items: [item] })
                   }
                   return acc
-                }, [] as { date: string; items: DataItem[] }[]).map((group) => (
+                }, [] as { date: string; items: DataItem[] }[]).map((group: { date: string; items: DataItem[] }) => (
                   <div key={group.date}>
                     <div className="text-sm font-semibold text-muted-foreground mb-3">
                       {group.date}
                     </div>
                     <div className="space-y-2">
-                      {group.items.map((item) => (
+                      {group.items.map((item: DataItem) => (
                         <div
                           key={item.id}
                           className="p-3 rounded-lg border bg-card hover:bg-accent cursor-pointer transition-colors"

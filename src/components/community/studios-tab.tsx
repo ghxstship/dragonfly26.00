@@ -109,7 +109,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
   })
 
   const myStudiosCount = studios.filter(s => s.joined).length
-  const totalMembers = studios.filter(s => s.joined).reduce((acc, s) => acc + s.members, 0)
+  const totalMembers = studios.filter(s => s.joined).reduce((acc: any, s: any) => acc + s.members, 0)
 
   return (
     <div className="space-y-6">

@@ -75,7 +75,7 @@ export function CustomFieldEditor({ fields, onFieldsChange }: CustomFieldEditorP
   }
 
   const deleteField = (id: string) => {
-    onFieldsChange(fields.filter((field) => field.id !== id))
+    onFieldsChange(fields.filter((field: any) => field.id !== id))
   }
 
   return (

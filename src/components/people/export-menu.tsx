@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,6 +27,7 @@ interface ExportMenuProps {
   onExport?: (format: ExportFormat, options?: ExportOptions) => void
   variant?: "default" | "outline" | "ghost"
   size?: "default" | "sm" | "lg" | "icon"
+  disabled?: boolean
   className?: string
 }
 
@@ -41,8 +43,10 @@ export function ExportMenu({
   onExport,
   variant = "outline",
   size = "default",
+  disabled = false,
   className
 }: ExportMenuProps) {
+  const t = useTranslations()
   const { toast } = useToast()
   const [isExporting, setIsExporting] = useState(false)
 
@@ -74,7 +78,7 @@ export function ExportMenu({
           variant={variant} 
           size={size} 
           className={className}
-          disabled={isExporting}
+          disabled={disabled || isExporting}
         >
           <FileDown className="h-4 w-4 mr-2" />
           {isExporting ? "Exporting..." : "Export"}
@@ -131,16 +135,17 @@ export function ExportMenu({
 
 // Payroll export specific menu
 export function PayrollExportMenu({
-  onExport,
+  onExportAction,
   providers = ["gusto", "adp", "paychex", "quickbooks"]
 }: {
-  onExport?: (provider: string, format: string) => void
+  onExportAction: (provider: string) => void
   providers?: string[]
 }) {
+  const t = useTranslations()
   const { toast } = useToast()
 
   const handleExport = (provider: string) => {
-    onExport?.(provider, "csv")
+    onExportAction(provider)
     toast({
       title: "Payroll export started",
       description: `Exporting timesheet data for ${provider}`,

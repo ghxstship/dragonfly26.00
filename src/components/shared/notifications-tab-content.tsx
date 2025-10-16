@@ -351,9 +351,9 @@ export function NotificationsTabContent() {
           <ScrollArea className="h-full px-4">
             <div className="space-y-1 pb-4">
               {notifications
-                .filter((n) => n.type === "mention")
+                .filter((n: any) => n.type === "mention")
                 .map(renderNotification)}
-              {notifications.filter((n) => n.type === "mention").length === 0 && (
+              {notifications.filter((n: any) => n.type === "mention").length === 0 && (
                 <div className="text-center py-12">
                   <AtSign className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">No mentions</p>

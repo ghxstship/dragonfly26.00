@@ -6,19 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { 
-  MapPin,
-  Calendar,
-  Plane,
-  Hotel,
-  Truck,
-  DollarSign,
-  Users,
-  Clock,
-  Plus,
-  Download,
-  Navigation
-} from "lucide-react"
+import { MapPin, Calendar, Plane, Hotel, Truck, DollarSign, Users, Clock, Plus, Download, Navigation } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
@@ -77,11 +65,11 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
             Export
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             Add Stop
           </Button>
         </div>
@@ -92,7 +80,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Shows</CardTitle>
-            <MapPin className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{totalShows}</div>
@@ -105,7 +93,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Travel Days</CardTitle>
-            <Truck className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Truck className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{totalTravelDays}</div>
@@ -116,7 +104,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Budget</CardTitle>
-            <DollarSign className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{formatCurrency(totalBudget)}</div>
@@ -127,7 +115,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Progress</CardTitle>
-            <Calendar className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -174,9 +162,9 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                             {/* Header */}
                             <div className="flex items-center gap-3 mb-3">
                               {isShow ? (
-                                <MapPin className="h-4 w-4" aria-hidden="true" className="text-primary" />
+                                <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
                               ) : (
-                                <Truck className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+                                <Truck className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                               )}
                               <div>
                                 <h3 className="font-semibold text-lg">{stop.city}, {stop.state || stop.country}</h3>
@@ -187,41 +175,41 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                             {/* Details Grid */}
                             <div className="grid gap-3 md:grid-cols-3">
                               <div className="flex items-center gap-2 text-sm">
-                                <Calendar className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+                                <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                 <span>{formatDate(stop.date)}</span>
                               </div>
                               
                               {stop.load_in_time && (
                                 <div className="flex items-center gap-2 text-sm">
-                                  <Clock className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+                                  <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{t('loadIn')}: {stop.load_in_time}</span>
                                 </div>
                               )}
                               
                               {stop.capacity && (
                                 <div className="flex items-center gap-2 text-sm">
-                                  <Users className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+                                  <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{t('capacity')}: {stop.capacity.toLocaleString()}</span>
                                 </div>
                               )}
                               
                               {stop.distance_from_previous && (
                                 <div className="flex items-center gap-2 text-sm">
-                                  <Navigation className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+                                  <Navigation className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{stop.distance_from_previous} {t('miles')}</span>
                                 </div>
                               )}
                               
                               {stop.hotel && (
                                 <div className="flex items-center gap-2 text-sm">
-                                  <Hotel className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+                                  <Hotel className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{stop.hotel}</span>
                                 </div>
                               )}
                               
                               {stop.budget && (
                                 <div className="flex items-center gap-2 text-sm">
-                                  <DollarSign className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+                                  <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{formatCurrency(stop.budget)}</span>
                                 </div>
                               )}

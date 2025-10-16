@@ -40,7 +40,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
   const [endDate, setEndDate] = useState("")
   const [endCount, setEndCount] = useState(10)
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const newRecurrence: ItemRecurrence = {
       id: recurrence?.id || `recurrence-${Date.now()}`,
       item_id: "current-item",
@@ -59,7 +59,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
     setIsEditing(false)
   }
 
-  const handleRemove = () => {
+  const handleRemove = async () => {
     onRecurrenceChange(null)
     setIsEditing(false)
   }

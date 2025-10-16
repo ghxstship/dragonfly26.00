@@ -44,6 +44,9 @@ interface Competition {
   prize: string
   image?: string
   joined?: boolean
+
+  titleKey?: string
+  descriptionKey?: string
 }
 
 interface LeaderboardEntry {
@@ -56,6 +59,9 @@ interface LeaderboardEntry {
   score: number
   badges: string[]
   streak: number
+
+  nameKey?: string
+  titleKey?: string
 }
 
 export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabProps) {
@@ -105,7 +111,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 1,
       previousRank: 1,
       userId: "1",
+      name: "Sarah Mitchell",
       nameKey: "sarah_mitchell",
+      title: "Production Director",
       titleKey: "production_director",
       image: "/api/placeholder/40/40",
       score: 9845,
@@ -116,7 +124,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 2,
       previousRank: 3,
       userId: "2",
+      name: "Marcus Chen",
       nameKey: "marcus_chen",
+      title: "Lighting Designer",
       titleKey: "lighting_designer",
       image: "/api/placeholder/40/40",
       score: 9234,
@@ -127,7 +137,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 3,
       previousRank: 2,
       userId: "3",
+      name: "Emily Rodriguez",
       nameKey: "emily_rodriguez",
+      title: "Festival Director",
       titleKey: "festival_director",
       image: "/api/placeholder/40/40",
       score: 8976,
@@ -138,7 +150,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 4,
       previousRank: 5,
       userId: "4",
+      name: "David Park",
       nameKey: "david_park",
+      title: "Technical Director",
       titleKey: "technical_director",
       image: "/api/placeholder/40/40",
       score: 8543,
@@ -149,7 +163,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 5,
       previousRank: 4,
       userId: "5",
+      name: "Jessica Martinez",
       nameKey: "jessica_martinez",
+      title: "Stage Manager",
       titleKey: "stage_manager",
       image: "/api/placeholder/40/40",
       score: 8321,
@@ -160,7 +176,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 6,
       previousRank: 7,
       userId: "6",
+      name: "Robert Williams",
       nameKey: "robert_williams",
+      title: "Audio Engineer",
       titleKey: "audio_engineer",
       image: "/api/placeholder/40/40",
       score: 7894,
@@ -171,7 +189,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 7,
       previousRank: 6,
       userId: "7",
+      name: "Lisa Johnson",
       nameKey: "lisa_johnson",
+      title: "Tour Manager",
       titleKey: "tour_manager",
       image: "/api/placeholder/40/40",
       score: 7654,
@@ -182,7 +202,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 8,
       previousRank: 9,
       userId: "8",
+      name: "Michael Thompson",
       nameKey: "michael_thompson",
+      title: "Lighting Technician",
       titleKey: "lighting_technician",
       image: "/api/placeholder/40/40",
       score: 7432,
@@ -193,7 +215,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 9,
       previousRank: 8,
       userId: "9",
+      name: "Amanda Garcia",
       nameKey: "amanda_garcia",
+      title: "Video Engineer",
       titleKey: "video_engineer",
       image: "/api/placeholder/40/40",
       score: 7123,
@@ -204,7 +228,9 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
       rank: 10,
       previousRank: 11,
       userId: "10",
+      name: "Kevin Lee",
       nameKey: "kevin_lee",
+      title: "Production Coordinator",
       titleKey: "production_coordinator",
       image: "/api/placeholder/40/40",
       score: 6945,
@@ -347,8 +373,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                   </Avatar>
 
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold truncate">{t(entry.nameKey)}</p>
-                    <p className="text-sm text-muted-foreground truncate">{t(entry.titleKey)}</p>
+                    <p className="font-semibold truncate">{entry.nameKey ? (entry.nameKey ? t(entry.nameKey) : entry.name) : entry.name}</p>
+                    <p className="text-sm text-muted-foreground truncate">{entry.titleKey ? (entry.titleKey ? t(entry.titleKey) : entry.title) : entry.title}</p>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {entry.badges.map((badge) => (
                         <Badge key={badge} variant="secondary" className="text-xs">
@@ -451,7 +477,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                         <CategoryIcon className="h-5 w-5 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold text-lg mb-1">{t(competition.titleKey)}</h3>
+                        <h3 className="font-semibold text-lg mb-1">{competition.titleKey ? (competition.titleKey ? t(competition.titleKey) : competition.title) : competition.title}</h3>
                         <Badge variant="outline" className="capitalize text-xs">
                           {competition.category}
                         </Badge>
@@ -460,7 +486,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
 
                     {/* Description */}
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                      {t(competition.descriptionKey)}
+                      {(competition.descriptionKey ? t(competition.descriptionKey) : competition.description)}
                     </p>
 
                     {/* Details */}

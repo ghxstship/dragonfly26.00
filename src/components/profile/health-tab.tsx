@@ -201,7 +201,7 @@ export function HealthTab() {
               </Button>
             </div>
             <div className="flex flex-wrap gap-2 mt-2">
-              {healthData.dietaryRestrictions.map((restriction, index) => (
+              {healthData.dietaryRestrictions.map((restriction: any, index: number) => (
                 <Badge key={index} variant="secondary" className="gap-1">
                   {restriction}
                   <button

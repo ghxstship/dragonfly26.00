@@ -34,8 +34,8 @@ export function AutomationsPageContent() {
 
   const stats = {
     total: automations.length,
-    active: automations.filter((a) => a.is_active).length,
-    executions: automations.reduce((sum, a) => sum + a.execution_count, 0),
+    active: automations.filter((a: any) => a.is_active).length,
+    executions: automations.reduce((sum: number, a) => sum + a.execution_count, 0),
   }
 
   return (

@@ -44,8 +44,8 @@ const mockTokens: APIToken[] = [
 export function APITokensPageContent() {
   const [showCreateDialog, setShowCreateDialog] = useState(false)
 
-  const activeTokens = mockTokens.filter((t) => t.is_active).length
-  const totalRequests = mockTokens.reduce((sum, t) => sum + t.usage_count, 0)
+  const activeTokens = mockTokens.filter((t: any) => t.is_active).length
+  const totalRequests = mockTokens.reduce((sum: number, t) => sum + t.usage_count, 0)
 
   return (
     <div className="flex flex-col h-full">

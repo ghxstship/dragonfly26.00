@@ -4,16 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { 
-  ShoppingCart,
-  Package,
-  Truck,
-  CheckCircle2,
-  Clock,
-  XCircle,
-  Plus,
-  Search
-} from "lucide-react"
+import { ShoppingCart, Package, Truck, CheckCircle2, Clock, XCircle, Plus, Search } from "lucide-react"
 import { useMyOrders } from "@/hooks/use-dashboard-data"
 import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
@@ -225,7 +216,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
 
                       <div className="flex items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(order.status)}>
-                          <StatusIcon className="h-4 w-4" aria-hidden="true" className="mr-1" />
+                          <StatusIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                           {order.status.replace('_', ' ')}
                         </Badge>
                         <Badge variant="outline">

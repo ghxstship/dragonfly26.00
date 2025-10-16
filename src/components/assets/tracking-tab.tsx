@@ -237,7 +237,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
         tabSlug={tabSlug}
         workspaceId={workspaceId}
         onRefresh={() => window.location.reload()}
-        onCreate={() => setCreateDialogOpen(true)}
+        onCreate={async () => { setCreateDialogOpen(true) }}
         onUpdate={async (id: string, updates: any) => {
           // Update logic here
           console.log('Update:', id, updates)

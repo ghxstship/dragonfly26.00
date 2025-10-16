@@ -3,7 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { TrendingUp, TrendingDown, AlertTriangle, CheckCircle2, Info, ChevronRight } from "lucide-react"
+import { TrendingUp, TrendingDown, AlertTriangle, CheckCircle2, Info, ChevronRight, Plus } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
@@ -99,15 +99,15 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
     ...MOCK_VARIANCES
   ]
 
-  const totalBudgeted = variances.reduce((sum, v) => sum + v.budgeted, 0)
-  const totalActual = variances.reduce((sum, v) => sum + v.actual, 0)
+  const totalBudgeted = variances.reduce((sum: number, v) => sum + v.budgeted, 0)
+  const totalActual = variances.reduce((sum: number, v) => sum + v.actual, 0)
   const totalVariance = totalActual - totalBudgeted
   const totalVariancePercent = ((totalVariance / totalBudgeted) * 100).toFixed(1)
 
   const favorableCount = variances.filter(v => v.type === 'favorable').length
   const unfavorableCount = variances.filter(v => v.type === 'unfavorable').length
-  const favorableAmount = variances.filter(v => v.type === 'favorable').reduce((sum, v) => sum + v.variance, 0)
-  const unfavorableAmount = variances.filter(v => v.type === 'unfavorable').reduce((sum, v) => sum + Math.abs(v.variance), 0)
+  const favorableAmount = variances.filter(v => v.type === 'favorable').reduce((sum: number, v) => sum + v.variance, 0)
+  const unfavorableAmount = variances.filter(v => v.type === 'unfavorable').reduce((sum: number, v) => sum + Math.abs(v.variance), 0)
   const actionRequiredCount = variances.filter(v => v.requiresAction && !v.actionTaken).length
 
   const rootCauseCategories = [
@@ -289,7 +289,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {rootCauseCategories.map((cause, index) => (
+              {rootCauseCategories.map((cause: any, index: number) => (
                 <div key={index} className="space-y-2">
                   <div className="flex items-center justify-between">
                     <h4 className="font-medium text-sm">{cause.category}</h4>

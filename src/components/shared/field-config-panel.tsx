@@ -98,15 +98,14 @@ export function FieldConfigPanel() {
     }
   }
 
-  const handleDragEnd = () => {
+  const handleDragEnd = async () => {
     setDraggedItem(null)
   }
 
-  const filteredFields = fields.filter((field) =>
-    field.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredFields = fields.filter((field: any) => field.name.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
-  const visibleCount = fields.filter((f) => f.visible).length
+  const visibleCount = fields.filter((f: any) => f.visible).length
   const totalCount = fields.length
 
   return (

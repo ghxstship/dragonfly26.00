@@ -57,7 +57,7 @@ export function AssigneeSelector({
   }
 
   const removeAssignee = (userId: string) => {
-    onAssigneesChange(assignees.filter((a) => a.user_id !== userId))
+    onAssigneesChange(assignees.filter((a: any) => a.user_id !== userId))
   }
 
   return (

@@ -57,6 +57,17 @@ const nextConfig = {
   
   // Enhanced webpack optimization
   webpack: (config, { isServer, dev }) => {
+    // Suppress Edge Runtime warnings for Supabase Node.js APIs
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+        crypto: false,
+      }
+    }
+    
     if (!isServer && !dev) {
       config.optimization = {
         ...config.optimization,

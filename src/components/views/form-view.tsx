@@ -33,7 +33,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
 
   const embedCode = `<iframe src="https://yoursite.com/forms/form-id" width="100%" height="600" frameborder="0"></iframe>`
 
-  const handleCopyEmbed = () => {
+  const handleCopyEmbed = async () => {
     navigator.clipboard.writeText(embedCode)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)

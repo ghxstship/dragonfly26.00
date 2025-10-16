@@ -269,8 +269,8 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
             <EmptyState
               variant="inline"
               icon={CircleDollarSign}
-              mainMessage={searchQuery ? "No grants found" : {t('nothingToSeeYet')}}
-              description={searchQuery ? {t('tryAdjustingSearch')} : t('addGrants')}
+              mainMessage={searchQuery ? t('searchNoResults') : t('nothingToSeeYet')}
+              description={searchQuery ? t('tryAdjustingSearch') : t('addGrants')}
               actionLabel={!searchQuery ? t('addGrant') : undefined}
               onAction={!searchQuery ? () => {} : undefined}
             />

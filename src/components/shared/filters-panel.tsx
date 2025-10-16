@@ -68,7 +68,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
   }
 
   const removeFilter = (id: string) => {
-    onFiltersChange(filters.filter((filter) => filter.id !== id))
+    onFiltersChange(filters.filter((filter: any) => filter.id !== id))
   }
 
   const clearAllFilters = () => {
@@ -107,7 +107,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
 
         <ScrollArea className="h-[calc(100vh-8rem)] mt-4">
           <div className="space-y-4">
-            {filters.map((filter, index) => {
+            {filters.map((filter: any, index: number) => {
               const field = availableFields.find((f) => f.id === filter.field)
               const operators = getOperatorsForField(filter.field)
 

@@ -22,21 +22,21 @@ import {
 
 // Mock system tags - will be populated from backend later
 const SYSTEM_TAGS = [
-  { id: "1", nameKey: "stage_management", category: "Role", color: "#3b82f6" },
-  { id: "2", nameKey: "lighting_design", category: "Role", color: "#8b5cf6" },
-  { id: "3", nameKey: "audio_engineering", category: "Role", color: "#0891b2" },
-  { id: "4", nameKey: "video_production", category: "Role", color: "#7c3aed" },
-  { id: "5", nameKey: "production_management", category: "Role", color: "#2563eb" },
-  { id: "6", nameKey: "corporate_events", category: "Type", color: "#059669" },
-  { id: "7", nameKey: "music_festivals", category: "Type", color: "#dc2626" },
-  { id: "8", nameKey: "conferences", category: "Type", color: "#ea580c" },
-  { id: "9", nameKey: "theatre", category: "Type", color: "#7c3aed" },
-  { id: "10", nameKey: "trade_shows", category: "Type", color: "#0891b2" },
-  { id: "11", nameKey: "protools_certified", category: "Certification", color: "#16a34a" },
-  { id: "12", nameKey: "etcp_certified", category: "Certification", color: "#10b981" },
-  { id: "13", nameKey: "union_member", category: "Status", color: "#64748b" },
-  { id: "14", nameKey: "travel_available", category: "Availability", color: "#f59e0b" },
-  { id: "15", nameKey: "remote_work", category: "Availability", color: "#8b5cf6" },
+  { id: "1", name: "Stage Management", nameKey: "stage_management", category: "Role", color: "#3b82f6" },
+  { id: "2", name: "Lighting Design", nameKey: "lighting_design", category: "Role", color: "#8b5cf6" },
+  { id: "3", name: "Audio Engineering", nameKey: "audio_engineering", category: "Role", color: "#0891b2" },
+  { id: "4", name: "Video Production", nameKey: "video_production", category: "Role", color: "#7c3aed" },
+  { id: "5", name: "Production Management", nameKey: "production_management", category: "Role", color: "#2563eb" },
+  { id: "6", name: "Corporate Events", nameKey: "corporate_events", category: "Type", color: "#059669" },
+  { id: "7", name: "Music Festivals", nameKey: "music_festivals", category: "Type", color: "#dc2626" },
+  { id: "8", name: "Conferences", nameKey: "conferences", category: "Type", color: "#ea580c" },
+  { id: "9", name: "Theatre", nameKey: "theatre", category: "Type", color: "#7c3aed" },
+  { id: "10", name: "Trade Shows", nameKey: "trade_shows", category: "Type", color: "#0891b2" },
+  { id: "11", name: "ProTools Certified", nameKey: "protools_certified", category: "Certification", color: "#16a34a" },
+  { id: "12", name: "ETCP Certified", nameKey: "etcp_certified", category: "Certification", color: "#10b981" },
+  { id: "13", name: "Union Member", nameKey: "union_member", category: "Status", color: "#64748b" },
+  { id: "14", name: "Travel Available", nameKey: "travel_available", category: "Availability", color: "#f59e0b" },
+  { id: "15", name: "Remote Work", nameKey: "remote_work", category: "Availability", color: "#8b5cf6" },
 ]
 
 export function TagsTab() {
@@ -54,8 +54,7 @@ export function TagsTab() {
     }
   }, [profile])
 
-  const filteredTags = SYSTEM_TAGS.filter((tag) =>
-    tag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  const filteredTags = SYSTEM_TAGS.filter((tag: any) => tag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     tag.category.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
@@ -97,7 +96,7 @@ export function TagsTab() {
     )
   }
 
-  const groupedTags = SYSTEM_TAGS.reduce((acc, tag) => {
+  const groupedTags = SYSTEM_TAGS.reduce((acc: any, tag: any) => {
     if (!acc[tag.category]) {
       acc[tag.category] = []
     }
@@ -201,8 +200,8 @@ export function TagsTab() {
           <ScrollArea className="h-[500px] pr-4">
             <div className="space-y-6">
               {Object.entries(groupedTags).map(([category, tags]) => {
-                const filteredCategoryTags = tags.filter((tag) =>
-                  tag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                const tagArray = tags as any[]
+                const filteredCategoryTags = tagArray.filter((tag: any) => tag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                   tag.category.toLowerCase().includes(searchQuery.toLowerCase())
                 )
 
@@ -275,14 +274,15 @@ export function TagsTab() {
             </TableHeader>
             <TableBody>
               {Object.entries(groupedTags).map(([category, tags]) => {
-                const selectedCount = tags.filter((tag) =>
+                const tagArray = tags as any[]
+                const selectedCount = tagArray.filter((tag: any) =>
                   selectedTags.includes(tag.name)
                 ).length
                 return (
                   <TableRow key={category}>
                     <TableCell className="font-medium">{category}</TableCell>
                     <TableCell className="text-right">{selectedCount}</TableCell>
-                    <TableCell className="text-right">{tags.length}</TableCell>
+                    <TableCell className="text-right">{tagArray.length}</TableCell>
                   </TableRow>
                 )
               })}

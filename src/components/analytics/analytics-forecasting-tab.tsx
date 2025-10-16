@@ -67,7 +67,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
 
 
       <div className="grid gap-6">
-        {forecasts.map((forecast, index) => (
+        {forecasts.map((forecast: any, index: number) => (
           <Card key={index} role="article">
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -88,7 +88,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
               <div className="space-y-4">
                 {/* Forecast Timeline */}
                 <div className="grid grid-cols-4 gap-4">
-                  {forecast.forecast.map((item, idx) => (
+                  {forecast.forecast.map((item: any, idx: number) => (
                     <div key={idx} className="p-4 border rounded-lg hover:bg-accent transition-colors">
                       <p className="text-sm font-medium text-muted-foreground mb-2">{item.period}</p>
                       <p className="text-2xl font-bold mb-2" aria-live="polite">{item.value.toLocaleString()}</p>

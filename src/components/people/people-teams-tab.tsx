@@ -21,9 +21,9 @@ export function TeamsTab({ data, loading }: TeamsTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('people', 'teams', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'people', 'teams')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

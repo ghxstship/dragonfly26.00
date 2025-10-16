@@ -97,7 +97,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
   // Use real stats from Supabase data
   const stats = [
     {
-      label: t('tasksDueToday'),
+      labelKey: 'tasksDueToday',
       value: tasksDueToday.toString(),
       change: "+2",
       trend: "up",
@@ -106,7 +106,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       bgColor: "bg-purple-100 dark:bg-purple-950",
     },
     {
-      label: t('upcomingEvents'),
+      labelKey: 'upcomingEvents',
       value: upcomingEvents.toString(),
       change: "+1",
       trend: "up",
@@ -115,7 +115,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       bgColor: "bg-red-100 dark:bg-red-950",
     },
     {
-      label: t('activeJobs'),
+      labelKey: 'activeJobs',
       value: activeJobs.toString(),
       change: "0",
       trend: "neutral",
@@ -124,7 +124,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       bgColor: "bg-blue-100 dark:bg-blue-950",
     },
     {
-      label: t('pendingExpenses'),
+      labelKey: 'pendingExpenses',
       value: pendingExpenses.toString(),
       change: "-1",
       trend: "down",
@@ -145,10 +145,10 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
   ]
 
   const quickActions = [
-    { label: t('logExpense'), icon: Receipt, color: "text-green-600", action: () => setLogExpenseOpen(true) },
-    { label: t('bookTravel'), icon: Plane, color: "text-blue-600", action: () => setBookTravelOpen(true) },
-    { label: t('createTask'), icon: CheckSquare, color: "text-purple-600", action: () => setCreateTaskOpen(true) },
-    { label: t('uploadFile'), icon: FolderOpen, color: "text-orange-600", action: () => setUploadFileOpen(true) },
+    { labelKey: 'logExpense', icon: Receipt, color: "text-green-600", action: () => setLogExpenseOpen(true) },
+    { labelKey: 'bookTravel', icon: Plane, color: "text-blue-600", action: () => setBookTravelOpen(true) },
+    { labelKey: 'createTask', icon: CheckSquare, color: "text-purple-600", action: () => setCreateTaskOpen(true) },
+    { labelKey: 'uploadFile', icon: FolderOpen, color: "text-orange-600", action: () => setUploadFileOpen(true) },
   ]
 
   return (
@@ -297,7 +297,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                 </div>
               ) : (
                 availableWidgets.slice(0, 3).map((widget) => {
-                  const widgetType = widgetTypes.find(w => w.name === widget.name)
+                  const widgetType = widgetTypes.find(w => w.nameKey === widget.name)
                   if (!widgetType) return null
                   const Icon = widgetType.icon
                   return (
@@ -309,13 +309,13 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                         <div className={`p-2 rounded ${widgetType.color}`}>
                           <Icon className="h-4 w-4 text-white" />
                         </div>
-                        <span className="text-sm font-medium">{t(widget.nameKey)}</span>
+                        <span className="text-sm font-medium">{t(widget.name)}</span>
                       </div>
                       <Button 
                         size="sm" 
                         variant="ghost"
                         onClick={() => toggleWidget(widget.id)}
-                        aria-label={`Add ${t(widget.nameKey)} widget`}
+                        aria-label={`Add ${t(widget.name)} widget`}
                       >
                         <Plus className="h-4 w-4" aria-hidden="true" />
                       </Button>

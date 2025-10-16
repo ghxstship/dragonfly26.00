@@ -23,9 +23,9 @@ export function OverviewTab({ data, loading }: OverviewTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('jobs', 'overview', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'jobs', 'overview')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

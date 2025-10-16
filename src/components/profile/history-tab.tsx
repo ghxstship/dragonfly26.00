@@ -28,6 +28,8 @@ interface ProjectHistory {
   status: "completed" | "ongoing" | "cancelled"
   hoursWorked: number
   rating?: number
+
+  nameKey?: string
 }
 
 export function HistoryTab() {
@@ -58,6 +60,7 @@ export function HistoryTab() {
   const mockHistory: ProjectHistory[] = [
     {
       id: "1",
+      name: "Summer Music Festival 2024",
       nameKey: "summer_music_festival_2024",
       role: "Production Manager",
       projectType: "Event",
@@ -69,6 +72,7 @@ export function HistoryTab() {
     },
     {
       id: "2",
+      name: "Corporate Conference - Tech Summit",
       nameKey: "corporate_conference__tech_summit",
       role: "Audio Engineer",
       projectType: "Conference",
@@ -80,6 +84,7 @@ export function HistoryTab() {
     },
     {
       id: "3",
+      name: "Broadway Production Setup",
       nameKey: "broadway_production_setup",
       role: "Lighting Technician",
       projectType: "Theater",
@@ -91,6 +96,7 @@ export function HistoryTab() {
     },
     {
       id: "4",
+      name: "Holiday Concert Series",
       nameKey: "holiday_concert_series",
       role: "Stage Manager",
       projectType: "Concert",
@@ -132,14 +138,14 @@ export function HistoryTab() {
       project.projectType.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
-  const totalHoursWorked = displayHistory.reduce((sum, p) => sum + p.hoursWorked, 0)
-  const completedProjects = displayHistory.filter((p) => p.status === "completed").length
+  const totalHoursWorked = displayHistory.reduce((sum: number, p) => sum + p.hoursWorked, 0)
+  const completedProjects = displayHistory.filter((p: any) => p.status === "completed").length
   const averageRating =
-    displayHistory.filter((p) => p.rating).length > 0
+    displayHistory.filter((p: any) => p.rating).length > 0
       ? displayHistory
-          .filter((p) => p.rating)
-          .reduce((sum, p) => sum + (p.rating || 0), 0) /
-        displayHistory.filter((p) => p.rating).length
+          .filter((p: any) => p.rating)
+          .reduce((sum: number, p) => sum + (p.rating || 0), 0) /
+        displayHistory.filter((p: any) => p.rating).length
       : 0
 
   return (
@@ -222,7 +228,7 @@ export function HistoryTab() {
               <TableBody>
                 {filteredProjects.map((project) => (
                   <TableRow key={project.id} className="cursor-pointer hover:bg-muted/50">
-                    <TableCell className="font-medium">{t(project.nameKey)}</TableCell>
+                    <TableCell className="font-medium">{(project.nameKey ? t(project.nameKey) : project.name)}</TableCell>
                     <TableCell>{project.role}</TableCell>
                     <TableCell>
                       <Badge variant="outline">{project.projectType}</Badge>
@@ -261,7 +267,7 @@ export function HistoryTab() {
         <CardContent>
           <div className="space-y-4">
             {Array.from(new Set(projectHistory.map((p) => p.role))).map((role) => {
-              const roleProjects = projectHistory.filter((p) => p.role === role)
+              const roleProjects = projectHistory.filter((p: any) => p.role === role)
               const percentage = (roleProjects.length / projectHistory.length) * 100
               return (
                 <div key={role} className="space-y-2">

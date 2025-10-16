@@ -163,7 +163,7 @@ export class BudgetService {
     }
 
     // Calculate daily average
-    const totalSpent = transactions.reduce((sum, t) => sum + t.amount, 0)
+    const totalSpent = transactions.reduce((sum: number, t) => sum + t.amount, 0)
     const dailyAverage = totalSpent / transactions.length
 
     // Project forward

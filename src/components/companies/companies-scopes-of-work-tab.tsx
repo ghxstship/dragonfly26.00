@@ -23,9 +23,9 @@ export function ScopesOfWorkTab({ data, loading }: ScopesOfWorkTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('companies', 'scopes-of-work', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'companies', 'scopes-of-work')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

@@ -23,9 +23,9 @@ export function PaymentsTab({ data, loading }: PaymentsTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('finance', 'payments', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'finance', 'payments')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

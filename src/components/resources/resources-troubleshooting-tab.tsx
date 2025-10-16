@@ -203,7 +203,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
             <EmptyState
               variant="inline"
               icon={HelpCircle}
-              mainMessage={searchQuery ? "No issues found" : {t('nothingToSeeYet')}}
+              mainMessage={searchQuery ? t('searchNoResults') : t('nothingToSeeYet')}
               description={searchQuery ? t('tryAdjustingSearch') : t('addIssues')}
               actionLabel={!searchQuery ? t('addIssue') : undefined}
               onAction={!searchQuery ? () => {} : undefined}

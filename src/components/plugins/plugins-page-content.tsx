@@ -79,8 +79,7 @@ export function PluginsPageContent() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [activeTab, setActiveTab] = useState("marketplace")
 
-  const filteredPlugins = mockPlugins.filter((plugin) =>
-    plugin.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  const filteredPlugins = mockPlugins.filter((plugin: any) => plugin.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     plugin.description?.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
@@ -129,7 +128,7 @@ export function PluginsPageContent() {
                 <div>
                   <p className="text-sm text-muted-foreground">Featured</p>
                   <p className="text-2xl font-bold text-yellow-600">
-                    {mockPlugins.filter((p) => p.is_featured).length}
+                    {mockPlugins.filter((p: any) => p.is_featured).length}
                   </p>
                 </div>
                 <Star className="h-8 w-8 text-yellow-600" />

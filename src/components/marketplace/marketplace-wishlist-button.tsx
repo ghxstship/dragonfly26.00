@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -53,6 +54,7 @@ export function WishlistButton({
   className,
   onWishlistUpdate
 }: WishlistButtonProps) {
+  const t = useTranslations()
   const [isInWishlists, setIsInWishlists] = useState<Set<string>>(
     new Set(productWishlistIds)
   )

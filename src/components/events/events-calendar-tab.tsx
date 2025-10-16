@@ -5,16 +5,7 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { 
-  Calendar as CalendarIcon,
-  ChevronLeft,
-  ChevronRight,
-  Plus,
-  Filter,
-  Clock,
-  MapPin,
-  Users
-} from "lucide-react"
+import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, Plus, Filter, Clock, MapPin, Users } from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
@@ -102,11 +93,11 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
             Filter
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             New Event
           </Button>
         </div>
@@ -117,7 +108,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">This Month</CardTitle>
-            <CalendarIcon className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <CalendarIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{events.length}</div>
@@ -127,7 +118,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Today</CardTitle>
-            <Clock className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -139,7 +130,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Performances</CardTitle>
-            <Users className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -151,7 +142,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Rehearsals</CardTitle>
-            <MapPin className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -269,7 +260,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
                         </span>
                         {event.location && (
                           <>
-                            <MapPin className="h-4 w-4" aria-hidden="true" className="ml-2" />
+                            <MapPin className="h-4 w-4 ml-2" aria-hidden="true" />
                             <span>{event.location}</span>
                           </>
                         )}

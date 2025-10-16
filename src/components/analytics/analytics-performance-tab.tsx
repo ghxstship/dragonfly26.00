@@ -78,7 +78,7 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
 
 
       <div className="grid gap-6">
-        {performanceAreas.map((area, index) => (
+        {performanceAreas.map((area: any, index: number) => (
           <Card key={index} role="region" aria-label={`${t(area.nameKey)} performance`}>
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -113,7 +113,7 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 pt-4 border-t">
-                  {area.metrics.map((metric, idx) => (
+                  {area.metrics.map((metric: any, idx: number) => (
                     <div key={idx} className="space-y-1">
                       <p className="text-xs text-muted-foreground">{t(metric.labelKey)}</p>
                       <p className="text-sm font-bold">{metric.value}</p>

@@ -154,7 +154,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
 
   const totalPolicies = spendingPolicies.length
   const activePolicies = spendingPolicies.filter(p => p.isActive).length
-  const totalViolations = spendingPolicies.reduce((sum, p) => sum + p.violations, 0)
+  const totalViolations = spendingPolicies.reduce((sum: number, p) => sum + p.violations, 0)
   const pendingViolations = recentViolations.filter(v => v.status === 'pending').length
 
   const getCardUtilization = (spent: number, limit: number) => {

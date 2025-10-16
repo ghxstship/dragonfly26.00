@@ -51,7 +51,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
 
   const displayMetrics = data || []
   const totalScore = Math.round(
-    successMetrics.reduce((sum, cat) => sum + cat.overallScore, 0) / successMetrics.length
+    successMetrics.reduce((sum: number, cat) => sum + cat.overallScore, 0) / successMetrics.length
   )
 
   return (
@@ -85,7 +85,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
       </Card>
 
       {/* Category Breakdown */}
-      {successMetrics.map((category, index) => (
+      {successMetrics.map((category: any, index: number) => (
         <Card key={index} role="article">
           <CardHeader>
             <div className="flex items-center justify-between">
@@ -98,7 +98,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {category.metrics.map((metric, idx) => {
+              {category.metrics.map((metric: any, idx: number) => {
                 const progress = metric.unit === "hrs" || metric.unit === "days"
                   ? ((metric.target / metric.current) * 100)
                   : ((metric.current / metric.target) * 100)

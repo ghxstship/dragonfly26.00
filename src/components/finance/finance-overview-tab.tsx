@@ -176,7 +176,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {monthlyData.map((data, index) => (
+              {monthlyData.map((data: any, index: number) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="font-medium">{data.month}</span>
@@ -230,7 +230,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {spendingByCategory.map((category, index) => (
+              {spendingByCategory.map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="font-medium">{category.category}</span>

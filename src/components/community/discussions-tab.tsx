@@ -178,7 +178,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {discussions.reduce((acc, d) => acc + d.comments, 0)}
+              {discussions.reduce((acc: any, d: any) => acc + d.comments, 0)}
             </div>
             <p className="text-xs text-muted-foreground">Total replies</p>
           </CardContent>

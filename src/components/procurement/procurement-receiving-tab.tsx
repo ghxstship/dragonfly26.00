@@ -31,8 +31,8 @@ interface ProcurementReceivingTabProps {
   loading?: boolean
 }
 
-const getInspectionStatusBadge = (status: string) => {
-  const variants: Record<string, { variant: any, icon: any, label: string }> = {
+const getInspectionStatusBadge = (status: string, t: any) => {
+  const variants: Record<string, { variant: any, icon: any, labelKey: string }> = {
     pass: { variant: "default", icon: CheckCircle2, labelKey: "pass" },
     fail: { variant: "destructive", icon: XCircle, labelKey: "fail" },
     pending: { variant: "secondary", icon: Clock, labelKey: "pending" },
@@ -49,8 +49,8 @@ const getInspectionStatusBadge = (status: string) => {
   )
 }
 
-const getStatusBadge = (status: string) => {
-  const variants: Record<string, { variant: any, label: string }> = {
+const getStatusBadge = (status: string, t: any) => {
+  const variants: Record<string, { variant: any, labelKey: string }> = {
     received: { variant: "secondary", labelKey: "received" },
     partially_received: { variant: "secondary", labelKey: "partially_received" },
     inspection: { variant: "secondary", labelKey: "inspection" },
@@ -61,8 +61,8 @@ const getStatusBadge = (status: string) => {
   return <Badge variant={config.variant as any}>{t(config.labelKey)}</Badge>
 }
 
-const getPriorityBadge = (priority: string) => {
-  const variants: Record<string, { variant: any, label: string }> = {
+const getPriorityBadge = (priority: string, t: any) => {
+  const variants: Record<string, { variant: any, labelKey: string }> = {
     urgent: { variant: "destructive", labelKey: "urgent" },
     high: { variant: "default", labelKey: "high" },
     normal: { variant: "secondary", labelKey: "normal" },
@@ -289,9 +289,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
                         )}
                       </div>
                     </TableCell>
-                    <TableCell>{getInspectionStatusBadge(item.inspection_status)}</TableCell>
-                    <TableCell>{getStatusBadge(item.status)}</TableCell>
-                    <TableCell>{getPriorityBadge(item.priority)}</TableCell>
+                    <TableCell>{getInspectionStatusBadge(item.inspection_status, t)}</TableCell>
+                    <TableCell>{getStatusBadge(item.status, t)}</TableCell>
+                    <TableCell>{getPriorityBadge(item.priority, t)}</TableCell>
                     <TableCell className="text-sm text-muted-foreground">{item.assignee_name}</TableCell>
                     <TableCell>
                       {item.attachments_count > 0 ? (

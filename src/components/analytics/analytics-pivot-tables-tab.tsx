@@ -78,7 +78,7 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
                 </tr>
               </thead>
               <tbody>
-                {pivotData.map((row, index) => (
+                {pivotData.map((row: any, index: number) => (
                   <tr key={index} className="hover:bg-accent/50 transition-colors">
                     <td className="border p-3 font-medium">{t(row.regionKey)}</td>
                     <td className="border p-3">{row.product}</td>

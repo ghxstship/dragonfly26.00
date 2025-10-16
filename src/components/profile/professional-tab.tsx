@@ -77,7 +77,7 @@ export function ProfessionalTab() {
   }
 
   const removeExperience = (id: string) => {
-    setExperiences(experiences.filter((e) => e.id !== id))
+    setExperiences(experiences.filter((e: any) => e.id !== id))
   }
 
   const updateExperience = (id: string, field: keyof Experience, value: string | boolean) => {
@@ -98,7 +98,7 @@ export function ProfessionalTab() {
   }
 
   const removeEducation = (id: string) => {
-    setEducation(education.filter((e) => e.id !== id))
+    setEducation(education.filter((e: any) => e.id !== id))
   }
 
   const updateEducation = (id: string, field: keyof Education, value: string) => {

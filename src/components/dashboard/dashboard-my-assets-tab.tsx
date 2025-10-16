@@ -218,7 +218,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
                   <div className="flex-1 space-y-2">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h3 className="font-semibold">{t(asset.nameKey)}</h3>
+                        <h3 className="font-semibold">{asset.name}</h3>
                         <p className="text-sm text-muted-foreground mt-1">
                           Qty: {asset.quantity} • {asset.location}
                         </p>

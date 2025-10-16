@@ -92,7 +92,7 @@ export function ErrorDisplay({
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-3 justify-center pt-4"
             >
-              {actions.map((action, index) => (
+              {actions.map((action: any, index: number) => (
                 <Button
                   key={index}
                   onClick={action.onClick}

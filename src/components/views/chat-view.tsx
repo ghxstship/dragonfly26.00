@@ -61,10 +61,10 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
   // Build thread structure
   const threaded = messages.filter((m) => !m.parentId)
   threaded.forEach((thread) => {
-    thread.replies = messages.filter((m) => m.parentId === thread.id)
+    thread.replies = messages.filter((m: any) => m.parentId === thread.id)
   })
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!message.trim()) return
     console.log("Sending message:", message)
     setMessage("")

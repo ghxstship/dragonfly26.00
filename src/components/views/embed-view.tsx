@@ -56,7 +56,7 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
 
   const activeEmbedData = embeds.find((e) => e.id === activeEmbed)
 
-  const handleAddEmbed = () => {
+  const handleAddEmbed = async () => {
     if (!newEmbedUrl || !newEmbedTitle) return
 
     const newEmbed: EmbedItem = {
@@ -74,7 +74,7 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
   }
 
   const handleRemoveEmbed = (id: string) => {
-    setEmbeds((prev) => prev.filter((e) => e.id !== id))
+    setEmbeds((prev) => prev.filter((e: any) => e.id !== id))
     if (activeEmbed === id) {
       setActiveEmbed(embeds[0]?.id || null)
     }

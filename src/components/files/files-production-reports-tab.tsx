@@ -14,17 +14,16 @@ interface ProductionReportsTabProps {
   loading?: boolean
 }
 
-export function ProductionReportsTab({
-  const t = useTranslations('production.files.production_reports')
+export function ProductionReportsTab({ data, loading }: ProductionReportsTabProps) {
+  const t = useTranslations('common')
   const tCommon = useTranslations('common')
- data, loading }: ProductionReportsTabProps) {
   const params = useParams()
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('files', 'production-reports', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'files', 'production-reports')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading
@@ -42,9 +41,8 @@ export function ProductionReportsTab({
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-        </div>
-         )
-}
+    )
+  }
 
   return (
     <main role="main" aria-label={t('title')}>
@@ -115,7 +113,7 @@ export function ProductionReportsTab({
                 <p className="text-lg font-semibold mb-2">No production reports found</p>
                 <p className="text-sm mb-4">{t('emptyStateMessage')}</p>
                 <Button>
-                  <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
                   Create Production Reports
                 </Button>
               </div>

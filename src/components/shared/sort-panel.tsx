@@ -50,7 +50,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
   }
 
   const removeSort = (id: string) => {
-    const updatedSorts = sorts.filter((s) => s.id !== id)
+    const updatedSorts = sorts.filter((s: any) => s.id !== id)
     setSorts(updatedSorts)
     if (onSortChange) {
       onSortChange(updatedSorts)
@@ -98,7 +98,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
     }
   }
 
-  const handleDragEnd = () => {
+  const handleDragEnd = async () => {
     setDraggedItem(null)
     if (onSortChange) {
       onSortChange(sorts)
@@ -161,7 +161,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
           </Button>
         </div>
       ) : (
-        sorts.map((sort, index) => (
+        sorts.map((sort: any, index: number) => (
           <div
             key={sort.id}
             draggable

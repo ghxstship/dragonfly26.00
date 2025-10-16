@@ -78,7 +78,7 @@ export function DependenciesManager({
   }
 
   const removeDependency = (depId: string) => {
-    onDependenciesChange(dependencies.filter((d) => d.id !== depId))
+    onDependenciesChange(dependencies.filter((d: any) => d.id !== depId))
   }
 
   const getItemName = (depItemId: string) => {
@@ -190,7 +190,7 @@ export function DependenciesManager({
                 </SelectTrigger>
                 <SelectContent>
                   {availableItems
-                    .filter((item) => item.id !== itemId)
+                    .filter((item: any) => item.id !== itemId)
                     .map((item) => (
                       <SelectItem key={item.id} value={item.id}>
                         {item.name || item.title || "Untitled"}

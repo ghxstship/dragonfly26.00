@@ -35,7 +35,7 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
   const groupingField = getGroupingField(schema)
 
   // Group data by the schema-defined grouping field
-  const groupedData = data.reduce((acc, item) => {
+  const groupedData = data.reduce((acc: any, item: any) => {
     const groupValue = item[groupingField] || "ungrouped"
     if (!acc[groupValue]) acc[groupValue] = []
     acc[groupValue].push(item)
@@ -94,9 +94,9 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
             <div className="flex items-center gap-2 p-3 bg-muted/50 border-b hover:bg-muted/70 transition-colors">
               <Button
                 variant="ghost"
-                size="icon"
-                className="h-6 w-6"
+                size="sm"
                 onClick={() => toggleGroup(group)}
+                className="h-6 w-6 p-0"
               >
                 {isExpanded ? (
                   <ChevronDown className="h-4 w-4" />
@@ -105,13 +105,13 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
                 )}
               </Button>
               <span className="font-semibold capitalize">{group}</span>
-              <span className="text-sm text-muted-foreground">({items.length})</span>
+              <span className="text-sm text-muted-foreground">({(items as any[]).length})</span>
             </div>
 
             {/* Group Items */}
             {isExpanded && (
               <div className="divide-y">
-                {items.map((item) => (
+                {(items as any[]).map((item: any) => (
                   <div
                     key={item.id}
                     className={cn(

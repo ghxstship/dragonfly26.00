@@ -57,9 +57,9 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
       if (aggregateFunc === "count") {
         value = filteredData.length
       } else if (aggregateFunc === "sum") {
-        value = filteredData.reduce((sum, item) => sum + (Number(item[valueField]) || 0), 0)
+        value = filteredData.reduce((sum: number, item) => sum + (Number(item[valueField]) || 0), 0)
       } else if (aggregateFunc === "avg") {
-        const sum = filteredData.reduce((sum, item) => sum + (Number(item[valueField]) || 0), 0)
+        const sum = filteredData.reduce((sum: number, item) => sum + (Number(item[valueField]) || 0), 0)
         value = filteredData.length > 0 ? sum / filteredData.length : 0
       } else if (aggregateFunc === "min") {
         const values = filteredData.map((item) => Number(item[valueField]) || 0)
@@ -79,12 +79,12 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
   let grandTotal = 0
 
   rowValues.forEach((row) => {
-    rowTotals[row] = Object.values(pivotData[row]).reduce((sum, val) => sum + val, 0)
+    rowTotals[row] = Object.values(pivotData[row]).reduce((sum: number, val) => sum + val, 0)
     grandTotal += rowTotals[row]
   })
 
   columnValues.forEach((col) => {
-    columnTotals[col] = rowValues.reduce((sum, row) => sum + pivotData[row][col], 0)
+    columnTotals[col] = rowValues.reduce((sum: number, row) => sum + pivotData[row][col], 0)
   })
 
   const formatValue = (value: number) => {

@@ -25,13 +25,13 @@ export function SharePanel({ onShare }: SharePanelProps) {
 
   const shareUrl = "https://app.dragonfly.com/share/abc123xyz"
 
-  const handleCopyLink = () => {
+  const handleCopyLink = async () => {
     navigator.clipboard.writeText(shareUrl)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
 
-  const handleSendEmail = () => {
+  const handleSendEmail = async () => {
     setSent(true)
     if (onShare) {
       onShare("email", { email, message, permission })

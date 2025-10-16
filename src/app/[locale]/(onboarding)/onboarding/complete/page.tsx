@@ -49,7 +49,7 @@ export default function CompletePage() {
     }
   }
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     // Redirect to dashboard
     // If workspaceId is available, use it; otherwise use 'personal' to load user's default workspace
     const targetPath = workspaceId 

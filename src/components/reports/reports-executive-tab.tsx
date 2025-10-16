@@ -83,7 +83,7 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 gap-6">
-            {kpiSummary.map((kpi, index) => (
+            {kpiSummary.map((kpi: any, index: number) => (
               <div key={index} className="space-y-2" role="article" aria-label={`KPI: ${t(kpi.nameKey)}`}>
                 <div className="flex items-center justify-between">
                   <p className="font-medium" id={`kpi-${index}`}>{t(kpi.nameKey)}</p>

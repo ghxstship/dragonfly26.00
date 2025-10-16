@@ -4,21 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { 
-  FolderOpen,
-  File,
-  FileText,
-  FileImage,
-  FileVideo,
-  FileArchive,
-  Star,
-  Download,
-  Upload,
-  Eye,
-  Plus,
-  Search,
-  Clock
-} from "lucide-react"
+import { FolderOpen, File, FileText, FileImage, FileVideo, FileArchive, Star, Download, Upload, Eye, Plus, Search, Clock } from "lucide-react"
 import { useMyFiles } from "@/hooks/use-dashboard-data"
 import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
@@ -119,7 +105,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           View and manage your files and documents
         </p>
         <Button size="sm">
-          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           Upload File
         </Button>
       </div>
@@ -224,7 +210,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
-                            <h3 className="font-semibold text-sm">{t(file.nameKey)}</h3>
+                            <h3 className="font-semibold text-sm">{file.name}</h3>
                             {file.isFavorite && (
                               <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                             )}

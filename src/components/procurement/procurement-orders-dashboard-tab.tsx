@@ -52,10 +52,6 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
     )
   }
 
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(amount)
-  }
-
   const getStatusColor = (status: string) => {
     const colors: Record<string, string> = {
       'pending': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-950 dark:text-yellow-400',
@@ -245,7 +241,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
 
               return (
                 <div className="space-y-3">
-                  {topVendors.map((vendor, index) => (
+                  {topVendors.map((vendor: any, index: number) => (
                     <div key={index} className="space-y-1">
                       <div className="flex justify-between text-sm">
                         <span className="font-medium">{vendor.vendor}</span>

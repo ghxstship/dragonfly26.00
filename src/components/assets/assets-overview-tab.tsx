@@ -5,8 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { 
-  Package,
+import { Package,
   TrendingUp,
   TrendingDown,
   AlertCircle,
@@ -15,17 +14,15 @@ import {
   CheckCircle2,
   Clock,
   Plus,
-  Download
-} from "lucide-react"
+  Download } from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { useState } from "react"
 import type { TabComponentProps } from "@/types"
 
-export function AssetsOverviewTab({
+export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.assets.overview')
   const tCommon = useTranslations('common')
- workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const { data: assets, loading } = useModuleData(workspaceId, 'assets', 'overview')
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
 
@@ -42,9 +39,8 @@ export function AssetsOverviewTab({
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-        </div>
-         )
-}
+    )
+  }
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(amount)
@@ -94,11 +90,11 @@ export function AssetsOverviewTab({
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
             Export
           </Button>
           <Button size="sm" onClick={() => setCreateDialogOpen(true)}>
-            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             New Asset
           </Button>
         </div>
@@ -109,7 +105,7 @@ export function AssetsOverviewTab({
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('totalAssets')}</CardTitle>
-            <Package className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{overview.totalAssets}</div>
@@ -122,7 +118,7 @@ export function AssetsOverviewTab({
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('totalValue')}</CardTitle>
-            <DollarSign className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{formatCurrency(overview.totalValue)}</div>
@@ -135,12 +131,12 @@ export function AssetsOverviewTab({
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('utilizationRate')}</CardTitle>
-            <TrendingUp className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">{overview.utilizationRate}%</div>
             <div className="flex items-center text-xs text-green-600">
-              <TrendingUp className="h-4 w-4" aria-hidden="true" className="mr-1" />
+              <TrendingUp className="h-4 w-4 mr-1" aria-hidden="true" />
               +5% vs last month
             </div>
           </CardContent>
@@ -149,7 +145,7 @@ export function AssetsOverviewTab({
         <Card className={overview.maintenanceAssets > 50 ? "border-yellow-200 dark:border-yellow-900" : ""}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('inMaintenance')}</CardTitle>
-            <Wrench className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Wrench className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${overview.maintenanceAssets > 50 ? 'text-yellow-600' : ''}`}>
@@ -199,7 +195,7 @@ export function AssetsOverviewTab({
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {assetsByCategory.map((category, index) => (
+              {assetsByCategory.map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="font-medium">{category.category}</span>
@@ -222,7 +218,7 @@ export function AssetsOverviewTab({
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {recentActivity.map((activity, index) => (
+              {recentActivity.map((activity: any, index: number) => (
                 <div key={index} className="flex items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
                   <div className={`h-2 w-2 rounded-full mt-2 ${
                     activity.action === 'Checked Out' ? "bg-blue-500" :

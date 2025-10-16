@@ -23,6 +23,7 @@ export function ChecklistTemplatesTab() {
     {
       id: "1",
       organization_id: "org-1",
+      name: "New Project Checklist",
       nameKey: "new_project_checklist",
       description: t('templates.standardChecklist'),
       items: [
@@ -43,15 +44,15 @@ export function ChecklistTemplatesTab() {
     items: [""],
   })
 
-  const handleCreateTemplate = () => {
+  const handleCreateTemplate = async () => {
     const template: ChecklistTemplate = {
       id: `template-${Date.now()}`,
       organization_id: "org-1",
       name: newTemplate.name,
       description: newTemplate.description,
       items: newTemplate.items
-        .filter((item) => item.trim())
-        .map((item, index) => ({
+        .filter((item: any) => item.trim())
+        .map((item: any, index: number) => ({
           content: item,
           completed: false,
           order: index,
@@ -67,7 +68,7 @@ export function ChecklistTemplatesTab() {
   }
 
   const deleteTemplate = (id: string) => {
-    setTemplates(templates.filter((t) => t.id !== id))
+    setTemplates(templates.filter((t: any) => t.id !== id))
   }
 
   return (
@@ -95,7 +96,7 @@ export function ChecklistTemplatesTab() {
                     <Label>Template Name</Label>
                     <Input
                       placeholder={t('admin.templates.namePlaceholder')}
-                      value={t(newTemplate.nameKey)}
+                      value={newTemplate.name}
                       onChange={(e) =>
                         setNewTemplate({ ...newTemplate, name: e.target.value })
                       }
@@ -106,7 +107,7 @@ export function ChecklistTemplatesTab() {
                     <Label>Description</Label>
                     <Textarea
                       placeholder={t('templates.describeUsage')}
-                      value={t(newTemplate.descriptionKey)}
+                      value={newTemplate.description}
                       onChange={(e) =>
                         setNewTemplate({ ...newTemplate, description: e.target.value })
                       }
@@ -116,7 +117,7 @@ export function ChecklistTemplatesTab() {
 
                   <div className="space-y-2">
                     <Label>Checklist Items</Label>
-                    {newTemplate.items.map((item, index) => (
+                    {newTemplate.items.map((item: any, index: number) => (
                       <div key={index} className="flex gap-2">
                         <Input
                           placeholder={t('templates.addChecklistItem')}
@@ -173,10 +174,10 @@ export function ChecklistTemplatesTab() {
                   <div className="flex gap-3 flex-1">
                     <ListChecks className="h-5 w-5 text-muted-foreground mt-0.5" aria-hidden="true" />
                     <div className="flex-1">
-                      <div className="font-medium">{t(template.nameKey)}</div>
+                      <div className="font-medium">{template.nameKey ? t(template.nameKey) : template.name}</div>
                       {template.description && (
                         <div className="text-sm text-muted-foreground mt-1">
-                          {t(template.descriptionKey)}
+                          {template.descriptionKey ? t(template.descriptionKey) : template.description}
                         </div>
                       )}
                       <div className="text-xs text-muted-foreground mt-2">

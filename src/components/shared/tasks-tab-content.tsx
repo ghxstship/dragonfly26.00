@@ -90,7 +90,7 @@ export function TasksTabContent() {
               prev.map((t) => (t.id === payload.new.id ? payload.new as Task : t))
             )
           } else if (payload.eventType === 'DELETE') {
-            setTasks((prev) => prev.filter((t) => t.id !== payload.old.id))
+            setTasks((prev) => prev.filter((t: any) => t.id !== payload.old.id))
           }
         }
       )

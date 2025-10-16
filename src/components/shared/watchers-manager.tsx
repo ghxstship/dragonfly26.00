@@ -36,7 +36,7 @@ export function WatchersManager({
   const toggleWatcher = (user: User) => {
     if (watcherUserIds.has(user.id)) {
       // Remove watcher
-      onWatchersChange(watchers.filter((w) => w.user_id !== user.id))
+      onWatchersChange(watchers.filter((w: any) => w.user_id !== user.id))
     } else {
       // Add watcher
       const newWatcher: ItemWatcher = {

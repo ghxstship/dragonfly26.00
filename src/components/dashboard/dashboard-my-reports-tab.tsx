@@ -4,18 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { 
-  FileBarChart,
-  Star,
-  Calendar,
-  Download,
-  Eye,
-  Plus,
-  Clock,
-  TrendingUp,
-  BarChart3,
-  PieChart
-} from "lucide-react"
+import { FileBarChart, Star, Calendar, Download, Eye, Plus, Clock, TrendingUp, BarChart3, PieChart } from "lucide-react"
 import { useMyReports } from "@/hooks/use-dashboard-data"
 import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
@@ -112,7 +101,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
           Access your reports and analytics
         </p>
         <Button size="sm" onClick={() => router.push(`/workspace/${workspaceId}/reports/custom-builder`)}>
-          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           New Report
         </Button>
       </div>
@@ -202,17 +191,17 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-2">
                           <div className="p-2 bg-primary/10 rounded">
-                            <Icon className="h-4 w-4" aria-hidden="true" className="text-primary" />
+                            <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
                           </div>
                           <div>
                             <div className="flex items-center gap-2">
-                              <h3 className="font-semibold">{t(report.nameKey)}</h3>
+                              <h3 className="font-semibold">{report.name}</h3>
                               {report.isFavorite && (
                                 <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                               )}
                             </div>
                             <p className="text-sm text-muted-foreground mt-1">
-                              {t(report.descriptionKey)}
+                              {report.description}
                             </p>
                           </div>
                         </div>
@@ -230,7 +219,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                         </Badge>
                         {report.isRecurring && (
                           <Badge variant="outline" className="text-blue-600">
-                            <Clock className="h-4 w-4" aria-hidden="true" className="mr-1" />
+                            <Clock className="h-4 w-4 mr-1" aria-hidden="true" />
                             {report.frequency}
                           </Badge>
                         )}
@@ -280,19 +269,19 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
-              <TrendingUp className="h-4 w-4" aria-hidden="true" className="text-purple-600" />
+              <TrendingUp className="h-4 w-4 text-purple-600" aria-hidden="true" />
               <span className="text-sm">{t('performanceReport')}</span>
             </Button>
             <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
-              <PieChart className="h-4 w-4" aria-hidden="true" className="text-green-600" />
+              <PieChart className="h-4 w-4 text-green-600" aria-hidden="true" />
               <span className="text-sm">{t('financialReport')}</span>
             </Button>
             <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
-              <BarChart3 className="h-4 w-4" aria-hidden="true" className="text-blue-600" />
+              <BarChart3 className="h-4 w-4 text-blue-600" aria-hidden="true" />
               <span className="text-sm">{t('assetsReport')}</span>
             </Button>
             <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
-              <Calendar className="h-4 w-4" aria-hidden="true" className="text-cyan-600" />
+              <Calendar className="h-4 w-4 text-cyan-600" aria-hidden="true" />
               <span className="text-sm">{t('timeReport')}</span>
             </Button>
           </div>

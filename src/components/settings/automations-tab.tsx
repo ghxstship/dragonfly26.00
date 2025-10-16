@@ -108,7 +108,7 @@ export function AutomationsTab() {
     })
   }
 
-  const handleCreateNew = () => {
+  const handleCreateNew = async () => {
     setSelectedAutomation(null)
     setDialogOpen(true)
   }
@@ -145,7 +145,7 @@ export function AutomationsTab() {
           <CardHeader className="pb-3">
             <CardDescription>{t('settings.automationsTab.totalRuns')}</CardDescription>
             <CardTitle className="text-3xl">
-              {automations.reduce((sum, a) => sum + a.runsCount, 0)}
+              {automations.reduce((sum: number, a) => sum + a.runsCount, 0)}
             </CardTitle>
           </CardHeader>
         </Card>

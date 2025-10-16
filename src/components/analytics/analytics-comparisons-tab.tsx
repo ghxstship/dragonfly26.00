@@ -80,8 +80,8 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
         </TabsList>
 
         <TabsContent value="quarterly" className="space-y-6 mt-6">
-          {comparisonData.map((data, index) => {
-            const maxValue = Math.max(...data.periods.map(p => p.value))
+          {comparisonData.map((data: any, index: number) => {
+            const maxValue = Math.max(...data.periods.map((p: any) => p.value))
             const isPositive = data.change.startsWith("+")
             
             return (
@@ -101,7 +101,7 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
                 <CardContent>
                   <div className="space-y-4">
                     <div className="grid grid-cols-4 gap-4">
-                      {data.periods.map((period, idx) => {
+                      {data.periods.map((period: any, idx: number) => {
                         const heightPercent = (period.value / maxValue) * 100
                         
                         return (
@@ -131,7 +131,7 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {regionComparison.map((region, index) => (
+                {regionComparison.map((region: any, index: number) => (
                   <div key={index} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className={`font-semibold text-lg ${region.color}`}>{t(region.regionKey)}</h3>

@@ -42,6 +42,8 @@ interface NewsArticle {
   comments: number
   trending?: boolean
   tags: string[]
+
+  titleKey?: string
 }
 
 export function NewsTab({ data = [], loading = false }: NewsTabProps) {
@@ -85,9 +87,9 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
 
   const getCategoryBadge = (category: NewsArticle["category"]) => {
     const variants: Record<NewsArticle["category"], { label: string, variant: "default" | "secondary" | "outline" }> = {
-      industry: { labelKey: "industry_news", variant: "default" },
+      industry: { label: "All", variant: "default" as const },
       sponsored: { label: t('sponsored'), variant: "secondary" },
-      curated: { labelKey: "curated", variant: "outline" }
+      curated: { label: "Industry", variant: "outline" as const }
     }
     return variants[category]
   }
@@ -220,7 +222,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
                       </Badge>
                     </div>
 
-                    <h3 className="text-xl font-semibold mb-2">{t(article.titleKey)}</h3>
+                    <h3 className="text-xl font-semibold mb-2">{article.titleKey ? (article.titleKey ? t(article.titleKey) : article.title) : article.title}</h3>
                     <p className="text-muted-foreground mb-4">We&apos;re excited to announce {article.summary}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">

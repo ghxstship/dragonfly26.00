@@ -4,18 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { 
-  Plane,
-  Hotel,
-  Car,
-  MapPin,
-  Calendar,
-  Clock,
-  DollarSign,
-  Plus,
-  CheckCircle2,
-  AlertCircle
-} from "lucide-react"
+import { Plane, Hotel, Car, MapPin, Calendar, Clock, DollarSign, Plus, CheckCircle2, AlertCircle } from "lucide-react"
 import { useMyTravel } from "@/hooks/use-dashboard-data"
 import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
@@ -175,9 +164,9 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                       <p className="font-semibold text-lg">{travel.totalCost}</p>
                       <Badge variant="secondary" className={getStatusColor(travel.status)}>
                         {travel.status === "confirmed" ? (
-                          <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="mr-1" />
+                          <CheckCircle2 className="h-4 w-4 mr-1" aria-hidden="true" />
                         ) : (
-                          <AlertCircle className="h-4 w-4" aria-hidden="true" className="mr-1" />
+                          <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />
                         )}
                         {travel.status}
                       </Badge>

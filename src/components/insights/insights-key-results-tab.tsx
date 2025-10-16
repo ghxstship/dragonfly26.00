@@ -137,7 +137,7 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('avgProgress')}</p>
             <p className="text-2xl font-bold mt-1" aria-live="polite">
-              {Math.round(keyResults.reduce((sum, kr) => sum + kr.progress, 0) / keyResults.length)}%
+              {Math.round(keyResults.reduce((sum: number, kr) => sum + kr.progress, 0) / keyResults.length)}%
             </p>
           </CardContent>
         </Card>

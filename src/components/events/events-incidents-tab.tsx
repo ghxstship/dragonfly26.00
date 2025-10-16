@@ -14,17 +14,16 @@ interface IncidentsTabProps {
   loading?: boolean
 }
 
-export function IncidentsTab({
+export function IncidentsTab({ data, loading }: IncidentsTabProps) {
   const t = useTranslations('production.events.incidents')
   const tCommon = useTranslations('common')
- data, loading }: IncidentsTabProps) {
   const params = useParams()
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('events', 'incidents', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'events', 'incidents')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading
@@ -42,9 +41,8 @@ export function IncidentsTab({
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-        </div>
-         )
-}
+    )
+  }
 
   return (
     <main role="main" aria-label={t('title')}>
@@ -115,7 +113,7 @@ export function IncidentsTab({
                 <p className="text-lg font-semibold mb-2">No incidents found</p>
                 <p className="text-sm mb-4">{t('emptyStateMessage')}</p>
                 <Button>
-                  <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
                   Create Incidents
                 </Button>
               </div>

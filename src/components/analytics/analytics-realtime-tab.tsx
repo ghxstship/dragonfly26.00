@@ -50,7 +50,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
 
       {/* Real-time Metrics */}
       <div className="grid grid-cols-4 gap-4">
-        {realtimeMetrics.map((metric, index) => (
+        {realtimeMetrics.map((metric: any, index: number) => (
           <Card key={index} className="border-2">
             <CardContent className="p-6">
               <div className="flex items-start justify-between mb-2">

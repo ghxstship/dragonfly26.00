@@ -100,7 +100,7 @@ export function convertFormConfigToSchema(moduleId: string, tabId: string): Modu
   if (!formConfig) return null
   
   // Convert form fields to FieldSchema, adding order based on array position
-  const fields: FieldSchema[] = formConfig.fields.map((field, index) => ({
+  const fields: FieldSchema[] = formConfig.fields.map((field: any, index: number) => ({
     ...convertFormFieldToFieldSchema(field),
     order: index + 1
   }))

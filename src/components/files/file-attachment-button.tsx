@@ -68,7 +68,7 @@ export function FileAttachmentButton({
 
       {selectedFiles.length > 0 && (
         <div className="space-y-1">
-          {selectedFiles.map((file, index) => (
+          {selectedFiles.map((file: any, index: number) => (
             <div
               key={index}
               className="flex items-center justify-between p-2 rounded-lg border bg-muted/50"

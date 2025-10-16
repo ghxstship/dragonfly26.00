@@ -51,6 +51,8 @@ interface TeamMember {
   role: "owner" | "admin" | "member" | "guest"
   status: "active" | "pending" | "suspended"
   joinedAt: string
+
+  nameKey?: string
 }
 
 export function TeamTab() {
@@ -63,6 +65,7 @@ export function TeamTab() {
   const [members, setMembers] = useState<TeamMember[]>([
     {
       id: "1",
+      name: "John Doe",
       nameKey: "john_doe",
       email: "john.doe@example.com",
       avatar: "https://github.com/shadcn.png",
@@ -72,6 +75,7 @@ export function TeamTab() {
     },
     {
       id: "2",
+      name: "Jane Smith",
       nameKey: "jane_smith",
       email: "jane.smith@example.com",
       role: "admin",
@@ -80,6 +84,7 @@ export function TeamTab() {
     },
     {
       id: "3",
+      name: "Bob Wilson",
       nameKey: "bob_wilson",
       email: "bob.wilson@example.com",
       role: "member",
@@ -88,6 +93,7 @@ export function TeamTab() {
     },
     {
       id: "4",
+      name: "Alice Johnson",
       nameKey: "alice_johnson",
       email: "alice.johnson@example.com",
       role: "member",
@@ -96,7 +102,7 @@ export function TeamTab() {
     },
   ])
 
-  const handleInvite = () => {
+  const handleInvite = async () => {
     toast({
       title: t('settings.toast.invitationSent'),
       description: `An invitation has been sent to ${inviteEmail}`,
@@ -220,7 +226,7 @@ export function TeamTab() {
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <p className="font-medium truncate">{t(member.nameKey)}</p>
+                      <p className="font-medium truncate">{(member.nameKey ? t(member.nameKey) : member.name)}</p>
                       {member.role === "owner" && (
                         <Crown className="h-4 w-4 text-yellow-500" />
                       )}

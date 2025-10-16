@@ -56,6 +56,7 @@ import type { DataItem } from "@/types"
 interface Member {
   id: string
   name: string
+  nameKey?: string
   email: string
   avatar?: string
   role: "legend" | "phantom" | "aviator" | "gladiator" | "navigator" | "deviator" | "raider" | "merchant" | "visitor" | "passenger" | "ambassador"
@@ -124,6 +125,7 @@ export function MembersManagementTab() {
     },
     {
       id: "5",
+      name: "Mike Chen",
       nameKey: "mike_chen",
       email: "mike.chen@example.com",
       role: "passenger",
@@ -134,7 +136,7 @@ export function MembersManagementTab() {
     },
   ])
 
-  const handleInvite = () => {
+  const handleInvite = async () => {
     toast({
       title: t('admin.toast.invitationSent'),
       description: `An invitation has been sent to ${inviteEmail}`,
@@ -191,7 +193,7 @@ export function MembersManagementTab() {
   }
 
   // Selection handlers
-  const handleSelectAll = () => {
+  const handleSelectAll = async () => {
     if (selectedIds.length === filteredMembers.length) {
       setSelectedIds([])
     } else {
@@ -365,7 +367,7 @@ export function MembersManagementTab() {
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <p className="font-medium truncate">{t(member.nameKey)}</p>
+                      <p className="font-medium truncate">{member.nameKey ? t(member.nameKey) : member.name}</p>
                       {(member.role === "legend" || member.role === "phantom") && (
                         <Crown className="h-4 w-4 text-yellow-500" aria-hidden="true" />
                       )}
@@ -509,8 +511,8 @@ export function MembersManagementTab() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <TabsTrigger value="invite">{t('members.invite')}</TabsTrigger>
-                  <TabsTrigger value="create">{t('members.create')}</TabsTrigger>
+                  <SelectItem value="admin">Admin</SelectItem>
+                  <SelectItem value="member">Member</SelectItem>
                   <SelectItem value="viewer">Viewer</SelectItem>
                 </SelectContent>
               </Select>

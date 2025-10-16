@@ -83,7 +83,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
 
 
       <div className="grid gap-6">
-        {benchmarks.map((benchmark, index) => {
+        {benchmarks.map((benchmark: any, index: number) => {
           const isAboveAvg = benchmark.yourScore > benchmark.industryAvg
           const gapToTop = benchmark.topPerformer - benchmark.yourScore
           
@@ -146,7 +146,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                   <div className="pt-4 border-t">
                     <p className="text-sm font-medium mb-3">{t('detailedBreakdown')}</p>
                     <div className="grid grid-cols-3 gap-4">
-                      {benchmark.metrics.map((metric, idx) => (
+                      {benchmark.metrics.map((metric: any, idx: number) => (
                         <div key={idx} className="space-y-1">
                           <p className="text-xs text-muted-foreground">{t(metric.nameKey)}</p>
                           <p className="text-sm font-bold">{metric.yours}</p>

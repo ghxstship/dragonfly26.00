@@ -53,6 +53,19 @@ const MOCK_APPROVALS = [
   },
 ]
 
+const getUrgencyColor = (urgency: string): "default" | "destructive" | "outline" | "secondary" => {
+  switch (urgency) {
+    case 'high':
+      return 'destructive'
+    case 'medium':
+      return 'secondary'
+    case 'low':
+      return 'outline'
+    default:
+      return 'default'
+  }
+}
+
 export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps) {
   const t = useTranslations('business.finance.approvals')
   const tCommon = useTranslations('business.common')
@@ -367,7 +380,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {recentActivity.map((activity, index) => (
+              {recentActivity.map((activity: any, index: number) => (
                 <div key={index} className="flex items-center gap-3">
                   <div className={`p-2 rounded-full ${
                     activity.action === 'Approved' 

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -37,6 +38,7 @@ export function GiftCardInput({
   appliedGiftCard: externalAppliedGiftCard,
   className
 }: GiftCardInputProps) {
+  const t = useTranslations()
   const [code, setCode] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -237,6 +239,7 @@ export function GiftCardInput({
 
 // Gift Card Balance Display (for account/profile page)
 export function GiftCardBalance({ giftCards }: { giftCards: GiftCard[] }) {
+  const t = useTranslations()
   const activeCards = giftCards.filter(gc => gc.status === 'active' && gc.current_balance > 0)
   const totalBalance = activeCards.reduce((sum, gc) => sum + gc.current_balance, 0)
 

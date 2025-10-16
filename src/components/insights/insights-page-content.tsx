@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Plus, Lightbulb, TrendingUp, AlertCircle, CheckCircle2, Target } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -11,7 +12,12 @@ import { CreateObjectiveDialog } from "@/components/insights/create-objective-di
 import { ObjectivesHierarchy } from "@/components/insights/objectives-hierarchy"
 import type { Goal } from "@/types"
 
-const mockObjectives: Goal[] = [
+export function InsightsPageContent() {
+  const t = useTranslations()
+  const [selectedObjective, setSelectedObjective] = useState<Goal | null>(null)
+  const [showCreateDialog, setShowCreateDialog] = useState(false)
+
+  const mockObjectives: Goal[] = [
   {
     id: "1",
     organization_id: "org-1",
@@ -69,11 +75,9 @@ const mockObjectives: Goal[] = [
     created_at: "2025-01-01T00:00:00Z",
     updated_at: "2025-01-15T00:00:00Z",
   },
-]
+  ]
 
-export function InsightsPageContent() {
   const [objectives, setObjectives] = useState<Goal[]>(mockObjectives)
-  const [selectedObjective, setSelectedObjective] = useState<Goal | null>(null)
   const [isCreating, setIsCreating] = useState(false)
   const [viewMode, setViewMode] = useState<"list" | "hierarchy">("list")
 

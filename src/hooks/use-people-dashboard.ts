@@ -216,7 +216,7 @@ export function useTodaysSchedule(workspaceId: string) {
         })) || []
 
         const openShifts = shifts?.filter(s => !s.personnel_id && s.status === 'scheduled')
-          .reduce((acc, s) => {
+          .reduce((acc: any, s: any) => {
             const time = new Date(s.start_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
             const existing = acc.find((item: { time: string; count: number; location?: string }) => item.time === time)
             if (existing) {

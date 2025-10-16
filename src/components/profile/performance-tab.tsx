@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select"
 
 interface PerformanceMetric {
-  label: string
+  labelKey: string
   value: number
   maxValue: number
   trend: "up" | "down" | "stable"
@@ -46,28 +46,28 @@ export function PerformanceTab() {
 
   const performanceMetrics: PerformanceMetric[] = [
     {
-      label: t('profile.performance.overall'),
+      labelKey: 'profile.performance.overall',
       value: 4.7,
       maxValue: 5.0,
       trend: "up",
       icon: <Star className="h-4 w-4" aria-hidden="true" />,
     },
     {
-      label: t('profile.performance.on-time'),
+      labelKey: 'profile.performance.on-time',
       value: 95,
       maxValue: 100,
       trend: "up",
       icon: <Clock className="h-4 w-4" aria-hidden="true" />,
     },
     {
-      label: t('profile.performance.quality'),
+      labelKey: 'profile.performance.quality',
       value: 4.8,
       maxValue: 5.0,
       trend: "stable",
       icon: <Award className="h-4 w-4" aria-hidden="true" />,
     },
     {
-      label: t('profile.performance.client-satisfaction'),
+      labelKey: 'profile.performance.client-satisfaction',
       value: 4.6,
       maxValue: 5.0,
       trend: "up",
@@ -87,29 +87,29 @@ export function PerformanceTab() {
   const achievements = [
     {
       id: "1",
-      title: t('profile.performance.top-performer'),
-      description: t('profile.performance.top-performer-description'),
+      titleKey: 'profile.performance.top-performer',
+      descriptionKey: 'profile.performance.top-performer-description',
       date: "2024-09-30",
       icon: "🏆",
     },
     {
       id: "2",
-      title: t('profile.performance.perfect-attendance'),
-      description: t('profile.performance.perfect-attendance-description'),
+      titleKey: 'profile.performance.perfect-attendance',
+      descriptionKey: 'profile.performance.perfect-attendance-description',
       date: "2024-08-15",
       icon: "⭐",
     },
     {
       id: "3",
-      title: t('profile.performance.safety-champion'),
-      description: t('profile.performance.safety-champion-description'),
+      titleKey: 'profile.performance.safety-champion',
+      descriptionKey: 'profile.performance.safety-champion-description',
       date: "2024-07-01",
       icon: "🛡️",
     },
     {
       id: "4",
-      title: t('profile.performance.mentor-of-the-month'),
-      description: t('profile.performance.mentor-of-the-month-description'),
+      titleKey: 'profile.performance.mentor-of-the-month',
+      descriptionKey: 'profile.performance.mentor-of-the-month-description',
       date: "2024-06-20",
       icon: "👥",
     },

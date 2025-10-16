@@ -69,7 +69,7 @@ export function getInitials(name: string): string {
 }
 
 export function groupBy<T>(array: T[], key: keyof T): Record<string, T[]> {
-  return array.reduce((result, item) => {
+  return array.reduce((result: any, item: any) => {
     const group = String(item[key])
     if (!result[group]) {
       result[group] = []

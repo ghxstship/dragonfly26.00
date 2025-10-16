@@ -109,7 +109,7 @@ export function AppearanceTab() {
     { id: "midnight", name: t('settings.appearance.themes.midnight'), color: "#1e1b4b" },
   ]
 
-  const handleSave = () => {
+  const handleSave = async () => {
     // Save to localStorage for persistence
     localStorage.setItem('appearance-settings', JSON.stringify({
       theme,
@@ -151,7 +151,7 @@ export function AppearanceTab() {
     }
   }
 
-  const handleReset = () => {
+  const handleReset = async () => {
     setTheme("system")
     setAccentColor("#8b5cf6")
     setBackgroundImage("")

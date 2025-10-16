@@ -94,7 +94,7 @@ export function useDashboardWidgets(workspaceId: string, userId: string) {
   }
 
   const reorderWidgets = async (newOrder: DashboardWidget[]) => {
-    const reordered = newOrder.map((w, index) => ({ ...w, position: index }))
+    const reordered = newOrder.map((w: any, index: number) => ({ ...w, position: index }))
     await saveWidgets(reordered)
   }
 
@@ -108,7 +108,7 @@ export function useDashboardWidgets(workspaceId: string, userId: string) {
     toggleWidget,
     reorderWidgets,
     resetToDefaults,
-    enabledWidgets: widgets.filter((w) => w.enabled).sort((a, b) => a.position - b.position),
+    enabledWidgets: widgets.filter((w: any) => w.enabled).sort((a, b) => a.position - b.position),
     availableWidgets: widgets.filter((w) => !w.enabled).sort((a, b) => a.position - b.position),
   }
 }

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
@@ -57,6 +58,7 @@ export function SmartFiltersBar({
   employmentStatuses = defaultStatuses,
   employmentTypes = defaultTypes,
 }: SmartFiltersBarProps) {
+  const t = useTranslations()
   const [filters, setFilters] = useState<FilterState>({
     department: "all",
     status: "active",
@@ -319,6 +321,7 @@ export function FilterSummaryBar({
   filteredCount: number
   activeFilters?: string[]
 }) {
+  const t = useTranslations()
   return (
     <div className="flex items-center justify-between px-4 py-2 bg-muted/20 text-sm">
       <div className="flex items-center gap-2">

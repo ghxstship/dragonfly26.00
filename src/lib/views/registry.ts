@@ -170,7 +170,7 @@ export function getViewDefinition(type: ViewType): ViewDefinition | undefined {
 }
 
 export function getViewsByCategory(category: string): ViewDefinition[] {
-  return VIEW_DEFINITIONS.filter((v) => v.category === category)
+  return VIEW_DEFINITIONS.filter((v: any) => v.category === category)
 }
 
 export function getCompatibleViews(moduleSlug: string): ViewDefinition[] {

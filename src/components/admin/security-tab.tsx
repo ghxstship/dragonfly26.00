@@ -53,14 +53,14 @@ export function SecurityTab() {
     { id: "5", event: "API token created", user: "mike.chen@example.com", ip: "192.168.1.105", timestamp: "2024-01-20 09:12:56", status: "success" },
   ])
 
-  const handleSaveChanges = () => {
+  const handleSaveChanges = async () => {
     toast({
       title: t('admin.toast.securityUpdated'),
       description: t('admin.toast.securityUpdatedDesc'),
     })
   }
 
-  const handleExportLogs = () => {
+  const handleExportLogs = async () => {
     toast({
       title: t('admin.toast.exportStarted'),
       description: t('admin.toast.exportStartedDesc'),

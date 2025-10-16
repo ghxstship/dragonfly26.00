@@ -40,7 +40,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
   const totalItems = data.length
   const lowStockItems = data.filter(item => item.status === 'low_stock').length
   const outOfStockItems = data.filter(item => item.status === 'out_of_stock').length
-  const totalValue = data.reduce((sum, item) => sum + ((item.unit_cost || 0) * (item.stock_quantity || 0)), 0)
+  const totalValue = data.reduce((sum: number, item) => sum + ((item.unit_cost || 0) * (item.stock_quantity || 0)), 0)
 
   // Filter by folder
   const filteredByFolder = selectedFolderId 
@@ -57,7 +57,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       render: (value: string[]) => {
         if (!value || value.length === 0) {
           return <div className="w-12 h-12 bg-muted rounded flex items-center justify-center">
-            <Package className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </div>
         }
         return <div className="w-12 h-12 bg-muted rounded overflow-hidden relative">
@@ -175,11 +175,11 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         </p>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" onClick={() => setScannerOpen(true)}>
-            <QrCode className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <QrCode className="h-4 w-4 mr-2" aria-hidden="true" />
             Scan Barcode
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
             Add Item
           </Button>
         </div>
@@ -206,7 +206,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
               size="sm"
               onClick={() => setShowFolderTree(!showFolderTree)}
             >
-              <FolderTree className="h-4 w-4" aria-hidden="true" className="mr-2" />
+              <FolderTree className="h-4 w-4 mr-2" aria-hidden="true" />
               {showFolderTree ? 'Hide' : 'Show'} Folders
             </Button>
             <InventoryAlertsPanel workspaceId={workspaceId} />
@@ -255,11 +255,11 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         {/* Quick Actions */}
         <div className="flex items-center gap-2 flex-wrap">
           <Button onClick={() => setRightSidebarOpen(true, 'photo-upload')} variant="outline">
-            <Camera className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Camera className="h-4 w-4 mr-2" aria-hidden="true" />
             Upload Photos
           </Button>
           <Button onClick={() => setScannerOpen(true)} variant="outline">
-            <QrCode className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <QrCode className="h-4 w-4 mr-2" aria-hidden="true" />
             Scan Barcode
           </Button>
           <div className="flex-1" />

@@ -58,7 +58,7 @@ export function WebhooksPageContent() {
   const [selectedWebhook, setSelectedWebhook] = useState<Webhook | null>(null)
   const [showCreateDialog, setShowCreateDialog] = useState(false)
 
-  const activeWebhooks = mockWebhooks.filter((w) => w.is_active).length
+  const activeWebhooks = mockWebhooks.filter((w: any) => w.is_active).length
   const totalDeliveries = 1234
   const successRate = 98.5
 

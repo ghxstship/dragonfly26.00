@@ -114,15 +114,14 @@ export function CreateMenu({
   }
 
   // Filter actions based on search query
-  const filteredActions = CREATE_ACTIONS.filter((action) =>
-    action.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  const filteredActions = CREATE_ACTIONS.filter((action: any) => action.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     action.description.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   const groupedActions = {
-    core: filteredActions.filter((a) => a.category === 'core'),
-    advanced: filteredActions.filter((a) => a.category === 'advanced'),
-    admin: filteredActions.filter((a) => a.category === 'admin'),
+    core: filteredActions.filter((a: any) => a.category === 'core'),
+    advanced: filteredActions.filter((a: any) => a.category === 'advanced'),
+    admin: filteredActions.filter((a: any) => a.category === 'admin'),
   }
 
   const filteredFavoriteActions = favoriteActions

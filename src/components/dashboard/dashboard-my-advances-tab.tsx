@@ -4,19 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { 
-  TrendingUp,
-  Package,
-  Calendar,
-  CheckCircle2,
-  Clock,
-  AlertCircle,
-  Plus,
-  FileText,
-  Tag,
-  Wrench,
-  Truck
-} from "lucide-react"
+import { TrendingUp, Package, Calendar, CheckCircle2, Clock, AlertCircle, Plus, FileText, Tag, Wrench, Truck } from "lucide-react"
 import { useMyAdvances } from "@/hooks/use-dashboard-data"
 import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
@@ -191,7 +179,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
           Track expense advances and reimbursements
         </p>
         <Button size="sm">
-          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           Request Advance
         </Button>
       </div>
@@ -267,11 +255,11 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
 
                       <div className="flex flex-wrap items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(advance.status)}>
-                          <StatusIcon className="h-4 w-4" aria-hidden="true" className="mr-1" />
+                          <StatusIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                           {advance.status}
                         </Badge>
                         <Badge variant="outline" className={getCategoryColor(advance.category)}>
-                          <CategoryIcon className="h-4 w-4" aria-hidden="true" className="mr-1" />
+                          <CategoryIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                           {getCategoryLabel(advance.category)}
                         </Badge>
                         {advance.assignedUsers > 0 && (

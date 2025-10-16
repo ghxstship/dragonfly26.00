@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { useRouter, useParams } from 'next/navigation'
+import { useEffect, useState, use } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -20,12 +20,18 @@ interface InvitationData {
   expires_at: string
 }
 
-export default function AcceptInvitationPage() {
+interface AcceptInvitationPageProps {
+  params: Promise<{
+    locale: string
+    token: string
+  }>
+}
+
+export default function AcceptInvitationPage({ params }: AcceptInvitationPageProps) {
+  const { token } = use(params)
   const router = useRouter()
-  const params = useParams<{ token: string }>()
   const { toast } = useToast()
   const supabase = createClient()
-  const token = params.token
   
   const [loading, setLoading] = useState(true)
   const [accepting, setAccepting] = useState(false)

@@ -251,7 +251,7 @@ export function PluginsTab() {
           <CardHeader className="pb-3">
             <CardDescription>Total Downloads</CardDescription>
             <CardTitle className="text-3xl">
-              {plugins.reduce((sum, p) => sum + p.downloads, 0).toLocaleString()}
+              {plugins.reduce((sum: number, p) => sum + p.downloads, 0).toLocaleString()}
             </CardTitle>
           </CardHeader>
         </Card>

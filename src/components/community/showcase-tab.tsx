@@ -120,7 +120,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {(posts.reduce((acc, p) => acc + p.views, 0) / 1000).toFixed(1)}K
+              {(posts.reduce((acc: any, p: any) => acc + p.views, 0) / 1000).toFixed(1)}K
             </div>
             <p className="text-xs text-muted-foreground">Total views</p>
           </CardContent>
@@ -133,7 +133,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {posts.reduce((acc, p) => acc + p.likes, 0)}
+              {posts.reduce((acc: any, p: any) => acc + p.likes, 0)}
             </div>
             <p className="text-xs text-muted-foreground">{t('totalLikes')}</p>
           </CardContent>

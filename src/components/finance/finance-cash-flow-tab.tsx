@@ -3,7 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Waves, TrendingUp, TrendingDown, AlertCircle, DollarSign, Calendar } from "lucide-react"
+import { Waves, TrendingUp, TrendingDown, AlertCircle, DollarSign, Calendar, Plus } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
@@ -69,6 +69,13 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
   ]
 
   const maxAmount = Math.max(...monthlyData.map(d => Math.max(d.inflows, d.outflows)))
+
+  const upcomingPayments = [
+    { description: 'Vendor Payment - ABC Productions', date: '2024-10-18', category: 'Production', amount: 12500, critical: true },
+    { description: 'Equipment Rental', date: '2024-10-20', category: 'Equipment', amount: 3200, critical: false },
+    { description: 'Contractor Payment', date: '2024-10-22', category: 'Labor', amount: 8000, critical: false },
+    { description: 'Location Fee', date: '2024-10-25', category: 'Locations', amount: 5500, critical: true },
+  ]
 
   return (
     <div className="space-y-6">
@@ -157,7 +164,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         <CardContent>
           <div className="space-y-6">
             {/* Waterfall Chart */}
-            {monthlyData.map((month, index) => (
+            {monthlyData.map((month: any, index: number) => (
               <div key={index} className="space-y-2">
                 <div className="flex items-center justify-between text-sm font-medium">
                   <span>{month.month}</span>
@@ -232,7 +239,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {inflowCategories.map((category, index) => (
+              {inflowCategories.map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
                     <span className="font-medium">{category.name}</span>
@@ -257,7 +264,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
                 <div className="flex items-center justify-between font-semibold">
                   <span>Total Inflows</span>
                   <span className="text-green-600">
-                    ${inflowCategories.reduce((sum, c) => sum + c.amount, 0).toLocaleString()}
+                    ${inflowCategories.reduce((sum: number, c) => sum + c.amount, 0).toLocaleString()}
                   </span>
                 </div>
               </div>
@@ -276,7 +283,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {outflowCategories.map((category, index) => (
+              {outflowCategories.map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
                     <span className="font-medium">{category.name}</span>
@@ -301,7 +308,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
                 <div className="flex items-center justify-between font-semibold">
                   <span>Total Outflows</span>
                   <span className="text-red-600">
-                    ${outflowCategories.reduce((sum, c) => sum + c.amount, 0).toLocaleString()}
+                    ${outflowCategories.reduce((sum: number, c) => sum + c.amount, 0).toLocaleString()}
                   </span>
                 </div>
               </div>
@@ -318,7 +325,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {upcomingPayments.map((payment, index) => (
+            {upcomingPayments.map((payment: any, index: number) => (
               <div
                 key={index}
                 className={`flex items-center justify-between p-3 rounded-lg border ${
@@ -347,7 +354,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
               <div className="flex items-center justify-between font-semibold">
                 <span>Total Due (30 days)</span>
                 <span className="text-red-600">
-                  ${upcomingPayments.reduce((sum, p) => sum + p.amount, 0).toLocaleString()}
+                  ${upcomingPayments.reduce((sum: number, p) => sum + p.amount, 0).toLocaleString()}
                 </span>
               </div>
             </div>

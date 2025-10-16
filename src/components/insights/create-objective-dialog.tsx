@@ -28,7 +28,7 @@ export function CreateObjectiveDialog({ open, onOpenChange, onCreateGoal }: Crea
     end_date: "",
   })
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     onCreateGoal(formData)
     setFormData({
       name: "",

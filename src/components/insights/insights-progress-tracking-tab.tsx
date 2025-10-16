@@ -92,7 +92,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
       </div>
 
       {/* Progress Charts */}
-      {progressData.map((data, index) => (
+      {progressData.map((data: any, index: number) => (
         <Card key={index} role="article">
           <CardHeader>
             <div className="flex items-center justify-between">
@@ -114,7 +114,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
             <div className="space-y-4">
               {/* Timeline visualization */}
               <div className="grid grid-cols-4 gap-4">
-                {data.timeline.map((month, idx) => {
+                {data.timeline.map((month: any, idx: number) => {
                   const isAhead = month.progress >= month.target
                   
                   return (

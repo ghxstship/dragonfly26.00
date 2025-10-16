@@ -172,7 +172,7 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {objectives.map((obj, index) => (
+            {objectives.map((obj: any, index: number) => (
               <div key={index} className="space-y-2">
                 <div className="flex items-center justify-between">
                   <p className="font-medium">{t(obj.nameKey)}</p>

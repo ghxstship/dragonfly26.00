@@ -22,9 +22,9 @@ export function TrainingTab(props: TrainingTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('people', 'training', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'people', 'training')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

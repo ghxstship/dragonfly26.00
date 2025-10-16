@@ -166,7 +166,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
             </div>
           ) : (
             <div className="space-y-3">
-              {upcomingEvents.map((event, index) => (
+              {upcomingEvents.map((event: any, index: number) => (
               <div
                 key={event.id}
                 role="button"
@@ -274,7 +274,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
             <CardContent className="pt-6">
               <div className="text-center">
                 <p className="text-3xl font-bold">
-                  {events.reduce((total, e) => {
+                  {events.reduce((total: any, e: any) => {
                     const start = new Date(e.start_time)
                     const end = new Date(e.end_time)
                     return total + Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60))

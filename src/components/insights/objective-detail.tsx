@@ -46,7 +46,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
 
   const progress = goal.target_value ? Math.round((goal.current_value / goal.target_value) * 100) : 0
 
-  const handleUpdateProgress = () => {
+  const handleUpdateProgress = async () => {
     const value = parseFloat(newProgress)
     if (!isNaN(value)) {
       onUpdate({ ...goal, current_value: value })

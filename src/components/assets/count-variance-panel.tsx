@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { AlertTriangle, CheckCircle, Image as ImageIcon, RotateCcw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -25,6 +26,7 @@ interface CountVariancePanelProps {
 }
 
 export function CountVariancePanel({ countId, variances, onAccept, onRecount, onAcceptAll }: CountVariancePanelProps) {
+  const t = useTranslations('production.assets')
   if (variances.length === 0) {
     return (
       <div className="text-center py-12">

@@ -52,7 +52,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
   // Bulk invite
   const [bulkEmails, setBulkEmails] = useState("")
 
-  const handleAddInvite = () => {
+  const handleAddInvite = async () => {
     if (!email) {
       toast({
         title: "Email required",
@@ -124,7 +124,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
     }
   }
 
-  const handleBulkImport = () => {
+  const handleBulkImport = async () => {
     if (!bulkEmails.trim()) {
       toast({
         title: "No emails provided",
@@ -347,7 +347,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 Pending Invites ({invites.length})
               </Label>
               <div className="space-y-2 max-h-[200px] overflow-auto border rounded-md p-3">
-                {invites.map((invite, index) => (
+                {invites.map((invite: any, index: number) => (
                   <div key={index} className="flex items-center justify-between gap-2 p-2 bg-muted rounded-md">
                     <div className="flex-1 flex flex-col gap-1">
                       <div className="flex items-center gap-2">

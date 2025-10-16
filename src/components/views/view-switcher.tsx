@@ -30,15 +30,14 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
   const currentViewDef = VIEW_DEFINITIONS.find((v) => v.type === currentView)
 
   // Filter views based on search query
-  const filteredViews = VIEW_DEFINITIONS.filter((view) =>
-    view.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  const filteredViews = VIEW_DEFINITIONS.filter((view: any) => view.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     view.description.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   const groupedViews = {
-    core: filteredViews.filter((v) => v.category === "core"),
-    advanced: filteredViews.filter((v) => v.category === "advanced"),
-    specialized: filteredViews.filter((v) => v.category === "specialized"),
+    core: filteredViews.filter((v: any) => v.category === "core"),
+    advanced: filteredViews.filter((v: any) => v.category === "advanced"),
+    specialized: filteredViews.filter((v: any) => v.category === "specialized"),
   }
 
   const filteredFavoriteViews = favoriteViews.filter((viewType) => {

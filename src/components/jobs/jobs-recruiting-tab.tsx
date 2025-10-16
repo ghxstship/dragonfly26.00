@@ -23,9 +23,9 @@ export function RecruitingTab({ data, loading }: RecruitingTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('jobs', 'recruiting', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'jobs', 'recruiting')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

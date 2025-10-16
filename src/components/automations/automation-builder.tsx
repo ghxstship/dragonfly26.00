@@ -20,7 +20,7 @@ export function AutomationBuilder({ open, onOpenChange, onSave }: AutomationBuil
   const [name, setName] = useState("")
   const [triggerType, setTriggerType] = useState<AutomationTriggerType>("item_created")
 
-  const handleSave = () => {
+  const handleSave = async () => {
     const automation: Automation = {
       id: `auto-${Date.now()}`,
       organization_id: "org-1",

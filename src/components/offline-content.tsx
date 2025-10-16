@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 export function OfflineContent() {
-  const handleRetry = () => {
+  const handleRetry = async () => {
     if (typeof window !== 'undefined') {
       window.location.reload()
     }

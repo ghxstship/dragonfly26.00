@@ -68,7 +68,7 @@ export function ActivityView({ data, schema, onItemClick }: ActivityViewProps) {
   })
 
   // Group by date
-  const groupedActivities = filteredActivities.reduce((acc, activity) => {
+  const groupedActivities = filteredActivities.reduce((acc: any, activity: any) => {
     const date = new Date(activity.timestamp).toLocaleDateString()
     if (!acc[date]) acc[date] = []
     acc[date].push(activity)
@@ -167,13 +167,15 @@ export function ActivityView({ data, schema, onItemClick }: ActivityViewProps) {
       {/* Activity Stream */}
       <div className="flex-1 overflow-auto p-6">
         <div className="max-w-3xl mx-auto space-y-6">
-          {Object.entries(groupedActivities).map(([date, activities]) => (
-            <div key={date}>
-              <div className="sticky top-0 bg-background/95 backdrop-blur py-2 mb-4 border-b">
-                <h4 className="font-semibold text-sm">{date}</h4>
-              </div>
-              <div className="space-y-4">
-                {activities.map((activity) => (
+          {Object.entries(groupedActivities).map(([date, activities]) => {
+            const activityArray = activities as any[]
+            return (
+              <div key={date}>
+                <div className="sticky top-0 bg-background/95 backdrop-blur py-2 mb-4 border-b">
+                  <h4 className="font-semibold text-sm">{date}</h4>
+                </div>
+                <div className="space-y-4">
+                  {activityArray.map((activity: any) => (
                   <div
                     key={activity.id}
                     className="flex gap-3 hover:bg-accent p-3 -mx-3 rounded-lg transition-colors cursor-pointer"
@@ -203,10 +205,11 @@ export function ActivityView({ data, schema, onItemClick }: ActivityViewProps) {
                       </div>
                     </div>
                   </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </div>

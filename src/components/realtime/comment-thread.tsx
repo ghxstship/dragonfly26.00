@@ -62,7 +62,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
   const [newComment, setNewComment] = useState("")
   const [replyTo, setReplyTo] = useState<string | null>(null)
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     console.log("Posting comment:", newComment, "reply to:", replyTo)
     setNewComment("")
     setReplyTo(null)
@@ -75,7 +75,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
       {/* Comments list */}
       <div className="space-y-4">
         {rootComments.map((comment) => {
-          const replies = comments.filter((c) => c.parent_comment_id === comment.id)
+          const replies = comments.filter((c: any) => c.parent_comment_id === comment.id)
 
           return (
             <div key={comment.id} className="space-y-3">

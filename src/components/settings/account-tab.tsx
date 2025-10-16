@@ -146,21 +146,21 @@ export function AccountTab() {
     }
   }
 
-  const handleChangePassword = () => {
+  const handleChangePassword = async () => {
     toast({
       title: t('settings.toast.passwordChangeRequested'),
       description: t('settings.toast.passwordChangeRequestedDesc'),
     })
   }
 
-  const handleExportData = () => {
+  const handleExportData = async () => {
     toast({
       title: t('settings.toast.dataExportStarted'),
       description: t('settings.toast.dataExportStartedDesc'),
     })
   }
 
-  const handleDeleteAccount = () => {
+  const handleDeleteAccount = async () => {
     toast({
       title: t('settings.toast.accountDeletionRequested'),
       description: t('settings.toast.accountDeletionRequestedDesc'),

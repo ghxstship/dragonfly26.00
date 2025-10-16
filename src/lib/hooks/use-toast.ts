@@ -7,7 +7,9 @@ const TOAST_REMOVE_DELAY = 1000000
 type ToasterToast = ToastProps & {
   id: string
   title?: React.ReactNode
+  titleKey?: string
   description?: React.ReactNode
+  descriptionKey?: string
   action?: ToastActionElement
 }
 
@@ -115,7 +117,7 @@ export const reducer = (state: State, action: Action): State => {
       }
       return {
         ...state,
-        toasts: state.toasts.filter((t) => t.id !== action.toastId),
+        toasts: state.toasts.filter((t: any) => t.id !== action.toastId),
       }
   }
 }

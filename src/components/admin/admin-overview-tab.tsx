@@ -133,7 +133,7 @@ export function AdminOverviewTab() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {recentActivity.map((activity, index) => (
+              {recentActivity.map((activity: any, index: number) => (
                 <div key={index} className="flex items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
                   <div className={`h-2 w-2 rounded-full mt-2 ${
                     activity.type === "complete" ? "bg-green-500" :

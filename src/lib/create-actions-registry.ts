@@ -239,7 +239,7 @@ export function getCreateActionById(id: string): CreateAction | undefined {
 }
 
 export function getCreateActionsByCategory(category: CreateAction['category']): CreateAction[] {
-  return CREATE_ACTIONS.filter((action) => action.category === category)
+  return CREATE_ACTIONS.filter((action: any) => action.category === category)
 }
 
 export function searchCreateActions(query: string): CreateAction[] {

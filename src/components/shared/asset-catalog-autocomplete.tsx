@@ -67,7 +67,7 @@ export function AssetCatalogAutocomplete({
     onChange(newValue)
   }
 
-  const handleClear = () => {
+  const handleClear = async () => {
     setInputValue('')
     onChange('')
     clearSuggestions()
@@ -160,7 +160,7 @@ export function AssetCatalogAutocomplete({
             ref={listRef}
             className="bg-popover border rounded-md shadow-md max-h-[300px] overflow-y-auto"
           >
-            {suggestions.map((suggestion, index) => (
+            {suggestions.map((suggestion: any, index: number) => (
               <li
                 key={suggestion.id}
                 className={cn(

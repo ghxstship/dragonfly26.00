@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState, useEffect, useRef } from "react"
 import { X, Camera, Flashlight, RotateCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -15,6 +16,7 @@ interface BarcodeScannerOverlayProps {
 }
 
 export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, workspaceId }: BarcodeScannerOverlayProps) {
+  const t = useTranslations('production.assets')
   const [hasPermission, setHasPermission] = useState<boolean | null>(null)
   const [scanning, setScanning] = useState(false)
   const [lastScan, setLastScan] = useState<string>('')

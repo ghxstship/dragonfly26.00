@@ -17,19 +17,19 @@ import {
 } from "@/components/ui/dropdown-menu"
 import type { CustomStatus } from "@/types"
 
-const STATUS_COLORS = [
-  { name: t('admin.mockData.colorSlate'), value: "#94a3b8" },
-  { name: t('admin.mockData.colorRed'), value: "#ef4444" },
-  { name: t('admin.mockData.colorOrange'), value: "#f97316" },
-  { name: t('admin.mockData.colorYellow'), value: "#eab308" },
-  { name: t('admin.mockData.colorGreen'), value: "#22c55e" },
-  { name: t('admin.mockData.colorBlue'), value: "#3b82f6" },
-  { name: t('admin.mockData.colorPurple'), value: "#a855f7" },
-  { name: t('admin.mockData.colorPink'), value: "#ec4899" },
-]
-
 export function CustomStatusesTab() {
   const t = useTranslations()
+  
+  const STATUS_COLORS = [
+    { name: t('admin.mockData.colorSlate'), value: "#94a3b8" },
+    { name: t('admin.mockData.colorRed'), value: "#ef4444" },
+    { name: t('admin.mockData.colorOrange'), value: "#f97316" },
+    { name: t('admin.mockData.colorYellow'), value: "#eab308" },
+    { name: t('admin.mockData.colorGreen'), value: "#22c55e" },
+    { name: t('admin.mockData.colorBlue'), value: "#3b82f6" },
+    { name: t('admin.mockData.colorPurple'), value: "#a855f7" },
+    { name: t('admin.mockData.colorPink'), value: "#ec4899" },
+  ]
   const [statuses, setStatuses] = useState<CustomStatus[]>([
     {
       id: "1",
@@ -73,7 +73,7 @@ export function CustomStatusesTab() {
     type: "custom",
   })
 
-  const handleCreateStatus = () => {
+  const handleCreateStatus = async () => {
     const status: CustomStatus = {
       id: `status-${Date.now()}`,
       organization_id: "org-1",
@@ -92,7 +92,7 @@ export function CustomStatusesTab() {
   }
 
   const deleteStatus = (id: string) => {
-    setStatuses(statuses.filter((s) => s.id !== id))
+    setStatuses(statuses.filter((s: any) => s.id !== id))
   }
 
   return (

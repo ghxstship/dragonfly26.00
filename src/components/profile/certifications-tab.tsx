@@ -53,7 +53,7 @@ export function CertificationsTab() {
   }
 
   const removeCertification = (id: string) => {
-    setCertifications(certifications.filter((c) => c.id !== id))
+    setCertifications(certifications.filter((c: any) => c.id !== id))
   }
 
   const updateCertification = (id: string, field: keyof Certification, value: string) => {

@@ -27,7 +27,7 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set())
 
   const progress = items.length > 0
-    ? Math.round((items.filter((i) => i.completed).length / items.length) * 100)
+    ? Math.round((items.filter((i: any) => i.completed).length / items.length) * 100)
     : 0
 
   const addItem = (parentId?: string) => {
@@ -39,7 +39,7 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
       parent_id: parentId,
       content: newItemContent,
       completed: false,
-      order: items.filter((i) => i.parent_id === parentId).length,
+      order: items.filter((i: any) => i.parent_id === parentId).length,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     }
@@ -96,7 +96,7 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
   }
 
   const renderItem = (item: ChecklistItem, level: number = 0) => {
-    const children = items.filter((i) => i.parent_id === item.id)
+    const children = items.filter((i: any) => i.parent_id === item.id)
     const hasChildren = children.length > 0
     const isExpanded = expandedItems.has(item.id)
 

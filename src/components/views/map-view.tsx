@@ -30,10 +30,10 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
   const [selectedItem, setSelectedItem] = useState<DataItem | null>(null)
 
   // Filter items with location data
-  const itemsWithLocation = data.filter((item) => item.latitude && item.longitude)
+  const itemsWithLocation = data.filter((item: any) => item.latitude && item.longitude)
 
   // Group by proximity (example clustering)
-  const clusters = itemsWithLocation.reduce((acc, item) => {
+  const clusters = itemsWithLocation.reduce((acc: any, item: any) => {
     const region = item.region || "Other"
     if (!acc[region]) acc[region] = []
     acc[region].push(item)
@@ -107,7 +107,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
                 <MapPin className="h-3 w-3 text-primary" />
                 <span>{region}</span>
                 <Badge variant="secondary" className="ml-auto">
-                  {items.length}
+                  {(items as any[]).length}
                 </Badge>
               </div>
             ))}

@@ -158,7 +158,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
             </div>
           ) : (
             <div className="space-y-4">
-              {jobsList.map((job, index) => (
+              {jobsList.map((job: any, index: number) => (
               <div
                 key={job.id || index}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"

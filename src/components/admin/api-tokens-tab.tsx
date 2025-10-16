@@ -84,7 +84,7 @@ export function ApiTokensTab() {
     },
   ])
 
-  const handleCreateToken = () => {
+  const handleCreateToken = async () => {
     const newToken = `dfsk_live_${Math.random().toString(36).substring(2, 40)}`
     setGeneratedToken(newToken)
     setDialogOpen(false)

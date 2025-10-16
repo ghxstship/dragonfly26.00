@@ -178,7 +178,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
                 Task
               </div>
               <div className="flex-1 relative">
-                {getDaysInRange().map((day, index) => {
+                {getDaysInRange().map((day: any, index: number) => {
                   if (index % 7 === 0) {
                     return (
                       <div
@@ -199,7 +199,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
           {/* Timeline Rows */}
           <div className="divide-y">
             {filteredData.length > 0 ? (
-              filteredData.map((item, index) => {
+              filteredData.map((item: any, index: number) => {
                 const position = getItemPosition(item)
                 return (
                   <div key={item.id} className="flex h-12 items-center hover:bg-accent/50">

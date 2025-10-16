@@ -62,7 +62,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
   }
 
   const removeFilter = (id: string) => {
-    const updatedFilters = filters.filter((f) => f.id !== id)
+    const updatedFilters = filters.filter((f: any) => f.id !== id)
     setFilters(updatedFilters)
     if (onFiltersChange) {
       onFiltersChange(updatedFilters)
@@ -126,7 +126,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
             </Button>
           </div>
         ) : (
-          filters.map((filter, index) => (
+          filters.map((filter: any, index: number) => (
             <div key={filter.id} className="space-y-2 p-3 border rounded-lg">
               <div className="flex items-center justify-between">
                 <Label className="text-xs font-medium">Filter {index + 1}</Label>

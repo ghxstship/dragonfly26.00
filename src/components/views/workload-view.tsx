@@ -34,11 +34,11 @@ export function WorkloadView({ data, schema, onItemClick, createActionLabel, onC
   const [expandedUsers, setExpandedUsers] = useState<Set<string>>(new Set())
 
   // Group data by assignee
-  const userWorkloads: UserWorkload[] = data.reduce((acc, item) => {
+  const userWorkloads: UserWorkload[] = data.reduce((acc: any, item: any) => {
     const userId = getAssigneeValue(item, schema) || "unassigned"
     const userName = item.assignee_name || "Unassigned"
     
-    let userWorkload = acc.find((w) => w.userId === userId)
+    let userWorkload = acc.find((w: UserWorkload) => w.userId === userId)
     if (!userWorkload) {
       userWorkload = {
         user: userId,

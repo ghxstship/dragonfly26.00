@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from '@/i18n/navigation'
-import { useParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -12,11 +11,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Building2, Users, Loader2, Plus, Check } from 'lucide-react'
 import { useToast } from '@/lib/hooks/use-toast'
 import { permissionService } from '@/lib/rbac/permission-service'
+import { useParams } from 'next/navigation'
 
 export default function WorkspacePage() {
+  const { locale } = useParams()
   const router = useRouter()
-  const params = useParams()
-  const locale = params.locale as string
   const { toast } = useToast()
   const supabase = createClient()
   

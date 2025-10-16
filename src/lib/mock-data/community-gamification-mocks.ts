@@ -136,7 +136,7 @@ export const mockPointTransactions = [
   },
 ]
 
-export const mockLeaderboard = mockMemberLevels.map((level, index) => ({
+export const mockLeaderboard = mockMemberLevels.map((level: any, index: number) => ({
   ...level,
   first_name: ['Sarah', 'Alex', 'Jordan', 'Taylor', 'Morgan'][index],
   last_name: ['Chen', 'Rivera', 'Patel', 'Kim', 'Santos'][index],

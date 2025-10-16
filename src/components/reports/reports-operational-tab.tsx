@@ -117,7 +117,7 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
               <div>
                 <p className="text-sm text-muted-foreground">{t('avgEfficiency')}</p>
                 <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
-                  {Math.round(operationalReports.reduce((sum, r) => sum + r.metrics.efficiency, 0) / operationalReports.length)}%
+                  {Math.round(operationalReports.reduce((sum: number, r) => sum + r.metrics.efficiency, 0) / operationalReports.length)}%
                 </p>
               </div>
               <CheckCircle2 className="h-8 w-8 text-green-600" aria-hidden="true" />
@@ -131,7 +131,7 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
               <div>
                 <p className="text-sm text-muted-foreground">{t('itemsBlocked')}</p>
                 <p className="text-2xl font-bold mt-1 text-red-600" aria-live="polite">
-                  {operationalReports.reduce((sum, r) => sum + r.metrics.blocked, 0)}
+                  {operationalReports.reduce((sum: number, r) => sum + r.metrics.blocked, 0)}
                 </p>
               </div>
               <AlertTriangle className="h-8 w-8 text-red-600" aria-hidden="true" />
@@ -145,7 +145,7 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
               <div>
                 <p className="text-sm text-muted-foreground">{t('inProgress')}</p>
                 <p className="text-2xl font-bold mt-1 text-blue-600" aria-live="polite">
-                  {operationalReports.reduce((sum, r) => sum + r.metrics.inProgress, 0)}
+                  {operationalReports.reduce((sum: number, r) => sum + r.metrics.inProgress, 0)}
                 </p>
               </div>
               <Clock className="h-8 w-8 text-blue-600" aria-hidden="true" />

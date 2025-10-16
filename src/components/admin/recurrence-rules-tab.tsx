@@ -34,9 +34,11 @@ import { useToast } from "@/lib/hooks/use-toast"
 
 interface RecurrenceRule {
   id: string
-  name: string
+  name?: string
+  nameKey?: string
   pattern: string
-  description: string
+  description?: string
+  descriptionKey?: string
   usageCount: number
   createdAt: string
 }
@@ -82,7 +84,7 @@ export function RecurrenceRulesTab() {
     },
   ])
 
-  const handleCreateRule = () => {
+  const handleCreateRule = async () => {
     setSelectedRule(null)
     setDialogOpen(true)
   }
@@ -128,7 +130,7 @@ export function RecurrenceRulesTab() {
           <CardHeader className="pb-3">
             <CardDescription>Total Usage</CardDescription>
             <CardTitle className="text-3xl">
-              {rules.reduce((sum, r) => sum + r.usageCount, 0)}
+              {rules.reduce((sum: number, r) => sum + r.usageCount, 0)}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -136,7 +138,7 @@ export function RecurrenceRulesTab() {
           <CardHeader className="pb-3">
             <CardDescription>Most Used</CardDescription>
             <CardTitle className="text-lg">
-              {rules.reduce((prev, curr) => 
+              {rules.reduce((prev: any, curr: any) => 
                 curr.usageCount > prev.usageCount ? curr : prev
               ).name}
             </CardTitle>
@@ -152,13 +154,13 @@ export function RecurrenceRulesTab() {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
-                    <CardTitle className="text-base">{t(rule.nameKey)}</CardTitle>
+                    <CardTitle className="text-base">{(rule.nameKey ? t(rule.nameKey) : rule.name)}</CardTitle>
                     <Badge variant="outline">
                       <Clock className="h-3 w-3 mr-1" />
                       {rule.usageCount} uses
                     </Badge>
                   </div>
-                  <CardDescription>{t(rule.descriptionKey)}</CardDescription>
+                  <CardDescription>{(rule.descriptionKey ? t(rule.descriptionKey) : rule.description || "")}</CardDescription>
                   <div className="flex items-center gap-2 mt-2 text-sm">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
                     <span className="font-medium">{rule.pattern}</span>

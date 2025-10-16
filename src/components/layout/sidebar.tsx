@@ -52,7 +52,7 @@ export function Sidebar() {
   const groupedModules = Object.entries(MODULE_CATEGORIES).map(([category, info]) => ({
     category,
     ...info,
-    modules: MODULES.filter((m) => m.category === category && m.enabled && m.id !== 'profile'),
+    modules: MODULES.filter((m: any) => m.category === category && m.enabled && m.id !== 'profile'),
   }))
 
   // Get profile module separately (to anchor at bottom)

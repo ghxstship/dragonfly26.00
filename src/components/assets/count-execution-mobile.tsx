@@ -26,7 +26,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
   const currentItem = items[currentIndex]
   const progress = ((currentIndex + 1) / items.length) * 100
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (countedQty) {
       onCountSubmit(currentItem.id, parseInt(countedQty))
       setCountedQty('')
@@ -36,7 +36,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
     }
   }
 
-  const handlePrevious = () => {
+  const handlePrevious = async () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1)
       setCountedQty('')

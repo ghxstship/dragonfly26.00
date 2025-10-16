@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Copy, Check, X, Link2, Users, Calendar } from "lucide-react"
 import { useFilePermissions } from "@/hooks/use-file-collaboration"
 import { addFilePermission, generateFileShareLink } from "@/hooks/use-file-collaboration"
+import { useTranslations } from "next-intl"
 
 interface FileShareDialogProps {
   fileId: string
@@ -20,6 +21,7 @@ interface FileShareDialogProps {
 }
 
 export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileShareDialogProps) {
+  const t = useTranslations('files')
   const [shareEmail, setShareEmail] = useState("")
   const [permissionLevel, setPermissionLevel] = useState<"viewer" | "commenter" | "editor">("viewer")
   const [shareLink, setShareLink] = useState<string | null>(null)
@@ -58,7 +60,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
     }
   }
 
-  const handleCopyLink = () => {
+  const handleCopyLink = async () => {
     if (shareLink) {
       navigator.clipboard.writeText(shareLink)
       setCopied(true)

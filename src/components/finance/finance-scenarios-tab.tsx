@@ -85,7 +85,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
     ...MOCK_SCENARIOS
   ]
 
-  const weightedAverage = scenarios.reduce((sum, s) => 
+  const weightedAverage = scenarios.reduce((sum: number, s) => 
     sum + (s.projectedNet * s.probability / 100), 0
   )
 

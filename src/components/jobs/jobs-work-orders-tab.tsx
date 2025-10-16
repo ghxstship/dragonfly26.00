@@ -23,9 +23,9 @@ export function WorkOrdersTab({ data, loading }: WorkOrdersTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: fetchedData, loading: fetchLoading } = data 
-    ? { data, loading } 
-    : useModuleData('jobs', 'work-orders', workspaceId)
+  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'jobs', 'work-orders')
+  const fetchedData = data || hookData
+  const fetchLoading = loading !== undefined ? loading : hookLoading
   
   const items = fetchedData || []
   const isLoading = loading || fetchLoading

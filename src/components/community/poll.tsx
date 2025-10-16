@@ -41,15 +41,15 @@ export function Poll({
     : hasVoted
 
   // Calculate vote counts
-  const voteCounts = options.map((_, index) => {
+  const voteCounts = options.map((_: any, index: number) => {
     const optionKey = `option_${index}`
     return votes[optionKey]?.length || 0
   })
 
-  const totalVotes = voteCounts.reduce((sum, count) => sum + count, 0)
+  const totalVotes = voteCounts.reduce((sum: number, count) => sum + count, 0)
 
   // Calculate percentages
-  const percentages = options.map((_, index) => {
+  const percentages = options.map((_: any, index: number) => {
     if (totalVotes === 0) return 0
     return Math.round((voteCounts[index] / totalVotes) * 100)
   })
@@ -57,7 +57,7 @@ export function Poll({
   // Find winning option(s)
   const maxVotes = Math.max(...voteCounts)
   const winningIndices = voteCounts
-    .map((count, index) => count === maxVotes ? index : -1)
+    .map((count: any, index: number) => count === maxVotes ? index : -1)
     .filter(index => index !== -1)
 
   const handleVote = (optionIndex: number) => {
@@ -79,7 +79,7 @@ export function Poll({
     }
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (selectedOptions.length > 0 && onVote && !userHasVoted) {
       selectedOptions.forEach(index => onVote(index))
       setHasVoted(true)
@@ -123,7 +123,7 @@ export function Poll({
 
       {/* Options */}
       <div className="space-y-2">
-        {options.map((option, index) => {
+        {options.map((option: any, index: number) => {
           const isSelected = selectedOptions.includes(index)
           const isWinning = winningIndices.includes(index) && totalVotes > 0
           const userVotedThis = currentUserId 

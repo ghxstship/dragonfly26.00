@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Plus, Minus, ArrowRightLeft, Edit3, CheckCircle } from "lucide-react"
 import {
@@ -22,6 +23,7 @@ interface QuickStockAdjustProps {
 }
 
 export function QuickStockAdjust({ item, onAdjusted }: QuickStockAdjustProps) {
+  const t = useTranslations('production.assets')
   const [open, setOpen] = useState(false)
   const [adjustType, setAdjustType] = useState<'receive' | 'issue' | 'transfer' | 'adjustment'>('receive')
   const [quantity, setQuantity] = useState('')

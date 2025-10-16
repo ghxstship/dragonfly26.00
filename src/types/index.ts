@@ -71,6 +71,8 @@ export interface OrganizationMember {
   invited_by?: string
   joined_at: string
   user?: User
+  name?: string
+  nameKey?: string
 }
 
 // Modules
@@ -394,7 +396,9 @@ export interface ChecklistTemplate {
   id: string
   organization_id: string
   name: string
+  nameKey?: string
   description?: string
+  descriptionKey?: string
   items: ChecklistItemData[]
   created_by: string
   created_at: string
@@ -446,6 +450,9 @@ export interface RecurrenceRule {
   id: string
   organization_id: string
   name: string
+  nameKey?: string
+  description?: string
+  descriptionKey?: string
   frequency: RecurrenceFrequency
   interval: number
   by_weekday?: number[]

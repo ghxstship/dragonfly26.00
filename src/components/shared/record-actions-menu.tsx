@@ -63,7 +63,7 @@ export function RecordActionsMenu({
         {customActions.length > 0 && (
           <>
             <DropdownMenuSeparator />
-            {customActions.map((action, index) => (
+            {customActions.map((action: any, index: number) => (
               <DropdownMenuItem
                 key={index}
                 onClick={action.onClick}

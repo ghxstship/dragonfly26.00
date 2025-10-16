@@ -131,7 +131,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('avgProgress')}</p>
             <p className="text-2xl font-bold mt-1" aria-live="polite">
-              {Math.round(objectives.reduce((sum, o) => sum + o.progress, 0) / objectives.length)}%
+              {Math.round(objectives.reduce((sum: number, o) => sum + o.progress, 0) / objectives.length)}%
             </p>
           </CardContent>
         </Card>

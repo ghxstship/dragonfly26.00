@@ -118,7 +118,7 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
           </div>
         ) : (
           <div className="space-y-4">
-            {activities.map((activity, index) => {
+            {activities.map((activity: any, index: number) => {
               const Icon = getActivityIcon(activity.activity_type)
               const color = getActivityColor(activity.activity_type)
               

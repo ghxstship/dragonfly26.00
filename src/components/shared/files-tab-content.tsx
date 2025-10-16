@@ -174,7 +174,7 @@ export function FilesTabContent() {
 
       if (error) throw error
 
-      setFiles((prev) => prev.filter((f) => f.id !== id))
+      setFiles((prev) => prev.filter((f: any) => f.id !== id))
       
       toast({
         title: "Success",

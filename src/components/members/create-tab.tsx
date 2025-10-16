@@ -17,11 +17,9 @@ import {
   X,
   FileSpreadsheet,
   Users,
-  AlertCircle
+  AlertCircle,
+  Plus
 } from "lucide-react"
-import { Plus } from "lucide-react"
-import { Plus } from "lucide-react"
-import { Plus } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
@@ -68,7 +66,7 @@ export function CreateTab() {
     setPassword(password)
   }
 
-  const handleAddUser = () => {
+  const handleAddUser = async () => {
     if (!email || !name) {
       toast({
         title: "Required fields missing",
@@ -105,7 +103,7 @@ export function CreateTab() {
     setUsers(users.filter((_, i) => i !== index))
   }
 
-  const handleCreateUsers = () => {
+  const handleCreateUsers = async () => {
     if (users.length === 0) {
       toast({
         title: "No users to create",
@@ -123,7 +121,7 @@ export function CreateTab() {
     setUsers([])
   }
 
-  const handleBulkImport = () => {
+  const handleBulkImport = async () => {
     if (!bulkData.trim()) {
       toast({
         title: "No data provided",
@@ -291,7 +289,7 @@ export function CreateTab() {
                   Pending Accounts ({users.length})
                 </Label>
                 <div className="space-y-2 max-h-[250px] overflow-auto border rounded-md p-3">
-                  {users.map((user, index) => (
+                  {users.map((user: any, index: number) => (
                     <div key={index} className="flex items-center justify-between gap-2 p-3 bg-muted rounded-md">
                       <div className="flex-1 space-y-1">
                         <div className="flex items-center gap-2">

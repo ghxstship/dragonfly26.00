@@ -41,8 +41,7 @@ export function WorkspaceSwitcher() {
   const { currentWorkspace, setCurrentWorkspace } = useUIStore()
   const { workspaces, currentOrganization, addWorkspace } = useWorkspaceStore()
 
-  const filteredWorkspaces = workspaces.filter((ws) =>
-    ws.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredWorkspaces = workspaces.filter((ws: any) => ws.name.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   const handleCreateWorkspace = async (e: React.FormEvent) => {

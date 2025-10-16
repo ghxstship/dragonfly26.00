@@ -58,8 +58,8 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
 
   // Group expenses by category
   const expensesByCategory = data
-    .filter((item) => item.type === "expense" || (item.amount && item.amount < 0))
-    .reduce((acc, item) => {
+    .filter((item: any) => item.type === "expense" || (item.amount && item.amount < 0))
+    .reduce((acc: any, item: any) => {
       const category = item.category || "Other"
       if (!acc[category]) acc[category] = 0
       acc[category] += Math.abs(item.amount || 0)
@@ -67,7 +67,7 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
     }, {} as Record<string, number>)
 
   const topExpenses = Object.entries(expensesByCategory)
-    .sort(([, a], [, b]) => b - a)
+    .sort(([, a], [, b]) => (b as number) - (a as number))
     .slice(0, 5)
 
   return (
@@ -208,12 +208,13 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
               <CardContent>
                 <div className="space-y-4">
                   {topExpenses.map(([category, amount]) => {
-                    const percentage = (amount / metrics.expenses) * 100
+                    const amountNum = amount as number
+                    const percentage = (amountNum / metrics.expenses) * 100
                     return (
                       <div key={category}>
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-sm font-medium">{category}</span>
-                          <span className="text-sm text-muted-foreground">${amount.toLocaleString()}</span>
+                          <span className="text-sm text-muted-foreground">${amountNum.toLocaleString()}</span>
                         </div>
                         <div className="h-2 bg-muted rounded-full overflow-hidden">
                           <div

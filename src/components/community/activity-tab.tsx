@@ -89,7 +89,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
   const characterLimit = 500
   const charactersRemaining = characterLimit - newPost.length
 
-  const handlePostSubmit = () => {
+  const handlePostSubmit = async () => {
     if (newPost.trim() && newPost.length <= characterLimit) {
       const newActivityPost: ActivityPost = {
         id: Date.now().toString(),
@@ -157,7 +157,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {posts.reduce((acc, p) => acc + p.likes, 0)}
+              {posts.reduce((acc: any, p: any) => acc + p.likes, 0)}
             </div>
             <p className="text-xs text-muted-foreground">{t('totalLikes')}</p>
           </CardContent>

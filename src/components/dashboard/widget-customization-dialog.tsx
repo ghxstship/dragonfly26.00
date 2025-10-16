@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
@@ -59,6 +60,7 @@ export function WidgetCustomizationDialog({
   onToggle,
   onReset 
 }: WidgetCustomizationDialogProps) {
+  const t = useTranslations()
   const [loading, setLoading] = useState<string | null>(null)
 
   const handleToggle = async (widgetId: string) => {

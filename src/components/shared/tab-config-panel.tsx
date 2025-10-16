@@ -34,17 +34,16 @@ export function TabConfigPanel({ moduleSlug }: TabConfigPanelProps) {
 
   const hideAllTabs = () => {
     setTabs((prev) =>
-      prev.map((tab, index) =>
+      prev.map((tab: any, index: number) =>
         index === 0 ? tab : { ...tab, enabled: false }
       )
     )
   }
 
-  const filteredTabs = tabs.filter((tab) =>
-    tab.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredTabs = tabs.filter((tab: any) => tab.name.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
-  const visibleCount = tabs.filter((t) => t.enabled).length
+  const visibleCount = tabs.filter((t: any) => t.enabled).length
   const totalCount = tabs.length
 
   return (
@@ -74,7 +73,7 @@ export function TabConfigPanel({ moduleSlug }: TabConfigPanelProps) {
 
       {/* Pages List */}
       <div className="space-y-2 max-h-[420px] overflow-y-auto pr-2">
-        {filteredTabs.map((tab, index) => {
+        {filteredTabs.map((tab: any, index: number) => {
           const Icon = iconMap[tab.icon]
           const isFirst = index === 0
 

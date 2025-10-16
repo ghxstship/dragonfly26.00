@@ -108,7 +108,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
         </TabsList>
 
         <TabsContent value="6months" className="space-y-4">
-          {trendData.map((data, index) => {
+          {trendData.map((data: any, index: number) => {
             const TrendIcon = data.trend === "up" ? TrendingUp : TrendingDown
             const trendColor = data.trend === "up" ? "text-green-600" : "text-red-600"
             const bgColor = data.trend === "up" ? "bg-green-100" : "bg-red-100"
@@ -140,8 +140,8 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
                     {/* Simple bar chart representation */}
                     <div className="overflow-x-auto -mx-2 px-2">
                       <div className="flex items-end gap-2 h-32 sm:h-40 min-w-[280px]">
-                        {periodsToShow.map((period, idx) => {
-                          const maxValue = Math.max(...periodsToShow.map(p => p.value))
+                        {periodsToShow.map((period: any, idx: number) => {
+                          const maxValue = Math.max(...periodsToShow.map((p: any) => p.value))
                           const height = (period.value / maxValue) * 100
                           
                           return (

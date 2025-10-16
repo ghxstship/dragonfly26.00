@@ -70,12 +70,12 @@ export const useCollaborationStore = create<CollaborationStore>((set) => ({
   
   addPresence: (user) =>
     set((state) => ({
-      presence: [...state.presence.filter((p) => p.user_id !== user.user_id), user],
+      presence: [...state.presence.filter((p: any) => p.user_id !== user.user_id), user],
     })),
 
   removePresence: (userId) =>
     set((state) => ({
-      presence: state.presence.filter((p) => p.user_id !== userId),
+      presence: state.presence.filter((p: any) => p.user_id !== userId),
     })),
 
   updatePresence: (userId, updates) =>
@@ -119,7 +119,7 @@ export const useCollaborationStore = create<CollaborationStore>((set) => ({
     set((state) => ({
       comments: {
         ...state.comments,
-        [entityId]: state.comments[entityId]?.filter((c) => c.id !== commentId),
+        [entityId]: state.comments[entityId]?.filter((c: any) => c.id !== commentId),
       },
     })),
 

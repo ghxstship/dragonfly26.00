@@ -179,7 +179,7 @@ export function BillingTab() {
     setUpgradeDialogOpen(true)
   }
 
-  const handleConfirmUpgrade = () => {
+  const handleConfirmUpgrade = async () => {
     toast({
       title: t('settings.toast.planUpgraded'),
       description: `Successfully upgraded to ${plans.find(p => p.id === selectedPlan)?.name} plan.`,
@@ -352,7 +352,7 @@ export function BillingTab() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <ul className="space-y-2">
-                      {plan.features.map((feature, index) => (
+                      {plan.features.map((feature: any, index: number) => (
                         <li key={index} className="flex items-center gap-2 text-sm">
                           <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" aria-hidden="true" />
                           {feature}
@@ -485,7 +485,7 @@ export function BillingTab() {
                 <div className="space-y-2">
                   <p className="text-sm font-medium">What&apos;s included:</p>
                   <ul className="space-y-1">
-                    {plans.find(p => p.id === selectedPlan)?.features.map((feature, index) => (
+                    {plans.find(p => p.id === selectedPlan)?.features.map((feature: any, index: number) => (
                       <li key={index} className="flex items-center gap-2 text-sm">
                         <CheckCircle2 className="h-4 w-4 text-green-500" aria-hidden="true" />
                         {feature}
