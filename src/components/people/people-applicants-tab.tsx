@@ -41,8 +41,7 @@ export function ApplicantsTab({ data, loading }: ApplicantsTabProps) {
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-      </div>
-         )
+    )
 }
 
   return (

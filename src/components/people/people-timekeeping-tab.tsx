@@ -41,8 +41,7 @@ export function TimekeepingTab({ data, loading }: TimekeepingTabProps) {
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-      </div>
-         )
+    )
 }
 
   return (

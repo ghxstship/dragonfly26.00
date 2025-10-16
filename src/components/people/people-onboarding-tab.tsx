@@ -41,8 +41,7 @@ export function OnboardingTab({ data, loading }: OnboardingTabProps) {
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-      </div>
-         )
+    )
 }
 
   return (

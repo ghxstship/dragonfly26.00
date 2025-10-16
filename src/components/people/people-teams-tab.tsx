@@ -41,8 +41,7 @@ export function TeamsTab({ data, loading }: TeamsTabProps) {
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-      </div>
-         )
+    )
 }
 
   return (

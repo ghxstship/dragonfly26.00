@@ -41,8 +41,7 @@ export function AssignmentsTab({ data, loading }: AssignmentsTabProps) {
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-      </div>
-         )
+    )
 }
 
   return (

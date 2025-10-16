@@ -41,8 +41,7 @@ export function PersonnelTab({ data, loading }: PersonnelTabProps) {
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-      </div>
-         )
+    )
 }
 
   return (

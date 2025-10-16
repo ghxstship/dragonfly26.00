@@ -41,8 +41,7 @@ export function OpeningsTab({ data, loading }: OpeningsTabProps) {
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
         </div>
       </div>
-      </div>
-         )
+    )
 }
 
   return (
