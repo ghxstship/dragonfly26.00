@@ -91,7 +91,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           Personnel scheduling
         </p>
         <Button size="sm">
-          <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+          <Plus className="h-4 w-4 mr-2" />
           Create
         </Button>
       </div>
@@ -104,11 +104,11 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </p>
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Download className="h-4 w-4 mr-2" />
             Export
           </Button>
           <Button size="sm">
-            <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+            <Plus className="h-4 w-4 mr-2" />
             Add Shift
           </Button>
         </div>
@@ -119,7 +119,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Shifts</CardTitle>
-            <Calendar className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Calendar className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{shifts.length}</div>
@@ -130,7 +130,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Hours</CardTitle>
-            <Clock className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Clock className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{totalHours}</div>
@@ -141,7 +141,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card className={conflicts > 0 ? "border-yellow-200 dark:border-yellow-900" : ""}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Conflicts</CardTitle>
-            <AlertTriangle className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <AlertTriangle className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${conflicts > 0 ? 'text-yellow-600' : ''}`}>
@@ -154,7 +154,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Overtime</CardTitle>
-            <Users className="h-4 w-4" aria-hidden="true" className="text-muted-foreground" />
+            <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{overtimeShifts}</div>
@@ -260,10 +260,10 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                                     <Badge variant="outline" className="text-[10px] px-1 py-0">OT</Badge>
                                   )}
                                   {shift.has_conflict && (
-                                    <AlertTriangle className="h-4 w-4" aria-hidden="true" className="text-yellow-600" />
+                                    <AlertTriangle className="h-4 w-4 text-yellow-600" />
                                   )}
                                   {shift.is_confirmed && (
-                                    <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="text-green-600" />
+                                    <CheckCircle2 className="h-4 w-4 text-green-600" />
                                   )}
                                 </div>
                               </div>
@@ -293,11 +293,11 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
               <span>{t('evening')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <AlertTriangle className="h-4 w-4" aria-hidden="true" className="text-yellow-600" />
+              <AlertTriangle className="h-4 w-4 text-yellow-600" />
               <span>{t('conflict')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4" aria-hidden="true" className="text-green-600" />
+              <CheckCircle2 className="h-4 w-4 text-green-600" />
               <span>{t('confirmed')}</span>
             </div>
           </div>

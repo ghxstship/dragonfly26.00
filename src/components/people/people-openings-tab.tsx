@@ -113,7 +113,7 @@ export function OpeningsTab({ data, loading }: OpeningsTabProps) {
                 <p className="text-lg font-semibold mb-2">No openings found</p>
                 <p className="text-sm mb-4">{t('emptyStateMessage')}</p>
                 <Button>
-                  <Plus className="h-4 w-4" aria-hidden="true" className="mr-2" />
+                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
                   Create Openings
                 </Button>
               </div>
