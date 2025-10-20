@@ -92,7 +92,7 @@ export function CustomStatusesTab() {
   }
 
   const deleteStatus = (id: string) => {
-    setStatuses(statuses.filter((s: any) => s.id !== id))
+    setStatuses(statuses.filter((s: any) => (s as any).id !== id))
   }
 
   return (
@@ -130,7 +130,7 @@ export function CustomStatusesTab() {
                   <div className="space-y-2">
                     <Label>Color</Label>
                     <div className="grid grid-cols-4 gap-2">
-                      {STATUS_COLORS.map((color) => (
+                      {STATUS_COLORS.map((color: any) => (
                         <button
                           key={color.value}
                           className={`h-10 rounded-md border-2 ${
@@ -150,7 +150,7 @@ export function CustomStatusesTab() {
                     <Label>Status Type</Label>
                     <Select
                       value={newStatus.type}
-                      onValueChange={(value: any) => setNewStatus({ ...newStatus, type: value })}
+                      onValueChange={(value: any) => setNewStatus({ ...newStatus, type: value as any })}
                     >
                       <SelectTrigger>
                         <SelectValue />
@@ -179,7 +179,7 @@ export function CustomStatusesTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
-            {statuses.map((status) => (
+            {statuses.map((status: any) => (
               <div
                 key={status.id}
                 className="flex items-center gap-3 p-3 border rounded-lg hover:bg-accent/50"

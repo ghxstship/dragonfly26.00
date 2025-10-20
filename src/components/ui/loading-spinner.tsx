@@ -58,7 +58,7 @@ export function PulseLoader({ className }: PulseLoaderProps) {
 
   return (
     <div className={cn("flex gap-1", className)}>
-      {[0, 1, 2].map((i) => (
+      {[0, 1, 2].map((i: any) => (
         <motion.div
           key={i}
           className="h-2 w-2 rounded-full bg-primary"

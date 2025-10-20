@@ -36,11 +36,11 @@ export function InventoryBadge({
 }: InventoryBadgeProps) {
   // Calculate total available across all locations
   const totalAvailable = inventoryLevels
-    ? inventoryLevels.reduce((sum, level) => sum + level.available, 0)
+    ? inventoryLevels.reduce((sum: any, level: any) => sum + level.available, 0)
     : inventoryQuantity
 
   const totalIncoming = inventoryLevels
-    ? inventoryLevels.reduce((sum, level) => sum + level.incoming, 0)
+    ? inventoryLevels.reduce((sum: any, level: any) => sum + level.incoming, 0)
     : 0
 
   const getStockStatus = () => {

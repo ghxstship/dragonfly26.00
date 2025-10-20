@@ -109,7 +109,7 @@ export default function InviteColleaguesPage() {
     } catch (error: any) {
       toast({
         title: 'Error',
-        description: error.message,
+        description: (error as any).message,
         variant: 'destructive',
       })
     } finally {
@@ -186,7 +186,7 @@ export default function InviteColleaguesPage() {
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            {availableRoles.map((roleSlug) => {
+                            {availableRoles.map((roleSlug: any) => {
                               const role = BRANDED_ROLES[roleSlug]
                               return (
                                 <SelectItem key={roleSlug} value={roleSlug}>

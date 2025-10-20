@@ -243,7 +243,7 @@ export function getPlanById(planId: string): SubscriptionPlan | null {
  * Get all plans sorted by price
  */
 export function getAllPlans(): SubscriptionPlan[] {
-  return Object.values(SUBSCRIPTION_PLANS).sort((a, b) => a.price - b.price)
+  return Object.values(SUBSCRIPTION_PLANS).sort((a: any, b: any) => a.price - b.price)
 }
 
 /**

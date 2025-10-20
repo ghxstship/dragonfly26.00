@@ -15,12 +15,13 @@ BEGIN
         WHERE tablename = 'data_sources' 
         AND policyname = 'Users can view data sources in their workspace'
     ) THEN
-        CREATE POLICY "Users can view data sources in their workspace"
+        DROP POLICY IF EXISTS "Users can view data sources in their workspace" ON data_sources;
+CREATE POLICY "Users can view data sources in their workspace"
             ON data_sources FOR SELECT
             USING (
                 workspace_id IN (
                     SELECT workspace_id FROM workspace_members
-                    WHERE user_id = auth.uid()
+                    WHERE user_id = (SELECT auth.uid())
                 )
             );
     END IF;
@@ -34,12 +35,13 @@ BEGIN
         WHERE tablename = 'data_sources' 
         AND policyname = 'Users can create data sources in their workspace'
     ) THEN
-        CREATE POLICY "Users can create data sources in their workspace"
+        DROP POLICY IF EXISTS "Users can create data sources in their workspace" ON data_sources;
+CREATE POLICY "Users can create data sources in their workspace"
             ON data_sources FOR INSERT
             WITH CHECK (
                 workspace_id IN (
                     SELECT workspace_id FROM workspace_members
-                    WHERE user_id = auth.uid()
+                    WHERE user_id = (SELECT auth.uid())
                 )
             );
     END IF;
@@ -53,12 +55,13 @@ BEGIN
         WHERE tablename = 'data_sources' 
         AND policyname = 'Users can update data sources in their workspace'
     ) THEN
-        CREATE POLICY "Users can update data sources in their workspace"
+        DROP POLICY IF EXISTS "Users can update data sources in their workspace" ON data_sources;
+CREATE POLICY "Users can update data sources in their workspace"
             ON data_sources FOR UPDATE
             USING (
                 workspace_id IN (
                     SELECT workspace_id FROM workspace_members
-                    WHERE user_id = auth.uid()
+                    WHERE user_id = (SELECT auth.uid())
                 )
             );
     END IF;
@@ -72,12 +75,13 @@ BEGIN
         WHERE tablename = 'data_sources' 
         AND policyname = 'Admins can delete data sources in their workspace'
     ) THEN
-        CREATE POLICY "Admins can delete data sources in their workspace"
+        DROP POLICY IF EXISTS "Admins can delete data sources in their workspace" ON data_sources;
+CREATE POLICY "Admins can delete data sources in their workspace"
             ON data_sources FOR DELETE
             USING (
                 workspace_id IN (
                     SELECT workspace_id FROM workspace_members
-                    WHERE user_id = auth.uid()
+                    WHERE user_id = (SELECT auth.uid())
                     AND role IN ('owner', 'admin')
                 )
             );

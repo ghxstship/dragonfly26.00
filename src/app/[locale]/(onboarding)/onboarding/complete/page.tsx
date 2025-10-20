@@ -44,7 +44,7 @@ export default function CompletePage() {
       if (error) {
         console.error('Error completing onboarding:', error)
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error marking onboarding complete:', error)
     }
   }

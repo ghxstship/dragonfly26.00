@@ -102,9 +102,9 @@ export function InsightsPageContent() {
 
   const stats = {
     total: objectives.length,
-    on_track: objectives.filter(g => g.status === "on_track").length,
-    at_risk: objectives.filter(g => g.status === "at_risk").length,
-    completed: objectives.filter(g => g.status === "completed").length,
+    on_track: objectives.filter(g => (g as any).status === "on_track").length,
+    at_risk: objectives.filter(g => (g as any).status === "at_risk").length,
+    completed: objectives.filter(g => (g as any).status === "completed").length,
   }
 
   return (
@@ -181,7 +181,7 @@ export function InsightsPageContent() {
 
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
-        <Tabs value={viewMode} onValueChange={(v: any) => setViewMode(v)}>
+        <Tabs value={viewMode} onValueChange={(v) => setViewMode(v as "list" | "hierarchy")}>
           <TabsList>
             <TabsTrigger value="list">List View</TabsTrigger>
             <TabsTrigger value="hierarchy">Hierarchy View</TabsTrigger>

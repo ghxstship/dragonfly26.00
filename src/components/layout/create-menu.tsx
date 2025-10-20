@@ -46,7 +46,7 @@ import {
 import type { ItemType } from "@/lib/modules/item-type-to-module-mapper"
 
 // Icon mapping
-const ICON_MAP: Record<string, any> = {
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   FolderKanban,
   Briefcase,
   CheckSquare,
@@ -97,7 +97,7 @@ export function CreateMenu({
     if (saved) {
       try {
         setFavoriteActions(JSON.parse(saved))
-      } catch (e) {
+      } catch (e: any) {
         console.error('Failed to load favorites', e)
       }
     }
@@ -106,7 +106,7 @@ export function CreateMenu({
   // Save favorites to localStorage
   const toggleFavorite = (actionId: string) => {
     const newFavorites = favoriteActions.includes(actionId)
-      ? favoriteActions.filter((id) => id !== actionId)
+      ? favoriteActions.filter((id: any) => id !== actionId)
       : [...favoriteActions, actionId]
     
     setFavoriteActions(newFavorites)
@@ -125,7 +125,7 @@ export function CreateMenu({
   }
 
   const filteredFavoriteActions = favoriteActions
-    .map((id) => CREATE_ACTIONS.find((a) => a.id === id))
+    .map((id: any) => CREATE_ACTIONS.find((a: any) => a.id === id))
     .filter((action): action is CreateAction => {
       if (!action) return false
       return (
@@ -166,7 +166,7 @@ export function CreateMenu({
   }
 
   const renderActionItem = (action: CreateAction, showFavorite = false) => {
-    const Icon = ICON_MAP[action.icon] || Plus
+    const Icon = iconMap[action.icon] || Plus
     const isFavorite = favoriteActions.includes(action.id)
 
     return (
@@ -226,7 +226,7 @@ export function CreateMenu({
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder={t('search.searchActions')}
-              value={searchQuery}
+              value={searchQuery as any}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="h-9 pl-9"
               onClick={(e) => e.stopPropagation()}
@@ -242,7 +242,7 @@ export function CreateMenu({
                 <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
                   {t('common.favorites')}
                 </DropdownMenuLabel>
-                {filteredFavoriteActions.map((action) => renderActionItem(action, true))}
+                {filteredFavoriteActions.map((action: any) => renderActionItem(action, true))}
                 <DropdownMenuSeparator />
               </>
             )}
@@ -253,7 +253,7 @@ export function CreateMenu({
                 <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
                   {t('create.coreItems')}
                 </DropdownMenuLabel>
-                {groupedActions.core.map((action) => renderActionItem(action, true))}
+                {groupedActions.core.map((action: any) => renderActionItem(action, true))}
               </>
             )}
 
@@ -264,7 +264,7 @@ export function CreateMenu({
                 <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
                   {t('create.advancedItems')}
                 </DropdownMenuLabel>
-                {groupedActions.advanced.map((action) => renderActionItem(action, true))}
+                {groupedActions.advanced.map((action: any) => renderActionItem(action, true))}
               </>
             )}
 
@@ -275,7 +275,7 @@ export function CreateMenu({
                 <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
                   {t('create.adminConfig')}
                 </DropdownMenuLabel>
-                {groupedActions.admin.map((action) => renderActionItem(action, true))}
+                {groupedActions.admin.map((action: any) => renderActionItem(action, true))}
               </>
             )}
 

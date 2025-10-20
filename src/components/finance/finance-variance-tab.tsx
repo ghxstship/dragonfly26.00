@@ -9,12 +9,45 @@ import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinanceVarianceTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
+interface Variance {
+  id: string | number
+  categoryKey?: string
+  category?: string
+  budgeted: number
+  actual: number
+  variance: number
+  variancePercent: number
+  type: string
+  rootCauseKey?: string
+  rootCause?: string
+  requiresAction: boolean
+  actionTaken: boolean
+  period: string
+}
+
+// Type guard to ensure variance has required properties
+function isValidVariance(obj: any): obj is Variance {
+  if (typeof obj !== 'object' || obj === null) return false
+  const v = obj as Record<string, unknown>
+  return (
+    (typeof v.id === 'string' || typeof v.id === 'number') &&
+    typeof v.budgeted === 'number' &&
+    typeof v.actual === 'number' &&
+    typeof v.variance === 'number' &&
+    typeof v.variancePercent === 'number' &&
+    typeof v.type === 'string' &&
+    typeof v.requiresAction === 'boolean' &&
+    typeof v.actionTaken === 'boolean' &&
+    typeof v.period === 'string'
+  )
+}
+
 // Mock data for demo/fallback - will be replaced with t() calls in component
-const MOCK_VARIANCES = [
+const MOCK_VARIANCES: Variance[] = [
   {
     id: '1',
     categoryKey: 'mockData.categories.equipmentRental',
@@ -95,9 +128,13 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
   }
 
   // ✅ Use real data if available, otherwise mock
-  const variances = (data && data.length > 0) ? data.slice(0, 10) : [
-    ...MOCK_VARIANCES
-  ]
+  let variances: Variance[] = MOCK_VARIANCES
+  if (data && data.length > 0) {
+    const validVariances = data.filter(isValidVariance) as unknown as Variance[]
+    if (validVariances.length > 0) {
+      variances = validVariances.slice(0, 10)
+    }
+  }
 
   const totalBudgeted = variances.reduce((sum: number, v) => sum + v.budgeted, 0)
   const totalActual = variances.reduce((sum: number, v) => sum + v.actual, 0)
@@ -110,7 +147,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
   const unfavorableAmount = variances.filter(v => v.type === 'unfavorable').reduce((sum: number, v) => sum + Math.abs(v.variance), 0)
   const actionRequiredCount = variances.filter(v => v.requiresAction && !v.actionTaken).length
 
-  const rootCauseCategories = [
+  const rootCauseCategories: Array<{ category: string; count: number; amount: number }> = [
     { category: t('mockData.rootCauseCategories.scopeChanges'), count: 2, amount: 13000 },
     { category: t('mockData.rootCauseCategories.vendorNegotiations'), count: 1, amount: 8000 },
     { category: t('mockData.rootCauseCategories.resourceOptimization'), count: 1, amount: 1500 },
@@ -121,12 +158,12 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Variance</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Total Variance</CardTitle>
             {totalVariance >= 0 ? (
-              <TrendingUp className="h-4 w-4" aria-hidden="true"  />
+              <TrendingUp className="h-4 w-4" aria-hidden="true" />
             ) : (
-              <TrendingDown className="h-4 w-4" aria-hidden="true"  />
+              <TrendingDown className="h-4 w-4" aria-hidden="true" />
             )}
           </CardHeader>
           <CardContent>
@@ -140,9 +177,9 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Favorable</CardTitle>
-            <TrendingUp className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Favorable</CardTitle>
+            <TrendingUp className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
@@ -155,9 +192,9 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Unfavorable</CardTitle>
-            <TrendingDown className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Unfavorable</CardTitle>
+            <TrendingDown className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">
@@ -170,9 +207,9 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Action Required</CardTitle>
-            <AlertTriangle className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Action Required</CardTitle>
+            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-orange-600">
@@ -193,11 +230,11 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {variances.map((variance) => (
+            {variances.map((variance: any) => (
               <Card key={variance.id} className={`border-l-4 ${
                 variance.type === 'favorable' ? 'border-l-green-500' : 'border-l-red-500'
               }`}>
-                <CardContent className="pt-6">
+                <CardContent className="pt-6" aria-hidden="true">
                   <div className="space-y-3">
                     {/* Header */}
                     <div className="flex items-start justify-between">
@@ -241,7 +278,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
 
                     {/* Root Cause */}
                     <div className="flex items-start gap-2 p-3 bg-muted rounded-md">
-                      <Info className="h-4 w-4" aria-hidden="true"  />
+                      <Info className="h-4 w-4" aria-hidden="true" />
                       <div className="space-y-1 flex-1">
                         <p className="text-xs font-medium">Root Cause</p>
                         <p className="text-sm text-muted-foreground">{variance.rootCauseKey ? t(variance.rootCauseKey) : variance.rootCause}</p>
@@ -277,7 +314,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {rootCauseCategories.map((cause: any, index: number) => (
+              {rootCauseCategories.map((cause, index: number) => (
                 <div key={index} className="space-y-2">
                   <div className="flex items-center justify-between">
                     <h4 className="font-medium text-sm">{cause.category}</h4>
@@ -285,7 +322,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                       <span className="text-sm font-semibold">
                         ${Math.abs(cause.amount).toLocaleString()}
                       </span>
-                      <ChevronRight className="h-4 w-4" aria-hidden="true"  />
+                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -349,7 +386,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                   <span className="text-muted-foreground">Average variance: <strong className="text-green-600">+$1.0k</strong></span>
                 </div>
                 <div className="flex items-center gap-2 text-sm mt-2">
-                  <AlertTriangle className="h-4 w-4" aria-hidden="true"  />
+                  <AlertTriangle className="h-4 w-4" aria-hidden="true" />
                   <span className="text-muted-foreground">Trending: <strong className="text-orange-600">Worsening</strong></span>
                 </div>
               </div>

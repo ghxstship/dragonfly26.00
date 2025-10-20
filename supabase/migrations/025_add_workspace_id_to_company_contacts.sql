@@ -29,7 +29,7 @@ CREATE POLICY "Users can view company contacts in their workspaces"
     ON company_contacts FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT (SELECT (SELECT auth.uid()))))
         )
     ));
 
@@ -37,7 +37,7 @@ CREATE POLICY "Users can manage company contacts in their workspaces"
     ON company_contacts FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT (SELECT (SELECT auth.uid()))))
         )
     ));
 

@@ -1,11 +1,23 @@
 "use client"
 
-import { Table, Filter, Download, Plus } from "lucide-react"
+import { Table, ChevronDown, ChevronRight, Plus, Download, type LucideIcon } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
-const pivotData = [
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
+
+interface PivotData {
+  regionKey: string
+  product: string
+  q1: number
+  q2: number
+  q3: number
+  q4: number
+  total: number
+}
+
+const pivotData: PivotData[] = [
   { regionKey: "north_america", product: "Product A", q1: 450, q2: 520, q3: 580, q4: 620, total: 2170 },
   { regionKey: "north_america", product: "Product B", q1: 380, q2: 420, q3: 460, q4: 500, total: 1760 },
   { regionKey: "europe", product: "Product A", q1: 320, q2: 360, q3: 400, q4: 440, total: 1520 },
@@ -15,7 +27,7 @@ const pivotData = [
 ]
 
 interface AnalyticsPivotTablesTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -53,7 +65,7 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
                 </tr>
               </thead>
               <tbody>
-                {pivotData.map((row: any, index: number) => (
+                {pivotData.map((row: PivotData, index: number) => (
                   <tr key={index} className="hover:bg-accent/50 transition-colors">
                     <td className="border p-3 font-medium">{t(row.regionKey)}</td>
                     <td className="border p-3">{row.product}</td>
@@ -65,6 +77,7 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
                   </tr>
                 ))}
                 <tr className="bg-muted font-bold">
+                  <Table className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
                   <td colSpan={2} className="border p-3">{t('grandTotal')}</td>
                   <td className="border p-3 text-right">$1,760K</td>
                   <td className="border p-3 text-right">$2,010K</td>

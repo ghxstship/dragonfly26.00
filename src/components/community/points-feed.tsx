@@ -71,7 +71,7 @@ export function PointsFeed({
         if (error) throw error
 
         setTransactions(data || [])
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error fetching point transactions:', error)
       } finally {
         setLoading(false)
@@ -155,7 +155,7 @@ export function PointsFeed({
       <CardContent className={compact ? "pt-0" : ""}>
         <ScrollArea className={compact ? "h-64" : "h-96"}>
           <div className="space-y-3 pr-4">
-            {transactions.map((transaction) => {
+            {transactions.map((transaction: any) => {
               const actionInfo = getActionInfo(transaction.action_type)
               const Icon = actionInfo.icon
               const isPositive = transaction.points_delta > 0

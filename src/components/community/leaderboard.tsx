@@ -89,7 +89,7 @@ export function Leaderboard({
             }
           }
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error fetching leaderboard:', error)
       } finally {
         setLoading(false)
@@ -170,7 +170,7 @@ export function Leaderboard({
       </CardHeader>
       <CardContent className={compact ? "pt-0" : ""}>
         <div className="space-y-3">
-          {entries.map((entry: any, index: number) => (
+          {entries.map((entry: LeaderboardEntry, index: number) => (
             <div
               key={entry.user_id}
               className={cn(

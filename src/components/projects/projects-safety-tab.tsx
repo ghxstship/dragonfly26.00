@@ -10,7 +10,7 @@ import { useParams } from "next/navigation"
 import { useState } from "react"
 
 interface SafetyTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 

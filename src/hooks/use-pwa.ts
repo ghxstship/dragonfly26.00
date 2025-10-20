@@ -20,7 +20,7 @@ export function usePWA() {
     isOffline: !navigator.onLine,
   })
 
-  const [deferredPrompt, setDeferredPrompt] = useState<any>(null)
+  const [deferredPrompt, setDeferredPrompt] = useState<unknown>(null)
 
   useEffect(() => {
     // Check if already installed
@@ -92,8 +92,8 @@ export function usePWA() {
       return false
     }
 
-    deferredPrompt.prompt()
-    const { outcome } = await deferredPrompt.userChoice
+    (deferredPrompt as any).prompt()
+    const { outcome } = await (deferredPrompt as any).userChoice
 
     if (outcome === 'accepted') {
       console.log('[PWA] User accepted install')

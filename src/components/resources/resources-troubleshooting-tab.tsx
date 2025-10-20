@@ -52,17 +52,17 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Issues</CardTitle>
-            <HelpCircle className="h-4 w-4 text-muted-foreground" />
+            <HelpCircle className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{issues.length}</div>
-            <p className="text-xs text-muted-foreground">Documented</p>
+            <p className="text-xs text-muted-foreground">{t('documented')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Critical</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('critical')}</CardTitle>
             <AlertCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -75,7 +75,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Common</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('common')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -88,8 +88,8 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Helpful</CardTitle>
-            <ThumbsUp className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('helpful')}</CardTitle>
+            <ThumbsUp className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">
@@ -105,7 +105,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
         <Input
           placeholder={t('searchIssues')}
-          value={searchQuery}
+          value={searchQuery as any}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-9"
         />
@@ -119,7 +119,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-start gap-3 flex-1">
                   <div className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
-                    <HelpCircle className="h-5 w-5 text-gray-600" />
+                    <HelpCircle className="h-5 w-5 text-gray-600"  aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <CardTitle className="text-lg">{issue.name}</CardTitle>
@@ -132,7 +132,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
                     </Badge>
                   )}
                   {issue.is_common && (
-                    <Badge variant="secondary">Common</Badge>
+                    <Badge variant="secondary">{t('common')}</Badge>
                   )}
                 </div>
               </div>
@@ -172,10 +172,10 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
 
               <div className="flex gap-2 pt-2 border-t">
                 <Button variant="outline" size="sm">
-                  <ThumbsUp className="h-4 w-4 mr-2" />
+                  <ThumbsUp className="h-4 w-4 mr-2"  aria-hidden="true" />
                   Helpful ({issue.helpful_count || 0})
                 </Button>
-                <Button variant="outline" size="sm">View Details</Button>
+                <Button variant="outline" size="sm">{t('viewDetails')}</Button>
               </div>
             </CardContent>
           </Card>

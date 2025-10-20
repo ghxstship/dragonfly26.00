@@ -238,7 +238,11 @@
     },
     "invite": "Invite",
     "apiTokens": "API Tokens",
-    "automations": "Automations",
+    "automations": {
+      "newMemberWelcome": "New Member Welcome",
+      "dailyTaskSummary": "Daily Task Summary",
+      "projectStatusUpdates": "Project Status Updates"
+    },
     "webhooks": "Webhooks",
     "customStatuses": "Custom Statuses",
     "checklistTemplates": {
@@ -247,7 +251,15 @@
     },
     "recurrenceRules": "Recurrence Rules",
     "organizationSettings": "Organization Settings",
-    "plugins": "Plugins",
+    "plugins": {
+      "slackIntegration": "Slack Integration",
+      "slackDesc": "Connect your workspace to Slack",
+      "googleDrive": "Google Drive",
+      "googleDriveDesc": "Sync files with Google Drive",
+      "zapier": "Zapier",
+      "zapierDesc": "Automate workflows with 5000+ apps",
+      "searchPlaceholder": "Search plugins..."
+    },
     "billing": "Billing",
     "security": "Security",
     "rolesPermissions": "Roles & Permissions",
@@ -270,23 +282,12 @@
       "uptime": "Uptime"
     },
     "members": {
-      "mockMember1": "John Doe",
-      "mockEmail1": "john@example.com",
-      "mockMember2": "Jane Smith",
-      "mockEmail2": "jane@example.com"
-    },
-    "automations": {
-      "newMemberWelcome": "New Member Welcome",
-      "dailyTaskSummary": "Daily Task Summary",
-      "projectStatusUpdates": "Project Status Updates"
-    },
-    "plugins": {
-      "slackIntegration": "Slack Integration",
-      "slackDesc": "Connect your workspace to Slack",
-      "googleDrive": "Google Drive",
-      "googleDriveDesc": "Sync files with Google Drive",
-      "zapier": "Zapier",
-      "zapierDesc": "Automate workflows with 5000+ apps"
+      "searchPlaceholder": "Search members...",
+      "allMembers": "All Members",
+      "emailPlaceholder": "colleague@example.com",
+      "inviteTab": {
+        "sendInvites": "Send Invites"
+      }
     },
     "systemStatus": "All systems operational",
     "viewAll": "View All",
@@ -441,14 +442,6 @@
       "ruleSavedDesc": "The recurrence rule has been saved successfully.",
       "secretCopiedDesc": "Webhook secret has been copied to clipboard.",
       "webhookSavedDesc": "The webhook has been configured successfully."
-    },
-    "members": {
-      "searchPlaceholder": "Search members...",
-      "allMembers": "All Members",
-      "emailPlaceholder": "colleague@example.com",
-      "inviteTab": {
-        "sendInvites": "Send Invites"
-      }
     },
     "templates": {
       "title": "Templates",

@@ -40,7 +40,7 @@ export const mockProductions = [
   {
     id: 'demo-prod-3',
     name: 'Theater Revival',
-    description: 'Broadway production technical setup',
+    description: 'Broadway production technical setUp',
     status: 'planning',
     start_date: new Date(Date.now() + 7776000000).toISOString(),
     end_date: new Date(Date.now() + 15552000000).toISOString(),

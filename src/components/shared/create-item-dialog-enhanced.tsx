@@ -92,25 +92,25 @@ export function CreateItemDialogEnhanced({
       }
 
       // Prepare data for insertion
-      const insertData: Record<string, any> = {
+      const newData: Record<string, any> = {
         ...formData,
       }
 
       // Add workspace_id if required
       if (tableMapping?.requiresWorkspaceId && workspaceId) {
-        insertData.workspace_id = workspaceId
+        newData.workspace_id = workspaceId
       }
 
       // Add created_by user_id if required
       if (tableMapping?.requiresUserId) {
-        insertData.created_by = user.id
+        newData.created_by = user.id
       }
 
       // Insert into database if table mapping exists
       if (tableMapping) {
         const { data: newItem, error } = await supabase
           .from(tableMapping.tableName)
-          .insert(insertData)
+          .insert(newData)
           .select()
           .single()
 
@@ -129,7 +129,7 @@ export function CreateItemDialogEnhanced({
         // Fallback for tabs without table mapping (legacy support)
         const newItem = {
           id: Math.random().toString(36).substr(2, 9),
-          ...insertData,
+          ...newData,
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
         }

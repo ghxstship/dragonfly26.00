@@ -50,7 +50,7 @@ export function TemplatesTab() {
         </CardHeader>
         <CardContent>
           <div className="grid gap-4 md:grid-cols-2">
-            {templateCategories.map((category) => {
+            {templateCategories.map((category: any) => {
               const Icon = category.icon
               return (
                 <div

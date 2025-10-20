@@ -154,7 +154,7 @@ CREATE POLICY "Users can view production advances in their workspaces"
     ON production_advances FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -163,21 +163,21 @@ CREATE POLICY "Users can create production advances in their workspaces"
     ON production_advances FOR INSERT
     WITH CHECK (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
-    ) AND created_by = auth.uid());
+    ) AND created_by = (SELECT (SELECT auth.uid())));
 
 -- Users can update their own advances or if they're the approver
 CREATE POLICY "Users can update production advances"
     ON production_advances FOR UPDATE
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ) AND (
-        created_by = auth.uid() OR 
-        approver_id = auth.uid() OR
-        requestor_id = auth.uid()
+        created_by = (SELECT (SELECT auth.uid())) OR 
+        approver_id = (SELECT (SELECT auth.uid())) OR
+        requestor_id = (SELECT (SELECT auth.uid()))
     ));
 
 -- Users can delete their own pending advances
@@ -185,9 +185,9 @@ CREATE POLICY "Users can delete their own pending advances"
     ON production_advances FOR DELETE
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
-    ) AND created_by = auth.uid() AND status = 'pending');
+    ) AND created_by = (SELECT (SELECT auth.uid())) AND status = 'pending');
 
 -- =============================================
 -- REALTIME PUBLICATION

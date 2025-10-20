@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
+import { useInsightsData } from "@/hooks/use-insights-data"
 const upcomingReviews = [
   {
     id: "1",
@@ -61,7 +62,7 @@ const pastReviews = [
 ]
 
 interface InsightsReviewsTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -76,7 +77,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
       <div>
         <h3 className="font-semibold mb-4">{t('upcomingReviews')}</h3>
         <div className="space-y-3">
-          {upcomingReviews.map((review) => (
+          {upcomingReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-start justify-between">
@@ -108,7 +109,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                       <div>
                         <p className="text-sm font-medium text-muted-foreground mb-2">{t('agenda')}</p>
                         <div className="flex flex-wrap gap-2">
-                          {review.agenda.map((item, idx) => (
+                          {review.agenda.map((item: any, idx: number) => (
                             <Badge key={idx} variant="secondary" className="text-xs">
                               {item}
                             </Badge>
@@ -138,7 +139,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
       <div>
         <h3 className="font-semibold mb-4">{t('recentReviews')}</h3>
         <div className="space-y-3">
-          {pastReviews.map((review) => (
+          {pastReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
@@ -163,7 +164,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                     <div>
                       <p className="text-sm font-medium mb-2">{t('keyOutcomes')}</p>
                       <ul className="space-y-1">
-                        {review.outcomes.map((outcome, idx) => (
+                        {review.outcomes.map((outcome: any, idx: number) => (
                           <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
                             {outcome}

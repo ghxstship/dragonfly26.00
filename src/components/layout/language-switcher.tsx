@@ -64,7 +64,7 @@ export function LanguageSwitcher() {
         <DropdownMenuLabel>{t("selectLanguage")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          {locales.map((lang) => (
+          {locales.map((lang: any) => (
             <DropdownMenuItem
               key={lang}
               onClick={() => changeLanguage(lang)}

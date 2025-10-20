@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-10-17T13:37:31.369Z",
+  "summary": {
+    "totalFiles": 55,
+    "totalDirectories": 22,
+    "violations": 0,
+    "successes": 77,
+    "complianceRate": 100
+  },
+  "violations": [],
+  "namingRules": {
+    "atoms": {
+      "suffix": "",
+      "example": "StatusBadge.tsx",
+      "directories": [
+        "kebab-case"
+      ]
+    },
+    "molecules": {
+      "suffix": "",
+      "example": "StatCard.tsx",
+      "directories": [
+        "kebab-case"
+      ]
+    },
+    "organisms": {
+      "suffix": "Organism",
+      "example": "CalendarOrganism.tsx",
+      "directories": [
+        "kebab-case"
+      ]
+    },
+    "templates": {
+      "suffix": "Template",
+      "example": "DataViewTemplate.tsx",
+      "directories": [
+        "kebab-case"
+      ]
+    },
+    "pages": {
+      "suffix": "",
+      "example": "example-data-view.tsx",
+      "directories": [
+        "kebab-case"
+      ]
+    }
+  }
+}

@@ -19,7 +19,7 @@ export function getDisplayValue(item: DataItem, schema?: FieldSchema[]): string 
   // Find the primary display field (usually first text field with order 1-3)
   const displayField = schema
     .filter(f => f.showInList && ['text', 'textarea', 'richtext'].includes(f.type))
-    .sort((a, b) => (a.order || 99) - (b.order || 99))[0]
+    .sort((a: any, b: any) => (a.order || 99) - (b.order || 99))[0]
   
   if (displayField && item[displayField.id]) {
     return String(item[displayField.id])
@@ -156,7 +156,7 @@ export function getVisibleFields(schema?: FieldSchema[], viewType: 'list' | 'tab
   
   return schema
     .filter(f => f.showInList !== false && f.id !== 'id')
-    .sort((a, b) => (a.order || 99) - (b.order || 99))
+    .sort((a: any, b: any) => (a.order || 99) - (b.order || 99))
     .slice(0, viewType === 'list' ? 5 : 10) // Limit fields for performance
 }
 

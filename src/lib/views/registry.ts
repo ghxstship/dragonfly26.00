@@ -166,7 +166,7 @@ export const VIEW_DEFINITIONS: ViewDefinition[] = [
 ]
 
 export function getViewDefinition(type: ViewType): ViewDefinition | undefined {
-  return VIEW_DEFINITIONS.find((v) => v.type === type)
+  return VIEW_DEFINITIONS.find((v: any) => v.type === type)
 }
 
 export function getViewsByCategory(category: string): ViewDefinition[] {

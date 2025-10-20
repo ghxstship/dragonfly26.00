@@ -127,7 +127,7 @@ export function AccessTab() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {credentials.map((cred) => (
+                {credentials.map((cred: any) => (
                   <TableRow key={cred.id}>
                     <TableCell className="font-medium">{cred.type}</TableCell>
                     <TableCell>{(cred.nameKey ? t(cred.nameKey) : cred.name)}</TableCell>
@@ -172,7 +172,7 @@ export function AccessTab() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {clearances.map((clearance) => (
+                {clearances.map((clearance: any) => (
                   <TableRow key={clearance.id}>
                     <TableCell className="font-medium">{clearance.type}</TableCell>
                     <TableCell>{clearance.level}</TableCell>

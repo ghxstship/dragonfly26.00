@@ -8,19 +8,31 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Heart, ShoppingCart, Star, Package, Filter, Search } from "lucide-react"
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { MarketplaceCartDrawer } from "./marketplace-cart-drawer"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
+interface ShopProduct {
+  id: string
+  name: string
+  price?: string
+  rating?: number
+  status?: string
+  [key: string]: any
+}
+
 interface ShopTabProps {
-  data?: any[]
+  data?: ShopProduct[]
   loading?: boolean
 }
 
-export function ShopTab({ data = [], loading = false }: ShopTabProps) {
+export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProps) {
+  const { products, loading: liveLoading } = useMarketplaceData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.shop')
   const tCommon = useTranslations('common')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
-  const productsData = data
+  const productsData: ShopProduct[] = data
   const [cart, setCart] = useState<Map<string, number>>(new Map())
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
   const [view, setView] = useState<"grid" | "list">("grid")
@@ -52,7 +64,7 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
     setCart(newCart)
   }
 
-  const handleViewDetails = (item: any) => {
+  const handleViewDetails = (item: Record<string, any>) => {
     setSelectedProduct(item as MarketplaceProduct)
     setDetailsDrawerOpen(true)
   }
@@ -116,11 +128,11 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
             <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="featured">Featured</SelectItem>
+            <SelectItem value="featured">{t('featured')}</SelectItem>
             <SelectItem value="price-low">Price: Low to High</SelectItem>
             <SelectItem value="price-high">Price: High to Low</SelectItem>
             <SelectItem value="rating">Highest Rated</SelectItem>
-            <SelectItem value="newest">Newest</SelectItem>
+            <SelectItem value="newest">{t('newest')}</SelectItem>
           </SelectContent>
         </Select>
         <Button variant="outline">
@@ -131,7 +143,7 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {productsData.map((item) => (
+        {productsData.map((item: any) => (
           <Card key={item.id} className="group overflow-hidden hover:shadow-lg transition-shadow">
             {/* Product Image */}
             <div className="relative aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
@@ -165,7 +177,7 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
               <div className="space-y-2">
                 <div className="flex items-start justify-between gap-2">
                   <p className="font-semibold line-clamp-2 text-sm">{item.name}</p>
-                  {getStockBadge(item.status)}
+                  {getStockBadge(item.status || 'available')}
                 </div>
                 <p className="text-xs text-muted-foreground">by {item.assignee_name}</p>
               </div>
@@ -179,7 +191,7 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
                     <Star
                       key={i}
                       className={`h-3 w-3 ${
-                        i < Math.floor(parseFloat(item.rating || "0"))
+                        i < Math.floor(item.rating || 0)
                           ? "fill-yellow-500 text-yellow-500"
                           : "text-muted-foreground/30"
                       }`}
@@ -216,11 +228,11 @@ export function ShopTab({ data = [], loading = false }: ShopTabProps) {
 
       {/* Pagination */}
       <div className="flex justify-center gap-2 pt-4">
-        <Button variant="outline">Previous</Button>
+        <Button variant="outline">{t('previous')}</Button>
         <Button variant="outline">1</Button>
         <Button variant="default">2</Button>
         <Button variant="outline">3</Button>
-        <Button variant="outline">Next</Button>
+        <Button variant="outline">{t('next')}</Button>
       </div>
 
       {/* Cart Drawer */}

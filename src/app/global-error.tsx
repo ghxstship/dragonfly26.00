@@ -95,7 +95,7 @@ export default function GlobalError({
                 </summary>
                 <div className="mt-4 p-4 bg-slate-100 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
                   <pre className="text-xs text-slate-600 dark:text-slate-400 overflow-x-auto whitespace-pre-wrap break-words font-mono">
-                    {error.message}
+                    {(error as any).message}
                     {'\n\n'}
                     {error.stack}
                   </pre>

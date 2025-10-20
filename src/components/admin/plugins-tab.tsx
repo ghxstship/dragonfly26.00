@@ -253,7 +253,7 @@ export function PluginsTab() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder={t('admin.plugins.searchPlaceholder')}
-              value={searchQuery}
+              value={searchQuery as any}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9"
             />

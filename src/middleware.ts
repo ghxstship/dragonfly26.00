@@ -21,7 +21,7 @@ export async function middleware(request: NextRequest) {
   // If there's an i18n response (locale was added to the path), merge with Supabase
   if (intlResponse) {
     // Copy Supabase session cookies to the i18n response
-    supabaseResponse?.cookies.getAll().forEach((cookie) => {
+    supabaseResponse?.cookies.getAll().forEach((cookie: any) => {
       intlResponse.cookies.set(cookie)
     })
     

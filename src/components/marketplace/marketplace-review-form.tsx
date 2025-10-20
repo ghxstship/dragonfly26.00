@@ -82,7 +82,7 @@ export function ReviewForm({
       setTimeout(() => {
         handleClose()
       }, 2000)
-    } catch (error) {
+    } catch (error: any) {
       console.error('Failed to submit review:', error)
     } finally {
       setLoading(false)
@@ -149,7 +149,7 @@ export function ReviewForm({
           <div className="space-y-2">
             <Label>Overall Rating *</Label>
             <div className="flex gap-1">
-              {[1, 2, 3, 4, 5].map((star) => (
+              {[1, 2, 3, 4, 5].map((star: any) => (
                 <button
                   key={star}
                   type="button"
@@ -186,7 +186,7 @@ export function ReviewForm({
             <Input
               id="title"
               placeholder={t('marketplace.review.titlePlaceholder')}
-              value={title}
+              value={title as any}
               onChange={(e) => setTitle(e.target.value)}
               maxLength={100}
             />
@@ -201,7 +201,7 @@ export function ReviewForm({
             <Textarea
               id="body"
               placeholder={t('marketplace.review.descriptionPlaceholder')}
-              value={body}
+              value={body as any}
               onChange={(e) => setBody(e.target.value)}
               rows={6}
               maxLength={2000}

@@ -7,7 +7,23 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-const successMetrics = [
+import { useInsightsData } from "@/hooks/use-insights-data"
+
+interface Metric {
+  nameKey: string
+  current: number
+  target: number
+  unit: string
+  weight: number
+}
+
+interface SuccessMetric {
+  categoryKey: string
+  metrics: Metric[]
+  overallScore: number
+}
+
+const successMetrics: SuccessMetric[] = [
   {
     categoryKey: "customer_success",
     metrics: [
@@ -41,7 +57,7 @@ const successMetrics = [
 ]
 
 interface InsightsSuccessMetricsTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -73,7 +89,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
       </Card>
 
       {/* Category Breakdown */}
-      {successMetrics.map((category: any, index: number) => (
+      {successMetrics.map((category, index: number) => (
         <Card key={index} role="article">
           <CardHeader>
             <div className="flex items-center justify-between">
@@ -86,7 +102,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {category.metrics.map((metric: any, idx: number) => {
+              {category.metrics.map((metric, idx: number) => {
                 const progress = metric.unit === "hrs" || metric.unit === "days"
                   ? ((metric.target / metric.current) * 100)
                   : ((metric.current / metric.target) * 100)

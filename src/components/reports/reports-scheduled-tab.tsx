@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Switch } from "@/components/ui/switch"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
+import { useReportsData } from "@/hooks/use-reports-data"
 
 const scheduledReports = [
   {
@@ -55,7 +56,7 @@ const scheduledReports = [
 ]
 
 interface ReportsScheduledTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -66,7 +67,7 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
   return (
     <div className="space-y-6">
       <div className="space-y-4">
-        {scheduledReports.map((report) => (
+        {scheduledReports.map((report: any) => (
           <Card key={report.id} role="article" aria-label={`Scheduled report: ${t(report.nameKey)}`}>
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -113,7 +114,7 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
                     {report.recipients.map((email: any, index: number) => (
                       <Badge key={index} variant="outline" className="text-xs" role="listitem">
                         <Mail className="h-3 w-3 mr-1" aria-hidden="true" />
-                        {email}
+                        {email as string}
                       </Badge>
                     ))}
                   </div>

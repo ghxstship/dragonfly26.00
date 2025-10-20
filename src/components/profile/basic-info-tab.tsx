@@ -72,10 +72,10 @@ export function BasicInfoTab() {
         title: t('profile.success.profileUpdated'),
         description: t('profile.success.basicInfoSaved'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('profile.errors.error'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {
@@ -104,10 +104,10 @@ export function BasicInfoTab() {
         title: t('profile.success.photoUploaded'),
         description: t('profile.success.photoSaved'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('profile.errors.uploadFailed'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {

@@ -94,7 +94,7 @@ export function ReportsPageContent() {
                 <div>
                   <p className="text-sm text-muted-foreground">Charts</p>
                   <p className="text-2xl font-bold">
-                    {mockReports.filter((r: any) => r.type === "chart").length}
+                    {mockReports.filter((r: any) => (r as any).type === "chart").length}
                   </p>
                 </div>
                 <LineChart className="h-8 w-8 text-blue-600" />
@@ -108,7 +108,7 @@ export function ReportsPageContent() {
                 <div>
                   <p className="text-sm text-muted-foreground">Tables</p>
                   <p className="text-2xl font-bold">
-                    {mockReports.filter((r: any) => r.type === "table").length}
+                    {mockReports.filter((r: any) => (r as any).type === "table").length}
                   </p>
                 </div>
                 <PieChart className="h-8 w-8 text-purple-600" />
@@ -151,21 +151,21 @@ export function ReportsPageContent() {
 
           <TabsContent value="charts" className="mt-6">
             <ReportsList
-              reports={mockReports.filter((r: any) => r.type === "chart")}
+              reports={mockReports.filter((r: any) => (r as any).type === "chart")}
               onSelect={setSelectedReport}
             />
           </TabsContent>
 
           <TabsContent value="tables" className="mt-6">
             <ReportsList
-              reports={mockReports.filter((r: any) => r.type === "table")}
+              reports={mockReports.filter((r: any) => (r as any).type === "table")}
               onSelect={setSelectedReport}
             />
           </TabsContent>
 
           <TabsContent value="dashboards" className="mt-6">
             <ReportsList
-              reports={mockReports.filter((r: any) => r.type === "dashboard")}
+              reports={mockReports.filter((r: any) => (r as any).type === "dashboard")}
               onSelect={setSelectedReport}
             />
           </TabsContent>

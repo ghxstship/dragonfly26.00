@@ -42,7 +42,7 @@ export function useProductReviews(productId: string) {
 
       if (reviewsError) throw reviewsError
       setReviews(data || [])
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
     } finally {
       setLoading(false)
@@ -83,7 +83,7 @@ export function useProductReviews(productId: string) {
       await fetchReviews()
 
       return data
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -110,7 +110,7 @@ export function useProductReviews(productId: string) {
 
       // Refresh reviews to get updated counts
       await fetchReviews()
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     }

@@ -17,10 +17,10 @@ export function ObjectivesHierarchy({ goals, onGoalClick }: GoalsHierarchyProps)
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set())
 
   // Build hierarchy
-  const topLevelGoals = goals.filter((g) => !g.parent_goal_id)
+  const topLevelGoals = goals.filter((g: any) => !g.parent_goal_id)
   const childGoalsMap = new Map<string, Goal[]>()
   
-  goals.forEach((goal) => {
+  goals.forEach((goal: any) => {
     if (goal.parent_goal_id) {
       if (!childGoalsMap.has(goal.parent_goal_id)) {
         childGoalsMap.set(goal.parent_goal_id, [])
@@ -90,7 +90,7 @@ export function ObjectivesHierarchy({ goals, onGoalClick }: GoalsHierarchyProps)
 
         {hasChildren && isExpanded && (
           <div>
-            {children.map((child) => renderGoal(child, level + 1))}
+            {children.map((child: any) => renderGoal(child, level + 1))}
           </div>
         )}
       </div>
@@ -99,7 +99,7 @@ export function ObjectivesHierarchy({ goals, onGoalClick }: GoalsHierarchyProps)
 
   return (
     <div className="space-y-2">
-      {topLevelGoals.map((goal) => renderGoal(goal))}
+      {topLevelGoals.map((goal: any) => renderGoal(goal))}
       
       {topLevelGoals.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">

@@ -72,8 +72,8 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Beginner</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('beginner')}</CardTitle>
+            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
@@ -85,8 +85,8 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Intermediate</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('intermediate')}</CardTitle>
+            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-yellow-600">
@@ -98,8 +98,8 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Advanced</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('advanced')}</CardTitle>
+            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">
@@ -115,7 +115,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
         <Input
           placeholder={t('searchGuides')}
-          value={searchQuery}
+          value={searchQuery as any}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-9"
         />

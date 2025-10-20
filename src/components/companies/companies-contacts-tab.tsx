@@ -32,13 +32,31 @@ import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
 import { formatDate as formatDateLocale } from "@/lib/utils/locale-formatting"
 
+interface Contact {
+  id: string
+  name: string
+  title?: string
+  company?: string
+  email?: string
+  phone?: string
+  mobile?: string
+  department?: string
+  role?: string
+  avatar?: string
+  is_primary?: boolean
+  last_contact?: string
+  response_time?: string
+  preferred_method?: string
+  notes?: string
+}
+
 export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('business.companies.contacts')
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
   const { data: contacts, loading } = useModuleData(workspaceId, 'companies', 'contacts')
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedContact, setSelectedContact] = useState<any>(null)
+  const [selectedContact, setSelectedContact] = useState<Contact | null>(null)
 
   if (loading) {
     return (
@@ -80,26 +98,27 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
     return colors[role] || 'bg-gray-100 text-gray-800'
   }
 
-  const filteredContacts = contacts.filter((contact: any) =>
-    contact.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    contact.company?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    contact.title?.toLowerCase().includes(searchQuery.toLowerCase())
-  )
+  const filteredContacts = contacts.filter((contact: any) => {
+    const c = contact as any
+    return c.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      c.company?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      c.title?.toLowerCase().includes(searchQuery.toLowerCase())
+  })
 
   const formatDate = (date: string) => {
     return formatDateLocale(date, locale)
   }
 
-  const primaryContacts = contacts.filter((c: any) => c.is_primary).length
-  const totalCompanies = new Set(contacts.map((c: any) => c.company)).size
+  const primaryContacts = contacts.filter((c: any) => (c as Contact).is_primary).length
+  const totalCompanies = new Set(contacts.map((c: any) => (c as Contact).company)).size
 
   return (
     <div className="space-y-6">
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.totalContacts')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalContacts')}</CardTitle>
             <User className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -111,19 +130,19 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.primaryContacts')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.primaryContacts')}</CardTitle>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{primaryContacts}</div>
+            <div className="text-2xl font-bold">{primaryContacts as any}</div>
             <p className="text-xs text-muted-foreground">{t('stats.keyRelationships')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.avgResponseTime')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.avgResponseTime')}</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -133,13 +152,13 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.activeThreads')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.activeThreads')}</CardTitle>
             <MessageSquare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {contacts.filter((c: any) => c.active_threads > 0).length}
+              {contacts.filter((c: any) => (c as any).active_threads > 0).length}
             </div>
             <p className="text-xs text-muted-foreground">{t('stats.ongoingConversations')}</p>
           </CardContent>
@@ -151,7 +170,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
         <Input
           placeholder={t('searchPlaceholder')}
-          value={searchQuery}
+          value={searchQuery as any}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-9"
           aria-label={tCommon('aria.searchInput', { type: 'contacts' })}
@@ -162,39 +181,41 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         {/* Contacts List */}
         <div className="md:col-span-2">
           <div className="grid gap-4 md:grid-cols-2">
-            {filteredContacts.map((contact: any) => (
+            {filteredContacts.map((contact: any) => {
+              const c = contact as Contact
+              return (
               <Card 
-                key={contact.id} 
+                key={c.id} 
                 className={`cursor-pointer transition-shadow hover:shadow-lg ${
-                  selectedContact?.id === contact.id ? 'border-primary border-2' : ''
+                  selectedContact?.id === c.id ? 'border-primary border-2' : ''
                 }`}
-                onClick={() => setSelectedContact(contact)}
+                onClick={() => setSelectedContact(c)}
               >
                 <CardHeader>
                   <div className="flex items-start gap-3">
-                    <Avatar className="h-12 w-12">
+                    <Avatar className="h-12 w-12" aria-hidden="true">
                       <AvatarImage 
-                        src={contact.avatar} 
-                        alt={tCommon('aria.avatar', { name: contact.name })} 
+                        src={c.avatar} 
+                        alt={tCommon('aria.avatar', { name: c.name })} 
                       />
-                      <AvatarFallback>{getInitials(contact.name)}</AvatarFallback>
+                      <AvatarFallback>{getInitials(c.name)}</AvatarFallback>
                     </Avatar>
                     <div className="flex-1 min-w-0">
-                      <CardTitle className="text-base line-clamp-1">{contact.name}</CardTitle>
-                      <CardDescription className="line-clamp-1">{contact.title}</CardDescription>
+                      <CardTitle className="text-base line-clamp-1" aria-hidden="true">{c.name}</CardTitle>
+                      <CardDescription className="line-clamp-1" aria-hidden="true">{c.title}</CardDescription>
                       <div className="flex items-center gap-1 mt-1 text-sm text-muted-foreground">
                         <Building2 className="h-3 w-3" aria-hidden="true" />
-                        <span className="truncate">{contact.company}</span>
+                        <span className="truncate">{c.company}</span>
                       </div>
                     </div>
                   </div>
                   <div className="flex gap-2 mt-2 flex-wrap">
-                    {contact.role && (
-                      <Badge variant="secondary" className={getRoleColor(contact.role)}>
-                        {contact.role}
+                    {c.role && (
+                      <Badge variant="secondary" className={getRoleColor(c.role)}>
+                        {c.role}
                       </Badge>
                     )}
-                    {contact.is_primary && (
+                    {c.is_primary && (
                       <Badge variant="outline">
                         <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                         {t('primaryBadge')}
@@ -203,39 +224,39 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   </div>
                 </CardHeader>
 
-                <CardContent className="space-y-2">
-                  {contact.email && (
+                <CardContent className="space-y-2" aria-hidden="true">
+                  {c.email && (
                     <div className="flex items-center gap-2 text-sm">
-                      <Mail className="h-3 w-3 text-muted-foreground flex-shrink-0" />
-                      <span className="truncate">{contact.email}</span>
+                      <Mail className="h-3 w-3 text-muted-foreground flex-shrink-0" aria-hidden="true" />
+                      <span className="truncate">{c.email}</span>
                     </div>
                   )}
-                  {contact.phone && (
+                  {c.phone && (
                     <div className="flex items-center gap-2 text-sm">
-                      <Phone className="h-3 w-3 text-muted-foreground flex-shrink-0" />
-                      <span>{contact.phone}</span>
+                      <Phone className="h-3 w-3 text-muted-foreground flex-shrink-0" aria-hidden="true" />
+                      <span>{c.phone}</span>
                     </div>
                   )}
-                  {contact.last_contact && (
+                  {c.last_contact && (
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-3 w-3 flex-shrink-0" />
-                      <span>{t('lastContact', { date: formatDate(contact.last_contact) })}</span>
+                      <Calendar className="h-3 w-3 flex-shrink-0" aria-hidden="true" />
+                      <span>{t('lastContact', { date: formatDate(c.last_contact) })}</span>
                     </div>
                   )}
-                  {contact.active_threads > 0 && (
+                  {(c as any).active_threads > 0 && (
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <MessageSquare className="h-3 w-3 flex-shrink-0" />
-                      <span>{t('activeThreadsCount', { count: contact.active_threads })}</span>
+                      <MessageSquare className="h-3 w-3 flex-shrink-0" aria-hidden="true" />
+                      <span>{t('activeThreadsCount', { count: (c as any).active_threads })}</span>
                     </div>
                   )}
                 </CardContent>
               </Card>
-            ))}
+            )})}
           </div>
 
           {filteredContacts.length === 0 && (
             <Card>
-              <CardContent className="p-0">
+              <CardContent className="p-0" aria-hidden="true">
                 <EmptyState
                   variant="inline"
                   icon={User}
@@ -252,10 +273,10 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         {/* Contact Detail Panel */}
         {selectedContact ? (
           <div className="md:col-span-1">
-            <Card className="sticky top-6">
+            <Card className="sticky top-6" aria-hidden="true">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <Avatar className="h-16 w-16">
+                  <Avatar className="h-16 w-16" aria-hidden="true">
                     <AvatarImage 
                       src={selectedContact.avatar} 
                       alt={tCommon('aria.avatar', { name: selectedContact.name })} 
@@ -268,7 +289,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4" aria-hidden="true">
                 <div>
                   <h4 className="font-semibold text-sm mb-2">{t('contactInformation')}</h4>
                   <div className="space-y-2 text-sm">
@@ -343,8 +364,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                 )}
 
                 <div className="flex flex-col gap-2 pt-4 border-t">
-                  <Button 
-                    className="w-full"
+                  <Button className="w-full" aria-hidden="true"
                     aria-label={t('aria.sendEmail', { name: selectedContact.name })}
                   >
                     <Mail className="h-4 w-4 mr-2" aria-hidden="true" />
@@ -372,7 +392,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         ) : (
           <div className="md:col-span-1">
             <Card>
-              <CardContent className="p-0">
+              <CardContent className="p-0" aria-hidden="true">
                 <EmptyState
                   variant="compact"
                   icon={User}

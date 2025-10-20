@@ -65,7 +65,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
 
   return (
     <div className="space-y-4">
-      {goals.map((goal) => {
+      {goals.map((goal: any) => {
         const progress = getProgress(goal)
         const statusConfig = STATUS_CONFIG[goal.status]
         const daysRemaining = getDaysRemaining(goal.end_date)

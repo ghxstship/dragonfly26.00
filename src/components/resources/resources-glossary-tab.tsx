@@ -50,7 +50,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
   })
 
   // Group terms by first letter
-  const termsByLetter = filteredTerms.reduce((acc: any, term: any) => {
+  const termsByLetter = filteredTerms.reduce((acc: number, term: any) => {
     const firstLetter = term.name?.charAt(0).toUpperCase() || '#'
     if (!acc[firstLetter]) {
       acc[firstLetter] = []
@@ -81,31 +81,31 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Terms</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground" />
+            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{terms.length}</div>
-            <p className="text-xs text-muted-foreground">Definitions</p>
+            <p className="text-xs text-muted-foreground">{t('definitions')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Categories</CardTitle>
-            <Hash className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('categories')}</CardTitle>
+            <Hash className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {new Set(terms.map((t: any) => t.category)).size}
             </div>
-            <p className="text-xs text-muted-foreground">Topics</p>
+            <p className="text-xs text-muted-foreground">{t('topics')}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Technical</CardTitle>
-            <Info className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('technical')}</CardTitle>
+            <Info className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">
@@ -117,8 +117,8 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Production</CardTitle>
-            <Info className="h-4 w-4 text-muted-foreground" />
+            <CardTitle className="text-sm font-medium">{t('production')}</CardTitle>
+            <Info className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-purple-600">
@@ -134,7 +134,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
         <Input
           placeholder={t('searchTerms')}
-          value={searchQuery}
+          value={searchQuery as any}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-9"
         />
@@ -147,7 +147,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
           size="sm"
           onClick={() => setSelectedLetter(null)}
         >{t('all')}</Button>
-        {alphabet.map((letter) => (
+        {alphabet.map((letter: any) => (
           <Button
             key={letter}
             variant={selectedLetter === letter ? "default" : "outline"}
@@ -162,7 +162,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
 
       {/* Terms List */}
       <div className="space-y-6">
-        {sortedLetters.map((letter) => (
+        {sortedLetters.map((letter: any) => (
           <div key={letter} id={`letter-${letter}`}>
             <div className="flex items-center gap-3 mb-4">
               <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-lg">
@@ -208,7 +208,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
 
                     {term.related_terms && term.related_terms.length > 0 && (
                       <div className="flex items-center gap-2 text-sm">
-                        <LinkIcon className="h-3 w-3 text-muted-foreground" />
+                        <LinkIcon className="h-3 w-3 text-muted-foreground"  aria-hidden="true" />
                         <span className="text-muted-foreground">Related:</span>
                         <div className="flex flex-wrap gap-1">
                           {term.related_terms.map((relatedTerm: string, i: number) => (

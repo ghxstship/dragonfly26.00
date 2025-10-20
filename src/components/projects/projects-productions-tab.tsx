@@ -84,7 +84,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {productions.filter((p: any) => p.status === 'active').length}
+              {productions.filter((p: any) => (p as any).status === 'active').length}
             </div>
             <p className="text-xs text-muted-foreground">
               {productions.filter((p: any) => p.health === 'healthy').length} {t('healthy')}
@@ -99,7 +99,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {formatCurrency(productions.reduce((sum: number, p: any) => sum + (p.budget || 0), 0))}
+              {formatCurrency(productions.reduce((sum: number, p: Record<string, any>) => sum + ((p.budget as number) || 0), 0))}
             </div>
             <p className="text-xs text-muted-foreground">
               {t('acrossAllProductions')}
@@ -114,7 +114,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {productions.filter((p: any) => p.status === 'planning').length}
+              {productions.filter((p: any) => (p as any).status === 'planning').length}
             </div>
             <p className="text-xs text-muted-foreground">
               {t('upcomingProjects')}

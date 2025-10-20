@@ -9,7 +9,7 @@ import { createClient } from '@/lib/supabase/client'
  */
 export function useWorkspace(workspaceIdOrSlug: string) {
   const [workspaceId, setWorkspaceId] = useState<string | null>(null)
-  const [workspace, setWorkspace] = useState<any>(null)
+  const [workspace, setWorkspace] = useState<unknown>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
@@ -135,7 +135,7 @@ export function useWorkspace(workspaceIdOrSlug: string) {
             setWorkspaceId(workspaceByName.id)
           }
         }
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error resolving workspace:', err)
         setError(err as Error)
         setWorkspaceId(null)

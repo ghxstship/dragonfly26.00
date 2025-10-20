@@ -3,6 +3,21 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { shouldUseMockData } from '@/lib/demo-mode'
+import { useWorkspaceRealtime } from '@/hooks/use-optimized-realtime'
+import { useMultiTableRealtime } from '@/hooks/use-debounced-realtime'
+import { queryCache, cacheKeys, invalidateCacheOnUpdate } from '@/lib/query-cache'
+import type { 
+  Report, 
+  Task, 
+  DashboardEvent, 
+  DashboardExpense, 
+  DashboardJob, 
+  DashboardAsset, 
+  DashboardOrder, 
+  DashboardAdvance, 
+  DashboardFile, 
+  DashboardTravel 
+} from '@/types'
 import { 
   mockEvents, 
   mockTasks, 
@@ -18,7 +33,7 @@ import {
 } from '@/lib/mock-data'
 
 export function useDashboardData(workspaceId: string, userId: string) {
-  const [data, setData] = useState<any>(null)
+  const [data, setData] = useState<unknown>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
@@ -37,7 +52,7 @@ export function useDashboardData(workspaceId: string, userId: string) {
         if (statsError) throw statsError
 
         setData(stats)
-      } catch (err) {
+      } catch (err: any) {
         setError(err as Error)
       } finally {
         setLoading(false)
@@ -47,53 +62,35 @@ export function useDashboardData(workspaceId: string, userId: string) {
     if (workspaceId) {
       fetchDashboardData()
     }
-
-    // Subscribe to real-time updates for dashboard-related tables
-    const channel = supabase
-      .channel(`dashboard:${workspaceId}`)
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'productions',
-          filter: `workspace_id=eq.${workspaceId}`
-        },
-        () => fetchDashboardData()
-      )
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'project_tasks',
-          filter: `workspace_id=eq.${workspaceId}`
-        },
-        () => fetchDashboardData()
-      )
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'events',
-          filter: `workspace_id=eq.${workspaceId}`
-        },
-        () => fetchDashboardData()
-      )
-      .subscribe()
-
-    return () => {
-      supabase.removeChannel(channel)
-    }
   }, [workspaceId])
+
+  // Optimized realtime subscription with debouncing (1s debounce, 5s max wait)
+  useMultiTableRealtime(
+    supabase,
+    `dashboard:${workspaceId}`,
+    [
+      { table: 'productions', filter: `workspace_id=eq.${workspaceId}` },
+      { table: 'project_tasks', filter: `workspace_id=eq.${workspaceId}` },
+      { table: 'events', filter: `workspace_id=eq.${workspaceId}` }
+    ],
+    async () => {
+      const { data: stats, error: statsError } = await supabase
+        .rpc('get_workspace_dashboard', {
+          p_workspace_id: workspaceId
+        })
+      if (!statsError && stats) {
+        setData(stats)
+      }
+    },
+    { debounceMs: 1000, maxWaitMs: 5000 }
+  )
 
   return { data, loading, error, refetch: () => {} }
 }
 
 // Hook for My Agenda (events for user)
 export function useMyAgenda(workspaceId: string, userId: string) {
-  const [events, setEvents] = useState<any[]>([])
+  const [events, setEvents] = useState<DashboardEvent[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -104,7 +101,7 @@ export function useMyAgenda(workspaceId: string, userId: string) {
       // Demo mode: use mock data
       if (shouldUseMockData()) {
         await simulateDelay(300)
-        setEvents(mockEvents)
+        setEvents(mockEvents as any)
         setLoading(false)
         return
       }
@@ -158,7 +155,7 @@ export function useMyAgenda(workspaceId: string, userId: string) {
 
 // Hook for My Tasks
 export function useMyTasks(workspaceId: string, userId: string) {
-  const [tasks, setTasks] = useState<any[]>([])
+  const [tasks, setTasks] = useState<Task[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -209,7 +206,7 @@ export function useMyTasks(workspaceId: string, userId: string) {
 
 // Hook for My Expenses
 export function useMyExpenses(workspaceId: string, userId: string) {
-  const [expenses, setExpenses] = useState<any[]>([])
+  const [expenses, setExpenses] = useState<DashboardExpense[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -263,7 +260,7 @@ export function useMyExpenses(workspaceId: string, userId: string) {
 
 // Hook for My Jobs (personnel assignments)
 export function useMyJobs(workspaceId: string, userId: string) {
-  const [jobs, setJobs] = useState<any[]>([])
+  const [jobs, setJobs] = useState<DashboardJob[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -316,7 +313,7 @@ export function useMyJobs(workspaceId: string, userId: string) {
 
 // Hook for My Assets
 export function useMyAssets(workspaceId: string, userId: string) {
-  const [assets, setAssets] = useState<any[]>([])
+  const [assets, setAssets] = useState<DashboardAsset[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -367,7 +364,7 @@ export function useMyAssets(workspaceId: string, userId: string) {
 
 // Hook for My Orders
 export function useMyOrders(workspaceId: string, userId: string) {
-  const [orders, setOrders] = useState<any[]>([])
+  const [orders, setOrders] = useState<DashboardOrder[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -419,7 +416,7 @@ export function useMyOrders(workspaceId: string, userId: string) {
 
 // Hook for My Advances
 export function useMyAdvances(workspaceId: string, userId: string) {
-  const [advances, setAdvances] = useState<any[]>([])
+  const [advances, setAdvances] = useState<DashboardAdvance[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -474,7 +471,7 @@ export function useMyAdvances(workspaceId: string, userId: string) {
 
 // Hook for My Reports
 export function useMyReports(workspaceId: string, userId: string) {
-  const [reports, setReports] = useState<any[]>([])
+  const [reports, setReports] = useState<Report[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -522,7 +519,7 @@ export function useMyReports(workspaceId: string, userId: string) {
 
 // Hook for My Files  
 export function useMyFiles(workspaceId: string, userId: string) {
-  const [files, setFiles] = useState<any[]>([])
+  const [files, setFiles] = useState<DashboardFile[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -573,7 +570,7 @@ export function useMyFiles(workspaceId: string, userId: string) {
 
 // Hook for My Travel
 export function useMyTravel(workspaceId: string, userId: string) {
-  const [travels, setTravels] = useState<any[]>([])
+  const [travels, setTravels] = useState<DashboardTravel[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 

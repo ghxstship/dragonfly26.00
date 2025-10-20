@@ -71,11 +71,11 @@ export function CreateTaskDialog({ open, onOpenChange, workspaceId, userId, onSu
         title: "Task created successfully",
         description: `"${formData.title}" has been added to your task list.`,
       })
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error creating task:', error)
       toast({
         title: "Failed to create task",
-        description: error instanceof Error ? error.message : "Please try again.",
+        description: error instanceof Error ? (error as any).message : "Please try again.",
         variant: "destructive",
       })
     } finally {

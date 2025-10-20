@@ -22,7 +22,7 @@ export function AutomationsList({ automations, onUpdate }: AutomationsListProps)
   const t = useTranslations()
   return (
     <div className="space-y-4">
-      {automations.map((automation) => (
+      {automations.map((automation: any) => (
         <Card key={automation.id}>
           <CardContent className="p-6">
             <div className="flex items-start justify-between">

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
+import { useReportsData } from "@/hooks/use-reports-data"
 
 const complianceReports = [
   {
@@ -70,7 +71,7 @@ const complianceReports = [
 ]
 
 interface ReportsComplianceTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -88,7 +89,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
               <div>
                 <p className="text-sm text-muted-foreground">{t('current')}</p>
                 <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
-                  {complianceReports.filter(r => r.status === "current").length}
+                  {complianceReports.filter(r => (r as any).status === "current").length}
                 </p>
               </div>
               <CheckCircle2 className="h-8 w-8 text-green-600" aria-hidden="true" />
@@ -102,7 +103,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
               <div>
                 <p className="text-sm text-muted-foreground">{t('dueSoon')}</p>
                 <p className="text-2xl font-bold mt-1 text-yellow-600" aria-live="polite">
-                  {complianceReports.filter(r => r.status === "due_soon").length}
+                  {complianceReports.filter(r => (r as any).status === "due_soon").length}
                 </p>
               </div>
               <Clock className="h-8 w-8 text-yellow-600" aria-hidden="true" />
@@ -116,7 +117,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
               <div>
                 <p className="text-sm text-muted-foreground">{t('overdue')}</p>
                 <p className="text-2xl font-bold mt-1 text-red-600" aria-live="polite">
-                  {complianceReports.filter(r => r.status === "overdue").length}
+                  {complianceReports.filter(r => (r as any).status === "overdue").length}
                 </p>
               </div>
               <AlertCircle className="h-8 w-8 text-red-600" aria-hidden="true" />
@@ -139,7 +140,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
 
       {/* Compliance Reports List */}
       <div className="space-y-3">
-        {complianceReports.map((report) => (
+        {complianceReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
@@ -149,14 +150,14 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
                     <div className="flex items-center gap-2 mb-2">
                       <h3 className="font-semibold text-lg">{t(report.nameKey)}</h3>
                       <Badge 
-                        variant={report.status === "current" ? "default" : report.status === "due_soon" ? "secondary" : "destructive"}
+                        variant={(report as any).status === "current" ? "default" : (report as any).status === "due_soon" ? "secondary" : "destructive"}
                         className={
-                          report.status === "current" ? "bg-green-600" : 
-                          report.status === "due_soon" ? "bg-yellow-600" : 
+                          (report as any).status === "current" ? "bg-green-600" : 
+                          (report as any).status === "due_soon" ? "bg-yellow-600" : 
                           "bg-red-600"
                         }
                       >
-                        {report.status === "current" ? t('current') : report.status === "due_soon" ? t('dueSoon') : t('overdue')}
+                        {(report as any).status === "current" ? t('current') : (report as any).status === "due_soon" ? t('dueSoon') : t('overdue')}
                       </Badge>
                       <Badge variant="outline">{t(report.categoryKey)}</Badge>
                     </div>

@@ -89,7 +89,7 @@ export class SyncEngine {
         success: true,
         conflicts: conflicts.length > 0 ? conflicts : undefined,
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('[Sync] Error:', error)
       return { success: false }
     } finally {
@@ -196,7 +196,7 @@ export class SyncEngine {
     for (const change of changes) {
       try {
         await this.applyChange(change)
-      } catch (error) {
+      } catch (error: any) {
         console.error('[Sync] Failed to apply change:', change, error)
       }
     }

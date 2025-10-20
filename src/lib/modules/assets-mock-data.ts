@@ -267,7 +267,7 @@ function generateAdvancesData(count: number): DataItem[] {
   ]
   const locations = ["Stage Left", "Loading Dock", "Production Office", "Back of House", "Stage Right", "Security Office", "Catering Area"]
   const purposes = [
-    "Load-in equipment setup and staging",
+    "Load-in equipment setUp and staging",
     "Event day operations and site services",
     "Safety compliance and emergency equipment",
     "Transportation and logistics support",

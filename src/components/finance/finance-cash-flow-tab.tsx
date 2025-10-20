@@ -9,7 +9,7 @@ import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinanceCashFlowTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -53,8 +53,8 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
     ...MOCK_MONTHLY_DATA
   ]
 
-  const currentBalance = monthlyData[0]?.balance || 125000
-  const projectedBalance = monthlyData[monthlyData.length - 1]?.balance || 98000
+  const currentBalance = Number((monthlyData[0] as any)?.balance) || 125000
+  const projectedBalance = Number((monthlyData[monthlyData.length - 1] as any)?.balance) || 98000
   const cashRunway = 16 // weeks
 
   const inflowCategories = [
@@ -68,7 +68,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
     { name: t('mockData.outflows.payroll'), amount: 60000, percent: 48 },
   ]
 
-  const maxAmount = Math.max(...monthlyData.map(d => Math.max(d.inflows, d.outflows)))
+  const maxAmount = Math.max(...monthlyData.map((d: any) => Math.max(d.inflows, d.outflows)))
 
   const upcomingPayments = [
     { description: 'Vendor Payment - ABC Productions', date: '2024-10-18', category: 'Production', amount: 12500, critical: true },
@@ -82,9 +82,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Current Balance</CardTitle>
-            <DollarSign className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Current Balance</CardTitle>
+            <DollarSign className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">${currentBalance.toLocaleString()}</div>
@@ -95,9 +95,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Projected (30d)</CardTitle>
-            <Waves className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Projected (30d)</CardTitle>
+            <Waves className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${projectedBalance < currentBalance ? 'text-red-600' : 'text-green-600'}`}>
@@ -110,9 +110,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Cash Runway</CardTitle>
-            <Calendar className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Cash Runway</CardTitle>
+            <Calendar className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{cashRunway} weeks</div>
@@ -123,9 +123,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Burn Rate</CardTitle>
-            <TrendingDown className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Burn Rate</CardTitle>
+            <TrendingDown className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">$7,800</div>
@@ -219,8 +219,8 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         {/* Inflow Breakdown */}
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5" aria-hidden="true"  />
+            <CardTitle className="flex items-center gap-2" aria-hidden="true">
+              <TrendingUp className="h-5 w-5" aria-hidden="true" />
               Inflow Breakdown
             </CardTitle>
             <CardDescription>Sources of cash inflows this month</CardDescription>
@@ -263,8 +263,8 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         {/* Outflow Breakdown */}
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <TrendingDown className="h-5 w-5" aria-hidden="true"  />
+            <CardTitle className="flex items-center gap-2" aria-hidden="true">
+              <TrendingDown className="h-5 w-5" aria-hidden="true" />
               Outflow Breakdown
             </CardTitle>
             <CardDescription>Cash outflows by category this month</CardDescription>
@@ -322,7 +322,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
               >
                 <div className="flex items-center gap-3">
                   {payment.critical && (
-                    <AlertCircle className="h-4 w-4" aria-hidden="true"  />
+                    <AlertCircle className="h-4 w-4" aria-hidden="true" />
                   )}
                   <div>
                     <p className="font-medium text-sm">{payment.description}</p>
@@ -352,10 +352,10 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
 
       {/* Alert */}
       {cashRunway < 20 && (
-        <Card className="border-orange-200 bg-orange-50 dark:border-orange-900 dark:bg-orange-950">
+        <Card className="border-orange-200 bg-orange-50 dark:border-orange-900 dark:bg-orange-950" aria-hidden="true">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertCircle className="h-5 w-5" aria-hidden="true"  />
+            <CardTitle className="flex items-center gap-2" aria-hidden="true">
+              <AlertCircle className="h-5 w-5" aria-hidden="true" />
               Cash Runway Alert
             </CardTitle>
           </CardHeader>

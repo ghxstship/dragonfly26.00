@@ -255,7 +255,7 @@ CREATE POLICY "Users can view productions in their workspaces"
     ON productions FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -263,7 +263,7 @@ CREATE POLICY "Users can create productions in their workspaces"
     ON productions FOR INSERT
     WITH CHECK (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -271,7 +271,7 @@ CREATE POLICY "Users can update productions in their workspaces"
     ON productions FOR UPDATE
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -279,7 +279,7 @@ CREATE POLICY "Users can delete productions in their workspaces"
     ON productions FOR DELETE
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -288,7 +288,7 @@ CREATE POLICY "Users can view tasks in their workspaces"
     ON project_tasks FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -296,7 +296,7 @@ CREATE POLICY "Users can manage tasks in their workspaces"
     ON project_tasks FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -305,7 +305,7 @@ CREATE POLICY "Users can view milestones in their workspaces"
     ON project_milestones FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -313,7 +313,7 @@ CREATE POLICY "Users can manage milestones in their workspaces"
     ON project_milestones FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -322,7 +322,7 @@ CREATE POLICY "Users can view compliance in their workspaces"
     ON project_compliance FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -330,7 +330,7 @@ CREATE POLICY "Users can manage compliance in their workspaces"
     ON project_compliance FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -339,7 +339,7 @@ CREATE POLICY "Users can view safety in their workspaces"
     ON project_safety FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -347,7 +347,7 @@ CREATE POLICY "Users can manage safety in their workspaces"
     ON project_safety FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 

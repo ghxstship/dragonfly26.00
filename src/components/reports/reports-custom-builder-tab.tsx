@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
+import { useReportsData } from "@/hooks/use-reports-data"
 
 const dataSourceOptions = [
   { value: "tasks", labelKey: "tasks" },
@@ -35,7 +36,7 @@ const sampleFields = [
 ]
 
 interface ReportsCustomBuilderTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -65,7 +66,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {dataSourceOptions.map((option) => (
+                    {dataSourceOptions.map((option: any) => (
                       <SelectItem key={option.value} value={option.value}>
                         {t(option.labelKey)}
                       </SelectItem>
@@ -77,7 +78,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
               <div className="space-y-2">
                 <Label>{t('visualizationType')}</Label>
                 <div className="grid grid-cols-2 gap-2">
-                  {chartTypes.map((chart) => {
+                  {chartTypes.map((chart: any) => {
                     const Icon = chart.icon
                     return (
                       <Button key={chart.value} variant="outline" className="h-20 flex flex-col gap-2">
@@ -97,7 +98,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                {sampleFields.map((field) => (
+                {(sampleFields as any[]).map((field: any) => (
                   <div
                     key={field.id}
                     className="flex items-center gap-2 p-2 border rounded hover:bg-accent cursor-move"

@@ -63,7 +63,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
     return colors[type] || 'bg-gray-100 text-gray-800 dark:bg-gray-950 dark:text-gray-400'
   }
 
-  const filteredResources = resources.filter((resource: any) =>
+  const filteredResources = resources.filter((resource: Record<string, any>) =>
     resource.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     resource.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     resource.category?.toLowerCase().includes(searchQuery.toLowerCase())
@@ -99,12 +99,12 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Courses</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('courses')}</CardTitle>
             <GraduationCap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {resources.filter((r: any) => r.type === 'course').length}
+              {resources.filter((r: Record<string, any>) => (r as any).type === 'course').length}
             </div>
             <p className="text-xs text-muted-foreground">Educational programs</p>
           </CardContent>
@@ -112,12 +112,12 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Guides</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('guides')}</CardTitle>
             <Book className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {resources.filter((r: any) => r.type === 'guide').length}
+              {resources.filter((r: Record<string, any>) => (r as any).type === 'guide').length}
             </div>
             <p className="text-xs text-muted-foreground">How-to guides</p>
           </CardContent>
@@ -125,12 +125,12 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Grants</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('grants')}</CardTitle>
             <CircleDollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {resources.filter((r: any) => r.type === 'grant').length}
+              {resources.filter((r: Record<string, any>) => (r as any).type === 'grant').length}
             </div>
             <p className="text-xs text-muted-foreground">Funding opportunities</p>
           </CardContent>
@@ -143,7 +143,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
           <Input
             placeholder={t('searchResources')}
-            value={searchQuery}
+            value={searchQuery as any}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-9"
           />
@@ -160,7 +160,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
               <CardHeader>
                 <div className="flex items-start gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
-                    <TypeIcon className="h-5 w-5 text-primary" />
+                    <TypeIcon className="h-5 w-5 text-primary"  aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <CardTitle className="text-lg line-clamp-2">{resource.name}</CardTitle>
@@ -254,7 +254,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
                     View Details
                   </Button>
                   {resource.downloadable && (
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" aria-label={t('download')}>
                       <Download className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   )}
@@ -271,7 +271,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
             <EmptyState
               variant="inline"
               icon={BookOpen}
-              mainMessage={searchQuery ? "No resources found" : t('nothingToSeeYet')}
+              mainMessage={searchQuery ? t('noResourcesFound') : t('nothingToSeeYet')}
               description={searchQuery ? t('tryAdjustingSearch') : t('addResources')}
               actionLabel={!searchQuery ? t('addResource') : undefined}
               onAction={!searchQuery ? () => {} : undefined}

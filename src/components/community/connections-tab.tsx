@@ -24,10 +24,12 @@ import {
   Award,
   Calendar
 } from "lucide-react"
+import { useCommunityData } from "@/hooks/use-community-data"
 
 interface ConnectionsTabProps {
   data?: any[]
   loading?: boolean
+  workspaceId?: string
 }
 
 interface Connection {
@@ -45,21 +47,40 @@ interface Connection {
   verified?: boolean
 }
 
-export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabProps) {
+export function ConnectionsTab({ data = [], loading: loadingProp = false, workspaceId }: ConnectionsTabProps) {
   const t = useTranslations('community.connections')
   const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
   const [filterStatus, setFilterStatus] = useState<"all" | "connected" | "pending" | "suggested">("all")
 
+  // Use live data from Supabase
+  const { connections: liveConnections, loading: liveLoading } = useCommunityData()
+  const loading = loadingProp || liveLoading
+
   const [connections, setConnections] = useState<Connection[]>([])
 
-  // Transform and update connections when data changes
+  // Transform live connections from Supabase
   useEffect(() => {
-    if (data && data.length > 0) {
+    if (liveConnections && liveConnections.length > 0) {
+      const transformed: Connection[] = liveConnections.map((conn: any) => ({
+        id: conn.id,
+        name: 'Connection User',
+        title: 'Professional',
+        company: 'Company',
+        location: 'Location',
+        connectionDate: conn.created_at,
+        mutualConnections: 0,
+        skills: [],
+        status: conn.status === 'accepted' ? 'connected' : (conn.status === 'pending' ? 'pending' : 'suggested'),
+        verified: false
+      }))
+      setConnections(transformed)
+    } else if (data && data.length > 0) {
       const transformed: Connection[] = data.map((item: any) => {
-        const connectedUser = item.connected_user || {}
+        const record = item as any
+        const connectedUser = record.connected_user || {}
         return {
-          id: item.id,
+          id: record.id,
           name: connectedUser.first_name && connectedUser.last_name 
             ? `${connectedUser.first_name} ${connectedUser.last_name}` 
             : 'Unknown User',
@@ -67,22 +88,22 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
           company: connectedUser.company || 'Company',
           location: [connectedUser.city, connectedUser.state].filter(Boolean).join(', ') || 'Location',
           image: connectedUser.avatar_url,
-          connectionDate: item.status === 'accepted' ? (item.accepted_at || item.requested_at) : item.requested_at,
+          connectionDate: (item as any).status === 'accepted' ? (record.accepted_at || record.requested_at) : record.requested_at,
           mutualConnections: 0, // Not yet tracked
           skills: [], // Not yet tracked
           recentActivity: undefined,
-          status: item.status === 'accepted' ? 'connected' : (item.status === 'pending' ? 'pending' : 'suggested'),
+          status: (item as any).status === 'accepted' ? 'connected' : ((item as any).status === 'pending' ? 'pending' : 'suggested'),
           verified: false
         }
       })
       setConnections(transformed)
     }
-  }, [data])
+  }, [liveConnections, data])
 
   const handleConnect = (connectionId: string) => {
     setConnections(connections.map(conn =>
       conn.id === connectionId
-        ? { ...conn, status: conn.status === "suggested" ? "pending" : "connected" }
+        ? { ...conn, status: (conn as any).status === "suggested" ? "pending" : "connected" }
         : conn
     ))
   }
@@ -99,13 +120,13 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
     const matchesSearch = conn.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          conn.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          conn.company.toLowerCase().includes(searchQuery.toLowerCase())
-    const matchesFilter = filterStatus === "all" || conn.status === filterStatus
+    const matchesFilter = filterStatus === "all" || (conn as any).status === filterStatus
     return matchesSearch && matchesFilter
   })
 
-  const connectedCount = connections.filter(c => c.status === "connected").length
-  const pendingCount = connections.filter(c => c.status === "pending").length
-  const suggestedCount = connections.filter(c => c.status === "suggested").length
+  const connectedCount = connections.filter(c => (c as any).status === "connected").length
+  const pendingCount = connections.filter(c => (c as any).status === "pending").length
+  const suggestedCount = connections.filter(c => (c as any).status === "suggested").length
 
   return (
     <div className="space-y-6">
@@ -113,40 +134,40 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Connections</div>
+            <div className="text-sm font-medium">{t('connections')}</div>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{connectedCount}</div>
+            <div className="text-2xl font-bold">{connectedCount as any}</div>
             <p className="text-xs text-muted-foreground">Professional network</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Pending</div>
-            <UserPlus className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('pending')}</div>
+            <UserPlus className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{pendingCount}</div>
+            <div className="text-2xl font-bold">{pendingCount as any}</div>
             <p className="text-xs text-muted-foreground">Awaiting response</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Suggestions</div>
+            <div className="text-sm font-medium">{t('suggestions')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{suggestedCount}</div>
+            <div className="text-2xl font-bold">{suggestedCount as any}</div>
             <p className="text-xs text-muted-foreground">People you may know</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Growth</div>
+            <div className="text-sm font-medium">{t('growth')}</div>
             <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -164,17 +185,17 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
                 placeholder={t('searchConnections')}
-                value={searchQuery}
+                value={searchQuery as any}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
             </div>
-            <Tabs value={filterStatus} onValueChange={(v) => setFilterStatus(v as any)}>
+            <Tabs value={filterStatus as any} onValueChange={(v) => setFilterStatus(v as any)}>
               <TabsList>
                 <TabsTrigger value="all">{t('all')}</TabsTrigger>
-                <TabsTrigger value="connected">Connected</TabsTrigger>
-                <TabsTrigger value="pending">Pending</TabsTrigger>
-                <TabsTrigger value="suggested">Suggested</TabsTrigger>
+                <TabsTrigger value="connected">{t('connected')}</TabsTrigger>
+                <TabsTrigger value="pending">{t('pending')}</TabsTrigger>
+                <TabsTrigger value="suggested">{t('suggested')}</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
@@ -197,7 +218,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
             </CardContent>
           </Card>
         ) : (
-          filteredConnections.map((connection) => (
+          filteredConnections.map((connection: any) => (
             <Card key={connection.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
@@ -217,7 +238,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
                           <h3 className="font-semibold truncate">{connection.name}</h3>
                           {connection.verified && (
                             <Badge variant="secondary" className="h-5 px-1">
-                              <UserCheck className="h-3 w-3" />
+                              <UserCheck className="h-3 w-3"  aria-hidden="true" />
                             </Badge>
                           )}
                         </div>
@@ -230,11 +251,11 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
 
                     <div className="mt-2 space-y-1 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
-                        <Briefcase className="h-3 w-3" />
+                        <Briefcase className="h-3 w-3"  aria-hidden="true" />
                         <span className="truncate">{connection.company}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-3 w-3" />
+                        <MapPin className="h-3 w-3"  aria-hidden="true" />
                         <span className="truncate">{connection.location}</span>
                       </div>
                       <div className="flex items-center gap-2">
@@ -245,7 +266,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
 
                     {/* Skills */}
                     <div className="flex flex-wrap gap-1 mt-3">
-                      {connection.skills.slice(0, 3).map((skill) => (
+                      {connection.skills.slice(0, 3).map((skill: any) => (
                         <Badge key={skill} variant="outline" className="text-xs">
                           {skill}
                         </Badge>
@@ -253,7 +274,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
                     </div>
 
                     {/* Recent Activity */}
-                    {connection.recentActivity && connection.status === "connected" && (
+                    {connection.recentActivity && (connection as any).status === "connected" && (
                       <p className="text-xs text-muted-foreground mt-2 italic">
                         {connection.recentActivity}
                       </p>
@@ -261,19 +282,19 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
 
                     {/* Action Buttons */}
                     <div className="flex gap-2 mt-4">
-                      {connection.status === "connected" && (
+                      {(connection as any).status === "connected" && (
                         <>
                           <Button variant="outline" size="sm" className="flex-1">
-                            <MessageSquare className="h-4 w-4 mr-2" />
+                            <MessageSquare className="h-4 w-4 mr-2"  aria-hidden="true" />
                             Message
                           </Button>
                           <Button variant="outline" size="sm" className="flex-1">
-                            <Mail className="h-4 w-4 mr-2" />
+                            <Mail className="h-4 w-4 mr-2"  aria-hidden="true" />
                             Email
                           </Button>
                         </>
                       )}
-                      {connection.status === "pending" && (
+                      {(connection as any).status === "pending" && (
                         <>
                           <Button variant="outline" size="sm" className="flex-1">
                             View Profile
@@ -288,7 +309,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
                           </Button>
                         </>
                       )}
-                      {connection.status === "suggested" && (
+                      {(connection as any).status === "suggested" && (
                         <>
                           <Button 
                             variant="default" 
@@ -296,7 +317,7 @@ export function ConnectionsTab({ data = [], loading = false }: ConnectionsTabPro
                             className="flex-1"
                             onClick={() => handleConnect(connection.id)}
                           >
-                            <UserPlus className="h-4 w-4 mr-2" />
+                            <UserPlus className="h-4 w-4 mr-2"  aria-hidden="true" />
                             Connect
                           </Button>
                           <Button variant="outline" size="sm" className="flex-1">

@@ -82,7 +82,7 @@ export function AdminOverviewTab() {
       <div className="sr-only" aria-live="polite" aria-atomic="true">
         {t('admin.overview.statsUpdated')}
       </div>
-        {stats.map((stat) => {
+        {stats.map((stat: any) => {
           const Icon = stat.icon
           return (
             <Card key={stat.label}>
@@ -124,19 +124,19 @@ export function AdminOverviewTab() {
               {recentActivity.map((activity: any, index: number) => (
                 <div key={index} className="flex items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
                   <div className={`h-2 w-2 rounded-full mt-2 ${
-                    activity.type === "complete" ? "bg-green-500" :
-                    activity.type === "create" ? "bg-blue-500" :
-                    activity.type === "update" ? "bg-yellow-500" :
-                    activity.type === "member" ? "bg-purple-500" :
-                    "bg-red-500"
+                    (activity as any).type === "complete" ? "bg-green-500" :
+                    (activity as any).type === "create" ? "bg-blue-500" :
+                    (activity as any).type === "update" ? "bg-yellow-500" :
+                    (activity as any).type === "member" ? "bg-purple-500" :
+                    "bg-gray-500"
                   }`} />
                   <div className="flex-1 space-y-1">
                     <p className="text-sm">
-                      <span className="font-medium">{activity.user}</span>{" "}
-                      <span className="text-muted-foreground">{activity.action}</span>{" "}
-                      <span className="font-medium">{activity.project}</span>
+                      <span className="font-medium">{(activity as any).user}</span>{" "}
+                      <span className="text-muted-foreground">{(activity as any).action}</span>{" "}
+                      <span className="font-medium">{(activity as any).project}</span>
                     </p>
-                    <p className="text-xs text-muted-foreground">{activity.time}</p>
+                    <p className="text-xs text-muted-foreground">{(activity as any).time}</p>
                   </div>
                 </div>
               ))}
@@ -152,7 +152,7 @@ export function AdminOverviewTab() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {systemHealth.map((item) => {
+              {systemHealth.map((item: any) => {
                 const Icon = item.icon
                 return (
                   <div key={item.metric} className="flex items-center justify-between p-3 border rounded-lg">
@@ -163,8 +163,8 @@ export function AdminOverviewTab() {
                         <p className="text-xs text-muted-foreground">{item.value}</p>
                       </div>
                     </div>
-                    <Badge variant={item.status === "healthy" ? "default" : "secondary"}>
-                      {item.status === "healthy" ? (
+                    <Badge variant={(item as any).status === "healthy" ? "default" : "secondary"}>
+                      {(item as any).status === "healthy" ? (
                         <>
                           <CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" />
                           {t('admin.healthy')}

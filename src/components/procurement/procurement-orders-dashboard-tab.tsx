@@ -70,11 +70,11 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
   ]
 
   const getOrdersByStage = (stage: string) => {
-    return orders.filter((order: any) => order.status === stage)
+    return orders.filter((order: any) => (order as any).status === stage)
   }
 
   const totalValue = orders.reduce((sum: number, o: any) => sum + (o.total || 0), 0)
-  const pendingApprovals = orders.filter((o: any) => o.status === 'pending').length
+  const pendingApprovals = orders.filter((o: any) => (o as any).status === 'pending').length
   const overdueOrders = orders.filter((o: any) => 
     new Date(o.expected_delivery) < new Date() && o.status !== 'received'
   ).length
@@ -84,9 +84,9 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
       {/* Key Metrics */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Orders</CardTitle>
-            <FileEdit className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Total Orders</CardTitle>
+            <FileEdit className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{orders.length}</div>
@@ -95,9 +95,9 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Value</CardTitle>
-            <DollarSign className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Total Value</CardTitle>
+            <DollarSign className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{formatCurrency(totalValue, locale)}</div>
@@ -106,9 +106,9 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         </Card>
 
         <Card className={pendingApprovals > 0 ? "border-yellow-200 dark:border-yellow-900" : ""}>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Pending Approval</CardTitle>
-            <Clock className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Pending Approval</CardTitle>
+            <Clock className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${pendingApprovals > 0 ? 'text-yellow-600' : ''}`}>
@@ -119,9 +119,9 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         </Card>
 
         <Card className={overdueOrders > 0 ? "border-red-200 dark:border-red-900" : ""}>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Overdue</CardTitle>
-            <AlertTriangle className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Overdue</CardTitle>
+            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${overdueOrders > 0 ? 'text-red-600' : ''}`}>
@@ -140,7 +140,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         </CardHeader>
         <CardContent>
           <div className="flex gap-4 overflow-x-auto pb-4">
-            {stages.map((stage) => {
+            {stages.map((stage: any) => {
               const stageOrders = getOrdersByStage(stage.id)
               const stageValue = stageOrders.reduce((sum: number, o: any) => sum + (o.total || 0), 0)
               const StageIcon = stage.icon
@@ -148,16 +148,16 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
               return (
                 <div key={stage.id} className="flex-shrink-0 w-64">
                   <Card>
-                    <CardHeader className="pb-3">
+                    <CardHeader className="pb-3" aria-hidden="true">
                       <div className="flex items-center justify-between">
-                        <CardTitle className="text-sm font-medium">{stage.name}</CardTitle>
-                        <StageIcon className="h-4 w-4" aria-hidden="true"  />
+                        <CardTitle className="text-sm font-medium" aria-hidden="true">{stage.name}</CardTitle>
+                        <StageIcon className="h-4 w-4" aria-hidden="true" />
                       </div>
                       <div className="text-xs text-muted-foreground">
                         {stageOrders.length} orders · {formatCurrency(stageValue, locale)}
                       </div>
                     </CardHeader>
-                    <CardContent className="space-y-2 max-h-96 overflow-y-auto">
+                    <CardContent className="space-y-2 max-h-96 overflow-y-auto" aria-hidden="true">
                       {stageOrders.map((order: any) => (
                         <Card key={order.id} className="p-3 hover:shadow-md transition-shadow cursor-pointer">
                           <div className="space-y-2">
@@ -216,20 +216,20 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
 
               const topVendors = Object.entries(vendorStats)
                 .map(([vendor, stats]: [string, any]) => ({ vendor, ...stats }))
-                .sort((a, b) => b.count - a.count)
+                .sort((a: any, b: any) => b.count - a.count)
                 .slice(0, 5)
 
               return (
                 <div className="space-y-3">
-                  {topVendors.map((vendor: any, index: number) => (
+                  {topVendors.map((vendor: Record<string, any>, index: number) => (
                     <div key={index} className="space-y-1">
                       <div className="flex justify-between text-sm">
-                        <span className="font-medium">{vendor.vendor}</span>
+                        <span className="font-medium">{vendor.vendor as string}</span>
                         <span className="text-muted-foreground">
-                          {vendor.count} orders · {formatCurrency(vendor.total, locale)}
+                          {vendor.count as number} orders · {formatCurrency(vendor.total as number, locale)}
                         </span>
                       </div>
-                      <Progress value={(vendor.count / orders.length) * 100} className="h-2" />
+                      <Progress value={((vendor.count as number) / orders.length) * 100} className="h-2" />
                     </div>
                   ))}
                 </div>
@@ -289,17 +289,17 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
 
       {/* Pending Approvals */}
       {pendingApprovals > 0 && (
-        <Card className="border-yellow-200 dark:border-yellow-900">
+        <Card className="border-yellow-200 dark:border-yellow-900" aria-hidden="true">
           <CardHeader>
-            <CardTitle className="text-yellow-600 flex items-center gap-2">
-              <Clock className="h-5 w-5" aria-hidden="true"  />
+            <CardTitle className="text-yellow-600 flex items-center gap-2" aria-hidden="true">
+              <Clock className="h-5 w-5" aria-hidden="true" />
               Pending Approvals
             </CardTitle>
             <CardDescription>{pendingApprovals} orders awaiting approval</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              {orders.filter((o: any) => o.status === 'pending').slice(0, 5).map((order: any) => (
+              {orders.filter((o: any) => (o as any).status === 'pending').slice(0, 5).map((order: any) => (
                 <div key={order.id} className="flex items-center justify-between p-3 border rounded">
                   <div>
                     <div className="font-medium">{order.title || order.po_number}</div>

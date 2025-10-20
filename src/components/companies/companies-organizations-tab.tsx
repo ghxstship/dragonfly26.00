@@ -86,52 +86,52 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.totalCompanies')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalCompanies')}</CardTitle>
             <Building2 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{companies.length}</div>
             <p className="text-xs text-muted-foreground">
-              {t('stats.activeCount', { count: companies.filter((c: any) => c.status === 'active').length })}
+              {t('stats.activeCount', { count: companies.filter((c: any) => (c as any).status === 'active').length })}
             </p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.vendors')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.vendors')}</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {companies.filter((c: any) => c.type === 'vendor').length}
+              {companies.filter((c: any) => (c as any).type === 'vendor').length}
             </div>
             <p className="text-xs text-muted-foreground">{t('stats.serviceProviders')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.clients')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.clients')}</CardTitle>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {companies.filter((c: any) => c.type === 'client').length}
+              {companies.filter((c: any) => (c as any).type === 'client').length}
             </div>
             <p className="text-xs text-muted-foreground">{t('stats.activeClients')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.partners')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.partners')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {companies.filter((c: any) => c.type === 'partner').length}
+              {companies.filter((c: any) => (c as any).type === 'partner').length}
             </div>
             <p className="text-xs text-muted-foreground">{t('stats.strategicPartners')}</p>
           </CardContent>
@@ -144,7 +144,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
           <Card key={company.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-start gap-4">
-                <Avatar className="h-12 w-12">
+                <Avatar className="h-12 w-12" aria-hidden="true">
                   <AvatarImage 
                     src={company.logo} 
                     alt={tCommon('aria.avatar', { name: company.name })} 
@@ -152,7 +152,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
                   <AvatarFallback>{getInitials(company.name)}</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 min-w-0">
-                  <CardTitle className="text-lg line-clamp-1">{company.name}</CardTitle>
+                  <CardTitle className="text-lg line-clamp-1" aria-hidden="true">{company.name}</CardTitle>
                   <div className="flex gap-2 mt-2">
                     <Badge className={getTypeColor(company.type)}>
                       {company.type}
@@ -165,32 +165,32 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
               </div>
             </CardHeader>
 
-            <CardContent className="space-y-3">
+            <CardContent className="space-y-3" aria-hidden="true">
               {/* Contact Information */}
               {company.location && (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin className="h-4 w-4 flex-shrink-0" />
+                  <MapPin className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <span className="truncate">{company.location}</span>
                 </div>
               )}
 
               {company.phone && (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Phone className="h-4 w-4 flex-shrink-0" />
+                  <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <span className="truncate">{company.phone}</span>
                 </div>
               )}
 
               {company.email && (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Mail className="h-4 w-4 flex-shrink-0" />
+                  <Mail className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <span className="truncate">{company.email}</span>
                 </div>
               )}
 
               {company.website && (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Globe className="h-4 w-4 flex-shrink-0" />
+                  <Globe className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <a 
                     href={company.website} 
                     target="_blank" 
@@ -246,8 +246,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
 
               {/* Actions */}
               <div className="flex gap-2 pt-2">
-                <Button 
-                  className="flex-1" 
+                <Button className="flex-1" aria-hidden="true" 
                   variant="outline" 
                   size="sm"
                   aria-label={t('aria.viewDetails', { name: company.name })}
@@ -269,7 +268,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
 
       {companies.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent className="p-0" aria-hidden="true">
             <EmptyState
               variant="inline"
               icon={Building2}

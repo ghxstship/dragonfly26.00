@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
 const dataSources = [
   {
     id: "1",
@@ -55,7 +56,7 @@ const dataSources = [
 ]
 
 interface AnalyticsDataSourcesTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -79,7 +80,7 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('connected')}</p>
             <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
-              {dataSources.filter(d => d.status === "connected").length}
+              {dataSources.filter(d => (d as any).status === "connected").length}
             </p>
           </CardContent>
         </Card>
@@ -99,7 +100,7 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
 
       {/* Data Sources List */}
       <div className="grid gap-4">
-        {dataSources.map((source) => (
+        {dataSources.map((source: any) => (
           <Card key={source.id} className="hover:shadow-md transition-shadow">
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -112,10 +113,10 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
                 </div>
                 <div className="flex items-center gap-3">
                   <Badge 
-                    variant={source.status === "connected" ? "default" : "secondary"}
-                    className={source.status === "connected" ? "bg-green-600" : "bg-yellow-600"}
+                    variant={(source as any).status === "connected" ? "default" : "secondary"}
+                    className={(source as any).status === "connected" ? "bg-green-600" : "bg-yellow-600"}
                   >
-                    {source.status === "connected" ? (
+                    {(source as any).status === "connected" ? (
                       <><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Connected</>
                     ) : (
                       <><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Warning</>

@@ -68,7 +68,7 @@ export function useProductVariants(productId: string) {
 
         setVariants(variantsData || [])
         setOptions(optionsData || [])
-      } catch (err) {
+      } catch (err: any) {
         setError(err as Error)
       } finally {
         setLoading(false)
@@ -112,7 +112,7 @@ export function useInventoryLevel(variantId: string, locationId?: string) {
         if (inventoryError) throw inventoryError
 
         setInventory(data)
-      } catch (err) {
+      } catch (err: any) {
         setError(err as Error)
       } finally {
         setLoading(false)

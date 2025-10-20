@@ -89,7 +89,7 @@ export default function WelcomePage() {
     } catch (error: any) {
       toast({
         title: 'Error',
-        description: error.message,
+        description: (error as any).message,
         variant: 'destructive',
       })
     } finally {
@@ -126,7 +126,7 @@ export default function WelcomePage() {
     } catch (error: any) {
       toast({
         title: 'Upload failed',
-        description: error.message,
+        description: (error as any).message,
         variant: 'destructive',
       })
     }

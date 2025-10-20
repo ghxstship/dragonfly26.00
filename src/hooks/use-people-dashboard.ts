@@ -135,7 +135,7 @@ export function usePeopleDashboard(workspaceId: string) {
             ptoRequests: ptoRequests?.length || 0
           }
         })
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error fetching dashboard data:', error)
       } finally {
         setLoading(false)
@@ -246,7 +246,7 @@ export function useTodaysSchedule(workspaceId: string) {
         })) || []
 
         setSchedule({ onDuty, comingSoon, openShifts, outToday })
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error fetching schedule:', error)
       } finally {
         setLoading(false)
@@ -363,7 +363,7 @@ export function useComplianceViolations(workspaceId: string) {
 
 // Pending approvals by type
 export function usePendingApprovals(workspaceId: string) {
-  const [approvals, setApprovals] = useState<any>({
+  const [approvals, setApprovals] = useState<unknown>({
     pto: [],
     timesheets: [],
     shifts: [],
@@ -412,7 +412,7 @@ export function usePendingApprovals(workspaceId: string) {
           ...(pto?.map(item => ({ ...item, type: 'pto' })) || []),
           ...(timesheets?.map(item => ({ ...item, type: 'timesheet' })) || []),
           ...(shifts?.map(item => ({ ...item, type: 'shift_swap' })) || [])
-        ].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+        ].sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
 
         setApprovals({
           pto: pto || [],
@@ -420,7 +420,7 @@ export function usePendingApprovals(workspaceId: string) {
           shifts: shifts || [],
           all
         })
-      } catch (error) {
+      } catch (error: any) {
         console.error('Error fetching approvals:', error)
       } finally {
         setLoading(false)

@@ -95,7 +95,7 @@ export function RecurrenceRulesTab() {
   }
 
   const handleDeleteRule = (ruleId: string) => {
-    setRules(rules.filter(r => r.id !== ruleId))
+    setRules(rules.filter(r => (r as any).id !== ruleId))
     toast({
       title: t('admin.toast.ruleDeleted'),
       description: t('admin.toast.ruleDeletedDesc'),
@@ -125,7 +125,7 @@ export function RecurrenceRulesTab() {
           <CardHeader className="pb-3">
             <CardDescription>Most Used</CardDescription>
             <CardTitle className="text-lg">
-              {rules.reduce((prev: any, curr: any) => 
+              {rules.reduce((prev: RecurrenceRule, curr: RecurrenceRule) => 
                 curr.usageCount > prev.usageCount ? curr : prev
               ).name}
             </CardTitle>
@@ -135,7 +135,7 @@ export function RecurrenceRulesTab() {
 
       {/* Rules List */}
       <div className="space-y-3">
-        {rules.map((rule) => (
+        {rules.map((rule: any) => (
           <Card key={rule.id}>
             <CardHeader>
               <div className="flex items-start justify-between">

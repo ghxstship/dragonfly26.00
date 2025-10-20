@@ -75,7 +75,7 @@ export function TodaysScheduleSidebar({
               <p className="text-xs text-muted-foreground pl-5">No one on duty</p>
             ) : (
               <div className="space-y-1 pl-5">
-                {onDuty.slice(0, 5).map((shift) => (
+                {onDuty.slice(0, 5).map((shift: any) => (
                   <PersonnelShiftItem key={shift.id} shift={shift} />
                 ))}
                 {onDuty.length > 5 && (
@@ -98,7 +98,7 @@ export function TodaysScheduleSidebar({
                 <Badge variant="outline">{comingSoon.length}</Badge>
               </div>
               <div className="space-y-1 pl-5">
-                {comingSoon.map((shift) => (
+                {comingSoon.map((shift: any) => (
                   <PersonnelShiftItem key={shift.id} shift={shift} showTime />
                 ))}
               </div>
@@ -114,7 +114,7 @@ export function TodaysScheduleSidebar({
                   <h4 className="text-sm font-medium">Open Shifts</h4>
                 </div>
                 <Badge variant="outline" className="bg-yellow-50 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300">
-                  {openShifts.reduce((sum, s) => sum + s.count, 0)}
+                  {openShifts.reduce((sum: any, s: any) => sum + s.count, 0)}
                 </Badge>
               </div>
               <div className="space-y-1 pl-5">

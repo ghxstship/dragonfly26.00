@@ -73,8 +73,8 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
   const personnel = Array.from(new Set(shifts.map((s: any) => s.person_id)))
     .map(id => ({
       id,
-      name: shifts.find((s: any) => s.person_id === id)?.person_name || 'Unknown',
-      role: shifts.find((s: any) => s.person_id === id)?.person_role || 'Staff'
+      name: (shifts.find((s: any) => s.person_id === id) as any)?.person_name || 'Unknown',
+      role: (shifts.find((s: any) => s.person_id === id) as any)?.person_role || 'Staff'
     }))
 
   const weekDays = getWeekDays()
@@ -104,7 +104,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
             <Clock className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalHours}</div>
+            <div className="text-2xl font-bold">{totalHours as any}</div>
             <p className="text-xs text-muted-foreground">Scheduled</p>
           </CardContent>
         </Card>
@@ -128,7 +128,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{overtimeShifts}</div>
+            <div className="text-2xl font-bold">{overtimeShifts as any}</div>
             <p className="text-xs text-muted-foreground">Shifts</p>
           </CardContent>
         </Card>
@@ -159,7 +159,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   const newDate = new Date(currentDate)
                   newDate.setDate(newDate.getDate() - 7)
                   setCurrentDate(newDate)
-                }}>
+                }} aria-label="Previous week">
                   <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <Button variant="outline" size="sm" onClick={() => setCurrentDate(new Date())}>
@@ -169,7 +169,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   const newDate = new Date(currentDate)
                   newDate.setDate(newDate.getDate() + 7)
                   setCurrentDate(newDate)
-                }}>
+                }} aria-label="Next week">
                   <ChevronRight className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
@@ -202,7 +202,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 </tr>
               </thead>
               <tbody>
-                {personnel.map((person) => (
+                {personnel.map((person: any) => (
                   <tr key={person.id}>
                     <td className="border p-2 bg-muted/50">
                       <div className="font-medium text-sm">{person.name}</div>

@@ -28,6 +28,114 @@ export type Density = 'compact' | 'comfortable' | 'spacious'
 export type CalendarMode = 'month' | 'week' | 'day' | 'agenda'
 export type Priority = 'urgent' | 'high' | 'normal' | 'low'
 
+// Task
+export interface Task {
+  id: string
+  workspace_id: string
+  production_id?: string
+  title?: string
+  name?: string
+  description?: string
+  status: string
+  priority?: string
+  due_date?: string
+  assignee_id?: string
+  created_by: string
+  created_at: string
+  updated_at: string
+  production?: {
+    name: string
+  }
+}
+
+// Dashboard Data Types
+export interface DashboardEvent {
+  id: string
+  workspace_id: string
+  title?: string
+  name?: string
+  start_date?: string
+  end_date?: string
+  location?: string
+  description?: string
+  created_at?: string
+  [key: string]: any
+}
+
+export interface DashboardExpense {
+  id: string
+  workspace_id: string
+  amount?: number
+  category?: string
+  description?: string
+  status?: string
+  created_at?: string
+  [key: string]: any
+}
+
+export interface DashboardJob {
+  id: string
+  workspace_id: string
+  title?: string
+  role?: string
+  production?: { name?: string }
+  created_at?: string
+  [key: string]: any
+}
+
+export interface DashboardAsset {
+  id: string
+  workspace_id: string
+  name?: string
+  type?: string
+  status?: string
+  assigned_to?: string
+  created_at?: string
+  [key: string]: any
+}
+
+export interface DashboardOrder {
+  id: string
+  workspace_id: string
+  order_number?: string
+  total?: number
+  status?: string
+  created_at?: string
+  [key: string]: any
+}
+
+export interface DashboardAdvance {
+  id: string
+  workspace_id: string
+  amount?: number
+  status?: string
+  production?: { name?: string }
+  created_at?: string
+  [key: string]: any
+}
+
+export interface DashboardFile {
+  id: string
+  workspace_id: string
+  name?: string
+  file_type?: string
+  size?: number
+  created_at?: string
+  [key: string]: any
+}
+
+export interface DashboardTravel {
+  id: string
+  workspace_id: string
+  title?: string
+  destination?: string
+  departure_date?: string
+  return_date?: string
+  status?: string
+  created_at?: string
+  [key: string]: any
+}
+
 // User & Organization
 export interface User {
   id: string
@@ -185,8 +293,8 @@ export interface ViewConfig {
   filters?: FilterConfig[]
   sorting?: SortConfig[]
   grouping?: GroupConfig[]
-  layout?: Record<string, any>
-  customization?: Record<string, any>
+  layout?: Record<string, unknown>
+  customization?: Record<string, unknown>
 }
 
 export interface ColumnConfig {
@@ -263,7 +371,7 @@ export interface Template {
   vendor_id?: string
   downloads: number
   rating: number
-  config: Record<string, any>
+  config: Record<string, unknown>
   created_at: string
 }
 
@@ -515,7 +623,7 @@ export interface AutomationCondition {
 
 export interface AutomationAction {
   type: 'update_field' | 'assign_user' | 'send_notification' | 'create_item' | 'move_to_list' | 'add_comment'
-  config: Record<string, any>
+  config: Record<string, unknown>
 }
 
 export interface Automation {
@@ -526,7 +634,7 @@ export interface Automation {
   description?: string
   is_active: boolean
   trigger_type: AutomationTriggerType
-  trigger_config: Record<string, any>
+  trigger_config: Record<string, unknown>
   conditions: AutomationCondition[]
   actions: AutomationAction[]
   run_once_per_item: boolean
@@ -545,7 +653,7 @@ export interface AutomationExecution {
   item_type: string
   status: 'success' | 'failed' | 'skipped'
   error_message?: string
-  actions_performed?: Record<string, any>
+  actions_performed?: Record<string, unknown>
   execution_time_ms?: number
   executed_at: string
 }
@@ -644,7 +752,7 @@ export interface ItemVersion {
   item_id: string
   item_type: string
   version: number
-  data: Record<string, any>
+  data: Record<string, unknown>
   changes?: Record<string, { old: any; new: any }>
   change_summary?: string
   changed_by: string
@@ -700,7 +808,7 @@ export interface SavedSearch {
   workspace_id?: string
   name: string
   query: string
-  filters: Record<string, any>
+  filters: Record<string, unknown>
   is_pinned: boolean
   created_at: string
   updated_at: string
@@ -734,7 +842,7 @@ export interface Plugin {
   supports_api: boolean
   supports_ui: boolean
   install_url?: string
-  config_schema?: Record<string, any>
+  config_schema?: Record<string, unknown>
   is_published: boolean
   is_featured: boolean
   install_count: number
@@ -751,7 +859,7 @@ export interface PluginInstallation {
   plugin_id: string
   organization_id: string
   status: PluginInstallationStatus
-  config: Record<string, any>
+  config: Record<string, unknown>
   last_used_at?: string
   usage_count: number
   subscription_id?: string
@@ -775,7 +883,7 @@ export interface Webhook {
   headers: Record<string, string>
   secret?: string
   events: string[]
-  filters: Record<string, any>
+  filters: Record<string, unknown>
   retry_enabled: boolean
   max_retries: number
   retry_delay_seconds: number
@@ -793,13 +901,13 @@ export interface WebhookDelivery {
   id: string
   webhook_id: string
   event_type: string
-  event_data: Record<string, any>
+  event_data: Record<string, unknown>
   request_url: string
   request_method: string
-  request_headers?: Record<string, any>
-  request_body?: Record<string, any>
+  request_headers?: Record<string, string>
+  request_body?: Record<string, unknown>
   response_status?: number
-  response_headers?: Record<string, any>
+  response_headers?: Record<string, string>
   response_body?: string
   duration_ms?: number
   status: 'pending' | 'success' | 'failed' | 'retrying'
@@ -846,7 +954,7 @@ export interface AdvancedCustomField {
   rollup_function?: RollupFunction
   options?: any
   is_required: boolean
-  validation_rules?: Record<string, any>
+  validation_rules?: Record<string, unknown>
   icon?: string
   color?: string
   created_by: string
@@ -885,8 +993,8 @@ export interface Report {
   sorting: any[]
   aggregations: any[]
   chart_type?: ChartType
-  chart_config?: Record<string, any>
-  layout?: Record<string, any>
+  chart_config?: Record<string, unknown>
+  layout?: Record<string, unknown>
   is_public: boolean
   shared_with?: string[]
   schedule_enabled: boolean
@@ -975,7 +1083,7 @@ export interface Activity {
   item_name?: string
   old_value?: any
   new_value?: any
-  metadata?: Record<string, any>
+  metadata?: Record<string, unknown>
   is_public: boolean
   visible_to?: string[]
   created_at: string
@@ -1077,7 +1185,7 @@ export interface SyncLog {
   table_name?: string
   record_id?: string
   operation?: 'create' | 'update' | 'delete'
-  new_data?: Record<string, any>
+  new_data?: Record<string, unknown>
   started_at: string
   completed_at: string
 }
@@ -1088,7 +1196,7 @@ export interface OfflineQueueItem {
   operation_type?: 'create' | 'update' | 'delete'
   entity_type: string
   entity_id: string
-  data: Record<string, any>
+  data: Record<string, unknown>
   timestamp: string
   status: 'pending' | 'syncing' | 'synced' | 'failed'
   retry_count: number
@@ -1098,8 +1206,8 @@ export interface SyncConflict {
   id: string
   entity_type: string
   entity_id: string
-  server_version: Record<string, any>
-  client_version: Record<string, any>
+  server_version: Record<string, unknown>
+  client_version: Record<string, unknown>
   resolution?: 'server' | 'client' | 'merge'
   resolved_at?: string
 }
@@ -1169,9 +1277,9 @@ export interface Asset {
   current_location?: string
   ownership?: AssetOwnership
   vendor_id?: string
-  specifications?: Record<string, any>
+  specifications?: Record<string, string | number | boolean>
   tags?: string[]
-  custom_fields?: Record<string, any>
+  custom_fields?: Record<string, unknown>
   created_by: string
   created_at: string
   updated_at: string
@@ -1216,7 +1324,7 @@ export interface ProductionAdvance {
   returned_at?: string
   notes?: string
   tags?: string[]
-  custom_fields?: Record<string, any>
+  custom_fields?: Record<string, unknown>
   created_by: string
   created_at: string
   updated_at: string

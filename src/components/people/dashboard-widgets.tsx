@@ -36,7 +36,7 @@ export function HeadcountWidget({
         <Users className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">{activeCount}</div>
+        <div className="text-2xl font-bold">{activeCount as any}</div>
         <p className="text-xs text-muted-foreground mt-1">Active employees</p>
         
         <div className="mt-4 space-y-2">
@@ -172,7 +172,7 @@ export function PendingApprovalsWidget({
         <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">{totalCount}</div>
+        <div className="text-2xl font-bold">{totalCount as any}</div>
         <p className="text-xs text-muted-foreground mt-1">Items need your review</p>
         
         <div className="mt-4 space-y-2">
@@ -237,7 +237,7 @@ export function AlertsWidget({
           </div>
         ) : (
           <>
-            <div className="text-2xl font-bold text-yellow-600">{alertCount}</div>
+            <div className="text-2xl font-bold text-yellow-600">{alertCount as any}</div>
             <p className="text-xs text-muted-foreground mt-1">Items need attention</p>
             
             <div className="mt-4 space-y-2">

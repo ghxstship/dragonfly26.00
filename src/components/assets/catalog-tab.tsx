@@ -13,7 +13,7 @@ import {
   useCatalogStatistics,
   useAssetCategories 
 } from "@/hooks/use-asset-catalog"
-import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
+import { DataTableOrganism } from "@/components/organisms"
 import {
   Select,
   SelectContent,
@@ -26,7 +26,7 @@ import { useUIStore } from "@/store/ui-store"
 import { createClient } from "@/lib/supabase/client"
 
 interface CatalogTabProps {
-  data: any[]
+  data: Record<string, unknown>[]
   loading: boolean
   workspaceId: string
 }
@@ -89,14 +89,14 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
       setTimeout(() => setCopiedItemId(null), 2000)
       
       console.log('Item copied to workspace:', copiedItem)
-    } catch (err) {
+    } catch (err: any) {
       console.error('Failed to copy item:', err)
       alert('Failed to copy item to workspace')
     }
   }
 
   // Schema for catalog table view
-  const catalogSchema: any[] = [
+  const catalogSchema: Record<string, unknown>[] = [
     { 
       id: 'name', 
       name: 'name', 
@@ -104,7 +104,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
       type: 'text',
       render: (value: string, item: any) => (
         <div>
-          <div className="font-medium">{value}</div>
+          <div className="font-medium">{value as any}</div>
           {item.manufacturer && (
             <div className="text-xs text-muted-foreground">{item.manufacturer}</div>
           )}
@@ -149,7 +149,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
       type: 'array',
       render: (value: string[]) => value?.length ? (
         <div className="flex gap-1 flex-wrap">
-          {value.slice(0, 3).map((tag, idx) => (
+          {value.slice(0, 3).map((tag: any, idx: number) => (
             <Badge key={idx} variant="secondary" className="text-xs">
               {tag}
             </Badge>
@@ -167,7 +167,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
       name: 'actions',
       label: 'Actions',
       type: 'custom',
-      render: (_: any, item: any) => (
+      render: (_: Record<string, unknown>, item: Record<string, unknown>) => (
         <Button
           size="sm"
           variant={copiedItemId === item.id ? "default" : "outline"}
@@ -220,19 +220,19 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder={t('assets.catalog.searchPlaceholder')}
-                value={searchQuery}
+                value={searchQuery as any}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
             </div>
-            <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+            <Select value={categoryFilter as any} onValueChange={setCategoryFilter}>
               <SelectTrigger className="w-[200px]">
                 <SelectValue placeholder={t('assets.catalog.allCategories')} />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Categories</SelectItem>
-                {assetCategories.map((cat) => (
-                  <SelectItem key={cat} value={cat} className="capitalize">
+                {assetCategories.map((cat: any) => (
+                  <SelectItem key={cat} value={cat as any} className="capitalize">
                     {cat.replace(/_/g, ' ')}
                   </SelectItem>
                 ))}
@@ -281,14 +281,10 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <EnhancedTableView
+          <DataTableOrganism
             data={displayData}
-            schema={catalogSchema}
-            moduleId="assets"
-            tabSlug="catalog"
-            workspaceId={currentWorkspace?.id || ''}
+            columns={catalogSchema as any}
             loading={isLoading}
-            onRefresh={() => {}}
           />
         </CardContent>
       </Card>

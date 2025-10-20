@@ -6,16 +6,29 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Heart, ShoppingCart, Star, Eye, X, Package } from "lucide-react"
+import { useWishlists } from "@/hooks/use-marketplace-wishlists"
+
+interface FavoriteItem {
+  id: string
+  name: string
+  price: number
+  image?: string
+  rating?: number
+  availability?: string
+  [key: string]: any
+}
 
 interface FavoritesTabProps {
-  data?: any[]
+  data?: FavoriteItem[]
   loading?: boolean
 }
 
-export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) {
+export function FavoritesTab({ data = [], loading: loadingProp = false }: FavoritesTabProps) {
+  const { wishlists, loading: liveLoading } = useWishlists()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.favorites')
   const tCommon = useTranslations('common')
-  const [favorites, setFavorites] = useState(data)
+  const [favorites, setFavorites] = useState<FavoriteItem[]>(data)
 
   const removeFavorite = (id: string) => {
     setFavorites(favorites.filter(item => item.id !== id))
@@ -39,7 +52,7 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
       {/* Favorites Grid */}
       {favorites.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {favorites.map((item) => (
+          {favorites.map((item: any) => (
             <Card key={item.id} className="group overflow-hidden relative">
               {/* Remove Button */}
               <Button
@@ -48,7 +61,7 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
                 className="absolute top-2 right-2 h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity z-10"
                 onClick={() => removeFavorite(item.id)}
               >
-                <X className="h-4 w-4" />
+                <X className="h-4 w-4" aria-hidden="true" />
               </Button>
 
               {/* Product Image */}
@@ -76,7 +89,7 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
                       <Star
                         key={i}
                         className={`h-3 w-3 ${
-                          i < Math.floor(parseFloat(item.rating || "0"))
+                          i < Math.floor(item.rating || 0)
                             ? "fill-yellow-500 text-yellow-500"
                             : "text-muted-foreground/30"
                         }`}
@@ -100,8 +113,8 @@ export function FavoritesTab({ data = [], loading = false }: FavoritesTabProps) 
                   <ShoppingCart className="h-4 w-4 mr-2" aria-hidden="true" />
                   Add to Cart
                 </Button>
-                <Button variant="outline" size="icon">
-                  <Eye className="h-4 w-4" />
+                <Button variant="outline" size="icon" aria-label={t('view')}>
+                  <Eye className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </CardFooter>
             </Card>

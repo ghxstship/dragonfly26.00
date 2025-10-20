@@ -34,7 +34,7 @@ export default function LoginPage() {
     })
 
     if (error) {
-      setError(error.message)
+      setError((error as any).message)
       setLoading(false)
     } else {
       // Redirect to auth-check page which will handle routing based on auth state
@@ -51,7 +51,7 @@ export default function LoginPage() {
     })
 
     if (error) {
-      setError(error.message)
+      setError((error as any).message)
     }
   }
 

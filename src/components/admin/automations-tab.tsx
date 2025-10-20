@@ -74,7 +74,7 @@ export function AutomationsTab() {
       </div>
 
       <div className="space-y-3">
-        {automations.map((automation) => (
+        {automations.map((automation: any) => (
           <Card key={automation.id}>
             <CardHeader>
               <div className="flex items-start justify-between">

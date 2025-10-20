@@ -6,12 +6,12 @@ import { ClipboardCheck, Plus, Calendar, Users, AlertTriangle, CheckCircle2, Clo
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardDescription, CardTitle } from "@/components/ui/card"
-import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
+import { DataTableOrganism } from "@/components/organisms"
 import { createClient } from "@/lib/supabase/client"
 import { useToast } from "@/lib/hooks/use-toast"
 
 interface CountsTabProps {
-  data: any[]
+  data: Record<string, unknown>[]
   loading: boolean
   workspaceId: string
 }
@@ -33,25 +33,25 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
 
   // Apply status filter
   const filteredData = statusFilter 
-    ? data.filter(count => count.status === statusFilter)
+    ? data.filter(count => (count as any).status === statusFilter)
     : data
 
   // Calculate metrics
-  const activeCounts = data.filter(c => c.status === 'in_progress').length
-  const plannedCounts = data.filter(c => c.status === 'planned').length
-  const completedCounts = data.filter(c => c.status === 'completed').length
-  const totalDiscrepancies = data.reduce((sum: number, c) => sum + (c.discrepancies_found || 0), 0)
+  const activeCounts = data.filter(c => (c as any).status === 'in_progress').length
+  const plannedCounts = data.filter(c => (c as any).status === 'planned').length
+  const completedCounts = data.filter(c => (c as any).status === 'completed').length
+  const totalDiscrepancies = data.reduce((sum: number, c) => sum + ((c as any).discrepancies_found || 0), 0)
 
   // Filter options
   const filterOptions: StatusOption[] = [
     { value: 'planned', label: 'Planned', color: 'bg-blue-500', count: plannedCounts },
     { value: 'in_progress', label: 'In Progress', color: 'bg-orange-500', count: activeCounts },
     { value: 'completed', label: 'Completed', color: 'bg-green-500', count: completedCounts },
-    { value: 'cancelled', label: 'Cancelled', color: 'bg-gray-500', count: data.filter(c => c.status === 'cancelled').length },
+    { value: 'cancelled', label: 'Cancelled', color: 'bg-gray-500', count: data.filter(c => (c as any).status === 'cancelled').length },
   ]
 
   // Schema for table view - using 'any' to allow custom render functions
-  const countsSchema: any[] = [
+  const countsSchema: Record<string, unknown>[] = [
     { 
       id: 'count_name',
       name: 'count_name', 
@@ -59,7 +59,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
       type: 'text',
       render: (value: string, item: any) => (
         <div>
-          <div className="font-medium">{value}</div>
+          <div className="font-medium">{value as any}</div>
           <div className="text-xs text-muted-foreground capitalize">{item.count_type?.replace(/_/g, ' ')}</div>
         </div>
       )
@@ -76,7 +76,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
           completed: 'bg-green-500/10 text-green-700 border-green-200',
           cancelled: 'bg-gray-500/10 text-gray-700 border-gray-200',
         }
-        const icons: Record<string, any> = {
+        const icons: Record<string, React.ReactNode> = {
           planned: <Calendar className="h-4 w-4 mr-1" aria-hidden="true" />,
           in_progress: <Clock className="h-4 w-4 mr-1" aria-hidden="true" />,
           completed: <CheckCircle2 className="h-4 w-4 mr-1" aria-hidden="true" />,
@@ -162,7 +162,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
     },
   ]
 
-  const handleCreateCount = async (count: any) => {
+  const handleCreateCount = async (count: Record<string, unknown>) => {
     const { error } = await supabase
       .from('inventory_counts')
       .insert({
@@ -176,7 +176,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
     }
   }
 
-  const handleUpdateCount = async (id: string, updates: any) => {
+  const handleUpdateCount = async (id: string, updates: Record<string, unknown>) => {
     const { error} = await supabase
       .from('inventory_counts')
       .update(updates)
@@ -212,7 +212,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
   const handleExport = async () => {
     const csv = []
     csv.push(['Count Name', 'Type', 'Status', 'Scheduled Date', 'Progress', 'Variances', 'Completed'])
-    filteredData.forEach(count => {
+    filteredData.forEach((count: any) => {
       const progress = count.total_items ? `${count.total_items_counted || 0}/${count.total_items}` : '-'
       csv.push([
         count.count_name || '',
@@ -301,16 +301,9 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
           </div>
         </div>
       ) : (
-        <EnhancedTableView
+        <DataTableOrganism
           data={filteredData}
-          schema={countsSchema}
-          moduleId="assets"
-          tabSlug="counts"
-          workspaceId={workspaceId}
-          onRefresh={() => {}}
-          onCreate={handleCreateCount}
-          onUpdate={handleUpdateCount}
-          onDelete={handleDeleteCount}
+          columns={countsSchema as any}
           loading={loading}
         />
       )}

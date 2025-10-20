@@ -17,7 +17,7 @@ DROP POLICY IF EXISTS "Authenticated users can join organizations" ON organizati
 CREATE POLICY "Authenticated users can join organizations"
     ON organization_members FOR INSERT
     TO authenticated
-    WITH CHECK (user_id = auth.uid());
+    WITH CHECK (user_id = (SELECT (SELECT auth.uid())));
 
 -- Fix circular dependency: Allow users to view their own memberships
 -- This prevents infinite recursion when storage policies check organization_members
@@ -70,7 +70,7 @@ CREATE POLICY "Users can view workspace members in their workspaces"
     ON workspace_members FOR SELECT
     USING (
         organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     );
 
@@ -79,9 +79,9 @@ CREATE POLICY "Users can join workspaces in their organizations"
     ON workspace_members FOR INSERT
     TO authenticated
     WITH CHECK (
-        user_id = auth.uid()
+        user_id = (SELECT (SELECT auth.uid()))
         AND organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     );
 
@@ -94,10 +94,10 @@ CREATE POLICY "System can assign roles during onboarding"
     ON user_roles FOR INSERT
     TO authenticated
     WITH CHECK (
-        user_id = auth.uid()
+        user_id = (SELECT (SELECT (SELECT auth.uid())))
         OR organization_id IN (
             SELECT organization_id FROM organization_members 
-            WHERE user_id = auth.uid() AND role IN ('owner', 'admin')
+            WHERE user_id = (SELECT (SELECT (SELECT auth.uid()))) AND role IN ('owner', 'admin')
         )
     );
 
@@ -123,10 +123,10 @@ CREATE POLICY "Users can be assigned roles in their organizations"
     ON user_role_assignments FOR INSERT
     TO authenticated
     WITH CHECK (
-        user_id = auth.uid()
+        user_id = (SELECT (SELECT auth.uid()))
         OR organization_id IN (
             SELECT organization_id FROM organization_members 
-            WHERE user_id = auth.uid() AND role IN ('owner', 'admin')
+            WHERE user_id = (SELECT (SELECT auth.uid())) AND role IN ('owner', 'admin')
         )
     );
 
@@ -134,9 +134,9 @@ DROP POLICY IF EXISTS "Users can view their role assignments" ON user_role_assig
 CREATE POLICY "Users can view their role assignments"
     ON user_role_assignments FOR SELECT
     USING (
-        user_id = auth.uid()
+        user_id = (SELECT (SELECT auth.uid()))
         OR organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     );
 
@@ -160,7 +160,7 @@ BEGIN
             WITH CHECK (
                 organization_id IN (
                     SELECT organization_id FROM organization_members 
-                    WHERE user_id = auth.uid() AND role = 'owner'
+                    WHERE user_id = (SELECT (SELECT auth.uid())) AND role = 'owner'
                 )
             );
     END IF;

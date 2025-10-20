@@ -7,16 +7,31 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Heart, MessageCircle, Share2, Bookmark, Sparkles, TrendingUp, Star, ChevronRight , Plus} from "lucide-react"
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
+
+interface SpotlightItem {
+  id: string
+  type: string
+  title: string
+  description?: string
+  likes_count?: number
+  comments_count?: number
+  shares_count?: number
+  author?: string
+  [key: string]: any
+}
 
 interface SpotlightTabProps {
-  data?: any[]
+  data?: SpotlightItem[]
   loading?: boolean
 }
 
-export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) {
+export function SpotlightTab({ data = [], loading: loadingProp = false }: SpotlightTabProps) {
+  const { products, loading: liveLoading } = useMarketplaceData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.spotlight')
   const tCommon = useTranslations('common')
-  const spotlightItems = data
+  const spotlightItems: SpotlightItem[] = data
   const [likedItems, setLikedItems] = useState<Set<string>>(new Set())
   const [savedItems, setSavedItems] = useState<Set<string>>(new Set())
 
@@ -52,7 +67,7 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case "sponsored": return <Sparkles className="h-3 w-3" />
+      case "sponsored": return <Sparkles className="h-3 w-3"  aria-hidden="true" />
       case "trending": return <TrendingUp className="h-3 w-3" aria-hidden="true" />
       case "featured": return <Star className="h-3 w-3" aria-hidden="true" />
       default: return null
@@ -65,10 +80,10 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
         {/* Filter Pills */}
         <div className="flex gap-2 overflow-x-auto pb-2">
         <Button variant="default" size="sm">{t('all')}</Button>
-        <Button variant="outline" size="sm">Sponsored</Button>
-        <Button variant="outline" size="sm">Featured</Button>
+        <Button variant="outline" size="sm">{t('sponsored')}</Button>
+        <Button variant="outline" size="sm">{t('featured')}</Button>
         <Button variant="outline" size="sm">{t('trending')}</Button>
-        <Button variant="outline" size="sm">Curated</Button>
+        <Button variant="outline" size="sm">{t('curated')}</Button>
       </div>
 
       {/* Feed */}
@@ -101,10 +116,10 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
             {/* Image Placeholder */}
             <div className="relative aspect-square bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-pink-500/20 flex items-center justify-center">
               <div className="text-center space-y-2">
-                <Sparkles className="h-16 w-16 mx-auto text-purple-500/50" />
+                <Sparkles className="h-16 w-16 mx-auto text-purple-500/50"  aria-hidden="true" />
                 <p className="text-sm text-muted-foreground">Featured Image</p>
               </div>
-              {item.status === "sponsored" && (
+              {(item as any).status === "sponsored" && (
                 <Badge className="absolute top-4 right-4 bg-purple-600">
                   Sponsored
                 </Badge>
@@ -178,7 +193,7 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
                 </div>
                 <Button size="sm">
                   View Details
-                  <ChevronRight className="ml-1 h-4 w-4" />
+                  <ChevronRight className="ml-1 h-4 w-4"  aria-hidden="true" />
                 </Button>
               </div>
 
@@ -192,7 +207,7 @@ export function SpotlightTab({ data = [], loading = false }: SpotlightTabProps) 
               </div>
 
               {/* Comments Preview */}
-              {item.comments_count > 0 && (
+              {(item.comments_count || 0) > 0 && (
                 <Button variant="link" className="h-auto p-0 text-sm text-muted-foreground">
                   View all {item.comments_count} comments
                 </Button>

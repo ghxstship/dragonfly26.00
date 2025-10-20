@@ -20,7 +20,7 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
   const { activities, loading } = useFileActivities(fileId, 50)
 
   const getActivityIcon = (type: string) => {
-    const icons: Record<string, any> = {
+    const icons: Record<string, React.ComponentType<{ className?: string }>> = {
       created: Upload,
       uploaded: Upload,
       viewed: Eye,

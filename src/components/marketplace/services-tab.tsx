@@ -9,17 +9,31 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Users, Star, MapPin, Briefcase, Clock, MessageCircle, Search, Award, Plus } from "lucide-react"
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
+interface Service {
+  id: string
+  name: string
+  provider?: string
+  rating?: number
+  availability?: string
+  price?: string
+  location?: string
+  [key: string]: any
+}
+
 interface ServicesTabProps {
-  data?: any[]
+  data?: Service[]
   loading?: boolean
 }
 
-export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
+export function ServicesTab({ data = [], loading: loadingProp = false }: ServicesTabProps) {
+  const { services, loading: liveLoading } = useMarketplaceData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.services')
   const tCommon = useTranslations('common')
-  const servicesData = data
+  const servicesData: Service[] = data
   const [detailsDrawerOpen, setDetailsDrawerOpen] = useState(false)
   const [selectedService, setSelectedService] = useState<MarketplaceProduct | null>(null)
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
@@ -29,9 +43,9 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
       case "available":
         return <Badge className="bg-green-600">{t('available')}</Badge>
       case "busy":
-        return <Badge className="bg-red-600">Busy</Badge>
+        return <Badge className="bg-red-600">{t('busy')}</Badge>
       case "limited-availability":
-        return <Badge className="bg-yellow-600">Limited</Badge>
+        return <Badge className="bg-yellow-600">{t('limited')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -40,11 +54,11 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
   const getLevelBadge = (priority: string) => {
     switch (priority) {
       case "premium":
-        return <Badge variant="outline" className="bg-purple-500/10 text-purple-600 border-purple-500/20">Premium</Badge>
+        return <Badge variant="outline" className="bg-purple-500/10 text-purple-600 border-purple-500/20">{t('premium')}</Badge>
       case "standard":
-        return <Badge variant="outline">Standard</Badge>
+        return <Badge variant="outline">{t('standard')}</Badge>
       case "basic":
-        return <Badge variant="outline" className="bg-gray-500/10 text-gray-600">Basic</Badge>
+        return <Badge variant="outline" className="bg-gray-500/10 text-gray-600">{t('basic')}</Badge>
       default:
         return null
     }
@@ -93,9 +107,9 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
           <SelectContent>
             <SelectItem value="all-level">All Levels</SelectItem>
             <SelectItem value="entry">Entry Level</SelectItem>
-            <SelectItem value="professional">Professional</SelectItem>
-            <SelectItem value="expert">Expert</SelectItem>
-            <SelectItem value="master">Master</SelectItem>
+            <SelectItem value="professional">{t('professional')}</SelectItem>
+            <SelectItem value="expert">{t('expert')}</SelectItem>
+            <SelectItem value="master">{t('master')}</SelectItem>
           </SelectContent>
         </Select>
         <Select defaultValue="rating">
@@ -113,7 +127,7 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
 
       {/* Services List */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {servicesData.map((service) => (
+        {servicesData.map((service: any) => (
           <Card key={service.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -148,7 +162,7 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
                     <Star className="h-3 w-3" aria-hidden="true" />
-                    <span className="text-xs">Rating</span>
+                    <span className="text-xs">{t('rating')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
@@ -157,15 +171,15 @@ export function ServicesTab({ data = [], loading = false }: ServicesTabProps) {
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
-                    <Briefcase className="h-3 w-3" />
-                    <span className="text-xs">Experience</span>
+                    <Briefcase className="h-3 w-3"  aria-hidden="true" />
+                    <span className="text-xs">{t('experience')}</span>
                   </div>
                   <p className="font-semibold">{service.experience_years} years</p>
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
                     <MessageCircle className="h-3 w-3" aria-hidden="true" />
-                    <span className="text-xs">Reviews</span>
+                    <span className="text-xs">{t('reviews')}</span>
                   </div>
                   <p className="font-semibold">{service.comments_count}</p>
                 </div>

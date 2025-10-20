@@ -140,7 +140,7 @@ export function PluginsPageContent() {
 
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
-        <Tabs value={activeTab} onValueChange={setActiveTab}>
+        <Tabs value={activeTab as any} onValueChange={setActiveTab}>
           <div className="flex items-center justify-between mb-6">
             <TabsList>
               <TabsTrigger value="marketplace">Marketplace</TabsTrigger>
@@ -153,7 +153,7 @@ export function PluginsPageContent() {
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
                     placeholder="Search plugins..."
-                    value={searchQuery}
+                    value={searchQuery as any}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-9"
                   />
@@ -183,13 +183,13 @@ export function PluginsPageContent() {
           <TabsContent value="marketplace">
             {viewMode === "grid" ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredPlugins.map((plugin) => (
+                {filteredPlugins.map((plugin: any) => (
                   <PluginCard key={plugin.id} plugin={plugin} />
                 ))}
               </div>
             ) : (
               <div className="space-y-4">
-                {filteredPlugins.map((plugin) => (
+                {filteredPlugins.map((plugin: any) => (
                   <PluginCard key={plugin.id} plugin={plugin} layout="list" />
                 ))}
               </div>

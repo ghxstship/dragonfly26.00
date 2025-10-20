@@ -94,10 +94,10 @@ export function AccountTab() {
         title: t('settings.toast.accountUpdated'),
         description: t('settings.toast.accountUpdatedDesc'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('common.error'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {
@@ -135,10 +135,10 @@ export function AccountTab() {
         title: t('settings.toast.photoUploaded'),
         description: t('settings.toast.photoUploadedDesc'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('settings.toast.uploadFailed'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {

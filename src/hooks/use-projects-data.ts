@@ -280,7 +280,7 @@ export function useSafety(workspaceId: string, productionId?: string) {
 
 // Hook for Production Summary (uses RPC function)
 export function useProductionSummary(productionId: string) {
-  const [summary, setSummary] = useState<any>(null)
+  const [summary, setSummary] = useState<unknown>(null)
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 

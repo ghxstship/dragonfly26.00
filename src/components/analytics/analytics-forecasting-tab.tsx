@@ -6,7 +6,22 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-const forecasts = [
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
+
+interface ForecastItem {
+  period: string
+  value: number
+  confidence: number
+}
+
+interface Forecast {
+  metric: string
+  current: string
+  forecast: ForecastItem[]
+  trend: "up" | "down"
+}
+
+const forecasts: Forecast[] = [
   {
     metric: "Revenue",
     current: "$2.4M",
@@ -43,7 +58,7 @@ const forecasts = [
 ]
 
 interface AnalyticsForecastingTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -55,7 +70,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
   return (
     <div className="space-y-6">
       <div className="grid gap-6">
-        {forecasts.map((forecast: any, index: number) => (
+        {forecasts.map((forecast: Forecast, index: number) => (
           <Card key={index} role="article">
             <CardHeader>
               <div className="flex items-center justify-between">
@@ -76,10 +91,10 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
               <div className="space-y-4">
                 {/* Forecast Timeline */}
                 <div className="grid grid-cols-4 gap-4">
-                  {forecast.forecast.map((item: any, idx: number) => (
+                  {forecast.forecast.map((item: ForecastItem, idx: number) => (
                     <div key={idx} className="p-4 border rounded-lg hover:bg-accent transition-colors">
                       <p className="text-sm font-medium text-muted-foreground mb-2">{item.period}</p>
-                      <p className="text-2xl font-bold mb-2" aria-live="polite">{item.value.toLocaleString()}</p>
+                      <p className="text-2xl font-bold mb-2" aria-live="polite">{item.value?.toLocaleString()}</p>
                       <div className="flex items-center gap-2">
                         <div className="flex-1 h-2 bg-accent rounded-full overflow-hidden">
                           <div 

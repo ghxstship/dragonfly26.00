@@ -121,7 +121,7 @@ export function ActivityFeed({ activities = mockActivities, limit }: ActivityFee
   return (
     <ScrollArea className="h-full">
       <div className="space-y-3 p-4">
-        {displayed.map((activity) => {
+        {displayed.map((activity: any) => {
           const Icon = activityIcons[activity.action] || FileText
           const colorClass = activityColors[activity.action] || "text-gray-600"
 

@@ -12,7 +12,7 @@ const supabase = createClient(
 
 export class ProductionService {
   
-  // Create production with validation and setup
+  // Create production with validation and setUp
   async createProduction(data: any) {
     // 1. Validate required fields
     if (!data.name || !data.workspace_id || !data.type) {

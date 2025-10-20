@@ -229,7 +229,7 @@ CREATE POLICY "Users can view assets in their workspaces"
     ON assets FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -237,7 +237,7 @@ CREATE POLICY "Users can manage assets in their workspaces"
     ON assets FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -245,7 +245,7 @@ CREATE POLICY "Users can view asset transactions in their workspaces"
     ON asset_transactions FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -253,7 +253,7 @@ CREATE POLICY "Users can manage asset transactions in their workspaces"
     ON asset_transactions FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -261,7 +261,7 @@ CREATE POLICY "Users can view maintenance in their workspaces"
     ON asset_maintenance FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -269,7 +269,7 @@ CREATE POLICY "Users can manage maintenance in their workspaces"
     ON asset_maintenance FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -277,7 +277,7 @@ CREATE POLICY "Users can view production advances in their workspaces"
     ON production_advances FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -285,7 +285,7 @@ CREATE POLICY "Users can manage production advances in their workspaces"
     ON production_advances FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 

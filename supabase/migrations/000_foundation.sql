@@ -385,28 +385,28 @@ ALTER TABLE notifications ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Users can view their organizations"
     ON organizations FOR SELECT
     USING (id IN (
-        SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+        SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
     ));
 
 CREATE POLICY "Owners and admins can update their organizations"
     ON organizations FOR UPDATE
     USING (id IN (
         SELECT organization_id FROM organization_members 
-        WHERE user_id = auth.uid() AND role IN ('owner', 'admin')
+        WHERE user_id = (SELECT (SELECT auth.uid())) AND role IN ('owner', 'admin')
     ));
 
 -- Workspaces policies
 CREATE POLICY "Users can view workspaces in their organizations"
     ON workspaces FOR SELECT
     USING (organization_id IN (
-        SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+        SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
     ));
 
 CREATE POLICY "Admins can manage workspaces"
     ON workspaces FOR ALL
     USING (organization_id IN (
         SELECT organization_id FROM organization_members 
-        WHERE user_id = auth.uid() AND role IN ('owner', 'admin')
+        WHERE user_id = (SELECT (SELECT auth.uid())) AND role IN ('owner', 'admin')
     ));
 
 -- Roles (read-only for all authenticated users)
@@ -424,25 +424,25 @@ CREATE POLICY "Authenticated users can view permissions"
 -- User Roles
 CREATE POLICY "Users can view their own role assignments"
     ON user_roles FOR SELECT
-    USING (user_id = auth.uid());
+    USING (user_id = (SELECT (SELECT auth.uid())));
 
 CREATE POLICY "Admins can manage user roles in their org"
     ON user_roles FOR ALL
     USING (
         organization_id IN (
             SELECT organization_id FROM organization_members 
-            WHERE user_id = auth.uid() AND role IN ('owner', 'admin')
+            WHERE user_id = (SELECT (SELECT auth.uid())) AND role IN ('owner', 'admin')
         )
     );
 
 -- Notifications
 CREATE POLICY "Users can view their own notifications"
     ON notifications FOR SELECT
-    USING (user_id = auth.uid());
+    USING (user_id = (SELECT (SELECT auth.uid())));
 
 CREATE POLICY "Users can update their own notifications"
     ON notifications FOR UPDATE
-    USING (user_id = auth.uid());
+    USING (user_id = (SELECT (SELECT auth.uid())));
 
 -- =============================================
 -- REALTIME PUBLICATION

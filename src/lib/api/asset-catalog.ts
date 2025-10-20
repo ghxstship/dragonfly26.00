@@ -21,7 +21,7 @@ export interface CatalogAsset {
   related_names?: string[]
   tags?: string[]
   industry_tags?: string[]
-  specifications?: Record<string, any>
+  specifications?: Record<string, string | number | boolean>
   created_at: string
 }
 
@@ -39,7 +39,7 @@ export async function searchAssetCatalog(
     industryFilter?: string
     limit?: number
   }
-): Promise<{ data: CatalogSearchResult[] | null; error: any }> {
+): Promise<{ data: CatalogSearchResult[] | null; error: Error | unknown }> {
   const supabase = createClient()
 
   try {
@@ -56,7 +56,7 @@ export async function searchAssetCatalog(
     const limitedData = options?.limit ? data?.slice(0, options.limit) : data
 
     return { data: limitedData, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error searching asset catalog:', error)
     return { data: null, error }
   }
@@ -68,7 +68,7 @@ export async function searchAssetCatalog(
 export async function browseCatalogByCategory(
   category?: string,
   subcategory?: string
-): Promise<{ data: CatalogAsset[] | null; error: any }> {
+): Promise<{ data: CatalogAsset[] | null; error: Error | unknown }> {
   const supabase = createClient()
 
   try {
@@ -81,7 +81,7 @@ export async function browseCatalogByCategory(
     if (error) throw error
 
     return { data, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error browsing catalog:', error)
     return { data: null, error }
   }
@@ -97,7 +97,7 @@ export async function getCatalogCategories(): Promise<{
     subcategory: string
     item_count: number
   }> | null
-  error: any
+  error: Error | unknown
 }> {
   const supabase = createClient()
 
@@ -112,7 +112,7 @@ export async function getCatalogCategories(): Promise<{
     if (error) throw error
 
     return { data, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error fetching catalog categories:', error)
     return { data: null, error }
   }
@@ -131,7 +131,7 @@ export async function getCatalogStatistics(): Promise<{
     total_related_names: number
     avg_related_names_per_item: number
   } | null
-  error: any
+  error: Error | unknown
 }> {
   const supabase = createClient()
 
@@ -144,7 +144,7 @@ export async function getCatalogStatistics(): Promise<{
     if (error) throw error
 
     return { data, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error fetching catalog statistics:', error)
     return { data: null, error }
   }
@@ -155,7 +155,7 @@ export async function getCatalogStatistics(): Promise<{
  */
 export async function getCatalogItem(
   itemId: string
-): Promise<{ data: CatalogAsset | null; error: any }> {
+): Promise<{ data: CatalogAsset | null; error: Error | unknown }> {
   const supabase = createClient()
 
   try {
@@ -169,7 +169,7 @@ export async function getCatalogItem(
     if (error) throw error
 
     return { data, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error fetching catalog item:', error)
     return { data: null, error }
   }
@@ -180,7 +180,7 @@ export async function getCatalogItem(
  */
 export async function getItemsByAssetCategory(
   assetCategory: string
-): Promise<{ data: CatalogAsset[] | null; error: any }> {
+): Promise<{ data: CatalogAsset[] | null; error: Error | unknown }> {
   const supabase = createClient()
 
   try {
@@ -196,7 +196,7 @@ export async function getItemsByAssetCategory(
     if (error) throw error
 
     return { data, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error fetching items by category:', error)
     return { data: null, error }
   }
@@ -207,7 +207,7 @@ export async function getItemsByAssetCategory(
  */
 export async function getAssetCategories(): Promise<{
   data: string[] | null
-  error: any
+  error: Error | unknown
 }> {
   const supabase = createClient()
 
@@ -221,10 +221,10 @@ export async function getAssetCategories(): Promise<{
     if (error) throw error
 
     // Get unique categories
-    const uniqueCategories = [...new Set(data?.map((item) => item.asset_category) || [])]
+    const uniqueCategories = [...new Set(data?.map((item: any) => item.asset_category) || [])]
 
     return { data: uniqueCategories, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error fetching asset categories:', error)
     return { data: null, error }
   }
@@ -235,7 +235,7 @@ export async function getAssetCategories(): Promise<{
  */
 export async function getIndustryTags(): Promise<{
   data: string[] | null
-  error: any
+  error: Error | unknown
 }> {
   const supabase = createClient()
 
@@ -253,7 +253,7 @@ export async function getIndustryTags(): Promise<{
     const uniqueTags = [...new Set(allTags)].sort()
 
     return { data: uniqueTags, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error fetching industry tags:', error)
     return { data: null, error }
   }
@@ -266,7 +266,7 @@ export async function autocompleteAssetSearch(
   searchQuery: string,
   assetCategory?: string,
   limit: number = 10
-): Promise<{ data: Array<{ id: string; name: string; category: string; manufacturer?: string }> | null; error: any }> {
+): Promise<{ data: Array<{ id: string; name: string; category: string; manufacturer?: string }> | null; error: Error | unknown }> {
   if (!searchQuery || searchQuery.length < 2) {
     return { data: [], error: null }
   }
@@ -279,7 +279,7 @@ export async function autocompleteAssetSearch(
   if (error) return { data: null, error }
 
   // Format for autocomplete
-  const formatted = data?.map((item) => ({
+  const formatted = data?.map((item: any) => ({
     id: item.id,
     name: item.name,
     category: item.category,
@@ -298,7 +298,7 @@ export async function copyCatalogItemToWorkspace(
   workspaceId: string,
   userId: string,
   overrides?: Partial<CatalogAsset>
-): Promise<{ data: any | null; error: any }> {
+): Promise<{ data: any | null; error: Error | unknown }> {
   const supabase = createClient()
 
   try {
@@ -332,7 +332,7 @@ export async function copyCatalogItemToWorkspace(
     if (error) throw error
 
     return { data, error: null }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error copying catalog item:', error)
     return { data: null, error }
   }

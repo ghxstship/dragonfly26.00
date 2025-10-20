@@ -174,7 +174,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
                     <span>Value</span>
                     <span>Change</span>
                   </div>
-                  {mockChartData.map((row, idx) => (
+                  {mockChartData.map((row: any, idx: number) => (
                     <div key={idx} className="grid grid-cols-4 gap-4 text-sm">
                       <span>{row.name}</span>
                       <span>Tasks</span>

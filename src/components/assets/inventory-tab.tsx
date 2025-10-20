@@ -7,8 +7,7 @@ import { Package, Camera, QrCode, FolderTree, AlertCircle, Grid3x3, List , Plus}
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardHeader, CardDescription, CardTitle } from "@/components/ui/card"
-import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
-import { BoxView } from "@/components/views/box-view"
+import { DataTableOrganism, BoxViewOrganism } from "@/components/organisms"
 import { useUIStore } from "@/store/ui-store"
 import { createClient } from "@/lib/supabase/client"
 import { InventoryFolderTree } from "./inventory-folder-tree"
@@ -18,7 +17,7 @@ import { BarcodeScannerOverlay } from "./barcode-scanner-overlay"
 import { BulkActionsToolbar } from "./bulk-actions-toolbar"
 
 interface InventoryTabProps {
-  data: any[]
+  data: Record<string, unknown>[]
   loading: boolean
   workspaceId: string
 }
@@ -28,7 +27,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
   const tCommon = useTranslations('common')
   const [viewMode, setViewMode] = useState<'table' | 'grid'>('table')
   const [selectedFolderId, setSelectedFolderId] = useState<string | null>(null)
-  const [selectedItem, setSelectedItem] = useState<any>(null)
+  const [selectedItem, setSelectedItem] = useState<unknown>(null)
   const [itemDrawerOpen, setItemDrawerOpen] = useState(false)
   const [scannerOpen, setScannerOpen] = useState(false)
   const [selectedItems, setSelectedItems] = useState<Set<string>>(new Set())
@@ -38,9 +37,9 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
 
   // Calculate metrics
   const totalItems = data.length
-  const lowStockItems = data.filter(item => item.status === 'low_stock').length
-  const outOfStockItems = data.filter(item => item.status === 'out_of_stock').length
-  const totalValue = data.reduce((sum: number, item) => sum + ((item.unit_cost || 0) * (item.stock_quantity || 0)), 0)
+  const lowStockItems = data.filter(item => (item as any).status === 'low_stock').length
+  const outOfStockItems = data.filter(item => (item as any).status === 'out_of_stock').length
+  const totalValue = data.reduce((sum: number, item: any) => sum + ((item.unit_cost || 0) * (item.stock_quantity || 0)), 0)
 
   // Filter by folder
   const filteredByFolder = selectedFolderId 
@@ -48,7 +47,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
     : data
 
   // Schema for table view
-  const inventorySchema: any[] = [
+  const inventorySchema: Record<string, unknown>[] = [
     { 
       id: 'photos',
       name: 'photos', 
@@ -84,7 +83,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       name: 'stock_quantity', 
       label: 'Stock', 
       type: 'number',
-      render: (value: number, item: any) => (
+      render: (value: any, item: any) => (
         <div className="flex items-center gap-2">
           <span className="font-medium">{value || 0}</span>
           {item.low_stock_threshold && value <= item.low_stock_threshold && (
@@ -117,7 +116,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
     { id: 'category', name: 'category', label: 'Category', type: 'text' },
   ]
 
-  const handleCreateItem = async (item: any) => {
+  const handleCreateItem = async (item: Record<string, unknown>) => {
     const { error } = await supabase
       .from('inventory_items')
       .insert({
@@ -131,7 +130,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
     }
   }
 
-  const handleUpdateItem = async (id: string, updates: any) => {
+  const handleUpdateItem = async (id: string, updates: Record<string, unknown>) => {
     const { error } = await supabase
       .from('inventory_items')
       .update(updates)
@@ -155,7 +154,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
     }
   }
 
-  const handleItemClick = (item: any) => {
+  const handleItemClick = (item: Record<string, unknown>) => {
     setSelectedItem(item)
     setItemDrawerOpen(true)
   }
@@ -273,22 +272,15 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
             </div>
           </div>
         ) : viewMode === 'table' ? (
-          <EnhancedTableView
+          <DataTableOrganism
             data={filteredByFolder}
-            schema={inventorySchema}
-            moduleId="assets"
-            tabSlug="inventory"
-            workspaceId={workspaceId}
-            onRefresh={() => {}}
-            onCreate={handleCreateItem}
-            onUpdate={handleUpdateItem}
-            onDelete={handleDeleteItem}
+            columns={inventorySchema as any}
             loading={loading}
           />
         ) : (
-          <BoxView 
-            data={filteredByFolder} 
-            schema={inventorySchema}
+          <BoxViewOrganism 
+            data={filteredByFolder as any} 
+            schema={inventorySchema as any}
             onItemClick={handleItemClick}
             createActionLabel="New Item"
             onCreateAction={() => {}}
@@ -305,7 +297,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         onEdit={() => {}}
         onDelete={async () => {
           if (selectedItem) {
-            await handleDeleteItem(selectedItem.id)
+            await handleDeleteItem((selectedItem as any).id)
             setItemDrawerOpen(false)
           }
         }}

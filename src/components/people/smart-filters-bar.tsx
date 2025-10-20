@@ -145,7 +145,7 @@ export function SmartFiltersBar({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            {departments.map((dept) => (
+            {departments.map((dept: any) => (
               <DropdownMenuItem 
                 key={dept.value}
                 onClick={() => handleFilterChange("department", dept.value)}
@@ -170,7 +170,7 @@ export function SmartFiltersBar({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            {employmentStatuses.map((status) => (
+            {employmentStatuses.map((status: any) => (
               <DropdownMenuItem 
                 key={status.value}
                 onClick={() => handleFilterChange("status", status.value)}
@@ -195,7 +195,7 @@ export function SmartFiltersBar({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            {employmentTypes.map((type) => (
+            {employmentTypes.map((type: any) => (
               <DropdownMenuItem 
                 key={type.value}
                 onClick={() => handleFilterChange("type", type.value)}
@@ -285,7 +285,7 @@ export function SmartFiltersBar({
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder={t('people.search.placeholder')}
-          value={searchQuery}
+          value={searchQuery as any}
           onChange={(e) => handleSearch(e.target.value)}
           className="pl-9 pr-20 h-9"
         />

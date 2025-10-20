@@ -6,11 +6,11 @@ export const mockEventsCalendar = [
   {
     id: 'demo-event-1',
     title: 'Load-In Day 1',
-    description: 'Main stage equipment load-in and setup',
+    description: 'Main stage equipment load-in and setUp',
     start_time: new Date(Date.now() + 4924800000).toISOString(), // 57 days from now
     end_time: new Date(Date.now() + 4953600000).toISOString(),
     all_day: false,
-    type: 'setup',
+    type: 'setUp',
     status: 'confirmed',
     production_id: 'demo-prod-1',
     production: { name: 'Summer Music Festival 2025' },
@@ -42,7 +42,7 @@ export const mockEventsCalendar = [
   {
     id: 'demo-event-3',
     title: 'Production Meeting - Corporate Gala',
-    description: 'Client meeting to review AV setup and timeline',
+    description: 'Client meeting to review AV setUp and timeline',
     start_time: new Date(Date.now() + 1728000000).toISOString(),
     end_time: new Date(Date.now() + 1735200000).toISOString(),
     all_day: false,
@@ -78,7 +78,7 @@ export const mockEventsCalendar = [
 ]
 
 export const mockEventTypes = [
-  { id: 'setup', name: 'Setup/Load-In', color: '#f59e0b' },
+  { id: 'setUp', name: 'Setup/Load-In', color: '#f59e0b' },
   { id: 'rehearsal', name: 'Rehearsal', color: '#8b5cf6' },
   { id: 'performance', name: 'Performance', color: '#ef4444' },
   { id: 'meeting', name: 'Meeting', color: '#3b82f6' },

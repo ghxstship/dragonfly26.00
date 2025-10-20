@@ -23,7 +23,7 @@ interface TimelineEvent {
   title: string
   description?: string
   timestamp: Date
-  metadata?: Record<string, any>
+  metadata?: Record<string, unknown>
 }
 
 interface ActivityTimelineProps {
@@ -129,7 +129,7 @@ function TimelineEventItem({
           {event.metadata && Object.keys(event.metadata).length > 0 && (
             Object.entries(event.metadata).map(([key, value]) => (
               <Badge key={key} variant="secondary" className="h-5 text-xs">
-                {value}
+                {String(value)}
               </Badge>
             ))
           )}
@@ -198,7 +198,7 @@ export function ActivityTimelineCompact({
 }) {
   return (
     <div className="space-y-3">
-      {events.slice(0, maxItems).map((event) => {
+      {events.slice(0, maxItems).map((event: any) => {
         const config = getEventConfig(event.type)
         return (
           <div key={event.id} className="flex items-start gap-2">

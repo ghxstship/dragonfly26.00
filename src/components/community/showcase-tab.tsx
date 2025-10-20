@@ -17,6 +17,7 @@ import {
   MoreHorizontal,
   Bookmark
 } from "lucide-react"
+import { useCommunityData } from "@/hooks/use-community-data"
 
 interface ShowcaseTabProps {
   data?: any[]
@@ -43,7 +44,9 @@ interface ShowcasePost {
   isBookmarked?: boolean
 }
 
-export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
+export function ShowcaseTab({ data = [], loading: loadingProp = false }: ShowcaseTabProps) {
+  const { showcases, loading: liveLoading } = useCommunityData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('community.showcase')
   const tCommon = useTranslations('common')
   const [posts, setPosts] = useState<ShowcasePost[]>([])
@@ -51,24 +54,27 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
   // Transform and update posts when data changes
   useEffect(() => {
     if (data && data.length > 0) {
-      const transformed: ShowcasePost[] = data.map((item: any) => ({
-        id: item.id,
-        author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Anonymous',
-        authorTitle: item.author?.job_title || 'Community Member',
-        authorImage: item.author?.avatar_url,
-        company: item.author?.company || 'Company',
-        content: item.content || '',
-        images: item.media_urls || [],
-        category: item.is_featured ? 'featured' : (item.is_sponsored ? 'sponsored' : 'achievement'),
-        likes: item.likes_count || 0,
-        comments: item.comments_count || 0,
-        shares: item.shares_count || 0,
-        views: 0, // Not tracked yet
-        timestamp: item.created_at,
-        tags: item.tags || [],
-        isLiked: false,
-        isBookmarked: false
-      }))
+      const transformed: ShowcasePost[] = data.map((item: any) => {
+        const record = item as any
+        return {
+          id: record.id,
+          author: record.author ? `${record.author.first_name} ${record.author.last_name}` : 'Anonymous',
+          authorTitle: record.author?.job_title || 'Community Member',
+          authorImage: record.author?.avatar_url,
+          company: record.author?.company || 'Company',
+          content: record.content || '',
+          images: record.media_urls || [],
+          category: record.is_featured ? 'featured' : (record.is_sponsored ? 'sponsored' : 'achievement'),
+          likes: record.likes_count || 0,
+          comments: record.comments_count || 0,
+          shares: record.shares_count || 0,
+          views: 0, // Not tracked yet
+          timestamp: record.created_at,
+          tags: record.tags || [],
+          isLiked: false,
+          isBookmarked: false
+        }
+      })
       setPosts(transformed)
     }
   }, [data])
@@ -105,7 +111,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Showcase Posts</div>
-            <Sparkles className="h-4 w-4 text-muted-foreground" />
+            <Sparkles className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{posts.length}</div>
@@ -116,11 +122,11 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Total Reach</div>
-            <Eye className="h-4 w-4 text-muted-foreground" />
+            <Eye className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {(posts.reduce((acc: any, p: any) => acc + p.views, 0) / 1000).toFixed(1)}K
+              {(posts.reduce((acc: number, p: ShowcasePost) => acc + p.views, 0) / 1000).toFixed(1)}K
             </div>
             <p className="text-xs text-muted-foreground">Total views</p>
           </CardContent>
@@ -133,7 +139,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {posts.reduce((acc: any, p: any) => acc + p.likes, 0)}
+              {posts.reduce((acc: number, p: ShowcasePost) => acc + p.likes, 0)}
             </div>
             <p className="text-xs text-muted-foreground">{t('totalLikes')}</p>
           </CardContent>
@@ -141,8 +147,8 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Bookmarked</div>
-            <Bookmark className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('bookmarked')}</div>
+            <Bookmark className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
@@ -155,7 +161,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
 
       {/* Showcase Feed */}
       <div className="space-y-6">
-        {posts.map((post) => {
+        {posts.map((post: any) => {
           const categoryConfig = getCategoryBadge(post.category)
           const CategoryIcon = categoryConfig.icon
 
@@ -179,7 +185,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
                   </div>
                   <div className="flex items-center gap-2">
                     <Badge variant="outline" className={categoryConfig.color}>
-                      <CategoryIcon className="h-3 w-3 mr-1" />
+                      <CategoryIcon className="h-3 w-3 mr-1"  aria-hidden="true" />
                       {categoryConfig.label}
                     </Badge>
                     <Button variant="ghost" size="sm">
@@ -199,7 +205,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
                     post.images?.length === 3 ? 'grid-cols-3' :
                     'grid-cols-2'
                   }`}>
-                    {post.images?.slice(0, 4).map((image, idx) => (
+                    {post.images?.slice(0, 4).map((image: any, idx: number) => (
                       <div 
                         key={idx}
                         className={`relative rounded-lg overflow-hidden ${
@@ -224,7 +230,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.map((tag) => (
+                  {post.tags.map((tag: any) => (
                     <Badge key={tag} variant="secondary" className="text-xs">
                       #{tag}
                     </Badge>
@@ -239,7 +245,7 @@ export function ShowcaseTab({ data = [], loading = false }: ShowcaseTabProps) {
                     <span>{post.shares} shares</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <Eye className="h-4 w-4" />
+                    <Eye className="h-4 w-4" aria-hidden="true" />
                     <span>{post.views.toLocaleString()} views</span>
                   </div>
                 </div>

@@ -139,7 +139,7 @@ export function HistoryTab() {
   )
 
   const totalHoursWorked = displayHistory.reduce((sum: number, p) => sum + p.hoursWorked, 0)
-  const completedProjects = displayHistory.filter((p: any) => p.status === "completed").length
+  const completedProjects = displayHistory.filter((p: any) => (p as any).status === "completed").length
   const averageRating =
     displayHistory.filter((p: any) => p.rating).length > 0
       ? displayHistory
@@ -195,7 +195,7 @@ export function HistoryTab() {
           <div className="pt-4">
             <Input
               placeholder={t('profile.history.searchProjectsRolesOrTypes')}
-              value={searchQuery}
+              value={searchQuery as any}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
@@ -220,7 +220,7 @@ export function HistoryTab() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredProjects.map((project) => (
+                {filteredProjects.map((project: any) => (
                   <TableRow key={project.id} className="cursor-pointer hover:bg-muted/50">
                     <TableCell className="font-medium">{(project.nameKey ? t(project.nameKey) : project.name)}</TableCell>
                     <TableCell>{project.role}</TableCell>
@@ -260,7 +260,7 @@ export function HistoryTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {Array.from(new Set(projectHistory.map((p) => p.role))).map((role) => {
+            {Array.from(new Set(projectHistory.map((p: any) => p.role))).map((role: any) => {
               const roleProjects = projectHistory.filter((p: any) => p.role === role)
               const percentage = (roleProjects.length / projectHistory.length) * 100
               return (

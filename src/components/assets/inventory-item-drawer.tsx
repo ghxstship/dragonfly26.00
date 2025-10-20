@@ -205,7 +205,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
 function DetailRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="text-muted-foreground">{icon}</div>
+      <div className="text-muted-foreground">{icon as any}</div>
       <div className="flex-1">
         <p className="text-sm font-medium">{label}</p>
         <p className="text-sm text-muted-foreground">{value}</p>

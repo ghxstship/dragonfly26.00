@@ -35,7 +35,7 @@ interface WidgetCustomizationDialogProps {
   onReset?: () => Promise<void>
 }
 
-const widgetIcons: Record<string, any> = {
+const widgetIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   'my-tasks': CheckSquare,
   'my-agenda': Calendar,
   'my-jobs': Briefcase,
@@ -71,7 +71,7 @@ export function WidgetCustomizationDialog({
         title: "Widget updated",
         description: t('dashboard.toast.customized'),
       })
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error toggling widget:', error)
       toast({
         title: "Failed to update widget",
@@ -92,7 +92,7 @@ export function WidgetCustomizationDialog({
         title: "Dashboard reset",
         description: t('dashboard.toast.resetToDefaults'),
       })
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error resetting widgets:', error)
       toast({
         title: "Failed to reset",
@@ -141,7 +141,7 @@ export function WidgetCustomizationDialog({
           </div>
 
           <div className="space-y-2 max-h-[400px] overflow-y-auto">
-            {widgets.map((widget) => {
+            {widgets.map((widget: any) => {
               const Icon = widgetIcons[widget.type] || CheckSquare
               const color = widgetColors[widget.type] || 'bg-gray-500'
               

@@ -55,7 +55,7 @@ export function useCollections(workspaceId?: string) {
 
       setCollections(collectionsWithCounts)
       return collectionsWithCounts
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -84,7 +84,7 @@ export function useCollections(workspaceId?: string) {
         featured: item.featured,
         position: item.position
       })) || []
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -104,7 +104,7 @@ export function useCollections(workspaceId?: string) {
       if (fetchError) throw fetchError
 
       return data?.map(item => item.collection).filter(Boolean) || []
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       return []
     }

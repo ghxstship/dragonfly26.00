@@ -242,7 +242,7 @@ export function TeamPTOCalendar({
   const [month, setMonth] = useState(new Date())
 
   // Group PTO by date
-  const ptoByDate = ptoRequests.reduce((acc, request) => {
+  const ptoByDate = ptoRequests.reduce((acc: any, request: any) => {
     request.dates.forEach(date => {
       const key = date.toISOString().split('T')[0]
       if (!acc[key]) acc[key] = []
@@ -306,7 +306,7 @@ export function TeamPTOCalendar({
                     })}
                   </p>
                   <div className="flex items-center gap-1 flex-wrap">
-                    {requests.map(req => (
+                    {(requests as any[]).map((req: any) => (
                       <Badge 
                         key={req.id}
                         variant={req.status === "approved" ? "default" : "secondary"}

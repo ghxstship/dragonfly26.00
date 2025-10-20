@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
+import { useInsightsData } from "@/hooks/use-insights-data"
 const recommendations = [
   {
     id: "1",
@@ -80,7 +81,7 @@ const recommendations = [
 ]
 
 interface InsightsRecommendationsTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -92,7 +93,7 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
   return (
     <div className="space-y-6">
       <div className="space-y-4">
-        {recommendations.map((rec) => {
+        {recommendations.map((rec: any) => {
           const Icon = rec.icon
           return (
             <Card key={rec.id} className="hover:shadow-lg transition-shadow">
@@ -137,7 +138,7 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
                   <div>
                     <p className="text-sm font-medium mb-2">Based on analysis of:</p>
                     <div className="flex flex-wrap gap-2">
-                      {rec.dataPoints.map((point, idx) => (
+                      {rec.dataPoints.map((point: any, idx: number) => (
                         <Badge key={idx} variant="outline" className="text-xs">
                           {point}
                         </Badge>

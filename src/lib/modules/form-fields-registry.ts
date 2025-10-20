@@ -1317,7 +1317,7 @@ const assetsForms: Record<string, TabFormConfig> = {
       { name: 'end_date', label: 'Rental End Date', type: 'date' },
       { name: 'site_location', label: 'Site Location', type: 'location', required: true },
       { name: 'operational_purpose', label: 'Operational Purpose', type: 'textarea', required: true, description: 'Business justification and intended use' },
-      { name: 'special_considerations', label: 'Special Considerations', type: 'textarea', description: 'Any special handling, setup, or requirements' },
+      { name: 'special_considerations', label: 'Special Considerations', type: 'textarea', description: 'Any special handling, setUp, or requirements' },
       { name: 'additional_information', label: 'Additional Information', type: 'textarea' },
       { name: 'requestor', label: 'Requestor', type: 'user', required: true },
       { name: 'assigned_users', label: 'Assigned Users', type: 'multiuser', description: 'People approved to collect/use these items' },

@@ -10,7 +10,7 @@ import { useParams } from "next/navigation"
 import { useState } from "react"
 
 interface OpeningsTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 

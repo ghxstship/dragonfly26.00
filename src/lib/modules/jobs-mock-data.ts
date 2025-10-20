@@ -288,7 +288,7 @@ function generateArchivedData(count: number): DataItem[] {
   return Array.from({ length: count }, (_, i) => ({
     id: `job-archived-${i + 1}`,
     name: archivedScopes[i % archivedScopes.length],
-    description: `Archived scope - Reason: ${archiveReasons[i % archiveReasons.length].replace(/_/g, ' ')} - All reconciliations and payments settled`,
+    description: `Archived scope - Reason: ${archiveReasons[i % archiveReasons.length].replace(/_/g, ' ')} - All reconciliations and payments setTled`,
     status: archiveReasons[i % archiveReasons.length],
     priority: "low",
     assignee: "Archive Admin",

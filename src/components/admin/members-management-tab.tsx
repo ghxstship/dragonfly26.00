@@ -147,7 +147,7 @@ export function MembersManagementTab() {
   }
 
   const handleRemoveMember = (memberId: string) => {
-    setMembers(members.filter(m => m.id !== memberId))
+    setMembers(members.filter(m => (m as any).id !== memberId))
     toast({
       title: t('admin.toast.memberRemoved'),
       description: t('admin.toast.memberRemovedDesc'),
@@ -156,14 +156,14 @@ export function MembersManagementTab() {
   }
 
   // CRUD handlers
-  const handleCreate = async (data: Record<string, any>) => {
+  const handleCreate = async (data: Record<string, unknown>) => {
     const now = new Date().toISOString()
     const newMember: Member = {
       id: String(members.length + 1),
-      name: data.name,
-      email: data.email,
-      role: data.role || 'member',
-      department: data.department || '',
+      name: data.name as string,
+      email: data.email as string,
+      role: (data.role as any) || 'member',
+      department: (data.department as string) || '',
       status: 'pending',
       joinedAt: now,
       lastActive: 'Never',
@@ -172,7 +172,7 @@ export function MembersManagementTab() {
     toast({ title: t('admin.toast.memberAdded') })
   }
 
-  const handleUpdate = async (id: string, updates: Record<string, any>) => {
+  const handleUpdate = async (id: string, updates: Record<string, unknown>) => {
     setMembers(members.map(m => m.id === id ? { ...m, ...updates } : m))
     toast({ title: t('admin.toast.memberUpdated') })
   }
@@ -266,7 +266,7 @@ export function MembersManagementTab() {
           <CardHeader className="pb-3">
             <CardDescription>Active</CardDescription>
             <CardTitle className="text-3xl">
-              {members.filter(m => m.status === "active").length}
+              {members.filter(m => (m as any).status === "active").length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -274,7 +274,7 @@ export function MembersManagementTab() {
           <CardHeader className="pb-3">
             <CardDescription>Pending</CardDescription>
             <CardTitle className="text-3xl">
-              {members.filter(m => m.status === "pending").length}
+              {members.filter(m => (m as any).status === "pending").length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -296,7 +296,7 @@ export function MembersManagementTab() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder={t('admin.members.searchPlaceholder')}
-                value={searchQuery}
+                value={searchQuery as any}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
@@ -325,7 +325,7 @@ export function MembersManagementTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {filteredMembers.map((member) => (
+            {filteredMembers.map((member: any) => (
               <div
                 key={member.id}
                 className={`flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors cursor-pointer ${
@@ -483,14 +483,14 @@ export function MembersManagementTab() {
               <Input
                 type="email"
                 placeholder={t('admin.members.emailPlaceholder')}
-                value={inviteEmail}
+                value={inviteEmail as any}
                 onChange={(e) => setInviteEmail(e.target.value)}
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium">Role</label>
-              <Select value={inviteRole} onValueChange={setInviteRole}>
+              <Select value={inviteRole as any} onValueChange={setInviteRole}>
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>

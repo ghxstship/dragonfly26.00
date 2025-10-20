@@ -58,7 +58,7 @@ export function useMemberLevel(workspaceId: string, userId: string) {
         } else {
           setLevel(data)
         }
-      } catch (err) {
+      } catch (err: any) {
         setError(err instanceof Error ? err : new Error('Failed to fetch member level'))
       } finally {
         setLoading(false)
@@ -96,7 +96,7 @@ export function useMemberLevel(workspaceId: string, userId: string) {
 
 // Hook to fetch member stats using the database function
 export function useMemberStats(workspaceId: string, userId: string) {
-  const [stats, setStats] = useState<any>(null)
+  const [stats, setStats] = useState<unknown>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
   
@@ -122,7 +122,7 @@ export function useMemberStats(workspaceId: string, userId: string) {
         if (fetchError) throw fetchError
         
         setStats(data)
-      } catch (err) {
+      } catch (err: any) {
         setError(err instanceof Error ? err : new Error('Failed to fetch member stats'))
       } finally {
         setLoading(false)

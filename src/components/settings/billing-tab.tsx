@@ -316,7 +316,7 @@ export function BillingTab() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {plans.map((plan) => {
+            {plans.map((plan: any) => {
               const displayPrice = billingCycle === "annual" ? plan.annualPrice : plan.price
               const isCurrentPlan = plan.id === "professional"
               
@@ -373,7 +373,7 @@ export function BillingTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {invoices.map((invoice) => (
+            {invoices.map((invoice: any) => (
               <div
                 key={invoice.id}
                 className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
@@ -400,6 +400,7 @@ export function BillingTab() {
                     variant="ghost"
                     size="icon"
                     onClick={() => handleDownloadInvoice(invoice)}
+                    aria-label={t('settings.billing.downloadInvoice')}
                   >
                     <Download className="h-4 w-4" aria-hidden="true" />
                   </Button>

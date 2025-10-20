@@ -7,7 +7,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-const useComparisonData = (t: any) => [
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
+
+interface Period {
+  nameKey: string
+  value: number
+  color: string
+}
+
+interface ComparisonData {
+  categoryKey: string
+  periods: Period[]
+  change: string
+}
+
+const useComparisonData = (t: (key: string) => string): ComparisonData[] => [
   {
     categoryKey: "revenue",
     periods: [
@@ -40,7 +54,15 @@ const useComparisonData = (t: any) => [
   },
 ]
 
-const useRegionComparison = (t: any) => [
+interface RegionComparison {
+  regionKey: string
+  revenue: number
+  growth: number
+  customers: number
+  color: string
+}
+
+const useRegionComparison = (t: (key: string) => string): RegionComparison[] => [
   { regionKey: "north_america", revenue: 45, growth: 12, customers: 5400, color: "text-blue-600" },
   { regionKey: "europe", revenue: 32, growth: 18, customers: 3800, color: "text-green-600" },
   { regionKey: "asia_pacific", revenue: 18, growth: 24, customers: 2100, color: "text-purple-600" },
@@ -48,7 +70,7 @@ const useRegionComparison = (t: any) => [
 ]
 
 interface AnalyticsComparisonsTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -68,8 +90,8 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
         </TabsList>
 
         <TabsContent value="quarterly" className="space-y-6 mt-6">
-          {comparisonData.map((data: any, index: number) => {
-            const maxValue = Math.max(...data.periods.map((p: any) => p.value))
+          {comparisonData.map((data: ComparisonData, index: number) => {
+            const maxValue = Math.max(...data.periods.map((p: Period) => p.value))
             const isPositive = data.change.startsWith("+")
             
             return (
@@ -89,7 +111,7 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
                 <CardContent>
                   <div className="space-y-4">
                     <div className="grid grid-cols-4 gap-4">
-                      {data.periods.map((period: any, idx: number) => {
+                      {data.periods.map((period: Period, idx: number) => {
                         const heightPercent = (period.value / maxValue) * 100
                         
                         return (
@@ -119,7 +141,7 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {regionComparison.map((region: any, index: number) => (
+                {regionComparison.map((region: RegionComparison, index: number) => (
                   <div key={index} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className={`font-semibold text-lg ${region.color}`}>{t(region.regionKey)}</h3>

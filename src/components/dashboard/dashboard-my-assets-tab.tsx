@@ -26,7 +26,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
   
 
   
-  const assetsList = assets.map(asset => ({
+  const assetsList = assets.map((asset: any) => ({
     id: asset.id,
     name: asset.name || asset.title,
     category: asset.category?.name || 'Uncategorized',
@@ -163,7 +163,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-3 gap-4">
-            {categoryStats.map((category) => {
+            {categoryStats.map((category: any) => {
               const Icon = category.icon
               return (
                 <div
@@ -187,7 +187,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {assetsList.map((asset) => (
+            {assetsList.map((asset: any) => (
               <div
                 key={asset.id}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"

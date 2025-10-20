@@ -35,7 +35,7 @@ export default function AssetsApprovalsTab() {
   if (error) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="text-destructive">Error loading approvals: {error.message}</div>
+        <div className="text-destructive">Error loading approvals: {(error as any).message}</div>
       </div>
     )
   }
@@ -91,7 +91,7 @@ export default function AssetsApprovalsTab() {
                 </TableCell>
               </TableRow>
             ) : (
-              approvals.map((approval: any) => (
+              (approvals as any[]).map((approval: any) => (
                 <TableRow key={approval.id}>
                   <TableCell>
                     <div className="flex items-center gap-2">

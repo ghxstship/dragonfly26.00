@@ -99,7 +99,7 @@ export function QuickView({
             {/* Image thumbnails */}
             {images.length > 1 && (
               <div className="flex gap-2 mt-4">
-                {images.map((img, idx) => (
+                {images.map((img: any, idx: number) => (
                   <button
                     key={idx}
                     onClick={() => setImageIndex(idx)}
@@ -278,7 +278,7 @@ export function QuickView({
                 <>
                   <Separator />
                   <div className="flex flex-wrap gap-2">
-                    {product.tags.map((tag) => (
+                    {product.tags.map((tag: any) => (
                       <Badge key={tag} variant="outline" className="text-xs">
                         {tag}
                       </Badge>

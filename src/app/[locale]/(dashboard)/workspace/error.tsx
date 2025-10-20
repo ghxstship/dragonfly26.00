@@ -73,7 +73,7 @@ export default function WorkspaceError({
               </summary>
               <div className="mt-4 p-4 bg-muted/50 rounded-lg border">
                 <pre className="text-xs text-muted-foreground overflow-x-auto whitespace-pre-wrap break-words font-mono">
-                  {error.message}
+                  {(error as any).message}
                   {'\n\n'}
                   {error.stack}
                 </pre>

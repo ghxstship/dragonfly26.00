@@ -143,7 +143,7 @@ export function TopBar() {
       const supabase = createClient()
       await supabase.auth.signOut()
       router.push('/login')
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error logging out:", error)
     }
   }

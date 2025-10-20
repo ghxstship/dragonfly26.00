@@ -163,7 +163,7 @@ export function useProfileData() {
 
       setProfile(profileWithEmail as ProfileData)
       setError(null)
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error fetching profile:', err)
       setError(err as Error)
     } finally {
@@ -193,7 +193,7 @@ export function useProfileData() {
 
       await fetchProfile() // Refresh data
       return data
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error updating profile:', err)
       throw err
     }
@@ -225,7 +225,7 @@ export function useProfileData() {
       await updateProfile({ avatar_url: data.publicUrl })
 
       return data.publicUrl
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error uploading avatar:', err)
       throw err
     }

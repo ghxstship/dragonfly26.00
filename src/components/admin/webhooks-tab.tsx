@@ -113,7 +113,7 @@ export function WebhooksTab() {
   }
 
   const handleDeleteWebhook = (webhookId: string) => {
-    setWebhooks(webhooks.filter(w => w.id !== webhookId))
+    setWebhooks(webhooks.filter(w => (w as any).id !== webhookId))
     toast({
       title: t('admin.toast.webhookDeleted'),
       description: t('admin.toast.webhookDeletedDesc'),
@@ -170,7 +170,7 @@ export function WebhooksTab() {
 
       {/* Webhooks List */}
       <div className="space-y-3">
-        {webhooks.map((webhook) => (
+        {webhooks.map((webhook: any) => (
           <Card key={webhook?.id}>
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -224,7 +224,7 @@ export function WebhooksTab() {
                 <div>
                   <Label className="text-xs text-muted-foreground">Events ({webhook?.events.length})</Label>
                   <div className="flex flex-wrap gap-2 mt-2">
-                    {webhook?.events.map((eventId) => {
+                    {webhook?.events.map((eventId: any) => {
                       const event = availableEvents.find(e => e.id === eventId)
                       return (
                         <Badge key={eventId} variant="outline">
@@ -245,8 +245,9 @@ export function WebhooksTab() {
                       variant="outline"
                       size="icon"
                       onClick={() => handleCopySecret(webhook?.secret)}
+                      aria-label={t('admin.webhooksTab.copySecret')}
                     >
-                      <Copy className="h-4 w-4" />
+                      <Copy className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </div>
                 </div>
@@ -339,7 +340,7 @@ export function WebhooksTab() {
             <div className="space-y-2">
               <Label>{t('admin.webhooksTab.eventsToSubscribe')}</Label>
               <div className="max-h-[300px] overflow-y-auto space-y-2 p-3 border rounded-lg">
-                {availableEvents.map((event) => (
+                {availableEvents.map((event: any) => (
                   <div key={event.id} className="flex items-start gap-3 p-2 hover:bg-accent rounded">
                     <input
                       type="checkbox"

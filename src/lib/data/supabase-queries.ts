@@ -15,7 +15,7 @@ export interface QueryOptions {
   offset?: number
   orderBy?: string
   orderDirection?: 'asc' | 'desc'
-  filters?: Record<string, any>
+  filters?: Record<string, unknown>
 }
 
 export interface QueryResult<T> {
@@ -29,7 +29,7 @@ export interface QueryResult<T> {
 export async function fetchProductions(
   supabase: SupabaseClient,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('productions')
@@ -65,7 +65,7 @@ export async function fetchProductions(
     const { data, error, count } = await query
 
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -74,7 +74,7 @@ export async function fetchProjectTasks(
   supabase: SupabaseClient,
   productionId?: string,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('project_tasks')
@@ -96,7 +96,7 @@ export async function fetchProjectTasks(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -106,7 +106,7 @@ export async function fetchProjectTasks(
 export async function fetchPersonnel(
   supabase: SupabaseClient,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('personnel')
@@ -125,7 +125,7 @@ export async function fetchPersonnel(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -134,7 +134,7 @@ export async function fetchTimeEntries(
   supabase: SupabaseClient,
   personId?: string,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('time_entries')
@@ -156,7 +156,7 @@ export async function fetchTimeEntries(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -166,7 +166,7 @@ export async function fetchTimeEntries(
 export async function fetchEvents(
   supabase: SupabaseClient,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('events')
@@ -185,7 +185,7 @@ export async function fetchEvents(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -195,7 +195,7 @@ export async function fetchEvents(
 export async function fetchAssets(
   supabase: SupabaseClient,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('assets')
@@ -214,7 +214,7 @@ export async function fetchAssets(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -224,7 +224,7 @@ export async function fetchAssets(
 export async function fetchBudgets(
   supabase: SupabaseClient,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('budgets')
@@ -242,7 +242,7 @@ export async function fetchBudgets(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -250,7 +250,7 @@ export async function fetchBudgets(
 export async function fetchInvoices(
   supabase: SupabaseClient,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('invoices')
@@ -268,7 +268,7 @@ export async function fetchInvoices(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -278,7 +278,7 @@ export async function fetchInvoices(
 export async function fetchCompanies(
   supabase: SupabaseClient,
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from('companies')
@@ -297,7 +297,7 @@ export async function fetchCompanies(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }
@@ -309,7 +309,7 @@ export async function fetchModuleData(
   tableName: string,
   fields: string = '*',
   options: QueryOptions = {}
-): Promise<QueryResult<any>> {
+): Promise<QueryResult<unknown>> {
   try {
     let query = supabase
       .from(tableName)
@@ -341,7 +341,7 @@ export async function fetchModuleData(
 
     const { data, error, count } = await query
     return { data, error, count: count || undefined }
-  } catch (err) {
+  } catch (err: any) {
     return { data: null, error: err as Error }
   }
 }

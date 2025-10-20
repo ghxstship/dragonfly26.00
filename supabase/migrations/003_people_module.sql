@@ -312,7 +312,7 @@ CREATE POLICY "Users can view personnel in their workspaces"
     ON personnel FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -320,7 +320,7 @@ CREATE POLICY "Users can manage personnel in their workspaces"
     ON personnel FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -329,7 +329,7 @@ CREATE POLICY "Users can view teams in their workspaces"
     ON teams FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -337,7 +337,7 @@ CREATE POLICY "Users can manage teams in their workspaces"
     ON teams FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -345,7 +345,7 @@ CREATE POLICY "Users can view assignments in their workspaces"
     ON personnel_assignments FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -353,7 +353,7 @@ CREATE POLICY "Users can manage assignments in their workspaces"
     ON personnel_assignments FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -361,7 +361,7 @@ CREATE POLICY "Users can view time entries in their workspaces"
     ON time_entries FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -369,7 +369,7 @@ CREATE POLICY "Users can manage time entries in their workspaces"
     ON time_entries FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -377,7 +377,7 @@ CREATE POLICY "Users can view training in their workspaces"
     ON training_records FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -385,7 +385,7 @@ CREATE POLICY "Users can manage training in their workspaces"
     ON training_records FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -393,7 +393,7 @@ CREATE POLICY "Users can view job openings in their workspaces"
     ON job_openings FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -401,7 +401,7 @@ CREATE POLICY "Users can manage job openings in their workspaces"
     ON job_openings FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -409,7 +409,7 @@ CREATE POLICY "Users can view applicants in their workspaces"
     ON job_applicants FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 
@@ -417,7 +417,7 @@ CREATE POLICY "Users can manage applicants in their workspaces"
     ON job_applicants FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
         )
     ));
 

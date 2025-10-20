@@ -37,7 +37,7 @@ export function Sidebar() {
   const toggleFavorite = (moduleId: string) => {
     setFavorites((prev) =>
       prev.includes(moduleId)
-        ? prev.filter((id) => id !== moduleId)
+        ? prev.filter((id: any) => id !== moduleId)
         : [...prev, moduleId]
     )
   }
@@ -56,7 +56,7 @@ export function Sidebar() {
   }))
 
   // Get profile module separately (to anchor at bottom)
-  const profileModule = MODULES.find((m) => m.id === 'profile')
+  const profileModule = MODULES.find((m: any) => m.id === 'profile')
 
   return (
     <TooltipProvider>
@@ -109,10 +109,10 @@ export function Sidebar() {
               </button>
               {!collapsedHubs['favorites'] && (
                 <div className="space-y-1">
-                  {favorites.map((favId) => {
-                    const favModule = MODULES.find((m) => m.id === favId)
+                  {favorites.map((favId: any) => {
+                    const favModule = MODULES.find((m: any) => m.id === favId)
                     if (!favModule) return null
-                    const Icon = iconMap[favModule.icon]
+                    const IconComponent = iconMap[favModule.icon] as React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined
                     const moduleTabs = getModuleTabs(favModule.slug)
                     const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
 
@@ -125,7 +125,7 @@ export function Sidebar() {
                           pathname.includes(favModule.slug) && "bg-accent"
                         )}
                       >
-                        {Icon && <Icon className="h-4 w-4 flex-shrink-0" style={{ color: favModule.color }} />}
+                        {IconComponent ? <IconComponent className="h-4 w-4 flex-shrink-0" style={{ color: favModule.color }} /> : null}
                         <span>{favModule.name}</span>
                       </Link>
                     )
@@ -136,7 +136,7 @@ export function Sidebar() {
           )}
 
           {/* Module Categories - Collapsible Hubs */}
-          {groupedModules.map((group) => (
+          {groupedModules.map((group: any) => (
             <div key={group.category} className="mb-4">
               {!sidebarCollapsed ? (
                 <button
@@ -153,8 +153,8 @@ export function Sidebar() {
               ) : null}
               {(!collapsedHubs[group.category] || sidebarCollapsed) && (
                 <div className="space-y-1">
-                  {group.modules.map((moduleItem) => {
-                    const Icon = iconMap[moduleItem.icon]
+                  {group.modules.map((moduleItem: any) => {
+                    const Icon = iconMap[moduleItem.icon] as React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined
                     const isActive = pathname.includes(moduleItem.slug)
                     const isFavorited = favorites.includes(moduleItem.id)
                     const moduleTabs = getModuleTabs(moduleItem.slug)
@@ -175,12 +175,12 @@ export function Sidebar() {
                             )}
                             title={sidebarCollapsed ? moduleItem.name : undefined}
                           >
-                            {Icon && (
+                            {Icon ? (
                               <Icon
                                 className="h-4 w-4 flex-shrink-0"
                                 style={{ color: moduleItem.color }}
                               />
-                            )}
+                            ) : null}
                             {!sidebarCollapsed && <span>{moduleItem.name}</span>}
                           </button>
                         </div>
@@ -201,12 +201,12 @@ export function Sidebar() {
                           )}
                           title={sidebarCollapsed ? moduleItem.name : undefined}
                         >
-                          {Icon && (
+                          {Icon ? (
                             <Icon
                               className="h-4 w-4 flex-shrink-0"
                               style={{ color: moduleItem.color }}
                             />
-                          )}
+                          ) : null}
                           {!sidebarCollapsed && <span>{moduleItem.name}</span>}
                         </Link>
 
@@ -239,7 +239,7 @@ export function Sidebar() {
       {profileModule && (
         <div className="border-t p-2 bg-background">
           {(() => {
-            const Icon = iconMap[profileModule.icon]
+            const Icon = iconMap[profileModule.icon] as React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined
             const moduleTabs = getModuleTabs(profileModule.slug)
             const firstTabSlug = moduleTabs.length > 0 ? moduleTabs[0].slug : 'overview'
             const isActive = pathname.includes(profileModule.slug)
@@ -254,12 +254,12 @@ export function Sidebar() {
                 )}
                 title={sidebarCollapsed ? profileModule.name : undefined}
               >
-                {Icon && (
+                {Icon ? (
                   <Icon
                     className="h-4 w-4 flex-shrink-0"
                     style={{ color: profileModule.color }}
                   />
-                )}
+                ) : null}
                 {!sidebarCollapsed && <span>{profileModule.name}</span>}
               </Link>
             )

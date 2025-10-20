@@ -104,7 +104,7 @@ CREATE POLICY "Users can view travel in their workspaces"
     ON travel_arrangements FOR SELECT
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT (SELECT (SELECT auth.uid()))))
         )
     ));
 
@@ -113,7 +113,7 @@ CREATE POLICY "Users can manage travel in their workspaces"
     ON travel_arrangements FOR ALL
     USING (workspace_id IN (
         SELECT id FROM workspaces WHERE organization_id IN (
-            SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+            SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT (SELECT (SELECT auth.uid()))))
         )
     ));
 

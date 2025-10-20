@@ -17,7 +17,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
   
 
   
-  const ordersList = orders.map(order => ({
+  const ordersList = orders.map((order: any) => ({
     id: order.id,
     item: order.product_name || 'Item',
     vendor: 'Vendor',
@@ -170,7 +170,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {ordersList.map((order) => {
+            {ordersList.map((order: any) => {
               const StatusIcon = getStatusIcon(order.status)
               return (
                 <div

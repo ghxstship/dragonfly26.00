@@ -38,7 +38,7 @@ export default function VerifyEmailPage() {
 
         if (error) {
           setStatus('error')
-          setError(error.message)
+          setError((error as any).message)
         } else {
           setStatus('success')
           // Redirect to auth-check after 3 seconds - it will handle routing
@@ -76,7 +76,7 @@ export default function VerifyEmailPage() {
     })
 
     if (error) {
-      setError(error.message)
+      setError((error as any).message)
     }
     
     setResending(false)

@@ -174,7 +174,7 @@ export function DiscountInput({
       onDiscountApplied?.(applied)
       setCode('')
     } catch (err: any) {
-      setError(err.message || 'Failed to apply discount code')
+      setError(err instanceof Error ? (err as any).message : 'Failed to apply discount code')
     } finally {
       setLoading(false)
     }
@@ -217,7 +217,7 @@ export function DiscountInput({
               <Tag className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder={t('marketplace.discount.placeholder')}
-                value={code}
+                value={code as any}
                 onChange={(e) => setCode(e.target.value.toUpperCase())}
                 onKeyPress={handleKeyPress}
                 disabled={loading}

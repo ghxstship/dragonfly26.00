@@ -115,7 +115,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
       setOrganization("")
       setProject("")
       onOpenChange(false)
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Error sending invitations",
         description: "Please try again later",
@@ -175,7 +175,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
           </DialogTitle>
         </DialogHeader>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
+        <Tabs value={activeTab as any} onValueChange={setActiveTab} className="space-y-4">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="single" className="gap-2">
               <Mail className="h-4 w-4" />
@@ -199,7 +199,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                   id="email"
                   type="email"
                   placeholder="colleague@example.com"
-                  value={email}
+                  value={email as any}
                   onChange={(e) => setEmail(e.target.value)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') {
@@ -219,7 +219,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                   <Input
                     id="organization"
                     placeholder="Organization name"
-                    value={organization}
+                    value={organization as any}
                     onChange={(e) => setOrganization(e.target.value)}
                   />
                 </div>
@@ -232,7 +232,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                   <Input
                     id="project"
                     placeholder="Project name"
-                    value={project}
+                    value={project as any}
                     onChange={(e) => setProject(e.target.value)}
                   />
                 </div>
@@ -240,7 +240,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
 
               <div className="space-y-2">
                 <Label htmlFor="role">Role</Label>
-                <Select value={role} onValueChange={setRole}>
+                <Select value={role as any} onValueChange={setRole}>
                   <SelectTrigger id="role">
                     <SelectValue />
                   </SelectTrigger>
@@ -270,7 +270,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 <Textarea
                   id="bulkEmails"
                   placeholder="Enter multiple emails separated by commas, semicolons, or new lines&#10;example1@company.com, example2@company.com&#10;example3@company.com"
-                  value={bulkEmails}
+                  value={bulkEmails as any}
                   onChange={(e) => setBulkEmails(e.target.value)}
                   className="min-h-[150px] font-mono text-sm"
                 />
@@ -288,7 +288,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                   <Input
                     id="bulkOrganization"
                     placeholder="Organization name"
-                    value={organization}
+                    value={organization as any}
                     onChange={(e) => setOrganization(e.target.value)}
                   />
                 </div>
@@ -301,7 +301,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                   <Input
                     id="bulkProject"
                     placeholder="Project name"
-                    value={project}
+                    value={project as any}
                     onChange={(e) => setProject(e.target.value)}
                   />
                 </div>
@@ -309,7 +309,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
 
               <div className="space-y-2">
                 <Label htmlFor="bulkRole">Default Role</Label>
-                <Select value={role} onValueChange={setRole}>
+                <Select value={role as any} onValueChange={setRole}>
                   <SelectTrigger id="bulkRole">
                     <SelectValue />
                   </SelectTrigger>
@@ -347,7 +347,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 Pending Invites ({invites.length})
               </Label>
               <div className="space-y-2 max-h-[200px] overflow-auto border rounded-md p-3">
-                {invites.map((invite: any, index: number) => (
+                {invites.map((invite, index: number) => (
                   <div key={index} className="flex items-center justify-between gap-2 p-2 bg-muted rounded-md">
                     <div className="flex-1 flex flex-col gap-1">
                       <div className="flex items-center gap-2">
@@ -391,7 +391,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
               <Textarea
                 id="message"
                 placeholder="Add a personal message to your invitation..."
-                value={message}
+                value={message as any}
                 onChange={(e) => setMessage(e.target.value)}
                 className="min-h-[80px]"
               />

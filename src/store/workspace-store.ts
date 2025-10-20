@@ -38,7 +38,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set) => ({
 
   updateWorkspace: (id, updates) =>
     set((state) => ({
-      workspaces: state.workspaces.map((ws) =>
+      workspaces: state.workspaces.map((ws: any) =>
         ws.id === id ? { ...ws, ...updates } : ws
       ),
     })),

@@ -123,7 +123,7 @@ export function Poll({
 
       {/* Options */}
       <div className="space-y-2">
-        {options.map((option: any, index: number) => {
+        {options.map((option: string, index: number) => {
           const isSelected = selectedOptions.includes(index)
           const isWinning = winningIndices.includes(index) && totalVotes > 0
           const userVotedThis = currentUserId 

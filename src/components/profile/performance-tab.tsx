@@ -129,7 +129,7 @@ export function PerformanceTab() {
   return (
     <div className="space-y-6">
       <div className="flex justify-end">
-        <Select value={timePeriod} onValueChange={setTimePeriod}>
+        <Select value={timePeriod as any} onValueChange={setTimePeriod}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder={t('profile.performance.select-period')} />
           </SelectTrigger>
@@ -144,7 +144,7 @@ export function PerformanceTab() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {performanceMetrics.map((metric) => (
+        {performanceMetrics.map((metric: any) => (
           <Card key={t(metric.labelKey)}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">{t(metric.labelKey)}</CardTitle>
@@ -174,7 +174,7 @@ export function PerformanceTab() {
           <CardDescription>{t('profile.performance.skills-description')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          {skills.map((skill) => (
+          {skills.map((skill: any) => (
             <div key={t(skill.nameKey)} className="space-y-2">
               <div className="flex items-center justify-between text-sm">
                 <span className="font-medium">{t(skill.nameKey)}</span>
@@ -254,7 +254,7 @@ export function PerformanceTab() {
             <CardDescription>{t('profile.performance.achievements-description')}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {achievements.map((achievement) => (
+            {achievements.map((achievement: any) => (
               <div key={achievement.id} className="flex gap-3 border-b pb-4 last:border-0">
                 <div className="text-2xl">{achievement.icon}</div>
                 <div className="flex-1">
@@ -284,7 +284,7 @@ export function PerformanceTab() {
               </div>
               <span className="text-muted-foreground">{t('profile.performance.goal-1-progress')}</span>
             </div>
-            <Progress value={70} />
+            <Progress value={70 as any} />
           </div>
 
           <div className="space-y-2">
@@ -295,7 +295,7 @@ export function PerformanceTab() {
               </div>
               <span className="text-green-600 font-medium">{t('profile.performance.achieved')}</span>
             </div>
-            <Progress value={100} />
+            <Progress value={100 as any} />
           </div>
 
           <div className="space-y-2">
@@ -306,7 +306,7 @@ export function PerformanceTab() {
               </div>
               <span className="text-muted-foreground">{t('profile.performance.goal-3-progress')}</span>
             </div>
-            <Progress value={66} />
+            <Progress value={66 as any} />
           </div>
         </CardContent>
       </Card>

@@ -6,8 +6,24 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
 
-const performanceAreas = [
+interface PerformanceMetric {
+  labelKey: string
+  value: string
+  benchmark: string
+  status: string
+}
+
+interface PerformanceArea {
+  nameKey: string
+  score: number
+  benchmark: number
+  status: string
+  metrics: PerformanceMetric[]
+}
+
+const performanceAreas: PerformanceArea[] = [
   { 
     nameKey: "operational_efficiency", 
     score: 87, 
@@ -55,7 +71,7 @@ const performanceAreas = [
 ]
 
 interface AnalyticsPerformanceTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -66,24 +82,24 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
   return (
     <div className="space-y-6">
       <div className="grid gap-6">
-        {performanceAreas.map((area: any, index: number) => (
+        {performanceAreas.map((area: PerformanceArea, index: number) => (
           <Card key={index} role="region" aria-label={`${t(area.nameKey)} performance`}>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
                   <CardTitle className="flex items-center gap-2">
-                    <Award className="h-5 w-5 text-blue-600" />
+                    <Award className="h-5 w-5 text-blue-600" aria-hidden="true" />
                     {t(area.nameKey)}
                   </CardTitle>
                   <CardDescription className="mt-2">
                     Performance Score: <span className="font-bold text-lg text-foreground">{area.score}</span> / 100
                   </CardDescription>
                 </div>
-                <Badge variant={area.status === "above" ? "default" : "secondary"} className={area.status === "above" ? "bg-green-600" : "bg-yellow-600"}>
-                  {area.status === "above" ? (
-                    <><CheckCircle className="h-3 w-3 mr-1" /> Above Benchmark</>
+                <Badge variant={(area as any).status === "above" ? "default" : "secondary"} className={(area as any).status === "above" ? "bg-green-600" : "bg-yellow-600"}>
+                  {(area as any).status === "above" ? (
+                    <><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Above Benchmark</>
                   ) : (
-                    <><AlertCircle className="h-3 w-3 mr-1" /> Below Benchmark</>
+                    <><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Below Benchmark</>
                   )}
                 </Badge>
               </div>
@@ -93,21 +109,21 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">vs. Industry Benchmark ({area.benchmark})</span>
-                    <span className={area.status === "above" ? "text-green-600" : "text-yellow-600"}>
-                      {area.status === "above" ? "+" : ""}{area.score - area.benchmark} points
+                    <span className={(area as any).status === "above" ? "text-green-600" : "text-yellow-600"}>
+                      {(area as any).status === "above" ? "+" : ""}{(area as any).score - (area as any).benchmark} points
                     </span>
                   </div>
                   <Progress value={area.score} className="h-2" />
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 pt-4 border-t">
-                  {area.metrics.map((metric: any, idx: number) => (
+                  {area.metrics.map((metric: PerformanceMetric, idx: number) => (
                     <div key={idx} className="space-y-1">
                       <p className="text-xs text-muted-foreground">{t(metric.labelKey)}</p>
                       <p className="text-sm font-bold">{metric.value}</p>
                       <p className="text-xs text-muted-foreground">
                         Benchmark: {metric.benchmark}
-                        {metric.status === "good" && <TrendingUp className="inline h-3 w-3 ml-1 text-green-600" />}
+                        {(metric as any).status === "good" && <TrendingUp className="inline h-3 w-3 ml-1 text-green-600" aria-hidden="true" />}
                       </p>
                     </div>
                   ))}

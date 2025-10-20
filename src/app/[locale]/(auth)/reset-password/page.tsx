@@ -71,7 +71,7 @@ export default function ResetPasswordPage() {
     })
 
     if (error) {
-      setError(error.message)
+      setError((error as any).message)
       setLoading(false)
     } else {
       setSuccess(true)

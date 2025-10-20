@@ -9,7 +9,7 @@ export interface DashboardWidget {
   type: string
   position: number
   enabled: boolean
-  settings?: Record<string, any>
+  settings?: Record<string, unknown>
 }
 
 const DEFAULT_WIDGETS: DashboardWidget[] = [
@@ -49,7 +49,7 @@ export function useDashboardWidgets(workspaceId: string, userId: string) {
         // Initialize with defaults
         await saveWidgets(DEFAULT_WIDGETS)
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error loading widgets:', error)
       // Use defaults on error
       setWidgets(DEFAULT_WIDGETS)
@@ -71,7 +71,7 @@ export function useDashboardWidgets(workspaceId: string, userId: string) {
       const { error } = await supabase
         .from('user_dashboard_widgets')
         .insert(
-          newWidgets.map((w) => ({
+          newWidgets.map((w: any) => ({
             ...w,
             workspace_id: workspaceId,
             user_id: userId,
@@ -80,14 +80,14 @@ export function useDashboardWidgets(workspaceId: string, userId: string) {
 
       if (error) throw error
       setWidgets(newWidgets)
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error saving widgets:', error)
       throw error
     }
   }
 
   const toggleWidget = async (widgetId: string) => {
-    const updatedWidgets = widgets.map((w) =>
+    const updatedWidgets = widgets.map((w: any) =>
       w.id === widgetId ? { ...w, enabled: !w.enabled } : w
     )
     await saveWidgets(updatedWidgets)
@@ -108,7 +108,7 @@ export function useDashboardWidgets(workspaceId: string, userId: string) {
     toggleWidget,
     reorderWidgets,
     resetToDefaults,
-    enabledWidgets: widgets.filter((w: any) => w.enabled).sort((a, b) => a.position - b.position),
-    availableWidgets: widgets.filter((w) => !w.enabled).sort((a, b) => a.position - b.position),
+    enabledWidgets: widgets.filter((w: any) => w.enabled).sort((a: any, b: any) => a.position - b.position),
+    availableWidgets: widgets.filter((w: any) => !w.enabled).sort((a: any, b: any) => a.position - b.position),
   }
 }

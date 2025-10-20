@@ -20,7 +20,7 @@ interface WebhooksListProps {
 export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
   return (
     <div className="space-y-4">
-      {webhooks.map((webhook) => (
+      {webhooks.map((webhook: any) => (
         <Card
           key={webhook.id}
           className="cursor-pointer hover:shadow-md transition-shadow"

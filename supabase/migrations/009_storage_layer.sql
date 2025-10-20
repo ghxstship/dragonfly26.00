@@ -27,21 +27,21 @@ CREATE POLICY "Users can upload their own avatar"
     ON storage.objects FOR INSERT
     WITH CHECK (
         bucket_id = 'avatars' 
-        AND auth.uid()::text = (storage.foldername(name))[1]
+        AND (SELECT (SELECT auth.uid()))::text = (storage.foldername(name))[1]
     );
 
 CREATE POLICY "Users can update their own avatar"
     ON storage.objects FOR UPDATE
     USING (
         bucket_id = 'avatars' 
-        AND auth.uid()::text = (storage.foldername(name))[1]
+        AND (SELECT (SELECT auth.uid()))::text = (storage.foldername(name))[1]
     );
 
 CREATE POLICY "Users can delete their own avatar"
     ON storage.objects FOR DELETE
     USING (
         bucket_id = 'avatars' 
-        AND auth.uid()::text = (storage.foldername(name))[1]
+        AND (SELECT (SELECT auth.uid()))::text = (storage.foldername(name))[1]
     );
 
 -- LOGOS BUCKET (Public Read, Admin Write)
@@ -53,7 +53,7 @@ CREATE POLICY "Admins can upload logos"
     ON storage.objects FOR INSERT
     WITH CHECK (
         bucket_id = 'logos'
-        AND auth.uid() IN (
+        AND (SELECT (SELECT auth.uid())) IN (
             SELECT user_id FROM organization_members 
             WHERE role IN ('owner', 'admin')
         )
@@ -63,7 +63,7 @@ CREATE POLICY "Admins can update logos"
     ON storage.objects FOR UPDATE
     USING (
         bucket_id = 'logos'
-        AND auth.uid() IN (
+        AND (SELECT (SELECT auth.uid())) IN (
             SELECT user_id FROM organization_members 
             WHERE role IN ('owner', 'admin')
         )
@@ -77,7 +77,7 @@ CREATE POLICY "Users can view documents in their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -89,7 +89,7 @@ CREATE POLICY "Users can upload documents to their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -101,7 +101,7 @@ CREATE POLICY "Users can update documents in their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -113,7 +113,7 @@ CREATE POLICY "Users can delete documents in their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -126,7 +126,7 @@ CREATE POLICY "Users can view media in their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -138,7 +138,7 @@ CREATE POLICY "Users can upload media to their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -151,7 +151,7 @@ CREATE POLICY "Users can view project files in their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -163,7 +163,7 @@ CREATE POLICY "Users can manage project files in their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -173,7 +173,7 @@ CREATE POLICY "Admins can view contracts"
     ON storage.objects FOR SELECT
     USING (
         bucket_id = 'contracts'
-        AND auth.uid() IN (
+        AND (SELECT (SELECT auth.uid())) IN (
             SELECT user_id FROM organization_members 
             WHERE role IN ('owner', 'admin')
         )
@@ -183,7 +183,7 @@ CREATE POLICY "Admins can manage contracts"
     ON storage.objects FOR ALL
     USING (
         bucket_id = 'contracts'
-        AND auth.uid() IN (
+        AND (SELECT (SELECT auth.uid())) IN (
             SELECT user_id FROM organization_members 
             WHERE role IN ('owner', 'admin')
         )
@@ -197,7 +197,7 @@ CREATE POLICY "Users can view reports in their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );
@@ -209,7 +209,7 @@ CREATE POLICY "Users can upload reports to their workspaces"
         AND (storage.foldername(name))[1]::uuid IN (
             SELECT w.id FROM workspaces w
             WHERE w.organization_id IN (
-                SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+                SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
             )
         )
     );

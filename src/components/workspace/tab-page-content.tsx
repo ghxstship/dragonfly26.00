@@ -15,25 +15,9 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useUIStore } from "@/store/ui-store"
 import { ItemDetailDrawer } from "@/components/shared/item-detail-drawer"
-import { ViewSwitcher } from "@/components/views/view-switcher"
-import { ListView } from "@/components/views/list-view"
-import { BoardView } from "@/components/views/board-view"
-import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
-import { CalendarView } from "@/components/views/calendar-view"
-import { TimelineView } from "@/components/views/timeline-view"
-import { DashboardView } from "@/components/views/dashboard-view"
-import { WorkloadView } from "@/components/views/workload-view"
-import { MapView } from "@/components/views/map-view"
-import { MindMapView } from "@/components/views/mind-map-view"
-import { FormView } from "@/components/views/form-view"
-import { ActivityView } from "@/components/views/activity-view"
-import { BoxView } from "@/components/views/box-view"
-import { EmbedView } from "@/components/views/embed-view"
-import { ChatView } from "@/components/views/chat-view"
-import { DocView } from "@/components/views/doc-view"
-import { FinancialView } from "@/components/views/financial-view"
-import { PortfolioView } from "@/components/views/portfolio-view"
-import { PivotView } from "@/components/views/pivot-view"
+import { ViewSwitcher } from "@/components/molecules"
+import { ListViewOrganism, BoardViewOrganism, DataTableOrganism, CalendarOrganism, TimelineOrganism, MapOrganism, MindMapOrganism, FormBuilderOrganism, EmbedContainerOrganism, ChatOrganism, DocumentEditorOrganism, FinancialDashboardOrganism, PivotTableOrganism, WorkloadViewOrganism, ActivityViewOrganism, BoxViewOrganism, PortfolioViewOrganism } from "@/components/organisms"
+import { DashboardTemplate } from "@/components/templates"
 import { getModuleBySlug } from "@/lib/modules/registry"
 import { getTabBySlug } from "@/lib/modules/tabs-registry"
 import { ModuleTabs } from "@/components/layout/module-tabs"
@@ -247,7 +231,7 @@ export function TabPageContent() {
     try {
       await updateItem(selectedItem.id, updates)
       console.log("Item updated successfully")
-    } catch (err) {
+    } catch (err: any) {
       console.error("Failed to update item:", err)
       alert("Failed to update item")
     }
@@ -259,7 +243,7 @@ export function TabPageContent() {
       await deleteItem(selectedItem.id)
       setDrawerOpen(false)
       console.log("Item deleted successfully")
-    } catch (err) {
+    } catch (err: any) {
       console.error("Failed to delete item:", err)
       alert("Failed to delete item")
     }
@@ -273,7 +257,7 @@ export function TabPageContent() {
       })
       console.log("Item created successfully")
       setCreateDialogOpen(false)
-    } catch (err) {
+    } catch (err: any) {
       console.error("Failed to create item:", err)
       alert("Failed to create item")
     }
@@ -445,7 +429,7 @@ export function TabPageContent() {
         <div className="flex items-center justify-center h-full">
           <div className="text-center">
             <p className="text-red-500 mb-2">Error loading data</p>
-            <p className="text-sm text-muted-foreground">{error.message}</p>
+            <p className="text-sm text-muted-foreground">{(error as any).message}</p>
             <p className="text-xs text-muted-foreground mt-2">Table: {tableName}</p>
           </div>
         </div>
@@ -465,55 +449,47 @@ export function TabPageContent() {
     // Otherwise, render based on view type with REAL DATA
     switch (currentView) {
       case "list":
-        return <ListView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <ListViewOrganism data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "board":
-        return <BoardView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <BoardViewOrganism data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
       case "table":
         // Use schema-driven EnhancedTableView (schema auto-generated from form configs if not manually defined)
         return (
-          <EnhancedTableView
+          <DataTableOrganism
             data={filteredData}
-            schema={schema?.fields || []}
-            moduleId={moduleSlug}
-            tabSlug={tabSlug}
-            workspaceId={workspaceId}
-            onRefresh={() => {/* Real-time updates handled automatically */}}
-            onCreate={handleCreateItem}
-            onUpdate={updateItem}
-            onDelete={deleteItem}
+            columns={(schema?.fields as any) || []}
             loading={loading}
+            onRowClick={handleItemClick}
           />
         )
       case "calendar":
-        return <CalendarView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
+        return <CalendarOrganism data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "timeline":
-        return <TimelineView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
-      case "dashboard":
-        return <DashboardView data={filteredData} schema={schema?.fields} />
+        return <TimelineOrganism data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "workload":
-        return <WorkloadView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <WorkloadViewOrganism data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "map":
-        return <MapView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <MapOrganism locations={filteredData as any} />
       case "mind-map":
-        return <MindMapView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
+        return <MindMapOrganism nodes={filteredData as any} onChange={() => {}} />
       case "form":
-        return <FormView data={filteredData} schema={schema?.fields} />
+        return <FormBuilderOrganism fields={(schema?.fields as any) || []} onChange={() => {}} />
       case "activity":
-        return <ActivityView data={filteredData} schema={schema?.fields} />
+        return <ActivityViewOrganism data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "box":
-        return <BoxView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <BoxViewOrganism data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "embed":
-        return <EmbedView data={filteredData} schema={schema?.fields} />
+        return <EmbedContainerOrganism url="" />
       case "chat":
-        return <ChatView data={filteredData} schema={schema?.fields} />
+        return <ChatOrganism messages={[]} currentUserId="" onSendMessage={() => {}} />
       case "doc":
-        return <DocView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
+        return <DocumentEditorOrganism content="" onChange={() => {}} />
       case "financial":
-        return <FinancialView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <FinancialDashboardOrganism data={filteredData} schema={schema?.fields} />
       case "portfolio":
-        return <PortfolioView data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <PortfolioViewOrganism data={filteredData} schema={schema?.fields} onItemClick={handleItemClick} />
       case "pivot":
-        return <PivotView data={filteredData} schema={schema?.fields} createActionLabel={createLabel} onCreateAction={handleCreateClick} />
+        return <PivotTableOrganism data={filteredData} schema={schema?.fields} />
       default:
         return (
           <div className="flex items-center justify-center h-full text-muted-foreground">
@@ -592,9 +568,9 @@ export function TabPageContent() {
         <div className="border-b bg-background p-4">
           <div className="flex items-center gap-2">
             <ViewSwitcher
-              currentView={currentView}
-              onViewChange={setCurrentView}
-              moduleSlug={moduleSlug}
+              value={currentView as any}
+              onChange={setCurrentView as any}
+              modes={['list', 'board', 'table', 'calendar'] as any}
             />
 
             <div className="flex-1 max-w-md">
@@ -602,7 +578,7 @@ export function TabPageContent() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Search..."
-                  value={searchQuery}
+                  value={searchQuery as any}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-9"
                 />

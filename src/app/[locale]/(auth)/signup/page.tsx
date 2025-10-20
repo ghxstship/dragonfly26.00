@@ -66,7 +66,7 @@ export default function SignupPage() {
     })
 
     if (error) {
-      setError(error.message)
+      setError((error as any).message)
       setLoading(false)
     } else if (data.user) {
       // Check if email confirmation is required
@@ -89,7 +89,7 @@ export default function SignupPage() {
     })
 
     if (error) {
-      setError(error.message)
+      setError((error as any).message)
     }
   }
 

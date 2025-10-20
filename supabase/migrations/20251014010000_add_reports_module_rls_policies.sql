@@ -12,6 +12,9 @@
 -- =============================================
 
 -- SELECT: Users can view report templates in their workspace
+DROP POLICY IF EXISTS "Users can view report templates in their workspace" ON report_templates;
+
+DROP POLICY IF EXISTS "Users can view report templates in their workspace" ON report_templates;
 CREATE POLICY "Users can view report templates in their workspace"
     ON report_templates FOR SELECT
     USING (
@@ -19,37 +22,43 @@ CREATE POLICY "Users can view report templates in their workspace"
         is_public = true OR
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- INSERT: Users can create report templates in their workspace
+
+DROP POLICY IF EXISTS "Users can create report templates in their workspace" ON report_templates;
 CREATE POLICY "Users can create report templates in their workspace"
     ON report_templates FOR INSERT
     WITH CHECK (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- UPDATE: Users can update report templates in their workspace
+
+DROP POLICY IF EXISTS "Users can update report templates in their workspace" ON report_templates;
 CREATE POLICY "Users can update report templates in their workspace"
     ON report_templates FOR UPDATE
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- DELETE: Users can delete report templates in their workspace
+
+DROP POLICY IF EXISTS "Users can delete report templates in their workspace" ON report_templates;
 CREATE POLICY "Users can delete report templates in their workspace"
     ON report_templates FOR DELETE
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
@@ -58,42 +67,50 @@ CREATE POLICY "Users can delete report templates in their workspace"
 -- =============================================
 
 -- SELECT: Users can view data sources in their workspace
+
+DROP POLICY IF EXISTS "Users can view data sources in their workspace" ON data_sources;
 CREATE POLICY "Users can view data sources in their workspace"
     ON data_sources FOR SELECT
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- INSERT: Users can create data sources in their workspace
+
+DROP POLICY IF EXISTS "Users can create data sources in their workspace" ON data_sources;
 CREATE POLICY "Users can create data sources in their workspace"
     ON data_sources FOR INSERT
     WITH CHECK (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- UPDATE: Users can update data sources in their workspace
+
+DROP POLICY IF EXISTS "Users can update data sources in their workspace" ON data_sources;
 CREATE POLICY "Users can update data sources in their workspace"
     ON data_sources FOR UPDATE
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- DELETE: Users can delete data sources in their workspace
+
+DROP POLICY IF EXISTS "Users can delete data sources in their workspace" ON data_sources;
 CREATE POLICY "Users can delete data sources in their workspace"
     ON data_sources FOR DELETE
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
@@ -102,42 +119,50 @@ CREATE POLICY "Users can delete data sources in their workspace"
 -- =============================================
 
 -- SELECT: Users can view custom metrics in their workspace
+
+DROP POLICY IF EXISTS "Users can view custom metrics in their workspace" ON custom_metrics;
 CREATE POLICY "Users can view custom metrics in their workspace"
     ON custom_metrics FOR SELECT
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- INSERT: Users can create custom metrics in their workspace
+
+DROP POLICY IF EXISTS "Users can create custom metrics in their workspace" ON custom_metrics;
 CREATE POLICY "Users can create custom metrics in their workspace"
     ON custom_metrics FOR INSERT
     WITH CHECK (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- UPDATE: Users can update custom metrics in their workspace
+
+DROP POLICY IF EXISTS "Users can update custom metrics in their workspace" ON custom_metrics;
 CREATE POLICY "Users can update custom metrics in their workspace"
     ON custom_metrics FOR UPDATE
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- DELETE: Users can delete custom metrics in their workspace
+
+DROP POLICY IF EXISTS "Users can delete custom metrics in their workspace" ON custom_metrics;
 CREATE POLICY "Users can delete custom metrics in their workspace"
     ON custom_metrics FOR DELETE
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 

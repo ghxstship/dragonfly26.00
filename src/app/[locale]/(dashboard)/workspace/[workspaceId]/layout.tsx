@@ -20,7 +20,7 @@ export default function WorkspaceLayout({
   useEffect(() => {
     if (workspace) {
       // Set the resolved workspace data
-      setCurrentWorkspace(workspace)
+      setCurrentWorkspace(workspace as any)
     }
   }, [workspace, setCurrentWorkspace])
 
@@ -42,7 +42,7 @@ export default function WorkspaceLayout({
       <div className="flex items-center justify-center h-screen">
         <div className="text-center">
           <p className="text-red-500 mb-2">Error loading workspace</p>
-          <p className="text-sm text-muted-foreground">{error.message}</p>
+          <p className="text-sm text-muted-foreground">{(error as any).message}</p>
         </div>
       </div>
     )

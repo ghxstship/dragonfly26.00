@@ -59,7 +59,10 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
   }
 
   const getTotalValue = (stage: string) => {
-    return getJobsByStage(stage).reduce((sum: number, job: any) => sum + (job.estimated_value || 0), 0)
+    return getJobsByStage(stage).reduce((sum: number, job) => {
+      const estimatedValue = typeof (job as any).estimated_value === 'number' ? (job as any).estimated_value : 0
+      return sum + estimatedValue
+    }, 0)
   }
 
   const getPriorityColor = (priority: string) => {
@@ -80,15 +83,18 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
     return formatDateLocale(date, locale)
   }
 
-  const totalPipelineValue = jobs.reduce((sum: number, job: any) => sum + (job.estimated_value || 0), 0)
+  const totalPipelineValue = jobs.reduce((sum: number, job) => {
+    const estimatedValue = typeof (job as any).estimated_value === 'number' ? (job as any).estimated_value : 0
+    return sum + estimatedValue
+  }, 0)
 
   return (
     <div className="space-y-6">
       {/* Pipeline Stats */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.totalPipeline')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalPipeline')}</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -98,8 +104,8 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.inNegotiation')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.inNegotiation')}</CardTitle>
             <Briefcase className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -113,8 +119,8 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.winRate')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.winRate')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -128,8 +134,8 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.avgDealSize')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.avgDealSize')}</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -143,20 +149,20 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
 
       {/* Kanban Board */}
       <div className="flex gap-4 overflow-x-auto pb-4">
-        {stages.map((stage) => {
+        {stages.map((stage: any) => {
           const stageJobs = getJobsByStage(stage.id)
           const stageValue = getTotalValue(stage.id)
 
           return (
             <div key={stage.id} className="flex-shrink-0 w-80">
               <Card>
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3" aria-hidden="true">
                   <div className="flex items-center justify-between">
                     <div>
                       <CardTitle className={`text-base ${stage.color}`}>
                         {stage.name}
                       </CardTitle>
-                      <CardDescription className="text-xs mt-1">
+                      <CardDescription className="text-xs mt-1" aria-hidden="true">
                         {stageJobs.length} • {formatCurrency(stageValue)}
                       </CardDescription>
                     </div>
@@ -169,7 +175,7 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
                     </Button>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-3 max-h-[calc(100vh-400px)] overflow-y-auto">
+                <CardContent className="space-y-3 max-h-[calc(100vh-400px)] overflow-y-auto" aria-hidden="true">
                   {stageJobs.map((job: any) => (
                     <Card 
                       key={job.id} 
@@ -178,9 +184,9 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
                       tabIndex={0}
                       aria-label={t('aria.jobCard', { title: job.name })}
                     >
-                      <CardHeader className="p-3">
+                      <CardHeader className="p-3" aria-hidden="true">
                         <div className="flex items-start justify-between">
-                          <CardTitle className="text-sm font-medium line-clamp-2">
+                          <CardTitle className="text-sm font-medium line-clamp-2" aria-hidden="true">
                             {job.name}
                           </CardTitle>
                           <Button 
@@ -193,7 +199,7 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
                           </Button>
                         </div>
                       </CardHeader>
-                      <CardContent className="p-3 pt-0 space-y-2">
+                      <CardContent className="p-3 pt-0 space-y-2" aria-hidden="true">
                         {/* Company */}
                         {job.company_name && (
                           <div className="flex items-center gap-2 text-xs text-muted-foreground">

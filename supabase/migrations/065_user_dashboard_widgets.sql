@@ -35,7 +35,7 @@ CREATE POLICY "Users can view own widgets"
     ON user_dashboard_widgets
     FOR SELECT
     USING (
-        auth.uid() = user_id
+        (SELECT (SELECT auth.uid())) = user_id
     );
 
 -- Users can insert their own widgets
@@ -43,7 +43,7 @@ CREATE POLICY "Users can insert own widgets"
     ON user_dashboard_widgets
     FOR INSERT
     WITH CHECK (
-        auth.uid() = user_id
+        (SELECT (SELECT auth.uid())) = user_id
     );
 
 -- Users can update their own widgets
@@ -51,10 +51,10 @@ CREATE POLICY "Users can update own widgets"
     ON user_dashboard_widgets
     FOR UPDATE
     USING (
-        auth.uid() = user_id
+        (SELECT (SELECT auth.uid())) = user_id
     )
     WITH CHECK (
-        auth.uid() = user_id
+        (SELECT (SELECT auth.uid())) = user_id
     );
 
 -- Users can delete their own widgets
@@ -62,7 +62,7 @@ CREATE POLICY "Users can delete own widgets"
     ON user_dashboard_widgets
     FOR DELETE
     USING (
-        auth.uid() = user_id
+        (SELECT (SELECT auth.uid())) = user_id
     );
 
 -- Trigger for updated_at

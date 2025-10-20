@@ -113,7 +113,7 @@ export function TeamTab() {
   }
 
   const handleRemoveMember = (memberId: string) => {
-    setMembers(members.filter(m => m.id !== memberId))
+    setMembers(members.filter(m => (m as any).id !== memberId))
     toast({
       title: t('settings.toast.memberRemoved'),
       description: t('settings.toast.memberRemovedDesc'),
@@ -171,7 +171,7 @@ export function TeamTab() {
           <CardHeader className="pb-3">
             <CardDescription>{t('settings.teamTab.active')}</CardDescription>
             <CardTitle className="text-3xl">
-              {members.filter(m => m.status === "active").length}
+              {members.filter(m => (m as any).status === "active").length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -179,7 +179,7 @@ export function TeamTab() {
           <CardHeader className="pb-3">
             <CardDescription>{t('settings.teamTab.pending')}</CardDescription>
             <CardTitle className="text-3xl">
-              {members.filter(m => m.status === "pending").length}
+              {members.filter(m => (m as any).status === "pending").length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -200,7 +200,7 @@ export function TeamTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {members.map((member) => (
+            {members.map((member: any) => (
               <div
                 key={member.id}
                 className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
@@ -237,8 +237,8 @@ export function TeamTab() {
                     {member.role !== "owner" && (
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon">
-                            <MoreVertical className="h-4 w-4" />
+                          <Button variant="ghost" size="icon" aria-label={t('settings.team.memberActions')}>
+                            <MoreVertical className="h-4 w-4" aria-hidden="true" />
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
@@ -332,14 +332,14 @@ export function TeamTab() {
               <Input
                 type="email"
                 placeholder="colleague@example.com"
-                value={inviteEmail}
+                value={inviteEmail as any}
                 onChange={(e) => setInviteEmail(e.target.value)}
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium">Role</label>
-              <Select value={inviteRole} onValueChange={setInviteRole}>
+              <Select value={inviteRole as any} onValueChange={setInviteRole}>
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>

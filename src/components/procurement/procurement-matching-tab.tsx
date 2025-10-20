@@ -27,12 +27,12 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 interface ProcurementMatchingTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
 const getMatchStatusBadge = (status: string, t: any) => {
-  const variants: Record<string, { variant: any, icon: any, labelKey: string }> = {
+  const variants: Record<string, { variant: "default" | "destructive" | "secondary" | "outline", icon: React.ComponentType<{ className?: string }>, labelKey: string }> = {
     matched: { variant: "default", icon: CheckCircle2, labelKey: "matched" },
     partial_match: { variant: "secondary", icon: AlertTriangle, labelKey: "partial_match" },
     no_match: { variant: "destructive", icon: XCircle, labelKey: "no_match" },
@@ -44,8 +44,8 @@ const getMatchStatusBadge = (status: string, t: any) => {
   const Icon = config.icon
   
   return (
-    <Badge variant={config.variant as any} className="gap-1">
-      <Icon className="h-3 w-3" />
+    <Badge variant={config.variant} className="gap-1">
+      <Icon className="h-3 w-3" aria-hidden="true" />
       {t(config.labelKey)}
     </Badge>
   )
@@ -63,7 +63,7 @@ const getVarianceBadge = (variancePercent: number) => {
   }
 }
 
-const getPriorityBadge = (priority: string, t: any) => {
+const getPriorityBadge = (priority: string, t: (key: string) => string) => {
   const variants: Record<string, { variant: any, labelKey: string }> = {
     urgent: { variant: "destructive", labelKey: "urgent" },
     high: { variant: "default", labelKey: "high" },
@@ -107,7 +107,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
   }
 
   // Filter data
-  const filteredData = data.filter(item => {
+  const filteredData = (data as any[]).filter(item => {
     const matchesSearch = searchQuery === "" || 
       item.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.vendor?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -135,8 +135,8 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.totalMatches')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalMatches')}</CardTitle>
             <GitCompare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -146,8 +146,8 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.matched')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.matched')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-green-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -157,8 +157,8 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.partialMatch')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.partialMatch')}</CardTitle>
             <AlertTriangle className="h-4 w-4 text-yellow-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -168,8 +168,8 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.noMatch')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.noMatch')}</CardTitle>
             <XCircle className="h-4 w-4 text-red-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -179,8 +179,8 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.approved')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.approved')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-blue-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -190,8 +190,8 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('stats.totalVariance')}</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalVariance')}</CardTitle>
             <AlertTriangle className="h-4 w-4 text-orange-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -208,7 +208,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <Input
               placeholder={t('searchPlaceholder')}
-              value={searchQuery}
+              value={searchQuery as any}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-8"
               aria-label={t('aria.searchMatching')}
@@ -270,7 +270,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                 <TableHead>Payment</TableHead>
                 <TableHead>Priority</TableHead>
                 <TableHead>Assignee</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                <TableHead className="text-right" aria-hidden="true">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -286,28 +286,28 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                     <TableCell>
                       <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-2 font-medium">
-                          <Receipt className="h-4 w-4 text-muted-foreground" />
+                          <Receipt className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                           {item.invoice_number}
                         </div>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <FileText className="h-3 w-3" />
+                          <FileText className="h-3 w-3" aria-hidden="true" />
                           {item.po_number}
                         </div>
                       </div>
                     </TableCell>
-                    <TableCell className="font-medium">{item.vendor}</TableCell>
+                    <TableCell className="font-medium" aria-hidden="true">{item.vendor}</TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2 text-sm">
                         <div className="flex items-center gap-1">
-                          <FileText className="h-3 w-3 text-blue-600" />
+                          <FileText className="h-3 w-3 text-blue-600" aria-hidden="true" />
                           <span>PO</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Package className="h-3 w-3 text-green-600" />
+                          <Package className="h-3 w-3 text-green-600" aria-hidden="true" />
                           <span>REC</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Receipt className="h-3 w-3 text-purple-600" />
+                          <Receipt className="h-3 w-3 text-purple-600" aria-hidden="true" />
                           <span>INV</span>
                         </div>
                       </div>
@@ -345,8 +345,8 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                       )}
                     </TableCell>
                     <TableCell>{getPriorityBadge(item.priority, t)}</TableCell>
-                    <TableCell className="text-sm text-muted-foreground">{item.assignee_name}</TableCell>
-                    <TableCell className="text-right">
+                    <TableCell className="text-sm text-muted-foreground" aria-hidden="true">{item.assignee_name}</TableCell>
+                    <TableCell className="text-right" aria-hidden="true">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button variant="ghost" size="sm">Actions</Button>
@@ -357,14 +357,14 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                           <DropdownMenuItem>View Details</DropdownMenuItem>
                           <DropdownMenuItem>Review Variance</DropdownMenuItem>
                           {!item.approved_for_payment && (
-                            <DropdownMenuItem className="text-green-600">
+                            <DropdownMenuItem className="text-green-600" aria-hidden="true">
                               <CheckCircle2 className="h-4 w-4 mr-2" />
                               Approve Payment
                             </DropdownMenuItem>
                           )}
                           <DropdownMenuSeparator />
-                          <DropdownMenuItem className="text-red-600">
-                            <XCircle className="h-4 w-4 mr-2" />
+                          <DropdownMenuItem className="text-red-600" aria-hidden="true">
+                            <XCircle className="h-4 w-4 mr-2" aria-hidden="true" />
                             Reject
                           </DropdownMenuItem>
                         </DropdownMenuContent>

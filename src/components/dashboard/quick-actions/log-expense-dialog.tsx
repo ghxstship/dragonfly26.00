@@ -86,11 +86,11 @@ export function LogExpenseDialog({ open, onOpenChange, workspaceId, userId, onSu
         title: "Expense logged successfully",
         description: `$${formData.amount} expense has been submitted for approval.`,
       })
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error logging expense:', error)
       toast({
         title: "Failed to log expense",
-        description: error instanceof Error ? error.message : "Please try again.",
+        description: error instanceof Error ? (error as any).message : "Please try again.",
         variant: "destructive",
       })
     } finally {
@@ -175,7 +175,7 @@ export function LogExpenseDialog({ open, onOpenChange, workspaceId, userId, onSu
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {categories.map((cat) => (
+                {categories.map((cat: any) => (
                   <SelectItem key={cat.value} value={cat.value}>
                     {cat.label}
                   </SelectItem>

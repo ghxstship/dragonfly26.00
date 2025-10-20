@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
+import { useReportsData } from "@/hooks/use-reports-data"
 
 const operationalReports = [
   {
@@ -75,7 +76,7 @@ const operationalReports = [
 ]
 
 interface ReportsOperationalTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -144,7 +145,7 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
 
       {/* Operational Reports Grid */}
       <div className="grid gap-4">
-        {operationalReports.map((report) => (
+        {operationalReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Operational report: ${t(report.titleKey)}`}>
             <CardHeader>
               <div className="flex items-center justify-between">

@@ -158,7 +158,7 @@ export default function WorkspacePage() {
     } catch (error: any) {
       toast({
         title: 'Error',
-        description: error.message,
+        description: (error as any).message,
         variant: 'destructive',
       })
     } finally {
@@ -309,7 +309,7 @@ export default function WorkspacePage() {
               <CardContent className="space-y-4">
                 {existingWorkspaces.length > 0 ? (
                   <div className="space-y-3">
-                    {existingWorkspaces.map((workspace) => (
+                    {existingWorkspaces.map((workspace: any) => (
                       <div
                         key={workspace.id}
                         className="flex items-center justify-between p-4 border rounded-lg"

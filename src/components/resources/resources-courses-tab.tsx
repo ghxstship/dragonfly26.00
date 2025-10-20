@@ -74,7 +74,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Enrolled</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('enrolled')}</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -94,7 +94,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
             <div className="text-2xl font-bold text-green-600">
               {courses.filter((c: any) => c.is_completed).length}
             </div>
-            <p className="text-xs text-muted-foreground">Finished</p>
+            <p className="text-xs text-muted-foreground">{t('finished')}</p>
           </CardContent>
         </Card>
 
@@ -117,7 +117,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
         <Input
           placeholder={t('searchCourses')}
-          value={searchQuery}
+          value={searchQuery as any}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-9"
         />
@@ -181,7 +181,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 )}
                 {course.video_count && (
                   <div className="flex items-center gap-1">
-                    <Video className="h-3 w-3" />
+                    <Video className="h-3 w-3"  aria-hidden="true" />
                     <span>{course.video_count} videos</span>
                   </div>
                 )}
@@ -222,7 +222,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
               {course.progress !== undefined && course.is_enrolled && (
                 <div className="space-y-1">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-muted-foreground">Progress</span>
+                    <span className="text-muted-foreground">{t('progress')}</span>
                     <span className="font-medium">{course.progress}%</span>
                   </div>
                   <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">

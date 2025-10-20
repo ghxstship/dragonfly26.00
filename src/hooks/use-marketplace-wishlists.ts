@@ -56,7 +56,7 @@ export function useWishlists() {
 
       setWishlists(wishlistsWithCounts)
       return wishlistsWithCounts
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -86,7 +86,7 @@ export function useWishlists() {
 
       await fetchWishlists()
       return data
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -117,7 +117,7 @@ export function useWishlists() {
       if (addError) throw addError
 
       await fetchWishlists()
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -146,7 +146,7 @@ export function useWishlists() {
       if (removeError) throw removeError
 
       await fetchWishlists()
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -170,7 +170,7 @@ export function useWishlists() {
       if (fetchError) throw fetchError
 
       return data || []
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -196,7 +196,7 @@ export function useWishlists() {
       const { data } = await query
 
       return data?.map(item => item.wishlist_id) || []
-    } catch (err) {
+    } catch (err: any) {
       return []
     }
   }

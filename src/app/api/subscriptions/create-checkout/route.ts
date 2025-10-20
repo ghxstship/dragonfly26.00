@@ -104,7 +104,7 @@ export async function POST(request: Request) {
   } catch (error: any) {
     console.error('Checkout error:', error)
     return NextResponse.json(
-      { error: error.message || 'Failed to process request' },
+      { error: (error as any).message || 'Failed to process request' },
       { status: 500 }
     )
   }

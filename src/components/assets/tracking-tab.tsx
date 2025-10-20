@@ -19,7 +19,7 @@ import {
   Filter,
   Calendar
 } from "lucide-react"
-import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
+import { DataTableOrganism } from "@/components/organisms"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
@@ -53,74 +53,63 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
   }
 
   // Schema for tracking table
-  const trackingSchema: any[] = [
+  const trackingSchema = [
     {
-      id: 'asset_name',
-      name: 'asset_name',
+      key: 'asset_name',
       label: 'Asset',
-      type: 'text',
-      render: (value: string, item: any) => (
+      render: (value: any, item: any) => (
         <div>
-          <div className="font-medium">{value}</div>
-          <div className="text-xs text-muted-foreground">{item.asset_tag || 'N/A'}</div>
+          <div className="font-medium">{value as string}</div>
+          <div className="text-xs text-muted-foreground">{(item as any).asset_tag || 'N/A'}</div>
         </div>
       )
     },
     {
-      id: 'status',
-      name: 'status',
+      key: 'status',
       label: 'Status',
-      type: 'select',
-      render: (value: string) => (
-        <Badge className={getStatusColor(value)}>
-          {value?.replace(/_/g, ' ')}
+      render: (value: any) => (
+        <Badge className={getStatusColor(value as string)}>
+          {(value as string)?.replace(/_/g, ' ')}
         </Badge>
       )
     },
     {
-      id: 'location',
-      name: 'location',
+      key: 'location',
       label: 'Location',
-      type: 'text',
-      render: (value: string) => (
+      render: (value: any) => (
         <div className="flex items-center gap-1">
           <MapPin className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
-          <span>{value || 'Unknown'}</span>
+          <span>{(value as string) || 'Unknown'}</span>
         </div>
       )
     },
     {
-      id: 'assigned_to',
-      name: 'assigned_to',
+      key: 'assigned_to',
       label: 'Assigned To',
-      type: 'text',
       render: (value: any) => {
         if (!value) return <span className="text-muted-foreground">-</span>
+        const assignee = value as any
         return (
           <div className="flex items-center gap-1">
             <User className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
-            <span>{value.first_name} {value.last_name}</span>
+            <span>{assignee.first_name} {assignee.last_name}</span>
           </div>
         )
       }
     },
     {
-      id: 'checked_out_at',
-      name: 'checked_out_at',
+      key: 'checked_out_at',
       label: 'Checked Out',
-      type: 'date',
-      render: (value: string) => value ? new Date(value).toLocaleDateString() : '-'
+      render: (value: any) => value ? new Date(value as string).toLocaleDateString() : '-'
     },
     {
-      id: 'expected_return',
-      name: 'expected_return',
+      key: 'expected_return',
       label: 'Expected Return',
-      type: 'date',
-      render: (value: string, item: any) => {
+      render: (value: any, item: any) => {
         if (!value) return '-'
-        const returnDate = new Date(value)
+        const returnDate = new Date(value as string)
         const today = new Date()
-        const isOverdue = returnDate < today && item.status === 'checked_out'
+        const isOverdue = returnDate < today && (item as any).status === 'checked_out'
         return (
           <div className={isOverdue ? 'text-red-600 font-medium' : ''}>
             {returnDate.toLocaleDateString()}
@@ -130,13 +119,15 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
       }
     },
     {
-      id: 'days_out',
-      name: 'days_out',
+      key: 'days_out',
       label: 'Days Out',
-      type: 'number',
       render: (value: any, item: any) => {
-        if (!item.checked_out_at) return '-'
-        const daysOut = Math.floor((new Date().getTime() - new Date(item.checked_out_at).getTime()) / (1000 * 60 * 60 * 24))
+        const row = item as any
+        if (!row.checked_out_at) return '-'
+        const checkedOutDate = typeof row.checked_out_at === 'string' || typeof row.checked_out_at === 'number' 
+          ? new Date(row.checked_out_at)
+          : new Date()
+        const daysOut = Math.floor((new Date().getTime() - checkedOutDate.getTime()) / (1000 * 60 * 60 * 24))
         return <span>{daysOut} days</span>
       }
     },
@@ -144,13 +135,13 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
 
   // Filter data
   const filteredData = statusFilter
-    ? trackingData.filter((item: any) => item.status === statusFilter)
+    ? trackingData.filter((item: any) => (item as any).status === statusFilter)
     : trackingData
 
   // Calculate metrics
-  const checkedOut = trackingData.filter((item: any) => item.status === 'checked_out').length
-  const inTransit = trackingData.filter((item: any) => item.status === 'in_transit').length
-  const available = trackingData.filter((item: any) => item.status === 'available').length
+  const checkedOut = trackingData.filter((item: any) => (item as any).status === 'checked_out').length
+  const inTransit = trackingData.filter((item: any) => (item as any).status === 'in_transit').length
+  const available = trackingData.filter((item: any) => (item as any).status === 'available').length
   const overdue = trackingData.filter((item: any) => {
     if (item.status !== 'checked_out' || !item.expected_return) return false
     return new Date(item.expected_return) < new Date()
@@ -207,22 +198,14 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
       </div>
 
       {/* Tracking Table */}
-      <EnhancedTableView
+      <DataTableOrganism
         data={filteredData}
-        schema={trackingSchema}
-        moduleId={moduleId}
-        tabSlug={tabSlug}
-        workspaceId={workspaceId}
-        onRefresh={() => window.location.reload()}
-        onUpdate={async (id: string, updates: any) => {
-          // Update logic here
-          console.log('Update:', id, updates)
-        }}
-        onDelete={async (id: string) => {
-          // Delete logic here
-          console.log('Delete:', id)
-        }}
+        columns={trackingSchema}
         loading={loading}
+        searchable={true}
+        searchPlaceholder="Search assets..."
+        sortable={true}
+        emptyMessage="No tracking data found"
       />
 
       {/* Recent Check-ins/Check-outs */}

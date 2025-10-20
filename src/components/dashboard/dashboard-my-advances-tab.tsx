@@ -17,7 +17,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
   
 
   
-  const advancesList = advances.map(adv => ({
+  const advancesList = advances.map((adv: any) => ({
     id: adv.id,
     title: adv.asset_item || 'Advance Request',
     project: adv.production?.name || 'No Project',
@@ -216,7 +216,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {advancesList.map((advance) => {
+            {advancesList.map((advance: any) => {
               const StatusIcon = getStatusIcon(advance.status)
               const CategoryIcon = getCategoryIcon(advance.category)
               return (
@@ -310,7 +310,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                       )}
                     </div>
 
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" aria-label="View advance details">
                       <FileText className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </div>

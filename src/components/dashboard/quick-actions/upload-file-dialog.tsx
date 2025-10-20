@@ -106,11 +106,11 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
         title: "File uploaded successfully",
         description: `${selectedFile.name} (${formatFileSize(selectedFile.size)}) has been uploaded.`,
       })
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error uploading file:', error)
       toast({
         title: "Failed to upload file",
-        description: error instanceof Error ? error.message : "Please try again.",
+        description: error instanceof Error ? (error as any).message : "Please try again.",
         variant: "destructive",
       })
     } finally {
@@ -203,7 +203,7 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {categories.map((cat) => (
+                {categories.map((cat: any) => (
                   <SelectItem key={cat.value} value={cat.value}>
                     {cat.label}
                   </SelectItem>

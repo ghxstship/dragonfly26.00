@@ -175,7 +175,7 @@ export class StripeService {
       return await stripe.invoices.retrieveUpcoming({
         customer: customerId,
       })
-    } catch (error) {
+    } catch (error: any) {
       // No upcoming invoice
       return null
     }

@@ -14,7 +14,7 @@ import {
   TrendingUp
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
-import { EnhancedTableView } from "@/components/shared/enhanced-table-view"
+import { DataTableOrganism } from "@/components/organisms"
 import { billingSchema } from "@/lib/schemas/admin-schemas"
 import type { DataItem } from "@/types"
 
@@ -74,7 +74,7 @@ export function BillingTab() {
     },
   ])
 
-  const handleCreate = async (data: Record<string, any>) => {
+  const handleCreate = async (data: Record<string, unknown>) => {
     const now = new Date().toISOString()
     const newInvoice: DataItem = {
       id: String(invoices.length + 1),
@@ -87,13 +87,13 @@ export function BillingTab() {
     toast({ title: t('admin.toast.invoiceCreated') })
   }
 
-  const handleUpdate = async (id: string, updates: Record<string, any>) => {
+  const handleUpdate = async (id: string, updates: Record<string, unknown>) => {
     setInvoices(invoices.map(inv => inv.id === id ? { ...inv, ...updates } : inv))
     toast({ title: t('admin.toast.invoiceUpdated') })
   }
 
   const handleDelete = async (id: string) => {
-    setInvoices(invoices.filter(inv => inv.id !== id))
+    setInvoices(invoices.filter(inv => (inv as any).id !== id))
     toast({ title: t('admin.toast.invoiceDeleted') })
   }
 
@@ -197,16 +197,18 @@ export function BillingTab() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <EnhancedTableView
-            data={invoices}
-            schema={billingSchema.fields}
-            moduleId="admin"
-            tabSlug="billing"
-            workspaceId={''}
-            onCreate={handleCreate}
-            onUpdate={handleUpdate}
-            onDelete={handleDelete}
-            loading={false}
+          <DataTableOrganism
+            {...{
+              data: invoices,
+              schema: billingSchema.fields,
+              moduleId: "admin",
+              tabSlug: "billing",
+              workspaceId: '',
+              onCreate: handleCreate,
+              onUpdate: handleUpdate,
+              onDelete: handleDelete,
+              loading: false
+            } as any}
           />
         </CardContent>
       </Card>

@@ -26,6 +26,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useCommunityData } from "@/hooks/use-community-data"
 
 interface StudiosTabProps {
   data?: any[]
@@ -50,7 +51,9 @@ interface Studio {
   joined?: boolean
 }
 
-export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
+export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosTabProps) {
+  const { posts, loading: liveLoading } = useCommunityData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('community.studios')
   const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
@@ -61,23 +64,26 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
   // Transform and update studios when data changes
   useEffect(() => {
     if (data && data.length > 0) {
-      const transformed: Studio[] = data.map((item: any) => ({
-        id: item.id,
-        name: item.name || 'Unnamed Studio',
-        type: 'page', // Companies are treated as pages
-        category: item.industry || 'Professional',
-        description: item.description || 'No description available',
-        image: item.logo_url,
-        coverImage: undefined,
-        members: 0, // Not tracked yet
-        posts: 0, // Not tracked yet
-        visibility: 'public',
-        verified: false,
-        role: undefined,
-        recentActivity: item.updated_at ? `Updated ${new Date(item.updated_at).toLocaleDateString()}` : 'No recent activity',
-        tags: item.industry ? [item.industry] : [],
-        joined: false
-      }))
+      const transformed: Studio[] = data.map((item: any) => {
+        const record = item as any
+        return {
+          id: record.id,
+          name: record.name || 'Unnamed Studio',
+          type: 'page', // Companies are treated as pages
+          category: record.industry || 'Professional',
+          description: record.description || 'No description available',
+          image: record.logo_url,
+          coverImage: undefined,
+          members: 0, // Not tracked yet
+          posts: 0, // Not tracked yet
+          visibility: 'public',
+          verified: false,
+          role: undefined,
+          recentActivity: record.updated_at ? `Updated ${new Date(record.updated_at).toLocaleDateString()}` : 'No recent activity',
+          tags: record.industry ? [record.industry] : [],
+          joined: false
+        }
+      })
       setStudios(transformed)
     }
   }, [data])
@@ -107,7 +113,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
   })
 
   const myStudiosCount = studios.filter(s => s.joined).length
-  const totalMembers = studios.filter(s => s.joined).reduce((acc: any, s: any) => acc + s.members, 0)
+  const totalMembers = studios.filter(s => s.joined).reduce((acc: number, s: Studio) => acc + s.members, 0)
 
   return (
     <div className="space-y-6">
@@ -115,11 +121,11 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">My Studios</div>
+            <div className="text-sm font-medium">{t('myStudios')}</div>
             <Building2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{myStudiosCount}</div>
+            <div className="text-2xl font-bold">{myStudiosCount as any}</div>
             <p className="text-xs text-muted-foreground">Pages & groups</p>
           </CardContent>
         </Card>
@@ -137,7 +143,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Suggestions</div>
+            <div className="text-sm font-medium">{t('suggestions')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -150,8 +156,8 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Activity</div>
-            <MessageSquare className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('activity')}</div>
+            <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">847</div>
@@ -182,16 +188,16 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
                 placeholder={t('searchStudios')}
-                value={searchQuery}
+                value={searchQuery as any}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
             </div>
-            <Tabs value={filter} onValueChange={(v) => setFilter(v as any)}>
+            <Tabs value={filter as any} onValueChange={(v) => setFilter(v as any)}>
               <TabsList>
                 <TabsTrigger value="all">{t('all')}</TabsTrigger>
-                <TabsTrigger value="my-studios">My Studios</TabsTrigger>
-                <TabsTrigger value="suggested">Suggested</TabsTrigger>
+                <TabsTrigger value="my-studios">{t('myStudios')}</TabsTrigger>
+                <TabsTrigger value="suggested">{t('suggested')}</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
@@ -212,7 +218,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
             </CardContent>
           </Card>
         ) : (
-          filteredStudios.map((studio) => (
+          filteredStudios.map((studio: any) => (
             <Card key={studio.id} className="overflow-hidden hover:shadow-md transition-shadow">
               <CardContent className="p-0">
                 {/* Cover Image */}
@@ -252,9 +258,9 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
                             </Badge>
                             <span className="flex items-center gap-1">
                               {studio.visibility === "public" ? (
-                                <Globe className="h-3 w-3" />
+                                <Globe className="h-3 w-3"  aria-hidden="true" />
                               ) : (
-                                <Lock className="h-3 w-3" />
+                                <Lock className="h-3 w-3"  aria-hidden="true" />
                               )}
                               {studio.visibility === "public" ? t('public') : t('private')}
                             </span>
@@ -280,7 +286,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
                           <span className="text-muted-foreground">members</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <MessageSquare className="h-4 w-4 text-muted-foreground" />
+                          <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
                           <span className="font-medium">{studio.posts.toLocaleString()}</span>
                           <span className="text-muted-foreground">posts</span>
                         </div>
@@ -293,7 +299,7 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
 
                       {/* Tags */}
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {studio.tags.map((tag) => (
+                        {studio.tags.map((tag: any) => (
                           <Badge key={tag} variant="outline" className="text-xs">
                             {tag}
                           </Badge>
@@ -311,16 +317,16 @@ export function StudiosTab({ data = [], loading = false }: StudiosTabProps) {
                         {studio.joined ? (
                           <>
                             <Button variant="outline" size="sm">
-                              <MessageSquare className="h-4 w-4 mr-2" />
+                              <MessageSquare className="h-4 w-4 mr-2"  aria-hidden="true" />
                               View Posts
                             </Button>
                             <Button variant="outline" size="sm">
-                              <Bell className="h-4 w-4 mr-2" />
+                              <Bell className="h-4 w-4 mr-2"  aria-hidden="true" />
                               Notifications
                             </Button>
                             {studio.role === "owner" || studio.role === "admin" ? (
                               <Button variant="outline" size="sm">
-                                <Settings className="h-4 w-4 mr-2" />
+                                <Settings className="h-4 w-4 mr-2"  aria-hidden="true" />
                                 Manage
                               </Button>
                             ) : (

@@ -461,16 +461,16 @@ CREATE POLICY "User role assignments viewable by organization members"
   ON user_role_assignments FOR SELECT
   USING (
     organization_id IN (
-      SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+      SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
     )
-    OR user_id = auth.uid() -- Users can always see their own role assignments
+    OR user_id = (SELECT (SELECT auth.uid())) -- Users can always see their own role assignments
   );
 
 -- Only admins can modify role assignments
 CREATE POLICY "Only admins can modify role assignments"
   ON user_role_assignments FOR ALL
   USING (
-    user_has_permission(auth.uid(), 'users.assign_roles', workspace_id)
+    user_has_permission((SELECT auth.uid()), 'users.assign_roles', workspace_id)
   );
 
 -- =====================================================

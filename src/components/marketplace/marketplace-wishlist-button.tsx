@@ -137,7 +137,7 @@ export function WishlistButton({
               {productName ? `Add "${productName}" to` : 'Add to wishlist'}
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            {mockWishlists.map((wishlist) => (
+            {mockWishlists.map((wishlist: any) => (
               <DropdownMenuItem
                 key={wishlist.id}
                 onClick={() => toggleWishlist(wishlist.id)}
@@ -179,7 +179,7 @@ export function WishlistButton({
                 <Input
                   id="wishlist-name"
                   placeholder="e.g., Summer Tour Equipment"
-                  value={newWishlistName}
+                  value={newWishlistName as any}
                   onChange={(e) => setNewWishlistName(e.target.value)}
                   autoFocus
                 />
@@ -189,7 +189,7 @@ export function WishlistButton({
                 <Input
                   id="wishlist-description"
                   placeholder={t('marketplace.wishlist.descriptionPlaceholder')}
-                  value={newWishlistDescription}
+                  value={newWishlistDescription as any}
                   onChange={(e) => setNewWishlistDescription(e.target.value)}
                 />
               </div>

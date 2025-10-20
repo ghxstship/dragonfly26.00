@@ -55,7 +55,7 @@ export function useGiftCardValidation() {
       }
 
       return giftCard
-    } catch (err) {
+    } catch (err: any) {
       const error = err as Error
       setError(error)
       throw error
@@ -88,7 +88,7 @@ export function useGiftCardValidation() {
       // update the current_balance and status of the gift card
 
       return true
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -114,7 +114,7 @@ export function useGiftCardValidation() {
       if (fetchError) throw fetchError
 
       return giftCards || []
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {

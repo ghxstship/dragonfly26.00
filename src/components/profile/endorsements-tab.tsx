@@ -173,10 +173,10 @@ export function EndorsementsTab() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {skillEndorsements.sort((a, b) => b.count - a.count)[0]?.skill.split(" ")[0]}
+              {skillEndorsements.sort((a: any, b: any) => b.count - a.count)[0]?.skill.split(" ")[0]}
             </div>
             <p className="text-xs text-muted-foreground">
-              {skillEndorsements.sort((a, b) => b.count - a.count)[0]?.count} endorsements
+              {skillEndorsements.sort((a: any, b: any) => b.count - a.count)[0]?.count} endorsements
             </p>
           </CardContent>
         </Card>
@@ -189,7 +189,7 @@ export function EndorsementsTab() {
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-2 gap-4">
-            {skillEndorsements.map((skillEndorsement) => (
+            {skillEndorsements.map((skillEndorsement: any) => (
               <div
                 key={skillEndorsement.skill}
                 className="flex items-start justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
@@ -222,7 +222,7 @@ export function EndorsementsTab() {
           <div className="pt-4">
             <Input
               placeholder={t('profile.endorsements.searchPlaceholder')}
-              value={searchQuery}
+              value={searchQuery as any}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
@@ -233,7 +233,7 @@ export function EndorsementsTab() {
               {t('profile.endorsements.noEndorsements')}
             </p>
           ) : (
-            filteredEndorsements.map((endorsement) => (
+            filteredEndorsements.map((endorsement: any) => (
               <div key={endorsement.id} className="border-b pb-6 last:border-0">
                 <div className="flex gap-4">
                   <Avatar className="h-12 w-12">
@@ -241,7 +241,7 @@ export function EndorsementsTab() {
                     <AvatarFallback>
                       {endorsement.endorserName
                         .split(" ")
-                        .map((n) => n[0])
+                        .map((n: any) => n[0])
                         .join("")}
                     </AvatarFallback>
                   </Avatar>

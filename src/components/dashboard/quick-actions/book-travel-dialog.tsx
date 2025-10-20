@@ -78,11 +78,11 @@ export function BookTravelDialog({ open, onOpenChange, workspaceId, userId, onSu
         title: "Travel request submitted",
         description: `Your travel request to ${formData.destination} has been submitted for approval.`,
       })
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error booking travel:', error)
       toast({
         title: "Failed to submit travel request",
-        description: error instanceof Error ? error.message : "Please try again.",
+        description: error instanceof Error ? (error as any).message : "Please try again.",
         variant: "destructive",
       })
     } finally {

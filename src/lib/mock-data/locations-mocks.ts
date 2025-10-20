@@ -173,7 +173,7 @@ export const mockLocations = [
       dock_doors: 8,
       loading_restrictions: 'Advance logistics plan required',
       parking_spaces: 50,
-      access_hours: '24/7 during event setup',
+      access_hours: '24/7 during event setUp',
     },
     power: {
       available: true,
@@ -283,7 +283,7 @@ export const mockLocationBookings = [
       email: 'john.doe@festival.com',
       phone: '+1 (555) 123-4567',
     },
-    notes: 'Multi-day festival setup and performances',
+    notes: 'Multi-day festival setUp and performances',
     created_at: new Date(Date.now() - 7776000000).toISOString(),
     workspace_id: 'demo-workspace',
   },

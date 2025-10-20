@@ -32,7 +32,7 @@ export function useCatalogSearch(
   const [query, setQuery] = useState(initialQuery)
   const [results, setResults] = useState<CatalogSearchResult[]>([])
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<any>(null)
+  const [error, setError] = useState<unknown>(null)
 
   // Debounced search
   useEffect(() => {
@@ -115,7 +115,7 @@ export function useCatalogAutocomplete(
 export function useCatalogBrowse(category?: string, subcategory?: string) {
   const [items, setItems] = useState<CatalogAsset[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<any>(null)
+  const [error, setError] = useState<unknown>(null)
 
   useEffect(() => {
     async function fetchItems() {
@@ -147,7 +147,7 @@ export function useCatalogCategories() {
     item_count: number
   }>>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<any>(null)
+  const [error, setError] = useState<unknown>(null)
 
   useEffect(() => {
     async function fetchCategories() {
@@ -181,7 +181,7 @@ export function useCatalogStatistics() {
     avg_related_names_per_item: number
   } | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<any>(null)
+  const [error, setError] = useState<unknown>(null)
 
   useEffect(() => {
     async function fetchStatistics() {
@@ -207,7 +207,7 @@ export function useCatalogStatistics() {
 export function useCatalogItemsByCategory(assetCategory: string) {
   const [items, setItems] = useState<CatalogAsset[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<any>(null)
+  const [error, setError] = useState<unknown>(null)
 
   useEffect(() => {
     async function fetchItems() {
@@ -236,7 +236,7 @@ export function useCatalogItemsByCategory(assetCategory: string) {
 export function useAssetCategories() {
   const [categories, setCategories] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<any>(null)
+  const [error, setError] = useState<unknown>(null)
 
   useEffect(() => {
     async function fetchCategories() {
@@ -262,7 +262,7 @@ export function useAssetCategories() {
 export function useIndustryTags() {
   const [tags, setTags] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<any>(null)
+  const [error, setError] = useState<unknown>(null)
 
   useEffect(() => {
     async function fetchTags() {

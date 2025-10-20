@@ -138,7 +138,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {webhook.events.map((event) => (
+                  {webhook.events.map((event: any) => (
                     <Badge key={event} variant="outline">
                       {event}
                     </Badge>
@@ -169,13 +169,13 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
           </TabsContent>
 
           <TabsContent value="logs" className="space-y-4">
-            {mockDeliveries.map((delivery) => (
+            {mockDeliveries.map((delivery: any) => (
               <Card key={delivery.id}>
                 <CardContent className="p-4">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <Badge variant="outline">{delivery.event_type}</Badge>
-                      {delivery.status === "success" ? (
+                      {(delivery as any).status === "success" ? (
                         <Badge variant="default" className="bg-green-600">
                           <CheckCircle2 className="h-3 w-3 mr-1" />
                           Success

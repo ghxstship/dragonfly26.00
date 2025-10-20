@@ -21,8 +21,8 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
     id: travel.id,
     title: travel.title || 'Travel',
     destination: travel.destination || 'TBD',
-    departureDate: new Date(travel.departure_date).toLocaleDateString(),
-    returnDate: new Date(travel.return_date).toLocaleDateString(),
+    departureDate: travel.departure_date ? new Date(travel.departure_date).toLocaleDateString() : 'TBD',
+    returnDate: travel.return_date ? new Date(travel.return_date).toLocaleDateString() : 'TBD',
     status: travel.status || 'pending',
     type: travel.type || 'Other',
     purpose: travel.purpose || '',
@@ -132,7 +132,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {travelsList.map((travel) => (
+            {travelsList.map((travel: any) => (
               <div
                 key={travel.id}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"

@@ -135,7 +135,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
           </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {tasksList.map((task) => (
+            {tasksList.map((task: any) => (
               <div
                 key={task.id}
                 role="button"
@@ -148,7 +148,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
                     router.push(`/workspace/${workspaceId}/projects/tasks?id=${task.id}`)
                   }
                 }}
-                aria-label={t('viewTask', { title: task.title })}
+                aria-label={t('viewTask', { title: task.title || 'Task' })}
               >
                 <div className="flex items-start gap-4">
                   <Checkbox 

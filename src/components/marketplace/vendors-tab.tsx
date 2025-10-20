@@ -7,26 +7,39 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Store, Star, ShieldCheck, Award, TrendingUp, Clock, Search, MessageCircle, Plus } from "lucide-react"
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { useTranslations } from 'next-intl'
 
+interface Vendor {
+  id: string
+  name: string
+  status?: string
+  rating?: number
+  products_count?: number
+  response_time?: string
+  [key: string]: any
+}
+
 interface VendorsTabProps {
-  data?: any[]
+  data?: Vendor[]
   loading?: boolean
 }
 
-export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
+export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsTabProps) {
+  const { vendors, loading: liveLoading } = useMarketplaceData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.vendors')
   const tCommon = useTranslations('common')
-  const vendorsData = data
+  const vendorsData: Vendor[] = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "verified":
-        return <Badge className="bg-green-600"><ShieldCheck className="h-3 w-3 mr-1" />Verified</Badge>
+        return <Badge className="bg-green-600"><ShieldCheck className="h-3 w-3 mr-1"  aria-hidden="true" />{t('verified')}</Badge>
       case "certified":
-        return <Badge className="bg-blue-600"><Award className="h-3 w-3 mr-1" aria-hidden="true" />Certified</Badge>
+        return <Badge className="bg-blue-600"><Award className="h-3 w-3 mr-1" aria-hidden="true" />{t('certified')}</Badge>
       case "featured":
-        return <Badge className="bg-purple-600"><Star className="h-3 w-3 mr-1" aria-hidden="true" />Featured</Badge>
+        return <Badge className="bg-purple-600"><Star className="h-3 w-3 mr-1" aria-hidden="true" />{t('featured')}</Badge>
       case "active":
         return <Badge variant="outline">{t('active')}</Badge>
       default:
@@ -61,8 +74,8 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="verified">Verified Only</SelectItem>
-            <SelectItem value="certified">Certified</SelectItem>
-            <SelectItem value="featured">Featured</SelectItem>
+            <SelectItem value="certified">{t('certified')}</SelectItem>
+            <SelectItem value="featured">{t('featured')}</SelectItem>
             <SelectItem value="all-vendors">All Vendors</SelectItem>
           </SelectContent>
         </Select>
@@ -80,7 +93,7 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
 
       {/* Vendors Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {vendorsData.map((vendor) => (
+        {vendorsData.map((vendor: any) => (
           <Card key={vendor.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-start gap-4">
@@ -97,7 +110,7 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
                         {vendor.assignee_name}
                       </CardDescription>
                     </div>
-                    {getStatusBadge(vendor.status)}
+                    {getStatusBadge(vendor.status || 'active')}
                   </div>
                 </div>
               </div>
@@ -114,7 +127,7 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
                     <Star className="h-3 w-3" aria-hidden="true" />
-                    <span className="text-xs">Rating</span>
+                    <span className="text-xs">{t('rating')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
@@ -124,21 +137,21 @@ export function VendorsTab({ data = [], loading = false }: VendorsTabProps) {
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
                     <TrendingUp className="h-3 w-3" aria-hidden="true" />
-                    <span className="text-xs">Sales</span>
+                    <span className="text-xs">{t('sales')}</span>
                   </div>
                   <p className="font-semibold">{vendor.total_sales}</p>
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
                     <MessageCircle className="h-3 w-3" aria-hidden="true" />
-                    <span className="text-xs">Reviews</span>
+                    <span className="text-xs">{t('reviews')}</span>
                   </div>
                   <p className="font-semibold">{vendor.comments_count}</p>
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-1 text-muted-foreground">
                     <Clock className="h-3 w-3" aria-hidden="true" />
-                    <span className="text-xs">Response</span>
+                    <span className="text-xs">{t('response')}</span>
                   </div>
                   <p className="font-semibold text-xs">{vendor.response_time}</p>
                 </div>

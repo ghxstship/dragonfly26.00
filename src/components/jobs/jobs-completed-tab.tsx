@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
 
 interface CompletedTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -56,7 +56,7 @@ export function CompletedTab({ data, loading }: CompletedTabProps) {
       {/* Summary Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>
-          <CardContent className="pt-6">
+          <CardContent className="pt-6" aria-hidden="true">
             <div className="text-center">
               <p className="text-2xl font-bold">{items.length}</p>
               <p className="text-xs text-muted-foreground mt-1">{tCommon('summaryCards.totalItems')}</p>
@@ -64,7 +64,7 @@ export function CompletedTab({ data, loading }: CompletedTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent className="pt-6" aria-hidden="true">
             <div className="text-center">
               <p className="text-2xl font-bold text-green-600">0</p>
               <p className="text-xs text-muted-foreground mt-1">{tCommon('summaryCards.active')}</p>
@@ -72,7 +72,7 @@ export function CompletedTab({ data, loading }: CompletedTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent className="pt-6" aria-hidden="true">
             <div className="text-center">
               <p className="text-2xl font-bold text-yellow-600">0</p>
               <p className="text-xs text-muted-foreground mt-1">{tCommon('summaryCards.pending')}</p>
@@ -80,7 +80,7 @@ export function CompletedTab({ data, loading }: CompletedTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent className="pt-6" aria-hidden="true">
             <div className="text-center">
               <p className="text-2xl font-bold">0</p>
               <p className="text-xs text-muted-foreground mt-1">{tCommon('summaryCards.completed')}</p>
@@ -92,7 +92,7 @@ export function CompletedTab({ data, loading }: CompletedTabProps) {
       {/* Main Content Card */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">{t('tabs.completed')}</CardTitle>
+          <CardTitle className="text-base" aria-hidden="true">{t('tabs.completed')}</CardTitle>
           <CardDescription>{t('descriptions.completed')}</CardDescription>
         </CardHeader>
         <CardContent>

@@ -77,12 +77,12 @@ export function ProfessionalTab() {
   }
 
   const removeExperience = (id: string) => {
-    setExperiences(experiences.filter((e: any) => e.id !== id))
+    setExperiences(experiences.filter((e: any) => (e as any).id !== id))
   }
 
   const updateExperience = (id: string, field: keyof Experience, value: string | boolean) => {
     setExperiences(
-      experiences.map((exp) => (exp.id === id ? { ...exp, [field]: value } : exp))
+      experiences.map((exp: any) => (exp.id === id ? { ...exp, [field]: value } : exp))
     )
   }
 
@@ -98,12 +98,12 @@ export function ProfessionalTab() {
   }
 
   const removeEducation = (id: string) => {
-    setEducation(education.filter((e: any) => e.id !== id))
+    setEducation(education.filter((e: any) => (e as any).id !== id))
   }
 
   const updateEducation = (id: string, field: keyof Education, value: string) => {
     setEducation(
-      education.map((edu) => (edu.id === id ? { ...edu, [field]: value } : edu))
+      education.map((edu: any) => (edu.id === id ? { ...edu, [field]: value } : edu))
     )
   }
 
@@ -124,10 +124,10 @@ export function ProfessionalTab() {
         title: t('profile.success.professionalUpdated'),
         description: t('profile.success.professionalSaved'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('profile.errors.error'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {
@@ -219,7 +219,7 @@ export function ProfessionalTab() {
               {t('profile.professional.noExperience')}
             </p>
           ) : (
-            experiences.map((exp) => (
+            experiences.map((exp: any) => (
               <div key={exp.id} className="border rounded-lg p-4 space-y-4">
                 <div className="flex justify-between items-start">
                   <h4 className="font-semibold">{t('profile.professional.experienceEntry')}</h4>
@@ -335,7 +335,7 @@ export function ProfessionalTab() {
               {t('profile.professional.noEducation')}
             </p>
           ) : (
-            education.map((edu) => (
+            education.map((edu: any) => (
               <div key={edu.id} className="border rounded-lg p-4 space-y-4">
                 <div className="flex justify-between items-start">
                   <h4 className="font-semibold">{t('profile.professional.educationEntry')}</h4>

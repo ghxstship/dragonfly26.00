@@ -223,7 +223,7 @@ export function useBudgetVariance(budgetId: string) {
 
 // Hook for GL Codes
 export function useGLCodes(workspaceId: string) {
-  const [glCodes, setGLCodes] = useState<any[]>([])
+  const [glCodes, setGlCodes] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
@@ -239,7 +239,7 @@ export function useGLCodes(workspaceId: string) {
         .order('code', { ascending: true })
 
       if (!error && data) {
-        setGLCodes(data)
+        setGlCodes(data)
       }
       setLoading(false)
     }

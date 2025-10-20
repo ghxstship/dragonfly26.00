@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
+import { useReportsData } from "@/hooks/use-reports-data"
 
 const templates = [
   { 
@@ -64,7 +65,7 @@ const templates = [
 ]
 
 interface ReportsTemplatesTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -75,7 +76,7 @@ export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTempl
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {templates.map((template) => (
+        {templates.map((template: any) => (
           <Card key={template.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Template: ${t(template.nameKey)}`}>
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -88,7 +89,7 @@ export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTempl
             <CardContent>
               <div className="space-y-4">
                 <div className="flex flex-wrap gap-2">
-                  {template.tags.map((tag) => (
+                  {template.tags.map((tag: any) => (
                     <Badge key={tag} variant="outline" className="text-xs">
                       {tag}
                     </Badge>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { useTranslations } from "next-intl"
+import { useReportsData } from "@/hooks/use-reports-data"
 
 const executiveReports = [
   {
@@ -54,7 +55,7 @@ const kpiSummary = [
 ]
 
 interface ReportsExecutiveTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -71,19 +72,19 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 gap-6">
-            {kpiSummary.map((kpi: any, index: number) => (
-              <div key={index} className="space-y-2" role="article" aria-label={`KPI: ${t(kpi.nameKey)}`}>
+            {kpiSummary.map((kpi: Record<string, any>, index: number) => (
+              <div key={index} className="space-y-2" role="article" aria-label={`KPI: ${t(kpi.nameKey as string)}`}>
                 <div className="flex items-center justify-between">
                   <p className="font-medium" id={`kpi-${index}`}>{t(kpi.nameKey)}</p>
-                  <Badge variant={kpi.status === "on_track" ? "default" : "secondary"} className={kpi.status === "on_track" ? "bg-green-600" : "bg-yellow-600"} aria-label={`Status: ${kpi.status === "on_track" ? t('onTrack') : t('atRisk')}`}>
-                    {kpi.status === "on_track" ? t('onTrack') : t('atRisk')}
+                  <Badge variant={(kpi as any).status === "on_track" ? "default" : "secondary"} className={(kpi as any).status === "on_track" ? "bg-green-600" : "bg-yellow-600"} aria-label={`Status: ${(kpi as any).status === "on_track" ? t('onTrack') : t('atRisk')}`}>
+                    {(kpi as any).status === "on_track" ? t('onTrack') : t('atRisk')}
                   </Badge>
                 </div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl font-bold" aria-labelledby={`kpi-${index}`}>{kpi.value}</span>
                   <span className="text-sm text-muted-foreground" aria-label={`Target: ${kpi.target}`}>/ {kpi.target}</span>
                 </div>
-                <Progress value={kpi.progress} className="h-2" aria-label={`${t(kpi.nameKey)} progress: ${kpi.progress}%`} />
+                <Progress value={kpi.progress as number} className="h-2" aria-label={`${t(kpi.nameKey as string)} progress: ${kpi.progress}%`} />
               </div>
             ))}
           </div>
@@ -92,7 +93,7 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
 
       {/* Executive Reports List */}
       <div className="grid gap-4">
-        {executiveReports.map((report) => (
+        {executiveReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Executive report: ${t(report.titleKey)}`}>
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
@@ -111,7 +112,7 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
                     <div>
                       <p className="text-sm font-medium text-muted-foreground mb-2">{t('keyMetrics')}</p>
                       <div className="flex flex-wrap gap-2">
-                        {report.metrics.map((metric, idx) => (
+                        {report.metrics.map((metric: any, idx: number) => (
                           <Badge key={idx} variant="secondary" className="text-xs">
                             {metric}
                           </Badge>

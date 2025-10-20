@@ -63,7 +63,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
     }
   }
 
-  const chartData = progressHistory.map((p) => ({
+  const chartData = progressHistory.map((p: any) => ({
     date: new Date(p.recorded_at).toLocaleDateString(),
     value: p.value,
   }))
@@ -98,7 +98,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
                   <p className="text-sm text-muted-foreground">Complete</p>
                 </div>
               </div>
-              <Progress value={progress} className="h-3" />
+              <Progress value={progress as any} className="h-3" />
             </CardContent>
           </Card>
 
@@ -120,7 +120,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
                     <Input
                       type="number"
                       placeholder={t('goals.enterNewValue')}
-                      value={newProgress}
+                      value={newProgress as any}
                       onChange={(e) => setNewProgress(e.target.value)}
                     />
                     <Button onClick={handleUpdateProgress}>
@@ -155,7 +155,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    {progressHistory.map((p) => (
+                    {progressHistory.map((p: any) => (
                       <div key={p.id} className="flex items-center justify-between py-2 border-b last:border-0">
                         <span className="text-sm">
                           {new Date(p.recorded_at).toLocaleDateString()} {new Date(p.recorded_at).toLocaleTimeString()}

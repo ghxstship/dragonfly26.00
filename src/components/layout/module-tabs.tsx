@@ -32,15 +32,15 @@ export function ModuleTabs({ moduleSlug }: ModuleTabsProps) {
       return savedTab ? { ...registryTab, enabled: savedTab.enabled, order: savedTab.order } : registryTab
     })
     .filter(tab => tab.enabled)
-    .sort((a, b) => a.order - b.order)
+    .sort((a: any, b: any) => a.order - b.order)
 
   if (tabs.length === 0) return null
 
   return (
     <div className="border-b bg-background overflow-x-auto">
       <div className="flex items-center gap-1 px-4 min-w-max">
-        {tabs.map((tab) => {
-          const Icon = iconMap[tab.icon]
+        {tabs.map((tab: any) => {
+          const IconComponent = iconMap[tab.icon] as React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined
           const href = `/workspace/${workspaceId}/${moduleSlug}/${tab.slug}`
           const isActive = pathname === href || pathname?.endsWith(`/${tab.slug}`)
 
@@ -56,7 +56,7 @@ export function ModuleTabs({ moduleSlug }: ModuleTabsProps) {
               )}
               style={isActive ? { borderColor: tab.color } : undefined}
             >
-              {Icon && <Icon className="h-4 w-4" style={{ color: tab.color }} />}
+              {IconComponent ? <IconComponent className="h-4 w-4" style={{ color: tab.color }} /> : null}
               {tab.name}
             </Link>
           )

@@ -25,7 +25,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
   const { jobs, loading } = useMyJobs(workspaceId, userId)
   
   // Transform real jobs data
-  const jobsList = jobs.map(job => ({
+  const jobsList = jobs.map((job: any) => ({
     id: job.id,
     title: job.role || job.title || 'Untitled',
     client: job.company?.name || 'Client',
@@ -40,9 +40,9 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
   }))
   
   // Calculate stats from real data
-  const activeJobs = jobsList.filter(j => j.status === 'active').length
-  const pendingJobs = jobsList.filter(j => j.status === 'pending').length
-  const completedJobs = jobsList.filter(j => j.status === 'completed').length
+  const activeJobs = jobsList.filter(j => (j as any).status === 'active').length
+  const pendingJobs = jobsList.filter(j => (j as any).status === 'pending').length
+  const completedJobs = jobsList.filter(j => (j as any).status === 'completed').length
   
   if (loading) {
     return (
@@ -201,11 +201,11 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
                   </div>
                   
                   <div className="flex flex-col gap-2">
-                    <Button variant="ghost" size="icon">
-                      <ChevronRight className="h-4 w-4" />
+                    <Button variant="ghost" size="icon" aria-label="View job details">
+                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
                     </Button>
-                    <Button variant="ghost" size="icon">
-                      <FileText className="h-4 w-4" />
+                    <Button variant="ghost" size="icon" aria-label="View documents">
+                      <FileText className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </div>
                 </div>

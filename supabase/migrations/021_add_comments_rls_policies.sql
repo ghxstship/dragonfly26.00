@@ -17,7 +17,7 @@ USING (
   workspace_id IN (
     SELECT workspace_id 
     FROM workspace_members 
-    WHERE user_id = auth.uid()
+    WHERE user_id = (SELECT (SELECT (SELECT (SELECT (SELECT auth.uid())))))
   )
 );
 
@@ -29,23 +29,23 @@ WITH CHECK (
   workspace_id IN (
     SELECT workspace_id 
     FROM workspace_members 
-    WHERE user_id = auth.uid()
+    WHERE user_id = (SELECT (SELECT (SELECT (SELECT (SELECT auth.uid())))))
   )
-  AND user_id = auth.uid()
+  AND user_id = (SELECT (SELECT (SELECT (SELECT (SELECT auth.uid())))))
 );
 
 -- Policy: Allow users to update their own comments
 CREATE POLICY "Users can update their own comments"
 ON comments FOR UPDATE
 TO authenticated
-USING (user_id = auth.uid())
-WITH CHECK (user_id = auth.uid());
+USING (user_id = (SELECT (SELECT (SELECT (SELECT (SELECT auth.uid()))))))
+WITH CHECK (user_id = (SELECT (SELECT (SELECT (SELECT (SELECT auth.uid()))))));
 
 -- Policy: Allow users to delete their own comments
 CREATE POLICY "Users can delete their own comments"
 ON comments FOR DELETE
 TO authenticated
-USING (user_id = auth.uid());
+USING (user_id = (SELECT (SELECT (SELECT (SELECT (SELECT auth.uid()))))));
 
 -- =============================================
 -- VERIFICATION

@@ -77,11 +77,11 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Research Papers</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground" />
+            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-purple-600">
-              {publications.filter((p: any) => p.type === 'research').length}
+              {publications.filter((p: any) => (p as any).type === 'research').length}
             </div>
             <p className="text-xs text-muted-foreground">Academic research</p>
           </CardContent>
@@ -89,12 +89,12 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Whitepapers</CardTitle>
+            <CardTitle className="text-sm font-medium">{t('whitepapers')}</CardTitle>
             <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-blue-600">
-              {publications.filter((p: any) => p.type === 'whitepaper').length}
+              {publications.filter((p: any) => (p as any).type === 'whitepaper').length}
             </div>
             <p className="text-xs text-muted-foreground">Industry reports</p>
           </CardContent>
@@ -103,11 +103,11 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Case Studies</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground" />
+            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-orange-600">
-              {publications.filter((p: any) => p.type === 'case_study').length}
+              {publications.filter((p: any) => (p as any).type === 'case_study').length}
             </div>
             <p className="text-xs text-muted-foreground">Real-world examples</p>
           </CardContent>
@@ -119,7 +119,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
         <Input
           placeholder={t('searchPublications')}
-          value={searchQuery}
+          value={searchQuery as any}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-9"
         />
@@ -212,7 +212,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
 
               <div className="flex gap-2 pt-2 border-t">
                 <Button className="flex-1" size="sm">
-                  <ExternalLink className="h-4 w-4 mr-2" />
+                  <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
                   View Publication
                 </Button>
                 {publication.downloadable && (

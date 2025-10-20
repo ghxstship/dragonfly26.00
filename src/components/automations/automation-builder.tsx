@@ -49,11 +49,11 @@ export function AutomationBuilder({ open, onOpenChange, onSave }: AutomationBuil
         <div className="space-y-4 mt-4">
           <div className="space-y-2">
             <Label>Name</Label>
-            <Input value={name} onChange={(e) => setName(e.target.value)} />
+            <Input value={name as any} onChange={(e) => setName(e.target.value)} />
           </div>
           <div className="space-y-2">
             <Label>Trigger</Label>
-            <Select value={triggerType} onValueChange={(v: AutomationTriggerType) => setTriggerType(v)}>
+            <Select value={triggerType as any} onValueChange={(v: AutomationTriggerType) => setTriggerType(v)}>
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>

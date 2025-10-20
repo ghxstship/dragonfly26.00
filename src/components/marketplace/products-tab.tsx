@@ -8,18 +8,31 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Package, Heart, ShoppingCart, Star, Search, SlidersHorizontal, Grid3x3, List } from "lucide-react"
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { MarketplaceCartDrawer } from "./marketplace-cart-drawer"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
+interface Product {
+  id: string
+  name: string
+  price: number
+  status?: string
+  rating?: number
+  image?: string
+  [key: string]: any
+}
+
 interface ProductsTabProps {
-  data?: any[]
+  data?: Product[]
   loading?: boolean
 }
 
-export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
+export function ProductsTab({ data = [], loading: loadingProp = false }: ProductsTabProps) {
+  const { products, loading: liveLoading } = useMarketplaceData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.products')
   const tCommon = useTranslations('common')
-  const productsData = data
+  const productsData: Product[] = data
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [favorites, setFavorites] = useState<Set<string>>(new Set())
   const [cart, setCart] = useState<Map<string, number>>(new Map())
@@ -131,7 +144,7 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
 
       {/* Products Grid */}
       <div className={viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" : "space-y-4"}>
-        {productsData.map((product) => (
+        {productsData.map((product: any) => (
           <Card key={product.id} className="group overflow-hidden hover:shadow-lg transition-shadow">
             {viewMode === "grid" ? (
               <>
@@ -155,7 +168,7 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
 
                   {/* Status Badge */}
                   <div className="absolute top-2 left-2">
-                    {getStatusBadge(product.status)}
+                    {getStatusBadge(product.status || 'available')}
                   </div>
                 </div>
 
@@ -174,7 +187,7 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
                         <Star
                           key={i}
                           className={`h-3 w-3 ${
-                            i < Math.floor(parseFloat(product.rating || "0"))
+                            i < Math.floor(product.rating || 0)
                               ? "fill-yellow-500 text-yellow-500"
                               : "text-muted-foreground/30"
                           }`}
@@ -214,7 +227,7 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
                           <p className="font-semibold">{product.name}</p>
                           <p className="text-xs text-muted-foreground">by {product.assignee_name}</p>
                         </div>
-                        {getStatusBadge(product.status)}
+                        {getStatusBadge(product.status || 'available')}
                       </div>
                       <div className="flex items-center gap-4">
                         <div className="flex items-center gap-1">
@@ -222,7 +235,7 @@ export function ProductsTab({ data = [], loading = false }: ProductsTabProps) {
                             <Star
                               key={i}
                               className={`h-3 w-3 ${
-                                i < Math.floor(parseFloat(product.rating || "0"))
+                                i < Math.floor(product.rating || 0)
                                   ? "fill-yellow-500 text-yellow-500"
                                   : "text-muted-foreground/30"
                               }`}

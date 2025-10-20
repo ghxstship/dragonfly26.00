@@ -31,7 +31,8 @@ import {
   Mail,
   MessageSquare,
   Database,
-  Cloud
+  Cloud,
+  type LucideIcon
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 
@@ -39,7 +40,7 @@ interface Integration {
   id: string
   name: string
   description: string
-  icon: any
+  icon: LucideIcon
   category: string
   connected: boolean
   scope: "organization" | "personal"

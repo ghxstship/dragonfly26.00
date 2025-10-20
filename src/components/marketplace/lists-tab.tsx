@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { ListChecks, ShoppingCart, Heart, BarChart3, Users, Archive, Plus, Search, MoreHorizontal } from "lucide-react"
+import { useCollections } from "@/hooks/use-marketplace-collections"
 import { useTranslations } from 'next-intl'
 import {
   DropdownMenu,
@@ -13,15 +14,26 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+interface ListItem {
+  id: string
+  name: string
+  total_value?: string
+  status?: string
+  items_count?: number
+  [key: string]: any
+}
+
 interface ListsTabProps {
-  data?: any[]
+  data?: ListItem[]
   loading?: boolean
 }
 
-export function ListsTab({ data = [], loading = false }: ListsTabProps) {
+export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabProps) {
+  const { collections, loading: liveLoading } = useCollections()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.lists')
   const tCommon = useTranslations('common')
-  const listsData = data
+  const listsData: ListItem[] = data
   
   const getListIcon = (name: string) => {
     if (name.includes("Shopping Cart")) return <ShoppingCart className="h-5 w-5 text-blue-500" aria-hidden="true" />
@@ -36,11 +48,11 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
       case "active":
         return <Badge className="bg-green-600">{t('active')}</Badge>
       case "saved":
-        return <Badge className="bg-blue-600">Saved</Badge>
+        return <Badge className="bg-blue-600">{t('saved')}</Badge>
       case "shared":
-        return <Badge className="bg-purple-600"><Users className="h-3 w-3 mr-1" aria-hidden="true" />Shared</Badge>
+        return <Badge className="bg-purple-600"><Users className="h-3 w-3 mr-1" aria-hidden="true" />{t('shared')}</Badge>
       case "archived":
-        return <Badge variant="outline"><Archive className="h-3 w-3 mr-1" aria-hidden="true" />Archived</Badge>
+        return <Badge variant="outline"><Archive className="h-3 w-3 mr-1" aria-hidden="true" />{t('archived')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -60,7 +72,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
           <CardHeader className="pb-3">
             <CardDescription>{t('activeLists')}</CardDescription>
             <CardTitle className="text-3xl">
-              {listsData.filter(l => l.status === 'active').length}
+              {listsData.filter(l => (l as any).status === 'active').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -68,7 +80,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
           <CardHeader className="pb-3">
             <CardDescription>{t('sharedLists')}</CardDescription>
             <CardTitle className="text-3xl">
-              {listsData.filter(l => l.status === 'shared').length}
+              {listsData.filter(l => (l as any).status === 'shared').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -76,7 +88,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
           <CardHeader className="pb-3">
             <CardDescription>{t('totalValue')}</CardDescription>
             <CardTitle className="text-3xl">
-              ${Math.floor(listsData.reduce((sum, l) => sum + parseFloat(l.total_value?.replace(/[$,]/g, '') || '0'), 0) / 1000)}k
+              ${Math.floor(listsData.reduce((sum: any, l: any) => sum + parseFloat(l.total_value?.replace(/[$,]/g, '') || '0'), 0) / 1000)}k
             </CardTitle>
           </CardHeader>
         </Card>
@@ -90,7 +102,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
 
       {/* Lists Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {listsData.map((list) => (
+        {listsData.map((list: any) => (
           <Card key={list.id} className="hover:shadow-lg transition-shadow group">
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -105,15 +117,15 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
                 </div>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <Button variant="ghost" size="icon" className="h-8 w-8" aria-label={t('morehorizontal')}>
                       <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuItem>Edit</DropdownMenuItem>
-                    <DropdownMenuItem>Share</DropdownMenuItem>
-                    <DropdownMenuItem>Duplicate</DropdownMenuItem>
-                    <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
+                    <DropdownMenuItem>{t('edit')}</DropdownMenuItem>
+                    <DropdownMenuItem>{t('share')}</DropdownMenuItem>
+                    <DropdownMenuItem>{t('duplicate')}</DropdownMenuItem>
+                    <DropdownMenuItem className="text-destructive">{t('delete')}</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
@@ -122,7 +134,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 p-4 bg-muted/50 rounded-lg">
                 <div>
-                  <p className="text-sm text-muted-foreground">Items</p>
+                  <p className="text-sm text-muted-foreground">{t('items')}</p>
                   <p className="text-2xl font-bold">{list.items_count}</p>
                 </div>
                 <div>
@@ -133,7 +145,7 @@ export function ListsTab({ data = [], loading = false }: ListsTabProps) {
 
               {/* Status and Date */}
               <div className="flex items-center justify-between">
-                {getStatusBadge(list.status)}
+                {getStatusBadge(list.status || 'active')}
                 <p className="text-xs text-muted-foreground">
                   Updated {new Date(list.updated_at).toLocaleDateString()}
                 </p>

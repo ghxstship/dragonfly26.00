@@ -117,7 +117,7 @@ export function VariantSelector({
   return (
     <div className={className}>
       <div className="space-y-4">
-        {options.map((option) => {
+        {options.map((option: any) => {
           const key = `option${option.position}`
           return (
             <div key={option.id}>
@@ -130,7 +130,7 @@ export function VariantSelector({
                 )}
               </label>
               <div className="flex flex-wrap gap-2">
-                {option.values.map((value) => {
+                {option.values.map((value: any) => {
                   const isSelected = selectedOptions[key] === value
                   const isAvailable = isOptionAvailable(option.position, value)
                   

@@ -23,11 +23,19 @@ import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
+interface SiteMap {
+  id: string
+  name: string
+  zones?: Array<{ id: string; name: string; [key: string]: any }>
+  connections?: Array<{ id: string; [key: string]: any }>
+  [key: string]: any
+}
+
 export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.locations.site_maps')
   const tCommon = useTranslations('common')
   const { data: siteMaps, loading } = useModuleData(workspaceId, 'locations', 'site-maps')
-  const [selectedMap, setSelectedMap] = useState<any>(null)
+  const [selectedMap, setSelectedMap] = useState<SiteMap | null>(null)
   const [activeLayers, setActiveLayers] = useState<string[]>(['floor-plan'])
   const [zoom, setZoom] = useState(100)
 
@@ -123,14 +131,14 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                 <CardDescription>{selectedMap?.location}</CardDescription>
               </div>
               <div className="flex items-center gap-2">
-                <Button variant="outline" size="icon" onClick={() => setZoom(Math.max(50, zoom - 10))}>
+                <Button variant="outline" size="icon" onClick={() => setZoom(Math.max(50, zoom - 10))} aria-label="Zoom out">
                   <ZoomOut className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <span className="text-sm text-muted-foreground w-12 text-center">{zoom}%</span>
-                <Button variant="outline" size="icon" onClick={() => setZoom(Math.min(200, zoom + 10))}>
+                <Button variant="outline" size="icon" onClick={() => setZoom(Math.min(200, zoom + 10))} aria-label="Zoom in">
                   <ZoomIn className="h-4 w-4" aria-hidden="true" />
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" aria-label="Fullscreen">
                   <Maximize2 className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
@@ -156,7 +164,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   </div>
 
                   {/* Zones (would be overlaid on actual map) */}
-                  {zones.map((zone: any, index: number) => (
+                  {zones.map((zone, index: number) => (
                     <div
                       key={zone.id}
                       className="absolute border-2 border-primary bg-primary/10 rounded flex items-center justify-center cursor-pointer hover:bg-primary/20 transition-colors"
@@ -264,7 +272,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
           </CardHeader>
           <CardContent>
             <div className="flex gap-2 flex-wrap">
-              {layers.map((layer) => {
+              {layers.map((layer: any) => {
                 const Icon = layer.icon
                 const isActive = activeLayers.includes(layer.id)
                 return (

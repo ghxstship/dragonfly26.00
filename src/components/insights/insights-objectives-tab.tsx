@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { useTranslations } from "next-intl"
+import { useInsightsData } from "@/hooks/use-insights-data"
 
 const objectives = [
   {
@@ -67,7 +68,7 @@ const objectives = [
 ]
 
 interface InsightsObjectivesTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -101,7 +102,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('onTrack')}</p>
             <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
-              {objectives.filter(o => o.status === "on_track").length}
+              {objectives.filter(o => (o as any).status === "on_track").length}
             </p>
           </CardContent>
         </Card>
@@ -109,7 +110,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('atRisk')}</p>
             <p className="text-2xl font-bold mt-1 text-yellow-600" aria-live="polite">
-              {objectives.filter(o => o.status === "at_risk").length}
+              {objectives.filter(o => (o as any).status === "at_risk").length}
             </p>
           </CardContent>
         </Card>
@@ -125,7 +126,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
 
       {/* Objectives List */}
       <div className="space-y-4">
-        {objectives.map((objective) => (
+        {objectives.map((objective: any) => (
           <Card key={objective.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-start justify-between">

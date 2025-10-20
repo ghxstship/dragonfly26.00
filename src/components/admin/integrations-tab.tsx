@@ -63,7 +63,7 @@ export function IntegrationsTab() {
       </div>
 
       <div className="space-y-3">
-        {integrations.map((integration) => (
+        {integrations.map((integration: any) => (
           <Card key={integration.id}>
             <CardHeader>
               <div className="flex items-start justify-between">

@@ -117,7 +117,7 @@ export function SecurityTab() {
 
           <div className="space-y-2">
             <Label>{t('admin.securityTab.sessionTimeout')}</Label>
-            <Select value={sessionTimeout} onValueChange={setSessionTimeout}>
+            <Select value={sessionTimeout as any} onValueChange={setSessionTimeout}>
               <SelectTrigger>
                 <SelectValue />
               </SelectTrigger>
@@ -186,7 +186,7 @@ export function SecurityTab() {
         {ipRestrictionEnabled && (
           <CardContent>
             <div className="space-y-3">
-              {ipWhitelist.map((item) => (
+              {ipWhitelist.map((item: any) => (
                 <div
                   key={item.id}
                   className="flex items-center justify-between p-3 border rounded-lg"
@@ -197,8 +197,8 @@ export function SecurityTab() {
                       {item.description} • Added {item.addedAt}
                     </p>
                   </div>
-                  <Button variant="ghost" size="icon">
-                    <Trash2 className="h-4 w-4 text-destructive" />
+                  <Button variant="ghost" size="icon" aria-label={t('admin.securityTab.removeIP')}>
+                    <Trash2 className="h-4 w-4 text-destructive" aria-hidden="true" />
                   </Button>
                 </div>
               ))}
@@ -228,13 +228,13 @@ export function SecurityTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
-            {auditLogs.map((log) => (
+            {auditLogs.map((log: any) => (
               <div
                 key={log.id}
                 className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent/50 transition-colors"
               >
                 <div className="flex items-center gap-3 flex-1">
-                  {log.status === "success" ? (
+                  {(log as any).status === "success" ? (
                     <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
                   ) : (
                     <XCircle className="h-4 w-4 text-red-500 flex-shrink-0" />
@@ -251,7 +251,7 @@ export function SecurityTab() {
                     </div>
                   </div>
                 </div>
-                <Badge variant={log.status === "success" ? "default" : "destructive"}>
+                <Badge variant={(log as any).status === "success" ? "default" : "destructive"}>
                   {log.status}
                 </Badge>
               </div>

@@ -21,6 +21,7 @@ import {
   Search,
   Filter
 } from "lucide-react"
+import { useCommunityData } from "@/hooks/use-community-data"
 
 interface NewsTabProps {
   data?: any[]
@@ -46,7 +47,9 @@ interface NewsArticle {
   titleKey?: string
 }
 
-export function NewsTab({ data = [], loading = false }: NewsTabProps) {
+export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProps) {
+  const { posts, loading: liveLoading } = useCommunityData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('community.news')
   const tCommon = useTranslations('common')
   const [selectedCategory, setSelectedCategory] = useState<"all" | "industry" | "sponsored" | "curated">("all")
@@ -56,23 +59,26 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
   // Transform and update articles when data changes
   useEffect(() => {
     if (data && data.length > 0) {
-      const transformed: NewsArticle[] = data.map((item: any) => ({
-        id: item.id,
-        title: item.title || 'Untitled',
-        summary: item.content || '',
-        source: item.author?.company || 'Community',
-        sourceImage: item.author?.avatar_url,
-        category: item.is_sponsored ? 'sponsored' : (item.is_featured ? 'curated' : 'industry'),
-        author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Anonymous',
-        authorTitle: item.author?.job_title || 'Community Member',
-        publishedAt: item.created_at,
-        image: item.media_urls?.[0],
-        url: '#',
-        likes: item.likes_count || 0,
-        comments: item.comments_count || 0,
-        trending: item.is_featured || false,
-        tags: item.tags || []
-      }))
+      const transformed: NewsArticle[] = data.map((item: any) => {
+        const record = item as any
+        return {
+          id: record.id,
+          title: record.title || 'Untitled',
+          summary: record.content || '',
+          source: record.author?.company || 'Community',
+          sourceImage: record.author?.avatar_url,
+          category: record.is_sponsored ? 'sponsored' : (record.is_featured ? 'curated' : 'industry'),
+          author: record.author ? `${record.author.first_name} ${record.author.last_name}` : 'Anonymous',
+          authorTitle: record.author?.job_title || 'Community Member',
+          publishedAt: record.created_at,
+          image: record.media_urls?.[0],
+          url: '#',
+          likes: record.likes_count || 0,
+          comments: record.comments_count || 0,
+          trending: record.is_featured || false,
+          tags: record.tags || []
+        }
+      })
       setNewsArticles(transformed)
     }
   }, [data])
@@ -89,7 +95,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
     const variants: Record<NewsArticle["category"], { label: string, variant: "default" | "secondary" | "outline" }> = {
       industry: { label: "All", variant: "default" as const },
       sponsored: { label: t('sponsored'), variant: "secondary" },
-      curated: { label: "Industry", variant: "outline" as const }
+      curated: { label: t('industry'), variant: "outline" as const }
     }
     return variants[category]
   }
@@ -101,7 +107,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Today&apos;s News</div>
-            <Newspaper className="h-4 w-4 text-muted-foreground" />
+            <Newspaper className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{newsArticles.length}</div>
@@ -124,8 +130,8 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Bookmarked</div>
-            <Bookmark className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('bookmarked')}</div>
+            <Bookmark className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">12</div>
@@ -135,7 +141,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">This Week</div>
+            <div className="text-sm font-medium">{t('thisWeek')}</div>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -153,17 +159,17 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
                 placeholder={t('searchNews')}
-                value={searchQuery}
+                value={searchQuery as any}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
             </div>
-            <Tabs value={selectedCategory} onValueChange={(v) => setSelectedCategory(v as any)}>
+            <Tabs value={selectedCategory as any} onValueChange={(v) => setSelectedCategory(v as any)}>
               <TabsList>
                 <TabsTrigger value="all">{t('all')}</TabsTrigger>
-                <TabsTrigger value="industry">Industry</TabsTrigger>
-                <TabsTrigger value="sponsored">Sponsored</TabsTrigger>
-                <TabsTrigger value="curated">Curated</TabsTrigger>
+                <TabsTrigger value="industry">{t('industry')}</TabsTrigger>
+                <TabsTrigger value="sponsored">{t('sponsored')}</TabsTrigger>
+                <TabsTrigger value="curated">{t('curated')}</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
@@ -184,7 +190,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
             </CardContent>
           </Card>
         ) : (
-          filteredArticles.map((article) => (
+          filteredArticles.map((article: any) => (
             <Card key={article.id} className="overflow-hidden hover:shadow-md transition-shadow">
               <CardContent className="p-0">
                 <div className="md:flex">
@@ -226,7 +232,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
                     <p className="text-muted-foreground mb-4">We&apos;re excited to announce {article.summary}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {article.tags.map((tag) => (
+                      {article.tags.map((tag: any) => (
                         <Badge key={tag} variant="outline" className="text-xs">
                           {tag}
                         </Badge>
@@ -237,7 +243,7 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
                         <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
                         <Button variant="ghost" size="sm" className="h-8">
-                          <ThumbsUp className="h-4 w-4 mr-1" />
+                          <ThumbsUp className="h-4 w-4 mr-1" aria-hidden="true" />
                           {article.likes}
                         </Button>
                         <Button variant="ghost" size="sm" className="h-8">
@@ -247,14 +253,14 @@ export function NewsTab({ data = [], loading = false }: NewsTabProps) {
                       </div>
 
                       <div className="flex gap-2">
-                        <Button variant="ghost" size="sm">
-                          <Bookmark className="h-4 w-4" />
+                        <Button variant="ghost" size="sm" aria-label={t('bookmark')}>
+                          <Bookmark className="h-4 w-4" aria-hidden="true" />
                         </Button>
                         <Button variant="ghost" size="sm">
                           <Share2 className="h-4 w-4" aria-hidden="true" />
                         </Button>
                         <Button variant="outline" size="sm">
-                          <ExternalLink className="h-4 w-4 mr-2" />
+                          <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
                           Read More
                         </Button>
                       </div>

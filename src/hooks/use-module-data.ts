@@ -252,7 +252,7 @@ export function useModuleData(
   moduleSlug: string,
   tabSlug: string,
   workspaceId: string,
-  filters: Record<string, any> = {}
+  filters: Record<string, unknown> = {}
 ) {
   const [data, setData] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
@@ -336,7 +336,7 @@ export function useModuleData(
 
         setData(result || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching module data:', err)
         setError(err as Error)
         setData([])
@@ -422,7 +422,7 @@ export function useCreateItem(table: string) {
       if (insertError) throw insertError
 
       return result
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -452,7 +452,7 @@ export function useUpdateItem(table: string) {
       if (updateError) throw updateError
 
       return result
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {
@@ -478,7 +478,7 @@ export function useDeleteItem(table: string) {
         .eq('id', id)
 
       if (deleteError) throw deleteError
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     } finally {

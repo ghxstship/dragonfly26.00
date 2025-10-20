@@ -101,7 +101,7 @@ export function useDiscountValidation() {
       }
 
       return discount
-    } catch (err) {
+    } catch (err: any) {
       const error = err as Error
       setError(error)
       throw error
@@ -136,7 +136,7 @@ export function useDiscountValidation() {
       })
 
       if (updateError) throw updateError
-    } catch (err) {
+    } catch (err: any) {
       setError(err as Error)
       throw err
     }

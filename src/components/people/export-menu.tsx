@@ -60,7 +60,7 @@ export function ExportMenu({
         title: "Export started",
         description: `Exporting to ${format.toUpperCase()}...`,
       })
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Export failed",
         description: t('people.toast.exportError'),

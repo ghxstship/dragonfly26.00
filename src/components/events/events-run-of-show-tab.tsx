@@ -26,7 +26,8 @@ import type { TabComponentProps } from "@/types"
 export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.events.run_of_show')
   const tCommon = useTranslations('common')
-  const { data: runOfShow, loading } = useModuleData(workspaceId, 'events', 'run-of-show')
+  const { data, loading }: { data?: any, loading?: boolean } = useModuleData(workspaceId, 'events', 'run-of-show')
+  const runOfShow = (data || []) as any[]
   const [currentCue, setCurrentCue] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
   const [showClock, setShowClock] = useState("00:00:00")
@@ -86,12 +87,12 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
   }
 
   // Group cues by act/segment
-  const groupedCues = runOfShow.reduce((acc: any, cue: any) => {
+  const groupedCues = runOfShow.reduce((acc: Record<string, any[]>, cue: any) => {
     const act = cue.act || 'Pre-Show'
     if (!acc[act]) acc[act] = []
     acc[act].push(cue)
     return acc
-  }, {})
+  }, {} as Record<string, any[]>)
 
   const completedCues = runOfShow.filter((c: any) => c.status === 'completed').length
   const progress = runOfShow.length > 0 ? (completedCues / runOfShow.length) * 100 : 0
@@ -105,7 +106,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
           <div className="flex items-center justify-between">
             <div className="space-y-2">
               <div className="text-sm text-muted-foreground">Show Clock</div>
-              <div className="text-4xl font-mono font-bold">{showClock}</div>
+              <div className="text-4xl font-mono font-bold">{showClock as any}</div>
             </div>
             
             <div className="flex gap-3">
@@ -162,10 +163,10 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                         <div className="text-lg font-bold">
                           {cue.number || index + 1}
                         </div>
-                        {cue.status === 'completed' && (
+                        {(cue as any).status === 'completed' && (
                           <CheckCircle2 className="h-4 w-4 mx-auto" aria-hidden="true" />
                         )}
-                        {cue.status === 'warning' && (
+                        {(cue as any).status === 'warning' && (
                           <AlertCircle className="h-4 w-4 mx-auto" aria-hidden="true" />
                         )}
                       </div>
@@ -227,7 +228,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                           variant={isCurrent ? "default" : "ghost"}
                           onClick={() => setCurrentCue(cue.number)}
                         >
-                          {cue.status === 'completed' ? 'Review' : 'Execute'}
+                          {(cue as any).status === 'completed' ? 'Review' : 'Execute'}
                         </Button>
                       </div>
                     </div>

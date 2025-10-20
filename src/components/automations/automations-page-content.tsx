@@ -34,8 +34,8 @@ export function AutomationsPageContent() {
 
   const stats = {
     total: automations.length,
-    active: automations.filter((a: any) => a.is_active).length,
-    executions: automations.reduce((sum: number, a) => sum + a.execution_count, 0),
+    active: automations.filter((a: Automation) => a.is_active).length,
+    executions: automations.reduce((sum: number, a: Automation) => sum + a.execution_count, 0),
   }
 
   return (
@@ -78,7 +78,7 @@ export function AutomationsPageContent() {
         <AutomationsList
           automations={automations}
           onUpdate={(updated) =>
-            setAutomations(automations.map((a) => (a.id === updated.id ? updated : a)))
+            setAutomations(automations.map((a: any) => (a.id === updated.id ? updated : a)))
           }
         />
       </div>

@@ -63,25 +63,28 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
   // Update posts when data changes
   useEffect(() => {
     if (data && data.length > 0) {
-      const transformed = data.map((item: any) => ({
-        id: item.id,
-        author: item.author ? `${item.author.first_name} ${item.author.last_name}` : 'Unknown',
-        author_id: item.author_id,
-        authorTitle: item.author?.job_title || 'Community Member',
-        authorImage: item.author?.avatar_url,
-        content: item.content || '',
-        image: item.media_urls?.[0],
-        timestamp: item.created_at,
-        likes: item.likes_count || 0,
-        comments: item.comments_count || 0,
-        shares: item.shares_count || 0,
-        isLiked: false,
-        tags: item.tags || [],
-        poll_options: item.poll_options || null,
-        poll_votes: item.poll_votes || {},
-        poll_expires_at: item.poll_expires_at || null,
-        poll_allow_multiple: item.poll_allow_multiple || false
-      }))
+      const transformed = data.map((item: any) => {
+        const record = item as any
+        return {
+          id: record.id,
+          author: record.author ? `${record.author.first_name} ${record.author.last_name}` : 'Unknown',
+          author_id: record.author_id,
+          authorTitle: record.author?.job_title || 'Community Member',
+          authorImage: record.author?.avatar_url,
+          content: record.content || '',
+          image: record.media_urls?.[0],
+          timestamp: record.created_at,
+          likes: record.likes_count || 0,
+          comments: record.comments_count || 0,
+          shares: record.shares_count || 0,
+          isLiked: false,
+          tags: record.tags || [],
+          poll_options: record.poll_options || null,
+          poll_votes: record.poll_votes || {},
+          poll_expires_at: record.poll_expires_at || null,
+          poll_allow_multiple: record.poll_allow_multiple || false
+        }
+      })
       setPosts(transformed)
     }
   }, [data])
@@ -146,7 +149,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {posts.reduce((acc: any, p: any) => acc + p.likes, 0)}
+              {posts.reduce((acc: number, p: ActivityPost) => acc + p.likes, 0)}
             </div>
             <p className="text-xs text-muted-foreground">{t('totalLikes')}</p>
           </CardContent>
@@ -186,7 +189,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
           <div className="space-y-2">
             <Textarea
               placeholder={t('placeholder')}
-              value={newPost}
+              value={newPost as any}
               onChange={(e) => {
                 if (e.target.value.length <= characterLimit) {
                   setNewPost(e.target.value)
@@ -223,7 +226,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
 
       {/* Activity Feed */}
       <div className="space-y-4">
-        {posts.map((post) => (
+        {posts.map((post: any) => (
           <Card key={post.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               {/* Post Header */}
@@ -279,7 +282,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
               {/* Tags */}
               {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {post.tags.map((tag) => (
+                  {post.tags.map((tag: any) => (
                     <Badge key={tag} variant="secondary" className="text-xs">
                       #{tag}
                     </Badge>

@@ -6,30 +6,44 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ClipboardList, FileText, Package, Truck, CheckCircle, Clock, XCircle, Search, Plus } from "lucide-react"
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { useTranslations } from 'next-intl'
 
+interface Purchase {
+  id: string
+  order_number: string
+  status: string
+  total: string
+  items_count?: number
+  date?: string
+  vendor?: string
+  [key: string]: any
+}
+
 interface PurchasesTabProps {
-  data?: any[]
+  data?: Purchase[]
   loading?: boolean
 }
 
-export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) {
+export function PurchasesTab({ data = [], loading: loadingProp = false }: PurchasesTabProps) {
+  const { orders, loading: liveLoading } = useMarketplaceData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.purchases')
   const tCommon = useTranslations('common')
-  const purchasesData = data
+  const purchasesData: Purchase[] = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
         return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('completed')}</Badge>
       case "delivered":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />Delivered</Badge>
+        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('delivered')}</Badge>
       case "shipped":
-        return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" aria-hidden="true" />Shipped</Badge>
+        return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" aria-hidden="true" />{t('shipped')}</Badge>
       case "processing":
-        return <Badge className="bg-cyan-600"><Package className="h-3 w-3 mr-1" aria-hidden="true" />Processing</Badge>
+        return <Badge className="bg-cyan-600"><Package className="h-3 w-3 mr-1" aria-hidden="true" />{t('processing')}</Badge>
       case "pending":
-        return <Badge variant="outline"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />Pending</Badge>
+        return <Badge variant="outline"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />{t('pending')}</Badge>
       case "cancelled":
         return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('cancelled')}</Badge>
       default:
@@ -40,11 +54,11 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
   const getPaymentBadge = (paymentStatus: string) => {
     switch (paymentStatus) {
       case "paid":
-        return <Badge variant="outline" className="bg-green-500/10 text-green-600 border-green-500/20">Paid</Badge>
+        return <Badge variant="outline" className="bg-green-500/10 text-green-600 border-green-500/20">{t('paid')}</Badge>
       case "pending":
         return <Badge variant="outline" className="bg-yellow-500/10 text-yellow-600 border-yellow-500/20">Payment Pending</Badge>
       case "processing":
-        return <Badge variant="outline" className="bg-blue-500/10 text-blue-600 border-blue-500/20">Processing</Badge>
+        return <Badge variant="outline" className="bg-blue-500/10 text-blue-600 border-blue-500/20">{t('processing')}</Badge>
       default:
         return null
     }
@@ -64,33 +78,33 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Pending</CardDescription>
+            <CardDescription className="text-xs">{t('pending')}</CardDescription>
             <CardTitle className="text-2xl">
-              {purchasesData.filter(p => p.status === 'pending').length}
+              {purchasesData.filter(p => (p as any).status === 'pending').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Processing</CardDescription>
+            <CardDescription className="text-xs">{t('processing')}</CardDescription>
             <CardTitle className="text-2xl">
-              {purchasesData.filter(p => p.status === 'processing').length}
+              {purchasesData.filter(p => (p as any).status === 'processing').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Shipped</CardDescription>
+            <CardDescription className="text-xs">{t('shipped')}</CardDescription>
             <CardTitle className="text-2xl">
-              {purchasesData.filter(p => p.status === 'shipped').length}
+              {purchasesData.filter(p => (p as any).status === 'shipped').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-2">
-            <CardDescription className="text-xs">Delivered</CardDescription>
+            <CardDescription className="text-xs">{t('delivered')}</CardDescription>
             <CardTitle className="text-2xl">
-              {purchasesData.filter(p => p.status === 'delivered').length}
+              {purchasesData.filter(p => (p as any).status === 'delivered').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -98,7 +112,7 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('completed')}</CardDescription>
             <CardTitle className="text-2xl">
-              {purchasesData.filter(p => p.status === 'completed').length}
+              {purchasesData.filter(p => (p as any).status === 'completed').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -128,10 +142,10 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all-status">{t('allStatus')}</SelectItem>
-            <SelectItem value="pending">Pending</SelectItem>
-            <SelectItem value="processing">Processing</SelectItem>
-            <SelectItem value="shipped">Shipped</SelectItem>
-            <SelectItem value="delivered">Delivered</SelectItem>
+            <SelectItem value="pending">{t('pending')}</SelectItem>
+            <SelectItem value="processing">{t('processing')}</SelectItem>
+            <SelectItem value="shipped">{t('shipped')}</SelectItem>
+            <SelectItem value="delivered">{t('delivered')}</SelectItem>
             <SelectItem value="completed">{t('completed')}</SelectItem>
           </SelectContent>
         </Select>
@@ -139,7 +153,7 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
 
       {/* Purchases List */}
       <div className="space-y-4">
-        {purchasesData.map((purchase) => (
+        {purchasesData.map((purchase: any) => (
           <Card key={purchase.id} className="hover:shadow-md transition-shadow">
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -161,23 +175,23 @@ export function PurchasesTab({ data = [], loading = false }: PurchasesTabProps) 
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 <div>
-                  <p className="text-sm text-muted-foreground">Amount</p>
+                  <p className="text-sm text-muted-foreground">{t('amount')}</p>
                   <p className="text-lg font-semibold">{purchase.price}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Purchased</p>
+                  <p className="text-sm text-muted-foreground">{t('purchased')}</p>
                   <p className="text-sm">{new Date(purchase.created_at).toLocaleDateString()}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Expected</p>
+                  <p className="text-sm text-muted-foreground">{t('expected')}</p>
                   <p className="text-sm">{new Date(purchase.due_date).toLocaleDateString()}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Priority</p>
+                  <p className="text-sm text-muted-foreground">{t('priority')}</p>
                   <Badge variant="outline" className="capitalize">{purchase.priority}</Badge>
                 </div>
                 <div className="flex items-end justify-end gap-2">
-                  <Button variant="outline" size="sm">Track</Button>
+                  <Button variant="outline" size="sm">{t('track')}</Button>
                   <Button size="sm">{tCommon('details')}</Button>
                 </div>
               </div>

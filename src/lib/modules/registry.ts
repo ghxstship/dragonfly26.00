@@ -366,7 +366,7 @@ export const MODULE_CATEGORIES = {
 }
 
 export function getModuleBySlug(slug: string): Module | undefined {
-  const foundModule = MODULES.find((m) => m.slug === slug)
+  const foundModule = MODULES.find((m: any) => m.slug === slug)
   if (foundModule && foundModule.has_tabs) {
     return { ...foundModule, tabs: MODULE_TABS[foundModule.id] || [] }
   }
@@ -374,7 +374,7 @@ export function getModuleBySlug(slug: string): Module | undefined {
 }
 
 export function getModulesByCategory(category: string): Module[] {
-  return MODULES.filter((m: any) => m.category === category).map((mod) => {
+  return MODULES.filter((m: any) => m.category === category).map((mod: any) => {
     if (mod.has_tabs) {
       return { ...mod, tabs: MODULE_TABS[mod.id] || [] }
     }
@@ -383,7 +383,7 @@ export function getModulesByCategory(category: string): Module[] {
 }
 
 export function getEnabledModules(): Module[] {
-  return MODULES.filter((m: any) => m.enabled).map((mod) => {
+  return MODULES.filter((m: any) => m.enabled).map((mod: any) => {
     if (mod.has_tabs) {
       return { ...mod, tabs: MODULE_TABS[mod.id] || [] }
     }
@@ -392,7 +392,7 @@ export function getEnabledModules(): Module[] {
 }
 
 export function getModuleWithTabs(moduleId: string): Module | undefined {
-  const foundModule = MODULES.find((m) => m.id === moduleId)
+  const foundModule = MODULES.find((m: any) => m.id === moduleId)
   if (foundModule && foundModule.has_tabs) {
     return { ...foundModule, tabs: MODULE_TABS[foundModule.id] || [] }
   }

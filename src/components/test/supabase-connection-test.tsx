@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { CheckCircle2, XCircle, Loader2 } from 'lucide-react'
 
 export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string }) {
-  const [results, setResults] = useState<any>({})
+  const [results, setResults] = useState<unknown>({})
   const [testing, setTesting] = useState(true)
   const supabase = createClient()
 
@@ -24,10 +24,10 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
         
         testResults.database = {
           success: !error && data,
-          message: error ? error.message : `Connected! Found ${data?.length || 0} workspaces`,
+          message: error ? (error as any).message : `Connected! Found ${data?.length || 0} workspaces`,
           data: data
         }
-      } catch (err) {
+      } catch (err: any) {
         testResults.database = {
           success: false,
           message: (err as Error).message
@@ -44,10 +44,10 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
         
         testResults.productions = {
           success: !error,
-          message: error ? error.message : `Found ${data?.length || 0} productions`,
+          message: error ? (error as any).message : `Found ${data?.length || 0} productions`,
           data: data
         }
-      } catch (err) {
+      } catch (err: any) {
         testResults.productions = {
           success: false,
           message: (err as Error).message
@@ -64,10 +64,10 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
         
         testResults.events = {
           success: !error,
-          message: error ? error.message : `Found ${data?.length || 0} events`,
+          message: error ? (error as any).message : `Found ${data?.length || 0} events`,
           data: data
         }
-      } catch (err) {
+      } catch (err: any) {
         testResults.events = {
           success: false,
           message: (err as Error).message
@@ -83,10 +83,10 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
         
         testResults.rpc = {
           success: !error,
-          message: error ? error.message : 'Dashboard RPC function works!',
+          message: error ? (error as any).message : 'Dashboard RPC function works!',
           data: data
         }
-      } catch (err) {
+      } catch (err: any) {
         testResults.rpc = {
           success: false,
           message: (err as Error).message
@@ -114,7 +114,7 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
         setTimeout(() => {
           supabase.removeChannel(channel)
         }, 2000)
-      } catch (err) {
+      } catch (err: any) {
         testResults.realtime = {
           success: false,
           message: (err as Error).message

@@ -60,7 +60,7 @@ export function CreateTokenDialog({ open, onOpenChange }: CreateTokenDialogProps
           <div>
             <Label>Scopes & Permissions</Label>
             <div className="grid grid-cols-2 gap-3 mt-2">
-              {availableScopes.map((scope) => (
+              {availableScopes.map((scope: any) => (
                 <div key={scope.value} className="flex items-center space-x-2">
                   <Checkbox
                     id={scope.value}
@@ -69,7 +69,7 @@ export function CreateTokenDialog({ open, onOpenChange }: CreateTokenDialogProps
                       if (checked) {
                         setSelectedScopes([...selectedScopes, scope.value])
                       } else {
-                        setSelectedScopes(selectedScopes.filter((s) => s !== scope.value))
+                        setSelectedScopes(selectedScopes.filter((s: any) => s !== scope.value))
                       }
                     }}
                   />

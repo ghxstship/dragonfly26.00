@@ -66,7 +66,7 @@ export function CreateWebhookDialog({ open, onOpenChange }: CreateWebhookDialogP
           <div>
             <Label>Events to Subscribe</Label>
             <div className="grid grid-cols-2 gap-3 mt-2">
-              {availableEvents.map((event) => (
+              {availableEvents.map((event: any) => (
                 <div key={event.value} className="flex items-center space-x-2">
                   <Checkbox
                     id={event.value}
@@ -75,7 +75,7 @@ export function CreateWebhookDialog({ open, onOpenChange }: CreateWebhookDialogP
                       if (checked) {
                         setSelectedEvents([...selectedEvents, event.value])
                       } else {
-                        setSelectedEvents(selectedEvents.filter((e) => e !== event.value))
+                        setSelectedEvents(selectedEvents.filter((e: any) => e !== event.value))
                       }
                     }}
                   />

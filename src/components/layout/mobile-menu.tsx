@@ -78,7 +78,7 @@ export function MobileMenu() {
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
         <div className="mt-6 space-y-1">
-          {menuItems.map((item) => {
+          {menuItems.map((item: any) => {
             const Icon = item.icon
             return (
               <Button

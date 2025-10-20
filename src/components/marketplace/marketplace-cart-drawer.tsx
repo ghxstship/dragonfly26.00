@@ -40,7 +40,7 @@ export function MarketplaceCartDrawer({
   const [appliedGiftCard, setAppliedGiftCard] = useState<AppliedGiftCard | null>(null)
 
   const calculateSubtotal = () => {
-    return cartItems.reduce((total, item) => {
+    return cartItems.reduce((total: any, item: any) => {
       const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""))
       return total + (price * item.quantity)
     }, 0)
@@ -96,7 +96,7 @@ export function MarketplaceCartDrawer({
               {/* Cart Items */}
               <ScrollArea className="flex-1">
                 <div className="p-6 space-y-4">
-                  {cartItems.map((item) => (
+                  {cartItems.map((item: any) => (
                     <div key={item.id} className="space-y-3">
                       <div className="flex gap-4">
                         {/* Product Image Placeholder */}

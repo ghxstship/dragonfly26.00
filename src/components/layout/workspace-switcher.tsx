@@ -81,7 +81,7 @@ export function WorkspaceSwitcher() {
         icon: ""
       })
       setIsCreateDialogOpen(false)
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error creating workspace:", error)
     } finally {
       setIsCreating(false)
@@ -133,7 +133,7 @@ export function WorkspaceSwitcher() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder={t('workspace.searchWorkspaces')}
-              value={searchQuery}
+              value={searchQuery as any}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="h-9 pl-9"
             />
@@ -142,7 +142,7 @@ export function WorkspaceSwitcher() {
 
         {/* Workspace List */}
         <div className="max-h-[320px] overflow-y-auto p-1">
-          {filteredWorkspaces.map((workspace) => (
+          {filteredWorkspaces.map((workspace: any) => (
             <DropdownMenuItem
               key={workspace.id}
               onClick={() => setCurrentWorkspace(workspace)}
@@ -247,7 +247,7 @@ export function WorkspaceSwitcher() {
                 >
                   —
                 </button>
-                {commonEmojis.map((emoji) => (
+                {commonEmojis.map((emoji: any) => (
                   <button
                     key={emoji}
                     type="button"
@@ -267,7 +267,7 @@ export function WorkspaceSwitcher() {
             <div className="grid gap-2">
               <Label className="text-sm font-medium">Color</Label>
               <div className="flex flex-wrap gap-2">
-                {colors.map((color) => (
+                {colors.map((color: any) => (
                   <button
                     key={color}
                     type="button"

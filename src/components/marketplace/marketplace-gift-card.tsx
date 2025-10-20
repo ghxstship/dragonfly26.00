@@ -129,7 +129,7 @@ export function GiftCardInput({
       onApply?.(applied)
       setCode('')
     } catch (err: any) {
-      setError(err.message || 'Failed to apply gift card')
+      setError(err instanceof Error ? (err as any).message : 'Failed to apply gift card')
     } finally {
       setLoading(false)
     }
@@ -157,7 +157,7 @@ export function GiftCardInput({
               <Gift className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder={t('marketplace.giftCard.placeholder')}
-                value={code}
+                value={code as any}
                 onChange={(e) => setCode(e.target.value.toUpperCase())}
                 onKeyPress={handleKeyPress}
                 disabled={loading}
@@ -241,7 +241,7 @@ export function GiftCardInput({
 export function GiftCardBalance({ giftCards }: { giftCards: GiftCard[] }) {
   const t = useTranslations()
   const activeCards = giftCards.filter(gc => gc.status === 'active' && gc.current_balance > 0)
-  const totalBalance = activeCards.reduce((sum, gc) => sum + gc.current_balance, 0)
+  const totalBalance = activeCards.reduce((sum: any, gc: any) => sum + gc.current_balance, 0)
 
   if (activeCards.length === 0) {
     return (
@@ -274,7 +274,7 @@ export function GiftCardBalance({ giftCards }: { giftCards: GiftCard[] }) {
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
-          {activeCards.map((card) => (
+          {activeCards.map((card: any) => (
             <div
               key={card.id}
               className="flex items-center justify-between p-3 bg-muted rounded-lg"

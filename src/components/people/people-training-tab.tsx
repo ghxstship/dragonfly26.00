@@ -10,12 +10,12 @@ import { useParams } from "next/navigation"
 import { useState } from "react"
 
 interface TrainingTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
 export function TrainingTab(props: TrainingTabProps) {
-  const { data, loading } = props
+  const { data, loading }: { data?: any, loading?: boolean } = props
   const t = useTranslations('production.people.training')
   const tCommon = useTranslations('common')
   const params = useParams()

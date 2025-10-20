@@ -5,14 +5,14 @@ import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Plus, Crown, Shield, Plane, Sword, Compass, Users as UsersIcon, User, Briefcase, UserPlus, Eye, Megaphone } from "lucide-react"
+import { Plus, Crown, Shield, Plane, Sword, Compass, Users as UsersIcon, User, Briefcase, UserPlus, Eye, Megaphone, type LucideIcon } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 import { BRANDED_ROLES, getAllRolesSorted } from "@/lib/rbac/role-definitions"
 import { getRolePermissions } from "@/lib/rbac/permission-matrix"
 import type { RoleSlug, RoleMetadata } from "@/types/rbac"
 
 // Icon mapping for branded roles
-const ROLE_ICONS: Record<string, any> = {
+const ROLE_ICONS: Record<string, LucideIcon> = {
   crown: Crown,
   shield: Shield,
   plane: Plane,
@@ -89,7 +89,7 @@ export function RolesPermissionsTab() {
 
       {/* Branded Roles Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {brandedRoles.map((role) => {
+        {brandedRoles.map((role: any) => {
           const Icon = getRoleIcon(role.icon)
           const permissionCount = getRolePermissionCount(role.slug)
 
@@ -106,7 +106,7 @@ export function RolesPermissionsTab() {
                       className="p-2 rounded-lg"
                       style={{ backgroundColor: `${role.color}20` }}
                     >
-                      <Icon className="h-5 w-5" style={{ color: role.color }} />
+                      <Icon className="h-5 w-5" aria-hidden="true" style={{ color: role.color }} />
                     </div>
                     <div>
                       <CardTitle className="text-base">{role.name}</CardTitle>
@@ -166,7 +166,7 @@ export function RolesPermissionsTab() {
                         className="p-3 rounded-lg"
                         style={{ backgroundColor: `${role.color}20` }}
                       >
-                        <Icon className="h-6 w-6" style={{ color: role.color }} />
+                        <Icon className="h-6 w-6" aria-hidden="true" style={{ color: role.color }} />
                       </div>
                       <div>
                         <CardTitle>{t('roles.userRoles')}</CardTitle>
@@ -187,7 +187,7 @@ export function RolesPermissionsTab() {
               <div>
                 <h3 className="text-sm font-semibold mb-3">Key Capabilities</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {BRANDED_ROLES[selectedRole].capabilities.map((capability, idx) => (
+                  {BRANDED_ROLES[selectedRole].capabilities.map((capability: any, idx: number) => (
                     <div key={idx} className="flex items-center gap-2 text-sm">
                       <div className="h-1.5 w-1.5 rounded-full bg-primary" />
                       {capability}

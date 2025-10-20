@@ -10,12 +10,42 @@ import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinanceScenariosTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
+interface Scenario {
+  id: string | number
+  type: string
+  nameKey?: string
+  name?: string
+  probability: number
+  projectedRevenue: number
+  projectedExpenses: number
+  projectedNet: number
+  variance: number
+  descriptionKey?: string
+  description?: string
+  isBaseline?: boolean
+}
+
+// Type guard to ensure scenario has required properties
+function isValidScenario(obj: any): obj is Scenario {
+  if (typeof obj !== 'object' || obj === null) return false
+  const s = obj as Record<string, unknown>
+  return (
+    (typeof s.id === 'string' || typeof s.id === 'number') &&
+    typeof s.type === 'string' &&
+    typeof s.probability === 'number' &&
+    typeof s.projectedRevenue === 'number' &&
+    typeof s.projectedExpenses === 'number' &&
+    typeof s.projectedNet === 'number' &&
+    typeof s.variance === 'number'
+  )
+}
+
 // Mock data for demo/fallback - will be replaced with t() calls in component
-const MOCK_SCENARIOS = [
+const MOCK_SCENARIOS: Scenario[] = [
   {
     id: '1',
     type: 'optimistic',
@@ -79,13 +109,18 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
   }
 
   // ✅ Use real data if available, otherwise mock
-  const scenarios = (data && data.length > 0) ? data.slice(0, 5) : [
-    ...MOCK_SCENARIOS
-  ]
+  let scenarios: Scenario[] = MOCK_SCENARIOS
+  if (data && data.length > 0) {
+    // Filter and type-assert after validation
+    const validScenarios = data.filter(isValidScenario) as unknown as Scenario[]
+    if (validScenarios.length > 0) {
+      scenarios = validScenarios.slice(0, 5)
+    }
+  }
 
-  const weightedAverage = scenarios.reduce((sum: number, s) => 
-    sum + (s.projectedNet * s.probability / 100), 0
-  )
+  const weightedAverage = scenarios.reduce((sum: number, s) => {
+    return sum + (s.projectedNet * s.probability / 100)
+  }, 0)
 
   const getVarianceColor = (variance: number) => {
     if (variance > 0) return 'text-green-600'
@@ -94,9 +129,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
   }
 
   const getVarianceIcon = (variance: number) => {
-    if (variance > 0) return <TrendingUp className="h-4 w-4" aria-hidden="true"  />
-    if (variance < 0) return <TrendingDown className="h-4 w-4" aria-hidden="true"  />
-    return <Minus className="h-4 w-4" aria-hidden="true"  />
+    if (variance > 0) return <TrendingUp className="h-4 w-4" aria-hidden="true" />
+    if (variance < 0) return <TrendingDown className="h-4 w-4" aria-hidden="true" />
+    return <Minus className="h-4 w-4" aria-hidden="true" />
   }
 
   const getScenarioColor = (type: string) => {
@@ -113,9 +148,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
       {/* Summary Metrics */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Scenarios</CardTitle>
-            <GitCompare className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Active Scenarios</CardTitle>
+            <GitCompare className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{scenarios.length}</div>
@@ -126,9 +161,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Weighted Average</CardTitle>
-            <TrendingUp className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Weighted Average</CardTitle>
+            <TrendingUp className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${weightedAverage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
@@ -141,9 +176,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Best Case</CardTitle>
-            <TrendingUp className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Best Case</CardTitle>
+            <TrendingUp className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-green-600">
@@ -156,9 +191,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Worst Case</CardTitle>
-            <TrendingDown className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Worst Case</CardTitle>
+            <TrendingDown className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-red-600">
@@ -180,14 +215,14 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               <CardDescription>Side-by-side analysis of financial projections</CardDescription>
             </div>
             <Button>
-              <Plus className="h-4 w-4" aria-hidden="true"  />
+              <Plus className="h-4 w-4" aria-hidden="true" />
               New Scenario
             </Button>
           </div>
         </CardHeader>
         <CardContent>
           <div className="grid gap-4 md:grid-cols-3">
-            {scenarios.map((scenario) => (
+            {scenarios.map((scenario: any) => (
               <Card 
                 key={scenario.id} 
                 className={`border-2 ${getScenarioColor(scenario.type)} ${
@@ -196,14 +231,14 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               >
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</CardTitle>
+                    <CardTitle className="text-lg" aria-hidden="true">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</CardTitle>
                     {scenario.isBaseline && (
                       <Badge variant="secondary">Baseline</Badge>
                     )}
                   </div>
                   <CardDescription>{scenario.descriptionKey ? t(scenario.descriptionKey) : scenario.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4" aria-hidden="true">
                   {/* Probability */}
                   <div>
                     <div className="flex items-center justify-between text-sm mb-1">
@@ -283,7 +318,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
             {/* Revenue Comparison */}
             <div className="space-y-2">
               <h4 className="text-sm font-medium">Revenue Projections</h4>
-              {scenarios.map((scenario) => (
+              {scenarios.map((scenario: any) => (
                 <div key={scenario.id} className="flex items-center gap-3">
                   <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
@@ -305,7 +340,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
             {/* Expense Comparison */}
             <div className="space-y-2">
               <h4 className="text-sm font-medium">Expense Projections</h4>
-              {scenarios.map((scenario) => (
+              {scenarios.map((scenario: any) => (
                 <div key={scenario.id} className="flex items-center gap-3">
                   <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
@@ -327,7 +362,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
             {/* Net Comparison */}
             <div className="space-y-2">
               <h4 className="text-sm font-medium">Net Profit/Loss</h4>
-              {scenarios.map((scenario) => (
+              {scenarios.map((scenario: any) => (
                 <div key={scenario.id} className="flex items-center gap-3">
                   <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
@@ -350,10 +385,10 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
       </Card>
 
       {/* Insights */}
-      <Card className="border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950">
+      <Card className="border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950" aria-hidden="true">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <AlertCircle className="h-5 w-5" aria-hidden="true"  />
+          <CardTitle className="flex items-center gap-2" aria-hidden="true">
+            <AlertCircle className="h-5 w-5" aria-hidden="true" />
             Scenario Insights
           </CardTitle>
         </CardHeader>

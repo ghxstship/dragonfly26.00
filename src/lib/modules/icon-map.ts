@@ -160,9 +160,15 @@ import {
   CalendarCheck,
   ReceiptText,
   Settings,
+  PackageSearch,
+  GitCompare,
+  GitMerge,
+  ChartColumn,
+  Send,
 } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
 
-export const iconMap: Record<string, any> = {
+export const iconMap: Record<string, LucideIcon> = {
   LayoutDashboard,
   Clapperboard,
   Users,
@@ -284,10 +290,12 @@ export const iconMap: Record<string, any> = {
   ChartArea: AreaChart,
   ChartSpline: Activity,
   CircleCheck: CheckCircle,
+  CheckCircle,
   Boxes,
   ChartLine: TrendingUp,
   ChartNoAxesCombined: BarChart,
   UserRoundSearch: UserSearch,
+  UserSearch,
   Webcam,
   FileHeart,
   GitGraph: GitBranch,
@@ -336,4 +344,9 @@ export const iconMap: Record<string, any> = {
   CalendarCheck,
   ReceiptText,
   Settings,
+  PackageSearch,
+  GitCompare,
+  GitMerge,
+  ChartColumn,
+  Send,
 }

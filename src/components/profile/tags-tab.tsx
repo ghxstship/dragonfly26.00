@@ -60,7 +60,7 @@ export function TagsTab() {
 
   const toggleTag = (tagName: string) => {
     if (selectedTags.includes(tagName)) {
-      setSelectedTags(selectedTags.filter((t) => t !== tagName))
+      setSelectedTags(selectedTags.filter((t: any) => t !== tagName))
     } else {
       setSelectedTags([...selectedTags, tagName])
     }
@@ -77,10 +77,10 @@ export function TagsTab() {
         title: t('profile.success.tagsUpdated'),
         description: t('profile.success.tagsSaved'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('errors.error'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {
@@ -91,7 +91,7 @@ export function TagsTab() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     )
   }
@@ -108,7 +108,7 @@ export function TagsTab() {
     <div className="space-y-6">
       {/* Info Banner */}
       <div className="flex items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950">
-        <Info className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" />
+        <Info className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" aria-hidden="true" />
         <div>
           <h3 className="font-semibold text-blue-900 dark:text-blue-100">
             {t('tags.systemTags')}
@@ -130,8 +130,8 @@ export function TagsTab() {
         <CardContent>
           {selectedTags.length > 0 ? (
             <div className="flex flex-wrap gap-2">
-              {selectedTags.map((tagName) => {
-                const tag = SYSTEM_TAGS.find((t) => t.name === tagName)
+              {selectedTags.map((tagName: any) => {
+                const tag = SYSTEM_TAGS.find((t: any) => (t as any).name === tagName)
                 return (
                   <Badge
                     key={tagName}
@@ -145,7 +145,7 @@ export function TagsTab() {
                       className="ml-2 hover:opacity-70"
                       aria-label={`Remove ${tagName} tag`}
                     >
-                      <X className="h-3 w-3" />
+                      <X className="h-3 w-3" aria-hidden="true" />
                     </button>
                   </Badge>
                 )
@@ -167,10 +167,10 @@ export function TagsTab() {
             {t('tags.clickToToggle')}
           </CardDescription>
           <div className="relative mt-4">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <Input
               placeholder={t('tags.searchTags')}
-              value={searchQuery}
+              value={searchQuery as any}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9"
             />
@@ -193,7 +193,7 @@ export function TagsTab() {
                       {category}
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {filteredCategoryTags.map((tag) => {
+                      {filteredCategoryTags.map((tag: any) => {
                         const isSelected = selectedTags.includes(tag.name)
                         return (
                           <button

@@ -34,7 +34,7 @@ export function useStorageQuota(workspaceId: string | null) {
         if (queryError) throw queryError
         setQuota(data)
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching storage quota:', err)
         setError(err as Error)
       } finally {
@@ -92,7 +92,7 @@ export function useFileTrash(workspaceId: string | null) {
         if (queryError) throw queryError
         setTrashedFiles(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching trashed files:', err)
         setError(err as Error)
       } finally {
@@ -138,7 +138,7 @@ export function useFilePresence(fileId: string | null) {
         if (queryError) throw queryError
         setActiveUsers(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching file presence:', err)
         setError(err as Error)
       } finally {
@@ -197,7 +197,7 @@ export function useFileBookmarks(userId: string | null) {
         if (queryError) throw queryError
         setBookmarks(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching bookmarks:', err)
         setError(err as Error)
       } finally {
@@ -238,7 +238,7 @@ export function useFileAuditLogs(fileId: string | null, limit = 50) {
         if (queryError) throw queryError
         setAuditLogs(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching audit logs:', err)
         setError(err as Error)
       } finally {
@@ -278,7 +278,7 @@ export async function moveFileToTrash(fileId: string): Promise<boolean> {
 
     if (error) throw error
     return data || false
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error moving file to trash:', err)
     return false
   }
@@ -295,7 +295,7 @@ export async function restoreFileFromTrash(fileId: string): Promise<boolean> {
 
     if (error) throw error
     return data || false
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error restoring file from trash:', err)
     return false
   }
@@ -313,7 +313,7 @@ export async function checkStorageQuota(workspaceId: string, fileSize: number): 
 
     if (error) throw error
     return data || false
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error checking storage quota:', err)
     return false
   }
@@ -354,7 +354,7 @@ export async function toggleFileBookmark(fileId: string, folderId?: string): Pro
     }
 
     return true
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error toggling bookmark:', err)
     return false
   }
@@ -381,7 +381,7 @@ export async function updateFilePresence(
       }, {
         onConflict: 'file_id,user_id'
       })
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error updating file presence:', err)
   }
 }
@@ -402,7 +402,7 @@ export async function logFileAudit(
       p_action_details: actionDetails || {},
       p_compliance_relevant: complianceRelevant
     })
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error logging file audit:', err)
   }
 }

@@ -62,7 +62,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { 
           error: 'Failed to apply migration', 
-          details: error.message,
+          details: (error as any).message,
           hint: 'You may need to apply this migration manually via Supabase Dashboard → SQL Editor'
         },
         { status: 500 }
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
   } catch (error: any) {
     console.error('API error:', error)
     return NextResponse.json(
-      { error: 'Internal server error', details: error.message },
+      { error: 'Internal server error', details: (error as any).message },
       { status: 500 }
     )
   }

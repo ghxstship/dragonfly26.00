@@ -171,7 +171,7 @@ export function CreateTab() {
         title: "Users imported",
         description: `Added ${newUsers.length} user${newUsers.length > 1 ? 's' : ''} to the creation list`,
       })
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Import failed",
         description: "Please check the data format and try again",
@@ -188,7 +188,7 @@ export function CreateTab() {
           Create member profiles
         </p>
         <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
           Create
         </Button>
       </div>
@@ -196,7 +196,7 @@ export function CreateTab() {
 
       {/* Info Alert */}
       <Alert>
-        <AlertCircle className="h-4 w-4" />
+        <AlertCircle className="h-4 w-4" aria-hidden="true" />
         <AlertTitle>Direct Account Creation</AlertTitle>
         <AlertDescription>
           Creating accounts directly bypasses the invitation process. Users will receive their credentials via email and can log in immediately.
@@ -207,7 +207,7 @@ export function CreateTab() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <UserPlus className="h-5 w-5" />
+            <UserPlus className="h-5 w-5" aria-hidden="true" />
             Create User Account
           </CardTitle>
           <CardDescription>
@@ -222,7 +222,7 @@ export function CreateTab() {
                 id="createEmail"
                 type="email"
                 placeholder="user@example.com"
-                value={email}
+                value={email as any}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -233,7 +233,7 @@ export function CreateTab() {
                 id="createName"
                 type="text"
                 placeholder="John Doe"
-                value={name}
+                value={name as any}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
@@ -242,7 +242,7 @@ export function CreateTab() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="createRole">Role</Label>
-              <Select value={role} onValueChange={setRole}>
+              <Select value={role as any} onValueChange={setRole}>
                 <SelectTrigger id="createRole">
                   <SelectValue />
                 </SelectTrigger>
@@ -261,7 +261,7 @@ export function CreateTab() {
                   id="createPassword"
                   type="text"
                   placeholder="Auto-generate if empty"
-                  value={password}
+                  value={password as any}
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <Button variant="outline" onClick={generatePassword}>
@@ -285,11 +285,11 @@ export function CreateTab() {
               <Separator />
               <div className="space-y-2">
                 <Label className="flex items-center gap-2">
-                  <Users className="h-4 w-4" />
+                  <Users className="h-4 w-4" aria-hidden="true" />
                   Pending Accounts ({users.length})
                 </Label>
                 <div className="space-y-2 max-h-[250px] overflow-auto border rounded-md p-3">
-                  {users.map((user: any, index: number) => (
+                  {users.map((user, index: number) => (
                     <div key={index} className="flex items-center justify-between gap-2 p-3 bg-muted rounded-md">
                       <div className="flex-1 space-y-1">
                         <div className="flex items-center gap-2">
@@ -321,7 +321,7 @@ export function CreateTab() {
 
           <div className="flex justify-end">
             <Button onClick={handleCreateUsers} size="lg" disabled={users.length === 0}>
-              <Save className="h-4 w-4 mr-2" />
+              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
               Create {users.length > 0 ? `${users.length} ` : ''}Account{users.length !== 1 ? 's' : ''}
             </Button>
           </div>
@@ -332,7 +332,7 @@ export function CreateTab() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <FileSpreadsheet className="h-5 w-5" />
+            <FileSpreadsheet className="h-5 w-5" aria-hidden="true" />
             Bulk Import
           </CardTitle>
           <CardDescription>
@@ -350,13 +350,13 @@ export function CreateTab() {
 
           <div className="space-y-2">
             <Label htmlFor="bulkData" className="flex items-center gap-2">
-              <FileSpreadsheet className="h-4 w-4" />
+              <FileSpreadsheet className="h-4 w-4" aria-hidden="true" />
               User Data
             </Label>
             <Textarea
               id="bulkData"
               placeholder="john@example.com, John Doe, member&#10;jane@example.com, Jane Smith, admin&#10;bob@example.com, Bob Johnson, viewer"
-              value={bulkData}
+              value={bulkData as any}
               onChange={(e) => setBulkData(e.target.value)}
               className="min-h-[200px] font-mono text-sm"
             />
@@ -370,7 +370,7 @@ export function CreateTab() {
               Clear
             </Button>
             <Button onClick={handleBulkImport}>
-              <Upload className="h-4 w-4 mr-2" />
+              <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
               Import Users
             </Button>
           </div>

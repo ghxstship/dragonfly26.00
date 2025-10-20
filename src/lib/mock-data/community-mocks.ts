@@ -7,7 +7,7 @@ export const mockActivityPosts = [
   {
     id: 'demo-post-1',
     author: { first_name: 'Jessica', last_name: 'Martinez', job_title: 'Stage Manager', avatar_url: null },
-    content: 'Just wrapped the most incredible 3-day festival setup! Our crew worked around the clock to build 5 stages from the ground up. The energy, teamwork, and dedication everyone brought was unmatched. 🎪✨',
+    content: 'Just wrapped the most incredible 3-day festival setUp! Our crew worked around the clock to build 5 stages from the ground up. The energy, teamwork, and dedication everyone brought was unmatched. 🎪✨',
     created_at: new Date(Date.now() - 3600000).toISOString(),
     likes_count: 234,
     comments_count: 18,
@@ -91,7 +91,7 @@ export const mockDiscussions = [
   {
     id: 'demo-discussion-1',
     title: 'Best practices for outdoor festival power distribution?',
-    content: 'Planning a 3-day outdoor festival with 5 stages. Looking for advice on power distribution setup and redundancy. What are your go-to strategies?',
+    content: 'Planning a 3-day outdoor festival with 5 stages. Looking for advice on power distribution setUp and redundancy. What are your go-to strategies?',
     author_id: 'demo-user-4',
     author: {
       name: 'David Brown',

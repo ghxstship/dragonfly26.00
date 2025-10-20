@@ -135,7 +135,7 @@ export function CollectionBrowser({
               All Products
             </Button>
           )}
-          {mockCollections.map((collection) => (
+          {mockCollections.map((collection: any) => (
             <Button
               key={collection.id}
               variant={selected === collection.id ? "default" : "outline"}
@@ -174,7 +174,7 @@ export function CollectionBrowser({
             <ChevronRight className="h-4 w-4" />
           </Button>
         )}
-        {mockCollections.map((collection) => (
+        {mockCollections.map((collection: any) => (
           <Button
             key={collection.id}
             variant={selected === collection.id ? "secondary" : "ghost"}
@@ -222,7 +222,7 @@ export function CollectionBrowser({
           </Card>
         )}
         
-        {mockCollections.map((collection) => (
+        {mockCollections.map((collection: any) => (
           <Card
             key={collection.id}
             className={`cursor-pointer transition-all hover:shadow-md ${

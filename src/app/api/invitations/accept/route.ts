@@ -132,7 +132,7 @@ export async function POST(request: Request) {
   } catch (error: any) {
     console.error('Accept invitation error:', error)
     return NextResponse.json(
-      { error: error.message || 'Failed to accept invitation' },
+      { error: (error as any).message || 'Failed to accept invitation' },
       { status: 500 }
     )
   }

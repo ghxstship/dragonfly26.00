@@ -73,9 +73,9 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
     return eventDate >= today
   }).length
   
-  const activeJobs = jobs.filter(j => j.status === 'active').length
+  const activeJobs = jobs.filter(j => (j as any).status === 'active').length
   
-  const pendingExpenses = expenses.filter(e => e.status === 'pending' || e.status === 'submitted').length
+  const pendingExpenses = expenses.filter(e => (e as any).status === 'pending' || (e as any).status === 'submitted').length
   
   // Loading state
   if (loading) {
@@ -195,7 +195,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       <section role="region" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="sr-only">Dashboard Statistics</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map((stat) => {
+        {stats.map((stat: any) => {
           const Icon = stat.icon
           return (
             <Card key={t(stat.labelKey)}>
@@ -229,7 +229,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
             </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-3">
-              {quickActions.map((action) => {
+              {quickActions.map((action: any) => {
                 const Icon = action.icon
                 return (
                   <Button
@@ -277,7 +277,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                   <p className="text-xs mt-1">{t('checkDashboardTabs')}</p>
                 </div>
               ) : (
-                availableWidgets.slice(0, 3).map((widget) => {
+                availableWidgets.slice(0, 3).map((widget: any) => {
                   const widgetType = widgetTypes.find(w => w.nameKey === widget.name)
                   if (!widgetType) return null
                   const Icon = widgetType.icon

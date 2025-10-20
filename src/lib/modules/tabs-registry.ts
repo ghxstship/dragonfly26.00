@@ -60,19 +60,20 @@ export const MODULE_TABS: Record<string, ModuleTab[]> = {
   ],
   events: [
     createTab('events-all-events', 'events', 'All Events', 'all-events', 'Calendar', 0, 'calendar', 'All scheduled events and activities', '#8b5cf6'),
-    createTab('events-activities', 'events', 'Activities', 'activities', 'Activity', 1, 'table', 'Performances, rehearsals, classes, workshops, recreation', '#7c3aed'),
-    createTab('events-run-of-show', 'events', 'Run of Show', 'run-of-show', 'ListOrdered', 2, 'timeline', 'Detailed show rundowns and cue sheets', '#dc2626'),
-    createTab('events-rehearsals', 'events', 'Rehearsals', 'rehearsals', 'Repeat', 3, 'calendar', 'Rehearsal schedules and sessions', '#2563eb'),
-    createTab('events-blocks', 'events', 'Blocks', 'blocks', 'LayoutGrid', 4, 'table', 'Room blocks, dressing rooms, green rooms, studio blocks', '#f59e0b'),
-    createTab('events-bookings', 'events', 'Bookings', 'bookings', 'CalendarCheck', 5, 'calendar', 'Venue bookings and reservations', '#16a34a'),
-    createTab('events-tours', 'events', 'Tours', 'tours', 'Route', 6, 'timeline', 'Tour dates and multi-city schedules', '#0891b2'),
-    createTab('events-itineraries', 'events', 'Itineraries', 'itineraries', 'Plane', 7, 'list', 'Travel itineraries and schedules', '#ea580c'),
-    createTab('events-reservations', 'events', 'Reservations', 'reservations', 'Utensils', 8, 'table', 'Hospitality and entertainment reservations', '#059669'),
-    createTab('events-equipment', 'events', 'Equipment', 'equipment', 'Package', 9, 'table', 'Event equipment assignments and tracking', '#64748b'),
-    createTab('events-shipping-receiving', 'events', 'Shipping & Receiving', 'shipping-receiving', 'Truck', 10, 'list', 'Shipments and deliveries for events', '#f59e0b'),
-    createTab('events-trainings', 'events', 'Trainings', 'trainings', 'GraduationCap', 11, 'calendar', 'Training sessions and workshops', '#7c3aed'),
-    createTab('events-incidents', 'events', 'Incidents', 'incidents', 'AlertTriangle', 12, 'table', 'Incident reports and safety issues', '#dc2626'),
-    createTab('events-internal', 'events', 'Internal', 'internal', 'Building', 13, 'list', 'Administrative and internal events', '#64748b'),
+    createTab('events-calendar', 'events', 'Calendar', 'calendar', 'CalendarDays', 1, 'calendar', 'Interactive calendar view of all events', '#7c3aed'),
+    createTab('events-activities', 'events', 'Activities', 'activities', 'Activity', 2, 'table', 'Performances, rehearsals, classes, workshops, recreation', '#7c3aed'),
+    createTab('events-run-of-show', 'events', 'Run of Show', 'run-of-show', 'ListOrdered', 3, 'timeline', 'Detailed show rundowns and cue sheets', '#dc2626'),
+    createTab('events-rehearsals', 'events', 'Rehearsals', 'rehearsals', 'Repeat', 4, 'calendar', 'Rehearsal schedules and sessions', '#2563eb'),
+    createTab('events-blocks', 'events', 'Blocks', 'blocks', 'LayoutGrid', 5, 'table', 'Room blocks, dressing rooms, green rooms, studio blocks', '#f59e0b'),
+    createTab('events-bookings', 'events', 'Bookings', 'bookings', 'CalendarCheck', 6, 'calendar', 'Venue bookings and reservations', '#16a34a'),
+    createTab('events-tours', 'events', 'Tours', 'tours', 'Route', 7, 'timeline', 'Tour dates and multi-city schedules', '#0891b2'),
+    createTab('events-itineraries', 'events', 'Itineraries', 'itineraries', 'Plane', 8, 'list', 'Travel itineraries and schedules', '#ea580c'),
+    createTab('events-reservations', 'events', 'Reservations', 'reservations', 'Utensils', 9, 'table', 'Hospitality and entertainment reservations', '#059669'),
+    createTab('events-equipment', 'events', 'Equipment', 'equipment', 'Package', 10, 'table', 'Event equipment assignments and tracking', '#64748b'),
+    createTab('events-shipping-receiving', 'events', 'Shipping & Receiving', 'shipping-receiving', 'Truck', 11, 'list', 'Shipments and deliveries for events', '#f59e0b'),
+    createTab('events-trainings', 'events', 'Trainings', 'trainings', 'GraduationCap', 12, 'calendar', 'Training sessions and workshops', '#7c3aed'),
+    createTab('events-incidents', 'events', 'Incidents', 'incidents', 'AlertTriangle', 13, 'table', 'Incident reports and safety issues', '#dc2626'),
+    createTab('events-internal', 'events', 'Internal', 'internal', 'Building', 14, 'list', 'Administrative and internal events', '#64748b'),
   ],
   people: [
     createTab('people-personnel', 'people', 'Personnel', 'personnel', 'Users', 0, 'table', 'All personnel, crew, and staff members', '#2563eb'),
@@ -126,10 +127,16 @@ export const MODULE_TABS: Record<string, ModuleTab[]> = {
     createTab('admin-billing', 'admin', 'Billing', 'billing', 'CreditCard', 4, 'table', 'Subscription & billing', '#059669'),
     createTab('admin-security', 'admin', 'Security', 'security', 'Lock', 5, 'table', 'Security settings & logs', '#dc2626'),
     createTab('admin-templates', 'admin', 'Templates', 'templates', 'LayoutTemplate', 6, 'table', 'Organization templates & resources', '#7c3aed'),
-    createTab('admin-automations', 'admin', 'Automations', 'automations', 'RadioTower', 7, 'table', 'Workflow automation rules', '#8b5cf6'),
-    createTab('admin-integrations', 'admin', 'Integrations', 'integrations', 'Zap', 8, 'table', 'Third-party integrations', '#f59e0b'),
-    createTab('admin-webhooks', 'admin', 'Webhooks', 'webhooks', 'Webhook', 9, 'table', 'Webhook configurations', '#06b6d4'),
-    createTab('admin-api-tokens', 'admin', 'API Tokens', 'api-tokens', 'Key', 10, 'table', 'API access tokens', '#64748b'),
+    createTab('admin-checklist-templates', 'admin', 'Checklist Templates', 'checklist-templates', 'ListChecks', 7, 'table', 'Reusable checklist templates', '#16a34a'),
+    createTab('admin-custom-statuses', 'admin', 'Custom Statuses', 'custom-statuses', 'Palette', 8, 'table', 'Custom workflow statuses', '#8b5cf6'),
+    createTab('admin-automations', 'admin', 'Automations', 'automations', 'RadioTower', 9, 'table', 'Workflow automation rules', '#8b5cf6'),
+    createTab('admin-integrations', 'admin', 'Integrations', 'integrations', 'Zap', 10, 'table', 'Third-party integrations', '#f59e0b'),
+    createTab('admin-webhooks', 'admin', 'Webhooks', 'webhooks', 'Webhook', 11, 'table', 'Webhook configurations', '#06b6d4'),
+    createTab('admin-api-tokens', 'admin', 'API Tokens', 'api-tokens', 'Key', 12, 'table', 'API access tokens', '#64748b'),
+    createTab('admin-plugins', 'admin', 'Plugins', 'plugins', 'Puzzle', 13, 'table', 'Plugin management & marketplace', '#7c3aed'),
+    createTab('admin-organization-settings', 'admin', 'Organization Settings', 'organization-settings', 'Building2', 14, 'form', 'Advanced organization configuration', '#2563eb'),
+    createTab('admin-members-management', 'admin', 'Members Management', 'members-management', 'Users', 15, 'table', 'Advanced member administration', '#7c3aed'),
+    createTab('admin-recurrence-rules', 'admin', 'Recurrence Rules', 'recurrence-rules', 'Repeat', 16, 'table', 'Recurring event patterns', '#0891b2'),
   ],
   settings: [
     createTab('settings-appearance', 'settings', 'Appearance', 'appearance', 'Palette', 0, 'form', 'Customize your interface with themes and custom styles', '#8b5cf6'),
@@ -290,5 +297,5 @@ export function getModuleTabs(moduleId: string): ModuleTab[] {
 
 export function getTabBySlug(moduleId: string, tabSlug: string): ModuleTab | undefined {
   const tabs = MODULE_TABS[moduleId] || []
-  return tabs.find((tab) => tab.slug === tabSlug)
+  return tabs.find((tab: any) => tab.slug === tabSlug)
 }

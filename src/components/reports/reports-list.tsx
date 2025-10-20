@@ -31,8 +31,8 @@ export function ReportsList({ reports, onSelect }: ReportsListProps) {
   const t = useTranslations()
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {reports.map((report) => {
-        const Icon = report.type === "table" ? Table : chartIcons[report.chart_type || "bar"]
+      {reports.map((report: any) => {
+        const Icon = report(t as any).type === "table" ? Table : chartIcons[report.chart_type || "bar"]
         
         return (
           <Card

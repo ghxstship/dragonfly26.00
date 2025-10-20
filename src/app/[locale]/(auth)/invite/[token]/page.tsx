@@ -107,7 +107,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
     } catch (error: any) {
       toast({
         title: 'Error',
-        description: error.message,
+        description: (error as any).message,
         variant: 'destructive',
       })
       setAccepting(false)

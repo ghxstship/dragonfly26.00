@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     event = await constructWebhookEvent(body, signature)
   } catch (err: any) {
     return NextResponse.json(
-      { error: `Webhook Error: ${err.message}` },
+      { error: `Webhook Error: ${(err as any).message}` },
       { status: 400 }
     )
   }

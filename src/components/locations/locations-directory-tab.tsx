@@ -95,7 +95,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
           <CardContent>
             <div className="text-2xl font-bold">{locations.length}</div>
             <p className="text-xs text-muted-foreground">
-              {locations.filter((l: any) => l.status === 'active').length} active
+              {locations.filter((l: any) => (l as any).status === 'active').length} active
             </p>
           </CardContent>
         </Card>
@@ -107,7 +107,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {locations.filter((l: any) => l.type === 'venue').length}
+              {locations.filter((l: any) => (l as any).type === 'venue').length}
             </div>
             <p className="text-xs text-muted-foreground">Event spaces</p>
           </CardContent>
@@ -120,7 +120,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {locations.filter((l: any) => l.type === 'warehouse').length}
+              {locations.filter((l: any) => (l as any).type === 'warehouse').length}
             </div>
             <p className="text-xs text-muted-foreground">Storage facilities</p>
           </CardContent>
@@ -133,7 +133,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {locations.filter((l: any) => l.type === 'office').length}
+              {locations.filter((l: any) => (l as any).type === 'office').length}
             </div>
             <p className="text-xs text-muted-foreground">Office spaces</p>
           </CardContent>
@@ -146,7 +146,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder={t('locations.search.placeholder')}
-            value={searchQuery}
+            value={searchQuery as any}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-9"
           />

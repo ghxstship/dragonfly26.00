@@ -51,7 +51,7 @@ export function InventoryFolderTree({ workspaceId, onFolderSelect, selectedFolde
     setLoading(false)
   }
 
-  const buildTree = (flatFolders: any[]): FolderNode[] => {
+  const buildTree = (flatFolders: FolderNode[]): FolderNode[] => {
     const map = new Map<string, FolderNode>()
     const roots: FolderNode[] = []
 

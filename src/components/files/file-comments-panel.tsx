@@ -34,7 +34,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
       })
       setNewComment("")
       setReplyTo(null)
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error adding comment:", error)
     } finally {
       setSubmitting(false)
@@ -70,7 +70,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
           )}
           <Textarea
             placeholder={t('files.comments.placeholder')}
-            value={newComment}
+            value={newComment as any}
             onChange={(e) => setNewComment(e.target.value)}
             rows={3}
           />
@@ -99,7 +99,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
           </div>
         ) : (
           <div className="space-y-4">
-            {comments.map((comment) => (
+            {comments.map((comment: any) => (
               <CommentItem 
                 key={comment.id} 
                 comment={comment}

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
+import { useInsightsData } from "@/hooks/use-insights-data"
 const priorities = [
   {
     id: "1",
@@ -76,7 +77,7 @@ const priorities = [
 ]
 
 interface InsightsPrioritiesTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -135,7 +136,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
             <div>
               <h3 className="font-semibold mb-3">{t('priorityScoreDistribution')}</h3>
               <div className="space-y-3">
-                {priorities.slice(0, 3).map((priority) => (
+                {priorities.slice(0, 3).map((priority: any) => (
                   <div key={priority.id} className="flex items-center gap-3">
                     <div className="text-2xl font-bold text-muted-foreground w-8">{priority.rank}</div>
                     <div className="flex-1">
@@ -158,7 +159,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
 
       {/* Ranked Priorities List */}
       <div className="space-y-3">
-        {priorities.map((priority) => (
+        {priorities.map((priority: any) => (
           <Card key={priority.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
@@ -197,7 +198,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
 
                   <div>
                     <span className="text-sm text-muted-foreground">Focus Areas: </span>
-                    {priority.focusAreas.map((area, idx) => (
+                    {priority.focusAreas.map((area: any, idx: number) => (
                       <Badge key={idx} variant="outline" className="ml-1 text-xs">
                         {area}
                       </Badge>

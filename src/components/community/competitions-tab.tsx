@@ -26,10 +26,12 @@ import {
   Search,
   Play
 } from "lucide-react"
+import { useCommunityData } from "@/hooks/use-community-data"
 
 interface CompetitionsTabProps {
   data?: any[]
   loading?: boolean
+  workspaceId?: string
 }
 
 interface Competition {
@@ -64,22 +66,49 @@ interface LeaderboardEntry {
   titleKey?: string
 }
 
-export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabProps) {
+export function CompetitionsTab({ data = [], loading: loadingProp = false, workspaceId }: CompetitionsTabProps) {
   const t = useTranslations('community.competitions')
   const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
   const [competitionFilter, setCompetitionFilter] = useState<"all" | "active" | "upcoming" | "completed">("all")
 
+  // Use live data from Supabase
+  const { competitions: liveCompetitions, loading: liveLoading } = useCommunityData()
+  
   const [competitions, setCompetitions] = useState<Competition[]>([])
+  const loading = loadingProp || liveLoading
 
-  // Transform and update competitions when data changes
+  // Transform live competitions from Supabase
   useEffect(() => {
-    if (data && data.length > 0) {
-      const transformed: Competition[] = data.map((item: any) => {
-        // Try to extract dates and prize info from content
+    if (liveCompetitions && liveCompetitions.length > 0) {
+      const transformed: Competition[] = liveCompetitions.map((comp: any) => {
         const now = new Date()
-        const startDate = item.created_at
-        const endDate = item.created_at // Placeholder
+        const start = new Date(comp.start_date)
+        const end = new Date(comp.end_date)
+        
+        let status: "active" | "upcoming" | "completed" = comp.status || "active"
+        
+        return {
+          id: comp.id,
+          title: comp.name || 'Untitled Competition',
+          description: comp.description || '',
+          category: 'innovation', // Default category
+          startDate: start.toISOString().split('T')[0],
+          endDate: end.toISOString().split('T')[0],
+          status,
+          participants: comp.participants_count || 0,
+          prize: comp.prize || 'TBA',
+          joined: false
+        }
+      })
+      setCompetitions(transformed)
+    } else if (data && data.length > 0) {
+      // Fallback to prop data if provided
+      const transformed: Competition[] = data.map((item: any) => {
+        const record = item as any
+        const now = new Date()
+        const startDate = record.created_at
+        const endDate = record.created_at
         
         const start = new Date(startDate)
         const end = new Date(endDate)
@@ -89,22 +118,22 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
         else if (now > end) status = "completed"
         
         return {
-          id: item.id,
-          title: item.title || 'Untitled Competition',
-          description: item.content || '',
-          category: 'innovation', // Default category
+          id: record.id,
+          title: record.title || 'Untitled Competition',
+          description: record.content || '',
+          category: 'innovation',
           startDate: start.toISOString().split('T')[0],
           endDate: end.toISOString().split('T')[0],
           status,
-          participants: item.comments_count || 0,
+          participants: record.comments_count || 0,
           prize: 'TBA',
-          image: item.media_urls?.[0],
+          image: record.media_urls?.[0],
           joined: false
         }
       })
       setCompetitions(transformed)
     }
-  }, [data])
+  }, [liveCompetitions, data])
 
   const [leaderboard] = useState<LeaderboardEntry[]>([
     {
@@ -250,7 +279,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
   const filteredCompetitions = competitions.filter(comp => {
     const matchesSearch = comp.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          comp.description.toLowerCase().includes(searchQuery.toLowerCase())
-    const matchesFilter = competitionFilter === "all" || comp.status === competitionFilter
+    const matchesFilter = competitionFilter === "all" || (comp as any).status === competitionFilter
     return matchesSearch && matchesFilter
   })
 
@@ -280,7 +309,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {competitions.filter(c => c.status === "active").length}
+              {competitions.filter(c => (c as any).status === "active").length}
             </div>
             <p className="text-xs text-muted-foreground">{t('competitions')}</p>
           </CardContent>
@@ -336,7 +365,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {leaderboard.map((entry) => {
+            {leaderboard.map((entry: any) => {
               const rankBadge = getRankBadge(entry.rank)
               const rankChange = getRankChange(entry.rank, entry.previousRank)
               const RankIcon = rankBadge.icon
@@ -376,7 +405,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                     <p className="font-semibold truncate">{entry.nameKey ? (entry.nameKey ? t(entry.nameKey) : entry.name) : entry.name}</p>
                     <p className="text-sm text-muted-foreground truncate">{entry.titleKey ? (entry.titleKey ? t(entry.titleKey) : entry.title) : entry.title}</p>
                     <div className="flex flex-wrap gap-1 mt-1">
-                      {entry.badges.map((badge) => (
+                      {entry.badges.map((badge: any) => (
                         <Badge key={badge} variant="secondary" className="text-xs">
                           {badge}
                         </Badge>
@@ -408,12 +437,12 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
                 placeholder={t('searchCompetitions')}
-                value={searchQuery}
+                value={searchQuery as any}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
             </div>
-            <Tabs value={competitionFilter} onValueChange={(v) => setCompetitionFilter(v as any)}>
+            <Tabs value={competitionFilter as any} onValueChange={(v) => setCompetitionFilter(v as any)}>
               <TabsList>
                 <TabsTrigger value="all">{t('all')}</TabsTrigger>
                 <TabsTrigger value="active">{t('active')}</TabsTrigger>
@@ -439,7 +468,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
             </CardContent>
           </Card>
         ) : (
-          filteredCompetitions.map((competition) => {
+          filteredCompetitions.map((competition: any) => {
             const categoryIcons = {
               design: Award,
               speed: Zap,
@@ -460,8 +489,8 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                       />
                       <Badge 
                         className={`absolute top-3 right-3 ${
-                          competition.status === "active" ? "bg-green-500" :
-                          competition.status === "upcoming" ? "bg-blue-500" :
+                          (competition as any).status === "active" ? "bg-green-500" :
+                          (competition as any).status === "upcoming" ? "bg-blue-500" :
                           "bg-gray-500"
                         }`}
                       >
@@ -474,7 +503,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                     {/* Header */}
                     <div className="flex items-start gap-3 mb-3">
                       <div className="p-2 rounded-lg bg-primary/10">
-                        <CategoryIcon className="h-5 w-5 text-primary" />
+                        <CategoryIcon className="h-5 w-5 text-primary"  aria-hidden="true" />
                       </div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-lg mb-1">{competition.titleKey ? (competition.titleKey ? t(competition.titleKey) : competition.title) : competition.title}</h3>
@@ -508,7 +537,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                     </div>
 
                     {/* Progress Bar for Active Competitions */}
-                    {competition.status === "active" && (
+                    {(competition as any).status === "active" && (
                       <div className="mb-4">
                         <div className="flex items-center justify-between text-xs text-muted-foreground mb-1">
                           <span>{t('timeRemaining')}</span>
@@ -519,7 +548,7 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                             )} days
                           </span>
                         </div>
-                        <Progress value={65} className="h-2" />
+                        <Progress value={65 as any} className="h-2" />
                       </div>
                     )}
 
@@ -538,10 +567,10 @@ export function CompetitionsTab({ data = [], loading = false }: CompetitionsTabP
                             size="sm" 
                             className="flex-1"
                             onClick={() => handleJoin(competition.id)}
-                            disabled={competition.status === "completed"}
+                            disabled={(competition as any).status === "completed"}
                           >
                             <Play className="h-4 w-4 mr-2" aria-hidden="true" />
-                            {competition.status === "upcoming" ? t('register') : t('joinNow')}
+                            {(competition as any).status === "upcoming" ? t('register') : t('joinNow')}
                           </Button>
                           <Button variant="outline" size="sm">{tCommon('details')}</Button>
                         </>

@@ -1,13 +1,28 @@
 "use client"
 
-import { TrendingUp, Calendar, Target, Plus } from "lucide-react"
+import { TrendingUp, Calendar, Target, Plus, ChartLine, type LucideIcon } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-const progressData = [
+import { useInsightsData } from "@/hooks/use-insights-data"
+
+interface TimelinePoint {
+  month: string
+  progress: number
+  target: number
+}
+
+interface ProgressData {
+  objective: string
+  timeline: TimelinePoint[]
+  status: string
+  velocity: string
+}
+
+const progressData: ProgressData[] = [
   {
     objective: "Increase Customer Satisfaction",
     timeline: [
@@ -44,7 +59,7 @@ const progressData = [
 ]
 
 interface InsightsProgressTrackingTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -80,7 +95,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
       </div>
 
       {/* Progress Charts */}
-      {progressData.map((data: any, index: number) => (
+      {progressData.map((data, index: number) => (
         <Card key={index} role="article">
           <CardHeader>
             <div className="flex items-center justify-between">
@@ -102,7 +117,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
             <div className="space-y-4">
               {/* Timeline visualization */}
               <div className="grid grid-cols-4 gap-4">
-                {data.timeline.map((month: any, idx: number) => {
+                {data.timeline.map((month, idx: number) => {
                   const isAhead = month.progress >= month.target
                   
                   return (

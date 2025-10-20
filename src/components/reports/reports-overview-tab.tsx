@@ -1,9 +1,10 @@
 "use client"
 
-import { FileText, Download, Calendar, TrendingUp, Plus } from "lucide-react"
+import { FileText, Download, Calendar, TrendingUp, Plus, type LucideIcon } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
+import { useReportsData } from "@/hooks/use-reports-data"
 
 const recentReports = [
   { id: "1", nameKey: "q4_performance_summary", type: "Executive", generated: "2025-10-10", size: "2.4 MB", downloads: 45 },
@@ -13,7 +14,15 @@ const recentReports = [
   { id: "5", nameKey: "monthly_financial_report", type: "Executive", generated: "2025-10-05", size: "4.6 MB", downloads: 67 },
 ]
 
-const useStats = (t: any) => [
+interface StatItem {
+  labelKey: string
+  value: string
+  change: string
+  icon: LucideIcon
+  color: string
+}
+
+const useStats = (t: (key: string) => string): StatItem[] => [
   { labelKey: "reportsGenerated", value: "142", change: "+12%", icon: FileText, color: "text-blue-600" },
   { labelKey: "totalDownloads", value: "1,284", change: "+8%", icon: Download, color: "text-green-600" },
   { labelKey: "scheduledReports", value: "28", change: "+3", icon: Calendar, color: "text-purple-600" },
@@ -21,7 +30,7 @@ const useStats = (t: any) => [
 ]
 
 interface ReportsOverviewTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -34,7 +43,7 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map((stat: any, index: number) => {
+        {stats.map((stat, index: number) => {
           const Icon = stat.icon
           return (
             <Card key={index} role="region" aria-label={`${t(stat.labelKey)} metric`}>
@@ -61,7 +70,7 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {recentReports.map((report) => (
+            {recentReports.map((report: any) => (
               <div 
                 key={report.id} 
                 className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent transition-colors"

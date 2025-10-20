@@ -7,7 +7,27 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-const strategicInsights = [
+import { useInsightsData } from "@/hooks/use-insights-data"
+
+interface StrategicInsight {
+  id: string
+  type: string
+  priority: string
+  titleKey: string
+  descriptionKey: string
+  impact: string
+  confidence: number
+  recommendation: string
+}
+
+interface Objective {
+  nameKey: string
+  progress: number
+  target: number
+  status: string
+}
+
+const strategicInsights: StrategicInsight[] = [
   {
     id: "1",
     type: "opportunity",
@@ -40,7 +60,7 @@ const strategicInsights = [
   },
 ]
 
-const objectives = [
+const objectives: Objective[] = [
   { nameKey: "increase_customer_satisfaction", progress: 87, target: 90, status: "on_track" },
   { nameKey: "reduce_operational_costs", progress: 53, target: 100, status: "at_risk" },
   { nameKey: "expand_market_presence", progress: 33, target: 100, status: "on_track" },
@@ -48,7 +68,7 @@ const objectives = [
 ]
 
 interface InsightsOverviewTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -118,7 +138,7 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {strategicInsights.map((insight) => (
+            {strategicInsights.map((insight: any) => (
               <div key={insight.id} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-start gap-3">
@@ -160,7 +180,7 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {objectives.map((obj: any, index: number) => (
+            {objectives.map((obj, index: number) => (
               <div key={index} className="space-y-2">
                 <div className="flex items-center justify-between">
                   <p className="font-medium">{t(obj.nameKey)}</p>

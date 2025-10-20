@@ -8,28 +8,43 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Star, ThumbsUp, Flag, Search, Filter, Plus } from "lucide-react"
+import { useProductReviews } from "@/hooks/use-marketplace-reviews"
 import { useTranslations } from 'next-intl'
 
+interface Review {
+  id: string
+  rating: number
+  status?: string
+  reviewer_name?: string
+  date?: string
+  comment?: string
+  helpful_count?: number
+  [key: string]: any
+}
+
 interface ReviewsTabProps {
-  data?: any[]
+  data?: Review[]
   loading?: boolean
 }
 
-export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
+export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsTabProps) {
+  // TODO: Implement all-reviews hook or use useProductReviews with specific productId
+  // const { reviews, loading: liveLoading } = useProductReviews(productId)
+  const loading = loadingProp
   const t = useTranslations('marketplace.reviews')
   const tCommon = useTranslations('common')
-  const reviewsData = data
+  const reviewsData: Review[] = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "verified":
         return <Badge className="bg-green-600">Verified Purchase</Badge>
       case "published":
-        return <Badge variant="outline" className="bg-blue-500/10 text-blue-600">Published</Badge>
+        return <Badge variant="outline" className="bg-blue-500/10 text-blue-600">{t('published')}</Badge>
       case "pending":
         return <Badge variant="outline" className="bg-yellow-500/10 text-yellow-600">Pending Review</Badge>
       case "flagged":
-        return <Badge variant="destructive">Flagged</Badge>
+        return <Badge variant="destructive">{t('flagged')}</Badge>
       default:
         return null
     }
@@ -53,13 +68,13 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
   }
 
   const averageRating = (
-    reviewsData.reduce((sum, r) => sum + parseInt(r.rating || "0"), 0) / reviewsData.length
+    reviewsData.reduce((sum: any, r: any) => sum + (r.rating || 0), 0) / reviewsData.length
   ).toFixed(1)
 
   const ratingDistribution = [5, 4, 3, 2, 1].map(rating => ({
     rating,
-    count: reviewsData.filter(r => parseInt(r.rating || "0") === rating).length,
-    percentage: (reviewsData.filter(r => parseInt(r.rating || "0") === rating).length / reviewsData.length) * 100
+    count: reviewsData.filter(r => (r.rating || 0) === rating).length,
+    percentage: (reviewsData.filter(r => (r.rating || 0) === rating).length / reviewsData.length) * 100
   }))
 
   return (
@@ -118,10 +133,10 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Types</SelectItem>
-            <SelectItem value="equipment">Equipment</SelectItem>
-            <SelectItem value="service">Services</SelectItem>
-            <SelectItem value="vendor">Vendors</SelectItem>
-            <SelectItem value="product">Products</SelectItem>
+            <SelectItem value="equipment">{t('equipment')}</SelectItem>
+            <SelectItem value="service">{t('services')}</SelectItem>
+            <SelectItem value="vendor">{t('vendors')}</SelectItem>
+            <SelectItem value="product">{t('products')}</SelectItem>
           </SelectContent>
         </Select>
         <Select defaultValue="recent">
@@ -150,7 +165,7 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
         </TabsList>
 
         <TabsContent value="all" className="space-y-4 mt-4">
-          {reviewsData.map((review) => (
+          {reviewsData.map((review: any) => (
             <Card key={review.id}>
               <CardHeader>
                 <div className="flex items-start justify-between">
@@ -163,17 +178,17 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         <CardTitle className="text-base">{review.assignee_name}</CardTitle>
-                        {review.status === "verified" && getStatusBadge(review.status)}
+                        {review.status === "verified" && getStatusBadge(review.status || 'published')}
                       </div>
                       <div className="flex items-center gap-3">
-                        {renderStars(parseInt(review.rating || "0"))}
+                        {renderStars(review.rating || 0)}
                         <span className="text-sm text-muted-foreground">
                           {new Date(review.created_at).toLocaleDateString()}
                         </span>
                       </div>
                     </div>
                   </div>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" aria-label={t('flag')}>
                     <Flag className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
@@ -201,7 +216,7 @@ export function ReviewsTab({ data = [], loading = false }: ReviewsTabProps) {
                 {/* Actions */}
                 <div className="flex items-center gap-4 pt-2 border-t">
                   <Button variant="ghost" size="sm" className="gap-2">
-                    <ThumbsUp className="h-4 w-4" />
+                    <ThumbsUp className="h-4 w-4"  aria-hidden="true" />
                     Helpful ({review.helpful_count})
                   </Button>
                   {review.comments_count > 0 && (

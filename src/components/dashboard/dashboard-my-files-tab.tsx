@@ -17,7 +17,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
   
 
   
-  const filesList = files.map(file => ({
+  const filesList = files.map((file: any) => ({
     id: file.id,
     name: file.name || file.title || 'Untitled',
     type: file.type || 'document',
@@ -158,7 +158,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {storageByCategory.map((category) => (
+            {storageByCategory.map((category: any) => (
               <div key={t(category.nameKey)} className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
                   <span className="font-medium">{t(category.nameKey)}</span>
@@ -183,7 +183,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {filesList.map((file) => {
+            {filesList.map((file: any) => {
               const Icon = file.icon
               return (
                 <div

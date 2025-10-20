@@ -248,7 +248,7 @@ export class PermissionService {
       .eq('id', assignmentId)
 
     if (error) {
-      return { success: false, error: error.message }
+      return { success: false, error: (error as any).message }
     }
 
     return { success: true }
@@ -287,7 +287,7 @@ export class PermissionService {
       .eq('id', assignmentId)
 
     if (error) {
-      return { success: false, error: error.message }
+      return { success: false, error: (error as any).message }
     }
 
     return { success: true }

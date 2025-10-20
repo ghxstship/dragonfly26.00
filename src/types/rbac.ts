@@ -386,7 +386,7 @@ export interface RoleAuditLog {
   action: 'assigned' | 'removed' | 'modified' | 'expired'
   userId: string
   roleId: string
-  changes: Record<string, any>
+  changes: Record<string, unknown>
   performedBy: string
   timestamp: string
   notes?: string

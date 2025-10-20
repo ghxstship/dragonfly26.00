@@ -63,14 +63,14 @@ export interface InventoryItem {
   manufacturer?: string
   model_number?: string
   variant_of?: string
-  variant_attributes?: Record<string, any>
+  variant_attributes?: Record<string, string | number>
   condition?: 'new' | 'excellent' | 'good' | 'fair' | 'poor' | 'damaged'
   condition_notes?: string
   last_inspected_at?: string
   status: 'in_stock' | 'low_stock' | 'out_of_stock' | 'on_order' | 'reserved' | 'discontinued'
   enable_low_stock_alert: boolean
   alert_contacts?: string[]
-  custom_fields?: Record<string, any>
+  custom_fields?: Record<string, unknown>
   tags?: string[]
   notes?: string
   last_counted_at?: string

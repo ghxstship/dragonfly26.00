@@ -103,7 +103,7 @@ export function ApiTokensTab() {
   }
 
   const handleDeleteToken = (tokenId: string) => {
-    setTokens(tokens.filter(t => t.id !== tokenId))
+    setTokens(tokens.filter(t => (t as any).id !== tokenId))
     toast({
       title: t('admin.toast.tokenDeleted'),
       description: t('admin.toast.tokenDeletedDesc'),
@@ -149,7 +149,7 @@ export function ApiTokensTab() {
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.apiTokensTab.activeTokens')}</CardDescription>
             <CardTitle className="text-3xl">
-              {tokens.filter(t => t.status === "active").length}
+              {tokens.filter(t => (t as any).status === "active").length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -163,7 +163,7 @@ export function ApiTokensTab() {
 
       {/* Tokens List */}
       <div className="space-y-3">
-        {tokens.map((token) => {
+        {tokens.map((token: any) => {
           const isVisible = visibleTokens.has(token.id)
           return (
             <Card key={token.id}>
@@ -173,11 +173,11 @@ export function ApiTokensTab() {
                     <div className="flex items-center gap-3 mb-2">
                       <CardTitle className="text-base">{token.name}</CardTitle>
                       <Badge variant={
-                        token.status === "active" ? "default" :
-                        token.status === "expired" ? "secondary" :
+                        (token as any).status === "active" ? "default" :
+                        (token as any).status === "expired" ? "secondary" :
                         "destructive"
                       }>
-                        {token.status === "active" && <CheckCircle2 className="h-3 w-3 mr-1" />}
+                        {(token as any).status === "active" && <CheckCircle2 className="h-3 w-3 mr-1" />}
                         {token.status.charAt(0).toUpperCase() + token.status.slice(1)}
                       </Badge>
                       <Badge variant="outline">{token.scope}</Badge>
@@ -232,7 +232,7 @@ export function ApiTokensTab() {
               </CardHeader>
               <CardContent>
                 <div className="flex justify-end gap-2">
-                  {token.status === "active" && (
+                  {(token as any).status === "active" && (
                     <Button
                       variant="outline"
                       size="sm"
@@ -367,8 +367,9 @@ export function ApiTokensTab() {
                   variant="outline"
                   size="icon"
                   onClick={() => generatedToken && handleCopyToken(generatedToken)}
+                  aria-label={t('admin.apiTokensTab.copyToken')}
                 >
-                  <Copy className="h-4 w-4" />
+                  <Copy className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
             </div>

@@ -57,7 +57,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
       {/* Variance List */}
       <ScrollArea className="h-[600px]">
         <div className="space-y-4">
-          {variances.map((variance) => (
+          {variances.map((variance: any) => (
             <Card key={variance.id} className="p-4">
               <div className="space-y-4">
                 {/* Item Header */}
@@ -89,7 +89,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                   <div>
                     <p className="text-sm font-medium mb-2">Photos from count:</p>
                     <div className="flex gap-2">
-                      {variance.photos.map((photo, idx) => (
+                      {variance.photos.map((photo: any, idx: number) => (
                         <div key={idx} className="relative w-20 h-20 rounded border bg-muted">
                           <ImageIcon className="absolute inset-0 m-auto h-8 w-8 text-muted-foreground" />
                         </div>

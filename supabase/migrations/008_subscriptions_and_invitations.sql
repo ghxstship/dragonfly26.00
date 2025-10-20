@@ -234,7 +234,7 @@ BEGIN
     ) THEN
         CREATE POLICY "Users can view their own profile"
             ON profiles FOR SELECT
-            USING (auth.uid() = id);
+            USING ((SELECT auth.uid()) = id);
     END IF;
     
     IF NOT EXISTS (
@@ -244,7 +244,7 @@ BEGIN
     ) THEN
         CREATE POLICY "Users can update their own profile"
             ON profiles FOR UPDATE
-            USING (auth.uid() = id);
+            USING ((SELECT auth.uid()) = id);
     END IF;
     
     IF NOT EXISTS (
@@ -254,7 +254,7 @@ BEGIN
     ) THEN
         CREATE POLICY "Users can insert their own profile"
             ON profiles FOR INSERT
-            WITH CHECK (auth.uid() = id);
+            WITH CHECK ((SELECT auth.uid()) = id);
     END IF;
 END $$;
 
@@ -428,7 +428,7 @@ CREATE POLICY "Users can view subscriptions in their organization"
   USING (
     organization_id IN (
       SELECT organization_id FROM organization_members 
-      WHERE user_id = auth.uid()
+      WHERE user_id = (SELECT (SELECT auth.uid()))
     )
   );
 
@@ -440,7 +440,7 @@ CREATE POLICY "Organization admins can manage subscriptions"
       FROM organization_members om
       JOIN user_role_assignments ura ON om.user_id = ura.user_id
       JOIN roles r ON ura.role_id = r.id
-      WHERE om.user_id = auth.uid()
+      WHERE om.user_id = (SELECT (SELECT auth.uid()))
         AND r.level <= 2 -- Phantom or Legend only
     )
   );
@@ -454,7 +454,7 @@ CREATE POLICY "Users can view usage in their subscription"
     subscription_id IN (
       SELECT s.id FROM subscriptions s
       WHERE s.organization_id IN (
-        SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+        SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
       )
     )
   );
@@ -464,26 +464,26 @@ ALTER TABLE invitations ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Users can view invitations they sent"
   ON invitations FOR SELECT
-  USING (invited_by = auth.uid());
+  USING (invited_by = (SELECT (SELECT auth.uid())));
 
 CREATE POLICY "Users can view invitations sent to their email"
   ON invitations FOR SELECT
   USING (
-    email = (SELECT email FROM auth.users WHERE id = auth.uid())
+    email = (SELECT email FROM auth.users WHERE id = (SELECT (SELECT auth.uid())))
   );
 
 CREATE POLICY "Users with permission can send invitations"
   ON invitations FOR INSERT
   WITH CHECK (
-    invited_by = auth.uid()
+    invited_by = (SELECT (SELECT auth.uid()))
     AND organization_id IN (
-      SELECT organization_id FROM organization_members WHERE user_id = auth.uid()
+      SELECT organization_id FROM organization_members WHERE user_id = (SELECT (SELECT auth.uid()))
     )
   );
 
 CREATE POLICY "Users can update their own invitations"
   ON invitations FOR UPDATE
-  USING (invited_by = auth.uid());
+  USING (invited_by = (SELECT (SELECT auth.uid())));
 
 -- =====================================================
 -- 8. TRIGGERS

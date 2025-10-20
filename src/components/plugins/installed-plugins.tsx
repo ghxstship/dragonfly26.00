@@ -22,7 +22,7 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
   const t = useTranslations()
   return (
     <div className="space-y-4">
-      {installations.map((installation) => (
+      {installations.map((installation: any) => (
         <Card key={installation.id}>
           <CardContent className="p-6">
             <div className="flex items-start gap-4">

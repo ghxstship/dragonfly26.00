@@ -49,7 +49,7 @@ export async function POST(request: Request) {
     const inviterName = profile?.full_name || user.email
 
     // Create invitations
-    const invitationRecords = invites.map((invite) => ({
+    const invitationRecords = invites.map((invite: any) => ({
       invited_by: user.id,
       organization_id: workspace.organization_id,
       workspace_id: workspaceId,
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
     // For now, we'll just return the invitation tokens
     // In production, integrate with Resend, SendGrid, or similar
 
-    const invitationLinks = createdInvites.map((inv) => ({
+    const invitationLinks = createdInvites.map((inv: any) => ({
       email: inv.email,
       link: `${process.env.NEXT_PUBLIC_APP_URL}/invite/${inv.token}`,
     }))
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
   } catch (error: any) {
     console.error('Send invitations error:', error)
     return NextResponse.json(
-      { error: error.message || 'Failed to send invitations' },
+      { error: (error as any).message || 'Failed to send invitations' },
       { status: 500 }
     )
   }

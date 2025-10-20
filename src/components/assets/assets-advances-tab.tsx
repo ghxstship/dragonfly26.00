@@ -35,7 +35,7 @@ export default function AssetsAdvancesTab() {
   if (error) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="text-destructive">Error loading advances: {error.message}</div>
+        <div className="text-destructive">Error loading advances: {(error as any).message}</div>
       </div>
     )
   }
@@ -92,8 +92,8 @@ export default function AssetsAdvancesTab() {
                 </TableCell>
               </TableRow>
             ) : (
-              advances.map((advance: any) => (
-                <TableRow key={advance.id}>
+              (advances as any[]).map((advance: any) => (
+                <TableRow key={advance.id as string}>
                   <TableCell>
                     <div className="flex items-start gap-2">
                       <Package className="h-4 w-4 mt-1 text-muted-foreground" aria-hidden="true" />

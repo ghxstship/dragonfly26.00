@@ -110,7 +110,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
 
           {/* Number Pad */}
           <div className="grid grid-cols-3 gap-2 mb-4">
-            {['1', '2', '3', '4', '5', '6', '7', '8', '9', 'clear', '0', 'backspace'].map((num) => (
+            {['1', '2', '3', '4', '5', '6', '7', '8', '9', 'clear', '0', 'backspace'].map((num: any) => (
               <Button
                 key={num}
                 variant="outline"

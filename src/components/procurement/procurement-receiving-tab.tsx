@@ -27,12 +27,12 @@ import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface ProcurementReceivingTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
 const getInspectionStatusBadge = (status: string, t: any) => {
-  const variants: Record<string, { variant: any, icon: any, labelKey: string }> = {
+  const variants: Record<string, { variant: "default" | "destructive" | "secondary" | "outline", icon: React.ComponentType<{ className?: string }>, labelKey: string }> = {
     pass: { variant: "default", icon: CheckCircle2, labelKey: "pass" },
     fail: { variant: "destructive", icon: XCircle, labelKey: "fail" },
     pending: { variant: "secondary", icon: Clock, labelKey: "pending" },
@@ -42,15 +42,15 @@ const getInspectionStatusBadge = (status: string, t: any) => {
   const Icon = config.icon
   
   return (
-    <Badge variant={config.variant as any} className="gap-1">
-      <Icon className="h-3 w-3" aria-hidden="true"  />
+    <Badge variant={config.variant} className="gap-1">
+      <Icon className="h-3 w-3" aria-hidden="true" />
       {t(config.labelKey)}
     </Badge>
   )
 }
 
-const getStatusBadge = (status: string, t: any) => {
-  const variants: Record<string, { variant: any, labelKey: string }> = {
+const getStatusBadge = (status: string, t: (key: string) => string) => {
+  const variants: Record<string, { variant: "default" | "destructive" | "secondary" | "outline", labelKey: string }> = {
     received: { variant: "secondary", labelKey: "received" },
     partially_received: { variant: "secondary", labelKey: "partially_received" },
     inspection: { variant: "secondary", labelKey: "inspection" },
@@ -58,18 +58,18 @@ const getStatusBadge = (status: string, t: any) => {
     rejected: { variant: "destructive", labelKey: "rejected" },
   }
   const config = variants[status] || variants.received
-  return <Badge variant={config.variant as any}>{t(config.labelKey)}</Badge>
+  return <Badge variant={config.variant}>{t(config.labelKey)}</Badge>
 }
 
 const getPriorityBadge = (priority: string, t: any) => {
-  const variants: Record<string, { variant: any, labelKey: string }> = {
+  const variants: Record<string, { variant: "default" | "destructive" | "secondary" | "outline", labelKey: string }> = {
     urgent: { variant: "destructive", labelKey: "urgent" },
     high: { variant: "default", labelKey: "high" },
     normal: { variant: "secondary", labelKey: "normal" },
     low: { variant: "outline", labelKey: "low" },
   }
   const config = variants[priority] || variants.normal
-  return <Badge variant={config.variant as any}>{t(config.labelKey)}</Badge>
+  return <Badge variant={config.variant}>{t(config.labelKey)}</Badge>
 }
 
 export function ProcurementReceivingTab({ data = [], loading }: ProcurementReceivingTabProps) {
@@ -101,13 +101,13 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
   }
 
   // Filter data
-  const filteredData = data.filter(item => {
+  const filteredData = (data as any[]).filter(item => {
     const matchesSearch = searchQuery === "" || 
       item.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.vendor?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.po_number?.toLowerCase().includes(searchQuery.toLowerCase())
     
-    const matchesStatus = statusFilter === "all" || item.status === statusFilter
+    const matchesStatus = statusFilter === "all" || (item as any).status === statusFilter
     
     return matchesSearch && matchesStatus
   })
@@ -115,9 +115,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
   // Calculate summary stats
   const stats = {
     total: data.length,
-    received: data.filter((item: any) => item.status === 'received').length,
-    accepted: data.filter((item: any) => item.status === 'accepted').length,
-    inspection: data.filter((item: any) => item.status === 'inspection').length,
+    received: data.filter((item: any) => (item as any).status === 'received').length,
+    accepted: data.filter((item: any) => (item as any).status === 'accepted').length,
+    inspection: data.filter((item: any) => (item as any).status === 'inspection').length,
     withDiscrepancies: data.filter((item: any) => item.has_discrepancy).length,
   }
 
@@ -126,9 +126,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Receipts</CardTitle>
-            <PackageCheck className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Total Receipts</CardTitle>
+            <PackageCheck className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.total}</div>
@@ -137,9 +137,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Received</CardTitle>
-            <PackageCheck className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Received</CardTitle>
+            <PackageCheck className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.received}</div>
@@ -148,9 +148,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">In Inspection</CardTitle>
-            <Clock className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">In Inspection</CardTitle>
+            <Clock className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.inspection}</div>
@@ -159,8 +159,8 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Accepted</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Accepted</CardTitle>
             <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
@@ -170,9 +170,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Discrepancies</CardTitle>
-            <AlertCircle className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Discrepancies</CardTitle>
+            <AlertCircle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.withDiscrepancies}</div>
@@ -185,10 +185,10 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 flex-1">
           <div className="relative flex-1 max-w-sm">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <Input
               placeholder={t('searchPlaceholder')}
-              value={searchQuery}
+              value={searchQuery as any}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-8"
             />
@@ -197,7 +197,7 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm" className="gap-2">
-                <Filter className="h-4 w-4" aria-hidden="true"  />
+                <Filter className="h-4 w-4" aria-hidden="true" />
                 Status: {statusFilter === 'all' ? 'All' : statusFilter}
               </Button>
             </DropdownMenuTrigger>
@@ -215,11 +215,11 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
 
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" className="gap-2">
-            <Camera className="h-4 w-4" aria-hidden="true"  />
+            <Camera className="h-4 w-4" aria-hidden="true" />
             Scan Packing Slip
           </Button>
           <Button size="sm" className="gap-2">
-            <PackageCheck className="h-4 w-4" aria-hidden="true"  />
+            <PackageCheck className="h-4 w-4" aria-hidden="true" />
             Record Receipt
           </Button>
         </div>
@@ -244,7 +244,7 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
                 <TableHead>Priority</TableHead>
                 <TableHead>Assignee</TableHead>
                 <TableHead>Attachments</TableHead>
-                <TableHead className="text-right">Actions</TableHead>
+                <TableHead className="text-right" aria-hidden="true">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -257,10 +257,10 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
               ) : (
                 filteredData.map((item: any) => (
                   <TableRow key={item.id}>
-                    <TableCell className="font-medium">{item.name?.replace('Receipt #', '')}</TableCell>
+                    <TableCell className="font-medium" aria-hidden="true">{item.name?.replace('Receipt #', '')}</TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
-                        <FileText className="h-4 w-4" aria-hidden="true"  />
+                        <FileText className="h-4 w-4" aria-hidden="true" />
                         {item.po_number}
                       </div>
                     </TableCell>
@@ -271,7 +271,7 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
                         <span className="text-xs text-muted-foreground">of {item.quantity_ordered || 0} ordered</span>
                         {item.has_discrepancy && (
                           <Badge variant="destructive" className="w-fit mt-1">
-                            <AlertCircle className="h-3 w-3" aria-hidden="true"  />
+                            <AlertCircle className="h-3 w-3" aria-hidden="true" />
                             Discrepancy
                           </Badge>
                         )}
@@ -280,18 +280,18 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
                     <TableCell>{getInspectionStatusBadge(item.inspection_status, t)}</TableCell>
                     <TableCell>{getStatusBadge(item.status, t)}</TableCell>
                     <TableCell>{getPriorityBadge(item.priority, t)}</TableCell>
-                    <TableCell className="text-sm text-muted-foreground">{item.assignee_name}</TableCell>
+                    <TableCell className="text-sm text-muted-foreground" aria-hidden="true">{item.assignee_name}</TableCell>
                     <TableCell>
                       {item.attachments_count > 0 ? (
                         <div className="flex items-center gap-1 text-sm">
-                          <Camera className="h-4 w-4" aria-hidden="true"  />
+                          <Camera className="h-4 w-4" aria-hidden="true" />
                           <span>{item.attachments_count}</span>
                         </div>
                       ) : (
                         <span className="text-muted-foreground text-sm">—</span>
                       )}
                     </TableCell>
-                    <TableCell className="text-right">
+                    <TableCell className="text-right" aria-hidden="true">
                       <Button variant="ghost" size="sm">View</Button>
                     </TableCell>
                   </TableRow>

@@ -70,17 +70,17 @@ export function getInitials(name: string): string {
 
 export function groupBy<T>(array: T[], key: keyof T): Record<string, T[]> {
   return array.reduce((result: any, item: any) => {
-    const group = String(item[key])
-    if (!result[group]) {
-      result[group] = []
+    const groupKey = item[key];
+    if (!result[groupKey]) {
+      result[groupKey] = [];
     }
-    result[group].push(item)
-    return result
-  }, {} as Record<string, T[]>)
+    result[groupKey].push(item);
+    return result;
+  }, {} as Record<string, T[]>);
 }
 
 export function sortBy<T>(array: T[], key: keyof T, direction: 'asc' | 'desc' = 'asc'): T[] {
-  return [...array].sort((a, b) => {
+  return [...array].sort((a: any, b: any) => {
     const aVal = a[key]
     const bVal = b[key]
     

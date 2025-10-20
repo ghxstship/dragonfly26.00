@@ -100,7 +100,7 @@ export function AutomationsTab() {
   }
 
   const handleDelete = (id: string) => {
-    setAutomations(automations.filter(a => a.id !== id))
+    setAutomations(automations.filter(a => (a as any).id !== id))
     toast({
       title: t('settings.toast.automationDeleted'),
       description: t('settings.toast.automationDeletedDesc'),
@@ -148,7 +148,7 @@ export function AutomationsTab() {
 
       {/* Automations List */}
       <div className="space-y-3">
-        {automations.map((automation) => (
+        {automations.map((automation: any) => (
           <Card key={automation.id}>
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -158,12 +158,12 @@ export function AutomationsTab() {
                     <Badge variant={automation.enabled ? "default" : "secondary"}>
                       {automation.enabled ? (
                         <>
-                          <Play className="h-3 w-3 mr-1" />
+                          <Play className="h-3 w-3 mr-1" aria-hidden="true" />
                           Active
                         </>
                       ) : (
                         <>
-                          <Pause className="h-3 w-3 mr-1" />
+                          <Pause className="h-3 w-3 mr-1" aria-hidden="true" />
                           Paused
                         </>
                       )}
@@ -183,12 +183,12 @@ export function AutomationsTab() {
               <div className="space-y-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                   <div className="flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-muted-foreground" />
+                    <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                     <span className="text-muted-foreground">Trigger:</span>
                     <span className="font-medium">{automation.trigger}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MessageSquare className="h-4 w-4 text-muted-foreground" />
+                    <MessageSquare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                     <span className="text-muted-foreground">Action:</span>
                     <span className="font-medium">{automation.action}</span>
                   </div>
@@ -196,7 +196,7 @@ export function AutomationsTab() {
 
                 {automation.lastRun && (
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4" />
+                    <Clock className="h-4 w-4" aria-hidden="true" />
                     Last run: {automation.lastRun} • {automation.runsCount} total runs
                   </div>
                 )}
@@ -207,7 +207,7 @@ export function AutomationsTab() {
                     size="sm"
                     onClick={() => handleEdit(automation)}
                   >
-                    <Settings className="h-4 w-4 mr-2" />
+                    <Settings className="h-4 w-4 mr-2" aria-hidden="true" />
                     Edit
                   </Button>
                   <Button
@@ -296,7 +296,7 @@ export function AutomationsTab() {
             </div>
 
             <div className="rounded-lg bg-amber-50 dark:bg-amber-950 p-3 flex gap-2">
-              <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+              <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-sm text-amber-800 dark:text-amber-200">
                 Automations will run automatically based on your trigger settings. Make sure to test
                 before enabling.

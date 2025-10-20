@@ -72,7 +72,7 @@ export function BreadcrumbNav() {
         <Home className="h-4 w-4 text-muted-foreground" />
       </Link>
       
-      {breadcrumbs.map((crumb: any, index: number) => (
+      {breadcrumbs.map((crumb, index: number) => (
         <div key={`${crumb.href}-${index}`} className="flex items-center gap-1 min-w-0">
           <ChevronRight className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           <Link

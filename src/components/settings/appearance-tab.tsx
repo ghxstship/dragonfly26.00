@@ -177,7 +177,7 @@ export function AppearanceTab() {
           <CardDescription>{t('settings.appearanceTab.chooseTheme')}</CardDescription>
         </CardHeader>
         <CardContent>
-          <RadioGroup value={theme} onValueChange={setTheme}>
+          <RadioGroup value={theme as any} onValueChange={setTheme}>
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="light" id="light" />
               <Label htmlFor="light">Light</Label>
@@ -205,7 +205,7 @@ export function AppearanceTab() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {themePresets.map((preset) => (
+            {themePresets.map((preset: any) => (
               <button
                 key={preset.id}
                 onClick={() => setAccentColor(preset.color)}
@@ -232,13 +232,13 @@ export function AppearanceTab() {
               <Input
                 id="custom-color"
                 type="color"
-                value={accentColor}
+                value={accentColor as any}
                 onChange={(e) => setAccentColor(e.target.value)}
                 className="w-20 h-10 p-1 cursor-pointer"
               />
               <Input
                 type="text"
-                value={accentColor}
+                value={accentColor as any}
                 onChange={(e) => setAccentColor(e.target.value)}
                 placeholder="#8b5cf6"
                 className="flex-1"
@@ -288,7 +288,7 @@ export function AppearanceTab() {
             <Input
               id="bg-image"
               type="text"
-              value={backgroundImage}
+              value={backgroundImage as any}
               onChange={(e) => setBackgroundImage(e.target.value)}
               placeholder="https://example.com/background.jpg"
             />
@@ -319,7 +319,7 @@ export function AppearanceTab() {
         </CardHeader>
         <CardContent className="space-y-4">
           <Textarea
-            value={customCSS}
+            value={customCSS as any}
             onChange={(e) => setCustomCSS(e.target.value)}
             placeholder="/* Your custom CSS here */&#10;.sidebar { border-radius: 12px; }&#10;&#10;/* Be creative! */"
             className="font-mono text-sm min-h-[200px]"

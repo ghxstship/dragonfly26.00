@@ -27,7 +27,7 @@ export default function SelectPlanPage() {
     if (!workspaceId) {
       toast({
         title: 'Missing workspace',
-        description: 'Please complete workspace setup first.',
+        description: 'Please complete workspace setUp first.',
         variant: 'destructive',
       })
       router.push('/onboarding/workspace')
@@ -68,7 +68,7 @@ export default function SelectPlanPage() {
     } catch (error: any) {
       toast({
         title: 'Error',
-        description: error.message,
+        description: (error as any).message,
         variant: 'destructive',
       })
       setLoading(false)
@@ -98,7 +98,7 @@ export default function SelectPlanPage() {
 
         {/* Plans */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
-          {plans.map((plan) => {
+          {plans.map((plan: any) => {
             const features = formatPlanFeatures(plan)
             const isSelected = selectedPlan === plan.id
             const isPopular = plan.popular
@@ -141,7 +141,7 @@ export default function SelectPlanPage() {
                 <CardContent className="space-y-6">
                   {/* Features */}
                   <ul className="space-y-3">
-                    {features.slice(0, 8).map((feature, idx) => (
+                    {features.slice(0, 8).map((feature: any, idx: number) => (
                       <li key={idx} className="flex items-start gap-2">
                         <Check className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                         <span className="text-sm">{feature}</span>

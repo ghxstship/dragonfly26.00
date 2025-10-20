@@ -26,7 +26,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
   const { events, loading } = useMyAgenda(workspaceId, userId)
   
   // Transform real events data
-  const upcomingEvents = events.map(event => ({
+  const upcomingEvents = events.map((event: any) => ({
     title: event.title || event.name,
     date: new Date(event.start_time).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
     time: `${new Date(event.start_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })} - ${new Date(event.end_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`,
@@ -66,7 +66,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
   ]
   
   // Count events per day
-  events.forEach(event => {
+  events.forEach((event: any) => {
     const dayOfWeek = new Date(event.start_time).getDay()
     if (dayOfWeek >= 1 && dayOfWeek <= 5) {
       weekSummary[dayOfWeek - 1].events++
@@ -112,7 +112,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           </CardHeader>
         <CardContent>
           <div className="flex items-end justify-between gap-2">
-            {weekSummary.map((day) => (
+            {weekSummary.map((day: any) => (
               <div key={day.day} className="flex-1 flex flex-col items-center gap-2">
                 <div 
                   className="w-full bg-purple-500 rounded-t"
@@ -165,7 +165,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                     router.push(`/workspace/${workspaceId}/events/all-events?id=${event.id}`)
                   }
                 }}
-                aria-label={t('viewEvent', { title: event.title })}
+                aria-label={t('viewEvent', { title: event.title as string })}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 space-y-2">
@@ -207,17 +207,17 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <Badge variant="secondary" className={getTypeColor(event.type)}>
+                      <Badge variant="secondary" className={getTypeColor(event.type as string)}>
                         {event.type}
                       </Badge>
-                      <Badge variant="secondary" className={getStatusColor(event.status)}>
+                      <Badge variant="secondary" className={getStatusColor(event.status as string)}>
                         {event.status}
                       </Badge>
                     </div>
                   </div>
                   
-                  <Button variant="ghost" size="icon">
-                    <ChevronRight className="h-4 w-4" />
+                  <Button variant="ghost" size="icon" aria-label="View event details">
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <p className="text-3xl font-bold">{events.filter(e => e.created_by === userId).length}</p>
+                <p className="text-3xl font-bold">{events.filter((e: any) => e.created_by === userId).length}</p>
                 <p className="text-xs text-muted-foreground mt-1">As Organizer</p>
               </div>
             </CardContent>
@@ -251,7 +251,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <p className="text-3xl font-bold">{events.filter(e => e.created_by !== userId).length}</p>
+                <p className="text-3xl font-bold">{events.filter((e: any) => e.created_by !== userId).length}</p>
                 <p className="text-xs text-muted-foreground mt-1">As Attendee</p>
               </div>
             </CardContent>
@@ -260,7 +260,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
             <CardContent className="pt-6">
               <div className="text-center">
                 <p className="text-3xl font-bold">
-                  {events.reduce((total: any, e: any) => {
+                  {events.reduce((total: number, e: any) => {
                     const start = new Date(e.start_time)
                     const end = new Date(e.end_time)
                     return total + Math.round((end.getTime() - start.getTime()) / (1000 * 60 * 60))

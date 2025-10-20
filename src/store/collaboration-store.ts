@@ -80,7 +80,7 @@ export const useCollaborationStore = create<CollaborationStore>((set) => ({
 
   updatePresence: (userId, updates) =>
     set((state) => ({
-      presence: state.presence.map((p) =>
+      presence: state.presence.map((p: any) =>
         p.user_id === userId ? { ...p, ...updates } : p
       ),
     })),
@@ -109,7 +109,7 @@ export const useCollaborationStore = create<CollaborationStore>((set) => ({
     set((state) => ({
       comments: {
         ...state.comments,
-        [entityId]: state.comments[entityId]?.map((c) =>
+        [entityId]: state.comments[entityId]?.map((c: any) =>
           c.id === commentId ? { ...c, ...updates } : c
         ),
       },

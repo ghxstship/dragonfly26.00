@@ -49,7 +49,7 @@ export function AdminPageContent() {
       <div className="flex-1 overflow-auto p-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <TabsList className="inline-flex h-auto flex-wrap justify-start gap-1 bg-muted p-1 rounded-lg">
-            {adminTabs.map((tab) => {
+            {adminTabs.map((tab: any) => {
               const Icon = iconMap[tab.icon]
               return (
                 <TabsTrigger 
@@ -58,14 +58,14 @@ export function AdminPageContent() {
                   className="gap-2 data-[state=active]:bg-background"
                   style={activeTab === tab.slug ? { color: tab.color } : undefined}
                 >
-                  {Icon && <Icon className="h-4 w-4" style={{ color: tab.color }} aria-hidden="true" />}
+                  {Icon && <Icon {...{ className: "h-4 w-4", style: { color: tab.color }, "aria-hidden": "true" } as any} />}
                   {t(`admin.${tab.slug}`)}
                 </TabsTrigger>
               )
             })}
           </TabsList>
 
-          {adminTabs.map((tab) => {
+          {adminTabs.map((tab: any) => {
             const TabComponent = tabComponents[tab.slug]
             if (!TabComponent) return null
             

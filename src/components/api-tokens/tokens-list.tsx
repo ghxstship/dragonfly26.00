@@ -28,7 +28,7 @@ export function APITokensList({ tokens }: APITokensListProps) {
   return (
     <TooltipProvider delayDuration={300}>
       <div className="space-y-4">
-      {tokens.map((token) => (
+      {tokens.map((token: any) => (
         <Card key={token.id}>
           <CardContent className="p-6">
             <div className="flex items-start justify-between">

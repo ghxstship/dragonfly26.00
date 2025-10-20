@@ -88,10 +88,10 @@ export function HealthTab() {
         title: t('profile.success.healthUpdated'),
         description: t('profile.success.healthSaved'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('profile.errors.error'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {
@@ -173,13 +173,13 @@ export function HealthTab() {
             <div className="flex gap-2">
               <Input
                 id="dietaryRestrictions"
-                value={newDietaryRestriction}
+                value={newDietaryRestriction as any}
                 onChange={(e) => setNewDietaryRestriction(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), addDietaryRestriction())}
                 placeholder={t('profile.health.restrictionPlaceholder')}
               />
-              <Button type="button" size="icon" onClick={addDietaryRestriction}>
-                <Plus className="h-4 w-4" />
+              <Button type="button" size="icon" onClick={addDietaryRestriction} aria-label={t('profile.health.addRestriction')}>
+                <Plus className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
             <div className="flex flex-wrap gap-2 mt-2">

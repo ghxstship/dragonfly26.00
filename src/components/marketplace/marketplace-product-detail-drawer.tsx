@@ -268,7 +268,7 @@ export function MarketplaceProductDetailDrawer({
                     <div className="space-y-2">
                       <h3 className="font-semibold">Key Features:</h3>
                       <ul className="space-y-2">
-                        {product.features.map((feature, idx) => (
+                        {product.features.map((feature: any, idx: number) => (
                           <li key={idx} className="flex items-start gap-2 text-sm">
                             <Award className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                             <span>{feature}</span>
@@ -282,7 +282,7 @@ export function MarketplaceProductDetailDrawer({
                     <div className="space-y-2">
                       <h3 className="font-semibold">Tags:</h3>
                       <div className="flex flex-wrap gap-2">
-                        {product.tags.map((tag, idx) => (
+                        {product.tags.map((tag: any, idx: number) => (
                           <Badge key={idx} variant="secondary">
                             {tag}
                           </Badge>
@@ -321,7 +321,7 @@ export function MarketplaceProductDetailDrawer({
 
                 {product.reviews && product.reviews.length > 0 ? (
                   <div className="space-y-4">
-                    {product.reviews.map((review) => (
+                    {product.reviews.map((review: any) => (
                       <div key={review.id} className="space-y-2 p-4 border rounded-lg">
                         <div className="flex items-start justify-between">
                           <div className="flex items-center gap-3">

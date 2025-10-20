@@ -54,7 +54,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
     const month = currentDate.getMonth()
     const targetDate = new Date(year, month, day)
     
-    return maintenanceItems.filter((item: any) => {
+    return (maintenanceItems as any[]).filter((item: any) => {
       const itemDate = new Date(item.scheduled_date || item.due_date)
       return itemDate.getDate() === day && 
              itemDate.getMonth() === month && 
@@ -85,10 +85,10 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
   const emptyDays = Array.from({ length: startingDayOfWeek }, (_, i) => i)
 
   const today = new Date()
-  const overdueMaintenance = maintenanceItems.filter((item: any) => 
+  const overdueMaintenance = (maintenanceItems as any[]).filter((item: any) => 
     new Date(item.due_date) < today && item.status !== 'completed'
   )
-  const upcomingMaintenance = maintenanceItems.filter((item: any) => {
+  const upcomingMaintenance = (maintenanceItems as any[]).filter((item: any) => {
     const dueDate = new Date(item.due_date)
     const daysUntilDue = Math.ceil((dueDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
     return daysUntilDue >= 0 && daysUntilDue <= 7 && item.status !== 'completed'
@@ -139,7 +139,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {maintenanceItems.filter((i: any) => i.status === 'completed').length}
+              {(maintenanceItems as any[]).filter((i: any) => (i as any).status === 'completed').length}
             </div>
             <p className="text-xs text-muted-foreground">This month</p>
           </CardContent>
@@ -154,7 +154,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
               {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
             </CardTitle>
             <div className="flex gap-2">
-              <Button variant="outline" size="icon" onClick={previousMonth}>
+              <Button variant="outline" size="icon" onClick={previousMonth} aria-label="Previous month">
                 <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               </Button>
               <Button 
@@ -164,7 +164,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
               >
                 Today
               </Button>
-              <Button variant="outline" size="icon" onClick={nextMonth}>
+              <Button variant="outline" size="icon" onClick={nextMonth} aria-label="Next month">
                 <ChevronRight className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
@@ -173,19 +173,19 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
         <CardContent>
           <div className="grid grid-cols-7 gap-2">
             {/* Day Headers */}
-            {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+            {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day: any) => (
               <div key={day} className="text-center text-sm font-medium text-muted-foreground py-2">
                 {day}
               </div>
             ))}
             
             {/* Empty cells */}
-            {emptyDays.map((i) => (
+            {emptyDays.map((i: any) => (
               <div key={`empty-${i}`} className="min-h-24 border rounded-lg bg-muted/20" />
             ))}
             
             {/* Calendar days */}
-            {calendarDays.map((day) => {
+            {calendarDays.map((day: any) => {
               const dayMaintenance = getMaintenanceForDay(day)
               const isToday = 
                 day === today.getDate() && 
@@ -203,7 +203,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
                     {day}
                   </div>
                   <div className="space-y-1">
-                    {dayMaintenance.slice(0, 3).map((item: any) => {
+                    {(dayMaintenance as any[]).slice(0, 3).map((item: any) => {
                       const isOverdue = new Date(item.due_date) < today && item.status !== 'completed'
                       return (
                         <div 

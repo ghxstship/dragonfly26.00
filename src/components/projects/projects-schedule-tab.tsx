@@ -66,26 +66,26 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
   }
 
   // Calculate task positioning
-  const calculateTaskBar = (task: any) => {
-    const start = new Date(task.start_date)
-    const end = new Date(task.end_date)
+  const calculateTaskBar = (task: Record<string, any>) => {
+    const start = new Date(task.start_date as string)
+    const end = new Date(task.end_date as string)
     const duration = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24))
-    const progress = task.progress || 0
+    const progress = task.progress as number || 0
     
     return { start, end, duration, progress }
   }
 
   // Group tasks by project/phase
-  const groupedTasks = tasks.reduce((acc: any, task: any) => {
-    const group = task.project_name || 'Unassigned'
+  const groupedTasks = tasks.reduce((acc: Record<string, any>, task: Record<string, any>) => {
+    const group = (task.project_name as string) || 'Unassigned'
     if (!acc[group]) acc[group] = []
     acc[group].push(task)
     return acc
-  }, {})
+  }, {} as Record<string, any>)
 
   const criticalPath = tasks.filter((t: any) => t.is_critical_path)
-  const blockedTasks = tasks.filter((t: any) => t.status === 'blocked')
-  const completedTasks = tasks.filter((t: any) => t.status === 'completed')
+  const blockedTasks = tasks.filter((t: any) => (t as any).status === 'blocked')
+  const completedTasks = tasks.filter((t: any) => (t as any).status === 'completed')
 
   return (
     <main role="main" aria-label={t('title')}>
@@ -157,21 +157,21 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 {t('month')}
               </Button>
               <div className="border-l pl-2 ml-2 flex gap-1">
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label="Zoom out">
                   <ZoomOut className="h-4 w-4" aria-hidden="true" />
                 </Button>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label="Zoom in">
                   <ZoomIn className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
               <div className="border-l pl-2 ml-2 flex gap-1">
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label="Previous period">
                   <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <Button variant="outline" size="sm">
                   {t('today')}
                 </Button>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" aria-label="Next period">
                   <ChevronRight className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
@@ -183,7 +183,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
           <div className="space-y-4">
             {Object.entries(groupedTasks).map(([project, projectTasks]: [string, any]) => (
               <div key={project} className="space-y-2">
-                <div className="font-semibold text-sm text-muted-foreground">{project}</div>
+                <div className="font-semibold text-sm text-muted-foreground">{project as any}</div>
                 {projectTasks.map((task: any) => {
                   const { duration, progress } = calculateTaskBar(task)
                   

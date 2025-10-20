@@ -6,17 +6,31 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ClipboardList, FileText, Package, Truck, AlertCircle, CheckCircle, Clock, XCircle, Search, Plus } from "lucide-react"
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { useTranslations } from 'next-intl'
 
+interface Order {
+  id: string
+  order_number: string
+  status: string
+  total: string
+  items_count?: number
+  date?: string
+  vendor?: string
+  [key: string]: any
+}
+
 interface OrdersTabProps {
-  data?: any[]
+  data?: Order[]
   loading?: boolean
 }
 
-export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
+export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTabProps) {
+  const { orders, loading: liveLoading } = useMarketplaceData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('marketplace.orders')
   const tCommon = useTranslations('common')
-  const ordersData = data
+  const ordersData: Order[] = data
   
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -66,7 +80,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('draft')}</CardDescription>
             <CardTitle className="text-2xl">
-              {ordersData.filter(o => o.status === 'draft').length}
+              {ordersData.filter(o => (o as any).status === 'draft').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -74,7 +88,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('submitted')}</CardDescription>
             <CardTitle className="text-2xl">
-              {ordersData.filter(o => o.status === 'submitted').length}
+              {ordersData.filter(o => (o as any).status === 'submitted').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -82,7 +96,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('approved')}</CardDescription>
             <CardTitle className="text-2xl">
-              {ordersData.filter(o => o.status === 'approved').length}
+              {ordersData.filter(o => (o as any).status === 'approved').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -90,7 +104,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('inProgress')}</CardDescription>
             <CardTitle className="text-2xl">
-              {ordersData.filter(o => o.status === 'in-progress').length}
+              {ordersData.filter(o => (o as any).status === 'in-progress').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -98,7 +112,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('completed')}</CardDescription>
             <CardTitle className="text-2xl">
-              {ordersData.filter(o => o.status === 'completed').length}
+              {ordersData.filter(o => (o as any).status === 'completed').length}
             </CardTitle>
           </CardHeader>
         </Card>
@@ -139,7 +153,7 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
 
       {/* Orders List */}
       <div className="space-y-4">
-        {ordersData.map((order) => (
+        {ordersData.map((order: any) => (
           <Card key={order.id} className="hover:shadow-md transition-shadow">
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -161,11 +175,11 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 <div>
-                  <p className="text-sm text-muted-foreground">Amount</p>
+                  <p className="text-sm text-muted-foreground">{t('amount')}</p>
                   <p className="text-lg font-semibold">{order.price}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Created</p>
+                  <p className="text-sm text-muted-foreground">{t('created')}</p>
                   <p className="text-sm">{new Date(order.created_at).toLocaleDateString()}</p>
                 </div>
                 <div>
@@ -173,12 +187,12 @@ export function OrdersTab({ data = [], loading = false }: OrdersTabProps) {
                   <p className="text-sm">{new Date(order.due_date).toLocaleDateString()}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Priority</p>
+                  <p className="text-sm text-muted-foreground">{t('priority')}</p>
                   <Badge variant="outline" className="capitalize">{order.priority}</Badge>
                 </div>
                 <div className="flex items-end justify-end gap-2">
                   <Button variant="outline" size="sm">{tCommon('view')}</Button>
-                  <Button size="sm">Edit</Button>
+                  <Button size="sm">{t('edit')}</Button>
                 </div>
               </div>
             </CardContent>

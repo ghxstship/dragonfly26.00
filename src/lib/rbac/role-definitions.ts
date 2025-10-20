@@ -222,7 +222,7 @@ export function getRoleBySlug(slug: RoleSlug): RoleMetadata {
  * Get all roles sorted by level
  */
 export function getAllRolesSorted(): RoleMetadata[] {
-  return Object.values(BRANDED_ROLES).sort((a, b) => a.level - b.level)
+  return Object.values(BRANDED_ROLES).sort((a: any, b: any) => a.level - b.level)
 }
 
 /**

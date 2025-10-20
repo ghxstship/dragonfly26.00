@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
 const savedMetrics = [
   {
     id: "1",
@@ -69,7 +70,7 @@ const savedMetrics = [
 ]
 
 interface AnalyticsMetricsLibraryTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -87,7 +88,7 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
           Favorite Metrics
         </h3>
         <div className="grid grid-cols-2 gap-4">
-          {savedMetrics.filter(m => m.isFavorite).map((metric) => (
+          {savedMetrics.filter(m => m.isFavorite).map((metric: any) => (
             <Card key={metric.id} className="hover:shadow-md transition-shadow">
               <CardHeader>
                 <div className="flex items-start justify-between">
@@ -122,7 +123,7 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
       <div>
         <h3 className="font-semibold mb-3">{t('allMetrics')}</h3>
         <div className="space-y-2">
-          {savedMetrics.map((metric) => (
+          {savedMetrics.map((metric: any) => (
             <Card key={metric.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">

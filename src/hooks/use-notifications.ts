@@ -17,7 +17,7 @@ export function useNotifications() {
   const [notifications, setNotifications] = useState<NotificationData[]>([])
   const [unreadCount, setUnreadCount] = useState<number>(0)
   const [isLoading, setIsLoading] = useState(true)
-  const [currentUser, setCurrentUser] = useState<any>(null)
+  const [currentUser, setCurrentUser] = useState<unknown>(null)
 
   // Fetch current user
   useEffect(() => {
@@ -37,7 +37,7 @@ export function useNotifications() {
         const { data, error } = await supabase
           .from('notifications')
           .select('*')
-          .eq('user_id', currentUser.id)
+          .eq('user_id', (currentUser as any)?.id)
           .order('created_at', { ascending: false })
           .limit(50)
 
@@ -45,7 +45,7 @@ export function useNotifications() {
         
         setNotifications(data || [])
         setUnreadCount(data?.filter(n => !n.read).length || 0)
-      } catch (error: any) {
+      } catch (error: Error | unknown) {
         console.error('Error fetching notifications:', error)
       } finally {
         setIsLoading(false)
@@ -60,14 +60,14 @@ export function useNotifications() {
     if (!currentUser) return
 
     const channel = supabase
-      .channel(`notifications:${currentUser.id}`)
+      .channel(`notifications:${(currentUser as any)?.id}`)
       .on(
         'postgres_changes',
         {
           event: 'INSERT',
           schema: 'public',
           table: 'notifications',
-          filter: `user_id=eq.${currentUser.id}`,
+          filter: `user_id=eq.${(currentUser as any)?.id}`,
         },
         (payload) => {
           const newNotification = payload.new as NotificationData
@@ -83,14 +83,14 @@ export function useNotifications() {
           event: 'UPDATE',
           schema: 'public',
           table: 'notifications',
-          filter: `user_id=eq.${currentUser.id}`,
+          filter: `user_id=eq.${(currentUser as any)?.id}`,
         },
         (payload) => {
           const updated = payload.new as NotificationData
           const old = payload.old as NotificationData
           
           setNotifications((prev) =>
-            prev.map((n) => (n.id === updated.id ? updated : n))
+            prev.map((n: any) => (n.id === updated.id ? updated : n))
           )
           
           // Update unread count
@@ -116,10 +116,10 @@ export function useNotifications() {
       if (error) throw error
 
       setNotifications((prev) =>
-        prev.map((n) => (n.id === id ? { ...n, read: true } : n))
+        prev.map((n: any) => (n.id === id ? { ...n, read: true } : n))
       )
       setUnreadCount((prev) => Math.max(0, prev - 1))
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       console.error('Error marking notification as read:', error)
       throw error
     }
@@ -132,14 +132,14 @@ export function useNotifications() {
       const { error } = await supabase
         .from('notifications')
         .update({ read: true })
-        .eq('user_id', currentUser.id)
+        .eq('user_id', (currentUser as any)?.id)
         .eq('read', false)
 
       if (error) throw error
 
-      setNotifications((prev) => prev.map((n) => ({ ...n, read: true })))
+      setNotifications((prev) => prev.map((n: any) => ({ ...n, read: true })))
       setUnreadCount(0)
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       console.error('Error marking all as read:', error)
       throw error
     }

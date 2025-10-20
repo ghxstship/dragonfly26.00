@@ -68,13 +68,13 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
     setReplyTo(null)
   }
 
-  const rootComments = comments.filter((c) => !c.parent_comment_id)
+  const rootComments = comments.filter((c: any) => !c.parent_comment_id)
 
   return (
     <div className="space-y-4">
       {/* Comments list */}
       <div className="space-y-4">
-        {rootComments.map((comment) => {
+        {rootComments.map((comment: any) => {
           const replies = comments.filter((c: any) => c.parent_comment_id === comment.id)
 
           return (
@@ -124,7 +124,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                               size="sm"
                               className="h-6 px-2 text-xs"
                             >
-                              {emoji} {users.length}
+                              {emoji} {(users as any[]).length}
                             </Button>
                           ))}
                           <Button variant="ghost" size="icon" className="h-6 w-6">
@@ -140,7 +140,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
               {/* Replies */}
               {replies.length > 0 && (
                 <div className="ml-8 space-y-3">
-                  {replies.map((reply) => (
+                  {replies.map((reply: any) => (
                     <Card key={reply.id}>
                       <CardContent className="p-3">
                         <div className="flex gap-2">
@@ -193,7 +193,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
               )}
               <Textarea
                 placeholder="Write a comment..."
-                value={newComment}
+                value={newComment as any}
                 onChange={(e) => setNewComment(e.target.value)}
                 rows={3}
                 className="resize-none"

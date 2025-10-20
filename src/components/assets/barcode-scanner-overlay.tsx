@@ -49,7 +49,7 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
       
       setHasPermission(true)
       setScanning(true)
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error accessing camera:', error)
       setHasPermission(false)
     }
@@ -74,7 +74,7 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
             advanced: [{ torch: !flashOn } as any]
           })
           setFlashOn(!flashOn)
-        } catch (error) {
+        } catch (error: any) {
           console.error('Flash not supported:', error)
         }
       }

@@ -175,7 +175,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {assetsByCategory.map((category: any, index: number) => (
+              {(assetsByCategory as any[]).map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="font-medium">{category.category}</span>
@@ -198,7 +198,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {recentActivity.map((activity: any, index: number) => (
+              {(recentActivity as any[]).map((activity: any, index: number) => (
                 <div key={index} className="flex items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
                   <div className={`h-2 w-2 rounded-full mt-2 ${
                     activity.action === 'Checked Out' ? "bg-blue-500" :
@@ -231,18 +231,18 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {alerts.map((alert) => (
+            {alerts.map((alert: any) => (
               <div
                 key={alert.id}
                 className={`flex items-start gap-3 p-3 rounded-lg border ${
-                  alert.type === 'warning' ? 'bg-yellow-50 dark:bg-yellow-950 border-yellow-200' :
-                  alert.type === 'success' ? 'bg-green-50 dark:bg-green-950 border-green-200' :
+                  (alert as any).type === 'warning' ? 'bg-yellow-50 dark:bg-yellow-950 border-yellow-200' :
+                  (alert as any).type === 'success' ? 'bg-green-50 dark:bg-green-950 border-green-200' :
                   'bg-blue-50 dark:bg-blue-950 border-blue-200'
                 }`}
               >
                 <AlertCircle className={`h-5 w-5 mt-0.5 ${
-                  alert.type === 'warning' ? 'text-yellow-600' :
-                  alert.type === 'success' ? 'text-green-600' :
+                  (alert as any).type === 'warning' ? 'text-yellow-600' :
+                  (alert as any).type === 'success' ? 'text-green-600' :
                   'text-blue-600'
                 }`} />
                 <div className="flex-1">

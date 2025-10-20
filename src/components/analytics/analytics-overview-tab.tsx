@@ -5,13 +5,32 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
+import type { LucideIcon } from "lucide-react"
+
+interface Metric {
+  labelKey: string
+  value: string
+  change: string
+  trend: "up" | "down"
+  icon: LucideIcon
+  color: string
+  bgColor: string
+}
+
+interface KPI {
+  nameKey: string
+  current: number
+  target: number
+  unit: string
+}
 
 interface AnalyticsOverviewTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
-const metrics = [
+const metrics: Metric[] = [
   { 
     labelKey: "total_revenue", 
     value: "$2.4M", 
@@ -50,7 +69,7 @@ const metrics = [
   },
 ]
 
-const kpis = [
+const kpis: KPI[] = [
   { nameKey: "customer_satisfaction", current: 87, target: 90, unit: "%" },
   { nameKey: "project_completion_rate", current: 94, target: 95, unit: "%" },
   { nameKey: "resource_utilization", current: 78, target: 85, unit: "%" },
@@ -64,7 +83,7 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
     <div className="space-y-6">
       {/* Key Metrics Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {displayMetrics.map((metric: any, index: number) => {
+        {(displayMetrics as Metric[]).map((metric: Metric, index: number) => {
           const Icon = metric.icon
           const TrendIcon = metric.trend === "up" ? TrendingUp : TrendingDown
           
@@ -98,7 +117,7 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
-            {kpis.map((kpi: any, index: number) => {
+            {kpis.map((kpi: KPI, index: number) => {
               const percentage = (kpi.current / kpi.target) * 100
               const isOnTrack = kpi.current >= kpi.target * 0.9
               

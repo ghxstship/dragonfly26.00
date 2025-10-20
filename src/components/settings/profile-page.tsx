@@ -81,10 +81,10 @@ export function ProfilePage() {
         title: t('settings.toast.profileUpdated'),
         description: t('settings.toast.profileUpdatedDesc'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('common.error'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {
@@ -231,7 +231,7 @@ export function ProfilePage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
+                {skills.map((skill: any) => (
                   <Badge key={skill} variant="secondary" className="text-sm px-3 py-1">
                     {skill}
                   </Badge>

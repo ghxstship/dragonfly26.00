@@ -11,7 +11,7 @@ export function cleanupOldStorage() {
     
     // You can add more cleanup items here as needed
     // localStorage.removeItem('other-old-key')
-  } catch (error) {
+  } catch (error: any) {
     console.warn('Failed to cleanup old storage:', error)
   }
 }

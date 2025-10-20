@@ -38,7 +38,7 @@ export function useFilePermissions(fileId: string | null) {
         if (queryError) throw queryError
         setPermissions(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching file permissions:', err)
         setError(err as Error)
       } finally {
@@ -101,7 +101,7 @@ export function useFileComments(fileId: string | null) {
         if (queryError) throw queryError
         setComments(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching file comments:', err)
         setError(err as Error)
       } finally {
@@ -160,7 +160,7 @@ export function useFileActivities(fileId: string | null, limit = 50) {
         if (queryError) throw queryError
         setActivities(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching file activities:', err)
         setError(err as Error)
       } finally {
@@ -225,7 +225,7 @@ export function useFileFolders(workspaceId: string | null, parentFolderId?: stri
         if (queryError) throw queryError
         setFolders(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching file folders:', err)
         setError(err as Error)
       } finally {
@@ -288,7 +288,7 @@ export function useFileCollaboration(fileId: string | null) {
         if (queryError) throw queryError
         setSessions(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching collaboration sessions:', err)
         setError(err as Error)
       } finally {
@@ -343,7 +343,7 @@ export function useExternalStorage(userId: string | null) {
         if (queryError) throw queryError
         setConnections(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching external storage connections:', err)
         setError(err as Error)
       } finally {
@@ -392,7 +392,7 @@ export function useCheckFilePermission(fileId: string | null, requiredPermission
         if (rpcError) throw rpcError
         setHasPermission(data || false)
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error checking file permission:', err)
         setError(err as Error)
         setHasPermission(false)
@@ -418,7 +418,7 @@ export async function generateFileShareLink(fileId: string): Promise<string | nu
 
     if (error) throw error
     return data
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error generating share link:', err)
     return null
   }
@@ -438,7 +438,7 @@ export async function logFileActivity(
       p_activity_type: activityType,
       p_details: details || {}
     })
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error logging file activity:', err)
   }
 }
@@ -453,7 +453,7 @@ export async function addFilePermission(
     canShare?: boolean
     expiresAt?: Date
   } = {}
-): Promise<any> {
+): Promise<unknown> {
   const supabase = createClient()
   
   try {
@@ -480,7 +480,7 @@ export async function addFilePermission(
     await logFileActivity(fileId, 'shared', { sharedWith: userId, permissionLevel })
     
     return data
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error adding file permission:', err)
     throw err
   }
@@ -496,7 +496,7 @@ export async function addFileComment(
     annotationType?: 'general' | 'text_selection' | 'area' | 'point'
     annotationData?: Record<string, any>
   } = {}
-): Promise<any> {
+): Promise<unknown> {
   const supabase = createClient()
   
   try {
@@ -523,7 +523,7 @@ export async function addFileComment(
     await logFileActivity(fileId, 'commented')
     
     return data
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error adding file comment:', err)
     throw err
   }
@@ -557,7 +557,7 @@ export function useSmartFolders(userId: string | null, workspaceId: string | nul
         if (queryError) throw queryError
         setSmartFolders(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching smart folders:', err)
         setError(err as Error)
       } finally {
@@ -603,7 +603,7 @@ export function useFileFavorites(userId: string | null) {
         if (queryError) throw queryError
         setFavorites(data || [])
         setError(null)
-      } catch (err) {
+      } catch (err: any) {
         console.error('Error fetching file favorites:', err)
         setError(err as Error)
       } finally {

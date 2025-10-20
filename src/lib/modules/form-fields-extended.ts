@@ -1728,7 +1728,7 @@ export const resourcesForms: Record<string, TabFormConfig> = {
         { value: 'how_to', label: 'How-To Guide' },
         { value: 'best_practices', label: 'Best Practices' },
         { value: 'troubleshooting', label: 'Troubleshooting' },
-        { value: 'setup', label: 'Setup Guide' },
+        { value: 'setUp', label: 'Setup Guide' },
         { value: 'user_manual', label: 'User Manual' }
       ]},
       { name: 'description', label: 'Brief Description', type: 'textarea', required: true },

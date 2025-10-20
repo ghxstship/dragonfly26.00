@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
 
 const customViews = [
   {
@@ -43,7 +44,7 @@ const customViews = [
 ]
 
 interface AnalyticsCustomViewsTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -56,7 +57,7 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {customViews.map((view) => (
+        {customViews.map((view: any) => (
           <Card key={view.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-start justify-between">
@@ -79,7 +80,7 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
                 <div>
                   <p className="text-sm font-medium mb-2">{t('widgets')} ({view.widgets.length})</p>
                   <div className="flex flex-wrap gap-2">
-                    {view.widgets.map((widget, idx) => (
+                    {view.widgets.map((widget: any, idx: number) => (
                       <Badge key={idx} variant="secondary" className="text-xs">
                         {widget}
                       </Badge>

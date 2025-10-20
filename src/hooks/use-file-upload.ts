@@ -9,7 +9,7 @@ export interface FileUploadOptions {
   folder?: string
   fileType?: string
   onProgress?: (progress: number) => void
-  metadata?: Record<string, any>
+  metadata?: Record<string, unknown>
 }
 
 export interface UploadResult {
@@ -118,8 +118,8 @@ export function useFileUpload() {
         fileUrl,
         storagePath
       }
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Upload failed'
+    } catch (err: any) {
+      const errorMessage = err instanceof Error ? (err as any).message : 'Upload failed'
       setError(errorMessage)
       setUploading(false)
       return {

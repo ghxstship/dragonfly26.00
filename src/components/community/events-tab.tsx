@@ -25,6 +25,7 @@ import {
   ExternalLink
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
+import { useCommunityData } from "@/hooks/use-community-data"
 
 interface EventsTabProps {
   data?: any[]
@@ -55,7 +56,9 @@ interface CommunityEvent {
   featured?: boolean
 }
 
-export function EventsTab({ data = [], loading = false }: EventsTabProps) {
+export function EventsTab({ data = [], loading: loadingProp = false }: EventsTabProps) {
+  const { events: liveEvents, loading: liveLoading } = useCommunityData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('community.events')
   const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
@@ -68,27 +71,28 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
   useEffect(() => {
     if (data && data.length > 0) {
       const transformed: CommunityEvent[] = data.map((item: any) => {
-        const startDate = new Date(item.start_time)
-        const endDate = item.end_time ? new Date(item.end_time) : undefined
+        const record = item as any
+        const startDate = new Date(record.start_time)
+        const endDate = record.end_time ? new Date(record.end_time) : undefined
         
         return {
-          id: item.id,
-          title: item.name || 'Untitled Event',
-          description: item.description || '',
-          organizer: item.production?.name || 'Community',
+          id: record.id,
+          title: record.name || 'Untitled Event',
+          description: record.description || '',
+          organizer: record.production?.name || 'Community',
           organizerImage: undefined,
-          category: item.event_type || 'conference',
+          category: record.event_type || 'conference',
           date: startDate.toISOString().split('T')[0],
           time: startDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
           endDate: endDate?.toISOString().split('T')[0],
-          venue: item.location?.name || 'TBA',
-          location: item.location ? `${item.location.city}, ${item.location.state}` : 'TBA',
+          venue: record.location?.name || 'TBA',
+          location: record.location ? `${record.location.city}, ${record.location.state}` : 'TBA',
           image: undefined,
           attendees: 0, // Not tracked yet
-          capacity: item.capacity || 1000,
+          capacity: record.capacity || 1000,
           price: 'free', // Not tracked yet
           priceAmount: undefined,
-          visibility: item.is_public ? 'public' : 'public',
+          visibility: record.is_public ? 'public' : 'public',
           tags: [],
           isAttending: false,
           isInterested: false,
@@ -138,7 +142,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('upcoming')}</div>
-            <CalendarDays className="h-4 w-4 text-muted-foreground" />
+            <CalendarDays className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{upcomingEvents.length}</div>
@@ -148,18 +152,18 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Attending</div>
-            <Ticket className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('attending')}</div>
+            <Ticket className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{attendingCount}</div>
+            <div className="text-2xl font-bold">{attendingCount as any}</div>
             <p className="text-xs text-muted-foreground">Your events</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Interested</div>
+            <div className="text-sm font-medium">{t('interested')}</div>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -172,14 +176,14 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Featured</div>
+            <div className="text-sm font-medium">{t('featured')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {events.filter(e => e.featured).length}
             </div>
-            <p className="text-xs text-muted-foreground">Highlighted</p>
+            <p className="text-xs text-muted-foreground">{t('highlighted')}</p>
           </CardContent>
         </Card>
       </div>
@@ -192,20 +196,20 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
                 placeholder={t('searchEvents')}
-                value={searchQuery}
+                value={searchQuery as any}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
             </div>
-            <Tabs value={categoryFilter} onValueChange={(v) => setCategoryFilter(v as any)}>
+            <Tabs value={categoryFilter as any} onValueChange={(v) => setCategoryFilter(v as any)}>
               <TabsList className="w-full grid grid-cols-4 lg:grid-cols-7">
                 <TabsTrigger value="all">{t('all')}</TabsTrigger>
-                <TabsTrigger value="concert">Concert</TabsTrigger>
-                <TabsTrigger value="festival">Festival</TabsTrigger>
-                <TabsTrigger value="theater">Theater</TabsTrigger>
-                <TabsTrigger value="conference">Conference</TabsTrigger>
-                <TabsTrigger value="workshop">Workshop</TabsTrigger>
-                <TabsTrigger value="networking">Network</TabsTrigger>
+                <TabsTrigger value="concert">{t('concert')}</TabsTrigger>
+                <TabsTrigger value="festival">{t('festival')}</TabsTrigger>
+                <TabsTrigger value="theater">{t('theater')}</TabsTrigger>
+                <TabsTrigger value="conference">{t('conference')}</TabsTrigger>
+                <TabsTrigger value="workshop">{t('workshop')}</TabsTrigger>
+                <TabsTrigger value="networking">{t('network')}</TabsTrigger>
               </TabsList>
             </Tabs>
           </CardContent>
@@ -252,7 +256,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
             </CardContent>
           </Card>
         ) : (
-          filteredEvents.map((event) => (
+          filteredEvents.map((event: any) => (
             <Card key={event.id} className="overflow-hidden hover:shadow-md transition-shadow">
               <CardContent className="p-0">
                 <div className="md:flex">
@@ -283,7 +287,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
                           <Badge variant="outline" className="capitalize">
-                            <Music className="h-3 w-3 mr-1" />
+                            <Music className="h-3 w-3 mr-1"  aria-hidden="true" />
                             {event.category}
                           </Badge>
                           <Badge variant={event.price === "free" ? "secondary" : "default"}>
@@ -310,7 +314,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                     {/* Event Info */}
                     <div className="space-y-2 mb-4 text-sm">
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <CalendarDays className="h-4 w-4" />
+                        <CalendarDays className="h-4 w-4"  aria-hidden="true" />
                         <span>
                           {new Date(event.date).toLocaleDateString('en-US', { 
                             weekday: 'long', 
@@ -329,7 +333,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                         <span>{event.time}</span>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
+                        <MapPin className="h-4 w-4"  aria-hidden="true" />
                         <span>{event.venue}, {event.location}</span>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
@@ -342,7 +346,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {event.tags.map((tag) => (
+                      {event.tags.map((tag: any) => (
                         <Badge key={tag} variant="secondary" className="text-xs">
                           {tag}
                         </Badge>
@@ -353,7 +357,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                     <div className="flex flex-wrap gap-2">
                       {event.isAttending ? (
                         <Button variant="default" size="sm" disabled>
-                          <Ticket className="h-4 w-4 mr-2" />
+                          <Ticket className="h-4 w-4 mr-2"  aria-hidden="true" />
                           Attending
                         </Button>
                       ) : (
@@ -362,7 +366,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                           size="sm"
                           onClick={() => handleAttend(event.id)}
                         >
-                          <Ticket className="h-4 w-4 mr-2" />
+                          <Ticket className="h-4 w-4 mr-2"  aria-hidden="true" />
                           Attend
                         </Button>
                       )}
@@ -379,7 +383,7 @@ export function EventsTab({ data = [], loading = false }: EventsTabProps) {
                         Share
                       </Button>
                       <Button variant="outline" size="sm">
-                        <ExternalLink className="h-4 w-4 mr-2" />{tCommon('details')}</Button>
+                        <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('details')}</Button>
                     </div>
                   </div>
                 </div>

@@ -21,12 +21,12 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
     id: report.id,
     name: report.name || 'Report',
     type: 'custom',
-    category: report.category || 'General',
+    category: 'General',
     isFavorite: false,
-    isRecurring: report.is_recurring || false,
-    frequency: report.frequency || undefined,
-    lastGenerated: new Date(report.created_at).toLocaleDateString(),
-    nextScheduled: report.next_scheduled ? new Date(report.next_scheduled).toLocaleDateString() : undefined,
+    isRecurring: report.schedule_enabled || false,
+    frequency: report.schedule_cron || undefined,
+    lastGenerated: report.last_run_at ? new Date(report.last_run_at).toLocaleDateString() : new Date(report.created_at).toLocaleDateString(),
+    nextScheduled: undefined,
     format: 'PDF',
     icon: FileBarChart,
     description: report.description || '',
@@ -146,7 +146,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-5 gap-4">
-            {categories.map((category) => (
+            {categories.map((category: any) => (
               <div
                 key={t(category.nameKey)}
                 className="p-4 border rounded-lg text-center hover:bg-accent transition-colors cursor-pointer"
@@ -167,7 +167,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {reportsList.map((report) => {
+            {reportsList.map((report: any) => {
               const Icon = report.icon
               return (
                 <div

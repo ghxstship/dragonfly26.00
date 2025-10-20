@@ -11,7 +11,11 @@
     "generate-logos": "node scripts/generate-logo-pngs.js",
     "analyze": "ANALYZE=true next build",
     "analyze:server": "BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser next build"
+    "analyze:browser": "BUNDLE_ANALYZE=browser next build",
+    "audit:tabs": "node scripts/find-unregistered-tabs.js",
+    "audit:icons": "node scripts/audit-tab-icons.js",
+    "audit:icons:all": "node scripts/audit-all-tab-icons.js",
+    "audit:tabs:full": "npm run audit:tabs && npm run audit:icons && npm run audit:icons:all"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",

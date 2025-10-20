@@ -6,6 +6,7 @@
 -- This was causing "Error Loading Data" for all resources module tabs
 
 -- Resources policies
+DROP POLICY IF EXISTS "Users can view resources in their workspace" ON resources;
 CREATE POLICY "Users can view resources in their workspace"
     ON resources FOR SELECT
     USING (
@@ -13,34 +14,37 @@ CREATE POLICY "Users can view resources in their workspace"
         is_public = true OR
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
+DROP POLICY IF EXISTS "Users can create resources in their workspace" ON resources;
 CREATE POLICY "Users can create resources in their workspace"
     ON resources FOR INSERT
     WITH CHECK (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
+DROP POLICY IF EXISTS "Users can update resources in their workspace" ON resources;
 CREATE POLICY "Users can update resources in their workspace"
     ON resources FOR UPDATE
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
+DROP POLICY IF EXISTS "Users can delete resources in their workspace" ON resources;
 CREATE POLICY "Users can delete resources in their workspace"
     ON resources FOR DELETE
     USING (
         workspace_id IN (
             SELECT workspace_id FROM workspace_members
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 

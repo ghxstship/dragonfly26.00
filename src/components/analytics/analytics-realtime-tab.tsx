@@ -6,14 +6,31 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-const realtimeMetrics = [
+import { useAnalyticsData } from "@/hooks/use-analytics-data"
+
+interface RealtimeMetric {
+  labelKey: string
+  value: string
+  change: string
+  status: string
+}
+
+interface RecentEvent {
+  id: string
+  type: string
+  message: string
+  time: string
+  severity: string
+}
+
+const realtimeMetrics: RealtimeMetric[] = [
   { labelKey: "active_users", value: "1,234", change: "+45 in last minute", status: "up" },
   { labelKey: "requestssec", value: "847", change: "+12% vs avg", status: "up" },
   { labelKey: "response_time", value: "124ms", change: "-8ms vs avg", status: "down" },
   { labelKey: "error_rate", value: "0.03%", change: "Normal", status: "stable" },
 ]
 
-const recentEvents = [
+const recentEvents: RecentEvent[] = [
   { id: "1", type: "user_signup", message: "New user registered", time: "2 seconds ago", severity: "info" },
   { id: "2", type: "purchase", message: "$2,450 transaction completed", time: "5 seconds ago", severity: "success" },
   { id: "3", type: "api_call", message: "API endpoint accessed", time: "7 seconds ago", severity: "info" },
@@ -25,7 +42,7 @@ const recentEvents = [
 ]
 
 interface AnalyticsRealtimeTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -38,7 +55,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
     <div className="space-y-6">
       {/* Real-time Metrics */}
       <div className="grid grid-cols-4 gap-4">
-        {realtimeMetrics.map((metric: any, index: number) => (
+        {realtimeMetrics.map((metric: RealtimeMetric, index: number) => (
           <Card key={index} className="border-2">
             <CardContent className="p-6">
               <div className="flex items-start justify-between mb-2">
@@ -70,7 +87,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
-            {recentEvents.map((event) => (
+            {recentEvents.map((event: any) => (
               <div 
                 key={event.id} 
                 className="flex items-center gap-3 p-3 border rounded-lg hover:bg-accent transition-colors"

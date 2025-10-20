@@ -29,7 +29,7 @@ export function ChecklistTemplatesTab() {
       items: [
         { content: t('templates.createProjectPlan'), completed: false, order: 0 },
         { content: t('templates.assignTeamMembers'), completed: false, order: 1 },
-        { content: t('templates.setupCommunication'), completed: false, order: 2 },
+        { content: t('templates.setUpCommunication'), completed: false, order: 2 },
       ],
       created_by: "user-1",
       created_at: "",
@@ -51,9 +51,9 @@ export function ChecklistTemplatesTab() {
       name: newTemplate.name,
       description: newTemplate.description,
       items: newTemplate.items
-        .filter((item: any) => item.trim())
+        .filter((item: any) => (item as string).trim())
         .map((item: any, index: number) => ({
-          content: item,
+          content: item as string,
           completed: false,
           order: index,
         })),
@@ -68,7 +68,7 @@ export function ChecklistTemplatesTab() {
   }
 
   const deleteTemplate = (id: string) => {
-    setTemplates(templates.filter((t: any) => t.id !== id))
+    setTemplates(templates.filter((t: any) => (t as any).id !== id))
   }
 
   return (
@@ -121,7 +121,7 @@ export function ChecklistTemplatesTab() {
                       <div key={index} className="flex gap-2">
                         <Input
                           placeholder={t('templates.addChecklistItem')}
-                          value={item}
+                          value={item as string}
                           onChange={(e) => {
                             const newItems = [...newTemplate.items]
                             newItems[index] = e.target.value
@@ -165,7 +165,7 @@ export function ChecklistTemplatesTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {templates.map((template) => (
+            {templates.map((template: any) => (
               <div
                 key={template.id}
                 className="p-4 border rounded-lg hover:bg-accent/50"

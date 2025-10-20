@@ -1,11 +1,12 @@
 "use client"
 
-import { Sparkles, TrendingUp, AlertTriangle, Lightbulb, Target, Plus } from "lucide-react"
+import { Sparkles, TrendingUp, AlertTriangle, Lightbulb, Target, Plus, Rss, type LucideIcon } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
+import { useInsightsData } from "@/hooks/use-insights-data"
 const insights = [
   {
     id: "1",
@@ -70,7 +71,7 @@ const insights = [
 ]
 
 interface InsightsIntelligenceFeedTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -88,16 +89,16 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
           High Priority ({insights.filter(i => i.priority === "high").length})
         </Badge>
         <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-          Opportunities ({insights.filter(i => i.type === "opportunity").length})
+          Opportunities ({insights.filter(i => (i as any).type === "opportunity").length})
         </Badge>
         <Badge variant="outline" className="cursor-pointer hover:bg-accent">
-          Risks ({insights.filter(i => i.type === "risk").length})
+          Risks ({insights.filter(i => (i as any).type === "risk").length})
         </Badge>
       </div>
 
       {/* Intelligence Feed */}
       <div className="space-y-3">
-        {insights.map((insight) => {
+        {insights.map((insight: any) => {
           const Icon = 
             insight.type === "opportunity" ? TrendingUp :
             insight.type === "risk" ? AlertTriangle :
@@ -141,6 +142,7 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
                       </div>
                     </div>
                     
+                    <Rss className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
                     <p className="text-muted-foreground mb-3">{insight.message}</p>
                     
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">

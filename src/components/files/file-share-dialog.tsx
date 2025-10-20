@@ -39,7 +39,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
       // For now, this is a placeholder
       await addFilePermission(fileId, shareEmail, permissionLevel)
       setShareEmail("")
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error sharing file:", error)
     } finally {
       setLoading(false)
@@ -53,7 +53,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
       if (link) {
         setShareLink(`${window.location.origin}/files/shared/${link}`)
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error generating share link:", error)
     } finally {
       setLoading(false)
@@ -95,11 +95,11 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
             <div className="flex gap-2">
               <Input
                 placeholder={t('files.share.emailPlaceholder')}
-                value={shareEmail}
+                value={shareEmail as any}
                 onChange={(e) => setShareEmail(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleShare()}
               />
-              <Select value={permissionLevel} onValueChange={(value: any) => setPermissionLevel(value)}>
+              <Select value={permissionLevel as any} onValueChange={(value: any) => setPermissionLevel(value)}>
                 <SelectTrigger className="w-[140px]">
                   <SelectValue />
                 </SelectTrigger>
@@ -120,7 +120,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
             <div className="space-y-3">
               <Label>People with access</Label>
               <div className="space-y-2 max-h-[200px] overflow-y-auto">
-                {permissions.map((perm) => (
+                {permissions.map((perm: any) => (
                   <div key={perm.id} className="flex items-center justify-between p-2 rounded-lg border">
                     <div className="flex items-center gap-3">
                       <Avatar className="h-8 w-8">
@@ -170,7 +170,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
               </Button>
             ) : (
               <div className="flex gap-2">
-                <Input value={shareLink} readOnly className="font-mono text-sm" />
+                <Input value={shareLink as any} readOnly className="font-mono text-sm" />
                 <Button 
                   variant="outline" 
                   size="icon"

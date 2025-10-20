@@ -13,10 +13,10 @@ const getConnectionConfig = () => {
   }
   
   return {
-    host: `aws-0-us-east-1.pooler.supabase.com`,
+    host: `aws-1-us-east-1.pooler.supabase.com`,
     port: 6543,
     database: 'postgres',
-    user: 'postgres',
+    user: `postgres.${projectRef}`,
     password: process.env.SUPABASE_DB_PASSWORD || process.env.DATABASE_PASSWORD,
     ssl: { rejectUnauthorized: false }
   }

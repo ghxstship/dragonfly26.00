@@ -53,12 +53,12 @@ export function CertificationsTab() {
   }
 
   const removeCertification = (id: string) => {
-    setCertifications(certifications.filter((c: any) => c.id !== id))
+    setCertifications(certifications.filter((c: any) => (c as any).id !== id))
   }
 
   const updateCertification = (id: string, field: keyof Certification, value: string) => {
     setCertifications(
-      certifications.map((cert) => (cert.id === id ? { ...cert, [field]: value } : cert))
+      certifications.map((cert: any) => (cert.id === id ? { ...cert, [field]: value } : cert))
     )
   }
 
@@ -86,10 +86,10 @@ export function CertificationsTab() {
         title: t('profile.success.certificationsUpdated'),
         description: t('profile.success.certificationsSaved'),
       })
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       toast({
         title: t('errors.error'),
-        description: error.message,
+        description: (error as any).message,
         variant: "destructive",
       })
     } finally {
@@ -134,7 +134,7 @@ export function CertificationsTab() {
               </Button>
             </div>
           ) : (
-            certifications.map((cert) => (
+            certifications.map((cert: any) => (
               <Card key={cert.id}>
                 <CardContent className="pt-6 space-y-4">
                   <div className="flex justify-between items-start">

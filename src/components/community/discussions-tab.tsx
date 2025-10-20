@@ -26,6 +26,7 @@ import {
   Lock,
   Eye
 } from "lucide-react"
+import { useCommunityData } from "@/hooks/use-community-data"
 
 interface DiscussionsTabProps {
   data?: any[]
@@ -52,7 +53,9 @@ interface Discussion {
   tags: string[]
 }
 
-export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabProps) {
+export function DiscussionsTab({ data = [], loading: loadingProp = false }: DiscussionsTabProps) {
+  const { posts, loading: liveLoading } = useCommunityData()
+  const loading = loadingProp || liveLoading
   const t = useTranslations('community.discussions')
   const tCommon = useTranslations('common')
   const [searchQuery, setSearchQuery] = useState("")
@@ -64,25 +67,28 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
   // Transform and update discussions when data changes
   useEffect(() => {
     if (data && data.length > 0) {
-      const transformed: Discussion[] = data.map((item: any) => ({
-        id: item.id,
-        title: item.title || 'Untitled Discussion',
-        content: item.content || '',
-        author: item.author ? `${item.author.first_name}_${item.author.last_name}`.toLowerCase() : 'anonymous',
-        authorImage: item.author?.avatar_url,
-        authorFlair: item.author?.job_title,
-        category: item.tags?.[0] || 'General',
-        timestamp: item.created_at,
-        upvotes: item.likes_count || 0,
-        downvotes: 0, // Not tracked yet
-        comments: item.comments_count || 0,
-        views: 0, // Not tracked yet
-        pinned: item.is_featured || false,
-        locked: false,
-        awarded: (item.likes_count || 0) > 100,
-        userVote: null,
-        tags: item.tags || []
-      }))
+      const transformed: Discussion[] = data.map((item: any) => {
+        const record = item as any
+        return {
+          id: record.id,
+          title: record.title || 'Untitled Discussion',
+          content: record.content || '',
+          author: record.author ? `${record.author.first_name}_${record.author.last_name}`.toLowerCase() : 'anonymous',
+          authorImage: record.author?.avatar_url,
+          authorFlair: record.author?.job_title,
+          category: record.tags?.[0] || 'General',
+          timestamp: record.created_at,
+          upvotes: record.likes_count || 0,
+          downvotes: 0, // Not tracked yet
+          comments: record.comments_count || 0,
+          views: 0, // Not tracked yet
+          pinned: record.is_featured || false,
+          locked: false,
+          awarded: (record.likes_count || 0) > 100,
+          userVote: null,
+          tags: record.tags || []
+        }
+      })
       setDiscussions(transformed)
     }
   }, [data])
@@ -131,7 +137,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
       discussion.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
       discussion.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
     )
-    .sort((a, b) => {
+    .sort((a: any, b: any) => {
       if (sortBy === "hot") {
         const scoreA = a.upvotes - a.downvotes + (a.comments * 2)
         const scoreB = b.upvotes - b.downvotes + (b.comments * 2)
@@ -158,8 +164,8 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Discussions</div>
-            <MessageSquare className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm font-medium">{t('discussions')}</div>
+            <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{discussions.length}</div>
@@ -169,12 +175,12 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <div className="text-sm font-medium">Comments</div>
+            <div className="text-sm font-medium">{t('comments')}</div>
             <MessageCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {discussions.reduce((acc: any, d: any) => acc + d.comments, 0)}
+              {discussions.reduce((acc: number, d: Discussion) => acc + d.comments, 0)}
             </div>
             <p className="text-xs text-muted-foreground">Total replies</p>
           </CardContent>
@@ -200,7 +206,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">7</div>
-            <p className="text-xs text-muted-foreground">Contributions</p>
+            <p className="text-xs text-muted-foreground">{t('contributions')}</p>
           </CardContent>
         </Card>
       </div>
@@ -214,12 +220,12 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
               <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
                 placeholder={t('searchDiscussions')}
-                value={searchQuery}
+                value={searchQuery as any}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9"
               />
             </div>
-            <Tabs value={sortBy} onValueChange={(v) => setSortBy(v as any)}>
+            <Tabs value={sortBy as any} onValueChange={(v) => setSortBy(v as any)}>
               <TabsList>
                 <TabsTrigger value="hot">
                   <TrendingUp className="h-4 w-4 mr-2" aria-hidden="true" />
@@ -230,7 +236,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
                   New
                 </TabsTrigger>
                 <TabsTrigger value="top">
-                  <ArrowUp className="h-4 w-4 mr-2" />
+                  <ArrowUp className="h-4 w-4 mr-2"  aria-hidden="true" />
                   Top
                 </TabsTrigger>
               </TabsList>
@@ -255,7 +261,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
             </CardContent>
           </Card>
         ) : (
-          filteredDiscussions.map((discussion) => (
+          filteredDiscussions.map((discussion: any) => (
             <Card key={discussion.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-4">
                 <div className="flex gap-4">
@@ -267,7 +273,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
                       className="h-8 w-8 p-0"
                       onClick={() => handleVote(discussion.id, "up")}
                     >
-                      <ArrowUp className="h-4 w-4" />
+                      <ArrowUp className="h-4 w-4"  aria-hidden="true" />
                     </Button>
                     <span className="font-bold text-sm">
                       {discussion.upvotes - discussion.downvotes}
@@ -278,7 +284,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
                       className="h-8 w-8 p-0"
                       onClick={() => handleVote(discussion.id, "down")}
                     >
-                      <ArrowDown className="h-4 w-4" />
+                      <ArrowDown className="h-4 w-4"  aria-hidden="true" />
                     </Button>
                   </div>
 
@@ -287,7 +293,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
                     {/* Header */}
                     <div className="flex items-start gap-2 mb-2">
                       {discussion.pinned && (
-                        <Pin className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                        <Pin className="h-4 w-4 text-primary flex-shrink-0 mt-1"  aria-hidden="true" />
                       )}
                       <div className="flex-1">
                         <h3 className="font-semibold text-lg mb-1 hover:text-primary cursor-pointer">
@@ -312,7 +318,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
                           {discussion.locked && (
                             <>
                               <span>•</span>
-                              <Lock className="h-3 w-3" />
+                              <Lock className="h-3 w-3"  aria-hidden="true" />
                             </>
                           )}
                         </div>
@@ -326,7 +332,7 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1 mb-3">
-                      {discussion.tags.map((tag) => (
+                      {discussion.tags.map((tag: any) => (
                         <Badge key={tag} variant="outline" className="text-xs">
                           {tag}
                         </Badge>
@@ -344,11 +350,11 @@ export function DiscussionsTab({ data = [], loading = false }: DiscussionsTabPro
                         Share
                       </Button>
                       <Button variant="ghost" size="sm" className="h-8">
-                        <Bookmark className="h-4 w-4 mr-2" />
+                        <Bookmark className="h-4 w-4 mr-2"  aria-hidden="true" />
                         Save
                       </Button>
                       <div className="ml-auto flex items-center gap-1 text-xs text-muted-foreground">
-                        <Eye className="h-3 w-3" />
+                        <Eye className="h-3 w-3"  aria-hidden="true" />
                         {discussion.views.toLocaleString()} views
                       </div>
                     </div>

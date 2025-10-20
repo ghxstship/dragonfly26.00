@@ -2,7 +2,7 @@
  * =====================================================
  * STRIPE CONFIGURATION
  * =====================================================
- * Stripe SDK setup and configuration
+ * Stripe SDK setUp and configuration
  * =====================================================
  */
 

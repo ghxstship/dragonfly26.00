@@ -235,7 +235,7 @@ export const DEFAULT_FAVORITE_ACTIONS = [
 ]
 
 export function getCreateActionById(id: string): CreateAction | undefined {
-  return CREATE_ACTIONS.find((action) => action.id === id)
+  return CREATE_ACTIONS.find((action: any) => action.id === id)
 }
 
 export function getCreateActionsByCategory(category: CreateAction['category']): CreateAction[] {

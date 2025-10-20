@@ -56,7 +56,7 @@ export function QuickStockAdjust({ item, onAdjusted }: QuickStockAdjustProps) {
       setQuantity('')
       setReason('')
       onAdjusted()
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error adjusting stock:', error)
       alert('Failed to adjust stock')
     } finally {
@@ -114,7 +114,7 @@ export function QuickStockAdjust({ item, onAdjusted }: QuickStockAdjustProps) {
                 id="quantity"
                 type="number"
                 placeholder={t('assets.stock.enterQuantity')}
-                value={quantity}
+                value={quantity as any}
                 onChange={(e) => setQuantity(e.target.value)}
                 min="1"
               />
@@ -125,7 +125,7 @@ export function QuickStockAdjust({ item, onAdjusted }: QuickStockAdjustProps) {
               <Textarea
                 id="reason"
                 placeholder="e.g., PO #12345, Event checkout, Damaged items"
-                value={reason}
+                value={reason as any}
                 onChange={(e) => setReason(e.target.value)}
                 rows={3}
               />

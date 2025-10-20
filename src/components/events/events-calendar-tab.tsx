@@ -117,7 +117,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {events.filter((e: any) => e.type === 'performance').length}
+              {events.filter((e: any) => (e as any).type === 'performance').length}
             </div>
             <p className="text-xs text-muted-foreground">This month</p>
           </CardContent>
@@ -129,7 +129,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {events.filter((e: any) => e.type === 'rehearsal').length}
+              {events.filter((e: any) => (e as any).type === 'rehearsal').length}
             </div>
             <p className="text-xs text-muted-foreground">Scheduled</p>
           </CardContent>
@@ -142,7 +142,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
           <div className="flex items-center justify-between">
             <CardTitle>{getMonthName(currentDate)}</CardTitle>
             <div className="flex gap-2">
-              <Button variant="outline" size="icon" onClick={previousMonth}>
+              <Button variant="outline" size="icon" onClick={previousMonth} aria-label="Previous month">
                 <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               </Button>
               <Button 
@@ -152,7 +152,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
               >
                 Today
               </Button>
-              <Button variant="outline" size="icon" onClick={nextMonth}>
+              <Button variant="outline" size="icon" onClick={nextMonth} aria-label="Next month">
                 <ChevronRight className="h-4 w-4" aria-hidden="true" />
               </Button>
             </div>
@@ -162,19 +162,19 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
           {/* Calendar Grid */}
           <div className="grid grid-cols-7 gap-2">
             {/* Day Headers */}
-            {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+            {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day: any) => (
               <div key={day} className="text-center text-sm font-medium text-muted-foreground py-2">
                 {day}
               </div>
             ))}
             
             {/* Empty cells for days before month starts */}
-            {emptyDays.map((i) => (
+            {emptyDays.map((i: any) => (
               <div key={`empty-${i}`} className="min-h-24 border rounded-lg bg-muted/20" />
             ))}
             
             {/* Calendar days */}
-            {calendarDays.map((day) => {
+            {calendarDays.map((day: any) => {
               const dayEvents = getEventsForDay(day)
               const isToday = 
                 day === today.getDate() && 

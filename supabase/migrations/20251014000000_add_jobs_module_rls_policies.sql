@@ -14,46 +14,50 @@
 -- =============================================
 
 -- SELECT: Users can view job contracts in their workspace
+DROP POLICY IF EXISTS "Users can view job contracts in their workspace" ON job_contracts;
 CREATE POLICY "Users can view job contracts in their workspace"
     ON job_contracts FOR SELECT
     USING (
         workspace_id IN (
             SELECT workspace_id 
             FROM workspace_members 
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- INSERT: Users can create job contracts in their workspace
+DROP POLICY IF EXISTS "Users can create job contracts in their workspace" ON job_contracts;
 CREATE POLICY "Users can create job contracts in their workspace"
     ON job_contracts FOR INSERT
     WITH CHECK (
         workspace_id IN (
             SELECT workspace_id 
             FROM workspace_members 
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- UPDATE: Users can update job contracts in their workspace
+DROP POLICY IF EXISTS "Users can update job contracts in their workspace" ON job_contracts;
 CREATE POLICY "Users can update job contracts in their workspace"
     ON job_contracts FOR UPDATE
     USING (
         workspace_id IN (
             SELECT workspace_id 
             FROM workspace_members 
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- DELETE: Users can delete job contracts in their workspace
+DROP POLICY IF EXISTS "Users can delete job contracts in their workspace" ON job_contracts;
 CREATE POLICY "Users can delete job contracts in their workspace"
     ON job_contracts FOR DELETE
     USING (
         workspace_id IN (
             SELECT workspace_id 
             FROM workspace_members 
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
@@ -62,46 +66,50 @@ CREATE POLICY "Users can delete job contracts in their workspace"
 -- =============================================
 
 -- SELECT: Users can view RFPs in their workspace
+DROP POLICY IF EXISTS "Users can view rfps in their workspace" ON rfps;
 CREATE POLICY "Users can view rfps in their workspace"
     ON rfps FOR SELECT
     USING (
         workspace_id IN (
             SELECT workspace_id 
             FROM workspace_members 
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- INSERT: Users can create RFPs in their workspace
+DROP POLICY IF EXISTS "Users can create rfps in their workspace" ON rfps;
 CREATE POLICY "Users can create rfps in their workspace"
     ON rfps FOR INSERT
     WITH CHECK (
         workspace_id IN (
             SELECT workspace_id 
             FROM workspace_members 
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- UPDATE: Users can update RFPs in their workspace
+DROP POLICY IF EXISTS "Users can update rfps in their workspace" ON rfps;
 CREATE POLICY "Users can update rfps in their workspace"
     ON rfps FOR UPDATE
     USING (
         workspace_id IN (
             SELECT workspace_id 
             FROM workspace_members 
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 
 -- DELETE: Users can delete RFPs in their workspace
+DROP POLICY IF EXISTS "Users can delete rfps in their workspace" ON rfps;
 CREATE POLICY "Users can delete rfps in their workspace"
     ON rfps FOR DELETE
     USING (
         workspace_id IN (
             SELECT workspace_id 
             FROM workspace_members 
-            WHERE user_id = auth.uid()
+            WHERE user_id = (SELECT auth.uid())
         )
     );
 

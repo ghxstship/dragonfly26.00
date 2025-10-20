@@ -51,7 +51,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
           variant: "destructive"
         })
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error restoring file:", error)
       toast({
         title: "Error",
@@ -80,7 +80,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
         description: t('files.toast.fileDeleted')
       })
       refetch()
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error deleting file:", error)
       toast({
         title: "Error",
@@ -125,7 +125,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
             </div>
           ) : (
             <div className="space-y-2">
-              {trashedFiles.map((item) => {
+              {trashedFiles.map((item: any) => {
                 const daysLeft = getDaysUntilAutoDelete(item.deleted_at)
                 
                 return (

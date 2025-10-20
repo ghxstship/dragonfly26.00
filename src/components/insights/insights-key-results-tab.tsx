@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { CheckCircle2, TrendingUp, Calendar, Plus } from "lucide-react"
+import { CheckCircle2, TrendingUp, Calendar, Plus, type LucideIcon } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { useTranslations } from "next-intl"
+import { useInsightsData } from "@/hooks/use-insights-data"
 const keyResults = [
   {
     id: "1",
@@ -83,7 +84,7 @@ const keyResults = [
 ]
 
 interface InsightsKeyResultsTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -129,16 +130,16 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
       </div>
 
       {/* Group by Objective */}
-      {Array.from(new Set(keyResults.map(kr => kr.objective))).map((objective) => (
+      {Array.from(new Set(keyResults.map(kr => kr.objective))).map((objective: any) => (
         <div key={objective}>
           <h3 className="font-semibold mb-3">{objective}</h3>
           <div className="space-y-3 mb-6">
-            {keyResults.filter(kr => kr.objective === objective).map((kr) => (
+            {keyResults.filter(kr => kr.objective === objective).map((kr: any) => (
               <Card key={kr.id} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3 flex-1">
-                      <CheckCircle2 className={`h-5 w-5 ${kr.status === "on_track" ? "text-green-600" : "text-yellow-600"}`} />
+                      <CheckCircle2 className={`h-5 w-5 ${kr.status === "on_track" ? "text-green-600" : "text-yellow-600"}`} aria-hidden="true" />
                       <div className="flex-1">
                         <h4 className="font-medium">{t(kr.nameKey)}</h4>
                         <p className="text-sm text-muted-foreground mt-1">

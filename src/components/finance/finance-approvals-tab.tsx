@@ -12,7 +12,7 @@ import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinanceApprovalsTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -116,7 +116,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
       
       // Refresh data if needed
       window.location.reload()
-    } catch (error) {
+    } catch (error: any) {
       console.error('Approval error:', error)
       toast({
         title: 'Approval failed',
@@ -150,7 +150,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
       
       // Refresh data if needed
       window.location.reload()
-    } catch (error) {
+    } catch (error: any) {
       console.error('Rejection error:', error)
       toast({
         title: 'Rejection failed',
@@ -197,9 +197,9 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Pending</CardTitle>
-            <Clock className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Pending</CardTitle>
+            <Clock className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{pendingApprovals.length}</div>
@@ -210,9 +210,9 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Urgent</CardTitle>
-            <AlertTriangle className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Urgent</CardTitle>
+            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-destructive">
@@ -225,8 +225,8 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Approved Today</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Approved Today</CardTitle>
             <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
@@ -238,9 +238,9 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Chains</CardTitle>
-            <ClipboardCheck className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Active Chains</CardTitle>
+            <ClipboardCheck className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{approvalChains.length}</div>
@@ -260,9 +260,9 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         <CardContent>
           <div className="space-y-4">
             {pendingApprovals.length > 0 ? (
-              pendingApprovals.map((approval) => (
+              pendingApprovals.map((approval: any) => (
                 <Card key={approval.id} className="border-l-4 border-l-primary">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6" aria-hidden="true">
                     <div className="flex items-start justify-between">
                       <div className="space-y-1 flex-1">
                         <div className="flex items-center gap-2">
@@ -275,7 +275,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                         <p className="text-sm text-muted-foreground">{approval.description}</p>
                         <div className="flex items-center gap-4 text-xs text-muted-foreground mt-2">
                           <span className="flex items-center gap-1">
-                            <User className="h-3 w-3" aria-hidden="true"  />
+                            <User className="h-3 w-3" aria-hidden="true" />
                             {approval.requester}
                           </span>
                           <span>Category: {approval.categoryKey ? t(approval.categoryKey) : approval.category}</span>
@@ -293,7 +293,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                             onClick={() => handleReject(approval.id)}
                             disabled={actionLoading === approval.id}
                           >
-                            <XCircle className="h-4 w-4" aria-hidden="true"  />
+                            <XCircle className="h-4 w-4" aria-hidden="true" />
                             Reject
                           </Button>
                           <Button
@@ -333,11 +333,11 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {approvalChains.map((chain) => (
+              {approvalChains.map((chain: any) => (
                 <div key={chain.id} className="space-y-2">
                   <div className="flex items-center justify-between">
                     <h4 className="font-medium text-sm">{chain.name}</h4>
-                    <ChevronRight className="h-4 w-4" aria-hidden="true"  />
+                    <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
@@ -378,7 +378,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                     {activity.action === 'Approved' ? (
                       <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
                     ) : (
-                      <XCircle className="h-4 w-4" aria-hidden="true"  />
+                      <XCircle className="h-4 w-4" aria-hidden="true" />
                     )}
                   </div>
                   <div className="flex-1">

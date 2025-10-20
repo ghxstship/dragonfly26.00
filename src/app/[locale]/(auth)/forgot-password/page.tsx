@@ -31,7 +31,7 @@ export default function ForgotPasswordPage() {
     })
 
     if (error) {
-      setError(error.message)
+      setError((error as any).message)
       setLoading(false)
     } else {
       setSuccess(true)

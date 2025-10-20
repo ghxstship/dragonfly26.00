@@ -8,7 +8,7 @@ import { Switch } from "@/components/ui/switch"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Plus } from "lucide-react"
+import { type LucideIcon } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 import type { OrganizationSettings } from "@/types"
 
@@ -42,7 +42,7 @@ export function OrganizationSettingsTab() {
         title: t('success.saved'),
         descriptionKey: "tadminorganizationsettingsdescription_have_been_updated_succ",
       })
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: t('common.error'),
         description: t('admin.toast.settingsFailedDesc'),
@@ -235,7 +235,7 @@ export function OrganizationSettingsTab() {
             <Select
               value={settings.default_assignee_behavior}
               onValueChange={(value: any) =>
-                setSettings({ ...settings, default_assignee_behavior: value })
+                setSettings({ ...settings, default_assignee_behavior: value as any })
               }
               disabled={!settings.enable_multiple_assignees}
             >
@@ -257,7 +257,7 @@ export function OrganizationSettingsTab() {
 
       {/* Save Button */}
       <div className="flex justify-end">
-        <Button onClick={handleSave} disabled={loading}>
+        <Button onClick={handleSave} disabled={loading} aria-label="Save organization settings">
           {loading ? "Saving..." : "Save Changes"}
         </Button>
       </div>

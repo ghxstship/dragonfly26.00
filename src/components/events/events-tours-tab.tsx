@@ -52,7 +52,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
 
   const totalShows = tourStops.filter((s: any) => s.type === 'show').length
   const totalTravelDays = tourStops.filter((s: any) => s.type === 'travel').length
-  const totalBudget = tourStops.reduce((sum: number, s: any) => sum + (s.budget || 0), 0)
+  const totalBudget = tourStops.reduce((sum: number, s: any) => sum + (Number(s.budget) || 0), 0)
   const completedStops = tourStops.filter((s: any) => s.status === 'completed').length
 
   return (
@@ -66,7 +66,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
             <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalShows}</div>
+            <div className="text-2xl font-bold">{totalShows as any}</div>
             <p className="text-xs text-muted-foreground">
               {completedStops} completed
             </p>
@@ -79,7 +79,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
             <Truck className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalTravelDays}</div>
+            <div className="text-2xl font-bold">{totalTravelDays as any}</div>
             <p className="text-xs text-muted-foreground">Between venues</p>
           </CardContent>
         </Card>

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
+import { useReportsData } from "@/hooks/use-reports-data"
 
 const archivedReports = [
   { id: "1", nameKey: "q3_2024_financial_report", type: "Executive", archivedDate: "2024-10-15", size: "4.2 MB", year: "2024" },
@@ -19,7 +20,7 @@ const archivedReports = [
 ]
 
 interface ReportsArchivedTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -61,7 +62,7 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('executive')}</p>
             <p className="text-2xl font-bold mt-1 text-purple-600" aria-live="polite">
-              {archivedReports.filter(r => r.type === "Executive").length}
+              {archivedReports.filter(r => (r as any).type === "Executive").length}
             </p>
           </CardContent>
         </Card>
@@ -69,7 +70,7 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('compliance')}</p>
             <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
-              {archivedReports.filter(r => r.type === "Compliance").length}
+              {archivedReports.filter(r => (r as any).type === "Compliance").length}
             </p>
           </CardContent>
         </Card>
@@ -77,7 +78,7 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('operational')}</p>
             <p className="text-2xl font-bold mt-1 text-orange-600" aria-live="polite">
-              {archivedReports.filter(r => r.type === "Operational").length}
+              {archivedReports.filter(r => (r as any).type === "Operational").length}
             </p>
           </CardContent>
         </Card>
@@ -85,7 +86,7 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
 
       {/* Archived Reports List */}
       <div className="space-y-2">
-        {archivedReports.map((report) => (
+        {archivedReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Archived report: ${t(report.nameKey)}`}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">

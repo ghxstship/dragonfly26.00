@@ -9,7 +9,7 @@ import { useLocale } from "next-intl"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 interface FinancePoliciesTabProps {
-  data?: any[]
+  data?: Record<string, unknown>[]
   loading?: boolean
 }
 
@@ -153,9 +153,9 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
   ]
 
   const totalPolicies = spendingPolicies.length
-  const activePolicies = spendingPolicies.filter(p => p.isActive).length
-  const totalViolations = spendingPolicies.reduce((sum: number, p) => sum + p.violations, 0)
-  const pendingViolations = recentViolations.filter(v => v.status === 'pending').length
+  const activePolicies = spendingPolicies.filter((p: any) => p.isActive).length
+  const totalViolations = (spendingPolicies as any[]).reduce((sum: number, p: any) => sum + Number(p.violations || 0), 0 as number)
+  const pendingViolations = recentViolations.filter((v: any) => v.status === 'pending').length
 
   const getCardUtilization = (spent: number, limit: number) => {
     return (spent / limit) * 100
@@ -172,12 +172,12 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
       {/* Summary Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Policies</CardTitle>
-            <ShieldCheck className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Active Policies</CardTitle>
+            <ShieldCheck className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{activePolicies}</div>
+            <div className="text-2xl font-bold">{activePolicies as any}</div>
             <p className="text-xs text-muted-foreground">
               {totalPolicies} total policies
             </p>
@@ -185,13 +185,13 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Corporate Cards</CardTitle>
-            <CreditCard className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Corporate Cards</CardTitle>
+            <CreditCard className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {corporateCards.filter(c => c.status === 'active').length}
+              {corporateCards.filter(c => (c as any).status === 'active').length}
             </div>
             <p className="text-xs text-muted-foreground">
               {corporateCards.length} total cards
@@ -200,12 +200,12 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Policy Violations</CardTitle>
-            <AlertTriangle className="h-4 w-4" aria-hidden="true"  />
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Policy Violations</CardTitle>
+            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-orange-600">{pendingViolations}</div>
+            <div className="text-2xl font-bold text-orange-600">{pendingViolations as any}</div>
             <p className="text-xs text-muted-foreground">
               {totalViolations} total this month
             </p>
@@ -213,8 +213,8 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Compliance Rate</CardTitle>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+            <CardTitle className="text-sm font-medium" aria-hidden="true">Compliance Rate</CardTitle>
             <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
@@ -234,9 +234,9 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {spendingPolicies.map((policy) => (
+            {spendingPolicies.map((policy: any) => (
               <Card key={policy.id} className={!policy.isActive ? 'opacity-60' : ''}>
-                <CardContent className="pt-6">
+                <CardContent className="pt-6" aria-hidden="true">
                   <div className="flex items-start justify-between">
                     <div className="space-y-2 flex-1">
                       <div className="flex items-center gap-2">
@@ -263,7 +263,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                     </div>
                     <div className="flex gap-2 ml-4">
                       <Button variant="outline" size="sm">
-                        <Settings className="h-4 w-4" aria-hidden="true"  />
+                        <Settings className="h-4 w-4" aria-hidden="true" />
                         Edit
                       </Button>
                     </div>
@@ -284,18 +284,18 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
               <CardDescription>Manage card assignments and spending limits</CardDescription>
             </div>
             <Button variant="outline">
-              <Plus className="h-4 w-4" aria-hidden="true"  />
+              <Plus className="h-4 w-4" aria-hidden="true" />
               Issue Card
             </Button>
           </div>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {corporateCards.map((card) => {
+            {corporateCards.map((card: any) => {
               const utilization = getCardUtilization(card.spentCurrentPeriod, card.spendingLimit)
               return (
                 <Card key={card.id} className={card.status === 'suspended' ? 'opacity-60 border-red-300' : ''}>
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6" aria-hidden="true">
                     <div className="space-y-3">
                       <div className="flex items-start justify-between">
                         <div className="space-y-1">
@@ -373,14 +373,14 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         <CardContent>
           <div className="space-y-3">
             {recentViolations.length > 0 ? (
-              recentViolations.map((violation) => (
+              recentViolations.map((violation: any) => (
                 <Card
                   key={violation.id}
                   className={`border-l-4 ${
                     violation.status === 'pending' ? 'border-l-orange-500' : 'border-l-green-500'
                   }`}
                 >
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6" aria-hidden="true">
                     <div className="flex items-start justify-between">
                       <div className="space-y-2 flex-1">
                         <div className="flex items-center gap-2">
@@ -412,7 +412,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                               Approve
                             </Button>
                             <Button size="sm" variant="outline">
-                              <XCircle className="h-4 w-4" aria-hidden="true"  />
+                              <XCircle className="h-4 w-4" aria-hidden="true" />
                               Reject
                             </Button>
                           </div>
