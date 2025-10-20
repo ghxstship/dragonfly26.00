@@ -9,30 +9,31 @@ export function useBudgets(workspaceId: string, productionId?: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchBudgets() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('budgets')
-        .select(`
-          *,
-          production:production_id(name),
-          line_items:budget_line_items(count)
-        `)
-        .eq('workspace_id', workspaceId)
+  const fetchBudgets = async () => {
+    if (!workspaceId) return
+    
+    let query = supabase
+      .from('budgets')
+      .select(`
+        *,
+        production:production_id(name),
+        line_items:budget_line_items(count)
+      `)
+      .eq('workspace_id', workspaceId)
 
-      if (productionId) {
-        query = query.eq('production_id', productionId)
-      }
-
-      const { data, error } = await query.order('created_at', { ascending: false })
-
-      if (!error && data) {
-        setBudgets(data)
-      }
-      setLoading(false)
+    if (productionId) {
+      query = query.eq('production_id', productionId)
     }
+
+    const { data, error } = await query.order('created_at', { ascending: false })
+
+    if (!error && data) {
+      setBudgets(data)
+    }
+    setLoading(false)
+  }
+
+  useEffect(() => {
 
     fetchBudgets()
 
@@ -50,7 +51,11 @@ export function useBudgets(workspaceId: string, productionId?: string) {
     }
   }, [workspaceId, productionId])
 
-  return { budgets, loading }
+  const refresh = async () => {
+    await fetchBudgets()
+  }
+
+  return { budgets, loading, refresh }
 }
 
 // Hook for Transactions
@@ -59,30 +64,31 @@ export function useTransactions(workspaceId: string, budgetId?: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchTransactions() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('financial_transactions')
-        .select(`
-          *,
-          budget:budget_id(name),
-          production:production_id(name)
-        `)
-        .eq('workspace_id', workspaceId)
+  const fetchTransactions = async () => {
+    if (!workspaceId) return
+    
+    let query = supabase
+      .from('financial_transactions')
+      .select(`
+        *,
+        budget:budget_id(name),
+        production:production_id(name)
+      `)
+      .eq('workspace_id', workspaceId)
 
-      if (budgetId) {
-        query = query.eq('budget_id', budgetId)
-      }
-
-      const { data, error } = await query.order('transaction_date', { ascending: false })
-
-      if (!error && data) {
-        setTransactions(data)
-      }
-      setLoading(false)
+    if (budgetId) {
+      query = query.eq('budget_id', budgetId)
     }
+
+    const { data, error } = await query.order('transaction_date', { ascending: false })
+
+    if (!error && data) {
+      setTransactions(data)
+    }
+    setLoading(false)
+  }
+
+  useEffect(() => {
 
     fetchTransactions()
 
@@ -100,7 +106,11 @@ export function useTransactions(workspaceId: string, budgetId?: string) {
     }
   }, [workspaceId, budgetId])
 
-  return { transactions, loading }
+  const refresh = async () => {
+    await fetchTransactions()
+  }
+
+  return { transactions, loading, refresh }
 }
 
 // Hook for Invoices
@@ -109,26 +119,27 @@ export function useInvoices(workspaceId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchInvoices() {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('invoices')
-        .select(`
-          *,
-          production:production_id(name),
-          company:company_id(name),
-          items:invoice_items(count)
-        `)
-        .eq('workspace_id', workspaceId)
-        .order('invoice_date', { ascending: false })
+  const fetchInvoices = async () => {
+    if (!workspaceId) return
+    
+    const { data, error } = await supabase
+      .from('invoices')
+      .select(`
+        *,
+        production:production_id(name),
+        company:company_id(name),
+        items:invoice_items(count)
+      `)
+      .eq('workspace_id', workspaceId)
+      .order('invoice_date', { ascending: false })
 
-      if (!error && data) {
-        setInvoices(data)
-      }
-      setLoading(false)
+    if (!error && data) {
+      setInvoices(data)
     }
+    setLoading(false)
+  }
+
+  useEffect(() => {
 
     fetchInvoices()
 
@@ -146,7 +157,11 @@ export function useInvoices(workspaceId: string) {
     }
   }, [workspaceId])
 
-  return { invoices, loading }
+  const refresh = async () => {
+    await fetchInvoices()
+  }
+
+  return { invoices, loading, refresh }
 }
 
 // Hook for Payroll
@@ -155,25 +170,26 @@ export function usePayroll(workspaceId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchPayroll() {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('payroll')
-        .select(`
-          *,
-          production:production_id(name),
-          items:payroll_items(count)
-        `)
-        .eq('workspace_id', workspaceId)
-        .order('pay_date', { ascending: false })
+  const fetchPayroll = async () => {
+    if (!workspaceId) return
+    
+    const { data, error } = await supabase
+      .from('payroll')
+      .select(`
+        *,
+        production:production_id(name),
+        items:payroll_items(count)
+      `)
+      .eq('workspace_id', workspaceId)
+      .order('pay_date', { ascending: false })
 
-      if (!error && data) {
-        setPayroll(data)
-      }
-      setLoading(false)
+    if (!error && data) {
+      setPayroll(data)
     }
+    setLoading(false)
+  }
+
+  useEffect(() => {
 
     fetchPayroll()
 
@@ -191,7 +207,11 @@ export function usePayroll(workspaceId: string) {
     }
   }, [workspaceId])
 
-  return { payroll, loading }
+  const refresh = async () => {
+    await fetchPayroll()
+  }
+
+  return { payroll, loading, refresh }
 }
 
 // Hook for Budget Variance (uses RPC function)
@@ -200,25 +220,30 @@ export function useBudgetVariance(budgetId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchVariance() {
-      const { data, error } = await supabase
-        .rpc('get_budget_variance', {
-          p_budget_id: budgetId
-        })
+  const fetchVariance = async () => {
+    const { data, error } = await supabase
+      .rpc('get_budget_variance', {
+        p_budget_id: budgetId
+      })
 
-      if (!error && data) {
-        setVariance(data)
-      }
-      setLoading(false)
+    if (!error && data) {
+      setVariance(data)
     }
+    setLoading(false)
+  }
+
+  useEffect(() => {
 
     if (budgetId) {
       fetchVariance()
     }
   }, [budgetId])
 
-  return { variance, loading }
+  const refresh = async () => {
+    await fetchVariance()
+  }
+
+  return { variance, loading, refresh }
 }
 
 // Hook for GL Codes
@@ -227,22 +252,23 @@ export function useGLCodes(workspaceId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchGLCodes() {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('gl_codes')
-        .select('*')
-        .eq('workspace_id', workspaceId)
-        .eq('is_active', true)
-        .order('code', { ascending: true })
+  const fetchGLCodes = async () => {
+    if (!workspaceId) return
+    
+    const { data, error } = await supabase
+      .from('gl_codes')
+      .select('*')
+      .eq('workspace_id', workspaceId)
+      .eq('is_active', true)
+      .order('code', { ascending: true })
 
-      if (!error && data) {
-        setGlCodes(data)
-      }
-      setLoading(false)
+    if (!error && data) {
+      setGlCodes(data)
     }
+    setLoading(false)
+  }
+
+  useEffect(() => {
 
     fetchGLCodes()
 
@@ -260,5 +286,9 @@ export function useGLCodes(workspaceId: string) {
     }
   }, [workspaceId])
 
-  return { glCodes, loading }
+  const refresh = async () => {
+    await fetchGLCodes()
+  }
+
+  return { glCodes, loading, refresh }
 }

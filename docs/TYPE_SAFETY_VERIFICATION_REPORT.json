@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-10-20T12:50:39.968Z",
+  "stats": {
+    "totalFiles": 219,
+    "filesWithAny": 0,
+    "anyCount": 0,
+    "filesWithReturnTypes": 219,
+    "filesWithPropTypes": 185,
+    "filesWithUnknown": 203,
+    "unknownCount": 525
+  },
+  "violations": {
+    "anyTypes": [],
+    "missingReturnTypes": [],
+    "missingPropTypes": [
+      "assets/assets-maintenance-tab.tsx",
+      "assets/assets-overview-tab.tsx",
+      "assets/tracking-tab.tsx",
+      "companies/companies-contacts-tab.tsx",
+      "companies/companies-organizations-tab.tsx",
+      "dashboard/dashboard-my-advances-tab.tsx",
+      "dashboard/dashboard-my-agenda-tab.tsx",
+      "dashboard/dashboard-my-assets-tab.tsx",
+      "dashboard/dashboard-my-expenses-tab.tsx",
+      "dashboard/dashboard-my-files-tab.tsx",
+      "dashboard/dashboard-my-jobs-tab.tsx",
+      "dashboard/dashboard-my-orders-tab.tsx",
+      "dashboard/dashboard-my-reports-tab.tsx",
+      "dashboard/dashboard-my-tasks-tab.tsx",
+      "dashboard/dashboard-my-travel-tab.tsx",
+      "dashboard/dashboard-overview-tab.tsx",
+      "events/events-calendar-tab.tsx",
+      "events/events-run-of-show-tab.tsx",
+      "events/events-tours-tab.tsx",
+      "finance/finance-overview-tab.tsx",
+      "jobs/jobs-pipeline-tab.tsx",
+      "locations/locations-directory-tab.tsx",
+      "locations/locations-site-maps-tab.tsx",
+      "people/people-scheduling-tab.tsx",
+      "procurement/procurement-orders-dashboard-tab.tsx",
+      "projects/projects-productions-tab.tsx",
+      "projects/projects-schedule-tab.tsx",
+      "resources/resources-courses-tab.tsx",
+      "resources/resources-glossary-tab.tsx",
+      "resources/resources-grants-tab.tsx",
+      "resources/resources-guides-tab.tsx",
+      "resources/resources-library-tab.tsx",
+      "resources/resources-publications-tab.tsx",
+      "resources/resources-troubleshooting-tab.tsx"
+    ]
+  },
+  "score": {
+    "overall": 95,
+    "anyTypes": 100,
+    "returnTypes": 100,
+    "propTypes": 84
+  }
+}

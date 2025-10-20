@@ -1,0 +1,3624 @@
+{
+  "timestamp": "2025-10-20T12:49:50.845Z",
+  "summary": {
+    "totalRoutes": 200,
+    "averageScore": 98.38888888888889,
+    "grade": "A+",
+    "perfectRoutes": 192,
+    "goodRoutes": 0,
+    "needsWorkRoutes": 8
+  },
+  "checkStats": {
+    "hasGET": 192,
+    "hasPOST": 200,
+    "hasPUT": 192,
+    "hasDELETE": 192,
+    "hasAuth": 196,
+    "hasErrorHandling": 199,
+    "hasSupabase": 200,
+    "hasTypeScript": 200,
+    "hasNextResponse": 200
+  },
+  "routes": [
+    {
+      "path": "/src/app/api/access/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/account/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/accounts/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/activations/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/active/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/activities/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/advances/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/agreements/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/all-documents/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/all-events/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/appearance/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/applicants/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/apply-migration/route.ts",
+      "checks": {
+        "hasGET": false,
+        "hasPOST": true,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 6,
+      "maxScore": 9,
+      "percentage": 66.66666666666666,
+      "isPerfect": false
+    },
+    {
+      "path": "/src/app/api/approvals/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/archive/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/archived/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/assignments/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/audits/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/automations/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/benchmarks/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/bids/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/billing/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/bim-models/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/blocks/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/bookings/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/budgets/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/calendar/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/call-sheets/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/cash-flow/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/catalog/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/certifications/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/checklists/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/companies-compliance/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/companies-invoices/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/companies-reviews/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/companies-work-orders/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/comparisons/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/competitions/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/completed/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/compliance/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/connections/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/contacts/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/contracts/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/coordination/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/costs/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/counts/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/courses/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/custom-builder/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/custom-views/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/data-sources/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/deliverables/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/directory/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/discussions/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/dispatch/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/documents/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/emergency/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/endorsements/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/equipment/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/estimates/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/executive/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/expenses/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/exports/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/favorites/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/forecasting/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/forecasts/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/fulfillment/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/gl-codes/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/glossary/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/grants/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/guides/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/health/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/history/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/incidents/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/info/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/insurance-permits/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/integrations/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/intelligence-feed/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/internal/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/inventory/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/invitations/accept/route.ts",
+      "checks": {
+        "hasGET": false,
+        "hasPOST": true,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 6,
+      "maxScore": 9,
+      "percentage": 66.66666666666666,
+      "isPerfect": false
+    },
+    {
+      "path": "/src/app/api/invitations/send/route.ts",
+      "checks": {
+        "hasGET": false,
+        "hasPOST": true,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 6,
+      "maxScore": 9,
+      "percentage": 66.66666666666666,
+      "isPerfect": false
+    },
+    {
+      "path": "/src/app/api/invite/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/invoices/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/itineraries/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/jobs-compliance/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/jobs-invoices/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/key-results/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/library/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/line-items/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/lists/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/logistics/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/maintenance/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/management/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/matching/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/media-assets/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/metrics-library/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/milestones/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-agenda/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-assets/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-expenses/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-files/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-jobs/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-orders/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-reports/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-tasks/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/my-travel/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/news/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/objectives/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/offers/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/onboarding/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/openings/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/operational/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/orders/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/orders-dashboard/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/organization/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/organizations/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/payments/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/payroll/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/performance/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/permissions/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/personnel/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/pipeline/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/pivot-tables/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/plugins/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/policies/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/priorities/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/procurement-approvals/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/production-reports/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/productions/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/products/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/professional/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/progress-tracking/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/projects-checklists/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/projects-work-orders/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/publications/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/purchases/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/realtime/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/receiving/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/recommendations/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/reconciliation/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/recruiting/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/rehearsals/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/requisitions/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/reservations/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/revenue/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/reviews/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/rfps/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/riders/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/rules/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/run-of-show/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/safety/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/sales/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/scenarios/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/schedule/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/scheduled/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/scheduling/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/scopes-of-work/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/security/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/services/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/settings/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/shared/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/shipping-receiving/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/shop/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/shortlists/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/showcase/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/site-maps/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/social/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/spatial-features/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/spotlight/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/statuses/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/stripe/create-checkout/route.ts",
+      "checks": {
+        "hasGET": false,
+        "hasPOST": true,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasAuth": false,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 5,
+      "maxScore": 9,
+      "percentage": 55.55555555555556,
+      "isPerfect": false
+    },
+    {
+      "path": "/src/app/api/stripe/create-portal/route.ts",
+      "checks": {
+        "hasGET": false,
+        "hasPOST": true,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasAuth": false,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 5,
+      "maxScore": 9,
+      "percentage": 55.55555555555556,
+      "isPerfect": false
+    },
+    {
+      "path": "/src/app/api/stripe/webhook/route.ts",
+      "checks": {
+        "hasGET": false,
+        "hasPOST": true,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasAuth": false,
+        "hasErrorHandling": false,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 4,
+      "maxScore": 9,
+      "percentage": 44.44444444444444,
+      "isPerfect": false
+    },
+    {
+      "path": "/src/app/api/studios/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/subcontractor-profile/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/subscriptions/create-checkout/route.ts",
+      "checks": {
+        "hasGET": false,
+        "hasPOST": true,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 6,
+      "maxScore": 9,
+      "percentage": 66.66666666666666,
+      "isPerfect": false
+    },
+    {
+      "path": "/src/app/api/success-metrics/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/tags/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/tasks/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/taxes/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/team/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/teams/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/tech-specs/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/templates/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/timekeeping/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/tokens/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/tours/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/tracking/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/training/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/trainings/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/transactions/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/travel/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/trends/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/troubleshooting/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/utilities/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/variance/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/vendors/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/warehousing/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    },
+    {
+      "path": "/src/app/api/webhooks/stripe/route.ts",
+      "checks": {
+        "hasGET": false,
+        "hasPOST": true,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasAuth": false,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 5,
+      "maxScore": 9,
+      "percentage": 55.55555555555556,
+      "isPerfect": false
+    },
+    {
+      "path": "/src/app/api/work-orders/route.ts",
+      "checks": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasAuth": true,
+        "hasErrorHandling": true,
+        "hasSupabase": true,
+        "hasTypeScript": true,
+        "hasNextResponse": true
+      },
+      "score": 9,
+      "maxScore": 9,
+      "percentage": 100,
+      "isPerfect": true
+    }
+  ]
+}

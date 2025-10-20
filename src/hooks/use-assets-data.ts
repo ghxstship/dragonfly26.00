@@ -1,6 +1,7 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
+import { useEffect } from 'react'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
 
 // Fetch function for assets
@@ -43,12 +44,31 @@ async function fetchAssets(workspaceId: string) {
  * Will be re-added via consolidated workspace subscription
  */
 export function useAssets(workspaceId: string) {
+  const supabase = createClient()
+  const queryClient = useQueryClient()
+  
   const query = useQuery({
     queryKey: ['assets', workspaceId],
     queryFn: () => fetchAssets(workspaceId),
     enabled: !!workspaceId,
     staleTime: 60 * 1000, // 1 minute
   })
+
+  // Realtime subscription
+  useEffect(() => {
+    if (!workspaceId) return
+
+    const channel = supabase
+      .channel('assets_changes')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'assets', filter: `workspace_id=eq.${workspaceId}` }, () => {
+        queryClient.invalidateQueries({ queryKey: ['assets', workspaceId] })
+      })
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [workspaceId, queryClient])
 
   return {
     assets: query.data || [],

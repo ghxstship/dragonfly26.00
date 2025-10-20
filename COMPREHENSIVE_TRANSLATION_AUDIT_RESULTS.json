@@ -1,0 +1,5574 @@
+{
+  "timestamp": "2025-10-20T11:24:34.695Z",
+  "summary": {
+    "totalFilesScanned": 235,
+    "totalIssuesFound": 0,
+    "errorCount": 0,
+    "warningCount": 365,
+    "infoCount": 426
+  },
+  "issues": {
+    "hardcodedKeys": [],
+    "missingNamespace": [
+      {
+        "hub": "System Hub",
+        "file": "admin/templates-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/checklist-templates-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/admin-overview-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/plugins-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/organization-settings-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/api-tokens-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/custom-statuses-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/billing-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/members-management-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/webhooks-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/security-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/automations-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/integrations-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/recurrence-rules-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/organization-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/invite-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/roles-permissions-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/billing-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/automations-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/integrations-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/account-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/team-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/appearance-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/tags-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/endorsements-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/certifications-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/history-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/emergency-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/travel-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/professional-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/social-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/health-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/performance-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/basic-info-tab.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/maps/MapOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/forms/FormBuilderOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/diagrams/MindMapOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/panels/FilterPanelOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/EmbedContainerOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/DocumentEditorOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PortfolioViewOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/ActivityViewOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/BoxViewOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/BoardViewOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/WorkloadViewOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/ListViewOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/TimelineOrganism.tsx",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/communication/ChatOrganism.tsx",
+        "severity": "WARNING"
+      }
+    ],
+    "invalidKeys": [
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "103",
+        "key": "stats.vendors",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "116",
+        "key": "stats.clients",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "129",
+        "key": "stats.partners",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "234",
+        "key": "stats.contacts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "238",
+        "key": "stats.projects",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "242",
+        "key": "stats.orders",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-documents-tab.tsx",
+        "line": "47",
+        "key": "tabs.documents",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-documents-tab.tsx",
+        "line": "95",
+        "key": "tabs.documents",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-documents-tab.tsx",
+        "line": "96",
+        "key": "descriptions.documents",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-documents-tab.tsx",
+        "line": "103",
+        "key": "tabs.documents",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-documents-tab.tsx",
+        "line": "106",
+        "key": "tabs.documents",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-documents-tab.tsx",
+        "line": "108",
+        "key": "tabs.documents",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-bids-tab.tsx",
+        "line": "47",
+        "key": "tabs.bids",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-bids-tab.tsx",
+        "line": "95",
+        "key": "tabs.bids",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-bids-tab.tsx",
+        "line": "96",
+        "key": "descriptions.bids",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-bids-tab.tsx",
+        "line": "103",
+        "key": "tabs.bids",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-bids-tab.tsx",
+        "line": "106",
+        "key": "tabs.bids",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-bids-tab.tsx",
+        "line": "108",
+        "key": "tabs.bids",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-compliance-tab.tsx",
+        "line": "47",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-compliance-tab.tsx",
+        "line": "95",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-compliance-tab.tsx",
+        "line": "96",
+        "key": "descriptions.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-compliance-tab.tsx",
+        "line": "103",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-compliance-tab.tsx",
+        "line": "106",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-compliance-tab.tsx",
+        "line": "108",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-reviews-tab.tsx",
+        "line": "47",
+        "key": "tabs.reviews",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-reviews-tab.tsx",
+        "line": "95",
+        "key": "tabs.reviews",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-reviews-tab.tsx",
+        "line": "96",
+        "key": "descriptions.reviews",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-reviews-tab.tsx",
+        "line": "103",
+        "key": "tabs.reviews",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-reviews-tab.tsx",
+        "line": "106",
+        "key": "tabs.reviews",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-reviews-tab.tsx",
+        "line": "108",
+        "key": "tabs.reviews",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-deliverables-tab.tsx",
+        "line": "47",
+        "key": "tabs.deliverables",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-deliverables-tab.tsx",
+        "line": "95",
+        "key": "tabs.deliverables",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-deliverables-tab.tsx",
+        "line": "96",
+        "key": "descriptions.deliverables",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-deliverables-tab.tsx",
+        "line": "103",
+        "key": "tabs.deliverables",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-deliverables-tab.tsx",
+        "line": "106",
+        "key": "tabs.deliverables",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-deliverables-tab.tsx",
+        "line": "108",
+        "key": "tabs.deliverables",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-invoices-tab.tsx",
+        "line": "47",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-invoices-tab.tsx",
+        "line": "95",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-invoices-tab.tsx",
+        "line": "96",
+        "key": "descriptions.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-invoices-tab.tsx",
+        "line": "103",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-invoices-tab.tsx",
+        "line": "106",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-invoices-tab.tsx",
+        "line": "108",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-active-tab.tsx",
+        "line": "47",
+        "key": "tabs.active",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-active-tab.tsx",
+        "line": "95",
+        "key": "tabs.active",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-active-tab.tsx",
+        "line": "96",
+        "key": "descriptions.active",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-active-tab.tsx",
+        "line": "103",
+        "key": "tabs.active",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-active-tab.tsx",
+        "line": "106",
+        "key": "tabs.active",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-active-tab.tsx",
+        "line": "108",
+        "key": "tabs.active",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-completed-tab.tsx",
+        "line": "47",
+        "key": "tabs.completed",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-completed-tab.tsx",
+        "line": "95",
+        "key": "tabs.completed",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-completed-tab.tsx",
+        "line": "96",
+        "key": "descriptions.completed",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-completed-tab.tsx",
+        "line": "103",
+        "key": "tabs.completed",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-completed-tab.tsx",
+        "line": "106",
+        "key": "tabs.completed",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-completed-tab.tsx",
+        "line": "108",
+        "key": "tabs.completed",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-compliance-tab.tsx",
+        "line": "47",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-compliance-tab.tsx",
+        "line": "95",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-compliance-tab.tsx",
+        "line": "96",
+        "key": "descriptions.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-compliance-tab.tsx",
+        "line": "103",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-compliance-tab.tsx",
+        "line": "106",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-compliance-tab.tsx",
+        "line": "108",
+        "key": "tabs.compliance",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-estimates-tab.tsx",
+        "line": "47",
+        "key": "tabs.estimates",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-estimates-tab.tsx",
+        "line": "95",
+        "key": "tabs.estimates",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-estimates-tab.tsx",
+        "line": "96",
+        "key": "descriptions.estimates",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-estimates-tab.tsx",
+        "line": "103",
+        "key": "tabs.estimates",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-estimates-tab.tsx",
+        "line": "106",
+        "key": "tabs.estimates",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-estimates-tab.tsx",
+        "line": "108",
+        "key": "tabs.estimates",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-shortlists-tab.tsx",
+        "line": "47",
+        "key": "tabs.shortlists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-shortlists-tab.tsx",
+        "line": "95",
+        "key": "tabs.shortlists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-shortlists-tab.tsx",
+        "line": "96",
+        "key": "descriptions.shortlists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-shortlists-tab.tsx",
+        "line": "103",
+        "key": "tabs.shortlists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-shortlists-tab.tsx",
+        "line": "106",
+        "key": "tabs.shortlists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-shortlists-tab.tsx",
+        "line": "108",
+        "key": "tabs.shortlists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-dispatch-tab.tsx",
+        "line": "47",
+        "key": "tabs.dispatch",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-dispatch-tab.tsx",
+        "line": "95",
+        "key": "tabs.dispatch",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-dispatch-tab.tsx",
+        "line": "96",
+        "key": "descriptions.dispatch",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-dispatch-tab.tsx",
+        "line": "103",
+        "key": "tabs.dispatch",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-dispatch-tab.tsx",
+        "line": "106",
+        "key": "tabs.dispatch",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-dispatch-tab.tsx",
+        "line": "108",
+        "key": "tabs.dispatch",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-invoices-tab.tsx",
+        "line": "47",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-invoices-tab.tsx",
+        "line": "95",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-invoices-tab.tsx",
+        "line": "96",
+        "key": "descriptions.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-invoices-tab.tsx",
+        "line": "103",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-invoices-tab.tsx",
+        "line": "106",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-invoices-tab.tsx",
+        "line": "108",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-pipeline-tab.tsx",
+        "line": "50",
+        "key": "stages.lead",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-pipeline-tab.tsx",
+        "line": "51",
+        "key": "stages.qualification",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-pipeline-tab.tsx",
+        "line": "52",
+        "key": "stages.proposal",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-pipeline-tab.tsx",
+        "line": "53",
+        "key": "stages.negotiation",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-overview-tab.tsx",
+        "line": "47",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-overview-tab.tsx",
+        "line": "95",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-overview-tab.tsx",
+        "line": "96",
+        "key": "descriptions.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-overview-tab.tsx",
+        "line": "103",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-overview-tab.tsx",
+        "line": "106",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-overview-tab.tsx",
+        "line": "108",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-rfps-tab.tsx",
+        "line": "47",
+        "key": "tabs.rfps",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-rfps-tab.tsx",
+        "line": "95",
+        "key": "tabs.rfps",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-rfps-tab.tsx",
+        "line": "96",
+        "key": "descriptions.rfps",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-rfps-tab.tsx",
+        "line": "103",
+        "key": "tabs.rfps",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-rfps-tab.tsx",
+        "line": "106",
+        "key": "tabs.rfps",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-rfps-tab.tsx",
+        "line": "108",
+        "key": "tabs.rfps",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-offers-tab.tsx",
+        "line": "47",
+        "key": "tabs.offers",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-offers-tab.tsx",
+        "line": "95",
+        "key": "tabs.offers",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-offers-tab.tsx",
+        "line": "96",
+        "key": "descriptions.offers",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-offers-tab.tsx",
+        "line": "103",
+        "key": "tabs.offers",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-offers-tab.tsx",
+        "line": "106",
+        "key": "tabs.offers",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-offers-tab.tsx",
+        "line": "108",
+        "key": "tabs.offers",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-checklists-tab.tsx",
+        "line": "47",
+        "key": "tabs.checklists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-checklists-tab.tsx",
+        "line": "95",
+        "key": "tabs.checklists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-checklists-tab.tsx",
+        "line": "96",
+        "key": "descriptions.checklists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-checklists-tab.tsx",
+        "line": "103",
+        "key": "tabs.checklists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-checklists-tab.tsx",
+        "line": "106",
+        "key": "tabs.checklists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-checklists-tab.tsx",
+        "line": "108",
+        "key": "tabs.checklists",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-archived-tab.tsx",
+        "line": "47",
+        "key": "tabs.archived",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-archived-tab.tsx",
+        "line": "95",
+        "key": "tabs.archived",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-archived-tab.tsx",
+        "line": "96",
+        "key": "descriptions.archived",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-archived-tab.tsx",
+        "line": "103",
+        "key": "tabs.archived",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-archived-tab.tsx",
+        "line": "106",
+        "key": "tabs.archived",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-archived-tab.tsx",
+        "line": "108",
+        "key": "tabs.archived",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-recruiting-tab.tsx",
+        "line": "47",
+        "key": "tabs.recruiting",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-recruiting-tab.tsx",
+        "line": "95",
+        "key": "tabs.recruiting",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-recruiting-tab.tsx",
+        "line": "96",
+        "key": "descriptions.recruiting",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-recruiting-tab.tsx",
+        "line": "103",
+        "key": "tabs.recruiting",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-recruiting-tab.tsx",
+        "line": "106",
+        "key": "tabs.recruiting",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-recruiting-tab.tsx",
+        "line": "108",
+        "key": "tabs.recruiting",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-agreements-tab.tsx",
+        "line": "47",
+        "key": "tabs.agreements",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-agreements-tab.tsx",
+        "line": "95",
+        "key": "tabs.agreements",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-agreements-tab.tsx",
+        "line": "96",
+        "key": "descriptions.agreements",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-agreements-tab.tsx",
+        "line": "103",
+        "key": "tabs.agreements",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-agreements-tab.tsx",
+        "line": "106",
+        "key": "tabs.agreements",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-agreements-tab.tsx",
+        "line": "108",
+        "key": "tabs.agreements",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-dashboard-tab.tsx",
+        "line": "66",
+        "key": "stages.approved",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-dashboard-tab.tsx",
+        "line": "67",
+        "key": "stages.ordered",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-dashboard-tab.tsx",
+        "line": "69",
+        "key": "stages.received",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-requisitions-tab.tsx",
+        "line": "47",
+        "key": "tabs.requisitions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-requisitions-tab.tsx",
+        "line": "95",
+        "key": "tabs.requisitions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-requisitions-tab.tsx",
+        "line": "96",
+        "key": "descriptions.requisitions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-requisitions-tab.tsx",
+        "line": "103",
+        "key": "tabs.requisitions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-requisitions-tab.tsx",
+        "line": "106",
+        "key": "tabs.requisitions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-requisitions-tab.tsx",
+        "line": "108",
+        "key": "tabs.requisitions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-fulfillment-tab.tsx",
+        "line": "47",
+        "key": "tabs.fulfillment",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-fulfillment-tab.tsx",
+        "line": "95",
+        "key": "tabs.fulfillment",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-fulfillment-tab.tsx",
+        "line": "96",
+        "key": "descriptions.fulfillment",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-fulfillment-tab.tsx",
+        "line": "103",
+        "key": "tabs.fulfillment",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-fulfillment-tab.tsx",
+        "line": "106",
+        "key": "tabs.fulfillment",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-fulfillment-tab.tsx",
+        "line": "108",
+        "key": "tabs.fulfillment",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-tab.tsx",
+        "line": "47",
+        "key": "tabs.orders",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-tab.tsx",
+        "line": "95",
+        "key": "tabs.orders",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-tab.tsx",
+        "line": "96",
+        "key": "descriptions.orders",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-tab.tsx",
+        "line": "103",
+        "key": "tabs.orders",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-tab.tsx",
+        "line": "106",
+        "key": "tabs.orders",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-tab.tsx",
+        "line": "108",
+        "key": "tabs.orders",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-overview-tab.tsx",
+        "line": "47",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-overview-tab.tsx",
+        "line": "95",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-overview-tab.tsx",
+        "line": "96",
+        "key": "descriptions.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-overview-tab.tsx",
+        "line": "103",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-overview-tab.tsx",
+        "line": "106",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-overview-tab.tsx",
+        "line": "108",
+        "key": "tabs.overview",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-procurement-approvals-tab.tsx",
+        "line": "47",
+        "key": "tabs.approvals",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-procurement-approvals-tab.tsx",
+        "line": "95",
+        "key": "tabs.approvals",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-procurement-approvals-tab.tsx",
+        "line": "96",
+        "key": "descriptions.approvals",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-procurement-approvals-tab.tsx",
+        "line": "103",
+        "key": "tabs.approvals",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-procurement-approvals-tab.tsx",
+        "line": "106",
+        "key": "tabs.approvals",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-procurement-approvals-tab.tsx",
+        "line": "108",
+        "key": "tabs.approvals",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-matching-tab.tsx",
+        "line": "152",
+        "key": "stats.matched",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-matching-tab.tsx",
+        "line": "185",
+        "key": "stats.approved",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-audits-tab.tsx",
+        "line": "47",
+        "key": "tabs.audits",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-audits-tab.tsx",
+        "line": "95",
+        "key": "tabs.audits",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-audits-tab.tsx",
+        "line": "96",
+        "key": "descriptions.audits",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-audits-tab.tsx",
+        "line": "103",
+        "key": "tabs.audits",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-audits-tab.tsx",
+        "line": "106",
+        "key": "tabs.audits",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-audits-tab.tsx",
+        "line": "108",
+        "key": "tabs.audits",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-revenue-tab.tsx",
+        "line": "47",
+        "key": "tabs.revenue",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-revenue-tab.tsx",
+        "line": "95",
+        "key": "tabs.revenue",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-revenue-tab.tsx",
+        "line": "96",
+        "key": "descriptions.revenue",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-revenue-tab.tsx",
+        "line": "103",
+        "key": "tabs.revenue",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-revenue-tab.tsx",
+        "line": "106",
+        "key": "tabs.revenue",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-revenue-tab.tsx",
+        "line": "108",
+        "key": "tabs.revenue",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-taxes-tab.tsx",
+        "line": "47",
+        "key": "tabs.taxes",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-taxes-tab.tsx",
+        "line": "95",
+        "key": "tabs.taxes",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-taxes-tab.tsx",
+        "line": "96",
+        "key": "descriptions.taxes",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-taxes-tab.tsx",
+        "line": "103",
+        "key": "tabs.taxes",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-taxes-tab.tsx",
+        "line": "106",
+        "key": "tabs.taxes",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-taxes-tab.tsx",
+        "line": "108",
+        "key": "tabs.taxes",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-forecasts-tab.tsx",
+        "line": "47",
+        "key": "tabs.forecasts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-forecasts-tab.tsx",
+        "line": "95",
+        "key": "tabs.forecasts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-forecasts-tab.tsx",
+        "line": "96",
+        "key": "descriptions.forecasts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-forecasts-tab.tsx",
+        "line": "103",
+        "key": "tabs.forecasts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-forecasts-tab.tsx",
+        "line": "106",
+        "key": "tabs.forecasts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-forecasts-tab.tsx",
+        "line": "108",
+        "key": "tabs.forecasts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-invoices-tab.tsx",
+        "line": "47",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-invoices-tab.tsx",
+        "line": "95",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-invoices-tab.tsx",
+        "line": "96",
+        "key": "descriptions.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-invoices-tab.tsx",
+        "line": "103",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-invoices-tab.tsx",
+        "line": "106",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-invoices-tab.tsx",
+        "line": "108",
+        "key": "tabs.invoices",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payments-tab.tsx",
+        "line": "47",
+        "key": "tabs.payments",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payments-tab.tsx",
+        "line": "95",
+        "key": "tabs.payments",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payments-tab.tsx",
+        "line": "96",
+        "key": "descriptions.payments",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payments-tab.tsx",
+        "line": "103",
+        "key": "tabs.payments",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payments-tab.tsx",
+        "line": "106",
+        "key": "tabs.payments",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payments-tab.tsx",
+        "line": "108",
+        "key": "tabs.payments",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-reconciliation-tab.tsx",
+        "line": "47",
+        "key": "tabs.reconciliation",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-reconciliation-tab.tsx",
+        "line": "95",
+        "key": "tabs.reconciliation",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-reconciliation-tab.tsx",
+        "line": "96",
+        "key": "descriptions.reconciliation",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-reconciliation-tab.tsx",
+        "line": "103",
+        "key": "tabs.reconciliation",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-reconciliation-tab.tsx",
+        "line": "106",
+        "key": "tabs.reconciliation",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-reconciliation-tab.tsx",
+        "line": "108",
+        "key": "tabs.reconciliation",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-expenses-tab.tsx",
+        "line": "47",
+        "key": "tabs.expenses",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-expenses-tab.tsx",
+        "line": "95",
+        "key": "tabs.expenses",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-expenses-tab.tsx",
+        "line": "96",
+        "key": "descriptions.expenses",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-expenses-tab.tsx",
+        "line": "103",
+        "key": "tabs.expenses",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-expenses-tab.tsx",
+        "line": "106",
+        "key": "tabs.expenses",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-expenses-tab.tsx",
+        "line": "108",
+        "key": "tabs.expenses",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-budgets-tab.tsx",
+        "line": "47",
+        "key": "tabs.budgets",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-budgets-tab.tsx",
+        "line": "95",
+        "key": "tabs.budgets",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-budgets-tab.tsx",
+        "line": "96",
+        "key": "descriptions.budgets",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-budgets-tab.tsx",
+        "line": "103",
+        "key": "tabs.budgets",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-budgets-tab.tsx",
+        "line": "106",
+        "key": "tabs.budgets",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-budgets-tab.tsx",
+        "line": "108",
+        "key": "tabs.budgets",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payroll-tab.tsx",
+        "line": "47",
+        "key": "tabs.payroll",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payroll-tab.tsx",
+        "line": "95",
+        "key": "tabs.payroll",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payroll-tab.tsx",
+        "line": "96",
+        "key": "descriptions.payroll",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payroll-tab.tsx",
+        "line": "103",
+        "key": "tabs.payroll",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payroll-tab.tsx",
+        "line": "106",
+        "key": "tabs.payroll",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payroll-tab.tsx",
+        "line": "108",
+        "key": "tabs.payroll",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-accounts-tab.tsx",
+        "line": "47",
+        "key": "tabs.accounts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-accounts-tab.tsx",
+        "line": "95",
+        "key": "tabs.accounts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-accounts-tab.tsx",
+        "line": "96",
+        "key": "descriptions.accounts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-accounts-tab.tsx",
+        "line": "103",
+        "key": "tabs.accounts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-accounts-tab.tsx",
+        "line": "106",
+        "key": "tabs.accounts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-accounts-tab.tsx",
+        "line": "108",
+        "key": "tabs.accounts",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-transactions-tab.tsx",
+        "line": "47",
+        "key": "tabs.transactions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-transactions-tab.tsx",
+        "line": "95",
+        "key": "tabs.transactions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-transactions-tab.tsx",
+        "line": "96",
+        "key": "descriptions.transactions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-transactions-tab.tsx",
+        "line": "103",
+        "key": "tabs.transactions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-transactions-tab.tsx",
+        "line": "106",
+        "key": "tabs.transactions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-transactions-tab.tsx",
+        "line": "108",
+        "key": "tabs.transactions",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/plugins-tab.tsx",
+        "line": "230",
+        "key": "plugins.installed",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/plugins-tab.tsx",
+        "line": "270",
+        "key": "plugins.install",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/organization-settings-tab.tsx",
+        "line": "43",
+        "key": "success.saved",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/organization-tab.tsx",
+        "line": "56",
+        "key": "success.saved",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/invite-tab.tsx",
+        "line": "94",
+        "key": "success.sent",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/invite-tab.tsx",
+        "line": "115",
+        "key": "success.copied",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/invite-tab.tsx",
+        "line": "125",
+        "key": "success.sent",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/invite-tab.tsx",
+        "line": "141",
+        "key": "success.revoked",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/tags-tab.tsx",
+        "line": "82",
+        "key": "errors.error",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/tags-tab.tsx",
+        "line": "165",
+        "key": "tags.browse",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/tags-tab.tsx",
+        "line": "250",
+        "key": "tags.category",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/tags-tab.tsx",
+        "line": "251",
+        "key": "tags.selected",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/tags-tab.tsx",
+        "line": "252",
+        "key": "tags.available",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/certifications-tab.tsx",
+        "line": "91",
+        "key": "errors.error",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/emergency-tab.tsx",
+        "line": "83",
+        "key": "emergency.name",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/emergency-tab.tsx",
+        "line": "92",
+        "key": "emergency.relationship",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/emergency-tab.tsx",
+        "line": "104",
+        "key": "emergency.phone",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/emergency-tab.tsx",
+        "line": "114",
+        "key": "emergency.email",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "105",
+        "key": "access.credentials",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "121",
+        "key": "access.type",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "122",
+        "key": "access.name",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "126",
+        "key": "access.status",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "151",
+        "key": "access.clearances",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "167",
+        "key": "access.type",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "168",
+        "key": "access.level",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "171",
+        "key": "access.status",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "195",
+        "key": "access.management",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "231",
+        "key": "access.note",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "231",
+        "key": "access.noteDescription",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/maps/MapOrganism.tsx",
+        "line": "82",
+        "key": "map.placeholder",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/maps/MapOrganism.tsx",
+        "line": "85",
+        "key": "map.locations",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/maps/MapOrganism.tsx",
+        "line": "111",
+        "key": "map.layers",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/maps/MapOrganism.tsx",
+        "line": "118",
+        "key": "map.fullscreen",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/maps/MapOrganism.tsx",
+        "line": "151",
+        "key": "map.locations",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/EmbedContainerOrganism.tsx",
+        "line": "78",
+        "key": "embed.refresh",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/EmbedContainerOrganism.tsx",
+        "line": "88",
+        "key": "embed.exitFullscreen",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/EmbedContainerOrganism.tsx",
+        "line": "88",
+        "key": "embed.fullscreen",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/EmbedContainerOrganism.tsx",
+        "line": "112",
+        "key": "embed.loading",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/DocumentEditorOrganism.tsx",
+        "line": "58",
+        "key": "editor.bold",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/DocumentEditorOrganism.tsx",
+        "line": "59",
+        "key": "editor.italic",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/DocumentEditorOrganism.tsx",
+        "line": "60",
+        "key": "editor.underline",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/DocumentEditorOrganism.tsx",
+        "line": "169",
+        "key": "editor.characters",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/content/DocumentEditorOrganism.tsx",
+        "line": "169",
+        "key": "editor.words",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "107",
+        "key": "calendar.january",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "107",
+        "key": "calendar.february",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "107",
+        "key": "calendar.march",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "108",
+        "key": "calendar.april",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "108",
+        "key": "calendar.may",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "108",
+        "key": "calendar.june",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "109",
+        "key": "calendar.july",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "109",
+        "key": "calendar.august",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "109",
+        "key": "calendar.september",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "110",
+        "key": "calendar.october",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "110",
+        "key": "calendar.november",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "110",
+        "key": "calendar.december",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "114",
+        "key": "calendar.sunday",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "114",
+        "key": "calendar.monday",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "114",
+        "key": "calendar.tuesday",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "115",
+        "key": "calendar.wednesday",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "115",
+        "key": "calendar.thursday",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "115",
+        "key": "calendar.friday",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "116",
+        "key": "calendar.saturday",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "134",
+        "key": "calendar.today",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "151",
+        "key": "calendar.month",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "152",
+        "key": "calendar.week",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "153",
+        "key": "calendar.day",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/CalendarOrganism.tsx",
+        "line": "220",
+        "key": "calendar.more",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "line": "116",
+        "key": "pivot.table",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "line": "119",
+        "key": "pivot.rows",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "line": "121",
+        "key": "pivot.columns",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "line": "123",
+        "key": "pivot.aggregation",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "line": "142",
+        "key": "pivot.total",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "line": "166",
+        "key": "pivot.collapse",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "line": "166",
+        "key": "pivot.expand",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PivotTableOrganism.tsx",
+        "line": "193",
+        "key": "pivot.total",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/TimelineOrganism.tsx",
+        "line": "125",
+        "key": "timeline.today",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/communication/ChatOrganism.tsx",
+        "line": "171",
+        "key": "chat.emoji",
+        "severity": "WARNING"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/communication/ChatOrganism.tsx",
+        "line": "178",
+        "key": "chat.send",
+        "severity": "WARNING"
+      }
+    ],
+    "missingTranslations": [],
+    "suspiciousPatterns": [
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-tasks-tab.tsx",
+        "line": "163",
+        "pattern": "task.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-tasks-tab.tsx",
+        "line": "164",
+        "pattern": "task.project",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-files-tab.tsx",
+        "line": "115",
+        "pattern": "summary.uploaded",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-files-tab.tsx",
+        "line": "123",
+        "pattern": "summary.downloaded",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-files-tab.tsx",
+        "line": "131",
+        "pattern": "summary.favorites",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-files-tab.tsx",
+        "line": "165",
+        "pattern": "category.percentage",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-files-tab.tsx",
+        "line": "169",
+        "pattern": "category.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-files-tab.tsx",
+        "line": "202",
+        "pattern": "file.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-files-tab.tsx",
+        "line": "207",
+        "pattern": "file.project",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-files-tab.tsx",
+        "line": "218",
+        "pattern": "file.size",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-advances-tab.tsx",
+        "line": "189",
+        "pattern": "summary.pending",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-advances-tab.tsx",
+        "line": "232",
+        "pattern": "advance.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-advances-tab.tsx",
+        "line": "238",
+        "pattern": "advance.quantity",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-advances-tab.tsx",
+        "line": "243",
+        "pattern": "advance.purpose",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-advances-tab.tsx",
+        "line": "294",
+        "pattern": "advance.quantity",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-advances-tab.tsx",
+        "line": "307",
+        "pattern": "advance.pending",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-assets-tab.tsx",
+        "line": "112",
+        "pattern": "summary.owned",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-assets-tab.tsx",
+        "line": "120",
+        "pattern": "summary.rented",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-assets-tab.tsx",
+        "line": "128",
+        "pattern": "summary.leased",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-assets-tab.tsx",
+        "line": "152",
+        "pattern": "summary.available",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-assets-tab.tsx",
+        "line": "173",
+        "pattern": "category.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-assets-tab.tsx",
+        "line": "174",
+        "pattern": "category.count",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-assets-tab.tsx",
+        "line": "200",
+        "pattern": "asset.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-expenses-tab.tsx",
+        "line": "92",
+        "pattern": "expense.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-expenses-tab.tsx",
+        "line": "93",
+        "pattern": "expense.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-expenses-tab.tsx",
+        "line": "96",
+        "pattern": "expense.amount",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-expenses-tab.tsx",
+        "line": "102",
+        "pattern": "expense.date",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-reports-tab.tsx",
+        "line": "111",
+        "pattern": "summary.favorites",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-reports-tab.tsx",
+        "line": "119",
+        "pattern": "summary.recurring",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-reports-tab.tsx",
+        "line": "127",
+        "pattern": "summary.custom",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-reports-tab.tsx",
+        "line": "154",
+        "pattern": "category.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-reports-tab.tsx",
+        "line": "155",
+        "pattern": "category.count",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-reports-tab.tsx",
+        "line": "187",
+        "pattern": "report.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-orders-tab.tsx",
+        "line": "143",
+        "pattern": "summary.pending",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-orders-tab.tsx",
+        "line": "147",
+        "pattern": "summary.processing",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-orders-tab.tsx",
+        "line": "155",
+        "pattern": "summary.delivered",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-orders-tab.tsx",
+        "line": "159",
+        "pattern": "summary.cancelled",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-orders-tab.tsx",
+        "line": "185",
+        "pattern": "order.item",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-orders-tab.tsx",
+        "line": "191",
+        "pattern": "order.total",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-orders-tab.tsx",
+        "line": "192",
+        "pattern": "order.quantity",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-travel-tab.tsx",
+        "line": "105",
+        "pattern": "summary.confirmed",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-travel-tab.tsx",
+        "line": "145",
+        "pattern": "travel.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-travel-tab.tsx",
+        "line": "146",
+        "pattern": "travel.project",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-travel-tab.tsx",
+        "line": "176",
+        "pattern": "travel.purpose",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-overview-tab.tsx",
+        "line": "206",
+        "pattern": "stat.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-overview-tab.tsx",
+        "line": "210",
+        "pattern": "stat.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-overview-tab.tsx",
+        "line": "242",
+        "pattern": "action.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-jobs-tab.tsx",
+        "line": "153",
+        "pattern": "job.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-jobs-tab.tsx",
+        "line": "154",
+        "pattern": "job.client",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-jobs-tab.tsx",
+        "line": "190",
+        "pattern": "job.progress",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-agenda-tab.tsx",
+        "line": "122",
+        "pattern": "day.day",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-agenda-tab.tsx",
+        "line": "123",
+        "pattern": "day.events",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-agenda-tab.tsx",
+        "line": "173",
+        "pattern": "event.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "dashboard/dashboard-my-agenda-tab.tsx",
+        "line": "238",
+        "pattern": "events.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-compliance-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-milestones-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-schedule-tab.tsx",
+        "line": "101",
+        "pattern": "tasks.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-schedule-tab.tsx",
+        "line": "198",
+        "pattern": "task.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-schedule-tab.tsx",
+        "line": "236",
+        "pattern": "task.assignee",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-schedule-tab.tsx",
+        "line": "275",
+        "pattern": "task.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-overview-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-projects-checklists-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-costs-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-productions-tab.tsx",
+        "line": "151",
+        "pattern": "production.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-productions-tab.tsx",
+        "line": "152",
+        "pattern": "production.code",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-productions-tab.tsx",
+        "line": "174",
+        "pattern": "production.progress",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-activations-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-projects-work-orders-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-safety-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "projects/projects-tasks-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-rehearsals-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-trainings-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-shipping-receiving-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-equipment-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-itineraries-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-internal-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-incidents-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-tours-tab.tsx",
+        "line": "153",
+        "pattern": "stop.city",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-reservations-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-run-of-show-tab.tsx",
+        "line": "197",
+        "pattern": "cue.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-all-events-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-activities-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-calendar-tab.tsx",
+        "line": "97",
+        "pattern": "events.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-calendar-tab.tsx",
+        "line": "234",
+        "pattern": "event.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-bookings-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "events/events-blocks-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-applicants-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-openings-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-personnel-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-assignments-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-teams-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-onboarding-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-timekeeping-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-scheduling-tab.tsx",
+        "line": "96",
+        "pattern": "shifts.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-scheduling-tab.tsx",
+        "line": "208",
+        "pattern": "person.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-scheduling-tab.tsx",
+        "line": "209",
+        "pattern": "person.role",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "people/people-training-tab.tsx",
+        "line": "56",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/catalog-tab.tsx",
+        "line": "109",
+        "pattern": "item.manufacturer",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/assets-maintenance-tab.tsx",
+        "line": "253",
+        "pattern": "item.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/assets-tracking-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/assets-advances-tab.tsx",
+        "line": "57",
+        "pattern": "config.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/assets-overview-tab.tsx",
+        "line": "181",
+        "pattern": "category.category",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/assets-overview-tab.tsx",
+        "line": "211",
+        "pattern": "activity.action",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/assets-overview-tab.tsx",
+        "line": "213",
+        "pattern": "activity.asset",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/assets-overview-tab.tsx",
+        "line": "249",
+        "pattern": "alert.message",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/counts-tab.tsx",
+        "line": "109",
+        "pattern": "value.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/counts-tab.tsx",
+        "line": "282",
+        "pattern": "option.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "assets/counts-tab.tsx",
+        "line": "284",
+        "pattern": "option.count",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-spatial-features-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-logistics-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-access-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-utilities-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-directory-tab.tsx",
+        "line": "96",
+        "pattern": "locations.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-directory-tab.tsx",
+        "line": "170",
+        "pattern": "location.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-directory-tab.tsx",
+        "line": "172",
+        "pattern": "location.code",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-directory-tab.tsx",
+        "line": "214",
+        "pattern": "location.email",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-directory-tab.tsx",
+        "line": "238",
+        "pattern": "location.capacity",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-coordination-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-site-maps-tab.tsx",
+        "line": "112",
+        "pattern": "map.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-site-maps-tab.tsx",
+        "line": "113",
+        "pattern": "map.location",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-site-maps-tab.tsx",
+        "line": "179",
+        "pattern": "zone.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-site-maps-tab.tsx",
+        "line": "235",
+        "pattern": "zone.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-site-maps-tab.tsx",
+        "line": "285",
+        "pattern": "layer.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-bim-models-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "locations/locations-warehousing-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-tech-specs-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-insurance-permits-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-archive-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-all-documents-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-media-assets-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-riders-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-production-reports-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-shared-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-contracts-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Production Hub",
+        "file": "files/files-call-sheets-tab.tsx",
+        "line": "55",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/activity-tab.tsx",
+        "line": "140",
+        "pattern": "posts.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/activity-tab.tsx",
+        "line": "241",
+        "pattern": "post.author",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/activity-tab.tsx",
+        "line": "254",
+        "pattern": "post.content",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/events-tab.tsx",
+        "line": "297",
+        "pattern": "event.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/events-tab.tsx",
+        "line": "311",
+        "pattern": "event.organizer",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/showcase-tab.tsx",
+        "line": "117",
+        "pattern": "posts.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/showcase-tab.tsx",
+        "line": "179",
+        "pattern": "post.author",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/showcase-tab.tsx",
+        "line": "180",
+        "pattern": "post.company",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/showcase-tab.tsx",
+        "line": "198",
+        "pattern": "post.content",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/competitions-tab.tsx",
+        "line": "383",
+        "pattern": "entry.rank",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/competitions-tab.tsx",
+        "line": "422",
+        "pattern": "entry.streak",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/news-tab.tsx",
+        "line": "222",
+        "pattern": "article.source",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/news-tab.tsx",
+        "line": "223",
+        "pattern": "article.author",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/news-tab.tsx",
+        "line": "232",
+        "pattern": "article.summary",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/connections-tab.tsx",
+        "line": "238",
+        "pattern": "connection.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/connections-tab.tsx",
+        "line": "245",
+        "pattern": "connection.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/connections-tab.tsx",
+        "line": "255",
+        "pattern": "connection.company",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/connections-tab.tsx",
+        "line": "259",
+        "pattern": "connection.location",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/studios-tab.tsx",
+        "line": "247",
+        "pattern": "studio.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "community/discussions-tab.tsx",
+        "line": "171",
+        "pattern": "discussions.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/spotlight-tab.tsx",
+        "line": "111",
+        "pattern": "item.status",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/spotlight-tab.tsx",
+        "line": "178",
+        "pattern": "item.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/spotlight-tab.tsx",
+        "line": "188",
+        "pattern": "item.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/spotlight-tab.tsx",
+        "line": "191",
+        "pattern": "item.rating",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/products-tab.tsx",
+        "line": "177",
+        "pattern": "product.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/products-tab.tsx",
+        "line": "197",
+        "pattern": "product.rating",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/products-tab.tsx",
+        "line": "202",
+        "pattern": "product.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/products-tab.tsx",
+        "line": "227",
+        "pattern": "product.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/products-tab.tsx",
+        "line": "244",
+        "pattern": "product.rating",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/products-tab.tsx",
+        "line": "248",
+        "pattern": "product.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/lists-tab.tsx",
+        "line": "114",
+        "pattern": "list.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/shop-tab.tsx",
+        "line": "179",
+        "pattern": "item.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/shop-tab.tsx",
+        "line": "208",
+        "pattern": "item.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/orders-tab.tsx",
+        "line": "163",
+        "pattern": "order.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/orders-tab.tsx",
+        "line": "179",
+        "pattern": "order.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/orders-tab.tsx",
+        "line": "191",
+        "pattern": "order.priority",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/services-tab.tsx",
+        "line": "169",
+        "pattern": "service.rating",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/services-tab.tsx",
+        "line": "200",
+        "pattern": "service.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/vendors-tab.tsx",
+        "line": "108",
+        "pattern": "vendor.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/vendors-tab.tsx",
+        "line": "134",
+        "pattern": "vendor.rating",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/favorites-tab.tsx",
+        "line": "81",
+        "pattern": "item.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/favorites-tab.tsx",
+        "line": "101",
+        "pattern": "item.rating",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/favorites-tab.tsx",
+        "line": "105",
+        "pattern": "item.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/sales-tab.tsx",
+        "line": "129",
+        "pattern": "sale.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/sales-tab.tsx",
+        "line": "144",
+        "pattern": "sale.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/reviews-tab.tsx",
+        "line": "201",
+        "pattern": "review.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/purchases-tab.tsx",
+        "line": "163",
+        "pattern": "purchase.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/purchases-tab.tsx",
+        "line": "179",
+        "pattern": "purchase.price",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "marketplace/purchases-tab.tsx",
+        "line": "191",
+        "pattern": "purchase.priority",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-glossary-tab.tsx",
+        "line": "87",
+        "pattern": "terms.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-glossary-tab.tsx",
+        "line": "180",
+        "pattern": "term.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-courses-tab.tsx",
+        "line": "70",
+        "pattern": "courses.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-courses-tab.tsx",
+        "line": "136",
+        "pattern": "course.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-courses-tab.tsx",
+        "line": "138",
+        "pattern": "course.category",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-courses-tab.tsx",
+        "line": "193",
+        "pattern": "course.instructor",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-courses-tab.tsx",
+        "line": "226",
+        "pattern": "course.progress",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-publications-tab.tsx",
+        "line": "72",
+        "pattern": "publications.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-publications-tab.tsx",
+        "line": "139",
+        "pattern": "publication.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-troubleshooting-tab.tsx",
+        "line": "58",
+        "pattern": "issues.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-troubleshooting-tab.tsx",
+        "line": "125",
+        "pattern": "issue.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-troubleshooting-tab.tsx",
+        "line": "144",
+        "pattern": "issue.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-troubleshooting-tab.tsx",
+        "line": "150",
+        "pattern": "issue.solution",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-library-tab.tsx",
+        "line": "95",
+        "pattern": "resources.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-library-tab.tsx",
+        "line": "166",
+        "pattern": "resource.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-library-tab.tsx",
+        "line": "168",
+        "pattern": "resource.category",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-library-tab.tsx",
+        "line": "204",
+        "pattern": "resource.author",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-guides-tab.tsx",
+        "line": "68",
+        "pattern": "guides.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-guides-tab.tsx",
+        "line": "134",
+        "pattern": "guide.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-guides-tab.tsx",
+        "line": "136",
+        "pattern": "guide.category",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-guides-tab.tsx",
+        "line": "172",
+        "pattern": "guide.author",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-grants-tab.tsx",
+        "line": "89",
+        "pattern": "grants.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Network Hub",
+        "file": "resources/resources-grants-tab.tsx",
+        "line": "159",
+        "pattern": "grant.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "94",
+        "pattern": "companies.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "155",
+        "pattern": "company.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "173",
+        "pattern": "company.location",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "180",
+        "pattern": "company.phone",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-organizations-tab.tsx",
+        "line": "187",
+        "pattern": "company.email",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-documents-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-bids-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-contacts-tab.tsx",
+        "line": "125",
+        "pattern": "contacts.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-contacts-tab.tsx",
+        "line": "204",
+        "pattern": "c.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-contacts-tab.tsx",
+        "line": "205",
+        "pattern": "c.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-contacts-tab.tsx",
+        "line": "208",
+        "pattern": "c.company",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-contacts-tab.tsx",
+        "line": "231",
+        "pattern": "c.email",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-compliance-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-subcontractor-profile-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-reviews-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-scopes-of-work-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-work-orders-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-deliverables-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "companies/companies-companies-invoices-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-active-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-completed-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-compliance-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-estimates-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-shortlists-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-dispatch-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-jobs-invoices-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-pipeline-tab.tsx",
+        "line": "162",
+        "pattern": "stage.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-overview-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-rfps-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-offers-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-checklists-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-archived-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-work-orders-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "jobs/jobs-recruiting-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-agreements-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-dashboard-tab.tsx",
+        "line": "92",
+        "pattern": "orders.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-dashboard-tab.tsx",
+        "line": "153",
+        "pattern": "stage.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-dashboard-tab.tsx",
+        "line": "167",
+        "pattern": "order.vendor",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-dashboard-tab.tsx",
+        "line": "267",
+        "pattern": "order.vendor",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-dashboard-tab.tsx",
+        "line": "306",
+        "pattern": "order.vendor",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-requisitions-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-fulfillment-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-orders-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-receiving-tab.tsx",
+        "line": "136",
+        "pattern": "stats.total",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-receiving-tab.tsx",
+        "line": "147",
+        "pattern": "stats.received",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-receiving-tab.tsx",
+        "line": "158",
+        "pattern": "stats.inspection",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-receiving-tab.tsx",
+        "line": "169",
+        "pattern": "stats.accepted",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-line-items-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-overview-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-procurement-approvals-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-matching-tab.tsx",
+        "line": "145",
+        "pattern": "stats.total",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-matching-tab.tsx",
+        "line": "156",
+        "pattern": "stats.matched",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-matching-tab.tsx",
+        "line": "300",
+        "pattern": "item.vendor",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "procurement/procurement-audits-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-revenue-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-taxes-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-forecasts-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-gl-codes-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-scenarios-tab.tsx",
+        "line": "156",
+        "pattern": "scenarios.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-scenarios-tab.tsx",
+        "line": "246",
+        "pattern": "scenario.probability",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-cash-flow-tab.tsx",
+        "line": "233",
+        "pattern": "category.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-cash-flow-tab.tsx",
+        "line": "277",
+        "pattern": "category.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-cash-flow-tab.tsx",
+        "line": "328",
+        "pattern": "payment.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-invoices-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-approvals-tab.tsx",
+        "line": "269",
+        "pattern": "approval.reference",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-approvals-tab.tsx",
+        "line": "275",
+        "pattern": "approval.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-approvals-tab.tsx",
+        "line": "339",
+        "pattern": "chain.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-approvals-tab.tsx",
+        "line": "385",
+        "pattern": "activity.item",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-approvals-tab.tsx",
+        "line": "386",
+        "pattern": "activity.date",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payments-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-overview-tab.tsx",
+        "line": "162",
+        "pattern": "data.month",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-overview-tab.tsx",
+        "line": "216",
+        "pattern": "category.category",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-overview-tab.tsx",
+        "line": "283",
+        "pattern": "alert.message",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-reconciliation-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-policies-tab.tsx",
+        "line": "402",
+        "pattern": "violation.reason",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-expenses-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-budgets-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-variance-tab.tsx",
+        "line": "253",
+        "pattern": "variance.period",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-variance-tab.tsx",
+        "line": "320",
+        "pattern": "cause.category",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-payroll-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-accounts-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Business Hub",
+        "file": "finance/finance-transactions-tab.tsx",
+        "line": "61",
+        "pattern": "items.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-custom-builder-tab.tsx",
+        "line": "109",
+        "pattern": "field.type",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-overview-tab.tsx",
+        "line": "54",
+        "pattern": "stat.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-overview-tab.tsx",
+        "line": "55",
+        "pattern": "stat.change",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-overview-tab.tsx",
+        "line": "57",
+        "pattern": "stat.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-overview-tab.tsx",
+        "line": "83",
+        "pattern": "report.id",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-overview-tab.tsx",
+        "line": "84",
+        "pattern": "report.size",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-overview-tab.tsx",
+        "line": "91",
+        "pattern": "report.downloads",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-templates-tab.tsx",
+        "line": "86",
+        "pattern": "template.id",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-templates-tab.tsx",
+        "line": "100",
+        "pattern": "template.rating",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-templates-tab.tsx",
+        "line": "104",
+        "pattern": "template.uses",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-compliance-tab.tsx",
+        "line": "176",
+        "pattern": "report.frequency",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-compliance-tab.tsx",
+        "line": "182",
+        "pattern": "report.requirement",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-archived-tab.tsx",
+        "line": "96",
+        "pattern": "report.id",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-archived-tab.tsx",
+        "line": "97",
+        "pattern": "report.size",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-archived-tab.tsx",
+        "line": "98",
+        "pattern": "report.type",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-scheduled-tab.tsx",
+        "line": "77",
+        "pattern": "report.frequency",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-scheduled-tab.tsx",
+        "line": "81",
+        "pattern": "report.schedule",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-scheduled-tab.tsx",
+        "line": "125",
+        "pattern": "report.format",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-executive-tab.tsx",
+        "line": "84",
+        "pattern": "kpi.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-executive-tab.tsx",
+        "line": "85",
+        "pattern": "kpi.target",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-executive-tab.tsx",
+        "line": "87",
+        "pattern": "kpi.progress",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-executive-tab.tsx",
+        "line": "103",
+        "pattern": "report.id",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-executive-tab.tsx",
+        "line": "104",
+        "pattern": "report.status",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-exports-tab.tsx",
+        "line": "61",
+        "pattern": "file.id",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-exports-tab.tsx",
+        "line": "62",
+        "pattern": "file.expires",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-exports-tab.tsx",
+        "line": "77",
+        "pattern": "file.status",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-operational-tab.tsx",
+        "line": "153",
+        "pattern": "report.id",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "reports/reports-operational-tab.tsx",
+        "line": "154",
+        "pattern": "report.frequency",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-data-sources-tab.tsx",
+        "line": "111",
+        "pattern": "source.type",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-data-sources-tab.tsx",
+        "line": "140",
+        "pattern": "source.records",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-data-sources-tab.tsx",
+        "line": "144",
+        "pattern": "source.tables",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-performance-tab.tsx",
+        "line": "95",
+        "pattern": "area.score",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-performance-tab.tsx",
+        "line": "111",
+        "pattern": "area.benchmark",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-performance-tab.tsx",
+        "line": "123",
+        "pattern": "metric.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-realtime-tab.tsx",
+        "line": "67",
+        "pattern": "metric.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-realtime-tab.tsx",
+        "line": "102",
+        "pattern": "event.message",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-realtime-tab.tsx",
+        "line": "103",
+        "pattern": "event.type",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-realtime-tab.tsx",
+        "line": "105",
+        "pattern": "event.time",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-overview-tab.tsx",
+        "line": "95",
+        "pattern": "metric.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-overview-tab.tsx",
+        "line": "97",
+        "pattern": "metric.change",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-overview-tab.tsx",
+        "line": "104",
+        "pattern": "metric.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-overview-tab.tsx",
+        "line": "129",
+        "pattern": "kpi.unit",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-overview-tab.tsx",
+        "line": "130",
+        "pattern": "kpi.unit",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-forecasting-tab.tsx",
+        "line": "78",
+        "pattern": "forecast.metric",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-forecasting-tab.tsx",
+        "line": "80",
+        "pattern": "forecast.current",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-forecasting-tab.tsx",
+        "line": "96",
+        "pattern": "item.period",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-forecasting-tab.tsx",
+        "line": "105",
+        "pattern": "item.confidence",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-pivot-tables-tab.tsx",
+        "line": "71",
+        "pattern": "row.product",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-pivot-tables-tab.tsx",
+        "line": "76",
+        "pattern": "row.total",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-metrics-library-tab.tsx",
+        "line": "144",
+        "pattern": "metric.trend",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-trends-tab.tsx",
+        "line": "127",
+        "pattern": "data.metric",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-trends-tab.tsx",
+        "line": "133",
+        "pattern": "data.current",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-trends-tab.tsx",
+        "line": "172",
+        "pattern": "data.change",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-comparisons-tab.tsx",
+        "line": "121",
+        "pattern": "period.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-comparisons-tab.tsx",
+        "line": "122",
+        "pattern": "period.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-comparisons-tab.tsx",
+        "line": "147",
+        "pattern": "region.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-comparisons-tab.tsx",
+        "line": "153",
+        "pattern": "region.revenue",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-comparisons-tab.tsx",
+        "line": "155",
+        "pattern": "region.revenue",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "analytics/analytics-comparisons-tab.tsx",
+        "line": "160",
+        "pattern": "region.growth",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-key-results-tab.tsx",
+        "line": "152",
+        "pattern": "kr.target",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-key-results-tab.tsx",
+        "line": "154",
+        "pattern": "kr.unit",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-intelligence-feed-tab.tsx",
+        "line": "87",
+        "pattern": "insights.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-intelligence-feed-tab.tsx",
+        "line": "146",
+        "pattern": "insight.message",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-intelligence-feed-tab.tsx",
+        "line": "150",
+        "pattern": "insight.source",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-recommendations-tab.tsx",
+        "line": "104",
+        "pattern": "rec.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-recommendations-tab.tsx",
+        "line": "129",
+        "pattern": "rec.effort",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-recommendations-tab.tsx",
+        "line": "133",
+        "pattern": "rec.confidence",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-recommendations-tab.tsx",
+        "line": "152",
+        "pattern": "rec.timeline",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-objectives-tab.tsx",
+        "line": "98",
+        "pattern": "objectives.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-objectives-tab.tsx",
+        "line": "154",
+        "pattern": "objective.owner",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-objectives-tab.tsx",
+        "line": "169",
+        "pattern": "objective.target",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-success-metrics-tab.tsx",
+        "line": "119",
+        "pattern": "metric.weight",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-success-metrics-tab.tsx",
+        "line": "124",
+        "pattern": "metric.target",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-success-metrics-tab.tsx",
+        "line": "126",
+        "pattern": "metric.unit",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-priorities-tab.tsx",
+        "line": "141",
+        "pattern": "priority.rank",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-priorities-tab.tsx",
+        "line": "148",
+        "pattern": "priority.score",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-priorities-tab.tsx",
+        "line": "195",
+        "pattern": "priority.owner",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-progress-tracking-tab.tsx",
+        "line": "103",
+        "pattern": "data.objective",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-progress-tracking-tab.tsx",
+        "line": "125",
+        "pattern": "month.month",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-overview-tab.tsx",
+        "line": "159",
+        "pattern": "insight.impact",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-overview-tab.tsx",
+        "line": "162",
+        "pattern": "insight.confidence",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-overview-tab.tsx",
+        "line": "167",
+        "pattern": "insight.recommendation",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-overview-tab.tsx",
+        "line": "191",
+        "pattern": "obj.progress",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Intelligence Hub",
+        "file": "insights/insights-benchmarks-tab.tsx",
+        "line": "158",
+        "pattern": "metric.yours",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/templates-tab.tsx",
+        "line": "68",
+        "pattern": "category.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/admin-overview-tab.tsx",
+        "line": "94",
+        "pattern": "stat.label",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/admin-overview-tab.tsx",
+        "line": "96",
+        "pattern": "stat.color",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/admin-overview-tab.tsx",
+        "line": "100",
+        "pattern": "stat.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/admin-overview-tab.tsx",
+        "line": "165",
+        "pattern": "item.metric",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/admin-overview-tab.tsx",
+        "line": "166",
+        "pattern": "item.value",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/plugins-tab.tsx",
+        "line": "159",
+        "pattern": "plugin.icon",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/plugins-tab.tsx",
+        "line": "162",
+        "pattern": "plugin.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/plugins-tab.tsx",
+        "line": "170",
+        "pattern": "plugin.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/api-tokens-tab.tsx",
+        "line": "146",
+        "pattern": "tokens.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/api-tokens-tab.tsx",
+        "line": "175",
+        "pattern": "token.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/custom-statuses-tab.tsx",
+        "line": "202",
+        "pattern": "status.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/members-management-tab.tsx",
+        "line": "263",
+        "pattern": "members.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/members-management-tab.tsx",
+        "line": "363",
+        "pattern": "member.email",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/webhooks-tab.tsx",
+        "line": "151",
+        "pattern": "webhooks.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/webhooks-tab.tsx",
+        "line": "353",
+        "pattern": "event.label",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/webhooks-tab.tsx",
+        "line": "354",
+        "pattern": "event.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/security-tab.tsx",
+        "line": "196",
+        "pattern": "item.ip",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/security-tab.tsx",
+        "line": "244",
+        "pattern": "log.event",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/automations-tab.tsx",
+        "line": "56",
+        "pattern": "automations.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/automations-tab.tsx",
+        "line": "84",
+        "pattern": "automation.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/integrations-tab.tsx",
+        "line": "55",
+        "pattern": "integrations.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/integrations-tab.tsx",
+        "line": "74",
+        "pattern": "integration.icon",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/integrations-tab.tsx",
+        "line": "77",
+        "pattern": "integration.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/recurrence-rules-tab.tsx",
+        "line": "114",
+        "pattern": "rules.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/recurrence-rules-tab.tsx",
+        "line": "154",
+        "pattern": "rule.pattern",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/invite-tab.tsx",
+        "line": "248",
+        "pattern": "invitation.email",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/roles-permissions-tab.tsx",
+        "line": "113",
+        "pattern": "role.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "admin/roles-permissions-tab.tsx",
+        "line": "136",
+        "pattern": "role.level",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/billing-tab.tsx",
+        "line": "333",
+        "pattern": "plan.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/billing-tab.tsx",
+        "line": "334",
+        "pattern": "plan.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/billing-tab.tsx",
+        "line": "387",
+        "pattern": "invoice.description",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/automations-tab.tsx",
+        "line": "158",
+        "pattern": "automation.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/automations-tab.tsx",
+        "line": "189",
+        "pattern": "automation.trigger",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/automations-tab.tsx",
+        "line": "194",
+        "pattern": "automation.action",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/integrations-tab.tsx",
+        "line": "158",
+        "pattern": "integration.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/team-tab.tsx",
+        "line": "168",
+        "pattern": "members.length",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/team-tab.tsx",
+        "line": "227",
+        "pattern": "member.email",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "settings/appearance-tab.tsx",
+        "line": "223",
+        "pattern": "preset.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/endorsements-tab.tsx",
+        "line": "259",
+        "pattern": "endorsement.message",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "132",
+        "pattern": "cred.type",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/access-tab.tsx",
+        "line": "177",
+        "pattern": "clearance.type",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/performance-tab.tsx",
+        "line": "181",
+        "pattern": "skill.rating",
+        "severity": "INFO"
+      },
+      {
+        "hub": "System Hub",
+        "file": "profile/performance-tab.tsx",
+        "line": "259",
+        "pattern": "achievement.icon",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/maps/MapOrganism.tsx",
+        "line": "165",
+        "pattern": "location.title",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/forms/FormBuilderOrganism.tsx",
+        "line": "158",
+        "pattern": "field.label",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/panels/FilterPanelOrganism.tsx",
+        "line": "108",
+        "pattern": "group.label",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/panels/FilterPanelOrganism.tsx",
+        "line": "125",
+        "pattern": "option.count",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PortfolioViewOrganism.tsx",
+        "line": "273",
+        "pattern": "project.name",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/PortfolioViewOrganism.tsx",
+        "line": "281",
+        "pattern": "project.health",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/ActivityViewOrganism.tsx",
+        "line": "211",
+        "pattern": "activity.action",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/ActivityViewOrganism.tsx",
+        "line": "213",
+        "pattern": "activity.entity",
+        "severity": "INFO"
+      },
+      {
+        "hub": "Organism Components",
+        "file": "organisms/data-views/FinancialDashboardOrganism.tsx",
+        "line": "185",
+        "pattern": "item.category",
+        "severity": "INFO"
+      }
+    ]
+  },
+  "modules": {
+    "production": {
+      "name": "Production Hub",
+      "path": "src/components",
+      "modules": {
+        "dashboard": {
+          "tabs": 11,
+          "path": "dashboard"
+        },
+        "projects": {
+          "tabs": 11,
+          "path": "projects"
+        },
+        "events": {
+          "tabs": 15,
+          "path": "events"
+        },
+        "people": {
+          "tabs": 9,
+          "path": "people"
+        },
+        "assets": {
+          "tabs": 9,
+          "path": "assets"
+        },
+        "locations": {
+          "tabs": 9,
+          "path": "locations"
+        },
+        "files": {
+          "tabs": 10,
+          "path": "files"
+        }
+      },
+      "total": 74
+    },
+    "network": {
+      "name": "Network Hub",
+      "path": "src/components",
+      "modules": {
+        "community": {
+          "tabs": 8,
+          "path": "community"
+        },
+        "marketplace": {
+          "tabs": 11,
+          "path": "marketplace"
+        },
+        "resources": {
+          "tabs": 7,
+          "path": "resources"
+        }
+      },
+      "total": 26
+    },
+    "business": {
+      "name": "Business Hub",
+      "path": "src/components",
+      "modules": {
+        "companies": {
+          "tabs": 11,
+          "path": "companies"
+        },
+        "jobs": {
+          "tabs": 15,
+          "path": "jobs"
+        },
+        "procurement": {
+          "tabs": 11,
+          "path": "procurement"
+        },
+        "finance": {
+          "tabs": 18,
+          "path": "finance"
+        }
+      },
+      "total": 55
+    },
+    "intelligence": {
+      "name": "Intelligence Hub",
+      "path": "src/components",
+      "modules": {
+        "reports": {
+          "tabs": 9,
+          "path": "reports"
+        },
+        "analytics": {
+          "tabs": 10,
+          "path": "analytics"
+        },
+        "insights": {
+          "tabs": 10,
+          "path": "insights"
+        }
+      },
+      "total": 29
+    },
+    "system": {
+      "name": "System Hub",
+      "path": "src/components",
+      "modules": {
+        "admin": {
+          "tabs": 16,
+          "path": "admin"
+        },
+        "settings": {
+          "tabs": 7,
+          "path": "settings"
+        },
+        "profile": {
+          "tabs": 12,
+          "path": "profile"
+        }
+      },
+      "total": 35
+    }
+  }
+}

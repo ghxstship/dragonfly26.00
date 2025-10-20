@@ -85,7 +85,19 @@ export function useDashboardData(workspaceId: string, userId: string) {
     { debounceMs: 1000, maxWaitMs: 5000 }
   )
 
-  return { data, loading, error, refetch: () => {} }
+  const refresh = async () => {
+    if (workspaceId) {
+      const { data: stats, error: statsError } = await supabase
+        .rpc('get_workspace_dashboard', {
+          p_workspace_id: workspaceId
+        })
+      if (!statsError && stats) {
+        setData(stats)
+      }
+    }
+  }
+
+  return { data, loading, error, refresh }
 }
 
 // Hook for My Agenda (events for user)
@@ -94,35 +106,35 @@ export function useMyAgenda(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchUpcomingEvents() {
-      if (!workspaceId) return
-      
-      // Demo mode: use mock data
-      if (shouldUseMockData()) {
-        await simulateDelay(300)
-        setEvents(mockEvents as any)
-        setLoading(false)
-        return
-      }
-      
-      // Production mode: use Supabase
-      const { data: { user } } = await supabase.auth.getUser()
-      const { data, error } = await supabase
-        .from('events')
-        .select('*, location:location_id(name)')
-        .eq('workspace_id', workspaceId)
-        .or(`created_by.eq.${userId},attendees.cs.{${userId}}`)
-        .gte('start_time', new Date().toISOString())
-        .order('start_time', { ascending: true })
-        .limit(50)
-
-      if (!error && data) {
-        setEvents(data)
-      }
+  const fetchUpcomingEvents = async () => {
+    if (!workspaceId) return
+    
+    // Demo mode: use mock data
+    if (shouldUseMockData()) {
+      await simulateDelay(300)
+      setEvents(mockEvents as any)
       setLoading(false)
+      return
     }
+    
+    // Production mode: use Supabase
+    const { data: { user } } = await supabase.auth.getUser()
+    const { data, error } = await supabase
+      .from('events')
+      .select('*, location:location_id(name)')
+      .eq('workspace_id', workspaceId)
+      .or(`created_by.eq.${userId},attendees.cs.{${userId}}`)
+      .gte('start_time', new Date().toISOString())
+      .order('start_time', { ascending: true })
+      .limit(50)
 
+    if (!error && data) {
+      setEvents(data)
+    }
+    setLoading(false)
+  }
+
+  useEffect(() => {
     fetchUpcomingEvents()
 
     // Skip real-time subscription in demo mode
@@ -150,7 +162,7 @@ export function useMyAgenda(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { events, loading }
+  return { events, loading, refresh: fetchUpcomingEvents }
 }
 
 // Hook for My Tasks
@@ -159,8 +171,7 @@ export function useMyTasks(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyTasks() {
+  const fetchMyTasks = async () => {
       if (!workspaceId) return
       
       const { data: { user } } = await supabase.auth.getUser()
@@ -179,6 +190,7 @@ export function useMyTasks(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyTasks()
 
     // Real-time subscription
@@ -201,7 +213,9 @@ export function useMyTasks(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { tasks, loading }
+  const refresh = fetchMyTasks
+
+  return { tasks, loading, refresh }
 }
 
 // Hook for My Expenses
@@ -210,8 +224,7 @@ export function useMyExpenses(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyExpenses() {
+  const fetchMyExpenses = async () => {
       if (!workspaceId) return
       
       const { data: { user } } = await supabase.auth.getUser()
@@ -233,6 +246,7 @@ export function useMyExpenses(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyExpenses()
 
     // Real-time subscription
@@ -255,7 +269,9 @@ export function useMyExpenses(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { expenses, loading }
+  const refresh = fetchMyExpenses
+
+  return { expenses, loading, refresh }
 }
 
 // Hook for My Jobs (personnel assignments)
@@ -264,8 +280,7 @@ export function useMyJobs(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyJobs() {
+  const fetchMyJobs = async () => {
       if (!workspaceId) return
       
       const { data, error } = await supabase
@@ -287,6 +302,7 @@ export function useMyJobs(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyJobs()
 
     const channel = supabase
@@ -308,7 +324,9 @@ export function useMyJobs(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { jobs, loading }
+  const refresh = fetchMyJobs
+
+  return { jobs, loading, refresh }
 }
 
 // Hook for My Assets
@@ -317,8 +335,7 @@ export function useMyAssets(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyAssets() {
+  const fetchMyAssets = async () => {
       if (!workspaceId) return
       
       const { data, error } = await supabase
@@ -338,6 +355,7 @@ export function useMyAssets(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyAssets()
 
     const channel = supabase
@@ -359,7 +377,9 @@ export function useMyAssets(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { assets, loading }
+  const refresh = fetchMyAssets
+
+  return { assets, loading, refresh }
 }
 
 // Hook for My Orders
@@ -368,8 +388,7 @@ export function useMyOrders(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyOrders() {
+  const fetchMyOrders = async () => {
       if (!workspaceId) return
       
       const { data, error } = await supabase
@@ -390,6 +409,7 @@ export function useMyOrders(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyOrders()
 
     const channel = supabase
@@ -411,7 +431,9 @@ export function useMyOrders(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { orders, loading }
+  const refresh = fetchMyOrders
+
+  return { orders, loading, refresh }
 }
 
 // Hook for My Advances
@@ -420,8 +442,7 @@ export function useMyAdvances(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyAdvances() {
+  const fetchMyAdvances = async () => {
       if (!workspaceId) return
       
       const { data, error } = await supabase
@@ -445,6 +466,7 @@ export function useMyAdvances(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyAdvances()
 
     const channel = supabase
@@ -466,7 +488,9 @@ export function useMyAdvances(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { advances, loading }
+  const refresh = fetchMyAdvances
+
+  return { advances, loading, refresh }
 }
 
 // Hook for My Reports
@@ -475,8 +499,7 @@ export function useMyReports(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyReports() {
+  const fetchMyReports = async () => {
       if (!workspaceId) return
       
       const { data, error } = await supabase
@@ -493,6 +516,7 @@ export function useMyReports(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyReports()
 
     const channel = supabase
@@ -514,7 +538,9 @@ export function useMyReports(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { reports, loading }
+  const refresh = fetchMyReports
+
+  return { reports, loading, refresh }
 }
 
 // Hook for My Files  
@@ -523,8 +549,7 @@ export function useMyFiles(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyFiles() {
+  const fetchMyFiles = async () => {
       if (!workspaceId) return
       
       const { data, error } = await supabase
@@ -544,6 +569,7 @@ export function useMyFiles(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyFiles()
 
     const channel = supabase
@@ -565,7 +591,9 @@ export function useMyFiles(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { files, loading }
+  const refresh = fetchMyFiles
+
+  return { files, loading, refresh }
 }
 
 // Hook for My Travel
@@ -574,8 +602,7 @@ export function useMyTravel(workspaceId: string, userId: string) {
   const [loading, setLoading] = useState(true)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchMyTravel() {
+  const fetchMyTravel = async () => {
       if (!workspaceId) return
       
       const { data, error } = await supabase
@@ -596,6 +623,7 @@ export function useMyTravel(workspaceId: string, userId: string) {
       setLoading(false)
     }
 
+  useEffect(() => {
     fetchMyTravel()
 
     const channel = supabase
@@ -617,5 +645,7 @@ export function useMyTravel(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { travels, loading }
+  const refresh = fetchMyTravel
+
+  return { travels, loading, refresh }
 }

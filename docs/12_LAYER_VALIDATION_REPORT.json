@@ -1,0 +1,78 @@
+{
+  "timestamp": "2025-10-20T16:08:09.451Z",
+  "overallScore": 98,
+  "layers": [
+    {
+      "layer": "Database Schema",
+      "score": 100,
+      "details": "90 migrations",
+      "status": "PERFECT"
+    },
+    {
+      "layer": "Migrations",
+      "score": 94,
+      "details": "85/90 valid",
+      "status": "PASS"
+    },
+    {
+      "layer": "Database Functions",
+      "score": 100,
+      "details": "88 functions",
+      "status": "PERFECT"
+    },
+    {
+      "layer": "Views",
+      "score": 100,
+      "details": "8 views",
+      "status": "PERFECT"
+    },
+    {
+      "layer": "RLS Policies",
+      "score": 100,
+      "details": "809 policies",
+      "status": "PERFECT"
+    },
+    {
+      "layer": "Realtime",
+      "score": 86,
+      "details": "19/22 hooks",
+      "status": "PASS"
+    },
+    {
+      "layer": "Hooks Layer",
+      "score": 100,
+      "details": "44 hooks",
+      "status": "PERFECT"
+    },
+    {
+      "layer": "React Query",
+      "score": 100,
+      "details": "3 hooks",
+      "status": "PERFECT"
+    },
+    {
+      "layer": "TypeScript Types",
+      "score": 100,
+      "details": "500 files",
+      "status": "PERFECT"
+    },
+    {
+      "layer": "Components",
+      "score": 90,
+      "details": "234 tabs",
+      "status": "PASS"
+    },
+    {
+      "layer": "Internationalization",
+      "score": 100,
+      "details": "234/234 components",
+      "status": "PERFECT"
+    },
+    {
+      "layer": "Accessibility",
+      "score": 100,
+      "details": "234/234 components",
+      "status": "PERFECT"
+    }
+  ]
+}

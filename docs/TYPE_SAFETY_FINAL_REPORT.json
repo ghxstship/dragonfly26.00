@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-10-20T12:51:42.654Z",
+  "stats": {
+    "totalFiles": 219,
+    "filesWithAny": 0,
+    "anyCount": 0,
+    "filesWithReturnTypes": 219,
+    "filesWithPropTypes": 219,
+    "filesWithUnknown": 203,
+    "unknownCount": 525
+  },
+  "violations": {
+    "anyTypes": [],
+    "missingReturnTypes": [],
+    "missingPropTypes": []
+  },
+  "score": {
+    "overall": 100,
+    "anyTypes": 100,
+    "returnTypes": 100,
+    "propTypes": 100
+  },
+  "grade": "A+",
+  "status": "PRODUCTION READY"
+}

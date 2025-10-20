@@ -1,0 +1,3055 @@
+-- Complete Partial RLS Policies
+-- Generated: 2025-10-20T12:46:46.187Z
+-- Tables: 74
+-- Note: Review and adjust policies based on specific table requirements
+
+-- ============================================================================
+-- ACTIVITIES TABLE - COMPLETE RLS POLICIES
+-- Missing: SELECT, INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "activities_select_policy"
+  ON activities
+  FOR SELECT
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = activities.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "activities_insert_policy"
+  ON activities
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = activities.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "activities_update_policy"
+  ON activities
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = activities.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "activities_delete_policy"
+  ON activities
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = activities.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- APPROVAL_CHAINS TABLE - COMPLETE RLS POLICIES
+-- Missing: SELECT, INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "approval_chains_select_policy"
+  ON approval_chains
+  FOR SELECT
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_chains.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "approval_chains_insert_policy"
+  ON approval_chains
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_chains.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "approval_chains_update_policy"
+  ON approval_chains
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_chains.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "approval_chains_delete_policy"
+  ON approval_chains
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_chains.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- APPROVAL_REQUESTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "approval_requests_insert_policy"
+  ON approval_requests
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_requests.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "approval_requests_update_policy"
+  ON approval_requests
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_requests.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "approval_requests_delete_policy"
+  ON approval_requests
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_requests.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- APPROVAL_STEPS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "approval_steps_insert_policy"
+  ON approval_steps
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_steps.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "approval_steps_update_policy"
+  ON approval_steps
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_steps.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "approval_steps_delete_policy"
+  ON approval_steps
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_steps.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- APPROVAL_WORKFLOWS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "approval_workflows_insert_policy"
+  ON approval_workflows
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_workflows.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "approval_workflows_update_policy"
+  ON approval_workflows
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_workflows.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "approval_workflows_delete_policy"
+  ON approval_workflows
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = approval_workflows.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ASSET_MAINTENANCE TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "asset_maintenance_insert_policy"
+  ON asset_maintenance
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = asset_maintenance.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "asset_maintenance_update_policy"
+  ON asset_maintenance
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = asset_maintenance.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "asset_maintenance_delete_policy"
+  ON asset_maintenance
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = asset_maintenance.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ASSET_TRANSACTIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "asset_transactions_insert_policy"
+  ON asset_transactions
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = asset_transactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "asset_transactions_update_policy"
+  ON asset_transactions
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = asset_transactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "asset_transactions_delete_policy"
+  ON asset_transactions
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = asset_transactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ASSETS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "assets_insert_policy"
+  ON assets
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = assets.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "assets_update_policy"
+  ON assets
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = assets.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "assets_delete_policy"
+  ON assets
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = assets.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- BOOKINGS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "bookings_insert_policy"
+  ON bookings
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = bookings.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "bookings_update_policy"
+  ON bookings
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = bookings.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "bookings_delete_policy"
+  ON bookings
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = bookings.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CHECKLIST_ITEMS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "checklist_items_insert_policy"
+  ON checklist_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "checklist_items_update_policy"
+  ON checklist_items
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "checklist_items_delete_policy"
+  ON checklist_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CHECKLIST_TEMPLATE_ITEMS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "checklist_template_items_insert_policy"
+  ON checklist_template_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_template_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "checklist_template_items_update_policy"
+  ON checklist_template_items
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_template_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "checklist_template_items_delete_policy"
+  ON checklist_template_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_template_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CHECKLIST_TEMPLATES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "checklist_templates_insert_policy"
+  ON checklist_templates
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_templates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "checklist_templates_update_policy"
+  ON checklist_templates
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_templates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "checklist_templates_delete_policy"
+  ON checklist_templates
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklist_templates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CHECKLISTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "checklists_insert_policy"
+  ON checklists
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklists.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "checklists_update_policy"
+  ON checklists
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklists.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "checklists_delete_policy"
+  ON checklists
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = checklists.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- COMMUNICATION_THREADS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "communication_threads_insert_policy"
+  ON communication_threads
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = communication_threads.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "communication_threads_update_policy"
+  ON communication_threads
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = communication_threads.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "communication_threads_delete_policy"
+  ON communication_threads
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = communication_threads.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- COMPANIES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "companies_insert_policy"
+  ON companies
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = companies.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "companies_update_policy"
+  ON companies
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = companies.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "companies_delete_policy"
+  ON companies
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = companies.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- COMPANY_CONTACTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "company_contacts_insert_policy"
+  ON company_contacts
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = company_contacts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "company_contacts_update_policy"
+  ON company_contacts
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = company_contacts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "company_contacts_delete_policy"
+  ON company_contacts
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = company_contacts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- COUNT_LINE_ITEMS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "count_line_items_insert_policy"
+  ON count_line_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = count_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "count_line_items_update_policy"
+  ON count_line_items
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = count_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "count_line_items_delete_policy"
+  ON count_line_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = count_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ESTIMATE_LINE_ITEMS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "estimate_line_items_insert_policy"
+  ON estimate_line_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = estimate_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "estimate_line_items_update_policy"
+  ON estimate_line_items
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = estimate_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "estimate_line_items_delete_policy"
+  ON estimate_line_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = estimate_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ESTIMATES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "estimates_insert_policy"
+  ON estimates
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = estimates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "estimates_update_policy"
+  ON estimates
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = estimates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "estimates_delete_policy"
+  ON estimates
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = estimates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- EVENTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "events_insert_policy"
+  ON events
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = events.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "events_update_policy"
+  ON events
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = events.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "events_delete_policy"
+  ON events
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = events.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- FILE_FOLDERS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "file_folders_insert_policy"
+  ON file_folders
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = file_folders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "file_folders_update_policy"
+  ON file_folders
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = file_folders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "file_folders_delete_policy"
+  ON file_folders
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = file_folders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- FILES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "files_insert_policy"
+  ON files
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = files.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "files_update_policy"
+  ON files
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = files.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "files_delete_policy"
+  ON files
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = files.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- HIRING_APPLICATION_RESPONSES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "hiring_application_responses_insert_policy"
+  ON hiring_application_responses
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = hiring_application_responses.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "hiring_application_responses_update_policy"
+  ON hiring_application_responses
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = hiring_application_responses.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "hiring_application_responses_delete_policy"
+  ON hiring_application_responses
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = hiring_application_responses.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- HIRING_APPLICATIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "hiring_applications_insert_policy"
+  ON hiring_applications
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = hiring_applications.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "hiring_applications_update_policy"
+  ON hiring_applications
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = hiring_applications.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "hiring_applications_delete_policy"
+  ON hiring_applications
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = hiring_applications.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- INCIDENTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "incidents_insert_policy"
+  ON incidents
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = incidents.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "incidents_update_policy"
+  ON incidents
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = incidents.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "incidents_delete_policy"
+  ON incidents
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = incidents.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- INVENTORY_ALERTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "inventory_alerts_insert_policy"
+  ON inventory_alerts
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_alerts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "inventory_alerts_update_policy"
+  ON inventory_alerts
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_alerts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "inventory_alerts_delete_policy"
+  ON inventory_alerts
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_alerts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- INVENTORY_COUNTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "inventory_counts_insert_policy"
+  ON inventory_counts
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_counts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "inventory_counts_update_policy"
+  ON inventory_counts
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_counts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "inventory_counts_delete_policy"
+  ON inventory_counts
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_counts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- INVENTORY_FOLDERS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "inventory_folders_insert_policy"
+  ON inventory_folders
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_folders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "inventory_folders_update_policy"
+  ON inventory_folders
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_folders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "inventory_folders_delete_policy"
+  ON inventory_folders
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_folders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- INVENTORY_ITEMS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "inventory_items_insert_policy"
+  ON inventory_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "inventory_items_update_policy"
+  ON inventory_items
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "inventory_items_delete_policy"
+  ON inventory_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = inventory_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- INVITATIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: DELETE
+-- ============================================================================
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "invitations_delete_policy"
+  ON invitations
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = invitations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- INVOICE_LINE_ITEMS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "invoice_line_items_insert_policy"
+  ON invoice_line_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = invoice_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "invoice_line_items_update_policy"
+  ON invoice_line_items
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = invoice_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "invoice_line_items_delete_policy"
+  ON invoice_line_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = invoice_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- JOB_APPLICANTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "job_applicants_insert_policy"
+  ON job_applicants
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = job_applicants.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "job_applicants_update_policy"
+  ON job_applicants
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = job_applicants.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "job_applicants_delete_policy"
+  ON job_applicants
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = job_applicants.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- JOB_OPENINGS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "job_openings_insert_policy"
+  ON job_openings
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = job_openings.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "job_openings_update_policy"
+  ON job_openings
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = job_openings.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "job_openings_delete_policy"
+  ON job_openings
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = job_openings.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- LOCATION_ACCESS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "location_access_insert_policy"
+  ON location_access
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_access.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "location_access_update_policy"
+  ON location_access
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_access.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "location_access_delete_policy"
+  ON location_access
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_access.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- LOCATION_BIM_CLASHES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "location_bim_clashes_insert_policy"
+  ON location_bim_clashes
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_bim_clashes.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "location_bim_clashes_update_policy"
+  ON location_bim_clashes
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_bim_clashes.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "location_bim_clashes_delete_policy"
+  ON location_bim_clashes
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_bim_clashes.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- LOCATION_BIM_MODELS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "location_bim_models_insert_policy"
+  ON location_bim_models
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_bim_models.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "location_bim_models_update_policy"
+  ON location_bim_models
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_bim_models.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "location_bim_models_delete_policy"
+  ON location_bim_models
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_bim_models.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- LOCATION_FEATURES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "location_features_insert_policy"
+  ON location_features
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_features.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "location_features_update_policy"
+  ON location_features
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_features.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "location_features_delete_policy"
+  ON location_features
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_features.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- LOCATION_UTILITIES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "location_utilities_insert_policy"
+  ON location_utilities
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_utilities.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "location_utilities_update_policy"
+  ON location_utilities
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_utilities.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "location_utilities_delete_policy"
+  ON location_utilities
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = location_utilities.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- LOCATIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "locations_insert_policy"
+  ON locations
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = locations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "locations_update_policy"
+  ON locations
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = locations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "locations_delete_policy"
+  ON locations
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = locations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- NOTIFICATIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "notifications_insert_policy"
+  ON notifications
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = notifications.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "notifications_delete_policy"
+  ON notifications
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = notifications.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ORGANIZATION_MEMBERS TABLE - COMPLETE RLS POLICIES
+-- Missing: UPDATE, DELETE
+-- ============================================================================
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "organization_members_update_policy"
+  ON organization_members
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = organization_members.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "organization_members_delete_policy"
+  ON organization_members
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = organization_members.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ORGANIZATIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: DELETE
+-- ============================================================================
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "organizations_delete_policy"
+  ON organizations
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = organizations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PERMISSION_CATEGORIES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "permission_categories_insert_policy"
+  ON permission_categories
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = permission_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "permission_categories_update_policy"
+  ON permission_categories
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = permission_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "permission_categories_delete_policy"
+  ON permission_categories
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = permission_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PERMISSIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "permissions_insert_policy"
+  ON permissions
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = permissions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "permissions_update_policy"
+  ON permissions
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = permissions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "permissions_delete_policy"
+  ON permissions
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = permissions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PERSONNEL TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "personnel_insert_policy"
+  ON personnel
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = personnel.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "personnel_update_policy"
+  ON personnel
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = personnel.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "personnel_delete_policy"
+  ON personnel
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = personnel.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PERSONNEL_ASSIGNMENTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "personnel_assignments_insert_policy"
+  ON personnel_assignments
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = personnel_assignments.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "personnel_assignments_update_policy"
+  ON personnel_assignments
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = personnel_assignments.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "personnel_assignments_delete_policy"
+  ON personnel_assignments
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = personnel_assignments.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PROFILES TABLE - COMPLETE RLS POLICIES
+-- Missing: DELETE
+-- ============================================================================
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "profiles_delete_policy"
+  ON profiles
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = profiles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PROJECT_COMPLIANCE TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "project_compliance_insert_policy"
+  ON project_compliance
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_compliance.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "project_compliance_update_policy"
+  ON project_compliance
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_compliance.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "project_compliance_delete_policy"
+  ON project_compliance
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_compliance.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PROJECT_COST_CATEGORIES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "project_cost_categories_insert_policy"
+  ON project_cost_categories
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_cost_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "project_cost_categories_update_policy"
+  ON project_cost_categories
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_cost_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "project_cost_categories_delete_policy"
+  ON project_cost_categories
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_cost_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PROJECT_COSTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "project_costs_insert_policy"
+  ON project_costs
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_costs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "project_costs_update_policy"
+  ON project_costs
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_costs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "project_costs_delete_policy"
+  ON project_costs
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_costs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PROJECT_MILESTONES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "project_milestones_insert_policy"
+  ON project_milestones
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_milestones.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "project_milestones_update_policy"
+  ON project_milestones
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_milestones.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "project_milestones_delete_policy"
+  ON project_milestones
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_milestones.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PROJECT_SAFETY TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "project_safety_insert_policy"
+  ON project_safety
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_safety.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "project_safety_update_policy"
+  ON project_safety
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_safety.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "project_safety_delete_policy"
+  ON project_safety
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_safety.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PROJECT_TASKS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "project_tasks_insert_policy"
+  ON project_tasks
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_tasks.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "project_tasks_update_policy"
+  ON project_tasks
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_tasks.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "project_tasks_delete_policy"
+  ON project_tasks
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = project_tasks.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ROLE_PERMISSIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "role_permissions_insert_policy"
+  ON role_permissions
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = role_permissions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "role_permissions_update_policy"
+  ON role_permissions
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = role_permissions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "role_permissions_delete_policy"
+  ON role_permissions
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = role_permissions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ROLES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "roles_insert_policy"
+  ON roles
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = roles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "roles_update_policy"
+  ON roles
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = roles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "roles_delete_policy"
+  ON roles
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = roles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SITE_MAPS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "site_maps_insert_policy"
+  ON site_maps
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = site_maps.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "site_maps_update_policy"
+  ON site_maps
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = site_maps.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "site_maps_delete_policy"
+  ON site_maps
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = site_maps.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- STOCK_MOVEMENTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "stock_movements_insert_policy"
+  ON stock_movements
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = stock_movements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "stock_movements_update_policy"
+  ON stock_movements
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = stock_movements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "stock_movements_delete_policy"
+  ON stock_movements
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = stock_movements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SUBCONTRACTOR_COMPLIANCE_DOCS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "subcontractor_compliance_docs_insert_policy"
+  ON subcontractor_compliance_docs
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_compliance_docs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "subcontractor_compliance_docs_update_policy"
+  ON subcontractor_compliance_docs
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_compliance_docs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "subcontractor_compliance_docs_delete_policy"
+  ON subcontractor_compliance_docs
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_compliance_docs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SUBCONTRACTOR_INVOICES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "subcontractor_invoices_insert_policy"
+  ON subcontractor_invoices
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_invoices.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "subcontractor_invoices_update_policy"
+  ON subcontractor_invoices
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_invoices.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "subcontractor_invoices_delete_policy"
+  ON subcontractor_invoices
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_invoices.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SUBCONTRACTOR_PROFILES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "subcontractor_profiles_insert_policy"
+  ON subcontractor_profiles
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_profiles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "subcontractor_profiles_update_policy"
+  ON subcontractor_profiles
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_profiles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "subcontractor_profiles_delete_policy"
+  ON subcontractor_profiles
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_profiles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SUBCONTRACTOR_REVIEWS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "subcontractor_reviews_insert_policy"
+  ON subcontractor_reviews
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_reviews.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "subcontractor_reviews_update_policy"
+  ON subcontractor_reviews
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_reviews.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "subcontractor_reviews_delete_policy"
+  ON subcontractor_reviews
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subcontractor_reviews.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SUBSCRIPTION_PLANS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "subscription_plans_insert_policy"
+  ON subscription_plans
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subscription_plans.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "subscription_plans_update_policy"
+  ON subscription_plans
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subscription_plans.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "subscription_plans_delete_policy"
+  ON subscription_plans
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subscription_plans.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SUBSCRIPTION_USAGE TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "subscription_usage_insert_policy"
+  ON subscription_usage
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subscription_usage.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "subscription_usage_update_policy"
+  ON subscription_usage
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subscription_usage.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "subscription_usage_delete_policy"
+  ON subscription_usage
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subscription_usage.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SUBSCRIPTIONS TABLE - COMPLETE RLS POLICIES
+-- Missing: UPDATE, DELETE
+-- ============================================================================
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "subscriptions_update_policy"
+  ON subscriptions
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subscriptions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "subscriptions_delete_policy"
+  ON subscriptions
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = subscriptions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TEAMS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "teams_insert_policy"
+  ON teams
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = teams.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "teams_update_policy"
+  ON teams
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = teams.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "teams_delete_policy"
+  ON teams
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = teams.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- THREAD_MESSAGES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "thread_messages_insert_policy"
+  ON thread_messages
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = thread_messages.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "thread_messages_update_policy"
+  ON thread_messages
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = thread_messages.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "thread_messages_delete_policy"
+  ON thread_messages
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = thread_messages.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TIME_ENTRIES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "time_entries_insert_policy"
+  ON time_entries
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = time_entries.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "time_entries_update_policy"
+  ON time_entries
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = time_entries.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "time_entries_delete_policy"
+  ON time_entries
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = time_entries.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TRAINING_RECORDS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "training_records_insert_policy"
+  ON training_records
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = training_records.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "training_records_update_policy"
+  ON training_records
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = training_records.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "training_records_delete_policy"
+  ON training_records
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = training_records.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TRAVEL_ARRANGEMENTS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "travel_arrangements_insert_policy"
+  ON travel_arrangements
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = travel_arrangements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "travel_arrangements_update_policy"
+  ON travel_arrangements
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = travel_arrangements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "travel_arrangements_delete_policy"
+  ON travel_arrangements
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = travel_arrangements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- USER_ROLE_ASSIGNMENTS TABLE - COMPLETE RLS POLICIES
+-- Missing: UPDATE, DELETE
+-- ============================================================================
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "user_role_assignments_update_policy"
+  ON user_role_assignments
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = user_role_assignments.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "user_role_assignments_delete_policy"
+  ON user_role_assignments
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = user_role_assignments.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- USER_ROLES TABLE - COMPLETE RLS POLICIES
+-- Missing: UPDATE, DELETE
+-- ============================================================================
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "user_roles_update_policy"
+  ON user_roles
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = user_roles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "user_roles_delete_policy"
+  ON user_roles
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = user_roles.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- WORK_AUTHORIZATION_RULES TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "work_authorization_rules_insert_policy"
+  ON work_authorization_rules
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = work_authorization_rules.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "work_authorization_rules_update_policy"
+  ON work_authorization_rules
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = work_authorization_rules.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "work_authorization_rules_delete_policy"
+  ON work_authorization_rules
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = work_authorization_rules.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- WORK_ORDER_OFFERS TABLE - COMPLETE RLS POLICIES
+-- Missing: INSERT, UPDATE, DELETE
+-- ============================================================================
+
+-- INSERT: Users can create their own data
+CREATE POLICY "work_order_offers_insert_policy"
+  ON work_order_offers
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = work_order_offers.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "work_order_offers_update_policy"
+  ON work_order_offers
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = work_order_offers.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "work_order_offers_delete_policy"
+  ON work_order_offers
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = work_order_offers.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- WORKSPACE_MEMBERS TABLE - COMPLETE RLS POLICIES
+-- Missing: UPDATE, DELETE
+-- ============================================================================
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "workspace_members_update_policy"
+  ON workspace_members
+  FOR UPDATE
+  USING (
+    auth.uid() = user_id
+    OR auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = workspace_members.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "workspace_members_delete_policy"
+  ON workspace_members
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM team_members
+      WHERE team_id = workspace_members.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+

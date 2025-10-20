@@ -36,3 +36,7 @@ export * from './maps/MapOrganism'
 
 // Diagrams
 export * from './diagrams/MindMapOrganism'
+
+// Templates
+export * from './templates/OverviewTemplateOrganism'
+export * from './templates/SpotlightTemplateOrganism'

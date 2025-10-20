@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-10-20T12:15:31.315Z",
+  "totalFiles": 221,
+  "gaps": [],
+  "compliance": {
+    "i18n": {
+      "total": 221,
+      "compliant": 221,
+      "violations": []
+    },
+    "aria": {
+      "total": 221,
+      "compliant": 221,
+      "violations": []
+    },
+    "statCard": {
+      "total": 221,
+      "violations": []
+    },
+    "emptyState": {
+      "total": 221,
+      "violations": []
+    },
+    "buttons": {
+      "total": 0,
+      "dead": 0,
+      "violations": []
+    }
+  }
+}

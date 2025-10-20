@@ -20,27 +20,41 @@ export function useInsightsData() {
   const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
-  useEffect(() => {
-    async function fetchInsights() {
-      try {
-        setLoading(true)
-        const { data: insights, error: fetchError } = await supabase
-          .from('insights_objectives')
-          .select('*')
-          .order('created_at', { ascending: false })
+  const fetchInsights = async () => {
+    try {
+      setLoading(true)
+      const { data: insights, error: fetchError } = await supabase
+        .from('insights_objectives')
+        .select('*')
+        .order('created_at', { ascending: false })
 
-        if (fetchError) throw fetchError
-        setData(insights || [])
-      } catch (err: any) {
-        setError(err as Error)
-        console.error('Error fetching insights:', err)
-      } finally {
-        setLoading(false)
-      }
+      if (fetchError) throw fetchError
+      setData(insights || [])
+    } catch (err: any) {
+      setError(err as Error)
+      console.error('Error fetching insights:', err)
+    } finally {
+      setLoading(false)
     }
+  }
 
+  useEffect(() => {
     fetchInsights()
   }, [])
 
-  return { data, loading, error }
+  // Realtime subscription
+  useEffect(() => {
+    const channel = supabase
+      .channel('insights_changes')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'insights_objectives' }, () => {
+        fetchInsights()
+      })
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(channel)
+    }
+  }, [])
+
+  return { data, loading, error, refresh: fetchInsights }
 }

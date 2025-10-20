@@ -1,0 +1,2904 @@
+{
+  "timestamp": "2025-10-20T11:47:16.198Z",
+  "tabs": {
+    "total": 221,
+    "withSupabaseHooks": 219,
+    "withi18n": 221,
+    "withHardcodedData": 0,
+    "withHardcodedPlaceholders": 0
+  },
+  "hooks": {
+    "total": 41,
+    "withSupabase": 38
+  },
+  "database": {
+    "migrations": 84,
+    "tables": 160,
+    "policies": 391
+  },
+  "violations": [
+    {
+      "type": "missing_supabase",
+      "module": "members",
+      "file": "create-tab.tsx",
+      "message": "No Supabase hook detected"
+    },
+    {
+      "type": "missing_supabase",
+      "module": "members",
+      "file": "invite-tab.tsx",
+      "message": "No Supabase hook detected"
+    }
+  ],
+  "details": [
+    {
+      "module": "admin",
+      "file": "admin-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/admin-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "api-tokens-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/api-tokens-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "automations-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/automations-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "billing-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/billing-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "checklist-templates-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/checklist-templates-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "custom-statuses-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/custom-statuses-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "integrations-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/integrations-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "invite-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/invite-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "members-management-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/members-management-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "organization-settings-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/organization-settings-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "organization-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/organization-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "plugins-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/plugins-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "recurrence-rules-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/recurrence-rules-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "roles-permissions-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/roles-permissions-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "security-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/security-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "templates-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/templates-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "admin",
+      "file": "webhooks-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/webhooks-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-admin-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-comparisons-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-comparisons-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-custom-views-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-custom-views-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-data-sources-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-data-sources-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-forecasting-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-forecasting-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-metrics-library-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-metrics-library-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-performance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-performance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-pivot-tables-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-pivot-tables-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-realtime-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-realtime-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "analytics",
+      "file": "analytics-trends-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-trends-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-analytics-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "assets-advances-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-advances-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "assets-approvals-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-approvals-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "assets-maintenance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-maintenance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "assets-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "assets-tracking-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-tracking-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "catalog-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/catalog-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-asset-catalog"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "counts-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/counts-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "createClient (direct)"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "inventory-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/inventory-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "createClient (direct)"
+      ],
+      "issues": []
+    },
+    {
+      "module": "assets",
+      "file": "tracking-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/tracking-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "community",
+      "file": "activity-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/activity-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-member-level"
+      ],
+      "issues": []
+    },
+    {
+      "module": "community",
+      "file": "competitions-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/competitions-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-community-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "community",
+      "file": "connections-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/connections-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-community-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "community",
+      "file": "discussions-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/discussions-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-community-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "community",
+      "file": "events-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/events-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-community-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "community",
+      "file": "news-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/news-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-community-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "community",
+      "file": "showcase-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/showcase-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-community-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "community",
+      "file": "studios-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/studios-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-community-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-bids-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-bids-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-companies-compliance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-companies-compliance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-companies-invoices-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-companies-invoices-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-companies-reviews-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-companies-reviews-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-companies-work-orders-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-companies-work-orders-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-contacts-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-contacts-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-deliverables-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-deliverables-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-documents-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-documents-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-organizations-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-organizations-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-scopes-of-work-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-scopes-of-work-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "companies",
+      "file": "companies-subcontractor-profile-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-subcontractor-profile-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-advances-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-advances-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-agenda-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-agenda-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-assets-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-assets-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-expenses-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-expenses-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-files-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-files-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-jobs-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-jobs-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-orders-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-orders-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-reports-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-reports-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-tasks-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-tasks-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-my-travel-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-travel-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "dashboard",
+      "file": "dashboard-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-dashboard-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-activities-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-activities-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-all-events-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-all-events-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-blocks-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-blocks-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-bookings-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-bookings-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-calendar-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-calendar-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-equipment-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-equipment-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-incidents-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-incidents-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-internal-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-internal-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-itineraries-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-itineraries-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-rehearsals-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-rehearsals-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-reservations-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-reservations-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-run-of-show-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-run-of-show-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-shipping-receiving-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-shipping-receiving-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-tours-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-tours-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "events",
+      "file": "events-trainings-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-trainings-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-all-documents-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-all-documents-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-archive-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-archive-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-call-sheets-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-call-sheets-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-contracts-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-contracts-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-insurance-permits-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-insurance-permits-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-media-assets-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-media-assets-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-production-reports-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-production-reports-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-riders-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-riders-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-shared-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-shared-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "files",
+      "file": "files-tech-specs-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-tech-specs-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-accounts-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-accounts-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-approvals-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-approvals-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "createClient (direct)"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-budgets-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-budgets-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-cash-flow-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-cash-flow-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-finance-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-expenses-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-expenses-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-forecasts-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-forecasts-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-gl-codes-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-gl-codes-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-invoices-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-invoices-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-payments-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-payments-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-payroll-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-payroll-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-policies-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-policies-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "createClient (direct)"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-reconciliation-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-reconciliation-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-revenue-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-revenue-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-scenarios-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-scenarios-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "createClient (direct)"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-taxes-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-taxes-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-transactions-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-transactions-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "finance",
+      "file": "finance-variance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-variance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "createClient (direct)"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-benchmarks-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-benchmarks-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-intelligence-feed-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-intelligence-feed-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-key-results-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-key-results-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-objectives-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-objectives-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-priorities-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-priorities-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-progress-tracking-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-progress-tracking-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-recommendations-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-recommendations-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-reviews-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-reviews-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "insights",
+      "file": "insights-success-metrics-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-success-metrics-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-insights-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-active-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-active-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-archived-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-archived-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-checklists-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-checklists-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-completed-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-completed-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-dispatch-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-dispatch-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-estimates-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-estimates-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-jobs-compliance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-jobs-compliance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-jobs-invoices-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-jobs-invoices-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-offers-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-offers-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-pipeline-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-pipeline-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-recruiting-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-recruiting-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-rfps-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-rfps-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-shortlists-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-shortlists-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "jobs",
+      "file": "jobs-work-orders-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-work-orders-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-access-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-access-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-bim-models-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-bim-models-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-coordination-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-coordination-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-directory-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-directory-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-logistics-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-logistics-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-site-maps-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-site-maps-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-spatial-features-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-spatial-features-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-utilities-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-utilities-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "locations",
+      "file": "locations-warehousing-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-warehousing-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "favorites-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/favorites-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "lists-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/lists-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "orders-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/orders-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "products-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/products-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "purchases-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/purchases-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "reviews-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/reviews-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "sales-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/sales-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "services-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/services-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "shop-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/shop-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "spotlight-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/spotlight-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "marketplace",
+      "file": "vendors-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/vendors-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-marketplace-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "members",
+      "file": "create-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/members/create-tab.tsx",
+      "hasSupabaseHook": false,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [],
+      "issues": []
+    },
+    {
+      "module": "members",
+      "file": "invite-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/members/invite-tab.tsx",
+      "hasSupabaseHook": false,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-applicants-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-applicants-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-assignments-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-assignments-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-onboarding-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-onboarding-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-openings-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-openings-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-personnel-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-personnel-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-scheduling-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-scheduling-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-teams-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-teams-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-timekeeping-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-timekeeping-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "people",
+      "file": "people-training-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-training-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-people-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-agreements-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-agreements-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-audits-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-audits-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-fulfillment-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-fulfillment-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-line-items-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-line-items-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-matching-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-matching-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-orders-dashboard-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-orders-dashboard-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-orders-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-orders-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-procurement-approvals-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-procurement-approvals-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-receiving-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-receiving-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "procurement",
+      "file": "procurement-requisitions-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-requisitions-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-procurement-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "access-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/access-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "basic-info-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/basic-info-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "certifications-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/certifications-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "emergency-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/emergency-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "endorsements-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/endorsements-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "health-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/health-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "history-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/history-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "performance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/performance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "professional-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/professional-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "social-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/social-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "tags-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/tags-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "profile",
+      "file": "travel-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/travel-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-activations-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-activations-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-compliance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-compliance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-costs-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-costs-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-milestones-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-milestones-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-productions-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-productions-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-projects-checklists-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-projects-checklists-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-projects-work-orders-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-projects-work-orders-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-safety-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-safety-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-schedule-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-schedule-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "projects",
+      "file": "projects-tasks-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-tasks-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-archived-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-archived-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-compliance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-compliance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-custom-builder-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-custom-builder-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-executive-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-executive-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-exports-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-exports-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-operational-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-operational-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-overview-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-overview-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-scheduled-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-scheduled-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "reports",
+      "file": "reports-templates-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-templates-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-reports-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "resources",
+      "file": "resources-courses-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-courses-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "resources",
+      "file": "resources-glossary-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-glossary-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "resources",
+      "file": "resources-grants-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-grants-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "resources",
+      "file": "resources-guides-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-guides-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "resources",
+      "file": "resources-library-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-library-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "resources",
+      "file": "resources-publications-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-publications-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "resources",
+      "file": "resources-troubleshooting-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-troubleshooting-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-module-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "settings",
+      "file": "account-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/account-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-profile-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "settings",
+      "file": "appearance-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/appearance-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-settings-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "settings",
+      "file": "automations-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/automations-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-settings-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "settings",
+      "file": "billing-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/billing-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-settings-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "settings",
+      "file": "integrations-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/integrations-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-settings-data"
+      ],
+      "issues": []
+    },
+    {
+      "module": "settings",
+      "file": "team-tab.tsx",
+      "path": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/team-tab.tsx",
+      "hasSupabaseHook": true,
+      "hasi18n": true,
+      "hasHardcodedData": false,
+      "hasHardcodedPlaceholders": false,
+      "hookImports": [
+        "use-settings-data"
+      ],
+      "issues": []
+    }
+  ]
+}

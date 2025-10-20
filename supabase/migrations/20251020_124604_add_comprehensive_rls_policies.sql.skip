@@ -1,0 +1,2741 @@
+-- Add Comprehensive RLS Policies
+-- Generated: 2025-10-20T12:46:04.494Z
+-- Tables: 48
+-- Note: Review and adjust policies based on specific table requirements
+
+-- ============================================================================
+-- AUTOMATED_FINANCIAL_RULES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for automated_financial_rules
+ALTER TABLE automated_financial_rules ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "automated_financial_rules_select_policy"
+  ON automated_financial_rules
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE workspace_id = automated_financial_rules.workspace_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "automated_financial_rules_insert_policy"
+  ON automated_financial_rules
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE workspace_id = automated_financial_rules.workspace_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "automated_financial_rules_update_policy"
+  ON automated_financial_rules
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE workspace_id = automated_financial_rules.workspace_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "automated_financial_rules_delete_policy"
+  ON automated_financial_rules
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE workspace_id = automated_financial_rules.workspace_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- BIDS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for bids
+ALTER TABLE bids ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "bids_select_policy"
+  ON bids
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = bids.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "bids_insert_policy"
+  ON bids
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = bids.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "bids_update_policy"
+  ON bids
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = bids.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "bids_delete_policy"
+  ON bids
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = bids.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- BUDGET_LINE_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for budget_line_items
+ALTER TABLE budget_line_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "budget_line_items_select_policy"
+  ON budget_line_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_line_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "budget_line_items_insert_policy"
+  ON budget_line_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "budget_line_items_update_policy"
+  ON budget_line_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "budget_line_items_delete_policy"
+  ON budget_line_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- BUDGET_SCENARIOS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for budget_scenarios
+ALTER TABLE budget_scenarios ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "budget_scenarios_select_policy"
+  ON budget_scenarios
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_scenarios.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "budget_scenarios_insert_policy"
+  ON budget_scenarios
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_scenarios.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "budget_scenarios_update_policy"
+  ON budget_scenarios
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_scenarios.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "budget_scenarios_delete_policy"
+  ON budget_scenarios
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_scenarios.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- BUDGET_VARIANCE_TRACKING TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for budget_variance_tracking
+ALTER TABLE budget_variance_tracking ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "budget_variance_tracking_select_policy"
+  ON budget_variance_tracking
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_variance_tracking.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "budget_variance_tracking_insert_policy"
+  ON budget_variance_tracking
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_variance_tracking.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "budget_variance_tracking_update_policy"
+  ON budget_variance_tracking
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_variance_tracking.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "budget_variance_tracking_delete_policy"
+  ON budget_variance_tracking
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = budget_variance_tracking.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CASH_FLOW_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for cash_flow_items
+ALTER TABLE cash_flow_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "cash_flow_items_select_policy"
+  ON cash_flow_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = cash_flow_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "cash_flow_items_insert_policy"
+  ON cash_flow_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = cash_flow_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "cash_flow_items_update_policy"
+  ON cash_flow_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = cash_flow_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "cash_flow_items_delete_policy"
+  ON cash_flow_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = cash_flow_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CASH_FLOW_PROJECTIONS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for cash_flow_projections
+ALTER TABLE cash_flow_projections ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "cash_flow_projections_select_policy"
+  ON cash_flow_projections
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = cash_flow_projections.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "cash_flow_projections_insert_policy"
+  ON cash_flow_projections
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = cash_flow_projections.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "cash_flow_projections_update_policy"
+  ON cash_flow_projections
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = cash_flow_projections.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "cash_flow_projections_delete_policy"
+  ON cash_flow_projections
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = cash_flow_projections.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- COMMUNITY_POSTS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for community_posts
+ALTER TABLE community_posts ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "community_posts_select_policy"
+  ON community_posts
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = community_posts.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "community_posts_insert_policy"
+  ON community_posts
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = community_posts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "community_posts_update_policy"
+  ON community_posts
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = community_posts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "community_posts_delete_policy"
+  ON community_posts
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = community_posts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CONNECTIONS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for connections
+ALTER TABLE connections ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "connections_select_policy"
+  ON connections
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = connections.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "connections_insert_policy"
+  ON connections
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = connections.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "connections_update_policy"
+  ON connections
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = connections.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "connections_delete_policy"
+  ON connections
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = connections.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CORPORATE_CARDS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for corporate_cards
+ALTER TABLE corporate_cards ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "corporate_cards_select_policy"
+  ON corporate_cards
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = corporate_cards.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "corporate_cards_insert_policy"
+  ON corporate_cards
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = corporate_cards.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "corporate_cards_update_policy"
+  ON corporate_cards
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = corporate_cards.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "corporate_cards_delete_policy"
+  ON corporate_cards
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = corporate_cards.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- CUSTOM_FIELDS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for custom_fields
+ALTER TABLE custom_fields ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "custom_fields_select_policy"
+  ON custom_fields
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = custom_fields.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "custom_fields_insert_policy"
+  ON custom_fields
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = custom_fields.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "custom_fields_update_policy"
+  ON custom_fields
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = custom_fields.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "custom_fields_delete_policy"
+  ON custom_fields
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = custom_fields.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- DEAL_FINANCIAL_TERMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for deal_financial_terms
+ALTER TABLE deal_financial_terms ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "deal_financial_terms_select_policy"
+  ON deal_financial_terms
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = deal_financial_terms.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "deal_financial_terms_insert_policy"
+  ON deal_financial_terms
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = deal_financial_terms.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "deal_financial_terms_update_policy"
+  ON deal_financial_terms
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = deal_financial_terms.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "deal_financial_terms_delete_policy"
+  ON deal_financial_terms
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = deal_financial_terms.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- EXPENSE_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for expense_items
+ALTER TABLE expense_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "expense_items_select_policy"
+  ON expense_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = expense_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "expense_items_insert_policy"
+  ON expense_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = expense_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "expense_items_update_policy"
+  ON expense_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = expense_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "expense_items_delete_policy"
+  ON expense_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = expense_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- EXPENSE_REPORTS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for expense_reports
+ALTER TABLE expense_reports ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "expense_reports_select_policy"
+  ON expense_reports
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = expense_reports.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "expense_reports_insert_policy"
+  ON expense_reports
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = expense_reports.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "expense_reports_update_policy"
+  ON expense_reports
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = expense_reports.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "expense_reports_delete_policy"
+  ON expense_reports
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = expense_reports.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- FILE_CATEGORIES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for file_categories
+ALTER TABLE file_categories ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "file_categories_select_policy"
+  ON file_categories
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = file_categories.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "file_categories_insert_policy"
+  ON file_categories
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = file_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "file_categories_update_policy"
+  ON file_categories
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = file_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "file_categories_delete_policy"
+  ON file_categories
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = file_categories.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- FINANCIAL_FORECASTS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for financial_forecasts
+ALTER TABLE financial_forecasts ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "financial_forecasts_select_policy"
+  ON financial_forecasts
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_forecasts.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "financial_forecasts_insert_policy"
+  ON financial_forecasts
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_forecasts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "financial_forecasts_update_policy"
+  ON financial_forecasts
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_forecasts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "financial_forecasts_delete_policy"
+  ON financial_forecasts
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_forecasts.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- FINANCIAL_KPIS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for financial_kpis
+ALTER TABLE financial_kpis ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "financial_kpis_select_policy"
+  ON financial_kpis
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_kpis.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "financial_kpis_insert_policy"
+  ON financial_kpis
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_kpis.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "financial_kpis_update_policy"
+  ON financial_kpis
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_kpis.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "financial_kpis_delete_policy"
+  ON financial_kpis
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_kpis.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- FINANCIAL_TRANSACTIONS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for financial_transactions
+ALTER TABLE financial_transactions ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "financial_transactions_select_policy"
+  ON financial_transactions
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_transactions.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "financial_transactions_insert_policy"
+  ON financial_transactions
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_transactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "financial_transactions_update_policy"
+  ON financial_transactions
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_transactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "financial_transactions_delete_policy"
+  ON financial_transactions
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = financial_transactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- FORECAST_DATA_POINTS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for forecast_data_points
+ALTER TABLE forecast_data_points ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "forecast_data_points_select_policy"
+  ON forecast_data_points
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = forecast_data_points.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "forecast_data_points_insert_policy"
+  ON forecast_data_points
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = forecast_data_points.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "forecast_data_points_update_policy"
+  ON forecast_data_points
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = forecast_data_points.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "forecast_data_points_delete_policy"
+  ON forecast_data_points
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = forecast_data_points.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- GL_CODES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for gl_codes
+ALTER TABLE gl_codes ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "gl_codes_select_policy"
+  ON gl_codes
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = gl_codes.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "gl_codes_insert_policy"
+  ON gl_codes
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = gl_codes.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "gl_codes_update_policy"
+  ON gl_codes
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = gl_codes.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "gl_codes_delete_policy"
+  ON gl_codes
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = gl_codes.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- HOSPITALITY_RESERVATIONS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for hospitality_reservations
+ALTER TABLE hospitality_reservations ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "hospitality_reservations_select_policy"
+  ON hospitality_reservations
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = hospitality_reservations.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "hospitality_reservations_insert_policy"
+  ON hospitality_reservations
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = hospitality_reservations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "hospitality_reservations_update_policy"
+  ON hospitality_reservations
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = hospitality_reservations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "hospitality_reservations_delete_policy"
+  ON hospitality_reservations
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = hospitality_reservations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- INVOICE_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for invoice_items
+ALTER TABLE invoice_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "invoice_items_select_policy"
+  ON invoice_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = invoice_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "invoice_items_insert_policy"
+  ON invoice_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = invoice_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "invoice_items_update_policy"
+  ON invoice_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = invoice_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "invoice_items_delete_policy"
+  ON invoice_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = invoice_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- MARKETPLACE_ORDERS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for marketplace_orders
+ALTER TABLE marketplace_orders ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "marketplace_orders_select_policy"
+  ON marketplace_orders
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = marketplace_orders.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "marketplace_orders_insert_policy"
+  ON marketplace_orders
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = marketplace_orders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "marketplace_orders_update_policy"
+  ON marketplace_orders
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = marketplace_orders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "marketplace_orders_delete_policy"
+  ON marketplace_orders
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = marketplace_orders.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- MODULE_CONFIGS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for module_configs
+ALTER TABLE module_configs ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "module_configs_select_policy"
+  ON module_configs
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = module_configs.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "module_configs_insert_policy"
+  ON module_configs
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = module_configs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "module_configs_update_policy"
+  ON module_configs
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = module_configs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "module_configs_delete_policy"
+  ON module_configs
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = module_configs.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ORDER_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for order_items
+ALTER TABLE order_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "order_items_select_policy"
+  ON order_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = order_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "order_items_insert_policy"
+  ON order_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = order_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "order_items_update_policy"
+  ON order_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = order_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "order_items_delete_policy"
+  ON order_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = order_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PAYMENT_MILESTONES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for payment_milestones
+ALTER TABLE payment_milestones ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "payment_milestones_select_policy"
+  ON payment_milestones
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payment_milestones.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "payment_milestones_insert_policy"
+  ON payment_milestones
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payment_milestones.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "payment_milestones_update_policy"
+  ON payment_milestones
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payment_milestones.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "payment_milestones_delete_policy"
+  ON payment_milestones
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payment_milestones.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PAYMENT_SCHEDULES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for payment_schedules
+ALTER TABLE payment_schedules ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "payment_schedules_select_policy"
+  ON payment_schedules
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payment_schedules.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "payment_schedules_insert_policy"
+  ON payment_schedules
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payment_schedules.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "payment_schedules_update_policy"
+  ON payment_schedules
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payment_schedules.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "payment_schedules_delete_policy"
+  ON payment_schedules
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payment_schedules.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PAYROLL TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for payroll
+ALTER TABLE payroll ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "payroll_select_policy"
+  ON payroll
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payroll.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "payroll_insert_policy"
+  ON payroll
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payroll.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "payroll_update_policy"
+  ON payroll
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payroll.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "payroll_delete_policy"
+  ON payroll
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payroll.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PAYROLL_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for payroll_items
+ALTER TABLE payroll_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "payroll_items_select_policy"
+  ON payroll_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payroll_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "payroll_items_insert_policy"
+  ON payroll_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payroll_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "payroll_items_update_policy"
+  ON payroll_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payroll_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "payroll_items_delete_policy"
+  ON payroll_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = payroll_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PO_LINE_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for po_line_items
+ALTER TABLE po_line_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "po_line_items_select_policy"
+  ON po_line_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = po_line_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "po_line_items_insert_policy"
+  ON po_line_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = po_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "po_line_items_update_policy"
+  ON po_line_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = po_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "po_line_items_delete_policy"
+  ON po_line_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = po_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- POLICY_VIOLATIONS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for policy_violations
+ALTER TABLE policy_violations ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "policy_violations_select_policy"
+  ON policy_violations
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = policy_violations.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "policy_violations_insert_policy"
+  ON policy_violations
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = policy_violations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "policy_violations_update_policy"
+  ON policy_violations
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = policy_violations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "policy_violations_delete_policy"
+  ON policy_violations
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = policy_violations.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- POST_REACTIONS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for post_reactions
+ALTER TABLE post_reactions ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "post_reactions_select_policy"
+  ON post_reactions
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = post_reactions.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "post_reactions_insert_policy"
+  ON post_reactions
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = post_reactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "post_reactions_update_policy"
+  ON post_reactions
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = post_reactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "post_reactions_delete_policy"
+  ON post_reactions
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = post_reactions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PROCUREMENT_AGREEMENTS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for procurement_agreements
+ALTER TABLE procurement_agreements ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "procurement_agreements_select_policy"
+  ON procurement_agreements
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = procurement_agreements.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "procurement_agreements_insert_policy"
+  ON procurement_agreements
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = procurement_agreements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "procurement_agreements_update_policy"
+  ON procurement_agreements
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = procurement_agreements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "procurement_agreements_delete_policy"
+  ON procurement_agreements
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = procurement_agreements.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- PURCHASE_REQUISITIONS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for purchase_requisitions
+ALTER TABLE purchase_requisitions ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "purchase_requisitions_select_policy"
+  ON purchase_requisitions
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = purchase_requisitions.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "purchase_requisitions_insert_policy"
+  ON purchase_requisitions
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = purchase_requisitions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "purchase_requisitions_update_policy"
+  ON purchase_requisitions
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = purchase_requisitions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "purchase_requisitions_delete_policy"
+  ON purchase_requisitions
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = purchase_requisitions.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- RECEIPT_MATCHES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for receipt_matches
+ALTER TABLE receipt_matches ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "receipt_matches_select_policy"
+  ON receipt_matches
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = receipt_matches.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "receipt_matches_insert_policy"
+  ON receipt_matches
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = receipt_matches.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "receipt_matches_update_policy"
+  ON receipt_matches
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = receipt_matches.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "receipt_matches_delete_policy"
+  ON receipt_matches
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = receipt_matches.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- RECONCILIATION_LINE_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for reconciliation_line_items
+ALTER TABLE reconciliation_line_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "reconciliation_line_items_select_policy"
+  ON reconciliation_line_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = reconciliation_line_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "reconciliation_line_items_insert_policy"
+  ON reconciliation_line_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = reconciliation_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "reconciliation_line_items_update_policy"
+  ON reconciliation_line_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = reconciliation_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "reconciliation_line_items_delete_policy"
+  ON reconciliation_line_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = reconciliation_line_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- REQUISITION_ITEMS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for requisition_items
+ALTER TABLE requisition_items ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "requisition_items_select_policy"
+  ON requisition_items
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = requisition_items.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "requisition_items_insert_policy"
+  ON requisition_items
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = requisition_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "requisition_items_update_policy"
+  ON requisition_items
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = requisition_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "requisition_items_delete_policy"
+  ON requisition_items
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = requisition_items.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- ROLE_HIERARCHY TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for role_hierarchy
+ALTER TABLE role_hierarchy ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "role_hierarchy_select_policy"
+  ON role_hierarchy
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = role_hierarchy.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "role_hierarchy_insert_policy"
+  ON role_hierarchy
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = role_hierarchy.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "role_hierarchy_update_policy"
+  ON role_hierarchy
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = role_hierarchy.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "role_hierarchy_delete_policy"
+  ON role_hierarchy
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = role_hierarchy.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- RULE_EXECUTION_LOG TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for rule_execution_log
+ALTER TABLE rule_execution_log ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "rule_execution_log_select_policy"
+  ON rule_execution_log
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = rule_execution_log.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "rule_execution_log_insert_policy"
+  ON rule_execution_log
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = rule_execution_log.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "rule_execution_log_update_policy"
+  ON rule_execution_log
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = rule_execution_log.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "rule_execution_log_delete_policy"
+  ON rule_execution_log
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = rule_execution_log.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SHIPMENTS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for shipments
+ALTER TABLE shipments ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "shipments_select_policy"
+  ON shipments
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = shipments.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "shipments_insert_policy"
+  ON shipments
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = shipments.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "shipments_update_policy"
+  ON shipments
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = shipments.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "shipments_delete_policy"
+  ON shipments
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = shipments.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- SPENDING_POLICIES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for spending_policies
+ALTER TABLE spending_policies ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "spending_policies_select_policy"
+  ON spending_policies
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = spending_policies.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "spending_policies_insert_policy"
+  ON spending_policies
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = spending_policies.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "spending_policies_update_policy"
+  ON spending_policies
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = spending_policies.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "spending_policies_delete_policy"
+  ON spending_policies
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = spending_policies.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TAX_DOCUMENTS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for tax_documents
+ALTER TABLE tax_documents ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "tax_documents_select_policy"
+  ON tax_documents
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tax_documents.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "tax_documents_insert_policy"
+  ON tax_documents
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tax_documents.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "tax_documents_update_policy"
+  ON tax_documents
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tax_documents.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "tax_documents_delete_policy"
+  ON tax_documents
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tax_documents.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TEMPLATES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for templates
+ALTER TABLE templates ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "templates_select_policy"
+  ON templates
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = templates.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "templates_insert_policy"
+  ON templates
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = templates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "templates_update_policy"
+  ON templates
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = templates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "templates_delete_policy"
+  ON templates
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = templates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TOUR_DATES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for tour_dates
+ALTER TABLE tour_dates ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "tour_dates_select_policy"
+  ON tour_dates
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tour_dates.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "tour_dates_insert_policy"
+  ON tour_dates
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tour_dates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "tour_dates_update_policy"
+  ON tour_dates
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tour_dates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "tour_dates_delete_policy"
+  ON tour_dates
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tour_dates.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TOURS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for tours
+ALTER TABLE tours ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "tours_select_policy"
+  ON tours
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tours.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "tours_insert_policy"
+  ON tours
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tours.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "tours_update_policy"
+  ON tours
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tours.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "tours_delete_policy"
+  ON tours
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = tours.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- TRAVEL_ITINERARIES TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for travel_itineraries
+ALTER TABLE travel_itineraries ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "travel_itineraries_select_policy"
+  ON travel_itineraries
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = travel_itineraries.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "travel_itineraries_insert_policy"
+  ON travel_itineraries
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = travel_itineraries.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "travel_itineraries_update_policy"
+  ON travel_itineraries
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = travel_itineraries.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "travel_itineraries_delete_policy"
+  ON travel_itineraries
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = travel_itineraries.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- USER_PRESENCE TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for user_presence
+ALTER TABLE user_presence ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "user_presence_select_policy"
+  ON user_presence
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = user_presence.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "user_presence_insert_policy"
+  ON user_presence
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = user_presence.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "user_presence_update_policy"
+  ON user_presence
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = user_presence.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "user_presence_delete_policy"
+  ON user_presence
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = user_presence.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- ============================================================================
+-- VIEWS TABLE RLS POLICIES
+-- ============================================================================
+
+-- Enable RLS for views
+ALTER TABLE views ENABLE ROW LEVEL SECURITY;
+
+-- SELECT: Users can view their own data or team data
+CREATE POLICY "views_select_policy"
+  ON views
+  FOR SELECT
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = views.team_id
+    )
+  );
+
+-- INSERT: Users can create their own data
+CREATE POLICY "views_insert_policy"
+  ON views
+  FOR INSERT
+  WITH CHECK (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = views.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- UPDATE: Users can update their own data
+CREATE POLICY "views_update_policy"
+  ON views
+  FOR UPDATE
+  USING (
+    auth.uid() = created_by
+    OR auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = views.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
+-- DELETE: Only owners/admins can delete
+CREATE POLICY "views_delete_policy"
+  ON views
+  FOR DELETE
+  USING (
+    auth.uid() IN (
+      SELECT user_id FROM workspace_members
+      WHERE team_id = views.team_id
+      AND role IN ('admin', 'owner')
+    )
+  );
+
