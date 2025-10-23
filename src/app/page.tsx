@@ -1,7 +1,36 @@
-import { redirect } from 'next/navigation'
-import { defaultLocale } from '@/i18n/config'
+import { HeroSection } from '@/marketing/components/sections/HeroSection'
+import { TrustBar } from '@/marketing/components/sections/TrustBar'
+import { ProblemSection } from '@/marketing/components/sections/ProblemSection'
+import { SolutionSection } from '@/marketing/components/sections/SolutionSection'
+import { HowItWorksSection } from '@/marketing/components/sections/HowItWorksSection'
+import { FeaturesSection } from '@/marketing/components/sections/FeaturesSection'
+import { RolesSection } from '@/marketing/components/sections/RolesSection'
+import { SecuritySection } from '@/marketing/components/sections/SecuritySection'
+import { TestimonialsSection } from '@/marketing/components/sections/TestimonialsSection'
+import { PricingSection } from '@/marketing/components/sections/PricingSection'
+import { FAQSection } from '@/marketing/components/sections/FAQSection'
+import { CTASection } from '@/marketing/components/sections/CTASection'
 
-export default function RootPage() {
-  // Redirect to default locale
-  redirect(`/${defaultLocale}`)
+export const metadata = {
+  title: 'ATLVS - Project Management for Experiential Production Teams',
+  description: 'The project management system built specifically for live entertainment production. Manage projects, teams, assets, and finances in one powerful platform.',
+}
+
+export default function MarketingHomePage() {
+  return (
+    <>
+      <HeroSection />
+      <TrustBar />
+      <ProblemSection />
+      <SolutionSection />
+      <HowItWorksSection />
+      <FeaturesSection />
+      <RolesSection />
+      <SecuritySection />
+      <TestimonialsSection />
+      <PricingSection />
+      <FAQSection />
+      <CTASection />
+    </>
+  )
 }

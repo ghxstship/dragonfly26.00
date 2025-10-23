@@ -1,48 +1,60 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Marketing site specific configuration
-  basePath: '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://atlvs.xyz' : '',
-  
-  // Output directory
+  // Output directory for marketing site
   distDir: '.next-marketing',
   
-  // Rewrites for app subdomain
+  // Image optimization
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    unoptimized: true, // Required for static export
+  },
+  
+  // Optimizations
+  compress: true,
+  poweredByHeader: false,
+  
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
+  
+  // Rewrites to handle app subdomain routing
   async rewrites() {
     return [
       {
         source: '/app',
-        destination: 'https://app.atlvs.xyz/app',
+        destination: 'https://app.atlvs.xyz',
       },
       {
         source: '/app/:path*',
-        destination: 'https://app.atlvs.xyz/app/:path*',
+        destination: 'https://app.atlvs.xyz/:path*',
       },
     ]
   },
 
-  // Redirects
+  // Redirects for auth pages
   async redirects() {
     return [
       {
         source: '/signup',
-        destination: 'https://app.atlvs.xyz/auth/signup',
+        destination: 'https://app.atlvs.xyz/en/signup',
         permanent: false,
       },
       {
         source: '/signin',
-        destination: 'https://app.atlvs.xyz/auth/signin',
+        destination: 'https://app.atlvs.xyz/en/login',
         permanent: false,
       },
       {
         source: '/login',
-        destination: 'https://app.atlvs.xyz/auth/signin',
+        destination: 'https://app.atlvs.xyz/en/login',
         permanent: false,
       },
     ]
   },
 
-  // Headers for security
+  // Security headers
   async headers() {
     return [
       {
@@ -64,30 +76,10 @@ const nextConfig = {
             key: 'X-Content-Type-Options',
             value: 'nosniff'
           },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
-          },
         ],
       },
     ]
   },
-
-  // Image optimization
-  images: {
-    domains: ['atlvs.xyz'],
-    formats: ['image/avif', 'image/webp'],
-  },
-
-  // Experimental features
-  experimental: {
-    optimizeCss: true,
-  },
-
-  // Production optimizations
-  swcMinify: true,
-  compress: true,
-  poweredByHeader: false,
 }
 
 module.exports = nextConfig
