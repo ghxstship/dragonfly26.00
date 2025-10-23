@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { randomBytes } from 'crypto'
+import { sendInvitationEmail } from '@/lib/email/resend'
 
 export async function POST(request: Request) {
   try {
@@ -75,9 +76,31 @@ export async function POST(request: Request) {
       )
     }
 
-    // TODO: Send invitation emails
-    // For now, we'll just return the invitation tokens
-    // In production, integrate with Resend, SendGrid, or similar
+    // Send invitation emails via Resend
+    const emailResults = await Promise.allSettled(
+      createdInvites.map(async (inv: any) => {
+        const invitationLink = `${process.env.NEXT_PUBLIC_APP_URL}/invite/${inv.token}`
+        
+        return sendInvitationEmail({
+          to: inv.email,
+          inviterName: inviterName,
+          workspaceName: workspace.name,
+          invitationLink,
+          message: inv.message,
+        })
+      })
+    )
+
+    // Track which emails succeeded/failed
+    const emailsSent = emailResults.filter((r) => r.status === 'fulfilled').length
+    const emailsFailed = emailResults.filter((r) => r.status === 'rejected').length
+
+    // Log any failures
+    emailResults.forEach((result, index) => {
+      if (result.status === 'rejected') {
+        console.error(`Failed to send email to ${createdInvites[index].email}:`, result.reason)
+      }
+    })
 
     const invitationLinks = createdInvites.map((inv: any) => ({
       email: inv.email,
@@ -88,6 +111,8 @@ export async function POST(request: Request) {
       success: true,
       invitations: invitationLinks,
       count: createdInvites.length,
+      emailsSent,
+      emailsFailed,
     })
   } catch (error: any) {
     console.error('Send invitations error:', error)
