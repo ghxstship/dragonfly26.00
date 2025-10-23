@@ -1,7 +1,17 @@
 import { Resend } from 'resend'
 
-// Initialize Resend client
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazy-load Resend client to avoid build-time initialization
+let resendClient: Resend | null = null
+
+function getResendClient() {
+  if (!resendClient) {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error('RESEND_API_KEY environment variable is not set')
+    }
+    resendClient = new Resend(process.env.RESEND_API_KEY)
+  }
+  return resendClient
+}
 
 export interface SendInvitationEmailParams {
   to: string
@@ -22,6 +32,7 @@ export async function sendInvitationEmail({
   message,
 }: SendInvitationEmailParams) {
   try {
+    const resend = getResendClient()
     const { data, error } = await resend.emails.send({
       from: 'ATLVS <noreply@atlvs.one>',
       to: [to],
@@ -112,6 +123,7 @@ export interface SendWelcomeEmailParams {
  */
 export async function sendWelcomeEmail({ to, name }: SendWelcomeEmailParams) {
   try {
+    const resend = getResendClient()
     const { data, error } = await resend.emails.send({
       from: 'ATLVS <noreply@atlvs.one>',
       to: [to],
