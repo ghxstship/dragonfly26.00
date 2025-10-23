@@ -27,7 +27,7 @@ export default async function Home() {
 
   // Not authenticated - redirect to login
   if (!user) {
-    redirect(`/login`)
+    redirect(`/${locale}/login`)
   }
 
   // Check if user has completed onboarding by checking their profile
@@ -39,9 +39,9 @@ export default async function Home() {
 
   // New user or incomplete onboarding - redirect to onboarding
   if (!profile || !profile.full_name || profile.onboarding_completed === false) {
-    redirect(`/onboarding/welcome`)
+    redirect(`/${locale}/onboarding/welcome`)
   }
 
   // Authenticated and onboarded - redirect to dashboard
-  redirect(`/workspace/personal/dashboard/overview`)
+  redirect(`/${locale}/workspace/personal/dashboard/overview`)
 }
