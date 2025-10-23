@@ -1,12 +1,15 @@
-import { redirect } from "next/navigation"
 import { createServerClient } from "@supabase/ssr"
 import { cookies } from "next/headers"
-import { getLocale } from 'next-intl/server'
+import { redirect } from "next/navigation"
 
 export const dynamic = 'force-dynamic'
 
-export default async function Home() {
-  const locale = await getLocale()
+interface PageProps {
+  params: Promise<{ locale: string }>
+}
+
+export default async function Home({ params }: PageProps) {
+  const { locale } = await params
   const cookieStore = await cookies()
   
   // Create Supabase client
