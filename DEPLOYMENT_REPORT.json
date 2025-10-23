@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-10-21T14:18:14.961Z",
+  "migration": "104_fix_performance_warnings.sql",
+  "status": "validated",
+  "performanceTests": [
+    {
+      "name": "User Workspaces Query",
+      "status": "error",
+      "duration": 545
+    },
+    {
+      "name": "Project Tasks Query",
+      "status": "success",
+      "duration": 95,
+      "rows": 0
+    },
+    {
+      "name": "Productions Query",
+      "status": "success",
+      "duration": 134,
+      "rows": 0
+    },
+    {
+      "name": "Marketplace Products Query",
+      "status": "success",
+      "duration": 96,
+      "rows": 0
+    }
+  ],
+  "summary": {
+    "totalTests": 4,
+    "successful": 3,
+    "failed": 0,
+    "errors": 1,
+    "averageQueryTime": "108.33ms"
+  }
+}
