@@ -7901,6 +7901,8 @@
         "description": "Platform Super Admin - Full control across all organizations"
       },
       "phantom": {
+        "name": "Phantom",
+        "level": "Level 2",
         "title": "Phantom",
         "description": "Organization Super Admin - Manage your entire organization"
       },
@@ -7962,12 +7964,15 @@
       "subtitle": "See what our customers have to say",
       "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
       "testimonial1Author": "Sarah Chen",
+      "testimonial1Role": "Production Director, Major Music Festival",
       "testimonial1Title": "Production Director, Major Music Festival",
       "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
       "testimonial2Author": "Marcus Rodriguez",
+      "testimonial2Role": "VP of Operations, Live Events Company",
       "testimonial2Title": "VP of Operations, Live Events Company",
       "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
       "testimonial3Author": "Jennifer Park",
+      "testimonial3Role": "CFO, Corporate Events Agency",
       "testimonial3Title": "CFO, Corporate Events Agency"
     },
     "pricing": {
