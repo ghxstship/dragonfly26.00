@@ -221,9 +221,12 @@ CREATE POLICY "Admins can read analytics snapshots"
   TO authenticated
   USING (
     EXISTS (
-      SELECT 1 FROM user_roles
-      WHERE user_id = auth.uid()
-      AND role_slug IN ('legend', 'phantom', 'aviator')
+      SELECT 1 FROM user_role_assignments ura
+      JOIN roles r ON ura.role_id = r.id
+      WHERE ura.user_id = auth.uid()
+      AND r.slug IN ('legend', 'phantom', 'aviator')
+      AND ura.is_active = true
+      AND (ura.valid_until IS NULL OR ura.valid_until > NOW())
     )
   );
 
