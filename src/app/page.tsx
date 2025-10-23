@@ -11,11 +11,6 @@ import { PricingSection } from '@/marketing/components/sections/PricingSection'
 import { FAQSection } from '@/marketing/components/sections/FAQSection'
 import { CTASection } from '@/marketing/components/sections/CTASection'
 
-export const metadata = {
-  title: 'ATLVS - Project Management for Experiential Production Teams',
-  description: 'The project management system built specifically for live entertainment production. Manage projects, teams, assets, and finances in one powerful platform.',
-}
-
 export default function MarketingHomePage() {
   return (
     <>
