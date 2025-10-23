@@ -2,9 +2,6 @@ const withNextIntl = require('next-intl/plugin')('./src/i18n/request.ts')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Output directory for marketing site
-  distDir: '.next-marketing',
-  
   // Use marketing app directory
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   
