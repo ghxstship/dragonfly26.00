@@ -3,6 +3,8 @@ import { Inter } from "next/font/google"
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getLocale } from 'next-intl/server'
 import { isRTL } from '@/i18n/config'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -68,6 +70,8 @@ export default async function RootLayout({
             </ThemeProvider>
           </NextIntlClientProvider>
         </QueryProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
