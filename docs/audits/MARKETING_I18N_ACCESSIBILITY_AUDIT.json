@@ -1,0 +1,259 @@
+{
+  "totals": {
+    "files": 27,
+    "withI18n": 24,
+    "withoutI18n": 3,
+    "totalHardcodedStrings": 8,
+    "totalAriaLabels": 6,
+    "totalAriaHidden": 43,
+    "totalAriaLive": 0,
+    "totalRoles": 1
+  },
+  "results": [
+    {
+      "file": "app/about/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/blog/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/contact/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 4,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/demo/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/docs/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/features/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/layout.tsx",
+      "hardcodedStrings": 6,
+      "hasI18n": false,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/legal/privacy/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/legal/terms/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/page.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": false,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "app/pricing/page.tsx",
+      "hardcodedStrings": 2,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 1,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/MarketingFooter.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/MarketingNav.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 1,
+      "ariaHidden": 2,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/CTASection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 1,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/FAQSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 1,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/FeaturesSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 5,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/HeroSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 1,
+      "ariaHidden": 1,
+      "ariaLive": 0,
+      "roles": 1
+    },
+    {
+      "file": "components/sections/HowItWorksSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 4,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/IntegrationsSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/PricingSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 12,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/ProblemSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 4,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/RolesSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 1,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/SecuritySection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 4,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/SolutionSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 4,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/TestimonialsSection.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 3,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "components/sections/TrustBar.tsx",
+      "hardcodedStrings": 0,
+      "hasI18n": true,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    },
+    {
+      "file": "i18n/request.ts",
+      "hardcodedStrings": 0,
+      "hasI18n": false,
+      "ariaLabels": 0,
+      "ariaHidden": 0,
+      "ariaLive": 0,
+      "roles": 0
+    }
+  ],
+  "grade": "C-",
+  "finalScore": 52.71851851851852
+}

@@ -1,0 +1,388 @@
+{
+  "marketing": {
+    "nav": {
+      "logo": "ATLVS",
+      "features": "Features",
+      "pricing": "Pricing",
+      "docs": "Docs",
+      "blog": "Blog",
+      "about": "About",
+      "signIn": "Sign In",
+      "startFree": "Start Free",
+      "toggleMenu": "Toggle menu"
+    },
+    "hero": {
+      "headline": "The Project Management System for",
+      "headlineHighlight": "Experiential Production Teams",
+      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
+      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
+      "ctaPrimary": "Start Free Today",
+      "ctaSecondary": "Schedule a Demo",
+      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
+      "platformScreenshot": "Platform Screenshot"
+    },
+    "trustBar": {
+      "trustedBy": "Trusted by production teams worldwide"
+    },
+    "problem": {
+      "title": "The Production Management Challenge",
+      "subtitle": "Managing live entertainment production is complex",
+      "pain1Title": "Scattered Tools",
+      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
+      "pain2Title": "Lost Information",
+      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
+      "pain3Title": "Budget Overruns",
+      "pain3Description": "Without real-time visibility, costs spiral out of control",
+      "pain4Title": "Communication Gaps",
+      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+    },
+    "solution": {
+      "title": "One Platform. Complete Control.",
+      "subtitle": "ATLVS brings everything together",
+      "feature1Title": "Unified Workspace",
+      "feature1Description": "All your projects, teams, and resources in one place",
+      "feature2Title": "Real-Time Collaboration",
+      "feature2Description": "Everyone stays in sync with live updates and notifications",
+      "feature3Title": "Financial Clarity",
+      "feature3Description": "Track budgets, expenses, and invoices with precision",
+      "feature4Title": "Vendor Management",
+      "feature4Description": "Streamline procurement and vendor relationships"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Get started in minutes, not months",
+      "step1Title": "Create Your Organization",
+      "step1Description": "Set up your company structure and invite your team",
+      "step2Title": "Build Your Projects",
+      "step2Description": "Define productions, activations, and workspaces",
+      "step3Title": "Assign Roles & Tasks",
+      "step3Description": "Give team members the right access and responsibilities",
+      "step4Title": "Track & Deliver",
+      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+    },
+    "features": {
+      "title": "Everything You Need to Produce at Scale",
+      "subtitle": "Five integrated hubs for complete production management",
+      "production": {
+        "title": "Production Hub",
+        "description": "Manage projects, events, people, assets, locations, and files",
+        "feature1": "Project & event planning",
+        "feature2": "Team & crew management",
+        "feature3": "Asset tracking & inventory",
+        "feature4": "Location & venue coordination"
+      },
+      "business": {
+        "title": "Business Hub",
+        "description": "Handle companies, jobs, procurement, and finances",
+        "feature1": "Vendor & company management",
+        "feature2": "Job postings & hiring",
+        "feature3": "Procurement & purchasing",
+        "feature4": "Budget & expense tracking"
+      },
+      "network": {
+        "title": "Network Hub",
+        "description": "Build community, marketplace, and resource library",
+        "feature1": "Community & discussions",
+        "feature2": "Marketplace & services",
+        "feature3": "Resource library",
+        "feature4": "Industry connections"
+      },
+      "intelligence": {
+        "title": "Intelligence Hub",
+        "description": "Generate reports, analytics, and insights",
+        "feature1": "Custom reports",
+        "feature2": "Real-time analytics",
+        "feature3": "Predictive insights",
+        "feature4": "Performance metrics"
+      },
+      "system": {
+        "title": "System Hub",
+        "description": "Configure admin, settings, and user profiles",
+        "feature1": "Admin controls",
+        "feature2": "System settings",
+        "feature3": "User profiles",
+        "feature4": "Security & permissions"
+      }
+    },
+    "roles": {
+      "title": "11 Branded Roles for Every Team Member",
+      "subtitle": "Flexible permissions that match how you work",
+      "legend": {
+        "name": "Legend",
+        "level": "Level 1",
+        "description": "Platform Super Admin - Complete control across all organizations"
+      },
+      "phantom": {
+        "name": "Phantom",
+        "level": "Level 2",
+        "description": "Organization Super Admin - Full control within your organization"
+      },
+      "aviator": {
+        "name": "Aviator",
+        "level": "Level 3",
+        "description": "Strategic Leader - Oversee multiple projects and cross-project reporting"
+      },
+      "gladiator": {
+        "name": "Gladiator",
+        "level": "Level 4",
+        "description": "Project Manager - Full project access, team assignment, budget approval"
+      },
+      "navigator": {
+        "name": "Navigator",
+        "level": "Level 5",
+        "description": "Department Manager - Manage your department or zone"
+      },
+      "deviator": {
+        "name": "Deviator",
+        "level": "Level 6",
+        "description": "Team Lead - Manage your team and assign tasks"
+      },
+      "raider": {
+        "name": "Raider",
+        "level": "Level 7",
+        "description": "Team Member - Edit access to your assigned tasks"
+      },
+      "vendor": {
+        "name": "Vendor",
+        "level": "Level 8",
+        "description": "External Contractor - Limited vendor-specific access"
+      },
+      "visitor": {
+        "name": "Visitor",
+        "level": "Level 9",
+        "description": "Temporary Access - Configurable permissions with expiration"
+      },
+      "partner": {
+        "name": "Partner",
+        "level": "Level 10",
+        "description": "Stakeholder - Read-only access for clients and partners"
+      },
+      "ambassador": {
+        "name": "Ambassador",
+        "level": "Level 11",
+        "description": "Marketing Affiliate - Marketing content and community access"
+      }
+    },
+    "security": {
+      "title": "Enterprise-Grade Security & Compliance",
+      "subtitle": "Your data is protected with industry-leading security",
+      "feature1Title": "End-to-End Encryption",
+      "feature1Description": "All data encrypted in transit and at rest",
+      "feature2Title": "SOC 2 Type II Certified",
+      "feature2Description": "Independently audited security controls",
+      "feature3Title": "GDPR Compliant",
+      "feature3Description": "Full compliance with international data protection laws",
+      "feature4Title": "99.9% Uptime SLA",
+      "feature4Description": "Enterprise-grade reliability and performance"
+    },
+    "testimonials": {
+      "title": "Trusted by Production Teams Worldwide",
+      "subtitle": "See what our customers are saying",
+      "testimonial1Quote": "ATLVS transformed how we manage our festival production. Everything is finally in one place.",
+      "testimonial1Author": "Sarah Chen",
+      "testimonial1Role": "Production Director, Major Music Festival",
+      "testimonial2Quote": "The role-based permissions are perfect for our complex vendor relationships.",
+      "testimonial2Author": "Marcus Rodriguez",
+      "testimonial2Role": "Operations Manager, Event Production Company",
+      "testimonial3Quote": "We cut our production planning time in half and eliminated budget overruns.",
+      "testimonial3Author": "Emily Thompson",
+      "testimonial3Role": "Executive Producer, Corporate Events"
+    },
+    "pricing": {
+      "title": "Transparent Pricing That Scales With You",
+      "subtitle": "From solo contractors to enterprise producers, we have a plan that fits your needs.",
+      "community": {
+        "name": "Community",
+        "price": "Free",
+        "period": "forever",
+        "description": "Perfect for getting started",
+        "feature1": "Community access and resources",
+        "feature2": "Basic project management",
+        "feature3": "Single user seat",
+        "feature4": "Community support forum",
+        "role": "Raider",
+        "hubAccess": "Network Hub",
+        "cta": "Start Free"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$12",
+        "period": "per month",
+        "annualPrice": "$10/month billed annually",
+        "description": "Independent Contractor",
+        "feature1": "Everything in Community, plus:",
+        "feature2": "Standardized datasets and workflows",
+        "feature3": "Transparent reporting",
+        "feature4": "Advanced project tools",
+        "feature5": "Priority email support",
+        "feature6": "Enhanced analytics",
+        "roles": "Deviator, Raider",
+        "hubAccess": "Network Hub, Production Hub",
+        "cta": "Start Pro Trial"
+      },
+      "team": {
+        "name": "Team",
+        "price": "$120",
+        "period": "per month",
+        "annualPrice": "$100/month billed annually",
+        "description": "Vendor • 2-10 Seats",
+        "feature1": "Everything in Pro, plus:",
+        "feature2": "Tiered access controls",
+        "feature3": "Global templates",
+        "feature4": "Team collaboration hub",
+        "feature5": "Unlimited API integrations",
+        "feature6": "Open source automations",
+        "feature7": "Webhook support",
+        "feature8": "Premium support (24hr response)",
+        "roles": "Gladiator, Navigator, Deviator, Raider, Visitor, Vendor, Ambassador",
+        "hubAccess": "Network Hub, Production Hub, Business Hub, System Hub",
+        "cta": "Start Team Trial",
+        "badge": "Most Popular"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "$1,200",
+        "period": "per month",
+        "annualPrice": "$1,000/month billed annually",
+        "description": "Producer • 2-20 Seats",
+        "feature1": "Everything in Team, plus:",
+        "feature2": "Advanced permissions",
+        "feature3": "Custom data fields",
+        "feature4": "Personalized views",
+        "feature5": "SSO & SAML integration",
+        "feature6": "AI agents & insights",
+        "feature7": "Smart recommendations",
+        "feature8": "Predictive resource planning",
+        "feature9": "Dedicated account manager",
+        "feature10": "24/7 priority support",
+        "feature11": "Custom onboarding & training",
+        "roles": "All 11 roles (Phantom, Aviator, Gladiator, Navigator, Deviator, Raider, Partner, Visitor, Vendor, Ambassador)",
+        "hubAccess": "All Hubs (Network, Production, Business, System, Intelligence)",
+        "cta": "Schedule Demo"
+      },
+      "additionalSeatsTitle": "Need More Seats?",
+      "additionalSeatsDescription": "Additional seats available for",
+      "additionalSeatsPrice": "$12/month",
+      "additionalSeatsAnnual": "($10/month when billed annually)",
+      "rolesLabel": "Roles:",
+      "hubAccessLabel": "Hub Access:",
+      "faqTitle": "Frequently Asked Questions",
+      "faq1Question": "Can I try ATLVS before committing?",
+      "faq1Answer": "Absolutely! Our Community plan is free forever—no credit card required. Pro, Team, and Enterprise plans offer 14-day free trials.",
+      "faq2Question": "Can I change plans later?",
+      "faq2Answer": "Yes! You can upgrade or downgrade your plan at any time. Upgrades take effect immediately, downgrades at the end of your billing cycle.",
+      "faq3Question": "What payment methods do you accept?",
+      "faq3Answer": "We accept all major credit cards (Visa, Mastercard, American Express) and ACH transfers for Enterprise plans."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "question1": "What makes ATLVS different from other project management tools?",
+      "answer1": "ATLVS is purpose-built for live entertainment production. Unlike generic PM tools, we understand the unique challenges of managing distributed teams, complex logistics, vendor relationships, and tight budgets in the events industry. Our 5-level organizational hierarchy, 11 branded roles, and specialized modules for assets, locations, and production workflows are designed specifically for how you work.",
+      "question2": "Can I try ATLVS before committing?",
+      "answer2": "Absolutely! Our Community plan is free forever—no credit card required. Pro, Team, and Enterprise plans offer 14-day free trials so you can experience the full power of ATLVS risk-free.",
+      "question3": "How long does implementation take?",
+      "answer3": "Most teams are up and running in less than a day. Our intuitive interface, pre-built templates, and standardized workflows mean you can start managing productions immediately. Enterprise customers receive dedicated onboarding and custom training.",
+      "question4": "What kind of support do you offer?",
+      "answer4": "Community: Forum-based community support. Pro: Priority email support (48hr response). Team: Premium support (24hr response). Enterprise: 24/7 priority support with dedicated account manager.",
+      "question5": "Is my data secure?",
+      "answer5": "Yes. We take security seriously with end-to-end encryption, SOC 2 Type II certification, GDPR compliance, and enterprise-grade infrastructure. Your data is backed up daily with 99.9% uptime guaranteed for Enterprise plans.",
+      "question6": "Can I integrate ATLVS with my existing tools?",
+      "answer6": "Yes! ATLVS offers a full REST API, webhook support, and pre-built integrations with popular tools like QuickBooks, Slack, Google Drive, and more. Team and Enterprise plans include unlimited API access."
+    },
+    "cta": {
+      "title": "Ready to Transform Your Production Management?",
+      "subtitle": "Join thousands of production professionals who trust ATLVS",
+      "ctaPrimary": "Start Free Today",
+      "ctaSecondary": "Schedule a Demo",
+      "trustIndicators": "No credit card required • 14-day free trial"
+    },
+    "footer": {
+      "tagline": "The production management platform built for experiential entertainment",
+      "productTitle": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "changelog": "Changelog",
+      "companyTitle": "Company",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "contact": "Contact",
+      "resourcesTitle": "Resources",
+      "docs": "Documentation",
+      "guides": "Guides",
+      "apiReference": "API Reference",
+      "community": "Community",
+      "legalTitle": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "security": "Security",
+      "copyright": "© 2025 ATLVS. All rights reserved.",
+      "socialTitle": "Follow Us"
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "subtitle": "Have questions? We'd love to hear from you.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "companyLabel": "Company",
+      "companyPlaceholder": "Your company",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us about your production needs...",
+      "submitButton": "Send Message",
+      "successMessage": "Thank you! We'll get back to you soon.",
+      "errorMessage": "Something went wrong. Please try again."
+    },
+    "demo": {
+      "title": "Schedule a Demo",
+      "subtitle": "See ATLVS in action with a personalized demo",
+      "description": "Our team will walk you through the platform and answer all your questions."
+    },
+    "about": {
+      "title": "About ATLVS",
+      "subtitle": "Built by production professionals, for production professionals"
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Insights, updates, and best practices for production teams"
+    },
+    "docs": {
+      "title": "Documentation",
+      "subtitle": "Everything you need to get started with ATLVS"
+    },
+    "featuresPage": {
+      "title": "Features",
+      "subtitle": "Discover what makes ATLVS the complete production management solution"
+    },
+    "legal": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated: January 2025"
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "lastUpdated": "Last updated: January 2025"
+      }
+    },
+    "metadata": {
+      "homeTitle": "ATLVS - Project Management for Experiential Production Teams",
+      "homeDescription": "The project management system built specifically for live entertainment production. Manage projects, teams, assets, and finances in one powerful platform.",
+      "pricingTitle": "Pricing - ATLVS",
+      "pricingDescription": "Transparent pricing that scales with you. From solo contractors to enterprise producers.",
+      "featuresTitle": "Features - ATLVS",
+      "featuresDescription": "Discover the complete production management solution for experiential entertainment.",
+      "aboutTitle": "About - ATLVS",
+      "aboutDescription": "Built by production professionals, for production professionals.",
+      "contactTitle": "Contact - ATLVS",
+      "contactDescription": "Get in touch with our team.",
+      "demoTitle": "Schedule a Demo - ATLVS",
+      "demoDescription": "See ATLVS in action with a personalized demo.",
+      "blogTitle": "Blog - ATLVS",
+      "blogDescription": "Insights, updates, and best practices for production teams.",
+      "docsTitle": "Documentation - ATLVS",
+      "docsDescription": "Everything you need to get started with ATLVS."
+    }
+  }
+}

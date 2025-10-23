@@ -1,34 +1,21 @@
+"use client"
+
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function FAQSection(): JSX.Element {
+  const t = useTranslations('marketing.faq')
+
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const faqs = [
-    {
-      question: "What makes ATLVS different from other project management tools?",
-      answer: "ATLVS is purpose-built for live entertainment production. Unlike generic PM tools, we understand the unique challenges of managing distributed teams, complex logistics, vendor relationships, and tight budgets in the events industry. Our 5-level organizational hierarchy, 11 branded roles, and specialized modules for assets, locations, and production workflows are designed specifically for how you work.",
-    },
-    {
-      question: "Can I try ATLVS before committing?",
-      answer: "Absolutely! Our Community plan is free forever—no credit card required. Pro, Team, and Enterprise plans offer 14-day free trials so you can experience the full power of ATLVS risk-free.",
-    },
-    {
-      question: "How long does implementation take?",
-      answer: "Most teams are up and running in less than a day. Our intuitive interface, pre-built templates, and standardized workflows mean you can start managing productions immediately. Enterprise customers receive dedicated onboarding and custom training.",
-    },
-    {
-      question: "What kind of support do you offer?",
-      answer: "Community: Forum-based community support. Pro: Priority email support (48hr response). Team: Premium support (24hr response). Enterprise: 24/7 priority support with dedicated account manager.",
-    },
-    {
-      question: "Is my data secure?",
-      answer: "Yes. We take security seriously with end-to-end encryption, SOC 2 Type II certification, GDPR compliance, and enterprise-grade infrastructure. Your data is backed up daily with 99.9% uptime guaranteed for Enterprise plans.",
-    },
-    {
-      question: "Can I integrate ATLVS with my existing tools?",
-      answer: "Yes! ATLVS offers a full REST API, webhook support, and pre-built integrations with popular tools like QuickBooks, Slack, Google Drive, and more. Team and Enterprise plans include unlimited API access.",
-    },
+    { question: t('question1'), answer: t('answer1') },
+    { question: t('question2'), answer: t('answer2') },
+    { question: t('question3'), answer: t('answer3') },
+    { question: t('question4'), answer: t('answer4') },
+    { question: t('question5'), answer: t('answer5') },
+    { question: t('question6'), answer: t('answer6') },
   ]
 
   return (
@@ -36,7 +23,7 @@ export function FAQSection(): JSX.Element {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked Questions
+            {t('title')}
           </h2>
         </div>
 

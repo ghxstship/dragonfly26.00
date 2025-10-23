@@ -1,48 +1,50 @@
+"use client"
+
+import { useTranslations } from "next-intl"
 import { Quote } from "lucide-react"
 
 export function TestimonialsSection(): JSX.Element {
-  const testimonials = [
-    {
-      quote: "ATLVS transformed how we manage our festival circuit. We went from chaos to complete clarity in weeks. The hierarchical structure mirrors exactly how we think about our productions.",
-      author: "Sarah Chen",
-      title: "Production Director",
-      company: "Major Festival Producer",
-    },
-    {
-      quote: "The asset tracking alone paid for itself in the first month. No more lost equipment, no more double-bookings. Our load-in and strike times improved by 40%.",
-      author: "Marcus Rodriguez",
-      title: "Technical Director",
-      company: "Live Events Company",
-    },
-    {
-      quote: "Finally, a platform built by people who actually understand production. The role-based access means our vendors and freelancers get exactly what they need—nothing more, nothing less.",
-      author: "Jennifer Park",
-      title: "Operations Manager",
-      company: "Corporate Events Agency",
-    },
-  ]
-
+  const t = useTranslations('marketing.testimonials')
+  
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Loved by Production Professionals
+            {t('title')}
           </h2>
+          <p className="text-xl text-gray-600">
+            {t('subtitle')}
+          </p>
         </div>
-
+        
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-              <Quote className="text-blue-600 mb-4" size={32} aria-hidden="true" />
-              <p className="text-gray-700 mb-6 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
-              <div className="border-t border-gray-200 pt-4">
-                <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                <p className="text-sm text-gray-600">{testimonial.title}</p>
-                <p className="text-sm text-gray-500">{testimonial.company}</p>
-              </div>
+          <div className="bg-white rounded-xl p-6">
+            <Quote className="mb-4 text-blue-600" size={32} aria-hidden="true" />
+            <p className="text-gray-700 mb-4 italic">{t('testimonial1Quote')}</p>
+            <div>
+              <p className="font-semibold text-gray-900">{t('testimonial1Author')}</p>
+              <p className="text-sm text-gray-600">{t('testimonial1Role')}</p>
             </div>
-          ))}
+          </div>
+          
+          <div className="bg-white rounded-xl p-6">
+            <Quote className="mb-4 text-blue-600" size={32} aria-hidden="true" />
+            <p className="text-gray-700 mb-4 italic">{t('testimonial2Quote')}</p>
+            <div>
+              <p className="font-semibold text-gray-900">{t('testimonial2Author')}</p>
+              <p className="text-sm text-gray-600">{t('testimonial2Role')}</p>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-xl p-6">
+            <Quote className="mb-4 text-blue-600" size={32} aria-hidden="true" />
+            <p className="text-gray-700 mb-4 italic">{t('testimonial3Quote')}</p>
+            <div>
+              <p className="font-semibold text-gray-900">{t('testimonial3Author')}</p>
+              <p className="text-sm text-gray-600">{t('testimonial3Role')}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

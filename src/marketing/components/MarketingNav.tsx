@@ -4,8 +4,10 @@ import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 
 export function MarketingNav(): JSX.Element {
+  const t = useTranslations('marketing.nav')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -14,35 +16,35 @@ export function MarketingNav(): JSX.Element {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-gray-900">ATLVS</div>
+            <div className="text-2xl font-bold text-gray-900">{t('logo')}</div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/features" className="text-gray-700 hover:text-gray-900 transition-colors">
-              Features
+              {t('features')}
             </Link>
             <Link href="/pricing" className="text-gray-700 hover:text-gray-900 transition-colors">
-              Pricing
+              {t('pricing')}
             </Link>
             <Link href="/docs" className="text-gray-700 hover:text-gray-900 transition-colors">
-              Docs
+              {t('docs')}
             </Link>
             <Link href="/blog" className="text-gray-700 hover:text-gray-900 transition-colors">
-              Blog
+              {t('blog')}
             </Link>
             <Link href="/about" className="text-gray-700 hover:text-gray-900 transition-colors">
-              About
+              {t('about')}
             </Link>
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="https://app.atlvs.xyz/auth/signin">
-              <Button variant="ghost">Sign In</Button>
+              <Button variant="ghost">{t('signIn')}</Button>
             </Link>
             <Link href="https://app.atlvs.xyz/auth/signup">
-              <Button variant="default">Start Free</Button>
+              <Button variant="default">{t('startFree')}</Button>
             </Link>
           </div>
 
@@ -50,9 +52,10 @@ export function MarketingNav(): JSX.Element {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
-            aria-label="Toggle menu"
+            aria-label={t('toggleMenu')}
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -66,42 +69,42 @@ export function MarketingNav(): JSX.Element {
               className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Features
+              {t('features')}
             </Link>
             <Link
               href="/pricing"
               className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Pricing
+              {t('pricing')}
             </Link>
             <Link
               href="/docs"
               className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Docs
+              {t('docs')}
             </Link>
             <Link
               href="/blog"
               className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Blog
+              {t('blog')}
             </Link>
             <Link
               href="/about"
               className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About
+              {t('about')}
             </Link>
             <div className="pt-4 space-y-2">
               <Link href="https://app.atlvs.xyz/auth/signin" className="block">
-                <Button variant="ghost" className="w-full">Sign In</Button>
+                <Button variant="ghost" className="w-full">{t('signIn')}</Button>
               </Link>
               <Link href="https://app.atlvs.xyz/auth/signup" className="block">
-                <Button variant="default" className="w-full">Start Free</Button>
+                <Button variant="default" className="w-full">{t('startFree')}</Button>
               </Link>
             </div>
           </div>

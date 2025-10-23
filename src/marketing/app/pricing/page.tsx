@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export const metadata = {
   title: "Pricing - ATLVS",
@@ -8,88 +11,90 @@ export const metadata = {
 }
 
 export default function PricingPage(): JSX.Element {
+  const t = useTranslations('marketing.pricing')
+
   const plans = [
     {
-      name: "Community",
-      price: "Free",
-      period: "forever",
-      description: "Perfect for getting started",
+      name: t('community.name'),
+      price: t('community.price'),
+      period: t('community.period'),
+      description: t('community.description'),
       features: [
-        "Community access and resources",
-        "Basic project management",
-        "Single user seat",
-        "Community support forum",
+        t('community.feature1'),
+        t('community.feature2'),
+        t('community.feature3'),
+        t('community.feature4'),
       ],
-      role: "Raider",
-      hubAccess: "Network Hub",
-      cta: "Start Free",
+      role: t('community.role'),
+      hubAccess: t('community.hubAccess'),
+      cta: t('community.cta'),
       ctaLink: "https://app.atlvs.xyz/auth/signup",
       highlighted: false,
     },
     {
-      name: "Pro",
-      price: "$12",
-      period: "per month",
-      annualPrice: "$10/month billed annually",
-      description: "Independent Contractor",
+      name: t('pro.name'),
+      price: t('pro.price'),
+      period: t('pro.period'),
+      annualPrice: t('pro.annualPrice'),
+      description: t('pro.description'),
       features: [
-        "Everything in Community, plus:",
-        "Standardized datasets and workflows",
-        "Transparent reporting",
-        "Advanced project tools",
-        "Priority email support",
-        "Enhanced analytics",
+        t('pro.feature1'),
+        t('pro.feature2'),
+        t('pro.feature3'),
+        t('pro.feature4'),
+        t('pro.feature5'),
+        t('pro.feature6'),
       ],
-      roles: "Deviator, Raider",
-      hubAccess: "Network Hub, Production Hub",
-      cta: "Start Pro Trial",
+      roles: t('pro.roles'),
+      hubAccess: t('pro.hubAccess'),
+      cta: t('pro.cta'),
       ctaLink: "https://app.atlvs.xyz/auth/signup?plan=pro",
       highlighted: false,
     },
     {
-      name: "Team",
-      price: "$120",
-      period: "per month",
-      annualPrice: "$100/month billed annually",
-      description: "Vendor • 2-10 Seats",
+      name: t('team.name'),
+      price: t('team.price'),
+      period: t('team.period'),
+      annualPrice: t('team.annualPrice'),
+      description: t('team.description'),
       features: [
-        "Everything in Pro, plus:",
-        "Tiered access controls",
-        "Global templates",
-        "Team collaboration hub",
-        "Unlimited API integrations",
-        "Open source automations",
-        "Webhook support",
-        "Premium support (24hr response)",
+        t('team.feature1'),
+        t('team.feature2'),
+        t('team.feature3'),
+        t('team.feature4'),
+        t('team.feature5'),
+        t('team.feature6'),
+        t('team.feature7'),
+        t('team.feature8'),
       ],
-      roles: "Gladiator, Navigator, Deviator, Raider, Visitor, Vendor, Ambassador",
-      hubAccess: "Network Hub, Production Hub, Business Hub, System Hub",
-      cta: "Start Team Trial",
+      roles: t('team.roles'),
+      hubAccess: t('team.hubAccess'),
+      cta: t('team.cta'),
       ctaLink: "https://app.atlvs.xyz/auth/signup?plan=team",
       highlighted: true,
     },
     {
-      name: "Enterprise",
-      price: "$1,200",
-      period: "per month",
-      annualPrice: "$1,000/month billed annually",
-      description: "Producer • 2-20 Seats",
+      name: t('enterprise.name'),
+      price: t('enterprise.price'),
+      period: t('enterprise.period'),
+      annualPrice: t('enterprise.annualPrice'),
+      description: t('enterprise.description'),
       features: [
-        "Everything in Team, plus:",
-        "Advanced permissions",
-        "Custom data fields",
-        "Personalized views",
-        "SSO & SAML integration",
-        "AI agents & insights",
-        "Smart recommendations",
-        "Predictive resource planning",
-        "Dedicated account manager",
-        "24/7 priority support",
-        "Custom onboarding & training",
+        t('enterprise.feature1'),
+        t('enterprise.feature2'),
+        t('enterprise.feature3'),
+        t('enterprise.feature4'),
+        t('enterprise.feature5'),
+        t('enterprise.feature6'),
+        t('enterprise.feature7'),
+        t('enterprise.feature8'),
+        t('enterprise.feature9'),
+        t('enterprise.feature10'),
+        t('enterprise.feature11'),
       ],
-      roles: "All 11 roles (Phantom, Aviator, Gladiator, Navigator, Deviator, Raider, Partner, Visitor, Vendor, Ambassador)",
-      hubAccess: "All Hubs (Network, Production, Business, System, Intelligence)",
-      cta: "Schedule Demo",
+      roles: t('enterprise.roles'),
+      hubAccess: t('enterprise.hubAccess'),
+      cta: t('enterprise.cta'),
       ctaLink: "/demo",
       highlighted: false,
     },
@@ -101,10 +106,10 @@ export default function PricingPage(): JSX.Element {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Transparent Pricing That Scales With You
+            {t('title')}
           </h1>
           <p className="text-xl text-gray-600">
-            From solo contractors to enterprise producers, we have a plan that fits your needs.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -121,7 +126,7 @@ export default function PricingPage(): JSX.Element {
             >
               {plan.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                  Most Popular
+                  {t('team.badge')}
                 </div>
               )}
 
@@ -142,7 +147,7 @@ export default function PricingPage(): JSX.Element {
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start">
-                    <Check className="text-green-500 mr-2 flex-shrink-0 mt-0.5" size={20} />
+                    <Check className="text-green-500 mr-2 flex-shrink-0 mt-0.5" size={20} aria-hidden="true" />
                     <span className="text-gray-700 text-sm">{feature}</span>
                   </li>
                 ))}
@@ -150,11 +155,11 @@ export default function PricingPage(): JSX.Element {
 
               <div className="space-y-3 mb-6 text-sm">
                 <div>
-                  <span className="font-semibold text-gray-900">Roles: </span>
+                  <span className="font-semibold text-gray-900">{t('rolesLabel')} </span>
                   <span className="text-gray-600">{plan.roles || plan.role}</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-gray-900">Hub Access: </span>
+                  <span className="font-semibold text-gray-900">{t('hubAccessLabel')} </span>
                   <span className="text-gray-600">{plan.hubAccess}</span>
                 </div>
               </div>
@@ -173,40 +178,40 @@ export default function PricingPage(): JSX.Element {
 
         {/* Additional Seats */}
         <div className="text-center bg-gray-50 rounded-xl p-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">Need More Seats?</h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('additionalSeatsTitle')}</h3>
           <p className="text-gray-600">
-            Additional seats available for <span className="font-semibold">$12/month</span> ($10/month when billed annually)
+            {t('additionalSeatsDescription')} <span className="font-semibold">{t('additionalSeatsPrice')}</span> {t('additionalSeatsAnnual')}
           </p>
         </div>
 
         {/* FAQ */}
         <div className="mt-20 max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Frequently Asked Questions
+            {t('faqTitle')}
           </h2>
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Can I try ATLVS before committing?
+                {t('faq1Question')}
               </h3>
               <p className="text-gray-600">
-                Absolutely! Our Community plan is free forever—no credit card required. Pro, Team, and Enterprise plans offer 14-day free trials.
+                {t('faq1Answer')}
               </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Can I change plans later?
+                {t('faq2Question')}
               </h3>
               <p className="text-gray-600">
-                Yes! You can upgrade or downgrade your plan at any time. Upgrades take effect immediately, downgrades at the end of your billing cycle.
+                {t('faq2Answer')}
               </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                What payment methods do you accept?
+                {t('faq3Question')}
               </h3>
               <p className="text-gray-600">
-                We accept all major credit cards (Visa, Mastercard, American Express) and ACH transfers for Enterprise plans.
+                {t('faq3Answer')}
               </p>
             </div>
           </div>

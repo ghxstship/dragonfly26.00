@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
 import "../../app/globals.css"
 import { MarketingNav } from "../components/MarketingNav"
 import { MarketingFooter } from "../components/MarketingFooter"
@@ -34,19 +36,23 @@ export const metadata: Metadata = {
   },
 }
 
-export default function MarketingLayout({
+export default async function MarketingLayout({
   children,
 }: {
   children: React.ReactNode
-}): JSX.Element {
+}) {
+  const messages = await getMessages()
+  
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MarketingNav />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <MarketingFooter />
+        <NextIntlClientProvider messages={messages}>
+          <MarketingNav />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <MarketingFooter />
+        </NextIntlClientProvider>
       </body>
     </html>
   )
