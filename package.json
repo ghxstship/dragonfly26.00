@@ -4,11 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:marketing": "next dev -p 3001 --experimental-https",
     "build": "next build",
-    "build:marketing": "node scripts/build-marketing.js",
     "start": "next start",
-    "start:marketing": "next start -p 3001",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "generate-logos": "node scripts/generate-logo-pngs.js",
