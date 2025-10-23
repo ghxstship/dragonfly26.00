@@ -29,31 +29,32 @@ const nextConfig = {
     return [
       {
         source: '/app',
-        destination: 'https://app.atlvs.xyz',
+        destination: process.env.NEXT_PUBLIC_APP_URL || 'https://atlvs-app.vercel.app',
       },
       {
         source: '/app/:path*',
-        destination: 'https://app.atlvs.xyz/:path*',
+        destination: `${process.env.NEXT_PUBLIC_APP_URL || 'https://atlvs-app.vercel.app'}/:path*`,
       },
     ]
   },
 
   // Redirects for auth pages
   async redirects() {
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atlvs-app.vercel.app'
     return [
       {
         source: '/signup',
-        destination: 'https://app.atlvs.xyz/en/signup',
+        destination: `${appUrl}/en/signup`,
         permanent: false,
       },
       {
         source: '/signin',
-        destination: 'https://app.atlvs.xyz/en/login',
+        destination: `${appUrl}/en/login`,
         permanent: false,
       },
       {
         source: '/login',
-        destination: 'https://app.atlvs.xyz/en/login',
+        destination: `${appUrl}/en/login`,
         permanent: false,
       },
     ]
