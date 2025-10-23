@@ -29,18 +29,18 @@ const nextConfig = {
     return [
       {
         source: '/app',
-        destination: process.env.NEXT_PUBLIC_APP_URL || 'https://atlvs-app.vercel.app',
+        destination: process.env.NEXT_PUBLIC_APP_URL || 'https://app.atlvs.one',
       },
       {
         source: '/app/:path*',
-        destination: `${process.env.NEXT_PUBLIC_APP_URL || 'https://atlvs-app.vercel.app'}/:path*`,
+        destination: `${process.env.NEXT_PUBLIC_APP_URL || 'https://app.atlvs.one'}/:path*`,
       },
     ]
   },
 
   // Redirects for auth pages
   async redirects() {
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atlvs-app.vercel.app'
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://app.atlvs.one'
     return [
       {
         source: '/signup',
