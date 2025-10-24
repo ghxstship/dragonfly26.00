@@ -1,0 +1,31 @@
+import { HeroSection } from "@/marketing/components/sections/HeroSection"
+import { TrustBar } from "@/marketing/components/sections/TrustBar"
+import { ProblemSection } from "@/marketing/components/sections/ProblemSection"
+import { SolutionSection } from "@/marketing/components/sections/SolutionSection"
+import { FeaturesSection } from "@/marketing/components/sections/FeaturesSection"
+import { HowItWorksSection } from "@/marketing/components/sections/HowItWorksSection"
+import { RolesSection } from "@/marketing/components/sections/RolesSection"
+import { TestimonialsSection } from "@/marketing/components/sections/TestimonialsSection"
+import { PricingSection } from "@/marketing/components/sections/PricingSection"
+import { SecuritySection } from "@/marketing/components/sections/SecuritySection"
+import { FAQSection } from "@/marketing/components/sections/FAQSection"
+import { CTASection } from "@/marketing/components/sections/CTASection"
+
+export default function MarketingHome() {
+  return (
+    <main>
+      <HeroSection />
+      <TrustBar />
+      <ProblemSection />
+      <SolutionSection />
+      <FeaturesSection />
+      <HowItWorksSection />
+      <RolesSection />
+      <TestimonialsSection />
+      <PricingSection />
+      <SecuritySection />
+      <FAQSection />
+      <CTASection />
+    </main>
+  )
+}
