@@ -6,7 +6,12 @@ export const metadata: Metadata = {
   description: "Insights, updates, and best practices for live entertainment production management.",
 }
 
-export default function BlogPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>
+}
+
+export default async function BlogPage({ params }: PageProps) {
+  await params // Consume params to satisfy Next.js
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

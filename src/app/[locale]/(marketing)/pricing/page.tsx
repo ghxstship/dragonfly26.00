@@ -8,7 +8,12 @@ export const metadata: Metadata = {
   description: "Transparent pricing that scales with you. From solo contractors to enterprise producers.",
 }
 
-export default function PricingPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>
+}
+
+export default async function PricingPage({ params }: PageProps) {
+  await params // Consume params to satisfy Next.js
   return (
     <div className="pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

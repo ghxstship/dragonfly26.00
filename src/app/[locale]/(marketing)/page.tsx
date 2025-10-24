@@ -11,7 +11,12 @@ import { SecuritySection } from "@/marketing/components/sections/SecuritySection
 import { FAQSection } from "@/marketing/components/sections/FAQSection"
 import { CTASection } from "@/marketing/components/sections/CTASection"
 
-export default function MarketingHome() {
+interface PageProps {
+  params: Promise<{ locale: string }>
+}
+
+export default async function MarketingHome({ params }: PageProps) {
+  await params // Consume params to satisfy Next.js
   return (
     <main>
       <HeroSection />

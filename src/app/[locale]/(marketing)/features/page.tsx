@@ -10,7 +10,12 @@ export const metadata: Metadata = {
   description: "Everything you need to manage live entertainment production. Five powerful hubs designed specifically for experiential production teams.",
 }
 
-export default function FeaturesPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>
+}
+
+export default async function FeaturesPage({ params }: PageProps) {
+  await params // Consume params to satisfy Next.js
   return (
     <div className="pt-20">
       <FeaturesSection />
