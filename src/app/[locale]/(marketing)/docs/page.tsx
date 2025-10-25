@@ -7,12 +7,7 @@ export const metadata: Metadata = {
   description: "Comprehensive guides, tutorials, and API documentation for ATLVS platform.",
 }
 
-interface PageProps {
-  params: Promise<{ locale: string }>
-}
-
-export default async function DocsPage({ params }: PageProps) {
-  await params // Consume params to satisfy Next.js
+export default function DocsPage()
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

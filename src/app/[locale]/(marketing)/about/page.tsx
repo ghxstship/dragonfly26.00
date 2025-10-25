@@ -7,12 +7,7 @@ export const metadata: Metadata = {
   description: "Built by production professionals, for production professionals. Learn about our mission to transform live entertainment production management.",
 }
 
-interface PageProps {
-  params: Promise<{ locale: string }>
-}
-
-export default async function AboutPage({ params }: PageProps) {
-  await params // Consume params to satisfy Next.js
+export default function AboutPage()
   return (
     <div className="pt-20">
       {/* Hero Section */}

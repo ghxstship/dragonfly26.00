@@ -9,12 +9,7 @@ const SwaggerUI = dynamic<{ url: string }>(
   { ssr: false }
 )
 
-interface PageProps {
-  params: Promise<{ locale: string }>
-}
-
-export default async function APIDocsPage({ params }: PageProps) {
-  await params // Consume params to satisfy Next.js
+export default function APIDocsPage()
   return (
     <div className="min-h-screen bg-white">
       <div className="border-b border-gray-200 bg-white">
