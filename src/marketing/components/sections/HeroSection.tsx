@@ -14,13 +14,13 @@ export function HeroSection(): JSX.Element {
       <div className={cn("mx-auto", container['6xl'])}>
         <div className={cn("text-center mx-auto", container['4xl'])}>
           {/* Headline */}
-          <h1 className="text-5xl md:text-3xl md:text-5xl lg:text-6xl lg:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
             {t('headline')}{" "}
             <span className="text-blue-600">{t('headlineHighlight')}</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 mb-4 md:mb-6 lg:mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed">
             {t('subheadline')}
           </p>
 
@@ -38,7 +38,7 @@ export function HeroSection(): JSX.Element {
               </Button>
             </Link>
             <Link href="/demo">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                 {t('ctaSecondary')}
               </Button>
             </Link>

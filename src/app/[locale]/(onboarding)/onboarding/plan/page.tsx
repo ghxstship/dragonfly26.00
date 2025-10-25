@@ -20,7 +20,8 @@ export default function SelectPlanPage() {
   const supabase = createClient()
   
   const [loading, setLoading] = useState(false)
-  const [selectedPlan, setSelectedPlan] = useState('network')
+  const [selectedPlan, setSelectedPlan] = useState('community')
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly')
   const workspaceId = searchParams.get('workspace')
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export default function SelectPlanPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) throw new Error('Not authenticated')
 
-      if (planId === 'network') {
+      if (planId === 'community') {
         // Free plan - just continue to next step
         router.push(`/onboarding/invite?workspace=${workspaceId}`)
       } else {
@@ -53,6 +54,7 @@ export default function SelectPlanPage() {
           body: JSON.stringify({
             planId,
             workspaceId,
+            billingCycle,
           }),
         })
 
@@ -96,6 +98,25 @@ export default function SelectPlanPage() {
           <div className="h-2 w-12 bg-muted rounded-full" />
         </div>
 
+        {/* Billing Cycle Toggle */}
+        <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-2 p-1 bg-muted rounded-lg w-fit mx-auto">
+          <Button
+            variant={billingCycle === 'monthly' ? 'default' : 'ghost'}
+            size="sm"
+            onClick={() => setBillingCycle('monthly')}
+          >
+            Monthly
+          </Button>
+          <Button
+            variant={billingCycle === 'annual' ? 'default' : 'ghost'}
+            size="sm"
+            onClick={() => setBillingCycle('annual')}
+          >
+            Annual
+            <Badge variant="secondary" className="ml-2">Save 2 Months</Badge>
+          </Button>
+        </div>
+
         {/* Plans */}
         <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 mt-12">
           {plans.map((plan: any) => {
@@ -127,10 +148,17 @@ export default function SelectPlanPage() {
                   
                   <div className="pt-4">
                     <div className="flex flex-wrap items-baseline justify-center gap-1">
-                      <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-bold">${plan.price}</span>
+                      <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-bold">
+                        ${billingCycle === 'annual' && plan.annualPrice ? plan.annualPrice : plan.price}
+                      </span>
                       <span className="text-muted-foreground">/month</span>
                     </div>
-                    {plan.id !== 'network' && (
+                    {billingCycle === 'annual' && plan.annualPrice && plan.annualPrice !== plan.price && (
+                      <p className="text-sm text-green-600 dark:text-green-400 mt-2">
+                        ${plan.price * 12} billed annually
+                      </p>
+                    )}
+                    {plan.id !== 'community' && (
                       <p className="text-sm text-muted-foreground mt-2">
                         14-day free trial included
                       </p>

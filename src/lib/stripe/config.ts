@@ -22,8 +22,22 @@ export const stripeConfig = {
   
   // Price IDs from Stripe Dashboard
   prices: {
-    pro: process.env.NEXT_PUBLIC_STRIPE_PRICE_PRO!,
-    enterprise: process.env.NEXT_PUBLIC_STRIPE_PRICE_ENTERPRISE!,
+    pro: {
+      monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_PRO_MONTHLY!,
+      annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_PRO_ANNUAL!,
+    },
+    team: {
+      monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_TEAM_MONTHLY!,
+      annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_TEAM_ANNUAL!,
+    },
+    enterprise: {
+      monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_ENTERPRISE_MONTHLY!,
+      annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_ENTERPRISE_ANNUAL!,
+    },
+    additionalSeat: {
+      monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_ADDITIONAL_SEAT_MONTHLY!,
+      annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_ADDITIONAL_SEAT_ANNUAL!,
+    },
   },
   
   // Trial period (in days)

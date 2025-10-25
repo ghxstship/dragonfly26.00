@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json()
-    const { planId, workspaceId } = body
+    const { planId, workspaceId, billingCycle = 'monthly' } = body
 
     if (!planId || !workspaceId) {
       return NextResponse.json(
@@ -35,6 +35,14 @@ export async function POST(request: Request) {
       )
     }
 
+    // Free plan doesn't need Stripe
+    if (planId === 'community') {
+      return NextResponse.json(
+        { error: 'Community plan is free and does not require checkout' },
+        { status: 400 }
+      )
+    }
+
     // Check if Stripe is configured
     if (!process.env.STRIPE_SECRET_KEY) {
       console.error('Stripe not configured: STRIPE_SECRET_KEY missing')
@@ -44,9 +52,14 @@ export async function POST(request: Request) {
       )
     }
 
+    // Get correct price ID based on billing cycle
+    const stripePriceId = billingCycle === 'annual' 
+      ? plan.stripePriceIdAnnual 
+      : plan.stripePriceIdMonthly
+
     // Check if plan has Stripe price ID configured
-    if (!plan.stripePriceId || plan.stripePriceId === '') {
-      console.error(`Stripe price ID not configured for plan: ${planId}`)
+    if (!stripePriceId || stripePriceId === '') {
+      console.error(`Stripe price ID not configured for plan: ${planId} (${billingCycle})`)
       return NextResponse.json(
         { error: `Payment processing is not available for the ${plan.name} plan. Please contact support or choose a different plan.` },
         { status: 503 }
@@ -73,7 +86,7 @@ export async function POST(request: Request) {
         userId: user.id,
         email: user.email!,
         planId,
-        stripePriceId: plan.stripePriceId,
+        stripePriceId,
         organizationId: workspace.organization.id,
         workspaceId,
         successUrl: `${process.env.NEXT_PUBLIC_APP_URL}/onboarding/invite?workspace=${workspaceId}&session_id={CHECKOUT_SESSION_ID}`,

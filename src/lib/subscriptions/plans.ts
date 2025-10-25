@@ -9,15 +9,16 @@
 import type { RoleSlug } from '@/types/rbac'
 
 export interface SubscriptionPlan {
-  id: 'network' | 'crew' | 'team' | 'pro' | 'core' | 'executive'
-  dbId: string // Database plan ID (e.g., 'crew-monthly')
+  id: 'community' | 'pro' | 'team' | 'enterprise'
+  dbId: string // Database plan ID (e.g., 'pro-monthly')
   name: string
   description: string
   price: number // in dollars (monthly)
   priceInCents: number
   annualPrice?: number // in dollars (annual, billed monthly equivalent)
   interval: 'month' | 'year'
-  stripePriceId: string | null
+  stripePriceIdMonthly: string | null
+  stripePriceIdAnnual: string | null
   
   // Limits
   maxProjects: number | 'unlimited'
@@ -52,22 +53,23 @@ export interface SubscriptionPlan {
 }
 
 /**
- * Subscription plan definitions
+ * Subscription plan definitions - Aligned with marketing pages
  */
 export const SUBSCRIPTION_PLANS: Record<string, SubscriptionPlan> = {
-  network: {
-    id: 'network',
-    dbId: 'network',
-    name: 'Network',
-    description: 'Perfect for trying out the platform',
+  community: {
+    id: 'community',
+    dbId: 'community',
+    name: 'Community',
+    description: 'Perfect for getting started',
     price: 0,
     priceInCents: 0,
     annualPrice: 0,
     interval: 'month',
-    stripePriceId: null, // No Stripe for free tier
+    stripePriceIdMonthly: null, // No Stripe for free tier
+    stripePriceIdAnnual: null,
     
-    maxProjects: 3,
-    maxMembers: 5,
+    maxProjects: 'unlimited',
+    maxMembers: 1,
     maxStorageGB: 5,
     
     features: {
@@ -77,52 +79,27 @@ export const SUBSCRIPTION_PLANS: Record<string, SubscriptionPlan> = {
       prioritySupport: false,
     },
     
-    availableRoles: ['ambassador', 'passenger'],
-    availableModules: ['projects', 'events', 'people'],
+    availableRoles: ['raider'],
+    availableModules: ['community', 'marketplace', 'resources'],
     
     badge: 'Free Forever',
   },
   
-  crew: {
-    id: 'crew',
-    dbId: 'crew-monthly',
-    name: 'Crew',
-    description: 'For small teams getting started',
-    price: 10,
-    priceInCents: 1000,
-    annualPrice: 12,
+  pro: {
+    id: 'pro',
+    dbId: 'pro-monthly',
+    name: 'Pro',
+    description: 'Independent Contractor',
+    price: 12,
+    priceInCents: 1200,
+    annualPrice: 10, // $120 billed annually = $10/month
     interval: 'month',
-    stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_CREW || '',
+    stripePriceIdMonthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_PRO_MONTHLY || '',
+    stripePriceIdAnnual: process.env.NEXT_PUBLIC_STRIPE_PRICE_PRO_ANNUAL || '',
     
-    maxProjects: 10,
-    maxMembers: 15,
+    maxProjects: 'unlimited',
+    maxMembers: 1,
     maxStorageGB: 25,
-    
-    features: {
-      analytics: false,
-      integrations: true,
-      customBranding: false,
-      prioritySupport: false,
-    },
-    
-    availableRoles: ['merchant', 'raider', 'visitor', 'ambassador', 'passenger'],
-    availableModules: ['projects', 'events', 'people', 'assets', 'files', 'locations'],
-  },
-  
-  team: {
-    id: 'team',
-    dbId: 'team-monthly',
-    name: 'Team',
-    description: 'For growing teams with team leads',
-    price: 20,
-    priceInCents: 2000,
-    annualPrice: 24,
-    interval: 'month',
-    stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_TEAM || '',
-    
-    maxProjects: 25,
-    maxMembers: 30,
-    maxStorageGB: 50,
     
     features: {
       analytics: true,
@@ -132,27 +109,24 @@ export const SUBSCRIPTION_PLANS: Record<string, SubscriptionPlan> = {
       advancedReporting: true,
     },
     
-    availableRoles: ['deviator', 'merchant', 'raider', 'visitor', 'ambassador', 'passenger'],
-    availableModules: ['projects', 'events', 'people', 'assets', 'files', 'locations', 'companies', 'resources'],
-    
-    popular: true,
-    badge: 'Most Popular',
-    highlight: 'Best for growing teams',
+    availableRoles: ['deviator', 'raider'],
+    availableModules: ['dashboard', 'projects', 'events', 'people', 'assets', 'locations', 'files', 'community', 'marketplace', 'resources'],
   },
   
-  pro: {
-    id: 'pro',
-    dbId: 'pro-monthly',
-    name: 'Pro',
-    description: 'For departments with advanced needs',
-    price: 30,
-    priceInCents: 3000,
-    annualPrice: 36,
+  team: {
+    id: 'team',
+    dbId: 'team-monthly',
+    name: 'Team',
+    description: 'Vendor • 2-10 Seats',
+    price: 120,
+    priceInCents: 12000,
+    annualPrice: 100, // $1,200 billed annually = $100/month
     interval: 'month',
-    stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_PRO || '',
+    stripePriceIdMonthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_TEAM_MONTHLY || '',
+    stripePriceIdAnnual: process.env.NEXT_PUBLIC_STRIPE_PRICE_TEAM_ANNUAL || '',
     
-    maxProjects: 50,
-    maxMembers: 50,
+    maxProjects: 'unlimited',
+    maxMembers: 10,
     maxStorageGB: 100,
     
     features: {
@@ -161,54 +135,32 @@ export const SUBSCRIPTION_PLANS: Record<string, SubscriptionPlan> = {
       customBranding: false,
       prioritySupport: true,
       advancedReporting: true,
+      apiAccess: true,
     },
     
-    availableRoles: ['navigator', 'deviator', 'merchant', 'raider', 'visitor', 'ambassador', 'passenger'],
+    availableRoles: ['gladiator', 'navigator', 'deviator', 'raider', 'visitor', 'merchant', 'ambassador'],
     availableModules: 'all',
+    
+    popular: true,
+    badge: 'Most Popular',
+    highlight: 'Best for vendors',
   },
   
-  core: {
-    id: 'core',
-    dbId: 'core-monthly',
-    name: 'Core',
-    description: 'For strategic leadership and multi-project oversight',
-    price: 50,
-    priceInCents: 5000,
-    annualPrice: 60,
+  enterprise: {
+    id: 'enterprise',
+    dbId: 'enterprise-monthly',
+    name: 'Enterprise',
+    description: 'Producer • 2-20 Seats',
+    price: 1200,
+    priceInCents: 120000,
+    annualPrice: 1000, // $12,000 billed annually = $1,000/month
     interval: 'month',
-    stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_CORE || '',
-    
-    maxProjects: 100,
-    maxMembers: 100,
-    maxStorageGB: 250,
-    
-    features: {
-      analytics: true,
-      integrations: true,
-      customBranding: true,
-      prioritySupport: true,
-      advancedReporting: true,
-      customization: true,
-    },
-    
-    availableRoles: ['aviator', 'navigator', 'deviator', 'merchant', 'raider', 'visitor', 'ambassador', 'passenger'],
-    availableModules: 'all',
-  },
-  
-  executive: {
-    id: 'executive',
-    dbId: 'executive-monthly',
-    name: 'Executive',
-    description: 'For large organizations with enterprise needs',
-    price: 100,
-    priceInCents: 10000,
-    annualPrice: 120,
-    interval: 'month',
-    stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_EXECUTIVE || '',
+    stripePriceIdMonthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_ENTERPRISE_MONTHLY || '',
+    stripePriceIdAnnual: process.env.NEXT_PUBLIC_STRIPE_PRICE_ENTERPRISE_ANNUAL || '',
     
     maxProjects: 'unlimited',
-    maxMembers: 'unlimited',
-    maxStorageGB: 1000,
+    maxMembers: 20,
+    maxStorageGB: 500,
     
     features: {
       analytics: true,
@@ -219,12 +171,12 @@ export const SUBSCRIPTION_PLANS: Record<string, SubscriptionPlan> = {
       sso: true,
       dedicatedSupport: true,
       customization: true,
-      whiteLabel: true,
+      whiteLabel: false,
       apiAccess: true,
       auditLogs: true,
     },
     
-    availableRoles: 'all',
+    availableRoles: 'all', // All 11 roles including Phantom, Aviator, Partner
     availableModules: 'all',
     
     badge: 'Enterprise',

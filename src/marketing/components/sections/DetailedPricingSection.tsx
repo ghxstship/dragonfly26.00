@@ -190,7 +190,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute sm:relative sm:inset-auto top-2 md:top-4 right-2 md:right-4 text-gray-400 hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
           aria-label="Close modal"
         >
           <X className="w-6 h-6" />
@@ -208,7 +208,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
         </div>
 
         {/* Role name */}
-        <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-white text-center mb-2">
+        <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-2">
           {t(`${role}.name`)}
         </h2>
 
@@ -223,7 +223,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
           <div className="bg-gray-800/50 rounded-lg p-4">
             <div className="text-gray-400 text-xs uppercase font-semibold mb-1">Access Level</div>
             <div className="text-white font-bold">{roleData.accessLevel}</div>
@@ -246,7 +246,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
             {roleData.abilities.map((ability, index) => (
               <li 
                 key={index}
-                className="flex flex-col md:flex-row items-start text-gray-300 text-sm hover:translate-x-1 transition-transform"
+                className="flex items-start text-gray-300 text-sm hover:translate-x-1 transition-transform"
               >
                 <span className="text-green-400 mr-2 mt-0.5">▸</span>
                 <span>{ability}</span>
@@ -273,7 +273,7 @@ function RoleBadge({ role, onClick }: RoleBadgeProps) {
     <button
       onClick={onClick}
       className={cn(
-        "inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-white",
+        "inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold text-white",
         "bg-gradient-to-r transition-all duration-300 hover:scale-105 hover:shadow-lg",
         "whitespace-nowrap flex-shrink-0",
         roleData.gradient
@@ -296,10 +296,10 @@ export function DetailedPricingSection(): JSX.Element {
         <div className={cn("mx-auto", container['6xl'])}>
           {/* Header */}
           <div className="text-center mb-12 animate-in fade-in-50 duration-800">
-            <h1 className="text-5xl md:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
               ATLVS Pricing
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Choose the perfect plan for your production needs
             </p>
           </div>
@@ -334,9 +334,9 @@ export function DetailedPricingSection(): JSX.Element {
           <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-12 lg:mb-16 animate-in fade-in-50 duration-1000 delay-500">
             {/* Community */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">Community</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Community</h3>
               <div className="mb-4">
-                <span className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Free</span>
+                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">Free</span>
                 <span className="text-gray-600 dark:text-gray-400 ml-2">Forever</span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 mb-6">Perfect for getting started</p>
@@ -376,7 +376,7 @@ export function DetailedPricingSection(): JSX.Element {
 
                 <div>
                   <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <RoleBadge role="raider" onClick={() => setSelectedRole("raider")} />
                   </div>
                 </div>
@@ -389,9 +389,9 @@ export function DetailedPricingSection(): JSX.Element {
 
             {/* Pro */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">Pro</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Pro</h3>
               <div className="mb-4">
-                <span className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">
+                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
                   ${isAnnual ? '10' : '12'}
                 </span>
                 <span className="text-gray-600 dark:text-gray-400">/month</span>
@@ -441,7 +441,7 @@ export function DetailedPricingSection(): JSX.Element {
 
                 <div>
                   <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <RoleBadge role="deviator" onClick={() => setSelectedRole("deviator")} />
                     <RoleBadge role="raider" onClick={() => setSelectedRole("raider")} />
                   </div>
@@ -455,12 +455,12 @@ export function DetailedPricingSection(): JSX.Element {
 
             {/* Team - Featured */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-2xl border-4 border-purple-600 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 relative lg:scale-105">
-              <div className="absolute sm:relative sm:inset-auto -top-4 left-1/2 -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold sm:relative sm:inset-auto">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold w-max mx-auto">
                 MOST POPULAR
               </div>
-              <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">Team</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0">Team</h3>
               <div className="mb-4">
-                <span className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">
+                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
                   ${isAnnual ? '100' : '120'}
                 </span>
                 <span className="text-gray-600 dark:text-gray-400">/month</span>
@@ -514,7 +514,7 @@ export function DetailedPricingSection(): JSX.Element {
 
                 <div>
                   <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <RoleBadge role="gladiator" onClick={() => setSelectedRole("gladiator")} />
                     <RoleBadge role="navigator" onClick={() => setSelectedRole("navigator")} />
                     <RoleBadge role="deviator" onClick={() => setSelectedRole("deviator")} />
@@ -533,9 +533,9 @@ export function DetailedPricingSection(): JSX.Element {
 
             {/* Enterprise */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
               <div className="mb-4">
-                <span className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">
+                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
                   ${isAnnual ? '1,000' : '1,200'}
                 </span>
                 <span className="text-gray-600 dark:text-gray-400">/month</span>
@@ -601,7 +601,7 @@ export function DetailedPricingSection(): JSX.Element {
 
                 <div>
                   <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <RoleBadge role="phantom" onClick={() => setSelectedRole("phantom")} />
                     <RoleBadge role="aviator" onClick={() => setSelectedRole("aviator")} />
                     <RoleBadge role="gladiator" onClick={() => setSelectedRole("gladiator")} />
