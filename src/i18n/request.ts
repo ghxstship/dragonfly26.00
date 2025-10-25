@@ -1,14 +1,9 @@
 import { getRequestConfig } from 'next-intl/server'
 import { locales } from './config'
 
-export default getRequestConfig(async ({ requestLocale }) => {
-  // This now gets the locale from the URL parameter
-  let locale = await requestLocale
-  
+export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid
-  const validLocale = locale || 'en'
-  
-  if (!locales.includes(validLocale as any)) {
+  if (!locale || !locales.includes(locale as any)) {
     return {
       locale: 'en',
       messages: (await import(`./messages/en.json`)).default,
@@ -16,7 +11,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   }
 
   return {
-    locale: validLocale,
-    messages: (await import(`./messages/${validLocale}.json`)).default,
+    locale,
+    messages: (await import(`./messages/${locale}.json`)).default,
   }
 })
