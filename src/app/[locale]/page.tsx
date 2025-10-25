@@ -1,3 +1,5 @@
+import { headers } from 'next/headers'
+import { redirect } from 'next/navigation'
 import { HeroSection } from "@/marketing/components/sections/HeroSection"
 import { TrustBar } from "@/marketing/components/sections/TrustBar"
 import { ProblemSection } from "@/marketing/components/sections/ProblemSection"
@@ -24,8 +26,16 @@ export default async function Home({ params }: PageProps) {
   const { locale } = await params
   setRequestLocale(locale)
   
-  // For now, always show marketing page
-  // TODO: Add auth check back once marketing site is stable
+  // Check if we're on the app subdomain
+  const headersList = await headers()
+  const host = headersList.get('host') || ''
+  
+  // If on app.atlvs.one subdomain, redirect to login
+  if (host.startsWith('app.')) {
+    redirect(`/${locale}/login`)
+  }
+  
+  // Otherwise, show marketing page (for atlvs.one)
   return (
     <>
       <MarketingNav />
