@@ -1,11 +1,15 @@
 import type { Metadata } from "next"
+import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "ATLVS Terms of Service - Legal terms and conditions for using our platform.",
 }
 
-export default function TermsPage() {
+export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

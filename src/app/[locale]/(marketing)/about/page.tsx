@@ -1,13 +1,17 @@
 import { TestimonialsSection } from "@/marketing/components/sections/TestimonialsSection"
 import { CTASection } from "@/marketing/components/sections/CTASection"
 import type { Metadata } from "next"
+import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
   title: "About Us",
   description: "Built by production professionals, for production professionals. Learn about our mission to transform live entertainment production management.",
 }
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <div className="pt-20">
       {/* Hero Section */}

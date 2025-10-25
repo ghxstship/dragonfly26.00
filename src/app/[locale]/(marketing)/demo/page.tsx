@@ -2,13 +2,17 @@ import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
   title: "Schedule a Demo",
   description: "See ATLVS in action. Schedule a personalized demo with our team to learn how ATLVS can transform your production workflows.",
 }
 
-export default function DemoPage() {
+export default async function DemoPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

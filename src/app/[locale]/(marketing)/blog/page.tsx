@@ -1,12 +1,16 @@
 import { CTASection } from "@/marketing/components/sections/CTASection"
 import type { Metadata } from "next"
+import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
   title: "Blog",
   description: "Insights, updates, and best practices for live entertainment production management.",
 }
 
-export default function BlogPage() {
+export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

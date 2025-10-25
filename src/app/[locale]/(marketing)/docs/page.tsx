@@ -1,13 +1,17 @@
 import { Book, Video, FileText, HelpCircle } from "lucide-react"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
   title: "Documentation",
   description: "Comprehensive guides, tutorials, and API documentation for ATLVS platform.",
 }
 
-export default function DocsPage() {
+export default async function DocsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

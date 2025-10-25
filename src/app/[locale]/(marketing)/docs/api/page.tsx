@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import 'swagger-ui-react/swagger-ui.css'
+import { setRequestLocale } from 'next-intl/server'
 
 // Dynamically import SwaggerUI to avoid SSR issues
 const SwaggerUI = dynamic<{ url: string }>(
@@ -9,7 +10,10 @@ const SwaggerUI = dynamic<{ url: string }>(
   { ssr: false }
 )
 
-export default function APIDocsPage() {
+export default async function APIDocsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <div className="min-h-screen bg-white">
       <div className="border-b border-gray-200 bg-white">

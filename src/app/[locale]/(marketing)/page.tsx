@@ -10,8 +10,12 @@ import { PricingSection } from "@/marketing/components/sections/PricingSection"
 import { SecuritySection } from "@/marketing/components/sections/SecuritySection"
 import { FAQSection } from "@/marketing/components/sections/FAQSection"
 import { CTASection } from "@/marketing/components/sections/CTASection"
+import { setRequestLocale } from 'next-intl/server'
 
-export default function MarketingHome() {
+export default async function MarketingHome({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <main>
       <HeroSection />

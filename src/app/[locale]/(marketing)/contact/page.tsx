@@ -1,13 +1,17 @@
 import { Button } from "@/components/ui/button"
 import { Mail, MessageSquare, Phone } from "lucide-react"
 import type { Metadata } from "next"
+import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Get in touch with the ATLVS team. We're here to help with questions, demos, and enterprise inquiries.",
 }
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">
