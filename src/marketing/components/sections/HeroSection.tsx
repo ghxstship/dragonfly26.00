@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useTranslations } from "next-intl"
@@ -10,7 +10,7 @@ import { spacing, padding, border, height, container } from "@/design-tokens"
 export function HeroSection(): JSX.Element {
   const t = useTranslations('marketing.hero')
   return (
-    <section className={cn("relative pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white", padding.sectionX)}>
+    <section className={cn("relative pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className={cn("text-center mx-auto", container['4xl'])}>
           {/* Headline */}
@@ -31,7 +31,7 @@ export function HeroSection(): JSX.Element {
 
           {/* CTAs */}
           <div className={cn("flex flex-col sm:flex-row justify-center items-center", spacing.gap)}>
-            <Link href="https://app.atlvs.one/en/signup">
+            <Link href="/signup">
               <Button variant="default" size="lg" className="w-full sm:w-auto">
                 {t('ctaPrimary')}
                 <ArrowRight className={cn("ml-2", height.icon)} aria-hidden="true" />
@@ -52,8 +52,8 @@ export function HeroSection(): JSX.Element {
 
         {/* Hero Image/Screenshot Placeholder */}
         <div className="mt-8 md:mt-12 lg:mt-16 relative">
-          <div className={cn("aspect-video bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl shadow-2xl border-gray-200 flex items-center justify-center", border.default)} role="img" aria-label={t('platformScreenshot')}>
-            <div className="text-gray-400 text-lg">{t('platformScreenshot')}</div>
+          <div className={cn("aspect-video bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl shadow-2xl border-gray-200 dark:border-gray-700 flex items-center justify-center", border.default)} role="img" aria-label={t('platformScreenshot')}>
+            <div className="text-gray-400 dark:text-gray-600 text-lg">{t('platformScreenshot')}</div>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ export function TrustBar(): JSX.Element {
   const t = useTranslations('marketing.trustBar')
   
   return (
-    <section className={cn("py-12 bg-white border-y border-gray-200", padding.sectionX)}>
+    <section className={cn("py-12 bg-white dark:bg-gray-950 border-y border-gray-200 dark:border-gray-800", padding.sectionX)}>
       <div className="mx-auto text-center">
         <p className="text-gray-600 dark:text-gray-400">{t('trustedBy')}</p>
       </div>

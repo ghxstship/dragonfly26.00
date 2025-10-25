@@ -21,7 +21,7 @@ export function FAQSection(): JSX.Element {
   ]
 
   return (
-    <section className={cn("py-20 bg-gray-50", padding.sectionX)}>
+    <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
       <div className={cn("mx-auto", container['2xl'])}>
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -31,10 +31,10 @@ export function FAQSection(): JSX.Element {
 
         <div className={spacing.gap}>
           {faqs.map((faq, index) => (
-            <div key={index} className={cn("bg-white rounded-lg overflow-hidden", border.card)}>
+            <div key={index} className={cn("bg-white dark:bg-gray-800 rounded-lg overflow-hidden", border.card)}>
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className={cn("w-full text-left flex items-center justify-between hover:bg-gray-50 transition-colors", padding.section)}
+                className={cn("w-full text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors", padding.section)}
                 aria-expanded={openIndex === index}
               >
                 <span className="font-semibold text-gray-900 dark:text-white pr-4">{faq.question}</span>

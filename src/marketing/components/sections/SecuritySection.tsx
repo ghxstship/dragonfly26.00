@@ -9,7 +9,7 @@ export function SecuritySection(): JSX.Element {
   const t = useTranslations('marketing.security')
   
   return (
-    <section className={cn("py-20 bg-white", padding.sectionX)}>
+    <section className={cn("py-20 bg-white dark:bg-gray-950", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className="text-center  mx-auto mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">

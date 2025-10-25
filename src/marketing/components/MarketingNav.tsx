@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
@@ -49,10 +49,10 @@ export function MarketingNav(): JSX.Element {
               <ThemeToggle />
               <LanguageSwitcher />
               <div className="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-2" />
-              <Link href="https://app.atlvs.one/en/login">
+              <Link href="/login">
                 <Button variant="ghost">{t('signIn')}</Button>
               </Link>
-              <Link href="https://app.atlvs.one/en/signup">
+              <Link href="/signup">
                 <Button variant="default">{t('startFree')}</Button>
               </Link>
             </div>
@@ -116,10 +116,10 @@ export function MarketingNav(): JSX.Element {
               </div>
 
               <div className="pt-2 space-y-2">
-                <Link href="https://app.atlvs.one/en/login" className="block">
+                <Link href="/login" className="block">
                   <Button variant="ghost" className="w-full">{t('signIn')}</Button>
                 </Link>
-                <Link href="https://app.atlvs.one/en/signup" className="block">
+                <Link href="/signup" className="block">
                   <Button variant="default" className="w-full">{t('startFree')}</Button>
                 </Link>
               </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
@@ -11,11 +11,11 @@ export function PricingSection(): JSX.Element {
   const t = useTranslations('marketing.pricing')
   
   return (
-    <section className={cn("py-20 bg-white", padding.sectionX)}>
+    <section className={cn("py-20 bg-white dark:bg-gray-950", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className={cn("mb-12", grid.cards4)}>
           {/* Community */}
-          <div className={cn("border-2 border-gray-200 rounded-xl", padding.section)}>
+          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
             <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('community.name')}</h3>
             <div className="mb-4">
               <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-4xl font-bold text-gray-900 dark:text-white">{t('community.price')}</span>
@@ -36,13 +36,13 @@ export function PricingSection(): JSX.Element {
                 <span>{t('community.feature3')}</span>
               </li>
             </ul>
-            <Link href="https://app.atlvs.one/en/signup">
+            <Link href="/signup">
               <Button variant="outline" className="w-full">{t('community.cta')}</Button>
             </Link>
           </div>
 
           {/* Pro */}
-          <div className={cn("border-2 border-gray-200 rounded-xl", padding.section)}>
+          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
             <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('pro.name')}</h3>
             <div className="mb-4">
               <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-4xl font-bold text-gray-900 dark:text-white">{t('pro.price')}</span>
@@ -64,13 +64,13 @@ export function PricingSection(): JSX.Element {
                 <span>{t('pro.feature3')}</span>
               </li>
             </ul>
-            <Link href="https://app.atlvs.one/en/signup?plan=pro">
+            <Link href="/signup?plan=pro">
               <Button variant="outline" className="w-full">{t('pro.cta')}</Button>
             </Link>
           </div>
 
           {/* Team */}
-          <div className={cn("border-2 border-blue-600 rounded-xl relative", padding.section)}>
+          <div className={cn("border-2 border-blue-600 rounded-xl relative bg-white dark:bg-gray-800", padding.section)}>
             <div className="absolute sm:relative sm:inset-auto -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold sm:relative sm:inset-auto">
               {t('team.badge')}
             </div>
@@ -95,13 +95,13 @@ export function PricingSection(): JSX.Element {
                 <span>{t('team.feature3')}</span>
               </li>
             </ul>
-            <Link href="https://app.atlvs.one/en/signup?plan=team">
+            <Link href="/signup?plan=team">
               <Button variant="default" className="w-full">{t('team.cta')}</Button>
             </Link>
           </div>
 
           {/* Enterprise */}
-          <div className={cn("border-2 border-gray-200 rounded-xl", padding.section)}>
+          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
             <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('enterprise.name')}</h3>
             <div className="mb-4">
               <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-4xl font-bold text-gray-900 dark:text-white">{t('enterprise.price')}</span>
@@ -130,7 +130,7 @@ export function PricingSection(): JSX.Element {
         </div>
 
         <div className="text-center">
-          <Link href="/pricing" className="text-blue-600 hover:text-blue-700 font-semibold">
+          <Link href="/pricing" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
             View detailed pricing →
           </Link>
         </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
 import { ArrowRight } from "lucide-react"
@@ -11,7 +11,7 @@ export function CTASection(): JSX.Element {
   const t = useTranslations('marketing.cta')
   
   return (
-    <section className={cn("py-20 bg-gradient-to-br from-blue-600 to-purple-600", padding.sectionX)}>
+    <section className={cn("py-20 bg-gradient-to-br from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700", padding.sectionX)}>
       <div className={cn("mx-auto text-center", container['4xl'])}>
         <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
           {t('title')}
@@ -21,14 +21,14 @@ export function CTASection(): JSX.Element {
         </p>
         
         <div className={cn("flex flex-col sm:flex-row justify-center items-center", spacing.gap)}>
-          <Link href="https://app.atlvs.one/en/signup">
-            <Button variant="default" size="lg" className="w-full sm:w-auto bg-white dark:bg-gray-900 text-blue-600 hover:bg-gray-100">
+          <Link href="/signup">
+            <Button variant="default" size="lg" className="w-full sm:w-auto bg-white text-blue-600 hover:bg-gray-100 dark:bg-white dark:text-blue-600 dark:hover:bg-gray-100">
               {t('ctaPrimary')}
               <ArrowRight className={cn("ml-2", height.icon)} aria-hidden="true" />
             </Button>
           </Link>
           <Link href="/demo">
-            <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white dark:bg-gray-900 hover:text-blue-600">
+            <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-blue-600 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-blue-600">
               {t('ctaSecondary')}
             </Button>
           </Link>

@@ -20,7 +20,7 @@ import {
   type LucideIcon
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 
 // Role definitions
 const ROLES = {
@@ -174,7 +174,7 @@ interface RoleModalProps {
 }
 
 function RoleModal({ role, onClose }: RoleModalProps) {
-  const t = useTranslations('marketing.pricing.roles')
+  const t = useTranslations('marketing.roles')
   const roleData = ROLES[role]
   const Icon = roleData.icon
 
@@ -265,7 +265,7 @@ interface RoleBadgeProps {
 }
 
 function RoleBadge({ role, onClick }: RoleBadgeProps) {
-  const t = useTranslations('marketing.pricing.roles')
+  const t = useTranslations('marketing.roles')
   const roleData = ROLES[role]
   const Icon = roleData.icon
 
@@ -273,13 +273,14 @@ function RoleBadge({ role, onClick }: RoleBadgeProps) {
     <button
       onClick={onClick}
       className={cn(
-        "inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold text-white",
-        "bg-gradient-to-r transition-all duration-300 hover:scale-110 hover:shadow-lg",
+        "inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-white",
+        "bg-gradient-to-r transition-all duration-300 hover:scale-105 hover:shadow-lg",
+        "whitespace-nowrap flex-shrink-0",
         roleData.gradient
       )}
     >
-      <Icon className="w-4 h-4" />
-      <span>{t(`${role}.name`)}</span>
+      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+      <span className="truncate">{t(`${role}.name`)}</span>
     </button>
   )
 }
@@ -291,7 +292,7 @@ export function DetailedPricingSection(): JSX.Element {
 
   return (
     <>
-      <section className={cn("py-20 bg-gradient-to-b from-gray-50 to-white", padding.sectionX)}>
+      <section className={cn("py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950", padding.sectionX)}>
         <div className={cn("mx-auto", container['6xl'])}>
           {/* Header */}
           <div className="text-center mb-12 animate-in fade-in-50 duration-800">
@@ -305,21 +306,21 @@ export function DetailedPricingSection(): JSX.Element {
 
           {/* Billing Toggle */}
           <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 lg:gap-4 mb-8 md:mb-12 lg:mb-16 animate-in fade-in duration-1000 delay-300">
-            <span className={cn("text-lg font-semibold", !isAnnual ? "text-gray-900" : "text-gray-500")}>
+            <span className={cn("text-lg font-semibold", !isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
               Monthly
             </span>
             <button
               onClick={() => setIsAnnual(!isAnnual)}
-              className="relative w-16 h-8 bg-gray-300 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-              style={{ backgroundColor: isAnnual ? '#667eea' : '#d1d5db' }}
+              className="relative w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+              style={{ backgroundColor: isAnnual ? '#7c3aed' : '#d1d5db' }}
               aria-label="Toggle billing period"
             >
               <span
-                className="absolute sm:relative sm:inset-auto top-1 left-1 w-6 h-6 bg-white dark:bg-gray-900 rounded-full shadow-md transition-transform duration-300 sm:relative sm:inset-auto"
+                className="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-lg transition-transform duration-300"
                 style={{ transform: isAnnual ? 'translateX(32px)' : 'translateX(0)' }}
               />
             </button>
-            <span className={cn("text-lg font-semibold", isAnnual ? "text-gray-900" : "text-gray-500")}>
+            <span className={cn("text-lg font-semibold", isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
               Annual
             </span>
             {isAnnual && (
@@ -332,7 +333,7 @@ export function DetailedPricingSection(): JSX.Element {
           {/* Pricing Grid */}
           <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-12 lg:mb-16 animate-in fade-in-50 duration-1000 delay-500">
             {/* Community */}
-            <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">Community</h3>
               <div className="mb-4">
                 <span className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">Free</span>
@@ -375,19 +376,19 @@ export function DetailedPricingSection(): JSX.Element {
 
                 <div>
                   <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     <RoleBadge role="raider" onClick={() => setSelectedRole("raider")} />
                   </div>
                 </div>
               </div>
 
-              <Link href="https://app.atlvs.one/en/signup">
+              <Link href="/signup">
                 <Button variant="outline" className="w-full">Get Started</Button>
               </Link>
             </div>
 
             {/* Pro */}
-            <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">Pro</h3>
               <div className="mb-4">
                 <span className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">
@@ -440,20 +441,20 @@ export function DetailedPricingSection(): JSX.Element {
 
                 <div>
                   <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     <RoleBadge role="deviator" onClick={() => setSelectedRole("deviator")} />
                     <RoleBadge role="raider" onClick={() => setSelectedRole("raider")} />
                   </div>
                 </div>
               </div>
 
-              <Link href="https://app.atlvs.one/en/signup?plan=pro">
+              <Link href="/signup?plan=pro">
                 <Button variant="default" className="w-full">Choose Pro</Button>
               </Link>
             </div>
 
             {/* Team - Featured */}
-            <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 md:p-8 shadow-2xl border-4 border-purple-600 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 relative lg:scale-105">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-2xl border-4 border-purple-600 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 relative lg:scale-105">
               <div className="absolute sm:relative sm:inset-auto -top-4 left-1/2 -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold sm:relative sm:inset-auto">
                 MOST POPULAR
               </div>
@@ -513,7 +514,7 @@ export function DetailedPricingSection(): JSX.Element {
 
                 <div>
                   <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     <RoleBadge role="gladiator" onClick={() => setSelectedRole("gladiator")} />
                     <RoleBadge role="navigator" onClick={() => setSelectedRole("navigator")} />
                     <RoleBadge role="deviator" onClick={() => setSelectedRole("deviator")} />
@@ -525,13 +526,13 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
               </div>
 
-              <Link href="https://app.atlvs.one/en/signup?plan=team">
+              <Link href="/signup?plan=team">
                 <Button variant="default" className="w-full bg-purple-600 hover:bg-purple-700">Choose Team</Button>
               </Link>
             </div>
 
             {/* Enterprise */}
-            <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
               <div className="mb-4">
                 <span className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white">
@@ -600,7 +601,7 @@ export function DetailedPricingSection(): JSX.Element {
 
                 <div>
                   <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     <RoleBadge role="phantom" onClick={() => setSelectedRole("phantom")} />
                     <RoleBadge role="aviator" onClick={() => setSelectedRole("aviator")} />
                     <RoleBadge role="gladiator" onClick={() => setSelectedRole("gladiator")} />

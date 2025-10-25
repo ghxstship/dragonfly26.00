@@ -9,7 +9,7 @@ export function TestimonialsSection(): JSX.Element {
   const t = useTranslations('marketing.testimonials')
   
   return (
-    <section className={cn("py-20 bg-gray-50", padding.sectionX)}>
+    <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className="text-center  mx-auto mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -21,7 +21,7 @@ export function TestimonialsSection(): JSX.Element {
         </div>
         
         <div className={cn("grid md:grid-cols-3", spacing.gapLoose)}>
-          <div className={cn("bg-white rounded-xl", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl", padding.section)}>
             <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
             <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{t('testimonial1Quote')}</p>
             <div>
@@ -30,7 +30,7 @@ export function TestimonialsSection(): JSX.Element {
             </div>
           </div>
           
-          <div className={cn("bg-white rounded-xl", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl", padding.section)}>
             <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
             <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{t('testimonial2Quote')}</p>
             <div>
@@ -39,7 +39,7 @@ export function TestimonialsSection(): JSX.Element {
             </div>
           </div>
           
-          <div className={cn("bg-white rounded-xl", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl", padding.section)}>
             <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
             <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{t('testimonial3Quote')}</p>
             <div>

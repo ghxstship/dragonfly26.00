@@ -9,7 +9,7 @@ export function RolesSection(): JSX.Element {
   const t = useTranslations('marketing.roles')
   
   return (
-    <section className={cn("py-20 bg-gray-50", padding.sectionX)}>
+    <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className={cn("text-center mb-16 mx-auto", container['2xl'])}>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
@@ -22,7 +22,7 @@ export function RolesSection(): JSX.Element {
         
         <div className={grid.cards3}>
           {/* Phantom */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
               <Ghost className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -32,7 +32,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Aviator */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
               <Plane className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -42,7 +42,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Gladiator */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
               <Sword className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -52,7 +52,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Navigator */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
               <Compass className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -62,7 +62,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Deviator */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
               <Target className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -72,7 +72,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Raider */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
               <Shield className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -82,7 +82,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Partner */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white">
               <Handshake className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -92,7 +92,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Visitor */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white">
               <Eye className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -102,7 +102,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Vendor */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white">
               <Users className="w-8 h-8" aria-hidden="true" />
             </div>
@@ -112,7 +112,7 @@ export function RolesSection(): JSX.Element {
           </div>
 
           {/* Ambassador */}
-          <div className={cn("bg-white rounded-xl border-2 border-gray-200 hover:border-blue-500 transition-colors", padding.section)}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors", padding.section)}>
             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white">
               <Star className="w-8 h-8" aria-hidden="true" />
             </div>
