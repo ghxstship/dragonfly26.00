@@ -1,10 +1,8 @@
-'use client'
-
 import dynamic from 'next/dynamic'
 import 'swagger-ui-react/swagger-ui.css'
 import { setRequestLocale } from 'next-intl/server'
 
-// Dynamically import SwaggerUI to avoid SSR issues
+// Dynamically import SwaggerUI to avoid SSR issues (client-side only)
 const SwaggerUI = dynamic<{ url: string }>(
   () => import('swagger-ui-react'),
   { ssr: false }
