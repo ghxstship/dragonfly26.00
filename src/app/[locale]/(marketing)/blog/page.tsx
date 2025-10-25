@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Insights, updates, and best practices for live entertainment production management.",
 }
 
-export default function BlogPage()
+export default function BlogPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

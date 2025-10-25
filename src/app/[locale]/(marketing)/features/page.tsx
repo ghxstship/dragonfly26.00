@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Everything you need to manage live entertainment production. Five powerful hubs designed specifically for experiential production teams.",
 }
 
-export default function FeaturesPage()
+export default function FeaturesPage() {
   return (
     <div className="pt-20">
       <FeaturesSection />

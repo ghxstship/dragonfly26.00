@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "ATLVS Privacy Policy - How we collect, use, and protect your data.",
 }
 
-export default function PrivacyPage()
+export default function PrivacyPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

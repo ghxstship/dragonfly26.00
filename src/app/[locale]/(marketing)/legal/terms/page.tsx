@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "ATLVS Terms of Service - Legal terms and conditions for using our platform.",
 }
 
-export default function TermsPage()
+export default function TermsPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

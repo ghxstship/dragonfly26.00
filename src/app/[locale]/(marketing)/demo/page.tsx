@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "See ATLVS in action. Schedule a personalized demo with our team to learn how ATLVS can transform your production workflows.",
 }
 
-export default function DemoPage()
+export default function DemoPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Get in touch with the ATLVS team. We're here to help with questions, demos, and enterprise inquiries.",
 }
 
-export default function ContactPage()
+export default function ContactPage() {
   return (
     <div className="pt-20">
       <section className="py-20 px-4 sm:px-6 lg:px-8">

@@ -9,7 +9,7 @@ const SwaggerUI = dynamic<{ url: string }>(
   { ssr: false }
 )
 
-export default function APIDocsPage()
+export default function APIDocsPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="border-b border-gray-200 bg-white">

@@ -11,7 +11,7 @@ import { SecuritySection } from "@/marketing/components/sections/SecuritySection
 import { FAQSection } from "@/marketing/components/sections/FAQSection"
 import { CTASection } from "@/marketing/components/sections/CTASection"
 
-export default function MarketingHome()
+export default function MarketingHome() {
   return (
     <main>
       <HeroSection />

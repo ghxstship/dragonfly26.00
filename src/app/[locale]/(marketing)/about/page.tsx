@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Built by production professionals, for production professionals. Learn about our mission to transform live entertainment production management.",
 }
 
-export default function AboutPage()
+export default function AboutPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
