@@ -27,40 +27,49 @@ export default async function Home({ params }: PageProps) {
   const { locale } = await params
   setRequestLocale(locale)
   
-  const cookieStore = await cookies()
-  
-  // Create Supabase client
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value
-        },
-      },
+  // Try to check authentication, but fall back to marketing page if it fails
+  try {
+    const cookieStore = await cookies()
+    
+    // Only check auth if Supabase is configured
+    if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      // Create Supabase client
+      const supabase = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+        {
+          cookies: {
+            get(name: string) {
+              return cookieStore.get(name)?.value
+            },
+          },
+        }
+      )
+
+      // Check authentication status
+      const { data: { user } } = await supabase.auth.getUser()
+
+      // If authenticated, check onboarding and redirect accordingly
+      if (user) {
+        // Check if user has completed onboarding by checking their profile
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('full_name, onboarding_completed')
+          .eq('id', user.id)
+          .single()
+
+        // New user or incomplete onboarding - redirect to onboarding
+        if (!profile || !profile.full_name || profile.onboarding_completed === false) {
+          redirect(`/${locale}/onboarding/welcome`)
+        }
+
+        // Authenticated and onboarded - redirect to dashboard
+        redirect(`/${locale}/workspace/personal/dashboard/overview`)
+      }
     }
-  )
-
-  // Check authentication status
-  const { data: { user } } = await supabase.auth.getUser()
-
-  // If authenticated, check onboarding and redirect accordingly
-  if (user) {
-    // Check if user has completed onboarding by checking their profile
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('full_name, onboarding_completed')
-      .eq('id', user.id)
-      .single()
-
-    // New user or incomplete onboarding - redirect to onboarding
-    if (!profile || !profile.full_name || profile.onboarding_completed === false) {
-      redirect(`/${locale}/onboarding/welcome`)
-    }
-
-    // Authenticated and onboarded - redirect to dashboard
-    redirect(`/${locale}/workspace/personal/dashboard/overview`)
+  } catch (error) {
+    // If auth check fails, just show marketing page
+    console.error('Auth check failed:', error)
   }
 
   // Not authenticated - show marketing home page
