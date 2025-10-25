@@ -57,11 +57,11 @@ export function TabConfigPanel({ moduleSlug }: TabConfigPanelProps) {
       />
 
       {/* Stats & Actions */}
-      <div className="flex items-center justify-between text-xs">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs">
         <span className="text-muted-foreground">
           {visibleCount} of {totalCount} visible
         </span>
-        <div className="flex gap-1">
+        <div className="flex flex-wrap gap-1">
           <Button variant="ghost" size="sm" onClick={showAllTabs} className="h-7 text-xs">
             Show All
           </Button>
@@ -72,7 +72,7 @@ export function TabConfigPanel({ moduleSlug }: TabConfigPanelProps) {
       </div>
 
       {/* Pages List */}
-      <div className="space-y-2 max-h-[420px] overflow-y-auto pr-2">
+      <div className="space-y-2 max-h-[252px] md:h-[420px] overflow-y-auto pr-2">
         {filteredTabs.map((tab: any, index: number) => {
           const Icon = iconMap[tab.icon]
           const isFirst = index === 0
@@ -80,9 +80,9 @@ export function TabConfigPanel({ moduleSlug }: TabConfigPanelProps) {
           return (
             <div
               key={tab.id}
-              className="flex items-center gap-3 p-3 rounded-md hover:bg-muted/50 transition-colors"
+              className="flex flex-col md:flex-row items-center gap-3 p-3 rounded-md hover:bg-muted/50 transition-colors"
             >
-              <div className="flex-1 min-w-0 flex items-center gap-2">
+              <div className="flex flex-col md:flex-row-1 min-w-0 flex flex-wrap items-center gap-2">
                 {Icon && (
                   <Icon
                     className="h-4 w-4 flex-shrink-0"
@@ -120,7 +120,7 @@ export function TabConfigPanel({ moduleSlug }: TabConfigPanelProps) {
       {/* Quick Presets */}
       <div className="space-y-3 pt-4 border-t">
         <Label>Quick Presets</Label>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
           <Button variant="outline" size="sm">
             Essential
           </Button>

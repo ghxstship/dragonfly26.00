@@ -78,7 +78,7 @@ export function PTOCalendarWidget({
   return (
     <Card className={className}>
       <CardHeader className="pb-3">
-        <CardTitle className="text-sm flex items-center justify-between">
+        <CardTitle className="text-sm flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <span>Request PTO</span>
           <CalendarIcon className="h-4 w-4 text-muted-foreground" />
         </CardTitle>
@@ -86,7 +86,7 @@ export function PTOCalendarWidget({
       <CardContent className="space-y-4">
         {/* Calendar */}
         <div className="border rounded-lg p-2">
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
             <Button
               variant="ghost"
               size="icon"
@@ -124,7 +124,7 @@ export function PTOCalendarWidget({
             onMonthChange={setMonth}
             modifiers={modifiers}
             modifiersStyles={modifiersStyles}
-            className="w-full"
+            className="w-full max-w-full"
             disabled={(date) => 
               date < new Date() || 
               blackoutDates.some(bd => bd.toDateString() === date.toDateString())
@@ -135,7 +135,7 @@ export function PTOCalendarWidget({
         {/* Selection Summary */}
         {selected.length > 0 && (
           <div className="p-3 bg-muted/50 rounded-lg space-y-2">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <span className="text-sm font-medium">Selected</span>
               <Button
                 variant="ghost"
@@ -160,7 +160,7 @@ export function PTOCalendarWidget({
                   {selected[selected.length - 1]?.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                 </p>
               )}
-              <div className="flex items-center justify-between pt-1">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between pt-1">
                 <span className="text-muted-foreground">Days:</span>
                 <span className="font-bold">{totalDays}</span>
               </div>
@@ -169,9 +169,9 @@ export function PTOCalendarWidget({
         )}
 
         {/* Balance */}
-        <div className="flex items-center justify-between p-2 border rounded">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 border rounded">
           <span className="text-sm text-muted-foreground">Balance:</span>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <span className="font-bold">{balance} days</span>
             {isAvailable ? (
               <CheckCircle2 className="h-4 w-4 text-green-500" />
@@ -182,20 +182,20 @@ export function PTOCalendarWidget({
         </div>
 
         {/* Legend */}
-        <div className="grid grid-cols-2 gap-2 text-xs">
-          <div className="flex items-center gap-1">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             <div className="h-3 w-3 rounded bg-green-500/20 border border-green-500" />
             <span className="text-muted-foreground">Approved</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             <div className="h-3 w-3 rounded bg-yellow-500/20 border border-yellow-500" />
             <span className="text-muted-foreground">Pending</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             <div className="h-3 w-3 rounded bg-red-500/20 border border-red-500" />
             <span className="text-muted-foreground">Blackout</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             <div className="h-3 w-3 rounded bg-primary border border-primary" />
             <span className="text-muted-foreground">Selected</span>
           </div>
@@ -204,7 +204,7 @@ export function PTOCalendarWidget({
         {/* Submit Button */}
         {onRequestPTO && selected.length > 0 && (
           <Button 
-            className="w-full"
+            className="w-full max-w-full"
             onClick={() => onRequestPTO(selected)}
             disabled={!isAvailable}
           >
@@ -259,7 +259,7 @@ export function TeamPTOCalendar({
       <CardContent>
         <div className="space-y-4">
           {/* Month Navigation */}
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <Button
               variant="outline"
               size="sm"
@@ -305,7 +305,7 @@ export function TeamPTOCalendar({
                       day: 'numeric' 
                     })}
                   </p>
-                  <div className="flex items-center gap-1 flex-wrap">
+                  <div className="flex flex-col md:flex-row items-center gap-1 flex-wrap">
                     {(requests as any[]).map((req: any) => (
                       <Badge 
                         key={req.id}

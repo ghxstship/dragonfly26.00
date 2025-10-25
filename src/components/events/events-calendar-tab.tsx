@@ -85,50 +85,50 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">This Month</CardTitle>
             <CalendarIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{events.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{events.length}</div>
             <p className="text-xs text-muted-foreground">Total events</p>
           </CardContent>
         </Card>
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Today</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {getEventsForDay(today.getDate()).length}
             </div>
             <p className="text-xs text-muted-foreground">Scheduled</p>
           </CardContent>
         </Card>
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Performances</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {events.filter((e: any) => (e as any).type === 'performance').length}
             </div>
             <p className="text-xs text-muted-foreground">This month</p>
           </CardContent>
         </Card>
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Rehearsals</CardTitle>
             <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {events.filter((e: any) => (e as any).type === 'rehearsal').length}
             </div>
             <p className="text-xs text-muted-foreground">Scheduled</p>
@@ -139,9 +139,9 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
       {/* Calendar */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <CardTitle>{getMonthName(currentDate)}</CardTitle>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Button variant="outline" size="icon" onClick={previousMonth} aria-label="Previous month">
                 <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               </Button>
@@ -160,7 +160,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </CardHeader>
         <CardContent>
           {/* Calendar Grid */}
-          <div className="grid grid-cols-7 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 gap-2">
             {/* Day Headers */}
             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day: any) => (
               <div key={day} className="text-center text-sm font-medium text-muted-foreground py-2">
@@ -227,12 +227,12 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
               {getEventsForDay(today.getDate()).map((event: any) => (
                 <div 
                   key={event.id}
-                  className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent/50 transition-colors"
+                  className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded-lg hover:bg-accent/50 transition-colors"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="flex flex-col">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
+                    <div className="flex flex-wrap flex-col">
                       <span className="font-medium">{event.name}</span>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                         <Clock className="h-4 w-4" aria-hidden="true" />
                         <span>
                           {new Date(event.start_time || event.start_date).toLocaleTimeString('en-US', {
@@ -250,7 +250,7 @@ export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabCompone
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Badge className={getEventTypeColor(event.type)}>
                       {event.type}
                     </Badge>

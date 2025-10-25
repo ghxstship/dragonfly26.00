@@ -102,7 +102,7 @@ export function LogExpenseDialog({ open, onOpenChange, workspaceId, userId, onSu
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-green-100 dark:bg-green-950">
               <Receipt className="h-5 w-5 text-green-600" />
             </div>
@@ -127,7 +127,7 @@ export function LogExpenseDialog({ open, onOpenChange, workspaceId, userId, onSu
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="amount">Amount *</Label>
               <Input
@@ -205,7 +205,7 @@ export function LogExpenseDialog({ open, onOpenChange, workspaceId, userId, onSu
             />
           </div>
 
-          <div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 bg-muted rounded-lg">
             <Upload className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">Receipt attachment coming soon</span>
           </div>

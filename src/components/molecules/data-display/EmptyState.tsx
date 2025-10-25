@@ -94,7 +94,7 @@ export function EmptyState({
       role="status"
       aria-live="polite"
     >
-      <h2 className="mb-3 text-2xl font-bold tracking-tight">
+      <h2 className="mb-3 text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold tracking-tight">
         {t('emptyState.nothingToSeeYet')}
       </h2>
       {description && (

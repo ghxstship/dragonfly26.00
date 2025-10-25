@@ -62,7 +62,7 @@ export function SocialMediaTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     )
@@ -76,7 +76,7 @@ export function SocialMediaTab() {
   ]
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>{t('profile.social.profiles')}</CardTitle>
@@ -84,7 +84,7 @@ export function SocialMediaTab() {
             {t('profile.social.visibility')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
           {platforms.map((platform: any) => (
             <div key={platform.key} className="space-y-2">
               <Label htmlFor={platform.key}>{platform.label}</Label>

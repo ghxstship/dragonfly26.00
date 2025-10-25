@@ -79,7 +79,7 @@ export function ChatOrganism({
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Messages Area */}
       <ScrollArea className="flex-1 p-4" ref={scrollRef}>
         <div className="space-y-4">
@@ -105,7 +105,7 @@ export function ChatOrganism({
                     isOwn && 'items-end'
                   )}
                 >
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs text-muted-foreground">
                     <span className="font-medium">{msg.userName}</span>
                     <span>{new Date(msg.timestamp).toLocaleTimeString()}</span>
                   </div>
@@ -128,10 +128,10 @@ export function ChatOrganism({
 
           {/* Typing Indicator */}
           {isTyping && typingUser && (
-            <div className="flex gap-3 items-center">
+            <div className="flex flex-wrap flex-col md:flex-row gap-3 items-center">
               <UserAvatar name={typingUser} size="sm" />
               <div className="bg-muted rounded-lg px-4 py-2">
-                <div className="flex gap-1">
+                <div className="flex flex-wrap gap-1">
                   <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
                   <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
                   <span className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
@@ -144,7 +144,7 @@ export function ChatOrganism({
 
       {/* Input Area */}
       <div className="border-t p-4">
-        <div className="flex items-end gap-2">
+        <div className="flex flex-wrap items-end gap-2">
           {onAttachFile && (
             <Button
               variant="ghost"

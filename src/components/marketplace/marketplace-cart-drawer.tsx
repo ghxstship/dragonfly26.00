@@ -57,13 +57,13 @@ export function MarketplaceCartDrawer({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-[500px] sm:max-w-[500px] p-0 flex flex-col">
+      <SheetContent side="right" className="w-full max-w-[500px] sm:max-w-[500px] p-0 flex flex-wrap flex-col">
         {/* Header */}
-        <SheetHeader className="border-b px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+        <SheetHeader className="border-b px-4 md:px-6 py-4">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <ShoppingCart className="h-5 w-5" />
-              <SheetTitle className="text-xl">Shopping Cart</SheetTitle>
+              <SheetTitle className="text-base md:text-lg lg:text-xl">Shopping Cart</SheetTitle>
               <Badge variant="secondary">{cartItems.length} items</Badge>
             </div>
             <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
@@ -73,11 +73,11 @@ export function MarketplaceCartDrawer({
         </SheetHeader>
 
         {/* Content */}
-        <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex-1 flex flex-wrap flex-col overflow-hidden md:block">
           {cartItems.length === 0 ? (
-            <div className="flex-1 flex items-center justify-center p-6">
+            <div className="flex-1 flex flex-wrap items-center justify-center p-6">
               <div className="text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-full bg-muted flex items-center justify-center">
+                <div className="w-20 h-20 mx-auto rounded-full bg-muted flex flex-wrap items-center justify-center">
                   <ShoppingCart className="h-10 w-10 text-muted-foreground" />
                 </div>
                 <div className="space-y-2">
@@ -98,15 +98,15 @@ export function MarketplaceCartDrawer({
                 <div className="p-6 space-y-4">
                   {cartItems.map((item: any) => (
                     <div key={item.id} className="space-y-3">
-                      <div className="flex gap-4">
+                      <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                         {/* Product Image Placeholder */}
-                        <div className="w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded flex items-center justify-center flex-shrink-0">
+                        <div className="w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded flex flex-wrap items-center justify-center flex-shrink-0">
                           <ShoppingCart className="h-8 w-8 text-muted-foreground/30" />
                         </div>
 
                         {/* Product Details */}
                         <div className="flex-1 space-y-1">
-                          <div className="flex items-start justify-between gap-2">
+                          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
                             <div className="flex-1">
                               <p className="font-semibold text-sm line-clamp-2">{item.name}</p>
                               {item.assignee_name && (
@@ -127,8 +127,8 @@ export function MarketplaceCartDrawer({
                           </div>
 
                           {/* Quantity Controls */}
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
+                          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                               <Button
                                 variant="outline"
                                 size="icon"
@@ -178,22 +178,22 @@ export function MarketplaceCartDrawer({
                   <Separator />
 
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between text-sm">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                       <span className="text-muted-foreground">Subtotal</span>
                       <span className="font-medium">${subtotal.toFixed(2)}</span>
                     </div>
                     {discountAmount > 0 && (
-                      <div className="flex items-center justify-between text-sm">
+                      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                         <span className="text-muted-foreground">Discount</span>
                         <span className="font-medium text-green-600">-${discountAmount.toFixed(2)}</span>
                       </div>
                     )}
-                    <div className="flex items-center justify-between text-sm">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                       <span className="text-muted-foreground">Tax (8%)</span>
                       <span className="font-medium">${tax.toFixed(2)}</span>
                     </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <span className="text-muted-foreground">Shipping</span>
                         {shipping === 0 && (
                           <Badge variant="secondary" className="text-xs">Free</Badge>
@@ -202,15 +202,15 @@ export function MarketplaceCartDrawer({
                       <span className="font-medium">${shipping.toFixed(2)}</span>
                     </div>
                     {giftCardAmount > 0 && (
-                      <div className="flex items-center justify-between text-sm">
+                      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                         <span className="text-muted-foreground">Gift Card</span>
                         <span className="font-medium text-purple-600">-${giftCardAmount.toFixed(2)}</span>
                       </div>
                     )}
                     <Separator />
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                       <span className="font-semibold text-lg">Total</span>
-                      <span className="font-bold text-2xl">${total.toFixed(2)}</span>
+                      <span className="font-bold text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">${total.toFixed(2)}</span>
                     </div>
                   </div>
 
@@ -222,10 +222,10 @@ export function MarketplaceCartDrawer({
                     </div>
                   )}
 
-                  <Button className="w-full" size="lg" onClick={onCheckout}>
+                  <Button className="w-full max-w-full" size="lg" onClick={onCheckout}>
                     Proceed to Checkout
                   </Button>
-                  <Button variant="outline" className="w-full" onClick={() => onOpenChange(false)}>
+                  <Button variant="outline" className="w-full max-w-full" onClick={() => onOpenChange(false)}>
                     Continue Shopping
                   </Button>
                 </div>

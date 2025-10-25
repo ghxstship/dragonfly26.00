@@ -28,7 +28,7 @@ export function OpportunitiesSponsorshipTab({ workspaceId = '', userId = '' }: O
   const renderCard = (sponsor: any) => (
     <Card className="hover:shadow-lg transition-shadow cursor-pointer">
       <CardHeader>
-        <div className="flex items-start justify-between">
+        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
           <CardTitle className="text-lg">{sponsor.brand || sponsor.name}</CardTitle>
           <Badge variant={sponsor.status === 'active' ? 'default' : 'secondary'}>
             {sponsor.status}
@@ -39,19 +39,19 @@ export function OpportunitiesSponsorshipTab({ workspaceId = '', userId = '' }: O
       <CardContent>
         <div className="space-y-2 text-sm">
           {sponsor.value && (
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
               <DollarSign className="h-4 w-4" aria-hidden="true" />
               <span>{sponsor.value}</span>
             </div>
           )}
           {sponsor.deadline && (
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
               <Calendar className="h-4 w-4" aria-hidden="true" />
               <span>{sponsor.deadline}</span>
             </div>
           )}
           {sponsor.location && (
-            <div className="flex items-center gap-2 text-muted-foreground">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
               <MapPin className="h-4 w-4" aria-hidden="true" />
               <span>{sponsor.location}</span>
             </div>
@@ -64,8 +64,8 @@ export function OpportunitiesSponsorshipTab({ workspaceId = '', userId = '' }: O
   return (
     <div role="main" aria-label="Tab content" className="space-y-4">
       <h2 className="sr-only">{t("title")}</h2>
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Award className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
           <p className="text-sm text-muted-foreground">{t('description')}</p>
         </div>

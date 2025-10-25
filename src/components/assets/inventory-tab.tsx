@@ -55,11 +55,11 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       type: 'text',
       render: (value: string[]) => {
         if (!value || value.length === 0) {
-          return <div className="w-12 h-12 bg-muted rounded flex items-center justify-center">
+          return <div className="w-12 h-12 bg-muted rounded flex flex-wrap items-center justify-center">
             <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </div>
         }
-        return <div className="w-12 h-12 bg-muted rounded overflow-hidden relative">
+        return <div className="w-12 h-12 bg-muted rounded overflow-hidden md:block relative">
           <Image src={value[0]} alt="Item" fill className="object-cover" />
         </div>
       }
@@ -72,7 +72,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       label: 'Barcode', 
       type: 'text',
       render: (value: string) => value ? (
-        <div className="flex items-center gap-1 text-xs">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs">
           <QrCode className="h-4 w-4" aria-hidden="true" />
           {value}
         </div>
@@ -84,7 +84,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       label: 'Stock', 
       type: 'number',
       render: (value: any, item: any) => (
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <span className="font-medium">{value || 0}</span>
           {item.low_stock_threshold && value <= item.low_stock_threshold && (
             <AlertCircle className="h-4 w-4 text-orange-500" aria-hidden="true" />
@@ -166,11 +166,11 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
-      <div className="flex h-[calc(100vh-200px)]">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="flex flex-wrap h-[calc(100vh-200px)]">
         {/* Left Sidebar - Folder Tree */}
         {showFolderTree && (
-          <div className="w-64 border-r">
+          <div className="w-full sm:w-64 border-r">
             <InventoryFolderTree
               workspaceId={workspaceId}
               onFolderSelect={setSelectedFolderId}
@@ -180,9 +180,9 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         )}
 
         {/* Main Content */}
-        <div className="flex-1 flex flex-col space-y-4 p-4">
+        <div className="flex-1 flex flex-wrap flex-col space-y-4 p-4">
           {/* Top Bar with Alerts */}
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <Button 
               variant="outline" 
               size="sm"
@@ -207,35 +207,35 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         />
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
             <CardHeader className="pb-3">
               <CardDescription>{t('totalItems')}</CardDescription>
-              <CardTitle className="text-2xl">{totalItems}</CardTitle>
+              <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{totalItems}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="pb-3">
               <CardDescription>{t('totalValue')}</CardDescription>
-              <CardTitle className="text-2xl">${totalValue.toLocaleString()}</CardTitle>
+              <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">${totalValue.toLocaleString()}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="pb-3">
               <CardDescription>Low Stock</CardDescription>
-              <CardTitle className="text-2xl text-orange-600">{lowStockItems}</CardTitle>
+              <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-orange-600">{lowStockItems}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
             <CardHeader className="pb-3">
               <CardDescription>Out of Stock</CardDescription>
-              <CardTitle className="text-2xl text-red-600">{outOfStockItems}</CardTitle>
+              <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-red-600">{outOfStockItems}</CardTitle>
             </CardHeader>
           </Card>
         </div>
 
         {/* Quick Actions */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
           <Button onClick={() => setRightSidebarOpen(true, 'photo-upload')} variant="outline">
             <Camera className="h-4 w-4 mr-2" aria-hidden="true" />
             Upload Photos
@@ -245,7 +245,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
             Scan Barcode
           </Button>
           <div className="flex-1" />
-          <div className="flex items-center gap-1 border rounded-md">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 border rounded-md">
             <Button 
               variant={viewMode === 'table' ? 'secondary' : 'ghost'} 
               size="sm"
@@ -265,7 +265,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
 
         {/* Content */}
         {loading ? (
-          <div className="flex items-center justify-center h-64">
+          <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
             <div className="text-center">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
               <p className="text-muted-foreground">Loading inventory...</p>

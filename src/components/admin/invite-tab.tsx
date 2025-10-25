@@ -170,11 +170,11 @@ export function InviteTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Send Invitation */}
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <UserPlus className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
             <CardTitle>{t('admin.invite.sendInvitation')}</CardTitle>
           </div>
@@ -183,10 +183,10 @@ export function InviteTab() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="flex flex-wrap flex-col gap-2 md:gap-3 lg:gap-4 sm:flex-col md:flex-row">
             <div className="flex-1 space-y-2">
               <Label htmlFor="email">{t('admin.invite.emailAddress')}</Label>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Mail className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 <Input
                   id="email"
@@ -198,7 +198,7 @@ export function InviteTab() {
                 />
               </div>
             </div>
-            <div className="w-full sm:w-48 space-y-2">
+            <div className="w-full sm:w-48 space-y-2 max-w-full">
               <Label htmlFor="role">{t('admin.invite.role')}</Label>
               <Select value={role as any} onValueChange={setRole}>
                 <SelectTrigger id="role">
@@ -211,7 +211,7 @@ export function InviteTab() {
                 </SelectContent>
               </Select>
             </div>
-            <div className="flex items-end">
+            <div className="flex flex-wrap items-end">
               <Button onClick={handleSendInvite} disabled={loading}>
                 <Send className="h-4 w-4 mr-2" aria-hidden="true" />
                 {loading ? t('common.sending') : t('admin.invite.send')}
@@ -256,7 +256,7 @@ export function InviteTab() {
                     {new Date(invitation.expires_at).toLocaleDateString()}
                   </TableCell>
                   <TableCell className="text-right">
-                    <div className="flex items-center justify-end gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center justify-end gap-2">
                       <Button
                         variant="ghost"
                         size="sm"

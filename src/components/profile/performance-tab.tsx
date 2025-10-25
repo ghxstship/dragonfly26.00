@@ -38,7 +38,7 @@ export function PerformanceTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     )
@@ -127,10 +127,10 @@ export function PerformanceTab() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-end">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="flex flex-wrap justify-end">
         <Select value={timePeriod as any} onValueChange={setTimePeriod}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('profile.performance.select-period')} />
           </SelectTrigger>
           <SelectContent>
@@ -143,16 +143,16 @@ export function PerformanceTab() {
         </Select>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         {performanceMetrics.map((metric: any) => (
           <Card key={t(metric.labelKey)}>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">{t(metric.labelKey)}</CardTitle>
               {metric.icon}
             </CardHeader>
             <CardContent>
-              <div className="flex items-baseline gap-2">
-                <div className="text-2xl font-bold">
+              <div className="flex flex-wrap items-baseline gap-2">
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
                   {metric.maxValue === 100
                     ? `${metric.value}%`
                     : `${metric.value}/${metric.maxValue}`}
@@ -176,7 +176,7 @@ export function PerformanceTab() {
         <CardContent className="space-y-4">
           {skills.map((skill: any) => (
             <div key={t(skill.nameKey)} className="space-y-2">
-              <div className="flex items-center justify-between text-sm">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                 <span className="font-medium">{t(skill.nameKey)}</span>
                 <span className="text-muted-foreground">{skill.rating}%</span>
               </div>
@@ -186,7 +186,7 @@ export function PerformanceTab() {
         </CardContent>
       </Card>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         <Card>
           <CardHeader>
             <CardTitle>{t('profile.performance.feedback')}</CardTitle>
@@ -194,12 +194,12 @@ export function PerformanceTab() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2 border-b pb-4">
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div>
                   <p className="font-medium text-sm">{t('profile.performance.feedback-1')}</p>
                   <p className="text-xs text-muted-foreground">{t('profile.performance.feedback-1-description')}</p>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   <span className="text-sm font-medium">5.0</span>
                 </div>
@@ -211,12 +211,12 @@ export function PerformanceTab() {
             </div>
 
             <div className="space-y-2 border-b pb-4">
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div>
                   <p className="font-medium text-sm">{t('profile.performance.feedback-2')}</p>
                   <p className="text-xs text-muted-foreground">{t('profile.performance.feedback-2-description')}</p>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   <span className="text-sm font-medium">4.8</span>
                 </div>
@@ -228,12 +228,12 @@ export function PerformanceTab() {
             </div>
 
             <div className="space-y-2">
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div>
                   <p className="font-medium text-sm">{t('profile.performance.feedback-3')}</p>
                   <p className="text-xs text-muted-foreground">{t('profile.performance.feedback-3-description')}</p>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   <span className="text-sm font-medium">4.5</span>
                 </div>
@@ -255,8 +255,8 @@ export function PerformanceTab() {
           </CardHeader>
           <CardContent className="space-y-4">
             {achievements.map((achievement: any) => (
-              <div key={achievement.id} className="flex gap-3 border-b pb-4 last:border-0">
-                <div className="text-2xl">{achievement.icon}</div>
+              <div key={achievement.id} className="flex flex-wrap gap-3 border-b pb-4 last:border-0">
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{achievement.icon}</div>
                 <div className="flex-1">
                   <p className="font-medium text-sm">{t(achievement.titleKey)}</p>
                   <p className="text-sm text-muted-foreground">{t(achievement.descriptionKey)}</p>
@@ -277,8 +277,8 @@ export function PerformanceTab() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Target className="h-4 w-4" aria-hidden="true" />
                 <span className="font-medium">{t('profile.performance.goal-1')}</span>
               </div>
@@ -288,8 +288,8 @@ export function PerformanceTab() {
           </div>
 
           <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Target className="h-4 w-4" aria-hidden="true" />
                 <span className="font-medium">{t('profile.performance.goal-2')}</span>
               </div>
@@ -299,8 +299,8 @@ export function PerformanceTab() {
           </div>
 
           <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Target className="h-4 w-4" aria-hidden="true" />
                 <span className="font-medium">{t('profile.performance.goal-3')}</span>
               </div>

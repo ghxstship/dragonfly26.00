@@ -33,7 +33,7 @@ export function PresenceAvatars({ presences, max = 5, size = "md" }: PresenceAva
 
   return (
     <TooltipProvider>
-      <div className="flex -space-x-2">
+      <div className="flex flex-wrap md:flex-nowrap -space-x-2">
         {displayed.map((presence: any) => (
           <Tooltip key={presence.id}>
             <TooltipTrigger asChild>

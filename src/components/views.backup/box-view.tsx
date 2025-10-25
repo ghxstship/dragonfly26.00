@@ -56,15 +56,15 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
   }
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <LayoutGrid className="h-5 w-5" />
           <h3 className="font-semibold">Card Grid</h3>
           <Badge variant="secondary">{data.length} items</Badge>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Button
             variant={gridSize === "small" ? "secondary" : "outline"}
             size="sm"
@@ -98,30 +98,30 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
             return (
               <Card
                 key={item.id}
-                className="group relative hover:shadow-lg transition-all cursor-pointer overflow-hidden"
+                className="group relative hover:shadow-lg transition-all cursor-pointer overflow-hidden md:block"
                 onClick={() => onItemClick?.(item)}
               >
                 {/* Cover Image */}
                 {item.cover_image && (
-                  <div className="aspect-video bg-muted overflow-hidden">
+                  <div className="aspect-video bg-muted overflow-hidden md:block">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={item.cover_image}
                       alt={item.name || "Cover"}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform max-w-full"
                     />
                   </div>
                 )}
 
                 <CardContent className={cn("p-4", !item.cover_image && "pt-6")}>
                   {/* Header */}
-                  <div className="flex items-start gap-2 mb-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 mb-2">
                     <div className="flex-1 min-w-0">
                       <h4 className="font-semibold text-sm line-clamp-2">
                         {item.name || item.title || "Untitled"}
                       </h4>
                     </div>
-                    <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="flex flex-wrap gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       <Button
                         variant="ghost"
                         size="icon"
@@ -169,7 +169,7 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
                   )}
 
                   {/* Metadata */}
-                  <div className="flex items-center gap-2 flex-wrap">
+                  <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
                     {item.status && (
                       <Badge variant="secondary" className="text-xs">
                         {item.status}
@@ -196,7 +196,7 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
 
                   {/* Tags */}
                   {item.tags && Array.isArray(item.tags) && item.tags.length > 0 && (
-                    <div className="flex gap-1 mt-2 flex-wrap">
+                    <div className="flex flex-col sm:flex-row gap-1 mt-2 flex-wrap">
                       {item.tags.slice(0, 3).map((tag: string, idx: number) => (
                         <Badge key={idx} variant="outline" className="text-xs">
                           {tag}

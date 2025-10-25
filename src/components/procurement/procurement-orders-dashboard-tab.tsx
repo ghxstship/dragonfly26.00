@@ -80,33 +80,33 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
   ).length
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Key Metrics */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Total Orders</CardTitle>
             <FileEdit className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{orders.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{orders.length}</div>
             <p className="text-xs text-muted-foreground">Active purchase orders</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Total Value</CardTitle>
             <DollarSign className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(totalValue, locale)}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(totalValue, locale)}</div>
             <p className="text-xs text-muted-foreground">Across all orders</p>
           </CardContent>
         </Card>
 
         <Card className={pendingApprovals > 0 ? "border-yellow-200 dark:border-yellow-900" : ""}>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Pending Approval</CardTitle>
             <Clock className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
@@ -119,7 +119,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         </Card>
 
         <Card className={overdueOrders > 0 ? "border-red-200 dark:border-red-900" : ""}>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Overdue</CardTitle>
             <AlertTriangle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
@@ -139,17 +139,17 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
           <CardDescription>Track orders through the procurement process</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex gap-4 overflow-x-auto pb-4">
+          <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4 overflow-x-auto pb-4">
             {stages.map((stage: any) => {
               const stageOrders = getOrdersByStage(stage.id)
               const stageValue = stageOrders.reduce((sum: number, o: any) => sum + (o.total || 0), 0)
               const StageIcon = stage.icon
 
               return (
-                <div key={stage.id} className="flex-shrink-0 w-64">
+                <div key={stage.id} className="flex flex-wrap flex-col lg:flex-row-shrink-0 w-full sm:w-full lg:w-64">
                   <Card>
                     <CardHeader className="pb-3" aria-hidden="true">
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                         <CardTitle className="text-sm font-medium" aria-hidden="true">{stage.name}</CardTitle>
                         <StageIcon className="h-4 w-4" aria-hidden="true" />
                       </div>
@@ -157,17 +157,17 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                         {stageOrders.length} orders · {formatCurrency(stageValue, locale)}
                       </div>
                     </CardHeader>
-                    <CardContent className="space-y-2 max-h-96 overflow-y-auto" aria-hidden="true">
+                    <CardContent className="space-y-2 max-h-64 md:h-80 lg:h-96 overflow-y-auto" aria-hidden="true">
                       {stageOrders.map((order: any) => (
                         <Card key={order.id} className="p-3 hover:shadow-md transition-shadow cursor-pointer">
                           <div className="space-y-2">
-                            <div className="flex items-start justify-between">
+                            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                               <div className="flex-1 min-w-0">
                                 <div className="font-medium text-sm truncate">{order.title || order.po_number}</div>
                                 <div className="text-xs text-muted-foreground truncate">{order.vendor}</div>
                               </div>
                             </div>
-                            <div className="flex items-center justify-between text-xs">
+                            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs">
                               <span className="font-medium">{formatCurrency(order.total, locale)}</span>
                               <Badge variant="secondary" className={getStatusColor(order.status)}>
                                 {order.status}
@@ -182,7 +182,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                         </Card>
                       ))}
                       {stageOrders.length === 0 && (
-                        <div className="text-center py-8 text-sm text-muted-foreground">
+                        <div className="text-center py-4 md:py-6 lg:py-8 text-sm text-muted-foreground">
                           No orders in this stage
                         </div>
                       )}
@@ -195,7 +195,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
         </CardContent>
       </Card>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 md:grid-cols-2">
         {/* Vendor Performance */}
         <Card>
           <CardHeader>
@@ -223,7 +223,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                 <div className="space-y-3">
                   {topVendors.map((vendor: Record<string, any>, index: number) => (
                     <div key={index} className="space-y-1">
-                      <div className="flex justify-between text-sm">
+                      <div className="flex flex-wrap justify-between text-sm">
                         <span className="font-medium">{vendor.vendor as string}</span>
                         <span className="text-muted-foreground">
                           {vendor.count as number} orders · {formatCurrency(vendor.total as number, locale)}
@@ -261,7 +261,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                   {upcomingDeliveries.map((order: any) => {
                     const daysUntil = Math.ceil((new Date(order.expected_delivery).getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
                     return (
-                      <div key={order.id} className="flex items-center justify-between p-2 border rounded">
+                      <div key={order.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 border rounded">
                         <div className="flex-1">
                           <div className="font-medium text-sm">{order.title || order.po_number}</div>
                           <div className="text-xs text-muted-foreground">{order.vendor}</div>
@@ -276,7 +276,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                     )
                   })}
                   {upcomingDeliveries.length === 0 && (
-                    <div className="text-center py-8 text-sm text-muted-foreground">
+                    <div className="text-center py-4 md:py-6 lg:py-8 text-sm text-muted-foreground">
                       No deliveries expected in the next 30 days
                     </div>
                   )}
@@ -291,7 +291,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
       {pendingApprovals > 0 && (
         <Card className="border-yellow-200 dark:border-yellow-900" aria-hidden="true">
           <CardHeader>
-            <CardTitle className="text-yellow-600 flex items-center gap-2" aria-hidden="true">
+            <CardTitle className="text-yellow-600 flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
               <Clock className="h-5 w-5" aria-hidden="true" />
               Pending Approvals
             </CardTitle>
@@ -300,12 +300,12 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
           <CardContent>
             <div className="space-y-2">
               {orders.filter((o: any) => (o as any).status === 'pending').slice(0, 5).map((order: any) => (
-                <div key={order.id} className="flex items-center justify-between p-3 border rounded">
+                <div key={order.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded">
                   <div>
                     <div className="font-medium">{order.title || order.po_number}</div>
                     <div className="text-sm text-muted-foreground">{order.vendor} · {formatCurrency(order.total, locale)}</div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <Button size="sm" variant="outline">Reject</Button>
                     <Button size="sm">Approve</Button>
                   </div>

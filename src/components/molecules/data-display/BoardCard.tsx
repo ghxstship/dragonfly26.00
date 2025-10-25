@@ -62,7 +62,7 @@ export function BoardCard({ item, schema, onClick, isDragging }: BoardCardProps)
       )}
       onClick={onClick}
     >
-      <div className="flex items-start gap-2">
+      <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
         <div
           {...attributes}
           {...listeners}
@@ -99,16 +99,16 @@ export function BoardCard({ item, schema, onClick, isDragging }: BoardCardProps)
           )}
 
           {/* Footer */}
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
               {item.comments_count && (
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <MessageSquare className="h-3 w-3" aria-hidden="true" />
                   <span>{item.comments_count}</span>
                 </div>
               )}
               {item.attachments_count && (
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <Paperclip className="h-3 w-3" aria-hidden="true" />
                   <span>{item.attachments_count}</span>
                 </div>

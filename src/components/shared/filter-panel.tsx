@@ -90,7 +90,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
       {filters.length > 1 && (
         <div className="space-y-2">
           <Label>Filter Logic</Label>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Button
               variant={filterLogic === "and" ? "default" : "outline"}
               size="sm"
@@ -117,7 +117,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
       {/* Filter Rules */}
       <div className="space-y-3">
         {filters.length === 0 ? (
-          <div className="text-center py-10 border-2 border-dashed rounded-lg">
+          <div className="text-center py-5 md:py-8 lg:py-10 border-2 border-dashed rounded-lg">
             <Filter className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
             <p className="text-sm text-muted-foreground mb-4">No filters applied</p>
             <Button onClick={addFilter} variant="outline" size="sm">
@@ -128,7 +128,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
         ) : (
           filters.map((filter: any, index: number) => (
             <div key={filter.id} className="space-y-2 p-3 border rounded-lg">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <Label className="text-xs font-medium">Filter {index + 1}</Label>
                 <Button
                   variant="ghost"
@@ -186,7 +186,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
 
       {/* Actions */}
       {filters.length > 0 && (
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button onClick={addFilter} variant="outline" className="flex-1">
             <Plus className="h-4 w-4 mr-2" />
             Add Filter
@@ -201,20 +201,20 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
       <div className="space-y-3 pt-4 border-t">
         <Label>Saved Filters</Label>
         <div className="space-y-2">
-          <Button variant="outline" className="w-full justify-start" size="sm">
+          <Button variant="outline" className="w-full justify-start max-w-full" size="sm">
             <Filter className="h-3 w-3 mr-2" />
             High Priority Tasks
           </Button>
-          <Button variant="outline" className="w-full justify-start" size="sm">
+          <Button variant="outline" className="w-full justify-start max-w-full" size="sm">
             <Filter className="h-3 w-3 mr-2" />
             Overdue Items
           </Button>
-          <Button variant="outline" className="w-full justify-start" size="sm">
+          <Button variant="outline" className="w-full justify-start max-w-full" size="sm">
             <Filter className="h-3 w-3 mr-2" />
             My Assignments
           </Button>
         </div>
-        <Button variant="ghost" size="sm" className="w-full">
+        <Button variant="ghost" size="sm" className="w-full max-w-full">
           Save Current Filters
         </Button>
       </div>

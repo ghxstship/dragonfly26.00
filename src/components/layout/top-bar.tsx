@@ -158,17 +158,17 @@ export function TopBar() {
 
   return (
     <TooltipProvider delayDuration={300}>
-      <header className="sticky top-0 z-50 flex h-14 items-center gap-2 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
+      <header className="sticky top-0 z-50 flex flex-wrap flex-col md:flex-row h-14 items-center gap-2 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
         {/* Left Section: Logo + Workspace + Breadcrumbs */}
-        <div className="flex items-center gap-2 min-w-0 flex-shrink">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 min-w-0 flex-shrink">
           {/* App Logo/Icon */}
-          <div className="flex items-center justify-center h-8 w-8 rounded-md bg-primary text-primary-foreground font-bold text-sm flex-shrink-0">
+          <div className="flex flex-wrap items-center justify-center h-8 w-8 rounded-md bg-primary text-primary-foreground font-bold text-sm flex-shrink-0">
             DF
           </div>
 
           {/* Demo Mode Badge */}
           {demoMode && (
-            <Badge variant="secondary" className="hidden md:flex gap-1 items-center">
+            <Badge variant="secondary" className="hidden md:flex flex-col md:flex-row gap-1 items-center">
               <Database className="h-3 w-3" />
               Demo Mode
             </Badge>
@@ -180,24 +180,24 @@ export function TopBar() {
           </div>
 
           {/* Breadcrumb Navigation */}
-          <div className="hidden xl:block h-6 w-px bg-border mx-1 flex-shrink-0" />
-          <div className="hidden xl:block min-w-0">
+          <div className="hidden md:block xl:block h-6 w-px bg-border mx-1 flex-shrink-0" />
+          <div className="hidden md:block xl:block min-w-0">
             <BreadcrumbNav />
           </div>
         </div>
 
         {/* Center Section: Search */}
-        <div className="flex items-center justify-center flex-1 min-w-0 px-2 sm:px-4">
+        <div className="flex flex-wrap items-center justify-center flex-1 min-w-0 px-2 sm:px-4">
           <Button
             variant="outline"
             className="w-full max-w-md h-9 justify-start text-muted-foreground hover:text-foreground transition-colors"
             onClick={() => setShowCommandPalette(true)}
           >
             <Search className="mr-2 h-4 w-4 flex-shrink-0" />
-            <span className="hidden sm:inline truncate">{t('common.searchAnything')}</span>
-            <span className="sm:hidden truncate">{t('common.search')}</span>
-            <div className="ml-auto flex items-center gap-1 flex-shrink-0">
-              <kbd className="hidden md:inline-flex pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
+            <span className="hidden md:block sm:inline truncate">{t('common.searchAnything')}</span>
+            <span className="sm:hidden md:block truncate">{t('common.search')}</span>
+            <div className="ml-auto flex flex-wrap flex-col md:flex-row items-center gap-1 flex-shrink-0">
+              <kbd className="hidden md:inline-flex flex-col md:flex-row pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
                 <span className="text-xs">⌘</span>K
               </kbd>
             </div>
@@ -205,7 +205,7 @@ export function TopBar() {
         </div>
 
         {/* Right Section: Actions + Status + User */}
-        <div className="flex items-center gap-1 flex-shrink-0">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 flex-shrink-0">
           {/* Create Menu */}
           <CreateMenu
             onCreateItem={handleCreateItem}
@@ -229,10 +229,10 @@ export function TopBar() {
                 <Bell className="h-4 w-4" />
                 {unreadCount > 0 && (
                   <>
-                    <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary ring-2 ring-background" />
+                    <span className="absolute sm:relative sm:inset-auto top-2 md:top-1.5 right-2 md:right-1.5 h-2 w-2 rounded-full bg-primary ring-2 ring-background" />
                     <Badge
                       variant="destructive"
-                      className="absolute -top-1 -right-1 h-5 min-w-5 flex items-center justify-center p-0 text-[10px]"
+                      className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-5 min-w-5 flex items-center justify-center p-0 text-[10px]"
                     >
                       {unreadCount > 9 ? "9+" : unreadCount}
                     </Badge>
@@ -249,7 +249,7 @@ export function TopBar() {
           </Tooltip>
 
           {/* Desktop Actions - Hidden on Mobile */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex flex-col md:flex-row items-center gap-1">
             {/* Comments */}
             <Tooltip>
               <TooltipTrigger asChild>
@@ -318,7 +318,7 @@ export function TopBar() {
               </TooltipTrigger>
               <TooltipContent>
                 <p>Help & Shortcuts</p>
-                <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⇧?</kbd>
+                <kbd className="ml-2 inline-flex flex-col md:flex-row items-center gap-0.5 font-mono text-[11px] opacity-70">⇧?</kbd>
               </TooltipContent>
             </Tooltip>
           </div>
@@ -332,7 +332,7 @@ export function TopBar() {
           {/* Online/Synced Status */}
           <Tooltip>
             <TooltipTrigger asChild>
-              <div className="flex items-center">
+              <div className="flex flex-wrap items-center">
                 {isOnline ? (
                   <Wifi className="h-4 w-4 text-green-500" />
                 ) : (
@@ -409,7 +409,7 @@ export function TopBar() {
                         {getInitials("Current User")}
                       </AvatarFallback>
                     </Avatar>
-                    <ChevronDown className="h-3.5 w-3.5 text-muted-foreground hidden sm:block" />
+                    <ChevronDown className="h-3.5 w-3.5 text-muted-foreground hidden md:block sm:block" />
                   </Button>
                 </DropdownMenuTrigger>
               </TooltipTrigger>
@@ -417,9 +417,9 @@ export function TopBar() {
                 <p>{t('nav.account')}</p>
               </TooltipContent>
             </Tooltip>
-            <DropdownMenuContent align="end" className="w-64">
+            <DropdownMenuContent align="end" className="w-full sm:w-64">
               <DropdownMenuLabel>
-                <div className="flex flex-col">
+                <div className="flex flex-wrap flex-col">
                   <span className="font-medium">Current User</span>
                   <span className="text-xs text-muted-foreground font-normal">
                     user@example.com
@@ -430,11 +430,11 @@ export function TopBar() {
               <DropdownMenuGroup>
                 <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/profile/basic-info`)}>
                   {t('nav.profile')}
-                  <kbd className="ml-auto inline-flex items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">⌘P</kbd>
+                  <kbd className="ml-auto inline-flex flex-col md:flex-row items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">⌘P</kbd>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/settings/appearance`)}>
                   {t('nav.settings')}
-                  <kbd className="ml-auto inline-flex items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">⌘,</kbd>
+                  <kbd className="ml-auto inline-flex flex-col md:flex-row items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">⌘,</kbd>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setShowCommandPalette(true)}>
                   {t('nav.keyboardShortcuts')}
@@ -444,9 +444,9 @@ export function TopBar() {
               <DropdownMenuGroup>
                 <DropdownMenuItem 
                   onClick={handleToggleDemoMode}
-                  className="flex items-center justify-between"
+                  className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between"
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Database className="h-4 w-4" />
                     <span>Demo Mode</span>
                   </div>

@@ -101,27 +101,27 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Header Stats */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Today&apos;s News</div>
             <Newspaper className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{newsArticles.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{newsArticles.length}</div>
             <p className="text-xs text-muted-foreground">Latest updates</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('trending')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {newsArticles.filter(a => a.trending).length}
             </div>
             <p className="text-xs text-muted-foreground">Hot topics</p>
@@ -129,23 +129,23 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('bookmarked')}</div>
             <Bookmark className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">12</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">12</div>
             <p className="text-xs text-muted-foreground">Saved articles</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('thisWeek')}</div>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">47</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">47</div>
             <p className="text-xs text-muted-foreground">New articles</p>
           </CardContent>
         </Card>
@@ -154,9 +154,9 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
       {/* Search and Filters */}
       <Card>
         <CardContent className="pt-6">
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
               <Input
                 placeholder={t('searchNews')}
                 value={searchQuery as any}
@@ -191,18 +191,18 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
           </Card>
         ) : (
           filteredArticles.map((article: any) => (
-            <Card key={article.id} className="overflow-hidden hover:shadow-md transition-shadow">
+            <Card key={article.id} className="overflow-hidden md:block hover:shadow-md transition-shadow">
               <CardContent className="p-0">
                 <div className="md:flex">
                   {/* Image */}
                   {article.image && (
-                    <div className="md:w-64 h-48 md:h-auto relative flex-shrink-0">
+                    <div className="md:w-full sm:w-64 h-48 md:h-auto relative flex-shrink-0">
                       <div 
-                        className="absolute inset-0 bg-cover bg-center"
+                        className="absolute sm:relative sm:inset-auto inset-0 bg-cover bg-center sm:relative sm:inset-auto"
                         style={{ backgroundImage: `url(${article.image})` }}
                       />
                       {article.trending && (
-                        <Badge className="absolute top-3 left-3 bg-orange-500">
+                        <Badge className="absolute sm:relative sm:inset-auto top-3 left-3 bg-orange-500 sm:relative sm:inset-auto">
                           <TrendingUp className="h-3 w-3 mr-1" aria-hidden="true" />{t('trending')}</Badge>
                       )}
                     </div>
@@ -210,8 +210,8 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
 
                   {/* Content */}
                   <div className="p-6 flex-1">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4 mb-3">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         {article.sourceImage && (
                           <Avatar className="h-8 w-8">
                             <AvatarImage src={article.sourceImage} />
@@ -228,7 +228,7 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
                       </Badge>
                     </div>
 
-                    <h3 className="text-xl font-semibold mb-2">{article.titleKey ? (article.titleKey ? t(article.titleKey) : article.title) : article.title}</h3>
+                    <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2">{article.titleKey ? (article.titleKey ? t(article.titleKey) : article.title) : article.title}</h3>
                     <p className="text-muted-foreground mb-4">We&apos;re excited to announce {article.summary}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -239,8 +239,8 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
                       ))}
                     </div>
 
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                         <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
                         <Button variant="ghost" size="sm" className="h-8">
                           <ThumbsUp className="h-4 w-4 mr-1" aria-hidden="true" />
@@ -252,7 +252,7 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
                         </Button>
                       </div>
 
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         <Button variant="ghost" size="sm" aria-label={t('bookmark')}>
                           <Bookmark className="h-4 w-4" aria-hidden="true" />
                         </Button>

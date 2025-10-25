@@ -100,15 +100,15 @@ export function DashboardView({ data, schema }: DashboardViewProps) {
       case "metric":
         const Icon = widget.data.icon
         return (
-          <div className="flex flex-col h-full justify-between">
-            <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col h-full justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <span className="text-sm font-medium text-muted-foreground">
                 {widget.title}
               </span>
               <Icon className="h-4 w-4 text-muted-foreground" />
             </div>
             <div>
-              <div className="text-3xl font-bold">{widget.data.value}</div>
+              <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{widget.data.value}</div>
               <div className="text-sm text-green-600 mt-1">
                 {widget.data.change}
               </div>
@@ -118,7 +118,7 @@ export function DashboardView({ data, schema }: DashboardViewProps) {
       
       case "chart":
         return (
-          <div className="flex items-center justify-center h-full text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center h-full text-muted-foreground">
             Chart: {widget.title}
           </div>
         )
@@ -131,8 +131,8 @@ export function DashboardView({ data, schema }: DashboardViewProps) {
   return (
     <div className="space-y-4">
       {/* Toolbar */}
-      <div className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold">Dashboard</h2>
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+        <h2 className="text-base md:text-lg lg:text-xl font-semibold">Dashboard</h2>
         <Button size="sm" className="gap-2">
           <Plus className="h-4 w-4" />
           Add Widget
@@ -140,7 +140,7 @@ export function DashboardView({ data, schema }: DashboardViewProps) {
       </div>
 
       {/* Widget Grid */}
-      <div className="grid grid-cols-4 gap-4 auto-rows-[200px]">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 auto-rows-[200px]">
         {widgets.map((widget: any) => (
           <div
             key={widget.id}
@@ -157,7 +157,7 @@ export function DashboardView({ data, schema }: DashboardViewProps) {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity h-6 w-6"
+                  className="absolute sm:relative sm:inset-auto top-2 md:top-2 right-2 md:right-2 opacity-0 group-hover:opacity-100 transition-opacity h-6 w-6"
                 >
                   <MoreHorizontal className="h-4 w-4" />
                 </Button>

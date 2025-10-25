@@ -78,13 +78,13 @@ export function StatCard({
       tabIndex={onClick ? 0 : undefined}
     >
       <CardContent className="p-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <div className="space-y-1">
             <p className="text-sm font-medium text-muted-foreground">{label}</p>
             {loading ? (
               <div className="h-8 w-24 animate-pulse bg-muted rounded" />
             ) : (
-              <p className="text-3xl font-bold">{value}</p>
+              <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{value}</p>
             )}
             {subtitle && (
               <p className="text-xs text-muted-foreground">{subtitle}</p>
@@ -98,7 +98,7 @@ export function StatCard({
           />
         </div>
         {trend && (
-          <div className="mt-4 flex items-center gap-1">
+          <div className="mt-4 flex flex-wrap flex-col md:flex-row items-center gap-1">
             <span
               className={cn(
                 'text-sm font-medium',

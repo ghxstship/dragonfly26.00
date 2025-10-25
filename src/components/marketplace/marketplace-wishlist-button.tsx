@@ -125,7 +125,7 @@ export function WishlistButton({
               {isInWishlists.size > 1 && (
                 <Badge
                   variant="secondary"
-                  className="absolute -top-1 -right-1 h-4 w-4 p-0 flex items-center justify-center text-xs"
+                  className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-4 w-4 p-0 flex items-center justify-center text-xs"
                 >
                   {isInWishlists.size}
                 </Badge>
@@ -141,7 +141,7 @@ export function WishlistButton({
               <DropdownMenuItem
                 key={wishlist.id}
                 onClick={() => toggleWishlist(wishlist.id)}
-                className="flex items-center justify-between cursor-pointer"
+                className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between cursor-pointer"
               >
                 <div className="flex-1 min-w-0">
                   <p className="font-medium truncate">{wishlist.name}</p>

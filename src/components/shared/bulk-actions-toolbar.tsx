@@ -37,7 +37,7 @@ export function BulkActionsToolbar({
 
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
-      <div className="bg-primary text-primary-foreground rounded-lg shadow-lg border flex items-center gap-2 px-4 py-3">
+      <div className="bg-primary text-primary-foreground rounded-lg shadow-lg border flex flex-wrap flex-col md:flex-row items-center gap-2 px-4 py-3">
         <span className="font-medium">{selectedCount} selected</span>
         
         <div className="h-6 w-px bg-primary-foreground/20 mx-2" />

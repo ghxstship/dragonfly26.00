@@ -94,13 +94,13 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.totalReports}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalReports}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Reports</p>
             </div>
           </CardContent>
@@ -108,7 +108,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-yellow-600">{summary.favorites}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{summary.favorites}</p>
               <p className="text-xs text-muted-foreground mt-1">Favorites</p>
             </div>
           </CardContent>
@@ -116,7 +116,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">{summary.recurring}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{summary.recurring}</p>
               <p className="text-xs text-muted-foreground mt-1">Recurring</p>
             </div>
           </CardContent>
@@ -124,7 +124,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-purple-600">{summary.custom}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-purple-600">{summary.custom}</p>
               <p className="text-xs text-muted-foreground mt-1">Custom</p>
             </div>
           </CardContent>
@@ -132,7 +132,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-green-600">{summary.thisMonth}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.thisMonth}</p>
               <p className="text-xs text-muted-foreground mt-1">This Month</p>
             </div>
           </CardContent>
@@ -145,7 +145,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
           <CardTitle className="text-base">By Category</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
             {categories.map((category: any) => (
               <div
                 key={t(category.nameKey)}
@@ -175,15 +175,15 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                   onClick={() => router.push(`/workspace/${workspaceId}/reports/templates?id=${report.id}`)}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <div className="p-2 bg-primary/10 rounded">
                             <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
                           </div>
                           <div>
-                            <div className="flex items-center gap-2">
+                            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                               <h3 className="font-semibold">{report.name}</h3>
                               {report.isFavorite && (
                                 <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
@@ -196,7 +196,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-2">
+                      <div className="flex flex-col md:flex-row flex-wrap items-center gap-2">
                         <Badge variant="secondary" className={getTypeColor(report.type)}>
                           {report.type}
                         </Badge>
@@ -225,14 +225,14 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                         <span>•</span>
                         <span>{report.fileSize}</span>
                         <span>•</span>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Eye className="h-4 w-4" aria-hidden="true" />
                           {report.views} {t('views')}
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-wrap flex-col gap-2">
                       <Button variant="outline" size="sm" className="gap-2">
                         <Download className="h-3.5 w-3.5" />
                         {tCommon('download')}
@@ -256,20 +256,20 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
           <CardTitle className="text-base">{t('quickActions')}</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-3">
+            <Button variant="outline" className="h-auto py-4 flex flex-wrap flex-col md:flex-row flex-col items-center gap-2">
               <TrendingUp className="h-4 w-4 text-purple-600" aria-hidden="true" />
               <span className="text-sm">{t('performanceReport')}</span>
             </Button>
-            <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
+            <Button variant="outline" className="h-auto py-4 flex flex-wrap flex-col md:flex-row flex-col items-center gap-2">
               <PieChart className="h-4 w-4 text-green-600" aria-hidden="true" />
               <span className="text-sm">{t('financialReport')}</span>
             </Button>
-            <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
+            <Button variant="outline" className="h-auto py-4 flex flex-wrap flex-col md:flex-row flex-col items-center gap-2">
               <BarChart3 className="h-4 w-4 text-blue-600" aria-hidden="true" />
               <span className="text-sm">{t('assetsReport')}</span>
             </Button>
-            <Button variant="outline" className="h-auto py-4 flex flex-col items-center gap-2">
+            <Button variant="outline" className="h-auto py-4 flex flex-wrap flex-col md:flex-row flex-col items-center gap-2">
               <Calendar className="h-4 w-4 text-cyan-600" aria-hidden="true" />
               <span className="text-sm">{t('timeReport')}</span>
             </Button>

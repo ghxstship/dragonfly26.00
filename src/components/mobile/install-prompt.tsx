@@ -24,19 +24,19 @@ export function InstallPrompt() {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:w-96">
+    <div className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:w-full md:w-96">
       <Card>
         <CardContent className="p-4">
-          <div className="flex items-start gap-3">
+          <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                 <Download className="h-5 w-5 text-primary" />
                 <h3 className="font-semibold">Install App</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-3">
                 Install Dragonfly for faster access and offline support
               </p>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Button size="sm" onClick={handleInstall}>
                   Install
                 </Button>

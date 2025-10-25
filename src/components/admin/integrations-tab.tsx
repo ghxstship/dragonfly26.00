@@ -43,19 +43,19 @@ export function IntegrationsTab() {
   ])
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.integrationsTab.totalIntegrations')}</CardDescription>
-            <CardTitle className="text-3xl">{integrations.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{integrations.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.integrationsTab.connected')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {integrations.filter(i => i.connected).length}
             </CardTitle>
           </CardHeader>
@@ -66,11 +66,11 @@ export function IntegrationsTab() {
         {integrations.map((integration: any) => (
           <Card key={integration.id}>
             <CardHeader>
-              <div className="flex items-start justify-between">
-                <div className="flex gap-3 flex-1">
-                  <div className="text-3xl">{integration.icon}</div>
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex flex-wrap gap-3 flex-1">
+                  <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{integration.icon}</div>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-1">
                       <CardTitle className="text-base">{integration.name}</CardTitle>
                       {integration.connected && (
                         <Badge variant="default">
@@ -87,7 +87,7 @@ export function IntegrationsTab() {
                     )}
                   </div>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   {integration.connected ? (
                     <>
                       <Button variant="outline" size="sm" aria-label={t('admin.integrationsTab.configure')}>

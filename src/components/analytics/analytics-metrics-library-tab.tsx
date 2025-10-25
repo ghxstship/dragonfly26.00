@@ -81,27 +81,27 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
   const displayMetrics = data || []
   
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div>
-        <h3 className="font-semibold mb-3 flex items-center gap-2">
+        <h3 className="font-semibold mb-3 flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />
           Favorite Metrics
         </h3>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
           {savedMetrics.filter(m => m.isFavorite).map((metric: any) => (
             <Card key={metric.id} className="hover:shadow-md transition-shadow">
               <CardHeader>
-                <div className="flex items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                   <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                       <CardTitle className="text-base">{t(metric.nameKey)}</CardTitle>
                       <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />
                     </div>
                     <Badge variant="outline" className="text-xs">{t(metric.categoryKey)}</Badge>
                   </div>
                   <div className="text-right">
-                    <p className="text-2xl font-bold" aria-live="polite">{metric.lastValue}</p>
-                    <p className="text-xs text-green-600 flex items-center gap-1">
+                    <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" aria-live="polite">{metric.lastValue}</p>
+                    <p className="text-xs text-green-600 flex flex-wrap flex-col md:flex-row items-center gap-1">
                       <TrendingUp className="h-3 w-3" aria-hidden="true" />
                       {metric.trend}
                     </p>
@@ -126,9 +126,9 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
           {savedMetrics.map((metric: any) => (
             <Card key={metric.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-4">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                       <h4 className="font-semibold">{t(metric.nameKey)}</h4>
                       <Badge variant="secondary" className="text-xs">{t(metric.categoryKey)}</Badge>
                       {metric.isFavorite && <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />}
@@ -140,7 +140,7 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
                   </div>
                   <div className="text-right ml-4">
                     <p className="text-sm text-muted-foreground">{t('currentValue')}</p>
-                    <p className="text-2xl font-bold" aria-live="polite">{metric.lastValue}</p>
+                    <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" aria-live="polite">{metric.lastValue}</p>
                     <p className="text-sm text-green-600 mt-1">{metric.trend}</p>
                   </div>
                 </div>

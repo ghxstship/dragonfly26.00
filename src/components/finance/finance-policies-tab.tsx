@@ -168,16 +168,16 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Active Policies</CardTitle>
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{activePolicies as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{activePolicies as any}</div>
             <p className="text-xs text-muted-foreground">
               {totalPolicies} total policies
             </p>
@@ -185,12 +185,12 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Corporate Cards</CardTitle>
             <CreditCard className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {corporateCards.filter(c => (c as any).status === 'active').length}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -200,12 +200,12 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Policy Violations</CardTitle>
             <AlertTriangle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-orange-600">{pendingViolations as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-orange-600">{pendingViolations as any}</div>
             <p className="text-xs text-muted-foreground">
               {totalViolations} total this month
             </p>
@@ -213,12 +213,12 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Compliance Rate</CardTitle>
             <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">94%</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">94%</div>
             <p className="text-xs text-muted-foreground">
               Transactions in compliance
             </p>
@@ -237,9 +237,9 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
             {spendingPolicies.map((policy: any) => (
               <Card key={policy.id} className={!policy.isActive ? 'opacity-60' : ''}>
                 <CardContent className="pt-6" aria-hidden="true">
-                  <div className="flex items-start justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                     <div className="space-y-2 flex-1">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <h4 className="font-semibold">{policy.nameKey ? t(policy.nameKey) : policy.name}</h4>
                         <Badge variant={policy.isActive ? 'default' : 'secondary'}>
                           {policy.isActive ? 'Active' : 'Inactive'}
@@ -251,7 +251,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                         )}
                       </div>
                       <p className="text-sm text-muted-foreground">{policy.descriptionKey ? t(policy.descriptionKey) : policy.description}</p>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-xs text-muted-foreground">
                         <span>Type: {policy.type}</span>
                         <span>•</span>
                         <span>Max Amount: ${policy.maxAmount.toLocaleString()}</span>
@@ -261,7 +261,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                         <span>{policy.requiresApproval ? 'Requires Approval' : 'Auto-approved'}</span>
                       </div>
                     </div>
-                    <div className="flex gap-2 ml-4">
+                    <div className="flex flex-wrap gap-2 ml-4">
                       <Button variant="outline" size="sm">
                         <Settings className="h-4 w-4" aria-hidden="true" />
                         Edit
@@ -278,7 +278,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
       {/* Corporate Cards */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>Corporate Cards</CardTitle>
               <CardDescription>Manage card assignments and spending limits</CardDescription>
@@ -297,9 +297,9 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                 <Card key={card.id} className={card.status === 'suspended' ? 'opacity-60 border-red-300' : ''}>
                   <CardContent className="pt-6" aria-hidden="true">
                     <div className="space-y-3">
-                      <div className="flex items-start justify-between">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                         <div className="space-y-1">
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                             <h4 className="font-semibold">{card.cardHolder}</h4>
                             <Badge variant={card.status === 'active' ? 'default' : 'destructive'}>
                               {card.status}
@@ -323,11 +323,11 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                       </div>
 
                       <div className="space-y-1">
-                        <div className="flex items-center justify-between text-xs text-muted-foreground">
+                        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs text-muted-foreground">
                           <span>Spent: ${card.spentCurrentPeriod.toLocaleString()}</span>
                           <span>Limit: ${card.spendingLimit.toLocaleString()}</span>
                         </div>
-                        <div className="w-full bg-secondary rounded-full h-2">
+                        <div className="w-full bg-secondary rounded-full h-2 max-w-full">
                           <div
                             className={`h-2 rounded-full transition-all ${
                               utilization >= 90 ? 'bg-red-500' :
@@ -343,7 +343,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                       </div>
 
                       {card.status === 'active' && (
-                        <div className="flex gap-2 pt-2">
+                        <div className="flex flex-wrap gap-2 pt-2">
                           <Button variant="outline" size="sm" className="flex-1">
                             Adjust Limit
                           </Button>
@@ -381,9 +381,9 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                   }`}
                 >
                   <CardContent className="pt-6" aria-hidden="true">
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                       <div className="space-y-2 flex-1">
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <h4 className="font-semibold">{violation.policyName}</h4>
                           <Badge variant={violation.status === 'pending' ? 'destructive' : 'default'}>
                             {violation.status}
@@ -394,7 +394,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                             </Badge>
                           )}
                         </div>
-                        <div className="flex items-center gap-4 text-sm">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm">
                           <span className="text-muted-foreground">Violator: {violation.violatedBy}</span>
                           <span className="text-muted-foreground">•</span>
                           <span className="text-muted-foreground">Date: {violation.violationDate}</span>
@@ -402,11 +402,11 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                         <p className="text-sm text-muted-foreground">{violation.reason}</p>
                       </div>
                       <div className="text-right ml-4">
-                        <p className="text-2xl font-bold text-red-600">
+                        <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
                           ${violation.transactionAmount.toLocaleString()}
                         </p>
                         {violation.status === 'pending' && (
-                          <div className="flex gap-2 mt-3">
+                          <div className="flex flex-wrap gap-2 mt-3">
                             <Button size="sm" variant="outline">
                               <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
                               Approve
@@ -423,7 +423,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                 </Card>
               ))
             ) : (
-              <div className="flex items-center justify-center h-32 text-muted-foreground">
+              <div className="flex flex-wrap items-center justify-center h-32 text-muted-foreground">
                 <div className="text-center">
                   <CheckCircle2 className="h-8 w-8" aria-hidden="true"  />
                   <p className="text-sm">No policy violations</p>
@@ -436,7 +436,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
       </Card>
 
       {/* Compliance Metrics */}
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Compliance Trends</CardTitle>
@@ -445,27 +445,27 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
           <CardContent>
             <div className="space-y-4">
               <div className="space-y-2">
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <span className="text-muted-foreground">This Month</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <div className="w-32 bg-secondary rounded-full h-2">
                       <div className="bg-green-500 h-2 rounded-full" style={{ width: '94%' }} />
                     </div>
                     <span className="font-medium text-green-600">94%</span>
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <span className="text-muted-foreground">Last Month</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <div className="w-32 bg-secondary rounded-full h-2">
                       <div className="bg-green-500 h-2 rounded-full" style={{ width: '96%' }} />
                     </div>
                     <span className="font-medium text-green-600">96%</span>
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <span className="text-muted-foreground">3 Months Ago</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <div className="w-32 bg-secondary rounded-full h-2">
                       <div className="bg-green-500 h-2 rounded-full" style={{ width: '91%' }} />
                     </div>
@@ -484,15 +484,15 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <span className="text-sm">Meal & Entertainment</span>
                 <Badge variant="destructive">5 violations</Badge>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <span className="text-sm">Travel Expense Policy</span>
                 <Badge variant="destructive">2 violations</Badge>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <span className="text-sm">Equipment Purchase Policy</span>
                 <Badge variant="secondary">0 violations</Badge>
               </div>

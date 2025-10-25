@@ -75,10 +75,10 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
   }
 
   return (
-    <div className="space-y-6">
-      <div className="container max-w-4xl space-y-8">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="container max-w-4xl px-4 sm:px-6 lg:px-8 space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         {/* Filter Pills */}
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="flex flex-wrap gap-2 overflow-x-auto pb-2">
         <Button variant="default" size="sm">{t('all')}</Button>
         <Button variant="outline" size="sm">{t('sponsored')}</Button>
         <Button variant="outline" size="sm">{t('featured')}</Button>
@@ -87,13 +87,13 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
       </div>
 
       {/* Feed */}
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
         {spotlightItems.map((item, index) => (
-          <Card key={item.id} className="overflow-hidden">
+          <Card key={item.id} className="overflow-hidden md:block">
             {/* Header */}
             <CardHeader className="pb-3">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Avatar>
                     <AvatarFallback>
                       {item.assignee_name?.charAt(0) || "V"}
@@ -114,13 +114,13 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
             </CardHeader>
 
             {/* Image Placeholder */}
-            <div className="relative aspect-square bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-pink-500/20 flex items-center justify-center">
+            <div className="relative aspect-square bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-pink-500/20 flex flex-wrap items-center justify-center">
               <div className="text-center space-y-2">
                 <Sparkles className="h-16 w-16 mx-auto text-purple-500/50"  aria-hidden="true" />
                 <p className="text-sm text-muted-foreground">Featured Image</p>
               </div>
               {(item as any).status === "sponsored" && (
-                <Badge className="absolute top-4 right-4 bg-purple-600">
+                <Badge className="absolute sm:relative sm:inset-auto top-2 md:top-4 right-2 md:right-4 bg-purple-600">
                   Sponsored
                 </Badge>
               )}
@@ -129,8 +129,8 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
             {/* Content */}
             <CardContent className="pt-4 space-y-4">
               {/* Actions */}
-              <div className="flex items-center justify-between">
-                <div className="flex gap-4">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                   <Button
                     variant="ghost"
                     size="sm"
@@ -183,10 +183,10 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
               </div>
 
               {/* Price and Rating */}
-              <div className="flex items-center justify-between pt-2 border-t">
-                <div className="flex items-center gap-4">
-                  <p className="text-2xl font-bold">{item.price}</p>
-                  <div className="flex items-center gap-1">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between pt-2 border-t">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{item.price}</p>
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                     <span className="font-semibold">{item.rating}</span>
                   </div>
@@ -218,7 +218,7 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
       </div>
 
         {/* Load More */}
-        <div className="flex justify-center pt-4">
+        <div className="flex flex-wrap justify-center pt-4">
           <Button variant="outline" size="lg">
             Load More
           </Button>

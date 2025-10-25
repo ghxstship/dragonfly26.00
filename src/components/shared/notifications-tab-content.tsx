@@ -201,7 +201,7 @@ export function NotificationsTabContent() {
           }
         }}
       >
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <div className="flex-shrink-0 mt-1">
             <div
               className={cn(
@@ -224,9 +224,9 @@ export function NotificationsTabContent() {
             </div>
           </div>
           <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
               <div className="font-medium text-sm">{notification.title}</div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 {!notification.read && (
                   <div className="h-2 w-2 rounded-full bg-primary flex-shrink-0" />
                 )}
@@ -235,7 +235,7 @@ export function NotificationsTabContent() {
             <div className="text-sm text-muted-foreground mt-1 line-clamp-2">
               {notification.message}
             </div>
-            <div className="flex items-center gap-2 mt-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2">
               <div className="text-xs text-muted-foreground">
                 {formatDate(notification.created_at)}
               </div>
@@ -262,21 +262,21 @@ export function NotificationsTabContent() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-12">
+      <div className="flex flex-wrap items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header Actions */}
       {unreadCount > 0 && (
         <div className="px-4 py-2 border-b">
           <Button 
             variant="ghost" 
             size="sm" 
-            className="w-full gap-2 justify-center"
+            className="w-full gap-2 justify-center max-w-full"
             onClick={markAllAsRead}
           >
             <CheckCheck className="h-4 w-4" />
@@ -285,8 +285,8 @@ export function NotificationsTabContent() {
         </div>
       )}
 
-      <Tabs defaultValue="all" className="flex-1 flex flex-col min-h-0">
-        <TabsList className="w-full grid grid-cols-3 mx-4 mt-4">
+      <Tabs defaultValue="all" className="flex-1 flex flex-wrap flex-col min-h-0">
+        <TabsList className="w-full grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4 mt-4 max-w-full">
           <TabsTrigger value="all">All</TabsTrigger>
           <TabsTrigger value="unread">Unread</TabsTrigger>
           <TabsTrigger value="mentions">Mentions</TabsTrigger>
@@ -316,7 +316,7 @@ export function NotificationsTabContent() {
                 </div>
               )}
               {notifications.length === 0 && (
-                <div className="text-center py-12">
+                <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
                   <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">All caught up!</p>
                   <p className="text-xs text-muted-foreground mt-1">
@@ -335,7 +335,7 @@ export function NotificationsTabContent() {
                 .filter((n) => !n.read)
                 .map(renderNotification)}
               {notifications.filter((n) => !n.read).length === 0 && (
-                <div className="text-center py-12">
+                <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
                   <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">All caught up!</p>
                   <p className="text-xs text-muted-foreground mt-1">
@@ -354,7 +354,7 @@ export function NotificationsTabContent() {
                 .filter((n: any) => n.type === "mention")
                 .map(renderNotification)}
               {notifications.filter((n: any) => n.type === "mention").length === 0 && (
-                <div className="text-center py-12">
+                <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
                   <AtSign className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">No mentions</p>
                   <p className="text-xs text-muted-foreground mt-1">

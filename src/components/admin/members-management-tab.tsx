@@ -252,20 +252,20 @@ export function MembersManagementTab() {
   )
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.members.totalMembers')}</CardDescription>
-            <CardTitle className="text-3xl">{members.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{members.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Active</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => (m as any).status === "active").length}
             </CardTitle>
           </CardHeader>
@@ -273,7 +273,7 @@ export function MembersManagementTab() {
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Pending</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => (m as any).status === "pending").length}
             </CardTitle>
           </CardHeader>
@@ -281,7 +281,7 @@ export function MembersManagementTab() {
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>High-Level Roles</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => ['legend', 'phantom', 'aviator', 'gladiator'].includes(m.role)).length}
             </CardTitle>
           </CardHeader>
@@ -291,9 +291,9 @@ export function MembersManagementTab() {
       {/* Search and Filter */}
       <Card>
         <CardContent className="pt-6">
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('admin.members.searchPlaceholder')}
                 value={searchQuery as any}
@@ -312,9 +312,9 @@ export function MembersManagementTab() {
       {/* Members List */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <CardTitle>All Members ({filteredMembers.length})</CardTitle>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Checkbox
                 checked={selectedIds.length === filteredMembers.length && filteredMembers.length > 0}
                 onCheckedChange={handleSelectAll}
@@ -336,7 +336,7 @@ export function MembersManagementTab() {
                   setDrawerMode('view')
                 }}
               >
-                <div className="flex items-center gap-4 flex-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-1">
                   <Checkbox
                     checked={selectedIds.includes(member.id)}
                     onCheckedChange={() => handleSelectMember(member.id)}
@@ -350,14 +350,14 @@ export function MembersManagementTab() {
                   </Avatar>
 
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                       <p className="font-medium truncate">{member.nameKey ? t(member.nameKey) : member.name}</p>
                       {(member.role === "legend" || member.role === "phantom") && (
                         <Crown className="h-4 w-4 text-yellow-500" aria-hidden="true" />
                       )}
                       {getStatusIcon(member.status)}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                       <Mail className="h-3 w-3" aria-hidden="true" />
                       <span className="truncate">{member.email}</span>
                       <span>•</span>
@@ -368,7 +368,7 @@ export function MembersManagementTab() {
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                     <Badge variant={getRoleBadgeColor(member.role)}>
                       {member.role.charAt(0).toUpperCase() + member.role.slice(1)}
                     </Badge>

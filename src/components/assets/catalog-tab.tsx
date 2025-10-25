@@ -148,7 +148,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
       label: 'Tags', 
       type: 'array',
       render: (value: string[]) => value?.length ? (
-        <div className="flex gap-1 flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-1 flex-wrap">
           {value.slice(0, 3).map((tag: any, idx: number) => (
             <Badge key={idx} variant="secondary" className="text-xs">
               {tag}
@@ -183,31 +183,31 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('totalItems')}</CardDescription>
-            <CardTitle className="text-3xl">{statistics?.total_items || 0}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.total_items || 0}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Asset Categories</CardDescription>
-            <CardTitle className="text-3xl">{statistics?.asset_categories || 0}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.asset_categories || 0}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Categories</CardDescription>
-            <CardTitle className="text-3xl">{statistics?.categories || 0}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.categories || 0}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Manufacturers</CardDescription>
-            <CardTitle className="text-3xl">{statistics?.manufacturers || 0}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.manufacturers || 0}</CardTitle>
           </CardHeader>
         </Card>
       </div>
@@ -215,9 +215,9 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
       {/* Search and Filter Bar */}
       <Card>
         <CardContent className="pt-6">
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('assets.catalog.searchPlaceholder')}
                 value={searchQuery as any}
@@ -226,7 +226,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
               />
             </div>
             <Select value={categoryFilter as any} onValueChange={setCategoryFilter}>
-              <SelectTrigger className="w-[200px]">
+              <SelectTrigger className="w-full max-w-[200px]">
                 <SelectValue placeholder={t('assets.catalog.allCategories')} />
               </SelectTrigger>
               <SelectContent>
@@ -264,9 +264,9 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
       {/* Catalog Table */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <BookOpen className="h-4 w-4" aria-hidden="true" />
                 Asset Catalog
               </CardTitle>

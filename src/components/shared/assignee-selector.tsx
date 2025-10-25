@@ -61,9 +61,9 @@ export function AssigneeSelector({
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
       {/* Display assigned users */}
-      <div className="flex -space-x-2">
+      <div className="flex flex-wrap md:flex-nowrap -space-x-2">
         {assignees.slice(0, 3).map((assignee) => (
           <div key={assignee.id} className="relative group">
             <Avatar className="h-8 w-8 border-2 border-background">
@@ -74,7 +74,7 @@ export function AssigneeSelector({
             </Avatar>
             <button
               onClick={() => removeAssignee(assignee.user_id)}
-              className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-destructive text-destructive-foreground opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-4 w-4 rounded-full bg-destructive text-destructive-foreground opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
             >
               <X className="h-3 w-3" />
             </button>
@@ -98,7 +98,7 @@ export function AssigneeSelector({
               <UserPlus className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-64 p-0">
+          <DropdownMenuContent align="end" className="w-full sm:w-64 p-0">
             <div className="p-2 border-b sticky top-0 bg-background z-10">
               <DropdownMenuLabel className="px-2 py-1.5">Assign to</DropdownMenuLabel>
               <Input

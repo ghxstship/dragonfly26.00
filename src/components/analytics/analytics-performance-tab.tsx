@@ -80,14 +80,14 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
   const tCommon = useTranslations('common')
   const displayData = data || []
   return (
-    <div className="space-y-6">
-      <div className="grid gap-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {performanceAreas.map((area: PerformanceArea, index: number) => (
           <Card key={index} role="region" aria-label={`${t(area.nameKey)} performance`}>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Award className="h-5 w-5 text-blue-600" aria-hidden="true" />
                     {t(area.nameKey)}
                   </CardTitle>
@@ -107,7 +107,7 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
             <CardContent>
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                     <span className="text-muted-foreground">vs. Industry Benchmark ({area.benchmark})</span>
                     <span className={(area as any).status === "above" ? "text-green-600" : "text-yellow-600"}>
                       {(area as any).status === "above" ? "+" : ""}{(area as any).score - (area as any).benchmark} points
@@ -116,7 +116,7 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
                   <Progress value={area.score} className="h-2" />
                 </div>
 
-                <div className="grid grid-cols-3 gap-4 pt-4 border-t">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 pt-4 border-t">
                   {area.metrics.map((metric: PerformanceMetric, idx: number) => (
                     <div key={idx} className="space-y-1">
                       <p className="text-xs text-muted-foreground">{t(metric.labelKey)}</p>

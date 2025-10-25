@@ -45,8 +45,8 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
   const tCommon = useTranslations('common')
   const displayData = data.length > 0 ? data : []
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {/* Configuration Panel */}
         <div className="col-span-1 space-y-4">
           <Card role="region" aria-labelledby="config-title">
@@ -77,11 +77,11 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
 
               <div className="space-y-2">
                 <Label>{t('visualizationType')}</Label>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
                   {chartTypes.map((chart: any) => {
                     const Icon = chart.icon
                     return (
-                      <Button key={chart.value} variant="outline" className="h-20 flex flex-col gap-2">
+                      <Button key={chart.value} variant="outline" className="h-20 flex flex-wrap flex-col gap-2">
                         <Icon className="h-6 w-6" />
                         <span className="text-xs">{t(chart.labelKey)}</span>
                       </Button>
@@ -101,7 +101,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
                 {(sampleFields as any[]).map((field: any) => (
                   <div
                     key={field.id}
-                    className="flex items-center gap-2 p-2 border rounded hover:bg-accent cursor-move"
+                    className="flex flex-col md:flex-row items-center gap-2 p-2 border rounded hover:bg-accent cursor-move"
                   >
                     <GripVertical className="h-4 w-4 text-muted-foreground" />
                     <div className="flex-1">
@@ -122,7 +122,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
               <CardTitle className="text-lg" id="preview-title">{t('reportPreview')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="border-2 border-dashed rounded-lg p-8 text-center min-h-[500px] flex items-center justify-center" role="status" aria-label={t('dragFieldsPrompt')}>
+              <div className="border-2 border-dashed rounded-lg p-8 text-center min-h-[300px] md:h-[500px] flex items-center justify-center" role="status" aria-label={t('dragFieldsPrompt')}>
                 <div className="text-muted-foreground">
                   <BarChart className="h-16 w-16 mx-auto mb-4 opacity-50" aria-hidden="true" />
                   <p className="text-lg font-medium mb-2">{t('dragFieldsPrompt')}</p>
@@ -132,7 +132,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
 
               <div className="mt-6 p-4 bg-muted rounded-lg">
                 <h4 className="font-medium mb-2">{t('filters')}</h4>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Button variant="outline" size="sm" aria-label={t('addFilter')}>
                     <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
                     {t('addFilter')}

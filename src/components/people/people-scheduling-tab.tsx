@@ -84,33 +84,33 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Shifts</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{shifts.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{shifts.length}</div>
             <p className="text-xs text-muted-foreground">This week</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Hours</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalHours as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalHours as any}</div>
             <p className="text-xs text-muted-foreground">Scheduled</p>
           </CardContent>
         </Card>
 
         <Card className={conflicts > 0 ? "border-yellow-200 dark:border-yellow-900" : ""}>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Conflicts</CardTitle>
             <AlertTriangle className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -123,12 +123,12 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Overtime</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{overtimeShifts as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{overtimeShifts as any}</div>
             <p className="text-xs text-muted-foreground">Shifts</p>
           </CardContent>
         </Card>
@@ -137,9 +137,9 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
       {/* View Controls */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <CardTitle>Schedule Grid</CardTitle>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Button 
                 variant={viewMode === 'week' ? 'default' : 'outline'} 
                 size="sm"
@@ -154,7 +154,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
               >
                 Month
               </Button>
-              <div className="border-l pl-2 ml-2 flex gap-1">
+              <div className="border-l pl-2 ml-2 flex flex-wrap gap-1">
                 <Button variant="ghost" size="icon" onClick={() => {
                   const newDate = new Date(currentDate)
                   newDate.setDate(newDate.getDate() - 7)
@@ -179,7 +179,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         <CardContent>
           {/* Week View Grid */}
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+            <table className="w-full border-collapse max-w-full">
               <thead>
                 <tr>
                   <th className="border p-2 bg-muted font-medium text-sm w-32">{t('title')}</th>
@@ -226,7 +226,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                                 className={`text-xs p-1.5 rounded ${getShiftTypeColor(shift.shift_type)}`}
                               >
                                 <div className="font-medium">{shift.start_time} - {shift.end_time}</div>
-                                <div className="flex items-center gap-1 mt-0.5">
+                                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mt-0.5">
                                   {shift.is_overtime && (
                                     <Badge variant="outline" className="text-[10px] px-1 py-0">OT</Badge>
                                   )}
@@ -250,24 +250,24 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           </div>
 
           {/* Legend */}
-          <div className="flex items-center gap-4 mt-4 pt-4 border-t text-sm">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 mt-4 pt-4 border-t text-sm">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <div className="w-3 h-3 bg-yellow-100 dark:bg-yellow-950 rounded" />
               <span>{t('morning')}</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <div className="w-3 h-3 bg-blue-100 dark:bg-blue-950 rounded" />
               <span>{t('afternoon')}</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <div className="w-3 h-3 bg-purple-100 dark:bg-purple-950 rounded" />
               <span>{t('evening')}</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <AlertTriangle className="h-4 w-4 text-yellow-600" />
               <span>{t('conflict')}</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-green-600" />
               <span>{t('confirmed')}</span>
             </div>
@@ -278,7 +278,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
       {conflicts > 0 && (
         <Card className="border-yellow-200 dark:border-yellow-900">
           <CardHeader>
-            <CardTitle className="text-yellow-600 flex items-center gap-2">
+            <CardTitle className="text-yellow-600 flex flex-wrap flex-col md:flex-row items-center gap-2">
               <AlertTriangle className="h-4 w-4" aria-hidden="true" />
               Scheduling Conflicts
             </CardTitle>
@@ -287,7 +287,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           <CardContent>
             <div className="space-y-2">
               {shifts.filter((s: any) => s.has_conflict).slice(0, 5).map((shift: any) => (
-                <div key={shift.id} className="flex items-center justify-between p-2 border rounded">
+                <div key={shift.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 border rounded">
                   <div>
                     <span className="font-medium">{shift.person_name}</span>
                     <span className="text-sm text-muted-foreground ml-2">

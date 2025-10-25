@@ -72,7 +72,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
 
   const displayReviews = data || []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Upcoming Reviews */}
       <div>
         <h3 className="font-semibold mb-4">{t('upcomingReviews')}</h3>
@@ -80,26 +80,26 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
           {upcomingReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start gap-4 flex-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4 flex-1">
                     <Calendar className="h-8 w-8 text-blue-600 mt-1" aria-hidden="true" />
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                         <h4 className="font-semibold text-lg">{t(review.titleKey)}</h4>
                         <Badge variant="outline">{review.type}</Badge>
                       </div>
                       
-                      <div className="grid grid-cols-2 gap-4 text-sm mb-3">
+                      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 text-sm mb-3">
                         <div>
                           <p className="text-muted-foreground">{t('dateTime')}</p>
-                          <p className="font-medium flex items-center gap-1">
+                          <p className="font-medium flex flex-wrap flex-col md:flex-row items-center gap-1">
                             <Calendar className="h-3 w-3" aria-hidden="true" />
                             {review.date} at {review.time}
                           </p>
                         </div>
                         <div>
                           <p className="text-muted-foreground">{t('attendees')}</p>
-                          <p className="font-medium flex items-center gap-1">
+                          <p className="font-medium flex flex-wrap flex-col md:flex-row items-center gap-1">
                             <Users className="h-3 w-3" aria-hidden="true" />
                             {review.attendees.join(", ")}
                           </p>
@@ -119,7 +119,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                     </div>
                   </div>
                   
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-wrap flex-col gap-2">
                     <Button>
                       <FileText className="h-4 w-4 mr-2" aria-hidden="true" />
                       View Details
@@ -142,10 +142,10 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
           {pastReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                   <CheckCircle className="h-8 w-8 text-green-600 mt-1" aria-hidden="true" />
                   <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                       <h4 className="font-semibold">{t(review.titleKey)}</h4>
                       <Badge variant="outline">{review.type}</Badge>
                       <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">
@@ -153,7 +153,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                       </Badge>
                     </div>
                     
-                    <div className="flex items-center gap-6 text-sm text-muted-foreground mb-3">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 text-sm text-muted-foreground mb-3">
                       <span>{review.date}</span>
                       <span>•</span>
                       <span>{review.attendees} attendees</span>
@@ -165,7 +165,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                       <p className="text-sm font-medium mb-2">{t('keyOutcomes')}</p>
                       <ul className="space-y-1">
                         {review.outcomes.map((outcome: any, idx: number) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <li key={idx} className="text-sm text-muted-foreground flex flex-wrap flex-col md:flex-row items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
                             {outcome}
                           </li>

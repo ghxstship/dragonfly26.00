@@ -181,9 +181,9 @@ export function CreateTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Action Buttons - Standard Positioning */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <p className="text-muted-foreground">
           Create member profiles
         </p>
@@ -206,7 +206,7 @@ export function CreateTab() {
       {/* Single User Creation */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <UserPlus className="h-5 w-5" aria-hidden="true" />
             Create User Account
           </CardTitle>
@@ -215,7 +215,7 @@ export function CreateTab() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="createEmail">Email Address *</Label>
               <Input
@@ -239,7 +239,7 @@ export function CreateTab() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="createRole">Role</Label>
               <Select value={role as any} onValueChange={setRole}>
@@ -256,7 +256,7 @@ export function CreateTab() {
 
             <div className="space-y-2">
               <Label htmlFor="createPassword">Password (Optional)</Label>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Input
                   id="createPassword"
                   type="text"
@@ -274,7 +274,7 @@ export function CreateTab() {
             </div>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex flex-wrap justify-end">
             <Button onClick={handleAddUser}>
               Add User
             </Button>
@@ -284,15 +284,15 @@ export function CreateTab() {
             <>
               <Separator />
               <div className="space-y-2">
-                <Label className="flex items-center gap-2">
+                <Label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Users className="h-4 w-4" aria-hidden="true" />
                   Pending Accounts ({users.length})
                 </Label>
                 <div className="space-y-2 max-h-[250px] overflow-auto border rounded-md p-3">
                   {users.map((user, index: number) => (
-                    <div key={index} className="flex items-center justify-between gap-2 p-3 bg-muted rounded-md">
+                    <div key={index} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 p-3 bg-muted rounded-md">
                       <div className="flex-1 space-y-1">
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <span className="font-medium text-sm">{user.name}</span>
                           <Badge variant="outline" className="text-xs">
                             {user.role}
@@ -319,7 +319,7 @@ export function CreateTab() {
             </>
           )}
 
-          <div className="flex justify-end">
+          <div className="flex flex-wrap justify-end">
             <Button onClick={handleCreateUsers} size="lg" disabled={users.length === 0}>
               <Save className="h-4 w-4 mr-2" aria-hidden="true" />
               Create {users.length > 0 ? `${users.length} ` : ''}Account{users.length !== 1 ? 's' : ''}
@@ -331,7 +331,7 @@ export function CreateTab() {
       {/* Bulk Import */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <FileSpreadsheet className="h-5 w-5" aria-hidden="true" />
             Bulk Import
           </CardTitle>
@@ -349,7 +349,7 @@ export function CreateTab() {
           </Alert>
 
           <div className="space-y-2">
-            <Label htmlFor="bulkData" className="flex items-center gap-2">
+            <Label htmlFor="bulkData" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <FileSpreadsheet className="h-4 w-4" aria-hidden="true" />
               User Data
             </Label>
@@ -365,7 +365,7 @@ export function CreateTab() {
             </p>
           </div>
 
-          <div className="flex justify-end gap-2">
+          <div className="flex flex-wrap justify-end gap-2">
             <Button variant="outline" onClick={() => setBulkData("")}>
               Clear
             </Button>

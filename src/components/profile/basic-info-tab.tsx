@@ -117,24 +117,24 @@ export function BasicInfoTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>{t('profile.basicInfo.profilePhoto')}</CardTitle>
           <CardDescription>{t('profile.basicInfo.uploadDescription')}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
             <Avatar className="h-24 w-24">
               <AvatarImage src={profileData.profileImage} />
-              <AvatarFallback className="text-2xl">
+              <AvatarFallback className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
                 {profileData.firstName?.[0]}{profileData.lastName?.[0]}
               </AvatarFallback>
             </Avatar>
@@ -144,7 +144,7 @@ export function BasicInfoTab() {
                 type="file"
                 accept="image/*"
                 onChange={handlePhotoUpload}
-                className="hidden"
+                className="hidden md:block"
               />
               <Button 
                 variant="outline" 
@@ -173,7 +173,7 @@ export function BasicInfoTab() {
           <CardDescription>{t('profile.basicInfo.personalDetails')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">{t('profile.basicInfo.firstName')}</Label>
               <Input
@@ -194,7 +194,7 @@ export function BasicInfoTab() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="email">{t('profile.basicInfo.email')}</Label>
               <Input
@@ -246,7 +246,7 @@ export function BasicInfoTab() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="city">{t('profile.basicInfo.city')}</Label>
               <Input
@@ -267,7 +267,7 @@ export function BasicInfoTab() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="zipCode">{t('profile.basicInfo.zipCode')}</Label>
               <Input
@@ -290,7 +290,7 @@ export function BasicInfoTab() {
         </CardContent>
       </Card>
 
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end">
         <Button onClick={handleSave} disabled={saving}>
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />

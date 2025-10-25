@@ -98,14 +98,14 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
         setActiveThread(isReply ? msg.parentId! : msg.id)
       }}
     >
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3">
         <Avatar className={cn("flex-shrink-0", isReply ? "h-6 w-6" : "h-8 w-8")}>
           <AvatarFallback className={isReply ? "text-xs" : ""}>
             {msg.userName.slice(0, 2).toUpperCase()}
           </AvatarFallback>
         </Avatar>
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
             <span className={cn("font-medium", isReply ? "text-sm" : "text-sm")}>{msg.userName}</span>
             <span className="text-xs text-muted-foreground">{formatTime(msg.timestamp)}</span>
             {msg.read && <CheckCheck className="h-3 w-3 text-primary" />}
@@ -157,10 +157,10 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
   const unreadCount = messages.filter((m: any) => !m.read).length
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <MessageSquare className="h-5 w-5" />
           <h3 className="font-semibold">Chat</h3>
           <Badge variant="secondary">{messages.length} messages</Badge>
@@ -179,8 +179,8 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
 
       {/* Input */}
       <div className="p-4 border-t bg-background">
-        <div className="flex items-end gap-2">
-          <div className="flex-1 flex flex-col gap-2">
+        <div className="flex flex-wrap items-end gap-2">
+          <div className="flex-1 flex flex-wrap flex-col gap-2">
             <Input
               placeholder="Type a message..."
               value={message as any}
@@ -195,7 +195,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
             />
           </div>
           <TooltipProvider delayDuration={300}>
-            <div className="flex gap-1">
+            <div className="flex flex-wrap gap-1">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="ghost" size="icon">
@@ -224,7 +224,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Send message</p>
-                  <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">Enter</kbd>
+                  <kbd className="ml-2 inline-flex flex-col md:flex-row items-center gap-0.5 font-mono text-[11px] opacity-70">Enter</kbd>
                 </TooltipContent>
               </Tooltip>
             </div>

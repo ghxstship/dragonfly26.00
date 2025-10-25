@@ -39,11 +39,11 @@ export function AutomationsPageContent() {
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       <div className="border-b bg-background p-6">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-6">
           <div>
-            <h1 className="text-3xl font-bold">Automations</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Automations</h1>
             <p className="text-muted-foreground mt-2">Automate repetitive tasks</p>
           </div>
           <Button onClick={() => setIsBuilding(true)} className="gap-2">
@@ -52,23 +52,23 @@ export function AutomationsPageContent() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
           <Card>
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Total</p>
-              <p className="text-2xl font-bold">{stats.total}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.total}</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Active</p>
-              <p className="text-2xl font-bold text-green-600">{stats.active}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{stats.active}</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground">Executions</p>
-              <p className="text-2xl font-bold">{stats.executions}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.executions}</p>
             </CardContent>
           </Card>
         </div>

@@ -216,16 +216,16 @@ export function PhotoTabContent() {
 
       {/* Camera View or Preview */}
       {showCamera ? (
-        <div className="relative rounded-lg overflow-hidden bg-black">
+        <div className="relative rounded-lg overflow-hidden md:block bg-black">
           <video
             ref={videoRef}
             autoPlay
             playsInline
             muted
-            className="w-full h-64 object-cover"
+            className="w-full h-48 md:h-56 lg:h-64 object-cover max-w-full"
           />
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-            <Button
+          <div className="absolute sm:relative sm:inset-auto bottom-4 left-0 right-0 flex flex-wrap justify-center gap-2 sm:relative sm:inset-auto flex-col sm:flex-row">
+        <Button
               variant="secondary"
               size="sm"
               onClick={stopCamera}
@@ -243,23 +243,23 @@ export function PhotoTabContent() {
           </div>
         </div>
       ) : capturedPhoto ? (
-        <div className="relative rounded-lg overflow-hidden">
+        <div className="relative rounded-lg overflow-hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={capturedPhoto}
             alt="Captured"
-            className="w-full h-64 object-cover"
+            className="w-full h-48 md:h-56 lg:h-64 object-cover max-w-full"
           />
           {uploading ? (
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+            <div className="absolute sm:relative sm:inset-auto inset-0 bg-black/50 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
               <div className="text-center text-white">
                 <Loader2 className="h-8 w-8 animate-spin mx-auto mb-2" />
                 <p className="text-sm">Saving... {progress}%</p>
               </div>
             </div>
           ) : (
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-              <Button
+            <div className="absolute sm:relative sm:inset-auto bottom-4 left-0 right-0 flex flex-wrap justify-center gap-2 sm:relative sm:inset-auto flex-col sm:flex-row">
+        <Button
                 variant="secondary"
                 size="sm"
                 onClick={retakePhoto}
@@ -278,7 +278,7 @@ export function PhotoTabContent() {
           )}
         </div>
       ) : (
-        <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-lg bg-muted/20">
+        <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64 border-2 border-dashed rounded-lg bg-muted/20">
           <div className="text-center">
             <Camera className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
             <p className="text-sm font-medium mb-1">Camera Ready</p>
@@ -290,7 +290,7 @@ export function PhotoTabContent() {
       )}
 
       {/* Canvas for photo capture (hidden) */}
-      <canvas ref={canvasRef} className="hidden" />
+      <canvas ref={canvasRef} className="hidden md:block" />
 
       {/* Action Buttons */}
       {!showCamera && !capturedPhoto && (
@@ -305,7 +305,7 @@ export function PhotoTabContent() {
             Open Camera
           </Button>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
             <Button
               variant="outline"
               size="sm"
@@ -340,7 +340,7 @@ export function PhotoTabContent() {
             accept="image/jpeg,image/png,image/webp,image/heic"
             multiple
             onChange={handleFileUpload}
-            className="hidden"
+            className="hidden md:block"
           />
         </>
       )}

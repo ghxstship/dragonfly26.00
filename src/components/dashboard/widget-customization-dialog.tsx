@@ -110,7 +110,7 @@ export function WidgetCustomizationDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-primary/10">
               <Settings2 className="h-5 w-5 text-primary" />
             </div>
@@ -124,7 +124,7 @@ export function WidgetCustomizationDialog({
         </DialogHeader>
 
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 bg-muted rounded-lg">
             <div className="text-sm">
               <span className="font-medium">{enabledCount}</span> of {widgets.length} widgets enabled
             </div>
@@ -148,15 +148,15 @@ export function WidgetCustomizationDialog({
               return (
                 <div
                   key={widget.id}
-                  className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
+                  className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
                 >
-                  <div className="flex items-center gap-3 flex-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 flex-1">
                     <GripVertical className="h-4 w-4 text-muted-foreground cursor-move" />
                     <div className={`p-2 rounded ${color}`}>
                       <Icon className="h-4 w-4 text-white" />
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Label htmlFor={`widget-${widget.id}`} className="font-medium cursor-pointer">
                           {widget.name}
                         </Label>

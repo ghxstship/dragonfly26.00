@@ -118,7 +118,7 @@ export function SmartFiltersBar({
   return (
     <div className="space-y-3 p-4 bg-muted/30 border-b">
       {/* Main Filters */}
-      <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
         <span className="text-sm font-medium text-muted-foreground">Filters:</span>
         
         {/* Employees Dropdown */}
@@ -226,7 +226,7 @@ export function SmartFiltersBar({
       </div>
 
       {/* Quick Filters */}
-      <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
         <span className="text-sm font-medium text-muted-foreground">Quick:</span>
         
         <Button
@@ -282,7 +282,7 @@ export function SmartFiltersBar({
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           placeholder={t('people.search.placeholder')}
           value={searchQuery as any}
@@ -293,7 +293,7 @@ export function SmartFiltersBar({
           <Button
             variant="ghost"
             size="sm"
-            className="absolute right-1 top-1/2 -translate-y-1/2 h-7"
+            className="absolute sm:relative sm:inset-auto right-1 top-1/2 -translate-y-1/2 h-7 sm:relative sm:inset-auto"
             onClick={() => handleSearch("")}
           >
             <X className="h-3 w-3" />
@@ -302,7 +302,7 @@ export function SmartFiltersBar({
         <Button
           variant="ghost"
           size="sm"
-          className="absolute right-9 top-1/2 -translate-y-1/2 h-7 text-xs"
+          className="absolute sm:relative sm:inset-auto right-9 top-1/2 -translate-y-1/2 h-7 text-xs sm:relative sm:inset-auto"
         >
           Advanced
         </Button>
@@ -323,13 +323,13 @@ export function FilterSummaryBar({
 }) {
   const t = useTranslations()
   return (
-    <div className="flex items-center justify-between px-4 py-2 bg-muted/20 text-sm">
-      <div className="flex items-center gap-2">
+    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between px-4 py-2 bg-muted/20 text-sm">
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
         <span className="text-muted-foreground">
           Showing <strong>{filteredCount}</strong> of <strong>{totalCount}</strong> employees
         </span>
         {activeFilters && activeFilters.length > 0 && (
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             {activeFilters.map((filter, i) => (
               <Badge key={i} variant="secondary" className="h-5">
                 {filter}

@@ -38,7 +38,7 @@ export function ModuleTabs({ moduleSlug }: ModuleTabsProps) {
 
   return (
     <div className="border-b bg-background overflow-x-auto">
-      <div className="flex items-center gap-1 px-4 min-w-max">
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 px-4 min-w-max">
         {tabs.map((tab: any) => {
           const IconComponent = iconMap[tab.icon] as React.ComponentType<{ className?: string; style?: React.CSSProperties }> | undefined
           const href = `/workspace/${workspaceId}/${moduleSlug}/${tab.slug}`

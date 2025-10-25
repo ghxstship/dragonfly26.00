@@ -83,8 +83,8 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
     const hasChildren = node.children.length > 0
 
     return (
-      <div key={node.id} className="flex items-start gap-2">
-        <div className="flex flex-col items-center">
+      <div key={node.id} className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+        <div className="flex flex-wrap flex-col items-center">
           {/* Node */}
           <div
             className={cn(
@@ -123,7 +123,7 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
               <Button
                 variant="outline"
                 size="icon"
-                className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-6 w-6"
+                className="absolute sm:relative sm:inset-auto -bottom-3 left-1/2 -translate-x-1/2 h-6 w-6 sm:relative sm:inset-auto"
                 onClick={(e) => {
                   e.stopPropagation()
                   toggleNode(node.id)
@@ -148,15 +148,15 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
   const tree = buildTree()
 
   return (
-    <div className="relative h-full flex flex-col">
+    <div className="relative h-full flex flex-wrap flex-col">
       {/* Toolbar */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Network className="h-5 w-5" />
           <h3 className="font-semibold">Mind Map</h3>
           <Badge variant="secondary">{data.length} nodes</Badge>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Button
             variant={layout === "radial" ? "secondary" : "outline"}
             size="sm"
@@ -173,7 +173,7 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
           </Button>
           <div className="w-px h-6 bg-border mx-2" />
           <TooltipProvider delayDuration={300}>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button
@@ -227,11 +227,11 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
           style={{ transform: `scale(${zoom / 100})`, transformOrigin: "top left" }}
         >
           {tree.length > 0 ? (
-            <div className="space-y-8">
+            <div className="space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
               {tree.map((root: any) => renderNode(root))}
             </div>
           ) : (
-            <div className="text-center text-muted-foreground py-12">
+            <div className="text-center text-muted-foreground py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
               No data to visualize
             </div>
           )}

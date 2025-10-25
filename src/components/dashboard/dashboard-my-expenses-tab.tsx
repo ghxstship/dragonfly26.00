@@ -74,7 +74,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
         {/* Stats Grid - Replaces 60+ lines of hardcoded cards */}
         <StatsGrid stats={stats} columns={4} />
 
@@ -87,7 +87,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
           emptyMessage={t('noExpenses')}
           renderItem={(expense) => (
             <div className="space-y-2">
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div>
                   <h3 className="font-semibold">{expense.name}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{expense.description}</p>
@@ -97,7 +97,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
                   <p className="text-xs text-muted-foreground">{expense.itemCount} items</p>
                 </div>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-col md:flex-row flex-wrap items-center gap-2">
                 <StatusBadge status={expense.status} showIcon />
                 <span className="text-xs text-muted-foreground">{expense.date}</span>
               </div>

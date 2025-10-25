@@ -48,7 +48,7 @@ export function MiniProfileCard({
     <Card className={className}>
       <CardContent className="p-4 space-y-3">
         {/* Header */}
-        <div className="flex items-start gap-3">
+        <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
           <Avatar className="h-12 w-12">
             <AvatarImage src={personnel.avatar} />
             <AvatarFallback>{initials}</AvatarFallback>
@@ -69,7 +69,7 @@ export function MiniProfileCard({
 
         {/* Contact Info */}
         <div className="space-y-2">
-          <div className="flex items-center gap-2 text-xs">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs">
             <Mail className="h-3 w-3 text-muted-foreground flex-shrink-0" />
             <a 
               href={`mailto:${personnel.email}`} 
@@ -79,7 +79,7 @@ export function MiniProfileCard({
             </a>
           </div>
           {personnel.phone && (
-            <div className="flex items-center gap-2 text-xs">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs">
               <Phone className="h-3 w-3 text-muted-foreground flex-shrink-0" />
               <a 
                 href={`tel:${personnel.phone}`}
@@ -90,7 +90,7 @@ export function MiniProfileCard({
             </div>
           )}
           {personnel.manager && (
-            <div className="flex items-center gap-2 text-xs">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs">
               <User className="h-3 w-3 text-muted-foreground flex-shrink-0" />
               <span className="text-muted-foreground">
                 Manager: <span className="text-foreground">{personnel.manager}</span>
@@ -104,7 +104,7 @@ export function MiniProfileCard({
 
         {/* Status & Info */}
         <div className="space-y-2">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <span className="text-xs text-muted-foreground">Status:</span>
             <StatusBadge 
               type="employment" 
@@ -114,11 +114,11 @@ export function MiniProfileCard({
           </div>
 
           {personnel.isClockedIn !== undefined && (
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Clock className="h-3 w-3 text-muted-foreground" />
               <span className="text-xs">
                 {personnel.isClockedIn ? (
-                  <span className="flex items-center gap-1">
+                  <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <StatusDot status="success" size="sm" />
                     <span className="text-green-600 font-medium">Clocked In</span>
                   </span>
@@ -130,7 +130,7 @@ export function MiniProfileCard({
           )}
 
           {personnel.ptoAvailable !== undefined && (
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Calendar className="h-3 w-3 text-muted-foreground" />
               <span className="text-xs text-muted-foreground">
                 PTO: <span className="font-medium text-foreground">{personnel.ptoAvailable} days</span> available
@@ -144,7 +144,7 @@ export function MiniProfileCard({
           <Button 
             variant="outline" 
             size="sm" 
-            className="w-full"
+            className="w-full max-w-full"
             onClick={onViewFullProfile}
           >
             View Full Profile
@@ -167,7 +167,7 @@ export function MiniProfilePopover({
   return (
     <div className="group relative inline-block">
       {children}
-      <div className="absolute z-50 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 left-0 top-full mt-2 w-80">
+      <div className="absolute sm:relative sm:inset-auto z-50 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 left-0 top-full mt-2 w-full sm:w-80">
         <MiniProfileCard personnel={personnel} />
       </div>
     </div>

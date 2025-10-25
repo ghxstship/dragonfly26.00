@@ -95,17 +95,17 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
   const displayData = data || []
   
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Tabs defaultValue="6months" className="space-y-4">
-        <TabsList className="w-full grid grid-cols-2 sm:grid-cols-4 h-auto">
+        <TabsList className="w-full grid grid-cols-2 sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 h-auto max-w-full">
           <TabsTrigger value="3months" className="text-xs sm:text-sm">
-            <span className="hidden sm:inline">{t('last')}</span> 3M
+            <span className="hidden md:block sm:inline">{t('last')}</span> 3M
           </TabsTrigger>
           <TabsTrigger value="6months" className="text-xs sm:text-sm">
-            <span className="hidden sm:inline">{t('last')}</span> 6M
+            <span className="hidden md:block sm:inline">{t('last')}</span> 6M
           </TabsTrigger>
           <TabsTrigger value="12months" className="text-xs sm:text-sm">
-            <span className="hidden sm:inline">{t('last')}</span> 12M
+            <span className="hidden md:block sm:inline">{t('last')}</span> 12M
           </TabsTrigger>
           <TabsTrigger value="ytd" className="text-xs sm:text-sm">YTD</TabsTrigger>
         </TabsList>
@@ -122,7 +122,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
             return (
               <Card key={index} role="article">
                 <CardHeader>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="flex flex-wrap flex-col md:flex-row flex-col sm:flex-row flex-col md:flex-row flex-col sm:flex-col md:flex-row items-start sm:items-center justify-between gap-3">
                     <div className="flex-1">
                       <CardTitle className="text-base sm:text-lg">{data.metric}</CardTitle>
                       <CardDescription className="text-xs sm:text-sm">
@@ -130,7 +130,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
                       </CardDescription>
                     </div>
                     <div className="text-left sm:text-right">
-                      <p className="text-xl sm:text-2xl font-bold">{data.current}</p>
+                      <p className="text-base md:text-lg lg:text-xl sm:text-lg md:text-xl lg:text-2xl font-bold">{data.current}</p>
                       <Badge variant="outline" className={`${bgColor} ${trendColor} mt-2 text-xs`}>
                         <TrendIcon className="h-3 w-3 mr-1" aria-hidden="true" />
                         {data.change}
@@ -142,18 +142,18 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
                   <div className="space-y-4">
                     {/* Simple bar chart representation */}
                     <div className="overflow-x-auto -mx-2 px-2">
-                      <div className="flex items-end gap-2 h-32 sm:h-40 min-w-[280px]">
+                      <div className="flex flex-wrap items-end gap-2 h-32 sm:h-40 min-w-[280px]">
                         {periodsToShow.map((period: TrendPeriod, idx: number) => {
                           const maxValue = Math.max(...periodsToShow.map((p: TrendPeriod) => p.value))
                           const height = (period.value / maxValue) * 100
                           
                           return (
-                            <div key={idx} className="flex-1 flex flex-col items-center gap-2 min-w-[40px]">
-                              <div className="w-full bg-accent rounded-t-lg flex items-end justify-center relative" style={{ height: `${height}%` }}>
-                                <div className="absolute -top-6 text-[10px] sm:text-xs font-medium whitespace-nowrap">
+                            <div key={idx} className="flex flex-col md:flex-row-1 flex flex-wrap flex-col items-center gap-2 min-w-[40px]">
+                              <div className="w-full bg-accent rounded-t-lg flex items-end justify-center relative max-w-full" style={{ height: `${height}%` }}>
+                                <div className="absolute sm:relative sm:inset-auto -top-6 text-[10px] sm:text-xs font-medium whitespace-nowrap overflow-hidden text-ellipsis">
                                   {period.value}
                                 </div>
-                                <div className="w-full h-full bg-blue-600 rounded-t-lg hover:bg-blue-700 transition-colors touch-manipulation"></div>
+                                <div className="w-full h-full bg-blue-600 rounded-t-lg hover:bg-blue-700 transition-colors touch-manipulation max-w-full"></div>
                               </div>
                               <span className="text-[10px] sm:text-xs text-muted-foreground">
                                 {period.period}
@@ -165,7 +165,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
                     </div>
 
                     {/* Insights */}
-                    <div className="flex items-start sm:items-center gap-2 p-3 bg-accent rounded-lg text-xs sm:text-sm">
+                    <div className="flex flex-wrap flex-col md:flex-row flex-col md:flex-row items-start sm:items-center gap-2 p-3 bg-accent rounded-lg text-xs sm:text-sm">
                       <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5 sm:mt-0" aria-hidden="true" />
                       <p className="leading-relaxed">
                         {data.trend === "up" ? "Positive" : "Negative"} trend over the last {isMobile ? '3' : '6'} months with 

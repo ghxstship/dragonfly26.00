@@ -113,16 +113,16 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
   const totalCompanies = new Set(contacts.map((c: any) => (c as Contact).company)).size
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalContacts')}</CardTitle>
             <User className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{contacts.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{contacts.length}</div>
             <p className="text-xs text-muted-foreground">
               {t('stats.acrossCompanies', { count: totalCompanies })}
             </p>
@@ -130,34 +130,34 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.primaryContacts')}</CardTitle>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{primaryContacts as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{primaryContacts as any}</div>
             <p className="text-xs text-muted-foreground">{t('stats.keyRelationships')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.avgResponseTime')}</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">4.2 hrs</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">4.2 hrs</div>
             <p className="text-xs text-muted-foreground">{t('stats.last30Days')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.activeThreads')}</CardTitle>
             <MessageSquare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {contacts.filter((c: any) => (c as any).active_threads > 0).length}
             </div>
             <p className="text-xs text-muted-foreground">{t('stats.ongoingConversations')}</p>
@@ -167,7 +167,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
         <Input
           placeholder={t('searchPlaceholder')}
           value={searchQuery as any}
@@ -177,10 +177,10 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         />
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {/* Contacts List */}
         <div className="md:col-span-2">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
             {filteredContacts.map((contact: any) => {
               const c = contact as Contact
               return (
@@ -192,7 +192,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                 onClick={() => setSelectedContact(c)}
               >
                 <CardHeader>
-                  <div className="flex items-start gap-3">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                     <Avatar className="h-12 w-12" aria-hidden="true">
                       <AvatarImage 
                         src={c.avatar} 
@@ -203,13 +203,13 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                     <div className="flex-1 min-w-0">
                       <CardTitle className="text-base line-clamp-1" aria-hidden="true">{c.name}</CardTitle>
                       <CardDescription className="line-clamp-1" aria-hidden="true">{c.title}</CardDescription>
-                      <div className="flex items-center gap-1 mt-1 text-sm text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mt-1 text-sm text-muted-foreground">
                         <Building2 className="h-3 w-3" aria-hidden="true" />
                         <span className="truncate">{c.company}</span>
                       </div>
                     </div>
                   </div>
-                  <div className="flex gap-2 mt-2 flex-wrap">
+                  <div className="flex flex-col sm:flex-row gap-2 mt-2 flex-wrap">
                     {c.role && (
                       <Badge variant="secondary" className={getRoleColor(c.role)}>
                         {c.role}
@@ -226,25 +226,25 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
                 <CardContent className="space-y-2" aria-hidden="true">
                   {c.email && (
-                    <div className="flex items-center gap-2 text-sm">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                       <Mail className="h-3 w-3 text-muted-foreground flex-shrink-0" aria-hidden="true" />
                       <span className="truncate">{c.email}</span>
                     </div>
                   )}
                   {c.phone && (
-                    <div className="flex items-center gap-2 text-sm">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                       <Phone className="h-3 w-3 text-muted-foreground flex-shrink-0" aria-hidden="true" />
                       <span>{c.phone}</span>
                     </div>
                   )}
                   {c.last_contact && (
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="h-3 w-3 flex-shrink-0" aria-hidden="true" />
                       <span>{t('lastContact', { date: formatDate(c.last_contact) })}</span>
                     </div>
                   )}
                   {(c as any).active_threads > 0 && (
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                       <MessageSquare className="h-3 w-3 flex-shrink-0" aria-hidden="true" />
                       <span>{t('activeThreadsCount', { count: (c as any).active_threads })}</span>
                     </div>
@@ -275,7 +275,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
           <div className="md:col-span-1">
             <Card className="sticky top-6" aria-hidden="true">
               <CardHeader>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Avatar className="h-16 w-16" aria-hidden="true">
                     <AvatarImage 
                       src={selectedContact.avatar} 
@@ -320,7 +320,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                 <div>
                   <h4 className="font-semibold text-sm mb-2">{t('company')}</h4>
                   <div className="text-sm">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Building2 className="h-4 w-4 text-muted-foreground" />
                       <span>{selectedContact.company}</span>
                     </div>
@@ -363,8 +363,8 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   </div>
                 )}
 
-                <div className="flex flex-col gap-2 pt-4 border-t">
-                  <Button className="w-full" aria-hidden="true"
+                <div className="flex flex-wrap flex-col gap-2 pt-4 border-t">
+                  <Button className="w-full max-w-full" aria-hidden="true"
                     aria-label={t('aria.sendEmail', { name: selectedContact.name })}
                   >
                     <Mail className="h-4 w-4 mr-2" aria-hidden="true" />
@@ -372,7 +372,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="w-full"
+                    className="w-full max-w-full"
                     aria-label={t('aria.scheduleMeeting', { name: selectedContact.name })}
                   >
                     <Calendar className="h-4 w-4 mr-2" aria-hidden="true" />
@@ -380,7 +380,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="w-full"
+                    className="w-full max-w-full"
                     aria-label={t('aria.viewHistory', { name: selectedContact.name })}
                   >
                     {t('viewHistory')}

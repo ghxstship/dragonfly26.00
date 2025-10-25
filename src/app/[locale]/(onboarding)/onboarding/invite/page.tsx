@@ -125,18 +125,18 @@ export default function InviteColleaguesPage() {
   const availableRoles = ['raider', 'deviator', 'navigator', 'gladiator'] as RoleSlug[]
 
   return (
-    <div className="container max-w-3xl min-h-screen py-12">
-      <div className="space-y-8">
+    <div className="container max-w-3xl px-4 sm:px-6 lg:px-8 min-h-screen py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
+      <div className="space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold">Invite your team</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">Invite your team</h1>
           <p className="text-muted-foreground text-lg">
             Collaborate with colleagues in {workspaceName || 'your workspace'}
           </p>
         </div>
 
         {/* Progress indicator */}
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-2">
           <div className="h-2 w-12 bg-primary rounded-full" />
           <div className="h-2 w-12 bg-primary rounded-full" />
           <div className="h-2 w-12 bg-primary rounded-full" />
@@ -146,7 +146,7 @@ export default function InviteColleaguesPage() {
         {/* Invitation form */}
         <Card>
           <CardHeader>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Mail className="h-5 w-5" />
               <CardTitle>Team Invitations</CardTitle>
             </div>
@@ -154,12 +154,12 @@ export default function InviteColleaguesPage() {
               Invite people via email. They&apos;ll receive an invitation link.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
             {/* Invites list */}
             <div className="space-y-4">
               {invites.map((invite: any, index: number) => (
                 <div key={index} className="space-y-3 p-4 border rounded-lg">
-                  <div className="flex items-start gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                     <div className="flex-1 space-y-3">
                       {/* Email */}
                       <div className="space-y-2">
@@ -190,7 +190,7 @@ export default function InviteColleaguesPage() {
                               const role = BRANDED_ROLES[roleSlug]
                               return (
                                 <SelectItem key={roleSlug} value={roleSlug}>
-                                  <div className="flex items-center gap-2">
+                                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                                     <span>{role.name}</span>
                                     <span className="text-xs text-muted-foreground">
                                       ({role.badge})
@@ -241,7 +241,7 @@ export default function InviteColleaguesPage() {
             <Button
               variant="outline"
               onClick={addInvite}
-              className="w-full"
+              className="w-full max-w-full"
             >
               <Plus className="h-4 w-4 mr-2" />
               Add Another Person
@@ -249,7 +249,7 @@ export default function InviteColleaguesPage() {
 
             {/* Info */}
             <div className="bg-muted/50 p-4 rounded-lg space-y-2">
-              <div className="flex items-start gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                 <Users className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
                 <div className="space-y-1">
                   <p className="text-sm font-medium">Team roles explained</p>
@@ -264,7 +264,7 @@ export default function InviteColleaguesPage() {
             </div>
 
             {/* Actions */}
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4 pt-4">
               <Button
                 variant="outline"
                 onClick={handleSkip}

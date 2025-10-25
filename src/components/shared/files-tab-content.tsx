@@ -217,17 +217,17 @@ export function FilesTabContent() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-12">
+      <div className="flex flex-wrap items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
       <div className="px-4 py-3 border-b">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-3">
           <div>
             <h3 className="font-semibold text-sm">My Files</h3>
             <p className="text-xs text-muted-foreground">
@@ -249,7 +249,7 @@ export function FilesTabContent() {
           <Input
             id="file-upload-input"
             type="file"
-            className="hidden"
+            className="hidden md:block"
             onChange={handleFileUpload}
             disabled={isUploading}
           />
@@ -260,7 +260,7 @@ export function FilesTabContent() {
       <ScrollArea className="flex-1">
         <div className="p-4 space-y-2">
           {files.length === 0 ? (
-            <div className="text-center py-12 border-2 border-dashed rounded-lg">
+            <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 border-2 border-dashed rounded-lg">
               <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <p className="text-sm font-medium">No files yet</p>
               <p className="text-xs text-muted-foreground mt-1 mb-4">
@@ -281,16 +281,16 @@ export function FilesTabContent() {
               return (
                 <div
                   key={file.id}
-                  className="flex items-center gap-3 p-3 rounded-lg border hover:bg-accent transition-colors"
+                  className="flex flex-col md:flex-row items-center gap-3 p-3 rounded-lg border hover:bg-accent transition-colors"
                 >
                   <div className="flex-shrink-0">
-                    <div className="h-10 w-10 rounded flex items-center justify-center bg-muted">
+                    <div className="h-10 w-10 rounded flex flex-wrap items-center justify-center bg-muted">
                       <FileIcon className="h-5 w-5 text-muted-foreground" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-sm truncate">{file.name}</div>
-                    <div className="flex items-center gap-2 mt-0.5 text-xs text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-0.5 text-xs text-muted-foreground">
                       <span>{formatFileSize(file.size)}</span>
                       <span>•</span>
                       <span>{formatDate(file.created_at)}</span>

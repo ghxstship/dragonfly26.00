@@ -79,7 +79,7 @@ export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
         )}
         <div className="relative">
           {prefix && (
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            <span className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 text-muted-foreground sm:relative sm:inset-auto">
               {prefix}
             </span>
           )}
@@ -103,7 +103,7 @@ export const NumberInput = React.forwardRef<HTMLInputElement, NumberInputProps>(
             {...props}
           />
           {suffix && (
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+            <span className="absolute sm:relative sm:inset-auto right-3 top-1/2 -translate-y-1/2 text-muted-foreground sm:relative sm:inset-auto">
               {suffix}
             </span>
           )}

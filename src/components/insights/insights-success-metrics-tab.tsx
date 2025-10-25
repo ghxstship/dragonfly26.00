@@ -71,13 +71,13 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
   )
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Overall Success Score */}
       <Card className="border-2">
-        <CardContent className="p-8">
+        <CardContent className="p-4 md:p-8">
           <div className="text-center">
             <Trophy className="h-16 w-16 mx-auto mb-4 text-yellow-600" aria-hidden="true" />
-            <div className="text-6xl font-bold mb-4 text-gradient-purple">
+            <div className="text-3xl md:text-4xl lg:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-gradient-purple">
               {totalScore}%
             </div>
             <p className="text-muted-foreground">{t('compositeScoreDesc')}</p>
@@ -92,10 +92,10 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
       {successMetrics.map((category, index: number) => (
         <Card key={index} role="article">
           <CardHeader>
-            <div className="flex items-center justify-between">
-              <CardTitle className="text-xl">{t(category.categoryKey)}</CardTitle>
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+              <CardTitle className="text-base md:text-lg lg:text-xl">{t(category.categoryKey)}</CardTitle>
               <div className="text-right">
-                <p className="text-3xl font-bold">{category.overallScore}%</p>
+                <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{category.overallScore}%</p>
                 <p className="text-sm text-muted-foreground">{t('categoryScore')}</p>
               </div>
             </div>
@@ -111,8 +111,8 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
 
                 return (
                   <div key={idx} className="p-4 border rounded-lg hover:bg-accent transition-colors">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                         <Target className={`h-5 w-5 ${isOnTarget ? 'text-green-600' : 'text-yellow-600'}`} />
                         <div>
                           <p className="font-medium">{t(metric.nameKey)}</p>
@@ -120,13 +120,13 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-xl font-bold">
+                        <p className="text-base md:text-lg lg:text-xl font-bold">
                           {metric.current}<span className="text-sm font-normal text-muted-foreground">/{metric.target}</span>
                         </p>
                         <p className="text-xs text-muted-foreground">{metric.unit}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                       <Progress value={Math.min(progress, 100)} className="flex-1 h-2" />
                       <Badge 
                         variant={isOnTarget ? "default" : "secondary"}

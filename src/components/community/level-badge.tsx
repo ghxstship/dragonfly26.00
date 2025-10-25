@@ -114,7 +114,7 @@ export function LevelBadge({
             </div>
             {nextLevelInfo && (
               <>
-                <div className="w-full bg-secondary rounded-full h-1.5">
+                <div className="w-full bg-secondary rounded-full h-1.5 max-w-full">
                   <div 
                     className={cn("h-1.5 rounded-full transition-all", levelInfo.color.replace('text-', 'bg-'))}
                     style={{ width: `${nextLevelInfo.progressPercent}%` }}

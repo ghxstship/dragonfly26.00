@@ -27,7 +27,7 @@ export default function WorkspaceLayout({
   // Show loading state while resolving workspace
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex flex-wrap items-center justify-center h-screen">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading workspace...</p>
@@ -39,7 +39,7 @@ export default function WorkspaceLayout({
   // Show error state if workspace resolution failed
   if (error) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex flex-wrap items-center justify-center h-screen">
         <div className="text-center">
           <p className="text-red-500 mb-2">Error loading workspace</p>
           <p className="text-sm text-muted-foreground">{(error as any).message}</p>

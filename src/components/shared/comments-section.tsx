@@ -218,7 +218,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
 
   if (isFetching) {
     return (
-      <div className="flex items-center justify-center py-8">
+      <div className="flex flex-wrap items-center justify-center py-4 md:py-6 lg:py-8">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
       </div>
     )
@@ -227,7 +227,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
   // Show message if no valid workspace context
   if (!currentWorkspace?.id || !entityId || entityId === 'no-workspace') {
     return (
-      <div className="flex flex-col items-center justify-center py-8 text-center">
+      <div className="flex flex-wrap flex-col items-center justify-center py-4 md:py-6 lg:py-8 text-center">
         <MessageSquare className="h-12 w-12 text-muted-foreground mb-3" />
         <p className="text-sm font-medium mb-1">No workspace selected</p>
         <p className="text-xs text-muted-foreground">
@@ -250,7 +250,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
           rows={3}
           disabled={isLoading}
         />
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <Button variant="ghost" size="icon" disabled>
             <Smile className="h-4 w-4" />
           </Button>
@@ -272,12 +272,12 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
       {/* Comments List */}
       <div className="space-y-4">
         {entityComments.length === 0 ? (
-          <div className="text-center py-8 text-sm text-muted-foreground">
+          <div className="text-center py-4 md:py-6 lg:py-8 text-sm text-muted-foreground">
             No comments yet. Be the first to comment!
           </div>
         ) : (
           entityComments.map((comment) => (
-            <div key={comment.id} className="flex gap-3">
+            <div key={comment.id} className="flex flex-wrap gap-3">
               <Avatar className="h-8 w-8 flex-shrink-0">
                 <AvatarImage src={comment.user?.avatar_url || undefined} />
                 <AvatarFallback className="text-xs">
@@ -285,7 +285,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
                 </AvatarFallback>
               </Avatar>
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="font-medium text-sm">{comment.user?.name || 'Unknown User'}</span>
                   <span className="text-xs text-muted-foreground">
                     {formatDate(comment.created_at)}

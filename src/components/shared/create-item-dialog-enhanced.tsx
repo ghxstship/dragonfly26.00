@@ -301,7 +301,7 @@ export function CreateItemDialogEnhanced({
 
       case 'switch':
         return (
-          <div key={field.name} className="flex items-center justify-between space-x-2">
+          <div key={field.name} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
             <Label htmlFor={field.name} className="flex flex-col space-y-1">
               <span>{field.label} {field.required && '*'}</span>
               {field.description && (
@@ -465,7 +465,7 @@ export function CreateItemDialogEnhanced({
             <DialogDescription>{config.description}</DialogDescription>
           </DialogHeader>
 
-          <div className="grid gap-4 py-4">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 py-4">
             {config.fields.map(field => renderField(field))}
           </div>
 

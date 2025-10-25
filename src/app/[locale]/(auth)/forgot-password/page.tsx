@@ -41,18 +41,18 @@ export default function ForgotPasswordPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background p-4">
-        <div className="w-full max-w-md space-y-8">
+      <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
+        <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
           <div className="text-center">
-            <div className="flex justify-center mb-4">
+            <div className="flex flex-wrap justify-center mb-4">
               <div className="relative">
-                <div className="absolute inset-0 bg-green-500/20 rounded-full blur-2xl" />
+                <div className="absolute sm:relative sm:inset-auto inset-0 bg-green-500/20 rounded-full blur-2xl sm:relative sm:inset-auto" />
                 <div className="relative bg-green-500/10 p-6 rounded-full">
                   <CheckCircle2 className="w-16 h-16 text-green-500" />
                 </div>
               </div>
             </div>
-            <h1 className="text-3xl font-bold">Check your email</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Check your email</h1>
             <p className="text-muted-foreground mt-2">
               We&apos;ve sent password reset instructions to
             </p>
@@ -77,7 +77,7 @@ export default function ForgotPasswordPage() {
           <div className="text-center">
             <Link
               href="/login"
-              className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
+              className="inline-flex flex-col md:flex-row items-center gap-2 text-sm text-primary hover:underline"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to login
@@ -89,16 +89,16 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <div className="w-full max-w-md space-y-8">
+    <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
+      <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         <div className="text-center">
-          <h1 className="text-3xl font-bold">Reset your password</h1>
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Reset your password</h1>
           <p className="text-muted-foreground mt-2">
             Enter your email and we&apos;ll send you instructions
           </p>
         </div>
 
-        <div className="bg-card border rounded-lg p-8 space-y-6">
+        <div className="bg-card border rounded-lg p-4 md:p-8 space-y-3 md:space-y-4 lg:space-y-6">
           <form onSubmit={handleResetPassword} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
@@ -118,7 +118,7 @@ export default function ForgotPasswordPage() {
               </div>
             )}
 
-            <Button type="submit" className="w-full" disabled={loading}>
+            <Button type="submit" className="w-full max-w-full" disabled={loading}>
               {loading ? "Sending..." : "Send reset instructions"}
             </Button>
           </form>
@@ -127,7 +127,7 @@ export default function ForgotPasswordPage() {
         <div className="text-center space-y-2">
           <Link
             href="/login"
-            className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
+            className="inline-flex flex-col md:flex-row items-center gap-2 text-sm text-primary hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to login

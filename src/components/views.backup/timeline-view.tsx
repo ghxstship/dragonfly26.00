@@ -95,12 +95,12 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
 
   return (
     <TooltipProvider delayDuration={300}>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-wrap flex-col h-full">
         {/* Header */}
-        <div className="flex items-center justify-between border-b p-4">
-          <div className="flex items-center gap-4">
-            <h2 className="text-xl font-semibold">Timeline</h2>
-            <div className="flex items-center gap-1">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b p-4">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+            <h2 className="text-base md:text-lg lg:text-xl font-semibold">Timeline</h2>
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="outline" size="icon" onClick={previousPeriod}>
@@ -134,7 +134,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -173,7 +173,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
         <div className="min-w-max">
           {/* Timeline Header */}
           <div className="sticky top-0 z-10 bg-background border-b">
-            <div className="flex h-12 items-center">
+            <div className="flex flex-wrap h-12 items-center">
               <div className="w-48 flex-shrink-0 border-r px-4 font-medium">
                 Task
               </div>
@@ -183,7 +183,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
                     return (
                       <div
                         key={day.toISOString()}
-                        className="absolute inset-y-0 border-r px-2 text-xs text-muted-foreground flex items-center"
+                        className="absolute sm:relative sm:inset-auto inset-y-0 border-r px-2 text-xs text-muted-foreground flex items-center sm:relative sm:inset-auto"
                         style={{ left: `${(index / getDaysInRange().length) * 100}%` }}
                       >
                         {day.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
@@ -202,13 +202,13 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
               filteredData.map((item: any, index: number) => {
                 const position = getItemPosition(item)
                 return (
-                  <div key={item.id} className="flex h-12 items-center hover:bg-accent/50">
+                  <div key={item.id} className="flex flex-wrap h-12 items-center hover:bg-accent/50">
                     <div className="w-48 flex-shrink-0 border-r px-4 text-sm font-medium truncate">
                       {getDisplayValue(item, schema)}
                     </div>
                     <div className="flex-1 relative h-full">
                       <div
-                        className="absolute top-2 bottom-2 rounded-md bg-primary/80 hover:bg-primary cursor-pointer flex items-center px-2 text-xs text-primary-foreground font-medium overflow-hidden"
+                        className="absolute sm:relative sm:inset-auto top-2 bottom-2 rounded-md bg-primary/80 hover:bg-primary cursor-pointer flex items-center px-2 text-xs text-primary-foreground font-medium overflow-hidden md:block"
                         style={position}
                         onClick={() => onItemClick?.(item)}
                       >

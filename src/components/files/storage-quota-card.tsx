@@ -18,7 +18,7 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
     return (
       <Card className={className}>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <HardDrive className="h-5 w-5" />
             Storage & Bandwidth
           </CardTitle>
@@ -49,7 +49,7 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <HardDrive className="h-5 w-5" />
           Storage & Bandwidth
         </CardTitle>
@@ -57,10 +57,10 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
           Workspace usage and limits
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
         {/* Storage */}
         <div className="space-y-2">
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
             <span className="font-medium">Storage</span>
             <span className={isStorageWarning ? "text-destructive font-medium" : ""}>
               {formatBytes(quota.storage_used_bytes)} / {formatBytes(quota.storage_limit_bytes)}
@@ -71,7 +71,7 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
             className={isStorageWarning ? "bg-destructive/20" : ""}
           />
           {isStorageWarning && (
-            <div className="flex items-center gap-1.5 text-xs text-destructive">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1.5 text-xs text-destructive">
               <AlertTriangle className="h-3.5 w-3.5" />
               Storage quota {storagePercent > 100 ? 'exceeded' : 'nearly full'}
             </div>
@@ -80,7 +80,7 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
 
         {/* Bandwidth */}
         <div className="space-y-2">
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
             <span className="font-medium">Bandwidth (This Month)</span>
             <span className={isBandwidthWarning ? "text-destructive font-medium" : ""}>
               {formatBytes(quota.bandwidth_used_bytes)} / {formatBytes(quota.bandwidth_limit_bytes)}
@@ -91,7 +91,7 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
             className={isBandwidthWarning ? "bg-destructive/20" : ""}
           />
           {isBandwidthWarning && (
-            <div className="flex items-center gap-1.5 text-xs text-destructive">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1.5 text-xs text-destructive">
               <AlertTriangle className="h-3.5 w-3.5" />
               Bandwidth quota {bandwidthPercent > 100 ? 'exceeded' : 'nearly exhausted'}
             </div>
@@ -103,7 +103,7 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
 
         {/* File Count */}
         <div className="pt-4 border-t">
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
             <span className="text-muted-foreground">Files</span>
             <Badge variant="outline">
               {quota.current_file_count.toLocaleString()} / {quota.file_count_limit.toLocaleString()}
@@ -113,11 +113,11 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
 
         {/* Settings */}
         <div className="pt-2 text-xs text-muted-foreground space-y-1">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <span>Version retention:</span>
             <span>{quota.version_retention_days} days</span>
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <span>Trash retention:</span>
             <span>{quota.trash_retention_days} days</span>
           </div>

@@ -88,9 +88,9 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
       {recurrence && (
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
           <Repeat className="h-4 w-4" />
           <span>{getRecurrenceLabel()}</span>
         </div>
@@ -109,7 +109,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
           </DialogHeader>
           <div className="space-y-4 mt-4">
             {/* Frequency */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
               <div className="space-y-2">
                 <Label>Repeat every</Label>
                 <Input
@@ -142,7 +142,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
             {frequency === "weekly" && (
               <div className="space-y-2">
                 <Label>Repeat on</Label>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   {WEEKDAYS.map((day) => (
                     <button
                       key={day.value}
@@ -193,7 +193,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
               )}
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {recurrence && (
                 <Button
                   variant="destructive"

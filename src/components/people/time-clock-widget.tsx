@@ -63,9 +63,9 @@ export function TimeClockWidget({
   }
 
   return (
-    <Card className="w-full">
+    <Card className="w-full max-w-full">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Clock className="h-5 w-5" />
           Time Clock
         </CardTitle>
@@ -78,7 +78,7 @@ export function TimeClockWidget({
         </div>
 
         {/* Status */}
-        <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 bg-muted/50 rounded-lg">
           <span className="text-sm font-medium">Status:</span>
           <Badge 
             variant={isClockedIn ? "default" : "outline"}
@@ -103,7 +103,7 @@ export function TimeClockWidget({
         {/* Clock In/Out Buttons */}
         <div className="space-y-2">
           <Button 
-            className="w-full h-12 text-lg font-medium"
+            className="w-full h-12 text-lg font-medium max-w-full"
             variant={isClockedIn ? "destructive" : "default"}
             onClick={handleClockAction}
             disabled={isProcessing}
@@ -126,7 +126,7 @@ export function TimeClockWidget({
           {showQROption && onQRScan && (
             <Button 
               variant="outline" 
-              className="w-full"
+              className="w-full max-w-full"
               onClick={onQRScan}
               disabled={isProcessing}
             >
@@ -138,14 +138,14 @@ export function TimeClockWidget({
 
         {/* Location Info */}
         {location && (
-          <div className="flex items-start gap-2 p-3 bg-muted/30 rounded-lg">
+          <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-muted/30 rounded-lg">
             <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium">Location</p>
               <p className="text-sm text-muted-foreground truncate">
                 {location.name}
               </p>
-              <div className="flex items-center gap-1 mt-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mt-1">
                 {location.withinGeofence ? (
                   <>
                     <CheckCircle2 className="h-3 w-3 text-green-500" />
@@ -168,7 +168,7 @@ export function TimeClockWidget({
             <p className="text-xs text-muted-foreground font-medium mb-2">
               Current Shift
             </p>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <span className="text-sm">{currentShift.startTime} - {currentShift.endTime}</span>
               {currentShift.location && (
                 <Badge variant="outline" className="text-xs">
@@ -180,7 +180,7 @@ export function TimeClockWidget({
         )}
 
         {/* Hours Summary */}
-        <div className="grid grid-cols-2 gap-3 pt-3 border-t">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-3 pt-3 border-t">
           <div>
             <p className="text-xs text-muted-foreground">Today</p>
             <p className="text-lg font-bold">{todayHours.toFixed(1)} hrs</p>
@@ -219,8 +219,8 @@ export function TimeClockWidgetCompact({
 
   return (
     <div className="p-4 bg-card border rounded-lg space-y-3">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Clock className="h-4 w-4" />
           <span className="font-medium text-sm">Time Clock</span>
         </div>
@@ -236,7 +236,7 @@ export function TimeClockWidgetCompact({
       </div>
 
       <Button 
-        className="w-full"
+        className="w-full max-w-full"
         size="sm"
         variant={isClockedIn ? "destructive" : "default"}
         onClick={handleClockAction}

@@ -85,13 +85,13 @@ export default function VerifyEmailPage() {
   // Verifying state
   if (status === 'verifying') {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background p-4">
-        <div className="w-full max-w-md space-y-8">
+      <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
+        <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
           <div className="text-center">
-            <div className="flex justify-center mb-4">
+            <div className="flex flex-wrap justify-center mb-4">
               <Loader2 className="w-16 h-16 text-primary animate-spin" />
             </div>
-            <h1 className="text-3xl font-bold">Verifying your email...</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Verifying your email...</h1>
             <p className="text-muted-foreground mt-2">
               Please wait while we confirm your email address
             </p>
@@ -104,18 +104,18 @@ export default function VerifyEmailPage() {
   // Success state
   if (status === 'success') {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background p-4">
-        <div className="w-full max-w-md space-y-8">
+      <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
+        <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
           <div className="text-center">
-            <div className="flex justify-center mb-4">
+            <div className="flex flex-wrap justify-center mb-4">
               <div className="relative">
-                <div className="absolute inset-0 bg-green-500/20 rounded-full blur-2xl" />
+                <div className="absolute sm:relative sm:inset-auto inset-0 bg-green-500/20 rounded-full blur-2xl sm:relative sm:inset-auto" />
                 <div className="relative bg-green-500/10 p-6 rounded-full">
                   <CheckCircle2 className="w-16 h-16 text-green-500" />
                 </div>
               </div>
             </div>
-            <h1 className="text-3xl font-bold">Email verified!</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Email verified!</h1>
             <p className="text-muted-foreground mt-2">
               Your email has been successfully verified
             </p>
@@ -126,7 +126,7 @@ export default function VerifyEmailPage() {
               Redirecting you to your workspace...
             </p>
             <Button
-              className="w-full"
+              className="w-full max-w-full"
               onClick={() => router.push('/auth-check')}
             >
               Continue to workspace
@@ -140,18 +140,18 @@ export default function VerifyEmailPage() {
   // Error state
   if (status === 'error') {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background p-4">
-        <div className="w-full max-w-md space-y-8">
+      <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
+        <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
           <div className="text-center">
-            <div className="flex justify-center mb-4">
+            <div className="flex flex-wrap justify-center mb-4">
               <div className="relative">
-                <div className="absolute inset-0 bg-destructive/20 rounded-full blur-2xl" />
+                <div className="absolute sm:relative sm:inset-auto inset-0 bg-destructive/20 rounded-full blur-2xl sm:relative sm:inset-auto" />
                 <div className="relative bg-destructive/10 p-6 rounded-full">
                   <XCircle className="w-16 h-16 text-destructive" />
                 </div>
               </div>
             </div>
-            <h1 className="text-3xl font-bold">Verification failed</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Verification failed</h1>
             <p className="text-muted-foreground mt-2">
               We couldn&apos;t verify your email address
             </p>
@@ -167,7 +167,7 @@ export default function VerifyEmailPage() {
               The verification link may have expired or already been used.
             </p>
             <Button
-              className="w-full"
+              className="w-full max-w-full"
               variant="outline"
               onClick={handleResendEmail}
               disabled={resending}
@@ -191,18 +191,18 @@ export default function VerifyEmailPage() {
 
   // Pending state (check your email)
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <div className="w-full max-w-md space-y-8">
+    <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
+      <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         <div className="text-center">
-          <div className="flex justify-center mb-4">
+          <div className="flex flex-wrap justify-center mb-4">
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl" />
+              <div className="absolute sm:relative sm:inset-auto inset-0 bg-primary/20 rounded-full blur-2xl sm:relative sm:inset-auto" />
               <div className="relative bg-primary/10 p-6 rounded-full">
                 <Mail className="w-16 h-16 text-primary" />
               </div>
             </div>
           </div>
-          <h1 className="text-3xl font-bold">Check your email</h1>
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Check your email</h1>
           <p className="text-muted-foreground mt-2">
             We&apos;ve sent a verification link to
           </p>

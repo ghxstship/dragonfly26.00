@@ -212,9 +212,9 @@ export function DiscountInput({
     <div className={className}>
       {!appliedDiscount ? (
         <div className="space-y-2">
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <div className="relative flex-1">
-              <Tag className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Tag className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('marketplace.discount.placeholder')}
                 value={code as any}
@@ -246,11 +246,11 @@ export function DiscountInput({
         </div>
       ) : (
         <div className="space-y-2">
-          <div className="flex items-center justify-between p-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900 rounded-lg">
-            <div className="flex items-center gap-2 flex-1">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900 rounded-lg">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
               <Check className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" />
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
+                <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
                   <Badge className="bg-green-600 dark:bg-green-700">
                     {appliedDiscount.code}
                   </Badge>
@@ -276,7 +276,7 @@ export function DiscountInput({
           </div>
 
           {appliedDiscount.discount_amount > 0 && (
-            <div className="flex items-center justify-between text-sm px-1">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm px-1">
               <span className="text-muted-foreground">Discount savings:</span>
               <span className="font-semibold text-green-600 dark:text-green-400">
                 -${appliedDiscount.discount_amount.toFixed(2)}

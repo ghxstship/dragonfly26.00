@@ -190,24 +190,24 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
         onReset={resetToDefaults}
       />
 
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
         {/* Stats Grid */}
       <section role="region" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="sr-only">Dashboard Statistics</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         {stats.map((stat: any) => {
           const Icon = stat.icon
           return (
             <Card key={t(stat.labelKey)}>
               <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <CardDescription className="text-xs">{t(stat.labelKey)}</CardDescription>
                   <div className={`p-2 rounded-lg ${stat.bgColor}`} aria-hidden="true">
                     <Icon className={`h-4 w-4 ${stat.color}`} aria-hidden="true" />
                   </div>
                 </div>
-                <div className="flex items-end justify-between">
-                  <CardTitle className="text-3xl">{stat.value}</CardTitle>
+                <div className="flex flex-wrap items-end justify-between">
+                  <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{stat.value}</CardTitle>
                   <div className="text-xs text-muted-foreground">
                     {stat.change}
                   </div>
@@ -219,7 +219,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
       </div>
       </section>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {/* Quick Actions */}
         <section role="region" aria-labelledby="quick-actions-heading">
           <Card>
@@ -228,14 +228,14 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
               <CardDescription>{t('quickActionsDesc')}</CardDescription>
             </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-3">
               {quickActions.map((action: any) => {
                 const Icon = action.icon
                 return (
                   <Button
                     key={t(action.labelKey)}
                     variant="outline"
-                    className="h-auto py-4 flex flex-col items-center gap-2"
+                    className="h-auto py-4 flex flex-col md:flex-row flex-col items-center gap-2"
                     onClick={action.action}
                     aria-label={t(action.labelKey)}
                   >
@@ -253,7 +253,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
         <section role="region" aria-labelledby="customize-heading">
           <Card>
           <CardHeader>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <CardTitle id="customize-heading" className="text-base">{t('customize')}</CardTitle>
                 <CardDescription>{t('addWidgets')}</CardDescription>
@@ -272,7 +272,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
           <CardContent>
             <div className="space-y-2">
               {availableWidgets.length === 0 ? (
-                <div className="text-center py-8 text-muted-foreground text-sm">
+                <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground text-sm">
                   <p>{t('allWidgetsEnabled')}</p>
                   <p className="text-xs mt-1">{t('checkDashboardTabs')}</p>
                 </div>
@@ -284,9 +284,9 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                   return (
                     <div
                       key={widget.id}
-                      className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent transition-colors"
+                      className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded-lg hover:bg-accent transition-colors"
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                         <div className={`p-2 rounded ${widgetType.color}`}>
                           <Icon className="h-4 w-4 text-white" />
                         </div>
@@ -307,7 +307,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
               {availableWidgets.length > 3 && (
                 <Button 
                   variant="ghost" 
-                  className="w-full text-xs"
+                  className="w-full text-xs max-w-full"
                   onClick={() => setWidgetCustomizationOpen(true)}
                   aria-label={`View ${availableWidgets.length - 3} more widgets`}
                 >
@@ -327,21 +327,21 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
             <CardTitle id="summary-heading" className="text-base">{t('thisWeekSummary')}</CardTitle>
           </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-2xl font-bold" aria-label="24 tasks completed">24</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" aria-label="24 tasks completed">24</p>
               <p className="text-xs text-muted-foreground mt-1">{t('tasksCompleted')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-2xl font-bold" aria-label="12 events attended">12</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" aria-label="12 events attended">12</p>
               <p className="text-xs text-muted-foreground mt-1">{t('eventsAttended')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-2xl font-bold" aria-label="$3,200 expenses submitted">$3.2k</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" aria-label="$3,200 expenses submitted">$3.2k</p>
               <p className="text-xs text-muted-foreground mt-1">{t('expensesSubmitted')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-2xl font-bold" aria-label="18 files uploaded">18</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" aria-label="18 files uploaded">18</p>
               <p className="text-xs text-muted-foreground mt-1">{t('filesUploaded')}</p>
             </div>
           </div>

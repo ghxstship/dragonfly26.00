@@ -31,12 +31,12 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right" className="w-full sm:max-w-2xl p-0">
-        <div className="flex flex-col h-full">
+        <div className="flex flex-wrap flex-col h-full">
           {/* Header */}
           <SheetHeader className="p-6 pb-4 border-b">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
               <div className="flex-1">
-                <SheetTitle className="text-2xl">{item.name}</SheetTitle>
+                <SheetTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{item.name}</SheetTitle>
                 <p className="text-sm text-muted-foreground mt-1">SKU: {item.sku || 'N/A'}</p>
               </div>
               <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
@@ -46,11 +46,11 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
           </SheetHeader>
 
           <ScrollArea className="flex-1">
-            <div className="p-6 space-y-6">
+            <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Photo Gallery */}
               {hasPhotos && (
                 <div className="space-y-2">
-                  <div className="relative aspect-video bg-muted rounded-lg overflow-hidden">
+                  <div className="relative aspect-video bg-muted rounded-lg overflow-hidden md:block">
                     <Image
                       src={photos[currentPhotoIndex]}
                       alt={`${item.name} - Photo ${currentPhotoIndex + 1}`}
@@ -59,7 +59,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
                     />
                   </div>
                   {photos.length > 1 && (
-                    <div className="flex gap-2 overflow-x-auto">
+                    <div className="flex flex-wrap gap-2 overflow-x-auto">
                       {photos.map((photo: string, idx: number) => (
                         <button
                           key={idx}
@@ -77,7 +77,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
               )}
 
               {/* Quick Actions */}
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Button onClick={onAdjustStock} className="flex-1">
                   <TrendingUp className="h-4 w-4 mr-2" />
                   Adjust Stock
@@ -92,13 +92,13 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
               </div>
 
               {/* Key Info Cards */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                 <Card>
                   <CardHeader className="pb-3">
                     <CardTitle className="text-sm font-medium text-muted-foreground">Stock Level</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-3xl font-bold">{item.stock_quantity || 0}</div>
+                    <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{item.stock_quantity || 0}</div>
                     <p className="text-xs text-muted-foreground mt-1">
                       Low threshold: {item.low_stock_threshold || 'Not set'}
                     </p>
@@ -110,7 +110,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
                     <CardTitle className="text-sm font-medium text-muted-foreground">Unit Value</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-3xl font-bold">${item.unit_cost?.toLocaleString() || '0'}</div>
+                    <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">${item.unit_cost?.toLocaleString() || '0'}</div>
                     <p className="text-xs text-muted-foreground mt-1">
                       Total: ${((item.unit_cost || 0) * (item.stock_quantity || 0)).toLocaleString()}
                     </p>
@@ -119,14 +119,14 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
               </div>
 
               {/* Status Badge */}
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <span className="text-sm font-medium">Status:</span>
                 <Badge>{item.status?.replace(/_/g, ' ')}</Badge>
               </div>
 
               {/* Tabs for Details */}
-              <Tabs defaultValue="details" className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
+              <Tabs defaultValue="details" className="w-full max-w-full">
+                <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
                   <TabsTrigger value="details">Details</TabsTrigger>
                   <TabsTrigger value="history">History</TabsTrigger>
                   <TabsTrigger value="notes">Notes</TabsTrigger>
@@ -187,7 +187,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
           </ScrollArea>
 
           {/* Footer Actions */}
-          <div className="border-t p-4 flex gap-2">
+          <div className="border-t p-4 flex flex-wrap gap-2">
             <Button variant="outline" className="flex-1" onClick={onEdit}>
               Edit Item
             </Button>
@@ -204,7 +204,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
 
 function DetailRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
       <div className="text-muted-foreground">{icon as any}</div>
       <div className="flex-1">
         <p className="text-sm font-medium">{label}</p>

@@ -33,7 +33,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading resources...</p>
@@ -70,13 +70,13 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
   )
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 {/* Actions */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <p className="text-muted-foreground">
           {t('description')}
         </p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button variant="outline" size="sm">
             <Filter className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('filter')}</Button>
           <Button size="sm">
@@ -85,25 +85,25 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
       </div>
 
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Resources</CardTitle>
             <BookOpen className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{resources.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{resources.length}</div>
             <p className="text-xs text-muted-foreground">{t('available')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('courses')}</CardTitle>
             <GraduationCap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {resources.filter((r: Record<string, any>) => (r as any).type === 'course').length}
             </div>
             <p className="text-xs text-muted-foreground">Educational programs</p>
@@ -111,12 +111,12 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('guides')}</CardTitle>
             <Book className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {resources.filter((r: Record<string, any>) => (r as any).type === 'guide').length}
             </div>
             <p className="text-xs text-muted-foreground">How-to guides</p>
@@ -124,12 +124,12 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('grants')}</CardTitle>
             <CircleDollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {resources.filter((r: Record<string, any>) => (r as any).type === 'grant').length}
             </div>
             <p className="text-xs text-muted-foreground">Funding opportunities</p>
@@ -138,9 +138,9 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
       </div>
 
       {/* Search */}
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
           <Input
             placeholder={t('searchResources')}
             value={searchQuery as any}
@@ -151,14 +151,14 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
       </div>
 
       {/* Resources Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {filteredResources.map((resource: any) => {
           const TypeIcon = getTypeIcon(resource.type)
 
           return (
             <Card key={resource.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex items-start gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <TypeIcon className="h-5 w-5 text-primary"  aria-hidden="true" />
                   </div>
@@ -169,7 +169,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
                     )}
                   </div>
                 </div>
-                <div className="flex gap-2 mt-2">
+                <div className="flex flex-wrap gap-2 mt-2">
                   <Badge className={getTypeColor(resource.type)}>
                     {resource.type}
                   </Badge>
@@ -191,15 +191,15 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 )}
 
                 {/* Metadata */}
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                   {resource.duration && (
-                    <div className="flex items-center gap-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                       <Clock className="h-3 w-3" aria-hidden="true" />
                       <span>{resource.duration}</span>
                     </div>
                   )}
                   {resource.author && (
-                    <div className="flex items-center gap-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                       <Users className="h-3 w-3" aria-hidden="true" />
                       <span className="truncate">{resource.author}</span>
                     </div>
@@ -208,8 +208,8 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
                 {/* Rating */}
                 {resource.rating && (
-                  <div className="flex items-center gap-2 pt-2 border-t">
-                    <div className="flex items-center">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 pt-2 border-t">
+                    <div className="flex flex-wrap items-center">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}
@@ -249,7 +249,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 )}
 
                 {/* Actions */}
-                <div className="flex gap-2 pt-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   <Button className="flex-1" variant="outline" size="sm">
                     View Details
                   </Button>

@@ -57,23 +57,23 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
       <div className="space-y-3">
         <Label>File Format</Label>
         <RadioGroup value={selectedFormat} onValueChange={setSelectedFormat}>
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="csv" id="csv" />
-            <Label htmlFor="csv" className="flex items-center gap-2 cursor-pointer font-normal">
+            <Label htmlFor="csv" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
               <FileSpreadsheet className="h-4 w-4" />
               CSV (Comma Separated Values)
             </Label>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="excel" id="excel" />
-            <Label htmlFor="excel" className="flex items-center gap-2 cursor-pointer font-normal">
+            <Label htmlFor="excel" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
               <FileSpreadsheet className="h-4 w-4" />
               Excel (.xlsx)
             </Label>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="json" id="json" />
-            <Label htmlFor="json" className="flex items-center gap-2 cursor-pointer font-normal">
+            <Label htmlFor="json" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
               <FileJson className="h-4 w-4" />
               JSON
             </Label>
@@ -84,11 +84,11 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
       {/* File Upload */}
       <div className="space-y-3">
         <Label>Upload File</Label>
-        <div className="border-2 border-dashed rounded-lg p-10 text-center hover:border-primary/50 transition-colors">
+        <div className="border-2 border-dashed rounded-lg p-4 md:p-10 text-center hover:border-primary/50 transition-colors">
           <input
             type="file"
             id="file-upload"
-            className="hidden"
+            className="hidden md:block"
             accept={
               selectedFormat === "csv"
                 ? ".csv"
@@ -146,15 +146,15 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
       <div className="space-y-3 pt-4 border-t">
         <Label>Import Options</Label>
         <div className="space-y-2 text-sm">
-          <label className="flex items-center gap-2">
+          <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <input type="checkbox" className="rounded" defaultChecked />
             <span>Update existing items</span>
           </label>
-          <label className="flex items-center gap-2">
+          <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <input type="checkbox" className="rounded" defaultChecked />
             <span>Skip duplicates</span>
           </label>
-          <label className="flex items-center gap-2">
+          <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <input type="checkbox" className="rounded" />
             <span>Create new fields automatically</span>
           </label>
@@ -162,7 +162,7 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
       </div>
 
       {/* Actions */}
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <Button onClick={handleImport} disabled={!file || importing} className="flex-1">
           <Upload className="h-4 w-4 mr-2" />
           Import

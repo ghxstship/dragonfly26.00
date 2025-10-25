@@ -12,10 +12,10 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
 
   return (
     <div className="pt-20">
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Privacy Policy</h1>
-          <p className="text-gray-600 mb-8">Last updated: October 23, 2025</p>
+      <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8">
+        <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
+          <h1 className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Privacy Policy</h1>
+          <p className="text-gray-600 mb-4 md:mb-6 lg:mb-8">Last updated: October 23, 2025</p>
 
           <div className="prose prose-lg max-w-none">
             <h2>1. Information We Collect</h2>

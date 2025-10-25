@@ -98,15 +98,15 @@ export function MarketplaceProductDetailDrawer({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] max-w-full p-0 flex flex-col">
+      <SheetContent side="right" className="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] max-w-full p-0 flex flex-wrap flex-col max-w-full">
         {/* Header */}
-        <SheetHeader className="border-b px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+        <SheetHeader className="border-b px-4 md:px-6 py-4">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Package className="h-5 w-5" />
-              <h2 className="text-xl font-semibold">Product Details</h2>
+              <h2 className="text-base md:text-lg lg:text-xl font-semibold">Product Details</h2>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <WishlistButton
                 productId={product.id}
                 productName={product.name}
@@ -124,12 +124,12 @@ export function MarketplaceProductDetailDrawer({
 
         {/* Content */}
         <ScrollArea className="flex-1">
-          <div className="p-6 space-y-6">
+          <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
             {/* Product Image */}
-            <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex items-center justify-center relative">
+            <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex flex-wrap items-center justify-center relative">
               <Package className="h-32 w-32 text-muted-foreground/30" />
               {product.priority === "featured" && (
-                <Badge className="absolute top-4 left-4 bg-purple-600">
+                <Badge className="absolute sm:relative sm:inset-auto top-4 left-4 bg-purple-600 sm:relative sm:inset-auto">
                   Featured
                 </Badge>
               )}
@@ -138,8 +138,8 @@ export function MarketplaceProductDetailDrawer({
             {/* Product Info */}
             <div className="space-y-4">
               <div className="space-y-2">
-                <div className="flex items-start justify-between gap-4">
-                  <h1 className="text-2xl font-bold">{product.name}</h1>
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                  <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{product.name}</h1>
                   {getStockBadge(product.status)}
                 </div>
                 {product.category && (
@@ -149,7 +149,7 @@ export function MarketplaceProductDetailDrawer({
 
               {/* Vendor Info */}
               {product.assignee_name && (
-                <div className="flex items-center gap-3 p-3 bg-muted rounded-lg">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 p-3 bg-muted rounded-lg">
                   <Avatar className="h-10 w-10">
                     <AvatarFallback className="bg-primary/10 text-primary">
                       {product.assignee_name.split(' ').map(n => n[0]).join('')}
@@ -167,8 +167,8 @@ export function MarketplaceProductDetailDrawer({
 
               {/* Rating */}
               {product.rating && (
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
@@ -189,8 +189,8 @@ export function MarketplaceProductDetailDrawer({
 
               {/* Price */}
               <div className="space-y-2">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold">{product.price}</span>
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-4xl font-bold">{product.price}</span>
                   {product.rental_rate && (
                     <span className="text-muted-foreground">/ purchase</span>
                   )}
@@ -220,8 +220,8 @@ export function MarketplaceProductDetailDrawer({
               />
 
               {/* Quantity and Add to Cart */}
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Button
                     variant="outline"
                     size="icon"
@@ -249,8 +249,8 @@ export function MarketplaceProductDetailDrawer({
             <Separator />
 
             {/* Tabs */}
-            <Tabs defaultValue="description" className="w-full">
-              <TabsList className="w-full">
+            <Tabs defaultValue="description" className="w-full max-w-full">
+              <TabsList className="w-full max-w-full">
                 <TabsTrigger value="description" className="flex-1">Description</TabsTrigger>
                 <TabsTrigger value="specs" className="flex-1">Specifications</TabsTrigger>
                 <TabsTrigger value="reviews" className="flex-1">
@@ -269,7 +269,7 @@ export function MarketplaceProductDetailDrawer({
                       <h3 className="font-semibold">Key Features:</h3>
                       <ul className="space-y-2">
                         {product.features.map((feature: any, idx: number) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm">
+                          <li key={idx} className="flex flex-wrap flex-col md:flex-row items-start gap-2 text-sm">
                             <Award className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                             <span>{feature}</span>
                           </li>
@@ -297,7 +297,7 @@ export function MarketplaceProductDetailDrawer({
                 {product.specifications && Object.keys(product.specifications).length > 0 ? (
                   <div className="space-y-2">
                     {Object.entries(product.specifications).map(([key, value]) => (
-                      <div key={key} className="flex items-start justify-between py-2 border-b last:border-0">
+                      <div key={key} className="flex flex-wrap flex-col md:flex-row items-start justify-between py-2 border-b last:border-0">
                         <span className="text-sm font-medium text-muted-foreground">{key}</span>
                         <span className="text-sm text-right">{value}</span>
                       </div>
@@ -313,7 +313,7 @@ export function MarketplaceProductDetailDrawer({
                   variant="outline" 
                   size="sm" 
                   onClick={() => setReviewFormOpen(true)}
-                  className="w-full"
+                  className="w-full max-w-full"
                 >
                   <Star className="h-4 w-4 mr-2" />
                   Write a Review
@@ -323,8 +323,8 @@ export function MarketplaceProductDetailDrawer({
                   <div className="space-y-4">
                     {product.reviews.map((review: any) => (
                       <div key={review.id} className="space-y-2 p-4 border rounded-lg">
-                        <div className="flex items-start justify-between">
-                          <div className="flex items-center gap-3">
+                        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                             <Avatar className="h-8 w-8">
                               <AvatarFallback className="bg-primary/10 text-primary text-xs">
                                 {review.author.split(' ').map(n => n[0]).join('')}
@@ -335,7 +335,7 @@ export function MarketplaceProductDetailDrawer({
                               <p className="text-xs text-muted-foreground">{review.date}</p>
                             </div>
                           </div>
-                          <div className="flex items-center gap-1">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                             {[...Array(5)].map((_, i) => (
                               <Star
                                 key={i}
@@ -353,7 +353,7 @@ export function MarketplaceProductDetailDrawer({
                     ))}
                   </div>
                 ) : (
-                  <div className="text-center py-8 space-y-2">
+                  <div className="text-center py-4 md:py-6 lg:py-8 space-y-2">
                     <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/30" />
                     <p className="text-sm text-muted-foreground">No reviews yet</p>
                   </div>

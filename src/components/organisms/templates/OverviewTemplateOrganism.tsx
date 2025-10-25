@@ -99,24 +99,24 @@ export function OverviewTemplateOrganism({
   
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
         {/* Stats Grid */}
         <section role="region" aria-labelledby="stats-heading">
           <h2 id="stats-heading" className="sr-only">{t('statsHeading')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             {stats.map((stat) => {
               const Icon = stat.icon
               return (
                 <Card key={stat.labelKey}>
                   <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                       <CardDescription className="text-xs">{t(stat.labelKey)}</CardDescription>
                       <div className={`p-2 rounded-lg ${stat.bgColor}`} aria-hidden="true">
                         <Icon className={`h-4 w-4 ${stat.color}`} aria-hidden="true" />
                       </div>
                     </div>
-                    <div className="flex items-end justify-between">
-                      <CardTitle className="text-3xl">{stat.value}</CardTitle>
+                    <div className="flex flex-wrap items-end justify-between">
+                      <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{stat.value}</CardTitle>
                       {stat.change && (
                         <div className="text-xs text-muted-foreground">
                           {stat.change}
@@ -139,14 +139,14 @@ export function OverviewTemplateOrganism({
                 <CardDescription>{t('quickActionsDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-3">
                   {quickActions.map((action) => {
                     const Icon = action.icon
                     return (
                       <Button
                         key={action.labelKey}
                         variant="outline"
-                        className="h-auto py-4 flex flex-col items-center gap-2"
+                        className="h-auto py-4 flex flex-col md:flex-row flex-col items-center gap-2"
                         onClick={action.action}
                         aria-label={t(action.labelKey)}
                       >
@@ -169,11 +169,11 @@ export function OverviewTemplateOrganism({
                 <CardTitle id="summary-heading" className="text-base">{t('summaryTitle')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
                   {summaryItems.map((item) => (
                     <div key={item.labelKey} className="text-center p-4 border rounded-lg">
                       <p 
-                        className="text-2xl font-bold" 
+                        className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" 
                         aria-label={item.ariaLabel || `${item.value} ${t(item.labelKey)}`}
                       >
                         {item.value}

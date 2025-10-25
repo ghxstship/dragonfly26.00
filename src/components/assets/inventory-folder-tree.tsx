@@ -124,7 +124,7 @@ export function InventoryFolderTree({ workspaceId, onFolderSelect, selectedFolde
           
           <span className="flex-1 text-sm font-medium truncate">{folder.name}</span>
           
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             {hasLowStock && <AlertCircle className="h-3 w-3 text-orange-500" />}
             <Badge variant="secondary" className="text-xs px-1.5 py-0">
               {folder.item_count}
@@ -155,8 +155,8 @@ export function InventoryFolderTree({ workspaceId, onFolderSelect, selectedFolde
   }
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between p-4 border-b">
+    <div className="flex flex-wrap flex-col h-full">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <h3 className="font-semibold">Folders</h3>
         <Button size="sm" variant="ghost" onClick={() => {}}>
           <Plus className="h-4 w-4" />
@@ -179,7 +179,7 @@ export function InventoryFolderTree({ workspaceId, onFolderSelect, selectedFolde
           </div>
           
           {folders.length === 0 ? (
-            <div className="text-center py-8 text-muted-foreground text-sm">
+            <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground text-sm">
               <Folder className="h-8 w-8 mx-auto mb-2 opacity-50" />
               <p>No folders yet</p>
               <p className="text-xs mt-1">Create folders to organize inventory</p>

@@ -26,7 +26,7 @@ export default function AssetsApprovalsTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <div className="text-muted-foreground">Loading approvals...</div>
           </div>
    )
@@ -34,7 +34,7 @@ export default function AssetsApprovalsTab() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <div className="text-destructive">Error loading approvals: {(error as any).message}</div>
       </div>
     )
@@ -70,7 +70,7 @@ export default function AssetsApprovalsTab() {
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div className="rounded-lg border bg-card">
         <Table>
           <TableHeader>
@@ -86,7 +86,7 @@ export default function AssetsApprovalsTab() {
           <TableBody>
             {approvals.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center text-muted-foreground py-8">
+                <TableCell colSpan={6} className="text-center text-muted-foreground py-4 md:py-6 lg:py-8">
                   No approval requests found
                 </TableCell>
               </TableRow>
@@ -94,7 +94,7 @@ export default function AssetsApprovalsTab() {
               (approvals as any[]).map((approval: any) => (
                 <TableRow key={approval.id}>
                   <TableCell>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       {getStatusIcon(approval.status)}
                       {getStatusBadge(approval.status)}
                     </div>

@@ -106,15 +106,15 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
           <Input placeholder={t('searchProducts')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-[200px]">
+          <SelectTrigger className="w-full max-w-[200px]">
             <SelectValue placeholder={t('category')} />
           </SelectTrigger>
           <SelectContent>
@@ -128,7 +128,7 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
           </SelectContent>
         </Select>
         <Select defaultValue="all-status">
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('status')} />
           </SelectTrigger>
           <SelectContent>
@@ -145,18 +145,18 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
       {/* Products Grid */}
       <div className={viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" : "space-y-4"}>
         {productsData.map((product: any) => (
-          <Card key={product.id} className="group overflow-hidden hover:shadow-lg transition-shadow">
+          <Card key={product.id} className="group overflow-hidden md:block hover:shadow-lg transition-shadow">
             {viewMode === "grid" ? (
               <>
                 {/* Product Image */}
-                <div className="relative aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
+                <div className="relative aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex flex-wrap items-center justify-center">
                   <Package className="h-20 w-20 text-muted-foreground/30" aria-hidden="true" />
                   
                   {/* Quick Actions */}
                   <Button
                     size="icon"
                     variant="secondary"
-                    className="absolute top-2 right-2 h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute sm:relative sm:inset-auto top-2 md:top-2 right-2 md:right-2 h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
                     onClick={() => toggleFavorite(product.id)}
                   >
                     <Heart
@@ -167,7 +167,7 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
                   </Button>
 
                   {/* Status Badge */}
-                  <div className="absolute top-2 left-2">
+                  <div className="absolute sm:relative sm:inset-auto top-2 left-2 sm:relative sm:inset-auto">
                     {getStatusBadge(product.status || 'available')}
                   </div>
                 </div>
@@ -181,8 +181,8 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
 
                 <CardContent className="p-4 pt-0 space-y-3">
                   {/* Rating */}
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                    <div className="flex flex-wrap items-center">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
@@ -199,7 +199,7 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
 
                   {/* Price */}
                   <div className="space-y-1">
-                    <p className="text-xl font-bold">{product.price}</p>
+                    <p className="text-base md:text-lg lg:text-xl font-bold">{product.price}</p>
                     {product.rental_rate && (
                       <p className="text-xs text-muted-foreground">
                         Rental: {product.rental_rate}
@@ -216,21 +216,21 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
               </>
             ) : (
               <CardHeader>
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-start gap-4 flex-1">
-                    <div className="w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded flex items-center justify-center flex-shrink-0">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4 flex-1">
+                    <div className="w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded flex flex-wrap items-center justify-center flex-shrink-0">
                       <Package className="h-12 w-12 text-muted-foreground/30" aria-hidden="true" />
                     </div>
                     <div className="space-y-2 flex-1">
-                      <div className="flex items-start justify-between gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
                         <div>
                           <p className="font-semibold">{product.name}</p>
                           <p className="text-xs text-muted-foreground">by {product.assignee_name}</p>
                         </div>
                         {getStatusBadge(product.status || 'available')}
                       </div>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
@@ -245,14 +245,14 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
                         </div>
                       </div>
                       <div>
-                        <p className="text-xl font-bold">{product.price}</p>
+                        <p className="text-base md:text-lg lg:text-xl font-bold">{product.price}</p>
                         {product.rental_rate && (
                           <p className="text-xs text-muted-foreground">Rental: {product.rental_rate}</p>
                         )}
                       </div>
                     </div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <Button size="sm" onClick={() => addToCart(product.id)}>
                       <ShoppingCart className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('add')}</Button>
                     <Button variant="outline" size="sm" onClick={() => handleViewDetails(product)}>{tCommon('details')}</Button>

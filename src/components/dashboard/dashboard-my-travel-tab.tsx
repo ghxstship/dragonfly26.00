@@ -88,13 +88,13 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.upcomingTrips}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.upcomingTrips}</p>
               <p className="text-xs text-muted-foreground mt-1">Upcoming Trips</p>
             </div>
           </CardContent>
@@ -102,7 +102,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-green-600">{summary.confirmed}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.confirmed}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('confirmed')}</p>
             </div>
           </CardContent>
@@ -110,7 +110,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.totalCost}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalCost}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Cost</p>
             </div>
           </CardContent>
@@ -118,7 +118,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">{summary.daysAway}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{summary.daysAway}</p>
               <p className="text-xs text-muted-foreground mt-1">Days Away This Year</p>
             </div>
           </CardContent>
@@ -140,7 +140,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
               >
                 <div className="space-y-3">
                   {/* Header */}
-                  <div className="flex items-start justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                     <div>
                       <h3 className="font-semibold">{travel.title}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{travel.project}</p>
@@ -160,11 +160,11 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
 
                   {/* Destination & Dates */}
                   <div className="flex flex-wrap gap-3 text-sm">
-                    <div className="flex items-center gap-1 text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                       <MapPin className="h-3.5 w-3.5" />
                       {travel.destination}
                     </div>
-                    <div className="flex items-center gap-1 text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                       <Calendar className="h-3.5 w-3.5" />
                       {travel.departureDate} - {travel.returnDate}
                     </div>
@@ -178,10 +178,10 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                   {/* Travel Details */}
                   <div className="space-y-2 pt-2 border-t">
                     {/* Flights */}
-                    <div className="flex items-start gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                       <Plane className="h-4 w-4 text-blue-600 mt-0.5" aria-hidden="true" />
                       <div className="flex-1">
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                           <p className="text-sm font-medium">Flights</p>
                           <p className="text-sm text-muted-foreground">{travel.flights.cost}</p>
                         </div>
@@ -192,10 +192,10 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
 
                     {/* Hotel */}
                     {travel.hotel && (
-                      <div className="flex items-start gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                         <Hotel className="h-4 w-4 text-purple-600 mt-0.5" aria-hidden="true" />
                         <div className="flex-1">
-                          <div className="flex items-center justify-between">
+                          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                             <p className="text-sm font-medium">{travel.hotel.name}</p>
                             <p className="text-sm text-muted-foreground">{travel.hotel.cost}</p>
                           </div>
@@ -207,10 +207,10 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                     )}
 
                     {/* Ground Transport */}
-                    <div className="flex items-start gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                       <Car className="h-4 w-4 text-orange-600 mt-0.5" aria-hidden="true" />
                       <div className="flex-1">
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                           <p className="text-sm font-medium">{travel.groundTransport.type}</p>
                           <p className="text-sm text-muted-foreground">{travel.groundTransport.cost}</p>
                         </div>
@@ -231,17 +231,17 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
           <CardTitle className="text-base">Travel Statistics This Year</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-center">
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">{summary.thisYear}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.thisYear}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Trips</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">{summary.daysAway}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.daysAway}</p>
               <p className="text-xs text-muted-foreground mt-1">Days Away</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">$14.2k</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">$14.2k</p>
               <p className="text-xs text-muted-foreground mt-1">Total Spent</p>
             </div>
           </div>

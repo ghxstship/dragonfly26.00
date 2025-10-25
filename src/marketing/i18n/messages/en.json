@@ -6,7 +6,7 @@
       "pricing": "Pricing",
       "docs": "Docs",
       "blog": "Blog",
-      "about": "About",
+      "company": "Company",
       "signIn": "Sign In",
       "startFree": "Start Free",
       "toggleMenu": "Toggle menu"
@@ -304,7 +304,7 @@
       "integrations": "Integrations",
       "changelog": "Changelog",
       "companyTitle": "Company",
-      "about": "About",
+      "company": "Company",
       "blog": "Blog",
       "careers": "Careers",
       "contact": "Contact",
@@ -340,8 +340,8 @@
       "subtitle": "See ATLVS in action with a personalized demo",
       "description": "Our team will walk you through the platform and answer all your questions."
     },
-    "about": {
-      "title": "About ATLVS",
+    "company": {
+      "title": "Company",
       "subtitle": "Built by production professionals, for production professionals"
     },
     "blog": {
@@ -373,8 +373,8 @@
       "pricingDescription": "Transparent pricing that scales with you. From solo contractors to enterprise producers.",
       "featuresTitle": "Features - ATLVS",
       "featuresDescription": "Discover the complete production management solution for experiential entertainment.",
-      "aboutTitle": "About - ATLVS",
-      "aboutDescription": "Built by production professionals, for production professionals.",
+      "companyTitle": "Company - ATLVS",
+      "companyDescription": "Built by production professionals, for production professionals.",
       "contactTitle": "Contact - ATLVS",
       "contactDescription": "Get in touch with our team.",
       "demoTitle": "Schedule a Demo - ATLVS",

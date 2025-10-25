@@ -30,7 +30,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">
@@ -58,27 +58,27 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Courses</CardTitle>
             <GraduationCap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{courses.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{courses.length}</div>
             <p className="text-xs text-muted-foreground">{t('available')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('enrolled')}</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">
               {courses.filter((c: any) => c.is_enrolled).length}
             </div>
             <p className="text-xs text-muted-foreground">Your courses</p>
@@ -86,12 +86,12 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('completed')}</CardTitle>
             <Award className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
               {courses.filter((c: any) => c.is_completed).length}
             </div>
             <p className="text-xs text-muted-foreground">{t('finished')}</p>
@@ -99,12 +99,12 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Hours</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {courses.reduce((total: number, c: any) => total + (c.duration_hours || 0), 0)}
             </div>
             <p className="text-xs text-muted-foreground">Learning content</p>
@@ -114,7 +114,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
         <Input
           placeholder={t('searchCourses')}
           value={searchQuery as any}
@@ -124,11 +124,11 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
       </div>
 
       {/* Courses Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {filteredCourses.map((course: any) => (
           <Card key={course.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-start gap-3">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                 <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-950">
                   <GraduationCap className="h-5 w-5 text-purple-600" aria-hidden="true" />
                 </div>
@@ -139,7 +139,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   )}
                 </div>
               </div>
-              <div className="flex gap-2 mt-2">
+              <div className="flex flex-wrap gap-2 mt-2">
                 {course.level && (
                   <Badge className={getLevelColor(course.level)}>
                     {course.level}
@@ -166,21 +166,21 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 </p>
               )}
 
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                 {course.duration_hours && (
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Clock className="h-3 w-3" aria-hidden="true" />
                     <span>{course.duration_hours}h</span>
                   </div>
                 )}
                 {course.module_count && (
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <BookOpen className="h-3 w-3" aria-hidden="true" />
                     <span>{course.module_count} modules</span>
                   </div>
                 )}
                 {course.video_count && (
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Video className="h-3 w-3"  aria-hidden="true" />
                     <span>{course.video_count} videos</span>
                   </div>
@@ -188,15 +188,15 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
               </div>
 
               {course.instructor && (
-                <div className="flex items-center gap-2 text-sm">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                   <Users className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
                   <span className="truncate text-muted-foreground">{course.instructor}</span>
                 </div>
               )}
 
               {course.rating && (
-                <div className="flex items-center gap-2 pt-2 border-t">
-                  <div className="flex items-center">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 pt-2 border-t">
+                  <div className="flex flex-wrap items-center">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
@@ -221,11 +221,11 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
               {course.progress !== undefined && course.is_enrolled && (
                 <div className="space-y-1">
-                  <div className="flex items-center justify-between text-xs">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs">
                     <span className="text-muted-foreground">{t('progress')}</span>
                     <span className="font-medium">{course.progress}%</span>
                   </div>
-                  <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+                  <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden md:block">
                     <div 
                       className="h-full bg-purple-500 transition-all"
                       style={{ width: `${course.progress}%` }}
@@ -234,7 +234,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 </div>
               )}
 
-              <div className="flex gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 <Button className="flex-1" size="sm">
                   {course.is_enrolled ? 'Continue Learning' : 'Enroll Now'}
                 </Button>

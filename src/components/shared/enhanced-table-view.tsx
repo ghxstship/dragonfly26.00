@@ -180,11 +180,11 @@ export function EnhancedTableView({
     <>
       <div className="space-y-4">
         {/* Header Actions */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <div className="text-sm text-muted-foreground">
             {data.length} {data.length === 1 ? 'item' : 'items'}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             {/* View Toggle - Desktop Only */}
             {!isMobile && (
               <div className="hidden md:flex items-center border rounded-md">
@@ -208,8 +208,8 @@ export function EnhancedTableView({
             )}
             <Button onClick={() => setCreateDialogOpen(true)} size="sm" className="h-9">
               <Plus className="h-4 w-4 mr-2" />
-              <span className="hidden sm:inline">{createButtonText}</span>
-              <span className="sm:hidden">{createButtonText}</span>
+              <span className="hidden md:block sm:inline">{createButtonText}</span>
+              <span className="sm:hidden md:block">{createButtonText}</span>
             </Button>
           </div>
         </div>
@@ -218,7 +218,7 @@ export function EnhancedTableView({
         {(isMobile || viewMode === 'card') && (
           <div className="space-y-3">
             {loading ? (
-              <div className="text-center py-12 text-muted-foreground">
+              <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
                 Loading...
               </div>
             ) : data.length > 0 ? (
@@ -254,8 +254,8 @@ export function EnhancedTableView({
         {/* Desktop Table View */}
         {!isMobile && viewMode === 'table' && (
           <div className="rounded-md border overflow-x-auto">
-            <div className="min-w-[640px]">
-              <table className="w-full">
+            <div className="min-w-[640px] max-w-full overflow-x-auto">
+        <table className="w-full max-w-full">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id} className="border-b bg-muted/50">
@@ -441,8 +441,8 @@ function renderCellValue(value: any, field: FieldSchema) {
 
     case 'progress':
       return (
-        <div className="flex items-center gap-2 min-w-[100px]">
-          <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 min-w-[100px]">
+          <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden md:block">
             <div
               className="h-full bg-primary transition-all"
               style={{ width: `${value}%` }}
@@ -500,7 +500,7 @@ function renderCellValue(value: any, field: FieldSchema) {
     // Visual types
     case 'color':
       return (
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <div
             className="w-6 h-6 rounded border"
             style={{ backgroundColor: value }}
@@ -511,7 +511,7 @@ function renderCellValue(value: any, field: FieldSchema) {
 
     case 'rating':
       return (
-        <div className="flex items-center gap-0.5">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-0.5">
           {Array.from({ length: 5 }).map((_, i) => (
             <span key={i} className="text-sm">
               {i < value ? '★' : '☆'}
@@ -523,12 +523,12 @@ function renderCellValue(value: any, field: FieldSchema) {
     case 'avatar':
     case 'icon':
       return (
-        <div className="w-8 h-8 rounded-full bg-muted overflow-hidden">
+        <div className="w-8 h-8 rounded-full bg-muted overflow-hidden md:block">
           {value ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={value} alt="Avatar" className="w-full h-full object-cover" />
+            <img src={value} alt="Avatar" className="w-full h-full object-cover max-w-full" />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+            <div className="w-full h-full flex flex-wrap items-center justify-center text-muted-foreground max-w-full">
               ?
             </div>
           )}

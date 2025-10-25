@@ -59,19 +59,19 @@ export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabPr
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 {/* Quick Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">
             <CardDescription>{t('totalLists')}</CardDescription>
-            <CardTitle className="text-3xl">{listsData.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{listsData.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">
             <CardDescription>{t('activeLists')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {listsData.filter(l => (l as any).status === 'active').length}
             </CardTitle>
           </CardHeader>
@@ -79,7 +79,7 @@ export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabPr
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">
             <CardDescription>{t('sharedLists')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {listsData.filter(l => (l as any).status === 'shared').length}
             </CardTitle>
           </CardHeader>
@@ -87,7 +87,7 @@ export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabPr
         <Card className="cursor-pointer hover:shadow-md transition-shadow">
           <CardHeader className="pb-3">
             <CardDescription>{t('totalValue')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               ${Math.floor(listsData.reduce((sum: any, l: any) => sum + parseFloat(l.total_value?.replace(/[$,]/g, '') || '0'), 0) / 1000)}k
             </CardTitle>
           </CardHeader>
@@ -96,17 +96,17 @@ export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabPr
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
         <Input placeholder={t('searchLists')} className="pl-9" />
       </div>
 
       {/* Lists Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {listsData.map((list: any) => (
           <Card key={list.id} className="hover:shadow-lg transition-shadow group">
             <CardHeader>
-              <div className="flex items-start justify-between">
-                <div className="flex items-start gap-3">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                   {getListIcon(list.name)}
                   <div className="space-y-1 flex-1">
                     <CardTitle className="text-lg line-clamp-1">{list.name}</CardTitle>
@@ -132,10 +132,10 @@ export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabPr
             </CardHeader>
             <CardContent className="space-y-4">
               {/* Stats */}
-              <div className="grid grid-cols-2 gap-4 p-4 bg-muted/50 rounded-lg">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 p-4 bg-muted/50 rounded-lg">
                 <div>
                   <p className="text-sm text-muted-foreground">{t('items')}</p>
-                  <p className="text-2xl font-bold">{list.items_count}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{list.items_count}</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t('totalValue')}</p>
@@ -144,7 +144,7 @@ export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabPr
               </div>
 
               {/* Status and Date */}
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 {getStatusBadge(list.status || 'active')}
                 <p className="text-xs text-muted-foreground">
                   Updated {new Date(list.updated_at).toLocaleDateString()}
@@ -152,7 +152,7 @@ export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabPr
               </div>
 
               {/* Actions */}
-              <div className="flex gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 <Button className="flex-1" size="sm">
                   View Items
                 </Button>

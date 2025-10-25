@@ -40,11 +40,11 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
   }
 
   return (
-    <div className="h-full flex flex-col">
-      <Tabs value={activeTab as any} onValueChange={(v) => setActiveTab(v as any)} className="flex-1 flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
+      <Tabs value={activeTab as any} onValueChange={(v) => setActiveTab(v as any)} className="flex-1 flex flex-wrap flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <FileInput className="h-5 w-5" />
             <h3 className="font-semibold">Form Builder</h3>
             <Badge variant="secondary">{data.length} submissions</Badge>
@@ -65,7 +65,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
             </CardHeader>
             <CardContent className="space-y-4">
               {(formFields as any[]).map((field: any) => (
-                <div key={field.id} className="flex items-center gap-3 p-3 border rounded-lg">
+                <div key={field.id} className="flex flex-wrap flex-col md:flex-row items-center gap-3 p-3 border rounded-lg">
                   <div className="flex-1">
                     <div className="font-medium text-sm">{field.label}</div>
                     <div className="text-xs text-muted-foreground">
@@ -76,7 +76,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                   <Button variant="ghost" size="sm">Delete</Button>
                 </div>
               ))}
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full max-w-full">
                 Add Field
               </Button>
             </CardContent>
@@ -98,7 +98,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                 <Button
                   size="sm"
                   variant="secondary"
-                  className="absolute top-2 right-2"
+                  className="absolute sm:relative sm:inset-auto top-2 md:top-2 right-2 md:right-2"
                   onClick={handleCopyEmbed}
                 >
                   {copied ? (
@@ -120,7 +120,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
 
         {/* Preview Tab */}
         <TabsContent value="preview" className="flex-1 overflow-auto p-6">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl px-4 sm:px-6 lg:px-8 mx-auto">
             <Card>
               <CardHeader>
                 <CardTitle>Contact Form</CardTitle>
@@ -144,7 +144,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                     )}
                   </div>
                 ))}
-                <Button className="w-full">Submit</Button>
+                <Button className="w-full max-w-full">Submit</Button>
               </CardContent>
             </Card>
           </div>
@@ -152,13 +152,13 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
 
         {/* Settings Tab */}
         <TabsContent value="settings" className="flex-1 overflow-auto p-6">
-          <div className="max-w-2xl mx-auto space-y-6">
+          <div className="max-w-2xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6">
             <Card>
               <CardHeader>
                 <CardTitle>Form Settings</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div className="space-y-0.5">
                     <Label>Allow Multiple Submissions</Label>
                     <div className="text-sm text-muted-foreground">
@@ -167,7 +167,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                   </div>
                   <Switch />
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div className="space-y-0.5">
                     <Label>Email Notifications</Label>
                     <div className="text-sm text-muted-foreground">
@@ -176,7 +176,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                   </div>
                   <Switch defaultChecked />
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div className="space-y-0.5">
                     <Label>Show Success Message</Label>
                     <div className="text-sm text-muted-foreground">

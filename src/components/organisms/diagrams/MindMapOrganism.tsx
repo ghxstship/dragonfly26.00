@@ -76,10 +76,10 @@ export function MindMapOrganism({
   }
 
   return (
-    <div className="flex flex-col h-full relative">
+    <div className="flex flex-wrap flex-col h-full relative">
       {/* Controls */}
-      <div className="flex items-center justify-between border-b p-2">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b p-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           {!readOnly && (
             <Button onClick={addNode} size="sm" className="gap-2">
               <Plus className="h-4 w-4" aria-hidden="true" />
@@ -90,7 +90,7 @@ export function MindMapOrganism({
             {nodes.length} {t('mindMap.nodes')}
           </span>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
           <Button
             variant="ghost"
             size="sm"
@@ -121,13 +121,13 @@ export function MindMapOrganism({
       </div>
 
       {/* Canvas */}
-      <div className="flex-1 relative overflow-hidden bg-muted/10">
+      <div className="flex-1 relative overflow-hidden md:block bg-muted/10">
         <div
-          className="absolute inset-0"
+          className="absolute sm:relative sm:inset-auto inset-0 sm:relative sm:inset-auto"
           style={{ transform: `scale(${zoom})`, transformOrigin: 'center' }}
         >
           {/* Connection Lines */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none">
+          <svg className="absolute sm:relative sm:inset-auto inset-0 w-full h-full pointer-events-none max-w-full sm:relative sm:inset-auto">
             {nodes.map((node: any) => 
               node.children?.map((childId: any) => {
                 const child = nodes.find(n => n.id === childId)
@@ -195,7 +195,7 @@ export function MindMapOrganism({
                 <Button
                   variant="destructive"
                   size="sm"
-                  className="absolute -top-2 -right-2 h-6 w-6 p-0 rounded-full"
+                  className="absolute sm:relative sm:inset-auto -top-2 md:top-2 -right-2 md:right-2 h-6 w-6 p-0 rounded-full"
                   onClick={(e) => {
                     e.stopPropagation()
                     removeNode(node.id)
@@ -212,7 +212,7 @@ export function MindMapOrganism({
 
       {/* Instructions */}
       {!readOnly && nodes.length === 0 && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center pointer-events-none sm:relative sm:inset-auto">
           <div className="text-center text-muted-foreground">
             <p className="text-sm">{t('mindMap.empty')}</p>
             <p className="text-xs mt-1">{t('mindMap.clickToAdd')}</p>

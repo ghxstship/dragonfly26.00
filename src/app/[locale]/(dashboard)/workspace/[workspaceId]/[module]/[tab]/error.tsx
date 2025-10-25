@@ -30,12 +30,12 @@ export default function TabError({
   }, [error])
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
-      <Card className="max-w-2xl w-full">
+    <div className="flex flex-wrap items-center justify-center min-h-screen p-4">
+      <Card className="max-w-2xl px-4 sm:px-6 lg:px-8 w-full max-w-full">
         <CardHeader className="text-center space-y-4">
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-destructive/20 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute sm:relative sm:inset-auto inset-0 bg-destructive/20 rounded-full blur-2xl animate-pulse sm:relative sm:inset-auto" />
               <div className="relative bg-destructive/10 p-6 rounded-full">
                 <AlertTriangle className="w-16 h-16 text-destructive" />
               </div>
@@ -48,7 +48,7 @@ export default function TabError({
             </div>
           )}
           
-          <CardTitle className="text-3xl">
+          <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
             {t('errorGenericTitle')}
           </CardTitle>
           <CardDescription className="text-base">
@@ -56,7 +56,7 @@ export default function TabError({
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
           {/* Actions */}
           <div className="flex flex-wrap gap-3 justify-center">
             <Button onClick={reset} className="gap-2">

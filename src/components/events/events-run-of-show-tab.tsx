@@ -99,17 +99,17 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Show Clock and Progress */}
       <Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950">
         <CardContent className="pt-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-2">
               <div className="text-sm text-muted-foreground">Show Clock</div>
-              <div className="text-4xl font-mono font-bold">{showClock as any}</div>
+              <div className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-4xl font-mono font-bold">{showClock as any}</div>
             </div>
             
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <Button 
                 size="lg" 
                 variant={isRunning ? "outline" : "default"}
@@ -125,7 +125,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
             </div>
 
             <div className="space-y-2 min-w-48">
-              <div className="flex justify-between text-sm">
+              <div className="flex flex-wrap justify-between text-sm">
                 <span className="text-muted-foreground">Progress</span>
                 <span className="font-medium">{completedCues}/{runOfShow.length} cues</span>
               </div>
@@ -136,7 +136,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
       </Card>
 
       {/* Acts/Segments */}
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
         {Object.entries(groupedCues).map(([act, cues]: [string, any]) => (
           <Card key={act}>
             <CardHeader>
@@ -173,7 +173,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
                       {/* Time */}
                       <div className="flex-shrink-0 w-24">
-                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm text-muted-foreground">
                           <Clock className="h-4 w-4" aria-hidden="true" />
                           <span className="font-mono">{cue.time || '--:--'}</span>
                         </div>
@@ -205,7 +205,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                       {/* Assigned Personnel */}
                       {cue.assignedTo && (
                         <div className="flex-shrink-0">
-                          <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm text-muted-foreground">
                             <Users className="h-4 w-4" aria-hidden="true" />
                             <span className="truncate max-w-32">{cue.assignedTo}</span>
                           </div>
@@ -250,7 +250,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
             {(() => {
               const cue = runOfShow.find((c: any) => c.number === currentCue)
               return (
-                <div className="grid gap-4 md:grid-cols-2">
+                <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
                   <div>
                     <div className="text-sm text-muted-foreground">Technical Notes</div>
                     <div className="mt-1 text-sm">{cue.notes || 'No notes'}</div>

@@ -129,49 +129,49 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
   const suggestedCount = connections.filter(c => (c as any).status === "suggested").length
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Header Stats */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('connections')}</div>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{connectedCount as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{connectedCount as any}</div>
             <p className="text-xs text-muted-foreground">Professional network</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('pending')}</div>
             <UserPlus className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{pendingCount as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{pendingCount as any}</div>
             <p className="text-xs text-muted-foreground">Awaiting response</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('suggestions')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{suggestedCount as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{suggestedCount as any}</div>
             <p className="text-xs text-muted-foreground">People you may know</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('growth')}</div>
             <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">+12</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">+12</div>
             <p className="text-xs text-muted-foreground">This month</p>
           </CardContent>
         </Card>
@@ -180,9 +180,9 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
       {/* Search and Filter */}
       <Card>
         <CardContent className="pt-6">
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
               <Input
                 placeholder={t('searchConnections')}
                 value={searchQuery as any}
@@ -203,7 +203,7 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
       </Card>
 
       {/* Connections Grid */}
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
         {filteredConnections.length === 0 ? (
           <Card className="col-span-2">
             <CardContent className="p-0">
@@ -221,7 +221,7 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
           filteredConnections.map((connection: any) => (
             <Card key={connection.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                   {/* Avatar */}
                   <Avatar className="h-16 w-16">
                     <AvatarImage src={connection.image} />
@@ -232,9 +232,9 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <h3 className="font-semibold truncate">{connection.name}</h3>
                           {connection.verified && (
                             <Badge variant="secondary" className="h-5 px-1">
@@ -250,15 +250,15 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
                     </div>
 
                     <div className="mt-2 space-y-1 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Briefcase className="h-3 w-3"  aria-hidden="true" />
                         <span className="truncate">{connection.company}</span>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <MapPin className="h-3 w-3"  aria-hidden="true" />
                         <span className="truncate">{connection.location}</span>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Users className="h-3 w-3" aria-hidden="true" />
                         <span>{connection.mutualConnections} mutual connections</span>
                       </div>
@@ -281,7 +281,7 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
                     )}
 
                     {/* Action Buttons */}
-                    <div className="flex gap-2 mt-4">
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {(connection as any).status === "connected" && (
                         <>
                           <Button variant="outline" size="sm" className="flex-1">
@@ -344,7 +344,7 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
       {/* Network Growth Tips */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Award className="h-5 w-5" aria-hidden="true" />
             Grow Your Network
           </CardTitle>
@@ -352,19 +352,19 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
         </CardHeader>
         <CardContent>
           <ul className="space-y-2 text-sm">
-            <li className="flex items-start gap-2">
+            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
               <span className="text-primary">•</span>
               <span>Connect with colleagues from recent productions and events</span>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
               <span className="text-primary">•</span>
               <span>Engage with posts and share your own experiences to increase visibility</span>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
               <span className="text-primary">•</span>
               <span>Endorse connections for their skills to strengthen relationships</span>
             </li>
-            <li className="flex items-start gap-2">
+            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
               <span className="text-primary">•</span>
               <span>Join industry groups and participate in discussions</span>
             </li>

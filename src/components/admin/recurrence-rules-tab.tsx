@@ -104,19 +104,19 @@ export function RecurrenceRulesTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Total Rules</CardDescription>
-            <CardTitle className="text-3xl">{rules.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{rules.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Total Usage</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {rules.reduce((sum: number, r) => sum + r.usageCount, 0)}
             </CardTitle>
           </CardHeader>
@@ -138,9 +138,9 @@ export function RecurrenceRulesTab() {
         {rules.map((rule: any) => (
           <Card key={rule.id}>
             <CardHeader>
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                     <CardTitle className="text-base">{(rule.nameKey ? t(rule.nameKey) : rule.name)}</CardTitle>
                     <Badge variant="outline">
                       <Clock className="h-3 w-3 mr-1" />
@@ -148,7 +148,7 @@ export function RecurrenceRulesTab() {
                     </Badge>
                   </div>
                   <CardDescription>{(rule.descriptionKey ? t(rule.descriptionKey) : rule.description || "")}</CardDescription>
-                  <div className="flex items-center gap-2 mt-2 text-sm">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2 text-sm">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
                     <span className="font-medium">{rule.pattern}</span>
                   </div>
@@ -156,7 +156,7 @@ export function RecurrenceRulesTab() {
                     Created {new Date(rule.createdAt).toLocaleDateString()}
                   </p>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Button
                     variant="outline"
                     size="sm"
@@ -226,7 +226,7 @@ export function RecurrenceRulesTab() {
               </Select>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
               <div className="space-y-2">
                 <Label>Day</Label>
                 <Select defaultValue="monday">

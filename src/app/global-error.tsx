@@ -21,12 +21,12 @@ export default function GlobalError({
   return (
     <html lang="en">
       <body>
-        <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
-          <div className="max-w-2xl w-full text-center space-y-6">
+        <div className="min-h-screen flex flex-wrap items-center justify-center p-4 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
+          <div className="max-w-2xl px-4 sm:px-6 lg:px-8 w-full text-center space-y-3 md:space-y-4 lg:space-y-6 max-w-full">
             {/* Error Icon with Animation */}
-            <div className="flex justify-center">
+            <div className="flex flex-wrap justify-center">
               <div className="relative">
-                <div className="absolute inset-0 bg-red-500/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute sm:relative sm:inset-auto inset-0 bg-red-500/20 rounded-full blur-2xl animate-pulse sm:relative sm:inset-auto" />
                 <div className="relative bg-red-500/10 p-6 rounded-full">
                   <AlertTriangle className="w-16 h-16 text-red-500" />
                 </div>
@@ -41,7 +41,7 @@ export default function GlobalError({
             )}
 
             {/* Title */}
-            <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+            <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
               Critical Error
             </h1>
 
@@ -56,15 +56,15 @@ export default function GlobalError({
                 What You Can Do:
               </h2>
               <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                <li className="flex items-start gap-2">
+                <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                   <span className="text-violet-600 dark:text-violet-400 mt-0.5">•</span>
                   <span>Refresh the page and try again</span>
                 </li>
-                <li className="flex items-start gap-2">
+                <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                   <span className="text-violet-600 dark:text-violet-400 mt-0.5">•</span>
                   <span>Clear your browser cache and cookies</span>
                 </li>
-                <li className="flex items-start gap-2">
+                <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                   <span className="text-violet-600 dark:text-violet-400 mt-0.5">•</span>
                   <span>Contact support if the problem persists</span>
                 </li>
@@ -75,14 +75,14 @@ export default function GlobalError({
             <div className="flex flex-wrap gap-3 justify-center pt-4">
               <button
                 onClick={reset}
-                className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 bg-violet-600 text-white hover:bg-violet-700 h-11 px-8"
+                className="inline-flex flex-col md:flex-row items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 bg-violet-600 text-white hover:bg-violet-700 h-11 px-4 md:px-4 md:px-6 lg:px-8"
               >
                 <RefreshCw className="w-4 h-4" />
                 Try Again
               </button>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 h-11 px-8"
+                className="inline-flex flex-col md:flex-row items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 h-11 px-4 md:px-4 md:px-6 lg:px-8"
               >
                 <Home className="w-4 h-4" />
                 Go Back Home
@@ -91,7 +91,7 @@ export default function GlobalError({
 
             {/* Technical Details (Development Only) */}
             {process.env.NODE_ENV === 'development' && (
-              <details className="mt-8 text-left">
+              <details className="mt-4 md:mt-6 lg:mt-8 text-left">
                 <summary className="text-sm text-slate-600 dark:text-slate-400 cursor-pointer hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
                   Technical Details
                 </summary>

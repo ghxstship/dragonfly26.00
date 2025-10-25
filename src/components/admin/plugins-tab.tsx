@@ -153,11 +153,11 @@ export function PluginsTab() {
   const renderPluginCard = (plugin: Plugin) => (
     <Card key={plugin.id}>
       <CardHeader>
-        <div className="flex items-start justify-between">
-          <div className="flex gap-3 flex-1">
-            <div className="text-3xl">{plugin.icon}</div>
+        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+          <div className="flex flex-wrap gap-3 flex-1">
+            <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{plugin.icon}</div>
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                 <CardTitle className="text-base">{plugin.name}</CardTitle>
                 {plugin.installed && (
                   <Badge variant="default">
@@ -167,17 +167,17 @@ export function PluginsTab() {
                 )}
               </div>
               <CardDescription className="text-sm">{plugin.description}</CardDescription>
-              <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mt-2 text-xs text-muted-foreground">
                 <span>by {plugin.author}</span>
                 <span>•</span>
                 <span>v{plugin.version}</span>
                 <span>•</span>
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   <span>{plugin.rating}</span>
                 </div>
                 <span>•</span>
-                <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <Download className="h-3 w-3" aria-hidden="true" />
                   <span>{plugin.downloads.toLocaleString()}</span>
                 </div>
@@ -187,7 +187,7 @@ export function PluginsTab() {
         </div>
       </CardHeader>
       <CardContent>
-        <div className="flex justify-end gap-2">
+        <div className="flex flex-wrap justify-end gap-2">
           {plugin.installed ? (
             <>
               <Button variant="outline" size="sm">
@@ -221,25 +221,25 @@ export function PluginsTab() {
   )
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('plugins.installed')}</CardDescription>
-            <CardTitle className="text-3xl">{installedPlugins.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{installedPlugins.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('common.active')}</CardDescription>
-            <CardTitle className="text-3xl">{availablePlugins.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{availablePlugins.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Total Downloads</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {plugins.reduce((sum: number, p) => sum + p.downloads, 0).toLocaleString()}
             </CardTitle>
           </CardHeader>
@@ -250,7 +250,7 @@ export function PluginsTab() {
       <Card>
         <CardContent className="pt-6">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
             <Input
               placeholder={t('admin.plugins.searchPlaceholder')}
               value={searchQuery as any}

@@ -90,7 +90,7 @@ export function FormBuilderOrganism({
             </Label>
             {field.type === 'textarea' ? (
               <textarea
-                className="w-full min-h-[100px] rounded-md border border-input bg-background px-3 py-2"
+                className="w-full min-h-[100px] rounded-md border border-input bg-background px-3 py-2 max-w-full"
                 placeholder={field.placeholder}
               />
             ) : field.type === 'select' ? (
@@ -105,7 +105,7 @@ export function FormBuilderOrganism({
                 </SelectContent>
               </Select>
             ) : field.type === 'checkbox' ? (
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <input type="checkbox" id={field.id} />
                 <label htmlFor={field.id}>{field.label}</label>
               </div>
@@ -122,10 +122,10 @@ export function FormBuilderOrganism({
   }
 
   return (
-    <div className="grid grid-cols-3 gap-4 h-full">
+    <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 h-full">
       {/* Fields List */}
       <div className="col-span-2 space-y-2 overflow-auto p-4">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
           <h3 className="font-semibold">{t('formBuilder.fields')}</h3>
           <Button onClick={addField} size="sm" className="gap-2">
             <Plus className="h-4 w-4" aria-hidden="true" />
@@ -135,7 +135,7 @@ export function FormBuilderOrganism({
 
         {fields.length === 0 ? (
           <Card>
-            <CardContent className="flex flex-col items-center justify-center py-12 text-center">
+            <CardContent className="flex flex-wrap flex-col items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-center">
               <p className="text-muted-foreground mb-4">{t('formBuilder.noFields')}</p>
               <Button onClick={addField} variant="outline">
                 {t('formBuilder.addFirstField')}
@@ -152,7 +152,7 @@ export function FormBuilderOrganism({
               )}
               onClick={() => setSelectedField(field.id)}
             >
-              <CardContent className="flex items-center gap-2 p-3">
+              <CardContent className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3">
                 <GripVertical className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 <div className="flex-1 min-w-0">
                   <p className="font-medium truncate">{field.label}</p>
@@ -181,7 +181,7 @@ export function FormBuilderOrganism({
       <div className="border-l p-4 overflow-auto">
         {selectedField ? (
           <div className="space-y-4">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-4">
               <Settings className="h-5 w-5" aria-hidden="true" />
               <h3 className="font-semibold">{t('formBuilder.properties')}</h3>
             </div>
@@ -229,7 +229,7 @@ export function FormBuilderOrganism({
                     />
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <input
                       type="checkbox"
                       id="required"
@@ -243,7 +243,7 @@ export function FormBuilderOrganism({
             })()}
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground">
+          <div className="flex flex-wrap flex-col items-center justify-center h-full text-center text-muted-foreground">
             <p>{t('formBuilder.selectField')}</p>
           </div>
         )}

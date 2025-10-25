@@ -13,14 +13,14 @@ export function OfflineContent() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-muted/30">
-      <Card className="max-w-md w-full">
+    <div className="flex flex-wrap items-center justify-center min-h-screen p-4 bg-muted/30">
+      <Card className="max-w-md w-full max-w-full">
         <CardContent className="pt-12 pb-8 text-center">
-          <div className="mx-auto w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-6">
+          <div className="mx-auto w-16 h-16 rounded-full bg-muted flex flex-wrap items-center justify-center mb-6">
             <WifiOff className="h-8 w-8 text-muted-foreground" />
           </div>
           
-          <h1 className="text-2xl font-bold mb-3">You&apos;re Offline</h1>
+          <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3">You&apos;re Offline</h1>
           
           <p className="text-muted-foreground mb-6">
             It looks like you&apos;ve lost your internet connection. Don&apos;t worry, you can still access
@@ -28,17 +28,17 @@ export function OfflineContent() {
           </p>
 
           <div className="space-y-3">
-            <Button onClick={handleRetry} className="w-full">
+            <Button onClick={handleRetry} className="w-full max-w-full">
               <RefreshCw className="h-4 w-4 mr-2" />
               Try Again
             </Button>
             
-            <Button variant="outline" className="w-full" asChild>
+            <Button variant="outline" className="w-full max-w-full" asChild>
               <Link href="/">Go to Dashboard</Link>
             </Button>
           </div>
 
-          <div className="mt-8 p-4 bg-muted rounded-lg text-left">
+          <div className="mt-4 md:mt-6 lg:mt-8 p-4 bg-muted rounded-lg text-left">
             <h3 className="font-semibold text-sm mb-2">Offline Features:</h3>
             <ul className="text-sm text-muted-foreground space-y-1">
               <li>• View recently accessed projects and tasks</li>

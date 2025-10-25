@@ -98,7 +98,7 @@ export function Sidebar() {
             <div className="mb-4">
               <button
                 onClick={() => toggleHub('favorites')}
-                className="flex items-center justify-between w-full mb-2 px-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider hover:text-foreground transition-colors"
+                className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between w-full mb-2 px-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider hover:text-foreground transition-colors max-w-full"
               >
                 <span>{t('sidebar.favorites')}</span>
                 {collapsedHubs['favorites'] ? (
@@ -141,7 +141,7 @@ export function Sidebar() {
               {!sidebarCollapsed ? (
                 <button
                   onClick={() => toggleHub(group.category)}
-                  className="flex items-center justify-between w-full mb-2 px-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider hover:text-foreground transition-colors"
+                  className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between w-full mb-2 px-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider hover:text-foreground transition-colors max-w-full"
                 >
                   <span>{group.label}</span>
                   {collapsedHubs[group.category] ? (

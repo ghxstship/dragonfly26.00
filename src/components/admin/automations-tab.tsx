@@ -46,19 +46,19 @@ export function AutomationsTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.automationsTab.totalAutomations')}</CardDescription>
-            <CardTitle className="text-3xl">{automations.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{automations.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.automationsTab.active')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {automations.filter(a => a.enabled).length}
             </CardTitle>
           </CardHeader>
@@ -66,7 +66,7 @@ export function AutomationsTab() {
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.automationsTab.totalRuns')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {automations.reduce((sum: number, a) => sum + a.runsCount, 0)}
             </CardTitle>
           </CardHeader>
@@ -77,9 +77,9 @@ export function AutomationsTab() {
         {automations.map((automation: any) => (
           <Card key={automation.id}>
             <CardHeader>
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                     <CardTitle className="text-base">{automation.name}</CardTitle>
                     <Badge variant={automation.enabled ? "default" : "secondary"}>
                       {automation.enabled ? (
@@ -94,7 +94,7 @@ export function AutomationsTab() {
                     {t('admin.automationsTab.trigger')}: {automation.trigger} • {automation.runsCount} {t('admin.automationsTab.totalRunsCount')}
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Switch
                     checked={automation.enabled}
                     onCheckedChange={() => handleToggle(automation.id)}

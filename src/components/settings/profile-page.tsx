@@ -94,7 +94,7 @@ export function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <span>Loading...</span>
       </div>
     )
@@ -110,10 +110,10 @@ export function ProfilePage() {
   ]
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
       <div className="border-b bg-background p-6">
-        <h1 className="text-3xl font-bold">{t('nav.profile')}</h1>
+        <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{t('nav.profile')}</h1>
         <p className="text-muted-foreground mt-2">
           {t('profile.descriptions.professional')}
         </p>
@@ -121,11 +121,11 @@ export function ProfilePage() {
 
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6">
           {/* Profile Picture & Basic Info */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <UserCircle className="h-5 w-5" aria-hidden="true" />
                 {t('profile.basicInfo.personalInfo')}
               </CardTitle>
@@ -133,12 +133,12 @@ export function ProfilePage() {
                 This information will be displayed on your profile
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
               {/* Profile Picture */}
-              <div className="flex items-start gap-6">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
                 <Avatar className="h-32 w-32">
                   <AvatarImage src={avatarUrl} />
-                  <AvatarFallback className="text-2xl">
+                  <AvatarFallback className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
                     {formData.displayName?.charAt(0) || "?"}
                   </AvatarFallback>
                 </Avatar>
@@ -194,9 +194,9 @@ export function ProfilePage() {
               <Separator />
 
               {/* Company & Location */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="company" className="flex items-center gap-2">
+                  <Label htmlFor="company" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Briefcase className="h-4 w-4" />
                     Company
                   </Label>
@@ -207,7 +207,7 @@ export function ProfilePage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="location" className="flex items-center gap-2">
+                  <Label htmlFor="location" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <MapPin className="h-4 w-4" />
                     Location
                   </Label>
@@ -246,7 +246,7 @@ export function ProfilePage() {
           {/* Social Links */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <LinkIcon className="h-5 w-5" />
                 Social Links
               </CardTitle>
@@ -256,7 +256,7 @@ export function ProfilePage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="website" className="flex items-center gap-2">
+                <Label htmlFor="website" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Globe className="h-4 w-4" />
                   Website
                 </Label>
@@ -270,11 +270,11 @@ export function ProfilePage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="linkedin" className="flex items-center gap-2">
+                <Label htmlFor="linkedin" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Linkedin className="h-4 w-4" />
                   LinkedIn
                 </Label>
-                <div className="flex">
+                <div className="flex flex-wrap">
                   <span className="inline-flex items-center px-3 text-sm border border-r-0 rounded-l-md bg-muted text-muted-foreground">
                     linkedin.com/in/
                   </span>
@@ -289,7 +289,7 @@ export function ProfilePage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="twitter" className="flex items-center gap-2">
+                <Label htmlFor="twitter" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Twitter className="h-4 w-4" />
                   Twitter
                 </Label>
@@ -302,11 +302,11 @@ export function ProfilePage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="github" className="flex items-center gap-2">
+                <Label htmlFor="github" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Github className="h-4 w-4" />
                   GitHub
                 </Label>
-                <div className="flex">
+                <div className="flex flex-wrap">
                   <span className="inline-flex items-center px-3 text-sm border border-r-0 rounded-l-md bg-muted text-muted-foreground">
                     github.com/
                   </span>
@@ -323,7 +323,7 @@ export function ProfilePage() {
           </Card>
 
           {/* Save Button */}
-          <div className="flex justify-end">
+          <div className="flex flex-wrap justify-end">
             <Button onClick={handleSave} disabled={saving} size="lg">
               <Save className="h-4 w-4 mr-2" aria-hidden="true" />
               {saving ? t('profile.actions.saving') : t('profile.actions.saveChanges')}

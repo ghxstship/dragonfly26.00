@@ -68,14 +68,14 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
 
   const displayData = data || []
   return (
-    <div className="space-y-6">
-      <div className="grid gap-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {forecasts.map((forecast: Forecast, index: number) => (
           <Card key={index} role="article">
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
-                  <CardTitle className="text-xl">{forecast.metric} Forecast</CardTitle>
+                  <CardTitle className="text-base md:text-lg lg:text-xl">{forecast.metric} Forecast</CardTitle>
                   <p className="text-sm text-muted-foreground mt-1">
                     Current: <span className="font-bold text-foreground">{forecast.current}</span>
                   </p>
@@ -90,13 +90,13 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
             <CardContent>
               <div className="space-y-4">
                 {/* Forecast Timeline */}
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
                   {forecast.forecast.map((item: ForecastItem, idx: number) => (
                     <div key={idx} className="p-4 border rounded-lg hover:bg-accent transition-colors">
                       <p className="text-sm font-medium text-muted-foreground mb-2">{item.period}</p>
-                      <p className="text-2xl font-bold mb-2" aria-live="polite">{item.value?.toLocaleString()}</p>
-                      <div className="flex items-center gap-2">
-                        <div className="flex-1 h-2 bg-accent rounded-full overflow-hidden">
+                      <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-2" aria-live="polite">{item.value?.toLocaleString()}</p>
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                        <div className="flex-1 h-2 bg-accent rounded-full overflow-hidden md:block">
                           <div 
                             className={`h-full ${item.confidence >= 90 ? 'bg-green-600' : item.confidence >= 85 ? 'bg-yellow-600' : 'bg-orange-600'}`}
                             style={{ width: `${item.confidence}%` }}
@@ -110,7 +110,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
                 </div>
 
                 {/* Insights */}
-                <div className="p-4 bg-accent rounded-lg flex items-start gap-3">
+                <div className="p-4 bg-accent rounded-lg flex flex-wrap flex-col md:flex-row items-start gap-3">
                   <Target className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
                   <div>
                     <p className="font-medium mb-1">{t('forecastInsight')}</p>
@@ -125,7 +125,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
 
                 {/* Warning for low confidence */}
                 {forecast.forecast[3].confidence < 85 && (
-                  <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg flex items-start gap-2">
+                  <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg flex flex-wrap flex-col md:flex-row items-start gap-2">
                     <AlertCircle className="h-4 w-4 text-yellow-600 mt-0.5" aria-hidden="true" />
                     <p className="text-sm text-yellow-800">
                       Long-term forecast confidence is below 85%. Consider reviewing assumptions and market conditions.

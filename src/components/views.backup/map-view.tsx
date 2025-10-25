@@ -41,10 +41,10 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
   }, {} as Record<string, DataItem[]>)
 
   return (
-    <div className="flex h-full gap-4">
+    <div className="flex flex-wrap h-full gap-2 md:gap-3 lg:gap-4">
       {/* Map Area */}
-      <div className="flex-1 relative bg-muted/30 rounded-lg border overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
+      <div className="flex-1 relative bg-muted/30 rounded-lg border overflow-hidden md:block">
+        <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
           {data.length === 0 ? (
             <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg">
               <EmptyState
@@ -58,7 +58,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
             </div>
           ) : (
             <div className="text-center space-y-4">
-              <div className="mx-auto w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
+              <div className="mx-auto w-24 h-24 rounded-full bg-primary/10 flex flex-wrap items-center justify-center">
                 <MapPin className="h-12 w-12 text-primary" />
               </div>
               <div>
@@ -73,7 +73,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
         </div>
 
         {/* Map Controls */}
-        <div className="absolute top-4 right-4 flex gap-2">
+        <div className="absolute sm:relative sm:inset-auto top-2 md:top-4 right-2 md:right-4 flex flex-wrap gap-2">
           <TooltipProvider delayDuration={300}>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -99,11 +99,11 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
         </div>
 
         {/* Marker indicators (placeholder) */}
-        <div className="absolute bottom-4 left-4 bg-background/95 backdrop-blur rounded-lg border p-3 shadow-lg">
+        <div className="absolute sm:relative sm:inset-auto bottom-4 left-4 bg-background/95 backdrop-blur rounded-lg border p-3 shadow-lg sm:relative sm:inset-auto">
           <div className="text-xs font-semibold mb-2">Clusters</div>
           <div className="space-y-1">
             {Object.entries(clusters).map(([region, items]) => (
-              <div key={region} className="flex items-center gap-2 text-sm">
+              <div key={region} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                 <MapPin className="h-3 w-3 text-primary" />
                 <span>{region}</span>
                 <Badge variant="secondary" className="ml-auto">
@@ -116,7 +116,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
       </div>
 
       {/* Item List Sidebar */}
-      <div className="w-80 border rounded-lg bg-background overflow-hidden flex flex-col">
+      <div className="w-full sm:w-80 border rounded-lg bg-background overflow-hidden md:block flex flex-wrap flex-col">
         <div className="p-4 border-b">
           <h3 className="font-semibold">Locations</h3>
           <p className="text-sm text-muted-foreground">
@@ -145,7 +145,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
                     onItemClick?.(item)
                   }}
                 >
-                  <div className="flex items-start gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                     <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
                       <div className="font-medium text-sm">

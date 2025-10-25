@@ -115,8 +115,8 @@ export function ReviewForm({
     return (
       <Dialog open={open} onOpenChange={handleClose}>
         <DialogContent className="sm:max-w-md">
-          <div className="flex flex-col items-center justify-center py-8 text-center">
-            <div className="h-16 w-16 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
+          <div className="flex flex-wrap flex-col items-center justify-center py-4 md:py-6 lg:py-8 text-center">
+            <div className="h-16 w-16 rounded-full bg-green-500/10 flex flex-wrap items-center justify-center mb-4">
               <CheckCircle2 className="h-8 w-8 text-green-600" />
             </div>
             <h3 className="text-lg font-semibold mb-2">Thank you for your review!</h3>
@@ -144,11 +144,11 @@ export function ReviewForm({
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-6 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4 lg:space-y-6 mt-4">
           {/* Rating */}
           <div className="space-y-2">
             <Label>Overall Rating *</Label>
-            <div className="flex gap-1">
+            <div className="flex flex-wrap gap-1">
               {[1, 2, 3, 4, 5].map((star: any) => (
                 <button
                   key={star}
@@ -232,7 +232,7 @@ export function ReviewForm({
                   <button
                     type="button"
                     onClick={() => removePhoto(index)}
-                    className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-red-500 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute sm:relative sm:inset-auto -top-2 md:top-2 -right-2 md:right-2 h-6 w-6 rounded-full bg-red-500 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -240,13 +240,13 @@ export function ReviewForm({
               ))}
 
               {photos.length < 5 && (
-                <label className="h-20 w-20 border-2 border-dashed border-muted-foreground/25 rounded-lg flex items-center justify-center cursor-pointer hover:border-muted-foreground/50 transition-colors">
+                <label className="h-20 w-20 border-2 border-dashed border-muted-foreground/25 rounded-lg flex flex-wrap items-center justify-center cursor-pointer hover:border-muted-foreground/50 transition-colors">
                   <Upload className="h-6 w-6 text-muted-foreground/50" />
                   <input
                     type="file"
                     accept="image/*"
                     multiple
-                    className="hidden"
+                    className="hidden md:block"
                     onChange={handlePhotoUpload}
                   />
                 </label>
@@ -255,8 +255,8 @@ export function ReviewForm({
           </div>
 
           {/* Submit */}
-          <div className="flex gap-3 pt-4">
-            <Button
+          <div className="flex flex-wrap gap-3 pt-4 flex-col sm:flex-row">
+        <Button
               type="button"
               variant="outline"
               onClick={handleClose}

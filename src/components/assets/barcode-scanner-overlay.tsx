@@ -105,10 +105,10 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl p-0 overflow-hidden">
+      <DialogContent className="max-w-2xl p-0 overflow-hidden md:block max-w-[95vw] sm:max-w-lg md:max-w-2xl lg:max-w-4xl">
         <div className="relative aspect-[4/3] bg-black">
           {hasPermission === false ? (
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 text-center">
+            <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap flex-col items-center justify-center text-white p-4 md:p-8 text-center sm:relative sm:inset-auto">
               <Camera className="h-16 w-16 mb-4 opacity-50" />
               <h3 className="text-lg font-semibold mb-2">Camera Access Required</h3>
               <p className="text-sm text-gray-300 mb-4">
@@ -125,27 +125,27 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
                 autoPlay
                 playsInline
                 muted
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover max-w-full"
               />
               
               {/* Scanning overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-64 h-48">
+              <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
+                <div className="relative w-full sm:w-64 h-48">
                   {/* Corner markers */}
-                  <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-white rounded-tl-lg" />
-                  <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-white rounded-tr-lg" />
-                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-white rounded-bl-lg" />
-                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-white rounded-br-lg" />
+                  <div className="absolute sm:relative sm:inset-auto top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-white rounded-tl-lg sm:relative sm:inset-auto" />
+                  <div className="absolute sm:relative sm:inset-auto top-2 md:top-0 right-2 md:right-0 w-8 h-8 border-t-4 border-r-4 border-white rounded-tr-lg" />
+                  <div className="absolute sm:relative sm:inset-auto bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-white rounded-bl-lg sm:relative sm:inset-auto" />
+                  <div className="absolute sm:relative sm:inset-auto bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-white rounded-br-lg sm:relative sm:inset-auto" />
                   
                   {/* Scanning line animation */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-green-400 to-transparent animate-scan" />
+                  <div className="absolute sm:relative sm:inset-auto inset-0 overflow-hidden md:block">
+                    <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-green-400 to-transparent animate-scan max-w-full" />
                   </div>
                 </div>
               </div>
 
               {/* Instructions */}
-              <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+              <div className="absolute sm:relative sm:inset-auto top-4 left-1/2 transform -translate-x-1/2 sm:relative sm:inset-auto">
                 <Badge className="bg-black/70 text-white border-white/20">
                   <Camera className="h-3 w-3 mr-1" />
                   Point at barcode or QR code
@@ -153,8 +153,8 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
               </div>
 
               {/* Controls */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                <Button
+              <div className="absolute sm:relative sm:inset-auto bottom-4 left-1/2 transform -translate-x-1/2 flex flex-wrap gap-2 sm:relative sm:inset-auto flex-col sm:flex-row">
+        <Button
                   variant="secondary"
                   size="icon"
                   onClick={toggleFlash}
@@ -175,7 +175,7 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute top-4 right-4 text-white hover:bg-white/20"
+                className="absolute sm:relative sm:inset-auto top-2 md:top-4 right-2 md:right-4 text-white hover:bg-white/20"
                 onClick={() => onOpenChange(false)}
               >
                 <X className="h-4 w-4" />
@@ -191,7 +191,7 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
             const input = e.currentTarget.elements.namedItem('code') as HTMLInputElement
             handleManualEntry(input.value)
           }}>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <input
                 name="code"
                 type="text"

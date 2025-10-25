@@ -95,13 +95,13 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.totalOrders}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalOrders}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Orders</p>
             </div>
           </CardContent>
@@ -109,7 +109,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">{summary.inTransit}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{summary.inTransit}</p>
               <p className="text-xs text-muted-foreground mt-1">In Transit</p>
             </div>
           </CardContent>
@@ -117,7 +117,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.totalSpent}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalSpent}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Spent</p>
             </div>
           </CardContent>
@@ -125,7 +125,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-green-600">{summary.thisMonth}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.thisMonth}</p>
               <p className="text-xs text-muted-foreground mt-1">This Month</p>
             </div>
           </CardContent>
@@ -138,25 +138,25 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
           <CardTitle className="text-base">Order Status</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-xl font-bold text-gray-600">{summary.pending}</p>
+              <p className="text-base md:text-lg lg:text-xl font-bold text-gray-600">{summary.pending}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('pending')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-xl font-bold text-yellow-600">{summary.processing}</p>
+              <p className="text-base md:text-lg lg:text-xl font-bold text-yellow-600">{summary.processing}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('processing')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-xl font-bold text-blue-600">{summary.inTransit}</p>
+              <p className="text-base md:text-lg lg:text-xl font-bold text-blue-600">{summary.inTransit}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('inTransit')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-xl font-bold text-green-600">{summary.delivered}</p>
+              <p className="text-base md:text-lg lg:text-xl font-bold text-green-600">{summary.delivered}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('delivered')}</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-xl font-bold text-red-600">{summary.cancelled}</p>
+              <p className="text-base md:text-lg lg:text-xl font-bold text-red-600">{summary.cancelled}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('cancelled')}</p>
             </div>
           </div>
@@ -178,9 +178,9 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                   onClick={() => router.push(`/workspace/${workspaceId}/marketplace/purchases?id=${order.id}`)}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
-                      <div className="flex items-start justify-between">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                         <div>
                           <h3 className="font-semibold">{order.item}</h3>
                           <p className="text-sm text-muted-foreground mt-1">
@@ -193,7 +193,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(order.status)}>
                           <StatusIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                           {order.status.replace('_', ' ')}
@@ -247,17 +247,17 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
           <CardTitle className="text-base">Spending Overview</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-center">
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">$42.4k</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">$42.4k</p>
               <p className="text-xs text-muted-foreground mt-1">Total Spent</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">$5.7k</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">$5.7k</p>
               <p className="text-xs text-muted-foreground mt-1">This Month</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">$1.5k</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">$1.5k</p>
               <p className="text-xs text-muted-foreground mt-1">Avg. Order Value</p>
             </div>
           </div>

@@ -72,7 +72,7 @@ export function UserAvatar({ name, src, size = 'md', status, className }: UserAv
       <Avatar className={cn(sizeClasses[size], className)}>
         <AvatarImage src={src} alt={name || 'User avatar'} />
         <AvatarFallback>
-          {initials || <User className="h-1/2 w-1/2" aria-hidden="true" />}
+          {initials || <User className="h-1/2 w-full md:w-1/2" aria-hidden="true" />}
         </AvatarFallback>
       </Avatar>
       {status && (

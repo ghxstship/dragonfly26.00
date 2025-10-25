@@ -68,11 +68,11 @@ export function SecurityTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Authentication */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base flex items-center gap-2">
+          <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Key className="h-5 w-5" aria-hidden="true" />
             {t('admin.securityTab.authentication')}
           </CardTitle>
@@ -81,9 +81,9 @@ export function SecurityTab() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center justify-between p-4 border rounded-lg">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg">
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                 <Lock className="h-4 w-4" />
                 <span className="font-medium">{t('admin.securityTab.twoFactor')}</span>
               </div>
@@ -97,9 +97,9 @@ export function SecurityTab() {
             />
           </div>
 
-          <div className="flex items-center justify-between p-4 border rounded-lg">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg">
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                 <Key className="h-4 w-4" />
                 <span className="font-medium">{t('admin.securityTab.sso')}</span>
               </div>
@@ -136,20 +136,20 @@ export function SecurityTab() {
 
           <div className="space-y-2">
             <Label>Password Requirements</Label>
-            <div className="grid grid-cols-2 gap-2">
-              <div className="flex items-center gap-2 p-2 border rounded">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-2 border rounded">
                 <CheckCircle2 className="h-4 w-4 text-green-500" />
                 <span className="text-sm">Minimum 8 characters</span>
               </div>
-              <div className="flex items-center gap-2 p-2 border rounded">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-2 border rounded">
                 <CheckCircle2 className="h-4 w-4 text-green-500" />
                 <span className="text-sm">Uppercase & lowercase</span>
               </div>
-              <div className="flex items-center gap-2 p-2 border rounded">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-2 border rounded">
                 <CheckCircle2 className="h-4 w-4 text-green-500" />
                 <span className="text-sm">Numbers required</span>
               </div>
-              <div className="flex items-center gap-2 p-2 border rounded">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-2 border rounded">
                 <CheckCircle2 className="h-4 w-4 text-green-500" />
                 <span className="text-sm">Special characters</span>
               </div>
@@ -161,9 +161,9 @@ export function SecurityTab() {
       {/* IP Restrictions */}
       <Card>
         <CardHeader>
-          <div className="flex items-start justify-between">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
             <div>
-              <CardTitle className="text-base flex items-center gap-2">
+              <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Globe className="h-5 w-5" aria-hidden="true" />
                 {t('admin.securityTab.ipRestrictions')}
               </CardTitle>
@@ -171,7 +171,7 @@ export function SecurityTab() {
                 {t('admin.securityTab.restrictAccess')}
               </CardDescription>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Button size="sm">
                 <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
                 {t('admin.securityTab.addIp')}
@@ -189,7 +189,7 @@ export function SecurityTab() {
               {ipWhitelist.map((item: any) => (
                 <div
                   key={item.id}
-                  className="flex items-center justify-between p-3 border rounded-lg"
+                  className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded-lg"
                 >
                   <div className="flex-1">
                     <p className="font-medium text-sm">{item.ip}</p>
@@ -210,9 +210,9 @@ export function SecurityTab() {
       {/* Audit Logs */}
       <Card>
         <CardHeader>
-          <div className="flex items-start justify-between">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
             <div>
-              <CardTitle className="text-base flex items-center gap-2">
+              <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Eye className="h-5 w-5" aria-hidden="true" />
                 {t('admin.securityTab.auditLogs')}
               </CardTitle>
@@ -231,9 +231,9 @@ export function SecurityTab() {
             {auditLogs.map((log: any) => (
               <div
                 key={log.id}
-                className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent/50 transition-colors"
+                className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded-lg hover:bg-accent/50 transition-colors"
               >
-                <div className="flex items-center gap-3 flex-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 flex-1">
                   {(log as any).status === "success" ? (
                     <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
                   ) : (
@@ -241,7 +241,7 @@ export function SecurityTab() {
                   )}
                   <div className="flex-1">
                     <p className="text-sm font-medium">{log.event}</p>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs text-muted-foreground mt-1">
                       <span>{log.user}</span>
                       <span>•</span>
                       <span>{log.ip}</span>
@@ -263,14 +263,14 @@ export function SecurityTab() {
       {/* Security Alerts */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base flex items-center gap-2">
+          <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
             <AlertTriangle className="h-5 w-5" aria-hidden="true" />
             {t('admin.securityTab.securityAlerts')}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="flex items-start gap-3 p-3 border rounded-lg bg-yellow-50 dark:bg-yellow-950 border-yellow-200 dark:border-yellow-800">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 border rounded-lg bg-yellow-50 dark:bg-yellow-950 border-yellow-200 dark:border-yellow-800">
               <AlertTriangle className="h-5 w-5 text-yellow-600 flex-shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm font-medium">3 failed login attempts detected</p>
@@ -284,7 +284,7 @@ export function SecurityTab() {
       </Card>
 
       {/* Save Button */}
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end">
         <Button onClick={handleSaveChanges}>
           <Shield className="h-4 w-4 mr-2" aria-hidden="true" />
           {t('admin.securityTab.saveSecuritySettings')}

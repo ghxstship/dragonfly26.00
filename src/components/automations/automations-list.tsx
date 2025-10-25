@@ -25,16 +25,16 @@ export function AutomationsList({ automations, onUpdate }: AutomationsListProps)
       {automations.map((automation: any) => (
         <Card key={automation.id}>
           <CardContent className="p-6">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                   <Zap className={`h-5 w-5 ${automation.is_active ? "text-purple-600" : "text-muted-foreground"}`} />
                   <h3 className="text-lg font-semibold">{automation.name}</h3>
                 </div>
                 {automation.description && (
                   <p className="text-sm text-muted-foreground mb-4">{automation.description}</p>
                 )}
-                <div className="flex items-center gap-6 text-sm">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 text-sm">
                   <div>
                     <span className="text-muted-foreground">Trigger: </span>
                     <span className="font-medium capitalize">{automation.trigger_type.replace(/_/g, " ")}</span>
@@ -49,7 +49,7 @@ export function AutomationsList({ automations, onUpdate }: AutomationsListProps)
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Switch
                   checked={automation.is_active}
                   onCheckedChange={() => onUpdate({ ...automation, is_active: !automation.is_active })}

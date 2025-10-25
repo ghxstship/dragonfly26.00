@@ -47,13 +47,13 @@ export function TrainingTab(props: TrainingTabProps) {
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* 1644 Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{items.length}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{items.length}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalItems')}</p>
             </div>
           </CardContent>
@@ -61,7 +61,7 @@ export function TrainingTab(props: TrainingTabProps) {
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-green-600">0</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">0</p>
               <p className="text-xs text-muted-foreground mt-1">{t('active')}</p>
             </div>
           </CardContent>
@@ -69,7 +69,7 @@ export function TrainingTab(props: TrainingTabProps) {
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-yellow-600">0</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">0</p>
               <p className="text-xs text-muted-foreground mt-1">{t('pending')}</p>
             </div>
           </CardContent>
@@ -77,7 +77,7 @@ export function TrainingTab(props: TrainingTabProps) {
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">0</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">0</p>
               <p className="text-xs text-muted-foreground mt-1">{t('completed')}</p>
             </div>
           </CardContent>
@@ -92,7 +92,7 @@ export function TrainingTab(props: TrainingTabProps) {
         </CardHeader>
         <CardContent>
           {items.length === 0 ? (
-            <div className="text-center py-12">
+            <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
               <div className="text-muted-foreground">
                 <p className="text-lg font-semibold mb-2">No training found</p>
                 <p className="text-sm mb-4">{t('emptyStateMessage')}</p>
@@ -109,7 +109,7 @@ export function TrainingTab(props: TrainingTabProps) {
                   key={item.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                 >
-                  <div className="flex items-start justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                     <div className="space-y-1">
                       <h3 className="font-semibold">{item.name || item.title || 'Untitled'}</h3>
                       <p className="text-sm text-muted-foreground">

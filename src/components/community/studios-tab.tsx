@@ -116,38 +116,38 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
   const totalMembers = studios.filter(s => s.joined).reduce((acc: number, s: Studio) => acc + s.members, 0)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Header Stats */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('myStudios')}</div>
             <Building2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{myStudiosCount as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{myStudiosCount as any}</div>
             <p className="text-xs text-muted-foreground">Pages & groups</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Total Reach</div>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{(totalMembers / 1000).toFixed(1)}K</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{(totalMembers / 1000).toFixed(1)}K</div>
             <p className="text-xs text-muted-foreground">Combined members</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('suggestions')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {studios.filter(s => !s.joined).length}
             </div>
             <p className="text-xs text-muted-foreground">Recommended for you</p>
@@ -155,12 +155,12 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('activity')}</div>
             <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">847</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">847</div>
             <p className="text-xs text-muted-foreground">Posts this week</p>
           </CardContent>
         </Card>
@@ -169,7 +169,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
       {/* Create Studio Button */}
       <Card className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-primary/20">
         <CardContent className="p-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <h3 className="font-semibold mb-1">Create Your Own Studio</h3>
               <p className="text-sm text-muted-foreground">
@@ -183,9 +183,9 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
       {/* Search and Filter */}
       <Card>
         <CardContent className="pt-6">
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
               <Input
                 placeholder={t('searchStudios')}
                 value={searchQuery as any}
@@ -219,7 +219,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
           </Card>
         ) : (
           filteredStudios.map((studio: any) => (
-            <Card key={studio.id} className="overflow-hidden hover:shadow-md transition-shadow">
+            <Card key={studio.id} className="overflow-hidden md:block hover:shadow-md transition-shadow">
               <CardContent className="p-0">
                 {/* Cover Image */}
                 {studio.coverImage && (
@@ -230,7 +230,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                 )}
 
                 <div className="p-6">
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                     {/* Studio Avatar */}
                     <Avatar className="h-20 w-20 border-4 border-background -mt-12">
                       <AvatarImage src={studio.image} />
@@ -241,10 +241,10 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
 
                     {/* Studio Info */}
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-4">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1">
-                            <h3 className="text-xl font-semibold truncate">{studio.name}</h3>
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
+                            <h3 className="text-base md:text-lg lg:text-xl font-semibold truncate">{studio.name}</h3>
                             {studio.verified && (
                               <Badge variant="secondary" className="h-5">
                                 <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" />
@@ -252,11 +252,11 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                               </Badge>
                             )}
                           </div>
-                          <div className="flex items-center gap-3 text-sm text-muted-foreground mb-2">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 text-sm text-muted-foreground mb-2">
                             <Badge variant="outline">
                               {studio.type === "page" ? "Page" : "Group"}
                             </Badge>
-                            <span className="flex items-center gap-1">
+                            <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                               {studio.visibility === "public" ? (
                                 <Globe className="h-3 w-3"  aria-hidden="true" />
                               ) : (
@@ -279,13 +279,13 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                       </p>
 
                       {/* Stats */}
-                      <div className="flex items-center gap-4 text-sm mb-3">
-                        <div className="flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm mb-3">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                           <span className="font-medium">{studio.members.toLocaleString()}</span>
                           <span className="text-muted-foreground">members</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
                           <span className="font-medium">{studio.posts.toLocaleString()}</span>
                           <span className="text-muted-foreground">posts</span>
@@ -313,7 +313,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                       </p>
 
                       {/* Action Buttons */}
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {studio.joined ? (
                           <>
                             <Button variant="outline" size="sm">

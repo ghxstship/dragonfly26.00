@@ -53,10 +53,10 @@ export function WatchersManager({
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
       {/* Show watcher count */}
       {watchers.length > 0 && (
-        <div className="flex -space-x-2">
+        <div className="flex flex-wrap md:flex-nowrap -space-x-2">
           {watchers.slice(0, 3).map((watcher) => (
             <Avatar key={watcher.id} className="h-6 w-6 border-2 border-background">
               <AvatarImage src={watcher.user?.avatar_url} />
@@ -107,10 +107,10 @@ export function WatchersManager({
             Manage ({watchers.length})
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-64">
+        <DropdownMenuContent align="end" className="w-full sm:w-64">
           <DropdownMenuLabel>Watchers</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <div className="max-h-64 overflow-y-auto">
+          <div className="max-h-48 md:h-56 lg:h-64 overflow-y-auto">
             {availableUsers.map((user) => (
               <DropdownMenuCheckboxItem
                 key={user.id}

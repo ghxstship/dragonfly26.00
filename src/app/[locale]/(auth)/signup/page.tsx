@@ -94,14 +94,14 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <div className="w-full max-w-md space-y-8">
+    <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
+      <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         <div className="text-center">
-          <h1 className="text-3xl font-bold">Welcome Aboard!</h1>
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Welcome Aboard!</h1>
           <p className="text-muted-foreground mt-2">Get started for free</p>
         </div>
 
-        <div className="bg-card border rounded-lg p-8 space-y-6">
+        <div className="bg-card border rounded-lg p-4 md:p-8 space-y-3 md:space-y-4 lg:space-y-6">
           <form onSubmit={handleSignup} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
@@ -139,7 +139,7 @@ export default function SignupPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  className="absolute sm:relative sm:inset-auto right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground sm:relative sm:inset-auto"
                 >
                   {showPassword ? (
                     <EyeOff className="w-4 h-4" />
@@ -159,16 +159,16 @@ export default function SignupPage() {
               </div>
             )}
 
-            <Button type="submit" className="w-full" disabled={loading}>
+            <Button type="submit" className="w-full max-w-full" disabled={loading}>
               {loading ? "Creating account..." : "Create account"}
             </Button>
           </form>
 
           <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t" />
+            <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center sm:relative sm:inset-auto">
+              <span className="w-full border-t max-w-full" />
             </div>
-            <div className="relative flex justify-center text-xs uppercase">
+            <div className="relative flex flex-wrap justify-center text-xs uppercase">
               <span className="bg-card px-2 text-muted-foreground">
                 Or continue with
               </span>
@@ -177,7 +177,7 @@ export default function SignupPage() {
 
           <Button
             variant="outline"
-            className="w-full"
+            className="w-full max-w-full"
             onClick={handleGoogleSignup}
           >
             <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">

@@ -50,7 +50,7 @@ export function ProgressBar({
         )}
       />
       {showPercentage && (
-        <div className="flex justify-between text-xs text-muted-foreground">
+        <div className="flex flex-wrap justify-between text-xs text-muted-foreground">
           <span>{value} / {max}</span>
           <span>{percentage}%</span>
         </div>
@@ -83,7 +83,7 @@ export function OnboardingProgressCard({
   return (
     <Card>
       <CardHeader className="pb-3">
-        <CardTitle className="text-sm flex items-center gap-2">
+        <CardTitle className="text-sm flex flex-wrap flex-col md:flex-row items-center gap-2">
           <span className="text-muted-foreground">📋</span>
           Onboarding: {personnelName}
         </CardTitle>
@@ -91,7 +91,7 @@ export function OnboardingProgressCard({
       <CardContent className="space-y-4">
         {/* Overall Progress */}
         <div>
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
             <span className="text-sm font-medium">Overall Progress</span>
             <span className="text-sm font-bold">{overallProgress}%</span>
           </div>
@@ -110,8 +110,8 @@ export function OnboardingProgressCard({
 
             return (
               <div key={i} className="space-y-1">
-                <div className="flex items-center justify-between text-sm">
-                  <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     {isComplete ? (
                       <CheckCircle2 className="h-4 w-4 text-green-500" />
                     ) : task.status === "in_progress" ? (
@@ -142,7 +142,7 @@ export function OnboardingProgressCard({
         </div>
 
         {/* Actions */}
-        <div className="flex gap-2 pt-2">
+        <div className="flex flex-wrap gap-2 pt-2">
           {onViewDetails && (
             <Button variant="outline" size="sm" className="flex-1" onClick={onViewDetails}>
               View Details
@@ -193,7 +193,7 @@ export function GoalProgressCard({
   return (
     <Card>
       <CardHeader className="pb-3">
-        <div className="flex items-start justify-between">
+        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
           <CardTitle className="text-sm line-clamp-2">{goalTitle}</CardTitle>
           <Badge variant={config.variant as any} className="ml-2">
             {config.label}
@@ -203,7 +203,7 @@ export function GoalProgressCard({
       <CardContent className="space-y-4">
         {/* Progress */}
         <div>
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
             <span className="text-xs text-muted-foreground">Progress</span>
             <span className="text-sm font-bold">{progress}%</span>
           </div>
@@ -216,7 +216,7 @@ export function GoalProgressCard({
 
         {/* Target Date */}
         {targetDate && (
-          <div className="flex items-center justify-between text-xs">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs">
             <span className="text-muted-foreground">Target Date</span>
             <span className="font-medium">{targetDate}</span>
           </div>
@@ -227,7 +227,7 @@ export function GoalProgressCard({
           <div className="space-y-2">
             <span className="text-xs text-muted-foreground font-medium">Key Results</span>
             {keyResults.map((kr, i) => (
-              <div key={i} className="flex items-center gap-2 text-sm">
+              <div key={i} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                 {kr.completed ? (
                   <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
                 ) : (
@@ -245,7 +245,7 @@ export function GoalProgressCard({
         )}
 
         {onViewDetails && (
-          <Button variant="ghost" size="sm" className="w-full" onClick={onViewDetails}>
+          <Button variant="ghost" size="sm" className="w-full max-w-full" onClick={onViewDetails}>
             View Details
             <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
@@ -303,8 +303,8 @@ export function CircularProgress({
           className="text-primary transition-all duration-300"
         />
       </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-2xl font-bold">{Math.round(percentage)}%</span>
+      <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap flex-col items-center justify-center sm:relative sm:inset-auto">
+        <span className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{Math.round(percentage)}%</span>
         {label && <span className="text-xs text-muted-foreground">{label}</span>}
       </div>
     </div>

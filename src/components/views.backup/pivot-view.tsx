@@ -95,15 +95,15 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
   }
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <TableIcon className="h-5 w-5" />
           <h3 className="font-semibold">Pivot Table</h3>
           <Badge variant="secondary">{data.length} records</Badge>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Button variant="outline" size="sm">
             <RefreshCw className="h-4 w-4 mr-2" />
             Refresh
@@ -117,7 +117,7 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
 
       {/* Configuration */}
       <div className="p-4 border-b bg-muted/30">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <div className="space-y-2">
             <label className="text-sm font-medium">Rows</label>
             <Select value={rowField as any} onValueChange={setRowField}>
@@ -194,9 +194,9 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
             onAction={onCreateAction}
           />
         ) : (
-          <div className="inline-block min-w-full align-middle">
-            <div className="overflow-hidden border rounded-lg">
-              <table className="min-w-full divide-y divide-border">
+          <div className="inline-block min-w-full align-middle max-w-full">
+            <div className="overflow-hidden md:block border rounded-lg overflow-x-auto">
+        <table className="min-w-full divide-y divide-border max-w-full">
                 <thead className="bg-muted/50">
                   <tr>
                     <th className="sticky left-0 z-10 bg-muted/50 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider">
@@ -257,13 +257,13 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
           </div>
 
           {/* Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mt-6">
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium">Total Records</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{data.length}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{data.length}</div>
               </CardContent>
             </Card>
 
@@ -272,7 +272,7 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
                 <CardTitle className="text-sm font-medium">Dimensions</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
                   {rowValues.length} × {columnValues.length}
                 </div>
               </CardContent>
@@ -283,7 +283,7 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
                 <CardTitle className="text-sm font-medium">Grand Total</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{formatValue(grandTotal)}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatValue(grandTotal)}</div>
               </CardContent>
             </Card>
           </div>

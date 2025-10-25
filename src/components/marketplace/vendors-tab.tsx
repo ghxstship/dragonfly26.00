@@ -48,15 +48,15 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
           <Input placeholder={t('searchVendors')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-[200px]">
+          <SelectTrigger className="w-full max-w-[200px]">
             <SelectValue placeholder={t('vendorType')} />
           </SelectTrigger>
           <SelectContent>
@@ -69,7 +69,7 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
           </SelectContent>
         </Select>
         <Select defaultValue="verified">
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('filter')} />
           </SelectTrigger>
           <SelectContent>
@@ -80,7 +80,7 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
           </SelectContent>
         </Select>
         <Select defaultValue="rating">
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
@@ -92,18 +92,18 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
       </div>
 
       {/* Vendors Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {vendorsData.map((vendor: any) => (
           <Card key={vendor.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-start gap-4">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                 <Avatar className="h-16 w-16">
-                  <AvatarFallback className="bg-primary/10 text-primary text-xl">
+                  <AvatarFallback className="bg-primary/10 text-primary text-base md:text-lg lg:text-xl">
                     {vendor.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1 space-y-2">
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
                     <div>
                       <CardTitle className="text-lg">{vendor.name}</CardTitle>
                       <CardDescription className="mt-1">
@@ -123,33 +123,33 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
               </p>
 
               {/* Stats */}
-              <div className="grid grid-cols-4 gap-4 p-4 bg-muted/50 rounded-lg">
+              <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 p-4 bg-muted/50 rounded-lg">
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                     <Star className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">{t('rating')}</span>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                     <span className="font-semibold">{vendor.rating}</span>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                     <TrendingUp className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">{t('sales')}</span>
                   </div>
                   <p className="font-semibold">{vendor.total_sales}</p>
                 </div>
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                     <MessageCircle className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">{t('reviews')}</span>
                   </div>
                   <p className="font-semibold">{vendor.comments_count}</p>
                 </div>
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                     <Clock className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">{t('response')}</span>
                   </div>
@@ -167,7 +167,7 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
               </div>
 
               {/* CTA */}
-              <div className="flex gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 <Button className="flex-1">
                   View Store
                 </Button>

@@ -69,26 +69,26 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
 
   const displayProgress = data || []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Overall Progress Summary */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('overallProgress')}</p>
-            <p className="text-2xl font-bold mt-1" aria-live="polite">58%</p>
+            <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">58%</p>
             <p className="text-xs text-green-600 mt-1">+12% this quarter</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('objectivesOnTrack')}</p>
-            <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">2/3</p>
+            <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">2/3</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('avgVelocity')}</p>
-            <p className="text-2xl font-bold mt-1" aria-live="polite">+6.2%</p>
+            <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">+6.2%</p>
             <p className="text-xs text-muted-foreground mt-1">per month</p>
           </CardContent>
         </Card>
@@ -98,7 +98,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
       {progressData.map((data, index: number) => (
         <Card key={index} role="article">
           <CardHeader>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <CardTitle className="text-lg">{data.objective}</CardTitle>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -116,27 +116,27 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
           <CardContent>
             <div className="space-y-4">
               {/* Timeline visualization */}
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
                 {data.timeline.map((month, idx: number) => {
                   const isAhead = month.progress >= month.target
                   
                   return (
                     <div key={idx} className="text-center">
                       <p className="text-sm font-medium mb-3">{month.month}</p>
-                      <div className="relative h-32 bg-accent rounded-lg overflow-hidden">
+                      <div className="relative h-32 bg-accent rounded-lg overflow-hidden md:block">
                         <div 
                           className={`absolute bottom-0 w-full ${isAhead ? 'bg-green-600' : 'bg-blue-600'} transition-all`}
                           style={{ height: `${month.progress}%` }}
                         >
-                          <div className="absolute top-2 left-0 right-0 text-xs font-bold text-white">
+                          <div className="absolute sm:relative sm:inset-auto top-2 md:top-2 left-0 right-2 md:right-0 text-xs font-bold text-white">
                             {month.progress}%
                           </div>
                         </div>
                         <div 
-                          className="absolute w-full border-t-2 border-dashed border-yellow-600"
+                          className="absolute sm:relative sm:inset-auto w-full border-t-2 border-dashed border-yellow-600 max-w-full sm:relative sm:inset-auto"
                           style={{ bottom: `${month.target}%` }}
                         >
-                          <div className="absolute -top-4 right-1 text-xs text-yellow-600 font-medium">
+                          <div className="absolute sm:relative sm:inset-auto -top-2 md:top-4 right-2 md:right-1 text-xs text-yellow-600 font-medium">
                             {month.target}%
                           </div>
                         </div>
@@ -151,7 +151,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
 
               {/* Current Status */}
               <div className="p-4 bg-accent rounded-lg">
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
                   <span className="text-sm font-medium">{t('currentVsTarget')}</span>
                   <span className="text-sm font-bold">
                     {data.timeline[3].progress}% / {data.timeline[3].target}%

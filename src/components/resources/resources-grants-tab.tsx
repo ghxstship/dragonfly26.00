@@ -31,7 +31,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">
@@ -77,27 +77,27 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Grants</CardTitle>
             <CircleDollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{grants.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{grants.length}</div>
             <p className="text-xs text-muted-foreground">{t('available')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('open')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
               {grants.filter((g: any) => (g as any).status === 'open').length}
             </div>
             <p className="text-xs text-muted-foreground">Accepting applications</p>
@@ -105,12 +105,12 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('applied')}</CardTitle>
             <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">
               {grants.filter((g: any) => (g as any).status === 'applied').length}
             </div>
             <p className="text-xs text-muted-foreground">Your applications</p>
@@ -118,12 +118,12 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Funding</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {formatCurrency(grants.reduce((total: number, g: any) => total + (g.amount || 0), 0))}
             </div>
             <p className="text-xs text-muted-foreground">Potential funding</p>
@@ -133,7 +133,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
         <Input
           placeholder={t('searchGrants')}
           value={searchQuery as any}
@@ -150,22 +150,22 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
           return (
             <Card key={grant.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-start gap-3 flex-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1">
                     <div className="p-2 rounded-lg bg-green-100 dark:bg-green-950">
                       <CircleDollarSign className="h-5 w-5 text-green-600" aria-hidden="true" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <CardTitle className="text-lg">{grant.name}</CardTitle>
                       {grant.provider && (
-                        <CardDescription className="mt-1 flex items-center gap-1">
+                        <CardDescription className="mt-1 flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Building2 className="h-3 w-3" />
                           {grant.provider}
                         </CardDescription>
                       )}
                     </div>
                   </div>
-                  <div className="flex flex-col items-end gap-2">
+                  <div className="flex flex-wrap flex-col items-end gap-2">
                     <Badge className={getStatusColor(grant.status)}>
                       {grant.status.replace('_', ' ')}
                     </Badge>
@@ -185,9 +185,9 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                   </p>
                 )}
 
-                <div className="flex flex-wrap gap-4 text-sm">
+                <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4 text-sm">
                   {grant.deadline && (
-                    <div className="flex items-center gap-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                       <Calendar className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
                       <span className="text-muted-foreground">
                         Deadline: {new Date(grant.deadline).toLocaleDateString()}
@@ -201,7 +201,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                     </div>
                   )}
                   {grant.eligibility && (
-                    <div className="flex items-center gap-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                       <AlertCircle className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
                       <span className="text-muted-foreground">
                         {grant.eligibility}
@@ -215,7 +215,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                     <p className="text-sm font-medium">Requirements:</p>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {grant.requirements.slice(0, 3).map((req: string, i: number) => (
-                        <li key={i} className="flex items-start gap-2">
+                        <li key={i} className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                           <CheckCircle2 className="h-3 w-3 mt-0.5 text-green-600 flex-shrink-0" />
                           <span>{req}</span>
                         </li>
@@ -234,7 +234,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                   </div>
                 )}
 
-                <div className="flex gap-2 pt-2 border-t">
+                <div className="flex flex-wrap gap-2 pt-2 border-t">
                   <Button className="flex-1" size="sm">
                     {grant(t as any).status === 'applied' ? 'View Application' : 'Apply Now'}
                   </Button>

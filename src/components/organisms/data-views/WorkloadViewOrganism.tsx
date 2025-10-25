@@ -125,7 +125,7 @@ export function WorkloadViewOrganism({
         return (
           <div key={workload.userId} className="border rounded-lg">
             {/* User Header */}
-            <div className="flex items-center gap-3 p-4 bg-muted/50 border-b hover:bg-muted/70 transition-colors">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 p-4 bg-muted/50 border-b hover:bg-muted/70 transition-colors">
               <Button
                 variant="ghost"
                 size="icon"
@@ -153,16 +153,16 @@ export function WorkloadViewOrganism({
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                 {/* Capacity Bar */}
                 <div className="w-48">
-                  <div className="flex justify-between text-xs mb-1">
+                  <div className="flex flex-wrap justify-between text-xs mb-1">
                     <span className="text-muted-foreground">Capacity</span>
                     <span className={getUtilizationColor(workload.allocated, workload.capacity)}>
                       {workload.allocated}h / {workload.capacity}h
                     </span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                     <div
                       className={cn(
                         "h-full transition-all",
@@ -186,7 +186,7 @@ export function WorkloadViewOrganism({
                 {workload.items.map((item: any) => (
                   <div
                     key={item.id}
-                    className="flex items-center gap-3 p-3 hover:bg-accent transition-colors cursor-pointer"
+                    className="flex flex-col md:flex-row items-center gap-3 p-3 hover:bg-accent transition-colors cursor-pointer"
                     onClick={() => onItemClick?.(item)}
                   >
                     <div className="flex-1 min-w-0">

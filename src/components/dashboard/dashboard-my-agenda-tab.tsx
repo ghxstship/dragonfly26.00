@@ -103,7 +103,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Week Overview */}
       <section role="region" aria-labelledby="week-overview">
         <Card>
@@ -111,11 +111,11 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
             <CardTitle id="week-overview" className="text-base">{t('thisWeek')}</CardTitle>
           </CardHeader>
         <CardContent>
-          <div className="flex items-end justify-between gap-2">
+          <div className="flex flex-wrap items-end justify-between gap-2">
             {weekSummary.map((day: any) => (
-              <div key={day.day} className="flex-1 flex flex-col items-center gap-2">
+              <div key={day.day} className="flex flex-col md:flex-row-1 flex flex-wrap flex-col items-center gap-2">
                 <div 
-                  className="w-full bg-purple-500 rounded-t"
+                  className="w-full bg-purple-500 rounded-t max-w-full"
                   style={{ height: `${day.events * 20}px` }}
                 />
                 <div className="text-center">
@@ -137,7 +137,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           </CardHeader>
           <CardContent>
             {upcomingEvents.length === 0 ? (
-              <div className="text-center py-12">
+              <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
                 <Calendar className="h-12 w-12 text-muted-foreground mx-auto mb-4" aria-hidden="true" />
                 <h3 className="text-lg font-semibold mb-2">{t('noUpcomingEvents')}</h3>
                 <p className="text-muted-foreground mb-4">{t('noEventsMessage')}</p>
@@ -167,9 +167,9 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                 }}
                 aria-label={t('viewEvent', { title: event.title as string })}
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
                   <div className="flex-1 space-y-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <h3 className="font-semibold">{event.title}</h3>
                       {event.isOrganizer && (
                         <Badge variant="outline" className="text-xs">
@@ -179,15 +179,15 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                     </div>
                     
                     <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                         <Calendar className="h-3.5 w-3.5" />
                         {event.date}
                       </div>
-                      <div className="flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                         <Clock className="h-3.5 w-3.5" />
                         {event.time}
                       </div>
-                      <div className="flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                         {event.isVirtual ? (
                           <>
                             <Video className="h-3.5 w-3.5" />
@@ -200,13 +200,13 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                           </>
                         )}
                       </div>
-                      <div className="flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                         <Users className="h-3.5 w-3.5" aria-hidden="true" />
                         {event.attendees} {t('attendees')}
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Badge variant="secondary" className={getTypeColor(event.type as string)}>
                         {event.type}
                       </Badge>
@@ -231,11 +231,11 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Summary Stats */}
       <section role="region" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="sr-only">Event Statistics</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <p className="text-3xl font-bold">{events.length}</p>
+                <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{events.length}</p>
                 <p className="text-xs text-muted-foreground mt-1">Total Events</p>
               </div>
             </CardContent>
@@ -243,7 +243,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <p className="text-3xl font-bold">{events.filter((e: any) => e.created_by === userId).length}</p>
+                <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{events.filter((e: any) => e.created_by === userId).length}</p>
                 <p className="text-xs text-muted-foreground mt-1">As Organizer</p>
               </div>
             </CardContent>
@@ -251,7 +251,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <p className="text-3xl font-bold">{events.filter((e: any) => e.created_by !== userId).length}</p>
+                <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{events.filter((e: any) => e.created_by !== userId).length}</p>
                 <p className="text-xs text-muted-foreground mt-1">As Attendee</p>
               </div>
             </CardContent>
@@ -259,7 +259,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <p className="text-3xl font-bold">
+                <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">
                   {events.reduce((total: number, e: any) => {
                     const start = new Date(e.start_time)
                     const end = new Date(e.end_time)

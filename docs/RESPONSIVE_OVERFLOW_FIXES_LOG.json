@@ -1,0 +1,52 @@
+[
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-realtime-tab.tsx",
+    "fix": "Add overflow handling to whitespace-nowrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-trends-tab.tsx",
+    "fix": "Add overflow handling to whitespace-nowrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-activity-timeline.tsx",
+    "fix": "Add overflow handling to whitespace-nowrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/objectives-hierarchy.tsx",
+    "fix": "Add overflow handling to whitespace-nowrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/PivotTableOrganism.tsx",
+    "fix": "Add overflow-x-auto to table containers",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/activity-timeline.tsx",
+    "fix": "Add overflow handling to whitespace-nowrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/realtime/activity-feed.tsx",
+    "fix": "Add overflow handling to whitespace-nowrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/enhanced-table-view.tsx",
+    "fix": "Add overflow-x-auto to table containers",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/enhanced-table-view.tsx",
+    "fix": "Add overflow-x-auto to table containers",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/pivot-view.tsx",
+    "fix": "Add overflow-x-auto to table containers",
+    "count": 1
+  }
+]

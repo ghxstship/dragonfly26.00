@@ -113,14 +113,14 @@ export function DataViewTemplate({
     <div className={cn('flex flex-col h-full', className)}>
       {/* Header */}
       <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex items-center justify-between p-4 md:p-6">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 md:p-6">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+            <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold tracking-tight">{title}</h1>
             {subtitle && (
               <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>
             )}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             {headerActions}
             {onCreateClick && (
               <Button onClick={onCreateClick} className="gap-2">
@@ -132,9 +132,9 @@ export function DataViewTemplate({
         </div>
 
         {/* Toolbar */}
-        <div className="px-4 md:px-6 pb-4">
+        <div className="px-4 md:px-4 md:px-6 pb-4">
           {selectedCount > 0 ? (
-            <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 bg-muted rounded-lg">
               <span className="text-sm font-medium">
                 {selectedCount} {selectedCount === 1 ? 'item' : 'items'} selected
               </span>
@@ -156,14 +156,14 @@ export function DataViewTemplate({
       </div>
 
       {/* Views */}
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 overflow-hidden md:block">
         {views.length === 1 ? (
           <div className="h-full p-4 md:p-6 overflow-auto">
             {views[0].content}
           </div>
         ) : (
-          <Tabs defaultValue={defaultView || views[0].id} className="h-full flex flex-col">
-            <div className="border-b px-4 md:px-6">
+          <Tabs defaultValue={defaultView || views[0].id} className="h-full flex flex-wrap flex-col">
+            <div className="border-b px-4 md:px-4 md:px-6">
               <TabsList>
                 {views.map((view: any) => (
                   <TabsTrigger key={view.id} value={view.id} className="gap-2">

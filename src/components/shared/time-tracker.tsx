@@ -297,7 +297,7 @@ export function TimeTracker() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-8">
+      <div className="flex flex-wrap items-center justify-center py-4 md:py-6 lg:py-8">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
       </div>
     )
@@ -307,7 +307,7 @@ export function TimeTracker() {
     <div className="space-y-4">
       {/* Timer Display */}
       <div className="text-center">
-        <div className="text-3xl font-mono font-bold">{formatTime(time)}</div>
+        <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-mono font-bold">{formatTime(time)}</div>
         {isRunning && (
           <p className="text-xs text-muted-foreground mt-1">
             Started {startTime?.toLocaleTimeString()}
@@ -328,7 +328,7 @@ export function TimeTracker() {
       </div>
 
       {/* Timer Controls */}
-      <div className="flex gap-2 justify-center">
+      <div className="flex flex-wrap gap-2 justify-center">
         {!isRunning ? (
           <Button onClick={handleStart} className="gap-2" disabled={isSaving}>
             {isSaving ? (
@@ -353,7 +353,7 @@ export function TimeTracker() {
       {/* Manual Entry */}
       <div className="border-t pt-4">
         <label className="text-sm font-medium mb-2 block">Manual Entry</label>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Input
             placeholder="e.g., 2h 30m"
             value={manualTime}
@@ -376,8 +376,8 @@ export function TimeTracker() {
             </div>
           ) : (
             entries.map((entry) => (
-              <div key={entry.id} className="flex items-center justify-between text-sm p-2 rounded border">
-                <div className="flex items-center gap-2">
+              <div key={entry.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm p-2 rounded border">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Clock className="h-4 w-4 text-muted-foreground" />
                   <span className="font-medium">{formatDuration(entry.duration)}</span>
                   {entry.notes && (

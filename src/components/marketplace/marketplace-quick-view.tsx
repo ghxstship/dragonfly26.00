@@ -78,11 +78,11 @@ export function QuickView({
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] p-0">
-        <div className="grid md:grid-cols-2 gap-0">
+      <DialogContent className="max-w-4xl px-4 sm:px-6 lg:px-8 max-h-[90vh] p-0">
+        <div className="grid md:grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left: Images */}
           <div className="bg-muted/30 p-6">
-            <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex items-center justify-center relative overflow-hidden">
+            <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex flex-wrap items-center justify-center relative overflow-hidden md:block">
               {images[imageIndex] ? (
                 <Image
                   src={images[imageIndex]}
@@ -98,7 +98,7 @@ export function QuickView({
 
             {/* Image thumbnails */}
             {images.length > 1 && (
-              <div className="flex gap-2 mt-4">
+              <div className="flex flex-wrap gap-2 mt-4">
                 {images.map((img: any, idx: number) => (
                   <button
                     key={idx}
@@ -108,7 +108,7 @@ export function QuickView({
                     }`}
                   >
                     {img ? (
-                      <div className="relative w-full h-full">
+                      <div className="relative w-full h-full max-w-full">
                         <Image src={img} alt="" fill className="object-cover rounded-lg" sizes="64px" />
                       </div>
                     ) : (
@@ -122,15 +122,15 @@ export function QuickView({
 
           {/* Right: Details */}
           <ScrollArea className="max-h-[90vh]">
-            <div className="p-6 space-y-6">
+            <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Header */}
               <div className="space-y-3">
-                <div className="flex items-start justify-between gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
                   <div className="flex-1 space-y-2">
                     {product.category && (
                       <Badge variant="secondary">{product.category}</Badge>
                     )}
-                    <h2 className="text-2xl font-bold leading-tight">
+                    <h2 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold leading-tight">
                       {product.name}
                     </h2>
                   </div>
@@ -150,8 +150,8 @@ export function QuickView({
 
                 {/* Rating */}
                 {product.rating && (
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                    <div className="flex flex-wrap items-center">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
@@ -174,8 +174,8 @@ export function QuickView({
 
               {/* Price */}
               <div className="space-y-2">
-                <div className="flex items-baseline gap-3">
-                  <span className="text-3xl font-bold">
+                <div className="flex flex-wrap items-baseline gap-3">
+                  <span className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">
                     ${currentPrice.toFixed(2)}
                   </span>
                   {comparePrice && comparePrice > currentPrice && (
@@ -230,9 +230,9 @@ export function QuickView({
               )}
 
               {/* Quantity Selector */}
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                 <span className="text-sm font-medium">Quantity:</span>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Button
                     variant="outline"
                     size="icon"
@@ -254,7 +254,7 @@ export function QuickView({
               </div>
 
               {/* Actions */}
-              <div className="flex gap-3 pt-2">
+              <div className="flex flex-wrap gap-3 pt-2">
                 <Button 
                   className="flex-1"
                   size="lg"

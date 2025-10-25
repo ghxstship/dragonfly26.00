@@ -91,21 +91,21 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
 
   const displayRecommendations = data || []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div className="space-y-4">
         {recommendations.map((rec: any) => {
           const Icon = rec.icon
           return (
             <Card key={rec.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                     <div className="p-2 bg-accent rounded-lg">
                       <Icon className={`h-6 w-6 ${rec.color}`} />
                     </div>
                     <div>
                       <Badge variant="outline" className="mb-2">{t(rec.categoryKey)}</Badge>
-                      <CardTitle className="text-xl">{t(rec.titleKey)}</CardTitle>
+                      <CardTitle className="text-base md:text-lg lg:text-xl">{t(rec.titleKey)}</CardTitle>
                       <CardDescription className="mt-2 text-base">{t(rec.descriptionKey)}</CardDescription>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
               <CardContent>
                 <div className="space-y-4">
                   {/* Key Metrics */}
-                  <div className="grid grid-cols-3 gap-4 p-4 bg-accent rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 p-4 bg-accent rounded-lg">
                     <div>
                       <p className="text-xs text-muted-foreground">{t('estimatedBenefit')}</p>
                       <p className="text-sm font-bold mt-1">{rec.estimatedBenefit}</p>
@@ -147,7 +147,7 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
                   </div>
 
                   {/* Timeline and Action */}
-                  <div className="flex items-center justify-between pt-4 border-t">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between pt-4 border-t">
                     <p className="text-sm text-muted-foreground">
                       <span className="font-medium text-foreground">Timeline:</span> {rec.timeline}
                     </p>

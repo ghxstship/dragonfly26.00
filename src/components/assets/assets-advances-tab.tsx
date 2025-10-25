@@ -26,7 +26,7 @@ export default function AssetsAdvancesTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <div className="text-muted-foreground">Loading production advances...</div>
           </div>
    )
@@ -34,7 +34,7 @@ export default function AssetsAdvancesTab() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <div className="text-destructive">Error loading advances: {(error as any).message}</div>
       </div>
     )
@@ -70,7 +70,7 @@ export default function AssetsAdvancesTab() {
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div className="rounded-lg border bg-card">
         <Table>
           <TableHeader>
@@ -87,7 +87,7 @@ export default function AssetsAdvancesTab() {
           <TableBody>
             {advances.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={7} className="text-center text-muted-foreground py-8">
+                <TableCell colSpan={7} className="text-center text-muted-foreground py-4 md:py-6 lg:py-8">
                   No production advances found
                 </TableCell>
               </TableRow>
@@ -95,7 +95,7 @@ export default function AssetsAdvancesTab() {
               (advances as any[]).map((advance: any) => (
                 <TableRow key={advance.id as string}>
                   <TableCell>
-                    <div className="flex items-start gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                       <Package className="h-4 w-4 mt-1 text-muted-foreground" aria-hidden="true" />
                       <div>
                         <div className="font-medium">{advance.asset_item}</div>
@@ -130,7 +130,7 @@ export default function AssetsAdvancesTab() {
                     )}
                   </TableCell>
                   <TableCell>
-                    <div className="flex items-center gap-1 text-sm">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm">
                       <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                       <div>
                         {format(new Date(advance.start_date), 'MMM d')}

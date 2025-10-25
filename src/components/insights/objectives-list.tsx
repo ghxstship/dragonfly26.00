@@ -77,9 +77,9 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
             onClick={() => onGoalClick(goal)}
           >
             <CardContent className="p-6">
-              <div className="flex items-start justify-between mb-4">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                     <h3 className="text-lg font-semibold">{goal.name}</h3>
                     {getTrendIcon(goal)}
                   </div>
@@ -95,7 +95,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
 
               {/* Progress */}
               <div className="space-y-2 mb-4">
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <span className="font-medium">
                     {formatValue(goal.current_value, goal.type, goal.unit)}
                   </span>
@@ -104,15 +104,15 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
                   </span>
                 </div>
                 <Progress value={progress} className="h-2" />
-                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs text-muted-foreground">
                   <span>{progress}% complete</span>
                   <span>{formatValue(goal.target_value! - goal.current_value, goal.type, goal.unit)} remaining</span>
                 </div>
               </div>
 
               {/* Meta */}
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <Calendar className="h-3 w-3" />
                   <span>
                     {daysRemaining > 0 ? `${daysRemaining} days left` : "Overdue"}
@@ -120,7 +120,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
                 </div>
 
                 {goal.owner && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Avatar className="h-5 w-5">
                       <AvatarImage src={goal.owner.avatar_url} />
                       <AvatarFallback className="text-xs">
@@ -142,7 +142,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
 
       {goals.length === 0 && (
         <Card>
-          <CardContent className="p-12 text-center">
+          <CardContent className="p-6 md:p-8 lg:p-12 text-center">
             <TrendingUp className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">No goals yet</h3>
             <p className="text-sm text-muted-foreground">

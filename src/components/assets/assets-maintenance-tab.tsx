@@ -96,49 +96,49 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Scheduled</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{maintenanceItems.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{maintenanceItems.length}</div>
             <p className="text-xs text-muted-foreground">This month</p>
           </CardContent>
         </Card>
 
         <Card className="border-red-200 dark:border-red-900">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('overdue')}</CardTitle>
             <AlertCircle className="h-4 w-4 text-red-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">{overdueMaintenance.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">{overdueMaintenance.length}</div>
             <p className="text-xs text-muted-foreground">Need attention</p>
           </CardContent>
         </Card>
 
         <Card className="border-yellow-200 dark:border-yellow-900">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Due This Week</CardTitle>
             <Clock className="h-4 w-4 text-yellow-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-yellow-600">{upcomingMaintenance.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{upcomingMaintenance.length}</div>
             <p className="text-xs text-muted-foreground">Upcoming</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('completed')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {(maintenanceItems as any[]).filter((i: any) => (i as any).status === 'completed').length}
             </div>
             <p className="text-xs text-muted-foreground">This month</p>
@@ -149,11 +149,11 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
       {/* Calendar */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <CardTitle>
               {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
             </CardTitle>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Button variant="outline" size="icon" onClick={previousMonth} aria-label="Previous month">
                 <ChevronLeft className="h-4 w-4" aria-hidden="true" />
               </Button>
@@ -171,7 +171,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-7 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 gap-2">
             {/* Day Headers */}
             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day: any) => (
               <div key={day} className="text-center text-sm font-medium text-muted-foreground py-2">
@@ -236,7 +236,7 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
       {overdueMaintenance.length > 0 && (
         <Card className="border-red-200 dark:border-red-900">
           <CardHeader>
-            <CardTitle className="text-red-600 flex items-center gap-2">
+            <CardTitle className="text-red-600 flex flex-wrap flex-col md:flex-row items-center gap-2">
               <AlertCircle className="h-4 w-4" aria-hidden="true" />
               Overdue Maintenance
             </CardTitle>
@@ -245,15 +245,15 @@ export function AssetsMaintenanceTab({ workspaceId, moduleId, tabSlug }: TabComp
           <CardContent>
             <div className="space-y-2">
               {overdueMaintenance.map((item: any) => (
-                <div key={item.id} className="flex items-center justify-between p-3 border rounded-lg">
-                  <div className="flex items-center gap-3">
+                <div key={item.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded-lg">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                     <Wrench className="h-4 w-4 text-red-600" aria-hidden="true" />
                     <div>
                       <div className="font-medium">{item.asset_name}</div>
                       <div className="text-sm text-muted-foreground">{item.description}</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                     <Badge variant="secondary" className={getMaintenanceTypeColor(item.type)}>
                       {item.type}
                     </Badge>

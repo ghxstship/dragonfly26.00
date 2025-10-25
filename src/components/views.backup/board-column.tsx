@@ -34,10 +34,10 @@ export function BoardColumn({ column, items, schema, onItemClick }: BoardColumnP
 
   return (
     <TooltipProvider delayDuration={300}>
-      <div className="flex-shrink-0 w-80 flex flex-col bg-muted/30 rounded-lg">
+      <div className="flex-shrink-0 w-full sm:w-80 flex flex-wrap flex-col bg-muted/30 rounded-lg">
         {/* Column Header */}
-        <div className="flex items-center justify-between p-3 border-b">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border-b">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div
               className="h-3 w-3 rounded-full"
               style={{ backgroundColor: column.color }}
@@ -77,7 +77,7 @@ export function BoardColumn({ column, items, schema, onItemClick }: BoardColumnP
             <Button
               variant="ghost"
               size="sm"
-              className="w-full justify-start gap-2"
+              className="w-full justify-start gap-2 max-w-full"
             >
               <Plus className="h-4 w-4" />
               Add card

@@ -43,7 +43,7 @@ export function CreateObjectiveDialog({ open, onOpenChange, onCreateGoal }: Crea
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8">
         <DialogHeader>
           <DialogTitle>Create New Goal</DialogTitle>
         </DialogHeader>
@@ -67,7 +67,7 @@ export function CreateObjectiveDialog({ open, onOpenChange, onCreateGoal }: Crea
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label>Goal Type *</Label>
               <Select
@@ -109,7 +109,7 @@ export function CreateObjectiveDialog({ open, onOpenChange, onCreateGoal }: Crea
             </div>
           )}
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label>Start Date *</Label>
               <Input
@@ -129,7 +129,7 @@ export function CreateObjectiveDialog({ open, onOpenChange, onCreateGoal }: Crea
             </div>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Button variant="outline" onClick={() => onOpenChange(false)} className="flex-1">
               Cancel
             </Button>

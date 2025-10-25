@@ -36,13 +36,13 @@ export function BulkActionsToolbar({
 
   return (
     <div className="border-b bg-muted/50 px-4 py-2">
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
         <Badge variant="secondary" className="gap-1">
           <span className="font-semibold">{selectedCount}</span>
           <span>item{selectedCount !== 1 ? 's' : ''} selected</span>
         </Badge>
 
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
           <Button variant="outline" size="sm" onClick={onMoveToFolder}>
             <FolderInput className="h-4 w-4 mr-2" />
             Move to Folder

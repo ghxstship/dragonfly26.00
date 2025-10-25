@@ -128,14 +128,14 @@ export function ActivityFeed({ activities = mockActivities, limit }: ActivityFee
           return (
             <Card key={activity.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-4">
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   <div className={cn("mt-1", colorClass)}>
                     <Icon className="h-5 w-5" />
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex items-center gap-2 flex-1 min-w-0">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1 min-w-0">
                         <Avatar className="h-6 w-6">
                           <AvatarImage src={`/avatars/${activity.user_id}.jpg`} />
                           <AvatarFallback className="text-xs">
@@ -144,7 +144,7 @@ export function ActivityFeed({ activities = mockActivities, limit }: ActivityFee
                         </Avatar>
                         <span className="font-medium text-sm truncate">{activity.user_id}</span>
                       </div>
-                      <span className="text-xs text-muted-foreground whitespace-nowrap">
+                      <span className="text-xs text-muted-foreground whitespace-nowrap overflow-hidden text-ellipsis">
                         {new Date(activity.created_at).toLocaleTimeString()}
                       </span>
                     </div>
@@ -156,7 +156,7 @@ export function ActivityFeed({ activities = mockActivities, limit }: ActivityFee
                     </p>
 
                     {activity.old_value && activity.new_value && (
-                      <div className="flex items-center gap-2 mt-2 text-xs">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2 text-xs">
                         <Badge variant="outline">{activity.old_value.toString()}</Badge>
                         <ArrowRight className="h-3 w-3" />
                         <Badge variant="default">{activity.new_value.toString()}</Badge>
@@ -170,7 +170,7 @@ export function ActivityFeed({ activities = mockActivities, limit }: ActivityFee
         })}
 
         {displayed.length === 0 && (
-          <div className="text-center py-12">
+          <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
             <p className="text-muted-foreground text-sm">No recent activity</p>
           </div>
         )}

@@ -119,13 +119,13 @@ export function AutomationsTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Automations List */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('settings.automationsTab.activeAutomations')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {automations.filter(a => a.enabled).length}
             </CardTitle>
           </CardHeader>
@@ -133,7 +133,7 @@ export function AutomationsTab() {
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('settings.automationsTab.totalRuns')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {automations.reduce((sum: number, a) => sum + a.runsCount, 0)}
             </CardTitle>
           </CardHeader>
@@ -141,7 +141,7 @@ export function AutomationsTab() {
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('settings.automationsTab.timeSaved')}</CardDescription>
-            <CardTitle className="text-3xl">12h</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">12h</CardTitle>
           </CardHeader>
         </Card>
       </div>
@@ -151,9 +151,9 @@ export function AutomationsTab() {
         {automations.map((automation: any) => (
           <Card key={automation.id}>
             <CardHeader>
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                     <CardTitle className="text-base">{automation.name}</CardTitle>
                     <Badge variant={automation.enabled ? "default" : "secondary"}>
                       {automation.enabled ? (
@@ -171,7 +171,7 @@ export function AutomationsTab() {
                   </div>
                   <CardDescription>{automation.description}</CardDescription>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Switch
                     checked={automation.enabled}
                     onCheckedChange={() => handleToggle(automation.id)}
@@ -181,13 +181,13 @@ export function AutomationsTab() {
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                  <div className="flex items-center gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Zap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                     <span className="text-muted-foreground">Trigger:</span>
                     <span className="font-medium">{automation.trigger}</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <MessageSquare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                     <span className="text-muted-foreground">Action:</span>
                     <span className="font-medium">{automation.action}</span>
@@ -195,13 +195,13 @@ export function AutomationsTab() {
                 </div>
 
                 {automation.lastRun && (
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                     <Clock className="h-4 w-4" aria-hidden="true" />
                     Last run: {automation.lastRun} • {automation.runsCount} total runs
                   </div>
                 )}
 
-                <div className="flex justify-end gap-2 pt-2">
+                <div className="flex flex-wrap justify-end gap-2 pt-2">
                   <Button
                     variant="outline"
                     size="sm"
@@ -257,7 +257,7 @@ export function AutomationsTab() {
               <Label>Automation Name</Label>
               <input
                 type="text"
-                className="w-full px-3 py-2 border rounded-md"
+                className="w-full px-3 py-2 border rounded-md max-w-full"
                 placeholder="e.g., Daily Task Summary"
                 defaultValue={selectedAutomation?.name}
               />
@@ -295,7 +295,7 @@ export function AutomationsTab() {
               </Select>
             </div>
 
-            <div className="rounded-lg bg-amber-50 dark:bg-amber-950 p-3 flex gap-2">
+            <div className="rounded-lg bg-amber-50 dark:bg-amber-950 p-3 flex flex-wrap gap-2">
               <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-sm text-amber-800 dark:text-amber-200">
                 Automations will run automatically based on your trigger settings. Make sure to test

@@ -178,7 +178,7 @@ export function CreateMenu({
         <Icon className="h-4 w-4" />
         <span className="flex-1">{action.name}</span>
         {action.keyboard_shortcut && (
-          <kbd className="inline-flex items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">{action.keyboard_shortcut}</kbd>
+          <kbd className="inline-flex flex-col md:flex-row items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">{action.keyboard_shortcut}</kbd>
         )}
         {showFavorite && (
           <button
@@ -206,24 +206,24 @@ export function CreateMenu({
           <DropdownMenuTrigger asChild>
             <Button size="sm" className="gap-2 h-9">
               <Plus className="h-4 w-4" />
-              <span className="hidden sm:inline">{t('common.new')}</span>
+              <span className="hidden md:block sm:inline">{t('common.new')}</span>
             </Button>
           </DropdownMenuTrigger>
         </TooltipTrigger>
         <TooltipContent>
           <p>Create new</p>
-          <kbd className="ml-2 inline-flex items-center gap-0.5 font-mono text-[11px] opacity-70">⌘N</kbd>
+          <kbd className="ml-2 inline-flex flex-col md:flex-row items-center gap-0.5 font-mono text-[11px] opacity-70">⌘N</kbd>
         </TooltipContent>
       </Tooltip>
 
-      <DropdownMenuContent align="end" className="w-80 p-0">
+      <DropdownMenuContent align="end" className="w-full sm:w-80 p-0">
         {/* Search Header */}
         <div className="p-2 border-b sticky top-0 bg-background z-10">
           <DropdownMenuLabel className="px-2 py-1.5">
             {t('create.createNew')}
           </DropdownMenuLabel>
           <div className="relative mt-2">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
             <Input
               placeholder={t('search.searchActions')}
               value={searchQuery as any}
@@ -234,7 +234,7 @@ export function CreateMenu({
           </div>
         </div>
 
-        <div className="max-h-[480px] overflow-y-auto">
+        <div className="max-h-[288px] md:h-[480px] overflow-y-auto">
           <div className="p-2">
             {/* Favorites */}
             {filteredFavoriteActions.length > 0 && (

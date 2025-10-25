@@ -22,12 +22,12 @@ export default function DashboardError({
   }, [error])
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
-      <Card className="max-w-2xl w-full">
+    <div className="flex flex-wrap items-center justify-center min-h-screen p-4">
+      <Card className="max-w-2xl px-4 sm:px-6 lg:px-8 w-full max-w-full">
         <CardHeader className="text-center space-y-4">
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-destructive/20 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute sm:relative sm:inset-auto inset-0 bg-destructive/20 rounded-full blur-2xl animate-pulse sm:relative sm:inset-auto" />
               <div className="relative bg-destructive/10 p-6 rounded-full">
                 <AlertTriangle className="w-16 h-16 text-destructive" />
               </div>
@@ -40,7 +40,7 @@ export default function DashboardError({
             </div>
           )}
           
-          <CardTitle className="text-3xl">
+          <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
             {t('errorGenericTitle')}
           </CardTitle>
           <CardDescription className="text-base">
@@ -48,22 +48,22 @@ export default function DashboardError({
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
           {/* What You Can Do Section */}
           <div className="text-left">
             <h3 className="text-sm font-semibold mb-3">
               {t('whatYouCanDo')}
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2">
+              <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                 <span className="text-primary mt-0.5">•</span>
                 <span>{t('tryAgain')}</span>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                 <span className="text-primary mt-0.5">•</span>
                 <span>{t('goBack')}</span>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                 <span className="text-primary mt-0.5">•</span>
                 <span>{t('reportProblem')}</span>
               </li>

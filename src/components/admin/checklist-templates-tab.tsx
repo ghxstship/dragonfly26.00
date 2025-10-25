@@ -72,10 +72,10 @@ export function ChecklistTemplatesTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>{t('admin.checklistTemplates.title')}</CardTitle>
               <CardDescription>{t('admin.checklistTemplates.description')}</CardDescription>
@@ -87,7 +87,7 @@ export function ChecklistTemplatesTab() {
                   Add Template
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl">
+              <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8">
                 <DialogHeader>
                   <DialogTitle>Create Checklist Template</DialogTitle>
                 </DialogHeader>
@@ -118,7 +118,7 @@ export function ChecklistTemplatesTab() {
                   <div className="space-y-2">
                     <Label>Checklist Items</Label>
                     {newTemplate.items.map((item: any, index: number) => (
-                      <div key={index} className="flex gap-2">
+                      <div key={index} className="flex flex-wrap gap-2">
                         <Input
                           placeholder={t('templates.addChecklistItem')}
                           value={item as string}
@@ -146,7 +146,7 @@ export function ChecklistTemplatesTab() {
                     ))}
                   </div>
 
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <Button
                       variant="outline"
                       onClick={() => setIsCreating(false)}
@@ -170,8 +170,8 @@ export function ChecklistTemplatesTab() {
                 key={template.id}
                 className="p-4 border rounded-lg hover:bg-accent/50"
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex gap-3 flex-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex flex-wrap gap-3 flex-1">
                     <ListChecks className="h-5 w-5 text-muted-foreground mt-0.5" aria-hidden="true" />
                     <div className="flex-1">
                       <div className="font-medium">{template.nameKey ? t(template.nameKey) : template.name}</div>

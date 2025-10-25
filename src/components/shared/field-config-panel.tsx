@@ -119,11 +119,11 @@ export function FieldConfigPanel() {
       />
 
       {/* Stats & Actions */}
-      <div className="flex items-center justify-between text-xs">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs">
         <span className="text-muted-foreground">
           {visibleCount} of {totalCount} visible
         </span>
-        <div className="flex gap-1">
+        <div className="flex flex-wrap gap-1">
           <Button variant="ghost" size="sm" onClick={showAllFields} className="h-7 text-xs">
             Show All
           </Button>
@@ -134,7 +134,7 @@ export function FieldConfigPanel() {
       </div>
 
       {/* Fields List */}
-      <div className="space-y-2 max-h-[420px] overflow-y-auto pr-2">
+      <div className="space-y-2 max-h-[252px] md:h-[420px] overflow-y-auto pr-2">
         {filteredFields.map((field) => (
           <div
             key={field.id}
@@ -175,15 +175,15 @@ export function FieldConfigPanel() {
       <div className="space-y-3 pt-4 border-t">
         <Label>Display Options</Label>
         <div className="space-y-2">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="text-sm">Auto-fit columns</div>
             <Switch defaultChecked />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="text-sm">Wrap text</div>
             <Switch />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="text-sm">Show row numbers</div>
             <Switch defaultChecked />
           </div>

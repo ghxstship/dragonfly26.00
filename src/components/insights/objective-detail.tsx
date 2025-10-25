@@ -70,18 +70,18 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="w-[600px] sm:max-w-[600px] overflow-y-auto">
+      <SheetContent className="w-full max-w-[600px] sm:max-w-[600px] overflow-y-auto">
         <SheetHeader>
           <SheetTitle>{goal.name}</SheetTitle>
         </SheetHeader>
 
-        <div className="mt-6 space-y-6">
+        <div className="mt-6 space-y-3 md:space-y-4 lg:space-y-6">
           {/* Current Progress */}
           <Card>
             <CardContent className="p-6">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
                 <div>
-                  <p className="text-3xl font-bold">
+                  <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">
                     {goal.type === "currency"
                       ? new Intl.NumberFormat("en-US", { style: "currency", currency: goal.unit || "USD" }).format(goal.current_value)
                       : `${goal.current_value}${goal.unit ? ` ${goal.unit}` : ""}`}
@@ -94,7 +94,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-3xl font-bold text-primary">{progress}%</p>
+                  <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-primary">{progress}%</p>
                   <p className="text-sm text-muted-foreground">Complete</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
           </Card>
 
           <Tabs defaultValue="progress">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
               <TabsTrigger value="progress">Progress</TabsTrigger>
               <TabsTrigger value="details">Details</TabsTrigger>
               <TabsTrigger value="linked">Linked Items</TabsTrigger>
@@ -116,7 +116,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
                   <CardTitle className="text-base">Update Progress</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <Input
                       type="number"
                       placeholder={t('goals.enterNewValue')}
@@ -156,7 +156,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
                 <CardContent>
                   <div className="space-y-2">
                     {progressHistory.map((p: any) => (
-                      <div key={p.id} className="flex items-center justify-between py-2 border-b last:border-0">
+                      <div key={p.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between py-2 border-b last:border-0">
                         <span className="text-sm">
                           {new Date(p.recorded_at).toLocaleDateString()} {new Date(p.recorded_at).toLocaleTimeString()}
                         </span>
@@ -180,7 +180,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
                     <p className="text-sm mt-1">{goal.description || t('goals.noDescription')}</p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                     <div>
                       <Label>Start Date</Label>
                       <p className="text-sm mt-1">{new Date(goal.start_date).toLocaleDateString()}</p>
@@ -207,10 +207,10 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
             <TabsContent value="linked" className="space-y-4">
               <Card>
                 <CardContent className="p-6">
-                  <p className="text-sm text-muted-foreground text-center py-8">
+                  <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
                     No linked items yet. Link tasks and projects to track progress automatically.
                   </p>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full max-w-full">
                     Link Items
                   </Button>
                 </CardContent>

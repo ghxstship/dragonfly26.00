@@ -183,14 +183,14 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
 
   return (
     <TooltipProvider delayDuration={300}>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-wrap flex-col h-full">
         {/* Header */}
-        <div className="flex items-center justify-between border-b p-4">
-          <div className="flex items-center gap-4">
-            <h2 className="text-xl font-semibold">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b p-4">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+            <h2 className="text-base md:text-lg lg:text-xl font-semibold">
               {monthNames[month]} {year}
             </h2>
-            <div className="flex items-center gap-1">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="outline" size="icon" onClick={previousMonth}>
@@ -224,7 +224,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
             </div>
           </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           {(["month", "week", "day", "agenda"] as CalendarMode[]).map((m: any) => (
             <Button
               key={m}
@@ -243,7 +243,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
       {mode === "month" && (
         <div className="flex-1 border">
           {/* Day Headers */}
-          <div className="grid grid-cols-7 border-b">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 border-b">
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day: any) => (
               <div
                 key={day}
@@ -254,19 +254,19 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
             ))}
           </div>
           {/* Days */}
-          <div className="grid grid-cols-7">{renderCalendarDays()}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7">{renderCalendarDays()}</div>
         </div>
       )}
 
       {/* Week View */}
       {mode === "week" && (
         <div className="flex-1 overflow-auto">
-          <div className="grid grid-cols-7 border-t">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 border-t">
             {getWeekDates().map((date: any, idx: number) => {
               const items = getItemsForWeekDate(date)
               const isToday = date.toDateString() === new Date().toDateString()
               return (
-                <div key={idx} className="border-r last:border-r-0 min-h-[500px]">
+                <div key={idx} className="border-r last:border-r-0 min-h-[300px] md:h-[500px]">
                   <div className={cn("p-3 border-b text-center", isToday && "bg-primary/5")}>
                     <div className="text-xs text-muted-foreground">
                       {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][idx]}
@@ -306,8 +306,8 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
       {/* Day View */}
       {mode === "day" && (
         <div className="flex-1 overflow-auto p-6">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-2xl font-bold mb-6">
+          <div className="max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-6">
               {currentDate.toLocaleDateString("en-US", {
                 weekday: "long",
                 year: "numeric",
@@ -333,7 +333,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                     {item.description && (
                       <div className="text-sm text-muted-foreground mt-1">{item.description}</div>
                     )}
-                    <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 mt-3 text-xs text-muted-foreground">
                       {getPriorityValue(item, schema) && <span className="capitalize">Priority: {getPriorityValue(item, schema)}</span>}
                       {getAssigneeValue(item, schema) && <span>Assigned to: {getAssigneeValue(item, schema)}</span>}
                       {getStatusValue(item, schema) && <span className="capitalize">Status: {getStatusValue(item, schema)}</span>}
@@ -349,11 +349,11 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
       {/* Agenda View */}
       {mode === "agenda" && (
         <div className="flex-1 overflow-auto p-6">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-xl font-bold mb-6">Upcoming Items</h3>
-            <div className="space-y-6">
+          <div className="max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto">
+            <h3 className="text-base md:text-lg lg:text-xl font-bold mb-6">Upcoming Items</h3>
+            <div className="space-y-3 md:space-y-4 lg:space-y-6">
               {getAllUpcomingItems().length === 0 ? (
-                <div className="text-center py-12 text-muted-foreground">
+                <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
                   No upcoming items
                 </div>
               ) : (
@@ -385,7 +385,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                           className="p-3 rounded-lg border bg-card hover:bg-accent cursor-pointer transition-colors"
                           onClick={() => onItemClick?.(item)}
                         >
-                          <div className="flex items-start justify-between">
+                          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                             <div className="flex-1">
                               <div className="font-medium">{getDisplayValue(item, schema)}</div>
                               {item.description && (
@@ -408,7 +408,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                               </span>
                             )}
                           </div>
-                          <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 mt-2 text-xs text-muted-foreground">
                             {getAssigneeValue(item, schema) && <span>{getAssigneeValue(item, schema)}</span>}
                             {getStatusValue(item, schema) && <span className="capitalize">{String(getStatusValue(item, schema)).replace(/_/g, " ")}</span>}
                           </div>

@@ -144,16 +144,16 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Metrics */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Active Scenarios</CardTitle>
             <GitCompare className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{scenarios.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{scenarios.length}</div>
             <p className="text-xs text-muted-foreground">
               Across all budgets
             </p>
@@ -161,7 +161,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Weighted Average</CardTitle>
             <TrendingUp className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
@@ -176,12 +176,12 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Best Case</CardTitle>
             <TrendingUp className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
               ${scenarios[0].projectedNet.toLocaleString()}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -191,12 +191,12 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Worst Case</CardTitle>
             <TrendingDown className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
               ${scenarios[2].projectedNet.toLocaleString()}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -209,7 +209,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
       {/* Scenario Comparison */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>Scenario Comparison</CardTitle>
               <CardDescription>Side-by-side analysis of financial projections</CardDescription>
@@ -221,7 +221,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {scenarios.map((scenario: any) => (
               <Card 
                 key={scenario.id} 
@@ -230,7 +230,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
                 }`}
               >
                 <CardHeader>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                     <CardTitle className="text-lg" aria-hidden="true">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</CardTitle>
                     {scenario.isBaseline && (
                       <Badge variant="secondary">Baseline</Badge>
@@ -241,11 +241,11 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
                 <CardContent className="space-y-4" aria-hidden="true">
                   {/* Probability */}
                   <div>
-                    <div className="flex items-center justify-between text-sm mb-1">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm mb-1">
                       <span className="text-muted-foreground">Probability</span>
                       <span className="font-semibold">{scenario.probability}%</span>
                     </div>
-                    <div className="w-full bg-secondary rounded-full h-2">
+                    <div className="w-full bg-secondary rounded-full h-2 max-w-full">
                       <div
                         className="bg-primary h-2 rounded-full transition-all"
                         style={{ width: `${scenario.probability}%` }}
@@ -255,27 +255,27 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
 
                   {/* Revenue */}
                   <div className="space-y-1">
-                    <div className="flex items-center justify-between text-sm">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                       <span className="text-muted-foreground">Projected Revenue</span>
                     </div>
-                    <div className="text-xl font-bold text-green-600">
+                    <div className="text-base md:text-lg lg:text-xl font-bold text-green-600">
                       ${scenario.projectedRevenue.toLocaleString()}
                     </div>
                   </div>
 
                   {/* Expenses */}
                   <div className="space-y-1">
-                    <div className="flex items-center justify-between text-sm">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                       <span className="text-muted-foreground">Projected Expenses</span>
                     </div>
-                    <div className="text-xl font-bold text-red-600">
+                    <div className="text-base md:text-lg lg:text-xl font-bold text-red-600">
                       ${scenario.projectedExpenses.toLocaleString()}
                     </div>
                   </div>
 
                   {/* Net */}
                   <div className="pt-3 border-t space-y-1">
-                    <div className="flex items-center justify-between text-sm">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                       <span className="text-muted-foreground">Net Profit</span>
                       <div className={`flex items-center gap-1 ${getVarianceColor(scenario.variance)}`}>
                         {getVarianceIcon(scenario.variance)}
@@ -292,7 +292,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
                   </div>
 
                   {/* Actions */}
-                  <div className="flex gap-2 pt-2">
+                  <div className="flex flex-wrap gap-2 pt-2">
                     <Button variant="outline" size="sm" className="flex-1">
                       Edit
                     </Button>
@@ -314,15 +314,15 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
           <CardDescription>Visual comparison across all scenarios</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-6">
+          <div className="space-y-3 md:space-y-4 lg:space-y-6">
             {/* Revenue Comparison */}
             <div className="space-y-2">
               <h4 className="text-sm font-medium">Revenue Projections</h4>
               {scenarios.map((scenario: any) => (
-                <div key={scenario.id} className="flex items-center gap-3">
+                <div key={scenario.id} className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
-                    <div className="w-full bg-secondary rounded-full h-6 relative">
+                    <div className="w-full bg-secondary rounded-full h-6 relative max-w-full">
                       <div
                         className="bg-green-500 h-6 rounded-full transition-all flex items-center justify-end pr-2"
                         style={{ width: `${(scenario.projectedRevenue / 500000) * 100}%` }}
@@ -341,10 +341,10 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
             <div className="space-y-2">
               <h4 className="text-sm font-medium">Expense Projections</h4>
               {scenarios.map((scenario: any) => (
-                <div key={scenario.id} className="flex items-center gap-3">
+                <div key={scenario.id} className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
-                    <div className="w-full bg-secondary rounded-full h-6 relative">
+                    <div className="w-full bg-secondary rounded-full h-6 relative max-w-full">
                       <div
                         className="bg-red-500 h-6 rounded-full transition-all flex items-center justify-end pr-2"
                         style={{ width: `${(scenario.projectedExpenses / 500000) * 100}%` }}
@@ -363,10 +363,10 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
             <div className="space-y-2">
               <h4 className="text-sm font-medium">Net Profit/Loss</h4>
               {scenarios.map((scenario: any) => (
-                <div key={scenario.id} className="flex items-center gap-3">
+                <div key={scenario.id} className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <div className="w-32 text-sm text-muted-foreground">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</div>
                   <div className="flex-1">
-                    <div className="w-full bg-secondary rounded-full h-6 relative">
+                    <div className="w-full bg-secondary rounded-full h-6 relative max-w-full">
                       <div
                         className={`${scenario.projectedNet >= 0 ? 'bg-green-500' : 'bg-red-500'} h-6 rounded-full transition-all flex items-center justify-end pr-2`}
                         style={{ width: `${Math.abs(scenario.projectedNet / 150000) * 100}%` }}
@@ -387,7 +387,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
       {/* Insights */}
       <Card className="border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950" aria-hidden="true">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2" aria-hidden="true">
+          <CardTitle className="flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
             <AlertCircle className="h-5 w-5" aria-hidden="true" />
             Scenario Insights
           </CardTitle>

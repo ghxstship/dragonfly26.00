@@ -67,13 +67,13 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
   const pendingSales = salesData.filter(s => s.status === 'pending').length
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Total Revenue</CardDescription>
-            <CardTitle className="text-3xl flex items-center gap-2">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
               <DollarSign className="h-6 w-6 text-green-600"  aria-hidden="true" />
               ${totalRevenue.toLocaleString()}
             </CardTitle>
@@ -82,7 +82,7 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Completed Sales</CardDescription>
-            <CardTitle className="text-3xl flex items-center gap-2">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
               <CheckCircle2 className="h-6 w-6 text-green-600" />
               {completedSales}
             </CardTitle>
@@ -91,7 +91,7 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Pending Sales</CardDescription>
-            <CardTitle className="text-3xl flex items-center gap-2">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Clock className="h-6 w-6 text-yellow-600" aria-hidden="true" />
               {pendingSales}
             </CardTitle>
@@ -100,9 +100,9 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
       </div>
 
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
           <Input placeholder={t('searchSales')} className="pl-9" />
         </div>
         <Button variant="outline">
@@ -124,21 +124,21 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
           {salesData.map((sale: any) => (
             <Card key={sale.id}>
               <CardHeader>
-                <div className="flex items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                   <div className="space-y-1">
                     <CardTitle className="text-lg">{sale.name}</CardTitle>
                     <CardDescription>
                       Customer: {sale.assignee_name}
                     </CardDescription>
                   </div>
-                  <div className="flex flex-col items-end gap-2">
+                  <div className="flex flex-wrap flex-col items-end gap-2">
                     {getStatusBadge(sale.status)}
                     {sale.payment_status && getPaymentBadge(sale.payment_status)}
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
                   <div>
                     <p className="text-sm text-muted-foreground">{t('amount')}</p>
                     <p className="text-lg font-semibold">{sale.price}</p>
@@ -151,7 +151,7 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
                     <p className="text-sm text-muted-foreground">Due Date</p>
                     <p className="text-sm">{new Date(sale.due_date).toLocaleDateString()}</p>
                   </div>
-                  <div className="flex items-end justify-end gap-2">
+                  <div className="flex flex-wrap items-end justify-end gap-2">
                     <Button variant="outline" size="sm">{tCommon('view')}</Button>
                     <Button size="sm">{t('manage')}</Button>
                   </div>
@@ -162,19 +162,19 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
         </TabsContent>
 
         <TabsContent value="pending" className="mt-4">
-          <div className="text-center py-12 text-muted-foreground">
+          <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
             Filter for pending sales
           </div>
         </TabsContent>
 
         <TabsContent value="in-progress" className="mt-4">
-          <div className="text-center py-12 text-muted-foreground">
+          <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
             Filter for in-progress sales
           </div>
         </TabsContent>
 
         <TabsContent value="completed" className="mt-4">
-          <div className="text-center py-12 text-muted-foreground">
+          <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
             Filter for completed sales
           </div>
         </TabsContent>

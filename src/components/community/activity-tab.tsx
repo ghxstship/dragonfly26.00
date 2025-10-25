@@ -128,27 +128,27 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 {/* Header Stats */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('activityFeed')}</div>
             <ActivityIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{posts.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{posts.length}</div>
             <p className="text-xs text-muted-foreground">{t('recentPosts')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('engagement')}</div>
             <Heart className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {posts.reduce((acc: number, p: ActivityPost) => acc + p.likes, 0)}
             </div>
             <p className="text-xs text-muted-foreground">{t('totalLikes')}</p>
@@ -156,12 +156,12 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('trending')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {posts.filter(p => p.likes > 500).length}
             </div>
             <p className="text-xs text-muted-foreground">{t('popularPosts')}</p>
@@ -169,12 +169,12 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('activeUsers')}</div>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">1.2K</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">1.2K</div>
             <p className="text-xs text-muted-foreground">{t('onlineNow')}</p>
           </CardContent>
         </Card>
@@ -197,15 +197,15 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
               }}
               className="min-h-[120px] resize-none"
             />
-            <div className="flex items-center justify-between">
-              <div className="flex gap-2">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+              <div className="flex flex-wrap gap-2">
                 <FileAttachmentButton 
                   onFilesSelected={setAttachedFiles}
                   maxFiles={3}
                   acceptedTypes="image/*,.pdf,.doc,.docx"
                 />
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                 <span className={`text-sm ${
                   charactersRemaining < 50 ? 'text-destructive' : 'text-muted-foreground'
                 }`}>
@@ -230,14 +230,14 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
           <Card key={post.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-6">
               {/* Post Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Avatar className="h-10 w-10">
                     <AvatarImage src={post.authorImage} />
                     <AvatarFallback>{post.author.split(" ").map(n => n[0]).join("")}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <p className="font-semibold text-sm">{post.author}</p>
                       {post.author_id && <PostAuthorLevel authorId={post.author_id} workspaceId={workspaceId} />}
                     </div>
@@ -255,9 +255,9 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
 
               {/* Post Image */}
               {post.image && (
-                <div className="mb-3 rounded-lg overflow-hidden">
+                <div className="mb-3 rounded-lg overflow-hidden md:block">
                   <div 
-                    className="h-64 bg-cover bg-center"
+                    className="h-48 md:h-56 lg:h-64 bg-cover bg-center"
                     style={{ backgroundImage: `url(${post.image})` }}
                   />
                 </div>
@@ -291,8 +291,8 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
               )}
 
               {/* Engagement Stats */}
-              <div className="flex items-center justify-between py-2 border-t text-xs text-muted-foreground">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between py-2 border-t text-xs text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <span>{post.likes} {t('likes')}</span>
                   <span>{post.comments} {t('comments')}</span>
                   <span>{post.shares} {t('shares')}</span>

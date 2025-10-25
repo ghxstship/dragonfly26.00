@@ -101,21 +101,21 @@ export function HealthTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>{t('profile.health.medical')}</CardTitle>
           <CardDescription>{t('profile.health.medicalDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="bloodType">{t('profile.health.bloodType')}</Label>
               <Input
@@ -170,7 +170,7 @@ export function HealthTab() {
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="dietaryRestrictions">{t('profile.health.dietaryRestrictions')}</Label>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Input
                 id="dietaryRestrictions"
                 value={newDietaryRestriction as any}
@@ -227,7 +227,7 @@ export function HealthTab() {
           <CardDescription>{t('profile.health.providerDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="doctorName">{t('profile.health.doctorName')}</Label>
               <Input
@@ -249,7 +249,7 @@ export function HealthTab() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="insuranceProvider">{t('profile.health.insuranceProvider')}</Label>
               <Input
@@ -274,7 +274,7 @@ export function HealthTab() {
         </CardContent>
       </Card>
 
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end">
         <Button onClick={handleSave} disabled={saving}>
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />

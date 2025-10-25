@@ -13,15 +13,15 @@ export function APIDocsClient() {
   return (
     <div className="min-h-screen bg-white">
       <div className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">API Documentation</h1>
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8 py-6">
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-gray-900">API Documentation</h1>
           <p className="mt-2 text-gray-600">
             Complete REST API reference for the ATLVS platform
           </p>
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8">
         <SwaggerUI url="/api/docs" />
       </div>
     </div>

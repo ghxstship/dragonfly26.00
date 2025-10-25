@@ -99,17 +99,17 @@ export function CertificationsTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>{t('profile.certifications.title')}</CardTitle>
               <CardDescription>
@@ -122,9 +122,9 @@ export function CertificationsTab() {
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
           {certifications.length === 0 ? (
-            <div className="text-center py-12 border-2 border-dashed rounded-lg">
+            <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 border-2 border-dashed rounded-lg">
               <p className="text-sm text-muted-foreground mb-4">
                 {t('profile.certifications.noCertifications')}
               </p>
@@ -137,8 +137,8 @@ export function CertificationsTab() {
             certifications.map((cert: any) => (
               <Card key={cert.id}>
                 <CardContent className="pt-6 space-y-4">
-                  <div className="flex justify-between items-start">
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row justify-between items-start">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <div className={`h-2 w-2 rounded-full ${getStatusColor(cert.status)}`} />
                       <h4 className="font-semibold">
                         {cert.name || t('profile.certifications.untitled')}
@@ -154,7 +154,7 @@ export function CertificationsTab() {
                     </Button>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                     <div className="space-y-2">
                       <Label htmlFor={`name-${cert.id}`}>{t('profile.certifications.name')}</Label>
                       <Input
@@ -177,7 +177,7 @@ export function CertificationsTab() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
                     <div className="space-y-2">
                       <Label htmlFor={`issue-${cert.id}`}>{t('profile.certifications.issueDate')}</Label>
                       <Input
@@ -206,7 +206,7 @@ export function CertificationsTab() {
                         id={`status-${cert.id}`}
                         value={cert.status}
                         onChange={(e) => updateCertification(cert.id, "status", e.target.value)}
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background max-w-full"
                       >
                         <option value="active">{t('profile.certifications.statusActive')}</option>
                         <option value="expired">{t('profile.certifications.statusExpired')}</option>
@@ -215,7 +215,7 @@ export function CertificationsTab() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                     <div className="space-y-2">
                       <Label htmlFor={`credId-${cert.id}`}>{t('profile.certifications.credentialId')}</Label>
                       <Input
@@ -229,7 +229,7 @@ export function CertificationsTab() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor={`url-${cert.id}`}>{t('profile.certifications.credentialUrl')}</Label>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         <Input
                           id={`url-${cert.id}`}
                           value={cert.credentialUrl}
@@ -255,7 +255,7 @@ export function CertificationsTab() {
 
                   <div className="space-y-2">
                     <Label htmlFor={`doc-${cert.id}`}>{t('profile.certifications.document')}</Label>
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                       <Input
                         id={`doc-${cert.id}`}
                         value={cert.documentFile}
@@ -282,7 +282,7 @@ export function CertificationsTab() {
       </Card>
 
       {certifications.length > 0 && (
-        <div className="flex justify-end">
+        <div className="flex flex-wrap justify-end">
           <Button onClick={handleSave} disabled={saving}>
             {saving ? (
               <Loader2 className="h-4 w-4 mr-2 animate-spin" />

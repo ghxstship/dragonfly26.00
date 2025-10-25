@@ -76,9 +76,9 @@ export function AdminOverviewTab() {
   ]
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
       <div className="sr-only" aria-live="polite" aria-atomic="true">
         {t('admin.overview.statsUpdated')}
       </div>
@@ -87,14 +87,14 @@ export function AdminOverviewTab() {
           return (
             <Card key={stat.label}>
               <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <CardDescription className="text-xs">{stat.label}</CardDescription>
                   <div className={`p-2 rounded-lg ${stat.bgColor}`}>
                     <Icon className={`h-4 w-4 ${stat.color}`} aria-hidden="true" />
                   </div>
                 </div>
-                <div className="flex items-end justify-between">
-                  <CardTitle className="text-3xl">{stat.value}</CardTitle>
+                <div className="flex flex-wrap items-end justify-between">
+                  <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{stat.value}</CardTitle>
                   <div className={`flex items-center text-sm font-medium ${
                     stat.trend === "up" ? "text-green-600" : "text-red-600"
                   }`}>
@@ -112,7 +112,7 @@ export function AdminOverviewTab() {
         })}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {/* Recent Activity */}
         <Card>
           <CardHeader>
@@ -122,7 +122,7 @@ export function AdminOverviewTab() {
           <CardContent>
             <div className="space-y-4">
               {recentActivity.map((activity: any, index: number) => (
-                <div key={index} className="flex items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
+                <div key={index} className="flex flex-wrap flex-col md:flex-row items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
                   <div className={`h-2 w-2 rounded-full mt-2 ${
                     (activity as any).type === "complete" ? "bg-green-500" :
                     (activity as any).type === "create" ? "bg-blue-500" :
@@ -155,8 +155,8 @@ export function AdminOverviewTab() {
               {systemHealth.map((item: any) => {
                 const Icon = item.icon
                 return (
-                  <div key={item.metric} className="flex items-center justify-between p-3 border rounded-lg">
-                    <div className="flex items-center gap-3">
+                  <div key={item.metric} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded-lg">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                       <Icon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                       <div>
                         <p className="text-sm font-medium">{item.metric}</p>
@@ -190,21 +190,21 @@ export function AdminOverviewTab() {
           <CardTitle className="text-base">This Month&apos;s Highlights</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-2xl font-bold">156</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">156</p>
               <p className="text-xs text-muted-foreground mt-1">Tasks Completed</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-2xl font-bold">23</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">23</p>
               <p className="text-xs text-muted-foreground mt-1">New Assets</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-2xl font-bold">89%</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">89%</p>
               <p className="text-xs text-muted-foreground mt-1">On-Time Delivery</p>
             </div>
             <div className="text-center p-4 border rounded-lg">
-              <p className="text-2xl font-bold">4.8</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">4.8</p>
               <p className="text-xs text-muted-foreground mt-1">Avg. Rating</p>
             </div>
           </div>

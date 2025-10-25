@@ -172,13 +172,13 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.totalAdvances}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalAdvances}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Advances</p>
             </div>
           </CardContent>
@@ -186,7 +186,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-yellow-600">{summary.pending}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{summary.pending}</p>
               <p className="text-xs text-muted-foreground mt-1">Pending Approval</p>
             </div>
           </CardContent>
@@ -194,7 +194,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.totalItems}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalItems}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalItems')}</p>
             </div>
           </CardContent>
@@ -202,7 +202,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-green-600">{summary.itemsOut}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.itemsOut}</p>
               <p className="text-xs text-muted-foreground mt-1">Items Out</p>
             </div>
           </CardContent>
@@ -225,9 +225,9 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                   onClick={() => router.push(`/workspace/${workspaceId}/assets/advances?id=${advance.id}`)}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
-                      <div className="flex items-start justify-between">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                         <div>
                           <h3 className="font-semibold">{advance.title}</h3>
                           <p className="text-sm text-muted-foreground mt-1">
@@ -242,7 +242,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
 
                       <p className="text-sm text-muted-foreground line-clamp-2">{advance.purpose}</p>
 
-                      <div className="flex flex-wrap items-center gap-2">
+                      <div className="flex flex-col md:flex-row flex-wrap items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(advance.status)}>
                           <StatusIcon className="h-4 w-4 mr-1" aria-hidden="true" />
                           {advance.status}
@@ -287,13 +287,13 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                       </div>
 
                       {(advance.status === "active" || advance.status === "returned" || advance.status === "partially_returned") && (
-                        <div className="flex items-center gap-4 pt-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 pt-2">
                           <div className="flex-1">
-                            <div className="flex items-center justify-between text-xs mb-1">
+                            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs mb-1">
                               <span className="text-muted-foreground">Items Returned</span>
                               <span className="font-medium">{advance.returned} / {advance.quantity}</span>
                             </div>
-                            <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+                            <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden md:block">
                               <div 
                                 className="h-full bg-green-500 transition-all"
                                 style={{ 
@@ -324,23 +324,23 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
       {/* Items Overview */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base flex items-center gap-2">
+          <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Package className="h-4 w-4" aria-hidden="true" />
             Items Overview
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-center">
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">{summary.totalItems}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalItems}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalItems')}</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold text-yellow-600">{summary.itemsOut}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{summary.itemsOut}</p>
               <p className="text-xs text-muted-foreground mt-1">Currently Out</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold text-green-600">{summary.itemsReturned}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.itemsReturned}</p>
               <p className="text-xs text-muted-foreground mt-1">Returned</p>
             </div>
           </div>

@@ -45,7 +45,7 @@ export function ReportsExportsTab({ data = [], loading = false }: ReportsExports
   const tCommon = useTranslations('common')
   const displayData = data.length > 0 ? data : []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div className="space-y-4">
         {exports.map((file: any) => {
           const Icon = getFileIcon(file.type)
@@ -54,15 +54,15 @@ export function ReportsExportsTab({ data = [], loading = false }: ReportsExports
           return (
             <Card key={file.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Export file: ${t(file.nameKey)}`}>
               <CardContent className="p-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4 flex-1">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-1">
                     <Icon className={`h-10 w-10 ${colorClass}`} aria-hidden="true" />
                     <div className="flex-1 min-w-0">
                       <p className="font-medium truncate" id={`file-${file.id}`}>{t(file.nameKey)}</p>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground mt-1" aria-label={`Size: ${file.size}, Date: ${file.date}, Expires: ${file.expires}`}>
+                      <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground mt-1" aria-label={`Size: ${file.size}, Date: ${file.date}, Expires: ${file.expires}`}>
                         <span>{file.size}</span>
                         <span>•</span>
-                        <span className="flex items-center gap-1">
+                        <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Calendar className="h-3 w-3" aria-hidden="true" />
                           {file.date}
                         </span>
@@ -72,7 +72,7 @@ export function ReportsExportsTab({ data = [], loading = false }: ReportsExports
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                     <Badge variant="outline" aria-label={`File type: ${file.type}`}>{file.type}</Badge>
                     <Badge variant="default" className="bg-green-600" aria-label={`Status: ${file.status}`}>
                       {t('ready')}

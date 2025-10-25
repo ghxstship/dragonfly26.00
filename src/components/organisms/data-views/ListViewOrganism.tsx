@@ -89,7 +89,7 @@ export function ListViewOrganism({ data, schema, onItemClick, createActionLabel,
     <div className="space-y-2">
       {data.length === 0 ? (
         <div className="border rounded-lg">
-          <div className="flex items-center gap-2 p-3 bg-muted/50 border-b">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 bg-muted/50 border-b">
             <List className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <span className="font-semibold text-muted-foreground">Items</span>
           </div>
@@ -108,7 +108,7 @@ export function ListViewOrganism({ data, schema, onItemClick, createActionLabel,
         
         return (
           <div key={group} className="border rounded-lg">
-            <div className="flex items-center gap-2 p-3 bg-muted/50 border-b hover:bg-muted/70 transition-colors">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 bg-muted/50 border-b hover:bg-muted/70 transition-colors">
               <Button
                 variant="ghost"
                 size="sm"
@@ -183,7 +183,7 @@ export function ListViewOrganism({ data, schema, onItemClick, createActionLabel,
                 ))}
 
                 <div className="p-3">
-                  <Button variant="ghost" size="sm" className="gap-2 w-full justify-start">
+                  <Button variant="ghost" size="sm" className="gap-2 w-full justify-start max-w-full">
                     <Plus className="h-4 w-4" aria-hidden="true" />
                     Add item
                   </Button>

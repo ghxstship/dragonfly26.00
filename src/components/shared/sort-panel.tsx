@@ -152,7 +152,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
 
       {/* Sort Rules */}
       {sorts.length === 0 ? (
-        <div className="text-center py-10 border-2 border-dashed rounded-lg">
+        <div className="text-center py-5 md:py-8 lg:py-10 border-2 border-dashed rounded-lg">
           <ArrowUpDown className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
           <p className="text-sm text-muted-foreground mb-4">No sorting applied</p>
           <Button onClick={addSort} variant="outline" size="sm">
@@ -172,8 +172,8 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
               draggedItem === sort.id ? "opacity-50" : ""
             }`}
           >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <GripVertical className="h-4 w-4 text-muted-foreground" />
                 <Label className="text-xs font-medium">Sort {index + 1}</Label>
               </div>
@@ -186,7 +186,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
                 <X className="h-3 w-3" />
               </Button>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Select
                 value={sort.field}
                 onValueChange={(value) => updateSort(sort.id, { field: value })}
@@ -225,7 +225,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
 
       {/* Actions */}
       {sorts.length > 0 && (
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button onClick={addSort} variant="outline" className="flex-1">
             <Plus className="h-4 w-4 mr-2" />
             Add Sort
@@ -239,7 +239,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
       {/* Quick Sort Options */}
       <div className="space-y-3 pt-4 border-t">
         <Label>Quick Sort</Label>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
           <Button
             variant="outline"
             size="sm"
@@ -285,7 +285,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
         <div className="space-y-2">
           <Button
             variant="outline"
-            className="w-full justify-start"
+            className="w-full justify-start max-w-full"
             size="sm"
             onClick={() => applySavedSort("priority-high")}
           >
@@ -294,7 +294,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
           </Button>
           <Button
             variant="outline"
-            className="w-full justify-start"
+            className="w-full justify-start max-w-full"
             size="sm"
             onClick={() => applySavedSort("due-date")}
           >
@@ -303,7 +303,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
           </Button>
           <Button
             variant="outline"
-            className="w-full justify-start"
+            className="w-full justify-start max-w-full"
             size="sm"
             onClick={() => applySavedSort("recent")}
           >
@@ -311,7 +311,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
             Recently Updated
           </Button>
         </div>
-        <Button variant="ghost" size="sm" className="w-full">
+        <Button variant="ghost" size="sm" className="w-full max-w-full">
           Save Current Sort
         </Button>
       </div>

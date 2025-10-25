@@ -212,7 +212,7 @@ export function RightSidebar() {
       >
         {/* Collapsed State - Icon Navigation */}
         {!isExpanded && (
-          <div className="flex flex-col w-full border-r">
+          <div className="flex flex-wrap flex-col w-full border-r max-w-full">
             {/* Expand Button */}
             <div className="p-2 border-b">
               <Tooltip>
@@ -220,7 +220,7 @@ export function RightSidebar() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="w-full h-10"
+                    className="w-full h-10 max-w-full"
                     onClick={() => setIsExpanded(true)}
                   >
                     <ChevronLeft className="h-4 w-4" />
@@ -234,7 +234,7 @@ export function RightSidebar() {
 
             {/* Group Icons */}
             <ScrollArea className="flex-1">
-              <div className="flex flex-col gap-1 p-2">
+              <div className="flex flex-wrap flex-col gap-1 p-2">
                 {Object.entries(tabGroups).map(([key, config]) => {
                   const GroupIcon = config.icon
                   return (
@@ -243,7 +243,7 @@ export function RightSidebar() {
                         <Button
                           variant={activeGroup === key ? "secondary" : "ghost"}
                           size="icon"
-                          className="w-full h-12"
+                          className="w-full h-12 max-w-full"
                           onClick={() => handleGroupChange(key as TabGroup)}
                         >
                           <GroupIcon className="h-5 w-5" />
@@ -265,7 +265,7 @@ export function RightSidebar() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="w-full h-10"
+                    className="w-full h-10 max-w-full"
                     onClick={() => setRightSidebarOpen(false)}
                   >
                     <X className="h-4 w-4" />
@@ -281,17 +281,17 @@ export function RightSidebar() {
 
         {/* Expanded State - Full Content */}
         {isExpanded && (
-          <div className="flex flex-col w-full">
+          <div className="flex flex-wrap flex-col w-full max-w-full">
             {/* Header with Title and Actions */}
-            <div className="flex items-center justify-between border-b px-4 py-3">
-              <div className="flex items-center gap-2 min-w-0 flex-1">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b px-4 py-3">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 min-w-0 flex-1">
                 {(() => {
                   const Icon = getTabIcon()
                   return <Icon className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
                 })()}
                 <h3 className="text-sm font-semibold truncate">{getTitle()}</h3>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
@@ -319,7 +319,7 @@ export function RightSidebar() {
             </div>
 
             {/* Group Switcher - Compact Pills */}
-            <div className="flex items-center gap-1 border-b px-3 py-2 bg-muted/20 overflow-x-auto">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 border-b px-3 py-2 bg-muted/20 overflow-x-auto">
               {Object.entries(tabGroups).map(([key, config]) => {
                 const GroupIcon = config.icon
                 return (
@@ -331,30 +331,30 @@ export function RightSidebar() {
                     onClick={() => handleGroupChange(key as TabGroup)}
                   >
                     <GroupIcon className="h-3 w-3" />
-                    <span className="hidden sm:inline">{config.label}</span>
+                    <span className="hidden md:block sm:inline">{config.label}</span>
                   </Button>
                 )
               })}
             </div>
 
             {/* Tab Content */}
-            <Tabs value={rightSidebarTab} onValueChange={setRightSidebarTab} className="flex-1 flex flex-col min-h-0">
+            <Tabs value={rightSidebarTab} onValueChange={setRightSidebarTab} className="flex-1 flex flex-wrap flex-col min-h-0">
               {/* Tabs Navigation - Horizontal Scroll */}
-              <TabsList className="w-full justify-start rounded-none border-b px-3 py-0 h-auto bg-transparent overflow-x-auto flex-nowrap">
+              <TabsList className="w-full justify-start rounded-none border-b px-3 py-0 h-auto bg-transparent overflow-x-auto flex-nowrap max-w-full">
                 {/* My Work Tabs */}
                 {activeGroup === 'mywork' && (
                   <>
                     <TabsTrigger value="agenda" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Calendar className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Agenda</span>
+                      <span className="hidden md:block sm:inline">Agenda</span>
                     </TabsTrigger>
                     <TabsTrigger value="tasks" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <ClipboardList className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Tasks</span>
+                      <span className="hidden md:block sm:inline">Tasks</span>
                     </TabsTrigger>
                     <TabsTrigger value="files" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <FileText className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Files</span>
+                      <span className="hidden md:block sm:inline">Files</span>
                     </TabsTrigger>
                   </>
                 )}
@@ -364,19 +364,19 @@ export function RightSidebar() {
                   <>
                     <TabsTrigger value="notifications" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Bell className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Notifications</span>
+                      <span className="hidden md:block sm:inline">Notifications</span>
                     </TabsTrigger>
                     <TabsTrigger value="comments" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <MessageSquare className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Comments</span>
+                      <span className="hidden md:block sm:inline">Comments</span>
                     </TabsTrigger>
                     <TabsTrigger value="time" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Clock className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Time</span>
+                      <span className="hidden md:block sm:inline">Time</span>
                     </TabsTrigger>
                     <TabsTrigger value="activity" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Activity className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Activity</span>
+                      <span className="hidden md:block sm:inline">Activity</span>
                     </TabsTrigger>
                   </>
                 )}
@@ -386,15 +386,15 @@ export function RightSidebar() {
                   <>
                     <TabsTrigger value="filter" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Filter className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Filter</span>
+                      <span className="hidden md:block sm:inline">Filter</span>
                     </TabsTrigger>
                     <TabsTrigger value="sort" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <ArrowUpDown className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Sort</span>
+                      <span className="hidden md:block sm:inline">Sort</span>
                     </TabsTrigger>
                     <TabsTrigger value="fields" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Columns3 className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Fields</span>
+                      <span className="hidden md:block sm:inline">Fields</span>
                     </TabsTrigger>
                   </>
                 )}
@@ -404,15 +404,15 @@ export function RightSidebar() {
                   <>
                     <TabsTrigger value="import" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Upload className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Import</span>
+                      <span className="hidden md:block sm:inline">Import</span>
                     </TabsTrigger>
                     <TabsTrigger value="export" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Download className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Export</span>
+                      <span className="hidden md:block sm:inline">Export</span>
                     </TabsTrigger>
                     <TabsTrigger value="share" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Share2 className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Share</span>
+                      <span className="hidden md:block sm:inline">Share</span>
                     </TabsTrigger>
                   </>
                 )}
@@ -422,11 +422,11 @@ export function RightSidebar() {
                   <>
                     <TabsTrigger value="scan" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <ScanLine className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Scan</span>
+                      <span className="hidden md:block sm:inline">Scan</span>
                     </TabsTrigger>
                     <TabsTrigger value="photo" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
                       <Camera className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">Photo</span>
+                      <span className="hidden md:block sm:inline">Photo</span>
                     </TabsTrigger>
                   </>
                 )}
@@ -434,20 +434,20 @@ export function RightSidebar() {
 
               <ScrollArea className="flex-1">
                 {/* My Work Content */}
-                <TabsContent value="agenda" className="m-0 h-full flex flex-col">
+                <TabsContent value="agenda" className="m-0 h-full flex flex-wrap flex-col">
                   <AgendaTabContent />
                 </TabsContent>
 
-                <TabsContent value="tasks" className="m-0 h-full flex flex-col">
+                <TabsContent value="tasks" className="m-0 h-full flex flex-wrap flex-col">
                   <TasksTabContent />
                 </TabsContent>
 
-                <TabsContent value="files" className="m-0 h-full flex flex-col">
+                <TabsContent value="files" className="m-0 h-full flex flex-wrap flex-col">
                   <FilesTabContent />
                 </TabsContent>
 
                 {/* Collaboration Tabs Content */}
-                <TabsContent value="notifications" className="m-0 h-full flex flex-col">
+                <TabsContent value="notifications" className="m-0 h-full flex flex-wrap flex-col">
                   <NotificationsTabContent />
                 </TabsContent>
 

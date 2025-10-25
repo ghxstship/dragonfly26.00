@@ -54,7 +54,7 @@ export function OrganizationSettingsTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Feature Toggles */}
       <Card>
         <CardHeader>
@@ -64,7 +64,7 @@ export function OrganizationSettingsTab() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label>Multiple Assignees</Label>
               <p className="text-sm text-muted-foreground">
@@ -79,7 +79,7 @@ export function OrganizationSettingsTab() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label>Watchers</Label>
               <p className="text-sm text-muted-foreground">
@@ -94,7 +94,7 @@ export function OrganizationSettingsTab() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label>Custom Statuses</Label>
               <p className="text-sm text-muted-foreground">
@@ -109,7 +109,7 @@ export function OrganizationSettingsTab() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label>Dependencies</Label>
               <p className="text-sm text-muted-foreground">
@@ -124,7 +124,7 @@ export function OrganizationSettingsTab() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label>Recurring Tasks</Label>
               <p className="text-sm text-muted-foreground">
@@ -139,7 +139,7 @@ export function OrganizationSettingsTab() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label>Checklists</Label>
               <p className="text-sm text-muted-foreground">
@@ -256,7 +256,7 @@ export function OrganizationSettingsTab() {
       </Card>
 
       {/* Save Button */}
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end">
         <Button onClick={handleSave} disabled={loading} aria-label="Save organization settings">
           {loading ? "Saving..." : "Save Changes"}
         </Button>

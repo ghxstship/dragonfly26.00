@@ -64,7 +64,7 @@ export function ActivityTimeline({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="w-full mt-4"
+              className="w-full mt-4 max-w-full"
               onClick={onLoadMore}
             >
               Load More
@@ -92,10 +92,10 @@ function TimelineEventItem({
   })
 
   return (
-    <div className="flex gap-3 relative">
+    <div className="flex flex-wrap gap-3 relative">
       {/* Timeline Line */}
       {!isLast && (
-        <div className="absolute left-[15px] top-8 bottom-0 w-px bg-border" />
+        <div className="absolute sm:relative sm:inset-auto left-[15px] top-8 bottom-0 w-px bg-border sm:relative sm:inset-auto" />
       )}
 
       {/* Icon */}
@@ -108,9 +108,9 @@ function TimelineEventItem({
 
       {/* Content */}
       <div className="flex-1 min-w-0 pb-4">
-        <div className="flex items-start justify-between gap-2 mb-1">
+        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 mb-1">
           <p className="text-sm font-medium">{event.title}</p>
-          <span className="text-xs text-muted-foreground whitespace-nowrap">
+          <span className="text-xs text-muted-foreground whitespace-nowrap overflow-hidden text-ellipsis">
             {timeAgo}
           </span>
         </div>
@@ -121,7 +121,7 @@ function TimelineEventItem({
           </p>
         )}
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
           <Badge variant="outline" className="h-5 text-xs">
             {config.label}
           </Badge>
@@ -201,7 +201,7 @@ export function ActivityTimelineCompact({
       {events.slice(0, maxItems).map((event: any) => {
         const config = getEventConfig(event.type)
         return (
-          <div key={event.id} className="flex items-start gap-2">
+          <div key={event.id} className="flex flex-wrap flex-col md:flex-row items-start gap-2">
             <div className={cn(
               "h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0",
               config.bgColor

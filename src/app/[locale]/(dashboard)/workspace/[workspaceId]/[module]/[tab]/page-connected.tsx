@@ -116,7 +116,7 @@ export default function ModuleTabPage() {
     // Show loading state
     if (loading) {
       return (
-        <div className="flex items-center justify-center h-full">
+        <div className="flex flex-wrap items-center justify-center h-full">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
             <p className="text-muted-foreground">Loading {currentTab?.name}...</p>
@@ -128,7 +128,7 @@ export default function ModuleTabPage() {
     // Show error state
     if (error) {
       return (
-        <div className="flex items-center justify-center h-full">
+        <div className="flex flex-wrap items-center justify-center h-full">
           <div className="text-center">
             <p className="text-red-500 mb-2">Error loading data</p>
             <p className="text-sm text-muted-foreground">{(error as any).message}</p>
@@ -252,7 +252,7 @@ export default function ModuleTabPage() {
         return <PivotTableOrganism {...{ data: filteredData } as any} />
       default:
         return (
-          <div className="flex items-center justify-center h-full text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center h-full text-muted-foreground">
             {currentView} view coming soon
           </div>
         )
@@ -261,9 +261,9 @@ export default function ModuleTabPage() {
 
   if (!currentModule || !currentTab) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-2">Page not found</h2>
+          <h2 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-2">Page not found</h2>
           <p className="text-muted-foreground">
             The {moduleSlug}/{tabSlug} page does not exist.
           </p>
@@ -273,22 +273,22 @@ export default function ModuleTabPage() {
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Module Header */}
       <div className="border-b bg-background">
         <div className="p-4 space-y-4">
           {/* Title and Actions */}
           {!focusMode && (
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
-                <h1 className="text-2xl font-bold" style={{ color: currentTab.color || currentModule.color }}>
+                <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" style={{ color: currentTab.color || currentModule.color }}>
                   {currentTab.name}
                 </h1>
                 <p className="text-sm text-muted-foreground mt-1">
                   {currentTab.description}
                 </p>
                 {/* Real-time indicator */}
-                <div className="flex items-center gap-2 mt-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2">
                   <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
                   <span className="text-xs text-muted-foreground">
                     Live • {realData.length} items
@@ -302,7 +302,7 @@ export default function ModuleTabPage() {
           )}
 
           {/* View Controls */}
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <ViewSwitcher
               value={currentView as any}
               onChange={setCurrentView as any}
@@ -311,7 +311,7 @@ export default function ModuleTabPage() {
 
             <div className="flex-1 max-w-md">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
                 <Input
                   placeholder="Search..."
                   value={searchQuery}

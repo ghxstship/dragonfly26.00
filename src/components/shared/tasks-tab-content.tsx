@@ -135,17 +135,17 @@ export function TasksTabContent() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-12">
+      <div className="flex flex-wrap items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
       <div className="px-4 py-3 border-b">
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
           <div>
             <h3 className="font-semibold text-sm">My Tasks</h3>
             <p className="text-xs text-muted-foreground">
@@ -160,8 +160,8 @@ export function TasksTabContent() {
       </div>
 
       {/* Content */}
-      <Tabs defaultValue="active" className="flex-1 flex flex-col min-h-0">
-        <TabsList className="w-full grid grid-cols-3 mx-4 mt-3">
+      <Tabs defaultValue="active" className="flex-1 flex flex-wrap flex-col min-h-0">
+        <TabsList className="w-full grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4 mt-3 max-w-full">
           <TabsTrigger value="active">
             Active
             {activeTasks.length > 0 && (
@@ -185,7 +185,7 @@ export function TasksTabContent() {
           <ScrollArea className="h-full">
             <div className="px-4 pb-4 space-y-2">
               {activeTasks.length === 0 ? (
-                <div className="text-center py-12">
+                <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
                   <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">All caught up!</p>
                   <p className="text-xs text-muted-foreground mt-1">
@@ -209,7 +209,7 @@ export function TasksTabContent() {
           <ScrollArea className="h-full">
             <div className="px-4 pb-4 space-y-2">
               {overdueTasks.length === 0 ? (
-                <div className="text-center py-12">
+                <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
                   <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">Nothing overdue</p>
                   <p className="text-xs text-muted-foreground mt-1">
@@ -234,7 +234,7 @@ export function TasksTabContent() {
           <ScrollArea className="h-full">
             <div className="px-4 pb-4 space-y-2">
               {completedTasks.length === 0 ? (
-                <div className="text-center py-12">
+                <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
                   <Circle className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">No completed tasks</p>
                   <p className="text-xs text-muted-foreground mt-1">
@@ -278,7 +278,7 @@ function TaskCard({
       )}
       onClick={() => onToggleComplete(task.id, task.status)}
     >
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3">
         <div className="flex-shrink-0 mt-0.5">
           {isCompleted ? (
             <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -287,14 +287,14 @@ function TaskCard({
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
             <div className={cn(
               "font-medium text-sm",
               isCompleted && "line-through text-muted-foreground"
             )}>
               {task.name}
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
               {task.priority && (
                 <Badge 
                   variant={
@@ -309,7 +309,7 @@ function TaskCard({
               )}
             </div>
           </div>
-          <div className="flex items-center gap-2 mt-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1">
             {task.due_date && (
               <div className={cn(
                 "flex items-center gap-1 text-xs",

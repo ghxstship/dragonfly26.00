@@ -67,19 +67,19 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
   const displaySources = data || []
   
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Status Summary */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalSources')}</p>
-            <p className="text-2xl font-bold mt-1" aria-live="polite">{dataSources.length}</p>
+            <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{dataSources.length}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('connected')}</p>
-            <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
+            <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">
               {dataSources.filter(d => (d as any).status === "connected").length}
             </p>
           </CardContent>
@@ -87,31 +87,31 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
         <Card>
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalRecords')}</p>
-            <p className="text-2xl font-bold mt-1" aria-live="polite">11.6M</p>
+            <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">11.6M</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalTables')}</p>
-            <p className="text-2xl font-bold mt-1" aria-live="polite">94</p>
+            <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">94</p>
           </CardContent>
         </Card>
       </div>
 
       {/* Data Sources List */}
-      <div className="grid gap-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4">
         {dataSources.map((source: any) => (
           <Card key={source.id} className="hover:shadow-md transition-shadow">
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Database className="h-8 w-8 text-blue-600" aria-hidden="true" />
                   <div>
                     <CardTitle className="text-lg">{t(source.nameKey)}</CardTitle>
                     <p className="text-sm text-muted-foreground">{source.type}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Badge 
                     variant={(source as any).status === "connected" ? "default" : "secondary"}
                     className={(source as any).status === "connected" ? "bg-green-600" : "bg-yellow-600"}
@@ -130,7 +130,7 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
                 <div>
                   <p className="text-sm text-muted-foreground">{t('lastSync')}</p>
                   <p className="font-medium mt-1">{source.lastSync}</p>

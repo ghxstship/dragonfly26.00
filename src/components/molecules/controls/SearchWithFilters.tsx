@@ -95,9 +95,9 @@ export function SearchWithFilters({
 
   return (
     <div className={cn('space-y-2', className)}>
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
           <Input
             value={localValue as any}
             onChange={handleChange}
@@ -109,7 +109,7 @@ export function SearchWithFilters({
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-1 top-1/2 h-7 w-7 -translate-y-1/2"
+              className="absolute sm:relative sm:inset-auto right-1 top-1/2 h-7 w-7 -translate-y-1/2 sm:relative sm:inset-auto"
               onClick={handleClear}
               aria-label="Clear search"
             >
@@ -126,7 +126,7 @@ export function SearchWithFilters({
           >
             <SlidersHorizontal className="h-4 w-4" />
             {activeFilters.length > 0 && (
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
+              <span className="absolute sm:relative sm:inset-auto -right-1 -top-1 flex flex-wrap h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground sm:relative sm:inset-auto">
                 {activeFilters.length}
               </span>
             )}
@@ -135,7 +135,7 @@ export function SearchWithFilters({
       </div>
 
       {activeFilters.length > 0 && (
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-col md:flex-row flex-wrap items-center gap-2">
           <span className="text-sm text-muted-foreground">Filters:</span>
           {activeFilters.map((filter: any) => (
             <Badge key={filter} variant="secondary" className="gap-1">

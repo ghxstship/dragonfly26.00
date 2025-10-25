@@ -154,11 +154,11 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
   ]
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Total Variance</CardTitle>
             {totalVariance >= 0 ? (
               <TrendingUp className="h-4 w-4" aria-hidden="true" />
@@ -177,12 +177,12 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Favorable</CardTitle>
             <TrendingUp className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
               {favorableCount}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -192,12 +192,12 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Unfavorable</CardTitle>
             <TrendingDown className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
               {unfavorableCount}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -207,12 +207,12 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Action Required</CardTitle>
             <AlertTriangle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-orange-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-orange-600">
               {actionRequiredCount}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -237,9 +237,9 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                 <CardContent className="pt-6" aria-hidden="true">
                   <div className="space-y-3">
                     {/* Header */}
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <h4 className="font-semibold">{variance.categoryKey ? t(variance.categoryKey) : variance.category}</h4>
                           <Badge variant={variance.type === 'favorable' ? 'default' : 'destructive'}>
                             {variance.type}
@@ -255,7 +255,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                       <div className={`text-right ${
                         variance.type === 'favorable' ? 'text-green-600' : 'text-red-600'
                       }`}>
-                        <div className="text-2xl font-bold">
+                        <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
                           {variance.variance >= 0 ? '+' : ''}${variance.variance.toLocaleString()}
                         </div>
                         <div className="text-sm font-medium">
@@ -265,7 +265,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                     </div>
 
                     {/* Budget vs Actual */}
-                    <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 text-sm">
                       <div>
                         <span className="text-muted-foreground">Budgeted:</span>
                         <span className="ml-2 font-semibold">${variance.budgeted.toLocaleString()}</span>
@@ -277,7 +277,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                     </div>
 
                     {/* Root Cause */}
-                    <div className="flex items-start gap-2 p-3 bg-muted rounded-md">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-muted rounded-md">
                       <Info className="h-4 w-4" aria-hidden="true" />
                       <div className="space-y-1 flex-1">
                         <p className="text-xs font-medium">Root Cause</p>
@@ -287,7 +287,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
 
                     {/* Actions */}
                     {variance.requiresAction && !variance.actionTaken && (
-                      <div className="flex gap-2 pt-2">
+                      <div className="flex flex-wrap gap-2 pt-2">
                         <Button size="sm" variant="outline" className="flex-1">
                           Add Corrective Action
                         </Button>
@@ -305,7 +305,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
       </Card>
 
       {/* Analysis Sections */}
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
         {/* Root Cause Analysis */}
         <Card>
           <CardHeader>
@@ -316,21 +316,21 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
             <div className="space-y-4">
               {rootCauseCategories.map((cause, index: number) => (
                 <div key={index} className="space-y-2">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                     <h4 className="font-medium text-sm">{cause.category}</h4>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <span className="text-sm font-semibold">
                         ${Math.abs(cause.amount).toLocaleString()}
                       </span>
                       <ChevronRight className="h-4 w-4" aria-hidden="true" />
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs text-muted-foreground">
                     <span>{cause.count} {cause.count === 1 ? 'item' : 'items'}</span>
                     <span>•</span>
                     <span>{((Math.abs(cause.amount) / unfavorableAmount) * 100).toFixed(0)}% of unfavorable</span>
                   </div>
-                  <div className="w-full bg-secondary rounded-full h-2">
+                  <div className="w-full bg-secondary rounded-full h-2 max-w-full">
                     <div
                       className="bg-primary h-2 rounded-full transition-all"
                       style={{ width: `${(Math.abs(cause.amount) / unfavorableAmount) * 100}%` }}
@@ -351,27 +351,27 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
           <CardContent>
             <div className="space-y-4">
               <div className="space-y-2">
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <span className="text-muted-foreground">Q1 2024</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <div className="w-24 bg-secondary rounded-full h-2">
                       <div className="bg-green-500 h-2 rounded-full" style={{ width: '70%' }} />
                     </div>
                     <span className="text-green-600 font-medium">+$4.5k</span>
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <span className="text-muted-foreground">Q2 2024</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <div className="w-24 bg-secondary rounded-full h-2">
                       <div className="bg-green-500 h-2 rounded-full" style={{ width: '40%' }} />
                     </div>
                     <span className="text-green-600 font-medium">+$2.1k</span>
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <span className="text-muted-foreground">Q3 2024</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <div className="w-24 bg-secondary rounded-full h-2">
                       <div className="bg-red-500 h-2 rounded-full" style={{ width: '50%' }} />
                     </div>
@@ -381,11 +381,11 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
               </div>
 
               <div className="pt-4 border-t">
-                <div className="flex items-center gap-2 text-sm">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                   <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
                   <span className="text-muted-foreground">Average variance: <strong className="text-green-600">+$1.0k</strong></span>
                 </div>
-                <div className="flex items-center gap-2 text-sm mt-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm mt-2">
                   <AlertTriangle className="h-4 w-4" aria-hidden="true" />
                   <span className="text-muted-foreground">Trending: <strong className="text-orange-600">Worsening</strong></span>
                 </div>
@@ -403,14 +403,14 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-center">
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Budgeted</p>
-                <p className="text-2xl font-bold">${totalBudgeted.toLocaleString()}</p>
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${totalBudgeted.toLocaleString()}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Actual</p>
-                <p className="text-2xl font-bold">${totalActual.toLocaleString()}</p>
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${totalActual.toLocaleString()}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Variance</p>
@@ -421,11 +421,11 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
             </div>
 
             <div className="relative pt-1">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
                 <span className="text-xs font-semibold text-muted-foreground">Budget Utilization</span>
                 <span className="text-xs font-semibold">{((totalActual / totalBudgeted) * 100).toFixed(1)}%</span>
               </div>
-              <div className="w-full bg-secondary rounded-full h-3">
+              <div className="w-full bg-secondary rounded-full h-3 max-w-full">
                 <div
                   className={`h-3 rounded-full transition-all ${
                     totalActual > totalBudgeted ? 'bg-red-500' : 'bg-green-500'

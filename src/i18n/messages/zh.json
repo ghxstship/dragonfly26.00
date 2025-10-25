@@ -320,7 +320,7 @@
       "pricing": "Pricing",
       "docs": "Docs",
       "blog": "Blog",
-      "about": "About",
+      "company": "Company",
       "signIn": "Sign In",
       "startFree": "Start Free",
       "toggleMenu": "Toggle menu"
@@ -376,7 +376,7 @@
     },
     "features": {
       "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Five integrated hubs for complete production management",
+      "subtitle": "Six integrated hubs for complete production management",
       "production": {
         "title": "Production Hub",
         "description": "Manage projects, events, people, assets, locations, and files",
@@ -400,6 +400,14 @@
         "feature2": "Marketplace & services",
         "feature3": "Resource library",
         "feature4": "Industry connections"
+      },
+      "automations": {
+        "title": "Automations Hub",
+        "description": "Automate workflows, triggers, and repetitive tasks",
+        "feature1": "Custom workflow automation",
+        "feature2": "Event-driven triggers",
+        "feature3": "Scheduled task execution",
+        "feature4": "Integration pipelines"
       },
       "intelligence": {
         "title": "Intelligence Hub",
@@ -575,7 +583,7 @@
       "docs": "Documentation",
       "changelog": "Changelog",
       "company": "Company",
-      "about": "About Us",
+      "company": "Company",
       "blog": "Blog",
       "careers": "Careers",
       "contact": "Contact",

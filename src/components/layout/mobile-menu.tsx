@@ -73,7 +73,7 @@ export function MobileMenu() {
           <Menu className="h-4 w-4" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[280px]">
+      <SheetContent side="right" className="w-full max-w-[280px]">
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
@@ -84,7 +84,7 @@ export function MobileMenu() {
               <Button
                 key={item.label}
                 variant="ghost"
-                className="w-full justify-start gap-3 h-11"
+                className="w-full justify-start gap-3 h-11 max-w-full"
                 onClick={item.action}
               >
                 <Icon className="h-5 w-5" />

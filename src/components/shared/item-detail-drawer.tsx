@@ -49,18 +49,18 @@ export function ItemDetailDrawer({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-[600px] p-0 flex flex-col">
+      <SheetContent side="right" className="w-full max-w-[600px] p-0 flex flex-wrap flex-col">
         {/* Header */}
-        <SheetHeader className="border-b px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+        <SheetHeader className="border-b px-4 md:px-6 py-4">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Input
                 value={editedItem.name || editedItem.title || ""}
                 onChange={(e) => handleUpdate("name", e.target.value)}
                 className="text-lg font-semibold border-0 px-0 focus-visible:ring-0"
               />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon">
@@ -86,13 +86,13 @@ export function ItemDetailDrawer({
         </SheetHeader>
 
         {/* Content */}
-        <div className="flex-1 flex overflow-hidden">
+        <div className="flex-1 flex flex-wrap overflow-hidden md:block">
           {/* Main Content */}
           <div className="flex-1 overflow-auto">
-            <div className="p-6 space-y-6">
+            <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Properties */}
               <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                   {/* Status */}
                   <div className="space-y-2">
                     <Label className="text-xs text-muted-foreground uppercase">Status</Label>
@@ -133,7 +133,7 @@ export function ItemDetailDrawer({
 
                   {/* Assignee */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-muted-foreground uppercase flex items-center gap-1">
+                    <Label className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
                       <User className="h-3 w-3" />
                       Assignee
                     </Label>
@@ -154,7 +154,7 @@ export function ItemDetailDrawer({
 
                   {/* Due Date */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-muted-foreground uppercase flex items-center gap-1">
+                    <Label className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       Due Date
                     </Label>
@@ -168,7 +168,7 @@ export function ItemDetailDrawer({
 
                 {/* Tags */}
                 <div className="space-y-2">
-                  <Label className="text-xs text-muted-foreground uppercase flex items-center gap-1">
+                  <Label className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Tag className="h-3 w-3" />
                     Tags
                   </Label>
@@ -201,11 +201,11 @@ export function ItemDetailDrawer({
 
               {/* Attachments */}
               <div className="space-y-2">
-                <Label className="text-xs text-muted-foreground uppercase flex items-center gap-1">
+                <Label className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
                   <Paperclip className="h-3 w-3" />
                   Attachments
                 </Label>
-                <Button variant="outline" size="sm" className="w-full">
+                <Button variant="outline" size="sm" className="w-full max-w-full">
                   Upload files
                 </Button>
               </div>
@@ -213,9 +213,9 @@ export function ItemDetailDrawer({
           </div>
 
           {/* Right Panel - Activity & Comments */}
-          <div className="w-80 border-l flex flex-col">
-            <Tabs defaultValue="comments" className="flex-1 flex flex-col">
-              <TabsList className="w-full justify-start rounded-none border-b px-4">
+          <div className="w-full sm:w-80 border-l flex flex-wrap flex-col">
+            <Tabs defaultValue="comments" className="flex-1 flex flex-wrap flex-col">
+              <TabsList className="w-full justify-start rounded-none border-b px-4 max-w-full">
                 <TabsTrigger value="comments">Comments</TabsTrigger>
                 <TabsTrigger value="activity">Activity</TabsTrigger>
               </TabsList>

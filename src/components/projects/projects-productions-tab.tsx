@@ -74,16 +74,16 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats Overview */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('activeProductions')}</CardTitle>
             <Clapperboard className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {productions.filter((p: any) => (p as any).status === 'active').length}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -93,12 +93,12 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('totalBudget')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {formatCurrency(productions.reduce((sum: number, p: Record<string, any>) => sum + ((p.budget as number) || 0), 0))}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -108,12 +108,12 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('inPlanning')}</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {productions.filter((p: any) => (p as any).status === 'planning').length}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -123,12 +123,12 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('atRisk')}</CardTitle>
             <AlertCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-yellow-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">
               {productions.filter((p: any) => p.health === 'at_risk' || p.health === 'critical').length}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -139,14 +139,14 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
       </div>
 
       {/* Productions Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {productions.map((production: any) => {
           const budgetPercentage = production.budget ? (production.budget_spent / production.budget) * 100 : 0
 
           return (
             <Card key={production.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                   <div className="flex-1">
                     <CardTitle className="text-lg line-clamp-1">{production.name}</CardTitle>
                     <CardDescription className="mt-1">{production.code}</CardDescription>
@@ -158,7 +158,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
                     {production.health}
                   </Badge>
                 </div>
-                <div className="flex gap-2 mt-2">
+                <div className="flex flex-wrap gap-2 mt-2">
                   <Badge className={getStatusColor(production.status)}>
                     {production.status}
                   </Badge>
@@ -169,7 +169,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
               <CardContent className="space-y-4">
                 {/* Progress */}
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                     <span className="text-muted-foreground">{t('progress')}</span>
                     <span className="font-medium">{production.progress}%</span>
                   </div>
@@ -178,7 +178,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
 
                 {/* Budget */}
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                     <span className="text-muted-foreground">{t('budget')}</span>
                     <span className="font-medium">{budgetPercentage.toFixed(0)}{t('spentPercent')}</span>
                   </div>
@@ -186,25 +186,25 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
                     value={budgetPercentage} 
                     className={`h-2 ${budgetPercentage > 90 ? 'bg-red-100' : ''}`}
                   />
-                  <div className="flex justify-between text-xs text-muted-foreground">
+                  <div className="flex flex-wrap justify-between text-xs text-muted-foreground">
                     <span>{formatCurrency(production.budget_spent)}</span>
                     <span>{formatCurrency(production.budget)}</span>
                   </div>
                 </div>
 
                 {/* Metadata */}
-                <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2 border-t">
-                  <div className="flex items-center gap-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground pt-2 border-t">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Calendar className="h-4 w-4" aria-hidden="true" />
                     <span>{formatDate(production.start_date)}</span>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Users className="h-4 w-4" aria-hidden="true" />
                     <span>{production.project_manager_id}</span>
                   </div>
                 </div>
 
-                <Button className="w-full" variant="outline" size="sm">
+                <Button className="w-full max-w-full" variant="outline" size="sm">
                   {t('viewDetails')}
                 </Button>
               </CardContent>

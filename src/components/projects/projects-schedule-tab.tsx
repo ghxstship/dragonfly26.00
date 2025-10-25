@@ -89,16 +89,16 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('totalTasks')}</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{tasks.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{tasks.length}</div>
             <p className="text-xs text-muted-foreground">
               {completedTasks.length} {t('completed')}
             </p>
@@ -106,34 +106,34 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('criticalPath')}</CardTitle>
             <AlertTriangle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{criticalPath.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{criticalPath.length}</div>
             <p className="text-xs text-muted-foreground">{t('tasksOnCriticalPath')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('blocked')}</CardTitle>
             <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">{blockedTasks.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">{blockedTasks.length}</div>
             <p className="text-xs text-muted-foreground">{t('needAttention')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('progress')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {tasks.length > 0 ? Math.round((completedTasks.length / tasks.length) * 100) : 0}%
             </div>
             <p className="text-xs text-muted-foreground">{t('overallCompletion')}</p>
@@ -144,9 +144,9 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
       {/* Timeline Controls */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <CardTitle>{t('timelineView')}</CardTitle>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Button variant="outline" size="sm" onClick={() => setViewMode('day')}>
                 {t('day')}
               </Button>
@@ -156,7 +156,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
               <Button variant="outline" size="sm" onClick={() => setViewMode('month')}>
                 {t('month')}
               </Button>
-              <div className="border-l pl-2 ml-2 flex gap-1">
+              <div className="border-l pl-2 ml-2 flex flex-wrap gap-1">
                 <Button variant="ghost" size="icon" aria-label="Zoom out">
                   <ZoomOut className="h-4 w-4" aria-hidden="true" />
                 </Button>
@@ -164,7 +164,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   <ZoomIn className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
-              <div className="border-l pl-2 ml-2 flex gap-1">
+              <div className="border-l pl-2 ml-2 flex flex-wrap gap-1">
                 <Button variant="ghost" size="icon" aria-label="Previous period">
                   <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                 </Button>
@@ -192,11 +192,11 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                       key={task.id}
                       className={`relative min-h-14 rounded-lg border bg-card p-3 hover:shadow-md transition-shadow ${getPriorityColor(task.priority)}`}
                     >
-                      <div className="flex items-center gap-4">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                         {/* Task Info */}
                         <div className="flex-1 min-w-48">
                           <div className="font-medium text-sm">{task.name}</div>
-                          <div className="flex items-center gap-2 mt-1">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1">
                             <Badge variant="secondary" className={`${getStatusColor(task.status)} text-white text-xs`}>
                               {task.status}
                             </Badge>
@@ -209,19 +209,19 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                         </div>
 
                         {/* Timeline Bar */}
-                        <div className="flex-1 min-w-96">
+                        <div className="flex-1 min-w-full md:w-96">
                           <div className="space-y-1">
-                            <div className="flex justify-between text-xs text-muted-foreground">
+                            <div className="flex flex-wrap justify-between text-xs text-muted-foreground">
                               <span>{new Date(task.start_date).toLocaleDateString()}</span>
                               <span>{duration} {t('days')}</span>
                               <span>{new Date(task.end_date).toLocaleDateString()}</span>
                             </div>
-                            <div className="relative h-6 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                            <div className="relative h-6 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden md:block">
                               <div
                                 className={`absolute inset-y-0 left-0 ${getStatusColor(task.status)} opacity-80`}
                                 style={{ width: `${progress}%` }}
                               />
-                              <div className="absolute inset-0 flex items-center justify-center text-xs font-medium">
+                              <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center text-xs font-medium sm:relative sm:inset-auto">
                                 {progress}%
                               </div>
                             </div>
@@ -231,7 +231,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                         {/* Assignee */}
                         {task.assignee && (
                           <div className="flex-shrink-0 w-32">
-                            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm text-muted-foreground">
                               <Users className="h-4 w-4" aria-hidden="true" />
                               <span className="truncate">{task.assignee}</span>
                             </div>
@@ -260,7 +260,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
       {criticalPath.length > 0 && (
         <Card className="border-red-200 dark:border-red-900">
           <CardHeader>
-            <CardTitle className="text-red-600 flex items-center gap-2">
+            <CardTitle className="text-red-600 flex flex-wrap flex-col md:flex-row items-center gap-2">
               <AlertTriangle className="h-4 w-4" aria-hidden="true" />
               {t('criticalPathItems')}
             </CardTitle>
@@ -271,9 +271,9 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
           <CardContent>
             <div className="space-y-2">
               {criticalPath.slice(0, 5).map((task: any) => (
-                <div key={task.id} className="flex items-center justify-between p-2 rounded border">
+                <div key={task.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 rounded border">
                   <span className="font-medium">{task.name}</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Badge variant="outline">{task.status}</Badge>
                     <span className="text-sm text-muted-foreground">
                       {new Date(task.end_date).toLocaleDateString()}

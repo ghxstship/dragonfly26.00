@@ -1,14 +1,16 @@
 "use client"
 
 import { useTranslations } from "next-intl"
+import { cn } from "@/lib/utils"
+import { spacing, grid, padding, border, container, height } from "@/design-tokens"
 
 export function TrustBar(): JSX.Element {
   const t = useTranslations('marketing.trustBar')
   
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white border-y border-gray-200">
-      <div className="max-w-7xl mx-auto text-center">
-        <p className="text-gray-600">{t('trustedBy')}</p>
+    <section className={cn("py-12 bg-white border-y border-gray-200", padding.sectionX)}>
+      <div className="mx-auto text-center">
+        <p className="text-gray-600 dark:text-gray-400">{t('trustedBy')}</p>
       </div>
     </section>
   )

@@ -80,15 +80,15 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
   const tCommon = useTranslations('common')
   const displayData = data || []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Status Summary */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card role="region" aria-label={`${t('current')} reports metric`}>
           <CardContent className="p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('current')}</p>
-                <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">
                   {complianceReports.filter(r => (r as any).status === "current").length}
                 </p>
               </div>
@@ -99,10 +99,10 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
 
         <Card role="region" aria-label={`${t('dueSoon')} reports metric`}>
           <CardContent className="p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('dueSoon')}</p>
-                <p className="text-2xl font-bold mt-1 text-yellow-600" aria-live="polite">
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-yellow-600" aria-live="polite">
                   {complianceReports.filter(r => (r as any).status === "due_soon").length}
                 </p>
               </div>
@@ -113,10 +113,10 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
 
         <Card role="region" aria-label={`${t('overdue')} reports metric`}>
           <CardContent className="p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('overdue')}</p>
-                <p className="text-2xl font-bold mt-1 text-red-600" aria-live="polite">
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-red-600" aria-live="polite">
                   {complianceReports.filter(r => (r as any).status === "overdue").length}
                 </p>
               </div>
@@ -127,10 +127,10 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
 
         <Card role="region" aria-label={`${t('totalReports')} metric`}>
           <CardContent className="p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('totalReports')}</p>
-                <p className="text-2xl font-bold mt-1" aria-live="polite">{complianceReports.length}</p>
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{complianceReports.length}</p>
               </div>
               <Shield className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
             </div>
@@ -143,11 +143,11 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
         {complianceReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-6">
-              <div className="flex items-start justify-between">
-                <div className="flex items-start gap-4 flex-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4 flex-1">
                   <Shield className="h-8 w-8 text-blue-600 mt-1" />
                   <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                       <h3 className="font-semibold text-lg">{t(report.nameKey)}</h3>
                       <Badge 
                         variant={(report as any).status === "current" ? "default" : (report as any).status === "due_soon" ? "secondary" : "destructive"}
@@ -162,7 +162,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
                       <Badge variant="outline">{t(report.categoryKey)}</Badge>
                     </div>
                     
-                    <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-sm">
                       <div>
                         <p className="text-muted-foreground">{t('lastGenerated')}</p>
                         <p className="font-medium" aria-label={`Last generated: ${report.lastGenerated}`}>{report.lastGenerated}</p>
@@ -182,7 +182,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
                       <p className="text-sm text-muted-foreground">{report.requirement}</p>
                     </div>
 
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                       <Button size="sm" className="flex-1" aria-label={`${t('generate')} ${t(report.nameKey)}`}>
                         <Download className="h-4 w-4 mr-2" aria-hidden="true" />
                         {t('generate')}
@@ -194,7 +194,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
                   </div>
                 </div>
                 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-wrap flex-col gap-2">
                 </div>
               </div>
             </CardContent>

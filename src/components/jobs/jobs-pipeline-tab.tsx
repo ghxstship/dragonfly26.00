@@ -89,27 +89,27 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
   }, 0)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Pipeline Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalPipeline')}</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(totalPipelineValue)}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(totalPipelineValue)}</div>
             <p className="text-xs text-muted-foreground">{t('opportunities', { count: jobs.length })}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.inNegotiation')}</CardTitle>
             <Briefcase className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {formatCurrency(getTotalValue('negotiation'))}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -119,12 +119,12 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.winRate')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {jobs.length > 0 
                 ? Math.round((getJobsByStage('closed_won').length / jobs.length) * 100) 
                 : 0}%
@@ -134,12 +134,12 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.avgDealSize')}</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {formatCurrency(jobs.length > 0 ? totalPipelineValue / jobs.length : 0)}
             </div>
             <p className="text-xs text-muted-foreground">{t('perOpportunity')}</p>
@@ -148,16 +148,16 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
       </div>
 
       {/* Kanban Board */}
-      <div className="flex gap-4 overflow-x-auto pb-4">
+      <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4 overflow-x-auto pb-4">
         {stages.map((stage: any) => {
           const stageJobs = getJobsByStage(stage.id)
           const stageValue = getTotalValue(stage.id)
 
           return (
-            <div key={stage.id} className="flex-shrink-0 w-80">
+            <div key={stage.id} className="flex-shrink-0 w-full sm:w-80">
               <Card>
                 <CardHeader className="pb-3" aria-hidden="true">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                     <div>
                       <CardTitle className={`text-base ${stage.color}`}>
                         {stage.name}
@@ -185,7 +185,7 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
                       aria-label={t('aria.jobCard', { title: job.name })}
                     >
                       <CardHeader className="p-3" aria-hidden="true">
-                        <div className="flex items-start justify-between">
+                        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                           <CardTitle className="text-sm font-medium line-clamp-2" aria-hidden="true">
                             {job.name}
                           </CardTitle>
@@ -202,7 +202,7 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
                       <CardContent className="p-3 pt-0 space-y-2" aria-hidden="true">
                         {/* Company */}
                         {job.company_name && (
-                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs text-muted-foreground">
                             <Building2 className="h-3 w-3" aria-hidden="true" />
                             <span className="truncate">{job.company_name}</span>
                           </div>
@@ -210,7 +210,7 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
 
                         {/* Value */}
                         {job.estimated_value && (
-                          <div className="flex items-center gap-2 text-xs font-medium">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs font-medium">
                             <DollarSign className="h-3 w-3" aria-hidden="true" />
                             <span>{formatCurrency(job.estimated_value)}</span>
                           </div>
@@ -218,14 +218,14 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
 
                         {/* Due Date */}
                         {job.close_date && (
-                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs text-muted-foreground">
                             <Clock className="h-3 w-3" aria-hidden="true" />
                             <span>{t('close', { date: formatDate(job.close_date) })}</span>
                           </div>
                         )}
 
                         {/* Priority */}
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <Badge variant="secondary" className={getPriorityColor(job.priority)}>
                             {job.priority}
                           </Badge>
@@ -256,7 +256,7 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
                   ))}
 
                   {stageJobs.length === 0 && (
-                    <div className="text-center py-8 text-sm text-muted-foreground">
+                    <div className="text-center py-4 md:py-6 lg:py-8 text-sm text-muted-foreground">
                       {t('noOpportunities')}
                     </div>
                   )}

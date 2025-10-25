@@ -227,27 +227,27 @@ export function ScanTabContent() {
 
       {/* Scanner View or Preview */}
       {showScanner ? (
-        <div className="relative rounded-lg overflow-hidden bg-black">
+        <div className="relative rounded-lg overflow-hidden md:block bg-black">
           <video
             ref={videoRef}
             autoPlay
             playsInline
             muted
-            className="w-full h-64 object-cover"
+            className="w-full h-48 md:h-56 lg:h-64 object-cover max-w-full"
           />
           {/* Scanning guide overlay */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute inset-8 border-2 border-white/50 rounded-lg">
-              <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white" />
-              <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white" />
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white" />
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white" />
+          <div className="absolute sm:relative sm:inset-auto inset-0 pointer-events-none sm:relative sm:inset-auto">
+            <div className="absolute sm:relative sm:inset-auto inset-8 border-2 border-white/50 rounded-lg sm:relative sm:inset-auto">
+              <div className="absolute sm:relative sm:inset-auto top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white sm:relative sm:inset-auto" />
+              <div className="absolute sm:relative sm:inset-auto top-2 md:top-0 right-2 md:right-0 w-4 h-4 border-t-2 border-r-2 border-white" />
+              <div className="absolute sm:relative sm:inset-auto bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white sm:relative sm:inset-auto" />
+              <div className="absolute sm:relative sm:inset-auto bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white sm:relative sm:inset-auto" />
             </div>
-            <p className="absolute bottom-20 left-0 right-0 text-center text-white text-sm bg-black/50 py-2">
+            <p className="absolute sm:relative sm:inset-auto bottom-20 left-0 right-0 text-center text-white text-sm bg-black/50 py-2 sm:relative sm:inset-auto">
               Position document within the frame
             </p>
           </div>
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+          <div className="absolute sm:relative sm:inset-auto bottom-4 left-0 right-0 flex flex-wrap justify-center gap-2 sm:relative sm:inset-auto">
             <Button
               variant="secondary"
               size="sm"
@@ -266,22 +266,22 @@ export function ScanTabContent() {
           </div>
         </div>
       ) : scannedImage ? (
-        <div className="relative rounded-lg overflow-hidden">
+        <div className="relative rounded-lg overflow-hidden md:block">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={scannedImage}
             alt="Scanned document"
-            className="w-full h-64 object-cover"
+            className="w-full h-48 md:h-56 lg:h-64 object-cover max-w-full"
           />
           {uploading ? (
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+            <div className="absolute sm:relative sm:inset-auto inset-0 bg-black/50 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
               <div className="text-center text-white">
                 <Loader2 className="h-8 w-8 animate-spin mx-auto mb-2" />
                 <p className="text-sm">Saving... {progress}%</p>
               </div>
             </div>
           ) : (
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+            <div className="absolute sm:relative sm:inset-auto bottom-4 left-0 right-0 flex flex-wrap justify-center gap-2 sm:relative sm:inset-auto">
               <Button
                 variant="secondary"
                 size="sm"
@@ -301,7 +301,7 @@ export function ScanTabContent() {
           )}
         </div>
       ) : (
-        <div className="flex items-center justify-center h-64 border-2 border-dashed rounded-lg bg-muted/20">
+        <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64 border-2 border-dashed rounded-lg bg-muted/20">
           <div className="text-center">
             <ScanLine className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
             <p className="text-sm font-medium mb-1">Ready to Scan</p>
@@ -313,7 +313,7 @@ export function ScanTabContent() {
       )}
 
       {/* Canvas for scan capture (hidden) */}
-      <canvas ref={canvasRef} className="hidden" />
+      <canvas ref={canvasRef} className="hidden md:block" />
 
       {/* Action Buttons */}
       {!showScanner && !scannedImage && (
@@ -328,7 +328,7 @@ export function ScanTabContent() {
             Start Scanning
           </Button>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
             <Button
               variant="outline"
               size="sm"
@@ -362,7 +362,7 @@ export function ScanTabContent() {
             type="file"
             accept="application/pdf"
             onChange={handlePDFUpload}
-            className="hidden"
+            className="hidden md:block"
           />
         </>
       )}

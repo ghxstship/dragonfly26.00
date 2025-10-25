@@ -19,7 +19,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">
@@ -46,27 +46,27 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Issues</CardTitle>
             <HelpCircle className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{issues.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{issues.length}</div>
             <p className="text-xs text-muted-foreground">{t('documented')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('critical')}</CardTitle>
             <AlertCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
               {issues.filter((i: any) => i.severity === 'critical').length}
             </div>
             <p className="text-xs text-muted-foreground">High priority</p>
@@ -74,12 +74,12 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('common')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
               {issues.filter((i: any) => i.is_common).length}
             </div>
             <p className="text-xs text-muted-foreground">Frequently seen</p>
@@ -87,12 +87,12 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('helpful')}</CardTitle>
             <ThumbsUp className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">
               {issues.filter((i: any) => i.helpful_count > 0).length}
             </div>
             <p className="text-xs text-muted-foreground">Verified solutions</p>
@@ -102,7 +102,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
         <Input
           placeholder={t('searchIssues')}
           value={searchQuery as any}
@@ -116,8 +116,8 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
         {filteredIssues.map((issue: any) => (
           <Card key={issue.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-start gap-3 flex-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1">
                   <div className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
                     <HelpCircle className="h-5 w-5 text-gray-600"  aria-hidden="true" />
                   </div>
@@ -125,7 +125,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
                     <CardTitle className="text-lg">{issue.name}</CardTitle>
                   </div>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   {issue.severity && (
                     <Badge className={getSeverityColor(issue.severity)}>
                       {issue.severity}
@@ -170,7 +170,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
                 </div>
               )}
 
-              <div className="flex gap-2 pt-2 border-t">
+              <div className="flex flex-wrap gap-2 pt-2 border-t">
                 <Button variant="outline" size="sm">
                   <ThumbsUp className="h-4 w-4 mr-2"  aria-hidden="true" />
                   Helpful ({issue.helpful_count || 0})

@@ -118,10 +118,10 @@ export function CalendarOrganism({
 
   return (
     <TooltipProvider delayDuration={300}>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-wrap flex-col h-full">
         {/* Header */}
-        <div className="flex items-center justify-between border-b p-4">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b p-4">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Button
               variant="outline"
               size="icon"
@@ -164,7 +164,7 @@ export function CalendarOrganism({
               description={t('views.emptyState.calendarViewDescription')}
             />
           ) : mode === 'month' ? (
-            <div className="grid grid-cols-7 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 gap-2">
               {/* Day headers */}
               {dayNames.map((day, i) => (
                 <div key={i} className="text-center font-semibold text-sm p-2">
@@ -226,7 +226,7 @@ export function CalendarOrganism({
               })}
             </div>
           ) : (
-            <div className="text-center py-12 text-muted-foreground">
+            <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
               {t('calendar.weekDayViewPlaceholder')}
             </div>
           )}

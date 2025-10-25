@@ -21,9 +21,9 @@ export default function DashboardLayout({
   }, [])
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-wrap flex-col">
       <TopBar />
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-wrap flex-1 overflow-hidden">
         <Sidebar />
         <main className="flex-1 overflow-auto">{children}</main>
         <RightSidebar />

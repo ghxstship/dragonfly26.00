@@ -1,0 +1,2065 @@
+{
+  "critical": [
+    {
+      "file": "src/components/shared/create-item-dialog-enhanced.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 10,
+          "severity": "medium"
+        },
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 12,
+      "score": 80
+    },
+    {
+      "file": "src/marketing/components/sections/RolesSection.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 10,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 10,
+      "score": 85
+    },
+    {
+      "file": "src/app/[locale]/(auth)/verify-email/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 8,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 9,
+      "score": 85
+    },
+    {
+      "file": "src/components/layout/workspace-switcher.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 6,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 6,
+      "score": 90
+    },
+    {
+      "file": "src/components/shared/scan-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 5,
+      "score": 80
+    }
+  ],
+  "high": [
+    {
+      "file": "src/components/admin/organization-settings-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 90
+    },
+    {
+      "file": "src/components/marketplace/services-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 80
+    },
+    {
+      "file": "src/components/marketplace/vendors-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 80
+    },
+    {
+      "file": "src/components/profile/health-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 85
+    },
+    {
+      "file": "src/components/shared/activity-feed.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 90
+    },
+    {
+      "file": "src/marketing/components/sections/HowItWorksSection.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 85
+    },
+    {
+      "file": "src/app/[locale]/(auth)/reset-password/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 85
+    },
+    {
+      "file": "src/app/[locale]/(auth)/signup/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 85
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/layout.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Visibility Controls",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 75
+    },
+    {
+      "file": "src/app/[locale]/(marketing)/docs/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 4,
+      "score": 90
+    },
+    {
+      "file": "src/components/admin/admin-page-content.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 85
+    },
+    {
+      "file": "src/components/insights/create-objective-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 90
+    },
+    {
+      "file": "src/components/layout/mobile-menu.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Visibility Controls",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 70
+    },
+    {
+      "file": "src/components/marketplace/orders-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 80
+    },
+    {
+      "file": "src/components/marketplace/products-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 80
+    },
+    {
+      "file": "src/components/marketplace/purchases-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 80
+    },
+    {
+      "file": "src/components/marketplace/reviews-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 80
+    },
+    {
+      "file": "src/components/marketplace/shop-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 80
+    },
+    {
+      "file": "src/components/members/members-page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 85
+    },
+    {
+      "file": "src/components/offline-content.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 85
+    },
+    {
+      "file": "src/components/shared/error-display.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(auth)/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/[workspaceId]/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(marketing)/contact/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 3,
+      "score": 90
+    }
+  ],
+  "medium": [
+    {
+      "file": "src/components/analytics/analytics-trends-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/components/assets/catalog-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 80
+    },
+    {
+      "file": "src/components/community/level-badge.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/components/files/file-share-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 90
+    },
+    {
+      "file": "src/components/marketplace/marketplace-cart-drawer.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 80
+    },
+    {
+      "file": "src/components/members/invite-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 80
+    },
+    {
+      "file": "src/components/organisms/data-views/BoardViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/components/profile/emergency-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/components/profile/performance-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 80
+    },
+    {
+      "file": "src/components/settings/automations-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 80
+    },
+    {
+      "file": "src/components/shared/enhanced-table-view.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/components/shared/filter-panel.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/components/ui/dropdown-menu.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/components/ui/progress.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 80
+    },
+    {
+      "file": "src/components/ui/scroll-area.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 80
+    },
+    {
+      "file": "src/components/views.backup/board-view.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 90
+    },
+    {
+      "file": "src/components/views.backup/enhanced-table-view.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/[workspaceId]/layout.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/workspace/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 85
+    },
+    {
+      "file": "src/app/sentry-example-page/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 2,
+      "score": 90
+    }
+  ],
+  "low": [
+    {
+      "file": "src/components/admin/billing-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/admin/invite-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/analytics/analytics-comparisons-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/assets/barcode-scanner-overlay.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/assets/count-execution-mobile.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/assets/counts-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 85
+    },
+    {
+      "file": "src/components/assets/inventory-alerts-panel.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/assets/inventory-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/atoms/avatars/UserAvatar.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/automations/automation-builder.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/community/competitions-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 85
+    },
+    {
+      "file": "src/components/community/discussions-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 85
+    },
+    {
+      "file": "src/components/community/events-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/community/news-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/community/poll.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/companies/companies-contacts-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-agenda-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/dashboard/dashboard-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/dashboard/quick-actions/book-travel-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/dashboard/quick-actions/create-task-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/dashboard/quick-actions/log-expense-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/dashboard/quick-actions/upload-file-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 85
+    },
+    {
+      "file": "src/components/dashboard/widget-customization-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/dynamic/dynamic-calendar.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/finance/finance-approvals-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/finance/finance-cash-flow-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/finance/finance-policies-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/finance/finance-scenarios-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/finance/finance-variance-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/insights/insights-progress-tracking-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/insights/objective-detail.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/layout/language-switcher.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/layout/quick-actions.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/layout/sidebar.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/layout/top-bar.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/marketplace/marketplace-collection-browser.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/marketplace/marketplace-discount-input.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/marketplace/marketplace-gift-card.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/marketplace/marketplace-product-detail-drawer.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/marketplace/marketplace-quick-view.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/marketplace/marketplace-variant-selector.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/mobile/install-prompt.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/molecules/controls/FilterButton.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 85
+    },
+    {
+      "file": "src/components/molecules/data-display/BoardColumn.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/molecules/data-display/UserInfo.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/organisms/content/EmbedContainerOrganism.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/organisms/data-views/BoxViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/organisms/data-views/ListViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/organisms/diagrams/MindMapOrganism.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/organisms/forms/FormBuilderOrganism.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/organisms/panels/FilterPanelOrganism.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/people/activity-timeline.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/people/dashboard-widgets.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/people/mini-profile-card.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/people/progress-indicators.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/people/pto-calendar-widget.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/people/time-clock-widget.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/people/todays-schedule-sidebar.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/plugins/plugin-card.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/plugins/plugins-page-content.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/profile/certifications-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/profile/social-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 85
+    },
+    {
+      "file": "src/components/projects/projects-productions-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/projects/projects-schedule-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/settings/account-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/settings/appearance-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/settings/billing-tab.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/shared/asset-catalog-autocomplete.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/shared/crud-drawer.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/shared/custom-field-editor.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/shared/dependencies-manager.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/shared/filters-panel.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/shared/item-detail-drawer.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/shared/notifications-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/shared/photo-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/shared/share-panel.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/shared/sort-panel.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/shared/tasks-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/templates/dashboards/DashboardTemplate.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/test/supabase-connection-test.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/ui/command.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 85
+    },
+    {
+      "file": "src/components/ui/loading-spinner.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/ui/radio-group.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/ui/select.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 85
+    },
+    {
+      "file": "src/components/ui/table.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/ui/toaster.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/views.backup/board-column.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/views.backup/box-view.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/views.backup/financial-view.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/components/views.backup/form-view.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/views.backup/list-view.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/components/views.backup/mind-map-view.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/marketing/components/MarketingNav.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/marketing/components/sections/CTASection.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/marketing/components/sections/DetailedPricingSection.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/marketing/components/sections/HeroSection.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/marketing/components/sections/PricingSection.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(auth)/auth-check/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/(auth)/forgot-password/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/app/[locale]/(auth)/invite/[token]/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/app/[locale]/(auth)/login/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/app/[locale]/(marketing)/demo/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/complete/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/invite/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/plan/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/welcome/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 90
+    },
+    {
+      "file": "src/app/[locale]/not-found.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    },
+    {
+      "file": "src/app/not-found.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "totalIssues": 1,
+      "score": 95
+    }
+  ]
+}

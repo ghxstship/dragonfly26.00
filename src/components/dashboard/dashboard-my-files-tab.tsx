@@ -98,13 +98,13 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.totalFiles}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalFiles}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Files</p>
             </div>
           </CardContent>
@@ -112,7 +112,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">{summary.uploaded}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{summary.uploaded}</p>
               <p className="text-xs text-muted-foreground mt-1">Uploaded</p>
             </div>
           </CardContent>
@@ -120,7 +120,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-green-600">{summary.downloaded}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.downloaded}</p>
               <p className="text-xs text-muted-foreground mt-1">Downloaded</p>
             </div>
           </CardContent>
@@ -128,7 +128,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-yellow-600">{summary.favorites}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{summary.favorites}</p>
               <p className="text-xs text-muted-foreground mt-1">Favorites</p>
             </div>
           </CardContent>
@@ -136,7 +136,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold">{summary.totalSize}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalSize}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalSize')}</p>
             </div>
           </CardContent>
@@ -144,7 +144,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-purple-600">{summary.thisMonth}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-purple-600">{summary.thisMonth}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('thisMonth')}</p>
             </div>
           </CardContent>
@@ -160,11 +160,11 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           <div className="space-y-4">
             {storageByCategory.map((category: any) => (
               <div key={t(category.nameKey)} className="space-y-2">
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <span className="font-medium">{t(category.nameKey)}</span>
                   <span className="text-muted-foreground">{category.size} ({category.percentage}%)</span>
                 </div>
-                <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+                <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden md:block">
                   <div 
                     className={`h-full ${category.color} transition-all`}
                     style={{ width: `${category.percentage}%` }}
@@ -191,14 +191,14 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                   onClick={() => router.push(`/workspace/${workspaceId}/files/all-documents?id=${file.id}`)}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
-                      <div className="flex items-start gap-3">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                         <div className={`p-2 bg-gray-100 dark:bg-gray-800 rounded ${getTypeColor(file.type)}`}>
                           <Icon className="h-4 w-4" aria-hidden="true" />
                         </div>
                         <div className="flex-1">
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                             <h3 className="font-semibold text-sm">{file.name}</h3>
                             {file.isFavorite && (
                               <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
@@ -208,7 +208,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-2">
+                      <div className="flex flex-col md:flex-row flex-wrap items-center gap-2">
                         <Badge variant="secondary" className={getActionColor(file.action)}>
                           {file.action}
                         </Badge>
@@ -219,29 +219,29 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
                       </div>
 
                       <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Upload className="h-4 w-4" aria-hidden="true" />
                           {t('uploaded')}: {file.uploadedDate}
                         </div>
                         <span>•</span>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Clock className="h-4 w-4" aria-hidden="true" />
                           {t('accessed')}: {file.lastAccessed}
                         </div>
                         <span>•</span>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Download className="h-4 w-4" aria-hidden="true" />
                           {file.downloads} {t('downloads')}
                         </div>
                         <span>•</span>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Eye className="h-4 w-4" aria-hidden="true" />
                           {file.views} views
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-wrap flex-col gap-2">
                       <Button variant="outline" size="sm" className="gap-2">
                         <Download className="h-3.5 w-3.5" />
                         Download
@@ -265,17 +265,17 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           <CardTitle className="text-base">Activity This Month</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-center">
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold text-blue-600">18</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">18</p>
               <p className="text-xs text-muted-foreground mt-1">{t('filesUploaded')}</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold text-green-600">6</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">6</p>
               <p className="text-xs text-muted-foreground mt-1">{t('filesDownloaded')}</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <p className="text-2xl font-bold">342 MB</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">342 MB</p>
               <p className="text-xs text-muted-foreground mt-1">{t('storageAdded')}</p>
             </div>
           </div>

@@ -47,7 +47,7 @@ export function ProgressBar({
   return (
     <div className={cn("w-full", className)}>
       {showLabel && (
-        <div className="flex items-center justify-between text-xs mb-1">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs mb-1">
           {label && <span className="text-muted-foreground">{label}</span>}
           <span className="font-medium">{Math.round(percentage)}%</span>
         </div>

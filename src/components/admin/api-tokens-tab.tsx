@@ -136,19 +136,19 @@ export function ApiTokensTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.apiTokensTab.totalTokens')}</CardDescription>
-            <CardTitle className="text-3xl">{tokens.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{tokens.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.apiTokensTab.activeTokens')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {tokens.filter(t => (t as any).status === "active").length}
             </CardTitle>
           </CardHeader>
@@ -156,7 +156,7 @@ export function ApiTokensTab() {
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.apiTokensTab.apiCallsMonth')}</CardDescription>
-            <CardTitle className="text-3xl">12.4k</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">12.4k</CardTitle>
           </CardHeader>
         </Card>
       </div>
@@ -168,9 +168,9 @@ export function ApiTokensTab() {
           return (
             <Card key={token.id}>
               <CardHeader>
-                <div className="flex items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                       <CardTitle className="text-base">{token.name}</CardTitle>
                       <Badge variant={
                         (token as any).status === "active" ? "default" :
@@ -183,7 +183,7 @@ export function ApiTokensTab() {
                       <Badge variant="outline">{token.scope}</Badge>
                     </div>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <code className="flex-1 px-3 py-2 bg-muted rounded text-xs font-mono">
                           {isVisible ? token.token : maskToken(token.token)}
                         </code>
@@ -208,12 +208,12 @@ export function ApiTokensTab() {
                           <Copy className="h-4 w-4" aria-hidden="true" />
                         </Button>
                       </div>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-xs text-muted-foreground">
                         <span>{t('admin.apiTokensTab.created')} {token.createdAt}</span>
                         {token.lastUsed && (
                           <>
                             <span>•</span>
-                            <div className="flex items-center gap-1">
+                            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                               <Clock className="h-3 w-3" aria-hidden="true" />
                               {t('admin.apiTokensTab.lastUsed')} {token.lastUsed}
                             </div>
@@ -231,7 +231,7 @@ export function ApiTokensTab() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="flex justify-end gap-2">
+                <div className="flex flex-wrap justify-end gap-2">
                   {(token as any).status === "active" && (
                     <Button
                       variant="outline"
@@ -265,7 +265,7 @@ export function ApiTokensTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
               <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <div className="text-xs text-amber-900 dark:text-amber-100">
                 <p className="font-medium mb-1">{t('admin.apiTokensTab.warningTitle')}</p>
@@ -359,7 +359,7 @@ export function ApiTokensTab() {
           <div className="space-y-4 py-4">
             <div className="space-y-2">
               <Label>Your New API Token</Label>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <code className="flex-1 px-3 py-2 bg-muted rounded text-xs font-mono break-all">
                   {generatedToken}
                 </code>
@@ -374,7 +374,7 @@ export function ApiTokensTab() {
               </div>
             </div>
 
-            <div className="flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
               <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
               <p className="text-xs text-amber-900 dark:text-amber-100">
                 Store this token securely. For security reasons, it won&apos;t be shown again.

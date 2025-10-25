@@ -87,7 +87,7 @@ export function CreateTaskDialog({ open, onOpenChange, workspaceId, userId, onSu
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-950">
               <CheckSquare className="h-5 w-5 text-purple-600" />
             </div>
@@ -123,7 +123,7 @@ export function CreateTaskDialog({ open, onOpenChange, workspaceId, userId, onSu
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="priority">Priority</Label>
               <Select value={formData.priority} onValueChange={(value) => setFormData({ ...formData, priority: value })}>

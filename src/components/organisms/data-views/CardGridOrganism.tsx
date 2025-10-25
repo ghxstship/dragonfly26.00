@@ -65,7 +65,7 @@ export function CardGridOrganism({
     <Card className={className}>
       {(title || searchable) && (
         <CardHeader>
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 md:gap-3 lg:gap-4">
             {title && <SectionHeading level={2}>{title}</SectionHeading>}
             {searchable && (
               <SearchBar

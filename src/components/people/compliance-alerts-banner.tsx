@@ -56,7 +56,7 @@ export function ComplianceAlertsBanner({
       ))}
 
       {visibleAlerts.length > 1 && onViewAll && (
-        <div className="flex justify-center">
+        <div className="flex flex-wrap justify-center">
           <Button 
             variant="outline" 
             size="sm"
@@ -103,7 +103,7 @@ function ComplianceAlertItem({
 
   return (
     <Alert className={cn(config.bg, config.border, "relative pr-12")}>
-      <div className="flex items-start gap-3">
+      <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
         <div className="mt-0.5">{config.icon}</div>
         <div className="flex-1 min-w-0">
           <AlertDescription className="text-sm">
@@ -112,7 +112,7 @@ function ComplianceAlertItem({
             )}
             {alert.message}
           </AlertDescription>
-          <div className="flex items-center gap-2 mt-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2">
             <Badge className={cn("text-xs", config.badge)}>
               {alert.type}
             </Badge>
@@ -134,7 +134,7 @@ function ComplianceAlertItem({
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-2 right-2 h-6 w-6"
+          className="absolute sm:relative sm:inset-auto top-2 md:top-2 right-2 md:right-2 h-6 w-6"
           onClick={onDismiss}
         >
           <X className="h-4 w-4" />
@@ -158,8 +158,8 @@ export function ComplianceStatusSummary({
 }) {
   if (totalViolations === 0) {
     return (
-      <div className="flex items-center gap-2 p-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg">
-        <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg">
+        <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-900 flex flex-wrap items-center justify-center">
           <Clock className="h-4 w-4 text-green-600" />
         </div>
         <div className="flex-1">
@@ -175,15 +175,15 @@ export function ComplianceStatusSummary({
   }
 
   return (
-    <div className="flex items-center gap-2 p-3 bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-      <div className="h-8 w-8 rounded-full bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center">
+    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+      <div className="h-8 w-8 rounded-full bg-yellow-100 dark:bg-yellow-900 flex flex-wrap items-center justify-center">
         <AlertTriangle className="h-4 w-4 text-yellow-600" />
       </div>
       <div className="flex-1">
         <p className="text-sm font-medium text-yellow-900 dark:text-yellow-100">
           {totalViolations} Compliance {totalViolations === 1 ? 'Alert' : 'Alerts'}
         </p>
-        <div className="flex items-center gap-2 mt-1">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1">
           {criticalCount > 0 && (
             <Badge className="h-5 text-xs bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300">
               {criticalCount} Critical

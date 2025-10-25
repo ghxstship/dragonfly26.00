@@ -29,7 +29,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">
@@ -56,27 +56,27 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Guides</CardTitle>
             <Book className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{guides.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{guides.length}</div>
             <p className="text-xs text-muted-foreground">{t('available')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('beginner')}</CardTitle>
             <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
               {guides.filter((g: any) => g.difficulty === 'beginner').length}
             </div>
             <p className="text-xs text-muted-foreground">Easy to follow</p>
@@ -84,12 +84,12 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('intermediate')}</CardTitle>
             <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-yellow-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">
               {guides.filter((g: any) => g.difficulty === 'intermediate').length}
             </div>
             <p className="text-xs text-muted-foreground">Moderate complexity</p>
@@ -97,12 +97,12 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('advanced')}</CardTitle>
             <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
               {guides.filter((g: any) => g.difficulty === 'advanced').length}
             </div>
             <p className="text-xs text-muted-foreground">Expert level</p>
@@ -112,7 +112,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
         <Input
           placeholder={t('searchGuides')}
           value={searchQuery as any}
@@ -122,11 +122,11 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
       </div>
 
       {/* Guides Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {filteredGuides.map((guide: any) => (
           <Card key={guide.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-start gap-3">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                 <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-950">
                   <Book className="h-5 w-5 text-blue-600" aria-hidden="true" />
                 </div>
@@ -137,7 +137,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
                   )}
                 </div>
               </div>
-              <div className="flex gap-2 mt-2">
+              <div className="flex flex-wrap gap-2 mt-2">
                 {guide.difficulty && (
                   <Badge className={getDifficultyColor(guide.difficulty)}>
                     {guide.difficulty}
@@ -159,15 +159,15 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 </p>
               )}
 
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                 {guide.duration && (
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Clock className="h-3 w-3" aria-hidden="true" />
                     <span>{guide.duration}</span>
                   </div>
                 )}
                 {guide.author && (
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Users className="h-3 w-3" aria-hidden="true" />
                     <span className="truncate">{guide.author}</span>
                   </div>
@@ -175,8 +175,8 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
               </div>
 
               {guide.rating && (
-                <div className="flex items-center gap-2 pt-2 border-t">
-                  <div className="flex items-center">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 pt-2 border-t">
+                  <div className="flex flex-wrap items-center">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
@@ -204,7 +204,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 </div>
               )}
 
-              <div className="flex gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 <Button className="flex-1" size="sm">
                   View Guide
                 </Button>

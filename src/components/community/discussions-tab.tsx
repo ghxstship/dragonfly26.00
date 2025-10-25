@@ -159,27 +159,27 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Header Stats */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('discussions')}</div>
             <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{discussions.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{discussions.length}</div>
             <p className="text-xs text-muted-foreground">Active threads</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('comments')}</div>
             <MessageCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {discussions.reduce((acc: number, d: Discussion) => acc + d.comments, 0)}
             </div>
             <p className="text-xs text-muted-foreground">Total replies</p>
@@ -187,12 +187,12 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Hot Topics</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {discussions.filter(d => d.upvotes > 200).length}
             </div>
             <p className="text-xs text-muted-foreground">{t('trending')}</p>
@@ -200,12 +200,12 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Your Posts</div>
             <Award className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">7</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">7</div>
             <p className="text-xs text-muted-foreground">{t('contributions')}</p>
           </CardContent>
         </Card>
@@ -215,9 +215,9 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
       {/* Search and Sort */}
       <Card>
         <CardContent className="pt-6">
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
               <Input
                 placeholder={t('searchDiscussions')}
                 value={searchQuery as any}
@@ -264,9 +264,9 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
           filteredDiscussions.map((discussion: any) => (
             <Card key={discussion.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-4">
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                   {/* Vote Column */}
-                  <div className="flex flex-col items-center gap-1 min-w-[48px]">
+                  <div className="flex flex-wrap flex-col md:flex-row flex-col items-center gap-1 min-w-[48px]">
                     <Button 
                       variant={discussion.userVote === "up" ? "default" : "ghost"} 
                       size="sm"
@@ -291,7 +291,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                   {/* Content Column */}
                   <div className="flex-1 min-w-0">
                     {/* Header */}
-                    <div className="flex items-start gap-2 mb-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 mb-2">
                       {discussion.pinned && (
                         <Pin className="h-4 w-4 text-primary flex-shrink-0 mt-1"  aria-hidden="true" />
                       )}
@@ -299,7 +299,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                         <h3 className="font-semibold text-lg mb-1 hover:text-primary cursor-pointer">
                           {discussion.title}
                         </h3>
-                        <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                        <div className="flex flex-col md:flex-row flex-wrap items-center gap-2 text-xs text-muted-foreground">
                           <Badge variant="secondary">{discussion.category}</Badge>
                           <span>Posted by {discussion.author}</span>
                           {discussion.authorFlair && (
@@ -340,7 +340,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                     </div>
 
                     {/* Action Bar */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                       <Button variant="ghost" size="sm" className="h-8">
                         <MessageCircle className="h-4 w-4 mr-2" aria-hidden="true" />
                         {discussion.comments} Comments
@@ -353,7 +353,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                         <Bookmark className="h-4 w-4 mr-2"  aria-hidden="true" />
                         Save
                       </Button>
-                      <div className="ml-auto flex items-center gap-1 text-xs text-muted-foreground">
+                      <div className="ml-auto flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs text-muted-foreground">
                         <Eye className="h-3 w-3"  aria-hidden="true" />
                         {discussion.views.toLocaleString()} views
                       </div>

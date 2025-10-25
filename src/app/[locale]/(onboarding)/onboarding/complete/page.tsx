@@ -59,12 +59,12 @@ export default function CompletePage() {
   }
 
   return (
-    <div className="container max-w-2xl min-h-screen flex items-center justify-center py-12">
-      <div className="w-full space-y-8 text-center">
+    <div className="container max-w-2xl px-4 sm:px-6 lg:px-8 min-h-screen flex flex-wrap items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
+      <div className="w-full space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8 text-center max-w-full">
         {/* Success icon */}
-        <div className="flex justify-center">
+        <div className="flex flex-wrap justify-center">
           <div className="relative">
-            <div className="absolute inset-0 animate-ping">
+            <div className="absolute sm:relative sm:inset-auto inset-0 animate-ping sm:relative sm:inset-auto">
               <CheckCircle2 className="h-24 w-24 text-green-500 opacity-75" />
             </div>
             <CheckCircle2 className="h-24 w-24 text-green-500 relative" />
@@ -73,10 +73,10 @@ export default function CompletePage() {
 
         {/* Header */}
         <div className="space-y-2">
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-bold">
             You&apos;re all set! 🎉
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
             Welcome to your new workspace
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function CompletePage() {
         {/* What's next */}
         <Card>
           <CardHeader>
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-2">
               <Sparkles className="h-5 w-5 text-primary" />
               <CardTitle>What&apos;s Next?</CardTitle>
             </div>
@@ -93,8 +93,8 @@ export default function CompletePage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid gap-4 text-left">
-              <div className="flex items-start gap-3 p-3 rounded-lg border">
+            <div className="grid gap-2 md:gap-3 lg:gap-4 text-left">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
                 <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium">Profile Complete</p>
@@ -104,7 +104,7 @@ export default function CompletePage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3 rounded-lg border">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
                 <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium">Workspace Created</p>
@@ -114,7 +114,7 @@ export default function CompletePage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3 rounded-lg border">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
                 <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium">Plan Selected</p>
@@ -128,7 +128,7 @@ export default function CompletePage() {
             <div className="pt-4 space-y-3">
               <Button
                 onClick={handleContinue}
-                className="w-full"
+                className="w-full max-w-full"
                 size="lg"
               >
                 Go to Dashboard
@@ -146,7 +146,7 @@ export default function CompletePage() {
         </Card>
 
         {/* Next steps suggestions */}
-        <div className="grid md:grid-cols-3 gap-4 pt-8">
+        <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 pt-8">
           <div className="p-4 rounded-lg border">
             <p className="font-medium mb-1">Create Your First Project</p>
             <p className="text-sm text-muted-foreground">

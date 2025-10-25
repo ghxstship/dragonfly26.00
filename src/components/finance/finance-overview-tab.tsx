@@ -89,17 +89,17 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
   const maxValue = Math.max(maxRevenue, maxExpense)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Total Revenue</CardTitle>
             <DollarSign className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(overview.totalRevenue, locale)}</div>
-            <div className="flex items-center text-xs text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(overview.totalRevenue, locale)}</div>
+            <div className="flex flex-wrap items-center text-xs text-green-600">
               <TrendingUp className="h-3 w-3" aria-hidden="true" />
               {formatPercentage(overview.revenueChange)} vs last period
             </div>
@@ -107,13 +107,13 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Total Expenses</CardTitle>
             <ArrowDownRight className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(overview.totalExpenses, locale)}</div>
-            <div className="flex items-center text-xs text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(overview.totalExpenses, locale)}</div>
+            <div className="flex flex-wrap items-center text-xs text-green-600">
               <TrendingDown className="h-3 w-3" aria-hidden="true" />
               {formatPercentage(overview.expenseChange)} vs last period
             </div>
@@ -121,12 +121,12 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Net Income</CardTitle>
             <TrendingUp className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">{formatCurrency(overview.netIncome, locale)}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{formatCurrency(overview.netIncome, locale)}</div>
             <div className="text-xs text-muted-foreground">
               {((overview.netIncome / overview.totalRevenue) * 100).toFixed(1)}% profit margin
             </div>
@@ -134,12 +134,12 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Cash on Hand</CardTitle>
             <Wallet className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(overview.cashOnHand, locale)}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(overview.cashOnHand, locale)}</div>
             <div className="text-xs text-muted-foreground">
               {(overview.cashOnHand / overview.burnRate).toFixed(1)} months runway
             </div>
@@ -147,7 +147,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 md:grid-cols-2">
         {/* Revenue vs Expenses Chart */}
         <Card>
           <CardHeader>
@@ -158,7 +158,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
             <div className="space-y-4">
               {monthlyData.map((data: any, index: number) => (
                 <div key={index} className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex flex-wrap justify-between text-sm">
                     <span className="font-medium">{data.month}</span>
                     <span className="text-muted-foreground">
                       {formatCurrency(data.revenue - data.expenses, locale)}
@@ -167,20 +167,20 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
                   <div className="space-y-1">
                     <div className="relative h-6 bg-gray-100 dark:bg-gray-800 rounded">
                       <div
-                        className="absolute inset-y-0 left-0 bg-green-500 rounded"
+                        className="absolute sm:relative sm:inset-auto inset-y-0 left-0 bg-green-500 rounded sm:relative sm:inset-auto"
                         style={{ width: `${(data.revenue / maxValue) * 100}%` }}
                       >
-                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-white font-medium">
+                        <span className="absolute sm:relative sm:inset-auto right-2 top-1/2 -translate-y-1/2 text-xs text-white font-medium sm:relative sm:inset-auto">
                           {formatCurrency(data.revenue, locale)}
                         </span>
                       </div>
                     </div>
                     <div className="relative h-6 bg-gray-100 dark:bg-gray-800 rounded">
                       <div
-                        className="absolute inset-y-0 left-0 bg-red-500 rounded"
+                        className="absolute sm:relative sm:inset-auto inset-y-0 left-0 bg-red-500 rounded sm:relative sm:inset-auto"
                         style={{ width: `${(data.expenses / maxValue) * 100}%` }}
                       >
-                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-white font-medium">
+                        <span className="absolute sm:relative sm:inset-auto right-2 top-1/2 -translate-y-1/2 text-xs text-white font-medium sm:relative sm:inset-auto">
                           {formatCurrency(data.expenses, locale)}
                         </span>
                       </div>
@@ -189,12 +189,12 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-4 mt-4 pt-4 border-t">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 mt-4 pt-4 border-t">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <div className="w-3 h-3 bg-green-500 rounded" />
                 <span className="text-sm">Revenue</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <div className="w-3 h-3 bg-red-500 rounded" />
                 <span className="text-sm">Expenses</span>
               </div>
@@ -212,7 +212,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
             <div className="space-y-4">
               {spendingByCategory.map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex flex-wrap justify-between text-sm">
                     <span className="font-medium">{category.category}</span>
                     <span className="text-muted-foreground">
                       {formatCurrency(category.amount, locale)} ({category.percentage}%)
@@ -227,7 +227,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
       </div>
 
       {/* Budget Health & Alerts */}
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Budget Health</CardTitle>
@@ -236,21 +236,21 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
           <CardContent>
             <div className="space-y-4">
               <div className="text-center">
-                <div className="text-5xl font-bold">{overview.budgetHealth}%</div>
+                <div className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-bold">{overview.budgetHealth}%</div>
                 <div className="text-sm text-muted-foreground mt-1">On track</div>
               </div>
               <Progress value={overview.budgetHealth} className="h-4" />
-              <div className="grid grid-cols-3 gap-4 text-center pt-4 border-t">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-center pt-4 border-t">
                 <div>
-                  <div className="text-2xl font-bold text-green-600">15</div>
+                  <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">15</div>
                   <div className="text-xs text-muted-foreground">Under Budget</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-blue-600">8</div>
+                  <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">8</div>
                   <div className="text-xs text-muted-foreground">On Track</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-red-600">3</div>
+                  <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">3</div>
                   <div className="text-xs text-muted-foreground">Over Budget</div>
                 </div>
               </div>

@@ -414,7 +414,7 @@ export function TabPageContent() {
     // Show loading state
     if (loading) {
       return (
-        <div className="flex items-center justify-center h-full">
+        <div className="flex flex-wrap items-center justify-center h-full">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
             <p className="text-muted-foreground">Loading {currentTab?.name || 'data'}...</p>
@@ -426,7 +426,7 @@ export function TabPageContent() {
     // Show error state
     if (error) {
       return (
-        <div className="flex items-center justify-center h-full">
+        <div className="flex flex-wrap items-center justify-center h-full">
           <div className="text-center">
             <p className="text-red-500 mb-2">Error loading data</p>
             <p className="text-sm text-muted-foreground">{(error as any).message}</p>
@@ -492,7 +492,7 @@ export function TabPageContent() {
         return <PivotTableOrganism data={filteredData} schema={schema?.fields} />
       default:
         return (
-          <div className="flex items-center justify-center h-full text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center h-full text-muted-foreground">
             {currentView} view coming soon
           </div>
         )
@@ -501,9 +501,9 @@ export function TabPageContent() {
 
   if (!currentModule) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-2">Module not found</h2>
+          <h2 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-2">Module not found</h2>
           <p className="text-muted-foreground">
             The module &quot;{moduleSlug}&quot; does not exist.
           </p>
@@ -514,9 +514,9 @@ export function TabPageContent() {
 
   if (!currentTab) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-2">Tab not found</h2>
+          <h2 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-2">Tab not found</h2>
           <p className="text-muted-foreground">
             The tab &quot;{tabSlug}&quot; does not exist for {currentModule.name}.
           </p>
@@ -526,15 +526,15 @@ export function TabPageContent() {
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Module Header */}
       <div className="border-b bg-background">
         <div className="p-4">
           {/* Title and Actions */}
           {!focusMode && (
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
-                <h1 className="text-2xl font-bold" style={{ color: currentModule.color }}>
+                <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" style={{ color: currentModule.color }}>
                   {currentModule.name}
                 </h1>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -542,7 +542,7 @@ export function TabPageContent() {
                 </p>
                 {/* Real-time indicator */}
                 {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isAssetsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isMarketplaceCustomTab && !isFinanceCustomTab && !isProcurementCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
-                  <div className="flex items-center gap-2 mt-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2">
                     <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
                     <span className="text-xs text-muted-foreground">
                       Live • {loading ? '...' : `${realData.length} items`}
@@ -566,7 +566,7 @@ export function TabPageContent() {
       {/* View Controls - Hidden for admin, settings, profile, dashboard, projects, events, assets, locations, community, marketplace, finance, procurement, reports, analytics, and insights custom tabs */}
       {!isAdminCustomTab && !isSettingsCustomTab && !isProfileCustomTab && !isDashboardCustomTab && !isProjectsCustomTab && !isEventsCustomTab && !isAssetsCustomTab && !isLocationsCustomTab && !isCommunityCustomTab && !isMarketplaceCustomTab && !isFinanceCustomTab && !isProcurementCustomTab && !isReportsCustomTab && !isAnalyticsCustomTab && !isInsightsCustomTab && (
         <div className="border-b bg-background p-4">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <ViewSwitcher
               value={currentView as any}
               onChange={setCurrentView as any}
@@ -575,7 +575,7 @@ export function TabPageContent() {
 
             <div className="flex-1 max-w-md">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
                 <Input
                   placeholder="Search..."
                   value={searchQuery as any}
@@ -669,7 +669,7 @@ export function TabPageContent() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <div className="flex items-center gap-1 ml-2 border-l pl-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 ml-2 border-l pl-2">
               <Button 
                 variant="ghost" 
                 size="icon"
@@ -707,7 +707,7 @@ export function TabPageContent() {
 
       {/* Tab Content */}
       <div className="border-b bg-muted/30 px-4 py-2">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <div 
             className="h-2 w-2 rounded-full" 
             style={{ backgroundColor: currentTab.color }}

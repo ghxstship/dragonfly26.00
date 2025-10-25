@@ -60,7 +60,7 @@ export function LanguageSwitcher() {
           <p>{t("selectLanguage")}</p>
         </TooltipContent>
       </Tooltip>
-      <DropdownMenuContent align="end" className="w-64 max-h-[500px] overflow-y-auto">
+      <DropdownMenuContent align="end" className="w-full sm:w-64 max-h-[300px] md:h-[500px] overflow-y-auto">
         <DropdownMenuLabel>{t("selectLanguage")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
@@ -73,7 +73,7 @@ export function LanguageSwitcher() {
                 locale === lang && "bg-accent"
               )}
             >
-              <div className="flex flex-col">
+              <div className="flex flex-wrap flex-col">
                 <span className="font-medium">{languageNames[lang].native}</span>
                 <span className="text-xs text-muted-foreground">
                   {languageNames[lang].english}

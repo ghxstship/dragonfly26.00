@@ -185,11 +185,11 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
     <div className="space-y-4">
       {/* Progress Bar */}
       <div className="space-y-2">
-        <div className="flex items-center justify-between text-sm">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
           <span className="font-medium">{checklist.name}</span>
           <span className="text-muted-foreground">{progress}%</span>
         </div>
-        <div className="h-2 bg-muted rounded-full overflow-hidden">
+        <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
           <div
             className="h-full bg-primary transition-all duration-300"
             style={{ width: `${progress}%` }}
@@ -203,7 +203,7 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
       </div>
 
       {/* Add Item */}
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <Input
           placeholder="Add checklist item..."
           value={newItemContent}

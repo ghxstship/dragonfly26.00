@@ -1,0 +1,2767 @@
+[
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/admin-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/admin-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/api-tokens-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/automations-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/billing-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/checklist-templates-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/custom-statuses-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/integrations-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/invite-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/members-management-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/members-management-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/organization-settings-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/organization-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/plugins-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/plugins-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/recurrence-rules-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/roles-permissions-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/security-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 19
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/templates-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/webhooks-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-comparisons-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-custom-views-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-data-sources-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-forecasting-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-metrics-library-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-performance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-pivot-tables-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-realtime-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-trends-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/api-tokens/api-tokens-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/api-tokens/tokens-list.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-advances-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-approvals-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-maintenance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/assets-tracking-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/barcode-scanner-overlay.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/barcode-scanner-overlay.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/barcode-scanner-overlay.tsx",
+    "fix": "Padding to responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/bulk-actions-toolbar.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/catalog-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/catalog-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/catalog-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/count-execution-mobile.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/count-execution-mobile.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/count-variance-panel.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/count-variance-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/counts-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/inventory-alerts-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/inventory-alerts-panel.tsx",
+    "fix": "Padding to responsive",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/inventory-folder-tree.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/inventory-item-drawer.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/inventory-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/tracking-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/atoms/indicators/ProgressBar.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/atoms/inputs/NumberInput.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/automations/automations-list.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/automations/automations-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/activity-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 12
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/competitions-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/competitions-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 15
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/connections-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/connections-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 17
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/discussions-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/discussions-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/events-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/events-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/leaderboard.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/news-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/news-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/points-feed.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/poll.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/showcase-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/showcase-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 13
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/studios-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/studios-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 15
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-bids-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-companies-compliance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-companies-invoices-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-companies-reviews-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-companies-work-orders-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-contacts-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-contacts-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-deliverables-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-documents-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-organizations-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-scopes-of-work-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-subcontractor-profile-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-advances-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-agenda-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-assets-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-expenses-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-files-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-jobs-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-orders-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-reports-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-tasks-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-my-travel-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/dashboard-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/quick-actions/book-travel-dialog.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/quick-actions/create-task-dialog.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/quick-actions/log-expense-dialog.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/quick-actions/upload-file-dialog.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/dashboard/widget-customization-dialog.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-activities-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-all-events-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-blocks-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-bookings-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-calendar-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-equipment-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-incidents-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-internal-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-itineraries-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-rehearsals-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-reservations-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-run-of-show-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-shipping-receiving-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-tours-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-tours-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 14
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-trainings-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-activity-timeline.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-activity-timeline.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-attachment-button.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-attachment-button.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-comments-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-share-dialog.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-share-dialog.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-trash-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-all-documents-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-archive-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-call-sheets-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-contracts-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-insurance-permits-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-media-assets-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-production-reports-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-riders-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-shared-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/files-tech-specs-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/storage-quota-card.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-accounts-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-approvals-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-budgets-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-cash-flow-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 15
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-expenses-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-forecasts-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-gl-codes-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-invoices-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-overview-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-payments-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-payroll-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-policies-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 23
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-reconciliation-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-revenue-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-scenarios-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-taxes-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-transactions-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-variance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 16
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/create-objective-dialog.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-benchmarks-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-intelligence-feed-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-key-results-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-objectives-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-priorities-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 17
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-progress-tracking-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-progress-tracking-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-recommendations-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-reviews-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-success-metrics-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-success-metrics-tab.tsx",
+    "fix": "Padding to responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/objective-detail.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/objective-detail.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/objectives-hierarchy.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/objectives-list.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-active-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-archived-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-checklists-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-completed-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-dispatch-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-estimates-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-jobs-compliance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-jobs-invoices-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-offers-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-pipeline-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-recruiting-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-rfps-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-shortlists-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/jobs/jobs-work-orders-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/breadcrumb-nav.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/create-menu.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/language-switcher.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/mobile-menu.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/module-tabs.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/right-sidebar.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 12
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/theme-toggle.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/top-bar.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/workspace-switcher.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/workspace-switcher.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-access-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-bim-models-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-coordination-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-directory-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-directory-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 14
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-logistics-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-site-maps-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-site-maps-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-spatial-features-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-utilities-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-warehousing-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/favorites-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/favorites-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/lists-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/lists-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-cart-drawer.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-cart-drawer.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 18
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-collection-browser.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-discount-input.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-discount-input.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-gift-card.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-gift-card.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-inventory-badge.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-product-detail-drawer.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-product-detail-drawer.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 17
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-quick-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-review-form.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-variant-selector.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-variant-selector.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/orders-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/orders-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/orders-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/products-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/products-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/products-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/purchases-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/purchases-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/purchases-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/reviews-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/reviews-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/reviews-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/sales-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/sales-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/services-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/services-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/services-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/shop-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/shop-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/shop-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/spotlight-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/vendors-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/vendors-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/vendors-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/members/create-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/members/invite-dialog.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 15
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/members/invite-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/members/invite-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/members/members-page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/mobile/install-prompt.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/controls/FilterButton.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/controls/SearchBar.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/controls/SearchWithFilters.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/controls/SearchWithFilters.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/data-display/BoardCard.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/data-display/BoardColumn.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/data-display/DataList.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/data-display/StatCard.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/data-display/UserInfo.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/offline-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/opportunities/opportunities-careers-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/opportunities/opportunities-grants-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/opportunities/opportunities-jobs-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/opportunities/opportunities-sponsorship-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/communication/ChatOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/content/DocumentEditorOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/content/EmbedContainerOrganism.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/content/EmbedContainerOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/ActivityViewOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/BoardViewOrganism.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/BoardViewOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/BoxViewOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/CalendarOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/CardGridOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/DataTableOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/FinancialDashboardOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/ListViewOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/PivotTableOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/PortfolioViewOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 14
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/TimelineOrganism.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/TimelineOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/WorkloadViewOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/diagrams/MindMapOrganism.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/diagrams/MindMapOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/forms/FormBuilderOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/maps/MapOrganism.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/maps/MapOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/panels/FilterPanelOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/templates/OverviewTemplateOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/templates/SpotlightTemplateOrganism.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/templates/SpotlightTemplateOrganism.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/action-button-bar.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/activity-timeline.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/activity-timeline.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/compliance-alerts-banner.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/dashboard-widgets.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 23
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/keyboard-shortcuts.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/mini-profile-card.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/notification-badges.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-applicants-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-assignments-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-onboarding-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-openings-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-personnel-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-scheduling-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 16
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-teams-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-timekeeping-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/people-training-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/progress-indicators.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/progress-indicators.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/pto-calendar-widget.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 12
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/quick-action-menu.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/smart-filters-bar.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/smart-filters-bar.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/time-clock-widget.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/todays-schedule-sidebar.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 18
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/plugins/installed-plugins.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/plugins/plugin-card.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/plugins/plugins-page-content.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/plugins/plugins-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-agreements-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-audits-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-fulfillment-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-line-items-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-matching-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-matching-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 12
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-orders-dashboard-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-orders-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-procurement-approvals-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-receiving-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-receiving-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-requisitions-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/access-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/basic-info-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/certifications-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/emergency-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/endorsements-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/health-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/history-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/performance-tab.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/performance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 18
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/professional-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/social-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/tags-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/tags-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/travel-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-activations-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-compliance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-costs-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-milestones-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-productions-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 12
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-projects-checklists-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-projects-work-orders-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-safety-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-schedule-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-schedule-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 16
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-tasks-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/realtime/activity-feed.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/realtime/comment-thread.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/report-viewer.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-archived-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-archived-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-compliance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-custom-builder-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-executive-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-exports-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-list.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-operational-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-overview-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-scheduled-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-templates-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-courses-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-courses-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 16
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-glossary-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-glossary-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-grants-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-grants-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 13
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-guides-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-guides-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 13
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-library-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-library-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 16
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-publications-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-publications-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-troubleshooting-tab.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-troubleshooting-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/account-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 15
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/appearance-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/automations-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/billing-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 18
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/integrations-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/profile-page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 14
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/team-tab.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/activity-feed.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/agenda-tab-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/asset-catalog-autocomplete.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/asset-catalog-autocomplete.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/assignee-selector.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/bulk-actions-toolbar.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/checklist-manager.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/comments-section.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/create-item-dialog-enhanced.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/create-item-dialog-enhanced.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/crud-drawer.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/crud-drawer.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/crud-drawer.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 20
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/custom-field-editor.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/dependencies-manager.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/empty-state.tsx",
+    "fix": "Padding to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/enhanced-table-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/error-display.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/error-display.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/export-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 9
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/field-config-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/files-tab-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/filter-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/filters-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/import-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/import-panel.tsx",
+    "fix": "Padding to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/item-detail-drawer.tsx",
+    "fix": "Fixed width containers to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/item-detail-drawer.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/mobile-table-card.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/notifications-tab-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/photo-tab-content.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/photo-tab-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/recurrence-editor.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/scan-tab-content.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/scan-tab-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/share-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 13
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/sort-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/tab-config-panel.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/tasks-tab-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/time-tracker.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/watchers-manager.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/templates/dashboards/DashboardTemplate.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/templates/data-views/DataViewTemplate.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/templates/forms/FormTemplate.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/test/supabase-connection-test.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/dialog.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/dropdown-menu.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/dropdown-menu.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/radio-group.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/select.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/select.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/sheet.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/activity-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/board-card.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/board-column.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/board-view.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/board-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/box-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/calendar-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/chat-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/dashboard-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/doc-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/embed-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/enhanced-table-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/financial-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 12
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/form-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/list-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/map-view.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/map-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/mind-map-view.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/mind-map-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/pivot-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/portfolio-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 14
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/timeline-view.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/timeline-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/view-switcher.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/view-switcher.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/workload-view.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/webhooks/webhook-detail.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 12
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/webhooks/webhooks-list.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/webhooks/webhooks-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/workspace/module-page-content.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/workspace/module-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/workspace/tab-page-content.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/workspace/tab-page-content.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 11
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/MarketingFooter.tsx",
+    "fix": "Gap spacing to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/MarketingNav.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/DetailedPricingSection.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/DetailedPricingSection.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 30
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/DetailedPricingSection.tsx",
+    "fix": "Gap spacing to responsive",
+    "count": 7
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/DetailedPricingSection.tsx",
+    "fix": "Padding to responsive",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/HowItWorksSection.tsx",
+    "fix": "Gap spacing to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/PricingSection.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/PricingSection.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 12
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/auth-check/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/error.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/error.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/forgot-password/page.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/forgot-password/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/forgot-password/page.tsx",
+    "fix": "Padding to responsive",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/invite/[token]/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/login/page.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/login/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/login/page.tsx",
+    "fix": "Padding to responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/reset-password/page.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/reset-password/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/reset-password/page.tsx",
+    "fix": "Padding to responsive",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/signup/page.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/signup/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/signup/page.tsx",
+    "fix": "Padding to responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/verify-email/page.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/verify-email/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/error.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/error.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/layout.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/error.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/error.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/page-connected.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/page-connected.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/error.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/error.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/error.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/error.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/layout.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/error.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/error.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/blog/page.tsx",
+    "fix": "Padding to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/company/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/contact/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/contact/page.tsx",
+    "fix": "Padding to responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/demo/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/demo/page.tsx",
+    "fix": "Padding to responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/docs/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/complete/page.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/complete/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/invite/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 6
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/plan/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/welcome/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/workspace/page.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 8
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/error.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/error.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/not-found.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/not-found.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/global-error.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/global-error.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 5
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/not-found.tsx",
+    "fix": "Absolute positioning with responsive fallback",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/not-found.tsx",
+    "fix": "Flex containers with wrap",
+    "count": 2
+  }
+]

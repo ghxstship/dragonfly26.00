@@ -125,9 +125,9 @@ export function DataTableOrganism({
     <Card className={className}>
       {(title || searchable || sortable) && (
         <CardHeader>
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 md:gap-3 lg:gap-4">
             {title && <SectionHeading level={2}>{title}</SectionHeading>}
-            <div className="flex items-center gap-2 ml-auto">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 ml-auto">
               {searchable && (
                 <SearchBar
                   value={searchQuery}

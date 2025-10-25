@@ -67,11 +67,11 @@ export function OrganizationTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Basic Information */}
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Building2 className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
             <CardTitle>{t('admin.organization.basicInfo')}</CardTitle>
           </div>
@@ -80,7 +80,7 @@ export function OrganizationTab() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="name">{t('admin.organization.name')}</Label>
               <Input
@@ -101,7 +101,7 @@ export function OrganizationTab() {
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="industry">{t('admin.organization.industry')}</Label>
               <Select value={profile.industry} onValueChange={(value) => setProfile({ ...profile, industry: value })}>
@@ -150,7 +150,7 @@ export function OrganizationTab() {
       {/* Contact Information */}
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Mail className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
             <CardTitle>{t('admin.organization.contactInfo')}</CardTitle>
           </div>
@@ -159,10 +159,10 @@ export function OrganizationTab() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="website">{t('admin.organization.website')}</Label>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 <Input
                   id="website"
@@ -175,7 +175,7 @@ export function OrganizationTab() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">{t('admin.organization.email')}</Label>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Mail className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                 <Input
                   id="email"
@@ -190,7 +190,7 @@ export function OrganizationTab() {
 
           <div className="space-y-2">
             <Label htmlFor="phone">{t('admin.organization.phone')}</Label>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Phone className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
                 id="phone"
@@ -207,7 +207,7 @@ export function OrganizationTab() {
       {/* Address */}
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <MapPin className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
             <CardTitle>{t('admin.organization.address')}</CardTitle>
           </div>
@@ -226,7 +226,7 @@ export function OrganizationTab() {
             />
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-2">
               <Label htmlFor="city">{t('admin.organization.city')}</Label>
               <Input
@@ -274,7 +274,7 @@ export function OrganizationTab() {
       </Card>
 
       {/* Save Button */}
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end">
         <Button onClick={handleSave} disabled={loading}>
           {loading ? t('common.saving') : t('common.save')}
         </Button>

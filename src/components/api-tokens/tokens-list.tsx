@@ -31,9 +31,9 @@ export function APITokensList({ tokens }: APITokensListProps) {
       {tokens.map((token: any) => (
         <Card key={token.id}>
           <CardContent className="p-6">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
               <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                   <h3 className="font-semibold text-lg">{token.name}</h3>
                   {token.is_active ? (
                     <Badge variant="default" className="bg-green-600">Active</Badge>
@@ -44,7 +44,7 @@ export function APITokensList({ tokens }: APITokensListProps) {
                 <p className="text-sm text-muted-foreground mb-3">{token.description}</p>
                 
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <code className="text-sm bg-muted px-2 py-1 rounded">
                       {token.token_prefix}••••••••••••
                     </code>
@@ -60,7 +60,7 @@ export function APITokensList({ tokens }: APITokensListProps) {
                     </Tooltip>
                   </div>
                   
-                  <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 text-sm text-muted-foreground">
                     <span>{token.scopes.length} scopes</span>
                     <span>{token.rate_limit_per_hour.toLocaleString()} req/hr</span>
                     <span>{token.usage_count.toLocaleString()} requests</span>

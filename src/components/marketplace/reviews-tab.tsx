@@ -52,7 +52,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
 
   const renderStars = (rating: number) => {
     return (
-      <div className="flex items-center gap-1">
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
@@ -78,18 +78,18 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
   }))
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 {/* Overview Card */}
       <Card>
         <CardHeader>
           <CardTitle>Rating Overview</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 md:gap-3 md:gap-4 lg:gap-6 lg:gap-8">
             {/* Average Rating */}
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
               <div className="text-center">
-                <p className="text-5xl font-bold">{averageRating}</p>
+                <p className="text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-3xl md:text-4xl lg:text-5xl font-bold">{averageRating}</p>
                 {renderStars(Math.round(parseFloat(averageRating)))}
                 <p className="text-sm text-muted-foreground mt-2">
                   Based on {reviewsData.length} reviews
@@ -100,12 +100,12 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
             {/* Rating Distribution */}
             <div className="space-y-2">
               {ratingDistribution.map(({ rating, count, percentage }) => (
-                <div key={rating} className="flex items-center gap-3">
-                  <div className="flex items-center gap-1 w-16">
+                <div key={rating} className="flex flex-wrap flex-col md:flex-row items-center gap-3">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 w-16">
                     <span className="text-sm font-medium">{rating}</span>
                     <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                   </div>
-                  <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden md:block">
                     <div
                       className="h-full bg-yellow-500"
                       style={{ width: `${percentage}%` }}
@@ -122,13 +122,13 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
       </Card>
 
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
           <Input placeholder={t('searchReviews')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('itemType')} />
           </SelectTrigger>
           <SelectContent>
@@ -140,7 +140,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
           </SelectContent>
         </Select>
         <Select defaultValue="recent">
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
@@ -168,19 +168,19 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
           {reviewsData.map((review: any) => (
             <Card key={review.id}>
               <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                     <Avatar>
                       <AvatarFallback>
                         {review.assignee_name?.split(' ').map((n: string) => n[0]).join('') || "U"}
                       </AvatarFallback>
                     </Avatar>
                     <div className="space-y-1">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <CardTitle className="text-base">{review.assignee_name}</CardTitle>
                         {review.status === "verified" && getStatusBadge(review.status || 'published')}
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                         {renderStars(review.rating || 0)}
                         <span className="text-sm text-muted-foreground">
                           {new Date(review.created_at).toLocaleDateString()}
@@ -214,7 +214,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
                 )}
 
                 {/* Actions */}
-                <div className="flex items-center gap-4 pt-2 border-t">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 pt-2 border-t">
                   <Button variant="ghost" size="sm" className="gap-2">
                     <ThumbsUp className="h-4 w-4"  aria-hidden="true" />
                     Helpful ({review.helpful_count})
@@ -231,25 +231,25 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
         </TabsContent>
 
         <TabsContent value="5star" className="mt-4">
-          <div className="text-center py-12 text-muted-foreground">
+          <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
             Filter for 5-star reviews
           </div>
         </TabsContent>
 
         <TabsContent value="4star" className="mt-4">
-          <div className="text-center py-12 text-muted-foreground">
+          <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
             Filter for 4-star reviews
           </div>
         </TabsContent>
 
         <TabsContent value="3star" className="mt-4">
-          <div className="text-center py-12 text-muted-foreground">
+          <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
             Filter for 3-star reviews
           </div>
         </TabsContent>
 
         <TabsContent value="verified" className="mt-4">
-          <div className="text-center py-12 text-muted-foreground">
+          <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
             Filter for verified reviews only
           </div>
         </TabsContent>

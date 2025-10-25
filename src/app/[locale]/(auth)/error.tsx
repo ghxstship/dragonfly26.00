@@ -24,12 +24,12 @@ export default function AuthError({
   }, [error])
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-gradient-to-b from-background to-muted/20">
-      <Card className="max-w-md w-full">
+    <div className="flex flex-wrap items-center justify-center min-h-screen p-4 bg-gradient-to-b from-background to-muted/20">
+      <Card className="max-w-md w-full max-w-full">
         <CardHeader className="text-center space-y-4">
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-destructive/20 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute sm:relative sm:inset-auto inset-0 bg-destructive/20 rounded-full blur-2xl animate-pulse sm:relative sm:inset-auto" />
               <div className="relative bg-destructive/10 p-6 rounded-full">
                 <AlertTriangle className="w-12 h-12 text-destructive" />
               </div>
@@ -42,7 +42,7 @@ export default function AuthError({
             </div>
           )}
           
-          <CardTitle className="text-2xl">
+          <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
             {t('errorGenericTitle')}
           </CardTitle>
           <CardDescription>
@@ -50,14 +50,14 @@ export default function AuthError({
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
           {/* Actions */}
-          <div className="flex flex-col gap-3">
-            <Button onClick={reset} className="w-full gap-2">
+          <div className="flex flex-wrap flex-col gap-3">
+            <Button onClick={reset} className="w-full gap-2 max-w-full">
               <RefreshCw className="w-4 h-4" />
               {t('tryAgain')}
             </Button>
-            <Button variant="outline" asChild className="w-full gap-2">
+            <Button variant="outline" asChild className="w-full gap-2 max-w-full">
               <Link href={`/${locale}`}>
                 <Home className="w-4 h-4" />
                 {t('goBackHome')}

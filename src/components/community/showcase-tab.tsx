@@ -105,27 +105,27 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Header Stats */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Showcase Posts</div>
             <Sparkles className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{posts.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{posts.length}</div>
             <p className="text-xs text-muted-foreground">Featured content</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Total Reach</div>
             <Eye className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {(posts.reduce((acc: number, p: ShowcasePost) => acc + p.views, 0) / 1000).toFixed(1)}K
             </div>
             <p className="text-xs text-muted-foreground">Total views</p>
@@ -133,12 +133,12 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('engagement')}</div>
             <Heart className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {posts.reduce((acc: number, p: ShowcasePost) => acc + p.likes, 0)}
             </div>
             <p className="text-xs text-muted-foreground">{t('totalLikes')}</p>
@@ -146,12 +146,12 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('bookmarked')}</div>
             <Bookmark className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {posts.filter(p => p.isBookmarked).length}
             </div>
             <p className="text-xs text-muted-foreground">Saved posts</p>
@@ -160,17 +160,17 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
       </div>
 
       {/* Showcase Feed */}
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
         {posts.map((post: any) => {
           const categoryConfig = getCategoryBadge(post.category)
           const CategoryIcon = categoryConfig.icon
 
           return (
-            <Card key={post.id} className="overflow-hidden">
+            <Card key={post.id} className="overflow-hidden md:block">
               <CardContent className="p-6">
                 {/* Post Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                     <Avatar className="h-12 w-12">
                       <AvatarImage src={post.authorImage} />
                       <AvatarFallback>{post.author.split(" ").map(n => n[0]).join("")}</AvatarFallback>
@@ -183,7 +183,7 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Badge variant="outline" className={categoryConfig.color}>
                       <CategoryIcon className="h-3 w-3 mr-1"  aria-hidden="true" />
                       {categoryConfig.label}
@@ -213,12 +213,12 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
                         } bg-muted`}
                       >
                         <div 
-                          className="absolute inset-0 bg-cover bg-center"
+                          className="absolute sm:relative sm:inset-auto inset-0 bg-cover bg-center sm:relative sm:inset-auto"
                           style={{ backgroundImage: `url(${image})` }}
                         />
                         {idx === 3 && post.images && post.images.length > 4 && (
-                          <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                            <span className="text-white text-2xl font-bold">
+                          <div className="absolute sm:relative sm:inset-auto inset-0 bg-black/60 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
+                            <span className="text-white text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
                               +{post.images.length - 4}
                             </span>
                           </div>
@@ -238,21 +238,21 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
                 </div>
 
                 {/* Engagement Stats */}
-                <div className="flex items-center justify-between py-3 border-y text-sm text-muted-foreground">
-                  <div className="flex items-center gap-4">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between py-3 border-y text-sm text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                     <span>{post.likes.toLocaleString()} likes</span>
                     <span>{post.comments} comments</span>
                     <span>{post.shares} shares</span>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Eye className="h-4 w-4" aria-hidden="true" />
                     <span>{post.views.toLocaleString()} views</span>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center justify-between pt-3">
-                  <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between pt-3">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Button 
                       variant={post.isLiked ? "default" : "ghost"} 
                       size="sm"

@@ -79,9 +79,9 @@ export function ObjectivesHierarchy({ goals, onGoalClick }: GoalsHierarchyProps)
 
           <div className="flex-1 min-w-0">
             <div className="font-medium truncate">{goal.name}</div>
-            <div className="flex items-center gap-4 mt-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 mt-2">
               <Progress value={progress} className="h-2 flex-1" />
-              <span className="text-sm text-muted-foreground whitespace-nowrap">
+              <span className="text-sm text-muted-foreground whitespace-nowrap overflow-hidden text-ellipsis">
                 {progress}%
               </span>
             </div>
@@ -102,7 +102,7 @@ export function ObjectivesHierarchy({ goals, onGoalClick }: GoalsHierarchyProps)
       {topLevelGoals.map((goal: any) => renderGoal(goal))}
       
       {topLevelGoals.length === 0 && (
-        <div className="text-center py-12 text-muted-foreground">
+        <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
           No goals to display
         </div>
       )}

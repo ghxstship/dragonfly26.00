@@ -20,7 +20,7 @@ export function TabConfigDrawer({ open, onOpenChange, moduleSlug }: TabConfigDra
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-full sm:w-[480px] lg:w-[540px] overflow-y-auto">
+      <SheetContent side="right" className="w-full sm:w-[480px] lg:w-[540px] overflow-y-auto max-w-full">
         <SheetHeader>
           <SheetTitle>Tab Configuration</SheetTitle>
           <SheetDescription>

@@ -134,45 +134,45 @@ export function EndorsementsTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     )
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('profile.endorsements.totalEndorsements')}</CardTitle>
             <ThumbsUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{displayEndorsements.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{displayEndorsements.length}</div>
             <p className="text-xs text-muted-foreground">{t('profile.endorsements.total')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('profile.endorsements.skillsEndorsed')}</CardTitle>
             <Badge className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{skillEndorsements.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{skillEndorsements.length}</div>
             <p className="text-xs text-muted-foreground">{t('profile.endorsements.skillsEndorsed')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('profile.endorsements.topSkill')}</CardTitle>
             <MessageSquare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {skillEndorsements.sort((a: any, b: any) => b.count - a.count)[0]?.skill.split(" ")[0]}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -188,11 +188,11 @@ export function EndorsementsTab() {
           <CardDescription>{t('profile.endorsements.skillsEndorsed')}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             {skillEndorsements.map((skillEndorsement: any) => (
               <div
                 key={skillEndorsement.skill}
-                className="flex items-start justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
+                className="flex flex-col md:flex-row items-start justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
               >
                 <div className="space-y-1">
                   <p className="font-medium">{skillEndorsement.skill}</p>
@@ -209,7 +209,7 @@ export function EndorsementsTab() {
 
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>{t('profile.endorsements.recommendations')}</CardTitle>
               <CardDescription>{t('profile.endorsements.detailedRecommendations')}</CardDescription>
@@ -227,15 +227,15 @@ export function EndorsementsTab() {
             />
           </div>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
           {filteredEndorsements.length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-8">
+            <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('profile.endorsements.noEndorsements')}
             </p>
           ) : (
             filteredEndorsements.map((endorsement: any) => (
               <div key={endorsement.id} className="border-b pb-6 last:border-0">
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                   <Avatar className="h-12 w-12">
                     <AvatarImage src={endorsement.endorserImage} />
                     <AvatarFallback>
@@ -246,7 +246,7 @@ export function EndorsementsTab() {
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex-1 space-y-2">
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                       <div>
                         <p className="font-semibold">{endorsement.endorserName}</p>
                         <p className="text-sm text-muted-foreground">
@@ -258,7 +258,7 @@ export function EndorsementsTab() {
 
                     <p className="text-sm leading-relaxed">{endorsement.message}</p>
 
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-xs text-muted-foreground">
                       <span>{new Date(endorsement.date).toLocaleDateString()}</span>
                       {endorsement.projectName && (
                         <>
@@ -268,7 +268,7 @@ export function EndorsementsTab() {
                       )}
                     </div>
 
-                    <div className="flex gap-2 pt-2">
+                    <div className="flex flex-wrap gap-2 pt-2">
                       <Button variant="ghost" size="sm">
                         <ThumbsUp className="h-3 w-3 mr-1" aria-hidden="true" />
                         {t('profile.endorsements.thank')}
@@ -294,7 +294,7 @@ export function EndorsementsTab() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="text-center py-8">
+          <div className="text-center py-4 md:py-6 lg:py-8">
             <UserPlus className="h-12 w-12 mx-auto text-muted-foreground mb-4" aria-hidden="true" />
             <p className="text-sm text-muted-foreground mb-4">
               {t('profile.endorsements.helpColleagues')}

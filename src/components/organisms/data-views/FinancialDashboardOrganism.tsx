@@ -77,10 +77,10 @@ export function FinancialDashboardOrganism({ data, schema, onItemClick }: Financ
     .slice(0, 5)
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <DollarSign className="h-5 w-5" aria-hidden="true" />
           <h3 className="font-semibold">{t('financial.dashboard')}</h3>
         </div>
@@ -95,9 +95,9 @@ export function FinancialDashboardOrganism({ data, schema, onItemClick }: Financ
 
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
-        <div className="max-w-7xl mx-auto space-y-6">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6 px-4 md:px-6 lg:px-8">
           {/* Key Metrics */}
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-4">
             <StatCard
               icon={DollarSign}
               label={t('financial.revenue')}
@@ -137,13 +137,13 @@ export function FinancialDashboardOrganism({ data, schema, onItemClick }: Financ
                   const percentage = (amount / metrics.expenses) * 100
                   return (
                     <div key={category} className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
+                      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                         <span className="font-medium">{category}</span>
                         <span className="text-muted-foreground">
                           ${(amount as number).toLocaleString()} ({percentage.toFixed(1)}%)
                         </span>
                       </div>
-                      <div className="h-2 bg-muted rounded-full overflow-hidden">
+                      <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                         <div
                           className="h-full bg-primary transition-all"
                           style={{ width: `${percentage}%` }}
@@ -166,10 +166,10 @@ export function FinancialDashboardOrganism({ data, schema, onItemClick }: Financ
                 {data.slice(0, 10).map((item: any) => (
                   <div
                     key={item.id}
-                    className="flex items-center justify-between p-3 rounded-lg hover:bg-accent cursor-pointer transition-colors"
+                    className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 rounded-lg hover:bg-accent cursor-pointer transition-colors"
                     onClick={() => onItemClick?.(item)}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                       <div className={cn(
                         'p-2 rounded-full',
                         item.amount > 0 ? 'bg-green-100 dark:bg-green-950' : 'bg-red-100 dark:bg-red-950'

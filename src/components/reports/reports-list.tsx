@@ -30,7 +30,7 @@ const chartIcons = {
 export function ReportsList({ reports, onSelect }: ReportsListProps) {
   const t = useTranslations()
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
       {reports.map((report: any) => {
         const Icon = report(t as any).type === "table" ? Table : chartIcons[report.chart_type || "bar"]
         
@@ -41,8 +41,8 @@ export function ReportsList({ reports, onSelect }: ReportsListProps) {
             onClick={() => onSelect(report)}
           >
             <CardContent className="p-6">
-              <div className="flex items-start justify-between mb-4">
-                <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
+                <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex flex-wrap items-center justify-center">
                   <Icon className="h-6 w-6 text-white" />
                 </div>
                 <DropdownMenu>
@@ -66,7 +66,7 @@ export function ReportsList({ reports, onSelect }: ReportsListProps) {
                 {report.description}
               </p>
               
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Badge variant="outline" className="capitalize">{report.type}</Badge>
                 {report.chart_type && (
                   <Badge variant="outline" className="capitalize">{report.chart_type}</Badge>
@@ -80,7 +80,7 @@ export function ReportsList({ reports, onSelect }: ReportsListProps) {
       })}
       
       {reports.length === 0 && (
-        <div className="col-span-full text-center py-12">
+        <div className="col-span-full text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
           <p className="text-muted-foreground">No reports found</p>
         </div>
       )}

@@ -81,15 +81,15 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
   }
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Frame className="h-5 w-5" />
           <h3 className="font-semibold">Embedded Content</h3>
         </div>
         <TooltipProvider delayDuration={300}>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             {activeEmbedData && (
               <>
                 <Button
@@ -130,7 +130,7 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
         </TooltipProvider>
       </div>
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex flex-wrap overflow-hidden md:block">
         {/* Embed Tabs */}
         {embeds.length > 0 && (
           <div className="w-48 border-r bg-muted/30 overflow-y-auto">
@@ -150,7 +150,7 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="absolute top-1 right-1 h-6 w-6 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute sm:relative sm:inset-auto top-2 md:top-1 right-2 md:right-1 h-6 w-6 opacity-0 group-hover:opacity-100 transition-opacity"
                     onClick={(e) => {
                       e.stopPropagation()
                       handleRemoveEmbed(embed.id)
@@ -165,22 +165,22 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
         )}
 
         {/* Embed Content */}
-        <div className="flex-1 overflow-hidden bg-muted/20">
+        <div className="flex-1 overflow-hidden md:block bg-muted/20">
           {activeEmbedData ? (
-            <div className="w-full h-full p-4">
-              <div className="w-full h-full border rounded-lg bg-background overflow-hidden">
+            <div className="w-full h-full p-4 max-w-full">
+              <div className="w-full h-full border rounded-lg bg-background overflow-hidden md:block max-w-full">
                 <iframe
                   src={activeEmbedData.url}
-                  className="w-full h-full"
+                  className="w-full h-full max-w-full"
                   title={activeEmbedData.title}
                   sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                 />
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-center h-full">
+            <div className="flex flex-wrap items-center justify-center h-full">
               <div className="text-center space-y-4">
-                <div className="mx-auto w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="mx-auto w-24 h-24 rounded-full bg-primary/10 flex flex-wrap items-center justify-center">
                   <Frame className="h-12 w-12 text-primary" />
                 </div>
                 <div>

@@ -91,7 +91,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
         role="status" 
         aria-live="polite" 
         aria-atomic="true"
-        className="flex items-center justify-center h-64"
+        className="flex items-center justify-center h-48 md:h-56 lg:h-64"
       >
         <div className="text-center">
           <div 
@@ -131,81 +131,81 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Cards */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-6">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalMatches')}</CardTitle>
             <GitCompare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{stats.total}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.total}</div>
             <p className="text-xs text-muted-foreground">{t('allRecords')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.matched')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-green-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{stats.matched}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.matched}</div>
             <p className="text-xs text-muted-foreground">{t('perfectAlignment')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.partialMatch')}</CardTitle>
             <AlertTriangle className="h-4 w-4 text-yellow-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{stats.partialMatch}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.partialMatch}</div>
             <p className="text-xs text-muted-foreground">{t('minorVariances')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.noMatch')}</CardTitle>
             <XCircle className="h-4 w-4 text-red-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{stats.noMatch}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.noMatch}</div>
             <p className="text-xs text-muted-foreground">{t('needsResolution')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.approved')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-blue-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{stats.approvedForPayment}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.approvedForPayment}</div>
             <p className="text-xs text-muted-foreground">{t('readyForPayment')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalVariance')}</CardTitle>
             <AlertTriangle className="h-4 w-4 text-orange-600" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(stats.totalVariance)}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(stats.totalVariance)}</div>
             <p className="text-xs text-muted-foreground">{t('acrossAllRecords')}</p>
           </CardContent>
         </Card>
       </div>
 
       {/* Filters and Actions */}
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2 flex-1">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 md:gap-3 lg:gap-4">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
           <div className="relative flex-1 max-w-sm">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Search className="absolute sm:relative sm:inset-auto left-2.5 top-2.5 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
             <Input
               placeholder={t('searchPlaceholder')}
               value={searchQuery as any}
@@ -240,7 +240,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
           </DropdownMenu>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Button 
             variant="outline" 
             size="sm"
@@ -276,7 +276,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
             <TableBody>
               {filteredData.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={10} className="text-center text-muted-foreground py-8">
+                  <TableCell colSpan={10} className="text-center text-muted-foreground py-4 md:py-6 lg:py-8">
                     {tCommon('emptyState.title', { resource: t('matchingRecords') })}. {tCommon('emptyState.description')}.
                   </TableCell>
                 </TableRow>
@@ -284,12 +284,12 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                 filteredData.map((item: any) => (
                   <TableRow key={item.id}>
                     <TableCell>
-                      <div className="flex flex-col gap-1">
-                        <div className="flex items-center gap-2 font-medium">
+                      <div className="flex flex-wrap flex-col gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 font-medium">
                           <Receipt className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                           {item.invoice_number}
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                           <FileText className="h-3 w-3" aria-hidden="true" />
                           {item.po_number}
                         </div>
@@ -297,23 +297,23 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                     </TableCell>
                     <TableCell className="font-medium" aria-hidden="true">{item.vendor}</TableCell>
                     <TableCell>
-                      <div className="flex items-center gap-2 text-sm">
-                        <div className="flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <FileText className="h-3 w-3 text-blue-600" aria-hidden="true" />
                           <span>PO</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Package className="h-3 w-3 text-green-600" aria-hidden="true" />
                           <span>REC</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Receipt className="h-3 w-3 text-purple-600" aria-hidden="true" />
                           <span>INV</span>
                         </div>
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-wrap flex-col gap-1">
                         <div className="text-sm">
                           <span className="text-muted-foreground">PO:</span> <span className="font-medium">{formatCurrency(item.po_amount)}</span>
                         </div>
@@ -323,7 +323,7 @@ export function ProcurementMatchingTab({ data = [], loading }: ProcurementMatchi
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="flex flex-col gap-1">
+                      <div className="flex flex-wrap flex-col gap-1">
                         <div className="font-medium text-sm">
                           {item.total_variance >= 0 ? '+' : ''}{formatCurrency(item.total_variance)}
                         </div>

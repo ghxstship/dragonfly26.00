@@ -73,13 +73,13 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Actions */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <p className="text-muted-foreground">
           Interactive floor plans and facility layouts
         </p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button variant="outline" size="sm">
             <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
             Upload Map
@@ -91,7 +91,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 md:grid-cols-4">
         {/* Map List */}
         <Card className="md:col-span-1">
           <CardHeader>
@@ -125,12 +125,12 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
         {/* Map Viewer */}
         <Card className="md:col-span-3">
           <CardHeader>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <CardTitle>{selectedMap?.name || 'Select a map'}</CardTitle>
                 <CardDescription>{selectedMap?.location}</CardDescription>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Button variant="outline" size="icon" onClick={() => setZoom(Math.max(50, zoom - 10))} aria-label="Zoom out">
                   <ZoomOut className="h-4 w-4" aria-hidden="true" />
                 </Button>
@@ -149,11 +149,11 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
               <div className="space-y-4">
                 {/* Map Display Area */}
                 <div 
-                  className="border-2 border-dashed rounded-lg bg-gray-50 dark:bg-gray-900 p-8 min-h-[500px] relative overflow-auto"
+                  className="border-2 border-dashed rounded-lg bg-gray-50 dark:bg-gray-900 p-8 min-h-[300px] md:h-[500px] relative overflow-auto"
                   style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'top left' }}
                 >
                   {/* Placeholder for actual map image */}
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
                     <div className="text-center text-muted-foreground">
                       <Map className="h-16 w-16 mx-auto mb-4" />
                       <p>{t('mapVisualization')}</p>
@@ -167,7 +167,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   {zones.map((zone, index: number) => (
                     <div
                       key={zone.id}
-                      className="absolute border-2 border-primary bg-primary/10 rounded flex items-center justify-center cursor-pointer hover:bg-primary/20 transition-colors"
+                      className="absolute sm:relative sm:inset-auto border-2 border-primary bg-primary/10 rounded flex items-center justify-center cursor-pointer hover:bg-primary/20 transition-colors sm:relative sm:inset-auto"
                       style={{
                         left: `${zone.x}%`,
                         top: `${zone.y}%`,
@@ -204,7 +204,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                 </div>
 
                 {/* Map Info */}
-                <div className="grid gap-4 md:grid-cols-3">
+                <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                   <div>
                     <div className="text-sm text-muted-foreground">Total Area</div>
                     <div className="text-lg font-semibold">
@@ -231,9 +231,9 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                     <h4 className="font-semibold mb-2">Zones & Areas</h4>
                     <div className="grid gap-2 md:grid-cols-2">
                       {zones.map((zone: any) => (
-                        <div key={zone.id} className="flex items-center justify-between p-2 border rounded">
+                        <div key={zone.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 border rounded">
                           <span className="text-sm font-medium">{zone.name}</span>
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                             {zone.capacity && (
                               <span className="text-xs text-muted-foreground">
                                 {zone.capacity} cap
@@ -250,7 +250,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
                 )}
               </div>
             ) : (
-              <div className="flex items-center justify-center h-[500px] text-muted-foreground">
+              <div className="flex flex-wrap items-center justify-center h-[300px] md:h-[500px] text-muted-foreground">
                 <div className="text-center">
                   <Map className="h-16 w-16 mx-auto mb-4" />
                   <p>{t('selectMap')}</p>
@@ -265,13 +265,13 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
       {selectedMap && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-base flex items-center gap-2">
+            <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Layers className="h-4 w-4" aria-hidden="true" />
               Map Layers
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex gap-2 flex-wrap">
+            <div className="flex flex-col sm:flex-row gap-2 flex-wrap">
               {layers.map((layer: any) => {
                 const Icon = layer.icon
                 const isActive = activeLayers.includes(layer.id)

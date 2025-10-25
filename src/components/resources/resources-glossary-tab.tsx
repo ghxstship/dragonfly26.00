@@ -28,7 +28,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">
@@ -75,27 +75,27 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Terms</CardTitle>
             <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{terms.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{terms.length}</div>
             <p className="text-xs text-muted-foreground">{t('definitions')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('categories')}</CardTitle>
             <Hash className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {new Set(terms.map((t: any) => t.category)).size}
             </div>
             <p className="text-xs text-muted-foreground">{t('topics')}</p>
@@ -103,12 +103,12 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('technical')}</CardTitle>
             <Info className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">
               {terms.filter((t: any) => t.category === 'technical').length}
             </div>
             <p className="text-xs text-muted-foreground">Technical terms</p>
@@ -116,12 +116,12 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('production')}</CardTitle>
             <Info className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-purple-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-purple-600">
               {terms.filter((t: any) => t.category === 'production').length}
             </div>
             <p className="text-xs text-muted-foreground">Production terms</p>
@@ -131,7 +131,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
         <Input
           placeholder={t('searchTerms')}
           value={searchQuery as any}
@@ -161,11 +161,11 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
       </div>
 
       {/* Terms List */}
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
         {sortedLetters.map((letter: any) => (
           <div key={letter} id={`letter-${letter}`}>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-lg">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-4">
+              <div className="flex flex-wrap items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold text-lg">
                 {letter}
               </div>
               <div className="flex-1 h-px bg-border" />
@@ -175,7 +175,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
               {termsByLetter[letter].map((term: any) => (
                 <Card key={term.id} className="hover:shadow-md transition-shadow">
                   <CardHeader>
-                    <div className="flex items-start justify-between gap-4">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
                       <div className="flex-1">
                         <CardTitle className="text-lg">{term.name}</CardTitle>
                         {term.alternate_names && term.alternate_names.length > 0 && (
@@ -207,7 +207,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
                     )}
 
                     {term.related_terms && term.related_terms.length > 0 && (
-                      <div className="flex items-center gap-2 text-sm">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                         <LinkIcon className="h-3 w-3 text-muted-foreground"  aria-hidden="true" />
                         <span className="text-muted-foreground">Related:</span>
                         <div className="flex flex-wrap gap-1">

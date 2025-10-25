@@ -81,7 +81,7 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
   const regionComparison = useRegionComparison(t)
   const displayData = data || []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Tabs defaultValue="quarterly">
         <TabsList>
           <TabsTrigger value="quarterly">{t('quarterly')}</TabsTrigger>
@@ -89,7 +89,7 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
           <TabsTrigger value="yoy">{t('yearOverYear')}</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="quarterly" className="space-y-6 mt-6">
+        <TabsContent value="quarterly" className="space-y-3 md:space-y-4 lg:space-y-6 mt-6">
           {comparisonData.map((data: ComparisonData, index: number) => {
             const maxValue = Math.max(...data.periods.map((p: Period) => p.value))
             const isPositive = data.change.startsWith("+")
@@ -97,7 +97,7 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
             return (
               <Card key={index} role="article">
                 <CardHeader>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                     <CardTitle>{t(data.categoryKey)}</CardTitle>
                     <Badge 
                       variant="outline" 
@@ -110,14 +110,14 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
                       {data.periods.map((period: Period, idx: number) => {
                         const heightPercent = (period.value / maxValue) * 100
                         
                         return (
                           <div key={idx} className="space-y-2">
-                            <div className="h-40 flex items-end">
-                              <div className="w-full space-y-1">
+                            <div className="h-40 flex flex-wrap items-end">
+                              <div className="w-full space-y-1 max-w-full">
                                 <div className="text-center text-sm font-bold mb-1">{period.value}</div>
                                 <div className={`${period.color} rounded-t-lg transition-all`} style={{ height: `${heightPercent}%` }}></div>
                               </div>
@@ -143,25 +143,25 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
               <div className="space-y-4">
                 {regionComparison.map((region: RegionComparison, index: number) => (
                   <div key={index} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-3">
                       <h3 className={`font-semibold text-lg ${region.color}`}>{t(region.regionKey)}</h3>
                       <Badge variant="outline">{region.revenue}% {t('ofTotalRevenue')}</Badge>
                     </div>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
                       <div>
                         <p className="text-sm text-muted-foreground">{t('revenueShare')}</p>
-                        <p className="text-2xl font-bold mt-1" aria-live="polite">{region.revenue}%</p>
+                        <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{region.revenue}%</p>
                         <div className="h-2 bg-accent rounded-full mt-2">
                           <div className={`h-2 ${region.color.replace('text-', 'bg-')} rounded-full`} style={{ width: `${region.revenue}%` }}></div>
                         </div>
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">{t('growthRate')}</p>
-                        <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">+{region.growth}%</p>
+                        <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">+{region.growth}%</p>
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">{t('customers')}</p>
-                        <p className="text-2xl font-bold mt-1" aria-live="polite">{region.customers.toLocaleString()}</p>
+                        <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{region.customers.toLocaleString()}</p>
                       </div>
                     </div>
                   </div>

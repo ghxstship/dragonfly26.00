@@ -111,7 +111,7 @@ export function SpotlightTemplateOrganism({
   
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
         {/* Hero Section (if provided) */}
         {heroContent && (
           <section role="region" aria-labelledby="hero-heading">
@@ -120,7 +120,7 @@ export function SpotlightTemplateOrganism({
           </section>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
           {/* Featured Content - Main Column */}
           <section role="region" aria-labelledby="featured-heading" className="lg:col-span-2">
             <div className="mb-4">
@@ -130,8 +130,8 @@ export function SpotlightTemplateOrganism({
             
             <div className="space-y-4">
               {featuredItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+                <Card key={item.id} className="overflow-hidden md:block hover:shadow-lg transition-shadow">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
                     {/* Image */}
                     {item.imageUrl && (
                       <div className="relative h-48 md:h-auto bg-muted">
@@ -143,7 +143,7 @@ export function SpotlightTemplateOrganism({
                           aria-hidden="true"
                         />
                         {item.categoryKey && (
-                          <Badge className="absolute top-2 left-2 z-10">
+                          <Badge className="absolute sm:relative sm:inset-auto top-2 left-2 z-10 sm:relative sm:inset-auto">
                             {t(item.categoryKey)}
                           </Badge>
                         )}
@@ -155,7 +155,7 @@ export function SpotlightTemplateOrganism({
                       <div className="space-y-3">
                         {/* Author Info */}
                         {item.authorName && (
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                             <Avatar className="h-8 w-8">
                               <AvatarImage src={item.authorAvatar} alt="" />
                               <AvatarFallback>{item.authorName.charAt(0)}</AvatarFallback>
@@ -166,7 +166,7 @@ export function SpotlightTemplateOrganism({
                         
                         {/* Title & Description */}
                         <div>
-                          <h3 className="text-xl font-semibold mb-2">
+                          <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2">
                             {item.titleKey ? t(item.titleKey) : item.title}
                           </h3>
                           <p className="text-sm text-muted-foreground">
@@ -187,21 +187,21 @@ export function SpotlightTemplateOrganism({
                         
                         {/* Metrics */}
                         {item.metrics && (
-                          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                             {item.metrics.views !== undefined && (
-                              <div className="flex items-center gap-1">
+                              <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                                 <Eye className="h-4 w-4" aria-hidden="true" />
                                 <span>{item.metrics.views.toLocaleString()}</span>
                               </div>
                             )}
                             {item.metrics.likes !== undefined && (
-                              <div className="flex items-center gap-1">
+                              <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                                 <Heart className="h-4 w-4" aria-hidden="true" />
                                 <span>{item.metrics.likes.toLocaleString()}</span>
                               </div>
                             )}
                             {item.metrics.rating !== undefined && (
-                              <div className="flex items-center gap-1">
+                              <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                                 <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                                 <span>{item.metrics.rating.toFixed(1)}</span>
                               </div>
@@ -231,7 +231,7 @@ export function SpotlightTemplateOrganism({
             <section role="region" aria-labelledby="trending-heading" className="lg:col-span-1">
               <Card>
                 <CardHeader>
-                  <CardTitle id="trending-heading" className="text-base flex items-center gap-2">
+                  <CardTitle id="trending-heading" className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <TrendingUp className="h-5 w-5" aria-hidden="true" />
                     {t('trendingTitle')}
                   </CardTitle>
@@ -244,7 +244,7 @@ export function SpotlightTemplateOrganism({
                       return (
                         <div
                           key={item.id}
-                          className="flex items-center justify-between p-3 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
+                          className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                           onClick={item.action}
                           role="button"
                           tabIndex={0}
@@ -255,7 +255,7 @@ export function SpotlightTemplateOrganism({
                             }
                           }}
                         >
-                          <div className="flex items-center gap-3 flex-1">
+                          <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 flex-1">
                             <span className="text-lg font-bold text-muted-foreground">
                               #{index + 1}
                             </span>

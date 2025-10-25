@@ -84,16 +84,16 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Locations</CardTitle>
             <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{locations.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{locations.length}</div>
             <p className="text-xs text-muted-foreground">
               {locations.filter((l: any) => (l as any).status === 'active').length} active
             </p>
@@ -101,12 +101,12 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Venues</CardTitle>
             <Building className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {locations.filter((l: any) => (l as any).type === 'venue').length}
             </div>
             <p className="text-xs text-muted-foreground">Event spaces</p>
@@ -114,12 +114,12 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Warehouses</CardTitle>
             <Warehouse className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {locations.filter((l: any) => (l as any).type === 'warehouse').length}
             </div>
             <p className="text-xs text-muted-foreground">Storage facilities</p>
@@ -127,12 +127,12 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Offices</CardTitle>
             <Home className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {locations.filter((l: any) => (l as any).type === 'office').length}
             </div>
             <p className="text-xs text-muted-foreground">Office spaces</p>
@@ -141,9 +141,9 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
       </div>
 
       {/* Search */}
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input
             placeholder={t('locations.search.placeholder')}
             value={searchQuery as any}
@@ -154,15 +154,15 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
       </div>
 
       {/* Locations Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {filteredLocations.map((location: any) => {
           const TypeIcon = getTypeIcon(location.type)
 
           return (
             <Card key={location.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start gap-3 flex-1 min-w-0">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1 min-w-0">
                     <div className="p-2 rounded-lg bg-primary/10">
                       <TypeIcon className="h-4 w-4 text-primary" aria-hidden="true" />
                     </div>
@@ -174,7 +174,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-2 mt-2">
+                <div className="flex flex-wrap gap-2 mt-2">
                   <Badge className={getTypeColor(location.type)}>
                     {location.type}
                   </Badge>
@@ -187,7 +187,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
               <CardContent className="space-y-3">
                 {/* Address */}
                 {location.address && (
-                  <div className="flex items-start gap-2 text-sm">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 text-sm">
                     <Navigation className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="flex-1">
                       <div>{location.address}</div>
@@ -202,21 +202,21 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
 
                 {/* Contact Info */}
                 {location.phone && (
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                     <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                     <span>{location.phone}</span>
                   </div>
                 )}
 
                 {location.email && (
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                     <Mail className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                     <span className="truncate">{location.email}</span>
                   </div>
                 )}
 
                 {location.website && (
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                     <Globe className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                     <a 
                       href={location.website} 
@@ -231,7 +231,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
 
                 {/* Capacity/Size */}
                 {(location.capacity || location.square_feet) && (
-                  <div className="flex justify-between pt-2 border-t text-sm">
+                  <div className="flex flex-wrap justify-between pt-2 border-t text-sm">
                     {location.capacity && (
                       <div>
                         <div className="text-muted-foreground">Capacity</div>
@@ -264,7 +264,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
                 )}
 
                 {/* Actions */}
-                <div className="flex gap-2 pt-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   <Button className="flex-1" variant="outline" size="sm">
                     View Details
                   </Button>

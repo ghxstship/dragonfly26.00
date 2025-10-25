@@ -97,14 +97,14 @@ export function DashboardTemplate({
     <div className={cn('flex flex-col h-full', className)}>
       {/* Header */}
       <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex items-center justify-between p-4 md:p-6">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 md:p-6">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+            <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold tracking-tight">{title}</h1>
             {subtitle && (
               <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>
             )}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             {headerActions}
             {onRefresh && (
               <Button
@@ -145,7 +145,7 @@ export function DashboardTemplate({
 
           {/* Sidebar */}
           {sidebar && (
-            <aside className="hidden xl:block w-80 flex-shrink-0">
+            <aside className="hidden md:block xl:block w-full sm:w-80 flex-shrink-0">
               {sidebar}
             </aside>
           )}

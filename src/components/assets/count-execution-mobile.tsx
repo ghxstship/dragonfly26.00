@@ -54,13 +54,13 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
   }
 
   return (
-    <div className="flex flex-col h-screen bg-background">
+    <div className="flex flex-wrap flex-col h-screen bg-background">
       {/* Progress Bar */}
       <div className="bg-primary h-1" style={{ width: `${progress}%`, transition: 'width 0.3s' }} />
 
       {/* Header */}
       <div className="p-4 border-b">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <h3 className="font-semibold">Counting Items</h3>
           <Badge variant="secondary">
             {currentIndex + 1} of {items.length}
@@ -72,7 +72,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
       <div className="flex-1 overflow-auto p-4">
         <Card className="p-4">
           {/* Photo */}
-          <div className="relative aspect-video bg-muted rounded-lg overflow-hidden mb-4">
+          <div className="relative aspect-video bg-muted rounded-lg overflow-hidden md:block mb-4">
             {currentItem.photos?.[0] ? (
               <Image
                 src={currentItem.photos[0]}
@@ -81,7 +81,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
                 className="object-cover"
               />
             ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
                 <Package className="h-12 w-12 text-muted-foreground" />
               </div>
             )}
@@ -89,7 +89,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
 
           {/* Item Info */}
           <div className="space-y-2 mb-4">
-            <h2 className="text-xl font-bold">{currentItem.name}</h2>
+            <h2 className="text-base md:text-lg lg:text-xl font-bold">{currentItem.name}</h2>
             <p className="text-sm text-muted-foreground">SKU: {currentItem.sku}</p>
             {currentItem.location && (
               <p className="text-sm text-muted-foreground">📍 {currentItem.location}</p>
@@ -97,25 +97,25 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
           </div>
 
           {/* Expected vs Counted */}
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 mb-4">
             <div className="text-center p-3 bg-muted rounded-lg">
               <p className="text-xs text-muted-foreground mb-1">Expected</p>
-              <p className="text-2xl font-bold">{currentItem.expected_quantity}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentItem.expected_quantity}</p>
             </div>
             <div className="text-center p-3 bg-primary/10 rounded-lg">
               <p className="text-xs text-muted-foreground mb-1">Counted</p>
-              <p className="text-2xl font-bold text-primary">{countedQty || '0'}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-primary">{countedQty || '0'}</p>
             </div>
           </div>
 
           {/* Number Pad */}
-          <div className="grid grid-cols-3 gap-2 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-4">
             {['1', '2', '3', '4', '5', '6', '7', '8', '9', 'clear', '0', 'backspace'].map((num: any) => (
               <Button
                 key={num}
                 variant="outline"
                 size="lg"
-                className="h-16 text-xl font-semibold"
+                className="h-16 text-base md:text-lg lg:text-xl font-semibold"
                 onClick={() => handleNumberPad(num)}
               >
                 {num === 'clear' ? 'C' : num === 'backspace' ? '⌫' : num}
@@ -124,7 +124,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
           </div>
 
           {/* Actions */}
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Button variant="outline" size="lg" className="flex-1" onClick={handlePrevious} disabled={currentIndex === 0}>
               <ChevronLeft className="h-5 w-5 mr-2" />
               Previous
@@ -145,7 +145,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
 
       {/* Bottom Actions */}
       <div className="p-4 border-t">
-        <Button variant="outline" className="w-full" size="lg">
+        <Button variant="outline" className="w-full max-w-full" size="lg">
           <Camera className="h-5 w-5 mr-2" />
           Scan Barcode
         </Button>

@@ -52,19 +52,19 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
 
   const displayMetrics = data || []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Real-time Metrics */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         {realtimeMetrics.map((metric: RealtimeMetric, index: number) => (
           <Card key={index} className="border-2">
             <CardContent className="p-6">
-              <div className="flex items-start justify-between mb-2">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-2">
                 <p className="text-sm text-muted-foreground">{t(metric.labelKey)}</p>
                 {metric.status === "up" && <Activity className="h-4 w-4 text-green-600" aria-hidden="true" />}
                 {metric.status === "down" && <Zap className="h-4 w-4 text-blue-600" aria-hidden="true" />}
                 {metric.status === "stable" && <div className="h-2 w-2 rounded-full bg-gray-400"></div>}
               </div>
-              <p className="text-3xl font-bold mb-2">{metric.value}</p>
+              <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold mb-2">{metric.value}</p>
               <p className={`text-xs ${
                 metric.status === "up" ? "text-green-600" : 
                 metric.status === "down" ? "text-blue-600" : 
@@ -80,7 +80,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
       {/* Activity Feed */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Activity className="h-5 w-5" aria-hidden="true" />
             Live Activity Feed
           </CardTitle>
@@ -90,7 +90,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
             {recentEvents.map((event: any) => (
               <div 
                 key={event.id} 
-                className="flex items-center gap-3 p-3 border rounded-lg hover:bg-accent transition-colors"
+                className="flex flex-col md:flex-row items-center gap-3 p-3 border rounded-lg hover:bg-accent transition-colors"
               >
                 <div className={`h-2 w-2 rounded-full flex-shrink-0 ${
                   event.severity === "success" ? "bg-green-600" :
@@ -102,7 +102,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
                   <p className="text-sm font-medium truncate">{event.message}</p>
                   <p className="text-xs text-muted-foreground">{event.type}</p>
                 </div>
-                <p className="text-xs text-muted-foreground whitespace-nowrap">{event.time}</p>
+                <p className="text-xs text-muted-foreground whitespace-nowrap overflow-hidden text-ellipsis">{event.time}</p>
               </div>
             ))}
           </div>
@@ -115,9 +115,9 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
           <CardTitle>{t('systemStatus')}</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             <div className="p-4 border rounded-lg">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
                 <p className="text-sm font-medium">{t('database')}</p>
                 <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">{t('healthy')}</Badge>
               </div>
@@ -127,7 +127,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
               </div>
             </div>
             <div className="p-4 border rounded-lg">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
                 <p className="text-sm font-medium">{t('apiServer')}</p>
                 <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">{t('healthy')}</Badge>
               </div>
@@ -137,7 +137,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
               </div>
             </div>
             <div className="p-4 border rounded-lg">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
                 <p className="text-sm font-medium">{t('cache')}</p>
                 <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200">{t('healthy')}</Badge>
               </div>

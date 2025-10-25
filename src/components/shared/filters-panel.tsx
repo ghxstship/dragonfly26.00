@@ -87,15 +87,15 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
         <Button variant="outline" size="icon" className="relative">
           <Filter className="h-4 w-4" />
           {filters.length > 0 && (
-            <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex items-center justify-center">
+            <span className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex flex-wrap items-center justify-center">
               {filters.length}
             </span>
           )}
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-96">
+      <SheetContent className="w-full md:w-96">
         <SheetHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <SheetTitle>Filters</SheetTitle>
             {filters.length > 0 && (
               <Button variant="ghost" size="sm" onClick={clearAllFilters}>
@@ -182,7 +182,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="w-full gap-2"
+                    className="w-full gap-2 max-w-full"
                     onClick={() => removeFilter(filter.id)}
                   >
                     <X className="h-4 w-4" />
@@ -195,7 +195,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
             {/* Add Filter Button */}
             <Button
               variant="outline"
-              className="w-full gap-2"
+              className="w-full gap-2 max-w-full"
               onClick={addFilter}
             >
               <Plus className="h-4 w-4" />

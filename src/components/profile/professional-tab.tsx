@@ -137,14 +137,14 @@ export function ProfessionalTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>{t('profile.professional.summary')}</CardTitle>
@@ -161,7 +161,7 @@ export function ProfessionalTab() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="company">{t('profile.professional.company')}</Label>
               <Input
@@ -202,7 +202,7 @@ export function ProfessionalTab() {
 
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>{t('profile.professional.workExperience')}</CardTitle>
               <CardDescription>{t('profile.professional.workHistory')}</CardDescription>
@@ -213,15 +213,15 @@ export function ProfessionalTab() {
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
           {experiences.length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-8">
+            <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('profile.professional.noExperience')}
             </p>
           ) : (
             experiences.map((exp: any) => (
               <div key={exp.id} className="border rounded-lg p-4 space-y-4">
-                <div className="flex justify-between items-start">
+                <div className="flex flex-wrap flex-col md:flex-row justify-between items-start">
                   <h4 className="font-semibold">{t('profile.professional.experienceEntry')}</h4>
                   <Button
                     variant="ghost"
@@ -233,7 +233,7 @@ export function ProfessionalTab() {
                   </Button>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                   <div className="space-y-2">
                     <Label htmlFor={`title-${exp.id}`}>{t('profile.professional.jobTitle')}</Label>
                     <Input
@@ -254,7 +254,7 @@ export function ProfessionalTab() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
                   <div className="space-y-2">
                     <Label htmlFor={`location-${exp.id}`}>{t('profile.professional.location')}</Label>
                     <Input
@@ -287,7 +287,7 @@ export function ProfessionalTab() {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-2">
+                <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
                   <input
                     type="checkbox"
                     id={`current-${exp.id}`}
@@ -318,7 +318,7 @@ export function ProfessionalTab() {
 
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>{t('profile.professional.education')}</CardTitle>
               <CardDescription>{t('profile.professional.educationBackground')}</CardDescription>
@@ -329,15 +329,15 @@ export function ProfessionalTab() {
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
           {education.length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-8">
+            <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('profile.professional.noEducation')}
             </p>
           ) : (
             education.map((edu: any) => (
               <div key={edu.id} className="border rounded-lg p-4 space-y-4">
-                <div className="flex justify-between items-start">
+                <div className="flex flex-wrap flex-col md:flex-row justify-between items-start">
                   <h4 className="font-semibold">{t('profile.professional.educationEntry')}</h4>
                   <Button
                     variant="ghost"
@@ -349,7 +349,7 @@ export function ProfessionalTab() {
                   </Button>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                   <div className="space-y-2">
                     <Label htmlFor={`degree-${edu.id}`}>{t('profile.professional.degree')}</Label>
                     <Input
@@ -370,7 +370,7 @@ export function ProfessionalTab() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                   <div className="space-y-2">
                     <Label htmlFor={`field-${edu.id}`}>{t('profile.professional.fieldOfStudy')}</Label>
                     <Input
@@ -418,7 +418,7 @@ export function ProfessionalTab() {
         </CardContent>
       </Card>
 
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end">
         <Button onClick={handleSave} disabled={saving}>
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />

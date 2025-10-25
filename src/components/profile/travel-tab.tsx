@@ -98,21 +98,21 @@ export function TravelProfileTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
           <CardTitle>{t('profile.travel.passport')}</CardTitle>
           <CardDescription>{t('profile.travel.passportDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="passportNumber">{t('profile.travel.passportNumber')}</Label>
               <Input
@@ -161,7 +161,7 @@ export function TravelProfileTab() {
           <CardDescription>{t('profile.travel.trustedTravelerDescription')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="tsa">{t('profile.travel.tsaPrecheck')}</Label>
               <Input
@@ -208,25 +208,25 @@ export function TravelProfileTab() {
               value={travelData.seatPreference}
               onValueChange={(value) => setTravelData({ ...travelData, seatPreference: value })}
             >
-              <div className="flex items-center space-x-2">
+              <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
                 <RadioGroupItem value="window" id="window" />
                 <Label htmlFor="window" className="font-normal">
                   {t('profile.travel.seatWindow')}
                 </Label>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
                 <RadioGroupItem value="aisle" id="aisle" />
                 <Label htmlFor="aisle" className="font-normal">
                   {t('profile.travel.seatAisle')}
                 </Label>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
                 <RadioGroupItem value="middle" id="middle" />
                 <Label htmlFor="middle" className="font-normal">
                   {t('profile.travel.seatMiddle')}
                 </Label>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
                 <RadioGroupItem value="no-preference" id="no-preference" />
                 <Label htmlFor="no-preference" className="font-normal">
                   {t('profile.travel.seatNoPreference')}
@@ -297,7 +297,7 @@ export function TravelProfileTab() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-3">
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
               <Checkbox
                 id="mobilityAssistance"
                 checked={travelData.mobilityAssistance}
@@ -310,7 +310,7 @@ export function TravelProfileTab() {
               </Label>
             </div>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
               <Checkbox
                 id="wheelchairRequired"
                 checked={travelData.wheelchairRequired}
@@ -337,7 +337,7 @@ export function TravelProfileTab() {
         </CardContent>
       </Card>
 
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end">
         <Button onClick={handleSave} disabled={saving}>
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />

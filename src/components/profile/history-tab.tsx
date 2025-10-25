@@ -112,7 +112,7 @@ export function HistoryTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     )
@@ -149,38 +149,38 @@ export function HistoryTab() {
       : 0
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Filters */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('profile.history.totalProjects')}</CardTitle>
             <FolderKanban className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{displayHistory.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{displayHistory.length}</div>
             <p className="text-xs text-muted-foreground">{completedProjects} {t('profile.history.completedLowercase')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('profile.history.hoursWorked')}</CardTitle>
             <CalendarDays className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalHoursWorked.toLocaleString()}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalHoursWorked.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">{t('profile.history.acrossAllProjects')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('profile.history.averageRating')}</CardTitle>
             <Briefcase className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{averageRating.toFixed(1)}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{averageRating.toFixed(1)}</div>
             <p className="text-xs text-muted-foreground">{t('profile.history.outOf5')}</p>
           </CardContent>
         </Card>
@@ -202,7 +202,7 @@ export function HistoryTab() {
         </CardHeader>
         <CardContent>
           {filteredProjects.length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-8">
+            <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('profile.history.noProjectsFound')}
             </p>
           ) : (
@@ -236,7 +236,7 @@ export function HistoryTab() {
                     <TableCell>{project.hoursWorked}</TableCell>
                     <TableCell>
                       {project.rating ? (
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <span className="font-medium">{project.rating.toFixed(1)}</span>
                           <span className="text-xs text-muted-foreground">{t('profile.history.outOf5')}</span>
                         </div>
@@ -265,14 +265,14 @@ export function HistoryTab() {
               const percentage = (roleProjects.length / projectHistory.length) * 100
               return (
                 <div key={role} className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                     <span className="font-medium">{role}</span>
                     <span className="text-muted-foreground">
                       {roleProjects.length} project{roleProjects.length !== 1 ? "s" : ""} (
                       {percentage.toFixed(0)}%)
                     </span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                     <div
                       className="h-full bg-primary transition-all"
                       style={{ width: `${percentage}%` }}

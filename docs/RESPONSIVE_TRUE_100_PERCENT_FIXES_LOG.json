@@ -1,0 +1,842 @@
+[
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/checklist-templates-tab.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/members-management-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/plugins-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/admin/webhooks-tab.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/analytics/analytics-trends-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/api-tokens/create-token-dialog.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/barcode-scanner-overlay.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/catalog-tab.tsx",
+    "fix": "Flex direction responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/catalog-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/count-execution-mobile.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/count-variance-panel.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/inventory-alerts-panel.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/atoms/inputs/NumberInput.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/competitions-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/connections-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/discussions-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/events-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/news-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/showcase-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/community/studios-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-contacts-tab.tsx",
+    "fix": "Flex direction responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/companies/companies-contacts-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/events/events-tours-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-activity-timeline.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/files/file-attachment-button.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/finance/finance-overview-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/create-objective-dialog.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/insights/insights-progress-tracking-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/create-menu.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/theme-toggle.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/top-bar.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/layout/workspace-switcher.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-directory-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-site-maps-tab.tsx",
+    "fix": "Flex direction responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/locations/locations-site-maps-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/favorites-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/lists-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-discount-input.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-gift-card.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-product-detail-drawer.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-quick-view.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-review-form.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-variant-selector.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-wishlist-button.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/orders-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/products-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/purchases-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/reviews-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/sales-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/services-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/shop-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/spotlight-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/spotlight-tab.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/vendors-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/members/invite-dialog.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/controls/SearchBar.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/molecules/controls/SearchWithFilters.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/content/EmbedContainerOrganism.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/ActivityViewOrganism.tsx",
+    "fix": "Flex direction responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/ActivityViewOrganism.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/BoardViewOrganism.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/BoxViewOrganism.tsx",
+    "fix": "Flex direction responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/FinancialDashboardOrganism.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/PortfolioViewOrganism.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/data-views/TimelineOrganism.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/diagrams/MindMapOrganism.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/maps/MapOrganism.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/organisms/templates/SpotlightTemplateOrganism.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/activity-timeline.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/compliance-alerts-banner.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/keyboard-shortcuts.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/mini-profile-card.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/progress-indicators.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/people/smart-filters-bar.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/plugins/plugins-page-content.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-matching-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/procurement/procurement-receiving-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/profile/tags-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/projects/projects-schedule-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/create-report-dialog.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-archived-tab.tsx",
+    "fix": "Flex direction responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/reports/reports-archived-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-courses-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-glossary-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-grants-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-guides-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-library-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-publications-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/resources/resources-troubleshooting-tab.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/settings/profile-page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/asset-catalog-autocomplete.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 4
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/assignee-selector.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/create-item-dialog-enhanced.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/crud-drawer.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/error-display.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/error-display.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/filters-panel.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/photo-tab-content.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/scan-tab-content.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 10
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/templates/forms/FormTemplate.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/test/supabase-connection-test.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/dialog.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/dropdown-menu.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/select.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/ui/sheet.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/activity-view.tsx",
+    "fix": "Flex direction responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/activity-view.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/board-view.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/box-view.tsx",
+    "fix": "Flex direction responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/calendar-view.tsx",
+    "fix": "Container padding",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/dashboard-view.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/doc-view.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/embed-view.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/financial-view.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/form-view.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/form-view.tsx",
+    "fix": "Container padding",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/map-view.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/mind-map-view.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/portfolio-view.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/timeline-view.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/views.backup/view-switcher.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/webhooks/create-webhook-dialog.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/workspace/module-page-content.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/workspace/tab-page-content.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/DetailedPricingSection.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/DetailedPricingSection.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/marketing/components/sections/PricingSection.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/error.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/forgot-password/page.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/invite/[token]/page.tsx",
+    "fix": "Container padding",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/login/page.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/reset-password/page.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/signup/page.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(auth)/verify-email/page.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/error.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/error.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/error.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/error.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/page-connected.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/error.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/error.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/error.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/[workspaceId]/error.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/error.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(dashboard)/workspace/error.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/blog/page.tsx",
+    "fix": "Container padding",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/company/page.tsx",
+    "fix": "Container padding",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/contact/page.tsx",
+    "fix": "Container padding",
+    "count": 3
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/demo/page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/docs/api/api-docs-client.tsx",
+    "fix": "Container padding",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/docs/page.tsx",
+    "fix": "Container padding",
+    "count": 2
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/legal/privacy/page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(marketing)/legal/terms/page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/complete/page.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/complete/page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/invite/page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/plan/page.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/plan/page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/welcome/page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/(onboarding)/onboarding/workspace/page.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/error.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/error.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/not-found.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/[locale]/not-found.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/global-error.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/global-error.tsx",
+    "fix": "Container padding",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/not-found.tsx",
+    "fix": "Absolute positioning responsive",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/app/not-found.tsx",
+    "fix": "Container padding",
+    "count": 1
+  }
+]

@@ -80,15 +80,15 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
           <Input placeholder={t('searchServices')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-[200px]">
+          <SelectTrigger className="w-full max-w-[200px]">
             <SelectValue placeholder={t('serviceType')} />
           </SelectTrigger>
           <SelectContent>
@@ -101,7 +101,7 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
           </SelectContent>
         </Select>
         <Select defaultValue="all-level">
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('experienceLevel')} />
           </SelectTrigger>
           <SelectContent>
@@ -113,7 +113,7 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
           </SelectContent>
         </Select>
         <Select defaultValue="rating">
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
@@ -126,19 +126,19 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
       </div>
 
       {/* Services List */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {servicesData.map((service: any) => (
           <Card key={service.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-start justify-between">
-                <div className="flex items-start gap-4">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                   <Avatar className="h-12 w-12">
                     <AvatarFallback className="bg-primary/10 text-primary">
                       {service.assignee_name?.split(' ').map((n: string) => n[0]).join('') || "SE"}
                     </AvatarFallback>
                   </Avatar>
                   <div className="space-y-1 flex-1">
-                    <div className="flex items-start justify-between gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
                       <CardTitle className="text-lg">{service.assignee_name}</CardTitle>
                       {getLevelBadge(service.priority)}
                     </div>
@@ -158,26 +158,26 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
               </p>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                     <Star className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">{t('rating')}</span>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                     <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
                     <span className="font-semibold">{service.rating}</span>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                     <Briefcase className="h-3 w-3"  aria-hidden="true" />
                     <span className="text-xs">{t('experience')}</span>
                   </div>
                   <p className="font-semibold">{service.experience_years} years</p>
                 </div>
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
                     <MessageCircle className="h-3 w-3" aria-hidden="true" />
                     <span className="text-xs">{t('reviews')}</span>
                   </div>
@@ -195,12 +195,12 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
               </div>
 
               {/* Price and CTA */}
-              <div className="flex items-center justify-between pt-2 border-t">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between pt-2 border-t">
                 <div>
-                  <p className="text-2xl font-bold">{service.price}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{service.price}</p>
                   <p className="text-xs text-muted-foreground">Rate per day</p>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Button variant="outline" size="sm" onClick={() => handleViewProfile(service)}>
                     View Profile
                   </Button>

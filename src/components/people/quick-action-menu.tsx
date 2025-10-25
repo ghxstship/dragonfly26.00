@@ -137,7 +137,7 @@ export function EmployeeQuickActions({
 }) {
   return (
     <div className={className}>
-      <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
         <Button variant="ghost" size="sm" className="h-7">
           <Eye className="h-3 w-3" />
         </Button>

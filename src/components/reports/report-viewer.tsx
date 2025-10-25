@@ -44,13 +44,13 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="w-full sm:max-w-4xl overflow-y-auto">
         <SheetHeader>
-          <div className="flex items-start justify-between">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
             <div>
               <SheetTitle>{report.name}</SheetTitle>
               <p className="text-sm text-muted-foreground mt-1">{report.description}</p>
             </div>
             <TooltipProvider delayDuration={300}>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <UITooltip>
                   <TooltipTrigger asChild>
                     <Button variant="outline" size="icon">
@@ -87,7 +87,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
         </SheetHeader>
 
         <Tabs defaultValue="visualization" className="mt-6">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
             <TabsTrigger value="visualization">Visualization</TabsTrigger>
             <TabsTrigger value="data">Data</TabsTrigger>
             <TabsTrigger value="settings">Settings</TabsTrigger>
@@ -96,9 +96,9 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
           <TabsContent value="visualization" className="space-y-4">
             <Card>
               <CardHeader>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <CardTitle className="text-lg">{report.name}</CardTitle>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <Badge variant="outline" className="capitalize">{report.type}</Badge>
                     {report.chart_type && (
                       <Badge variant="outline" className="capitalize">{report.chart_type}</Badge>
@@ -146,18 +146,18 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
                 <CardTitle className="text-sm">Summary Statistics</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
                   <div>
                     <p className="text-sm text-muted-foreground">Total Records</p>
-                    <p className="text-2xl font-bold">127</p>
+                    <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">127</p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Average</p>
-                    <p className="text-2xl font-bold">15.9</p>
+                    <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">15.9</p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Trend</p>
-                    <p className="text-2xl font-bold text-green-600">↑ 12%</p>
+                    <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">↑ 12%</p>
                   </div>
                 </div>
               </CardContent>
@@ -168,14 +168,14 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
             <Card>
               <CardContent className="p-6">
                 <div className="space-y-2">
-                  <div className="grid grid-cols-4 gap-4 font-medium pb-2 border-b">
+                  <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 font-medium pb-2 border-b">
                     <span>Date</span>
                     <span>Category</span>
                     <span>Value</span>
                     <span>Change</span>
                   </div>
                   {mockChartData.map((row: any, idx: number) => (
-                    <div key={idx} className="grid grid-cols-4 gap-4 text-sm">
+                    <div key={idx} className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 text-sm">
                       <span>{row.name}</span>
                       <span>Tasks</span>
                       <span>{row.value}</span>
@@ -193,23 +193,23 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
                 <CardTitle className="text-sm">Report Configuration</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Data Source</span>
                   <span className="capitalize">{report.data_source}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Public Access</span>
                   <span>{report.is_public ? "Yes" : "No"}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Scheduled</span>
                   <span>{report.schedule_enabled ? "Yes" : "No"}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Created</span>
                   <span>{new Date(report.created_at).toLocaleDateString()}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Last Updated</span>
                   <span>{new Date(report.updated_at).toLocaleDateString()}</span>
                 </div>

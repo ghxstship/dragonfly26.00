@@ -114,7 +114,7 @@ export function InventoryBadge({
   if (showLocations && inventoryLevels && inventoryLevels.length > 0) {
     return (
       <div className={cn("space-y-2", className)}>
-        <div className="flex items-center gap-1.5">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1.5">
           <Icon className={iconSizeClasses[size]} />
           <span className="text-sm font-medium">
             {stockInfo.label}
@@ -123,7 +123,7 @@ export function InventoryBadge({
         </div>
         <div className="space-y-1">
           {inventoryLevels.map((level, index) => (
-            <div key={index} className="flex items-center justify-between text-xs text-muted-foreground">
+            <div key={index} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs text-muted-foreground">
               <span>{level.location_name || `Location ${index + 1}`}</span>
               <span className="font-medium">
                 {level.available > 0 ? (

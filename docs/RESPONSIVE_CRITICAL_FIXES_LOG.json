@@ -1,0 +1,22 @@
+[
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/marketplace/marketplace-review-form.tsx",
+    "fix": "Responsive button groups",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/barcode-scanner-overlay.tsx",
+    "fix": "Responsive dialog widths",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/assets/barcode-scanner-overlay.tsx",
+    "fix": "Responsive button groups",
+    "count": 1
+  },
+  {
+    "file": "/Users/julianclarkson/Documents/Dragonfly26.00/src/components/shared/photo-tab-content.tsx",
+    "fix": "Responsive button groups",
+    "count": 2
+  }
+]

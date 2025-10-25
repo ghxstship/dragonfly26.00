@@ -7795,7 +7795,7 @@
       "pricing": "Pricing",
       "docs": "Docs",
       "blog": "Blog",
-      "about": "About",
+      "company": "Company",
       "signIn": "Sign In",
       "startFree": "Start Free",
       "toggleMenu": "Toggle menu"
@@ -7851,7 +7851,7 @@
     },
     "features": {
       "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Five integrated hubs for complete production management",
+      "subtitle": "Six integrated hubs for complete production management",
       "production": {
         "title": "Production Hub",
         "description": "Manage projects, events, people, assets, locations, and files",
@@ -7876,6 +7876,14 @@
         "feature3": "Resource library",
         "feature4": "Industry connections"
       },
+      "automations": {
+        "title": "Automations Hub",
+        "description": "Automate workflows, triggers, and repetitive tasks",
+        "feature1": "Custom workflow automation",
+        "feature2": "Event-driven triggers",
+        "feature3": "Scheduled task execution",
+        "feature4": "Integration pipelines"
+      },
       "intelligence": {
         "title": "Intelligence Hub",
         "description": "Generate reports, analytics, and insights",
@@ -7895,52 +7903,70 @@
     },
     "roles": {
       "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "subtitle": "10 branded roles with precise permissions",
       "legend": {
         "title": "Legend",
         "description": "Platform Super Admin - Full control across all organizations"
       },
       "phantom": {
         "name": "Phantom",
-        "level": "Level 2",
+        "level": "Supreme Authority",
         "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "description": "Complete system administration and unrestricted access to all operations. Shape platform direction and maintain enterprise oversight."
       },
       "aviator": {
+        "name": "Aviator",
+        "level": "Strategic Leadership",
         "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "description": "Cross-project visibility, resource allocation, and executive analytics. Navigate high-level production direction at scale."
       },
       "gladiator": {
+        "name": "Gladiator",
+        "level": "Project Leadership",
         "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
       },
       "navigator": {
+        "name": "Navigator",
+        "level": "Coordination",
         "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "description": "Project coordination, task assignment, and team guidance. Chart the course through complex workflows."
       },
       "deviator": {
+        "name": "Deviator",
+        "level": "Execution",
         "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "description": "Focused task completion within established frameworks. Deliver high-quality work on assigned responsibilities."
       },
       "raider": {
+        "name": "Raider",
+        "level": "Learning & Observation",
         "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "description": "View-only access to learn and grow. Perfect for newcomers and community members building their skills."
       },
       "vendor": {
+        "name": "Vendor",
+        "level": "Scoped Delivery",
         "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted responsibilities."
       },
       "visitor": {
+        "name": "Visitor",
+        "level": "Limited Visibility",
         "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "description": "Temporary, read-only access for external stakeholders. Stay informed without interfering with workflows."
       },
       "partner": {
+        "name": "Partner",
+        "level": "Strategic Collaboration",
         "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
       },
       "ambassador": {
+        "name": "Ambassador",
+        "level": "Community Champions",
         "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, and grow the ecosystem."
       }
     },
     "security": {
@@ -8105,13 +8131,22 @@
       "product": "Product",
       "features": "Features",
       "pricing": "Pricing",
+      "demo": "Demo",
+      "integrations": "Integrations",
       "docs": "Documentation",
+      "apiReference": "API Reference",
       "changelog": "Changelog",
+      "caseStudies": "Case Studies",
+      "templates": "Templates",
       "company": "Company",
-      "about": "About Us",
+      "aboutUs": "About Us",
       "blog": "Blog",
       "careers": "Careers",
       "contact": "Contact",
+      "press": "Press",
+      "partners": "Partners",
+      "customers": "Customers",
+      "events": "Events",
       "legal": "Legal",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
@@ -8120,6 +8155,7 @@
       "helpCenter": "Help Center",
       "community": "Community",
       "status": "System Status",
+      "roiCalculator": "ROI Calculator",
       "copyright": "© 2025 ATLVS. All rights reserved."
     },
     "integrations": {

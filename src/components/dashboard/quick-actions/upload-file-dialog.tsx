@@ -130,7 +130,7 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-950">
               <FolderOpen className="h-5 w-5 text-orange-600" />
             </div>
@@ -152,8 +152,8 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
               onClick={() => fileInputRef.current?.click()}
             >
               {selectedFile ? (
-                <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                  <div className="flex items-center gap-3">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 bg-muted rounded-lg">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                     <File className="h-8 w-8 text-muted-foreground" />
                     <div className="text-left">
                       <p className="font-medium text-sm">{selectedFile.name}</p>
@@ -190,7 +190,7 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
             <input
               ref={fileInputRef}
               type="file"
-              className="hidden"
+              className="hidden md:block"
               onChange={handleFileSelect}
               accept="*/*"
             />

@@ -170,7 +170,7 @@ export function CrudDrawer({
       case 'currency':
         return (
           <div className="relative">
-            <span className="absolute left-3 top-2.5 text-muted-foreground">$</span>
+            <span className="absolute sm:relative sm:inset-auto left-3 top-2.5 text-muted-foreground sm:relative sm:inset-auto">$</span>
             <Input
               type="number"
               value={value || ''}
@@ -198,13 +198,13 @@ export function CrudDrawer({
               max={100}
               className="pr-8"
             />
-            <span className="absolute right-3 top-2.5 text-muted-foreground">%</span>
+            <span className="absolute sm:relative sm:inset-auto right-3 top-2.5 text-muted-foreground sm:relative sm:inset-auto">%</span>
           </div>
         )
 
       case 'duration':
         return (
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
             <Input
               type="number"
               placeholder="Hours"
@@ -236,7 +236,7 @@ export function CrudDrawer({
       case 'progress':
         return (
           <div className="space-y-2">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Input
                 type="number"
                 value={value || 0}
@@ -248,7 +248,7 @@ export function CrudDrawer({
               />
               <span className="text-sm text-muted-foreground">%</span>
             </div>
-            <div className="h-2 bg-muted rounded-full overflow-hidden">
+            <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
               <div
                 className="h-full bg-primary transition-all"
                 style={{ width: `${value || 0}%` }}
@@ -293,7 +293,7 @@ export function CrudDrawer({
 
       case 'daterange':
         return (
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
             <Input
               type="date"
               placeholder="Start date"
@@ -329,7 +329,7 @@ export function CrudDrawer({
             <SelectContent>
               {field.options?.map(option => (
                 <SelectItem key={option.value} value={option.value}>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     {option.color && (
                       <div className="w-3 h-3 rounded-full" style={{ backgroundColor: option.color }} />
                     )}
@@ -345,7 +345,7 @@ export function CrudDrawer({
         return (
           <div className="space-y-2">
             {field.options?.map(option => (
-              <div key={option.value} className="flex items-center space-x-2">
+              <div key={option.value} className="flex flex-wrap md:flex-nowrap items-center space-x-2">
                 <input
                   type="radio"
                   name={field.id}
@@ -395,7 +395,7 @@ export function CrudDrawer({
       case 'checkbox':
       case 'toggle':
         return (
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <Switch
               checked={value || false}
               onCheckedChange={(checked) => handleFieldChange(field.id, checked)}
@@ -465,13 +465,13 @@ export function CrudDrawer({
         return (
           <div className="space-y-2">
             {value && (
-              <div className="flex items-center gap-2 p-2 border rounded">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-2 border rounded">
                 <Paperclip className="h-4 w-4" />
                 <span className="text-sm">{value.name || 'File attached'}</span>
               </div>
             )}
             {!isReadOnly && (
-              <Button variant="outline" size="sm" className="w-full">
+              <Button variant="outline" size="sm" className="w-full max-w-full">
                 <Paperclip className="h-4 w-4 mr-2" />
                 Upload {field.type}
               </Button>
@@ -486,8 +486,8 @@ export function CrudDrawer({
             {(value || []).length > 0 && (
               <div className="space-y-1">
                 {(value || []).map((file: any, idx: number) => (
-                  <div key={idx} className="flex items-center justify-between p-2 border rounded">
-                    <div className="flex items-center gap-2">
+                  <div key={idx} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 border rounded">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Paperclip className="h-4 w-4" />
                       <span className="text-sm">{file.name || `File ${idx + 1}`}</span>
                     </div>
@@ -508,7 +508,7 @@ export function CrudDrawer({
               </div>
             )}
             {!isReadOnly && (
-              <Button variant="outline" size="sm" className="w-full">
+              <Button variant="outline" size="sm" className="w-full max-w-full">
                 <Paperclip className="h-4 w-4 mr-2" />
                 Upload {field.type}
               </Button>
@@ -519,7 +519,7 @@ export function CrudDrawer({
       // Visual types
       case 'color':
         return (
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Input
               type="color"
               value={value || '#000000'}
@@ -540,14 +540,14 @@ export function CrudDrawer({
 
       case 'rating':
         return (
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             {[1, 2, 3, 4, 5].map((star) => (
               <button
                 key={star}
                 type="button"
                 onClick={() => !isReadOnly && handleFieldChange(field.id, star)}
                 disabled={isReadOnly}
-                className="text-2xl"
+                className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl"
               >
                 {star <= (value || 0) ? '★' : '☆'}
               </button>
@@ -558,11 +558,11 @@ export function CrudDrawer({
       case 'avatar':
       case 'icon':
         return (
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+            <div className="w-16 h-16 rounded-full bg-muted flex flex-wrap items-center justify-center">
               {value ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={value} alt="Avatar" className="w-full h-full rounded-full object-cover" />
+                <img src={value} alt="Avatar" className="w-full h-full rounded-full object-cover max-w-full" />
               ) : (
                 <User className="h-8 w-8 text-muted-foreground" />
               )}
@@ -618,7 +618,7 @@ export function CrudDrawer({
               disabled={isReadOnly}
             />
             {value && (
-              <div className="p-4 border rounded bg-muted flex items-center justify-center">
+              <div className="p-4 border rounded bg-muted flex flex-wrap items-center justify-center">
                 <div className="text-sm text-muted-foreground">
                   {field.type.toUpperCase()} Preview: {value}
                 </div>
@@ -660,7 +660,7 @@ export function CrudDrawer({
       // Location types
       case 'coordinates':
         return (
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
             <Input
               type="number"
               placeholder="Latitude"
@@ -740,19 +740,19 @@ export function CrudDrawer({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-[800px] sm:max-w-[800px] p-0 flex flex-col">
+      <SheetContent side="right" className="w-full max-w-800px lg:w-[800px] sm:max-w-[800px] p-0 flex flex-wrap flex-col">
         {/* Header */}
-        <SheetHeader className="border-b px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <SheetTitle className="text-xl">
+        <SheetHeader className="border-b px-4 md:px-6 py-4">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
+              <SheetTitle className="text-base md:text-lg lg:text-xl">
                 {title || (isCreating ? 'Create New' : displayName)}
               </SheetTitle>
               {!isCreating && !isReadOnly && (
                 <Badge variant="outline">Editing</Badge>
               )}
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               {!isCreating && mode !== 'edit' && (
                 <Button
                   variant="outline"
@@ -782,10 +782,10 @@ export function CrudDrawer({
         </SheetHeader>
 
         {/* Content */}
-        <div className="flex-1 flex overflow-hidden">
+        <div className="flex-1 flex flex-wrap overflow-hidden md:block">
           {/* Main Form */}
           <ScrollArea className="flex-1">
-            <div className="p-6 space-y-6">
+            <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Form Fields */}
               <div className="space-y-4">
                 {formFields.map(field => (
@@ -806,11 +806,11 @@ export function CrudDrawer({
               {!isCreating && item && (
                 <>
                   <Separator />
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 text-sm">
                     {formData.created_at && (
                       <div>
                         <Label className="text-xs text-muted-foreground">Created</Label>
-                        <div className="flex items-center gap-1 mt-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mt-1">
                           <Clock className="h-3 w-3" />
                           {new Date(formData.created_at).toLocaleString()}
                         </div>
@@ -819,7 +819,7 @@ export function CrudDrawer({
                     {formData.updated_at && (
                       <div>
                         <Label className="text-xs text-muted-foreground">Last Updated</Label>
-                        <div className="flex items-center gap-1 mt-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mt-1">
                           <Clock className="h-3 w-3" />
                           {new Date(formData.updated_at).toLocaleString()}
                         </div>
@@ -833,9 +833,9 @@ export function CrudDrawer({
 
           {/* Activity Panel (only in view/edit mode) */}
           {!isCreating && item && (
-            <div className="w-80 border-l flex flex-col">
-              <Tabs defaultValue="activity" className="flex-1 flex flex-col">
-                <TabsList className="w-full justify-start rounded-none border-b px-4">
+            <div className="w-full sm:w-80 border-l flex flex-wrap flex-col">
+              <Tabs defaultValue="activity" className="flex-1 flex flex-wrap flex-col">
+                <TabsList className="w-full justify-start rounded-none border-b px-4 max-w-full">
                   <TabsTrigger value="activity">Activity</TabsTrigger>
                   <TabsTrigger value="comments">Comments</TabsTrigger>
                 </TabsList>
@@ -854,7 +854,7 @@ export function CrudDrawer({
 
         {/* Footer Actions */}
         {!isReadOnly && (
-          <div className="border-t px-6 py-4 flex justify-end gap-2">
+          <div className="border-t px-4 md:px-6 py-4 flex flex-wrap justify-end gap-2">
             <Button variant="outline" onClick={() => onOpenChange(false)} disabled={isSaving}>
               Cancel
             </Button>

@@ -41,17 +41,17 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
   const displayReports = data || []
   
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         {stats.map((stat, index: number) => {
           const Icon = stat.icon
           return (
             <Card key={index} role="region" aria-label={`${t(stat.labelKey)} metric`}>
               <CardContent className="p-6">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div>
                     <p className="text-sm text-muted-foreground" id={`stat-label-${index}`}>{t(stat.labelKey)}</p>
-                    <p className="text-2xl font-bold mt-2" aria-labelledby={`stat-label-${index}`} aria-live="polite">{stat.value}</p>
+                    <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-2" aria-labelledby={`stat-label-${index}`} aria-live="polite">{stat.value}</p>
                     <p className="text-sm text-green-600 mt-1" aria-label={`Change: ${stat.change}`}>{stat.change}</p>
                   </div>
                   <Icon className={`h-8 w-8 ${stat.color}`} aria-hidden="true" />
@@ -73,11 +73,11 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
             {recentReports.map((report: any) => (
               <div 
                 key={report.id} 
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent transition-colors"
+                className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg hover:bg-accent transition-colors"
                 role="article"
                 aria-label={`Report: ${t(report.nameKey)}`}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                   <FileText className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
                   <div>
                     <p className="font-medium" id={`report-name-${report.id}`}>{t(report.nameKey)}</p>
@@ -86,7 +86,7 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                   <div className="text-right">
                     <p className="text-sm text-muted-foreground" aria-label={`${report.downloads} downloads`}>{report.downloads} {t('downloads')}</p>
                   </div>

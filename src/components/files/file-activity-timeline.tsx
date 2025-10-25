@@ -101,18 +101,18 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Activity className="h-5 w-5" />
           Activity
         </CardTitle>
       </CardHeader>
       <CardContent>
         {loading ? (
-          <div className="text-center py-8 text-muted-foreground">
+          <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
             Loading activity...
           </div>
         ) : activities.length === 0 ? (
-          <div className="text-center py-8 text-muted-foreground">
+          <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
             <Activity className="h-12 w-12 mx-auto mb-2 opacity-50" />
             <p>No activity yet</p>
           </div>
@@ -123,10 +123,10 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
               const color = getActivityColor(activity.activity_type)
               
               return (
-                <div key={activity.id} className="flex gap-3 relative">
+                <div key={activity.id} className="flex flex-wrap gap-3 relative">
                   {/* Timeline line */}
                   {index < activities.length - 1 && (
-                    <div className="absolute left-4 top-10 bottom-0 w-px bg-border" />
+                    <div className="absolute sm:relative sm:inset-auto left-4 top-10 bottom-0 w-px bg-border sm:relative sm:inset-auto" />
                   )}
                   
                   {/* Icon */}
@@ -136,8 +136,8 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
                   
                   {/* Content */}
                   <div className="flex-1 pt-0.5">
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex items-center gap-2 flex-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
                         {activity.user && (
                           <Avatar className="h-6 w-6">
                             <AvatarImage src={activity.user.avatar_url} />
@@ -150,7 +150,7 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
                           {formatActivityText(activity)}
                         </span>
                       </div>
-                      <span className="text-xs text-muted-foreground whitespace-nowrap">
+                      <span className="text-xs text-muted-foreground whitespace-nowrap overflow-hidden text-ellipsis">
                         {formatTime(activity.created_at)}
                       </span>
                     </div>

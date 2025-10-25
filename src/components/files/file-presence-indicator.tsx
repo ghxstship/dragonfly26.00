@@ -59,7 +59,7 @@ export function FilePresenceIndicator({
     <TooltipProvider>
       <div className={`flex items-center gap-1 ${className}`}>
         {activeUsers.length > 0 && (
-          <div className="flex -space-x-2">
+          <div className="flex flex-wrap md:flex-nowrap -space-x-2">
             {activeUsers.slice(0, 5).map((presence: any) => {
               const ActivityIcon = getActivityIcon(presence.activity_type)
               const activityColor = getActivityColor(presence.activity_type)

@@ -38,12 +38,12 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
   const displayData = data || []
   
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <CardTitle>{t('salesByRegionProduct')}</CardTitle>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Badge variant="outline">Rows: Region, Product</Badge>
               <Badge variant="outline">Columns: Quarters</Badge>
               <Badge variant="outline">Values: Revenue ($K)</Badge>
@@ -52,7 +52,7 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+            <table className="w-full border-collapse max-w-full">
               <thead>
                 <tr className="bg-muted">
                   <th className="border p-3 text-left font-semibold">{t('region')}</th>
@@ -96,7 +96,7 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
           <CardTitle className="text-lg">{t('pivotConfiguration')}</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             <div className="p-4 border rounded-lg">
               <p className="font-medium mb-3">{t('rowFields')}</p>
               <div className="space-y-2">

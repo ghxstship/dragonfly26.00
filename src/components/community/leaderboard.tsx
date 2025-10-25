@@ -133,7 +133,7 @@ export function Leaderboard({
     return (
       <Card className={className}>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <TrendingUp className="h-5 w-5" />
             Leaderboard
           </CardTitle>
@@ -141,7 +141,7 @@ export function Leaderboard({
         <CardContent>
           <div className="space-y-3">
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="flex items-center gap-3 animate-pulse">
+              <div key={i} className="flex flex-wrap flex-col md:flex-row items-center gap-3 animate-pulse">
                 <div className="h-10 w-10 rounded-full bg-muted" />
                 <div className="flex-1 space-y-2">
                   <div className="h-4 bg-muted rounded w-24" />
@@ -158,7 +158,7 @@ export function Leaderboard({
   return (
     <Card className={className}>
       <CardHeader className={compact ? "pb-3" : ""}>
-        <CardTitle className="flex items-center gap-2 text-lg">
+        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-lg">
           <TrendingUp className="h-5 w-5" />
           Leaderboard
         </CardTitle>
@@ -179,7 +179,7 @@ export function Leaderboard({
               )}
             >
               {/* Rank */}
-              <div className="flex items-center justify-center w-8 h-8 font-bold text-sm">
+              <div className="flex flex-wrap items-center justify-center w-8 h-8 font-bold text-sm">
                 {getRankIcon(entry.current_rank) || (
                   <span className="text-muted-foreground">#{entry.current_rank}</span>
                 )}
@@ -195,7 +195,7 @@ export function Leaderboard({
 
               {/* Info */}
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <p className="font-medium text-sm truncate">
                     {entry.first_name} {entry.last_name}
                   </p>
@@ -203,7 +203,7 @@ export function Leaderboard({
                     <Badge variant="secondary" className="text-xs">You</Badge>
                   )}
                 </div>
-                <div className="flex items-center gap-2 mt-1">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1">
                   <LevelBadge level={entry.level} points={entry.points} size="sm" showTooltip={false} />
                   {!compact && (
                     <span className="text-xs text-muted-foreground">
@@ -230,8 +230,8 @@ export function Leaderboard({
             <>
               <div className="border-t pt-3 mt-3">
                 <p className="text-xs text-muted-foreground mb-2">Your rank</p>
-                <div className="flex items-center gap-3 p-2 rounded-lg bg-primary/5 border border-primary/20">
-                  <div className="flex items-center justify-center w-8 h-8 font-bold text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 p-2 rounded-lg bg-primary/5 border border-primary/20">
+                  <div className="flex flex-wrap items-center justify-center w-8 h-8 font-bold text-sm text-muted-foreground">
                     #{currentUserRank.current_rank}
                   </div>
                   <Avatar className="h-10 w-10">
@@ -257,7 +257,7 @@ export function Leaderboard({
           )}
 
           {entries.length === 0 && (
-            <div className="text-center py-8 text-muted-foreground">
+            <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
               <TrendingUp className="h-12 w-12 mx-auto mb-2 opacity-20" />
               <p className="text-sm">No leaderboard data yet</p>
               <p className="text-xs">Be the first to earn points!</p>

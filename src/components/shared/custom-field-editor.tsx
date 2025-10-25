@@ -83,7 +83,7 @@ export function CustomFieldEditor({ fields, onFieldsChange }: CustomFieldEditorP
       {fields.map((field) => (
         <div
           key={field.id}
-          className="flex items-center gap-2 p-3 border rounded-lg hover:bg-accent/50"
+          className="flex flex-col md:flex-row items-center gap-2 p-3 border rounded-lg hover:bg-accent/50"
         >
           <GripVertical className="h-4 w-4 text-muted-foreground cursor-grab" />
           <div className="flex-1">
@@ -115,7 +115,7 @@ export function CustomFieldEditor({ fields, onFieldsChange }: CustomFieldEditorP
 
       <Dialog open={isCreating} onOpenChange={setIsCreating}>
         <DialogTrigger asChild>
-          <Button variant="outline" className="w-full gap-2">
+          <Button variant="outline" className="w-full gap-2 max-w-full">
             <Plus className="h-4 w-4" />
             Add custom field
           </Button>
@@ -155,7 +155,7 @@ export function CustomFieldEditor({ fields, onFieldsChange }: CustomFieldEditorP
               </Select>
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <Label>Required field</Label>
               <Switch
                 checked={newField.required}
@@ -165,7 +165,7 @@ export function CustomFieldEditor({ fields, onFieldsChange }: CustomFieldEditorP
               />
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Button
                 variant="outline"
                 onClick={() => setIsCreating(false)}

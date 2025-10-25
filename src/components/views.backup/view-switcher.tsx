@@ -49,7 +49,7 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
   })
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
       {/* Current View */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -58,11 +58,11 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
             <ChevronDown className="h-4 w-4 text-muted-foreground" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="w-64 p-0">
+        <DropdownMenuContent align="start" className="w-full sm:w-64 p-0">
           <div className="p-2 border-b sticky top-0 bg-background z-10">
             <DropdownMenuLabel className="px-2 py-1.5">Switch View</DropdownMenuLabel>
             <div className="relative mt-2">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder="Search views..."
                 value={searchQuery as any}
@@ -72,7 +72,7 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
             </div>
           </div>
 
-          <div className="max-h-[420px] overflow-y-auto">
+          <div className="max-h-[252px] md:h-[420px] overflow-y-auto">
             <div className="p-2">
               {/* Favorites */}
               {filteredFavoriteViews.length > 0 && (

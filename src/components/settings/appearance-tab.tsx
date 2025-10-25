@@ -165,12 +165,12 @@ export function AppearanceTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 
       {/* Theme Mode */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Palette className="h-5 w-5" aria-hidden="true" />
             Theme Mode
           </CardTitle>
@@ -178,15 +178,15 @@ export function AppearanceTab() {
         </CardHeader>
         <CardContent>
           <RadioGroup value={theme as any} onValueChange={setTheme}>
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
               <RadioGroupItem value="light" id="light" />
               <Label htmlFor="light">Light</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
               <RadioGroupItem value="dark" id="dark" />
               <Label htmlFor="dark">Dark</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
               <RadioGroupItem value="system" id="system" />
               <Label htmlFor="system">System</Label>
             </div>
@@ -197,14 +197,14 @@ export function AppearanceTab() {
       {/* Accent Color & Presets */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Sparkles className="h-5 w-5" aria-hidden="true" />
             {t('settings.appearanceTab.accentColor')}
           </CardTitle>
           <CardDescription>{t('settings.appearanceTab.customizeColors')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {themePresets.map((preset: any) => (
               <button
                 key={preset.id}
@@ -228,7 +228,7 @@ export function AppearanceTab() {
 
           <div className="space-y-2">
             <Label htmlFor="custom-color">Custom Accent Color</Label>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Input
                 id="custom-color"
                 type="color"
@@ -251,7 +251,7 @@ export function AppearanceTab() {
       {/* Custom Background (MySpace Style) */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Upload className="h-5 w-5" aria-hidden="true" />
             {t('settings.appearanceTab.customBackground')}
           </CardTitle>
@@ -267,13 +267,13 @@ export function AppearanceTab() {
               type="file"
               accept="image/*"
               onChange={handleBackgroundFileUpload}
-              className="hidden"
+              className="hidden md:block"
             />
             <Button
               type="button"
               variant="outline"
               onClick={() => backgroundFileInputRef.current?.click()}
-              className="w-full"
+              className="w-full max-w-full"
             >
               <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
               Choose Image File
@@ -309,7 +309,7 @@ export function AppearanceTab() {
       {/* Custom CSS */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Code className="h-5 w-5" aria-hidden="true" />
             Custom CSS
           </CardTitle>
@@ -333,7 +333,7 @@ export function AppearanceTab() {
       {/* Animation Settings */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Sparkles className="h-5 w-5" aria-hidden="true" />
             {t('settings.appearanceTab.animationEffects')}
           </CardTitle>
@@ -342,7 +342,7 @@ export function AppearanceTab() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label htmlFor="animations">Enable Animations</Label>
               <p className="text-sm text-muted-foreground">
@@ -358,7 +358,7 @@ export function AppearanceTab() {
 
           <Separator />
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label htmlFor="particles">Particle Effects</Label>
               <p className="text-sm text-muted-foreground">
@@ -375,7 +375,7 @@ export function AppearanceTab() {
       </Card>
 
       {/* Action Buttons */}
-      <div className="flex justify-end gap-2">
+      <div className="flex flex-wrap justify-end gap-2">
         <Button variant="outline" onClick={handleReset}>
           <RotateCcw className="h-4 w-4 mr-2" aria-hidden="true" />
           {t('settings.appearanceTab.resetToDefault')}

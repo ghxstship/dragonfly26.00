@@ -48,7 +48,7 @@ export function TodaysScheduleSidebar({
   return (
     <Card className={cn("w-full max-w-sm", className)}>
       <CardHeader className="pb-3">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <CardTitle className="text-base">Today&apos;s Schedule</CardTitle>
           <Clock className="h-4 w-4 text-muted-foreground" />
         </div>
@@ -61,11 +61,11 @@ export function TodaysScheduleSidebar({
         </p>
       </CardHeader>
       <CardContent className="space-y-4">
-        <ScrollArea className="h-[500px] pr-4">
+        <ScrollArea className="h-[300px] md:h-[500px] pr-4">
           {/* On Duty */}
           <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <StatusDot status="success" size="md" />
                 <h4 className="text-sm font-medium">On Duty</h4>
               </div>
@@ -79,7 +79,7 @@ export function TodaysScheduleSidebar({
                   <PersonnelShiftItem key={shift.id} shift={shift} />
                 ))}
                 {onDuty.length > 5 && (
-                  <Button variant="ghost" size="sm" className="w-full h-7 text-xs">
+                  <Button variant="ghost" size="sm" className="w-full h-7 text-xs max-w-full">
                     +{onDuty.length - 5} more
                   </Button>
                 )}
@@ -90,8 +90,8 @@ export function TodaysScheduleSidebar({
           {/* Coming Soon */}
           {comingSoon.length > 0 && (
             <div className="space-y-2 mt-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <StatusDot status="info" size="md" />
                   <h4 className="text-sm font-medium">Coming Soon</h4>
                 </div>
@@ -108,8 +108,8 @@ export function TodaysScheduleSidebar({
           {/* Open Shifts */}
           {openShifts.length > 0 && (
             <div className="space-y-2 mt-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <StatusDot status="warning" size="md" />
                   <h4 className="text-sm font-medium">Open Shifts</h4>
                 </div>
@@ -121,7 +121,7 @@ export function TodaysScheduleSidebar({
                 {openShifts.map((shift, i) => (
                   <div 
                     key={i} 
-                    className="flex items-center justify-between text-xs p-2 rounded hover:bg-muted/50 cursor-pointer"
+                    className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs p-2 rounded hover:bg-muted/50 cursor-pointer"
                   >
                     <div>
                       <p className="font-medium">{shift.time}</p>
@@ -138,7 +138,7 @@ export function TodaysScheduleSidebar({
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="w-full h-7 mt-1"
+                    className="w-full h-7 mt-1 max-w-full"
                     onClick={onAssignShift}
                   >
                     <Plus className="h-3 w-3 mr-1" />
@@ -152,8 +152,8 @@ export function TodaysScheduleSidebar({
           {/* Out Today */}
           {outToday.length > 0 && (
             <div className="space-y-2 mt-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Calendar className="h-4 w-4 text-muted-foreground" />
                   <h4 className="text-sm font-medium">Out Today</h4>
                 </div>
@@ -161,7 +161,7 @@ export function TodaysScheduleSidebar({
               </div>
               <div className="space-y-1 pl-5">
                 {outToday.map((person, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs p-1">
+                  <div key={i} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs p-1">
                     <Avatar className="h-5 w-5">
                       <AvatarImage src={person.avatar} />
                       <AvatarFallback className="text-[10px]">
@@ -182,7 +182,7 @@ export function TodaysScheduleSidebar({
         {onViewFullSchedule && (
           <Button 
             variant="outline" 
-            className="w-full"
+            className="w-full max-w-full"
             onClick={onViewFullSchedule}
           >
             View Full Schedule
@@ -202,7 +202,7 @@ function PersonnelShiftItem({
   showTime?: boolean 
 }) {
   return (
-    <div className="flex items-center gap-2 text-xs p-1.5 rounded hover:bg-muted/50">
+    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs p-1.5 rounded hover:bg-muted/50">
       <Avatar className="h-6 w-6">
         <AvatarImage src={shift.avatar} />
         <AvatarFallback className="text-[10px]">
@@ -238,22 +238,22 @@ export function TodaysScheduleCompact({
 }) {
   return (
     <div className="p-4 bg-card border rounded-lg space-y-3">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <h4 className="text-sm font-medium">Today&apos;s Schedule</h4>
         <Clock className="h-4 w-4 text-muted-foreground" />
       </div>
 
       <div className="space-y-2">
-        <div className="flex items-center justify-between text-sm">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <StatusDot status="success" size="sm" />
             <span className="text-muted-foreground">On duty</span>
           </div>
           <span className="font-medium">{onDutyCount}</span>
         </div>
 
-        <div className="flex items-center justify-between text-sm">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <StatusDot status="info" size="sm" />
             <span className="text-muted-foreground">Coming</span>
           </div>
@@ -261,8 +261,8 @@ export function TodaysScheduleCompact({
         </div>
 
         {openShiftsCount > 0 && (
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <StatusDot status="warning" size="sm" />
               <span className="text-muted-foreground">Open</span>
             </div>
@@ -275,7 +275,7 @@ export function TodaysScheduleCompact({
         <Button 
           variant="outline" 
           size="sm" 
-          className="w-full"
+          className="w-full max-w-full"
           onClick={onViewSchedule}
         >
           View Schedule

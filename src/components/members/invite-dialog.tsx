@@ -167,16 +167,16 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-3xl px-4 sm:px-6 lg:px-8 max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
+          <DialogTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <UserPlus className="h-5 w-5" />
             Invite Team Members
           </DialogTitle>
         </DialogHeader>
 
         <Tabs value={activeTab as any} onValueChange={setActiveTab} className="space-y-4">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 max-w-full">
             <TabsTrigger value="single" className="gap-2">
               <Mail className="h-4 w-4" />
               Single Invite
@@ -191,7 +191,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
           <TabsContent value="single" className="space-y-4">
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email" className="flex items-center gap-2">
+                <Label htmlFor="email" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Mail className="h-4 w-4" />
                   Email Address <span className="text-destructive">*</span>
                 </Label>
@@ -210,9 +210,9 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="organization" className="flex items-center gap-2">
+                  <Label htmlFor="organization" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Building2 className="h-4 w-4" />
                     Organization (Optional)
                   </Label>
@@ -225,7 +225,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="project" className="flex items-center gap-2">
+                  <Label htmlFor="project" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <FolderKanban className="h-4 w-4" />
                     Project (Optional)
                   </Label>
@@ -252,7 +252,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 </Select>
               </div>
 
-              <Button onClick={handleAddInvite} className="w-full">
+              <Button onClick={handleAddInvite} className="w-full max-w-full">
                 <UserPlus className="h-4 w-4 mr-2" />
                 Add to Invite List
               </Button>
@@ -263,7 +263,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
           <TabsContent value="bulk" className="space-y-4">
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="bulkEmails" className="flex items-center gap-2">
+                <Label htmlFor="bulkEmails" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <FileText className="h-4 w-4" />
                   Email Addresses <span className="text-destructive">*</span>
                 </Label>
@@ -279,9 +279,9 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="bulkOrganization" className="flex items-center gap-2">
+                  <Label htmlFor="bulkOrganization" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Building2 className="h-4 w-4" />
                     Organization (Optional)
                   </Label>
@@ -294,7 +294,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="bulkProject" className="flex items-center gap-2">
+                  <Label htmlFor="bulkProject" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <FolderKanban className="h-4 w-4" />
                     Project (Optional)
                   </Label>
@@ -324,7 +324,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                 </p>
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Button variant="outline" onClick={() => setBulkEmails("")} className="flex-1">
                   Clear
                 </Button>
@@ -342,15 +342,15 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
           <>
             <Separator />
             <div className="space-y-2">
-              <Label className="flex items-center gap-2">
+              <Label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Users className="h-4 w-4" />
                 Pending Invites ({invites.length})
               </Label>
               <div className="space-y-2 max-h-[200px] overflow-auto border rounded-md p-3">
                 {invites.map((invite, index: number) => (
-                  <div key={index} className="flex items-center justify-between gap-2 p-2 bg-muted rounded-md">
-                    <div className="flex-1 flex flex-col gap-1">
-                      <div className="flex items-center gap-2">
+                  <div key={index} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 p-2 bg-muted rounded-md">
+                    <div className="flex-1 flex flex-wrap flex-col gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Mail className="h-4 w-4 text-muted-foreground" />
                         <span className="text-sm font-medium">{invite.email}</span>
                         <Badge variant="outline" className="text-xs">
@@ -358,15 +358,15 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                         </Badge>
                       </div>
                       {(invite.organization || invite.project) && (
-                        <div className="flex items-center gap-2 ml-6 text-xs text-muted-foreground">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 ml-6 text-xs text-muted-foreground">
                           {invite.organization && (
-                            <span className="flex items-center gap-1">
+                            <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                               <Building2 className="h-3 w-3" />
                               {invite.organization}
                             </span>
                           )}
                           {invite.project && (
-                            <span className="flex items-center gap-1">
+                            <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                               <FolderKanban className="h-3 w-3" />
                               {invite.project}
                             </span>

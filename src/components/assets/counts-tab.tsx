@@ -104,7 +104,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
       render: (value: string[]) => {
         if (!value || value.length === 0) return <span className="text-muted-foreground">-</span>
         return (
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
             <span className="text-sm">{value.length} team {value.length === 1 ? 'member' : 'members'}</span>
           </div>
@@ -123,8 +123,8 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         
         return (
           <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <div className="flex-1 bg-muted rounded-full h-2 overflow-hidden">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <div className="flex-1 bg-muted rounded-full h-2 overflow-hidden md:block">
                 <div 
                   className="bg-primary h-full transition-all"
                   style={{ width: `${percentage}%` }}
@@ -146,7 +146,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
       render: (value: number) => {
         if (!value || value === 0) return <span className="text-muted-foreground">-</span>
         return (
-          <div className="flex items-center gap-1 text-orange-600">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-orange-600">
             <AlertTriangle className="h-4 w-4" aria-hidden="true" />
             <span className="font-medium">{value}</span>
           </div>
@@ -240,37 +240,37 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Quick Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Active Counts</CardDescription>
-            <CardTitle className="text-2xl text-orange-600">{activeCounts}</CardTitle>
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-orange-600">{activeCounts}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Planned</CardDescription>
-            <CardTitle className="text-2xl text-blue-600">{plannedCounts}</CardTitle>
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-blue-600">{plannedCounts}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('completed')}</CardDescription>
-            <CardTitle className="text-2xl text-green-600">{completedCounts}</CardTitle>
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-green-600">{completedCounts}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Total Variances</CardDescription>
-            <CardTitle className="text-2xl">{totalDiscrepancies}</CardTitle>
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{totalDiscrepancies}</CardTitle>
           </CardHeader>
         </Card>
       </div>
 
       {/* Filter Chips */}
-      <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
         <span className="text-sm font-medium text-muted-foreground">Filter:</span>
         {filterOptions.map(option => (
           <Badge
@@ -294,7 +294,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
 
       {/* Counts Table */}
       {loading ? (
-        <div className="flex items-center justify-center h-64">
+        <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
             <p className="text-muted-foreground">Loading counts...</p>

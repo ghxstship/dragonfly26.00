@@ -71,10 +71,10 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
   }
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <FileText className="h-5 w-5" />
           <input
             type="text"
@@ -83,9 +83,9 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
             defaultValue="Document"
           />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           {/* Collaborators */}
-          <div className="flex items-center gap-1 mr-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mr-2">
             <TooltipProvider>
               {collaborators.map((collab: any) => (
                 <Tooltip key={collab.id}>
@@ -126,7 +126,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
       </div>
 
       {/* Toolbar */}
-      <div className="flex items-center gap-1 p-2 border-b bg-muted/30">
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 p-2 border-b bg-muted/30">
         <TooltipProvider>
           {toolbarButtons.map((button: any) => {
             const Icon = button.icon
@@ -155,14 +155,14 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
         </Button>
       </div>
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex flex-wrap overflow-hidden md:block">
         {/* Editor */}
         <div className="flex-1 overflow-auto">
-          <div className="max-w-4xl mx-auto py-8 px-12">
+          <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto py-4 md:py-6 lg:py-8 px-4 md:px-8 lg:px-12">
             <Textarea
               value={content as any}
               onChange={(e) => setContent(e.target.value)}
-              className="min-h-[600px] border-none focus-visible:ring-0 text-base leading-relaxed resize-none"
+              className="min-h-[360px] md:h-[600px] border-none focus-visible:ring-0 text-base leading-relaxed resize-none"
               placeholder="Start typing..."
             />
           </div>
@@ -170,14 +170,14 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
 
         {/* Comments Sidebar */}
         {showComments && (
-          <div className="w-80 border-l bg-muted/30 overflow-hidden flex flex-col">
+          <div className="w-full sm:w-80 border-l bg-muted/30 overflow-hidden md:block flex flex-wrap flex-col">
             <div className="p-4 border-b bg-background">
               <h3 className="font-semibold">Comments</h3>
             </div>
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {/* Example comments */}
               <div className="space-y-2">
-                <div className="flex items-start gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                   <Avatar className="h-6 w-6">
                     <AvatarFallback>JD</AvatarFallback>
                   </Avatar>
@@ -193,7 +193,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
                 </div>
               </div>
               <div className="space-y-2">
-                <div className="flex items-start gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                   <Avatar className="h-6 w-6">
                     <AvatarFallback>JS</AvatarFallback>
                   </Avatar>
@@ -211,7 +211,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
             </div>
             <div className="p-4 border-t bg-background">
               <Textarea placeholder="Add a comment..." rows={3} />
-              <Button size="sm" className="mt-2 w-full">
+              <Button size="sm" className="mt-2 w-full max-w-full">
                 Comment
               </Button>
             </div>

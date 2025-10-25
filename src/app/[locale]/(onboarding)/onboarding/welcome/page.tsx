@@ -133,18 +133,18 @@ export default function WelcomePage() {
   }
 
   return (
-    <div className="container max-w-2xl min-h-screen flex items-center justify-center py-12">
-      <div className="w-full space-y-6">
+    <div className="container max-w-2xl px-4 sm:px-6 lg:px-8 min-h-screen flex flex-wrap items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
+      <div className="w-full space-y-3 md:space-y-4 lg:space-y-6 max-w-full">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold">Welcome aboard! 🏴‍☠️</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">Welcome aboard! 🏴‍☠️</h1>
           <p className="text-muted-foreground text-lg">
             Let&apos;s get your profile set up
           </p>
         </div>
 
         {/* Progress indicator */}
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-2">
           <div className="h-2 w-12 bg-primary rounded-full" />
           <div className="h-2 w-12 bg-muted rounded-full" />
           <div className="h-2 w-12 bg-muted rounded-full" />
@@ -160,9 +160,9 @@ export default function WelcomePage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4 lg:space-y-6">
               {/* Avatar */}
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                 <Avatar className="h-20 w-20">
                   <AvatarImage src={profile.avatar_url} />
                   <AvatarFallback>
@@ -171,7 +171,7 @@ export default function WelcomePage() {
                 </Avatar>
                 <div>
                   <Label htmlFor="avatar" className="cursor-pointer">
-                    <div className="flex items-center gap-2 text-sm text-primary hover:underline">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-primary hover:underline">
                       <Upload className="h-4 w-4" />
                       Upload photo
                     </div>
@@ -227,7 +227,7 @@ export default function WelcomePage() {
               </div>
 
               {/* Actions */}
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                 <Button
                   type="button"
                   variant="outline"

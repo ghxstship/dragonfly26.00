@@ -78,18 +78,18 @@ export default function SelectPlanPage() {
   const plans = Object.values(SUBSCRIPTION_PLANS)
 
   return (
-    <div className="container max-w-7xl min-h-screen py-12">
-      <div className="space-y-8">
+    <div className="container max-w-7xl px-4 sm:px-6 lg:px-8 min-h-screen py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 px-4 md:px-6 lg:px-8">
+      <div className="space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold">Choose your plan</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">Choose your plan</h1>
           <p className="text-muted-foreground text-lg">
             Start with a free trial, upgrade anytime
           </p>
         </div>
 
         {/* Progress indicator */}
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-2">
           <div className="h-2 w-12 bg-primary rounded-full" />
           <div className="h-2 w-12 bg-primary rounded-full" />
           <div className="h-2 w-12 bg-primary rounded-full" />
@@ -97,7 +97,7 @@ export default function SelectPlanPage() {
         </div>
 
         {/* Plans */}
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
+        <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 mt-12">
           {plans.map((plan: any) => {
             const features = formatPlanFeatures(plan)
             const isSelected = selectedPlan === plan.id
@@ -111,7 +111,7 @@ export default function SelectPlanPage() {
                 }`}
               >
                 {isPopular && (
-                  <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                  <div className="absolute sm:relative sm:inset-auto -top-2 md:top-4 left-0 right-2 md:right-0 flex flex-wrap justify-center">
                     <Badge className="px-3 py-1">
                       <Sparkles className="h-3 w-3 mr-1" />
                       {plan.badge}
@@ -120,14 +120,14 @@ export default function SelectPlanPage() {
                 )}
 
                 <CardHeader className="text-center">
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                  <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{plan.name}</CardTitle>
                   <CardDescription className="min-h-[40px]">
                     {plan.description}
                   </CardDescription>
                   
                   <div className="pt-4">
-                    <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-5xl font-bold">${plan.price}</span>
+                    <div className="flex flex-wrap items-baseline justify-center gap-1">
+                      <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-bold">${plan.price}</span>
                       <span className="text-muted-foreground">/month</span>
                     </div>
                     {plan.id !== 'network' && (
@@ -138,11 +138,11 @@ export default function SelectPlanPage() {
                   </div>
                 </CardHeader>
 
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
                   {/* Features */}
                   <ul className="space-y-3">
                     {features.slice(0, 8).map((feature: any, idx: number) => (
-                      <li key={idx} className="flex items-start gap-2">
+                      <li key={idx} className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                         <Check className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                         <span className="text-sm">{feature}</span>
                       </li>
@@ -156,7 +156,7 @@ export default function SelectPlanPage() {
 
                   {/* CTA */}
                   <Button
-                    className="w-full"
+                    className="w-full max-w-full"
                     variant={isPopular ? 'default' : 'outline'}
                     onClick={() => handleSelectPlan(plan.id)}
                     disabled={loading}

@@ -78,16 +78,16 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
   ]
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Current Balance</CardTitle>
             <DollarSign className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">${currentBalance.toLocaleString()}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${currentBalance.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">
               As of today
             </p>
@@ -95,7 +95,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Projected (30d)</CardTitle>
             <Waves className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
@@ -110,12 +110,12 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Cash Runway</CardTitle>
             <Calendar className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{cashRunway} weeks</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{cashRunway} weeks</div>
             <p className="text-xs text-muted-foreground">
               At current burn rate
             </p>
@@ -123,12 +123,12 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Burn Rate</CardTitle>
             <TrendingDown className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-red-600">$7,800</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">$7,800</div>
             <p className="text-xs text-muted-foreground">
               Per week average
             </p>
@@ -139,7 +139,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
       {/* Cash Flow Projection */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>6-Month Cash Flow Projection</CardTitle>
               <CardDescription>Projected inflows, outflows, and ending balance</CardDescription>
@@ -150,11 +150,11 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="space-y-6">
+          <div className="space-y-3 md:space-y-4 lg:space-y-6">
             {/* Waterfall Chart */}
             {monthlyData.map((month: any, index: number) => (
               <div key={index} className="space-y-2">
-                <div className="flex items-center justify-between text-sm font-medium">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm font-medium">
                   <span>{month.month}</span>
                   <Badge variant={month.net >= 0 ? 'default' : 'destructive'}>
                     {month.net >= 0 ? '+' : ''}${month.net.toLocaleString()} net
@@ -162,10 +162,10 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
                 </div>
 
                 {/* Inflows */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <span className="text-xs text-muted-foreground w-16">Inflows</span>
                   <div className="flex-1">
-                    <div className="w-full bg-secondary rounded-full h-6 relative">
+                    <div className="w-full bg-secondary rounded-full h-6 relative max-w-full">
                       <div
                         className="bg-green-500 h-6 rounded-full transition-all flex items-center justify-end pr-2"
                         style={{ width: `${(month.inflows / maxAmount) * 100}%` }}
@@ -179,10 +179,10 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
                 </div>
 
                 {/* Outflows */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <span className="text-xs text-muted-foreground w-16">Outflows</span>
                   <div className="flex-1">
-                    <div className="w-full bg-secondary rounded-full h-6 relative">
+                    <div className="w-full bg-secondary rounded-full h-6 relative max-w-full">
                       <div
                         className="bg-red-500 h-6 rounded-full transition-all flex items-center justify-end pr-2"
                         style={{ width: `${(month.outflows / maxAmount) * 100}%` }}
@@ -196,9 +196,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
                 </div>
 
                 {/* Balance */}
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <span className="text-xs text-muted-foreground w-16">Balance</span>
-                  <div className="flex-1 flex items-center gap-2">
+                  <div className="flex flex-col md:flex-row-1 flex flex-wrap items-center gap-2">
                     <div className="text-sm font-semibold">
                       ${month.balance.toLocaleString()}
                     </div>
@@ -215,11 +215,11 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
       </Card>
 
       {/* Breakdown & Upcoming */}
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
         {/* Inflow Breakdown */}
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2" aria-hidden="true">
+            <CardTitle className="flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
               <TrendingUp className="h-5 w-5" aria-hidden="true" />
               Inflow Breakdown
             </CardTitle>
@@ -229,14 +229,14 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
             <div className="space-y-4">
               {inflowCategories.map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                     <span className="font-medium">{category.name}</span>
                     <span className="text-green-600 font-semibold">
                       ${category.amount.toLocaleString()}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 w-full bg-secondary rounded-full h-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                    <div className="flex-1 w-full bg-secondary rounded-full h-2 max-w-full">
                       <div
                         className="bg-green-500 h-2 rounded-full transition-all"
                         style={{ width: `${category.percent}%` }}
@@ -249,7 +249,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
                 </div>
               ))}
               <div className="pt-3 border-t">
-                <div className="flex items-center justify-between font-semibold">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between font-semibold">
                   <span>Total Inflows</span>
                   <span className="text-green-600">
                     ${inflowCategories.reduce((sum: number, c) => sum + c.amount, 0).toLocaleString()}
@@ -263,7 +263,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         {/* Outflow Breakdown */}
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2" aria-hidden="true">
+            <CardTitle className="flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
               <TrendingDown className="h-5 w-5" aria-hidden="true" />
               Outflow Breakdown
             </CardTitle>
@@ -273,14 +273,14 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
             <div className="space-y-4">
               {outflowCategories.map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                     <span className="font-medium">{category.name}</span>
                     <span className="text-red-600 font-semibold">
                       ${category.amount.toLocaleString()}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 w-full bg-secondary rounded-full h-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                    <div className="flex-1 w-full bg-secondary rounded-full h-2 max-w-full">
                       <div
                         className="bg-red-500 h-2 rounded-full transition-all"
                         style={{ width: `${category.percent}%` }}
@@ -293,7 +293,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
                 </div>
               ))}
               <div className="pt-3 border-t">
-                <div className="flex items-center justify-between font-semibold">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between font-semibold">
                   <span>Total Outflows</span>
                   <span className="text-red-600">
                     ${outflowCategories.reduce((sum: number, c) => sum + c.amount, 0).toLocaleString()}
@@ -320,13 +320,13 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
                   payment.critical ? 'border-red-200 bg-red-50 dark:border-red-900 dark:bg-red-950' : 'bg-muted'
                 }`}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   {payment.critical && (
                     <AlertCircle className="h-4 w-4" aria-hidden="true" />
                   )}
                   <div>
                     <p className="font-medium text-sm">{payment.description}</p>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs text-muted-foreground mt-1">
                       <span>{payment.date}</span>
                       <span>•</span>
                       <span>{payment.category}</span>
@@ -339,7 +339,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
               </div>
             ))}
             <div className="pt-3 border-t">
-              <div className="flex items-center justify-between font-semibold">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between font-semibold">
                 <span>Total Due (30 days)</span>
                 <span className="text-red-600">
                   ${upcomingPayments.reduce((sum: number, p) => sum + p.amount, 0).toLocaleString()}
@@ -354,7 +354,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
       {cashRunway < 20 && (
         <Card className="border-orange-200 bg-orange-50 dark:border-orange-900 dark:bg-orange-950" aria-hidden="true">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2" aria-hidden="true">
+            <CardTitle className="flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
               <AlertCircle className="h-5 w-5" aria-hidden="true" />
               Cash Runway Alert
             </CardTitle>

@@ -193,16 +193,16 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
   ]
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Pending</CardTitle>
             <Clock className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{pendingApprovals.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{pendingApprovals.length}</div>
             <p className="text-xs text-muted-foreground">
               Require your approval
             </p>
@@ -210,12 +210,12 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Urgent</CardTitle>
             <AlertTriangle className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-destructive">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-destructive">
               {pendingApprovals.filter(a => a.urgency === 'high').length}
             </div>
             <p className="text-xs text-muted-foreground">
@@ -225,12 +225,12 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Approved Today</CardTitle>
             <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">1</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">1</div>
             <p className="text-xs text-muted-foreground">
               Total value: $5,000
             </p>
@@ -238,12 +238,12 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Active Chains</CardTitle>
             <ClipboardCheck className="h-4 w-4" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{approvalChains.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{approvalChains.length}</div>
             <p className="text-xs text-muted-foreground">
               Multi-step approvals
             </p>
@@ -263,9 +263,9 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
               pendingApprovals.map((approval: any) => (
                 <Card key={approval.id} className="border-l-4 border-l-primary">
                   <CardContent className="pt-6" aria-hidden="true">
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                       <div className="space-y-1 flex-1">
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <h4 className="font-semibold">{approval.reference}</h4>
                           <Badge variant={getUrgencyColor(approval.urgency)}>
                             {approval.urgency}
@@ -273,8 +273,8 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                           <Badge variant="outline">{approval.type}</Badge>
                         </div>
                         <p className="text-sm text-muted-foreground">{approval.description}</p>
-                        <div className="flex items-center gap-4 text-xs text-muted-foreground mt-2">
-                          <span className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-xs text-muted-foreground mt-2">
+                          <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                             <User className="h-3 w-3" aria-hidden="true" />
                             {approval.requester}
                           </span>
@@ -282,11 +282,11 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                           <span>Due: {approval.dueDate}</span>
                         </div>
                       </div>
-                      <div className="flex flex-col items-end gap-2 ml-4">
-                        <div className="text-2xl font-bold text-green-600">
+                      <div className="flex flex-wrap flex-col items-end gap-2 ml-4">
+                        <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
                           ${approval.amount.toLocaleString()}
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
                           <Button
                             size="sm"
                             variant="outline"
@@ -311,7 +311,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                 </Card>
               ))
             ) : (
-              <div className="flex items-center justify-center h-32 text-muted-foreground">
+              <div className="flex flex-wrap items-center justify-center h-32 text-muted-foreground">
                 <div className="text-center">
                   <CheckCircle2 className="h-8 w-8" aria-hidden="true"  />
                   <p className="text-sm">No pending approvals</p>
@@ -324,7 +324,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
       </Card>
 
       {/* Approval Chains & Activity */}
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
         {/* Approval Chains */}
         <Card>
           <CardHeader>
@@ -335,16 +335,16 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
             <div className="space-y-4">
               {approvalChains.map((chain: any) => (
                 <div key={chain.id} className="space-y-2">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                     <h4 className="font-medium text-sm">{chain.name}</h4>
                     <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </div>
                   <div className="space-y-1">
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs text-muted-foreground">
                       <span>Step {chain.completedSteps + 1} of {chain.totalSteps}</span>
                       <span>{Math.round((chain.completedSteps / chain.totalSteps) * 100)}%</span>
                     </div>
-                    <div className="w-full bg-secondary rounded-full h-2">
+                    <div className="w-full bg-secondary rounded-full h-2 max-w-full">
                       <div
                         className="bg-primary h-2 rounded-full transition-all"
                         style={{ width: `${(chain.completedSteps / chain.totalSteps) * 100}%` }}
@@ -369,7 +369,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
           <CardContent>
             <div className="space-y-4">
               {recentActivity.map((activity: any, index: number) => (
-                <div key={index} className="flex items-center gap-3">
+                <div key={index} className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <div className={`p-2 rounded-full ${
                     activity.action === 'Approved' 
                       ? 'bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300' 

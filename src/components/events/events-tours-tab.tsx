@@ -57,16 +57,16 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Shows</CardTitle>
             <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalShows as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalShows as any}</div>
             <p className="text-xs text-muted-foreground">
               {completedStops} completed
             </p>
@@ -74,34 +74,34 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Travel Days</CardTitle>
             <Truck className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalTravelDays as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalTravelDays as any}</div>
             <p className="text-xs text-muted-foreground">Between venues</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Budget</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(totalBudget)}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(totalBudget)}</div>
             <p className="text-xs text-muted-foreground">Across all stops</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Progress</CardTitle>
             <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {tourStops.length > 0 ? Math.round((completedStops / tourStops.length) * 100) : 0}%
             </div>
             <p className="text-xs text-muted-foreground">Tour completion</p>
@@ -118,10 +118,10 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         <CardContent>
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border" />
+            <div className="absolute sm:relative sm:inset-auto left-8 top-0 bottom-0 w-0.5 bg-border sm:relative sm:inset-auto" />
             
             {/* Tour stops */}
-            <div className="space-y-6">
+            <div className="space-y-3 md:space-y-4 lg:space-y-6">
               {tourStops.map((stop: any, index: number) => {
                 const isShow = stop.type === 'show'
                 const isTravel = stop.type === 'travel'
@@ -140,10 +140,10 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                       onClick={() => setSelectedStop(stop)}
                     >
                       <CardContent className="pt-6">
-                        <div className="flex items-start justify-between gap-4">
+                        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
                           <div className="flex-1">
                             {/* Header */}
-                            <div className="flex items-center gap-3 mb-3">
+                            <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-3">
                               {isShow ? (
                                 <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
                               ) : (
@@ -156,42 +156,42 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                             </div>
 
                             {/* Details Grid */}
-                            <div className="grid gap-3 md:grid-cols-3">
-                              <div className="flex items-center gap-2 text-sm">
+                            <div className="grid gap-3 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                                 <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                 <span>{formatDate(stop.date)}</span>
                               </div>
                               
                               {stop.load_in_time && (
-                                <div className="flex items-center gap-2 text-sm">
+                                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                                   <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{t('loadIn')}: {stop.load_in_time}</span>
                                 </div>
                               )}
                               
                               {stop.capacity && (
-                                <div className="flex items-center gap-2 text-sm">
+                                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                                   <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{t('capacity')}: {stop.capacity.toLocaleString()}</span>
                                 </div>
                               )}
                               
                               {stop.distance_from_previous && (
-                                <div className="flex items-center gap-2 text-sm">
+                                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                                   <Navigation className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{stop.distance_from_previous} {t('miles')}</span>
                                 </div>
                               )}
                               
                               {stop.hotel && (
-                                <div className="flex items-center gap-2 text-sm">
+                                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                                   <Hotel className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{stop.hotel}</span>
                                 </div>
                               )}
                               
                               {stop.budget && (
-                                <div className="flex items-center gap-2 text-sm">
+                                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                                   <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
                                   <span>{formatCurrency(stop.budget)}</span>
                                 </div>
@@ -199,7 +199,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                             </div>
 
                             {/* Tags and Status */}
-                            <div className="flex items-center gap-2 mt-3">
+                            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-3">
                               <Badge className={getStatusColor(stop.status)}>
                                 {stop.status}
                               </Badge>
@@ -216,7 +216,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                           </div>
 
                           {/* Quick Actions */}
-                          <div className="flex flex-col gap-2">
+                          <div className="flex flex-wrap flex-col gap-2">
                             <Button variant="outline" size="sm">
                               {t('details')}
                             </Button>
@@ -244,7 +244,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
             <CardTitle>{t('stopDetails')}: {selectedStop.city}</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
               <div>
                 <h4 className="font-semibold mb-2">{t('venueInformation')}</h4>
                 <div className="space-y-1 text-sm">

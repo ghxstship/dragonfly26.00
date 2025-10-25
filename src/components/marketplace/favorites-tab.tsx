@@ -48,28 +48,28 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Favorites Grid */}
       {favorites.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
           {favorites.map((item: any) => (
-            <Card key={item.id} className="group overflow-hidden relative">
+            <Card key={item.id} className="group overflow-hidden md:block relative">
               {/* Remove Button */}
               <Button
                 size="icon"
                 variant="destructive"
-                className="absolute top-2 right-2 h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                className="absolute sm:relative sm:inset-auto top-2 md:top-2 right-2 md:right-2 h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity z-10"
                 onClick={() => removeFavorite(item.id)}
               >
                 <X className="h-4 w-4" aria-hidden="true" />
               </Button>
 
               {/* Product Image */}
-              <div className="relative aspect-square bg-gradient-to-br from-pink-500/10 to-red-500/10 flex items-center justify-center">
+              <div className="relative aspect-square bg-gradient-to-br from-pink-500/10 to-red-500/10 flex flex-wrap items-center justify-center">
                 <Package className="h-20 w-20 text-muted-foreground/30" aria-hidden="true" />
                 
                 {/* Status Badge */}
-                <div className="absolute top-2 left-2">
+                <div className="absolute sm:relative sm:inset-auto top-2 left-2 sm:relative sm:inset-auto">
                   {getAvailabilityBadge(item.status)}
                 </div>
               </div>
@@ -83,8 +83,8 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
 
               <CardContent className="p-4 pt-0 space-y-3">
                 {/* Rating */}
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                  <div className="flex flex-wrap items-center">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
@@ -100,7 +100,7 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
                 </div>
 
                 {/* Price */}
-                <p className="text-2xl font-bold">{item.price}</p>
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{item.price}</p>
 
                 {/* Saved Date */}
                 <p className="text-xs text-muted-foreground">
@@ -121,11 +121,11 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
           ))}
         </div>
       ) : (
-        <Card className="p-12">
+        <Card className="p-6 md:p-8 lg:p-12">
           <div className="text-center space-y-4">
             <Heart className="h-16 w-16 mx-auto text-muted-foreground/30" aria-hidden="true" />
             <div>
-              <h3 className="text-xl font-semibold">No favorites yet</h3>
+              <h3 className="text-base md:text-lg lg:text-xl font-semibold">No favorites yet</h3>
               <p className="text-muted-foreground mt-2">
                 Start browsing and save items you love to see them here
               </p>

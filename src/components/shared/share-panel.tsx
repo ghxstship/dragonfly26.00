@@ -43,7 +43,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
     <div className="space-y-4">
       {/* Share Type */}
       <Label>Share Method</Label>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
         <Button
           variant={shareType === "link" ? "default" : "outline"}
           onClick={() => setShareType("link")}
@@ -66,9 +66,9 @@ export function SharePanel({ onShare }: SharePanelProps) {
       <div className="space-y-3 pt-4 border-t">
         <Label>Access Level</Label>
         <RadioGroup value={permission} onValueChange={setPermission}>
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="view" id="permission-view" />
-            <Label htmlFor="permission-view" className="flex items-center gap-2 cursor-pointer font-normal">
+            <Label htmlFor="permission-view" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
               <Globe className="h-4 w-4" />
               <div>
                 <div>View only</div>
@@ -76,9 +76,9 @@ export function SharePanel({ onShare }: SharePanelProps) {
               </div>
             </Label>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="edit" id="permission-edit" />
-            <Label htmlFor="permission-edit" className="flex items-center gap-2 cursor-pointer font-normal">
+            <Label htmlFor="permission-edit" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
               <Share2 className="h-4 w-4" />
               <div>
                 <div>Can edit</div>
@@ -86,9 +86,9 @@ export function SharePanel({ onShare }: SharePanelProps) {
               </div>
             </Label>
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="admin" id="permission-admin" />
-            <Label htmlFor="permission-admin" className="flex items-center gap-2 cursor-pointer font-normal">
+            <Label htmlFor="permission-admin" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
               <Lock className="h-4 w-4" />
               <div>
                 <div>Full access</div>
@@ -103,7 +103,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
       {shareType === "link" && (
         <div className="space-y-3 pt-4 border-t">
           <Label>Shareable Link</Label>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Input value={shareUrl} readOnly className="font-mono text-sm" />
             <Button onClick={handleCopyLink} variant="outline" size="icon">
               <Copy className="h-4 w-4" />
@@ -116,15 +116,15 @@ export function SharePanel({ onShare }: SharePanelProps) {
             </Alert>
           )}
           <div className="space-y-2 text-sm">
-            <label className="flex items-center gap-2">
+            <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <input type="checkbox" className="rounded" defaultChecked />
               <span>Allow link sharing</span>
             </label>
-            <label className="flex items-center gap-2">
+            <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <input type="checkbox" className="rounded" />
               <span>Require password</span>
             </label>
-            <label className="flex items-center gap-2">
+            <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <input type="checkbox" className="rounded" />
               <span>Set expiration date</span>
             </label>
@@ -161,7 +161,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
               <AlertDescription>Invitation sent successfully!</AlertDescription>
             </Alert>
           )}
-          <Button onClick={handleSendEmail} disabled={!email} className="w-full">
+          <Button onClick={handleSendEmail} disabled={!email} className="w-full max-w-full">
             <Mail className="h-4 w-4 mr-2" />
             Send Invitation
           </Button>
@@ -172,9 +172,9 @@ export function SharePanel({ onShare }: SharePanelProps) {
       <div className="space-y-3 pt-4 border-t">
         <Label>People with Access</Label>
         <div className="space-y-2">
-          <div className="flex items-center justify-between p-2 rounded-md bg-muted/50">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-medium">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 rounded-md bg-muted/50">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <div className="h-8 w-8 rounded-full bg-primary/10 flex flex-wrap items-center justify-center text-sm font-medium">
                 JD
               </div>
               <div className="text-sm">
@@ -184,9 +184,9 @@ export function SharePanel({ onShare }: SharePanelProps) {
             </div>
             <Button variant="ghost" size="sm">Edit</Button>
           </div>
-          <div className="flex items-center justify-between p-2 rounded-md bg-muted/50">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-medium">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 rounded-md bg-muted/50">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <div className="h-8 w-8 rounded-full bg-primary/10 flex flex-wrap items-center justify-center text-sm font-medium">
                 JS
               </div>
               <div className="text-sm">

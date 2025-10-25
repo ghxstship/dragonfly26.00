@@ -81,14 +81,14 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
             <div key={comment.id} className="space-y-3">
               <Card>
                 <CardContent className="p-4">
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3">
                     <Avatar className="h-8 w-8">
                       <AvatarImage src={`/avatars/${comment.created_by}.jpg`} />
                       <AvatarFallback>{getInitials(comment.created_by)}</AvatarFallback>
                     </Avatar>
 
                     <div className="flex-1 space-y-2">
-                      <div className="flex items-start justify-between">
+                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                         <div>
                           <p className="font-medium text-sm">{comment.created_by}</p>
                           <p className="text-xs text-muted-foreground">
@@ -116,7 +116,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
 
                       {/* Reactions */}
                       {Object.keys(comment.reactions || {}).length > 0 && (
-                        <div className="flex gap-1">
+                        <div className="flex flex-wrap gap-1">
                           {Object.entries(comment.reactions || {}).map(([emoji, users]) => (
                             <Button
                               key={emoji}
@@ -143,7 +143,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                   {replies.map((reply: any) => (
                     <Card key={reply.id}>
                       <CardContent className="p-3">
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
                           <Avatar className="h-6 w-6">
                             <AvatarImage src={`/avatars/${reply.created_by}.jpg`} />
                             <AvatarFallback className="text-xs">
@@ -151,7 +151,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                             </AvatarFallback>
                           </Avatar>
                           <div className="flex-1">
-                            <div className="flex items-center justify-between">
+                            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                               <p className="font-medium text-xs">{reply.created_by}</p>
                               <span className="text-xs text-muted-foreground">
                                 {new Date(reply.created_at).toLocaleTimeString()}
@@ -173,13 +173,13 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
       {/* New comment input */}
       <Card>
         <CardContent className="p-4">
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             <Avatar className="h-8 w-8">
               <AvatarFallback>You</AvatarFallback>
             </Avatar>
             <div className="flex-1 space-y-2">
               {replyTo && (
-                <div className="flex items-center justify-between text-xs bg-muted p-2 rounded">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs bg-muted p-2 rounded">
                   <span>Replying to comment</span>
                   <Button
                     variant="ghost"
@@ -198,8 +198,8 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                 rows={3}
                 className="resize-none"
               />
-              <div className="flex justify-between">
-                <div className="flex gap-1">
+              <div className="flex flex-wrap justify-between">
+                <div className="flex flex-wrap gap-1">
                   <Button variant="ghost" size="icon" className="h-8 w-8">
                     <Smile className="h-4 w-4" />
                   </Button>

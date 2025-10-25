@@ -103,16 +103,16 @@ export function BillingTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Current Plan */}
       <Card>
         <CardHeader>
           <CardTitle className="text-base">{t('admin.billingTab.currentPlan')}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-start justify-between">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
             <div>
-              <h3 className="text-2xl font-bold">{t(currentPlan.nameKey)}</h3>
+              <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{t(currentPlan.nameKey)}</h3>
               <p className="text-muted-foreground mt-1">
                 ${currentPlan.price}/{currentPlan.billingCycle}
               </p>
@@ -122,45 +122,45 @@ export function BillingTab() {
 
           <Separator />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                 <Users className="h-4 w-4" aria-hidden="true" />
                 {t('admin.billingTab.teamSeats')}
               </div>
-              <p className="text-2xl font-bold">
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
                 {currentPlan.seats === -1 
                   ? `${currentPlan.usedSeats} / Unlimited` 
                   : `${currentPlan.usedSeats} / ${currentPlan.seats}`}
               </p>
               {currentPlan.seats !== -1 && (
-                <div className="h-2 bg-muted rounded-full overflow-hidden mt-2">
+                <div className="h-2 bg-muted rounded-full overflow-hidden md:block mt-2">
                   <div className="h-full bg-primary" style={{ width: `${(currentPlan.usedSeats / currentPlan.seats) * 100}%` }} />
                 </div>
               )}
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                 <Database className="h-4 w-4" aria-hidden="true" />
                 {t('admin.billingTab.storage')}
               </div>
-              <p className="text-2xl font-bold">{currentPlan.usedStorage} / {currentPlan.storage}GB</p>
-              <div className="h-2 bg-muted rounded-full overflow-hidden mt-2">
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.usedStorage} / {currentPlan.storage}GB</p>
+              <div className="h-2 bg-muted rounded-full overflow-hidden md:block mt-2">
                 <div className="h-full bg-primary" style={{ width: `${(currentPlan.usedStorage / currentPlan.storage) * 100}%` }} />
               </div>
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4" aria-hidden="true" />
                 {t('admin.billingTab.nextBilling')}
               </div>
-              <p className="text-2xl font-bold">
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
                 {new Date(currentPlan.nextBillingDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
               </p>
             </div>
           </div>
 
-          <Button className="w-full" variant="outline" size="sm" aria-label={t('admin.billingTab.viewAllPlans')}>
+          <Button className="w-full max-w-full" variant="outline" size="sm" aria-label={t('admin.billingTab.viewAllPlans')}>
             {t('admin.billingTab.viewAllPlans')}
           </Button>
         </CardContent>
@@ -169,14 +169,14 @@ export function BillingTab() {
       {/* Payment Method */}
       <Card>
         <CardHeader>
-          <div className="flex items-start justify-between">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
             <CardTitle className="text-base">{t('admin.billingTab.paymentMethod')}</CardTitle>
             <Button variant="outline" size="sm">{t('admin.billingTab.update')}</Button>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-4 p-4 border rounded-lg">
-            <div className="h-10 w-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded flex items-center justify-center">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 p-4 border rounded-lg">
+            <div className="h-10 w-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded flex flex-wrap items-center justify-center">
               <CreditCard className="h-6 w-6 text-white" />
             </div>
             <div className="flex-1">

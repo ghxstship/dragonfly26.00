@@ -49,7 +49,7 @@ export function QuickActions() {
             <p>Apps</p>
           </TooltipContent>
         </Tooltip>
-        <DropdownMenuContent align="end" className="w-64">
+        <DropdownMenuContent align="end" className="w-full sm:w-64">
           <DropdownMenuLabel>Quick Access</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/integrations`)}>

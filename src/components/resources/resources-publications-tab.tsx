@@ -30,7 +30,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">
@@ -60,27 +60,27 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Publications</CardTitle>
             <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{publications.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{publications.length}</div>
             <p className="text-xs text-muted-foreground">{t('available')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Research Papers</CardTitle>
             <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-purple-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-purple-600">
               {publications.filter((p: any) => (p as any).type === 'research').length}
             </div>
             <p className="text-xs text-muted-foreground">Academic research</p>
@@ -88,12 +88,12 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('whitepapers')}</CardTitle>
             <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">
               {publications.filter((p: any) => (p as any).type === 'whitepaper').length}
             </div>
             <p className="text-xs text-muted-foreground">Industry reports</p>
@@ -101,12 +101,12 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Case Studies</CardTitle>
             <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-orange-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-orange-600">
               {publications.filter((p: any) => (p as any).type === 'case_study').length}
             </div>
             <p className="text-xs text-muted-foreground">Real-world examples</p>
@@ -116,7 +116,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
         <Input
           placeholder={t('searchPublications')}
           value={searchQuery as any}
@@ -130,8 +130,8 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         {filteredPublications.map((publication: any) => (
           <Card key={publication.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-start gap-3 flex-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1">
                   <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-950">
                     <FileText className="h-5 w-5 text-orange-600" aria-hidden="true" />
                   </div>
@@ -139,7 +139,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
                     <CardTitle className="text-lg">{publication.name}</CardTitle>
                     <div className="flex flex-wrap gap-2 mt-2">
                       {publication.author && (
-                        <CardDescription className="flex items-center gap-1">
+                        <CardDescription className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Users className="h-3 w-3" aria-hidden="true" />
                           {publication.author}
                         </CardDescription>
@@ -148,7 +148,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
                         <CardDescription>• {publication.publisher}</CardDescription>
                       )}
                       {publication.published_date && (
-                        <CardDescription className="flex items-center gap-1">
+                        <CardDescription className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           • <Calendar className="h-3 w-3" aria-hidden="true" />
                           {new Date(publication.published_date).toLocaleDateString()}
                         </CardDescription>
@@ -156,7 +156,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-wrap flex-col gap-2">
                   {publication.type && (
                     <Badge className={getTypeColor(publication.type)}>
                       {publication.type.replace('_', ' ')}
@@ -210,7 +210,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
                 </div>
               )}
 
-              <div className="flex gap-2 pt-2 border-t">
+              <div className="flex flex-wrap gap-2 pt-2 border-t">
                 <Button className="flex-1" size="sm">
                   <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
                   View Publication

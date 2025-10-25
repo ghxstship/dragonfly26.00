@@ -117,8 +117,8 @@ export function BoardViewOrganism({
         ))}
 
         {!isMobile && (
-          <div className="flex-shrink-0 w-80">
-            <Button variant="ghost" className="w-full justify-start gap-2 h-10">
+          <div className="flex-shrink-0 w-full sm:w-80">
+            <Button variant="ghost" className="w-full justify-start gap-2 h-10 max-w-full">
               <Plus className="h-4 w-4" aria-hidden="true" />
               Add column
             </Button>
@@ -126,7 +126,7 @@ export function BoardViewOrganism({
         )}
 
         {data.length === 0 && (
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center pointer-events-none sm:relative sm:inset-auto">
             <div className="bg-background/95 backdrop-blur-sm border rounded-lg shadow-lg pointer-events-auto">
               <EmptyState
                 variant="inline"

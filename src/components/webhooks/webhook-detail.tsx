@@ -49,7 +49,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
         </SheetHeader>
 
         <Tabs defaultValue="overview" className="mt-6">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="config">Configuration</TabsTrigger>
             <TabsTrigger value="logs">Delivery Logs</TabsTrigger>
@@ -89,7 +89,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                 <CardTitle className="text-sm">Statistics</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Last Triggered</span>
                   <span>
                     {webhook.last_triggered_at
@@ -97,7 +97,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                       : "Never"}
                   </span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Last Success</span>
                   <span>
                     {webhook.last_success_at
@@ -105,7 +105,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                       : "Never"}
                   </span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Failure Count</span>
                   <span className={webhook.failure_count > 0 ? "text-destructive" : ""}>
                     {webhook.failure_count}
@@ -121,11 +121,11 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                 <CardTitle className="text-sm">Endpoint</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Method</span>
                   <span className="font-mono">{webhook.method}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">URL</span>
                   <span className="font-mono text-xs break-all">{webhook.url}</span>
                 </div>
@@ -152,15 +152,15 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                 <CardTitle className="text-sm">Retry Configuration</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Retry Enabled</span>
                   <span>{webhook.retry_enabled ? "Yes" : "No"}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Max Retries</span>
                   <span>{webhook.max_retries}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Retry Delay</span>
                   <span>{webhook.retry_delay_seconds}s</span>
                 </div>
@@ -172,8 +172,8 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
             {mockDeliveries.map((delivery: any) => (
               <Card key={delivery.id}>
                 <CardContent className="p-4">
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Badge variant="outline">{delivery.event_type}</Badge>
                       {(delivery as any).status === "success" ? (
                         <Badge variant="default" className="bg-green-600">
@@ -191,9 +191,9 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                       {new Date(delivery.created_at).toLocaleString()}
                     </span>
                   </div>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                     <span>Status: {delivery.response_status}</span>
-                    <span className="flex items-center gap-1">
+                    <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                       <Clock className="h-3 w-3" />
                       {delivery.duration_ms}ms
                     </span>

@@ -136,7 +136,7 @@ export function AgendaTabContent() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-12">
+      <div className="flex flex-wrap items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     )
@@ -145,10 +145,10 @@ export function AgendaTabContent() {
   const { morning, afternoon, evening } = groupItemsByTime()
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
       <div className="px-4 py-3 border-b">
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
           <div>
             <h3 className="font-semibold text-sm">Today&apos;s Agenda</h3>
             <p className="text-xs text-muted-foreground">
@@ -165,7 +165,7 @@ export function AgendaTabContent() {
           </Button>
         </div>
         {items.length > 0 && (
-          <div className="flex gap-2 text-xs">
+          <div className="flex flex-wrap gap-2 text-xs">
             <span className="text-muted-foreground">
               {items.filter(i => i.completed).length} / {items.length} completed
             </span>
@@ -177,7 +177,7 @@ export function AgendaTabContent() {
       <ScrollArea className="flex-1">
         <div className="p-4 space-y-4">
           {items.length === 0 ? (
-            <div className="text-center py-12">
+            <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
               <Calendar className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <p className="text-sm font-medium">Your day is clear!</p>
               <p className="text-xs text-muted-foreground mt-1">
@@ -259,7 +259,7 @@ function AgendaItemCard({
       )}
       onClick={() => onToggleComplete(item.id, item.completed)}
     >
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3">
         <div className="flex-shrink-0 mt-0.5">
           {item.completed ? (
             <CheckCircle2 className="h-5 w-5 text-primary" />
@@ -268,7 +268,7 @@ function AgendaItemCard({
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
             <div className={cn(
               "font-medium text-sm",
               item.completed && "line-through text-muted-foreground"
@@ -288,7 +288,7 @@ function AgendaItemCard({
               </Badge>
             )}
           </div>
-          <div className="flex items-center gap-2 mt-1 text-xs text-muted-foreground">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1 text-xs text-muted-foreground">
             <Clock className="h-3 w-3" />
             <span>
               {new Date(item.start_time).toLocaleTimeString('en-US', {

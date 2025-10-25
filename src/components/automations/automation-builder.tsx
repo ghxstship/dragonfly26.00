@@ -65,7 +65,7 @@ export function AutomationBuilder({ open, onOpenChange, onSave }: AutomationBuil
               </SelectContent>
             </Select>
           </div>
-          <Button onClick={handleSave} className="w-full">Create</Button>
+          <Button onClick={handleSave} className="w-full max-w-full">Create</Button>
         </div>
       </DialogContent>
     </Dialog>

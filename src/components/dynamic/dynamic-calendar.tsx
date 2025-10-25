@@ -11,7 +11,7 @@ export const DynamicCalendar = dynamic(
   {
     loading: () => (
       <div className="p-3">
-        <div className="h-[300px] w-full animate-pulse bg-muted rounded-md" />
+        <div className="h-[300px] w-full animate-pulse bg-muted rounded-md max-w-full" />
       </div>
     ),
     ssr: false, // Calendar doesn't need SSR

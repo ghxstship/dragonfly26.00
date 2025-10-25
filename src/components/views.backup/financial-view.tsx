@@ -71,10 +71,10 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
     .slice(0, 5)
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <DollarSign className="h-5 w-5" />
           <h3 className="font-semibold">Financial Dashboard</h3>
         </div>
@@ -97,16 +97,16 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
             onAction={onCreateAction}
           />
         ) : (
-          <div className="max-w-7xl mx-auto space-y-6">
+          <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6 px-4 md:px-6 lg:px-8">
             {/* Key Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium">Revenue</CardTitle>
                 <TrendingUp className="h-4 w-4 text-green-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">${metrics.revenue.toLocaleString()}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${metrics.revenue.toLocaleString()}</div>
                 <p className="text-xs text-muted-foreground mt-1">
                   <span className="text-green-500 inline-flex items-center">
                     <ArrowUpRight className="h-3 w-3 mr-1" />
@@ -118,12 +118,12 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
             </Card>
 
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium">Expenses</CardTitle>
                 <TrendingDown className="h-4 w-4 text-red-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">${metrics.expenses.toLocaleString()}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${metrics.expenses.toLocaleString()}</div>
                 <p className="text-xs text-muted-foreground mt-1">
                   <span className="text-red-500 inline-flex items-center">
                     <ArrowUpRight className="h-3 w-3 mr-1" />
@@ -135,7 +135,7 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
             </Card>
 
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium">Profit</CardTitle>
                 <DollarSign className="h-4 w-4 text-primary" />
               </CardHeader>
@@ -150,15 +150,15 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
             </Card>
 
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium">Budget</CardTitle>
                 <Badge variant={budgetUsed > 90 ? "destructive" : "secondary"}>
                   {budgetUsed.toFixed(0)}%
                 </Badge>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">${metrics.budget.toLocaleString()}</div>
-                <div className="mt-2 h-2 bg-muted rounded-full overflow-hidden">
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${metrics.budget.toLocaleString()}</div>
+                <div className="mt-2 h-2 bg-muted rounded-full overflow-hidden md:block">
                   <div
                     className={cn(
                       "h-full transition-all",
@@ -172,25 +172,25 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
           </div>
 
           {/* Charts Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
             {/* Revenue vs Expenses */}
             <Card>
               <CardHeader>
                 <CardTitle>Revenue vs Expenses</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="h-64 flex items-end justify-around gap-4 pb-4">
-                  <div className="flex-1 flex flex-col items-center gap-2">
+                <div className="h-48 md:h-56 lg:h-64 flex flex-wrap items-end justify-around gap-2 md:gap-3 lg:gap-4 pb-4">
+                  <div className="flex flex-col md:flex-row-1 flex flex-wrap flex-col items-center gap-2">
                     <div
-                      className="w-full bg-green-500 rounded-t-lg transition-all"
+                      className="w-full bg-green-500 rounded-t-lg transition-all max-w-full"
                       style={{ height: `${(metrics.revenue / Math.max(metrics.revenue, metrics.expenses)) * 100}%` }}
                     />
                     <div className="text-sm font-medium">Revenue</div>
                     <div className="text-xs text-muted-foreground">${metrics.revenue.toLocaleString()}</div>
                   </div>
-                  <div className="flex-1 flex flex-col items-center gap-2">
+                  <div className="flex flex-col md:flex-row-1 flex flex-wrap flex-col items-center gap-2">
                     <div
-                      className="w-full bg-red-500 rounded-t-lg transition-all"
+                      className="w-full bg-red-500 rounded-t-lg transition-all max-w-full"
                       style={{ height: `${(metrics.expenses / Math.max(metrics.revenue, metrics.expenses)) * 100}%` }}
                     />
                     <div className="text-sm font-medium">Expenses</div>
@@ -212,11 +212,11 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
                     const percentage = (amountNum / metrics.expenses) * 100
                     return (
                       <div key={category}>
-                        <div className="flex items-center justify-between mb-1">
+                        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-1">
                           <span className="text-sm font-medium">{category}</span>
                           <span className="text-sm text-muted-foreground">${amountNum.toLocaleString()}</span>
                         </div>
-                        <div className="h-2 bg-muted rounded-full overflow-hidden">
+                        <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                           <div
                             className="h-full bg-primary transition-all"
                             style={{ width: `${percentage}%` }}
@@ -240,10 +240,10 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
                 {data.slice(0, 10).map((item: any) => (
                   <div
                     key={item.id}
-                    className="flex items-center justify-between p-3 hover:bg-accent rounded-lg transition-colors cursor-pointer"
+                    className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 hover:bg-accent rounded-lg transition-colors cursor-pointer"
                     onClick={() => onItemClick?.(item)}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                       <div
                         className={cn(
                           "w-2 h-2 rounded-full",

@@ -85,15 +85,15 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
   const tCommon = useTranslations('common')
   const displayData = data.length > 0 ? data : []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Cards */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card role="region" aria-label={`${t('totalReports')} metric`}>
           <CardContent className="p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('totalReports')}</p>
-                <p className="text-2xl font-bold mt-1" aria-live="polite">{operationalReports.length}</p>
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{operationalReports.length}</p>
               </div>
               <Activity className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
             </div>
@@ -102,10 +102,10 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
         
         <Card role="region" aria-label={`${t('avgEfficiency')} metric`}>
           <CardContent className="p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('avgEfficiency')}</p>
-                <p className="text-2xl font-bold mt-1 text-green-600" aria-live="polite">
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">
                   {Math.round(operationalReports.reduce((sum: number, r) => sum + r.metrics.efficiency, 0) / operationalReports.length)}%
                 </p>
               </div>
@@ -116,10 +116,10 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
 
         <Card role="region" aria-label={`${t('itemsBlocked')} metric`}>
           <CardContent className="p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('itemsBlocked')}</p>
-                <p className="text-2xl font-bold mt-1 text-red-600" aria-live="polite">
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-red-600" aria-live="polite">
                   {operationalReports.reduce((sum: number, r) => sum + r.metrics.blocked, 0)}
                 </p>
               </div>
@@ -130,10 +130,10 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
 
         <Card role="region" aria-label={`${t('inProgress')} metric`}>
           <CardContent className="p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('inProgress')}</p>
-                <p className="text-2xl font-bold mt-1 text-blue-600" aria-live="polite">
+                <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-blue-600" aria-live="polite">
                   {operationalReports.reduce((sum: number, r) => sum + r.metrics.inProgress, 0)}
                 </p>
               </div>
@@ -144,19 +144,19 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
       </div>
 
       {/* Operational Reports Grid */}
-      <div className="grid gap-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4">
         {operationalReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Operational report: ${t(report.titleKey)}`}>
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <CardTitle className="text-lg" id={`report-${report.id}`}>{t(report.titleKey)}</CardTitle>
-                  <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1" aria-label={`Frequency: ${report.frequency}`}>
+                  <p className="text-sm text-muted-foreground mt-1 flex flex-col md:flex-row items-center gap-1" aria-label={`Frequency: ${report.frequency}`}>
                     <Clock className="h-3 w-3" aria-hidden="true" />
                     {report.frequency}
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Badge variant="outline" className={
                     report.trend === "up" ? "bg-green-100 text-green-800 border-green-200" :
                     report.trend === "down" ? "bg-red-100 text-red-800 border-red-200" :
@@ -168,21 +168,21 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
                 <div className="text-center" aria-label={`${report.metrics.completed} ${t('completed')}`}>
-                  <p className="text-2xl font-bold text-green-600">{report.metrics.completed}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{report.metrics.completed}</p>
                   <p className="text-xs text-muted-foreground mt-1">{t('completed')}</p>
                 </div>
                 <div className="text-center" aria-label={`${report.metrics.inProgress} ${t('inProgress')}`}>
-                  <p className="text-2xl font-bold text-blue-600">{report.metrics.inProgress}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{report.metrics.inProgress}</p>
                   <p className="text-xs text-muted-foreground mt-1">{t('inProgress')}</p>
                 </div>
                 <div className="text-center" aria-label={`${report.metrics.blocked} ${t('blocked')}`}>
-                  <p className="text-2xl font-bold text-red-600">{report.metrics.blocked}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">{report.metrics.blocked}</p>
                   <p className="text-xs text-muted-foreground mt-1">{t('blocked')}</p>
                 </div>
                 <div className="text-center" aria-label={`${report.metrics.efficiency}% ${t('efficiency')}`}>
-                  <p className="text-2xl font-bold text-purple-600">{report.metrics.efficiency}%</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-purple-600">{report.metrics.efficiency}%</p>
                   <p className="text-xs text-muted-foreground mt-1">{t('efficiency')}</p>
                 </div>
                 <div className="text-center border-l pl-4">

@@ -79,16 +79,16 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
 
   return (
     <main role="main" aria-label={t('title')}>
-      <div className="space-y-6">
+      <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Key Metrics */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('totalAssets')}</CardTitle>
             <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{overview.totalAssets}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{overview.totalAssets}</div>
             <p className="text-xs text-muted-foreground">
               {overview.availableAssets} available
             </p>
@@ -96,12 +96,12 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('totalValue')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(overview.totalValue)}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(overview.totalValue)}</div>
             <p className="text-xs text-muted-foreground">
               Asset portfolio value
             </p>
@@ -109,13 +109,13 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('utilizationRate')}</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-green-600">{overview.utilizationRate}%</div>
-            <div className="flex items-center text-xs text-green-600">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{overview.utilizationRate}%</div>
+            <div className="flex flex-wrap items-center text-xs text-green-600">
               <TrendingUp className="h-4 w-4 mr-1" aria-hidden="true" />
               +5% vs last month
             </div>
@@ -123,7 +123,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </Card>
 
         <Card className={overview.maintenanceAssets > 50 ? "border-yellow-200 dark:border-yellow-900" : ""}>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('inMaintenance')}</CardTitle>
             <Wrench className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
@@ -145,28 +145,28 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
           <CardDescription>{t('cardDescription')}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             <div className="p-4 border rounded-lg">
-              <div className="text-2xl font-bold text-green-600">{overview.availableAssets}</div>
+              <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{overview.availableAssets}</div>
               <p className="text-xs text-muted-foreground mt-1">{t('available')}</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <div className="text-2xl font-bold text-blue-600">{overview.rentedAssets}</div>
+              <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{overview.rentedAssets}</div>
               <p className="text-xs text-muted-foreground mt-1">{t('inUseRented')}</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <div className="text-2xl font-bold text-yellow-600">{overview.maintenanceAssets}</div>
+              <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{overview.maintenanceAssets}</div>
               <p className="text-xs text-muted-foreground mt-1">{t('maintenance')}</p>
             </div>
             <div className="p-4 border rounded-lg">
-              <div className="text-2xl font-bold text-gray-600">{overview.retiredAssets}</div>
+              <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-gray-600">{overview.retiredAssets}</div>
               <p className="text-xs text-muted-foreground mt-1">{t('retired')}</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 md:grid-cols-2">
         {/* Assets by Category */}
         <Card>
           <CardHeader>
@@ -177,7 +177,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
             <div className="space-y-4">
               {(assetsByCategory as any[]).map((category: any, index: number) => (
                 <div key={index} className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex flex-wrap justify-between text-sm">
                     <span className="font-medium">{category.category}</span>
                     <span className="text-muted-foreground">
                       {category.count} items · {formatCurrency(category.value)}
@@ -199,7 +199,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
           <CardContent>
             <div className="space-y-4">
               {(recentActivity as any[]).map((activity: any, index: number) => (
-                <div key={index} className="flex items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
+                <div key={index} className="flex flex-wrap flex-col md:flex-row items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
                   <div className={`h-2 w-2 rounded-full mt-2 ${
                     activity.action === 'Checked Out' ? "bg-blue-500" :
                     activity.action === 'Checked In' ? "bg-green-500" :

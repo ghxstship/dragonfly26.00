@@ -17,7 +17,7 @@ export function CreateReportDialog({ open, onOpenChange }: CreateReportDialogPro
   const t = useTranslations()
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8">
         <DialogHeader>
           <DialogTitle>Create Report</DialogTitle>
         </DialogHeader>
@@ -33,7 +33,7 @@ export function CreateReportDialog({ open, onOpenChange }: CreateReportDialogPro
             <Textarea id="description" placeholder={t('placeholders.whatDoesReportShow')} rows={2} />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div>
               <Label htmlFor="type">Report Type</Label>
               <Select defaultValue="chart">

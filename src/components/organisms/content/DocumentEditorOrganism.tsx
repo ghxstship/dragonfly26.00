@@ -72,12 +72,12 @@ export function DocumentEditorOrganism({
   ]
 
   return (
-    <div className="flex flex-col h-full border rounded-lg">
+    <div className="flex flex-wrap flex-col h-full border rounded-lg">
       {/* Toolbar */}
       {!readOnly && (
-        <div className="flex items-center gap-1 p-2 border-b bg-muted/30">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 p-2 border-b bg-muted/30">
           {/* Text Formatting */}
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             {toolbarButtons.map((btn: any) => (
               <Button
                 key={btn.id}
@@ -95,7 +95,7 @@ export function DocumentEditorOrganism({
           <Separator orientation="vertical" className="h-6" />
 
           {/* Alignment */}
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             {alignmentButtons.map((btn: any) => (
               <Button
                 key={btn.id}
@@ -112,7 +112,7 @@ export function DocumentEditorOrganism({
           <Separator orientation="vertical" className="h-6" />
 
           {/* Lists */}
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             {listButtons.map((btn: any) => (
               <Button
                 key={btn.id}
@@ -129,7 +129,7 @@ export function DocumentEditorOrganism({
           <Separator orientation="vertical" className="h-6" />
 
           {/* Insert */}
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             <Button
               variant="ghost"
               size="sm"
@@ -164,7 +164,7 @@ export function DocumentEditorOrganism({
       </div>
 
       {/* Status Bar */}
-      <div className="flex items-center justify-between border-t p-2 text-xs text-muted-foreground bg-muted/30">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-t p-2 text-xs text-muted-foreground bg-muted/30">
         <span>
           {content.length} {t('editor.characters')} • {content.split(/\s+/).filter(Boolean).length} {t('editor.words')}
         </span>

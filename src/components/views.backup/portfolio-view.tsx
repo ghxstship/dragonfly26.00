@@ -110,10 +110,10 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
   }
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Briefcase className="h-5 w-5" />
           <h3 className="font-semibold">Portfolio Overview</h3>
           <Badge variant="secondary">{totalProjects} projects</Badge>
@@ -122,15 +122,15 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
 
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
-        <div className="max-w-7xl mx-auto space-y-6">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6 px-4 md:px-6 lg:px-8">
           {/* Overview Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium">Total Projects</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{totalProjects as any}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalProjects as any}</div>
               </CardContent>
             </Card>
 
@@ -139,12 +139,12 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
               onClick={() => setFilterStatus(filterStatus === "on-track" ? null : "on-track")}
             >
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                <CardTitle className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="text-green-500">●</span> On Track
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{onTrack as any}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{onTrack as any}</div>
               </CardContent>
             </Card>
 
@@ -153,12 +153,12 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
               onClick={() => setFilterStatus(filterStatus === "at-risk" ? null : "at-risk")}
             >
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                <CardTitle className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="text-orange-500">●</span> At Risk
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{atRisk as any}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{atRisk as any}</div>
               </CardContent>
             </Card>
 
@@ -167,12 +167,12 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
               onClick={() => setFilterStatus(filterStatus === "delayed" ? null : "delayed")}
             >
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                <CardTitle className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="text-red-500">●</span> Delayed
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{delayed as any}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{delayed as any}</div>
               </CardContent>
             </Card>
 
@@ -181,12 +181,12 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
               onClick={() => setFilterStatus(filterStatus === "completed" ? null : "completed")}
             >
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                <CardTitle className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="text-blue-500">●</span> Completed
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{completed as any}</div>
+                <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{completed as any}</div>
               </CardContent>
             </Card>
           </div>
@@ -198,15 +198,15 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span>Total Budget</span>
                   <span className="font-semibold">${totalBudget.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex flex-wrap justify-between text-sm">
                   <span>Total Spent</span>
                   <span className="font-semibold">${totalSpent.toLocaleString()}</span>
                 </div>
-                <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                   <div
                     className={cn(
                       "h-full transition-all",
@@ -232,7 +232,7 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
               onAction={onCreateAction}
             />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
               {filteredProjects.map((project: any) => (
               <Card
                 key={project.id}
@@ -240,10 +240,10 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
                 onClick={() => onItemClick?.(data.find((d: any) => d.id === project.id)!)}
               >
                 <CardHeader>
-                  <div className="flex items-start justify-between">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                     <div className="flex-1 min-w-0">
                       <CardTitle className="text-base line-clamp-1">{project.name}</CardTitle>
-                      <div className="flex items-center gap-2 mt-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2">
                         <div className={cn("flex items-center gap-1 text-sm", getStatusColor(project.status))}>
                           {getStatusIcon(project.status)}
                           <span className="capitalize">{project.status.replace("-", " ")}</span>
@@ -256,11 +256,11 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
                 <CardContent className="space-y-4">
                   {/* Progress */}
                   <div>
-                    <div className="flex justify-between text-sm mb-1">
+                    <div className="flex flex-wrap justify-between text-sm mb-1">
                       <span className="text-muted-foreground">Progress</span>
                       <span className="font-medium">{Math.round(project.progress)}%</span>
                     </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                       <div
                         className="h-full bg-primary transition-all"
                         style={{ width: `${project.progress}%` }}
@@ -270,13 +270,13 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
 
                   {/* Budget */}
                   <div>
-                    <div className="flex justify-between text-sm mb-1">
+                    <div className="flex flex-wrap justify-between text-sm mb-1">
                       <span className="text-muted-foreground">Budget</span>
                       <span className="font-medium">
                         ${project.spent.toLocaleString()} / ${project.budget.toLocaleString()}
                       </span>
                     </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                       <div
                         className={cn(
                           "h-full transition-all",
@@ -295,7 +295,7 @@ export function PortfolioView({ data, schema, onItemClick, createActionLabel, on
 
                   {/* Team */}
                   {project.team.length > 0 && (
-                    <div className="flex items-center gap-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                       {project.team.slice(0, 3).map((member: any, idx: number) => (
                         <Avatar key={idx} className="h-6 w-6 border">
                           <AvatarFallback className="text-xs">

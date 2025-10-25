@@ -39,12 +39,12 @@ export function OpportunitiesGrantsTab({ workspaceId = '', userId = '' }: Opport
   return (
     <div role="main" aria-label="Tab content" className="space-y-4">
       <h2 className="sr-only">{t("title")}</h2>
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
           <Globe className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
           <div>
             <p className="text-sm text-muted-foreground">{t('description')}</p>
-            <div className="flex items-center gap-2 mt-1">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1">
               <Badge variant="secondary" className="text-xs">
                 <DollarSign className="h-3 w-3 mr-1" aria-hidden="true" />
                 {t('totalAvailable')}

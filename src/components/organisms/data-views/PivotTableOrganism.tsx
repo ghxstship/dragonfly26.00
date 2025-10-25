@@ -108,14 +108,14 @@ export function PivotTableOrganism({
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
-      <div className="flex items-center justify-between border-b p-4">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b p-4">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Table className="h-5 w-5" aria-hidden="true" />
           <h3 className="font-semibold">{t('pivot.table')}</h3>
         </div>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
           <span>{t('pivot.rows')}: {rowField}</span>
           <span>•</span>
           <span>{t('pivot.columns')}: {columnField}</span>
@@ -126,8 +126,8 @@ export function PivotTableOrganism({
 
       {/* Pivot Table */}
       <div className="flex-1 overflow-auto p-4">
-        <div className="border rounded-lg overflow-hidden">
-          <table className="w-full">
+        <div className="border rounded-lg overflow-hidden md:block overflow-x-auto">
+        <table className="w-full max-w-full">
             <thead className="bg-muted">
               <tr>
                 <th className="text-left p-3 font-semibold border-r">
@@ -157,7 +157,7 @@ export function PivotTableOrganism({
                     )}
                   >
                     <td className="p-3 border-r">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Button
                           variant="ghost"
                           size="sm"

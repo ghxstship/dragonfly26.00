@@ -87,8 +87,8 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
 
   const displayData = data || []
   return (
-    <div className="space-y-6">
-      <div className="grid gap-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="grid gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {benchmarks.map((benchmark, index: number) => {
           const isAboveAvg = benchmark.yourScore > benchmark.industryAvg
           const gapToTop = benchmark.topPerformer - benchmark.yourScore
@@ -96,13 +96,13 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
           return (
             <Card key={index} role="article">
               <CardHeader>
-                <div className="flex items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                   <div>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Award className="h-5 w-5 text-purple-600" aria-hidden="true" />
                       {t(benchmark.categoryKey)}
                     </CardTitle>
-                    <CardDescription className="mt-2 flex items-center gap-4">
+                    <CardDescription className="mt-2 flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                       <span>Your Score: <span className="font-bold text-lg text-foreground">{benchmark.yourScore}</span></span>
                       <span>•</span>
                       <span>Top {benchmark.percentile}th percentile</span>
@@ -114,11 +114,11 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="space-y-6">
+                <div className="space-y-3 md:space-y-4 lg:space-y-6">
                   {/* Comparison Bars */}
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
+                      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                         <span className="font-medium">{t('yourPerformance')}</span>
                         <span className="font-bold">{benchmark.yourScore}</span>
                       </div>
@@ -126,8 +126,8 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                     </div>
 
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-muted-foreground flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+                        <span className="text-muted-foreground flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Building2 className="h-3 w-3" aria-hidden="true" />
                           Industry Average
                         </span>
@@ -137,8 +137,8 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                     </div>
 
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-muted-foreground flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
+                        <span className="text-muted-foreground flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <TrendingUp className="h-3 w-3" aria-hidden="true" />
                           Top Performer
                         </span>
@@ -151,7 +151,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                   {/* Detailed Metrics */}
                   <div className="pt-4 border-t">
                     <p className="text-sm font-medium mb-3">{t('detailedBreakdown')}</p>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
                       {benchmark.metrics.map((metric, idx: number) => (
                         <div key={idx} className="space-y-1">
                           <p className="text-xs text-muted-foreground">{t(metric.nameKey)}</p>

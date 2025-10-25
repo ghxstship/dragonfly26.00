@@ -32,7 +32,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading tracking data...</p>
@@ -77,7 +77,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
       key: 'location',
       label: 'Location',
       render: (value: any) => (
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
           <MapPin className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
           <span>{(value as string) || 'Unknown'}</span>
         </div>
@@ -90,7 +90,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
         if (!value) return <span className="text-muted-foreground">-</span>
         const assignee = value as any
         return (
-          <div className="flex items-center gap-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
             <User className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
             <span>{assignee.first_name} {assignee.last_name}</span>
           </div>
@@ -148,25 +148,25 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
   }).length
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Quick Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Checked Out</CardDescription>
-            <CardTitle className="text-2xl text-blue-600">{checkedOut}</CardTitle>
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-blue-600">{checkedOut}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>In Transit</CardDescription>
-            <CardTitle className="text-2xl text-yellow-600">{inTransit}</CardTitle>
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-yellow-600">{inTransit}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('available')}</CardDescription>
-            <CardTitle className="text-2xl text-green-600">{available}</CardTitle>
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-green-600">{available}</CardTitle>
           </CardHeader>
         </Card>
         <Card className={overdue > 0 ? "border-red-200 dark:border-red-900" : ""}>
@@ -178,7 +178,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
       </div>
 
       {/* Filter Chips */}
-      <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
         <span className="text-sm font-medium text-muted-foreground">Filter:</span>
         {['checked_out', 'checked_in', 'in_transit', 'maintenance', 'available'].map(status => (
           <Badge
@@ -217,8 +217,8 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
         <CardContent>
           <div className="space-y-2">
             {trackingData.slice(0, 5).map((item: any) => (
-              <div key={item.id} className="flex items-center justify-between p-3 border rounded">
-                <div className="flex items-center gap-3">
+              <div key={item.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Package className="h-5 w-5 text-muted-foreground" />
                   <div>
                     <div className="font-medium">{item.asset_name}</div>

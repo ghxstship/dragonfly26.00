@@ -120,7 +120,7 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
           <Bell className="h-5 w-5" />
           {unacknowledgedCount > 0 && (
             <Badge 
-              className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
+              className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
               variant="destructive"
             >
               {unacknowledgedCount > 9 ? '9+' : unacknowledgedCount}
@@ -128,8 +128,8 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
           )}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-96">
-        <div className="flex items-center justify-between p-4">
+      <DropdownMenuContent align="end" className="w-full md:w-96">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4">
           <h3 className="font-semibold">Inventory Alerts</h3>
           {unacknowledgedCount > 0 && (
             <Badge variant="secondary">{unacknowledgedCount} new</Badge>
@@ -138,12 +138,12 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
         <Separator />
         <ScrollArea className="h-[400px]">
           {loading ? (
-            <div className="p-8 text-center text-muted-foreground">
+            <div className="p-4 md:p-8 text-center text-muted-foreground">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
               Loading alerts...
             </div>
           ) : alerts.length === 0 ? (
-            <div className="p-8 text-center text-muted-foreground">
+            <div className="p-4 md:p-8 text-center text-muted-foreground">
               <CheckCircle className="h-12 w-12 mx-auto mb-2 opacity-50" />
               <p>No active alerts</p>
               <p className="text-xs mt-1">All inventory levels look good!</p>
@@ -152,10 +152,10 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
             <div className="divide-y">
               {alerts.map(alert => (
                 <div key={alert.id} className="p-4 hover:bg-accent transition-colors">
-                  <div className="flex items-start gap-3">
+                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                     <div className="mt-0.5">{getAlertIcon(alert.alert_type)}</div>
                     <div className="flex-1 space-y-1">
-                      <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <p className="font-medium text-sm">{alert.item_name}</p>
                         <div className={`h-2 w-2 rounded-full ${getSeverityColor(alert.severity)}`} />
                       </div>
@@ -165,7 +165,7 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-2 mt-3">
+                  <div className="flex flex-wrap gap-2 mt-3">
                     <Button 
                       size="sm" 
                       variant="outline"
@@ -187,7 +187,7 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
           <>
             <Separator />
             <div className="p-2">
-              <Button variant="ghost" className="w-full" size="sm">
+              <Button variant="ghost" className="w-full max-w-full" size="sm">
                 View All Alerts
               </Button>
             </div>

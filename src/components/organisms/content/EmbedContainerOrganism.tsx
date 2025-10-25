@@ -62,13 +62,13 @@ export function EmbedContainerOrganism({
       className
     )}>
       {/* Header */}
-      <div className="flex items-center justify-between border-b p-2 bg-muted/30">
-        <div className="flex items-center gap-2 min-w-0">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b p-2 bg-muted/30">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 min-w-0">
           <span className="text-sm font-medium truncate">
             {title || url}
           </span>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
           {onRefresh && (
             <Button
               variant="ghost"
@@ -106,8 +106,8 @@ export function EmbedContainerOrganism({
       {/* Embed Content */}
       <div className="flex-1 relative bg-background">
         {isLoading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
-            <div className="flex flex-col items-center gap-2">
+          <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center bg-muted/50 sm:relative sm:inset-auto">
+            <div className="flex flex-wrap flex-col md:flex-row flex-col items-center gap-2">
               <RefreshCw className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
               <span className="text-sm text-muted-foreground">{t('embed.loading')}</span>
             </div>
@@ -116,7 +116,7 @@ export function EmbedContainerOrganism({
         <iframe
           src={url}
           title={title || t('embed.embeddedContent')}
-          className="w-full h-full border-0"
+          className="w-full h-full border-0 max-w-full"
           onLoad={handleLoad}
           sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           loading="lazy"

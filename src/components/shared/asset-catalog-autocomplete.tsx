@@ -120,7 +120,7 @@ export function AssetCatalogAutocomplete({
         {label} {required && '*'}
       </Label>
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           ref={inputRef}
           id="asset-autocomplete"
@@ -136,7 +136,7 @@ export function AssetCatalogAutocomplete({
           required={required}
           className="pl-9 pr-20"
         />
-        <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
+        <div className="absolute sm:relative sm:inset-auto right-2 top-1/2 -translate-y-1/2 flex flex-wrap flex-col md:flex-row items-center gap-1">
           {loading && <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />}
           {inputValue && !loading && (
             <button
@@ -155,7 +155,7 @@ export function AssetCatalogAutocomplete({
 
       {/* Suggestions Dropdown */}
       {showSuggestions && suggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-1 z-50">
+        <div className="absolute sm:relative sm:inset-auto top-full left-0 right-0 mt-1 z-50 sm:relative sm:inset-auto">
           <ul
             ref={listRef}
             className="bg-popover border rounded-md shadow-md max-h-[300px] overflow-y-auto"
@@ -169,10 +169,10 @@ export function AssetCatalogAutocomplete({
                 )}
                 onClick={() => handleSelect(suggestion)}
               >
-                <div className="flex items-start justify-between gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
                   <div className="flex-1 min-w-0">
                     <div className="font-medium truncate">{suggestion.name}</div>
-                    <div className="text-xs text-muted-foreground flex items-center gap-2 mt-1">
+                    <div className="text-xs text-muted-foreground flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1">
                       {suggestion.manufacturer && (
                         <span>{suggestion.manufacturer}</span>
                       )}
@@ -196,7 +196,7 @@ export function AssetCatalogAutocomplete({
 
       {/* No results message */}
       {showSuggestions && !loading && inputValue.length >= 2 && suggestions.length === 0 && (
-        <div className="absolute top-full left-0 right-0 mt-1 z-50">
+        <div className="absolute sm:relative sm:inset-auto top-full left-0 right-0 mt-1 z-50 sm:relative sm:inset-auto">
           <div className="bg-popover border rounded-md shadow-md p-4 text-sm text-muted-foreground">
             No catalog items found. You can still enter a custom item name.
           </div>

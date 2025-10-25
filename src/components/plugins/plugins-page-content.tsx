@@ -84,12 +84,12 @@ export function PluginsPageContent() {
   )
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
       <div className="border-b bg-background p-6">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-6">
           <div>
-            <h1 className="text-3xl font-bold">Plugin Marketplace</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Plugin Marketplace</h1>
             <p className="text-muted-foreground mt-2">
               Extend your workspace with powerful integrations
             </p>
@@ -97,13 +97,13 @@ export function PluginsPageContent() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Available Plugins</p>
-                  <p className="text-2xl font-bold">{mockPlugins.length}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{mockPlugins.length}</p>
                 </div>
                 <Zap className="h-8 w-8 text-muted-foreground" />
               </div>
@@ -112,10 +112,10 @@ export function PluginsPageContent() {
 
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Installed</p>
-                  <p className="text-2xl font-bold text-green-600">{mockInstalled.length}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{mockInstalled.length}</p>
                 </div>
                 <TrendingUp className="h-8 w-8 text-green-600" />
               </div>
@@ -124,10 +124,10 @@ export function PluginsPageContent() {
 
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Featured</p>
-                  <p className="text-2xl font-bold text-yellow-600">
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">
                     {mockPlugins.filter((p: any) => p.is_featured).length}
                   </p>
                 </div>
@@ -141,16 +141,16 @@ export function PluginsPageContent() {
       {/* Content */}
       <div className="flex-1 overflow-auto p-6">
         <Tabs value={activeTab as any} onValueChange={setActiveTab}>
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-6">
             <TabsList>
               <TabsTrigger value="marketplace">Marketplace</TabsTrigger>
               <TabsTrigger value="installed">Installed ({mockInstalled.length})</TabsTrigger>
             </TabsList>
 
             {activeTab === "marketplace" && (
-              <div className="flex items-center gap-2">
-                <div className="relative w-64">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <div className="relative w-full sm:w-64">
+                  <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
                   <Input
                     placeholder="Search plugins..."
                     value={searchQuery as any}
@@ -158,7 +158,7 @@ export function PluginsPageContent() {
                     className="pl-9"
                   />
                 </div>
-                <div className="flex border rounded-md">
+                <div className="flex flex-wrap border rounded-md">
                   <Button
                     variant={viewMode === "grid" ? "default" : "ghost"}
                     size="icon"
@@ -182,7 +182,7 @@ export function PluginsPageContent() {
 
           <TabsContent value="marketplace">
             {viewMode === "grid" ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
                 {filteredPlugins.map((plugin: any) => (
                   <PluginCard key={plugin.id} plugin={plugin} />
                 ))}
@@ -196,7 +196,7 @@ export function PluginsPageContent() {
             )}
 
             {filteredPlugins.length === 0 && (
-              <div className="text-center py-12">
+              <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
                 <p className="text-muted-foreground">No plugins found</p>
               </div>
             )}

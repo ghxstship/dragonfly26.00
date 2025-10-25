@@ -148,8 +148,8 @@ export function VariantSelector({
                         <Check className="ml-1 h-3 w-3" />
                       )}
                       {!isAvailable && (
-                        <span className="absolute inset-0 flex items-center justify-center">
-                          <span className="h-px w-full bg-muted-foreground rotate-45" />
+                        <span className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
+                          <span className="h-px w-full bg-muted-foreground rotate-45 max-w-full" />
                         </span>
                       )}
                     </Button>
@@ -163,13 +163,13 @@ export function VariantSelector({
 
       {currentVariant && (
         <div className="mt-4 p-3 bg-muted/50 rounded-lg space-y-2">
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
             <span className="text-muted-foreground">SKU:</span>
             <span className="font-mono">{currentVariant.sku || 'N/A'}</span>
           </div>
           
           {currentVariant.compare_at_price && currentVariant.compare_at_price > currentVariant.price && (
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <span className="text-sm line-through text-muted-foreground">
                 ${currentVariant.compare_at_price.toFixed(2)}
               </span>
@@ -179,7 +179,7 @@ export function VariantSelector({
             </div>
           )}
 
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
             <span className="text-muted-foreground">Availability:</span>
             {currentVariant.inventory_quantity > 0 ? (
               <Badge variant="outline" className="bg-green-500/10 text-green-600 border-green-500/20">

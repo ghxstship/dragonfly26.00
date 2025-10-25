@@ -109,10 +109,10 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
 
   return (
     <TooltipProvider delayDuration={300}>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-wrap flex-col h-full">
         {/* Header */}
-        <div className="flex items-center justify-between border-b p-4">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b p-4">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Button
               variant="outline"
               size="icon"
@@ -134,7 +134,7 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
             </Button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Button
               variant="outline"
               size="icon"
@@ -162,7 +162,7 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
           <div className="relative min-h-[400px]">
             {/* Time scale */}
             <div className="h-8 border-b mb-4 relative">
-              <div className="absolute inset-0 flex">
+              <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap sm:relative sm:inset-auto">
                 {Array.from({ length: 12 }).map((_, i) => (
                   <div key={i} className="flex-1 border-r text-xs text-center text-muted-foreground">
                     {start.getMonth() + i}
@@ -210,7 +210,7 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
 
             {/* Today marker */}
             <div
-              className="absolute top-0 bottom-0 w-0.5 bg-primary pointer-events-none"
+              className="absolute sm:relative sm:inset-auto top-0 bottom-0 w-0.5 bg-primary pointer-events-none sm:relative sm:inset-auto"
               style={{
                 left: `${((new Date().getTime() - start.getTime()) / (end.getTime() - start.getTime())) * 100}%`
               }}

@@ -71,11 +71,11 @@ export function MapOrganism({
   }
 
   return (
-    <div className="flex flex-col h-full relative">
+    <div className="flex flex-wrap flex-col h-full relative">
       {/* Map Container */}
       <div className="flex-1 relative bg-muted/20">
         {/* Placeholder for actual map implementation */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
           <div className="text-center space-y-2">
             <MapPin className="h-12 w-12 mx-auto text-muted-foreground" aria-hidden="true" />
             <p className="text-sm text-muted-foreground">
@@ -88,7 +88,7 @@ export function MapOrganism({
         </div>
 
         {/* Map Controls */}
-        <div className="absolute top-4 right-4 flex flex-col gap-2">
+        <div className="absolute sm:relative sm:inset-auto top-2 md:top-4 right-2 md:right-4 flex flex-wrap flex-col gap-2">
           <Button
             variant="secondary"
             size="icon"
@@ -159,7 +159,7 @@ export function MapOrganism({
               )}
               onClick={() => handleLocationClick(location)}
             >
-              <div className="flex items-center gap-2 min-w-0">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 min-w-0">
                 <MapPin className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                 <div className="min-w-0">
                   <p className="font-medium truncate">{location.title}</p>

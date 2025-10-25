@@ -86,16 +86,16 @@ function KeyboardShortcutsDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
+          <DialogTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Keyboard className="h-5 w-5" />
             Keyboard Shortcuts
           </DialogTitle>
         </DialogHeader>
 
-        <ScrollArea className="max-h-[500px] pr-4">
-          <div className="space-y-6">
+        <ScrollArea className="max-h-[300px] md:h-[500px] pr-4">
+          <div className="space-y-3 md:space-y-4 lg:space-y-6">
             {Object.entries(categories).map(([key, title]) => {
               const categoryShortcuts = shortcuts.filter((s: Shortcut) => s.category === key)
               
@@ -108,12 +108,12 @@ function KeyboardShortcutsDialog({
                     {categoryShortcuts.map((shortcut, i) => (
                       <div 
                         key={i} 
-                        className="flex items-center justify-between py-2 px-3 rounded hover:bg-muted/50"
+                        className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between py-2 px-3 rounded hover:bg-muted/50"
                       >
                         <span className="text-sm">{shortcut.description}</span>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                           {shortcut.keys.map((key, j) => (
-                            <span key={j} className="flex items-center gap-1">
+                            <span key={j} className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                               <kbd className="px-2 py-1 text-xs font-semibold bg-muted border border-border rounded">
                                 {key}
                               </kbd>
@@ -135,7 +135,7 @@ function KeyboardShortcutsDialog({
           </div>
         </ScrollArea>
 
-        <div className="flex items-center justify-between pt-4 border-t text-xs text-muted-foreground">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between pt-4 border-t text-xs text-muted-foreground">
           <span>Press <kbd className="px-1.5 py-0.5 bg-muted border rounded text-xs">?</kbd> anytime to see shortcuts</span>
           <span>Press <kbd className="px-1.5 py-0.5 bg-muted border rounded text-xs">Esc</kbd> to close</span>
         </div>
@@ -155,7 +155,7 @@ export function ShortcutHint({
   return (
     <div className={className}>
       {keys.map((key, i) => (
-        <span key={i} className="inline-flex items-center gap-0.5">
+        <span key={i} className="inline-flex flex-col md:flex-row items-center gap-0.5">
           <kbd className="px-1.5 py-0.5 text-[10px] font-semibold bg-muted border border-border rounded">
             {key}
           </kbd>

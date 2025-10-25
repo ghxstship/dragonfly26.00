@@ -73,13 +73,13 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
 {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('draft')}</CardDescription>
-            <CardTitle className="text-2xl">
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'draft').length}
             </CardTitle>
           </CardHeader>
@@ -87,7 +87,7 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
         <Card>
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('submitted')}</CardDescription>
-            <CardTitle className="text-2xl">
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'submitted').length}
             </CardTitle>
           </CardHeader>
@@ -95,7 +95,7 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
         <Card>
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('approved')}</CardDescription>
-            <CardTitle className="text-2xl">
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'approved').length}
             </CardTitle>
           </CardHeader>
@@ -103,7 +103,7 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
         <Card>
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('inProgress')}</CardDescription>
-            <CardTitle className="text-2xl">
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'in-progress').length}
             </CardTitle>
           </CardHeader>
@@ -111,7 +111,7 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
         <Card>
           <CardHeader className="pb-2">
             <CardDescription className="text-xs">{t('completed')}</CardDescription>
-            <CardTitle className="text-2xl">
+            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'completed').length}
             </CardTitle>
           </CardHeader>
@@ -119,13 +119,13 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
       </div>
 
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
           <Input placeholder={t('searchOrders')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-[200px]">
+          <SelectTrigger className="w-full max-w-[200px]">
             <SelectValue placeholder={t('orderType')} />
           </SelectTrigger>
           <SelectContent>
@@ -137,7 +137,7 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
           </SelectContent>
         </Select>
         <Select defaultValue="all-status">
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full max-w-[180px]">
             <SelectValue placeholder={t('status')} />
           </SelectTrigger>
           <SelectContent>
@@ -156,8 +156,8 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
         {ordersData.map((order: any) => (
           <Card key={order.id} className="hover:shadow-md transition-shadow">
             <CardHeader>
-              <div className="flex items-start justify-between">
-                <div className="flex items-start gap-3">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
                   {getOrderTypeIcon(order.name)}
                   <div className="space-y-1">
                     <CardTitle className="text-lg">{order.name}</CardTitle>
@@ -166,14 +166,14 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
                     </CardDescription>
                   </div>
                 </div>
-                <div className="flex flex-col items-end gap-2">
+                <div className="flex flex-wrap flex-col items-end gap-2">
                   {getStatusBadge(order.status)}
                   {order.approval_status && getApprovalBadge(order.approval_status)}
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
                 <div>
                   <p className="text-sm text-muted-foreground">{t('amount')}</p>
                   <p className="text-lg font-semibold">{order.price}</p>
@@ -190,7 +190,7 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
                   <p className="text-sm text-muted-foreground">{t('priority')}</p>
                   <Badge variant="outline" className="capitalize">{order.priority}</Badge>
                 </div>
-                <div className="flex items-end justify-end gap-2">
+                <div className="flex flex-wrap items-end justify-end gap-2">
                   <Button variant="outline" size="sm">{tCommon('view')}</Button>
                   <Button size="sm">{t('edit')}</Button>
                 </div>

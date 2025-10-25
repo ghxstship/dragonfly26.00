@@ -299,16 +299,16 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Header Stats */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('active')}</div>
             <Trophy className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {competitions.filter(c => (c as any).status === "active").length}
             </div>
             <p className="text-xs text-muted-foreground">{t('competitions')}</p>
@@ -316,12 +316,12 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('participating')}</div>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {competitions.filter(c => c.joined).length}
             </div>
             <p className="text-xs text-muted-foreground">{t('yourEntries')}</p>
@@ -329,23 +329,23 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('yourRank')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">#247</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">#247</div>
             <p className="text-xs text-muted-foreground">{t('globalRanking')}</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('totalPoints')}</div>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">3,456</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">3,456</div>
             <p className="text-xs text-muted-foreground">{t('competitionPoints')}</p>
           </CardContent>
         </Card>
@@ -354,9 +354,9 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
       {/* Leaderboard */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Trophy className="h-5 w-5 text-yellow-500" aria-hidden="true" />{t('globalLeaderboard')}</CardTitle>
               <CardDescription>{t('topPerformers')}</CardDescription>
             </div>
@@ -378,7 +378,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                   }`}
                 >
                   {/* Rank */}
-                  <div className="flex flex-col items-center min-w-[60px]">
+                  <div className="flex flex-wrap flex-col items-center min-w-[60px]">
                     <RankIcon className={`h-6 w-6 ${rankBadge.color}`} />
                     <span className="text-lg font-bold">#{entry.rank}</span>
                     {rankChange && rankChange.direction !== "same" && (
@@ -415,9 +415,9 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
 
                   {/* Score & Streak */}
                   <div className="text-right">
-                    <div className="text-xl font-bold">{entry.score.toLocaleString()}</div>
+                    <div className="text-base md:text-lg lg:text-xl font-bold">{entry.score.toLocaleString()}</div>
                     <div className="text-xs text-muted-foreground">{t('points')}</div>
-                    <div className="flex items-center justify-end gap-1 mt-1 text-orange-500">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center justify-end gap-1 mt-1 text-orange-500">
                       <Zap className="h-3 w-3 fill-current" aria-hidden="true" />
                       <span className="text-xs font-semibold">{entry.streak} day streak</span>
                     </div>
@@ -432,9 +432,9 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
       {/* Search and Filter */}
       <Card>
         <CardContent className="pt-6">
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
               <Input
                 placeholder={t('searchCompetitions')}
                 value={searchQuery as any}
@@ -455,7 +455,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
       </Card>
 
       {/* Competitions Grid */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {filteredCompetitions.length === 0 ? (
           <Card className="col-span-2">
             <CardContent className="p-0">
@@ -478,7 +478,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
             const CategoryIcon = categoryIcons[competition.category]
 
             return (
-              <Card key={competition.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card key={competition.id} className="overflow-hidden md:block hover:shadow-lg transition-shadow">
                 <CardContent className="p-0">
                   {/* Competition Image */}
                   {competition.image && (
@@ -501,7 +501,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
 
                   <div className="p-6">
                     {/* Header */}
-                    <div className="flex items-start gap-3 mb-3">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 mb-3">
                       <div className="p-2 rounded-lg bg-primary/10">
                         <CategoryIcon className="h-5 w-5 text-primary"  aria-hidden="true" />
                       </div>
@@ -520,17 +520,17 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
 
                     {/* Details */}
                     <div className="space-y-2 mb-4 text-sm">
-                      <div className="flex items-center gap-2 text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
                         <Calendar className="h-4 w-4" aria-hidden="true" />
                         <span>
                           {new Date(competition.startDate).toLocaleDateString()} - {new Date(competition.endDate).toLocaleDateString()}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
                         <Users className="h-4 w-4" aria-hidden="true" />
                         <span>{competition.participants} participants</span>
                       </div>
-                      <div className="flex items-center gap-2 text-primary font-medium">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-primary font-medium">
                         <Trophy className="h-4 w-4" aria-hidden="true" />
                         <span>{competition.prize}</span>
                       </div>
@@ -539,7 +539,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                     {/* Progress Bar for Active Competitions */}
                     {(competition as any).status === "active" && (
                       <div className="mb-4">
-                        <div className="flex items-center justify-between text-xs text-muted-foreground mb-1">
+                        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs text-muted-foreground mb-1">
                           <span>{t('timeRemaining')}</span>
                           <span>
                             {Math.ceil(
@@ -553,7 +553,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                     )}
 
                     {/* Actions */}
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                       {competition.joined ? (
                         <>
                           <Button variant="default" size="sm" className="flex-1" disabled>

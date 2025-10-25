@@ -103,7 +103,7 @@ export function ProgressBar({ className, indeterminate = true }: ProgressBarProp
     return (
       <div className={cn("relative h-1 w-full overflow-hidden rounded-full bg-muted", className)}>
         <motion.div
-          className="absolute h-full w-1/3 bg-primary"
+          className="absolute h-full w-full md:w-1/2 lg:w-1/3 bg-primary"
           animate={{
             x: ["-100%", "300%"],
           }}

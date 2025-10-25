@@ -31,24 +31,24 @@ export function HeadcountWidget({
 }: HeadcountWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-row items-center justify-between pb-2">
+      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium">Headcount</CardTitle>
         <Users className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">{activeCount as any}</div>
+        <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{activeCount as any}</div>
         <p className="text-xs text-muted-foreground mt-1">Active employees</p>
         
         <div className="mt-4 space-y-2">
-          <div className="flex justify-between text-sm">
+          <div className="flex flex-wrap justify-between text-sm">
             <span className="text-muted-foreground">Full-time</span>
             <span className="font-medium">{fullTimeCount}</span>
           </div>
-          <div className="flex justify-between text-sm">
+          <div className="flex flex-wrap justify-between text-sm">
             <span className="text-muted-foreground">Part-time</span>
             <span className="font-medium">{partTimeCount}</span>
           </div>
-          <div className="flex justify-between text-sm">
+          <div className="flex flex-wrap justify-between text-sm">
             <span className="text-muted-foreground">Contractors</span>
             <span className="font-medium">{contractorCount}</span>
           </div>
@@ -58,7 +58,7 @@ export function HeadcountWidget({
           <Button 
             variant="ghost" 
             size="sm" 
-            className="w-full mt-4"
+            className="w-full mt-4 max-w-full"
             onClick={onViewDetails}
           >
             View Details
@@ -87,22 +87,22 @@ export function TodaysScheduleWidget({
 }: TodaysScheduleWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-row items-center justify-between pb-2">
+      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium">Today&apos;s Schedule</CardTitle>
         <Clock className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <StatusDot status="success" size="md" />
               <span className="text-sm">On duty</span>
             </div>
             <span className="text-lg font-bold">{onDutyCount}</span>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <StatusDot status="info" size="md" />
               <span className="text-sm">Coming soon</span>
             </div>
@@ -110,8 +110,8 @@ export function TodaysScheduleWidget({
           </div>
 
           {openShiftsCount > 0 && (
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <StatusDot status="warning" size="md" />
                 <span className="text-sm">Open shifts</span>
               </div>
@@ -124,7 +124,7 @@ export function TodaysScheduleWidget({
           <div className="mt-4 pt-4 border-t space-y-2">
             <p className="text-xs text-muted-foreground font-medium">Upcoming shifts</p>
             {shifts.map((shift, i) => (
-              <div key={i} className="flex justify-between text-sm">
+              <div key={i} className="flex flex-wrap justify-between text-sm">
                 <span className="text-muted-foreground">{shift.time}</span>
                 <Badge variant="outline" className="h-5">
                   {shift.count}
@@ -138,7 +138,7 @@ export function TodaysScheduleWidget({
           <Button 
             variant="ghost" 
             size="sm" 
-            className="w-full mt-4"
+            className="w-full mt-4 max-w-full"
             onClick={onViewSchedule}
           >
             View Full Schedule
@@ -167,29 +167,29 @@ export function PendingApprovalsWidget({
 }: PendingApprovalsWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-row items-center justify-between pb-2">
+      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium">Pending Approvals</CardTitle>
         <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">{totalCount as any}</div>
+        <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalCount as any}</div>
         <p className="text-xs text-muted-foreground mt-1">Items need your review</p>
         
         <div className="mt-4 space-y-2">
           {ptoCount > 0 && (
-            <div className="flex justify-between items-center text-sm">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row justify-between items-center text-sm">
               <span className="text-muted-foreground">PTO requests</span>
               <Badge variant="secondary">{ptoCount}</Badge>
             </div>
           )}
           {timesheetsCount > 0 && (
-            <div className="flex justify-between items-center text-sm">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row justify-between items-center text-sm">
               <span className="text-muted-foreground">Timesheets</span>
               <Badge variant="secondary">{timesheetsCount}</Badge>
             </div>
           )}
           {shiftsCount > 0 && (
-            <div className="flex justify-between items-center text-sm">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row justify-between items-center text-sm">
               <span className="text-muted-foreground">Shift swaps</span>
               <Badge variant="secondary">{shiftsCount}</Badge>
             </div>
@@ -200,7 +200,7 @@ export function PendingApprovalsWidget({
           <Button 
             variant="default" 
             size="sm" 
-            className="w-full mt-4"
+            className="w-full mt-4 max-w-full"
             onClick={onReviewAll}
           >
             Review All
@@ -225,7 +225,7 @@ export function AlertsWidget({
 }: AlertsWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-row items-center justify-between pb-2">
+      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium">Alerts</CardTitle>
         <AlertTriangle className="h-4 w-4 text-yellow-600" />
       </CardHeader>
@@ -237,12 +237,12 @@ export function AlertsWidget({
           </div>
         ) : (
           <>
-            <div className="text-2xl font-bold text-yellow-600">{alertCount as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{alertCount as any}</div>
             <p className="text-xs text-muted-foreground mt-1">Items need attention</p>
             
             <div className="mt-4 space-y-2">
               {alerts.slice(0, 3).map((alert, i) => (
-                <div key={i} className="flex items-start gap-2 text-sm">
+                <div key={i} className="flex flex-wrap flex-col md:flex-row items-start gap-2 text-sm">
                   <StatusDot 
                     status={alert.type === "compliance" ? "error" : "warning"} 
                     size="sm" 
@@ -257,7 +257,7 @@ export function AlertsWidget({
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="w-full mt-4"
+                className="w-full mt-4 max-w-full"
                 onClick={onReviewAlerts}
               >
                 Review All Alerts
@@ -286,20 +286,20 @@ export function QuickStatsWidget({
 }: QuickStatsWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-row items-center justify-between pb-2">
+      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium">Quick Stats</CardTitle>
         <TrendingUp className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row justify-between items-center">
             <span className="text-sm text-muted-foreground">Onboarding</span>
             <Badge variant={onboardingCount > 0 ? "secondary" : "outline"}>
               {onboardingCount}
             </Badge>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row justify-between items-center">
             <span className="text-sm text-muted-foreground">Reviews due</span>
             <Badge variant={reviewsDueCount > 0 ? "secondary" : "outline"}>
               {reviewsDueCount}
@@ -307,7 +307,7 @@ export function QuickStatsWidget({
           </div>
 
           {ptoRequestsCount > 0 && (
-            <div className="flex justify-between items-center">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row justify-between items-center">
               <span className="text-sm text-muted-foreground">PTO pending</span>
               <Badge variant="secondary">
                 {ptoRequestsCount}
@@ -320,7 +320,7 @@ export function QuickStatsWidget({
           <Button 
             variant="ghost" 
             size="sm" 
-            className="w-full mt-4"
+            className="w-full mt-4 max-w-full"
             onClick={onViewReports}
           >
             View Reports
@@ -354,7 +354,7 @@ export function UpcomingPTOWidget({ upcomingPTO }: UpcomingPTOWidgetProps) {
         ) : (
           <div className="space-y-2">
             {upcomingPTO.slice(0, 5).map((item, i) => (
-              <div key={i} className="flex justify-between text-sm border-b pb-2 last:border-0">
+              <div key={i} className="flex flex-wrap justify-between text-sm border-b pb-2 last:border-0">
                 <span className="text-muted-foreground">{item.date}</span>
                 <Badge variant="outline" className="h-5">
                   {item.personnel.length}

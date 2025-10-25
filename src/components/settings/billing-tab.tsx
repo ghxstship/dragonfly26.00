@@ -206,19 +206,19 @@ export function BillingTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Current Plan */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Zap className="h-5 w-5" aria-hidden="true" />
             Current Plan
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-start justify-between">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
             <div>
-              <h3 className="text-2xl font-bold">{currentPlan.name}</h3>
+              <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.name}</h3>
               <p className="text-muted-foreground mt-1">
                 ${currentPlan.price}/{currentPlan.billingCycle}
               </p>
@@ -228,27 +228,27 @@ export function BillingTab() {
 
           <Separator />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                 <Users className="h-4 w-4" aria-hidden="true" />
                 Users
               </div>
-              <p className="text-2xl font-bold">{currentPlan.users}</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.users}</p>
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                 <Database className="h-4 w-4" aria-hidden="true" />
                 Storage
               </div>
-              <p className="text-2xl font-bold">{currentPlan.storage}GB</p>
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.storage}GB</p>
             </div>
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4" aria-hidden="true" />
                 Next Billing
               </div>
-              <p className="text-2xl font-bold">
+              <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
                 {new Date(currentPlan.nextBillingDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
               </p>
             </div>
@@ -259,9 +259,9 @@ export function BillingTab() {
       {/* Payment Method */}
       <Card>
         <CardHeader>
-          <div className="flex items-start justify-between">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
             <div>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <CreditCard className="h-5 w-5" aria-hidden="true" />
                 Payment Method
               </CardTitle>
@@ -273,8 +273,8 @@ export function BillingTab() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-4 p-4 border rounded-lg">
-            <div className="h-10 w-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded flex items-center justify-center">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 p-4 border rounded-lg">
+            <div className="h-10 w-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded flex flex-wrap items-center justify-center">
               <CreditCard className="h-6 w-6 text-white" aria-hidden="true" />
             </div>
             <div className="flex-1">
@@ -289,14 +289,14 @@ export function BillingTab() {
       {/* Available Plans */}
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>{t('settings.billingTab.availablePlans')}</CardTitle>
               <CardDescription>
                 Choose the plan that&apos;s right for you
               </CardDescription>
             </div>
-            <div className="flex items-center gap-2 p-1 bg-muted rounded-lg">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-1 bg-muted rounded-lg">
               <Button
                 variant={billingCycle === "monthly" ? "default" : "ghost"}
                 size="sm"
@@ -315,7 +315,7 @@ export function BillingTab() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             {plans.map((plan: any) => {
               const displayPrice = billingCycle === "annual" ? plan.annualPrice : plan.price
               const isCurrentPlan = plan.id === "professional"
@@ -329,10 +329,10 @@ export function BillingTab() {
                     {plan.price === 0 && (
                       <Badge variant="secondary" className="w-fit mb-2">Free Forever</Badge>
                     )}
-                    <CardTitle className="text-xl">{plan.name}</CardTitle>
+                    <CardTitle className="text-base md:text-lg lg:text-xl">{plan.name}</CardTitle>
                     <CardDescription className="mt-2">{plan.description}</CardDescription>
                     <div className="mt-4">
-                      <span className="text-3xl font-bold">${displayPrice}</span>
+                      <span className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">${displayPrice}</span>
                       <span className="text-muted-foreground">
                         /{billingCycle === "annual" ? "year" : "month"}
                       </span>
@@ -341,14 +341,14 @@ export function BillingTab() {
                   <CardContent className="space-y-4">
                     <ul className="space-y-2">
                       {plan.features.map((feature: any, index: number) => (
-                        <li key={index} className="flex items-center gap-2 text-sm">
+                        <li key={index} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                           <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" aria-hidden="true" />
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <Button 
-                      className="w-full"
+                      className="w-full max-w-full"
                       variant={isCurrentPlan ? "default" : "outline"}
                       onClick={() => handleUpgrade(plan.id)}
                       disabled={isCurrentPlan}
@@ -376,10 +376,10 @@ export function BillingTab() {
             {invoices.map((invoice: any) => (
               <div
                 key={invoice.id}
-                className="flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
+                className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
               >
-                <div className="flex items-center gap-4 flex-1">
-                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-1">
+                  <div className="h-10 w-10 rounded-full bg-primary/10 flex flex-wrap items-center justify-center">
                     <DollarSign className="h-5 w-5 text-primary" aria-hidden="true" />
                   </div>
                   <div className="flex-1">
@@ -414,7 +414,7 @@ export function BillingTab() {
       {/* Usage Stats */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <TrendingUp className="h-5 w-5" aria-hidden="true" />
             Usage This Month
           </CardTitle>
@@ -422,20 +422,20 @@ export function BillingTab() {
         <CardContent>
           <div className="space-y-4">
             <div>
-              <div className="flex justify-between mb-2">
+              <div className="flex flex-wrap justify-between mb-2">
                 <span className="text-sm font-medium">Team Members</span>
                 <span className="text-sm text-muted-foreground">4 / {currentPlan.users}</span>
               </div>
-              <div className="h-2 bg-muted rounded-full overflow-hidden">
+              <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                 <div className="h-full bg-primary" style={{ width: "40%" }} />
               </div>
             </div>
             <div>
-              <div className="flex justify-between mb-2">
+              <div className="flex flex-wrap justify-between mb-2">
                 <span className="text-sm font-medium">Storage</span>
                 <span className="text-sm text-muted-foreground">42GB / {currentPlan.storage}GB</span>
               </div>
-              <div className="h-2 bg-muted rounded-full overflow-hidden">
+              <div className="h-2 bg-muted rounded-full overflow-hidden md:block">
                 <div className="h-full bg-primary" style={{ width: "42%" }} />
               </div>
             </div>
@@ -458,10 +458,10 @@ export function BillingTab() {
               <>
                 <div className="p-4 bg-muted rounded-lg">
                   <p className="text-sm text-muted-foreground mb-1">Upgrading to</p>
-                  <p className="text-xl font-bold">
+                  <p className="text-base md:text-lg lg:text-xl font-bold">
                     {plans.find(p => p.id === selectedPlan)?.name}
                   </p>
-                  <p className="text-2xl font-bold mt-2">
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-2">
                     ${billingCycle === "annual" 
                       ? plans.find(p => p.id === selectedPlan)?.annualPrice 
                       : plans.find(p => p.id === selectedPlan)?.price}
@@ -475,7 +475,7 @@ export function BillingTab() {
                   <p className="text-sm font-medium">What&apos;s included:</p>
                   <ul className="space-y-1">
                     {plans.find(p => p.id === selectedPlan)?.features.map((feature: any, index: number) => (
-                      <li key={index} className="flex items-center gap-2 text-sm">
+                      <li key={index} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
                         <CheckCircle2 className="h-4 w-4 text-green-500" aria-hidden="true" />
                         {feature}
                       </li>

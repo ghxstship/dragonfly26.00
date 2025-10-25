@@ -171,18 +171,18 @@ export default function WorkspacePage() {
   }
 
   return (
-    <div className="container max-w-4xl min-h-screen flex items-center justify-center py-12">
-      <div className="w-full space-y-6">
+    <div className="container max-w-4xl px-4 sm:px-6 lg:px-8 min-h-screen flex flex-wrap items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
+      <div className="w-full space-y-3 md:space-y-4 lg:space-y-6 max-w-full">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold">Set up your workspace</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">Set up your workspace</h1>
           <p className="text-muted-foreground text-lg">
             Create a new workspace or join an existing one
           </p>
         </div>
 
         {/* Progress indicator */}
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-2">
           <div className="h-2 w-12 bg-primary rounded-full" />
           <div className="h-2 w-12 bg-primary rounded-full" />
           <div className="h-2 w-12 bg-muted rounded-full" />
@@ -190,8 +190,8 @@ export default function WorkspacePage() {
         </div>
 
         {/* Tabs */}
-        <Tabs defaultValue="create" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
+        <Tabs defaultValue="create" className="w-full max-w-full">
+          <TabsList className="grid w-full grid-cols-2 max-w-full">
             <TabsTrigger value="create">Create New</TabsTrigger>
             <TabsTrigger value="join">Join Existing</TabsTrigger>
           </TabsList>
@@ -200,7 +200,7 @@ export default function WorkspacePage() {
           <TabsContent value="create">
             <Card>
               <CardHeader>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Building2 className="h-5 w-5" />
                   <CardTitle>Create Workspace</CardTitle>
                 </div>
@@ -234,7 +234,7 @@ export default function WorkspacePage() {
                     <Label htmlFor="slug">
                       Workspace URL
                     </Label>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <span className="text-sm text-muted-foreground">app.atlvs.one/</span>
                       <Input
                         id="slug"
@@ -266,15 +266,15 @@ export default function WorkspacePage() {
                   <div className="bg-muted/50 p-4 rounded-lg space-y-2">
                     <p className="text-sm font-medium">You&apos;ll receive:</p>
                     <ul className="text-sm text-muted-foreground space-y-1">
-                      <li className="flex items-center gap-2">
+                      <li className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
                         Organization Admin (Phantom) role
                       </li>
-                      <li className="flex items-center gap-2">
+                      <li className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
                         Full access to workspace settings
                       </li>
-                      <li className="flex items-center gap-2">
+                      <li className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
                         Ability to invite team members
                       </li>
@@ -283,7 +283,7 @@ export default function WorkspacePage() {
 
                   <Button
                     type="submit"
-                    className="w-full"
+                    className="w-full max-w-full"
                     disabled={loading || !newWorkspace.name}
                   >
                     {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
@@ -298,7 +298,7 @@ export default function WorkspacePage() {
           <TabsContent value="join">
             <Card>
               <CardHeader>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Users className="h-5 w-5" />
                   <CardTitle>Join Workspace</CardTitle>
                 </div>
@@ -312,7 +312,7 @@ export default function WorkspacePage() {
                     {existingWorkspaces.map((workspace: any) => (
                       <div
                         key={workspace.id}
-                        className="flex items-center justify-between p-4 border rounded-lg"
+                        className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg"
                       >
                         <div>
                           <h3 className="font-medium">{workspace.name}</h3>
@@ -329,7 +329,7 @@ export default function WorkspacePage() {
                     ))}
                   </div>
                 ) : (
-                  <div className="text-center py-8">
+                  <div className="text-center py-4 md:py-6 lg:py-8">
                     <Users className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
                     <p className="text-muted-foreground mb-4">
                       No existing workspaces found

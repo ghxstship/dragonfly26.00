@@ -143,7 +143,7 @@ export function ModulePageContent() {
         return <PivotTableOrganism data={mockData} schema={schema?.fields} />
       default:
         return (
-          <div className="flex items-center justify-center h-full text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center h-full text-muted-foreground">
             {currentView} view coming soon
           </div>
         )
@@ -153,7 +153,7 @@ export function ModulePageContent() {
   // Show loading while redirecting to first tab
   if (moduleTabs.length > 0) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
           <p className="text-muted-foreground">Loading...</p>
         </div>
@@ -163,9 +163,9 @@ export function ModulePageContent() {
 
   if (!currentModule) {
     return (
-      <div className="flex items-center justify-center h-full">
+      <div className="flex flex-wrap items-center justify-center h-full">
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-2">Module not found</h2>
+          <h2 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-2">Module not found</h2>
           <p className="text-muted-foreground">
             The module &quot;{moduleSlug}&quot; does not exist.
           </p>
@@ -175,15 +175,15 @@ export function ModulePageContent() {
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Module Header */}
       <div className="border-b bg-background">
         <div className="p-4 space-y-4">
           {/* Title and Actions */}
           {!focusMode && (
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
-                <h1 className="text-2xl font-bold" style={{ color: currentModule.color }}>
+                <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" style={{ color: currentModule.color }}>
                   {currentModule.name}
                 </h1>
                 <p className="text-sm text-muted-foreground mt-1">
@@ -197,7 +197,7 @@ export function ModulePageContent() {
           )}
 
           {/* View Controls */}
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <ViewSwitcher
               value={currentView as any}
               onChange={setCurrentView as any}
@@ -206,7 +206,7 @@ export function ModulePageContent() {
 
             <div className="flex-1 max-w-md">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
                 <Input
                   placeholder="Search..."
                   value={searchQuery as any}

@@ -27,9 +27,9 @@ export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
           onClick={() => onSelect(webhook)}
         >
           <CardContent className="p-6">
-            <div className="flex items-start justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
               <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                   <h3 className="font-semibold text-lg">{webhook.name}</h3>
                   {webhook.is_active ? (
                     <Badge variant="default" className="bg-green-600">
@@ -50,7 +50,7 @@ export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
                   )}
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">{webhook.description}</p>
-                <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 text-sm text-muted-foreground">
                   <span className="font-mono text-xs">{webhook.method}</span>
                   <span className="truncate max-w-md">{webhook.url}</span>
                   <span>{webhook.events.length} events</span>

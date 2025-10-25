@@ -147,7 +147,7 @@ export function ActivityFeed() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center py-8">
+      <div className="flex flex-wrap items-center justify-center py-4 md:py-6 lg:py-8">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
       </div>
     )
@@ -156,12 +156,12 @@ export function ActivityFeed() {
   return (
     <div className="space-y-4">
       {activities.length === 0 ? (
-        <div className="text-center py-8 text-sm text-muted-foreground">
+        <div className="text-center py-4 md:py-6 lg:py-8 text-sm text-muted-foreground">
           No activity yet
         </div>
       ) : (
         activities.map((activity) => (
-          <div key={activity.id} className="flex gap-3">
+          <div key={activity.id} className="flex flex-wrap gap-3">
             <Avatar className="h-8 w-8 flex-shrink-0">
               <AvatarImage src={activity.user?.avatar_url || undefined} />
               <AvatarFallback className="text-xs">

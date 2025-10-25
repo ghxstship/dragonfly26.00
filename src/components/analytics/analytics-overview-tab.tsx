@@ -80,9 +80,9 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
   const t = useTranslations('intelligence.analytics.overview')
   const displayMetrics = data.length > 0 ? data : metrics
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Key Metrics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         {(displayMetrics as Metric[]).map((metric: Metric, index: number) => {
           const Icon = metric.icon
           const TrendIcon = metric.trend === "up" ? TrendingUp : TrendingDown
@@ -90,7 +90,7 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
           return (
             <Card key={index} role="region" aria-label={`${t(metric.labelKey)} metric`}>
               <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
                   <div className={`p-3 rounded-lg ${metric.bgColor}`}>
                     <Icon className={`h-6 w-6 ${metric.color}`} aria-hidden="true" />
                   </div>
@@ -101,7 +101,7 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{t(metric.labelKey)}</p>
-                  <p className="text-2xl font-bold mt-1" aria-live="polite">{metric.value}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{metric.value}</p>
                 </div>
               </CardContent>
             </Card>
@@ -116,17 +116,17 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
           <CardDescription>{t('kpiDescription')}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="space-y-6">
+          <div className="space-y-3 md:space-y-4 lg:space-y-6">
             {kpis.map((kpi: KPI, index: number) => {
               const percentage = (kpi.current / kpi.target) * 100
               const isOnTrack = kpi.current >= kpi.target * 0.9
               
               return (
                 <div key={index} className="space-y-2" role="article" aria-label={`${t(kpi.nameKey)} KPI`}>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                     <p className="font-medium" id={`kpi-${index}`}>{t(kpi.nameKey)}</p>
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl font-bold" aria-labelledby={`kpi-${index}`}>{kpi.current}{kpi.unit}</span>
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                      <span className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" aria-labelledby={`kpi-${index}`}>{kpi.current}{kpi.unit}</span>
                       <span className="text-sm text-muted-foreground">/ {kpi.target}{kpi.unit}</span>
                     </div>
                   </div>

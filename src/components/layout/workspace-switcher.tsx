@@ -122,7 +122,7 @@ export function WorkspaceSwitcher() {
           <ChevronsUpDown className="ml-1 h-4 w-4 text-muted-foreground flex-shrink-0" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="w-80 p-0">
+      <DropdownMenuContent align="start" className="w-full sm:w-80 p-0">
         <div className="p-2 border-b sticky top-0 bg-background z-10">
           <DropdownMenuLabel className="px-2 py-1.5">
             {currentOrganization?.name || t('workspace.organization')}
@@ -130,7 +130,7 @@ export function WorkspaceSwitcher() {
           
           {/* Search */}
           <div className="relative mt-2">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
             <Input
               placeholder={t('workspace.searchWorkspaces')}
               value={searchQuery as any}
@@ -146,7 +146,7 @@ export function WorkspaceSwitcher() {
             <DropdownMenuItem
               key={workspace.id}
               onClick={() => setCurrentWorkspace(workspace)}
-              className="flex items-center gap-2"
+              className="flex flex-col md:flex-row items-center gap-2"
             >
               {workspace.icon && (
                 <span className="text-base">{workspace.icon}</span>
@@ -202,7 +202,7 @@ export function WorkspaceSwitcher() {
             </DialogDescription>
           </DialogHeader>
 
-          <div className="grid gap-4 py-4">
+          <div className="grid gap-2 md:gap-3 lg:gap-4 py-4">
             {/* Name Field */}
             <div className="grid gap-2">
               <Label htmlFor="name" className="text-sm font-medium">
@@ -214,7 +214,7 @@ export function WorkspaceSwitcher() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="w-full"
+                className="w-full max-w-full"
               />
             </div>
 
@@ -229,7 +229,7 @@ export function WorkspaceSwitcher() {
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 rows={3}
-                className="w-full resize-none"
+                className="w-full resize-none max-w-full"
               />
             </div>
 
@@ -285,9 +285,9 @@ export function WorkspaceSwitcher() {
             {/* Preview */}
             <div className="grid gap-2 pt-2">
               <Label className="text-sm font-medium">Preview</Label>
-              <div className="flex items-center gap-3 p-3 rounded-lg border bg-muted/50">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 p-3 rounded-lg border bg-muted/50">
                 {formData.icon ? (
-                  <span className="text-2xl">{formData.icon}</span>
+                  <span className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{formData.icon}</span>
                 ) : (
                   <div
                     className="h-10 w-10 rounded flex items-center justify-center text-sm font-semibold text-white"

@@ -104,7 +104,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
     <>
       <Card className={className}>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Trash2 className="h-5 w-5" />
             Trash
           </CardTitle>
@@ -114,12 +114,12 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
         </CardHeader>
         <CardContent>
           {loading ? (
-            <div className="text-center py-8 text-muted-foreground">
+            <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
               <Loader2 className="h-8 w-8 animate-spin mx-auto mb-2" />
               Loading trash...
             </div>
           ) : trashedFiles.length === 0 ? (
-            <div className="text-center py-8 text-muted-foreground">
+            <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
               <Trash2 className="h-12 w-12 mx-auto mb-2 opacity-50" />
               <p>Trash is empty</p>
             </div>
@@ -131,10 +131,10 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
                 return (
                   <div
                     key={item.id}
-                    className="flex items-center gap-3 p-3 rounded-lg border hover:bg-accent transition-colors"
+                    className="flex flex-col md:flex-row items-center gap-3 p-3 rounded-lg border hover:bg-accent transition-colors"
                   >
                     <div className="flex-shrink-0">
-                      <div className="h-10 w-10 rounded flex items-center justify-center bg-muted">
+                      <div className="h-10 w-10 rounded flex flex-wrap items-center justify-center bg-muted">
                         <File className="h-5 w-5 text-muted-foreground" />
                       </div>
                     </div>
@@ -143,7 +143,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
                       <div className="font-medium text-sm truncate">
                         {item.file?.name || 'Unnamed file'}
                       </div>
-                      <div className="flex items-center gap-2 mt-0.5 text-xs text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-0.5 text-xs text-muted-foreground">
                         <span>Deleted {formatDate(item.deleted_at)}</span>
                         <span>•</span>
                         <Badge variant={daysLeft < 7 ? "destructive" : "outline"} className="text-xs">
@@ -152,7 +152,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Button
                         variant="outline"
                         size="sm"

@@ -29,7 +29,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
   const t = useTranslations('production.assets')
   if (variances.length === 0) {
     return (
-      <div className="text-center py-12">
+      <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
         <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
         <h3 className="text-lg font-semibold mb-2">No Variances Found</h3>
         <p className="text-muted-foreground">All counted quantities match expected values</p>
@@ -40,7 +40,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
   return (
     <div className="space-y-4">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <div>
           <h3 className="text-lg font-semibold">Variance Review</h3>
           <p className="text-sm text-muted-foreground">
@@ -55,16 +55,16 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
       <Separator />
 
       {/* Variance List */}
-      <ScrollArea className="h-[600px]">
+      <ScrollArea className="h-[360px] md:h-[600px]">
         <div className="space-y-4">
           {variances.map((variance: any) => (
             <Card key={variance.id} className="p-4">
               <div className="space-y-4">
                 {/* Item Header */}
-                <div className="flex items-start justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                   <div className="flex-1">
                     <h4 className="font-semibold">{variance.item_name}</h4>
-                    <div className="flex items-center gap-4 mt-2 text-sm">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 mt-2 text-sm">
                       <div>
                         <span className="text-muted-foreground">Expected:</span>
                         <span className="ml-2 font-medium">{variance.expected_quantity}</span>
@@ -88,10 +88,10 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                 {variance.photos && variance.photos.length > 0 && (
                   <div>
                     <p className="text-sm font-medium mb-2">Photos from count:</p>
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                       {variance.photos.map((photo: any, idx: number) => (
                         <div key={idx} className="relative w-20 h-20 rounded border bg-muted">
-                          <ImageIcon className="absolute inset-0 m-auto h-8 w-8 text-muted-foreground" />
+                          <ImageIcon className="absolute sm:relative sm:inset-auto inset-0 m-auto h-8 w-8 text-muted-foreground sm:relative sm:inset-auto" />
                         </div>
                       ))}
                     </div>
@@ -117,7 +117,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Button 
                     variant="default" 
                     size="sm"

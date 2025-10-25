@@ -82,16 +82,16 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalCompanies')}</CardTitle>
             <Building2 className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{companies.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{companies.length}</div>
             <p className="text-xs text-muted-foreground">
               {t('stats.activeCount', { count: companies.filter((c: any) => (c as any).status === 'active').length })}
             </p>
@@ -99,12 +99,12 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.vendors')}</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {companies.filter((c: any) => (c as any).type === 'vendor').length}
             </div>
             <p className="text-xs text-muted-foreground">{t('stats.serviceProviders')}</p>
@@ -112,12 +112,12 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.clients')}</CardTitle>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {companies.filter((c: any) => (c as any).type === 'client').length}
             </div>
             <p className="text-xs text-muted-foreground">{t('stats.activeClients')}</p>
@@ -125,12 +125,12 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
+          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.partners')}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {companies.filter((c: any) => (c as any).type === 'partner').length}
             </div>
             <p className="text-xs text-muted-foreground">{t('stats.strategicPartners')}</p>
@@ -139,11 +139,11 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
       </div>
 
       {/* Companies Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {companies.map((company: any) => (
           <Card key={company.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-start gap-4">
+              <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                 <Avatar className="h-12 w-12" aria-hidden="true">
                   <AvatarImage 
                     src={company.logo} 
@@ -153,7 +153,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
                 </Avatar>
                 <div className="flex-1 min-w-0">
                   <CardTitle className="text-lg line-clamp-1" aria-hidden="true">{company.name}</CardTitle>
-                  <div className="flex gap-2 mt-2">
+                  <div className="flex flex-wrap gap-2 mt-2">
                     <Badge className={getTypeColor(company.type)}>
                       {company.type}
                     </Badge>
@@ -168,28 +168,28 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
             <CardContent className="space-y-3" aria-hidden="true">
               {/* Contact Information */}
               {company.location && (
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                   <MapPin className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <span className="truncate">{company.location}</span>
                 </div>
               )}
 
               {company.phone && (
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                   <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <span className="truncate">{company.phone}</span>
                 </div>
               )}
 
               {company.email && (
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                   <Mail className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <span className="truncate">{company.email}</span>
                 </div>
               )}
 
               {company.website && (
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                   <Globe className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <a 
                     href={company.website} 
@@ -204,7 +204,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
 
               {/* Rating */}
               {company.rating && (
-                <div className="flex items-center gap-2 pt-2 border-t">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 pt-2 border-t">
                   <div 
                     className="flex items-center"
                     role="img"
@@ -229,7 +229,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
               )}
 
               {/* Stats */}
-              <div className="flex justify-between pt-2 border-t text-sm">
+              <div className="flex flex-wrap justify-between pt-2 border-t text-sm">
                 <div>
                   <div className="text-muted-foreground">{t('stats.contacts')}</div>
                   <div className="font-medium">{company.contacts_count || 0}</div>
@@ -245,7 +245,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
               </div>
 
               {/* Actions */}
-              <div className="flex gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 <Button className="flex-1" aria-hidden="true" 
                   variant="outline" 
                   size="sm"

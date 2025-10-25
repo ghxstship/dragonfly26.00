@@ -124,7 +124,7 @@ export function CollectionBrowser({
   if (variant === 'chips') {
     return (
       <ScrollArea className={className}>
-        <div className="flex gap-2 pb-2">
+        <div className="flex flex-wrap gap-2 pb-2">
           {showAllOption && (
             <Button
               variant={selected === null ? "default" : "outline"}
@@ -164,10 +164,10 @@ export function CollectionBrowser({
         {showAllOption && (
           <Button
             variant={selected === null ? "secondary" : "ghost"}
-            className="w-full justify-between mb-1"
+            className="w-full justify-between mb-1 max-w-full"
             onClick={() => handleSelect(null)}
           >
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Layers className="h-4 w-4" />
               <span>All Collections</span>
             </div>
@@ -178,10 +178,10 @@ export function CollectionBrowser({
           <Button
             key={collection.id}
             variant={selected === collection.id ? "secondary" : "ghost"}
-            className="w-full justify-between mb-1"
+            className="w-full justify-between mb-1 max-w-full"
             onClick={() => handleSelect(collection)}
           >
-            <div className="flex items-center gap-2 flex-1 min-w-0">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1 min-w-0">
               {collection.collection_type === 'smart' && (
                 <Sparkles className="h-4 w-4 flex-shrink-0 text-purple-500" />
               )}
@@ -199,7 +199,7 @@ export function CollectionBrowser({
   // Cards variant
   return (
     <div className={className}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         {showAllOption && (
           <Card
             className={`cursor-pointer transition-all hover:shadow-md ${
@@ -208,7 +208,7 @@ export function CollectionBrowser({
             onClick={() => handleSelect(null)}
           >
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <Layers className="h-5 w-5 text-muted-foreground" />
                 <Badge variant="secondary">All</Badge>
               </div>
@@ -231,13 +231,13 @@ export function CollectionBrowser({
             onClick={() => handleSelect(collection)}
           >
             {collection.image_url && (
-              <div className="h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
+              <div className="h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex flex-wrap items-center justify-center">
                 <Layers className="h-12 w-12 text-muted-foreground/20" />
               </div>
             )}
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   {collection.collection_type === 'smart' && (
                     <Sparkles className="h-4 w-4 text-purple-500" />
                   )}

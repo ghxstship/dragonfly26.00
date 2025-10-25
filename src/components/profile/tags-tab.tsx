@@ -90,7 +90,7 @@ export function TagsTab() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
+      <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
       </div>
     )
@@ -105,9 +105,9 @@ export function TagsTab() {
   }, {} as Record<string, typeof SYSTEM_TAGS>)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Info Banner */}
-      <div className="flex items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950">
+      <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950">
         <Info className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" aria-hidden="true" />
         <div>
           <h3 className="font-semibold text-blue-900 dark:text-blue-100">
@@ -167,7 +167,7 @@ export function TagsTab() {
             {t('tags.clickToToggle')}
           </CardDescription>
           <div className="relative mt-4">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
             <Input
               placeholder={t('tags.searchTags')}
               value={searchQuery as any}
@@ -177,8 +177,8 @@ export function TagsTab() {
           </div>
         </CardHeader>
         <CardContent>
-          <ScrollArea className="h-[500px] pr-4">
-            <div className="space-y-6">
+          <ScrollArea className="h-[300px] md:h-[500px] pr-4">
+            <div className="space-y-3 md:space-y-4 lg:space-y-6">
               {Object.entries(groupedTags).map(([category, tags]) => {
                 const tagArray = tags as any[]
                 const filteredCategoryTags = tagArray.filter((tag: any) => tag.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

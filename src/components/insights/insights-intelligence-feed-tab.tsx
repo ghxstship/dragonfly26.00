@@ -81,9 +81,9 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
 
   const displayInsights = data || []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Filter Badges */}
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <Badge variant="outline" className="cursor-pointer hover:bg-accent">All ({insights.length})</Badge>
         <Badge variant="outline" className="cursor-pointer hover:bg-accent">
           High Priority ({insights.filter(i => i.priority === "high").length})
@@ -123,14 +123,14 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
           return (
             <Card key={insight.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                   <div className={`p-3 rounded-lg ${bgClass} flex-shrink-0`}>
                     <Icon className={`h-6 w-6 ${colorClass}`} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-3 mb-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-3 mb-2">
                       <h4 className="font-semibold text-lg">{t(insight.titleKey)}</h4>
-                      <div className="flex items-center gap-2 flex-shrink-0">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-shrink-0">
                         <Badge 
                           variant={insight.priority === "high" ? "destructive" : insight.priority === "medium" ? "default" : "secondary"}
                         >
@@ -145,8 +145,8 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
                     <Rss className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
                     <p className="text-muted-foreground mb-3">{insight.message}</p>
                     
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
+                      <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                         <span className="font-medium">Source:</span> {insight.source}
                       </span>
                       <span>•</span>

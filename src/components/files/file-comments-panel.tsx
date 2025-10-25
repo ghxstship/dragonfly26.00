@@ -52,7 +52,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <MessageCircle className="h-5 w-5" />
           Comments ({comments.length})
         </CardTitle>
@@ -61,7 +61,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
         {/* New comment input */}
         <div className="space-y-2">
           {replyTo && (
-            <div className="text-sm text-muted-foreground flex items-center justify-between bg-muted p-2 rounded">
+            <div className="text-sm text-muted-foreground flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between bg-muted p-2 rounded">
               <span>Replying to comment...</span>
               <Button variant="ghost" size="sm" onClick={() => setReplyTo(null)}>
                 Cancel
@@ -74,7 +74,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
             onChange={(e) => setNewComment(e.target.value)}
             rows={3}
           />
-          <div className="flex justify-end">
+          <div className="flex flex-wrap justify-end">
             <Button 
               onClick={handleSubmitComment} 
               disabled={!newComment.trim() || submitting}
@@ -88,11 +88,11 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
 
         {/* Comments list */}
         {loading ? (
-          <div className="text-center py-8 text-muted-foreground">
+          <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
             Loading comments...
           </div>
         ) : comments.length === 0 ? (
-          <div className="text-center py-8 text-muted-foreground">
+          <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
             <MessageCircle className="h-12 w-12 mx-auto mb-2 opacity-50" />
             <p>No comments yet</p>
             <p className="text-sm">Be the first to comment!</p>
@@ -125,7 +125,7 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
 
   return (
     <div className="space-y-2">
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3">
         <Avatar className="h-8 w-8">
           <AvatarImage src={comment.user?.avatar_url} />
           <AvatarFallback>
@@ -133,8 +133,8 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
           </AvatarFallback>
         </Avatar>
         <div className="flex-1 space-y-1">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <span className="text-sm font-medium">
                 {comment.user?.first_name} {comment.user?.last_name}
               </span>
@@ -155,7 +155,7 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
           <p className="text-sm text-muted-foreground whitespace-pre-wrap">
             {comment.content}
           </p>
-          <div className="flex items-center gap-2 pt-1">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 pt-1">
             <Button variant="ghost" size="sm" className="h-7 text-xs" onClick={onReply}>
               <Reply className="h-3 w-3 mr-1" />
               Reply
@@ -183,7 +183,7 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
               ) : (
                 <div className="space-y-3 pl-4 border-l-2">
                   {comment.replies.map((reply: any) => (
-                    <div key={reply.id} className="flex gap-2">
+                    <div key={reply.id} className="flex flex-wrap gap-2">
                       <Avatar className="h-6 w-6">
                         <AvatarImage src={reply.user?.avatar_url} />
                         <AvatarFallback className="text-xs">
@@ -191,7 +191,7 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
                         </AvatarFallback>
                       </Avatar>
                       <div className="flex-1">
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <span className="text-xs font-medium">
                             {reply.user?.first_name} {reply.user?.last_name}
                           </span>

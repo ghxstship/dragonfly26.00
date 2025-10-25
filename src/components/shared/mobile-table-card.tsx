@@ -84,7 +84,7 @@ export function MobileTableCard({
       <CardContent className="p-4">
         <div className="space-y-3">
           {/* Title/Name field - prominently displayed */}
-          <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
             <div className="flex-1 min-w-0">
               <h3 className="font-semibold text-base line-clamp-2">
                 {item.name || item.title || item.id}
@@ -99,7 +99,7 @@ export function MobileTableCard({
           </div>
 
           {/* Key fields */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-3">
             {displayFields.map((field) => {
               const value = item[field.id]
               if (value === null || value === undefined) return null

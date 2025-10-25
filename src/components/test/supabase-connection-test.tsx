@@ -129,7 +129,7 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
   }, [workspaceId])
 
   return (
-    <Card className="w-full max-w-2xl">
+    <Card className="w-full max-w-2xl px-4 sm:px-6 lg:px-8">
       <CardHeader>
         <CardTitle>Supabase Connection Test</CardTitle>
         <CardDescription>
@@ -138,21 +138,21 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
       </CardHeader>
       <CardContent className="space-y-4">
         {testing && (
-          <div className="flex items-center gap-2 text-muted-foreground">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
             <Loader2 className="h-4 w-4 animate-spin" />
             <span>Running tests...</span>
           </div>
         )}
 
         {Object.entries(results).map(([test, result]: [string, any]) => (
-          <div key={test} className="flex items-start gap-3 p-3 border rounded-lg">
+          <div key={test} className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 border rounded-lg">
             {result.success ? (
               <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5" />
             ) : (
               <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
             )}
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                 <span className="font-medium capitalize">{test.replace('_', ' ')}</span>
                 <Badge variant={result.success ? 'default' : 'destructive'}>
                   {result.success ? 'PASS' : 'FAIL'}

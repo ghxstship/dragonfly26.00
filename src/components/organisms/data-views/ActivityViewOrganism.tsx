@@ -125,15 +125,15 @@ export function ActivityViewOrganism({ data, schema, onItemClick }: ActivityView
   }
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-wrap flex-col">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <ActivityIcon className="h-5 w-5" aria-hidden="true" />
           <h3 className="font-semibold">Activity Stream</h3>
           <Badge variant="secondary">{filteredActivities.length} events</Badge>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm">
@@ -185,7 +185,7 @@ export function ActivityViewOrganism({ data, schema, onItemClick }: ActivityView
 
       {/* Activity Stream */}
       <div className="flex-1 overflow-auto p-6">
-        <div className="max-w-3xl mx-auto space-y-6">
+        <div className="max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6">
           {Object.entries(groupedActivities).map(([date, activities]) => (
             <div key={date}>
               <div className="sticky top-0 bg-background/95 backdrop-blur py-2 mb-4 border-b">
@@ -195,7 +195,7 @@ export function ActivityViewOrganism({ data, schema, onItemClick }: ActivityView
                 {activities.map((activity: any) => (
                   <div
                     key={activity.id}
-                    className="flex gap-3 hover:bg-accent p-3 -mx-3 rounded-lg transition-colors cursor-pointer"
+                    className="flex flex-col sm:flex-row gap-3 hover:bg-accent p-3 -mx-3 rounded-lg transition-colors cursor-pointer"
                     onClick={() => onItemClick?.(data.find((d: any) => d.id === activity.id)!)}
                   >
                     <Avatar className="h-8 w-8 mt-0.5">
@@ -204,7 +204,7 @@ export function ActivityViewOrganism({ data, schema, onItemClick }: ActivityView
                       </AvatarFallback>
                     </Avatar>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap">
+                      <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
                         <span className="font-medium text-sm">{activity.userName}</span>
                         <div className={cn("flex items-center gap-1", getActionColor(activity.action))}>
                           {getActionIcon(activity.action)}

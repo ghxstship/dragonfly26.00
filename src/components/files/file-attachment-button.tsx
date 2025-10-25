@@ -61,7 +61,7 @@ export function FileAttachmentButton({
           multiple
           accept={acceptedTypes}
           onChange={handleFileChange}
-          className="absolute inset-0 opacity-0 cursor-pointer"
+          className="absolute sm:relative sm:inset-auto inset-0 opacity-0 cursor-pointer sm:relative sm:inset-auto"
           disabled={selectedFiles.length >= maxFiles}
         />
       </Button>
@@ -71,9 +71,9 @@ export function FileAttachmentButton({
           {selectedFiles.map((file: any, index: number) => (
             <div
               key={index}
-              className="flex items-center justify-between p-2 rounded-lg border bg-muted/50"
+              className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 rounded-lg border bg-muted/50"
             >
-              <div className="flex items-center gap-2 flex-1 min-w-0">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1 min-w-0">
                 {getFileIcon(file)}
                 <span className="text-sm truncate">{file.name}</span>
                 <Badge variant="outline" className="text-xs">

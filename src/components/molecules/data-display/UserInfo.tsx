@@ -88,7 +88,7 @@ export function UserInfo({
         size={avatarSizes[size]}
         status={status}
       />
-      <div className="flex flex-col min-w-0">
+      <div className="flex flex-wrap flex-col min-w-0">
         <span className={cn('font-medium truncate', textSizes[size])}>
           {name}
         </span>

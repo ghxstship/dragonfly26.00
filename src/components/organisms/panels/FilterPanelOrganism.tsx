@@ -85,9 +85,9 @@ function FilterContent({ filters, values, onChange, onClear }: Omit<FilterPanelO
   const activeCount = Object.values(values).reduce((sum: any, arr: any) => sum + arr.length, 0)
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between p-4 border-b">
-        <div className="flex items-center gap-2">
+    <div className="flex flex-wrap flex-col h-full">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
+        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <SlidersHorizontal className="h-5 w-5" aria-hidden="true" />
           <h3 className="font-semibold">Filters</h3>
           {activeCount > 0 && (
@@ -102,7 +102,7 @@ function FilterContent({ filters, values, onChange, onClear }: Omit<FilterPanelO
       </div>
 
       <ScrollArea className="flex-1">
-        <div className="p-4 space-y-6">
+        <div className="p-4 space-y-3 md:space-y-4 lg:space-y-6">
           {filters.map((group: any) => (
             <div key={group.id} className="space-y-3">
               <Label className="text-sm font-medium">{group.label}</Label>
@@ -110,7 +110,7 @@ function FilterContent({ filters, values, onChange, onClear }: Omit<FilterPanelO
                 {group.options.map((option: any) => {
                   const isChecked = (values[group.id] || []).includes(option.id)
                   return (
-                    <div key={option.id} className="flex items-center space-x-2">
+                    <div key={option.id} className="flex flex-wrap md:flex-nowrap items-center space-x-2">
                       <Checkbox
                         id={`${group.id}-${option.id}`}
                         checked={isChecked}
@@ -164,7 +164,7 @@ export function FilterPanelOrganism({
           </Button>
         )}
       </SheetTrigger>
-      <SheetContent side="left" className="w-80 p-0">
+      <SheetContent side="left" className="w-full sm:w-80 p-0">
         <FilterContent filters={filters} values={values} onChange={onChange} onClear={onClear} />
       </SheetContent>
     </Sheet>

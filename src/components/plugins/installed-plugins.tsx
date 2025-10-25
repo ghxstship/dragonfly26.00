@@ -25,12 +25,12 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
       {installations.map((installation: any) => (
         <Card key={installation.id}>
           <CardContent className="p-6">
-            <div className="flex items-start gap-4">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
               <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex-shrink-0" />
               <div className="flex-1">
-                <div className="flex items-start justify-between mb-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-2">
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                       <h3 className="text-lg font-semibold">{installation.plugin?.name}</h3>
                       <Badge variant={installation.status === "active" ? "default" : "secondary"} className="capitalize">
                         {installation.status}
@@ -69,7 +69,7 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>
-                <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6 text-sm text-muted-foreground">
                   <span>Installed {new Date(installation.installed_at).toLocaleDateString()}</span>
                   <span>{installation.usage_count} uses</span>
                   {installation.last_used_at && (
@@ -84,7 +84,7 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
 
       {installations.length === 0 && (
         <Card>
-          <CardContent className="p-12 text-center">
+          <CardContent className="p-6 md:p-8 lg:p-12 text-center">
             <p className="text-muted-foreground">No plugins installed yet</p>
           </CardContent>
         </Card>

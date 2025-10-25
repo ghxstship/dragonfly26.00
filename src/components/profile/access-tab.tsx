@@ -96,10 +96,10 @@ export function AccessTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Key className="h-5 w-5" aria-hidden="true" />
             <div>
               <CardTitle>{t('access.credentials')}</CardTitle>
@@ -111,7 +111,7 @@ export function AccessTab() {
         </CardHeader>
         <CardContent>
           {credentials.length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-8">
+            <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('access.noCredentials')}
             </p>
           ) : (
@@ -145,7 +145,7 @@ export function AccessTab() {
 
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Shield className="h-5 w-5" aria-hidden="true" />
             <div>
               <CardTitle>{t('access.clearances')}</CardTitle>
@@ -157,7 +157,7 @@ export function AccessTab() {
         </CardHeader>
         <CardContent>
           {clearances.length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-8">
+            <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('access.noClearances')}
             </p>
           ) : (
@@ -189,7 +189,7 @@ export function AccessTab() {
 
       <Card>
         <CardHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Lock className="h-5 w-5" aria-hidden="true" />
             <div>
               <CardTitle>{t('access.management')}</CardTitle>
@@ -216,7 +216,7 @@ export function AccessTab() {
             <p className="text-sm text-muted-foreground mb-3">
               {t('access.backgroundCheckDescription')}
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Badge variant="default">{t('profile.access.completed')}</Badge>
               <span className="text-sm text-muted-foreground">
                 {t('profile.access.lastUpdated')} January 15, 2024
@@ -232,7 +232,7 @@ export function AccessTab() {
         </p>
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex flex-wrap justify-end">
         <Button onClick={handleSave}>
           <Save className="h-4 w-4 mr-2" />
           {t('actions.saveChanges')}

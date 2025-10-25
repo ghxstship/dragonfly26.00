@@ -176,7 +176,7 @@ export function ExampleDataViewPage() {
             label: 'Table',
             icon: <Table className="h-4 w-4" aria-hidden="true" />,
             content: (
-              <div className="text-center py-12 text-muted-foreground">
+              <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
                 Table view would use EnhancedTableView component here
               </div>
             )

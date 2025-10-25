@@ -43,7 +43,7 @@ export default function AuthCheckPage() {
   }, [supabase, router])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="min-h-screen flex flex-wrap items-center justify-center bg-background">
       <div className="text-center space-y-4">
         <Loader2 className="w-12 h-12 animate-spin mx-auto text-primary" />
         <p className="text-muted-foreground">Signing you in...</p>

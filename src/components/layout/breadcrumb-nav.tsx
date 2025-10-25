@@ -63,7 +63,7 @@ export function BreadcrumbNav() {
   if (breadcrumbs.length === 0) return null
 
   return (
-    <nav className="flex items-center gap-1 text-sm min-w-0">
+    <nav className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm min-w-0">
       <Link
         href="/"
         className="p-1.5 rounded-md hover:bg-accent transition-colors flex-shrink-0"
@@ -73,7 +73,7 @@ export function BreadcrumbNav() {
       </Link>
       
       {breadcrumbs.map((crumb, index: number) => (
-        <div key={`${crumb.href}-${index}`} className="flex items-center gap-1 min-w-0">
+        <div key={`${crumb.href}-${index}`} className="flex flex-wrap flex-col md:flex-row items-center gap-1 min-w-0">
           <ChevronRight className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           <Link
             href={crumb.href}

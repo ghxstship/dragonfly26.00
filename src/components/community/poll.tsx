@@ -109,12 +109,12 @@ export function Poll({
   return (
     <Card className={cn("p-4", className)}>
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
         <Badge variant="secondary" className="text-xs">
           📊 Poll
         </Badge>
         {expiresAt && (
-          <div className="flex items-center gap-1 text-xs text-muted-foreground">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs text-muted-foreground">
             <Clock className="h-3 w-3" />
             {timeRemaining()}
           </div>
@@ -144,8 +144,8 @@ export function Poll({
                         !isWinning && !userVotedThis && "border-border"
                       )}
                     >
-                      <div className="flex items-center justify-between relative z-10">
-                        <div className="flex items-center gap-2 flex-1">
+                      <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between relative z-10">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
                           {userVotedThis && <Check className="h-4 w-4 text-primary" />}
                           <span className={cn(
                             "text-sm",
@@ -154,7 +154,7 @@ export function Poll({
                             {option}
                           </span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <span className="text-sm font-semibold">
                             {percentages[index]}%
                           </span>
@@ -187,7 +187,7 @@ export function Poll({
                     (disabled || isExpired) && "opacity-50 cursor-not-allowed"
                   )}
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <div className={cn(
                       "w-4 h-4 rounded-full border-2 flex items-center justify-center",
                       isSelected ? "border-primary" : "border-muted-foreground",
@@ -214,7 +214,7 @@ export function Poll({
         <Button 
           onClick={handleSubmit}
           disabled={selectedOptions.length === 0 || disabled}
-          className="w-full mt-4"
+          className="w-full mt-4 max-w-full"
           size="sm"
         >
           Submit Vote{selectedOptions.length > 0 ? ` (${selectedOptions.length})` : ''}
@@ -222,7 +222,7 @@ export function Poll({
       )}
 
       {/* Footer */}
-      <div className="mt-3 pt-3 border-t flex items-center justify-between text-xs text-muted-foreground">
+      <div className="mt-3 pt-3 border-t flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-xs text-muted-foreground">
         <span>
           {totalVotes} {totalVotes === 1 ? 'vote' : 'votes'}
         </span>

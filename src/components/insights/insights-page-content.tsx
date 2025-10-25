@@ -108,12 +108,12 @@ export function InsightsPageContent() {
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
       <div className="border-b bg-background p-6">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-6">
           <div>
-            <h1 className="text-3xl font-bold flex items-center gap-3">
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold flex flex-wrap flex-col md:flex-row items-center gap-3">
               <Lightbulb className="h-8 w-8 text-green-600" />
               Strategic Insights
             </h1>
@@ -128,13 +128,13 @@ export function InsightsPageContent() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Active Objectives</p>
-                  <p className="text-2xl font-bold">{stats.total}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.total}</p>
                 </div>
                 <Target className="h-8 w-8 text-muted-foreground" />
               </div>
@@ -143,10 +143,10 @@ export function InsightsPageContent() {
 
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">On Track</p>
-                  <p className="text-2xl font-bold text-green-600">{stats.on_track}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{stats.on_track}</p>
                 </div>
                 <TrendingUp className="h-8 w-8 text-green-600" />
               </div>
@@ -155,10 +155,10 @@ export function InsightsPageContent() {
 
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">At Risk</p>
-                  <p className="text-2xl font-bold text-yellow-600">{stats.at_risk}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{stats.at_risk}</p>
                 </div>
                 <AlertCircle className="h-8 w-8 text-yellow-600" />
               </div>
@@ -167,10 +167,10 @@ export function InsightsPageContent() {
 
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Completed</p>
-                  <p className="text-2xl font-bold text-blue-600">{stats.completed}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{stats.completed}</p>
                 </div>
                 <CheckCircle2 className="h-8 w-8 text-blue-600" />
               </div>

@@ -152,9 +152,9 @@ export function GiftCardInput({
     <div className={className}>
       {!appliedGiftCard ? (
         <div className="space-y-2">
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <div className="relative flex-1">
-              <Gift className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Gift className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('marketplace.giftCard.placeholder')}
                 value={code as any}
@@ -187,9 +187,9 @@ export function GiftCardInput({
       ) : (
         <Card className="border-purple-200 dark:border-purple-900 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30">
           <CardHeader className="pb-3">
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-2">
-                <div className="h-10 w-10 rounded-full bg-purple-500/10 flex items-center justify-center">
+            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <div className="h-10 w-10 rounded-full bg-purple-500/10 flex flex-wrap items-center justify-center">
                   <Gift className="h-5 w-5 text-purple-600 dark:text-purple-400" />
                 </div>
                 <div>
@@ -210,20 +210,20 @@ export function GiftCardInput({
             </div>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
               <span className="text-muted-foreground">Gift card balance:</span>
               <span className="font-semibold">
                 ${appliedGiftCard.balance.toFixed(2)}
               </span>
             </div>
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
               <span className="text-muted-foreground">Amount applied:</span>
               <span className="font-semibold text-purple-600 dark:text-purple-400">
                 -${appliedGiftCard.amount_applied.toFixed(2)}
               </span>
             </div>
             {appliedGiftCard.balance > appliedGiftCard.amount_applied && (
-              <div className="flex items-center justify-between text-sm pt-2 border-t">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm pt-2 border-t">
                 <span className="text-muted-foreground">Remaining balance:</span>
                 <Badge variant="secondary" className="bg-purple-100 dark:bg-purple-900">
                   ${(appliedGiftCard.balance - appliedGiftCard.amount_applied).toFixed(2)}
@@ -247,7 +247,7 @@ export function GiftCardBalance({ giftCards }: { giftCards: GiftCard[] }) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle className="text-base flex items-center gap-2">
+          <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Gift className="h-5 w-5" />
             Gift Cards
           </CardTitle>
@@ -264,7 +264,7 @@ export function GiftCardBalance({ giftCards }: { giftCards: GiftCard[] }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-base flex items-center gap-2">
+        <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Gift className="h-5 w-5" />
           Gift Cards
         </CardTitle>
@@ -277,7 +277,7 @@ export function GiftCardBalance({ giftCards }: { giftCards: GiftCard[] }) {
           {activeCards.map((card: any) => (
             <div
               key={card.id}
-              className="flex items-center justify-between p-3 bg-muted rounded-lg"
+              className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 bg-muted rounded-lg"
             >
               <div>
                 <p className="font-mono text-sm font-medium">{card.code}</p>

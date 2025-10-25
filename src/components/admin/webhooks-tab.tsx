@@ -141,19 +141,19 @@ export function WebhooksTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.webhooksTab.totalWebhooks')}</CardDescription>
-            <CardTitle className="text-3xl">{webhooks.length}</CardTitle>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{webhooks.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.webhooksTab.activeWebhooks')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {webhooks.filter(w => w.active).length}
             </CardTitle>
           </CardHeader>
@@ -161,7 +161,7 @@ export function WebhooksTab() {
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>{t('admin.webhooksTab.totalCalls')}</CardDescription>
-            <CardTitle className="text-3xl">
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {webhooks.reduce((sum: number, w) => sum + w.totalCalls, 0).toLocaleString()}
             </CardTitle>
           </CardHeader>
@@ -173,9 +173,9 @@ export function WebhooksTab() {
         {webhooks.map((webhook: any) => (
           <Card key={webhook?.id}>
             <CardHeader>
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                     <CardTitle className="text-base">{webhook?.name}</CardTitle>
                     <Badge variant={webhook?.active ? "default" : "secondary"}>
                       {webhook?.active ? (
@@ -192,16 +192,16 @@ export function WebhooksTab() {
                     </Badge>
                   </div>
                   <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
                       <ExternalLink className="h-3 w-3" />
                       <span className="font-mono text-xs">{webhook?.url}</span>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <div className="flex items-center gap-1">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-xs text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                         <Activity className="h-3 w-3" />
                         {webhook?.totalCalls} calls
                       </div>
-                      <div className="flex items-center gap-1">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                         <CheckCircle2 className="h-3 w-3" />
                         {webhook?.successRate}% success rate
                       </div>
@@ -211,7 +211,7 @@ export function WebhooksTab() {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Switch
                     checked={webhook?.active}
                     onCheckedChange={() => handleToggleWebhook(webhook?.id)}
@@ -237,7 +237,7 @@ export function WebhooksTab() {
 
                 <div>
                   <Label className="text-xs text-muted-foreground">Signing Secret</Label>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1">
                     <code className="flex-1 px-3 py-2 bg-muted rounded text-xs font-mono">
                       {webhook?.secret}
                     </code>
@@ -252,7 +252,7 @@ export function WebhooksTab() {
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-2 pt-2">
+                <div className="flex flex-wrap justify-end gap-2 pt-2">
                   <Button
                     variant="outline"
                     size="sm"
@@ -293,7 +293,7 @@ export function WebhooksTab() {
             <p className="text-muted-foreground">
               Webhooks allow you to receive real-time notifications when events occur in your organization.
             </p>
-            <div className="flex items-start gap-2 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg">
               <AlertCircle className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="text-xs text-blue-900 dark:text-blue-100">
                 <p className="font-medium mb-1">Security Best Practices</p>
@@ -306,7 +306,7 @@ export function WebhooksTab() {
 
       {/* Create/Edit Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8">
           <DialogHeader>
             <DialogTitle>
               {selectedWebhook ? t('admin.webhooksTab.editWebhook') : t('admin.webhooksTab.createWebhook')}
@@ -341,7 +341,7 @@ export function WebhooksTab() {
               <Label>{t('admin.webhooksTab.eventsToSubscribe')}</Label>
               <div className="max-h-[300px] overflow-y-auto space-y-2 p-3 border rounded-lg">
                 {availableEvents.map((event: any) => (
-                  <div key={event.id} className="flex items-start gap-3 p-2 hover:bg-accent rounded">
+                  <div key={event.id} className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-2 hover:bg-accent rounded">
                     <input
                       type="checkbox"
                       id={event.id}

@@ -148,8 +148,8 @@ export function IntegrationsTab() {
     return (
       <Card key={integration.id}>
         <CardHeader>
-          <div className="flex items-start justify-between">
-            <div className="flex items-start gap-3">
+          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
               <div className="p-2 rounded-lg bg-primary/10">
                 <Icon className="h-5 w-5 text-primary" />
               </div>
@@ -173,8 +173,8 @@ export function IntegrationsTab() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
               {integration.scope === "organization" ? (
                 <>
                   <Building2 className="h-4 w-4" />
@@ -193,7 +193,7 @@ export function IntegrationsTab() {
                 </>
               )}
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {integration.connected ? (
                 <>
                   <Button
@@ -233,7 +233,7 @@ export function IntegrationsTab() {
   const personalIntegrations = integrations.filter(i => i.scope === "personal")
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Connected Integrations */}
       <Tabs defaultValue="all" className="space-y-4">
         <TabsList>
@@ -251,7 +251,7 @@ export function IntegrationsTab() {
         <TabsContent value="all" className="space-y-4">
           <div className="space-y-4">
             <div>
-              <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+              <h3 className="text-sm font-semibold mb-3 flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <Building2 className="h-4 w-4" />
                 Organization Integrations
               </h3>
@@ -263,7 +263,7 @@ export function IntegrationsTab() {
             <Separator />
 
             <div>
-              <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+              <h3 className="text-sm font-semibold mb-3 flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <User className="h-4 w-4" />
                 Personal Integrations
               </h3>
@@ -312,7 +312,7 @@ export function IntegrationsTab() {
                 placeholder="https://..."
               />
             </div>
-            <div className="flex items-center gap-2 p-3 rounded-lg bg-muted">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 rounded-lg bg-muted">
               <ExternalLink className="h-4 w-4 text-muted-foreground" />
               <a
                 href="#"

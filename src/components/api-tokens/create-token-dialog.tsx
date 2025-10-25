@@ -31,7 +31,7 @@ export function CreateTokenDialog({ open, onOpenChange }: CreateTokenDialogProps
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8">
         <DialogHeader>
           <DialogTitle>Create API Token</DialogTitle>
         </DialogHeader>
@@ -59,9 +59,9 @@ export function CreateTokenDialog({ open, onOpenChange }: CreateTokenDialogProps
 
           <div>
             <Label>Scopes & Permissions</Label>
-            <div className="grid grid-cols-2 gap-3 mt-2">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-3 mt-2">
               {availableScopes.map((scope: any) => (
-                <div key={scope.value} className="flex items-center space-x-2">
+                <div key={scope.value} className="flex flex-wrap md:flex-nowrap items-center space-x-2">
                   <Checkbox
                     id={scope.value}
                     checked={selectedScopes.includes(scope.value)}

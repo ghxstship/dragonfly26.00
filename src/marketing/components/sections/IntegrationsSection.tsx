@@ -1,18 +1,20 @@
 "use client"
 
 import { useTranslations } from "next-intl"
+import { cn } from "@/lib/utils"
+import { spacing, grid, padding, border, container, height } from "@/design-tokens"
 
 export function IntegrationsSection(): JSX.Element {
   const t = useTranslations('marketing.integrations')
   
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">
-          Integrations
+    <section className={cn("py-20 bg-white", padding.sectionX)}>
+      <div className={cn("mx-auto text-center", container['6xl'])}>
+        <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6 lg:mb-8">
+          {t('title')}
         </h2>
-        <p className="text-gray-600">
-          Connect with your favorite tools
+        <p className="text-gray-600 dark:text-gray-400">
+          {t('subtitle')}
         </p>
       </div>
     </section>

@@ -136,38 +136,38 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
   const attendingCount = events.filter(e => e.isAttending).length
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Header Stats */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('upcoming')}</div>
             <CalendarDays className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{upcomingEvents.length}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{upcomingEvents.length}</div>
             <p className="text-xs text-muted-foreground">Public events</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('attending')}</div>
             <Ticket className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{attendingCount as any}</div>
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{attendingCount as any}</div>
             <p className="text-xs text-muted-foreground">Your events</p>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('interested')}</div>
             <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {events.filter(e => e.isInterested).length}
             </div>
             <p className="text-xs text-muted-foreground">Saved events</p>
@@ -175,12 +175,12 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('featured')}</div>
             <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">
+            <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
               {events.filter(e => e.featured).length}
             </div>
             <p className="text-xs text-muted-foreground">{t('highlighted')}</p>
@@ -189,11 +189,11 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
       </div>
 
       {/* Search and Filters */}
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card className="md:col-span-2">
           <CardContent className="pt-6 space-y-4">
             <div className="relative">
-              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
               <Input
                 placeholder={t('searchEvents')}
                 value={searchQuery as any}
@@ -202,7 +202,7 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
               />
             </div>
             <Tabs value={categoryFilter as any} onValueChange={(v) => setCategoryFilter(v as any)}>
-              <TabsList className="w-full grid grid-cols-4 lg:grid-cols-7">
+              <TabsList className="w-full grid grid-cols-4 lg:grid-cols-7 max-w-full">
                 <TabsTrigger value="all">{t('all')}</TabsTrigger>
                 <TabsTrigger value="concert">{t('concert')}</TabsTrigger>
                 <TabsTrigger value="festival">{t('festival')}</TabsTrigger>
@@ -230,7 +230,7 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="w-full mt-2"
+                className="w-full mt-2 max-w-full"
                 onClick={() => setDateFilter(undefined)}
               >
                 Clear Date
@@ -257,24 +257,24 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
           </Card>
         ) : (
           filteredEvents.map((event: any) => (
-            <Card key={event.id} className="overflow-hidden hover:shadow-md transition-shadow">
+            <Card key={event.id} className="overflow-hidden md:block hover:shadow-md transition-shadow">
               <CardContent className="p-0">
                 <div className="md:flex">
                   {/* Event Image */}
                   {event.image && (
-                    <div className="md:w-80 h-56 relative flex-shrink-0">
+                    <div className="md:w-full sm:w-80 h-56 relative flex-shrink-0">
                       <div 
-                        className="absolute inset-0 bg-cover bg-center"
+                        className="absolute sm:relative sm:inset-auto inset-0 bg-cover bg-center sm:relative sm:inset-auto"
                         style={{ backgroundImage: `url(${event.image})` }}
                       />
                       {event.featured && (
-                        <Badge className="absolute top-3 left-3 bg-orange-500">
+                        <Badge className="absolute sm:relative sm:inset-auto top-3 left-3 bg-orange-500 sm:relative sm:inset-auto">
                           <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" />
                           Featured
                         </Badge>
                       )}
                       {event.price === "free" && (
-                        <Badge className="absolute top-3 right-3 bg-green-500">
+                        <Badge className="absolute sm:relative sm:inset-auto top-2 md:top-3 right-2 md:right-3 bg-green-500">
                           FREE
                         </Badge>
                       )}
@@ -283,9 +283,9 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
 
                   {/* Event Details */}
                   <div className="p-6 flex-1">
-                    <div className="flex items-start justify-between gap-4 mb-3">
+                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4 mb-3">
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
+                        <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                           <Badge variant="outline" className="capitalize">
                             <Music className="h-3 w-3 mr-1"  aria-hidden="true" />
                             {event.category}
@@ -294,7 +294,7 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
                             {event.price === "free" ? t('free') : `$${event.priceAmount}`}
                           </Badge>
                         </div>
-                        <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
+                        <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2">{event.title}</h3>
                       </div>
                     </div>
 
@@ -303,7 +303,7 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
                     </p>
 
                     {/* Organizer */}
-                    <div className="flex items-center gap-2 mb-4">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-4">
                       <Avatar className="h-8 w-8">
                         <AvatarImage src={event.organizerImage} />
                         <AvatarFallback>{event.organizer[0]}</AvatarFallback>
@@ -313,7 +313,7 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
 
                     {/* Event Info */}
                     <div className="space-y-2 mb-4 text-sm">
-                      <div className="flex items-center gap-2 text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
                         <CalendarDays className="h-4 w-4"  aria-hidden="true" />
                         <span>
                           {new Date(event.date).toLocaleDateString('en-US', { 
@@ -328,15 +328,15 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
                           })}`}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
                         <Clock className="h-4 w-4" aria-hidden="true" />
                         <span>{event.time}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
                         <MapPin className="h-4 w-4"  aria-hidden="true" />
                         <span>{event.venue}, {event.location}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-muted-foreground">
+                      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
                         <Users className="h-4 w-4" aria-hidden="true" />
                         <span>
                           {event.attendees.toLocaleString()} attending · {event.capacity.toLocaleString()} capacity

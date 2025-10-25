@@ -63,12 +63,12 @@ export function WebhooksPageContent() {
   const successRate = 98.5
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
       <div className="border-b bg-background p-6">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-6">
           <div>
-            <h1 className="text-3xl font-bold">Webhooks</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Webhooks</h1>
             <p className="text-muted-foreground mt-2">
               Send real-time notifications to external services
             </p>
@@ -80,13 +80,13 @@ export function WebhooksPageContent() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Webhooks</p>
-                  <p className="text-2xl font-bold">{mockWebhooks.length}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{mockWebhooks.length}</p>
                 </div>
                 <WebhookIcon className="h-8 w-8 text-muted-foreground" />
               </div>
@@ -95,10 +95,10 @@ export function WebhooksPageContent() {
 
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Active</p>
-                  <p className="text-2xl font-bold text-green-600">{activeWebhooks}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{activeWebhooks}</p>
                 </div>
                 <CheckCircle2 className="h-8 w-8 text-green-600" />
               </div>
@@ -107,10 +107,10 @@ export function WebhooksPageContent() {
 
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Deliveries</p>
-                  <p className="text-2xl font-bold">{totalDeliveries.toLocaleString()}</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalDeliveries.toLocaleString()}</p>
                 </div>
                 <Clock className="h-8 w-8 text-muted-foreground" />
               </div>
@@ -119,10 +119,10 @@ export function WebhooksPageContent() {
 
           <Card>
             <CardContent className="p-4">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Success Rate</p>
-                  <p className="text-2xl font-bold text-green-600">{successRate}%</p>
+                  <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{successRate}%</p>
                 </div>
                 <CheckCircle2 className="h-8 w-8 text-green-600" />
               </div>

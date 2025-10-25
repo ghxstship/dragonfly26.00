@@ -88,11 +88,11 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-6 py-4">
+        <div className="space-y-3 md:space-y-4 lg:space-y-6 py-4">
           {/* Add people */}
           <div className="space-y-3">
             <Label>Share with people</Label>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Input
                 placeholder={t('files.share.emailPlaceholder')}
                 value={shareEmail as any}
@@ -100,7 +100,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                 onKeyDown={(e) => e.key === 'Enter' && handleShare()}
               />
               <Select value={permissionLevel as any} onValueChange={(value: any) => setPermissionLevel(value)}>
-                <SelectTrigger className="w-[140px]">
+                <SelectTrigger className="w-full max-w-[140px]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -121,8 +121,8 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
               <Label>People with access</Label>
               <div className="space-y-2 max-h-[200px] overflow-y-auto">
                 {permissions.map((perm: any) => (
-                  <div key={perm.id} className="flex items-center justify-between p-2 rounded-lg border">
-                    <div className="flex items-center gap-3">
+                  <div key={perm.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 rounded-lg border">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                       <Avatar className="h-8 w-8">
                         <AvatarImage src={perm.user?.avatar_url} />
                         <AvatarFallback>
@@ -134,14 +134,14 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                           {perm.user?.first_name} {perm.user?.last_name}
                         </p>
                         {perm.expires_at && (
-                          <p className="text-xs text-muted-foreground flex items-center gap-1">
+                          <p className="text-xs text-muted-foreground flex flex-wrap flex-col md:flex-row items-center gap-1">
                             <Calendar className="h-3 w-3" />
                             Expires {new Date(perm.expires_at).toLocaleDateString()}
                           </p>
                         )}
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Badge variant={getPermissionBadge(perm.permission_level).variant}>
                         {getPermissionBadge(perm.permission_level).label}
                       </Badge>
@@ -161,7 +161,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
             {!shareLink ? (
               <Button 
                 variant="outline" 
-                className="w-full" 
+                className="w-full max-w-full" 
                 onClick={handleGenerateLink}
                 disabled={loading}
               >
@@ -169,7 +169,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                 Generate Share Link
               </Button>
             ) : (
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Input value={shareLink as any} readOnly className="font-mono text-sm" />
                 <Button 
                   variant="outline" 

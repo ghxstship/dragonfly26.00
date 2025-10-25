@@ -1,0 +1,5481 @@
+{
+  "timestamp": "2025-10-25T13:57:45.962Z",
+  "overall": {
+    "totalFiles": 549,
+    "filesWithIssues": 407,
+    "avgScore": "94.6",
+    "issuesByCategory": {
+      "Mobile-First": 329,
+      "Layout Responsiveness": 169,
+      "Overflow Handling": 110,
+      "Visibility Controls": 2
+    },
+    "grade": "A"
+  },
+  "components": {
+    "totalFiles": 479,
+    "filesWithIssues": 369,
+    "avgScore": "94.5",
+    "issuesByCategory": {
+      "Mobile-First": 315,
+      "Layout Responsiveness": 110,
+      "Overflow Handling": 91,
+      "Visibility Controls": 1
+    },
+    "grade": "A"
+  },
+  "marketing": {
+    "totalFiles": 16,
+    "filesWithIssues": 13,
+    "avgScore": "93.4",
+    "issuesByCategory": {
+      "Mobile-First": 12,
+      "Overflow Handling": 5,
+      "Layout Responsiveness": 14
+    },
+    "grade": "A"
+  },
+  "app": {
+    "totalFiles": 54,
+    "filesWithIssues": 25,
+    "avgScore": "95.6",
+    "issuesByCategory": {
+      "Layout Responsiveness": 45,
+      "Overflow Handling": 14,
+      "Visibility Controls": 1,
+      "Mobile-First": 2
+    },
+    "grade": "A+"
+  },
+  "detailedResults": [
+    {
+      "file": "src/components/admin/admin-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/admin-page-content.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/api-tokens-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/automations-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/billing-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/checklist-templates-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/custom-statuses-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/integrations-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/invite-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/members-management-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/organization-settings-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/organization-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/plugins-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/recurrence-rules-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/roles-permissions-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/security-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/templates-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/admin/webhooks-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-comparisons-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-custom-views-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-data-sources-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-forecasting-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-metrics-library-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-performance-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-pivot-tables-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-realtime-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/analytics/analytics-trends-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/assets-advances-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/assets-approvals-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/assets-maintenance-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/assets-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/assets-tracking-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/barcode-scanner-overlay.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/catalog-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/count-execution-mobile.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/counts-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/inventory-alerts-panel.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/inventory-item-drawer.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/inventory-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/assets/tracking-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/atoms/avatars/UserAvatar.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/atoms/badges/CategoryBadge.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/atoms/badges/PriorityBadge.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/atoms/badges/StatusBadge.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/atoms/badges/TypeBadge.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/atoms/buttons/ActionButton.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/atoms/buttons/IconButton.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/atoms/cards/StatCard.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/atoms/icons/IconWrapper.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/atoms/indicators/EmptyStateIcon.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/atoms/indicators/LoadingSpinner.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/atoms/indicators/ProgressBar.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/atoms/inputs/DateInput.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/automations/automation-builder.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/community/activity-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/competitions-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/connections-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/discussions-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/events-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/level-badge.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/news-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/poll.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/showcase-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/community/studios-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-bids-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-companies-compliance-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-companies-invoices-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-companies-reviews-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-companies-work-orders-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-contacts-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-deliverables-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-documents-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-organizations-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-scopes-of-work-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/companies/companies-subcontractor-profile-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-advances-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-agenda-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-assets-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-files-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-jobs-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-orders-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-reports-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-tasks-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-my-travel-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/dashboard-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/quick-actions/book-travel-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/quick-actions/create-task-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/quick-actions/log-expense-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/quick-actions/upload-file-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dashboard/widget-customization-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/dynamic/dynamic-calendar.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/events/events-activities-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-all-events-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-blocks-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-bookings-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-calendar-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-equipment-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-incidents-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-internal-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-itineraries-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-rehearsals-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-reservations-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-run-of-show-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-shipping-receiving-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-tours-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/events/events-trainings-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/file-activity-timeline.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/file-share-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-all-documents-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-archive-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-call-sheets-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-contracts-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-insurance-permits-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-media-assets-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-production-reports-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-riders-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-shared-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/files/files-tech-specs-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-accounts-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-approvals-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-budgets-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-cash-flow-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-expenses-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-forecasts-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-gl-codes-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-invoices-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-payments-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-payroll-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-policies-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-reconciliation-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-revenue-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-scenarios-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-taxes-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-transactions-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/finance/finance-variance-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/create-objective-dialog.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-benchmarks-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-intelligence-feed-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-key-results-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-objectives-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-priorities-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-progress-tracking-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-recommendations-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-reviews-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/insights-success-metrics-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/objective-detail.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/insights/objectives-hierarchy.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-active-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-archived-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-checklists-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-completed-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-dispatch-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-estimates-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-jobs-compliance-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-jobs-invoices-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-offers-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-pipeline-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-recruiting-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-rfps-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-shortlists-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/jobs/jobs-work-orders-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/layout/create-menu.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/layout/language-switcher.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/layout/mobile-menu.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Visibility Controls",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 70,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/layout/quick-actions.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/layout/right-sidebar.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/layout/sidebar.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/layout/top-bar.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/layout/workspace-switcher.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 6,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-access-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-bim-models-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-coordination-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-directory-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-logistics-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-site-maps-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-spatial-features-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-utilities-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/locations/locations-warehousing-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/favorites-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/lists-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/marketplace-cart-drawer.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/marketplace-collection-browser.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/marketplace-discount-input.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/marketplace-gift-card.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/marketplace-product-detail-drawer.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/marketplace-quick-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/marketplace-review-form.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/marketplace-variant-selector.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/orders-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/products-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/purchases-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/reviews-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/sales-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/services-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/shop-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/spotlight-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/marketplace/vendors-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/members/create-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/members/invite-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/members/members-page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/mobile/install-prompt.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/molecules/controls/FilterButton.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/molecules/controls/SearchBar.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/molecules/controls/SearchWithFilters.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/molecules/controls/SortControl.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/molecules/controls/ViewSwitcher.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/molecules/data-display/BoardCard.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/molecules/data-display/BoardColumn.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/molecules/data-display/UserInfo.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/molecules/form-fields/DateRangePicker.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/molecules/menus/ActionMenu.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/offline-content.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/opportunities/opportunities-careers-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/opportunities/opportunities-grants-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/opportunities/opportunities-jobs-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/opportunities/opportunities-sponsorship-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/communication/ChatOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/content/DocumentEditorOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/content/EmbedContainerOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/ActivityViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/BoardViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/BoxViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/CalendarOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/FinancialDashboardOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/ListViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/PivotTableOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/PortfolioViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/TimelineOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/data-views/WorkloadViewOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/diagrams/MindMapOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/forms/FormBuilderOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/maps/MapOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/panels/FilterPanelOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/templates/OverviewTemplateOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/organisms/templates/SpotlightTemplateOrganism.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/pages/ExampleDataViewPage.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/activity-timeline.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/dashboard-widgets.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/mini-profile-card.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-applicants-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-assignments-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-onboarding-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-openings-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-personnel-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-scheduling-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-teams-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-timekeeping-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/people-training-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/progress-indicators.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/pto-calendar-widget.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/time-clock-widget.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/people/todays-schedule-sidebar.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/plugins/plugin-card.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/plugins/plugins-page-content.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-agreements-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-audits-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-fulfillment-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-line-items-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-matching-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-orders-dashboard-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-orders-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-procurement-approvals-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-receiving-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/procurement/procurement-requisitions-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/access-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/basic-info-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/certifications-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/emergency-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/endorsements-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/health-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/history-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/performance-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/professional-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/social-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/tags-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/profile/travel-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-activations-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-compliance-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-costs-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-milestones-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-productions-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-projects-checklists-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-projects-work-orders-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-safety-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-schedule-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/projects/projects-tasks-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/realtime/activity-feed.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-archived-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-compliance-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-custom-builder-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-executive-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-exports-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-operational-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-overview-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-scheduled-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/reports/reports-templates-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/resources/resources-courses-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/resources/resources-glossary-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/resources/resources-grants-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/resources/resources-guides-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/resources/resources-library-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/resources/resources-publications-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/resources/resources-troubleshooting-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/settings/account-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/settings/appearance-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/settings/automations-tab.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/settings/billing-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/settings/integrations-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/settings/profile-page.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/settings/team-tab.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/activity-feed.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/asset-catalog-autocomplete.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/checklist-manager.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/create-item-dialog-enhanced.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 10,
+          "severity": "medium"
+        },
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/crud-drawer.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/custom-field-editor.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/dependencies-manager.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/enhanced-table-view.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/error-display.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/files-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/filter-panel.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/filters-panel.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/import-panel.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/item-detail-drawer.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/notifications-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/photo-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/scan-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/share-panel.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/sort-panel.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/shared/tasks-tab-content.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/templates/dashboards/DashboardTemplate.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/templates/data-views/DataViewTemplate.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/templates/forms/FormTemplate.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/test/supabase-connection-test.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/ui/avatar.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/ui/calendar.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/ui/command.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/ui/dropdown-menu.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/ui/loading-spinner.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/ui/page-transition.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/ui/progress.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/ui/radio-group.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/ui/scroll-area.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 80,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/ui/select.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/ui/table.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/ui/toast.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/ui/toaster.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/ui/tooltip.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/components/views.backup/board-column.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/board-view.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/box-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/doc-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/embed-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/enhanced-table-view.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/financial-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/form-view.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/list-view.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/map-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/mind-map-view.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/pivot-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/portfolio-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/timeline-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/components/views.backup/workload-view.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/MarketingNav.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/CTASection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/DetailedPricingSection.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/FAQSection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/FeaturesSection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/HeroSection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/HowItWorksSection.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/PricingSection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/ProblemSection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/RolesSection.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 10,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/SecuritySection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/SolutionSection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/marketing/components/sections/TestimonialsSection.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(auth)/auth-check/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/app/[locale]/(auth)/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(auth)/forgot-password/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(auth)/invite/[token]/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(auth)/login/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(auth)/reset-password/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(auth)/signup/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(auth)/verify-email/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 8,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/layout.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        },
+        {
+          "category": "Visibility Controls",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 75,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/[tab]/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/[workspaceId]/[module]/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/[workspaceId]/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/[workspaceId]/layout.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": false
+    },
+    {
+      "file": "src/app/[locale]/(dashboard)/workspace/error.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(marketing)/contact/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 3,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(marketing)/demo/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(marketing)/docs/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 4,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/complete/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/invite/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/plan/page.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/welcome/page.tsx",
+      "issues": [
+        {
+          "category": "Mobile-First",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/(onboarding)/onboarding/workspace/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 1,
+          "severity": "medium"
+        },
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 85,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/[locale]/not-found.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/not-found.tsx",
+      "issues": [
+        {
+          "category": "Overflow Handling",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "score": 95,
+      "hasResponsive": true
+    },
+    {
+      "file": "src/app/sentry-example-page/page.tsx",
+      "issues": [
+        {
+          "category": "Layout Responsiveness",
+          "count": 2,
+          "severity": "medium"
+        }
+      ],
+      "score": 90,
+      "hasResponsive": false
+    }
+  ]
+}

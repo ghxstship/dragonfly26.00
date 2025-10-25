@@ -94,7 +94,7 @@ export function BookTravelDialog({ open, onOpenChange, workspaceId, userId, onSu
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-950">
               <Plane className="h-5 w-5 text-blue-600" />
             </div>
@@ -146,7 +146,7 @@ export function BookTravelDialog({ open, onOpenChange, workspaceId, userId, onSu
             </Select>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label>Departure Date *</Label>
               <Popover>

@@ -74,12 +74,12 @@ export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTempl
   const tCommon = useTranslations('common')
   const displayTemplates = data || []
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         {templates.map((template: any) => (
           <Card key={template.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Template: ${t(template.nameKey)}`}>
             <CardHeader>
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <FileStack className="h-8 w-8 text-blue-600" aria-hidden="true" />
                 <Badge variant="secondary" aria-label={`Category: ${t(template.categoryKey)}`}>{t(template.categoryKey)}</Badge>
               </div>
@@ -96,18 +96,18 @@ export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTempl
                   ))}
                 </div>
                 
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1" aria-label={`Rating: ${template.rating} out of 5`}>
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
+                  <div className="flex flex-col md:flex-row items-center gap-1" aria-label={`Rating: ${template.rating} out of 5`}>
                     <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                     <span>{template.rating}</span>
                   </div>
-                  <div className="flex items-center gap-1" aria-label={`${template.uses} uses`}>
+                  <div className="flex flex-col md:flex-row items-center gap-1" aria-label={`${template.uses} uses`}>
                     <Download className="h-4 w-4" aria-hidden="true" />
                     <span>{template.uses} {t('uses')}</span>
                   </div>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   <Button className="flex-1" size="sm" aria-label={`${t('useTemplate')}: ${t(template.nameKey)}`}>
                     {t('useTemplate')}
                   </Button>

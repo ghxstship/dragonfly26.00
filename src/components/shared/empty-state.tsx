@@ -91,13 +91,13 @@ export function EmptyState({
       )}
     >
       {Icon && showIcon && (
-        <div className="mb-6 rounded-full bg-muted/50 p-8">
+        <div className="mb-6 rounded-full bg-muted/50 p-4 md:p-8">
           <Icon className="h-12 w-12 text-muted-foreground" />
         </div>
       )}
-      <h2 className="mb-3 text-2xl font-bold tracking-tight">{mainMessage}</h2>
+      <h2 className="mb-3 text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold tracking-tight">{mainMessage}</h2>
       {description && (
-        <p className="mb-8 max-w-md text-muted-foreground">
+        <p className="mb-4 md:mb-6 lg:mb-8 max-w-md text-muted-foreground">
           {description}
         </p>
       )}

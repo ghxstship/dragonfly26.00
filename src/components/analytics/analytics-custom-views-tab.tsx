@@ -55,14 +55,14 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
   const displayViews = data || []
   
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         {customViews.map((view: any) => (
           <Card key={view.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
+                  <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                     <CardTitle className="text-lg">{t(view.nameKey)}</CardTitle>
                     {view.isDefault && (
                       <Badge variant="outline" className="bg-yellow-100 text-yellow-800 border-yellow-200">
@@ -88,11 +88,11 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
                   </div>
                 </div>
 
-                <div className="pt-3 border-t flex items-center justify-between">
+                <div className="pt-3 border-t flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <p className="text-xs text-muted-foreground">
                     {t('modified')} {view.lastModified}
                   </p>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <Button variant="outline" size="sm">
                       <Edit className="h-3 w-3 mr-1" aria-hidden="true" />
                       Edit
@@ -110,7 +110,7 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
 
       {/* Create New View Card */}
       <Card className="border-2 border-dashed">
-        <CardContent className="p-12 text-center">
+        <CardContent className="p-6 md:p-8 lg:p-12 text-center">
           <Sliders className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" aria-hidden="true" />
           <h3 className="font-semibold mb-2">{t('createCustomView')}</h3>
           <p className="text-sm text-muted-foreground mb-4">

@@ -139,7 +139,7 @@ export function InlineNotificationCount({
   if (count === 0) return null
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
       <span className="text-sm text-muted-foreground">{label}</span>
       <Badge variant={variant} className="h-5">
         {count}

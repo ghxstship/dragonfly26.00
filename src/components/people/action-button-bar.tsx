@@ -45,8 +45,8 @@ export function ActionButtonBar({
   const t = useTranslations()
 
   return (
-    <div className="flex items-center justify-between gap-2 p-3 bg-background border-b sticky top-0 z-40">
-      <div className="flex items-center gap-2 flex-wrap">
+    <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 p-3 bg-background border-b sticky top-0 z-40">
+      <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
         {/* Primary Actions */}
         {onAddEmployee && (
           <Button onClick={onAddEmployee} size="sm">
@@ -80,14 +80,14 @@ export function ActionButtonBar({
           <Button onClick={onApprove} variant="outline" size="sm" className="relative">
             <CheckCircle2 className="h-4 w-4 mr-2" />
             Approve
-            <Badge variant="destructive" className="ml-2 h-5 w-5 flex items-center justify-center p-0 text-xs">
+            <Badge variant="destructive" className="ml-2 h-5 w-5 flex flex-wrap items-center justify-center p-0 text-xs">
               {pendingApprovals}
             </Badge>
           </Button>
         )}
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
         {/* More Actions Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

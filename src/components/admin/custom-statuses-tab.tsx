@@ -96,10 +96,10 @@ export function CustomStatusesTab() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <CardTitle>Custom Statuses</CardTitle>
               <CardDescription>
@@ -129,7 +129,7 @@ export function CustomStatusesTab() {
 
                   <div className="space-y-2">
                     <Label>Color</Label>
-                    <div className="grid grid-cols-4 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
                       {STATUS_COLORS.map((color: any) => (
                         <button
                           key={color.value}
@@ -164,7 +164,7 @@ export function CustomStatusesTab() {
                     </Select>
                   </div>
 
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     <Button variant="outline" onClick={() => setIsCreating(false)} className="flex-1">
                       Cancel
                     </Button>
@@ -182,7 +182,7 @@ export function CustomStatusesTab() {
             {statuses.map((status: any) => (
               <div
                 key={status.id}
-                className="flex items-center gap-3 p-3 border rounded-lg hover:bg-accent/50"
+                className="flex flex-col md:flex-row items-center gap-3 p-3 border rounded-lg hover:bg-accent/50"
               >
                 <GripVertical className="h-4 w-4 text-muted-foreground cursor-grab" aria-hidden="true" />
                 

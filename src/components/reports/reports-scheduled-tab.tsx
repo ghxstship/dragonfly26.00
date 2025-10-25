@@ -65,26 +65,26 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
   const tCommon = useTranslations('common')
   const displayReports = data || []
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div className="space-y-4">
         {scheduledReports.map((report: any) => (
           <Card key={report.id} role="article" aria-label={`Scheduled report: ${t(report.nameKey)}`}>
             <CardHeader>
-              <div className="flex items-start justify-between">
+              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="space-y-1">
                   <CardTitle id={`report-${report.id}`}>{t(report.nameKey)}</CardTitle>
-                  <CardDescription className="flex items-center gap-4">
-                    <span className="flex items-center gap-1" aria-label={`Frequency: ${report.frequency}`}>
+                  <CardDescription className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+                    <span className="flex flex-col md:flex-row items-center gap-1" aria-label={`Frequency: ${report.frequency}`}>
                       <Calendar className="h-3 w-3" aria-hidden="true" />
                       {report.frequency}
                     </span>
-                    <span className="flex items-center gap-1" aria-label={`Schedule: ${report.schedule}`}>
+                    <span className="flex flex-col md:flex-row items-center gap-1" aria-label={`Schedule: ${report.schedule}`}>
                       <Clock className="h-3 w-3" aria-hidden="true" />
                       {report.schedule}
                     </span>
                   </CardDescription>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                   <Badge variant={report.enabled ? "default" : "secondary"} aria-label={`Status: ${report.enabled ? t('active') : t('paused')}`}>
                     {report.enabled ? t('active') : t('paused')}
                   </Badge>
@@ -93,8 +93,8 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4">
-                <div className="grid grid-cols-2 gap-4">
+              <div className="grid gap-2 md:gap-3 lg:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                   <div>
                     <p className="text-sm font-medium text-muted-foreground">{t('lastRun')}</p>
                     <p className="text-sm" aria-label={`Last run: ${report.lastRun}`}>{report.lastRun}</p>
@@ -106,7 +106,7 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
                 </div>
 
                 <div>
-                  <p className="text-sm font-medium text-muted-foreground mb-2 flex items-center gap-2">
+                  <p className="text-sm font-medium text-muted-foreground mb-2 flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Users className="h-4 w-4" aria-hidden="true" />
                     {t('recipients')} ({report.recipients.length})
                   </p>

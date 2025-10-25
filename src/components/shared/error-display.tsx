@@ -27,14 +27,14 @@ export function ErrorDisplay({
   technicalDetails,
 }: ErrorDisplayProps) {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen flex flex-wrap items-center justify-center p-4 bg-gradient-to-b from-background to-muted/20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-2xl w-full"
+        className="max-w-2xl px-4 sm:px-6 lg:px-8 w-full max-w-full"
       >
-        <div className="text-center space-y-6">
+        <div className="text-center space-y-3 md:space-y-4 lg:space-y-6">
           {/* Error Icon */}
           {showIcon && (
             <motion.div
@@ -44,7 +44,7 @@ export function ErrorDisplay({
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute sm:relative sm:inset-auto inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse sm:relative sm:inset-auto" />
                 <div className="relative bg-primary/10 p-6 rounded-full">
                   <AlertTriangle className="w-16 h-16 text-primary" />
                 </div>
@@ -69,7 +69,7 @@ export function ErrorDisplay({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-4xl font-bold tracking-tight"
+            className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-4xl font-bold tracking-tight"
           >
             {title}
           </motion.h1>
@@ -113,7 +113,7 @@ export function ErrorDisplay({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="mt-8 text-left"
+              className="mt-4 md:mt-6 lg:mt-8 text-left"
             >
               <summary className="text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors">
                 Technical Details

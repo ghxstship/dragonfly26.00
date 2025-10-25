@@ -116,7 +116,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
 
   if (loading) {
     return (
-      <div className="container max-w-2xl min-h-screen flex items-center justify-center">
+      <div className="container max-w-2xl px-4 sm:px-6 lg:px-8 min-h-screen flex flex-wrap items-center justify-center">
         <div className="text-center">
           <Loader2 className="h-12 w-12 animate-spin mx-auto mb-4 text-primary" />
           <p className="text-muted-foreground">Loading invitation...</p>
@@ -127,17 +127,17 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
 
   if (error || !invitation) {
     return (
-      <div className="container max-w-2xl min-h-screen flex items-center justify-center">
-        <Card className="w-full">
+      <div className="container max-w-2xl px-4 sm:px-6 lg:px-8 min-h-screen flex flex-wrap items-center justify-center">
+        <Card className="w-full max-w-full">
           <CardHeader>
-            <div className="flex items-center gap-2 text-destructive">
+            <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-destructive">
               <AlertCircle className="h-5 w-5" />
               <CardTitle>Invalid Invitation</CardTitle>
             </div>
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-muted-foreground">{error}</p>
-            <Button onClick={() => router.push('/login')} className="w-full">
+            <Button onClick={() => router.push('/login')} className="w-full max-w-full">
               Go to Login
             </Button>
           </CardContent>
@@ -149,12 +149,12 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
   const role = BRANDED_ROLES[invitation.role_slug as keyof typeof BRANDED_ROLES]
 
   return (
-    <div className="container max-w-2xl min-h-screen flex items-center justify-center py-12">
-      <div className="w-full space-y-6">
+    <div className="container max-w-2xl px-4 sm:px-6 lg:px-8 min-h-screen flex flex-wrap items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
+      <div className="w-full space-y-3 md:space-y-4 lg:space-y-6 max-w-full">
         {/* Header */}
         <div className="text-center space-y-2">
           <CheckCircle2 className="h-16 w-16 text-primary mx-auto mb-4" />
-          <h1 className="text-4xl font-bold">You&apos;ve been invited!</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">You&apos;ve been invited!</h1>
           <p className="text-muted-foreground text-lg">
             {invitation.inviter_name} invited you to join their team
           </p>
@@ -170,7 +170,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Organization */}
-            <div className="flex items-start gap-3 p-3 rounded-lg border">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
               <Building2 className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm font-medium">Organization</p>
@@ -181,7 +181,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             </div>
 
             {/* Workspace */}
-            <div className="flex items-start gap-3 p-3 rounded-lg border">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
               <Building2 className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm font-medium">Workspace</p>
@@ -192,7 +192,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             </div>
 
             {/* Email */}
-            <div className="flex items-start gap-3 p-3 rounded-lg border">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
               <Mail className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm font-medium">Invited Email</p>
@@ -203,7 +203,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             </div>
 
             {/* Role */}
-            <div className="flex items-start gap-3 p-3 rounded-lg border">
+            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
               <UserCheck className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm font-medium">Your Role</p>
@@ -231,7 +231,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
               <Button
                 onClick={handleAccept}
                 disabled={accepting}
-                className="w-full"
+                className="w-full max-w-full"
                 size="lg"
               >
                 {accepting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
