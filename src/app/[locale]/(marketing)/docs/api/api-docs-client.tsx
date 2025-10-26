@@ -11,11 +11,11 @@ const SwaggerUI = dynamic<{ url: string }>(
 
 export function APIDocsClient() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="border-b border-gray-200 bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
+      <div className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8 py-6">
-          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-gray-900">API Documentation</h1>
-          <p className="mt-2 text-gray-600">
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase text-gray-900 dark:text-white">API Documentation</h1>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">
             Complete REST API reference for the ATLVS platform
           </p>
         </div>

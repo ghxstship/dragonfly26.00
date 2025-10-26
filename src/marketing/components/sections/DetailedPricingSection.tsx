@@ -316,7 +316,7 @@ export function DetailedPricingSection(): JSX.Element {
               aria-label="Toggle billing period"
             >
               <span
-                className="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-lg transition-transform duration-300"
+                className="absolute top-1 left-1 w-6 h-6 bg-white dark:bg-gray-800 rounded-full shadow-lg transition-transform duration-300"
                 style={{ transform: isAnnual ? 'translateX(32px)' : 'translateX(0)' }}
               />
             </button>

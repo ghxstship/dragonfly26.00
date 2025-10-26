@@ -26,7 +26,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
 
           <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 md:gap-3 md:gap-4 lg:gap-6 lg:gap-8 max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto px-4 md:px-6">
-            <div className="bg-white dark:bg-gray-800 p-4 md:p-8 rounded-xl border-2 border-gray-200 text-center">
+            <div className="bg-white dark:bg-gray-800 p-4 md:p-8 rounded-xl border-2 border-gray-200 dark:border-gray-700 text-center">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex flex-wrap items-center justify-center mx-auto mb-4">
                 <Mail className="text-blue-600" size={24} />
               </div>
@@ -37,7 +37,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </a>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-4 md:p-8 rounded-xl border-2 border-gray-200 text-center">
+            <div className="bg-white dark:bg-gray-800 p-4 md:p-8 rounded-xl border-2 border-gray-200 dark:border-gray-700 text-center">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex flex-wrap items-center justify-center mx-auto mb-4">
                 <MessageSquare className="text-blue-600" size={24} />
               </div>
@@ -46,7 +46,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               <Button variant="outline">Start Chat</Button>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-4 md:p-8 rounded-xl border-2 border-gray-200 text-center">
+            <div className="bg-white dark:bg-gray-800 p-4 md:p-8 rounded-xl border-2 border-gray-200 dark:border-gray-700 text-center">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex flex-wrap items-center justify-center mx-auto mb-4">
                 <Phone className="text-blue-600" size={24} />
               </div>

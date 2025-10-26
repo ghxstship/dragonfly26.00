@@ -39,7 +39,7 @@ export function FAQSection(): JSX.Element {
               >
                 <span className="font-heading uppercase text-gray-900 dark:text-white pr-4">{faq.question}</span>
                 <ChevronDown
-                  className={cn("text-gray-500 flex-shrink-0 transition-transform", height.icon, openIndex === index && "rotate-180")}
+                  className={cn("text-gray-500 dark:text-gray-400 flex-shrink-0 transition-transform", height.icon, openIndex === index && "rotate-180")}
                   aria-hidden="true"
                 />
               </button>
