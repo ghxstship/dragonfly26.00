@@ -57,18 +57,10 @@
     @apply bg-background text-foreground;
   }
   
-  /* Marketing Typography - Apply Share Tech to all marketing pages */
-  .font-tech,
-  .font-tech * {
-    font-family: var(--font-share-tech), sans-serif !important;
-  }
-  
-  /* Preserve heading fonts */
-  .font-tech .font-pixel,
-  .font-tech .font-title,
-  .font-tech .font-heading,
-  .font-tech .font-tech-mono {
-    font-family: inherit !important;
+  /* Marketing Typography - Apply Share Tech as default body font */
+  /* Only apply to elements WITHOUT explicit font classes */
+  .font-tech {
+    font-family: var(--font-share-tech), sans-serif;
   }
 }
 
