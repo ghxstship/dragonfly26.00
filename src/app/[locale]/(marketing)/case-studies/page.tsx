@@ -139,7 +139,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
                   <div className={grid.stats3}>
                     {study.results.map((result) => (
                       <div key={result.label} className="text-center">
-                        <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">
+                        <div className="text-3xl md:text-4xl font-title uppercase text-blue-600 mb-1">
                           {result.metric}
                         </div>
                         <div className="text-sm text-gray-600 dark:text-gray-400">
@@ -189,13 +189,13 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/demo"
-              className="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              className="px-8 py-3 bg-blue-600 text-white rounded-lg font-heading uppercase hover:bg-blue-700 transition-colors"
             >
               Schedule a Demo
             </Link>
             <Link
               href="/pricing"
-              className="px-8 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 rounded-lg font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+              className="px-8 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 rounded-lg font-heading uppercase hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
             >
               View Pricing
             </Link>

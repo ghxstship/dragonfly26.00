@@ -195,7 +195,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
           </p>
           <a
             href="mailto:security@atlvs.one"
-            className="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            className="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-heading uppercase hover:bg-blue-700 transition-colors"
           >
             Contact Security Team
           </a>

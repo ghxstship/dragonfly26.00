@@ -76,7 +76,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
                   className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center"
                 >
                   <Icon className="mx-auto text-blue-600 mb-3" size={32} />
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                  <div className="text-3xl md:text-4xl font-title uppercase text-gray-900 dark:text-white mb-2">
                     {metric.value}
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
@@ -189,7 +189,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
               className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
               aria-label="Email address"
             />
-            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-heading uppercase hover:bg-blue-700 transition-colors">
               Subscribe
             </button>
           </div>

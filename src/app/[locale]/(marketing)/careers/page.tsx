@@ -150,7 +150,7 @@ export default async function CareersPage({ params }: { params: Promise<{ locale
                   </div>
                   <Link
                     href={`/careers/${job.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center"
+                    className="px-6 py-2 bg-blue-600 text-white rounded-lg font-heading uppercase hover:bg-blue-700 transition-colors text-center"
                   >
                     Apply Now
                   </Link>
@@ -174,7 +174,7 @@ export default async function CareersPage({ params }: { params: Promise<{ locale
           </p>
           <a
             href="mailto:careers@atlvs.one"
-            className="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            className="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-heading uppercase hover:bg-blue-700 transition-colors"
           >
             Get in Touch
           </a>

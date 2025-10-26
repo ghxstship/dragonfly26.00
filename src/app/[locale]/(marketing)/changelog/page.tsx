@@ -191,7 +191,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
                       </div>
                     </div>
                     <span className={cn(
-                      "inline-block px-3 py-1 rounded-full text-xs font-medium",
+                      "inline-block px-3 py-1 rounded-full text-xs font-heading uppercase",
                       release.type === "major" && "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
                       release.type === "minor" && "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
                     )}>
@@ -222,7 +222,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
                                 {item.title}
                               </h3>
                               <span className={cn(
-                                "px-2 py-0.5 rounded text-xs font-medium",
+                                "px-2 py-0.5 rounded text-xs font-heading uppercase",
                                 typeColors[item.type as keyof typeof typeColors]
                               )}>
                                 {item.type}
@@ -259,7 +259,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
               className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
               aria-label="Email address"
             />
-            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-heading uppercase hover:bg-blue-700 transition-colors">
               Subscribe
             </button>
           </div>
