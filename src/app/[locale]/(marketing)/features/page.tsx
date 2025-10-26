@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
-  title: "Features",
+  title: "Features | ATLVS",
   description: "Everything you need to manage live entertainment production. Five powerful hubs designed specifically for experiential production teams.",
 }
 

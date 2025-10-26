@@ -208,7 +208,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
         </div>
 
         {/* Role name */}
-        <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-2">
+        <h2 className="text-2xl sm:text-3xl text-white text-center mb-2 font-heading uppercase">
           {t(`${role}.name`)}
         </h2>
 
@@ -241,7 +241,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
 
         {/* Key Abilities */}
         <div>
-          <h3 className="text-white font-bold mb-3 uppercase text-sm">Key Abilities</h3>
+          <h3 className="text-white mb-3 uppercase text-sm font-heading uppercase">Key Abilities</h3>
           <ul className="space-y-2">
             {roleData.abilities.map((ability, index) => (
               <li 
@@ -296,7 +296,7 @@ export function DetailedPricingSection(): JSX.Element {
         <div className={cn("mx-auto", container['6xl'])}>
           {/* Header */}
           <div className="text-center mb-12 animate-in fade-in-50 duration-800">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-white mb-6 font-title uppercase">
               ATLVS Pricing
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -334,7 +334,7 @@ export function DetailedPricingSection(): JSX.Element {
           <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-12 lg:mb-16 animate-in fade-in-50 duration-1000 delay-500">
             {/* Community */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Community</h3>
+              <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Community</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">Free</span>
                 <span className="text-gray-600 dark:text-gray-400 ml-2">Forever</span>
@@ -343,7 +343,7 @@ export function DetailedPricingSection(): JSX.Element {
 
               <div className="space-y-3 md:space-y-4 lg:space-y-6 mb-4 md:mb-6 lg:mb-8">
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">COLLABORATION</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">COLLABORATION</h4>
                   <ul className={spacing.listTight}>
                     <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -357,7 +357,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">FUNDAMENTALS</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">FUNDAMENTALS</h4>
                   <ul className={spacing.listTight}>
                     <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -375,7 +375,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">AVAILABLE ROLES</h4>
                   <div className="flex flex-wrap gap-2">
                     <RoleBadge role="raider" onClick={() => setSelectedRole("raider")} />
                   </div>
@@ -389,7 +389,7 @@ export function DetailedPricingSection(): JSX.Element {
 
             {/* Pro */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Pro</h3>
+              <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Pro</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
                   ${isAnnual ? '10' : '12'}
@@ -404,7 +404,7 @@ export function DetailedPricingSection(): JSX.Element {
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Everything in Community, plus:</p>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">EFFICIENCY</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">EFFICIENCY</h4>
                   <ul className={spacing.listTight}>
                     <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -422,7 +422,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">PRO FEATURES</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">PRO FEATURES</h4>
                   <ul className={spacing.listTight}>
                     <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -440,7 +440,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">AVAILABLE ROLES</h4>
                   <div className="flex flex-wrap gap-2">
                     <RoleBadge role="deviator" onClick={() => setSelectedRole("deviator")} />
                     <RoleBadge role="raider" onClick={() => setSelectedRole("raider")} />
@@ -458,7 +458,7 @@ export function DetailedPricingSection(): JSX.Element {
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold w-max mx-auto">
                 MOST POPULAR
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0">Team</h3>
+              <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0 font-heading uppercase">Team</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
                   ${isAnnual ? '100' : '120'}
@@ -473,7 +473,7 @@ export function DetailedPricingSection(): JSX.Element {
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Everything in Pro, plus:</p>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">TEAM MANAGEMENT</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">TEAM MANAGEMENT</h4>
                   <ul className={spacing.listTight}>
                     <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -491,7 +491,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">INTEGRATIONS</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">INTEGRATIONS</h4>
                   <ul className={spacing.listTight}>
                     <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -513,7 +513,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">AVAILABLE ROLES</h4>
                   <div className="flex flex-wrap gap-2">
                     <RoleBadge role="gladiator" onClick={() => setSelectedRole("gladiator")} />
                     <RoleBadge role="navigator" onClick={() => setSelectedRole("navigator")} />
@@ -533,7 +533,7 @@ export function DetailedPricingSection(): JSX.Element {
 
             {/* Enterprise */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
+              <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Enterprise</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
                   ${isAnnual ? '1,000' : '1,200'}
@@ -548,7 +548,7 @@ export function DetailedPricingSection(): JSX.Element {
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Everything in Team, plus:</p>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">ENTERPRISE CONTROL</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">ENTERPRISE CONTROL</h4>
                   <ul className={spacing.listTight}>
                     <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -570,7 +570,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AI & INTELLIGENCE</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">AI & INTELLIGENCE</h4>
                   <ul className={spacing.listTight}>
                     <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
@@ -600,7 +600,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-bold uppercase text-gray-500 dark:text-gray-500 mb-3">AVAILABLE ROLES</h4>
+                  <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">AVAILABLE ROLES</h4>
                   <div className="flex flex-wrap gap-2">
                     <RoleBadge role="phantom" onClick={() => setSelectedRole("phantom")} />
                     <RoleBadge role="aviator" onClick={() => setSelectedRole("aviator")} />

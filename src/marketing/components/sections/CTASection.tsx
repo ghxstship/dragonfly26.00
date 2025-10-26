@@ -13,7 +13,7 @@ export function CTASection(): JSX.Element {
   return (
     <section className={cn("py-20 bg-gradient-to-br from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700", padding.sectionX)}>
       <div className={cn("mx-auto text-center", container['4xl'])}>
-        <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl text-white mb-6 font-heading uppercase">
           {t('title')}
         </h2>
         <p className="text-base md:text-lg lg:text-xl text-blue-100 mb-4 md:mb-6 lg:mb-8">
@@ -28,7 +28,7 @@ export function CTASection(): JSX.Element {
             </Button>
           </Link>
           <Link href="/demo">
-            <Button variant="outline" size="lg" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-blue-600 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-blue-600">
+            <Button variant="secondary" size="lg" className="w-full sm:w-auto">
               {t('ctaSecondary')}
             </Button>
           </Link>

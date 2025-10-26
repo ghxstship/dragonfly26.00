@@ -18,10 +18,10 @@ export default async function MarketingLayout({
   setRequestLocale(locale)
   
   return (
-    <>
+    <div className="font-tech">
       <MarketingNav />
       {children}
       <MarketingFooter />
-    </>
+    </div>
   )
 }

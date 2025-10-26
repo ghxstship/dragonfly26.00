@@ -12,7 +12,7 @@ export function TestimonialsSection(): JSX.Element {
     <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className="text-center  mx-auto mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6 font-heading uppercase">
             {t('title')}
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400">

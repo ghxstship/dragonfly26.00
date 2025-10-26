@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service | ATLVS",
   description: "ATLVS Terms of Service - Legal terms and conditions for using our platform.",
 }
 

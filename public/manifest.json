@@ -1,7 +1,7 @@
 {
-  "name": "ATLVS - Project Management",
+  "name": "ATLVS - Experiential Production Management Platform",
   "short_name": "ATLVS",
-  "description": "Enterprise project management platform with offline support",
+  "description": "The World's First Project Management System for Creative Industries",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

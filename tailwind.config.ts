@@ -38,6 +38,12 @@ const config = {
           'Menlo',
           'monospace',
         ],
+        // Marketing Typography
+        pixel: ['var(--font-coral-pixels)', 'monospace'],
+        title: ['var(--font-anton-sc)', 'sans-serif'],
+        heading: ['var(--font-bebas-neue)', 'sans-serif'],
+        'tech-mono': ['var(--font-share-tech-mono)', 'monospace'],
+        'tech': ['var(--font-share-tech)', 'sans-serif'],
       },
       fontSize: {
         // Display styles

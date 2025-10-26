@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
-  title: "Documentation",
+  title: "Documentation | ATLVS",
   description: "Comprehensive guides, tutorials, and API documentation for ATLVS platform.",
 }
 

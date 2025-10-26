@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { setRequestLocale } from 'next-intl/server'
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | ATLVS",
   description: "ATLVS Privacy Policy - How we collect, use, and protect your data.",
 }
 
