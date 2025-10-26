@@ -107,18 +107,18 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
               <div className={cn(index % 2 === 1 && "md:col-start-1 md:row-start-1")}>
                 <div className="flex items-center gap-3 mb-4">
                   <Building2 className="text-blue-600" size={24} />
-                  <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">
                     {study.industry}
                   </span>
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                <h2 className="text-3xl md:text-4xl font-heading uppercase text-gray-900 dark:text-white mb-4">
                   {study.company}
                 </h2>
 
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">
+                    <h3 className="text-sm font-heading uppercase text-gray-900 dark:text-white mb-2 uppercase tracking-wide">
                       Challenge
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
@@ -127,7 +127,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
                   </div>
 
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">
+                    <h3 className="text-sm font-heading uppercase text-gray-900 dark:text-white mb-2 uppercase tracking-wide">
                       Solution
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
@@ -180,7 +180,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
       {/* CTA Section */}
       <section className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className={cn("mx-auto text-center", container['4xl'])}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading uppercase text-gray-900 dark:text-white mb-4">
             Ready to Transform Your Production?
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">

@@ -37,7 +37,7 @@ export default async function ComparePage({ params }: { params: Promise<{ locale
                 href={`/compare/${comp.slug}`}
                 className="p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-300 hover:shadow-lg transition-all"
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-heading uppercase text-gray-900 dark:text-white">
                   ATLVS vs {comp.name}
                 </h3>
               </Link>

@@ -92,7 +92,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
       {/* Services Status */}
       <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className={cn("mx-auto", container['6xl'])}>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          <h2 className="text-2xl md:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-8">
             Service Status
           </h2>
           <div className="space-y-3">
@@ -104,7 +104,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
                 <div className="flex items-center gap-4">
                   <CheckCircle2 className="text-green-600 flex-shrink-0" size={24} />
                   <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                    <h3 className="font-heading uppercase text-gray-900 dark:text-white">
                       {service.name}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -122,7 +122,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
       {/* Incident History */}
       <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
         <div className={cn("mx-auto", container['6xl'])}>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          <h2 className="text-2xl md:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-8">
             Recent Incidents
           </h2>
           {incidents.length > 0 ? (
@@ -135,7 +135,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <CheckCircle2 className="text-green-600 flex-shrink-0" size={20} />
-                      <h3 className="font-semibold text-gray-900 dark:text-white">
+                      <h3 className="font-heading uppercase text-gray-900 dark:text-white">
                         {incident.title}
                       </h3>
                     </div>
@@ -155,7 +155,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
                       <Clock size={14} />
                       Duration: {incident.duration}
                     </span>
-                    <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs font-medium">
+                    <span className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-xs ">
                       Resolved
                     </span>
                   </div>
@@ -176,7 +176,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
       {/* Subscribe to Updates */}
       <section className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className={cn("mx-auto text-center", container['4xl'])}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading uppercase text-gray-900 dark:text-white mb-4">
             Get Status Updates
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">

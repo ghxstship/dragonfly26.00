@@ -178,7 +178,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
                   </div>
                   <div className="flex-1 pt-2">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      <h2 className="text-2xl font-heading uppercase text-gray-900 dark:text-white">
                         Version {release.version}
                       </h2>
                       <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
@@ -218,7 +218,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
-                              <h3 className="font-semibold text-gray-900 dark:text-white">
+                              <h3 className="font-heading uppercase text-gray-900 dark:text-white">
                                 {item.title}
                               </h3>
                               <span className={cn(
@@ -246,7 +246,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
       {/* Subscribe CTA */}
       <section className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
         <div className={cn("mx-auto text-center", container['4xl'])}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading uppercase text-gray-900 dark:text-white mb-4">
             Stay Updated
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">

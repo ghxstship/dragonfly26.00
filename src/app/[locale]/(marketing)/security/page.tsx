@@ -132,7 +132,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
       {/* Compliance */}
       <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className={cn("mx-auto", container['6xl'])}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-heading uppercase text-gray-900 dark:text-white mb-8 text-center">
             Compliance & Certifications
           </h2>
           <div className={grid.cards4}>
@@ -142,10 +142,10 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
                 className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center"
               >
                 <CheckCircle2 className="mx-auto text-green-600 mb-3" size={32} />
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="font-heading uppercase text-gray-900 dark:text-white mb-2">
                   {item.name}
                 </h3>
-                <span className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+                <span className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm ">
                   {item.status}
                 </span>
               </div>
@@ -157,7 +157,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
       {/* Data Protection Details */}
       <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
         <div className={cn("mx-auto", container['6xl'])}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-heading uppercase text-gray-900 dark:text-white mb-12 text-center">
             Data Protection Measures
           </h2>
           <div className={grid.cards2}>
@@ -166,7 +166,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
                 key={section.title}
                 className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6"
               >
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-xl font-heading uppercase text-gray-900 dark:text-white mb-4">
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
@@ -187,7 +187,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
       <section className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className={cn("mx-auto text-center", container['4xl'])}>
           <AlertTriangle className="mx-auto text-orange-600 mb-4" size={48} />
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading uppercase text-gray-900 dark:text-white mb-4">
             Report a Security Issue
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
