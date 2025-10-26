@@ -59,7 +59,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
       <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         <div className="text-center">
-          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Welcome Back!</h1>
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Welcome Back!</h1>
           <p className="text-muted-foreground mt-2">
             Sign in to your account to continue
           </p>

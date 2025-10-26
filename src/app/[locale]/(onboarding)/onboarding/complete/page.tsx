@@ -73,7 +73,7 @@ export default function CompletePage() {
 
         {/* Header */}
         <div className="space-y-2">
-          <h1 className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-bold">
+          <h1 className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-title uppercase">
             You&apos;re all set! 🎉
           </h1>
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
@@ -97,7 +97,7 @@ export default function CompletePage() {
               <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
                 <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">Profile Complete</p>
+                  <p className="">Profile Complete</p>
                   <p className="text-sm text-muted-foreground">
                     Your profile is set up and ready
                   </p>
@@ -107,7 +107,7 @@ export default function CompletePage() {
               <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
                 <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">Workspace Created</p>
+                  <p className="">Workspace Created</p>
                   <p className="text-sm text-muted-foreground">
                     Your team workspace is ready to use
                   </p>
@@ -117,7 +117,7 @@ export default function CompletePage() {
               <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
                 <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium">Plan Selected</p>
+                  <p className="">Plan Selected</p>
                   <p className="text-sm text-muted-foreground">
                     Start collaborating with your team
                   </p>
@@ -148,19 +148,19 @@ export default function CompletePage() {
         {/* Next steps suggestions */}
         <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 pt-8">
           <div className="p-4 rounded-lg border">
-            <p className="font-medium mb-1">Create Your First Project</p>
+            <p className="mb-1">Create Your First Project</p>
             <p className="text-sm text-muted-foreground">
               Start organizing your work
             </p>
           </div>
           <div className="p-4 rounded-lg border">
-            <p className="font-medium mb-1">Invite Team Members</p>
+            <p className="mb-1">Invite Team Members</p>
             <p className="text-sm text-muted-foreground">
               Collaborate with your team
             </p>
           </div>
           <div className="p-4 rounded-lg border">
-            <p className="font-medium mb-1">Explore Features</p>
+            <p className="mb-1">Explore Features</p>
             <p className="text-sm text-muted-foreground">
               Discover all 20 modules
             </p>

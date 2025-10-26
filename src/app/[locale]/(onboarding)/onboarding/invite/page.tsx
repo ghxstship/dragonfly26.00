@@ -129,7 +129,7 @@ export default function InviteColleaguesPage() {
       <div className="space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">Invite your team</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-title uppercase">Invite your team</h1>
           <p className="text-muted-foreground text-lg">
             Collaborate with colleagues in {workspaceName || 'your workspace'}
           </p>
@@ -252,7 +252,7 @@ export default function InviteColleaguesPage() {
               <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
                 <Users className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
                 <div className="space-y-1">
-                  <p className="text-sm font-medium">Team roles explained</p>
+                  <p className="text-sm ">Team roles explained</p>
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li><strong>Raider</strong> - Team member (task execution)</li>
                     <li><strong>Deviator</strong> - Team lead (crew coordination)</li>

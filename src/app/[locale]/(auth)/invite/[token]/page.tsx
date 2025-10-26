@@ -154,7 +154,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
         {/* Header */}
         <div className="text-center space-y-2">
           <CheckCircle2 className="h-16 w-16 text-primary mx-auto mb-4" />
-          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">You&apos;ve been invited!</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-title uppercase">You&apos;ve been invited!</h1>
           <p className="text-muted-foreground text-lg">
             {invitation.inviter_name} invited you to join their team
           </p>
@@ -173,7 +173,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
               <Building2 className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
-                <p className="text-sm font-medium">Organization</p>
+                <p className="text-sm ">Organization</p>
                 <p className="text-sm text-muted-foreground">
                   {invitation.organization.name}
                 </p>
@@ -184,7 +184,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
               <Building2 className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
-                <p className="text-sm font-medium">Workspace</p>
+                <p className="text-sm ">Workspace</p>
                 <p className="text-sm text-muted-foreground">
                   {invitation.workspace.name}
                 </p>
@@ -195,7 +195,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
               <Mail className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
-                <p className="text-sm font-medium">Invited Email</p>
+                <p className="text-sm ">Invited Email</p>
                 <p className="text-sm text-muted-foreground">
                   {invitation.email}
                 </p>
@@ -206,7 +206,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
               <UserCheck className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
-                <p className="text-sm font-medium">Your Role</p>
+                <p className="text-sm ">Your Role</p>
                 <p className="text-sm">
                   <strong>{role.name}</strong> ({role.badge})
                 </p>
@@ -219,7 +219,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             {/* Personal message */}
             {invitation.message && (
               <div className="p-3 rounded-lg bg-muted/50">
-                <p className="text-sm font-medium mb-1">Personal Message</p>
+                <p className="text-sm mb-1">Personal Message</p>
                 <p className="text-sm text-muted-foreground italic">
                   &ldquo;{invitation.message}&rdquo;
                 </p>

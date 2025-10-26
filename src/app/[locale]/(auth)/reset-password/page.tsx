@@ -97,7 +97,7 @@ export default function ResetPasswordPage() {
                 </div>
               </div>
             </div>
-            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Password updated!</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Password updated!</h1>
             <p className="text-muted-foreground mt-2">
               Your password has been successfully reset
             </p>
@@ -123,7 +123,7 @@ export default function ResetPasswordPage() {
     <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
       <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         <div className="text-center">
-          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Set new password</h1>
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Set new password</h1>
           <p className="text-muted-foreground mt-2">
             Choose a strong password for your account
           </p>

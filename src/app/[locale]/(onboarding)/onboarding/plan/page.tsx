@@ -84,7 +84,7 @@ export default function SelectPlanPage() {
       <div className="space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">Choose your plan</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-title uppercase">Choose your plan</h1>
           <p className="text-muted-foreground text-lg">
             Start with a free trial, upgrade anytime
           </p>
@@ -148,7 +148,7 @@ export default function SelectPlanPage() {
                   
                   <div className="pt-4">
                     <div className="flex flex-wrap items-baseline justify-center gap-1">
-                      <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-bold">
+                      <span className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-title uppercase">
                         ${billingCycle === 'annual' && plan.annualPrice ? plan.annualPrice : plan.price}
                       </span>
                       <span className="text-muted-foreground">/month</span>

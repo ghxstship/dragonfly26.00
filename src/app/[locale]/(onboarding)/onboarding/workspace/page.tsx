@@ -175,7 +175,7 @@ export default function WorkspacePage() {
       <div className="w-full space-y-3 md:space-y-4 lg:space-y-6 max-w-full">
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-bold">Set up your workspace</h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-title uppercase">Set up your workspace</h1>
           <p className="text-muted-foreground text-lg">
             Create a new workspace or join an existing one
           </p>
@@ -264,7 +264,7 @@ export default function WorkspacePage() {
                   </div>
 
                   <div className="bg-muted/50 p-4 rounded-lg space-y-2">
-                    <p className="text-sm font-medium">You&apos;ll receive:</p>
+                    <p className="text-sm ">You&apos;ll receive:</p>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Check className="h-4 w-4 text-green-500" />
@@ -315,7 +315,7 @@ export default function WorkspacePage() {
                         className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg"
                       >
                         <div>
-                          <h3 className="font-medium">{workspace.name}</h3>
+                          <h3 className="font-heading uppercase">{workspace.name}</h3>
                           <p className="text-sm text-muted-foreground">
                             {workspace.description || 'No description'}
                           </p>

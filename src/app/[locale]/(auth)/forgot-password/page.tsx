@@ -52,11 +52,11 @@ export default function ForgotPasswordPage() {
                 </div>
               </div>
             </div>
-            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Check your email</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Check your email</h1>
             <p className="text-muted-foreground mt-2">
               We&apos;ve sent password reset instructions to
             </p>
-            <p className="text-foreground font-medium mt-1">{email}</p>
+            <p className="text-foreground mt-1">{email}</p>
           </div>
 
           <div className="bg-card border rounded-lg p-6 space-y-4">
@@ -92,7 +92,7 @@ export default function ForgotPasswordPage() {
     <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
       <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         <div className="text-center">
-          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Reset your password</h1>
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Reset your password</h1>
           <p className="text-muted-foreground mt-2">
             Enter your email and we&apos;ll send you instructions
           </p>

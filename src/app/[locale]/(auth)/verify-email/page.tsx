@@ -91,7 +91,7 @@ export default function VerifyEmailPage() {
             <div className="flex flex-wrap justify-center mb-4">
               <Loader2 className="w-16 h-16 text-primary animate-spin" />
             </div>
-            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Verifying your email...</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Verifying your email...</h1>
             <p className="text-muted-foreground mt-2">
               Please wait while we confirm your email address
             </p>
@@ -115,7 +115,7 @@ export default function VerifyEmailPage() {
                 </div>
               </div>
             </div>
-            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Email verified!</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Email verified!</h1>
             <p className="text-muted-foreground mt-2">
               Your email has been successfully verified
             </p>
@@ -151,7 +151,7 @@ export default function VerifyEmailPage() {
                 </div>
               </div>
             </div>
-            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Verification failed</h1>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Verification failed</h1>
             <p className="text-muted-foreground mt-2">
               We couldn&apos;t verify your email address
             </p>
@@ -202,12 +202,12 @@ export default function VerifyEmailPage() {
               </div>
             </div>
           </div>
-          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Check your email</h1>
+          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Check your email</h1>
           <p className="text-muted-foreground mt-2">
             We&apos;ve sent a verification link to
           </p>
           {email && (
-            <p className="text-foreground font-medium mt-1">{email}</p>
+            <p className="text-foreground mt-1">{email}</p>
           )}
         </div>
 
