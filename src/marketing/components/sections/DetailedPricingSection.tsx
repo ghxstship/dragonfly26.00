@@ -215,7 +215,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
         {/* Role type badge */}
         <div className="flex flex-wrap justify-center mb-6">
           <span className={cn(
-            "px-4 py-1 rounded-full text-sm font-semibold text-white bg-gradient-to-r",
+            "px-4 py-1 rounded-full text-sm font-heading uppercase text-white bg-gradient-to-r",
             roleData.gradient
           )}>
             {roleData.type}
@@ -273,7 +273,7 @@ function RoleBadge({ role, onClick }: RoleBadgeProps) {
     <button
       onClick={onClick}
       className={cn(
-        "inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold text-white",
+        "inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-heading uppercase text-white",
         "bg-gradient-to-r transition-all duration-300 hover:scale-105 hover:shadow-lg",
         "whitespace-nowrap flex-shrink-0",
         roleData.gradient
@@ -336,7 +336,7 @@ export function DetailedPricingSection(): JSX.Element {
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Community</h3>
               <div className="mb-4">
-                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">Free</span>
+                <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">Free</span>
                 <span className="text-gray-600 dark:text-gray-400 ml-2">Forever</span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 mb-6">Perfect for getting started</p>
@@ -391,7 +391,7 @@ export function DetailedPricingSection(): JSX.Element {
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Pro</h3>
               <div className="mb-4">
-                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
+                <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">
                   ${isAnnual ? '10' : '12'}
                 </span>
                 <span className="text-gray-600 dark:text-gray-400">/month</span>
@@ -455,12 +455,12 @@ export function DetailedPricingSection(): JSX.Element {
 
             {/* Team - Featured */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-2xl border-4 border-purple-600 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 relative lg:scale-105">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold w-max mx-auto">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-heading uppercase w-max mx-auto">
                 MOST POPULAR
               </div>
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0 font-heading uppercase">Team</h3>
               <div className="mb-4">
-                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
+                <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">
                   ${isAnnual ? '100' : '120'}
                 </span>
                 <span className="text-gray-600 dark:text-gray-400">/month</span>
@@ -535,7 +535,7 @@ export function DetailedPricingSection(): JSX.Element {
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Enterprise</h3>
               <div className="mb-4">
-                <span className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white">
+                <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">
                   ${isAnnual ? '1,000' : '1,200'}
                 </span>
                 <span className="text-gray-600 dark:text-gray-400">/month</span>

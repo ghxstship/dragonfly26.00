@@ -71,7 +71,7 @@ export function PricingSection(): JSX.Element {
 
           {/* Team */}
           <div className={cn("border-2 border-blue-600 rounded-xl relative bg-white dark:bg-gray-800", padding.section)}>
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold w-max mx-auto">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-heading uppercase w-max mx-auto">
               {t('team.badge')}
             </div>
             <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0 font-heading uppercase">{t('team.name')}</h3>

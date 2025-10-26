@@ -18,7 +18,7 @@ const statusStyles = {
 export function StatusBadge({ status, label, className }: StatusBadgeProps): JSX.Element {
   return (
     <span className={cn(
-      "inline-flex items-center px-3 py-1 rounded-full text-sm font-medium",
+      "inline-flex items-center px-3 py-1 rounded-full text-sm font-heading uppercase",
       statusStyles[status],
       className
     )}>

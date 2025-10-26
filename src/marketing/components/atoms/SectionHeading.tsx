@@ -18,7 +18,7 @@ export function SectionHeading({ title, subtitle, centered = true, className }: 
       centered ? "mx-auto" : "",
       className
     )}>
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-title uppercase text-gray-900 dark:text-white mb-4">
         {title}
       </h1>
       {subtitle && (

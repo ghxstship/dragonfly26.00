@@ -22,7 +22,7 @@ export function MarketingNav(): JSX.Element {
           <div className="flex flex-wrap flex-col sm:flex-row items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex flex-wrap md:flex-nowrap items-center space-x-2">
-              <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-pixel font-bold text-gray-900 dark:text-white tracking-wider">{t('logo')}</div>
+              <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-pixel text-gray-900 dark:text-white tracking-wider">{t('logo')}</div>
             </Link>
 
             {/* Desktop Navigation */}
