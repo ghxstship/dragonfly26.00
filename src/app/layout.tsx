@@ -21,7 +21,7 @@ const inter = Inter({
 const coralPixels = localFont({
   src: [
     {
-      path: '../../../public/fonts/CoralPixels-Regular.woff2',
+      path: '../../public/fonts/CoralPixels-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
