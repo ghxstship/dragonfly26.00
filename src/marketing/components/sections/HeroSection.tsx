@@ -20,7 +20,7 @@ export function HeroSection(): JSX.Element {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl md:text-2xl font-heading uppercase text-gray-600 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed">
             {t('subheadline')}
           </p>
 
