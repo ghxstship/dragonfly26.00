@@ -23,22 +23,22 @@ export function SecuritySection(): JSX.Element {
         <div className={grid.cards4}>
           <div className="text-center">
             <Lock className={cn("mx-auto mb-4 text-green-600", height.iconXl)} aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('feature1Title')}</h3>
+            <h3 className="text-lg  text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('feature1Title')}</h3>
             <p className="text-gray-600 dark:text-gray-400">{t('feature1Description')}</p>
           </div>
           <div className="text-center">
             <Shield className={cn("mx-auto mb-4 text-green-600", height.iconXl)} aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('feature2Title')}</h3>
+            <h3 className="text-lg  text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('feature2Title')}</h3>
             <p className="text-gray-600 dark:text-gray-400">{t('feature2Description')}</p>
           </div>
           <div className="text-center">
             <Globe className={cn("mx-auto mb-4 text-green-600", height.iconXl)} aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('feature3Title')}</h3>
+            <h3 className="text-lg  text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('feature3Title')}</h3>
             <p className="text-gray-600 dark:text-gray-400">{t('feature3Description')}</p>
           </div>
           <div className="text-center">
             <Zap className={cn("mx-auto mb-4 text-green-600", height.iconXl)} aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('feature4Title')}</h3>
+            <h3 className="text-lg  text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('feature4Title')}</h3>
             <p className="text-gray-600 dark:text-gray-400">{t('feature4Description')}</p>
           </div>
         </div>

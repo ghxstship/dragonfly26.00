@@ -18,7 +18,7 @@ export function PricingSection(): JSX.Element {
           <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
             <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('community.name')}</h3>
             <div className="mb-4">
-              <span className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">{t('community.price')}</span>
+              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{t('community.price')}</span>
               <span className="text-gray-600 dark:text-gray-400"> {t('community.period')}</span>
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6">{t('community.description')}</p>
@@ -45,7 +45,7 @@ export function PricingSection(): JSX.Element {
           <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
             <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pro.name')}</h3>
             <div className="mb-4">
-              <span className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">{t('pro.price')}</span>
+              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{t('pro.price')}</span>
               <span className="text-gray-600 dark:text-gray-400">/{t('pro.period')}</span>
               <p className="text-sm text-gray-500 dark:text-gray-500">{t('pro.annualPrice')}</p>
             </div>
@@ -76,7 +76,7 @@ export function PricingSection(): JSX.Element {
             </div>
             <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0 font-heading uppercase">{t('team.name')}</h3>
             <div className="mb-4">
-              <span className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">{t('team.price')}</span>
+              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{t('team.price')}</span>
               <span className="text-gray-600 dark:text-gray-400">/{t('team.period')}</span>
               <p className="text-sm text-gray-500 dark:text-gray-500">{t('team.annualPrice')}</p>
             </div>
@@ -104,7 +104,7 @@ export function PricingSection(): JSX.Element {
           <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
             <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('enterprise.name')}</h3>
             <div className="mb-4">
-              <span className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">{t('enterprise.price')}</span>
+              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{t('enterprise.price')}</span>
               <span className="text-gray-600 dark:text-gray-400">/{t('enterprise.period')}</span>
               <p className="text-sm text-gray-500 dark:text-gray-500">{t('enterprise.annualPrice')}</p>
             </div>
@@ -130,7 +130,7 @@ export function PricingSection(): JSX.Element {
         </div>
 
         <div className="text-center">
-          <Link href="/pricing" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          <Link href="/pricing" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
             View detailed pricing →
           </Link>
         </div>

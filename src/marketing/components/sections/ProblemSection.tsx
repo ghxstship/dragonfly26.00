@@ -23,22 +23,22 @@ export function ProblemSection(): JSX.Element {
         <div className={grid.cards4}>
           <div className="text-center">
             <AlertCircle className={cn("mx-auto mb-4 text-red-500", height.iconXl)} aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pain1Title')}</h3>
+            <h3 className="text-lg  text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pain1Title')}</h3>
             <p className="text-gray-600 dark:text-gray-400">{t('pain1Description')}</p>
           </div>
           <div className="text-center">
             <FileX className={cn("mx-auto mb-4 text-red-500", height.iconXl)} aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pain2Title')}</h3>
+            <h3 className="text-lg  text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pain2Title')}</h3>
             <p className="text-gray-600 dark:text-gray-400">{t('pain2Description')}</p>
           </div>
           <div className="text-center">
             <DollarSign className={cn("mx-auto mb-4 text-red-500", height.iconXl)} aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pain3Title')}</h3>
+            <h3 className="text-lg  text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pain3Title')}</h3>
             <p className="text-gray-600 dark:text-gray-400">{t('pain3Description')}</p>
           </div>
           <div className="text-center">
             <MessageSquareX className={cn("mx-auto mb-4 text-red-500", height.iconXl)} aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pain4Title')}</h3>
+            <h3 className="text-lg  text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pain4Title')}</h3>
             <p className="text-gray-600 dark:text-gray-400">{t('pain4Description')}</p>
           </div>
         </div>

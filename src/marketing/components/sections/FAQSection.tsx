@@ -37,7 +37,7 @@ export function FAQSection(): JSX.Element {
                 className={cn("w-full text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors", padding.section)}
                 aria-expanded={openIndex === index}
               >
-                <span className="font-semibold text-gray-900 dark:text-white pr-4">{faq.question}</span>
+                <span className="font-heading uppercase text-gray-900 dark:text-white pr-4">{faq.question}</span>
                 <ChevronDown
                   className={cn("text-gray-500 flex-shrink-0 transition-transform", height.icon, openIndex === index && "rotate-180")}
                   aria-hidden="true"

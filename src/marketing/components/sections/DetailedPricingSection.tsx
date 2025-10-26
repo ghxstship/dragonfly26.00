@@ -225,12 +225,12 @@ function RoleModal({ role, onClose }: RoleModalProps) {
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
           <div className="bg-gray-800/50 rounded-lg p-4">
-            <div className="text-gray-400 text-xs uppercase font-semibold mb-1">Access Level</div>
-            <div className="text-white font-bold">{roleData.accessLevel}</div>
+            <div className="text-gray-400 text-xs font-heading uppercase mb-1">Access Level</div>
+            <div className="text-white font-heading uppercase">{roleData.accessLevel}</div>
           </div>
           <div className="bg-gray-800/50 rounded-lg p-4">
-            <div className="text-gray-400 text-xs uppercase font-semibold mb-1">Permissions</div>
-            <div className="text-white font-bold">{roleData.permissions}</div>
+            <div className="text-gray-400 text-xs font-heading uppercase mb-1">Permissions</div>
+            <div className="text-white font-heading uppercase">{roleData.permissions}</div>
           </div>
         </div>
 
@@ -246,7 +246,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
             {roleData.abilities.map((ability, index) => (
               <li 
                 key={index}
-                className="flex items-start text-gray-300 text-sm hover:translate-x-1 transition-transform"
+                className="flex items-start text-gray-300 dark:text-gray-400 text-sm hover:translate-x-1 transition-transform"
               >
                 <span className="text-green-400 mr-2 mt-0.5">▸</span>
                 <span>{ability}</span>
@@ -306,7 +306,7 @@ export function DetailedPricingSection(): JSX.Element {
 
           {/* Billing Toggle */}
           <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 lg:gap-4 mb-8 md:mb-12 lg:mb-16 animate-in fade-in duration-1000 delay-300">
-            <span className={cn("text-lg font-semibold", !isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
+            <span className={cn("text-lg font-heading uppercase", !isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
               Monthly
             </span>
             <button
@@ -320,11 +320,11 @@ export function DetailedPricingSection(): JSX.Element {
                 style={{ transform: isAnnual ? 'translateX(32px)' : 'translateX(0)' }}
               />
             </button>
-            <span className={cn("text-lg font-semibold", isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
+            <span className={cn("text-lg font-heading uppercase", isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
               Annual
             </span>
             {isAnnual && (
-              <span className="ml-2 px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">
+              <span className="ml-2 px-3 py-1 bg-green-100 text-green-800 text-sm font-heading uppercase rounded-full">
                 Save 2 Months
               </span>
             )}
@@ -401,7 +401,7 @@ export function DetailedPricingSection(): JSX.Element {
               <p className="text-sm text-gray-500 dark:text-gray-500 mb-6">Single Seat</p>
 
               <div className="space-y-3 md:space-y-4 lg:space-y-6 mb-4 md:mb-6 lg:mb-8">
-                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Everything in Community, plus:</p>
+                <p className="text-sm font-heading uppercase text-gray-700 dark:text-gray-300">Everything in Community, plus:</p>
 
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">EFFICIENCY</h4>
@@ -470,7 +470,7 @@ export function DetailedPricingSection(): JSX.Element {
               <p className="text-sm text-gray-500 dark:text-gray-500 mb-6">2-10 Seats</p>
 
               <div className="space-y-3 md:space-y-4 lg:space-y-6 mb-4 md:mb-6 lg:mb-8">
-                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Everything in Pro, plus:</p>
+                <p className="text-sm font-heading uppercase text-gray-700 dark:text-gray-300">Everything in Pro, plus:</p>
 
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">TEAM MANAGEMENT</h4>
@@ -545,7 +545,7 @@ export function DetailedPricingSection(): JSX.Element {
               <p className="text-sm text-gray-500 dark:text-gray-500 mb-6">2-20 Seats</p>
 
               <div className="space-y-3 md:space-y-4 lg:space-y-6 mb-4 md:mb-6 lg:mb-8">
-                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Everything in Team, plus:</p>
+                <p className="text-sm font-heading uppercase text-gray-700 dark:text-gray-300">Everything in Team, plus:</p>
 
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">ENTERPRISE CONTROL</h4>
@@ -625,8 +625,8 @@ export function DetailedPricingSection(): JSX.Element {
           {/* Additional Seats */}
           <div className="text-center text-gray-600 dark:text-gray-400 animate-in fade-in duration-1200 delay-800">
             <p className="text-lg">
-              <span className="font-semibold">Need More Seats?</span> Additional seats available for{' '}
-              <span className="font-bold text-gray-900 dark:text-white">
+              <span className="font-heading uppercase">Need More Seats?</span> Additional seats available for{' '}
+              <span className="font-heading uppercase text-gray-900 dark:text-white">
                 ${isAnnual ? '10' : '12'}/month
               </span>
               {isAnnual && ' ($120 when billed annually)'}
