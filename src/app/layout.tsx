@@ -96,7 +96,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${coralPixels.variable} ${antonSC.variable} ${bebasNeue.variable} ${shareTechMono.variable} ${shareTech.variable} ${inter.className}`}>
+      <body className={`${inter.variable} ${coralPixels.variable} ${antonSC.variable} ${bebasNeue.variable} ${shareTechMono.variable} ${shareTech.variable} font-tech`}>
         <QueryProvider>
           <ThemeProvider
             attribute="class"
