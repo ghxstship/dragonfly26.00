@@ -7901,6 +7901,132 @@
         "feature4": "Security & permissions"
       }
     },
+    "detailedFeatures": {
+      "hero": {
+        "title": "Everything You Need to Produce at Scale",
+        "subtitle": "Six integrated hubs with comprehensive modules designed specifically for experiential production teams"
+      },
+      "production": {
+        "title": "Production Hub",
+        "description": "Manage projects, events, people, assets, locations, and files",
+        "projects": {
+          "title": "Projects",
+          "description": "Organize and track all your production projects from concept to completion"
+        },
+        "events": {
+          "title": "Events",
+          "description": "Schedule, coordinate, and manage all event details and timelines"
+        },
+        "people": {
+          "title": "People",
+          "description": "Manage crew, staff, and team member assignments and availability"
+        },
+        "assets": {
+          "title": "Assets",
+          "description": "Track equipment, inventory, and physical resources across productions"
+        },
+        "locations": {
+          "title": "Locations",
+          "description": "Coordinate venues, sites, and facility logistics for your events"
+        },
+        "files": {
+          "title": "Files",
+          "description": "Centralize documents, media, and production files in one secure location"
+        }
+      },
+      "business": {
+        "title": "Business Hub",
+        "description": "Handle companies, jobs, procurement, and finances",
+        "companies": {
+          "title": "Companies",
+          "description": "Manage vendor relationships, client accounts, and partner organizations"
+        },
+        "jobs": {
+          "title": "Jobs",
+          "description": "Post positions, track applications, and manage hiring workflows"
+        },
+        "procurement": {
+          "title": "Procurement",
+          "description": "Streamline purchasing, vendor selection, and contract management"
+        },
+        "invoices": {
+          "title": "Invoices",
+          "description": "Create, send, and track invoices with automated payment reminders"
+        },
+        "expenses": {
+          "title": "Expenses",
+          "description": "Record and categorize expenses with receipt capture and approval workflows"
+        },
+        "budgets": {
+          "title": "Budgets",
+          "description": "Plan, monitor, and control project budgets with real-time tracking"
+        }
+      },
+      "network": {
+        "title": "Network Hub",
+        "description": "Build community, marketplace, and resource library",
+        "community": {
+          "title": "Community",
+          "description": "Connect with industry professionals, share knowledge, and collaborate"
+        },
+        "marketplace": {
+          "title": "Marketplace",
+          "description": "Discover services, hire talent, and find production resources"
+        },
+        "resources": {
+          "title": "Resources",
+          "description": "Access guides, templates, and best practices for production excellence"
+        }
+      },
+      "automations": {
+        "title": "Automations Hub",
+        "description": "Automate workflows, triggers, and repetitive tasks",
+        "workflows": {
+          "title": "Workflows",
+          "description": "Build custom automation sequences to streamline repetitive processes"
+        },
+        "triggers": {
+          "title": "Triggers",
+          "description": "Set up event-driven actions that respond to system changes automatically"
+        },
+        "scheduled": {
+          "title": "Scheduled Tasks",
+          "description": "Automate recurring tasks with flexible scheduling and execution rules"
+        }
+      },
+      "intelligence": {
+        "title": "Intelligence Hub",
+        "description": "Generate reports, analytics, and insights",
+        "reports": {
+          "title": "Reports",
+          "description": "Create custom reports with flexible data visualization and export options"
+        },
+        "analytics": {
+          "title": "Analytics",
+          "description": "Track KPIs, monitor trends, and measure production performance metrics"
+        },
+        "insights": {
+          "title": "Insights",
+          "description": "Get AI-powered recommendations and predictive analytics for better decisions"
+        }
+      },
+      "system": {
+        "title": "System Hub",
+        "description": "Configure admin, settings, and user profiles",
+        "admin": {
+          "title": "Admin",
+          "description": "Manage organization settings, security policies, and system configuration"
+        },
+        "settings": {
+          "title": "Settings",
+          "description": "Customize preferences, integrations, and platform behavior"
+        },
+        "profiles": {
+          "title": "User Profiles",
+          "description": "Manage team member profiles, roles, and access permissions"
+        }
+      }
+    },
     "roles": {
       "title": "Built for Every Role on Your Team",
       "subtitle": "10 branded roles with precise permissions",

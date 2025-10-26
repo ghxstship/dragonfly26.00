@@ -4,7 +4,7 @@ import { HeroSection } from "@/marketing/components/sections/HeroSection"
 import { TrustBar } from "@/marketing/components/sections/TrustBar"
 import { ProblemSection } from "@/marketing/components/sections/ProblemSection"
 import { SolutionSection } from "@/marketing/components/sections/SolutionSection"
-import { FeaturesSection } from "@/marketing/components/sections/FeaturesSection"
+import { FeaturesOverviewSection } from "@/marketing/components/sections/FeaturesOverviewSection"
 import { HowItWorksSection } from "@/marketing/components/sections/HowItWorksSection"
 import { RolesSection } from "@/marketing/components/sections/RolesSection"
 import { TestimonialsSection } from "@/marketing/components/sections/TestimonialsSection"
@@ -44,7 +44,7 @@ export default async function Home({ params }: PageProps) {
         <TrustBar />
         <ProblemSection />
         <SolutionSection />
-        <FeaturesSection />
+        <FeaturesOverviewSection />
         <HowItWorksSection />
         <RolesSection />
         <TestimonialsSection />

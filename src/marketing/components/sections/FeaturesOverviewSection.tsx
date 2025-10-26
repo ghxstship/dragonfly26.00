@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 import { spacing, grid, padding, border, container, height } from "@/design-tokens"
 import { Briefcase, Building2, Network, Zap, BarChart3, Settings } from "lucide-react"
 
-export function FeaturesSection(): JSX.Element {
+export function FeaturesOverviewSection(): JSX.Element {
   const t = useTranslations('marketing.features')
   
   return (
