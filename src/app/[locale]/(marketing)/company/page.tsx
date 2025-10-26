@@ -17,7 +17,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ locale
       {/* Hero Section */}
       <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
-          <h1 className="text-5xl md:text-3xl md:text-5xl lg:text-6xl font-title uppercase text-gray-900 dark:text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-title uppercase text-gray-900 dark:text-white mb-6">
             Built by Production Professionals,<br />for Production Professionals
           </h1>
           <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">

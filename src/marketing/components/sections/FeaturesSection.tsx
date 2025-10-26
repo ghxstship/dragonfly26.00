@@ -12,7 +12,7 @@ export function FeaturesSection(): JSX.Element {
     <section className={cn("py-20 bg-white dark:bg-gray-950", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className={cn("text-center mb-16 mx-auto", container['2xl'])}>
-          <h1 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl font-title uppercase text-gray-900 dark:text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-title uppercase text-gray-900 dark:text-white mb-6">
             {t('title')}
           </h1>
           <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400">

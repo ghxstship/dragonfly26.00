@@ -18,7 +18,7 @@ export default async function DemoPage({ params }: { params: Promise<{ locale: s
       <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8">
         <div className="max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
-            <h1 className="text-xl md:text-2xl lg:text-3xl md:text-2xl md:text-3xl lg:text-4xl lg:text-5xl font-title uppercase text-gray-900 dark:text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-title uppercase text-gray-900 dark:text-white mb-6">
               See ATLVS in Action
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400">
