@@ -57,10 +57,25 @@
     @apply bg-background text-foreground;
   }
   
-  /* Marketing Typography - Apply Share Tech as default body font */
-  /* Only apply to elements WITHOUT explicit font classes */
+  /* Marketing Typography - Explicit font class definitions */
+  .font-pixel {
+    font-family: var(--font-coral-pixels), monospace;
+  }
+  
+  .font-title {
+    font-family: var(--font-anton-sc), sans-serif;
+  }
+  
+  .font-heading {
+    font-family: var(--font-bebas-neue), sans-serif;
+  }
+  
   .font-tech {
     font-family: var(--font-share-tech), sans-serif;
+  }
+  
+  .font-tech-mono {
+    font-family: var(--font-share-tech-mono), monospace;
   }
 }
 
