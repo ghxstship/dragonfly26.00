@@ -28,6 +28,9 @@ export function MarketingNav(): JSX.Element {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex flex-wrap md:flex-nowrap items-center space-x-2 md:space-x-4 lg:space-x-4 md:space-x-6 lg:space-x-8">
+              <Link href="/solutions" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase">
+                {t('solutions')}
+              </Link>
               <Link href="/features" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase">
                 {t('features')}
               </Link>
@@ -86,6 +89,13 @@ export function MarketingNav(): JSX.Element {
               </div>
 
               {/* Navigation Links */}
+              <Link
+                href="/solutions"
+                className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-heading uppercase"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t('solutions')}
+              </Link>
               <Link
                 href="/features"
                 className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-heading uppercase"

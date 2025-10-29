@@ -323,7 +323,50 @@
       "company": "Company",
       "signIn": "Sign In",
       "startFree": "Start Free",
-      "toggleMenu": "Toggle menu"
+      "toggleMenu": "Toggle menu",
+      "solutions": "Solutions"
+    },
+    "solutions": {
+      "hero": {
+        "title": "Solutions by Industry",
+        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+      },
+      "concerts": {
+        "title": "Concerts & Touring",
+        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+      },
+      "festivals": {
+        "title": "Music & Art Festivals",
+        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+      },
+      "immersive": {
+        "title": "Immersive & Experiential Events",
+        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+      },
+      "theatrical": {
+        "title": "Theatrical & Live Productions",
+        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+      },
+      "filmTv": {
+        "title": "Film, TV & Media",
+        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+      },
+      "brandActivations": {
+        "title": "Brand Activations & Marketing Campaigns",
+        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+      },
+      "corporate": {
+        "title": "Corporate & Private Events",
+        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+      },
+      "tradeShows": {
+        "title": "Trade Shows & Conventions",
+        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+      },
+      "wellness": {
+        "title": "Health, Wellness & Lifestyle",
+        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+      }
     },
     "hero": {
       "headline": "The Project Management System for",
@@ -582,7 +625,6 @@
       "pricing": "Pricing",
       "docs": "Documentation",
       "changelog": "Changelog",
-      "company": "Company",
       "company": "Company",
       "blog": "Blog",
       "careers": "Careers",
