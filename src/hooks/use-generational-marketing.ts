@@ -17,6 +17,7 @@ import type { GenerationalVariant } from '@/types/generational-language';
  */
 export function useGenerationalMarketing() {
   const t = useTranslations('marketing');
+  const tGenerational = useTranslations('marketing.generational');
   const { variant } = useGenerationalLanguage();
   
   /**
@@ -31,34 +32,17 @@ export function useGenerationalMarketing() {
     
     // Try to get generational variant
     try {
+      // Attempt to access the generational variant
+      // Format: marketing.generational.{variant}.{key}
       const generationalKey = `${variant}.${key}`;
-      const messages = (t as any).raw('');
+      const value = tGenerational(generationalKey as any);
       
-      // Navigate to the generational variant
-      const parts = generationalKey.split('.');
-      let value: any = messages;
-      
-      // First check if marketingGenerational exists
-      if (messages.marketingGenerational && messages.marketingGenerational[variant]) {
-        value = messages.marketingGenerational[variant];
-        
-        // Navigate through remaining parts
-        for (let i = 0; i < parts.length - 1; i++) {
-          if (value && typeof value === 'object' && parts[i + 1] in value) {
-            value = value[parts[i + 1]];
-          } else {
-            // Fallback to default
-            return t(key);
-          }
-        }
-        
-        if (typeof value === 'string') {
-          return value;
-        }
+      if (value && typeof value === 'string' && !value.startsWith('marketing.generational.')) {
+        return value;
       }
     } catch (error) {
-      // Fallback to default on any error
-      console.warn(`Generational variant not found for ${variant}.${key}, using default`);
+      // Fallback to default on any error (variant not found)
+      // This is expected behavior when generational variants aren't available
     }
     
     // Fallback to default marketing copy

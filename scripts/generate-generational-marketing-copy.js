@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
 /**
- * Generate Generational Marketing Copy
+ * Generate Generational Marketing Copy - COMPLETE VERSION
  * 
- * Creates generational variants for all marketing copy:
- * - Baby Boomer: Traditional, formal, value-focused
- * - Gen X: Pragmatic, skeptical, no-nonsense
+ * Creates generational variants for ALL marketing copy:
+ * - Baby Boomer: Traditional, formal, value-focused, professional
+ * - Gen X: Pragmatic, skeptical, no-nonsense, direct
  * - Millennial: Collaborative, purpose-driven, tech-savvy (similar to default)
- * - Gen Z: Authentic, direct, meme-aware
- * - Gen Alpha: Digital-native, visual, gamified
+ * - Gen Z: Authentic, direct, casual, meme-aware
+ * - Gen Alpha: Digital-native, visual, gamified, emoji-heavy
  */
 
 const fs = require('fs');
@@ -16,7 +16,7 @@ const path = require('path');
 
 const EN_JSON_PATH = path.join(__dirname, '../src/i18n/messages/en.json');
 
-// Generational variants for marketing copy
+// Complete generational variants for ALL marketing sections
 const generationalVariants = {
   "baby-boomer": {
     "hero": {

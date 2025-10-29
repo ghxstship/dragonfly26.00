@@ -3,25 +3,10 @@
 import { useState, useTransition } from "react"
 import { useLocale, useTranslations } from "next-intl"
 import { useRouter, usePathname } from "@/i18n/navigation"
-import { Languages, Check } from "lucide-react"
+import { ChevronDown, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  DropdownMenuGroup,
-} from "@/components/ui/dropdown-menu"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { locales, languageNames, type Locale } from "@/i18n/config"
 import { setStoredLanguage } from "@/lib/language-preference"
-import { cn } from "@/lib/utils"
 
 export function LanguageSwitcher() {
   const t = useTranslations("language")
@@ -29,10 +14,14 @@ export function LanguageSwitcher() {
   const router = useRouter()
   const pathname = usePathname()
   const [isPending, startTransition] = useTransition()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const currentLanguage = languageNames[locale as Locale]
 
   const changeLanguage = (newLocale: Locale) => {
     // Save user's language preference
     setStoredLanguage(newLocale)
+    setIsOpen(false)
     
     startTransition(() => {
       // Use push + refresh to force full re-render with new translations
@@ -43,53 +32,90 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <DropdownMenu>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-9 w-9"
-              disabled={isPending}
-            >
-              <Languages className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{t("selectLanguage")}</p>
-        </TooltipContent>
-      </Tooltip>
-      <DropdownMenuContent align="end" className="w-full sm:w-64 max-h-[300px] md:h-[500px] overflow-y-auto">
-        <DropdownMenuLabel>{t("selectLanguage")}</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          {locales.map((lang: any) => (
-            <DropdownMenuItem
-              key={lang}
-              onClick={() => changeLanguage(lang)}
-              className={cn(
-                "cursor-pointer flex items-center justify-between gap-3",
-                locale === lang && "bg-accent"
-              )}
-            >
-              <div className="flex items-center gap-3 flex-1 min-w-0">
-                <span className="text-2xl flex-shrink-0" aria-hidden="true">
-                  {languageNames[lang].flag}
-                </span>
-                <div className="flex flex-col min-w-0">
-                  <span className="font-medium">{languageNames[lang].native}</span>
-                  <span className="text-xs text-muted-foreground">
-                    {languageNames[lang].english}
+    <div className="relative">
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 font-tech text-sm"
+        disabled={isPending}
+        aria-label="Change language"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        <span className="text-base" aria-hidden="true">{currentLanguage.flag}</span>
+        <span className="hidden sm:inline">{currentLanguage.native}</span>
+        <ChevronDown 
+          className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        />
+      </Button>
+
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 z-40" 
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+          />
+          
+          {/* Dropdown */}
+          <div 
+            className="absolute right-0 top-full mt-2 w-72 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg z-50 overflow-hidden"
+            role="menu"
+            aria-label="Language options"
+          >
+            <div className="p-3 border-b border-gray-200 dark:border-gray-700">
+              <h3 className="font-heading text-sm uppercase text-gray-900 dark:text-gray-100">
+                {t("selectLanguage")}
+              </h3>
+              <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                Choose your preferred language
+              </p>
+            </div>
+            
+            <div className="max-h-96 overflow-y-auto">
+              {locales.map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => changeLanguage(lang)}
+                  disabled={isPending}
+                  className={`w-full px-4 py-3 flex items-start gap-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors ${
+                    locale === lang ? 'bg-gray-50 dark:bg-gray-700/50' : ''
+                  }`}
+                  role="menuitem"
+                  aria-label={`Switch to ${languageNames[lang].english}`}
+                >
+                  <span className="text-2xl flex-shrink-0 mt-0.5" aria-hidden="true">
+                    {languageNames[lang].flag}
                   </span>
-                </div>
-              </div>
-              {locale === lang && <Check className="h-4 w-4 flex-shrink-0" aria-label="Currently selected" />}
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+                  
+                  <div className="flex-1 text-left min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="font-heading text-sm uppercase text-gray-900 dark:text-gray-100">
+                        {languageNames[lang].native}
+                      </span>
+                      {locale === lang && (
+                        <Check className="h-4 w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-label="Currently selected" />
+                      )}
+                    </div>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                      {languageNames[lang].english}
+                    </p>
+                  </div>
+                </button>
+              ))}
+            </div>
+            
+            <div className="p-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+              <p className="text-xs text-gray-600 dark:text-gray-400">
+                Your language preference is saved locally
+              </p>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
   )
 }

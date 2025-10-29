@@ -30,35 +30,35 @@ export const GENERATIONAL_VARIANTS: Record<GenerationalVariant, GenerationalLang
   },
   'baby-boomer': {
     variant: 'baby-boomer',
-    label: 'Classic',
+    label: 'Baby Boomers',
     description: 'Traditional and proven',
     icon: '🎖️',
     ageRange: '1946-1964'
   },
   'gen-x': {
     variant: 'gen-x',
-    label: 'Pragmatic',
+    label: 'Gen X',
     description: 'No-nonsense and direct',
     icon: '🎸',
     ageRange: '1965-1980'
   },
   'millennial': {
     variant: 'millennial',
-    label: 'Collaborative',
+    label: 'Millennials',
     description: 'Purpose-driven and connected',
     icon: '💼',
     ageRange: '1981-1996'
   },
   'gen-z': {
     variant: 'gen-z',
-    label: 'Authentic',
+    label: 'Gen Z',
     description: 'Real and unfiltered',
     icon: '✨',
     ageRange: '1997-2012'
   },
   'gen-alpha': {
     variant: 'gen-alpha',
-    label: 'Digital',
+    label: 'Gen Alpha',
     description: 'Interactive and visual',
     icon: '🚀',
     ageRange: '2013+'

@@ -50,9 +50,9 @@ export function MarketingNav(): JSX.Element {
 
             {/* CTA Buttons + Theme/Language Toggles */}
             <div className="hidden md:flex flex-wrap md:flex-nowrap items-center space-x-2">
+              <LanguageSwitcher />
               <GenerationalLanguageToggle />
               <ThemeToggle />
-              <LanguageSwitcher />
               <div className="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-2" />
               <Link href="/login">
                 <Button variant="ghost">{t('signIn')}</Button>
@@ -135,9 +135,9 @@ export function MarketingNav(): JSX.Element {
               {/* Secondary Settings - Bottom (iOS/Android Pattern) */}
               <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
                 <div className="flex items-center justify-center gap-3">
+                  <LanguageSwitcher />
                   <GenerationalLanguageToggle />
                   <ThemeToggle />
-                  <LanguageSwitcher />
                 </div>
               </div>
             </div>
