@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useGenerationalLanguage } from '@/contexts/GenerationalLanguageContext';
 import { GENERATIONAL_VARIANTS, type GenerationalVariant } from '@/types/generational-language';
 import { Button } from '@/components/ui/button';
@@ -9,8 +10,16 @@ import { ChevronDown, Check } from 'lucide-react';
 export function GenerationalLanguageToggle() {
   const { variant, setVariant } = useGenerationalLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const currentConfig = GENERATIONAL_VARIANTS[variant];
+
+  const handleVariantChange = (newVariant: GenerationalVariant) => {
+    setVariant(newVariant);
+    setIsOpen(false);
+    // Force page reload to apply new variant
+    router.refresh();
+  };
 
   return (
     <div className="relative">
@@ -59,10 +68,7 @@ export function GenerationalLanguageToggle() {
               {Object.values(GENERATIONAL_VARIANTS).map((config) => (
                 <button
                   key={config.variant}
-                  onClick={() => {
-                    setVariant(config.variant);
-                    setIsOpen(false);
-                  }}
+                  onClick={() => handleVariantChange(config.variant)}
                   className={`w-full px-4 py-3 flex items-start gap-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors ${
                     variant === config.variant ? 'bg-gray-50 dark:bg-gray-700/50' : ''
                   }`}

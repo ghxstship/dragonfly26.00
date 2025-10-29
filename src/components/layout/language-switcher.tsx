@@ -35,9 +35,10 @@ export function LanguageSwitcher() {
     setStoredLanguage(newLocale)
     
     startTransition(() => {
-      // The next-intl router automatically handles locale prefixing
-      // We just need to replace the locale parameter in the URL
-      router.replace(pathname, { locale: newLocale })
+      // Use push + refresh to force full re-render with new translations
+      router.push(pathname, { locale: newLocale })
+      // Force a refresh to reload translations
+      router.refresh()
     })
   }
 
@@ -69,17 +70,22 @@ export function LanguageSwitcher() {
               key={lang}
               onClick={() => changeLanguage(lang)}
               className={cn(
-                "cursor-pointer flex items-center justify-between",
+                "cursor-pointer flex items-center justify-between gap-3",
                 locale === lang && "bg-accent"
               )}
             >
-              <div className="flex flex-wrap flex-col">
-                <span className="font-medium">{languageNames[lang].native}</span>
-                <span className="text-xs text-muted-foreground">
-                  {languageNames[lang].english}
+              <div className="flex items-center gap-3 flex-1 min-w-0">
+                <span className="text-2xl flex-shrink-0" aria-hidden="true">
+                  {languageNames[lang].flag}
                 </span>
+                <div className="flex flex-col min-w-0">
+                  <span className="font-medium">{languageNames[lang].native}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {languageNames[lang].english}
+                  </span>
+                </div>
               </div>
-              {locale === lang && <Check className="h-4 w-4 ml-2" />}
+              {locale === lang && <Check className="h-4 w-4 flex-shrink-0" aria-label="Currently selected" />}
             </DropdownMenuItem>
           ))}
         </DropdownMenuGroup>

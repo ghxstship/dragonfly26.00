@@ -15,7 +15,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ locale
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-title uppercase text-gray-900 dark:text-white mb-6">
             Built by Production Professionals,<br />for Production Professionals
@@ -27,7 +27,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ locale
       </section>
 
       {/* Story Section */}
-      <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8">
+      <section className="py-10 md:py-16 lg:py-20 px-4 sm:px-4 md:px-6 lg:px-4 md:px-6 lg:px-8 bg-white dark:bg-gray-950">
         <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto">
           <div className="prose prose-lg max-w-none">
             <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-6">Our Story</h2>
@@ -40,36 +40,42 @@ export default async function CompanyPage({ params }: { params: Promise<{ locale
 
             <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-6 mt-12">Our Mission</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              To empower production teams with professional-grade management tools that eliminate chaos, improve collaboration, and deliver unforgettable experiences—without the headaches.
+              To empower unconventional industries with the tools to create unimaginable experiences.
             </p>
 
             <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-6 mt-12">Our Vision</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              A world where every production team—from independent contractors to enterprise producers—has access to the tools they need to succeed, regardless of size or budget.
+              Venture Beyond Limits
             </p>
 
             <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-6 mt-12">Our Values</h2>
-            <ul className="space-y-4">
-              <li className="flex flex-wrap flex-col md:flex-row items-start">
-                <span className="text-gray-900 dark:text-white mr-2">User-First:</span>
-                <span className="text-gray-600 dark:text-gray-400">We build for production professionals, not investors.</span>
-              </li>
-              <li className="flex flex-wrap flex-col md:flex-row items-start">
-                <span className="text-gray-900 dark:text-white mr-2">Excellence:</span>
-                <span className="text-gray-600 dark:text-gray-400">We ship quality, not just features.</span>
-              </li>
-              <li className="flex flex-wrap flex-col md:flex-row items-start">
-                <span className="text-gray-900 dark:text-white mr-2">Transparency:</span>
-                <span className="text-gray-600 dark:text-gray-400">We communicate openly and honestly.</span>
-              </li>
-              <li className="flex flex-wrap flex-col md:flex-row items-start">
-                <span className="text-gray-900 dark:text-white mr-2">Collaboration:</span>
-                <span className="text-gray-600 dark:text-gray-400">We win as a team.</span>
-              </li>
-              <li className="flex flex-wrap flex-col md:flex-row items-start">
-                <span className="text-gray-900 dark:text-white mr-2">Innovation:</span>
-                <span className="text-gray-600 dark:text-gray-400">We challenge the status quo.</span>
-              </li>
+            <ul className="space-y-2 mb-8">
+              <li className="text-gray-600 dark:text-gray-400">Innovation</li>
+              <li className="text-gray-600 dark:text-gray-400">Diversity</li>
+              <li className="text-gray-600 dark:text-gray-400">Education</li>
+              <li className="text-gray-600 dark:text-gray-400">Accessibility</li>
+              <li className="text-gray-600 dark:text-gray-400">Sustainability</li>
+            </ul>
+
+            <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-6 mt-12">How We Interact</h2>
+            <ul className="space-y-2 mb-8">
+              <li className="text-gray-600 dark:text-gray-400">Authenticity</li>
+              <li className="text-gray-600 dark:text-gray-400">Transparency</li>
+              <li className="text-gray-600 dark:text-gray-400">Camaraderie</li>
+            </ul>
+
+            <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-6 mt-12">How We Operate</h2>
+            <ul className="space-y-2 mb-8">
+              <li className="text-gray-600 dark:text-gray-400">Preparation</li>
+              <li className="text-gray-600 dark:text-gray-400">Organization</li>
+              <li className="text-gray-600 dark:text-gray-400">Communication</li>
+            </ul>
+
+            <h2 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-heading uppercase text-gray-900 dark:text-white mb-6 mt-12">How We Create</h2>
+            <ul className="space-y-2">
+              <li className="text-gray-600 dark:text-gray-400">Modularity</li>
+              <li className="text-gray-600 dark:text-gray-400">Flexibility</li>
+              <li className="text-gray-600 dark:text-gray-400">Scalability</li>
             </ul>
           </div>
         </div>

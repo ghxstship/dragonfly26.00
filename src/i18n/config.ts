@@ -1,49 +1,50 @@
+// Ordered by usage in North America
 export const locales = [
-  'en', // English
-  'zh', // Mandarin Chinese
-  'hi', // Hindi
-  'es', // Spanish
-  'fr', // French
-  'ar', // Arabic
-  'bn', // Bengali
-  'ru', // Russian
-  'pt', // Portuguese
-  'id', // Indonesian
-  'ur', // Urdu
-  'de', // German
-  'ja', // Japanese
-  'sw', // Swahili
-  'mr', // Marathi
-  'te', // Telugu
-  'tr', // Turkish
-  'ta', // Tamil
-  'vi', // Vietnamese
-  'ko', // Korean
+  'en', // English - Primary
+  'es', // Spanish - Second most common
+  'fr', // French - Canada
+  'zh', // Chinese - Large communities
+  'hi', // Hindi - Growing population
+  'ar', // Arabic - Significant communities
+  'ko', // Korean - Major communities
+  'vi', // Vietnamese - Major communities
+  'pt', // Portuguese - Growing
+  'de', // German - Historical communities
+  'ja', // Japanese - Business/tech
+  'ru', // Russian - Communities
+  'id', // Indonesian - Growing
+  'ur', // Urdu - South Asian communities
+  'bn', // Bengali - South Asian communities
+  'ta', // Tamil - South Asian communities
+  'te', // Telugu - South Asian communities
+  'mr', // Marathi - South Asian communities
+  'tr', // Turkish - Communities
+  'sw', // Swahili - African diaspora
 ] as const
 
 export type Locale = (typeof locales)[number]
 
-export const languageNames: Record<Locale, { native: string; english: string }> = {
-  en: { native: 'English', english: 'English' },
-  zh: { native: '中文', english: 'Chinese' },
-  hi: { native: 'हिन्दी', english: 'Hindi' },
-  es: { native: 'Español', english: 'Spanish' },
-  fr: { native: 'Français', english: 'French' },
-  ar: { native: 'العربية', english: 'Arabic' },
-  bn: { native: 'বাংলা', english: 'Bengali' },
-  ru: { native: 'Русский', english: 'Russian' },
-  pt: { native: 'Português', english: 'Portuguese' },
-  id: { native: 'Bahasa Indonesia', english: 'Indonesian' },
-  ur: { native: 'اردو', english: 'Urdu' },
-  de: { native: 'Deutsch', english: 'German' },
-  ja: { native: '日本語', english: 'Japanese' },
-  sw: { native: 'Kiswahili', english: 'Swahili' },
-  mr: { native: 'मराठी', english: 'Marathi' },
-  te: { native: 'తెలుగు', english: 'Telugu' },
-  tr: { native: 'Türkçe', english: 'Turkish' },
-  ta: { native: 'தமிழ்', english: 'Tamil' },
-  vi: { native: 'Tiếng Việt', english: 'Vietnamese' },
-  ko: { native: '한국어', english: 'Korean' },
+export const languageNames: Record<Locale, { native: string; english: string; flag: string }> = {
+  en: { native: 'English', english: 'English', flag: '🇺🇸' },
+  zh: { native: '中文', english: 'Chinese', flag: '🇨🇳' },
+  hi: { native: 'हिन्दी', english: 'Hindi', flag: '🇮🇳' },
+  es: { native: 'Español', english: 'Spanish', flag: '🇪🇸' },
+  fr: { native: 'Français', english: 'French', flag: '🇫🇷' },
+  ar: { native: 'العربية', english: 'Arabic', flag: '🇸🇦' },
+  bn: { native: 'বাংলা', english: 'Bengali', flag: '🇧🇩' },
+  ru: { native: 'Русский', english: 'Russian', flag: '🇷🇺' },
+  pt: { native: 'Português', english: 'Portuguese', flag: '🇧🇷' },
+  id: { native: 'Bahasa Indonesia', english: 'Indonesian', flag: '🇮🇩' },
+  ur: { native: 'اردو', english: 'Urdu', flag: '🇵🇰' },
+  de: { native: 'Deutsch', english: 'German', flag: '🇩🇪' },
+  ja: { native: '日本語', english: 'Japanese', flag: '🇯🇵' },
+  sw: { native: 'Kiswahili', english: 'Swahili', flag: '🇰🇪' },
+  mr: { native: 'मराठी', english: 'Marathi', flag: '🇮🇳' },
+  te: { native: 'తెలుగు', english: 'Telugu', flag: '🇮🇳' },
+  tr: { native: 'Türkçe', english: 'Turkish', flag: '🇹🇷' },
+  ta: { native: 'தமிழ்', english: 'Tamil', flag: '🇮🇳' },
+  vi: { native: 'Tiếng Việt', english: 'Vietnamese', flag: '🇻🇳' },
+  ko: { native: '한국어', english: 'Korean', flag: '🇰🇷' },
 }
 
 export const defaultLocale: Locale = 'en'
