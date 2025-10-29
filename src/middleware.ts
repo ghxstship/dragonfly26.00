@@ -9,9 +9,17 @@ const intlMiddleware = createIntlMiddleware({
   ...routing,
   localeDetection: true, // Enable automatic locale detection
   localePrefix: 'always' as const,
+  defaultLocale, // Explicitly set default locale
 })
 
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+  
+  // Handle root path explicitly - redirect to default locale
+  if (pathname === '/') {
+    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url))
+  }
+  
   // First, handle i18n routing
   const intlResponse = intlMiddleware(request)
   
@@ -38,13 +46,17 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    // Match all paths including root
+    '/',
+    // Match all locale-prefixed paths
+    '/(en|es|fr|zh|hi|ar|ko|vi|pt|de|ja|ru|id|ur|bn|ta|te|mr|tr|sw)/:path*',
     /*
-     * Match all request paths except for the ones starting with:
+     * Match all other request paths except for the ones starting with:
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      * - api routes
-     * Feel free to modify this pattern to include more paths.
+     * - static files (images, etc.)
      */
     '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
