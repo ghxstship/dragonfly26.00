@@ -9,7 +9,6 @@ import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "@/i18n/navigation"
 import { useLocale } from "next-intl"
 import { Eye, EyeOff } from "lucide-react"
-import Image from "next/image"
 
 export const dynamic = 'force-dynamic'
 export const dynamicParams = true
@@ -61,14 +60,9 @@ export default function LoginPage() {
       <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
         <div className="text-center space-y-4">
           <Link href="/" className="inline-block">
-            <Image
-              src="/logo-xl.png"
-              alt="ATLVS"
-              width={200}
-              height={80}
-              className="mx-auto"
-              priority
-            />
+            <div className="font-pixel text-2xl sm:text-3xl md:text-4xl tracking-wider text-foreground">
+              ATLVS
+            </div>
           </Link>
           <div>
             <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Welcome Back!</h1>
