@@ -79,7 +79,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
         <div className="space-y-3">
           {upcomingReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                   <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4 flex-1">
                     <Calendar className="h-8 w-8 text-blue-600 mt-1" aria-hidden="true" />
@@ -141,7 +141,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
         <div className="space-y-3">
           {pastReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                   <CheckCircle className="h-8 w-8 text-green-600 mt-1" aria-hidden="true" />
                   <div className="flex-1">

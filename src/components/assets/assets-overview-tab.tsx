@@ -145,7 +145,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
           <CardDescription>{t('cardDescription')}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             <div className="p-4 border rounded-lg">
               <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{overview.availableAssets}</div>
               <p className="text-xs text-muted-foreground mt-1">{t('available')}</p>

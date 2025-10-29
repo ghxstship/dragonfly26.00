@@ -114,7 +114,7 @@ export function ReviewForm({
   if (submitted) {
     return (
       <Dialog open={open} onOpenChange={handleClose}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
           <div className="flex flex-wrap flex-col items-center justify-center py-4 md:py-6 lg:py-8 text-center">
             <div className="h-16 w-16 rounded-full bg-green-500/10 flex flex-wrap items-center justify-center mb-4">
               <CheckCircle2 className="h-8 w-8 text-green-600" />

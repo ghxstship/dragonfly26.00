@@ -73,7 +73,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
               return (
                 <div
                   key={metric.label}
-                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center"
+                  className="mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6 text-center max-w-sm md:max-w-none"
                 >
                   <Icon className="mx-auto text-blue-600 mb-3" size={32} />
                   <div className="text-3xl md:text-4xl font-title uppercase text-gray-900 dark:text-white mb-2">
@@ -99,7 +99,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
             {services.map((service) => (
               <div
                 key={service.name}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 flex items-center justify-between"
+                className="mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 flex items-center justify-between max-w-sm md:max-w-none"
               >
                 <div className="flex items-center gap-4">
                   <CheckCircle2 className="text-green-600 flex-shrink-0" size={24} />
@@ -130,7 +130,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
               {incidents.map((incident, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6"
+                  className="mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6 max-w-sm md:max-w-none"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
@@ -186,7 +186,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+              className="mx-auto flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white max-w-sm md:max-w-none"
               aria-label="Email address"
             />
             <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-heading uppercase hover:bg-blue-700 transition-colors">

@@ -124,7 +124,7 @@ export function MarketplaceProductDetailDrawer({
 
         {/* Content */}
         <ScrollArea className="flex-1">
-          <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
+          <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
             {/* Product Image */}
             <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex flex-wrap items-center justify-center relative">
               <Package className="h-32 w-32 text-muted-foreground/30" />

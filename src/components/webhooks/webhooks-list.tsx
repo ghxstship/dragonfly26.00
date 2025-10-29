@@ -26,7 +26,7 @@ export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
           className="cursor-pointer hover:shadow-md transition-shadow"
           onClick={() => onSelect(webhook)}
         >
-          <CardContent className="p-6">
+          <CardContent className="p-4 sm:p-6">
             <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">

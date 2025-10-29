@@ -96,7 +96,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
     <main role="main" aria-label={t('title')}>
       <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Summary Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
@@ -256,7 +256,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
           <CardTitle className="text-base">{t('quickActions')}</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-3">
             <Button variant="outline" className="h-auto py-4 flex flex-wrap flex-col md:flex-row flex-col items-center gap-2">
               <TrendingUp className="h-4 w-4 text-purple-600" aria-hidden="true" />
               <span className="text-sm">{t('performanceReport')}</span>

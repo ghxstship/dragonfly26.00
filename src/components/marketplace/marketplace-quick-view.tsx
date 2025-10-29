@@ -81,7 +81,7 @@ export function QuickView({
       <DialogContent className="max-w-4xl px-4 sm:px-6 lg:px-8 max-h-[90vh] p-0">
         <div className="grid md:grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left: Images */}
-          <div className="bg-muted/30 p-6">
+          <div className="bg-muted/30 p-4 sm:p-6">
             <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex flex-wrap items-center justify-center relative overflow-hidden md:block">
               {images[imageIndex] ? (
                 <Image
@@ -122,7 +122,7 @@ export function QuickView({
 
           {/* Right: Details */}
           <ScrollArea className="max-h-[90vh]">
-            <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
+            <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Header */}
               <div className="space-y-3">
                 <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">

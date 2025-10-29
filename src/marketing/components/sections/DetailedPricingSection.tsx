@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { cn } from "@/lib/utils"
-import { spacing, padding, container } from "@/design-tokens"
+import { spacing, padding, container, cards } from "@/design-tokens"
 import { 
   Check, 
   X, 
@@ -184,38 +184,38 @@ function RoleModal({ role, onClose }: RoleModalProps) {
       onClick={onClose}
     >
       <div 
-        className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 max-w-lg w-full shadow-2xl animate-in slide-in-from-bottom-4 duration-400"
+        className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 sm:p-6 md:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-in slide-in-from-bottom-4 duration-400"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-400 hover:text-white transition-colors z-10 bg-gray-800/80 rounded-full p-1.5 sm:p-2"
           aria-label="Close modal"
         >
-          <X className="w-6 h-6" />
+          <X className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         {/* Floating icon */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-4 sm:mb-6">
           <div className={cn(
-            "inline-flex items-center justify-center w-24 h-24 rounded-full animate-bounce",
+            "inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full animate-bounce",
             "bg-gradient-to-r text-white",
             roleData.gradient
           )}>
-            <Icon className="w-12 h-12" />
+            <Icon className="w-10 h-10 sm:w-12 sm:h-12" />
           </div>
         </div>
 
         {/* Role name */}
-        <h2 className="text-2xl sm:text-3xl text-white text-center mb-2 font-heading uppercase">
+        <h2 className="text-xl sm:text-2xl md:text-3xl text-white text-center mb-2 font-heading uppercase">
           {t(`${role}.name`)}
         </h2>
 
         {/* Role type badge */}
-        <div className="flex flex-wrap justify-center mb-6">
+        <div className="flex flex-wrap justify-center mb-4 sm:mb-6">
           <span className={cn(
-            "px-4 py-1 rounded-full text-sm font-heading uppercase text-white bg-gradient-to-r",
+            "px-3 py-1 sm:px-4 sm:py-1 rounded-full text-xs sm:text-sm font-heading uppercase text-white bg-gradient-to-r",
             roleData.gradient
           )}>
             {roleData.type}
@@ -223,19 +223,19 @@ function RoleModal({ role, onClose }: RoleModalProps) {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-          <div className="bg-gray-800/50 rounded-lg p-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
+          <div className="bg-gray-800/50 rounded-lg p-3 sm:p-4">
             <div className="text-gray-400 text-xs font-heading uppercase mb-1">Access Level</div>
-            <div className="text-white font-heading uppercase">{roleData.accessLevel}</div>
+            <div className="text-white text-sm sm:text-base font-heading uppercase">{roleData.accessLevel}</div>
           </div>
-          <div className="bg-gray-800/50 rounded-lg p-4">
+          <div className="bg-gray-800/50 rounded-lg p-3 sm:p-4">
             <div className="text-gray-400 text-xs font-heading uppercase mb-1">Permissions</div>
-            <div className="text-white font-heading uppercase">{roleData.permissions}</div>
+            <div className="text-white text-sm sm:text-base font-heading uppercase">{roleData.permissions}</div>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-gray-300 mb-6 leading-relaxed">
+        <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
           {t(`${role}.description`)}
         </p>
 
@@ -246,10 +246,10 @@ function RoleModal({ role, onClose }: RoleModalProps) {
             {roleData.abilities.map((ability, index) => (
               <li 
                 key={index}
-                className="flex items-start text-gray-300 dark:text-gray-400 text-sm hover:translate-x-1 transition-transform"
+                className="flex items-start text-gray-300 dark:text-gray-400 text-sm hover:translate-x-1 transition-transform min-w-0"
               >
-                <span className="text-green-400 mr-2 mt-0.5">▸</span>
-                <span>{ability}</span>
+                <span className="text-green-400 mr-2 mt-0.5 flex-shrink-0">▸</span>
+                <span className="flex-1 min-w-0 break-words">{ability}</span>
               </li>
             ))}
           </ul>
@@ -323,17 +323,21 @@ export function DetailedPricingSection(): JSX.Element {
             <span className={cn("text-lg font-heading uppercase", isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
               Annual
             </span>
-            {isAnnual && (
-              <span className="ml-2 px-3 py-1 bg-green-100 text-green-800 text-sm font-heading uppercase rounded-full">
-                Save 2 Months
-              </span>
-            )}
+            <span 
+              className={cn(
+                "ml-2 px-3 py-1 bg-green-100 text-green-800 text-sm font-heading uppercase rounded-full transition-opacity duration-300",
+                isAnnual ? "opacity-100" : "opacity-0 pointer-events-none"
+              )}
+              aria-hidden={!isAnnual}
+            >
+              Save 2 Months
+            </span>
           </div>
 
           {/* Pricing Grid */}
-          <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-8 md:mb-12 lg:mb-16 animate-in fade-in-50 duration-1000 delay-500">
+          <div className={cn(cards.grid1to4, "mb-8 md:mb-12 lg:mb-16 animate-in fade-in-50 duration-1000 delay-500")}>
             {/* Community */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300", cards.marketing, cards.paddingMd)}>
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Community</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">Free</span>
@@ -388,7 +392,7 @@ export function DetailedPricingSection(): JSX.Element {
             </div>
 
             {/* Pro */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300", cards.marketing, cards.paddingMd)}>
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Pro</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">
@@ -454,7 +458,7 @@ export function DetailedPricingSection(): JSX.Element {
             </div>
 
             {/* Team - Featured */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-2xl border-4 border-purple-600 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 relative lg:scale-105">
+            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border-4 border-purple-600 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 relative lg:scale-105", cards.marketing, cards.paddingMd)}>
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-heading uppercase w-max mx-auto">
                 MOST POPULAR
               </div>
@@ -532,7 +536,7 @@ export function DetailedPricingSection(): JSX.Element {
             </div>
 
             {/* Enterprise */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 md:p-8 shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300", cards.marketing, cards.paddingMd)}>
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Enterprise</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">

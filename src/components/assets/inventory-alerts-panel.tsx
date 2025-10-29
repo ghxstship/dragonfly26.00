@@ -138,12 +138,12 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
         <Separator />
         <ScrollArea className="h-[400px]">
           {loading ? (
-            <div className="p-4 md:p-8 text-center text-muted-foreground">
+            <div className="p-4 md:p-4 sm:p-6 md:p-8 text-center text-muted-foreground">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
               Loading alerts...
             </div>
           ) : alerts.length === 0 ? (
-            <div className="p-4 md:p-8 text-center text-muted-foreground">
+            <div className="p-4 md:p-4 sm:p-6 md:p-8 text-center text-muted-foreground">
               <CheckCircle className="h-12 w-12 mx-auto mb-2 opacity-50" />
               <p>No active alerts</p>
               <p className="text-xs mt-1">All inventory levels look good!</p>

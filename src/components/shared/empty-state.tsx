@@ -91,7 +91,7 @@ export function EmptyState({
       )}
     >
       {Icon && showIcon && (
-        <div className="mb-6 rounded-full bg-muted/50 p-4 md:p-8">
+        <div className="mb-6 rounded-full bg-muted/50 p-4 md:p-4 sm:p-6 md:p-8">
           <Icon className="h-12 w-12 text-muted-foreground" />
         </div>
       )}

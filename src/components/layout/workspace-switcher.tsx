@@ -193,7 +193,7 @@ export function WorkspaceSwitcher() {
     </DropdownMenu>
 
     <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <form onSubmit={handleCreateWorkspace}>
           <DialogHeader>
             <DialogTitle>{t('quickActions.createWorkspace')}</DialogTitle>

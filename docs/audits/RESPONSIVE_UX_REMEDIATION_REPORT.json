@@ -1,0 +1,2229 @@
+{
+  "timestamp": "2025-10-29T14:06:49.421Z",
+  "dryRun": false,
+  "summary": {
+    "applied": 197,
+    "skipped": 282,
+    "errors": 0,
+    "byType": {
+      "grid-mobile-first": 141,
+      "responsive-padding-p6": 88,
+      "dialog-max-height": 19,
+      "responsive-padding-p8": 13
+    }
+  },
+  "modifiedFiles": [
+    {
+      "file": "admin/admin-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "admin/admin-page-content.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "admin/checklist-templates-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "admin/members-management-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "admin/roles-permissions-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 3,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "admin/webhooks-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "analytics/analytics-custom-views-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "analytics/analytics-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "analytics/analytics-realtime-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "api-tokens/api-tokens-page-content.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "api-tokens/create-token-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "api-tokens/tokens-list.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "assets/assets-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "assets/assets-tracking-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "assets/barcode-scanner-overlay.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "assets/counts-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "assets/inventory-alerts-panel.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "assets/inventory-item-drawer.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "assets/inventory-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "automations/automations-list.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "automations/automations-page-content.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "community/activity-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "community/competitions-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "community/connections-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "community/events-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "community/news-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "community/showcase-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "community/studios-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-bids-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-companies-compliance-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-companies-invoices-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-companies-reviews-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-companies-work-orders-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-deliverables-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-documents-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-scopes-of-work-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "companies/companies-subcontractor-profile-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-my-advances-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-my-agenda-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-my-files-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-my-jobs-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-my-orders-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-my-reports-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-my-tasks-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-my-travel-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/dashboard-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 4,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/quick-actions/book-travel-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/quick-actions/create-task-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/quick-actions/log-expense-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/quick-actions/upload-file-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "dashboard/widget-customization-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "events/events-activities-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-all-events-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-blocks-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-bookings-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-equipment-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-incidents-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-internal-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-itineraries-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-rehearsals-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-reservations-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-shipping-receiving-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "events/events-trainings-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/file-share-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "files/files-all-documents-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-archive-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-call-sheets-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-contracts-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-insurance-permits-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-media-assets-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-production-reports-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-riders-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-shared-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "files/files-tech-specs-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-accounts-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-budgets-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-expenses-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-forecasts-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-gl-codes-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-invoices-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-payments-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-payroll-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-reconciliation-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-revenue-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-taxes-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "finance/finance-transactions-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/create-objective-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "insights/insights-intelligence-feed-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/insights-objectives-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/insights-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "responsive-padding-p6",
+          "count": 4,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/insights-page-content.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/insights-priorities-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/insights-reviews-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/insights-success-metrics-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/objective-detail.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "insights/objectives-list.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-active-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-archived-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-checklists-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-completed-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-dispatch-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-estimates-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-jobs-compliance-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-jobs-invoices-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-offers-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-recruiting-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-rfps-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-shortlists-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "jobs/jobs-work-orders-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "layout/workspace-switcher.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "locations/locations-access-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "locations/locations-bim-models-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "locations/locations-coordination-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "locations/locations-logistics-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "locations/locations-site-maps-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "locations/locations-spatial-features-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "locations/locations-utilities-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "locations/locations-warehousing-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/favorites-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/lists-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/marketplace-cart-drawer.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/marketplace-product-detail-drawer.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/marketplace-quick-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/marketplace-review-form.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/marketplace-wishlist-button.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/orders-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/purchases-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "marketplace/sales-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "members/members-page.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "molecules/data-display/StatCard.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "organisms/data-views/ActivityViewOrganism.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "organisms/data-views/BoxViewOrganism.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "organisms/data-views/FinancialDashboardOrganism.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "organisms/data-views/PortfolioViewOrganism.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "organisms/forms/FormBuilderOrganism.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "organisms/templates/OverviewTemplateOrganism.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "people/keyboard-shortcuts.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "people/people-applicants-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "people/people-assignments-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "people/people-onboarding-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "people/people-openings-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "people/people-personnel-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "people/people-teams-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "people/people-timekeeping-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "people/people-training-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "plugins/installed-plugins.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "plugins/plugin-card.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "plugins/plugins-page-content.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "procurement/procurement-agreements-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "procurement/procurement-audits-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "procurement/procurement-fulfillment-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "procurement/procurement-line-items-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "procurement/procurement-orders-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "procurement/procurement-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "procurement/procurement-procurement-approvals-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "procurement/procurement-requisitions-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "profile/performance-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-activations-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-compliance-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-costs-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-milestones-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-projects-checklists-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-projects-work-orders-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-safety-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "projects/projects-tasks-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "reports/create-report-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "reports/report-viewer.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "reports/reports-compliance-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "reports/reports-custom-builder-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "reports/reports-executive-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "reports/reports-list.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "reports/reports-overview-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "reports/reports-page-content.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "settings/automations-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "settings/profile-page.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "settings/team-tab.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "shared/crud-drawer.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "shared/empty-state.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "shared/error-display.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "shared/item-detail-drawer.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "templates/dashboards/DashboardTemplate.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "templates/data-views/DataViewTemplate.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "templates/forms/FormTemplate.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "ui/command.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "views.backup/activity-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "views.backup/box-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "views.backup/calendar-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 3,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "views.backup/financial-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "views.backup/form-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 3,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "views.backup/mind-map-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p8",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "views.backup/pivot-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "grid-mobile-first",
+          "count": 2,
+          "priority": "MEDIUM"
+        },
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "views.backup/portfolio-view.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "webhooks/create-webhook-dialog.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "dialog-max-height",
+          "count": 1,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    {
+      "file": "webhooks/webhooks-list.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 1,
+          "priority": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "file": "webhooks/webhooks-page-content.tsx",
+      "modified": true,
+      "fixes": [
+        {
+          "name": "responsive-padding-p6",
+          "count": 2,
+          "priority": "MEDIUM"
+        }
+      ]
+    }
+  ]
+}

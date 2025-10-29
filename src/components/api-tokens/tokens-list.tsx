@@ -30,7 +30,7 @@ export function APITokensList({ tokens }: APITokensListProps) {
       <div className="space-y-4">
       {tokens.map((token: any) => (
         <Card key={token.id}>
-          <CardContent className="p-6">
+          <CardContent className="p-4 sm:p-6">
             <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">

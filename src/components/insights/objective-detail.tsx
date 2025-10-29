@@ -78,7 +78,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
         <div className="mt-6 space-y-3 md:space-y-4 lg:space-y-6">
           {/* Current Progress */}
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
                 <div>
                   <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">
@@ -174,7 +174,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
 
             <TabsContent value="details" className="space-y-4">
               <Card>
-                <CardContent className="p-6 space-y-4">
+                <CardContent className="p-4 sm:p-6 space-y-4">
                   <div>
                     <Label>Description</Label>
                     <p className="text-sm mt-1">{goal.description || t('goals.noDescription')}</p>
@@ -206,7 +206,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
 
             <TabsContent value="linked" className="space-y-4">
               <Card>
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
                     No linked items yet. Link tasks and projects to track progress automatically.
                   </p>

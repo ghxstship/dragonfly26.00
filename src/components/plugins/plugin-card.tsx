@@ -19,7 +19,7 @@ export function PluginCard({ plugin, layout = "grid", isInstalled = false, onIns
   if (layout === "list") {
     return (
       <Card>
-        <CardContent className="p-6">
+        <CardContent className="p-4 sm:p-6">
           <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
             <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex-shrink-0" />
             <div className="flex-1">

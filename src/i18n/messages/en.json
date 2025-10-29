@@ -621,6 +621,46 @@
       "decorativeParticles": "Decorative particle effects (may impact performance)",
       "resetToDefault": "Reset to Default"
     },
+    "typography": {
+      "title": "Typography",
+      "description": "Customize fonts for your organization",
+      "loading": "Loading typography settings...",
+      "noPermission": {
+        "title": "Permission Required",
+        "description": "Only organization administrators can modify typography settings. Contact your Phantom or Aviator to request changes."
+      },
+      "fontSelection": {
+        "title": "Font Selection",
+        "headingFont": "Heading Font",
+        "bodyFont": "Body Font",
+        "monoFont": "Code Font"
+      },
+      "fontWeights": {
+        "title": "Font Weights",
+        "light": "Light",
+        "normal": "Normal",
+        "medium": "Medium",
+        "semibold": "Semibold",
+        "bold": "Bold"
+      },
+      "preview": {
+        "title": "Preview",
+        "heading": "Heading Font",
+        "headingSample": "The Quick Brown Fox",
+        "body": "Body Font",
+        "bodySample": "This is how your body text will look with the selected font. It should be easy to read and comfortable for long-form content.",
+        "code": "Code Font",
+        "codeSample": "const example = \"Hello World\";"
+      },
+      "actions": {
+        "save": "Save Typography",
+        "saving": "Saving...",
+        "resetToDefaults": "Reset to Defaults",
+        "revert": "Revert Changes"
+      },
+      "saveSuccess": "Typography settings saved successfully",
+      "saveError": "Failed to save typography settings: {error}"
+    },
     "automationsTab": {
       "description": "Automation rules and workflows",
       "newAutomation": "New Automation",
@@ -7801,57 +7841,57 @@
       "toggleMenu": "Toggle menu"
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
+      "headline": "Production Management That Actually Works",
+      "headlineHighlight": "For Experiential Teams",
+      "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
+      "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
       "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
+      "ctaSecondary": "See It in Action",
+      "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
       "platformScreenshot": "Platform Screenshot"
     },
     "trustBar": {
       "trustedBy": "Trusted by production teams worldwide"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "The Production Chaos Problem",
+      "subtitle": "You know the drill",
+      "pain1Title": "Tool Overload",
+      "pain1Description": "Spreadsheets, Slack, email, that one Google Doc nobody can find—your workflow is scattered across a dozen platforms",
+      "pain2Title": "Information Black Holes",
+      "pain2Description": "Critical details vanish during handoffs. Someone definitely sent that file... somewhere",
+      "pain3Title": "Budget Surprises",
+      "pain3Description": "Costs creep up in the shadows. By the time you notice, you're already over",
+      "pain4Title": "Communication Drift",
+      "pain4Description": "Vendors miss updates, crew works off old info, stakeholders ask the same questions twice"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "One Platform. Zero Chaos.",
+      "subtitle": "Everything in its right place",
+      "feature1Title": "Unified Command Center",
+      "feature1Description": "Projects, people, and resources all sailing in formation",
+      "feature2Title": "Real-Time Sync",
+      "feature2Description": "Updates flow instantly. Everyone's working from the same chart",
+      "feature3Title": "Budget Radar",
+      "feature3Description": "Track every dollar in real-time. No surprises, no overruns",
+      "feature4Title": "Vendor Coordination",
+      "feature4Description": "Keep external partners in the loop without giving away the ship"
     },
     "howItWorks": {
       "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "subtitle": "Set sail in minutes, not months",
+      "step1Title": "Launch Your Organization",
+      "step1Description": "Set up your structure and bring your crew aboard",
+      "step2Title": "Chart Your Projects",
+      "step2Description": "Map out productions, activations, and workspaces",
+      "step3Title": "Assign Roles & Missions",
+      "step3Description": "Give everyone the right access and clear responsibilities",
+      "step4Title": "Navigate & Deliver",
+      "step4Description": "Monitor progress, manage budgets, execute flawlessly"
     },
     "features": {
       "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "subtitle": "Six integrated hubs for complete production control",
       "production": {
         "title": "Production Hub",
         "description": "Manage projects, events, people, assets, locations, and files",
@@ -7904,34 +7944,34 @@
     "detailedFeatures": {
       "hero": {
         "title": "Everything You Need to Produce at Scale",
-        "subtitle": "Six integrated hubs with comprehensive modules designed specifically for experiential production teams"
+        "subtitle": "Six integrated hubs designed for experiential production teams"
       },
       "production": {
         "title": "Production Hub",
         "description": "Manage projects, events, people, assets, locations, and files",
         "projects": {
           "title": "Projects",
-          "description": "Organize and track all your production projects from concept to completion"
+          "description": "Organize and track productions from concept to strike"
         },
         "events": {
           "title": "Events",
-          "description": "Schedule, coordinate, and manage all event details and timelines"
+          "description": "Schedule, coordinate, and manage every detail and timeline"
         },
         "people": {
           "title": "People",
-          "description": "Manage crew, staff, and team member assignments and availability"
+          "description": "Manage crew assignments, availability, and scheduling"
         },
         "assets": {
           "title": "Assets",
-          "description": "Track equipment, inventory, and physical resources across productions"
+          "description": "Track equipment, inventory, and resources across productions"
         },
         "locations": {
           "title": "Locations",
-          "description": "Coordinate venues, sites, and facility logistics for your events"
+          "description": "Coordinate venues, sites, and facility logistics"
         },
         "files": {
           "title": "Files",
-          "description": "Centralize documents, media, and production files in one secure location"
+          "description": "Centralize documents, media, and production files securely"
         }
       },
       "business": {
@@ -7939,27 +7979,27 @@
         "description": "Handle companies, jobs, procurement, and finances",
         "companies": {
           "title": "Companies",
-          "description": "Manage vendor relationships, client accounts, and partner organizations"
+          "description": "Manage vendor relationships, clients, and partners"
         },
         "jobs": {
           "title": "Jobs",
-          "description": "Post positions, track applications, and manage hiring workflows"
+          "description": "Post positions, track applications, manage hiring"
         },
         "procurement": {
           "title": "Procurement",
-          "description": "Streamline purchasing, vendor selection, and contract management"
+          "description": "Streamline purchasing, vendor selection, and contracts"
         },
         "invoices": {
           "title": "Invoices",
-          "description": "Create, send, and track invoices with automated payment reminders"
+          "description": "Create, send, and track invoices with automated reminders"
         },
         "expenses": {
           "title": "Expenses",
-          "description": "Record and categorize expenses with receipt capture and approval workflows"
+          "description": "Record and categorize expenses with receipt capture"
         },
         "budgets": {
           "title": "Budgets",
-          "description": "Plan, monitor, and control project budgets with real-time tracking"
+          "description": "Plan, monitor, and control budgets with real-time tracking"
         }
       },
       "network": {
@@ -7967,15 +8007,15 @@
         "description": "Build community, marketplace, and resource library",
         "community": {
           "title": "Community",
-          "description": "Connect with industry professionals, share knowledge, and collaborate"
+          "description": "Connect with industry pros, share knowledge, collaborate"
         },
         "marketplace": {
           "title": "Marketplace",
-          "description": "Discover services, hire talent, and find production resources"
+          "description": "Discover services, hire talent, find production resources"
         },
         "resources": {
           "title": "Resources",
-          "description": "Access guides, templates, and best practices for production excellence"
+          "description": "Access guides, templates, and best practices"
         }
       },
       "automations": {
@@ -7983,15 +8023,15 @@
         "description": "Automate workflows, triggers, and repetitive tasks",
         "workflows": {
           "title": "Workflows",
-          "description": "Build custom automation sequences to streamline repetitive processes"
+          "description": "Build custom automation sequences for repetitive processes"
         },
         "triggers": {
           "title": "Triggers",
-          "description": "Set up event-driven actions that respond to system changes automatically"
+          "description": "Set up event-driven actions that respond automatically"
         },
         "scheduled": {
           "title": "Scheduled Tasks",
-          "description": "Automate recurring tasks with flexible scheduling and execution rules"
+          "description": "Automate recurring tasks with flexible scheduling"
         }
       },
       "intelligence": {
@@ -7999,15 +8039,15 @@
         "description": "Generate reports, analytics, and insights",
         "reports": {
           "title": "Reports",
-          "description": "Create custom reports with flexible data visualization and export options"
+          "description": "Create custom reports with flexible visualization and export"
         },
         "analytics": {
           "title": "Analytics",
-          "description": "Track KPIs, monitor trends, and measure production performance metrics"
+          "description": "Track KPIs, monitor trends, measure performance"
         },
         "insights": {
           "title": "Insights",
-          "description": "Get AI-powered recommendations and predictive analytics for better decisions"
+          "description": "Get AI-powered recommendations and predictive analytics"
         }
       },
       "system": {
@@ -8015,7 +8055,7 @@
         "description": "Configure admin, settings, and user profiles",
         "admin": {
           "title": "Admin",
-          "description": "Manage organization settings, security policies, and system configuration"
+          "description": "Manage organization settings, security, and configuration"
         },
         "settings": {
           "title": "Settings",
@@ -8023,13 +8063,13 @@
         },
         "profiles": {
           "title": "User Profiles",
-          "description": "Manage team member profiles, roles, and access permissions"
+          "description": "Manage team profiles, roles, and access permissions"
         }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "10 branded roles with precise permissions",
+      "title": "Built for Every Role on Your Crew",
+      "subtitle": "11 branded roles with precise permissions",
       "legend": {
         "title": "Legend",
         "description": "Platform Super Admin - Full control across all organizations"
@@ -8038,13 +8078,13 @@
         "name": "Phantom",
         "level": "Supreme Authority",
         "title": "Phantom",
-        "description": "Complete system administration and unrestricted access to all operations. Shape platform direction and maintain enterprise oversight."
+        "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
       },
       "aviator": {
         "name": "Aviator",
         "level": "Strategic Leadership",
         "title": "Aviator",
-        "description": "Cross-project visibility, resource allocation, and executive analytics. Navigate high-level production direction at scale."
+        "description": "Cross-project visibility, resource allocation, and executive analytics. Navigate high-level production strategy at scale."
       },
       "gladiator": {
         "name": "Gladiator",
@@ -8062,25 +8102,25 @@
         "name": "Deviator",
         "level": "Execution",
         "title": "Deviator",
-        "description": "Focused task completion within established frameworks. Deliver high-quality work on assigned responsibilities."
+        "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
       },
       "raider": {
         "name": "Raider",
         "level": "Learning & Observation",
         "title": "Raider",
-        "description": "View-only access to learn and grow. Perfect for newcomers and community members building their skills."
+        "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
       },
       "vendor": {
         "name": "Vendor",
         "level": "Scoped Delivery",
         "title": "Vendor",
-        "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted responsibilities."
+        "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
       },
       "visitor": {
         "name": "Visitor",
         "level": "Limited Visibility",
         "title": "Visitor",
-        "description": "Temporary, read-only access for external stakeholders. Stay informed without interfering with workflows."
+        "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
       },
       "partner": {
         "name": "Partner",
@@ -8092,7 +8132,7 @@
         "name": "Ambassador",
         "level": "Community Champions",
         "title": "Ambassador",
-        "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, and grow the ecosystem."
+        "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
       }
     },
     "security": {
@@ -8113,16 +8153,16 @@
     },
     "testimonials": {
       "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
+      "subtitle": "Real stories from real producers",
+      "testimonial1Quote": "ATLVS transformed how we manage festivals. Everything in one place, everyone on the same page. Finally.",
       "testimonial1Author": "Sarah Chen",
       "testimonial1Role": "Production Director, Major Music Festival",
       "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
+      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Proper access control for production? Revolutionary.",
       "testimonial2Author": "Marcus Rodriguez",
       "testimonial2Role": "VP of Operations, Live Events Company",
       "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
+      "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
       "testimonial3Author": "Jennifer Park",
       "testimonial3Role": "CFO, Corporate Events Agency",
       "testimonial3Title": "CFO, Corporate Events Agency"
@@ -8216,7 +8256,7 @@
       "question1": "How long is the free trial?",
       "answer1": "14 days, no credit card required. Full access to all features.",
       "question2": "Can I cancel anytime?",
-      "answer2": "Yes, cancel anytime. No long-term contracts or commitments.",
+      "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
       "question3": "What payment methods do you accept?",
       "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
       "question4": "Is my data secure?",
@@ -8228,7 +8268,7 @@
       "q1": "How long is the free trial?",
       "a1": "14 days, no credit card required. Full access to all features.",
       "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
+      "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
       "q3": "What payment methods do you accept?",
       "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
       "q4": "Is my data secure?",
@@ -8288,6 +8328,203 @@
       "title": "Integrates With Your Favorite Tools",
       "subtitle": "Connect ATLVS with the tools you already use",
       "comingSoon": "More integrations coming soon"
+    }
+  },
+  "marketingGenerational": {
+    "baby-boomer": {
+      "hero": {
+        "headline": "Professional Production Management Solutions",
+        "headlineHighlight": "For Experiential Teams",
+        "subheadline": "Comprehensive project, workforce, asset, and financial management from a centralized platform. Designed for professionals who deliver exceptional experiences.",
+        "supportingCopy": "From festivals to corporate events and immersive experiences—ATLVS provides the structure and oversight needed for successful production management.",
+        "ctaPrimary": "Begin Free Trial",
+        "ctaSecondary": "Request Demonstration"
+      },
+      "problem": {
+        "title": "The Production Management Challenge",
+        "subtitle": "Industry-wide inefficiencies",
+        "pain1Title": "Fragmented Systems",
+        "pain1Description": "Teams utilize multiple disconnected platforms including spreadsheets, email, and various project management tools",
+        "pain2Title": "Information Loss",
+        "pain2Description": "Critical project details are lost during transitions and team handoffs",
+        "pain3Title": "Budget Overruns",
+        "pain3Description": "Without proper financial oversight, costs exceed projections",
+        "pain4Title": "Communication Breakdowns",
+        "pain4Description": "Vendors, crew members, and stakeholders experience coordination difficulties"
+      },
+      "solution": {
+        "title": "Comprehensive Platform. Complete Control.",
+        "subtitle": "Integrated production management",
+        "feature1Title": "Centralized Platform",
+        "feature1Description": "All projects, personnel, and resources managed from one location",
+        "feature2Title": "Real-Time Updates",
+        "feature2Description": "Instant synchronization ensures all team members have current information",
+        "feature3Title": "Financial Oversight",
+        "feature3Description": "Track budgets, expenses, and invoices with precision and accuracy",
+        "feature4Title": "Vendor Coordination",
+        "feature4Description": "Streamline external partner relationships and deliverables"
+      },
+      "testimonials": {
+        "testimonial1Quote": "ATLVS has transformed our festival management operations. The centralized platform provides the structure and oversight we need.",
+        "testimonial2Quote": "The role-based access control system is exactly what our organization required. Professional-grade security and permissions.",
+        "testimonial3Quote": "We reduced budget overruns by 40% in the first quarter. The financial visibility and reporting capabilities are exceptional."
+      }
+    },
+    "gen-x": {
+      "hero": {
+        "headline": "Production Management That Doesn't Waste Your Time",
+        "headlineHighlight": "For Experiential Teams",
+        "subheadline": "Manage projects, crew, assets, and budgets without the usual platform bloat. Built for people who actually do the work.",
+        "supportingCopy": "Festivals, corporate events, immersive experiences—ATLVS gets out of your way so you can get things done.",
+        "ctaPrimary": "Try It Free",
+        "ctaSecondary": "See Demo"
+      },
+      "problem": {
+        "title": "The Production Management Problem",
+        "subtitle": "Same issues, different decade",
+        "pain1Title": "Too Many Tools",
+        "pain1Description": "Spreadsheets, Slack, email, random cloud docs—your workflow is a mess of disconnected platforms",
+        "pain2Title": "Lost Information",
+        "pain2Description": "Critical details disappear during handoffs. Someone sent that file, but good luck finding it",
+        "pain3Title": "Budget Creep",
+        "pain3Description": "Costs sneak up on you. By the time you notice, you're already over budget",
+        "pain4Title": "Communication Failures",
+        "pain4Description": "Vendors miss updates, crew works off outdated info, stakeholders keep asking the same questions"
+      },
+      "solution": {
+        "title": "One Platform. Actually Works.",
+        "subtitle": "Everything where it should be",
+        "feature1Title": "Unified System",
+        "feature1Description": "Projects, people, and resources in one place. Finally.",
+        "feature2Title": "Real-Time Sync",
+        "feature2Description": "Updates happen instantly. Everyone works from the same information",
+        "feature3Title": "Budget Control",
+        "feature3Description": "Track every dollar in real-time. No surprises, no excuses",
+        "feature4Title": "Vendor Management",
+        "feature4Description": "Keep external partners informed without giving them full access"
+      },
+      "testimonials": {
+        "testimonial1Quote": "ATLVS actually works. Everything in one place, no unnecessary features. It does what it says it does.",
+        "testimonial2Quote": "The access control system works for our complex structure. No compromises, no workarounds required.",
+        "testimonial3Quote": "We cut budget overruns by 40% first quarter. The financial tracking actually delivers results."
+      }
+    },
+    "millennial": {
+      "hero": {
+        "headline": "Production Management That Actually Works",
+        "headlineHighlight": "For Experiential Teams",
+        "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
+        "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
+        "ctaPrimary": "Start Free Today",
+        "ctaSecondary": "See It in Action"
+      },
+      "problem": {
+        "title": "The Production Chaos Problem",
+        "subtitle": "You know the drill",
+        "pain1Title": "Tool Overload",
+        "pain1Description": "Spreadsheets, Slack, email, that one Google Doc nobody can find—your workflow is scattered across a dozen platforms",
+        "pain2Title": "Information Black Holes",
+        "pain2Description": "Critical details vanish during handoffs. Someone definitely sent that file... somewhere",
+        "pain3Title": "Budget Surprises",
+        "pain3Description": "Costs creep up in the shadows. By the time you notice, you're already over",
+        "pain4Title": "Communication Drift",
+        "pain4Description": "Vendors miss updates, crew works off old info, stakeholders ask the same questions twice"
+      },
+      "solution": {
+        "title": "One Platform. Zero Chaos.",
+        "subtitle": "Everything in its right place",
+        "feature1Title": "Unified Command Center",
+        "feature1Description": "Projects, people, and resources all sailing in formation",
+        "feature2Title": "Real-Time Sync",
+        "feature2Description": "Updates flow instantly. Everyone's working from the same chart",
+        "feature3Title": "Budget Radar",
+        "feature3Description": "Track every dollar in real-time. No surprises, no overruns",
+        "feature4Title": "Vendor Coordination",
+        "feature4Description": "Keep external partners in the loop without giving away the ship"
+      },
+      "testimonials": {
+        "testimonial1Quote": "ATLVS transformed how we manage festivals. Everything in one place, everyone on the same page. Finally.",
+        "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Proper access control for production? Revolutionary.",
+        "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing."
+      }
+    },
+    "gen-z": {
+      "hero": {
+        "headline": "Production Management That Hits Different",
+        "headlineHighlight": "For Experiential Teams",
+        "subheadline": "Manage projects, crew, assets, and budgets from one place. No cap, it actually works.",
+        "supportingCopy": "Festivals, corporate events, immersive experiences—ATLVS is the platform that doesn't make you want to rage quit.",
+        "ctaPrimary": "Start Free",
+        "ctaSecondary": "See Demo"
+      },
+      "problem": {
+        "title": "The Production Chaos Is Real",
+        "subtitle": "We've all been there",
+        "pain1Title": "Too Many Apps",
+        "pain1Description": "Spreadsheets, Slack, email, that random Google Doc—your workflow is giving 'disorganized chaos'",
+        "pain2Title": "Files Go Missing",
+        "pain2Description": "Critical info just disappears. Someone sent it... allegedly",
+        "pain3Title": "Budget Goes Brr",
+        "pain3Description": "Costs sneak up on you. By the time you notice, you're already cooked",
+        "pain4Title": "Communication = Broken",
+        "pain4Description": "Vendors miss updates, crew has old info, stakeholders keep asking the same thing"
+      },
+      "solution": {
+        "title": "One Platform. No Drama.",
+        "subtitle": "Everything where it belongs",
+        "feature1Title": "All-in-One Hub",
+        "feature1Description": "Projects, people, resources—all in one place like it should be",
+        "feature2Title": "Live Updates",
+        "feature2Description": "Changes happen instantly. Everyone stays synced",
+        "feature3Title": "Budget Tracking",
+        "feature3Description": "Track every dollar in real-time. No surprises, no stress",
+        "feature4Title": "Vendor Management",
+        "feature4Description": "Keep external partners updated without giving them full access"
+      },
+      "testimonials": {
+        "testimonial1Quote": "ATLVS lowkey changed how we run festivals. Everything's organized, everyone's informed. It's giving efficiency.",
+        "testimonial2Quote": "The access control system? *Chef's kiss*. Finally, proper permissions for production work.",
+        "testimonial3Quote": "We cut budget overruns by 40% first quarter. The financial visibility is actually insane (in a good way)."
+      }
+    },
+    "gen-alpha": {
+      "hero": {
+        "headline": "Level Up Your Production Game",
+        "headlineHighlight": "For Experiential Teams",
+        "subheadline": "Manage projects, crew, assets, and budgets from your command center. Built for creators who make epic experiences.",
+        "supportingCopy": "Festivals, events, immersive worlds—ATLVS is your co-pilot from idea to launch.",
+        "ctaPrimary": "Start Free 🚀",
+        "ctaSecondary": "Watch Demo 🎮"
+      },
+      "problem": {
+        "title": "Production Chaos = Game Over",
+        "subtitle": "Time to respawn",
+        "pain1Title": "Too Many Apps 📱",
+        "pain1Description": "Your workflow is scattered across a million different apps and platforms",
+        "pain2Title": "Lost Files 🔍",
+        "pain2Description": "Important stuff just disappears. Where did that file go? Nobody knows",
+        "pain3Title": "Budget Explosion 💸",
+        "pain3Description": "Costs keep going up. By the time you notice, you're way over budget",
+        "pain4Title": "Communication Lag 💬",
+        "pain4Description": "Team members miss updates and work with old information"
+      },
+      "solution": {
+        "title": "One Platform. Total Control. 🎯",
+        "subtitle": "Everything in one place",
+        "feature1Title": "Command Center 🎮",
+        "feature1Description": "All your projects, team, and resources in one hub",
+        "feature2Title": "Live Sync ⚡",
+        "feature2Description": "Updates happen instantly. Everyone stays connected",
+        "feature3Title": "Budget Tracker 💰",
+        "feature3Description": "See every dollar in real-time. No surprises",
+        "feature4Title": "Team Coordination 🤝",
+        "feature4Description": "Keep everyone updated and on the same page"
+      },
+      "testimonials": {
+        "testimonial1Quote": "ATLVS is OP for managing festivals. Everything's organized, everyone's synced. 10/10 would recommend.",
+        "testimonial2Quote": "The permissions system is fire. Finally got proper access control for our team.",
+        "testimonial3Quote": "We cut budget problems by 40% first quarter. The money tracking is straight up amazing."
+      }
     }
   }
 }

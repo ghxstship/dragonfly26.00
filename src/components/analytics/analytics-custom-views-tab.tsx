@@ -110,7 +110,7 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
 
       {/* Create New View Card */}
       <Card className="border-2 border-dashed">
-        <CardContent className="p-6 md:p-8 lg:p-12 text-center">
+        <CardContent className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
           <Sliders className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" aria-hidden="true" />
           <h3 className="font-semibold mb-2">{t('createCustomView')}</h3>
           <p className="text-sm text-muted-foreground mb-4">

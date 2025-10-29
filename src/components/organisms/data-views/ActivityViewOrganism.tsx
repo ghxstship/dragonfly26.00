@@ -184,7 +184,7 @@ export function ActivityViewOrganism({ data, schema, onItemClick }: ActivityView
       </div>
 
       {/* Activity Stream */}
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 sm:p-6">
         <div className="max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6">
           {Object.entries(groupedActivities).map(([date, activities]) => (
             <div key={date}>

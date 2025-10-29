@@ -47,7 +47,7 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
           const Icon = stat.icon
           return (
             <Card key={index} role="region" aria-label={`${t(stat.labelKey)} metric`}>
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div>
                     <p className="text-sm text-muted-foreground" id={`stat-label-${index}`}>{t(stat.labelKey)}</p>

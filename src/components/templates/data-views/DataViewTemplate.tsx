@@ -113,7 +113,7 @@ export function DataViewTemplate({
     <div className={cn('flex flex-col h-full', className)}>
       {/* Header */}
       <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 md:p-6">
+        <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 md:p-4 sm:p-6">
           <div>
             <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold tracking-tight">{title}</h1>
             {subtitle && (
@@ -158,7 +158,7 @@ export function DataViewTemplate({
       {/* Views */}
       <div className="flex-1 overflow-hidden md:block">
         {views.length === 1 ? (
-          <div className="h-full p-4 md:p-6 overflow-auto">
+          <div className="h-full p-4 md:p-4 sm:p-6 overflow-auto">
             {views[0].content}
           </div>
         ) : (
@@ -174,7 +174,7 @@ export function DataViewTemplate({
               </TabsList>
             </div>
             {views.map((view: any) => (
-              <TabsContent key={view.id} value={view.id} className="flex-1 overflow-auto p-4 md:p-6 mt-0">
+              <TabsContent key={view.id} value={view.id} className="flex-1 overflow-auto p-4 md:p-4 sm:p-6 mt-0">
                 {view.content}
               </TabsContent>
             ))}

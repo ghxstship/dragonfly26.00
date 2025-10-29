@@ -86,7 +86,7 @@ export function PluginsPageContent() {
   return (
     <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
-      <div className="border-b bg-background p-6">
+      <div className="border-b bg-background p-4 sm:p-6">
         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-6">
           <div>
             <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">Plugin Marketplace</h1>
@@ -139,7 +139,7 @@ export function PluginsPageContent() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 sm:p-6">
         <Tabs value={activeTab as any} onValueChange={setActiveTab}>
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-6">
             <TabsList>

@@ -74,7 +74,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Overall Success Score */}
       <Card className="border-2">
-        <CardContent className="p-4 md:p-8">
+        <CardContent className="p-4 md:p-4 sm:p-6 md:p-8">
           <div className="text-center">
             <Trophy className="h-16 w-16 mx-auto mb-4 text-yellow-600" aria-hidden="true" />
             <div className="text-3xl md:text-4xl lg:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-gradient-purple">

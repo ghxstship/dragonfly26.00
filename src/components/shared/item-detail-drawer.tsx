@@ -89,7 +89,7 @@ export function ItemDetailDrawer({
         <div className="flex-1 flex flex-wrap overflow-hidden md:block">
           {/* Main Content */}
           <div className="flex-1 overflow-auto">
-            <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
+            <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Properties */}
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">

@@ -231,7 +231,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Summary Stats */}
       <section role="region" aria-labelledby="stats-heading">
         <h2 id="stats-heading" className="sr-only">Event Statistics</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">

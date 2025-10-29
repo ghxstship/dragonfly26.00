@@ -76,7 +76,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
             className="hover:shadow-md transition-shadow cursor-pointer"
             onClick={() => onGoalClick(goal)}
           >
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
@@ -142,7 +142,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
 
       {goals.length === 0 && (
         <Card>
-          <CardContent className="p-6 md:p-8 lg:p-12 text-center">
+          <CardContent className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
             <TrendingUp className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">No goals yet</h3>
             <p className="text-sm text-muted-foreground">

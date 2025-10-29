@@ -57,7 +57,7 @@ export function AnalyticsRealtimeTab({ data = [], loading = false }: AnalyticsRe
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         {realtimeMetrics.map((metric: RealtimeMetric, index: number) => (
           <Card key={index} className="border-2">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-2">
                 <p className="text-sm text-muted-foreground">{t(metric.labelKey)}</p>
                 {metric.status === "up" && <Activity className="h-4 w-4 text-green-600" aria-hidden="true" />}

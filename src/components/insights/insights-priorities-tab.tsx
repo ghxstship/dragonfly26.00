@@ -90,7 +90,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Priority Matrix */}
       <Card>
-        <CardContent className="p-6">
+        <CardContent className="p-4 sm:p-6">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
             <div>
               <h3 className="font-semibold mb-3">{t('impactVsEffortMatrix')}</h3>
@@ -161,7 +161,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
       <div className="space-y-3">
         {priorities.map((priority: any) => (
           <Card key={priority.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                 <div className="flex flex-wrap items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 font-bold text-base md:text-lg lg:text-xl flex-shrink-0">
                   {priority.rank}

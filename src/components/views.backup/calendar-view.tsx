@@ -243,7 +243,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
       {mode === "month" && (
         <div className="flex-1 border">
           {/* Day Headers */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 border-b">
+          <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 border-b">
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day: any) => (
               <div
                 key={day}
@@ -254,14 +254,14 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
             ))}
           </div>
           {/* Days */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7">{renderCalendarDays()}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7">{renderCalendarDays()}</div>
         </div>
       )}
 
       {/* Week View */}
       {mode === "week" && (
         <div className="flex-1 overflow-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 border-t">
+          <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-7 border-t">
             {getWeekDates().map((date: any, idx: number) => {
               const items = getItemsForWeekDate(date)
               const isToday = date.toDateString() === new Date().toDateString()
@@ -305,7 +305,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
 
       {/* Day View */}
       {mode === "day" && (
-        <div className="flex-1 overflow-auto p-6">
+        <div className="flex-1 overflow-auto p-4 sm:p-6">
           <div className="max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto">
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-6">
               {currentDate.toLocaleDateString("en-US", {
@@ -348,7 +348,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
 
       {/* Agenda View */}
       {mode === "agenda" && (
-        <div className="flex-1 overflow-auto p-6">
+        <div className="flex-1 overflow-auto p-4 sm:p-6">
           <div className="max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto">
             <h3 className="text-base md:text-lg lg:text-xl font-bold mb-6">Upcoming Items</h3>
             <div className="space-y-3 md:space-y-4 lg:space-y-6">

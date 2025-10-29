@@ -33,7 +33,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
       <SheetContent side="right" className="w-full sm:max-w-2xl p-0">
         <div className="flex flex-wrap flex-col h-full">
           {/* Header */}
-          <SheetHeader className="p-6 pb-4 border-b">
+          <SheetHeader className="p-4 sm:p-6 pb-4 border-b">
             <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
               <div className="flex-1">
                 <SheetTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{item.name}</SheetTitle>
@@ -46,7 +46,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
           </SheetHeader>
 
           <ScrollArea className="flex-1">
-            <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
+            <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Photo Gallery */}
               {hasPhotos && (
                 <div className="space-y-2">

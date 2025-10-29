@@ -306,7 +306,7 @@ export function WebhooksTab() {
 
       {/* Create/Edit Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8">
+        <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8 max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>
               {selectedWebhook ? t('admin.webhooksTab.editWebhook') : t('admin.webhooksTab.createWebhook')}

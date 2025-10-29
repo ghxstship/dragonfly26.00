@@ -24,7 +24,7 @@ export function AutomationsList({ automations, onUpdate }: AutomationsListProps)
     <div className="space-y-4">
       {automations.map((automation: any) => (
         <Card key={automation.id}>
-          <CardContent className="p-6">
+          <CardContent className="p-4 sm:p-6">
             <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">

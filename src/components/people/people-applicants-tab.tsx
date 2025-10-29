@@ -48,7 +48,7 @@ export function ApplicantsTab({ data, loading }: ApplicantsTabProps) {
     <main role="main" aria-label={t('title')}>
       <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* 1632 Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">

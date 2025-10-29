@@ -95,7 +95,7 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
       <div className="grid gap-2 md:gap-3 lg:gap-4">
         {executiveReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Executive report: ${t(report.titleKey)}`}>
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">

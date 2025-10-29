@@ -112,7 +112,7 @@ export function ProfilePage() {
   return (
     <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
-      <div className="border-b bg-background p-6">
+      <div className="border-b bg-background p-4 sm:p-6">
         <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{t('nav.profile')}</h1>
         <p className="text-muted-foreground mt-2">
           {t('profile.descriptions.professional')}
@@ -120,7 +120,7 @@ export function ProfilePage() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 sm:p-6">
         <div className="max-w-4xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6">
           {/* Profile Picture & Basic Info */}
           <Card>

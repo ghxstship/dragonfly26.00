@@ -190,7 +190,7 @@ export function AdminOverviewTab() {
           <CardTitle className="text-base">This Month&apos;s Highlights</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             <div className="text-center p-4 border rounded-lg">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">156</p>
               <p className="text-xs text-muted-foreground mt-1">Tasks Completed</p>

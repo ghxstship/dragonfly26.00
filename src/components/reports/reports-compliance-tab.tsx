@@ -142,7 +142,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
       <div className="space-y-3">
         {complianceReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4 flex-1">
                   <Shield className="h-8 w-8 text-blue-600 mt-1" />

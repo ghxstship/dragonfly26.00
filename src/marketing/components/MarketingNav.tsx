@@ -10,6 +10,7 @@ import { spacing, grid, padding, border, container, height } from "@/design-toke
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { GenerationalLanguageToggle } from "@/components/marketing/GenerationalLanguageToggle"
 
 export function MarketingNav(): JSX.Element {
   const t = useTranslations('marketing.nav')
@@ -18,7 +19,7 @@ export function MarketingNav(): JSX.Element {
   return (
     <TooltipProvider>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-        <div className={cn("mx-auto", padding.sectionX, container['6xl'])}>
+        <div className={cn("mx-auto px-4 sm:px-6 lg:px-8", container['6xl'])}>
           <div className="flex flex-wrap flex-col sm:flex-row items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex flex-wrap md:flex-nowrap items-center space-x-2">
@@ -46,6 +47,7 @@ export function MarketingNav(): JSX.Element {
 
             {/* CTA Buttons + Theme/Language Toggles */}
             <div className="hidden md:flex flex-wrap md:flex-nowrap items-center space-x-2">
+              <GenerationalLanguageToggle />
               <ThemeToggle />
               <LanguageSwitcher />
               <div className="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-2" />
@@ -73,6 +75,17 @@ export function MarketingNav(): JSX.Element {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <div className="px-4 py-4 space-y-3">
+              {/* Primary CTAs - Top (Most Important) */}
+              <div className="space-y-2 pb-3 border-b border-gray-200 dark:border-gray-800">
+                <Link href="/signup" className="block">
+                  <Button variant="default" className="w-full">{t('startFree')}</Button>
+                </Link>
+                <Link href="/login" className="block">
+                  <Button variant="ghost" className="w-full">{t('signIn')}</Button>
+                </Link>
+              </div>
+
+              {/* Navigation Links */}
               <Link
                 href="/features"
                 className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 font-heading uppercase"
@@ -109,19 +122,13 @@ export function MarketingNav(): JSX.Element {
                 {t('company')}
               </Link>
               
-              {/* Mobile Theme/Language Toggles */}
-              <div className="pt-4 pb-2 flex flex-wrap items-center justify-center gap-2 md:gap-3 lg:gap-4">
-                <ThemeToggle />
-                <LanguageSwitcher />
-              </div>
-
-              <div className="pt-2 space-y-2">
-                <Link href="/login" className="block">
-                  <Button variant="ghost" className="w-full">{t('signIn')}</Button>
-                </Link>
-                <Link href="/signup" className="block">
-                  <Button variant="default" className="w-full">{t('startFree')}</Button>
-                </Link>
+              {/* Secondary Settings - Bottom (iOS/Android Pattern) */}
+              <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
+                <div className="flex items-center justify-center gap-3">
+                  <GenerationalLanguageToggle />
+                  <ThemeToggle />
+                  <LanguageSwitcher />
+                </div>
               </div>
             </div>
           </div>

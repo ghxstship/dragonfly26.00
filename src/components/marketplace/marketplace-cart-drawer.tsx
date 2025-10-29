@@ -75,7 +75,7 @@ export function MarketplaceCartDrawer({
         {/* Content */}
         <div className="flex-1 flex flex-wrap flex-col overflow-hidden md:block">
           {cartItems.length === 0 ? (
-            <div className="flex-1 flex flex-wrap items-center justify-center p-6">
+            <div className="flex-1 flex flex-wrap items-center justify-center p-4 sm:p-6">
               <div className="text-center space-y-4">
                 <div className="w-20 h-20 mx-auto rounded-full bg-muted flex flex-wrap items-center justify-center">
                   <ShoppingCart className="h-10 w-10 text-muted-foreground" />
@@ -95,7 +95,7 @@ export function MarketplaceCartDrawer({
             <>
               {/* Cart Items */}
               <ScrollArea className="flex-1">
-                <div className="p-6 space-y-4">
+                <div className="p-4 sm:p-6 space-y-4">
                   {cartItems.map((item: any) => (
                     <div key={item.id} className="space-y-3">
                       <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
@@ -160,7 +160,7 @@ export function MarketplaceCartDrawer({
 
               {/* Summary */}
               <div className="border-t">
-                <div className="p-6 space-y-4">
+                <div className="p-4 sm:p-6 space-y-4">
                   {/* Discount Code Input */}
                   <DiscountInput
                     cartTotal={subtotal}

@@ -242,7 +242,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
     <main role="main" aria-label={t('title')}>
       <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Quick Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Active Counts</CardDescription>

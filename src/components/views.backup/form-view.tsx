@@ -57,7 +57,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
         </div>
 
         {/* Build Tab */}
-        <TabsContent value="build" className="flex-1 overflow-auto p-6 space-y-4">
+        <TabsContent value="build" className="flex-1 overflow-auto p-4 sm:p-6 space-y-4">
           <Card>
             <CardHeader>
               <CardTitle>Form Fields</CardTitle>
@@ -119,7 +119,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
         </TabsContent>
 
         {/* Preview Tab */}
-        <TabsContent value="preview" className="flex-1 overflow-auto p-6">
+        <TabsContent value="preview" className="flex-1 overflow-auto p-4 sm:p-6">
           <div className="max-w-2xl px-4 sm:px-6 lg:px-8 mx-auto">
             <Card>
               <CardHeader>
@@ -151,7 +151,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
         </TabsContent>
 
         {/* Settings Tab */}
-        <TabsContent value="settings" className="flex-1 overflow-auto p-6">
+        <TabsContent value="settings" className="flex-1 overflow-auto p-4 sm:p-6">
           <div className="max-w-2xl px-4 sm:px-6 lg:px-8 mx-auto space-y-3 md:space-y-4 lg:space-y-6">
             <Card>
               <CardHeader>

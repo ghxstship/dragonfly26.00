@@ -40,7 +40,7 @@ export function ReportsList({ reports, onSelect }: ReportsListProps) {
             className="cursor-pointer hover:shadow-lg transition-shadow"
             onClick={() => onSelect(report)}
           >
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
                 <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex flex-wrap items-center justify-center">
                   <Icon className="h-6 w-6 text-white" />

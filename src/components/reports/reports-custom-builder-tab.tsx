@@ -122,7 +122,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
               <CardTitle className="text-lg" id="preview-title">{t('reportPreview')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="border-2 border-dashed rounded-lg p-8 text-center min-h-[300px] md:h-[500px] flex items-center justify-center" role="status" aria-label={t('dragFieldsPrompt')}>
+              <div className="border-2 border-dashed rounded-lg p-4 sm:p-6 md:p-8 text-center min-h-[300px] md:h-[500px] flex items-center justify-center" role="status" aria-label={t('dragFieldsPrompt')}>
                 <div className="text-muted-foreground">
                   <BarChart className="h-16 w-16 mx-auto mb-4 opacity-50" aria-hidden="true" />
                   <p className="text-lg font-medium mb-2">{t('dragFieldsPrompt')}</p>

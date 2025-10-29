@@ -86,7 +86,7 @@ function KeyboardShortcutsDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8">
+      <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8 max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Keyboard className="h-5 w-5" />

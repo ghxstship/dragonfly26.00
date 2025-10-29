@@ -166,7 +166,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
 
           <TabsContent value="data" className="space-y-4">
             <Card>
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="space-y-2">
                   <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 font-medium pb-2 border-b">
                     <span>Date</span>

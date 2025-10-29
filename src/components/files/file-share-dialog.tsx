@@ -80,7 +80,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px]">
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Share &quot;{fileName}&quot;</DialogTitle>
           <DialogDescription>

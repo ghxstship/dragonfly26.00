@@ -128,7 +128,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
       <div className="space-y-4">
         {objectives.map((objective: any) => (
           <Card key={objective.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1">
                   <Target className="h-6 w-6 text-blue-600 mt-1" aria-hidden="true" />

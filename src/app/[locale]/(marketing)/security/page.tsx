@@ -139,7 +139,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             {compliance.map((item) => (
               <div
                 key={item.name}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 text-center"
+                className="mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6 text-center max-w-sm md:max-w-none"
               >
                 <CheckCircle2 className="mx-auto text-green-600 mb-3" size={32} />
                 <h3 className="font-heading uppercase text-gray-900 dark:text-white mb-2">
@@ -164,7 +164,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
             {dataProtection.map((section) => (
               <div
                 key={section.title}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6"
+                className="mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6 max-w-sm md:max-w-none"
               >
                 <h3 className="text-xl font-heading uppercase text-gray-900 dark:text-white mb-4">
                   {section.title}

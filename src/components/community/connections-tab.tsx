@@ -220,7 +220,7 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
         ) : (
           filteredConnections.map((connection: any) => (
             <Card key={connection.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                   {/* Avatar */}
                   <Avatar className="h-16 w-16">
@@ -353,19 +353,19 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
         <CardContent>
           <ul className="space-y-2 text-sm">
             <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
-              <span className="text-primary">•</span>
+              <span className="text-primary flex-shrink-0">•</span>
               <span>Connect with colleagues from recent productions and events</span>
             </li>
             <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
-              <span className="text-primary">•</span>
+              <span className="text-primary flex-shrink-0">•</span>
               <span>Engage with posts and share your own experiences to increase visibility</span>
             </li>
             <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
-              <span className="text-primary">•</span>
+              <span className="text-primary flex-shrink-0">•</span>
               <span>Endorse connections for their skills to strengthen relationships</span>
             </li>
             <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
-              <span className="text-primary">•</span>
+              <span className="text-primary flex-shrink-0">•</span>
               <span>Join industry groups and participate in discussions</span>
             </li>
           </ul>

@@ -17,9 +17,15 @@ import {
   Sparkles, 
   Eye, 
   Save,
-  RotateCcw 
+  RotateCcw,
+  Type
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useUserTypography } from "@/hooks/use-typography"
+import {
+  type TypographySettings,
+} from "@/lib/google-fonts"
+import { FontSelector } from "@/components/typography/font-selector"
 
 export function AppearanceTab() {
   const t = useTranslations()
@@ -31,6 +37,19 @@ export function AppearanceTab() {
   const [enableAnimations, setEnableAnimations] = useState(true)
   const [enableParticles, setEnableParticles] = useState(false)
   const backgroundFileInputRef = useRef<HTMLInputElement>(null)
+  
+  // Typography settings
+  const {
+    effectiveTypography,
+    organizationTypography,
+    hasCustomTypography,
+    updateUserTypography,
+    resetToOrganizationDefaults,
+    isUpdating: isUpdatingTypography
+  } = useUserTypography()
+  
+  const [useOrgTypography, setUseOrgTypography] = useState(!hasCustomTypography)
+  const [customTypography, setCustomTypography] = useState<TypographySettings>(effectiveTypography)
 
   // Apply accent color to CSS variables
   useEffect(() => {
@@ -158,10 +177,57 @@ export function AppearanceTab() {
     setCustomCSS("")
     setEnableAnimations(true)
     setEnableParticles(false)
+    setUseOrgTypography(true)
+    setCustomTypography(organizationTypography)
     toast({
       title: t('settings.toast.settingsReset'),
       description: t('settings.toast.appearanceResetDesc'),
     })
+  }
+  
+  const handleTypographyToggle = (checked: boolean) => {
+    setUseOrgTypography(checked)
+    if (checked) {
+      // Reset to organization defaults
+      resetToOrganizationDefaults(undefined, {
+        onSuccess: () => {
+          setCustomTypography(organizationTypography)
+          toast({
+            title: "Typography Reset",
+            description: "Using organization typography settings",
+          })
+        }
+      })
+    }
+  }
+  
+  const handleTypographyChange = (type: 'headingFont' | 'bodyFont' | 'monoFont', value: string) => {
+    setCustomTypography(prev => ({
+      ...prev,
+      [type]: value
+    }))
+  }
+  
+  const handleSaveTypography = () => {
+    if (useOrgTypography) {
+      resetToOrganizationDefaults(undefined, {
+        onSuccess: () => {
+          toast({
+            title: "Typography Saved",
+            description: "Using organization typography settings",
+          })
+        }
+      })
+    } else {
+      updateUserTypography(customTypography, {
+        onSuccess: () => {
+          toast({
+            title: "Typography Saved",
+            description: "Custom typography settings applied",
+          })
+        }
+      })
+    }
   }
 
   return (
@@ -371,6 +437,113 @@ export function AppearanceTab() {
               onCheckedChange={setEnableParticles}
             />
           </div>
+        </CardContent>
+      </Card>
+
+      {/* Typography Settings */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Type className="h-5 w-5" aria-hidden="true" />
+            Typography
+          </CardTitle>
+          <CardDescription>
+            Customize fonts for headings, body text, and code
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Use Organization Typography Toggle */}
+          <div className="flex flex-wrap flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-0.5">
+              <Label htmlFor="use-org-typography">Use Organization Typography</Label>
+              <p className="text-sm text-muted-foreground">
+                Use your organization&apos;s default typography settings
+              </p>
+            </div>
+            <Switch
+              id="use-org-typography"
+              checked={useOrgTypography}
+              onCheckedChange={handleTypographyToggle}
+              disabled={isUpdatingTypography}
+            />
+          </div>
+
+          {/* Custom Typography Controls */}
+          {!useOrgTypography && (
+            <>
+              <Separator />
+              
+              <div className="space-y-4">
+                {/* Heading Font */}
+                <div className="space-y-2">
+                  <Label htmlFor="user-heading-font">Heading Font</Label>
+                  <FontSelector
+                    value={customTypography.headingFont}
+                    onChange={(value) => handleTypographyChange('headingFont', value)}
+                    label="Heading Font"
+                    disabled={isUpdatingTypography}
+                  />
+                </div>
+
+                {/* Body Font */}
+                <div className="space-y-2">
+                  <Label htmlFor="user-body-font">Body Font</Label>
+                  <FontSelector
+                    value={customTypography.bodyFont}
+                    onChange={(value) => handleTypographyChange('bodyFont', value)}
+                    label="Body Font"
+                    disabled={isUpdatingTypography}
+                  />
+                </div>
+
+                {/* Monospace Font */}
+                <div className="space-y-2">
+                  <Label htmlFor="user-mono-font">Code Font</Label>
+                  <FontSelector
+                    value={customTypography.monoFont}
+                    onChange={(value) => handleTypographyChange('monoFont', value)}
+                    category="monospace"
+                    label="Code Font"
+                    disabled={isUpdatingTypography}
+                  />
+                </div>
+
+                {/* Preview */}
+                <div className="space-y-2 pt-2">
+                  <Label>Preview</Label>
+                  <div className="space-y-3 p-4 border rounded-lg bg-muted/20">
+                    <h3 
+                      className="text-2xl font-bold"
+                      style={{ fontFamily: customTypography.headingFont }}
+                    >
+                      Heading Example
+                    </h3>
+                    <p 
+                      className="text-base"
+                      style={{ fontFamily: customTypography.bodyFont }}
+                    >
+                      This is how your body text will look with the selected font.
+                    </p>
+                    <code 
+                      className="block p-2 bg-background rounded text-sm"
+                      style={{ fontFamily: customTypography.monoFont }}
+                    >
+                      const example = &quot;code&quot;;
+                    </code>
+                  </div>
+                </div>
+
+                <Button
+                  onClick={handleSaveTypography}
+                  disabled={isUpdatingTypography}
+                  className="w-full"
+                >
+                  <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+                  {isUpdatingTypography ? "Saving..." : "Save Typography"}
+                </Button>
+              </div>
+            </>
+          )}
         </CardContent>
       </Card>
 

@@ -38,7 +38,7 @@ export function AdminPageContent() {
   return (
     <div className="flex flex-wrap flex-col h-full">
       {/* Header */}
-      <div className="border-b bg-background p-6">
+      <div className="border-b bg-background p-4 sm:p-6">
         <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{t('admin.settings')}</h1>
         <p className="text-muted-foreground mt-2">
           {t('admin.manageOrganizationSettings')}
@@ -46,7 +46,7 @@ export function AdminPageContent() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 sm:p-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-3 md:space-y-4 lg:space-y-6">
           <TabsList className="inline-flex h-auto flex-wrap justify-start gap-1 bg-muted p-1 rounded-lg">
             {adminTabs.map((tab: any) => {

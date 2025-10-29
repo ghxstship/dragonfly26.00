@@ -117,7 +117,7 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
 
       {/* Configuration */}
       <div className="p-4 border-b bg-muted/30">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <div className="space-y-2">
             <label className="text-sm font-medium">Rows</label>
             <Select value={rowField as any} onValueChange={setRowField}>
@@ -185,7 +185,7 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
       </div>
 
       {/* Pivot Table */}
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 sm:p-6">
         {data.length === 0 ? (
           <EmptyState
             mainMessage={t('views.emptyState.nothingToSeeYet')}

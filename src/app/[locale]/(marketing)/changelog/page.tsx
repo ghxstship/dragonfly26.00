@@ -207,7 +207,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
                     return (
                       <div
                         key={index}
-                        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4"
+                        className="mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 max-w-sm md:max-w-none"
                       >
                         <div className="flex items-start gap-3">
                           <div className={cn(
@@ -256,7 +256,7 @@ export default async function ChangelogPage({ params }: { params: Promise<{ loca
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+              className="mx-auto flex-1 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white max-w-sm md:max-w-none"
               aria-label="Email address"
             />
             <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-heading uppercase hover:bg-blue-700 transition-colors">

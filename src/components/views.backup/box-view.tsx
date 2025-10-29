@@ -90,7 +90,7 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
       </div>
 
       {/* Grid */}
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 sm:p-6">
         <div className={cn("grid gap-4", getGridClass())}>
           {data.map((item: any) => {
             const isFavorite = favorites.has(item.id)

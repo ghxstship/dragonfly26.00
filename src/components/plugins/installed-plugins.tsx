@@ -24,7 +24,7 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
     <div className="space-y-4">
       {installations.map((installation: any) => (
         <Card key={installation.id}>
-          <CardContent className="p-6">
+          <CardContent className="p-4 sm:p-6">
             <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
               <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex-shrink-0" />
               <div className="flex-1">
@@ -84,7 +84,7 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
 
       {installations.length === 0 && (
         <Card>
-          <CardContent className="p-6 md:p-8 lg:p-12 text-center">
+          <CardContent className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
             <p className="text-muted-foreground">No plugins installed yet</p>
           </CardContent>
         </Card>

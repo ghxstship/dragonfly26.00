@@ -121,7 +121,7 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
           ))}
         </div>
       ) : (
-        <Card className="p-6 md:p-8 lg:p-12">
+        <Card className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12">
           <div className="text-center space-y-4">
             <Heart className="h-16 w-16 mx-auto text-muted-foreground/30" aria-hidden="true" />
             <div>

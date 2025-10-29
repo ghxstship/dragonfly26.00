@@ -83,7 +83,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
       {/* Summary Stats */}
       <section role="region" aria-labelledby="jobs-stats">
         <h2 id="jobs-stats" className="sr-only">Job Statistics</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">

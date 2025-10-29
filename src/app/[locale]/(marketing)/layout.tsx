@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server'
 import { MarketingNav } from "@/marketing/components/MarketingNav"
 import { MarketingFooter } from "@/marketing/components/MarketingFooter"
+import { GenerationalLanguageProvider } from "@/contexts/GenerationalLanguageContext"
 
 // Force dynamic rendering for marketing pages to support client components with i18n
 export const dynamic = 'force-dynamic'
@@ -18,10 +19,12 @@ export default async function MarketingLayout({
   setRequestLocale(locale)
   
   return (
-    <div className="font-tech">
-      <MarketingNav />
-      {children}
-      <MarketingFooter />
-    </div>
+    <GenerationalLanguageProvider>
+      <div className="font-tech">
+        <MarketingNav />
+        {children}
+        <MarketingFooter />
+      </div>
+    </GenerationalLanguageProvider>
   )
 }

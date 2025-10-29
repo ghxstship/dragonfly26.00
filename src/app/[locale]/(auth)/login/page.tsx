@@ -9,6 +9,7 @@ import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "@/i18n/navigation"
 import { useLocale } from "next-intl"
 import { Eye, EyeOff } from "lucide-react"
+import Image from "next/image"
 
 export const dynamic = 'force-dynamic'
 export const dynamicParams = true
@@ -58,11 +59,23 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
       <div className="w-full max-w-md space-y-4 md:space-y-3 md:space-y-4 lg:space-y-6 lg:space-y-8">
-        <div className="text-center">
-          <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Welcome Back!</h1>
-          <p className="text-muted-foreground mt-2">
-            Sign in to your account to continue
-          </p>
+        <div className="text-center space-y-4">
+          <Link href="/" className="inline-block">
+            <Image
+              src="/logo-xl.png"
+              alt="ATLVS"
+              width={200}
+              height={80}
+              className="mx-auto"
+              priority
+            />
+          </Link>
+          <div>
+            <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-title uppercase">Welcome Back!</h1>
+            <p className="text-muted-foreground mt-2">
+              Sign in to your account to continue
+            </p>
+          </div>
         </div>
 
         <div className="bg-card border rounded-lg p-4 md:p-8 space-y-3 md:space-y-4 lg:space-y-6">
@@ -101,7 +114,7 @@ export default function LoginPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute sm:relative sm:inset-auto right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground sm:relative sm:inset-auto"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 >
                   {showPassword ? (
                     <EyeOff className="w-4 h-4" />
@@ -124,10 +137,10 @@ export default function LoginPage() {
           </form>
 
           <div className="relative">
-            <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center sm:relative sm:inset-auto">
-              <span className="w-full border-t max-w-full" />
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
             </div>
-            <div className="relative flex flex-wrap justify-center text-xs uppercase">
+            <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-card px-2 text-muted-foreground">
                 Or continue with
               </span>

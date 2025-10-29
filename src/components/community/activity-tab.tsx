@@ -228,7 +228,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
       <div className="space-y-4">
         {posts.map((post: any) => (
           <Card key={post.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               {/* Post Header */}
               <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">

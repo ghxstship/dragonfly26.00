@@ -81,7 +81,7 @@ export function FormBuilderOrganism({
 
   if (mode === 'preview') {
     return (
-      <div className="space-y-4 p-6">
+      <div className="space-y-4 p-4 sm:p-6">
         {(fields as any[]).map((field: any) => (
           <div key={field.id} className="space-y-2">
             <Label>

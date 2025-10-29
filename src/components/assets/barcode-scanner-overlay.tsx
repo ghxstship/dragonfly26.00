@@ -105,10 +105,10 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl p-0 overflow-hidden md:block max-w-[95vw] sm:max-w-lg md:max-w-2xl lg:max-w-4xl">
+      <DialogContent className="max-w-2xl p-0 overflow-hidden md:block max-w-[95vw] sm:max-w-lg md:max-w-2xl lg:max-w-4xl max-h-[90vh] overflow-y-auto">
         <div className="relative aspect-[4/3] bg-black">
           {hasPermission === false ? (
-            <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap flex-col items-center justify-center text-white p-4 md:p-8 text-center sm:relative sm:inset-auto">
+            <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap flex-col items-center justify-center text-white p-4 md:p-4 sm:p-6 md:p-8 text-center sm:relative sm:inset-auto">
               <Camera className="h-16 w-16 mb-4 opacity-50" />
               <h3 className="text-lg font-semibold mb-2">Camera Access Required</h3>
               <p className="text-sm text-gray-300 mb-4">

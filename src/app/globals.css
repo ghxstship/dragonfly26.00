@@ -59,7 +59,7 @@
   
   /* Marketing Typography - Explicit font class definitions */
   .font-pixel {
-    font-family: var(--font-coral-pixels), monospace;
+    font-family: var(--font-press-start-2p), monospace;
   }
   
   .font-title {

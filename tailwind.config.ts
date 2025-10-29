@@ -39,11 +39,22 @@ const config = {
           'monospace',
         ],
         // Marketing Typography
-        pixel: ['var(--font-coral-pixels)', 'monospace'],
+        pixel: ['var(--font-press-start-2p)', 'monospace'],
         title: ['var(--font-anton-sc)', 'sans-serif'],
         heading: ['var(--font-bebas-neue)', 'sans-serif'],
         'tech-mono': ['var(--font-share-tech-mono)', 'monospace'],
         'tech': ['var(--font-share-tech)', 'sans-serif'],
+        // Dynamic User Typography (from Google Fonts)
+        'user-heading': ['var(--font-heading)', 'sans-serif'],
+        'user-body': ['var(--font-body)', 'sans-serif'],
+        'user-mono': ['var(--font-mono)', 'monospace'],
+      },
+      fontWeight: {
+        light: 'var(--font-weight-light, 300)',
+        normal: 'var(--font-weight-normal, 400)',
+        medium: 'var(--font-weight-medium, 500)',
+        semibold: 'var(--font-weight-semibold, 600)',
+        bold: 'var(--font-weight-bold, 700)',
       },
       fontSize: {
         // Display styles

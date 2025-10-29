@@ -122,7 +122,7 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
 
           return (
             <Card key={insight.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
                   <div className={`p-3 rounded-lg ${bgClass} flex-shrink-0`}>
                     <Icon className={`h-6 w-6 ${colorClass}`} />

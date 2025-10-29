@@ -168,7 +168,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
 
       {/* Create Studio Button */}
       <Card className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-primary/20">
-        <CardContent className="p-6">
+        <CardContent className="p-4 sm:p-6">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <h3 className="font-semibold mb-1">Create Your Own Studio</h3>
@@ -229,7 +229,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                   />
                 )}
 
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                     {/* Studio Avatar */}
                     <Avatar className="h-20 w-20 border-4 border-background -mt-12">

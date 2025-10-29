@@ -60,7 +60,7 @@ export function RolesPermissionsTab() {
       </div>
 
       {/* Role Hierarchy Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardHeader className="pb-3">
             <CardDescription>Total Roles</CardDescription>
@@ -153,44 +153,48 @@ export function RolesPermissionsTab() {
 
       {/* Role Details Panel */}
       {selectedRole && (
-        <Card>
-          <CardHeader>
-            <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-              <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
+        <Card className="max-h-[calc(100vh-8rem)] overflow-y-auto">
+          <CardHeader className="p-4 sm:p-4 sm:p-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="flex items-start gap-3 min-w-0 flex-1">
                 {(() => {
                   const role = BRANDED_ROLES[selectedRole]
                   const Icon = getRoleIcon(role.icon)
                   return (
                     <>
                       <div 
-                        className="p-3 rounded-lg"
+                        className="p-2 sm:p-3 rounded-lg flex-shrink-0"
                         style={{ backgroundColor: `${role.color}20` }}
                       >
-                        <Icon className="h-6 w-6" aria-hidden="true" style={{ color: role.color }} />
+                        <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" style={{ color: role.color }} />
                       </div>
-                      <div>
-                        <CardTitle>{t('roles.userRoles')}</CardTitle>
-                        <CardDescription>{role.description}</CardDescription>
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-base sm:text-lg">{t('roles.userRoles')}</CardTitle>
+                        <CardDescription className="mt-1 text-sm">{role.description}</CardDescription>
                       </div>
                     </>
                   )
                 })()}
               </div>
-              <Button variant="outline" onClick={() => setSelectedRole(null)}>
+              <Button 
+                variant="outline" 
+                onClick={() => setSelectedRole(null)}
+                className="w-full sm:w-auto flex-shrink-0"
+              >
                 Close
               </Button>
             </div>
           </CardHeader>
-          <CardContent>
-            <div className="space-y-3 md:space-y-4 lg:space-y-6">
+          <CardContent className="p-4 sm:p-4 sm:p-6">
+            <div className="space-y-4 sm:space-y-6">
               {/* Key Capabilities */}
               <div>
                 <h3 className="text-sm font-semibold mb-3">Key Capabilities</h3>
-                <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="flex flex-col gap-2 sm:grid sm:grid-cols-2">
                   {BRANDED_ROLES[selectedRole].capabilities.map((capability: any, idx: number) => (
-                    <div key={idx} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                      <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                      {capability}
+                    <div key={idx} className="flex items-start gap-2 text-sm min-w-0">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5" aria-hidden="true" />
+                      <span className="flex-1 min-w-0 break-words">{capability}</span>
                     </div>
                   ))}
                 </div>
@@ -199,22 +203,22 @@ export function RolesPermissionsTab() {
               {/* Permission Count */}
               <div>
                 <h3 className="text-sm font-semibold mb-3">Permission Summary</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 lg:gap-4">
                   <div className="text-center p-3 border rounded-lg">
-                    <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{getRolePermissionCount(selectedRole)}</div>
-                    <div className="text-xs text-muted-foreground">Total Permissions</div>
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold">{getRolePermissionCount(selectedRole)}</div>
+                    <div className="text-xs text-muted-foreground mt-1">Total Permissions</div>
                   </div>
                   <div className="text-center p-3 border rounded-lg">
-                    <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{BRANDED_ROLES[selectedRole].level}</div>
-                    <div className="text-xs text-muted-foreground">Hierarchy Level</div>
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold">{BRANDED_ROLES[selectedRole].level}</div>
+                    <div className="text-xs text-muted-foreground mt-1">Hierarchy Level</div>
                   </div>
                   <div className="text-center p-3 border rounded-lg">
-                    <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold capitalize">{BRANDED_ROLES[selectedRole].scope}</div>
-                    <div className="text-xs text-muted-foreground">Permission Scope</div>
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold capitalize">{BRANDED_ROLES[selectedRole].scope}</div>
+                    <div className="text-xs text-muted-foreground mt-1">Permission Scope</div>
                   </div>
                   <div className="text-center p-3 border rounded-lg">
-                    <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">12</div>
-                    <div className="text-xs text-muted-foreground">Categories</div>
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold">12</div>
+                    <div className="text-xs text-muted-foreground mt-1">Categories</div>
                   </div>
                 </div>
               </div>

@@ -139,7 +139,7 @@ export function OverviewTemplateOrganism({
                 <CardDescription>{t('quickActionsDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-3">
                   {quickActions.map((action) => {
                     const Icon = action.icon
                     return (
@@ -169,7 +169,7 @@ export function OverviewTemplateOrganism({
                 <CardTitle id="summary-heading" className="text-base">{t('summaryTitle')}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
                   {summaryItems.map((item) => (
                     <div key={item.labelKey} className="text-center p-4 border rounded-lg">
                       <p 

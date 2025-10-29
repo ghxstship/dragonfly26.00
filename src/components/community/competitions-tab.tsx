@@ -499,7 +499,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                     </div>
                   )}
 
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     {/* Header */}
                     <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 mb-3">
                       <div className="p-2 rounded-lg bg-primary/10">

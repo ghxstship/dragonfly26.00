@@ -88,7 +88,7 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-auto p-6">
+      <div className="flex-1 overflow-auto p-4 sm:p-6">
         {data.length === 0 ? (
           <EmptyState
             mainMessage={t('views.emptyState.nothingToSeeYet')}

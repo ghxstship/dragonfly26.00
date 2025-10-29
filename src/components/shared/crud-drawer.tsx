@@ -785,7 +785,7 @@ export function CrudDrawer({
         <div className="flex-1 flex flex-wrap overflow-hidden md:block">
           {/* Main Form */}
           <ScrollArea className="flex-1">
-            <div className="p-6 space-y-3 md:space-y-4 lg:space-y-6">
+            <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Form Fields */}
               <div className="space-y-4">
                 {formFields.map(field => (

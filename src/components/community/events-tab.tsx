@@ -202,7 +202,7 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
               />
             </div>
             <Tabs value={categoryFilter as any} onValueChange={(v) => setCategoryFilter(v as any)}>
-              <TabsList className="w-full grid grid-cols-4 lg:grid-cols-7 max-w-full">
+              <TabsList className="w-full grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-7 max-w-full">
                 <TabsTrigger value="all">{t('all')}</TabsTrigger>
                 <TabsTrigger value="concert">{t('concert')}</TabsTrigger>
                 <TabsTrigger value="festival">{t('festival')}</TabsTrigger>
@@ -282,7 +282,7 @@ export function EventsTab({ data = [], loading: loadingProp = false }: EventsTab
                   )}
 
                   {/* Event Details */}
-                  <div className="p-6 flex-1">
+                  <div className="p-4 sm:p-6 flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4 mb-3">
                       <div className="flex-1">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">

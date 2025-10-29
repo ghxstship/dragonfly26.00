@@ -149,7 +149,7 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
               <div className="space-y-4">
                 {/* Map Display Area */}
                 <div 
-                  className="border-2 border-dashed rounded-lg bg-gray-50 dark:bg-gray-900 p-8 min-h-[300px] md:h-[500px] relative overflow-auto"
+                  className="border-2 border-dashed rounded-lg bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 md:p-8 min-h-[300px] md:h-[500px] relative overflow-auto"
                   style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'top left' }}
                 >
                   {/* Placeholder for actual map image */}

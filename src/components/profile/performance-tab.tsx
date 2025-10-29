@@ -143,7 +143,7 @@ export function PerformanceTab() {
         </Select>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         {performanceMetrics.map((metric: any) => (
           <Card key={t(metric.labelKey)}>
             <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">

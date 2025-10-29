@@ -209,7 +209,7 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
                   )}
 
                   {/* Content */}
-                  <div className="p-6 flex-1">
+                  <div className="p-4 sm:p-6 flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4 mb-3">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         {article.sourceImage && (

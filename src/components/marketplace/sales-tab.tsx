@@ -138,7 +138,7 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
                   <div>
                     <p className="text-sm text-muted-foreground">{t('amount')}</p>
                     <p className="text-lg font-semibold">{sale.price}</p>

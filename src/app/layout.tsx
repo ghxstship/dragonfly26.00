@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import { Inter, Anton_SC, Bebas_Neue, Share_Tech_Mono, Share_Tech } from "next/font/google"
-import localFont from "next/font/local"
+import { Inter, Anton_SC, Bebas_Neue, Share_Tech_Mono, Share_Tech, Press_Start_2P } from "next/font/google"
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import "./globals.css"
@@ -17,17 +16,12 @@ const inter = Inter({
 })
 
 // Marketing Typography
-// Coral Pixels - Logo (pixel font)
-const coralPixels = localFont({
-  src: [
-    {
-      path: '../../public/fonts/CoralPixels-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-coral-pixels',
+// Press Start 2P - Logo (pixel font from Google Fonts)
+const pressStart2P = Press_Start_2P({
+  weight: '400',
+  subsets: ["latin"],
   display: 'swap',
+  variable: '--font-press-start-2p',
 })
 
 // Anton SC - Titles (capitalized)
@@ -96,7 +90,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${coralPixels.variable} ${antonSC.variable} ${bebasNeue.variable} ${shareTechMono.variable} ${shareTech.variable} font-tech`}>
+      <body className={`${inter.variable} ${pressStart2P.variable} ${antonSC.variable} ${bebasNeue.variable} ${shareTechMono.variable} ${shareTech.variable} font-tech`}>
         <QueryProvider>
           <ThemeProvider
             attribute="class"

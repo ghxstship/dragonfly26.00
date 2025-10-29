@@ -166,7 +166,7 @@ export function WishlistButton({
         </DropdownMenu>
 
         <Dialog open={showNewWishlistDialog} onOpenChange={setShowNewWishlistDialog}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Create New Wishlist</DialogTitle>
               <DialogDescription>

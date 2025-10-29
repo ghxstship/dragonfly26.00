@@ -1,0 +1,2751 @@
+{
+  "results": [
+    {
+      "filePath": "admin/admin-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "admin/api-tokens-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "admin/automations-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "admin/billing-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "admin/custom-statuses-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "admin/integrations-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "admin/members-management-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "admin/plugins-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "admin/recurrence-rules-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "admin/roles-permissions-tab.tsx",
+      "issues": [
+        {
+          "pattern": "bulletPoints",
+          "issue": "Bullet point list items",
+          "fix": "Add min-w-0, flex-shrink-0, break-words",
+          "priority": "HIGH",
+          "count": 1
+        },
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "admin/security-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "admin/webhooks-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-comparisons-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-custom-views-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        },
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-data-sources-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-forecasting-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-metrics-library-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-performance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-pivot-tables-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-realtime-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "analytics/analytics-trends-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "api-tokens/api-tokens-page-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "api-tokens/create-token-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "assets/assets-maintenance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "assets/assets-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "assets/assets-tracking-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "assets/barcode-scanner-overlay.tsx",
+      "issues": [
+        {
+          "pattern": "dialogContent",
+          "issue": "Dialog content with fixed padding",
+          "fix": "Use responsive padding: p-4 sm:p-6 md:p-8",
+          "priority": "HIGH",
+          "count": 1
+        },
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "assets/count-execution-mobile.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "assets/counts-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "assets/inventory-alerts-panel.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "assets/inventory-item-drawer.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "assets/inventory-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "automations/automations-page-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "community/events-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-bids-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-companies-compliance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-companies-invoices-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-companies-reviews-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-companies-work-orders-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-deliverables-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-documents-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-scopes-of-work-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "companies/companies-subcontractor-profile-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-advances-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-agenda-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-assets-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-files-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-jobs-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-orders-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-reports-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-tasks-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-my-travel-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/dashboard-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/quick-actions/book-travel-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/quick-actions/create-task-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/quick-actions/log-expense-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "dashboard/quick-actions/upload-file-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-activities-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-all-events-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-blocks-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-bookings-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-calendar-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-equipment-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-incidents-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-internal-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-itineraries-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-rehearsals-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-reservations-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-shipping-receiving-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "events/events-trainings-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-all-documents-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-archive-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-call-sheets-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-contracts-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-insurance-permits-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-media-assets-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-production-reports-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-riders-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-shared-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "files/files-tech-specs-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-accounts-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-budgets-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-expenses-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-forecasts-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-gl-codes-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-invoices-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-payments-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-payroll-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-reconciliation-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-revenue-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-taxes-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-transactions-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "finance/finance-variance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "insights/create-objective-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-benchmarks-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-key-results-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-objectives-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-page-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-priorities-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-progress-tracking-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-recommendations-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-reviews-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "insights/insights-success-metrics-tab.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "insights/objective-detail.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "insights/objectives-list.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-active-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-archived-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-checklists-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-completed-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-dispatch-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-estimates-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-jobs-compliance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-jobs-invoices-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-offers-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-recruiting-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-rfps-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-shortlists-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "jobs/jobs-work-orders-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "locations/locations-access-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "locations/locations-bim-models-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "locations/locations-coordination-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "locations/locations-logistics-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "locations/locations-site-maps-tab.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "locations/locations-spatial-features-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "locations/locations-utilities-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "locations/locations-warehousing-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/favorites-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        },
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/lists-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/marketplace-collection-browser.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/marketplace-quick-view.tsx",
+      "issues": [
+        {
+          "pattern": "dialogContent",
+          "issue": "Dialog content with fixed padding",
+          "fix": "Use responsive padding: p-4 sm:p-6 md:p-8",
+          "priority": "HIGH",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/orders-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/purchases-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/reviews-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        },
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/sales-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/services-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/shop-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "marketplace/vendors-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "members/create-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "members/invite-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "organisms/data-views/CalendarOrganism.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "organisms/data-views/PortfolioViewOrganism.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "organisms/forms/FormBuilderOrganism.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "organisms/templates/OverviewTemplateOrganism.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "organisms/templates/SpotlightTemplateOrganism.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "people/activity-timeline.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/people-applicants-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/people-assignments-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/people-onboarding-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/people-openings-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/people-personnel-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/people-teams-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/people-timekeeping-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/people-training-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/pto-calendar-widget.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "people/time-clock-widget.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "plugins/installed-plugins.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "plugins/plugins-page-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "procurement/procurement-agreements-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "procurement/procurement-audits-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "procurement/procurement-fulfillment-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "procurement/procurement-line-items-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "procurement/procurement-orders-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "procurement/procurement-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "procurement/procurement-procurement-approvals-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "procurement/procurement-requisitions-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "profile/basic-info-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "filePath": "profile/certifications-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "profile/emergency-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "profile/health-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "profile/history-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "profile/performance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "profile/professional-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "filePath": "profile/travel-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-activations-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-compliance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-costs-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-milestones-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-projects-checklists-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-projects-work-orders-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-safety-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "projects/projects-tasks-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "reports/create-report-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "reports/report-viewer.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-archived-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-compliance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-custom-builder-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        },
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-executive-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-list.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-operational-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-overview-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-page-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-scheduled-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "reports/reports-templates-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "settings/account-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "settings/appearance-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "settings/automations-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "settings/billing-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "settings/profile-page.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "settings/team-tab.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/crud-drawer.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "filePath": "shared/empty-state.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/item-detail-drawer.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/mobile-table-card.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/notifications-tab-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/photo-tab-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/recurrence-editor.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/scan-tab-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/share-panel.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/sort-panel.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/tab-config-panel.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "shared/tasks-tab-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "ui/command.tsx",
+      "issues": [
+        {
+          "pattern": "dialogContent",
+          "issue": "Dialog content with fixed padding",
+          "fix": "Use responsive padding: p-4 sm:p-6 md:p-8",
+          "priority": "HIGH",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "views.backup/calendar-view.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "filePath": "views.backup/dashboard-view.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "views.backup/financial-view.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "views.backup/mind-map-view.tsx",
+      "issues": [
+        {
+          "pattern": "largePadding",
+          "issue": "Large padding without responsive",
+          "fix": "Use p-4 sm:p-6 md:p-8",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "views.backup/pivot-view.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "views.backup/portfolio-view.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "filePath": "webhooks/create-webhook-dialog.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "filePath": "webhooks/webhooks-page-content.tsx",
+      "issues": [
+        {
+          "pattern": "gridNoMobile",
+          "issue": "Grid without mobile-first",
+          "fix": "Start with grid-cols-1",
+          "priority": "MEDIUM",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "HIGH": 4,
+    "MEDIUM": 227,
+    "LOW": 0
+  }
+}

@@ -223,7 +223,7 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
       {/* Canvas */}
       <div className="flex-1 overflow-auto bg-muted/30">
         <div
-          className="p-8 min-w-max"
+          className="p-4 sm:p-6 md:p-8 min-w-max"
           style={{ transform: `scale(${zoom / 100})`, transformOrigin: "top left" }}
         >
           {tree.length > 0 ? (

@@ -91,7 +91,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
       {/* Summary Stats */}
       <section role="region" aria-labelledby="tasks-stats">
         <h2 id="tasks-stats" className="sr-only">{t('summaryStats')}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="text-center">
