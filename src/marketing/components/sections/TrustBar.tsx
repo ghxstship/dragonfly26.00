@@ -10,7 +10,7 @@ export function TrustBar(): JSX.Element {
   return (
     <section className={cn("py-12 bg-white dark:bg-gray-950 border-y border-gray-200 dark:border-gray-800", padding.sectionX)}>
       <div className="mx-auto text-center">
-        <p className="text-gray-600 dark:text-gray-400">{tGen('trustedBy')}</p>
+        <p className="text-gray-600 dark:text-gray-400">{tGen('trustBar.trustedBy')}</p>
       </div>
     </section>
   )

@@ -37,7 +37,18 @@ export function useGenerationalMarketing() {
       const generationalKey = `${variant}.${key}`;
       const value = tGenerational(generationalKey as any);
       
-      if (value && typeof value === 'string' && !value.startsWith('marketing.generational.')) {
+      // Check if we got a valid translation (not a key path)
+      if (value && typeof value === 'string' && !value.includes('marketing.generational.') && !value.includes('.')) {
+        return value;
+      }
+      
+      // If the value looks like a translation key (contains dots or the namespace), fall back
+      if (typeof value === 'string' && (value.includes('marketing.generational.') || value === generationalKey)) {
+        return t(key);
+      }
+      
+      // If we got a valid string that doesn't look like a key, return it
+      if (value && typeof value === 'string') {
         return value;
       }
     } catch (error) {

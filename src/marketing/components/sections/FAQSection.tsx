@@ -12,12 +12,12 @@ export function FAQSection(): JSX.Element {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const faqs = [
-    { question: tGen('question1'), answer: tGen('answer1') },
-    { question: tGen('question2'), answer: tGen('answer2') },
-    { question: tGen('question3'), answer: tGen('answer3') },
-    { question: tGen('question4'), answer: tGen('answer4') },
-    { question: tGen('question5'), answer: tGen('answer5') },
-    { question: tGen('question6'), answer: tGen('answer6') },
+    { question: tGen('faq.question1'), answer: tGen('faq.answer1') },
+    { question: tGen('faq.question2'), answer: tGen('faq.answer2') },
+    { question: tGen('faq.question3'), answer: tGen('faq.answer3') },
+    { question: tGen('faq.question4'), answer: tGen('faq.answer4') },
+    { question: tGen('faq.question5'), answer: tGen('faq.answer5') },
+    { question: tGen('faq.question6'), answer: tGen('faq.answer6') },
   ]
 
   return (
@@ -25,7 +25,7 @@ export function FAQSection(): JSX.Element {
       <div className={cn("mx-auto", container['2xl'])}>
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6 font-heading uppercase">
-            {tGen('title')}
+            {tGen('faq.title')}
           </h2>
         </div>
 
