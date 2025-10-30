@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useTranslations } from "next-intl"
+import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, padding, container, cards } from "@/design-tokens"
 import { 
@@ -174,8 +174,7 @@ interface RoleModalProps {
 }
 
 function RoleModal({ role, onClose }: RoleModalProps) {
-  const t = useTranslations('marketing.roles')
-  const roleData = ROLES[role]
+    const roleData = ROLES[role]
   const Icon = roleData.icon
 
   return (
@@ -209,7 +208,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
 
         {/* Role name */}
         <h2 className="text-xl sm:text-2xl md:text-3xl text-white text-center mb-2 font-heading uppercase">
-          {t(`${role}.name`)}
+          {tGen(`${role}.name`)}
         </h2>
 
         {/* Role type badge */}
@@ -236,7 +235,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
 
         {/* Description */}
         <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
-          {t(`${role}.description`)}
+          {tGen(`${role}.description`)}
         </p>
 
         {/* Key Abilities */}
@@ -265,8 +264,7 @@ interface RoleBadgeProps {
 }
 
 function RoleBadge({ role, onClick }: RoleBadgeProps) {
-  const t = useTranslations('marketing.roles')
-  const roleData = ROLES[role]
+    const roleData = ROLES[role]
   const Icon = roleData.icon
 
   return (
@@ -280,14 +278,14 @@ function RoleBadge({ role, onClick }: RoleBadgeProps) {
       )}
     >
       <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
-      <span className="truncate">{t(`${role}.name`)}</span>
+      <span className="truncate">{tGen(`${role}.name`)}</span>
     </button>
   )
 }
 
 export function DetailedPricingSection(): JSX.Element {
-  const t = useTranslations('marketing.pricing')
-  const [isAnnual, setIsAnnual] = useState(false)
+  const { tGen } = useGenerationalMarketing()
+    const [isAnnual, setIsAnnual] = useState(false)
   const [selectedRole, setSelectedRole] = useState<RoleKey | null>(null)
 
   return (

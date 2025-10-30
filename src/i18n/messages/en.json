@@ -8435,6 +8435,431 @@
           "testimonial3Quote": "We reduced budget overruns by 40% in the first quarter. The financial visibility and tracking capabilities are genuinely impressive.",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "features": {
+          "title": "Everything You Need to Produce at Scale",
+          "subtitle": "Six integrated hubs for complete production control",
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "feature1": "Project & event planning",
+            "feature2": "Team & team management",
+            "feature3": "Asset tracking & inventory",
+            "feature4": "Location & venue coordination"
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "feature1": "Vendor & company management",
+            "feature2": "Job postings & hiring",
+            "feature3": "Procurement & purchasing",
+            "feature4": "Budget & expense tracking"
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "feature1": "Community & discussions",
+            "feature2": "Marketplace & services",
+            "feature3": "Resource library",
+            "feature4": "Industry connections"
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "feature1": "Custom workflow automation",
+            "feature2": "Event-driven triggers",
+            "feature3": "Scheduled task execution",
+            "feature4": "Integration pipelines"
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "feature1": "Custom reports",
+            "feature2": "Real-time analytics",
+            "feature3": "Predictive insights",
+            "feature4": "Performance metrics"
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "feature1": "User & role management",
+            "feature2": "System configuration",
+            "feature3": "Profile customization",
+            "feature4": "Security & permissions"
+          }
+        },
+        "detailedFeatures": {
+          "hero": {
+            "title": "Everything You Need to Produce at Scale",
+            "subtitle": "Six integrated hubs designed for experiential production teams"
+          },
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "projects": {
+              "title": "Projects",
+              "description": "Organize and track productions from concept to strike"
+            },
+            "events": {
+              "title": "Events",
+              "description": "Schedule, coordinate, and manage every detail and timeline"
+            },
+            "people": {
+              "title": "People",
+              "description": "Manage team assignments, availability, and scheduling"
+            },
+            "assets": {
+              "title": "Assets",
+              "description": "Track equipment, inventory, and resources across productions"
+            },
+            "locations": {
+              "title": "Locations",
+              "description": "Coordinate venues, sites, and facility logistics"
+            },
+            "files": {
+              "title": "Files",
+              "description": "Centralize documents, media, and production files securely"
+            }
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "companies": {
+              "title": "Companies",
+              "description": "Manage vendor relationships, clients, and partners"
+            },
+            "jobs": {
+              "title": "Jobs",
+              "description": "Post positions, track applications, manage hiring"
+            },
+            "procurement": {
+              "title": "Procurement",
+              "description": "Streamline purchasing, vendor selection, and contracts"
+            },
+            "invoices": {
+              "title": "Invoices",
+              "description": "Create, send, and track invoices with automated reminders"
+            },
+            "expenses": {
+              "title": "Expenses",
+              "description": "Record and categorize expenses with receipt capture"
+            },
+            "budgets": {
+              "title": "Budgets",
+              "description": "Plan, monitor, and control budgets with real-time tracking"
+            }
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "community": {
+              "title": "Community",
+              "description": "Connect with industry pros, share knowledge, collaborate"
+            },
+            "marketplace": {
+              "title": "Marketplace",
+              "description": "Discover services, hire talent, find production resources"
+            },
+            "resources": {
+              "title": "Resources",
+              "description": "Access guides, templates, and best practices"
+            }
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "workflows": {
+              "title": "Workflows",
+              "description": "Build custom automation sequences for repetitive processes"
+            },
+            "triggers": {
+              "title": "Triggers",
+              "description": "Set up event-driven actions that respond automatically"
+            },
+            "scheduled": {
+              "title": "Scheduled Tasks",
+              "description": "Automate recurring tasks with flexible scheduling"
+            }
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "reports": {
+              "title": "Reports",
+              "description": "Create custom reports with flexible visualization and export"
+            },
+            "analytics": {
+              "title": "Analytics",
+              "description": "Track KPIs, monitor trends, measure performance"
+            },
+            "insights": {
+              "title": "Insights",
+              "description": "Get AI-powered recommendations and predictive analytics"
+            }
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "admin": {
+              "title": "Admin",
+              "description": "Manage organization settings, security, and configuration"
+            },
+            "settings": {
+              "title": "Settings",
+              "description": "Customize preferences, integrations, and platform behavior"
+            },
+            "profiles": {
+              "title": "User Profiles",
+              "description": "Manage team profiles, roles, and access permissions"
+            }
+          }
+        },
+        "roles": {
+          "title": "Built for Every Role on Your Crew",
+          "subtitle": "11 branded roles with precise permissions",
+          "legend": {
+            "title": "Legend",
+            "description": "Platform Super Admin - Full control across all organizations"
+          },
+          "phantom": {
+            "name": "Phantom",
+            "level": "Supreme Authority",
+            "title": "Phantom",
+            "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
+          },
+          "aviator": {
+            "name": "Aviator",
+            "level": "Strategic Leadership",
+            "title": "Aviator",
+            "description": "Cross-project visibility, resource allocation, and executive analytics. Manage high-level production strategy at scale."
+          },
+          "gladiator": {
+            "name": "Gladiator",
+            "level": "Project Leadership",
+            "title": "Gladiator",
+            "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
+          },
+          "navigator": {
+            "name": "Navigator",
+            "level": "Coordination",
+            "title": "Navigator",
+            "description": "Project coordination, task assignment, and team guidance. Plan the course through complex workflows."
+          },
+          "deviator": {
+            "name": "Deviator",
+            "level": "Execution",
+            "title": "Deviator",
+            "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
+          },
+          "raider": {
+            "name": "Raider",
+            "level": "Learning & Observation",
+            "title": "Raider",
+            "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
+          },
+          "vendor": {
+            "name": "Vendor",
+            "level": "Scoped Delivery",
+            "title": "Vendor",
+            "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
+          },
+          "visitor": {
+            "name": "Visitor",
+            "level": "Limited Visibility",
+            "title": "Visitor",
+            "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
+          },
+          "partner": {
+            "name": "Partner",
+            "level": "Strategic Collaboration",
+            "title": "Partner",
+            "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
+          },
+          "ambassador": {
+            "name": "Ambassador",
+            "level": "Community Champions",
+            "title": "Ambassador",
+            "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
+          }
+        },
+        "security": {
+          "title": "Enterprise-Grade Security",
+          "subtitle": "Your data is protected at every level",
+          "feature1Title": "Row-Level Security",
+          "feature1Description": "801 RLS policies ensure users only see what they should",
+          "feature2Title": "Role-Based Access",
+          "feature2Description": "11 branded roles with 45+ granular permissions",
+          "feature3Title": "Encrypted Storage",
+          "feature3Description": "All data encrypted at rest and in transit",
+          "feature4Title": "Audit Logging",
+          "feature4Description": "Complete audit trail of all system activity",
+          "feature5Title": "SOC 2 Compliant",
+          "feature5Description": "Enterprise-grade security standards",
+          "feature6Title": "GDPR Ready",
+          "feature6Description": "Full compliance with data privacy regulations"
+        },
+        "pricing": {
+          "title": "Transparent Pricing That Scales With You",
+          "subtitle": "From solo contractors to enterprise producers",
+          "monthly": "Monthly",
+          "annually": "Annually",
+          "save20": "Save 20%",
+          "community": {
+            "name": "Community",
+            "price": "Free",
+            "period": "forever",
+            "description": "Perfect for getting started",
+            "feature1": "Raider role access",
+            "feature2": "Basic task management",
+            "feature3": "Community support",
+            "cta": "Begin Trial Free"
+          },
+          "pro": {
+            "name": "Pro",
+            "price": "$12",
+            "period": "per month",
+            "annualPrice": "$10/month (billed annually)",
+            "description": "For independent contractors",
+            "feature1": "Deviator & Raider roles",
+            "feature2": "Advanced task management",
+            "feature3": "Priority support",
+            "cta": "Begin Free Trial Trial"
+          },
+          "team": {
+            "name": "Team",
+            "badge": "Most Popular",
+            "price": "$120",
+            "period": "per month",
+            "annualPrice": "$100/month (billed annually)",
+            "description": "For small to medium teams (2-10 seats)",
+            "feature1": "All Pro features",
+            "feature2": "Vendor management",
+            "feature3": "Team collaboration",
+            "cta": "Begin Free Trial Trial"
+          },
+          "starter": {
+            "name": "Starter",
+            "price": "$29",
+            "period": "per user/month",
+            "description": "Perfect for freelancers and small teams",
+            "feature1": "Up to 5 users",
+            "feature2": "10 active projects",
+            "feature3": "Basic reporting",
+            "feature4": "Email support",
+            "feature5": "10GB storage",
+            "cta": "Begin Free Trial Trial"
+          },
+          "professional": {
+            "name": "Professional",
+            "price": "$79",
+            "period": "per user/month",
+            "description": "For growing production companies",
+            "feature1": "Up to 25 users",
+            "feature2": "Unlimited projects",
+            "feature3": "Advanced analytics",
+            "feature4": "Priority support",
+            "feature5": "100GB storage",
+            "feature6": "Custom roles",
+            "feature7": "API access",
+            "cta": "Begin Free Trial Trial",
+            "popular": "Most Popular"
+          },
+          "enterprise": {
+            "name": "Enterprise",
+            "price": "Custom",
+            "period": "contact sales",
+            "annualPrice": "$1000/month (billed annually)",
+            "description": "For large organizations and agencies",
+            "feature1": "Unlimited users",
+            "feature2": "Unlimited projects",
+            "feature3": "Custom integrations",
+            "feature4": "Dedicated support",
+            "feature5": "Unlimited storage",
+            "feature6": "SSO & SAML",
+            "feature7": "SLA guarantee",
+            "feature8": "Custom training",
+            "cta": "Contact Sales"
+          }
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "subtitle": "Everything you need to know",
+          "question1": "How long is the free trial?",
+          "answer1": "14 days, no credit card required. Full access to all features.",
+          "question2": "Can I cancel anytime?",
+          "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "question3": "What payment methods do you accept?",
+          "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "question4": "Is my data secure?",
+          "answer4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "question5": "Do you offer training?",
+          "answer5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "question6": "Can I import my existing data?",
+          "answer6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans.",
+          "q1": "How long is the free trial?",
+          "a1": "14 days, no credit card required. Full access to all features.",
+          "q2": "Can I cancel anytime?",
+          "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "q3": "What payment methods do you accept?",
+          "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "q4": "Is my data secure?",
+          "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "q5": "Do you offer training?",
+          "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "q6": "Can I import my existing data?",
+          "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+        },
+        "cta": {
+          "title": "Ready to Transform Your Production Workflow?",
+          "subtitle": "Join thousands of production professionals using ATLVS",
+          "ctaPrimary": "Begin Free Trial Trial",
+          "ctaSecondary": "Schedule Demo",
+          "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
+          "primary": "Begin Free Trial Trial",
+          "secondary": "Schedule Demo",
+          "noCard": "No credit card required"
+        },
+        "solutions": {
+          "hero": {
+            "title": "Solutions by Industry",
+            "subtitle": "Purpose-built workflows for every type of live entertainment production"
+          },
+          "concerts": {
+            "title": "Concerts & Touring",
+            "description": "Streamline routing, budgeting, logistics, and team management across global tour operations — from small venue runs to arena-scale productions."
+          },
+          "festivals": {
+            "title": "Music & Art Festivals",
+            "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+          },
+          "immersive": {
+            "title": "Immersive & Experiential Events",
+            "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+          },
+          "theatrical": {
+            "title": "Theatrical & Live Productions",
+            "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+          },
+          "filmTv": {
+            "title": "Film, TV & Media",
+            "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+          },
+          "brandActivations": {
+            "title": "Brand Activations & Marketing Campaigns",
+            "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+          },
+          "corporate": {
+            "title": "Corporate & Private Events",
+            "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+          },
+          "tradeShows": {
+            "title": "Trade Shows & Conventions",
+            "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+          },
+          "wellness": {
+            "title": "Health, Wellness & Lifestyle",
+            "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+          }
         }
       },
       "gen-x": {
@@ -8499,6 +8924,431 @@
           "testimonial3Quote": "Cut budget overruns 40% first quarter. The tracking actually works.",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "features": {
+          "title": "Everything You Need to Produce at Scale",
+          "subtitle": "Six integrated hubs for complete production control",
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "feature1": "Project & event planning",
+            "feature2": "Team & crew management",
+            "feature3": "Asset tracking & inventory",
+            "feature4": "Location & venue coordination"
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "feature1": "Vendor & company management",
+            "feature2": "Job postings & hiring",
+            "feature3": "Procurement & purchasing",
+            "feature4": "Budget & expense tracking"
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "feature1": "Community & discussions",
+            "feature2": "Marketplace & services",
+            "feature3": "Resource library",
+            "feature4": "Industry connections"
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "feature1": "Custom workflow automation",
+            "feature2": "Event-driven triggers",
+            "feature3": "Scheduled task execution",
+            "feature4": "Integration pipelines"
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "feature1": "Custom reports",
+            "feature2": "Real-time analytics",
+            "feature3": "Predictive insights",
+            "feature4": "Performance metrics"
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "feature1": "User & role management",
+            "feature2": "System configuration",
+            "feature3": "Profile customization",
+            "feature4": "Security & permissions"
+          }
+        },
+        "detailedFeatures": {
+          "hero": {
+            "title": "Everything You Need to Produce at Scale",
+            "subtitle": "Six integrated hubs designed for experiential production teams"
+          },
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "projects": {
+              "title": "Projects",
+              "description": "Organize and track productions from concept to strike"
+            },
+            "events": {
+              "title": "Events",
+              "description": "Schedule, coordinate, and manage every detail and timeline"
+            },
+            "people": {
+              "title": "People",
+              "description": "Manage crew assignments, availability, and scheduling"
+            },
+            "assets": {
+              "title": "Assets",
+              "description": "Track equipment, inventory, and resources across productions"
+            },
+            "locations": {
+              "title": "Locations",
+              "description": "Coordinate venues, sites, and facility logistics"
+            },
+            "files": {
+              "title": "Files",
+              "description": "Centralize documents, media, and production files securely"
+            }
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "companies": {
+              "title": "Companies",
+              "description": "Manage vendor relationships, clients, and partners"
+            },
+            "jobs": {
+              "title": "Jobs",
+              "description": "Post positions, track applications, manage hiring"
+            },
+            "procurement": {
+              "title": "Procurement",
+              "description": "Streamline purchasing, vendor selection, and contracts"
+            },
+            "invoices": {
+              "title": "Invoices",
+              "description": "Create, send, and track invoices with automated reminders"
+            },
+            "expenses": {
+              "title": "Expenses",
+              "description": "Record and categorize expenses with receipt capture"
+            },
+            "budgets": {
+              "title": "Budgets",
+              "description": "Plan, monitor, and control budgets with real-time tracking"
+            }
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "community": {
+              "title": "Community",
+              "description": "Connect with industry pros, share knowledge, collaborate"
+            },
+            "marketplace": {
+              "title": "Marketplace",
+              "description": "Discover services, hire talent, find production resources"
+            },
+            "resources": {
+              "title": "Resources",
+              "description": "Access guides, templates, and best practices"
+            }
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "workflows": {
+              "title": "Workflows",
+              "description": "Build custom automation sequences for repetitive processes"
+            },
+            "triggers": {
+              "title": "Triggers",
+              "description": "Set up event-driven actions that respond automatically"
+            },
+            "scheduled": {
+              "title": "Scheduled Tasks",
+              "description": "Automate recurring tasks with flexible scheduling"
+            }
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "reports": {
+              "title": "Reports",
+              "description": "Create custom reports with flexible visualization and export"
+            },
+            "analytics": {
+              "title": "Analytics",
+              "description": "Track KPIs, monitor trends, measure performance"
+            },
+            "insights": {
+              "title": "Insights",
+              "description": "Get AI-powered recommendations and predictive analytics"
+            }
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "admin": {
+              "title": "Admin",
+              "description": "Manage organization settings, security, and configuration"
+            },
+            "settings": {
+              "title": "Settings",
+              "description": "Customize preferences, integrations, and platform behavior"
+            },
+            "profiles": {
+              "title": "User Profiles",
+              "description": "Manage team profiles, roles, and access permissions"
+            }
+          }
+        },
+        "roles": {
+          "title": "Built for Every Role on Your Crew",
+          "subtitle": "11 branded roles with precise permissions",
+          "legend": {
+            "title": "Legend",
+            "description": "Platform Super Admin - Full control across all organizations"
+          },
+          "phantom": {
+            "name": "Phantom",
+            "level": "Supreme Authority",
+            "title": "Phantom",
+            "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
+          },
+          "aviator": {
+            "name": "Aviator",
+            "level": "Strategic Leadership",
+            "title": "Aviator",
+            "description": "Cross-project visibility, resource allocation, and executive analytics. Get it done high-level production strategy at scale."
+          },
+          "gladiator": {
+            "name": "Gladiator",
+            "level": "Project Leadership",
+            "title": "Gladiator",
+            "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
+          },
+          "navigator": {
+            "name": "Navigator",
+            "level": "Coordination",
+            "title": "Navigator",
+            "description": "Project coordination, task assignment, and team guidance. Map out the course through complex workflows."
+          },
+          "deviator": {
+            "name": "Deviator",
+            "level": "Execution",
+            "title": "Deviator",
+            "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
+          },
+          "raider": {
+            "name": "Raider",
+            "level": "Learning & Observation",
+            "title": "Raider",
+            "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
+          },
+          "vendor": {
+            "name": "Vendor",
+            "level": "Scoped Delivery",
+            "title": "Vendor",
+            "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
+          },
+          "visitor": {
+            "name": "Visitor",
+            "level": "Limited Visibility",
+            "title": "Visitor",
+            "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
+          },
+          "partner": {
+            "name": "Partner",
+            "level": "Strategic Collaboration",
+            "title": "Partner",
+            "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
+          },
+          "ambassador": {
+            "name": "Ambassador",
+            "level": "Community Champions",
+            "title": "Ambassador",
+            "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
+          }
+        },
+        "security": {
+          "title": "Enterprise-Grade Security",
+          "subtitle": "Your data is protected at every level",
+          "feature1Title": "Row-Level Security",
+          "feature1Description": "801 RLS policies ensure users only see what they should",
+          "feature2Title": "Role-Based Access",
+          "feature2Description": "11 branded roles with 45+ granular permissions",
+          "feature3Title": "Encrypted Storage",
+          "feature3Description": "All data encrypted at rest and in transit",
+          "feature4Title": "Audit Logging",
+          "feature4Description": "Complete audit trail of all system activity",
+          "feature5Title": "SOC 2 Compliant",
+          "feature5Description": "Enterprise-grade security standards",
+          "feature6Title": "GDPR Ready",
+          "feature6Description": "Full compliance with data privacy regulations"
+        },
+        "pricing": {
+          "title": "Transparent Pricing That Scales With You",
+          "subtitle": "From solo contractors to enterprise producers",
+          "monthly": "Monthly",
+          "annually": "Annually",
+          "save20": "Save 20%",
+          "community": {
+            "name": "Community",
+            "price": "Free",
+            "period": "forever",
+            "description": "Perfect for getting started",
+            "feature1": "Raider role access",
+            "feature2": "Basic task management",
+            "feature3": "Community support",
+            "cta": "Get Started Free"
+          },
+          "pro": {
+            "name": "Pro",
+            "price": "$12",
+            "period": "per month",
+            "annualPrice": "$10/month (billed annually)",
+            "description": "For independent contractors",
+            "feature1": "Deviator & Raider roles",
+            "feature2": "Advanced task management",
+            "feature3": "Priority support",
+            "cta": "Start Free Trial"
+          },
+          "team": {
+            "name": "Team",
+            "badge": "Most Popular",
+            "price": "$120",
+            "period": "per month",
+            "annualPrice": "$100/month (billed annually)",
+            "description": "For small to medium teams (2-10 seats)",
+            "feature1": "All Pro features",
+            "feature2": "Vendor management",
+            "feature3": "Team collaboration",
+            "cta": "Start Free Trial"
+          },
+          "starter": {
+            "name": "Starter",
+            "price": "$29",
+            "period": "per user/month",
+            "description": "Perfect for freelancers and small teams",
+            "feature1": "Up to 5 users",
+            "feature2": "10 active projects",
+            "feature3": "Basic reporting",
+            "feature4": "Email support",
+            "feature5": "10GB storage",
+            "cta": "Start Free Trial"
+          },
+          "professional": {
+            "name": "Professional",
+            "price": "$79",
+            "period": "per user/month",
+            "description": "For growing production companies",
+            "feature1": "Up to 25 users",
+            "feature2": "Unlimited projects",
+            "feature3": "Advanced analytics",
+            "feature4": "Priority support",
+            "feature5": "100GB storage",
+            "feature6": "Custom roles",
+            "feature7": "API access",
+            "cta": "Start Free Trial",
+            "popular": "Most Popular"
+          },
+          "enterprise": {
+            "name": "Enterprise",
+            "price": "Custom",
+            "period": "contact sales",
+            "annualPrice": "$1000/month (billed annually)",
+            "description": "For large organizations and agencies",
+            "feature1": "Unlimited users",
+            "feature2": "Unlimited projects",
+            "feature3": "Custom integrations",
+            "feature4": "Dedicated support",
+            "feature5": "Unlimited storage",
+            "feature6": "SSO & SAML",
+            "feature7": "SLA guarantee",
+            "feature8": "Custom training",
+            "cta": "Contact Sales"
+          }
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "subtitle": "Everything you need to know",
+          "question1": "How long is the free trial?",
+          "answer1": "14 days, no credit card required. Full access to all features.",
+          "question2": "Can I cancel anytime?",
+          "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "question3": "What payment methods do you accept?",
+          "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "question4": "Is my data secure?",
+          "answer4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "question5": "Do you offer training?",
+          "answer5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "question6": "Can I import my existing data?",
+          "answer6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans.",
+          "q1": "How long is the free trial?",
+          "a1": "14 days, no credit card required. Full access to all features.",
+          "q2": "Can I cancel anytime?",
+          "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "q3": "What payment methods do you accept?",
+          "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "q4": "Is my data secure?",
+          "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "q5": "Do you offer training?",
+          "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "q6": "Can I import my existing data?",
+          "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+        },
+        "cta": {
+          "title": "Ready to Transform Your Production Workflow?",
+          "subtitle": "Join thousands of production professionals using ATLVS",
+          "ctaPrimary": "Start Free Trial",
+          "ctaSecondary": "Schedule Demo",
+          "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
+          "primary": "Start Free Trial",
+          "secondary": "Schedule Demo",
+          "noCard": "No credit card required"
+        },
+        "solutions": {
+          "hero": {
+            "title": "Solutions by Industry",
+            "subtitle": "Purpose-built workflows for every type of live entertainment production"
+          },
+          "concerts": {
+            "title": "Concerts & Touring",
+            "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+          },
+          "festivals": {
+            "title": "Music & Art Festivals",
+            "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+          },
+          "immersive": {
+            "title": "Immersive & Experiential Events",
+            "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+          },
+          "theatrical": {
+            "title": "Theatrical & Live Productions",
+            "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+          },
+          "filmTv": {
+            "title": "Film, TV & Media",
+            "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+          },
+          "brandActivations": {
+            "title": "Brand Activations & Marketing Campaigns",
+            "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+          },
+          "corporate": {
+            "title": "Corporate & Private Events",
+            "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+          },
+          "tradeShows": {
+            "title": "Trade Shows & Conventions",
+            "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+          },
+          "wellness": {
+            "title": "Health, Wellness & Lifestyle",
+            "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+          }
         }
       },
       "millennial": {
@@ -8563,6 +9413,431 @@
           "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "features": {
+          "title": "Everything You Need to Produce at Scale",
+          "subtitle": "Six integrated hubs for complete production control",
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "feature1": "Project & event planning",
+            "feature2": "Team & crew management",
+            "feature3": "Asset tracking & inventory",
+            "feature4": "Location & venue coordination"
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "feature1": "Vendor & company management",
+            "feature2": "Job postings & hiring",
+            "feature3": "Procurement & purchasing",
+            "feature4": "Budget & expense tracking"
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "feature1": "Community & discussions",
+            "feature2": "Marketplace & services",
+            "feature3": "Resource library",
+            "feature4": "Industry connections"
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "feature1": "Custom workflow automation",
+            "feature2": "Event-driven triggers",
+            "feature3": "Scheduled task execution",
+            "feature4": "Integration pipelines"
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "feature1": "Custom reports",
+            "feature2": "Real-time analytics",
+            "feature3": "Predictive insights",
+            "feature4": "Performance metrics"
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "feature1": "User & role management",
+            "feature2": "System configuration",
+            "feature3": "Profile customization",
+            "feature4": "Security & permissions"
+          }
+        },
+        "detailedFeatures": {
+          "hero": {
+            "title": "Everything You Need to Produce at Scale",
+            "subtitle": "Six integrated hubs designed for experiential production teams"
+          },
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "projects": {
+              "title": "Projects",
+              "description": "Organize and track productions from concept to strike"
+            },
+            "events": {
+              "title": "Events",
+              "description": "Schedule, coordinate, and manage every detail and timeline"
+            },
+            "people": {
+              "title": "People",
+              "description": "Manage crew assignments, availability, and scheduling"
+            },
+            "assets": {
+              "title": "Assets",
+              "description": "Track equipment, inventory, and resources across productions"
+            },
+            "locations": {
+              "title": "Locations",
+              "description": "Coordinate venues, sites, and facility logistics"
+            },
+            "files": {
+              "title": "Files",
+              "description": "Centralize documents, media, and production files securely"
+            }
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "companies": {
+              "title": "Companies",
+              "description": "Manage vendor relationships, clients, and partners"
+            },
+            "jobs": {
+              "title": "Jobs",
+              "description": "Post positions, track applications, manage hiring"
+            },
+            "procurement": {
+              "title": "Procurement",
+              "description": "Streamline purchasing, vendor selection, and contracts"
+            },
+            "invoices": {
+              "title": "Invoices",
+              "description": "Create, send, and track invoices with automated reminders"
+            },
+            "expenses": {
+              "title": "Expenses",
+              "description": "Record and categorize expenses with receipt capture"
+            },
+            "budgets": {
+              "title": "Budgets",
+              "description": "Plan, monitor, and control budgets with real-time tracking"
+            }
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "community": {
+              "title": "Community",
+              "description": "Connect with industry pros, share knowledge, collaborate"
+            },
+            "marketplace": {
+              "title": "Marketplace",
+              "description": "Discover services, hire talent, find production resources"
+            },
+            "resources": {
+              "title": "Resources",
+              "description": "Access guides, templates, and best practices"
+            }
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "workflows": {
+              "title": "Workflows",
+              "description": "Build custom automation sequences for repetitive processes"
+            },
+            "triggers": {
+              "title": "Triggers",
+              "description": "Set up event-driven actions that respond automatically"
+            },
+            "scheduled": {
+              "title": "Scheduled Tasks",
+              "description": "Automate recurring tasks with flexible scheduling"
+            }
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "reports": {
+              "title": "Reports",
+              "description": "Create custom reports with flexible visualization and export"
+            },
+            "analytics": {
+              "title": "Analytics",
+              "description": "Track KPIs, monitor trends, measure performance"
+            },
+            "insights": {
+              "title": "Insights",
+              "description": "Get AI-powered recommendations and predictive analytics"
+            }
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "admin": {
+              "title": "Admin",
+              "description": "Manage organization settings, security, and configuration"
+            },
+            "settings": {
+              "title": "Settings",
+              "description": "Customize preferences, integrations, and platform behavior"
+            },
+            "profiles": {
+              "title": "User Profiles",
+              "description": "Manage team profiles, roles, and access permissions"
+            }
+          }
+        },
+        "roles": {
+          "title": "Built for Every Role on Your Crew",
+          "subtitle": "11 branded roles with precise permissions",
+          "legend": {
+            "title": "Legend",
+            "description": "Platform Super Admin - Full control across all organizations"
+          },
+          "phantom": {
+            "name": "Phantom",
+            "level": "Supreme Authority",
+            "title": "Phantom",
+            "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
+          },
+          "aviator": {
+            "name": "Aviator",
+            "level": "Strategic Leadership",
+            "title": "Aviator",
+            "description": "Cross-project visibility, resource allocation, and executive analytics. Navigate high-level production strategy at scale."
+          },
+          "gladiator": {
+            "name": "Gladiator",
+            "level": "Project Leadership",
+            "title": "Gladiator",
+            "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
+          },
+          "navigator": {
+            "name": "Navigator",
+            "level": "Coordination",
+            "title": "Navigator",
+            "description": "Project coordination, task assignment, and team guidance. Chart the course through complex workflows."
+          },
+          "deviator": {
+            "name": "Deviator",
+            "level": "Execution",
+            "title": "Deviator",
+            "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
+          },
+          "raider": {
+            "name": "Raider",
+            "level": "Learning & Observation",
+            "title": "Raider",
+            "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
+          },
+          "vendor": {
+            "name": "Vendor",
+            "level": "Scoped Delivery",
+            "title": "Vendor",
+            "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
+          },
+          "visitor": {
+            "name": "Visitor",
+            "level": "Limited Visibility",
+            "title": "Visitor",
+            "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
+          },
+          "partner": {
+            "name": "Partner",
+            "level": "Strategic Collaboration",
+            "title": "Partner",
+            "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
+          },
+          "ambassador": {
+            "name": "Ambassador",
+            "level": "Community Champions",
+            "title": "Ambassador",
+            "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
+          }
+        },
+        "security": {
+          "title": "Enterprise-Grade Security",
+          "subtitle": "Your data is protected at every level",
+          "feature1Title": "Row-Level Security",
+          "feature1Description": "801 RLS policies ensure users only see what they should",
+          "feature2Title": "Role-Based Access",
+          "feature2Description": "11 branded roles with 45+ granular permissions",
+          "feature3Title": "Encrypted Storage",
+          "feature3Description": "All data encrypted at rest and in transit",
+          "feature4Title": "Audit Logging",
+          "feature4Description": "Complete audit trail of all system activity",
+          "feature5Title": "SOC 2 Compliant",
+          "feature5Description": "Enterprise-grade security standards",
+          "feature6Title": "GDPR Ready",
+          "feature6Description": "Full compliance with data privacy regulations"
+        },
+        "pricing": {
+          "title": "Transparent Pricing That Scales With You",
+          "subtitle": "From solo contractors to enterprise producers",
+          "monthly": "Monthly",
+          "annually": "Annually",
+          "save20": "Save 20%",
+          "community": {
+            "name": "Community",
+            "price": "Free",
+            "period": "forever",
+            "description": "Perfect for getting started",
+            "feature1": "Raider role access",
+            "feature2": "Basic task management",
+            "feature3": "Community support",
+            "cta": "Get Started Free"
+          },
+          "pro": {
+            "name": "Pro",
+            "price": "$12",
+            "period": "per month",
+            "annualPrice": "$10/month (billed annually)",
+            "description": "For independent contractors",
+            "feature1": "Deviator & Raider roles",
+            "feature2": "Advanced task management",
+            "feature3": "Priority support",
+            "cta": "Start Free Trial"
+          },
+          "team": {
+            "name": "Team",
+            "badge": "Most Popular",
+            "price": "$120",
+            "period": "per month",
+            "annualPrice": "$100/month (billed annually)",
+            "description": "For small to medium teams (2-10 seats)",
+            "feature1": "All Pro features",
+            "feature2": "Vendor management",
+            "feature3": "Team collaboration",
+            "cta": "Start Free Trial"
+          },
+          "starter": {
+            "name": "Starter",
+            "price": "$29",
+            "period": "per user/month",
+            "description": "Perfect for freelancers and small teams",
+            "feature1": "Up to 5 users",
+            "feature2": "10 active projects",
+            "feature3": "Basic reporting",
+            "feature4": "Email support",
+            "feature5": "10GB storage",
+            "cta": "Start Free Trial"
+          },
+          "professional": {
+            "name": "Professional",
+            "price": "$79",
+            "period": "per user/month",
+            "description": "For growing production companies",
+            "feature1": "Up to 25 users",
+            "feature2": "Unlimited projects",
+            "feature3": "Advanced analytics",
+            "feature4": "Priority support",
+            "feature5": "100GB storage",
+            "feature6": "Custom roles",
+            "feature7": "API access",
+            "cta": "Start Free Trial",
+            "popular": "Most Popular"
+          },
+          "enterprise": {
+            "name": "Enterprise",
+            "price": "Custom",
+            "period": "contact sales",
+            "annualPrice": "$1000/month (billed annually)",
+            "description": "For large organizations and agencies",
+            "feature1": "Unlimited users",
+            "feature2": "Unlimited projects",
+            "feature3": "Custom integrations",
+            "feature4": "Dedicated support",
+            "feature5": "Unlimited storage",
+            "feature6": "SSO & SAML",
+            "feature7": "SLA guarantee",
+            "feature8": "Custom training",
+            "cta": "Contact Sales"
+          }
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "subtitle": "Everything you need to know",
+          "question1": "How long is the free trial?",
+          "answer1": "14 days, no credit card required. Full access to all features.",
+          "question2": "Can I cancel anytime?",
+          "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "question3": "What payment methods do you accept?",
+          "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "question4": "Is my data secure?",
+          "answer4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "question5": "Do you offer training?",
+          "answer5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "question6": "Can I import my existing data?",
+          "answer6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans.",
+          "q1": "How long is the free trial?",
+          "a1": "14 days, no credit card required. Full access to all features.",
+          "q2": "Can I cancel anytime?",
+          "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "q3": "What payment methods do you accept?",
+          "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "q4": "Is my data secure?",
+          "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "q5": "Do you offer training?",
+          "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "q6": "Can I import my existing data?",
+          "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+        },
+        "cta": {
+          "title": "Ready to Transform Your Production Workflow?",
+          "subtitle": "Join thousands of production professionals using ATLVS",
+          "ctaPrimary": "Start Free Trial",
+          "ctaSecondary": "Schedule Demo",
+          "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
+          "primary": "Start Free Trial",
+          "secondary": "Schedule Demo",
+          "noCard": "No credit card required"
+        },
+        "solutions": {
+          "hero": {
+            "title": "Solutions by Industry",
+            "subtitle": "Purpose-built workflows for every type of live entertainment production"
+          },
+          "concerts": {
+            "title": "Concerts & Touring",
+            "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+          },
+          "festivals": {
+            "title": "Music & Art Festivals",
+            "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+          },
+          "immersive": {
+            "title": "Immersive & Experiential Events",
+            "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+          },
+          "theatrical": {
+            "title": "Theatrical & Live Productions",
+            "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+          },
+          "filmTv": {
+            "title": "Film, TV & Media",
+            "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+          },
+          "brandActivations": {
+            "title": "Brand Activations & Marketing Campaigns",
+            "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+          },
+          "corporate": {
+            "title": "Corporate & Private Events",
+            "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+          },
+          "tradeShows": {
+            "title": "Trade Shows & Conventions",
+            "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+          },
+          "wellness": {
+            "title": "Health, Wellness & Lifestyle",
+            "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+          }
         }
       },
       "gen-z": {
@@ -8627,6 +9902,431 @@
           "testimonial3Quote": "We cut budget problems by 40% first quarter. The money tracking is straight up amazing.",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "features": {
+          "title": "Everything You Need to Produce at Scale",
+          "subtitle": "Six integrated hubs for complete production control",
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "feature1": "Project & event planning",
+            "feature2": "Team & crew management",
+            "feature3": "Asset tracking & inventory",
+            "feature4": "Location & venue coordination"
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "feature1": "Vendor & company management",
+            "feature2": "Job postings & hiring",
+            "feature3": "Procurement & purchasing",
+            "feature4": "Budget & expense tracking"
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "feature1": "Community & discussions",
+            "feature2": "Marketplace & services",
+            "feature3": "Resource library",
+            "feature4": "Industry connections"
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "feature1": "Custom workflow automation",
+            "feature2": "Event-driven triggers",
+            "feature3": "Scheduled task execution",
+            "feature4": "Integration pipelines"
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "feature1": "Custom reports",
+            "feature2": "Real-time analytics",
+            "feature3": "Predictive insights",
+            "feature4": "Performance metrics"
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "feature1": "User & role management",
+            "feature2": "System configuration",
+            "feature3": "Profile customization",
+            "feature4": "Security & permissions"
+          }
+        },
+        "detailedFeatures": {
+          "hero": {
+            "title": "Everything You Need to Produce at Scale",
+            "subtitle": "Six integrated hubs designed for experiential production teams"
+          },
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "projects": {
+              "title": "Projects",
+              "description": "Organize and track productions from concept to strike"
+            },
+            "events": {
+              "title": "Events",
+              "description": "Schedule, coordinate, and manage every detail and timeline"
+            },
+            "people": {
+              "title": "People",
+              "description": "Manage crew assignments, availability, and scheduling"
+            },
+            "assets": {
+              "title": "Assets",
+              "description": "Track equipment, inventory, and resources across productions"
+            },
+            "locations": {
+              "title": "Locations",
+              "description": "Coordinate venues, sites, and facility logistics"
+            },
+            "files": {
+              "title": "Files",
+              "description": "Centralize documents, media, and production files securely"
+            }
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "companies": {
+              "title": "Companies",
+              "description": "Manage vendor relationships, clients, and partners"
+            },
+            "jobs": {
+              "title": "Jobs",
+              "description": "Post positions, track applications, manage hiring"
+            },
+            "procurement": {
+              "title": "Procurement",
+              "description": "Streamline purchasing, vendor selection, and contracts"
+            },
+            "invoices": {
+              "title": "Invoices",
+              "description": "Create, send, and track invoices with automated reminders"
+            },
+            "expenses": {
+              "title": "Expenses",
+              "description": "Record and categorize expenses with receipt capture"
+            },
+            "budgets": {
+              "title": "Budgets",
+              "description": "Plan, monitor, and control budgets with real-time tracking"
+            }
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "community": {
+              "title": "Community",
+              "description": "Connect with industry pros, share knowledge, collaborate"
+            },
+            "marketplace": {
+              "title": "Marketplace",
+              "description": "Discover services, hire talent, find production resources"
+            },
+            "resources": {
+              "title": "Resources",
+              "description": "Access guides, templates, and best practices"
+            }
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "workflows": {
+              "title": "Workflows",
+              "description": "Build custom automation sequences for repetitive processes"
+            },
+            "triggers": {
+              "title": "Triggers",
+              "description": "Set up event-driven actions that respond automatically"
+            },
+            "scheduled": {
+              "title": "Scheduled Tasks",
+              "description": "Automate recurring tasks with flexible scheduling"
+            }
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "reports": {
+              "title": "Reports",
+              "description": "Create custom reports with flexible visualization and export"
+            },
+            "analytics": {
+              "title": "Analytics",
+              "description": "Track KPIs, monitor trends, measure performance"
+            },
+            "insights": {
+              "title": "Insights",
+              "description": "Get AI-powered recommendations and predictive analytics"
+            }
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "admin": {
+              "title": "Admin",
+              "description": "Manage organization settings, security, and configuration"
+            },
+            "settings": {
+              "title": "Settings",
+              "description": "Customize preferences, integrations, and platform behavior"
+            },
+            "profiles": {
+              "title": "User Profiles",
+              "description": "Manage team profiles, roles, and access permissions"
+            }
+          }
+        },
+        "roles": {
+          "title": "Built for Every Role on Your Crew",
+          "subtitle": "11 branded roles with precise permissions",
+          "legend": {
+            "title": "Legend",
+            "description": "Platform Super Admin - Full control across all organizations"
+          },
+          "phantom": {
+            "name": "Phantom",
+            "level": "Supreme Authority",
+            "title": "Phantom",
+            "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
+          },
+          "aviator": {
+            "name": "Aviator",
+            "level": "Strategic Leadership",
+            "title": "Aviator",
+            "description": "Cross-project visibility, resource allocation, and executive analytics. Ship high-level production strategy at scale."
+          },
+          "gladiator": {
+            "name": "Gladiator",
+            "level": "Project Leadership",
+            "title": "Gladiator",
+            "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
+          },
+          "navigator": {
+            "name": "Navigator",
+            "level": "Coordination",
+            "title": "Navigator",
+            "description": "Project coordination, task assignment, and team guidance. Create the course through complex workflows."
+          },
+          "deviator": {
+            "name": "Deviator",
+            "level": "Execution",
+            "title": "Deviator",
+            "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
+          },
+          "raider": {
+            "name": "Raider",
+            "level": "Learning & Observation",
+            "title": "Raider",
+            "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
+          },
+          "vendor": {
+            "name": "Vendor",
+            "level": "Scoped Delivery",
+            "title": "Vendor",
+            "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
+          },
+          "visitor": {
+            "name": "Visitor",
+            "level": "Limited Visibility",
+            "title": "Visitor",
+            "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
+          },
+          "partner": {
+            "name": "Partner",
+            "level": "Strategic Collaboration",
+            "title": "Partner",
+            "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
+          },
+          "ambassador": {
+            "name": "Ambassador",
+            "level": "Community Champions",
+            "title": "Ambassador",
+            "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
+          }
+        },
+        "security": {
+          "title": "Enterprise-Grade Security",
+          "subtitle": "Your data is protected at every level",
+          "feature1Title": "Row-Level Security",
+          "feature1Description": "801 RLS policies ensure users only see what they should",
+          "feature2Title": "Role-Based Access",
+          "feature2Description": "11 branded roles with 45+ granular permissions",
+          "feature3Title": "Encrypted Storage",
+          "feature3Description": "All data encrypted at rest and in transit",
+          "feature4Title": "Audit Logging",
+          "feature4Description": "Complete audit trail of all system activity",
+          "feature5Title": "SOC 2 Compliant",
+          "feature5Description": "Enterprise-grade security standards",
+          "feature6Title": "GDPR Ready",
+          "feature6Description": "Full compliance with data privacy regulations"
+        },
+        "pricing": {
+          "title": "Transparent Pricing That Scales With You",
+          "subtitle": "From solo contractors to enterprise producers",
+          "monthly": "Monthly",
+          "annually": "Annually",
+          "save20": "Save 20%",
+          "community": {
+            "name": "Community",
+            "price": "Free",
+            "period": "forever",
+            "description": "Perfect for getting started",
+            "feature1": "Raider role access",
+            "feature2": "Basic task management",
+            "feature3": "Community support",
+            "cta": "Get Started Free"
+          },
+          "pro": {
+            "name": "Pro",
+            "price": "$12",
+            "period": "per month",
+            "annualPrice": "$10/month (billed annually)",
+            "description": "For independent contractors",
+            "feature1": "Deviator & Raider roles",
+            "feature2": "Advanced task management",
+            "feature3": "Priority support",
+            "cta": "Start Free Trial"
+          },
+          "team": {
+            "name": "Team",
+            "badge": "Most Popular",
+            "price": "$120",
+            "period": "per month",
+            "annualPrice": "$100/month (billed annually)",
+            "description": "For small to medium teams (2-10 seats)",
+            "feature1": "All Pro features",
+            "feature2": "Vendor management",
+            "feature3": "Team collaboration",
+            "cta": "Start Free Trial"
+          },
+          "starter": {
+            "name": "Starter",
+            "price": "$29",
+            "period": "per user/month",
+            "description": "Perfect for freelancers and small teams",
+            "feature1": "Up to 5 users",
+            "feature2": "10 active projects",
+            "feature3": "Basic reporting",
+            "feature4": "Email support",
+            "feature5": "10GB storage",
+            "cta": "Start Free Trial"
+          },
+          "professional": {
+            "name": "Professional",
+            "price": "$79",
+            "period": "per user/month",
+            "description": "For growing production companies",
+            "feature1": "Up to 25 users",
+            "feature2": "Unlimited projects",
+            "feature3": "Advanced analytics",
+            "feature4": "Priority support",
+            "feature5": "100GB storage",
+            "feature6": "Custom roles",
+            "feature7": "API access",
+            "cta": "Start Free Trial",
+            "popular": "Most Popular"
+          },
+          "enterprise": {
+            "name": "Enterprise",
+            "price": "Custom",
+            "period": "contact sales",
+            "annualPrice": "$1000/month (billed annually)",
+            "description": "For large organizations and agencies",
+            "feature1": "Unlimited users",
+            "feature2": "Unlimited projects",
+            "feature3": "Custom integrations",
+            "feature4": "Dedicated support",
+            "feature5": "Unlimited storage",
+            "feature6": "SSO & SAML",
+            "feature7": "SLA guarantee",
+            "feature8": "Custom training",
+            "cta": "Contact Sales"
+          }
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "subtitle": "Everything you need to know",
+          "question1": "How long is the free trial?",
+          "answer1": "14 days, no credit card required. Full access to all features.",
+          "question2": "Can I cancel anytime?",
+          "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "question3": "What payment methods do you accept?",
+          "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "question4": "Is my data secure?",
+          "answer4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "question5": "Do you offer training?",
+          "answer5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "question6": "Can I import my existing data?",
+          "answer6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans.",
+          "q1": "How long is the free trial?",
+          "a1": "14 days, no credit card required. Full access to all features.",
+          "q2": "Can I cancel anytime?",
+          "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "q3": "What payment methods do you accept?",
+          "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "q4": "Is my data secure?",
+          "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "q5": "Do you offer training?",
+          "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "q6": "Can I import my existing data?",
+          "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+        },
+        "cta": {
+          "title": "Ready to Transform Your Production Workflow?",
+          "subtitle": "Join thousands of production professionals using ATLVS",
+          "ctaPrimary": "Start Free Trial",
+          "ctaSecondary": "Schedule Demo",
+          "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
+          "primary": "Start Free Trial",
+          "secondary": "Schedule Demo",
+          "noCard": "No credit card required"
+        },
+        "solutions": {
+          "hero": {
+            "title": "Solutions by Industry",
+            "subtitle": "Purpose-built workflows for every type of live entertainment production"
+          },
+          "concerts": {
+            "title": "Concerts & Touring",
+            "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+          },
+          "festivals": {
+            "title": "Music & Art Festivals",
+            "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+          },
+          "immersive": {
+            "title": "Immersive & Experiential Events",
+            "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+          },
+          "theatrical": {
+            "title": "Theatrical & Live Productions",
+            "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+          },
+          "filmTv": {
+            "title": "Film, TV & Media",
+            "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+          },
+          "brandActivations": {
+            "title": "Brand Activations & Marketing Campaigns",
+            "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+          },
+          "corporate": {
+            "title": "Corporate & Private Events",
+            "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+          },
+          "tradeShows": {
+            "title": "Trade Shows & Conventions",
+            "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+          },
+          "wellness": {
+            "title": "Health, Wellness & Lifestyle",
+            "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+          }
         }
       },
       "gen-alpha": {
@@ -8691,6 +10391,431 @@
           "testimonial3Quote": "We cut budget issues by 40% first quarter. The tracking is insane! 🎯",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "features": {
+          "title": "Everything You Need to Produce at Scale",
+          "subtitle": "Six integrated hubs for complete production control",
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "feature1": "Project & event planning",
+            "feature2": "Team & crew management",
+            "feature3": "Asset tracking & inventory",
+            "feature4": "Location & venue coordination"
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "feature1": "Vendor & company management",
+            "feature2": "Job postings & hiring",
+            "feature3": "Procurement & purchasing",
+            "feature4": "Budget & expense tracking"
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "feature1": "Community & discussions",
+            "feature2": "Marketplace & services",
+            "feature3": "Resource library",
+            "feature4": "Industry connections"
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "feature1": "Custom workflow automation",
+            "feature2": "Event-driven triggers",
+            "feature3": "Scheduled task execution",
+            "feature4": "Integration pipelines"
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "feature1": "Custom reports",
+            "feature2": "Real-time analytics",
+            "feature3": "Predictive insights",
+            "feature4": "Performance metrics"
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "feature1": "User & role management",
+            "feature2": "System configuration",
+            "feature3": "Profile customization",
+            "feature4": "Security & permissions"
+          }
+        },
+        "detailedFeatures": {
+          "hero": {
+            "title": "Everything You Need to Produce at Scale",
+            "subtitle": "Six integrated hubs designed for experiential production teams"
+          },
+          "production": {
+            "title": "Production Hub",
+            "description": "Manage projects, events, people, assets, locations, and files",
+            "projects": {
+              "title": "Projects",
+              "description": "Organize and track productions from concept to strike"
+            },
+            "events": {
+              "title": "Events",
+              "description": "Schedule, coordinate, and manage every detail and timeline"
+            },
+            "people": {
+              "title": "People",
+              "description": "Manage crew assignments, availability, and scheduling"
+            },
+            "assets": {
+              "title": "Assets",
+              "description": "Track equipment, inventory, and resources across productions"
+            },
+            "locations": {
+              "title": "Locations",
+              "description": "Coordinate venues, sites, and facility logistics"
+            },
+            "files": {
+              "title": "Files",
+              "description": "Centralize documents, media, and production files securely"
+            }
+          },
+          "business": {
+            "title": "Business Hub",
+            "description": "Handle companies, jobs, procurement, and finances",
+            "companies": {
+              "title": "Companies",
+              "description": "Manage vendor relationships, clients, and partners"
+            },
+            "jobs": {
+              "title": "Jobs",
+              "description": "Post positions, track applications, manage hiring"
+            },
+            "procurement": {
+              "title": "Procurement",
+              "description": "Streamline purchasing, vendor selection, and contracts"
+            },
+            "invoices": {
+              "title": "Invoices",
+              "description": "Create, send, and track invoices with automated reminders"
+            },
+            "expenses": {
+              "title": "Expenses",
+              "description": "Record and categorize expenses with receipt capture"
+            },
+            "budgets": {
+              "title": "Budgets",
+              "description": "Plan, monitor, and control budgets with real-time tracking"
+            }
+          },
+          "network": {
+            "title": "Network Hub",
+            "description": "Build community, marketplace, and resource library",
+            "community": {
+              "title": "Community",
+              "description": "Connect with industry pros, share knowledge, collaborate"
+            },
+            "marketplace": {
+              "title": "Marketplace",
+              "description": "Discover services, hire talent, find production resources"
+            },
+            "resources": {
+              "title": "Resources",
+              "description": "Access guides, templates, and best practices"
+            }
+          },
+          "automations": {
+            "title": "Automations Hub",
+            "description": "Automate workflows, triggers, and repetitive tasks",
+            "workflows": {
+              "title": "Workflows",
+              "description": "Build custom automation sequences for repetitive processes"
+            },
+            "triggers": {
+              "title": "Triggers",
+              "description": "Set up event-driven actions that respond automatically"
+            },
+            "scheduled": {
+              "title": "Scheduled Tasks",
+              "description": "Automate recurring tasks with flexible scheduling"
+            }
+          },
+          "intelligence": {
+            "title": "Intelligence Hub",
+            "description": "Generate reports, analytics, and insights",
+            "reports": {
+              "title": "Reports",
+              "description": "Create custom reports with flexible visualization and export"
+            },
+            "analytics": {
+              "title": "Analytics",
+              "description": "Track KPIs, monitor trends, measure performance"
+            },
+            "insights": {
+              "title": "Insights",
+              "description": "Get AI-powered recommendations and predictive analytics"
+            }
+          },
+          "system": {
+            "title": "System Hub",
+            "description": "Configure admin, settings, and user profiles",
+            "admin": {
+              "title": "Admin",
+              "description": "Manage organization settings, security, and configuration"
+            },
+            "settings": {
+              "title": "Settings",
+              "description": "Customize preferences, integrations, and platform behavior"
+            },
+            "profiles": {
+              "title": "User Profiles",
+              "description": "Manage team profiles, roles, and access permissions"
+            }
+          }
+        },
+        "roles": {
+          "title": "Built for Every Role on Your Crew",
+          "subtitle": "11 branded roles with precise permissions",
+          "legend": {
+            "title": "Legend",
+            "description": "Platform Super Admin - Full control across all organizations"
+          },
+          "phantom": {
+            "name": "Phantom",
+            "level": "Supreme Authority",
+            "title": "Phantom",
+            "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
+          },
+          "aviator": {
+            "name": "Aviator",
+            "level": "Strategic Leadership",
+            "title": "Aviator",
+            "description": "Cross-project visibility, resource allocation, and executive analytics. Launch high-level production strategy at scale."
+          },
+          "gladiator": {
+            "name": "Gladiator",
+            "level": "Project Leadership",
+            "title": "Gladiator",
+            "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
+          },
+          "navigator": {
+            "name": "Navigator",
+            "level": "Coordination",
+            "title": "Navigator",
+            "description": "Project coordination, task assignment, and team guidance. Create the course through complex workflows."
+          },
+          "deviator": {
+            "name": "Deviator",
+            "level": "Execution",
+            "title": "Deviator",
+            "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
+          },
+          "raider": {
+            "name": "Raider",
+            "level": "Learning & Observation",
+            "title": "Raider",
+            "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
+          },
+          "vendor": {
+            "name": "Vendor",
+            "level": "Scoped Delivery",
+            "title": "Vendor",
+            "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
+          },
+          "visitor": {
+            "name": "Visitor",
+            "level": "Limited Visibility",
+            "title": "Visitor",
+            "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
+          },
+          "partner": {
+            "name": "Partner",
+            "level": "Strategic Collaboration",
+            "title": "Partner",
+            "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
+          },
+          "ambassador": {
+            "name": "Ambassador",
+            "level": "Community Champions",
+            "title": "Ambassador",
+            "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
+          }
+        },
+        "security": {
+          "title": "Enterprise-Grade Security",
+          "subtitle": "Your data is protected at every level",
+          "feature1Title": "Row-Level Security",
+          "feature1Description": "801 RLS policies ensure users only see what they should",
+          "feature2Title": "Role-Based Access",
+          "feature2Description": "11 branded roles with 45+ granular permissions",
+          "feature3Title": "Encrypted Storage",
+          "feature3Description": "All data encrypted at rest and in transit",
+          "feature4Title": "Audit Logging",
+          "feature4Description": "Complete audit trail of all system activity",
+          "feature5Title": "SOC 2 Compliant",
+          "feature5Description": "Enterprise-grade security standards",
+          "feature6Title": "GDPR Ready",
+          "feature6Description": "Full compliance with data privacy regulations"
+        },
+        "pricing": {
+          "title": "Transparent Pricing That Scales With You",
+          "subtitle": "From solo contractors to enterprise producers",
+          "monthly": "Monthly",
+          "annually": "Annually",
+          "save20": "Save 20%",
+          "community": {
+            "name": "Community",
+            "price": "Free",
+            "period": "forever",
+            "description": "Perfect for getting started",
+            "feature1": "Raider role access",
+            "feature2": "Basic task management",
+            "feature3": "Community support",
+            "cta": "Get Started Free"
+          },
+          "pro": {
+            "name": "Pro",
+            "price": "$12",
+            "period": "per month",
+            "annualPrice": "$10/month (billed annually)",
+            "description": "For independent contractors",
+            "feature1": "Deviator & Raider roles",
+            "feature2": "Advanced task management",
+            "feature3": "Priority support",
+            "cta": "Start Free Trial"
+          },
+          "team": {
+            "name": "Team",
+            "badge": "Most Popular",
+            "price": "$120",
+            "period": "per month",
+            "annualPrice": "$100/month (billed annually)",
+            "description": "For small to medium teams (2-10 seats)",
+            "feature1": "All Pro features",
+            "feature2": "Vendor management",
+            "feature3": "Team collaboration",
+            "cta": "Start Free Trial"
+          },
+          "starter": {
+            "name": "Starter",
+            "price": "$29",
+            "period": "per user/month",
+            "description": "Perfect for freelancers and small teams",
+            "feature1": "Up to 5 users",
+            "feature2": "10 active projects",
+            "feature3": "Basic reporting",
+            "feature4": "Email support",
+            "feature5": "10GB storage",
+            "cta": "Start Free Trial"
+          },
+          "professional": {
+            "name": "Professional",
+            "price": "$79",
+            "period": "per user/month",
+            "description": "For growing production companies",
+            "feature1": "Up to 25 users",
+            "feature2": "Unlimited projects",
+            "feature3": "Advanced analytics",
+            "feature4": "Priority support",
+            "feature5": "100GB storage",
+            "feature6": "Custom roles",
+            "feature7": "API access",
+            "cta": "Start Free Trial",
+            "popular": "Most Popular"
+          },
+          "enterprise": {
+            "name": "Enterprise",
+            "price": "Custom",
+            "period": "contact sales",
+            "annualPrice": "$1000/month (billed annually)",
+            "description": "For large organizations and agencies",
+            "feature1": "Unlimited users",
+            "feature2": "Unlimited projects",
+            "feature3": "Custom integrations",
+            "feature4": "Dedicated support",
+            "feature5": "Unlimited storage",
+            "feature6": "SSO & SAML",
+            "feature7": "SLA guarantee",
+            "feature8": "Custom training",
+            "cta": "Contact Sales"
+          }
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "subtitle": "Everything you need to know",
+          "question1": "How long is the free trial?",
+          "answer1": "14 days, no credit card required. Full access to all features.",
+          "question2": "Can I cancel anytime?",
+          "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "question3": "What payment methods do you accept?",
+          "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "question4": "Is my data secure?",
+          "answer4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "question5": "Do you offer training?",
+          "answer5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "question6": "Can I import my existing data?",
+          "answer6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans.",
+          "q1": "How long is the free trial?",
+          "a1": "14 days, no credit card required. Full access to all features.",
+          "q2": "Can I cancel anytime?",
+          "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
+          "q3": "What payment methods do you accept?",
+          "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
+          "q4": "Is my data secure?",
+          "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
+          "q5": "Do you offer training?",
+          "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
+          "q6": "Can I import my existing data?",
+          "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+        },
+        "cta": {
+          "title": "Ready to Transform Your Production Workflow?",
+          "subtitle": "Join thousands of production professionals using ATLVS",
+          "ctaPrimary": "Start Free Trial",
+          "ctaSecondary": "Schedule Demo",
+          "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
+          "primary": "Start Free Trial",
+          "secondary": "Schedule Demo",
+          "noCard": "No credit card required"
+        },
+        "solutions": {
+          "hero": {
+            "title": "Solutions by Industry",
+            "subtitle": "Purpose-built workflows for every type of live entertainment production"
+          },
+          "concerts": {
+            "title": "Concerts & Touring",
+            "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+          },
+          "festivals": {
+            "title": "Music & Art Festivals",
+            "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+          },
+          "immersive": {
+            "title": "Immersive & Experiential Events",
+            "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+          },
+          "theatrical": {
+            "title": "Theatrical & Live Productions",
+            "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+          },
+          "filmTv": {
+            "title": "Film, TV & Media",
+            "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+          },
+          "brandActivations": {
+            "title": "Brand Activations & Marketing Campaigns",
+            "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+          },
+          "corporate": {
+            "title": "Corporate & Private Events",
+            "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+          },
+          "tradeShows": {
+            "title": "Trade Shows & Conventions",
+            "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+          },
+          "wellness": {
+            "title": "Health, Wellness & Lifestyle",
+            "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+          }
         }
       }
     }

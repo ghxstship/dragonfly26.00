@@ -1,130 +1,130 @@
 "use client"
 
 import { Link } from "@/i18n/navigation"
-import { useTranslations } from "next-intl"
+import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, container, height } from "@/design-tokens"
 
 export function PricingSection(): JSX.Element {
-  const t = useTranslations('marketing.pricing')
-  
+  const { tGen } = useGenerationalMarketing()
+    
   return (
     <section className={cn("py-20 bg-white dark:bg-gray-950", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className={cn("mb-12", grid.cards4)}>
           {/* Community */}
           <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
-            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('community.name')}</h3>
+            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{tGen('community.name')}</h3>
             <div className="mb-4">
-              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{t('community.price')}</span>
-              <span className="text-gray-600 dark:text-gray-400"> {t('community.period')}</span>
+              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{tGen('community.price')}</span>
+              <span className="text-gray-600 dark:text-gray-400"> {tGen('community.period')}</span>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">{t('community.description')}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">{tGen('community.description')}</p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('community.feature1')}</span>
+                <span>{tGen('community.feature1')}</span>
               </li>
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('community.feature2')}</span>
+                <span>{tGen('community.feature2')}</span>
               </li>
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('community.feature3')}</span>
+                <span>{tGen('community.feature3')}</span>
               </li>
             </ul>
             <Link href="/signup">
-              <Button variant="outline" className="w-full">{t('community.cta')}</Button>
+              <Button variant="outline" className="w-full">{tGen('community.cta')}</Button>
             </Link>
           </div>
 
           {/* Pro */}
           <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
-            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('pro.name')}</h3>
+            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{tGen('pro.name')}</h3>
             <div className="mb-4">
-              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{t('pro.price')}</span>
-              <span className="text-gray-600 dark:text-gray-400">/{t('pro.period')}</span>
-              <p className="text-sm text-gray-500 dark:text-gray-500">{t('pro.annualPrice')}</p>
+              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{tGen('pro.price')}</span>
+              <span className="text-gray-600 dark:text-gray-400">/{tGen('pro.period')}</span>
+              <p className="text-sm text-gray-500 dark:text-gray-500">{tGen('pro.annualPrice')}</p>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">{t('pro.description')}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">{tGen('pro.description')}</p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('pro.feature1')}</span>
+                <span>{tGen('pro.feature1')}</span>
               </li>
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('pro.feature2')}</span>
+                <span>{tGen('pro.feature2')}</span>
               </li>
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('pro.feature3')}</span>
+                <span>{tGen('pro.feature3')}</span>
               </li>
             </ul>
             <Link href="/signup?plan=pro">
-              <Button variant="outline" className="w-full">{t('pro.cta')}</Button>
+              <Button variant="outline" className="w-full">{tGen('pro.cta')}</Button>
             </Link>
           </div>
 
           {/* Team */}
           <div className={cn("border-2 border-blue-600 rounded-xl relative bg-white dark:bg-gray-800", padding.section)}>
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-heading uppercase w-max mx-auto">
-              {t('team.badge')}
+              {tGen('team.badge')}
             </div>
-            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0 font-heading uppercase">{t('team.name')}</h3>
+            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0 font-heading uppercase">{tGen('team.name')}</h3>
             <div className="mb-4">
-              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{t('team.price')}</span>
-              <span className="text-gray-600 dark:text-gray-400">/{t('team.period')}</span>
-              <p className="text-sm text-gray-500 dark:text-gray-500">{t('team.annualPrice')}</p>
+              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{tGen('team.price')}</span>
+              <span className="text-gray-600 dark:text-gray-400">/{tGen('team.period')}</span>
+              <p className="text-sm text-gray-500 dark:text-gray-500">{tGen('team.annualPrice')}</p>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">{t('team.description')}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">{tGen('team.description')}</p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('team.feature1')}</span>
+                <span>{tGen('team.feature1')}</span>
               </li>
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('team.feature2')}</span>
+                <span>{tGen('team.feature2')}</span>
               </li>
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('team.feature3')}</span>
+                <span>{tGen('team.feature3')}</span>
               </li>
             </ul>
             <Link href="/signup?plan=team">
-              <Button variant="default" className="w-full">{t('team.cta')}</Button>
+              <Button variant="default" className="w-full">{tGen('team.cta')}</Button>
             </Link>
           </div>
 
           {/* Enterprise */}
           <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
-            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{t('enterprise.name')}</h3>
+            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{tGen('enterprise.name')}</h3>
             <div className="mb-4">
-              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{t('enterprise.price')}</span>
-              <span className="text-gray-600 dark:text-gray-400">/{t('enterprise.period')}</span>
-              <p className="text-sm text-gray-500 dark:text-gray-500">{t('enterprise.annualPrice')}</p>
+              <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{tGen('enterprise.price')}</span>
+              <span className="text-gray-600 dark:text-gray-400">/{tGen('enterprise.period')}</span>
+              <p className="text-sm text-gray-500 dark:text-gray-500">{tGen('enterprise.annualPrice')}</p>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">{t('enterprise.description')}</p>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">{tGen('enterprise.description')}</p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('enterprise.feature1')}</span>
+                <span>{tGen('enterprise.feature1')}</span>
               </li>
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('enterprise.feature2')}</span>
+                <span>{tGen('enterprise.feature2')}</span>
               </li>
               <li className="flex items-start text-sm">
                 <Check className={cn("text-green-500 mr-2 flex-shrink-0 mt-0.5", height.iconSm)} aria-hidden="true" />
-                <span>{t('enterprise.feature3')}</span>
+                <span>{tGen('enterprise.feature3')}</span>
               </li>
             </ul>
             <Link href="/demo">
-              <Button variant="outline" className="w-full">{t('enterprise.cta')}</Button>
+              <Button variant="outline" className="w-full">{tGen('enterprise.cta')}</Button>
             </Link>
           </div>
         </div>

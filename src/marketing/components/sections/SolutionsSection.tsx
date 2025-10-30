@@ -1,6 +1,6 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, border, container, height } from "@/design-tokens"
 import { 
@@ -9,8 +9,8 @@ import {
 } from "lucide-react"
 
 export function SolutionsSection(): JSX.Element {
-  const t = useTranslations('marketing.solutions')
-  
+  const { tGen } = useGenerationalMarketing()
+    
   const industries = [
     {
       icon: Music,
@@ -74,10 +74,10 @@ export function SolutionsSection(): JSX.Element {
       <section className={cn("relative pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950", padding.sectionX)}>
         <div className={cn("mx-auto text-center", container['6xl'])}>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-title uppercase text-gray-900 dark:text-white mb-6 leading-tight">
-            {t('hero.title')}
+            {tGen('hero.title')}
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6 md:mb-8 leading-relaxed max-w-4xl mx-auto">
-            {t('hero.subtitle')}
+            {tGen('hero.subtitle')}
           </p>
         </div>
       </section>
@@ -99,10 +99,10 @@ export function SolutionsSection(): JSX.Element {
                 >
                   <Icon className={cn("mb-4", height.iconLg, industry.color)} aria-hidden="true" />
                   <h2 className="text-xl sm:text-2xl font-heading uppercase text-gray-900 dark:text-white mb-3">
-                    {t(industry.titleKey)}
+                    {tGen(industry.titleKey)}
                   </h2>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {t(industry.descriptionKey)}
+                    {tGen(industry.descriptionKey)}
                   </p>
                 </div>
               )

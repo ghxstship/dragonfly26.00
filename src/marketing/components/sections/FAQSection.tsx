@@ -2,22 +2,22 @@
 
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, padding, border, container, height } from "@/design-tokens"
 
 export function FAQSection(): JSX.Element {
-  const t = useTranslations('marketing.faq')
-
+  const { tGen } = useGenerationalMarketing()
+  
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const faqs = [
-    { question: t('question1'), answer: t('answer1') },
-    { question: t('question2'), answer: t('answer2') },
-    { question: t('question3'), answer: t('answer3') },
-    { question: t('question4'), answer: t('answer4') },
-    { question: t('question5'), answer: t('answer5') },
-    { question: t('question6'), answer: t('answer6') },
+    { question: tGen('question1'), answer: tGen('answer1') },
+    { question: tGen('question2'), answer: tGen('answer2') },
+    { question: tGen('question3'), answer: tGen('answer3') },
+    { question: tGen('question4'), answer: tGen('answer4') },
+    { question: tGen('question5'), answer: tGen('answer5') },
+    { question: tGen('question6'), answer: tGen('answer6') },
   ]
 
   return (
@@ -25,7 +25,7 @@ export function FAQSection(): JSX.Element {
       <div className={cn("mx-auto", container['2xl'])}>
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6 font-heading uppercase">
-            {t('title')}
+            {tGen('title')}
           </h2>
         </div>
 
