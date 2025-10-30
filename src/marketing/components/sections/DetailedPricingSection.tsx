@@ -174,7 +174,8 @@ interface RoleModalProps {
 }
 
 function RoleModal({ role, onClose }: RoleModalProps) {
-    const roleData = ROLES[role]
+  const { tGen } = useGenerationalMarketing()
+  const roleData = ROLES[role]
   const Icon = roleData.icon
 
   return (
