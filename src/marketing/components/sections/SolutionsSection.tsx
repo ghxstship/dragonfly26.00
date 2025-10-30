@@ -2,10 +2,10 @@
 
 import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
-import { spacing, grid, padding, border, container, height } from "@/design-tokens"
+import { spacing, grid, padding, border, container, height, cards } from "@/design-tokens"
 import { 
   Music, Palette, Sparkles, Theater, Film, Megaphone, 
-  Building, Store, Heart
+  Building, Store, Heart, Quote
 } from "lucide-react"
 
 export function SolutionsSection(): JSX.Element {
@@ -107,6 +107,42 @@ export function SolutionsSection(): JSX.Element {
                 </div>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className={cn("py-20 bg-white dark:bg-gray-950", padding.sectionX)}>
+        <div className={cn("mx-auto", container['6xl'])}>
+          <div className="text-center mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-4 font-heading uppercase">
+              Proven Across Every Industry
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              From strategic planning to risk management
+            </p>
+          </div>
+          
+          <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-8")}>
+            {/* Grace O'Malley */}
+            <div className={cn("bg-gray-50 dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+              <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.graceOMalleyQuote')}</p>
+              <div>
+                <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.graceOMalleyAuthor')}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.graceOMalleyRole')}</p>
+              </div>
+            </div>
+            
+            {/* Sinbad */}
+            <div className={cn("bg-gray-50 dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+              <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.sinbadQuote')}</p>
+              <div>
+                <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.sinbadAuthor')}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.sinbadRole')}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

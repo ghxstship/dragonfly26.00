@@ -2,7 +2,7 @@
 
 import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
-import { spacing, grid, padding, border, container, height } from "@/design-tokens"
+import { spacing, grid, padding, border, container, height, cards } from "@/design-tokens"
 import { 
   Briefcase, Building2, Network, Zap, BarChart3, Settings,
   Calendar, Users, MapPin, FileText, Package, Folder,
@@ -10,7 +10,7 @@ import {
   MessageSquare, Store, BookOpen, Award, Share2, Trophy,
   Workflow, Clock, Bell, Repeat, GitBranch, Layers,
   LineChart, Database, FileBarChart, Target, Activity, Brain,
-  Shield, Key, UserCog, Lock, Eye, Sliders
+  Shield, Key, UserCog, Lock, Eye, Sliders, Quote
 } from "lucide-react"
 
 export function DetailedFeaturesSection(): JSX.Element {
@@ -89,6 +89,20 @@ export function DetailedFeaturesSection(): JSX.Element {
         </div>
       </section>
 
+      {/* Testimonial: Odysseus - Production Hub */}
+      <section className={cn("py-12 bg-white dark:bg-gray-950", padding.sectionX)}>
+        <div className={cn("mx-auto max-w-4xl")}>
+          <div className={cn("bg-gray-50 dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+            <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+            <p className="text-gray-700 dark:text-gray-300 mb-4 italic text-lg">{tGen('testimonials.odysseusQuote')}</p>
+            <div>
+              <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.odysseusAuthor')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.odysseusRole')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Business Hub */}
       <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
         <div className={cn("mx-auto", container['6xl'])}>
@@ -143,6 +157,20 @@ export function DetailedFeaturesSection(): JSX.Element {
               <DollarSign className={cn("mb-3 text-blue-600", height.icon)} aria-hidden="true" />
               <h3 className="text-lg font-heading uppercase text-gray-900 dark:text-white mb-2">{tGen('business.budgets.title')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('business.budgets.description')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial: Captain Sisko - Business Hub */}
+      <section className={cn("py-12 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
+        <div className={cn("mx-auto max-w-4xl")}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+            <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+            <p className="text-gray-700 dark:text-gray-300 mb-4 italic text-lg">{tGen('testimonials.captainSiskoQuote')}</p>
+            <div>
+              <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.captainSiskoAuthor')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.captainSiskoRole')}</p>
             </div>
           </div>
         </div>
@@ -224,6 +252,20 @@ export function DetailedFeaturesSection(): JSX.Element {
         </div>
       </section>
 
+      {/* Testimonial: Captain Marvel - Network Hub */}
+      <section className={cn("py-12 bg-white dark:bg-gray-950", padding.sectionX)}>
+        <div className={cn("mx-auto max-w-4xl")}>
+          <div className={cn("bg-gray-50 dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+            <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+            <p className="text-gray-700 dark:text-gray-300 mb-4 italic text-lg">{tGen('testimonials.captainMarvelQuote')}</p>
+            <div>
+              <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.captainMarvelAuthor')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.captainMarvelRole')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Intelligence Hub */}
       <section className={cn("py-20 bg-white dark:bg-gray-950", padding.sectionX)}>
         <div className={cn("mx-auto", container['6xl'])}>
@@ -262,6 +304,20 @@ export function DetailedFeaturesSection(): JSX.Element {
         </div>
       </section>
 
+      {/* Testimonial: Captain Janeway - Intelligence Hub */}
+      <section className={cn("py-12 bg-white dark:bg-gray-950", padding.sectionX)}>
+        <div className={cn("mx-auto max-w-4xl")}>
+          <div className={cn("bg-gray-50 dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+            <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+            <p className="text-gray-700 dark:text-gray-300 mb-4 italic text-lg">{tGen('testimonials.captainJanewayQuote')}</p>
+            <div>
+              <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.captainJanewayAuthor')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.captainJanewayRole')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* System Hub */}
       <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
         <div className={cn("mx-auto", container['6xl'])}>
@@ -295,6 +351,20 @@ export function DetailedFeaturesSection(): JSX.Element {
               <UserCog className={cn("mb-3 text-blue-600", height.icon)} aria-hidden="true" />
               <h3 className="text-lg font-heading uppercase text-gray-900 dark:text-white mb-2">{tGen('system.profiles.title')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('system.profiles.description')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial: Moana - System Hub */}
+      <section className={cn("py-12 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
+        <div className={cn("mx-auto max-w-4xl")}>
+          <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+            <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+            <p className="text-gray-700 dark:text-gray-300 mb-4 italic text-lg">{tGen('testimonials.moanaQuote')}</p>
+            <div>
+              <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.moanaAuthor')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.moanaRole')}</p>
             </div>
           </div>
         </div>

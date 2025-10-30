@@ -1,15 +1,13 @@
+"use client"
+
 import { CTASection } from "@/marketing/components/sections/CTASection"
-import type { Metadata } from "next"
-import { setRequestLocale } from 'next-intl/server'
+import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
+import { cn } from "@/lib/utils"
+import { cards, height, padding } from "@/design-tokens"
+import { Quote } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Blog | ATLVS",
-  description: "Insights, updates, and best practices for live entertainment production management.",
-}
-
-export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params
-  setRequestLocale(locale)
+export default function BlogPage() {
+  const { tGen } = useGenerationalMarketing()
 
   return (
     <div className="pt-20">
@@ -24,9 +22,32 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
             </p>
           </div>
 
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 md:p-8 lg:p-12 text-center">
+          <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 md:p-8 lg:p-12 text-center mb-12">
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-heading uppercase text-gray-900 dark:text-white mb-2">Coming Soon</p>
             <p className="text-gray-600 dark:text-gray-400">We&apos;re preparing valuable content for you. Check back soon!</p>
+          </div>
+
+          {/* Testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {/* Captain Jack Sparrow */}
+            <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+              <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.captainJackSparrowQuote')}</p>
+              <div>
+                <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.captainJackSparrowAuthor')}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.captainJackSparrowRole')}</p>
+              </div>
+            </div>
+
+            {/* Popeye */}
+            <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.paddingSm)}>
+              <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.popeyeQuote')}</p>
+              <div>
+                <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.popeyeAuthor')}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.popeyeRole')}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

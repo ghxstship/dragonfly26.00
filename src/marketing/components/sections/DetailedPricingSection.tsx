@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
-import { spacing, padding, container, cards } from "@/design-tokens"
+import { spacing, padding, container, cards, height } from "@/design-tokens"
 import { 
   Check, 
   X, 
@@ -17,6 +17,7 @@ import {
   Eye, 
   Users, 
   Star,
+  Quote,
   type LucideIcon
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -635,6 +636,52 @@ export function DetailedPricingSection(): JSX.Element {
               </span>
               {isAnnual && ' ($120 when billed annually)'}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
+        <div className={cn("mx-auto", container['6xl'])}>
+          <div className="text-center mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-4 font-heading uppercase">
+              Trusted by Captains at Every Scale
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              From small crews to enterprise fleets
+            </p>
+          </div>
+          
+          <div className={cn(cards.grid1to3)}>
+            {/* Long John Silver - Pro/Team tier */}
+            <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.marketing, cards.paddingSm)}>
+              <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.longJohnSilverQuote')}</p>
+              <div>
+                <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.longJohnSilverAuthor')}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.longJohnSilverRole')}</p>
+              </div>
+            </div>
+            
+            {/* Horatio Hornblower - Team tier */}
+            <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.marketing, cards.paddingSm)}>
+              <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.horatioHornblowerQuote')}</p>
+              <div>
+                <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.horatioHornblowerAuthor')}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.horatioHornblowerRole')}</p>
+              </div>
+            </div>
+            
+            {/* Captain Nemo - Enterprise tier */}
+            <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.marketing, cards.paddingSm)}>
+              <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.captainNemoQuote')}</p>
+              <div>
+                <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.captainNemoAuthor')}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.captainNemoRole')}</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

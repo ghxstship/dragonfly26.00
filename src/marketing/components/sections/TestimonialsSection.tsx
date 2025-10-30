@@ -21,30 +21,33 @@ export function TestimonialsSection(): JSX.Element {
         </div>
         
         <div className={cn(cards.grid1to3)}>
+          {/* Captain Picard */}
           <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.marketing, cards.paddingSm)}>
             <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
-            <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.testimonial1Quote')}</p>
+            <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.captainPicardQuote')}</p>
             <div>
-              <p className="text-gray-900 dark:text-white">{tGen('testimonials.testimonial1Author')}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.testimonial1Role')}</p>
+              <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.captainPicardAuthor')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.captainPicardRole')}</p>
             </div>
           </div>
           
+          {/* Zheng Yi Sao */}
           <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.marketing, cards.paddingSm)}>
             <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
-            <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.testimonial2Quote')}</p>
+            <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.zhengYiSaoQuote')}</p>
             <div>
-              <p className="text-gray-900 dark:text-white">{tGen('testimonials.testimonial2Author')}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.testimonial2Role')}</p>
+              <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.zhengYiSaoAuthor')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.zhengYiSaoRole')}</p>
             </div>
           </div>
           
+          {/* Captain Ahab */}
           <div className={cn("bg-white dark:bg-gray-800 rounded-xl", cards.marketing, cards.paddingSm)}>
             <Quote className={cn("mb-4 text-blue-600", height.iconLg)} aria-hidden="true" />
-            <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.testimonial3Quote')}</p>
+            <p className="text-gray-700 dark:text-gray-300 mb-4 italic">{tGen('testimonials.captainAhabQuote')}</p>
             <div>
-              <p className="text-gray-900 dark:text-white">{tGen('testimonials.testimonial3Author')}</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.testimonial3Role')}</p>
+              <p className="text-gray-900 dark:text-white font-semibold">{tGen('testimonials.captainAhabAuthor')}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{tGen('testimonials.captainAhabRole')}</p>
             </div>
           </div>
         </div>
