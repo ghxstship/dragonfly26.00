@@ -265,7 +265,8 @@ interface RoleBadgeProps {
 }
 
 function RoleBadge({ role, onClick }: RoleBadgeProps) {
-    const roleData = ROLES[role]
+  const { tGen } = useGenerationalMarketing()
+  const roleData = ROLES[role]
   const Icon = roleData.icon
 
   return (
