@@ -5,8 +5,11 @@ import { ChevronDown } from "lucide-react"
 import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, padding, border, container, height } from "@/design-tokens"
+import { useTranslations } from "next-intl"
 
 export function FAQSection(): JSX.Element {
+  const t = useTranslations('marketing')
+
   const { tGen } = useGenerationalMarketing()
   
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -24,7 +27,7 @@ export function FAQSection(): JSX.Element {
     <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
       <div className={cn("mx-auto", container['2xl'])}>
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6 font-heading uppercase">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-white mb-6 font-heading uppercase">
             {tGen('faq.title')}
           </h2>
         </div>

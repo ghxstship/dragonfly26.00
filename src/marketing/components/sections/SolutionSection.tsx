@@ -4,15 +4,18 @@ import { useGenerationalMarketing } from '@/hooks/use-generational-marketing'
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, border, container, height } from "@/design-tokens"
 import { Layers, Users, DollarSign, Building2 } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function SolutionSection(): JSX.Element {
+  const t = useTranslations('marketing')
+
   const { tGen } = useGenerationalMarketing()
   
   return (
     <section className={cn("py-20 bg-gray-50 dark:bg-gray-900", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className="text-center  mx-auto mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl md:text-3xl md:text-4xl lg:text-5xl text-gray-900 dark:text-white mb-6 font-heading uppercase">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-white mb-6 font-heading uppercase">
             {tGen('solution.title')}
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400">

@@ -22,6 +22,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Link } from "@/i18n/navigation"
+import { useTranslations } from "next-intl"
 
 // Role definitions
 const ROLES = {
@@ -154,7 +155,7 @@ const ROLES = {
   ambassador: {
     icon: Star,
     type: "External Role",
-    accessLevel: "Community",
+    accessLevel: {t("pricing.community.name")},
     permissions: "Represent",
     gradient: "from-pink-500 to-orange-500",
     abilities: [
@@ -175,7 +176,7 @@ interface RoleModalProps {
 }
 
 function RoleModal({ role, onClose }: RoleModalProps) {
-  const { tGen } = useGenerationalMarketing()
+  const { t, tGen } = useGenerationalMarketing()
   const roleData = ROLES[role]
   const Icon = roleData.icon
 
@@ -210,7 +211,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
 
         {/* Role name */}
         <h2 className="text-xl sm:text-2xl md:text-3xl text-white text-center mb-2 font-heading uppercase">
-          {tGen(`${role}.name`)}
+          {t(`roles.${role}.name`)}
         </h2>
 
         {/* Role type badge */}
@@ -237,7 +238,7 @@ function RoleModal({ role, onClose }: RoleModalProps) {
 
         {/* Description */}
         <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
-          {tGen(`${role}.description`)}
+          {t(`roles.${role}.description`)}
         </p>
 
         {/* Key Abilities */}
@@ -266,7 +267,7 @@ interface RoleBadgeProps {
 }
 
 function RoleBadge({ role, onClick }: RoleBadgeProps) {
-  const { tGen } = useGenerationalMarketing()
+  const { t, tGen } = useGenerationalMarketing()
   const roleData = ROLES[role]
   const Icon = roleData.icon
 
@@ -281,12 +282,14 @@ function RoleBadge({ role, onClick }: RoleBadgeProps) {
       )}
     >
       <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
-      <span className="truncate">{tGen(`${role}.name`)}</span>
+      <span className="truncate">{t(`roles.${role}.name`)}</span>
     </button>
   )
 }
 
 export function DetailedPricingSection(): JSX.Element {
+  const t = useTranslations('marketing')
+
   const { tGen } = useGenerationalMarketing()
     const [isAnnual, setIsAnnual] = useState(false)
   const [selectedRole, setSelectedRole] = useState<RoleKey | null>(null)
@@ -306,33 +309,40 @@ export function DetailedPricingSection(): JSX.Element {
           </div>
 
           {/* Billing Toggle */}
-          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 lg:gap-4 mb-8 md:mb-12 lg:mb-16 animate-in fade-in duration-1000 delay-300">
-            <span className={cn("text-lg font-heading uppercase", !isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className="relative w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-              style={{ backgroundColor: isAnnual ? '#7c3aed' : '#d1d5db' }}
-              aria-label="Toggle billing period"
-            >
-              <span
-                className="absolute top-1 left-1 w-6 h-6 bg-white dark:bg-gray-800 rounded-full shadow-lg transition-transform duration-300"
-                style={{ transform: isAnnual ? 'translateX(32px)' : 'translateX(0)' }}
-              />
-            </button>
-            <span className={cn("text-lg font-heading uppercase", isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
-              Annual
-            </span>
-            <span 
-              className={cn(
-                "ml-2 px-3 py-1 bg-green-100 text-green-800 text-sm font-heading uppercase rounded-full transition-opacity duration-300",
-                isAnnual ? "opacity-100" : "opacity-0 pointer-events-none"
-              )}
-              aria-hidden={!isAnnual}
-            >
-              Save 2 Months
-            </span>
+          <div className="relative flex flex-col items-center gap-3 mb-8 md:mb-12 lg:mb-16 animate-in fade-in duration-1000 delay-300">
+            {/* Badge positioned above toggle */}
+            <div className="h-7 flex items-center">
+              <span 
+                className={cn(
+                  "px-3 py-1 bg-green-100 text-green-800 text-sm font-heading uppercase rounded-full transition-opacity duration-300",
+                  isAnnual ? "opacity-100" : "opacity-0"
+                )}
+                aria-hidden={!isAnnual}
+              >
+                Save 2 Months
+              </span>
+            </div>
+            
+            {/* Centered toggle */}
+            <div className="flex items-center gap-3 md:gap-4">
+              <span className={cn("text-lg font-heading uppercase", !isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
+                Monthly
+              </span>
+              <button
+                onClick={() => setIsAnnual(!isAnnual)}
+                className="relative w-16 h-8 rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                style={{ backgroundColor: isAnnual ? '#7c3aed' : '#d1d5db' }}
+                aria-label="Toggle billing period"
+              >
+                <span
+                  className="absolute top-1 left-1 w-6 h-6 bg-white dark:bg-gray-800 rounded-full shadow-lg transition-transform duration-300"
+                  style={{ transform: isAnnual ? 'translateX(32px)' : 'translateX(0)' }}
+                />
+              </button>
+              <span className={cn("text-lg font-heading uppercase", isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400")}>
+                Annual
+              </span>
+            </div>
           </div>
 
           {/* Pricing Grid */}

@@ -1,0 +1,1097 @@
+{
+  "components": {
+    "total": 16,
+    "withI18n": 16,
+    "withoutI18n": 0,
+    "details": [
+      {
+        "file": "CTASection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "DetailedFeaturesSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "DetailedPricingSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 1,
+        "hardcodedStringsCount": 49,
+        "hardcodedStrings": [
+          ">Access Level<",
+          ">Permissions<",
+          ">Key Abilities<",
+          ">\n              ATLVS Pricing\n            <",
+          ">\n              Choose the perfect plan for your production needs\n            <"
+        ]
+      },
+      {
+        "file": "FAQSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "FeaturesOverviewSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "HeroSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "HowItWorksSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "IntegrationsSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "PricingSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "ProblemSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "RolesSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "SecuritySection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "SolutionSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "SolutionsSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 2,
+        "hardcodedStrings": [
+          ">\n              Proven Across Every Industry\n            <",
+          ">\n              From strategic planning to risk management\n            <"
+        ]
+      },
+      {
+        "file": "TestimonialsSection.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      },
+      {
+        "file": "TrustBar.tsx",
+        "hasUseTranslations": true,
+        "translationCallsCount": 0,
+        "hardcodedStringsCount": 0,
+        "hardcodedStrings": []
+      }
+    ]
+  },
+  "translations": {
+    "total": 20,
+    "complete": 1,
+    "incomplete": 19,
+    "details": [
+      {
+        "locale": "en",
+        "status": "complete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 0,
+        "issues": []
+      },
+      {
+        "locale": "es",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "fr",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "zh",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "hi",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "ar",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "ko",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "vi",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "pt",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "de",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "ja",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "ru",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "id",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "ur",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "bn",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "ta",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "te",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "mr",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "tr",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      },
+      {
+        "locale": "sw",
+        "status": "incomplete",
+        "keysCount": 682,
+        "totalKeys": 682,
+        "missingKeys": 0,
+        "untranslatedKeys": 630,
+        "issues": [
+          {
+            "path": "nav.logo",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.solutions",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.features",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.pricing",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.docs",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.blog",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.company",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.signIn",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.startFree",
+            "issue": "untranslated (English placeholder)"
+          },
+          {
+            "path": "nav.toggleMenu",
+            "issue": "untranslated (English placeholder)"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {}
+}

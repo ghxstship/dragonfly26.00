@@ -3,8 +3,11 @@
 import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, border, container, height } from "@/design-tokens"
+import { useTranslations } from "next-intl"
 
 export function TrustBar(): JSX.Element {
+  const t = useTranslations('marketing')
+
   const { tGen } = useGenerationalMarketing()
     
   return (

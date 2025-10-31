@@ -6,13 +6,22 @@ import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, container, height } from "@/design-tokens"
+import { useTranslations } from "next-intl"
 
 export function PricingSection(): JSX.Element {
+  const t = useTranslations('marketing')
+
   const { tGen } = useGenerationalMarketing()
     
   return (
     <section className={cn("py-20 bg-white dark:bg-gray-950", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
+        <div className="text-center mx-auto mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl text-gray-900 dark:text-white mb-6 font-heading uppercase">
+            {tGen('pricing.title')}
+          </h2>
+        </div>
+        
         <div className={cn("mb-12", grid.cards4)}>
           {/* Community */}
           <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>

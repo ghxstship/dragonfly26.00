@@ -4,17 +4,20 @@ import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, border, container, height, cards } from "@/design-tokens"
 import { Briefcase, Building2, Network, Zap, BarChart3, Settings } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function FeaturesOverviewSection(): JSX.Element {
+  const t = useTranslations('marketing')
+
   const { tGen } = useGenerationalMarketing()
   
   return (
     <section className={cn("py-20 bg-white dark:bg-gray-950", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>
         <div className={cn("text-center mb-16 mx-auto", container['2xl'])}>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading uppercase text-gray-900 dark:text-white mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading uppercase text-gray-900 dark:text-white mb-6">
             {tGen('features.title')}
-          </h1>
+          </h2>
           <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400">
             {tGen('features.subtitle')}
           </p>

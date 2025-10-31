@@ -8262,7 +8262,7 @@
       "captainSiskoRole": "Starfleet Commander, Deep Space Nine (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
+      "title": "Transparent pricing",
       "subtitle": "From solo contractors to enterprise producers",
       "monthly": "Monthly",
       "annually": "Annually",
@@ -8486,6 +8486,9 @@
           "testimonial3Quote": "We reduced budget overruns by 40% in the first quarter. The financial visibility and tracking capabilities are genuinely impressive.",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "pricing": {
+          "title": "Professional Pricing Structure"
         }
       },
       "gen-x": {
@@ -8550,6 +8553,9 @@
           "testimonial3Quote": "Cut budget overruns 40% first quarter. The tracking actually works.",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "pricing": {
+          "title": "Straightforward pricing"
         }
       },
       "millennial": {
@@ -8614,6 +8620,9 @@
           "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "pricing": {
+          "title": "Transparent pricing that scales"
         }
       },
       "gen-z": {
@@ -8678,6 +8687,9 @@
           "testimonial3Quote": "We cut budget problems by 40% first quarter. The money tracking is straight up amazing.",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "pricing": {
+          "title": "Pricing that hits different"
         }
       },
       "gen-alpha": {
@@ -8742,6 +8754,9 @@
           "testimonial3Quote": "We cut budget issues by 40% first quarter. The tracking is insane! 🎯",
           "testimonial3Author": "Jennifer Park",
           "testimonial3Role": "CFO, Corporate Events Agency"
+        },
+        "pricing": {
+          "title": "Pricing that's actually fair ✨"
         }
       }
     }

@@ -4,8 +4,11 @@ import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, container } from "@/design-tokens"
 import { Ghost, Plane, Sword, Compass, Target, Shield, Handshake, Eye, Users, Star } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function RolesSection(): JSX.Element {
+  const t = useTranslations('marketing')
+
   const { tGen } = useGenerationalMarketing()
     
   return (

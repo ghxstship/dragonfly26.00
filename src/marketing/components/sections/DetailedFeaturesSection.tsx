@@ -1,6 +1,7 @@
 "use client"
 
-import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
+import { 
+import { useTranslations } from "next-intl"useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, border, container, height, cards } from "@/design-tokens"
 import { 
@@ -14,6 +15,8 @@ import {
 } from "lucide-react"
 
 export function DetailedFeaturesSection(): JSX.Element {
+  const t = useTranslations('marketing')
+
   const { tGen } = useGenerationalMarketing()
     
   return (

@@ -23,12 +23,19 @@ export function LanguageSwitcher() {
     setStoredLanguage(newLocale)
     setIsOpen(false)
     
-    startTransition(() => {
-      // Use push + refresh to force full re-render with new translations
-      router.push(pathname, { locale: newLocale })
-      // Force a refresh to reload translations
-      router.refresh()
-    })
+    // Use window.location for full page reload to ensure translations update
+    // This is necessary because client components don't automatically re-render
+    // when the locale changes via router.push()
+    const currentPath = pathname
+    
+    // Ensure path starts with / for proper URL construction
+    const normalizedPath = currentPath.startsWith('/') ? currentPath : `/${currentPath}`
+    
+    // Build new URL with locale prefix
+    const newUrl = `/${newLocale}${normalizedPath}`
+    
+    // Force full page reload to ensure all translations update
+    window.location.href = newUrl
   }
 
   return (

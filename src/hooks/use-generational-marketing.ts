@@ -37,17 +37,17 @@ export function useGenerationalMarketing() {
       const generationalKey = `${variant}.${key}`;
       const value = tGenerational(generationalKey as any);
       
-      // Check if we got a valid translation (not a key path)
-      if (value && typeof value === 'string' && !value.includes('marketing.generational.') && !value.includes('.')) {
-        return value;
-      }
+      // next-intl returns the full key path when translation is missing
+      // e.g., "marketing.generational.gen-z.integrations.title"
+      // We need to detect this and fall back to the base translation
+      const fullKeyPath = `marketing.generational.${generationalKey}`;
       
-      // If the value looks like a translation key (contains dots or the namespace), fall back
-      if (typeof value === 'string' && (value.includes('marketing.generational.') || value === generationalKey)) {
+      // If the returned value is the key path itself, the translation doesn't exist
+      if (value === fullKeyPath || value === generationalKey) {
         return t(key);
       }
       
-      // If we got a valid string that doesn't look like a key, return it
+      // If we got a valid translation (doesn't look like a key path), return it
       if (value && typeof value === 'string') {
         return value;
       }
