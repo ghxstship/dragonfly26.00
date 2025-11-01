@@ -401,334 +401,935 @@
   },
   "marketing": {
     "nav": {
-      "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "logo": "ஏடிஎல்விஎஸ்",
+      "solutions": "தீர்வுகள்",
+      "features": "அம்சங்கள்",
+      "pricing": "விலை நிர்ணயம்",
+      "docs": "ஆவணங்கள்",
+      "blog": "வலைப்பதிவு",
+      "company": "நிறுவனம்",
+      "signIn": "உள்நுழையவும்",
+      "startFree": "இலவசமாக தொடங்கவும்",
+      "toggleMenu": "மெனுவை மாற்று"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "தொழில் மூலம் தீர்வுகள்",
+        "subtitle": "ஒவ்வொரு வகையான நேரடி பொழுதுபோக்கு தயாரிப்புக்கான நோக்கத்துடன் கட்டமைக்கப்பட்ட பணிப்பாய்வுகள்"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "கச்சேரிகள் & சுற்றுலா",
+        "description": "உலகளாவிய சுற்றுப்பயணச் செயல்பாடுகள் முழுவதிலும் ரூட்டிங், பட்ஜெட், தளவாடங்கள் மற்றும் குழு மேலாண்மை - சிறிய இடத்திலிருந்து அரங்க அளவிலான தயாரிப்புகள் வரை."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "இசை & கலை விழாக்கள்",
+        "description": "பல நாள், பல-நிலை நிகழ்வுகளுக்கான பணிப்பாய்வுகளை மையப்படுத்துதல் - ஒரு கட்டளை அமைப்பின் கீழ் உற்பத்தி, திறமை, விற்பனையாளர்கள் மற்றும் இணக்கம் ஆகியவற்றை ஒன்றிணைத்தல்."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "ஆழ்ந்த மற்றும் அனுபவ நிகழ்வுகள்",
+        "description": "ஊடாடும் உலகங்கள், நிறுவல்கள் மற்றும் பிராண்டட் அனுபவங்களை ஆக்கப்பூர்வமான மேம்பாடு முதல் நேரலை செயல்படுத்துதல் வரை முழுத் தெரிவுநிலையுடன் வடிவமைத்து இயக்கவும்."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "நாடக மற்றும் நேரடி தயாரிப்புகள்",
+        "description": "மேடை மற்றும் செயல்திறன் அடிப்படையிலான பொழுதுபோக்கிற்காக ஆக்கப்பூர்வமான குழுக்கள், தொழில்நுட்ப அட்டவணைகள் மற்றும் தயாரிப்பு சொத்துக்களை நிர்வகிக்கவும்."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "திரைப்படம், தொலைக்காட்சி & ஊடகம்",
+        "description": "கிராஸ் டிபார்ட்மெண்டல் ஒத்திசைவு மற்றும் நிதி வெளிப்படைத்தன்மைக்காக உருவாக்கப்பட்ட கருவிகளுடன் முன் தயாரிப்பு, ஆன்-செட் செயல்பாடுகள் மற்றும் மடக்கு அறிக்கையை ஒருங்கிணைக்கவும்."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "பிராண்ட் செயல்பாடுகள் & சந்தைப்படுத்தல் பிரச்சாரங்கள்",
+        "description": "பாப்-அப்கள், லாஞ்ச்கள் மற்றும் பிரச்சாரம் சார்ந்த அனுபவங்களைச் செயல்படுத்தவும் - கிரியேட்டிவ், லாஜிஸ்டிக்ஸ் மற்றும் ROI டிராக்கிங் ஆகியவற்றை ஒரு அறிவார்ந்த டாஷ்போர்டில் ஒருங்கிணைத்தல்."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "கார்ப்பரேட் & தனியார் நிகழ்வுகள்",
+        "description": "நெறிப்படுத்தப்பட்ட திட்டமிடல் மற்றும் விற்பனையாளர் ஒருங்கிணைப்புடன் உள் சந்திப்புகள், பின்வாங்கல்கள் மற்றும் உயர்மட்டக் கூட்டங்களுக்கு குறைபாடற்ற அனுபவங்களை வழங்கவும்."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "வர்த்தக நிகழ்ச்சிகள் மற்றும் மரபுகள்",
+        "description": "சாவடி உருவாக்கம், கண்காட்சித் தளவாடங்கள் மற்றும் இறுதி முதல் இறுதி திட்ட மேலாண்மை மற்றும் நிகழ்நேர பகுப்பாய்வு ஆகியவற்றுடன் ஸ்பான்சர் உறவுகளை எளிமைப்படுத்தவும்."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "உடல்நலம், ஆரோக்கியம் & வாழ்க்கை முறை",
+        "description": "பின்வாங்கல்கள், உடற்பயிற்சி நிகழ்வுகள் மற்றும் ஆரோக்கிய அனுபவங்களுக்கு நிரலாக்கம், பணியாளர்கள் மற்றும் விருந்தினர் ஓட்டத்தை மேம்படுத்தவும் - விவரம் மற்றும் சூழ்நிலை மிகவும் முக்கியமானது."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "உண்மையில் வேலை செய்யும் உற்பத்தி மேலாண்மை",
+      "headlineHighlight": "அனுபவமிக்க அணிகளுக்கு",
+      "subheadline": "உங்கள் திட்டங்கள், பணியாளர்கள், சொத்துக்கள் மற்றும் பட்ஜெட்டுகளை ஒரே கட்டளை மையத்திலிருந்து செல்லவும். மறக்க முடியாத அனுபவங்களை உருவாக்கும் மக்களுக்காக உருவாக்கப்பட்டது.",
+      "supportingCopy": "நீங்கள் திருவிழாக்கள், கார்ப்பரேட் நிகழ்வுகள் அல்லது அதிவேகச் செயல்பாடுகளை உருவாக்கினாலும் - ATLVS கருத்து முதல் திரை அழைப்பு வரையிலான பாடத்திட்டத்தை பட்டியலிடுகிறது.",
+      "ctaPrimary": "இன்றே இலவசமாகத் தொடங்குங்கள்",
+      "ctaSecondary": "செயலில் பார்க்கவும்",
+      "trustIndicators": "கிரெடிட் கார்டு இல்லை • 14 நாள் சோதனை • எப்போது வேண்டுமானாலும் ரத்துசெய்யலாம்",
+      "platformScreenshot": "பிளாட்ஃபார்ம் ஸ்கிரீன்ஷாட்"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "உலகெங்கிலும் உள்ள தயாரிப்பு குழுக்களால் நம்பப்படுகிறது"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "உற்பத்தி குழப்ப பிரச்சனை",
+      "subtitle": "உங்களுக்கு பயிற்சி தெரியும்",
+      "pain1Title": "கருவி ஓவர்லோட்",
+      "pain1Description": "விரிதாள்கள், ஸ்லாக், மின்னஞ்சல், யாராலும் கண்டுபிடிக்க முடியாத ஒரு Google ஆவணம்—உங்கள் பணிப்பாய்வு ஒரு டஜன் தளங்களில் சிதறிக்கிடக்கிறது",
+      "pain2Title": "தகவல் கருந்துளைகள்",
+      "pain2Description": "கையளிப்பின் போது முக்கியமான விவரங்கள் மறைந்துவிடும். அந்த ஃபைலை யாரோ கண்டிப்பா அனுப்பியிருக்காங்க... எங்கோ",
+      "pain3Title": "பட்ஜெட் ஆச்சரியங்கள்",
+      "pain3Description": "நிழலில் செலவுகள் ஏறும். நீங்கள் கவனிக்கும் நேரத்தில், நீங்கள் ஏற்கனவே முடிந்துவிட்டீர்கள்",
+      "pain4Title": "தொடர்பு சறுக்கல்",
+      "pain4Description": "விற்பனையாளர்கள் புதுப்பிப்புகளைத் தவறவிடுகிறார்கள், குழுவினர் பழைய தகவலைப் பயன்படுத்துகிறார்கள், பங்குதாரர்கள் அதே கேள்விகளை இரண்டு முறை கேட்கிறார்கள்"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "ஒரு மேடை. ஜீரோ கேயாஸ்.",
+      "subtitle": "எல்லாம் அதன் சரியான இடத்தில்",
+      "feature1Title": "ஒருங்கிணைந்த கட்டளை மையம்",
+      "feature1Description": "திட்டங்கள், மக்கள் மற்றும் வளங்கள் அனைத்தும் உருவாக்கத்தில் பயணிக்கின்றன",
+      "feature2Title": "நிகழ்நேர ஒத்திசைவு",
+      "feature2Description": "புதுப்பிப்புகள் உடனடியாகச் செல்கின்றன. எல்லோரும் ஒரே அட்டவணையில் இருந்து வேலை செய்கிறார்கள்",
+      "feature3Title": "பட்ஜெட் ரேடார்",
+      "feature3Description": "ஒவ்வொரு டாலரையும் நிகழ்நேரத்தில் கண்காணிக்கவும். ஆச்சரியங்கள் இல்லை, மீறல்கள் இல்லை",
+      "feature4Title": "விற்பனையாளர் ஒருங்கிணைப்பு",
+      "feature4Description": "கப்பலைக் கொடுக்காமல் வெளிப்புற பங்காளிகளை வளையத்தில் வைத்திருங்கள்"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "இது எப்படி வேலை செய்கிறது",
+      "subtitle": "சில நிமிடங்களில் பயணம் செய்யுங்கள், மாதங்களில் அல்ல",
+      "step1Title": "உங்கள் நிறுவனத்தைத் தொடங்கவும்",
+      "step1Description": "உங்கள் கட்டமைப்பை அமைத்து, உங்கள் பணியாளர்களை கப்பலில் கொண்டு வாருங்கள்",
+      "step2Title": "உங்கள் திட்டங்களை பட்டியலிடவும்",
+      "step2Description": "தயாரிப்புகள், செயல்படுத்தல்கள் மற்றும் பணியிடங்களை வரைபடமாக்குங்கள்",
+      "step3Title": "பாத்திரங்கள் மற்றும் பணிகளை ஒதுக்கவும்",
+      "step3Description": "அனைவருக்கும் சரியான அணுகல் மற்றும் தெளிவான பொறுப்புகளை வழங்கவும்",
+      "step4Title": "வழிசெலுத்து & வழங்கு",
+      "step4Description": "முன்னேற்றத்தைக் கண்காணிக்கவும், வரவு செலவுத் திட்டங்களை நிர்வகிக்கவும், குறைபாடற்ற முறையில் செயல்படுத்தவும்"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "நீங்கள் அளவில் உற்பத்தி செய்ய வேண்டிய அனைத்தும்",
+      "subtitle": "முழுமையான உற்பத்திக் கட்டுப்பாட்டிற்கு ஆறு ஒருங்கிணைந்த மையங்கள்",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "உற்பத்தி மையம்",
+        "description": "திட்டங்கள், நிகழ்வுகள், நபர்கள், சொத்துக்கள், இருப்பிடங்கள் மற்றும் கோப்புகளை நிர்வகிக்கவும்",
+        "feature1": "திட்டம் மற்றும் நிகழ்வு திட்டமிடல்",
+        "feature2": "குழு மற்றும் குழு மேலாண்மை",
+        "feature3": "சொத்து கண்காணிப்பு & இருப்பு",
+        "feature4": "இடம் மற்றும் இடம் ஒருங்கிணைப்பு"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "வணிக மையம்",
+        "description": "நிறுவனங்கள், வேலைகள், கொள்முதல் மற்றும் நிதி ஆகியவற்றைக் கையாளவும்",
+        "feature1": "விற்பனையாளர் மற்றும் நிறுவன மேலாண்மை",
+        "feature2": "வேலை வாய்ப்புகள் மற்றும் பணியமர்த்தல்",
+        "feature3": "கொள்முதல் மற்றும் கொள்முதல்",
+        "feature4": "பட்ஜெட் மற்றும் செலவு கண்காணிப்பு"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "நெட்வொர்க் ஹப்",
+        "description": "சமூகம், சந்தை மற்றும் வள நூலகத்தை உருவாக்குங்கள்",
+        "feature1": "சமூகம் மற்றும் விவாதங்கள்",
+        "feature2": "சந்தை மற்றும் சேவைகள்",
+        "feature3": "வள நூலகம்",
+        "feature4": "தொழில் தொடர்புகள்"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "ஆட்டோமேஷன் ஹப்",
+        "description": "பணிப்பாய்வுகள், தூண்டுதல்கள் மற்றும் மீண்டும் மீண்டும் செய்யும் பணிகளை தானியங்குபடுத்துங்கள்",
+        "feature1": "தனிப்பயன் பணிப்பாய்வு ஆட்டோமேஷன்",
+        "feature2": "நிகழ்வு-உந்துதல் தூண்டுதல்கள்",
+        "feature3": "திட்டமிடப்பட்ட பணி நிறைவேற்றம்",
+        "feature4": "ஒருங்கிணைப்பு குழாய்கள்"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "புலனாய்வு மையம்",
+        "description": "அறிக்கைகள், பகுப்பாய்வு மற்றும் நுண்ணறிவுகளை உருவாக்கவும்",
+        "feature1": "விருப்ப அறிக்கைகள்",
+        "feature2": "நிகழ் நேர பகுப்பாய்வு",
+        "feature3": "முன்னறிவிப்பு நுண்ணறிவு",
+        "feature4": "செயல்திறன் அளவீடுகள்"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "சிஸ்டம் ஹப்",
+        "description": "நிர்வாகம், அமைப்புகள் மற்றும் பயனர் சுயவிவரங்களை உள்ளமைக்கவும்",
+        "feature1": "பயனர் மற்றும் பங்கு மேலாண்மை",
+        "feature2": "கணினி கட்டமைப்பு",
+        "feature3": "சுயவிவர தனிப்பயனாக்கம்",
+        "feature4": "பாதுகாப்பு மற்றும் அனுமதிகள்"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "நீங்கள் அளவில் உற்பத்தி செய்ய வேண்டிய அனைத்தும்",
+        "subtitle": "அனுபவமிக்க உற்பத்தி குழுக்களுக்காக வடிவமைக்கப்பட்ட ஆறு ஒருங்கிணைந்த மையங்கள்"
+      },
+      "production": {
+        "title": "உற்பத்தி மையம்",
+        "description": "திட்டங்கள், நிகழ்வுகள், நபர்கள், சொத்துக்கள், இருப்பிடங்கள் மற்றும் கோப்புகளை நிர்வகிக்கவும்",
+        "projects": {
+          "title": "திட்டங்கள்",
+          "description": "கருத்து முதல் வேலைநிறுத்தம் வரை தயாரிப்புகளை ஒழுங்கமைத்து கண்காணிக்கவும்"
+        },
+        "events": {
+          "title": "நிகழ்வுகள்",
+          "description": "ஒவ்வொரு விவரம் மற்றும் காலவரிசையை திட்டமிடவும், ஒருங்கிணைக்கவும் மற்றும் நிர்வகிக்கவும்"
+        },
+        "people": {
+          "title": "மக்கள்",
+          "description": "குழு பணிகள், கிடைக்கும் தன்மை மற்றும் திட்டமிடல் ஆகியவற்றை நிர்வகிக்கவும்"
+        },
+        "assets": {
+          "title": "சொத்துக்கள்",
+          "description": "தயாரிப்புகள் முழுவதும் உபகரணங்கள், சரக்கு மற்றும் ஆதாரங்களைக் கண்காணிக்கவும்"
+        },
+        "locations": {
+          "title": "இடங்கள்",
+          "description": "இடங்கள், தளங்கள் மற்றும் வசதி தளவாடங்களை ஒருங்கிணைக்கவும்"
+        },
+        "files": {
+          "title": "கோப்புகள்",
+          "description": "ஆவணங்கள், ஊடகங்கள் மற்றும் தயாரிப்பு கோப்புகளை பாதுகாப்பாக மையப்படுத்தவும்"
+        }
+      },
+      "business": {
+        "title": "வணிக மையம்",
+        "description": "நிறுவனங்கள், வேலைகள், கொள்முதல் மற்றும் நிதி ஆகியவற்றைக் கையாளவும்",
+        "companies": {
+          "title": "நிறுவனங்கள்",
+          "description": "விற்பனையாளர் உறவுகள், வாடிக்கையாளர்கள் மற்றும் கூட்டாளர்களை நிர்வகிக்கவும்"
+        },
+        "jobs": {
+          "title": "வேலைகள்",
+          "description": "பதவிகளை இடுகையிடவும், பயன்பாடுகளைக் கண்காணிக்கவும், பணியமர்த்துதலை நிர்வகிக்கவும்"
+        },
+        "procurement": {
+          "title": "கொள்முதல்",
+          "description": "வாங்குதல், விற்பனையாளர் தேர்வு மற்றும் ஒப்பந்தங்களை ஒழுங்குபடுத்துதல்"
+        },
+        "invoices": {
+          "title": "இன்வாய்ஸ்கள்",
+          "description": "தானியங்கு நினைவூட்டல்களுடன் இன்வாய்ஸ்களை உருவாக்கவும், அனுப்பவும் மற்றும் கண்காணிக்கவும்"
+        },
+        "expenses": {
+          "title": "செலவுகள்",
+          "description": "ரசீது பிடிப்புடன் செலவுகளைப் பதிவுசெய்து வகைப்படுத்தவும்"
+        },
+        "budgets": {
+          "title": "பட்ஜெட்டுகள்",
+          "description": "நிகழ்நேர கண்காணிப்புடன் பட்ஜெட்களைத் திட்டமிடுங்கள், கண்காணிக்கலாம் மற்றும் கட்டுப்படுத்தலாம்"
+        }
+      },
+      "network": {
+        "title": "நெட்வொர்க் ஹப்",
+        "description": "சமூகம், சந்தை மற்றும் வள நூலகத்தை உருவாக்குங்கள்",
+        "community": {
+          "title": "சமூகம்",
+          "description": "தொழில் சாதகருடன் இணையுங்கள், அறிவைப் பகிர்ந்து கொள்ளுங்கள், ஒத்துழைக்கவும்"
+        },
+        "marketplace": {
+          "title": "சந்தை",
+          "description": "சேவைகளைக் கண்டறியவும், திறமைகளை நியமிக்கவும், உற்பத்தி ஆதாரங்களைக் கண்டறியவும்"
+        },
+        "resources": {
+          "title": "வளங்கள்",
+          "description": "வழிகாட்டிகள், வார்ப்புருக்கள் மற்றும் சிறந்த நடைமுறைகளை அணுகவும்"
+        }
+      },
+      "automations": {
+        "title": "ஆட்டோமேஷன் ஹப்",
+        "description": "பணிப்பாய்வுகள், தூண்டுதல்கள் மற்றும் மீண்டும் மீண்டும் செய்யும் பணிகளை தானியங்குபடுத்துங்கள்",
+        "workflows": {
+          "title": "பணிப்பாய்வுகள்",
+          "description": "மீண்டும் மீண்டும் செயல்முறைகளுக்கு தனிப்பயன் ஆட்டோமேஷன் வரிசைகளை உருவாக்கவும்"
+        },
+        "triggers": {
+          "title": "தூண்டுகிறது",
+          "description": "தானாகவே பதிலளிக்கும் நிகழ்வு சார்ந்த செயல்களை அமைக்கவும்"
+        },
+        "scheduled": {
+          "title": "திட்டமிடப்பட்ட பணிகள்",
+          "description": "நெகிழ்வான திட்டமிடலுடன் தொடர்ச்சியான பணிகளை தானியங்குபடுத்துங்கள்"
+        }
+      },
+      "intelligence": {
+        "title": "புலனாய்வு மையம்",
+        "description": "அறிக்கைகள், பகுப்பாய்வு மற்றும் நுண்ணறிவுகளை உருவாக்கவும்",
+        "reports": {
+          "title": "அறிக்கைகள்",
+          "description": "நெகிழ்வான காட்சிப்படுத்தல் மற்றும் ஏற்றுமதி மூலம் தனிப்பயன் அறிக்கைகளை உருவாக்கவும்"
+        },
+        "analytics": {
+          "title": "பகுப்பாய்வு",
+          "description": "KPIகளைக் கண்காணிக்கவும், போக்குகளைக் கண்காணிக்கவும், செயல்திறனை அளவிடவும்"
+        },
+        "insights": {
+          "title": "நுண்ணறிவு",
+          "description": "AI-இயங்கும் பரிந்துரைகள் மற்றும் முன்கணிப்பு பகுப்பாய்வுகளைப் பெறுங்கள்"
+        }
+      },
+      "system": {
+        "title": "சிஸ்டம் ஹப்",
+        "description": "நிர்வாகம், அமைப்புகள் மற்றும் பயனர் சுயவிவரங்களை உள்ளமைக்கவும்",
+        "admin": {
+          "title": "நிர்வாகி",
+          "description": "நிறுவன அமைப்புகள், பாதுகாப்பு மற்றும் உள்ளமைவை நிர்வகிக்கவும்"
+        },
+        "settings": {
+          "title": "அமைப்புகள்",
+          "description": "விருப்பத்தேர்வுகள், ஒருங்கிணைப்புகள் மற்றும் இயங்குதள நடத்தை ஆகியவற்றைத் தனிப்பயனாக்குங்கள்"
+        },
+        "profiles": {
+          "title": "பயனர் சுயவிவரங்கள்",
+          "description": "குழு சுயவிவரங்கள், பாத்திரங்கள் மற்றும் அணுகல் அனுமதிகளை நிர்வகிக்கவும்"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "உங்கள் குழுவினரின் ஒவ்வொரு பாத்திரத்திற்காகவும் கட்டப்பட்டது",
+      "subtitle": "துல்லியமான அனுமதிகளுடன் 11 பிராண்டட் பாத்திரங்கள்",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "புராணக்கதை",
+        "description": "பிளாட்ஃபார்ம் சூப்பர் அட்மின் - அனைத்து நிறுவனங்களிலும் முழுக் கட்டுப்பாடு"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "பாண்டம்",
+        "level": "உச்ச அதிகாரம்",
+        "title": "பாண்டம்",
+        "description": "முழுமையான கணினி நிர்வாகம் மற்றும் கட்டுப்பாடற்ற அணுகல். தளத்தின் திசையை வடிவமைத்து, நிறுவன மேற்பார்வையைப் பராமரிக்கவும்."
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "விமானி",
+        "level": "மூலோபாய தலைமை",
+        "title": "விமானி",
+        "description": "குறுக்கு-திட்டத் தெரிவுநிலை, வள ஒதுக்கீடு மற்றும் நிர்வாக பகுப்பாய்வு. உயர்நிலை உற்பத்தி உத்தியை அளவில் வழிசெலுத்தவும்."
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "கிளாடியேட்டர்",
+        "level": "திட்ட தலைமை",
+        "title": "கிளாடியேட்டர்",
+        "description": "முழு திட்ட உருவாக்கம் மற்றும் எடிட்டிங் உரிமைகள். முழுமையான கட்டுப்பாட்டுடன் கருத்து முதல் நிறைவு வரை தயாரிப்புகளை வழிநடத்துங்கள்."
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "நேவிகேட்டர்",
+        "level": "ஒருங்கிணைப்பு",
+        "title": "நேவிகேட்டர்",
+        "description": "திட்ட ஒருங்கிணைப்பு, பணி ஒதுக்கீடு மற்றும் குழு வழிகாட்டுதல். சிக்கலான பணிப்பாய்வுகள் மூலம் பாடத்திட்டத்தை பட்டியலிடவும்."
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "விலகுபவர்",
+        "level": "மரணதண்டனை",
+        "title": "விலகுபவர்",
+        "description": "நிறுவப்பட்ட கட்டமைப்பிற்குள் கவனம் செலுத்தப்பட்ட பணி நிறைவு. ஒதுக்கப்பட்ட பொறுப்புகளில் தரமான வேலையை வழங்குங்கள்."
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "ரைடர்",
+        "level": "கற்றல் மற்றும் கவனிப்பு",
+        "title": "ரைடர்",
+        "description": "கற்றுக்கொள்ளவும் வளரவும் பார்க்க மட்டுமே அணுகல். புதியவர்கள் தங்கள் திறமைகளை வளர்த்துக் கொள்வதற்கு ஏற்றது."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "விற்பனையாளர்",
+        "level": "ஸ்கோப் டெலிவரி",
+        "title": "விற்பனையாளர்",
+        "description": "வெளிப்புற சேவை வழங்குநர்களுக்கான இலக்கு அணுகல். டெலிவரி செய்யக்கூடியவற்றைப் பதிவேற்றவும் மற்றும் ஒப்பந்த வேலைகளை நிறைவேற்றவும்."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "பார்வையாளர்",
+        "level": "வரையறுக்கப்பட்ட பார்வை",
+        "title": "பார்வையாளர்",
+        "description": "வெளிப்புற பங்குதாரர்களுக்கான தற்காலிக, படிக்க மட்டும் அணுகல். பணிப்பாய்வுகளுக்கு இடையூறு விளைவிக்காமல் தகவலுடன் இருங்கள்."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "பங்குதாரர்",
+        "level": "மூலோபாய ஒத்துழைப்பு",
+        "title": "பங்குதாரர்",
+        "description": "நம்பகமான வெளிப்புற கூட்டுப்பணியாளர்களுக்கான ஆழமான ஒருங்கிணைப்பு. இருவழி தரவு பகிர்வு மற்றும் கூட்டு பணிப்பாய்வு மேலாண்மை."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "தூதுவர்",
+        "level": "சமூக சாம்பியன்கள்",
+        "title": "தூதுவர்",
+        "description": "ATLVSஐப் பிரதிநிதித்துவப்படுத்தவும், பயனர்களை ஆதரிக்கவும் மற்றும் ஒத்துழைப்பை வளர்க்கவும். நிகழ்வுகளை நடத்தவும், உள்ளடக்கத்தை உருவாக்கவும், சுற்றுச்சூழல் அமைப்பை வளர்க்கவும்."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "நிறுவன தர பாதுகாப்பு",
+      "subtitle": "உங்கள் தரவு ஒவ்வொரு மட்டத்திலும் பாதுகாக்கப்படுகிறது",
+      "feature1Title": "வரிசை நிலை பாதுகாப்பு",
+      "feature1Description": "801 RLS கொள்கைகள் பயனர்கள் என்ன செய்ய வேண்டும் என்பதை மட்டுமே பார்ப்பதை உறுதி செய்கிறது",
+      "feature2Title": "பங்கு அடிப்படையிலான அணுகல்",
+      "feature2Description": "45+ கிரானுலர் அனுமதிகளுடன் 11 பிராண்டட் பாத்திரங்கள்",
+      "feature3Title": "மறைகுறியாக்கப்பட்ட சேமிப்பு",
+      "feature3Description": "எல்லா தரவும் ஓய்வு மற்றும் போக்குவரத்தில் குறியாக்கம் செய்யப்பட்டுள்ளது",
+      "feature4Title": "தணிக்கை பதிவு",
+      "feature4Description": "அனைத்து கணினி செயல்பாடுகளின் முழுமையான தணிக்கை பாதை",
+      "feature5Title": "SOC 2 இணக்கமானது",
+      "feature5Description": "நிறுவன தர பாதுகாப்பு தரநிலைகள்",
+      "feature6Title": "GDPR தயார்",
+      "feature6Description": "தரவு தனியுரிமை விதிமுறைகளுடன் முழு இணக்கம்"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
-      "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "title": "உலகளாவிய தயாரிப்புக் குழுக்களால் நம்பப்படுகிறது",
+      "subtitle": "உண்மையான தயாரிப்பாளர்களிடமிருந்து உண்மையான கதைகள்",
+      "testimonial1Quote": "ATLVS நாங்கள் திருவிழாக்களை எவ்வாறு நிர்வகிக்கிறோம் என்பதை மாற்றியது. அனைத்தும் ஒரே இடத்தில், அனைவரும் ஒரே பக்கத்தில். இறுதியாக.",
+      "testimonial1Author": "சாரா சென்",
+      "testimonial1Role": "தயாரிப்பு இயக்குனர், முக்கிய இசை விழா",
+      "testimonial1Title": "தயாரிப்பு இயக்குனர், முக்கிய இசை விழா",
+      "testimonial2Quote": "RBAC அமைப்பு நமது சிக்கலான அமைப்பு அமைப்புக்கு ஏற்றது. உற்பத்திக்கான சரியான அணுகல் கட்டுப்பாடு? புரட்சியாளர்.",
+      "testimonial2Author": "மார்கஸ் ரோட்ரிக்ஸ்",
+      "testimonial2Role": "ஆபரேஷன்ஸ், லைவ் ஈவென்ட்ஸ் நிறுவனத்தின் வி.பி",
+      "testimonial2Title": "ஆபரேஷன்ஸ், லைவ் ஈவென்ட்ஸ் நிறுவனத்தின் வி.பி",
+      "testimonial3Quote": "முதல் காலாண்டில் வரவு செலவுத் திட்டத்தை 40% குறைத்துள்ளோம். நிதித் தெரிவுநிலையானது சட்டப்பூர்வமாக விளையாட்டை மாற்றும்.",
+      "testimonial3Author": "ஜெனிபர் பார்க்",
+      "testimonial3Role": "CFO, கார்ப்பரேட் நிகழ்வுகள் நிறுவனம்",
+      "testimonial3Title": "CFO, கார்ப்பரேட் நிகழ்வுகள் நிறுவனம்",
+      "jamesCookQuote": "விஞ்ஞானிகளின் மூன்று கப்பல்களை நிர்வகிப்பது தாங்கள் முக்கிய கதாபாத்திரம் என்று நினைக்கிறதா? ATLVS அனைவரையும் சீரமைத்து, கடனுக்காக போட்டியிடுவதற்குப் பதிலாக ஒன்றாகச் செயல்படும்.",
+      "jamesCookAuthor": "கேப்டன் ஜேம்ஸ் குக்",
+      "jamesCookRole": "பிரிட்டிஷ் ராயல் நேவி எக்ஸ்ப்ளோரர் (1728-1779)",
+      "zhengYiSaoQuote": "நான் கடற்கொள்ளையை ஒரு பார்ச்சூன் 500 நிறுவனமாக மாற்றினேன், எனது சொந்த பொதுமன்னிப்பு பேரம் பேசி, ஓய்வுபெற்ற செல்வந்தனாக இருந்தேன். ATLVS என்பது வழக்கத்திற்கு மாறான செயல்பாடுகளுக்கு இன்னும் உறுதியான மேலாண்மை தேவை என்பதை புரிந்துகொள்பவர்களுக்கானது.",
+      "zhengYiSaoAuthor": "ஜெங் யி சாவோ",
+      "zhengYiSaoRole": "சீன கடற்கொள்ளையர் தலைவர் (1775-1844)",
+      "captainAhabQuote": "பெரிய படத்தைக் கருத்தில் கொள்ளாமல் ஒவ்வொரு கடலிலும் ஒரு குறிப்பிட்ட இலக்கைத் துரத்துகிறீர்களா? ATLVS உங்களை தனிப்பட்ட நோக்கங்கள் மட்டுமின்றி உண்மையான வணிகத் திட்டத்தில் கவனம் செலுத்துகிறது.",
+      "captainAhabAuthor": "கேப்டன் ஆகாப்",
+      "captainAhabRole": "திமிங்கல கேப்டன், பெக்கோட்",
+      "graceOMalleyQuote": "ராணி எலிசபெத்துடன் சமமாக பேச்சுவார்த்தை நடத்தினார். ATLVS ஆனது, ஒவ்வொரு சந்திப்பிலும் உங்கள் தரவைத் தயார் செய்து உங்கள் நம்பிக்கையுடன் காண்பிக்க உதவுகிறது.",
+      "graceOMalleyAuthor": "கிரேஸ் ஓ'மல்லி \"கிரைன் மாஹோல்\"",
+      "graceOMalleyRole": "ஐரிஷ் கடற்கொள்ளையர் ராணி & தலைவர் (c. 1530-1603)",
+      "sinbadQuote": "நான் கப்பல் விபத்துக்குள்ளாகிக்கொண்டே இருந்தேன், ஆனால் இன்னும் வெளியே சென்றது எப்படி? அது மோசமான திட்டமிடல். ATLVS எனது முடிவெடுப்பதற்குத் தெளிவாகத் தேவையான கட்டமைப்பை வழங்குகிறது.",
+      "sinbadAuthor": "சின்பாத் மாலுமி",
+      "sinbadRole": "பழம்பெரும் வணிக மாலுமி, அரேபிய இரவுகள்",
+      "longJohnSilverQuote": "பூனைகளுக்கு ஸ்கர்வி மற்றும் நம்பிக்கை பிரச்சினைகள் இருந்தால் கடற்கொள்ளையர்களை நிர்வகிப்பது உண்மையில் பூனைகளை மேய்ப்பதாகும். ATLVS இன் பங்குதாரர் நிர்வாகம், அவர்கள் ஒருவருக்கொருவர் சதி செய்தாலும் கூட, அனைவரையும் சீரமைக்க வைத்திருக்கிறது.",
+      "longJohnSilverAuthor": "நீண்ட ஜான் சில்வர்",
+      "longJohnSilverRole": "குவாட்டர்மாஸ்டர் & பைரேட் குக், புதையல் தீவு",
+      "horatioHornblowerQuote": "முழு மன உளைச்சலைக் கொண்டிருக்கும்போது பிரெஞ்சுக்காரர்களுடன் சண்டையிடுவது நேர்மையாக எனக்கு மிகவும் ஆன்-பிராண்ட். ATLVS அனைத்து தந்திரோபாய விஷயங்களையும் ஒழுங்கமைத்து வைத்திருப்பதால் நீங்கள் உண்மையான பணியில் கவனம் செலுத்த முடியும்.",
+      "horatioHornblowerAuthor": "ஹொரேஷியோ ஹார்ன்ப்ளோவர்",
+      "horatioHornblowerRole": "ராயல் நேவி அதிகாரி (சி.எஸ். ஃபாரெஸ்டர் நாவல்கள்)",
+      "captainNemoQuote": "நீர்மூழ்கிக் கப்பலில் துறவியாக இருப்பது உண்மையில் மிகவும் உள்முக-குறியீடு ஆகும், ஆனால் எனக்குக் கூட குழு ஒருங்கிணைப்பு தேவைப்பட்டது. நீங்கள் தனியாக வேலை செய்யும் போது கூட ATLVS வேலை செய்கிறது.",
+      "captainNemoAuthor": "கேப்டன் நெமோ",
+      "captainNemoRole": "தளபதி, நாட்டிலஸ் (கடலுக்கு அடியில் இருபதாயிரம் லீக்குகள்)",
+      "odysseusQuote": "கேள்விக்குரிய தேர்வுகளை நான் தொடர்ந்து செய்ததால் ஒவ்வொரு குழு உறுப்பினர்களையும் இழந்தேன். ATLVS 'சைரன்கள் எதைப் பற்றியது என்பதை நாங்கள் பார்க்கத் தேவையில்லை' என்பது போல இருந்திருக்குமா மற்றும் நேர்மையாக? செல்லுபடியாகும்.",
+      "odysseusAuthor": "ஒடிசியஸ்/யுலிஸஸ்",
+      "odysseusRole": "இத்தாக்காவின் மன்னர், கிரேக்க ஹீரோ (தி ஒடிஸி)",
+      "blackbeardQuote": "நீங்கள் கைமுறையாக ஒருங்கிணைக்கும்போது நான்கு கப்பல்களைக் கொண்ட ஒரு முழு துறைமுகத்தையும் தடுப்பது வித்தியாசமாக இருக்கும். ATLVS என்னை கடல்களில் மிகவும் செயல்பாட்டு திறன் கொண்ட கடற்கொள்ளையர் ஆக்கியிருக்கும்.",
+      "blackbeardAuthor": "கேப்டன் எட்வர்ட் டீச் \"பிளாக்பியர்ட்\"",
+      "blackbeardRole": "பைரேட் கமாண்டர் (c. 1680-1718)",
+      "captainMarvelQuote": "30 ஆண்டுகளாக விண்வெளி அவசரநிலைகளை செக்-இன் செய்யாமல் கையாண்டது. ATLVS இன் தகவல் தொடர்பு கருவிகள், நான் விரும்பும் அனைவரையும் பேய் பிடிக்காமல் இருக்க எனக்கு உதவியிருக்கும்.",
+      "captainMarvelAuthor": "கேப்டன் மார்வெல் / கரோல் டான்வர்ஸ்",
+      "captainMarvelRole": "விமானப்படை பைலட் & காஸ்மிக் ஹீரோ (MCU)",
+      "captainJanewayQuote": "எனது குழுவினரைக் காப்பாற்றுவதற்காக நான் பலமுறை டெம்போரல் பிரைம் உத்தரவை மீறியுள்ளேன், ஆனால் எனது திட்ட காலக்கெடுவை நான் மீறவில்லை. ATLVS நெறிமுறைகள் சிக்கலானதாக இருந்தாலும் முன்னுரிமைகளை தெளிவாக வைத்திருக்கிறது.",
+      "captainJanewayAuthor": "கேப்டன் கேத்ரின் ஜேன்வே",
+      "captainJanewayRole": "ஸ்டார்ப்லீட் கேப்டன், யுஎஸ்எஸ் வாயேஜர் (ஸ்டார் ட்ரெக்: வாயேஜர்)",
+      "moanaQuote": "மௌய் எனது வழிகாட்டியாக இருக்க வேண்டும், ஆனால் பெரும்பாலான நேரத்தை உணர்ச்சிவசப்படாமல் கழித்தார். உங்கள் குழு கடினமாக இருக்கும்போது ATLVS டெலிவரிகளை கண்காணிக்கிறது.",
+      "moanaAuthor": "மோனா",
+      "moanaRole": "வேஃபைண்டர் & தீவுத் தலைவர் (டிஸ்னியின் மோனா)",
+      "captainJackSparrowQuote": "ஒரு குழுவினரை நிர்வகித்தல், உண்மையில் அவர்கள் வேலையில் இருக்கிறார்களா அல்லது குழப்பத்திற்காகவா என்று யாருக்கும் தெரியாது? ATLVS எனது முழு அதிர்வும் இல்லை என்பதை தெளிவுபடுத்துகிறது.",
+      "captainJackSparrowAuthor": "கேப்டன் ஜாக் ஸ்பாரோ",
+      "captainJackSparrowRole": "கடற்கொள்ளையர் கேப்டன், கருப்பு முத்து (பைரேட்ஸ் ஆஃப் தி கரீபியன்)",
+      "popeyeQuote": "எனது முழு ஆளுமையும் 'பிடிவாதமாக முன்னோக்கி திட்டமிட மறுக்கிறது.' ATLVS என்பது எனக்கு தெளிவாகத் தேவைப்படும் ஆனால் ஒப்புக்கொள்ளாத பெரியவர்.",
+      "popeyeAuthor": "போபியே மாலுமி நாயகன்",
+      "popeyeRole": "மாலுமி மற்றும் ஆலிவ் ஆயில்ஸ் பாதுகாவலர் (கார்ட்டூன் பாத்திரம்)",
+      "captainPicardQuote": "முதல் தொடர்பு சூழ்நிலைகள் மற்றும் இராஜதந்திர நெருக்கடிகள் மூலம் பலதரப்பட்ட குழுவினரை வழிநடத்துகிறீர்களா? பங்குகள் உண்மையில் விண்மீன்களாக இருக்கும்போது ATLVS அனைவரையும் சீரமைக்க வைக்கிறது.",
+      "captainPicardAuthor": "கேப்டன் ஜீன்-லூக் பிகார்ட்",
+      "captainPicardRole": "ஸ்டார்ப்லீட் கேப்டன், யுஎஸ்எஸ் எண்டர்பிரைஸ் (ஸ்டார் ட்ரெக்: டிஎன்ஜி)",
+      "captainSiskoQuote": "ஒரு பகுதி இராணுவ தளம், பகுதி வர்த்தக மையம், பகுதி அகதிகள் மையம் என்று ஒரு நிலையத்தை கட்டளையிடுவதா? ஒவ்வொரு பங்குதாரருக்கும் வெவ்வேறு முன்னுரிமைகள் இருக்கும்போது சிக்கலான தன்மையை நிர்வகிக்க ATLVS உதவுகிறது.",
+      "captainSiskoAuthor": "கேப்டன் பெஞ்சமின் சிஸ்கோ",
+      "captainSiskoRole": "ஸ்டார்ப்லீட் கமாண்டர், டீப் ஸ்பேஸ் ஒன்பது (ஸ்டார் ட்ரெக்: டிஎஸ்9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "வெளிப்படையான விலை நிர்ணயம்",
+      "subtitle": "தனி ஒப்பந்ததாரர்கள் முதல் நிறுவன தயாரிப்பாளர்கள் வரை",
+      "monthly": "மாதாந்திர",
+      "annually": "ஆண்டுதோறும்",
+      "save20": "20% சேமிக்கவும்",
+      "community": {
+        "name": "சமூகம்",
+        "price": "இலவசம்",
+        "period": "என்றென்றும்",
+        "description": "தொடங்குவதற்கு ஏற்றது",
+        "feature1": "ரைடர் பங்கு அணுகல்",
+        "feature2": "அடிப்படை பணி மேலாண்மை",
+        "feature3": "சமூக ஆதரவு",
+        "cta": "இலவசமாக தொடங்குங்கள்"
+      },
+      "pro": {
+        "name": "ப்ரோ",
+        "price": "$12",
+        "period": "மாதத்திற்கு",
+        "annualPrice": "$10/மாதம் (வருடாந்திர கட்டணம்)",
+        "description": "சுயாதீன ஒப்பந்தக்காரர்களுக்கு",
+        "feature1": "டிவையேட்டர் & ரைடர் பாத்திரங்கள்",
+        "feature2": "மேம்பட்ட பணி மேலாண்மை",
+        "feature3": "முன்னுரிமை ஆதரவு",
+        "cta": "இலவச சோதனையைத் தொடங்கவும்"
+      },
+      "team": {
+        "name": "குழு",
+        "badge": "மிகவும் பிரபலமானது",
+        "price": "$120",
+        "period": "மாதத்திற்கு",
+        "annualPrice": "$100/மாதம் (வருடாந்திர கட்டணம்)",
+        "description": "சிறிய மற்றும் நடுத்தர அணிகளுக்கு (2-10 இடங்கள்)",
+        "feature1": "அனைத்து ப்ரோ அம்சங்கள்",
+        "feature2": "விற்பனையாளர் மேலாண்மை",
+        "feature3": "குழு ஒத்துழைப்பு",
+        "cta": "இலவச சோதனையைத் தொடங்கவும்"
+      },
       "starter": {
-        "name": "Starter",
+        "name": "ஸ்டார்டர்",
         "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "period": "ஒரு பயனருக்கு/மாதம்",
+        "description": "ஃப்ரீலான்ஸர்கள் மற்றும் சிறிய குழுக்களுக்கு ஏற்றது",
+        "feature1": "5 பயனர்கள் வரை",
+        "feature2": "10 செயலில் உள்ள திட்டங்கள்",
+        "feature3": "அடிப்படை அறிக்கை",
+        "feature4": "மின்னஞ்சல் ஆதரவு",
+        "feature5": "10 ஜிபி சேமிப்பு",
+        "cta": "இலவச சோதனையைத் தொடங்கவும்"
       },
       "professional": {
-        "name": "Professional",
+        "name": "தொழில்முறை",
         "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "period": "ஒரு பயனருக்கு/மாதம்",
+        "description": "வளர்ந்து வரும் உற்பத்தி நிறுவனங்களுக்கு",
+        "feature1": "25 பயனர்கள் வரை",
+        "feature2": "வரம்பற்ற திட்டங்கள்",
+        "feature3": "மேம்பட்ட பகுப்பாய்வு",
+        "feature4": "முன்னுரிமை ஆதரவு",
+        "feature5": "100ஜிபி சேமிப்பு",
+        "feature6": "விருப்ப பாத்திரங்கள்",
+        "feature7": "API அணுகல்",
+        "cta": "இலவச சோதனையைத் தொடங்கவும்",
+        "popular": "மிகவும் பிரபலமானது"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
+        "name": "நிறுவன",
+        "price": "தனிப்பயன்",
+        "period": "தொடர்பு விற்பனை",
+        "annualPrice": "$1000/மாதம் (வருடாந்திர கட்டணம்)",
+        "description": "பெரிய நிறுவனங்கள் மற்றும் ஏஜென்சிகளுக்கு",
+        "feature1": "வரம்பற்ற பயனர்கள்",
+        "feature2": "வரம்பற்ற திட்டங்கள்",
+        "feature3": "விருப்ப ஒருங்கிணைப்புகள்",
+        "feature4": "அர்ப்பணிப்பு ஆதரவு",
+        "feature5": "வரம்பற்ற சேமிப்பு",
         "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "feature7": "SLA உத்தரவாதம்",
+        "feature8": "விருப்ப பயிற்சி",
+        "cta": "விற்பனையைத் தொடர்பு கொள்ளவும்"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+      "subtitle": "நீங்கள் தெரிந்து கொள்ள வேண்டிய அனைத்தும்",
+      "question1": "இலவச சோதனை எவ்வளவு காலம்?",
+      "answer1": "14 நாட்கள், கிரெடிட் கார்டு தேவையில்லை. அனைத்து அம்சங்களுக்கும் முழு அணுகல்.",
+      "question2": "நான் எப்போது வேண்டுமானாலும் ரத்து செய்யலாமா?",
+      "answer2": "ஆம். எப்போது வேண்டுமானாலும் ரத்து செய்யலாம். நீண்ட கால ஒப்பந்தங்கள் அல்லது பொறுப்புகள் இல்லை.",
+      "question3": "நீங்கள் என்ன கட்டண முறைகளை ஏற்றுக்கொள்கிறீர்கள்?",
+      "answer3": "நிறுவனத் திட்டங்களுக்கான அனைத்து முக்கிய கிரெடிட் கார்டுகள், ACH மற்றும் கம்பி பரிமாற்றங்களை நாங்கள் ஏற்றுக்கொள்கிறோம்.",
+      "question4": "எனது தரவு பாதுகாப்பானதா?",
+      "answer4": "ஆம். எண்டர்பிரைஸ்-கிரேடு என்க்ரிப்ஷன், SOC 2 இணக்கமானது, GDPR தயார். உங்கள் தரவு ஒவ்வொரு மட்டத்திலும் பாதுகாக்கப்படுகிறது.",
+      "question5": "நீங்கள் பயிற்சி அளிக்கிறீர்களா?",
+      "answer5": "ஆம். அனைத்து திட்டங்களுக்கும் சுய சேவை ஆதாரங்கள், மேலும் நிறுவன வாடிக்கையாளர்களுக்கு அர்ப்பணிப்பு பயிற்சி.",
+      "question6": "எனது தற்போதைய தரவை நான் இறக்குமதி செய்யலாமா?",
+      "answer6": "ஆம். நாங்கள் CSV இறக்குமதி கருவிகளை வழங்குகிறோம், மேலும் நிறுவனத் திட்டங்களுக்கான தனிப்பயன் தரவு இடம்பெயர்வுகளுக்கு உதவ முடியும்.",
+      "q1": "இலவச சோதனை எவ்வளவு காலம்?",
+      "a1": "14 நாட்கள், கிரெடிட் கார்டு தேவையில்லை. அனைத்து அம்சங்களுக்கும் முழு அணுகல்.",
+      "q2": "நான் எப்போது வேண்டுமானாலும் ரத்து செய்யலாமா?",
+      "a2": "ஆம். எப்போது வேண்டுமானாலும் ரத்து செய்யலாம். நீண்ட கால ஒப்பந்தங்கள் அல்லது பொறுப்புகள் இல்லை.",
+      "q3": "நீங்கள் என்ன கட்டண முறைகளை ஏற்றுக்கொள்கிறீர்கள்?",
+      "a3": "நிறுவனத் திட்டங்களுக்கான அனைத்து முக்கிய கிரெடிட் கார்டுகள், ACH மற்றும் கம்பி பரிமாற்றங்களை நாங்கள் ஏற்றுக்கொள்கிறோம்.",
+      "q4": "எனது தரவு பாதுகாப்பானதா?",
+      "a4": "ஆம். எண்டர்பிரைஸ்-கிரேடு என்க்ரிப்ஷன், SOC 2 இணக்கமானது, GDPR தயார். உங்கள் தரவு ஒவ்வொரு மட்டத்திலும் பாதுகாக்கப்படுகிறது.",
+      "q5": "நீங்கள் பயிற்சி அளிக்கிறீர்களா?",
+      "a5": "ஆம். அனைத்து திட்டங்களுக்கும் சுய சேவை ஆதாரங்கள், மேலும் நிறுவன வாடிக்கையாளர்களுக்கு அர்ப்பணிப்பு பயிற்சி.",
+      "q6": "எனது தற்போதைய தரவை நான் இறக்குமதி செய்யலாமா?",
+      "a6": "ஆம். நாங்கள் CSV இறக்குமதி கருவிகளை வழங்குகிறோம், மேலும் நிறுவனத் திட்டங்களுக்கான தனிப்பயன் தரவு இடம்பெயர்வுகளுக்கு உதவ முடியும்."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "உங்கள் உற்பத்திப் பணியை மாற்றத் தயாரா?",
+      "subtitle": "ATLVS ஐப் பயன்படுத்தி ஆயிரக்கணக்கான உற்பத்தி நிபுணர்களுடன் சேரவும்",
+      "ctaPrimary": "இலவச சோதனையைத் தொடங்கவும்",
+      "ctaSecondary": "அட்டவணை டெமோ",
+      "trustIndicators": "கிரெடிட் கார்டு தேவையில்லை • 14 நாள் இலவச சோதனை • எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்",
+      "primary": "இலவச சோதனையைத் தொடங்கவும்",
+      "secondary": "அட்டவணை டெமோ",
+      "noCard": "கடன் அட்டை தேவையில்லை"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "tagline": "அனுபவமிக்க உற்பத்தி குழுக்களுக்கான திட்ட மேலாண்மை அமைப்பு",
+      "productTitle": "தயாரிப்பு",
+      "companyTitle": "நிறுவனம்",
+      "resourcesTitle": "வளங்கள்",
+      "legalTitle": "சட்டப்படி",
+      "product": "தயாரிப்பு",
+      "features": "அம்சங்கள்",
+      "pricing": "விலை நிர்ணயம்",
+      "demo": "டெமோ",
+      "integrations": "ஒருங்கிணைப்புகள்",
+      "docs": "ஆவணப்படுத்தல்",
+      "apiReference": "API குறிப்பு",
+      "changelog": "சேஞ்ச்லாக்",
+      "caseStudies": "வழக்கு ஆய்வுகள்",
+      "templates": "வார்ப்புருக்கள்",
+      "company": "நிறுவனம்",
+      "aboutUs": "எங்களைப் பற்றி",
+      "blog": "வலைப்பதிவு",
+      "careers": "தொழில்",
+      "contact": "தொடர்பு கொள்ளவும்",
+      "press": "அழுத்தவும்",
+      "partners": "பங்குதாரர்கள்",
+      "customers": "வாடிக்கையாளர்கள்",
+      "events": "நிகழ்வுகள்",
+      "legal": "சட்டப்படி",
+      "privacy": "தனியுரிமைக் கொள்கை",
+      "terms": "சேவை விதிமுறைகள்",
+      "security": "பாதுகாப்பு",
+      "support": "ஆதரவு",
+      "helpCenter": "உதவி மையம்",
+      "community": "சமூகம்",
+      "status": "கணினி நிலை",
+      "roiCalculator": "ROI கால்குலேட்டர்",
+      "copyright": "© 2025 ATLVS. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "உங்களுக்கு பிடித்த கருவிகளுடன் ஒருங்கிணைக்கிறது",
+      "subtitle": "நீங்கள் ஏற்கனவே பயன்படுத்தும் கருவிகளுடன் ATLVSஐ இணைக்கவும்",
+      "comingSoon": "மேலும் ஒருங்கிணைப்புகள் விரைவில் வரும்"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "தொழில்முறை உற்பத்தி மேலாண்மை தீர்வுகள்",
+          "headlineHighlight": "அனுபவமிக்க அணிகளுக்கு",
+          "subheadline": "ஒரு மையப்படுத்தப்பட்ட தளத்தில் இருந்து விரிவான திட்டம், பணியாளர்கள், சொத்து மற்றும் நிதி மேலாண்மை. விதிவிலக்கான அனுபவங்களை வழங்கும் நிபுணர்களுக்காக வடிவமைக்கப்பட்டுள்ளது.",
+          "supportingCopy": "திருவிழாக்கள் முதல் பெருநிறுவன நிகழ்வுகள் மற்றும் அதிவேக அனுபவங்கள் வரை - ATLVS வெற்றிகரமான உற்பத்தி நிர்வாகத்திற்கு தேவையான கட்டமைப்பு மற்றும் மேற்பார்வையை வழங்குகிறது.",
+          "ctaPrimary": "இலவச சோதனையைத் தொடங்குங்கள்",
+          "ctaSecondary": "கோரிக்கை ஆர்ப்பாட்டம்",
+          "trustIndicators": "கிரெடிட் கார்டு தேவையில்லை • 14 நாள் சோதனை • எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்",
+          "platformScreenshot": "பிளாட்ஃபார்ம் ஸ்கிரீன்ஷாட்"
+        },
+        "trustBar": {
+          "trustedBy": "உலகெங்கிலும் உள்ள உற்பத்தி நிபுணர்களால் நம்பப்படுகிறது"
+        },
+        "problem": {
+          "title": "உற்பத்தி மேலாண்மை சவால்",
+          "subtitle": "தொழில்துறை அளவிலான திறமையின்மை",
+          "pain1Title": "துண்டாக்கப்பட்ட அமைப்புகள்",
+          "pain1Description": "விரிதாள்கள், மின்னஞ்சல் மற்றும் பல்வேறு திட்ட மேலாண்மை கருவிகள் உட்பட பல துண்டிக்கப்பட்ட தளங்களை அணிகள் பயன்படுத்துகின்றன",
+          "pain2Title": "தகவல் இழப்பு",
+          "pain2Description": "முக்கியமான திட்ட விவரங்கள் மாற்றங்கள் மற்றும் குழு கையேடுகளின் போது இழக்கப்படும்",
+          "pain3Title": "பட்ஜெட் மீறுகிறது",
+          "pain3Description": "சரியான நிதி மேற்பார்வை இல்லாமல், செலவுகள் கணிப்புகளை மீறுகின்றன",
+          "pain4Title": "தொடர்பு முறிவுகள்",
+          "pain4Description": "விற்பனையாளர்கள், குழு உறுப்பினர்கள் மற்றும் பங்குதாரர்கள் ஒருங்கிணைப்பு சிரமங்களை அனுபவிக்கின்றனர்"
+        },
+        "solution": {
+          "title": "விரிவான மேடை. முழுமையான கட்டுப்பாடு.",
+          "subtitle": "ஒருங்கிணைந்த உற்பத்தி மேலாண்மை",
+          "feature1Title": "மையப்படுத்தப்பட்ட மேடை",
+          "feature1Description": "அனைத்து திட்டங்கள், பணியாளர்கள் மற்றும் வளங்கள் ஒரே இடத்திலிருந்து நிர்வகிக்கப்படுகின்றன",
+          "feature2Title": "நிகழ்நேர புதுப்பிப்புகள்",
+          "feature2Description": "உடனடி ஒத்திசைவு அனைத்து குழு உறுப்பினர்களுக்கும் தற்போதைய தகவல் இருப்பதை உறுதி செய்கிறது",
+          "feature3Title": "நிதி மேற்பார்வை",
+          "feature3Description": "பட்ஜெட்டுகள், செலவுகள் மற்றும் இன்வாய்ஸ்களை துல்லியமாகவும் துல்லியமாகவும் கண்காணிக்கவும்",
+          "feature4Title": "விற்பனையாளர் மேலாண்மை",
+          "feature4Description": "முறையான மேற்பார்வையை உறுதி செய்யும் போது தொழில்முறை உறவுகளை பராமரிக்கவும்"
+        },
+        "howItWorks": {
+          "title": "செயல்படுத்தல் செயல்முறை",
+          "subtitle": "திறமையான அமைப்பு மற்றும் வரிசைப்படுத்தல்",
+          "step1Title": "உங்கள் அமைப்பை நிறுவவும்",
+          "step1Description": "உங்கள் நிறுவன கட்டமைப்பை உள்ளமைக்கவும் மற்றும் உங்கள் குழுவில் நுழையவும்",
+          "step2Title": "உங்கள் திட்டங்களை வரையறுக்கவும்",
+          "step2Description": "தயாரிப்புகள், செயல்படுத்தல்கள் மற்றும் பணியிடங்களை நிறுவுதல்",
+          "step3Title": "பாத்திரங்கள் & பொறுப்புகளை ஒதுக்குங்கள்",
+          "step3Description": "பொருத்தமான அணுகல் நிலைகள் மற்றும் தெளிவான பொறுப்புணர்வை வழங்கவும்",
+          "step4Title": "இயக்கவும் & கண்காணிக்கவும்",
+          "step4Description": "முன்னேற்றத்தைக் கண்காணிக்கவும், வரவு செலவுத் திட்டங்களை நிர்வகிக்கவும், விதிவிலக்கான முடிவுகளை வழங்கவும்"
+        },
+        "testimonials": {
+          "title": "உலகளாவிய உற்பத்தி வல்லுநர்களால் நம்பப்படுகிறது",
+          "subtitle": "தொழில்துறை தலைவர்களிடமிருந்து நிரூபிக்கப்பட்ட முடிவுகள்",
+          "testimonial1Quote": "ATLVS எங்கள் திருவிழா செயல்பாடுகளை நிர்வகிப்பதற்கான ஒரு சிறந்த தீர்வாக நிரூபிக்கப்பட்டுள்ளது. எல்லாம் நன்கு ஒழுங்கமைக்கப்பட்டுள்ளது மற்றும் எங்கள் குழு சரியான ஒருங்கிணைப்பை பராமரிக்கிறது.",
+          "testimonial1Author": "சாரா சென்",
+          "testimonial1Role": "தயாரிப்பு இயக்குனர், முக்கிய இசை விழா",
+          "testimonial2Quote": "பங்கு அடிப்படையிலான அணுகல் கட்டுப்பாட்டு அமைப்பு, எங்கள் நிறுவன கட்டமைப்பிற்கு தேவையானதை சரியாக வழங்குகிறது. இறுதியாக, உற்பத்தி குழுக்களுக்கான சரியான பாதுகாப்பு மற்றும் அணுகல் மேலாண்மை.",
+          "testimonial2Author": "மார்கஸ் ரோட்ரிக்ஸ்",
+          "testimonial2Role": "ஆபரேஷன்ஸ், லைவ் ஈவென்ட்ஸ் நிறுவனத்தின் வி.பி",
+          "testimonial3Quote": "முதல் காலாண்டில் வரவுசெலவுத் திட்டத்தை 40% குறைத்துள்ளோம். நிதித் தெரிவுநிலை மற்றும் கண்காணிப்பு திறன்கள் உண்மையிலேயே ஈர்க்கக்கூடியவை.",
+          "testimonial3Author": "ஜெனிபர் பார்க்",
+          "testimonial3Role": "CFO, கார்ப்பரேட் நிகழ்வுகள் நிறுவனம்"
+        },
+        "pricing": {
+          "title": "தொழில்முறை விலை அமைப்பு"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "வேலை செய்யும் உற்பத்தி மேலாண்மை",
+          "headlineHighlight": "பிஎஸ் இல்லை",
+          "subheadline": "ஒரே இடத்திலிருந்து திட்டங்கள், பணியாளர்கள், சொத்துக்கள் மற்றும் பட்ஜெட்டை நிர்வகிக்கவும். உண்மையில் வேலை செய்யும் நபர்களுக்காக கட்டப்பட்டது.",
+          "supportingCopy": "திருவிழாக்கள், கார்ப்பரேட் நிகழ்வுகள், அதிவேகச் செயல்பாடுகள் - ATLVS புழுதி இல்லாமல் அதைக் கையாளுகிறது.",
+          "ctaPrimary": "இலவசமாக தொடங்கவும்",
+          "ctaSecondary": "இது எவ்வாறு செயல்படுகிறது என்பதைப் பார்க்கவும்",
+          "trustIndicators": "கிரெடிட் கார்டு இல்லை • 14 நாள் சோதனை • எப்போது வேண்டுமானாலும் ரத்துசெய்யலாம்",
+          "platformScreenshot": "பிளாட்ஃபார்ம் ஸ்கிரீன்ஷாட்"
+        },
+        "trustBar": {
+          "trustedBy": "பொருட்களைச் செய்யும் தயாரிப்புக் குழுக்களால் பயன்படுத்தப்படுகிறது"
+        },
+        "problem": {
+          "title": "உற்பத்தி குழப்பம்",
+          "subtitle": "அதே கதை, வெவ்வேறு நாள்",
+          "pain1Title": "கருவி குழப்பம்",
+          "pain1Description": "விரிதாள்கள், ஸ்லாக், மின்னஞ்சல், ரேண்டம் Google டாக்ஸ்-உங்கள் பணிப்பாய்வு எல்லா இடங்களிலும் சிதறடிக்கப்பட்டுள்ளது",
+          "pain2Title": "தகவல் விடுபட்டுள்ளது",
+          "pain2Description": "கோப்புகள் மறைந்துவிடும். யாரோ எங்கோ அனுப்பினார்கள். அதை கண்டுபிடித்ததில் நல்ல அதிர்ஷ்டம்",
+          "pain3Title": "பட்ஜெட் க்ரீப்",
+          "pain3Description": "செலவுகள் உங்களைத் தாக்கும். நீங்கள் அதைப் பிடிக்கும் நேரத்தில், நீங்கள் பட்ஜெட்டை முடித்துவிட்டீர்கள்",
+          "pain4Title": "தொடர்பு முறிவு",
+          "pain4Description": "விற்பனையாளர்கள் புதுப்பிப்புகளைத் தவறவிடுகிறார்கள், குழு பழைய தகவலைக் கொண்டு வேலை செய்கிறது, பங்குதாரர்கள் அதே கேள்விகளைக் கேட்கிறார்கள்"
+        },
+        "solution": {
+          "title": "ஒரு மேடை. உண்மையில் வேலை செய்கிறது.",
+          "subtitle": "எல்லாம் இருக்க வேண்டிய இடத்தில்",
+          "feature1Title": "ஒருங்கிணைந்த அமைப்பு",
+          "feature1Description": "திட்டங்கள், மக்கள், வளங்கள்-அனைத்தும் உண்மையில் அர்த்தமுள்ள ஒரே இடத்தில்",
+          "feature2Title": "நிகழ்நேர புதுப்பிப்புகள்",
+          "feature2Description": "மாற்றங்கள் உடனடியாக நடக்கும். எல்லோரும் அதையே பார்க்கிறார்கள்",
+          "feature3Title": "பட்ஜெட் கண்காணிப்பு",
+          "feature3Description": "ஒவ்வொரு டாலரையும் கண்காணிக்கவும். ஆச்சரியங்கள் இல்லை, சாக்குகள் இல்லை",
+          "feature4Title": "விற்பனையாளர் ஒருங்கிணைப்பு",
+          "feature4Description": "கட்டுப்பாட்டை இழக்காமல் கூட்டாளர்களை வளையத்தில் வைத்திருங்கள்"
+        },
+        "howItWorks": {
+          "title": "இது எப்படி வேலை செய்கிறது",
+          "subtitle": "எழுந்து வேகமாக ஓடவும்",
+          "step1Title": "உங்கள் அமைப்பை அமைக்கவும்",
+          "step1Description": "உங்கள் கட்டமைப்பை உருவாக்குங்கள், உங்கள் குழுவைச் சேர்க்கவும்",
+          "step2Title": "உங்கள் திட்டங்களை உருவாக்கவும்",
+          "step2Description": "தயாரிப்புகள் மற்றும் பணியிடங்களை வரைபடமாக்குங்கள்",
+          "step3Title": "பாத்திரங்களை ஒதுக்குங்கள்",
+          "step3Description": "மக்களுக்கு சரியான அணுகலை வழங்குங்கள், அதற்கு மேல் எதுவும் இல்லை",
+          "step4Title": "செய்து முடிக்கவும்",
+          "step4Description": "முன்னேற்றத்தைக் கண்காணிக்கவும், வரவு செலவுத் திட்டங்களை நிர்வகிக்கவும், சரியான நேரத்தில் அனுப்பவும்"
+        },
+        "testimonials": {
+          "title": "உண்மையான அணிகள், உண்மையான முடிவுகள்",
+          "subtitle": "மார்க்கெட்டிங் பேசவில்லை",
+          "testimonial1Quote": "ATLVS எங்கள் திருவிழா குழப்பத்தை சரிசெய்தது. எல்லாம் ஒரே இடத்தில், என்ன நடக்கிறது என்பது அனைவருக்கும் தெரியும். இறுதியாக.",
+          "testimonial1Author": "சாரா சென்",
+          "testimonial1Role": "தயாரிப்பு இயக்குனர், முக்கிய இசை விழா",
+          "testimonial2Quote": "அனுமதி அமைப்பு நமக்குத் தேவையானதுதான். இனி கனவுகளை அணுக முடியாது.",
+          "testimonial2Author": "மார்கஸ் ரோட்ரிக்ஸ்",
+          "testimonial2Role": "ஆபரேஷன்ஸ், லைவ் ஈவென்ட்ஸ் நிறுவனத்தின் வி.பி",
+          "testimonial3Quote": "கட் பட்ஜெட் முதல் காலாண்டில் 40% அதிகமாக உள்ளது. கண்காணிப்பு உண்மையில் வேலை செய்கிறது.",
+          "testimonial3Author": "ஜெனிபர் பார்க்",
+          "testimonial3Role": "CFO, கார்ப்பரேட் நிகழ்வுகள் நிறுவனம்"
+        },
+        "pricing": {
+          "title": "நேரடியான விலை நிர்ணயம்"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "உண்மையில் வேலை செய்யும் உற்பத்தி மேலாண்மை",
+          "headlineHighlight": "அனுபவமிக்க அணிகளுக்கு",
+          "subheadline": "உங்கள் திட்டங்கள், பணியாளர்கள், சொத்துக்கள் மற்றும் பட்ஜெட்டுகளை ஒரே கட்டளை மையத்திலிருந்து செல்லவும். மறக்க முடியாத அனுபவங்களை உருவாக்கும் மக்களுக்காக உருவாக்கப்பட்டது.",
+          "supportingCopy": "நீங்கள் திருவிழாக்கள், கார்ப்பரேட் நிகழ்வுகள் அல்லது அதிவேகச் செயல்பாடுகளை உருவாக்கினாலும் - ATLVS கருத்து முதல் திரை அழைப்பு வரையிலான பாடத்திட்டத்தை பட்டியலிடுகிறது.",
+          "ctaPrimary": "இன்றே இலவசமாகத் தொடங்குங்கள்",
+          "ctaSecondary": "செயலில் பார்க்கவும்",
+          "trustIndicators": "கிரெடிட் கார்டு இல்லை • 14 நாள் சோதனை • எப்போது வேண்டுமானாலும் ரத்துசெய்யலாம்",
+          "platformScreenshot": "பிளாட்ஃபார்ம் ஸ்கிரீன்ஷாட்"
+        },
+        "trustBar": {
+          "trustedBy": "உலகெங்கிலும் உள்ள தயாரிப்பு குழுக்களால் நம்பப்படுகிறது"
+        },
+        "problem": {
+          "title": "உற்பத்தி குழப்ப பிரச்சனை",
+          "subtitle": "உங்களுக்கு பயிற்சி தெரியும்",
+          "pain1Title": "கருவி ஓவர்லோட்",
+          "pain1Description": "விரிதாள்கள், ஸ்லாக், மின்னஞ்சல், யாராலும் கண்டுபிடிக்க முடியாத ஒரு Google ஆவணம்—உங்கள் பணிப்பாய்வு ஒரு டஜன் தளங்களில் சிதறிக்கிடக்கிறது",
+          "pain2Title": "தகவல் கருந்துளைகள்",
+          "pain2Description": "கையளிப்பின் போது முக்கியமான விவரங்கள் மறைந்துவிடும். அந்த ஃபைலை யாரோ கண்டிப்பா அனுப்பியிருக்காங்க... எங்கோ",
+          "pain3Title": "பட்ஜெட் ஆச்சரியங்கள்",
+          "pain3Description": "நிழலில் செலவுகள் ஏறும். நீங்கள் கவனிக்கும் நேரத்தில், நீங்கள் ஏற்கனவே முடிந்துவிட்டீர்கள்",
+          "pain4Title": "தொடர்பு சறுக்கல்",
+          "pain4Description": "விற்பனையாளர்கள் புதுப்பிப்புகளைத் தவறவிடுகிறார்கள், குழுவினர் பழைய தகவலைப் பயன்படுத்துகிறார்கள், பங்குதாரர்கள் அதே கேள்விகளை இரண்டு முறை கேட்கிறார்கள்"
+        },
+        "solution": {
+          "title": "ஒரு மேடை. ஜீரோ கேயாஸ்.",
+          "subtitle": "எல்லாம் அதன் சரியான இடத்தில்",
+          "feature1Title": "ஒருங்கிணைந்த கட்டளை மையம்",
+          "feature1Description": "திட்டங்கள், மக்கள் மற்றும் வளங்கள் அனைத்தும் உருவாக்கத்தில் பயணிக்கின்றன",
+          "feature2Title": "நிகழ்நேர ஒத்திசைவு",
+          "feature2Description": "புதுப்பிப்புகள் உடனடியாகச் செல்கின்றன. எல்லோரும் ஒரே அட்டவணையில் இருந்து வேலை செய்கிறார்கள்",
+          "feature3Title": "பட்ஜெட் ரேடார்",
+          "feature3Description": "ஒவ்வொரு டாலரையும் நிகழ்நேரத்தில் கண்காணிக்கவும். ஆச்சரியங்கள் இல்லை, மீறல்கள் இல்லை",
+          "feature4Title": "விற்பனையாளர் ஒருங்கிணைப்பு",
+          "feature4Description": "கப்பலைக் கொடுக்காமல் வெளிப்புற பங்காளிகளை வளையத்தில் வைத்திருங்கள்"
+        },
+        "howItWorks": {
+          "title": "இது எப்படி வேலை செய்கிறது",
+          "subtitle": "சில நிமிடங்களில் பயணம் செய்யுங்கள், மாதங்களில் அல்ல",
+          "step1Title": "உங்கள் நிறுவனத்தைத் தொடங்கவும்",
+          "step1Description": "உங்கள் கட்டமைப்பை அமைத்து, உங்கள் பணியாளர்களை கப்பலில் கொண்டு வாருங்கள்",
+          "step2Title": "உங்கள் திட்டங்களை பட்டியலிடவும்",
+          "step2Description": "தயாரிப்புகள், செயல்படுத்தல்கள் மற்றும் பணியிடங்களை வரைபடமாக்குங்கள்",
+          "step3Title": "பாத்திரங்கள் மற்றும் பணிகளை ஒதுக்கவும்",
+          "step3Description": "அனைவருக்கும் சரியான அணுகல் மற்றும் தெளிவான பொறுப்புகளை வழங்கவும்",
+          "step4Title": "வழிசெலுத்து & வழங்கு",
+          "step4Description": "முன்னேற்றத்தைக் கண்காணிக்கவும், வரவு செலவுத் திட்டங்களை நிர்வகிக்கவும், குறைபாடற்ற முறையில் செயல்படுத்தவும்"
+        },
+        "testimonials": {
+          "title": "உலகளாவிய தயாரிப்புக் குழுக்களால் நம்பப்படுகிறது",
+          "subtitle": "உண்மையான தயாரிப்பாளர்களிடமிருந்து உண்மையான கதைகள்",
+          "testimonial1Quote": "ATLVS நாங்கள் திருவிழாக்களை எவ்வாறு நிர்வகிக்கிறோம் என்பதை மாற்றியது. அனைத்தும் ஒரே இடத்தில், அனைவரும் ஒரே பக்கத்தில். இறுதியாக.",
+          "testimonial1Author": "சாரா சென்",
+          "testimonial1Role": "தயாரிப்பு இயக்குனர், முக்கிய இசை விழா",
+          "testimonial2Quote": "RBAC அமைப்பு நமது சிக்கலான அமைப்பு அமைப்புக்கு ஏற்றது. உற்பத்திக்கான சரியான அணுகல் கட்டுப்பாடு? புரட்சியாளர்.",
+          "testimonial2Author": "மார்கஸ் ரோட்ரிக்ஸ்",
+          "testimonial2Role": "ஆபரேஷன்ஸ், லைவ் ஈவென்ட்ஸ் நிறுவனத்தின் வி.பி",
+          "testimonial3Quote": "முதல் காலாண்டில் வரவு செலவுத் திட்டத்தை 40% குறைத்துள்ளோம். நிதித் தெரிவுநிலையானது சட்டப்பூர்வமாக விளையாட்டை மாற்றும்.",
+          "testimonial3Author": "ஜெனிபர் பார்க்",
+          "testimonial3Role": "CFO, கார்ப்பரேட் நிகழ்வுகள் நிறுவனம்"
+        },
+        "pricing": {
+          "title": "அளவிடும் வெளிப்படையான விலை"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "உற்பத்தி மேலாண்மை வேறுபட்டது",
+          "headlineHighlight": "நிகழ்வு படைப்பாளர்களுக்கு",
+          "subheadline": "ஒரு பயன்பாட்டிலிருந்து உங்கள் திட்டங்கள், குழு, கியர் மற்றும் பட்ஜெட்டை இயக்கவும். உண்மையில் அனுபவங்களை உருவாக்கும் நபர்களுக்காக உருவாக்கப்பட்டது.",
+          "supportingCopy": "திருவிழாக்கள், பிராண்ட் செயல்பாடுகள், அதிவேக நிகழ்வுகள் - ATLVS யோசனை முதல் செயல்படுத்துதல் வரை அனைத்தையும் ஒழுங்கமைத்து வைத்திருக்கிறது.",
+          "ctaPrimary": "இலவசமாக தொடங்கவும்",
+          "ctaSecondary": "அதை பாருங்கள்",
+          "trustIndicators": "கிரெடிட் கார்டு தேவையில்லை • இலவச சோதனை • எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்",
+          "platformScreenshot": "பிளாட்ஃபார்ம் ஸ்கிரீன்ஷாட்"
+        },
+        "trustBar": {
+          "trustedBy": "எல்லா இடங்களிலும் தயாரிப்பு குழுக்களால் பயன்படுத்தப்படுகிறது"
+        },
+        "problem": {
+          "title": "தயாரிப்பு மெஸ்ஸி ஏஎஃப்",
+          "subtitle": "நாங்கள் அனைவரும் அங்கு இருந்தோம்",
+          "pain1Title": "பல பயன்பாடுகள்",
+          "pain1Description": "விரிதாள்கள், ஸ்லாக், மின்னஞ்சல், ரேண்டம் கூகுள் டாக்-எல்லாமே எல்லா இடங்களிலும் குழப்பமாக இருக்கிறது",
+          "pain2Title": "கோப்புகள் காணாமல் போகின்றன",
+          "pain2Description": "அந்த ஃபைலை யாரோ... எங்கோ அனுப்பினார்கள். இப்போது யாராலும் கண்டுபிடிக்க முடியாது. கிளாசிக்.",
+          "pain3Title": "பட்ஜெட் செல்கிறது சகோ",
+          "pain3Description": "செலவுகள் அதிகரித்துக்கொண்டே இருக்கும். நீங்கள் கவனிக்கும் நேரத்தில், நீங்கள் பட்ஜெட்டை தாண்டிவிட்டீர்கள்",
+          "pain4Title": "தொடர்பு பின்னடைவு 💬",
+          "pain4Description": "குழு உறுப்பினர்கள் புதுப்பிப்புகளைத் தவறவிட்டு, பழைய தகவல்களுடன் வேலை செய்கிறார்கள்"
+        },
+        "solution": {
+          "title": "ஒரு மேடை. மொத்த கட்டுப்பாடு. 🎯",
+          "subtitle": "எல்லாம் ஒரே இடத்தில்",
+          "feature1Title": "கட்டளை மையம் 🎮",
+          "feature1Description": "உங்கள் திட்டங்கள், குழு மற்றும் ஆதாரங்கள் அனைத்தும் ஒரே மையத்தில்",
+          "feature2Title": "நேரலை ஒத்திசைவு ⚡",
+          "feature2Description": "புதுப்பிப்புகள் உடனடியாக நடக்கும். அனைவரும் இணைந்தே இருக்கிறார்கள்",
+          "feature3Title": "பட்ஜெட் டிராக்கர் 💰",
+          "feature3Description": "ஒவ்வொரு டாலரையும் நிகழ்நேரத்தில் பார்க்கவும். ஆச்சரியம் இல்லை",
+          "feature4Title": "குழு ஒருங்கிணைப்பு 🤝",
+          "feature4Description": "அனைவரையும் புதுப்பித்து, ஒரே பக்கத்தில் வைத்திருங்கள்"
+        },
+        "howItWorks": {
+          "title": "இது எப்படி வேலை செய்கிறது",
+          "subtitle": "சில நிமிடங்களில் தொடங்கவும்",
+          "step1Title": "உங்கள் அமைப்பை அமைக்கவும்",
+          "step1Description": "உங்கள் குழு அமைப்பை உருவாக்கி அனைவரையும் சேர்க்கவும்",
+          "step2Title": "திட்டங்களை உருவாக்கவும்",
+          "step2Description": "உங்கள் நிகழ்வுகள் மற்றும் தயாரிப்புகளை வரைபடமாக்குங்கள்",
+          "step3Title": "பாத்திரங்களை ஒதுக்குங்கள்",
+          "step3Description": "மக்களுக்கு சரியான அனுமதிகளை வழங்குங்கள்",
+          "step4Title": "அதை அனுப்பு",
+          "step4Description": "எல்லாவற்றையும் கண்காணிக்கவும், பட்ஜெட்டுகளை நிர்வகிக்கவும், சரியாக செயல்படுத்தவும்"
+        },
+        "testimonials": {
+          "title": "ATLVS ஐப் பயன்படுத்தும் உண்மையான அணிகள்",
+          "subtitle": "உண்மையான நபர்களிடமிருந்து உண்மையான கருத்து",
+          "testimonial1Quote": "ATLVS என்பது திருவிழாக்களை நிர்வகிப்பதற்கான OP ஆகும். எல்லாம் ஒழுங்கமைக்கப்பட்டுள்ளது, அனைவரும் ஒத்திசைக்கப்பட்டுள்ளனர். 10/10 பரிந்துரைக்கும்.",
+          "testimonial1Author": "சாரா சென்",
+          "testimonial1Role": "தயாரிப்பு இயக்குனர், முக்கிய இசை விழா",
+          "testimonial2Quote": "அனுமதி அமைப்பு தீ. இறுதியாக எங்கள் குழுவிற்கு சரியான அணுகல் கட்டுப்பாடு கிடைத்தது.",
+          "testimonial2Author": "மார்கஸ் ரோட்ரிக்ஸ்",
+          "testimonial2Role": "ஆபரேஷன்ஸ், லைவ் ஈவென்ட்ஸ் நிறுவனத்தின் வி.பி",
+          "testimonial3Quote": "பட்ஜெட் பிரச்சனைகளை முதல் காலாண்டில் 40% குறைத்துள்ளோம். பணத்தை கண்காணிப்பது ஆச்சரியமாக இருக்கிறது.",
+          "testimonial3Author": "ஜெனிபர் பார்க்",
+          "testimonial3Role": "CFO, கார்ப்பரேட் நிகழ்வுகள் நிறுவனம்"
+        },
+        "pricing": {
+          "title": "வித்தியாசமாகத் தாக்கும் விலை"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "உங்கள் தயாரிப்பு கேம் 🎮 லெவல் அப்",
+          "headlineHighlight": "நிகழ்வு படைப்பாளர்களுக்கு",
+          "subheadline": "ஒரு சூப்பர் பயன்பாட்டிலிருந்து திட்டங்கள், குழு, கியர் மற்றும் பணத்தை நிர்வகிக்கவும் ✨ காவிய அனுபவங்களை உருவாக்கும் படைப்பாளர்களுக்காக உருவாக்கப்பட்டது 🚀",
+          "supportingCopy": "திருவிழாக்கள், நிகழ்வுகள், செயல்பாடுகள் - ATLVS ஆரம்பம் முதல் இறுதி வரை அனைத்தையும் ஒழுங்கமைத்து வைத்திருக்கிறது",
+          "ctaPrimary": "இலவசமாக தொடங்கவும் 🚀",
+          "ctaSecondary": "டெமோவைப் பார்க்கவும் 👀",
+          "trustIndicators": "கார்டு தேவையில்லை • இலவச சோதனை • எப்போது வேண்டுமானாலும் ரத்து செய்யலாம் ✌️",
+          "platformScreenshot": "பிளாட்ஃபார்ம் ஸ்கிரீன்ஷாட்"
+        },
+        "trustBar": {
+          "trustedBy": "உலகெங்கிலும் உள்ள தயாரிப்பு குழுக்களால் பயன்படுத்தப்படுகிறது 🌍"
+        },
+        "problem": {
+          "title": "உற்பத்தி குழப்பமாக இருக்கலாம் 😅",
+          "subtitle": "தெரிந்ததா?",
+          "pain1Title": "ஆப் ஓவர்லோட் 📱",
+          "pain1Description": "பல பயன்பாடுகள், அதிக குழப்பம். எல்லாம் சிதறிக் கிடக்கிறது, கண்டுபிடிக்க கடினமாக உள்ளது",
+          "pain2Title": "தொலைந்த கோப்புகள் 📂",
+          "pain2Description": "கோப்புகள் வெற்றிடத்தில் மறைந்துவிடும். யாரோ அனுப்பினார்கள்... எங்கோ... நல்லவேளை! 🔍",
+          "pain3Title": "பட்ஜெட் ஆச்சரியம் 💸",
+          "pain3Description": "பணம் காணாமல் போய்க்கொண்டே இருக்கிறது. நீங்கள் கவனிக்கும் நேரத்தில், நீங்கள் பட்ஜெட்டை தாண்டிவிட்டீர்கள் 😬",
+          "pain4Title": "குழு குழப்பம் 🤷",
+          "pain4Description": "மக்கள் புதுப்பிப்புகளைத் தவறவிடுகிறார்கள், பழைய தகவலுடன் வேலை செய்கிறார்கள், அதே கேள்விகளைக் கேட்கிறார்கள்"
+        },
+        "solution": {
+          "title": "ஒரு பயன்பாடு. முழு கட்டுப்பாடு. 💪",
+          "subtitle": "உங்களுக்கு தேவையான அனைத்தும் ஒரே இடத்தில்",
+          "feature1Title": "கட்டளை மையம் 🎮",
+          "feature1Description": "ஒரே டேஷ்போர்டில் அனைத்து திட்டப்பணிகள், குழு & கியர்",
+          "feature2Title": "உடனடி ஒத்திசைவு ⚡",
+          "feature2Description": "புதுப்பிப்புகள் நிகழ்நேரத்தில் நடக்கும். அனைவரும் இணைந்தே இருக்கிறார்கள்",
+          "feature3Title": "பணம் டிராக்கர் 💰",
+          "feature3Description": "ஒவ்வொரு டாலரையும் பாருங்கள். ஆச்சரியங்கள் இல்லை, மன அழுத்தம் இல்லை",
+          "feature4Title": "குழு கூட்டு 🤝",
+          "feature4Description": "அனைவரையும் வளையத்தில் வைத்து ஒன்றாக வேலை செய்யுங்கள்"
+        },
+        "howItWorks": {
+          "title": "இது எப்படி வேலை செய்கிறது ⚙️",
+          "subtitle": "மிக வேகமாக தொடங்குங்கள்",
+          "step1Title": "உங்கள் குழுவை உருவாக்குங்கள் 👥",
+          "step1Description": "உங்கள் அமைப்பினை அமைத்து உங்கள் குழுவைச் சேர்க்கவும்",
+          "step2Title": "திட்டங்களை உருவாக்கவும் 📋",
+          "step2Description": "உங்கள் எல்லா நிகழ்வுகளையும் தயாரிப்புகளையும் வரைபடமாக்குங்கள்",
+          "step3Title": "அனுமதிகளை அமைக்கவும் 🔐",
+          "step3Description": "அனைவருக்கும் சரியான அணுகல் நிலை வழங்கவும்",
+          "step4Title": "துவக்கி வெற்றி 🏆",
+          "step4Description": "முன்னேற்றத்தைக் கண்காணிக்கவும், பணத்தை நிர்வகிக்கவும், சரியாகச் செய்யவும்"
+        },
+        "testimonials": {
+          "title": "அணிகள் ATLVS ஐ விரும்புகின்றன 💙",
+          "subtitle": "உண்மையான பயனர்களிடமிருந்து உண்மையான மதிப்புரைகள்",
+          "testimonial1Quote": "ATLVS உண்மையில் திருவிழாக்களுக்கு ஏற்றது. எல்லாம் ஒழுங்கமைக்கப்பட்டுள்ளது, அனைவரும் ஒத்திசைக்கப்பட்டுள்ளனர். 100/10! 🔥",
+          "testimonial1Author": "சாரா சென்",
+          "testimonial1Role": "தயாரிப்பு இயக்குனர், முக்கிய இசை விழா",
+          "testimonial2Quote": "அனுமதி அமைப்பு சமையல்காரரின் முத்தம் 👌 இறுதியாக சரியான அணுகல் கட்டுப்பாடு!",
+          "testimonial2Author": "மார்கஸ் ரோட்ரிக்ஸ்",
+          "testimonial2Role": "ஆபரேஷன்ஸ், லைவ் ஈவென்ட்ஸ் நிறுவனத்தின் வி.பி",
+          "testimonial3Quote": "பட்ஜெட் பிரச்சினைகளை முதல் காலாண்டில் 40% குறைத்துள்ளோம். கண்காணிப்பு பைத்தியம்! 🎯",
+          "testimonial3Author": "ஜெனிபர் பார்க்",
+          "testimonial3Role": "CFO, கார்ப்பரேட் நிகழ்வுகள் நிறுவனம்"
+        },
+        "pricing": {
+          "title": "உண்மையில் நியாயமான விலை ✨"
+        }
+      }
     }
   }
 }

@@ -401,334 +401,935 @@
   },
   "marketing": {
     "nav": {
-      "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "logo": "एटीएलवीएस",
+      "solutions": "समाधान",
+      "features": "विशेषताएँ",
+      "pricing": "मूल्य निर्धारण",
+      "docs": "डॉक्स",
+      "blog": "ब्लॉग",
+      "company": "कंपनी",
+      "signIn": "दाखिल करना",
+      "startFree": "निःशुल्क प्रारंभ करें",
+      "toggleMenu": "मेनू टॉगल करें"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "उद्योग द्वारा समाधान",
+        "subtitle": "हर प्रकार के लाइव मनोरंजन उत्पादन के लिए उद्देश्य-निर्मित वर्कफ़्लो"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "संगीत कार्यक्रम और भ्रमण",
+        "description": "वैश्विक टूर संचालन में रूटिंग, बजटिंग, लॉजिस्टिक्स और क्रू प्रबंधन को सुव्यवस्थित करें - छोटे आयोजन स्थलों से लेकर अखाड़े के पैमाने पर प्रस्तुतियों तक।"
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "संगीत एवं कला उत्सव",
+        "description": "बहु-दिवसीय, बहु-मंचीय आयोजनों के लिए वर्कफ़्लो को केंद्रीकृत करें - एक कमांड सिस्टम के तहत उत्पादन, प्रतिभा, विक्रेताओं और अनुपालन को एकजुट करना।"
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "गहन एवं अनुभवात्मक घटनाएँ",
+        "description": "रचनात्मक विकास से लेकर लाइव निष्पादन तक पूर्ण दृश्यता के साथ इंटरैक्टिव दुनिया, इंस्टॉलेशन और ब्रांडेड अनुभवों को डिज़ाइन और संचालित करें।"
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "नाट्य एवं सजीव प्रस्तुतियाँ",
+        "description": "मंच और प्रदर्शन-आधारित मनोरंजन के लिए रचनात्मक टीमों, तकनीकी शेड्यूल और उत्पादन संपत्तियों का प्रबंधन करें।"
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "फिल्म, टीवी और मीडिया",
+        "description": "क्रॉस-डिपार्टमेंटल सिंक और वित्तीय पारदर्शिता के लिए बनाए गए टूल के साथ प्री-प्रोडक्शन, ऑन-सेट संचालन और रैप रिपोर्टिंग का समन्वय करें।"
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "ब्रांड सक्रियण और विपणन अभियान",
+        "description": "पॉप-अप, लॉन्च और अभियान-संचालित अनुभवों को निष्पादित करें - रचनात्मक, लॉजिस्टिक्स और आरओआई ट्रैकिंग को एक बुद्धिमान डैशबोर्ड में एकीकृत करें।"
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "कॉर्पोरेट एवं निजी कार्यक्रम",
+        "description": "सुव्यवस्थित योजना और विक्रेता समन्वय के साथ आंतरिक बैठकों, रिट्रीट और हाई-प्रोफाइल समारोहों के लिए त्रुटिहीन अनुभव प्रदान करें।"
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "व्यापार शो और सम्मेलन",
+        "description": "एंड-टू-एंड प्रोजेक्ट प्रबंधन और वास्तविक समय विश्लेषण के साथ बूथ निर्माण, प्रदर्शक लॉजिस्टिक्स और प्रायोजक संबंधों को सरल बनाएं।"
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "स्वास्थ्य, कल्याण और जीवन शैली",
+        "description": "रिट्रीट, फिटनेस इवेंट और वेलनेस अनुभवों के लिए प्रोग्रामिंग, स्टाफिंग और अतिथि प्रवाह को अनुकूलित करें - जहां विवरण और माहौल सबसे ज्यादा मायने रखता है।"
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "उत्पादन प्रबंधन जो वास्तव में काम करता है",
+      "headlineHighlight": "अनुभवात्मक टीमों के लिए",
+      "subheadline": "एक ही कमांड सेंटर से अपने प्रोजेक्ट, क्रू, संपत्ति और बजट को नेविगेट करें। उन लोगों के लिए बनाया गया है जो अविस्मरणीय अनुभव बनाते हैं।",
+      "supportingCopy": "चाहे आप त्योहारों, कॉर्पोरेट आयोजनों, या गहन सक्रियणों का निर्माण कर रहे हों - एटीएलवीएस अवधारणा से लेकर पर्दा कॉल तक के पाठ्यक्रम को चार्ट करता है।",
+      "ctaPrimary": "आज ही नि:शुल्क प्रारंभ करें",
+      "ctaSecondary": "इसे क्रियान्वित रूप में देखें",
+      "trustIndicators": "कोई क्रेडिट कार्ड नहीं • 14-दिवसीय परीक्षण • किसी भी समय रद्द करें",
+      "platformScreenshot": "प्लेटफ़ॉर्म स्क्रीनशॉट"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "दुनिया भर की उत्पादन टीमों द्वारा विश्वसनीय"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "उत्पादन अराजकता समस्या",
+      "subtitle": "आप ड्रिल जानते हैं",
+      "pain1Title": "उपकरण अधिभार",
+      "pain1Description": "स्प्रेडशीट, स्लैक, ईमेल, वह Google डॉक जिसे कोई नहीं ढूंढ सकता—आपका वर्कफ़्लो एक दर्जन प्लेटफ़ॉर्म पर बिखरा हुआ है",
+      "pain2Title": "सूचना ब्लैक होल",
+      "pain2Description": "हैंडऑफ़ के दौरान महत्वपूर्ण विवरण गायब हो जाते हैं। वह फ़ाइल अवश्य ही किसी ने कहीं भेजी होगी...",
+      "pain3Title": "बजट आश्चर्य",
+      "pain3Description": "लागतें छाया में बढ़ जाती हैं। जब तक आप ध्यान दें, आप पहले ही ख़त्म हो चुके होते हैं",
+      "pain4Title": "संचार बहाव",
+      "pain4Description": "विक्रेता अपडेट से चूक जाते हैं, क्रू पुरानी जानकारी से काम चलाता है, हितधारक एक ही प्रश्न दो बार पूछते हैं"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "एक मंच. शून्य अराजकता.",
+      "subtitle": "सब कुछ सही जगह मे है",
+      "feature1Title": "एकीकृत कमांड सेंटर",
+      "feature1Description": "परियोजनाएँ, लोग और संसाधन सभी निर्माण में आगे बढ़ रहे हैं",
+      "feature2Title": "रीयल-टाइम सिंक",
+      "feature2Description": "अपडेट तुरंत प्रवाहित होते हैं. हर कोई एक ही चार्ट से काम कर रहा है",
+      "feature3Title": "बजट रडार",
+      "feature3Description": "वास्तविक समय में प्रत्येक डॉलर को ट्रैक करें। कोई आश्चर्य नहीं, कोई अतिरेक नहीं",
+      "feature4Title": "विक्रेता समन्वय",
+      "feature4Description": "जहाज को छोड़े बिना बाहरी साझेदारों को लूप में रखें"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "यह काम किस प्रकार करता है",
+      "subtitle": "महीनों में नहीं, मिनटों में यात्रा तय करें",
+      "step1Title": "अपना संगठन लॉन्च करें",
+      "step1Description": "अपनी संरचना स्थापित करें और अपने दल को उसमें ले आएं",
+      "step2Title": "अपनी परियोजनाओं का चार्ट बनाएं",
+      "step2Description": "उत्पादनों, सक्रियणों और कार्यस्थानों का मानचित्र तैयार करें",
+      "step3Title": "भूमिकाएँ और मिशन सौंपें",
+      "step3Description": "सभी को सही पहुँच और स्पष्ट जिम्मेदारियाँ दें",
+      "step4Title": "नेविगेट करें और वितरित करें",
+      "step4Description": "प्रगति की निगरानी करें, बजट प्रबंधित करें, त्रुटिहीन ढंग से कार्यान्वित करें"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "वह सब कुछ जो आपको बड़े पैमाने पर उत्पादित करने के लिए चाहिए",
+      "subtitle": "पूर्ण उत्पादन नियंत्रण के लिए छह एकीकृत केंद्र",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "प्रोडक्शन हब",
+        "description": "परियोजनाओं, घटनाओं, लोगों, परिसंपत्तियों, स्थानों और फ़ाइलों को प्रबंधित करें",
+        "feature1": "प्रोजेक्ट एवं इवेंट प्लानिंग",
+        "feature2": "टीम एवं क्रू प्रबंधन",
+        "feature3": "संपत्ति ट्रैकिंग और सूची",
+        "feature4": "स्थान एवं स्थल समन्वय"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "बिजनेस हब",
+        "description": "कंपनियों, नौकरियों, खरीद और वित्त को संभालें",
+        "feature1": "विक्रेता और कंपनी प्रबंधन",
+        "feature2": "नौकरी की पोस्टिंग और नियुक्ति",
+        "feature3": "अधिप्राप्ति क्रय",
+        "feature4": "बजट और व्यय ट्रैकिंग"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "नेटवर्क हब",
+        "description": "समुदाय, बाज़ार और संसाधन पुस्तकालय का निर्माण करें",
+        "feature1": "समुदाय और चर्चाएँ",
+        "feature2": "बाज़ार और सेवाएँ",
+        "feature3": "संसाधन पुस्तकालय",
+        "feature4": "उद्योग कनेक्शन"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "ऑटोमेशन हब",
+        "description": "वर्कफ़्लो, ट्रिगर और दोहराए जाने वाले कार्यों को स्वचालित करें",
+        "feature1": "कस्टम वर्कफ़्लो स्वचालन",
+        "feature2": "घटना-संचालित ट्रिगर",
+        "feature3": "निर्धारित कार्य निष्पादन",
+        "feature4": "एकीकरण पाइपलाइन"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "इंटेलिजेंस हब",
+        "description": "रिपोर्ट, विश्लेषण और अंतर्दृष्टि उत्पन्न करें",
+        "feature1": "कस्टम रिपोर्ट",
+        "feature2": "वास्तविक समय विश्लेषण",
+        "feature3": "पूर्वानुमानित अंतर्दृष्टि",
+        "feature4": "प्रदर्शन मेट्रिक्स"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "सिस्टम हब",
+        "description": "व्यवस्थापक, सेटिंग्स और उपयोगकर्ता प्रोफ़ाइल कॉन्फ़िगर करें",
+        "feature1": "उपयोगकर्ता एवं भूमिका प्रबंधन",
+        "feature2": "प्रणाली विन्यास",
+        "feature3": "प्रोफ़ाइल अनुकूलन",
+        "feature4": "सुरक्षा एवं अनुमतियाँ"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "वह सब कुछ जो आपको बड़े पैमाने पर उत्पादित करने के लिए चाहिए",
+        "subtitle": "अनुभवात्मक उत्पादन टीमों के लिए डिज़ाइन किए गए छह एकीकृत केंद्र"
+      },
+      "production": {
+        "title": "प्रोडक्शन हब",
+        "description": "परियोजनाओं, घटनाओं, लोगों, परिसंपत्तियों, स्थानों और फ़ाइलों को प्रबंधित करें",
+        "projects": {
+          "title": "परियोजनाओं",
+          "description": "अवधारणा से लेकर हड़ताल तक प्रस्तुतियों को व्यवस्थित और ट्रैक करें"
+        },
+        "events": {
+          "title": "घटनाएँ",
+          "description": "प्रत्येक विवरण और समयरेखा को शेड्यूल करें, समन्वयित करें और प्रबंधित करें"
+        },
+        "people": {
+          "title": "लोग",
+          "description": "क्रू असाइनमेंट, उपलब्धता और शेड्यूलिंग प्रबंधित करें"
+        },
+        "assets": {
+          "title": "संपत्ति",
+          "description": "सभी उत्पादनों में उपकरण, सूची और संसाधनों को ट्रैक करें"
+        },
+        "locations": {
+          "title": "स्थानों",
+          "description": "स्थानों, साइटों और सुविधा रसद का समन्वय करें"
+        },
+        "files": {
+          "title": "फ़ाइलें",
+          "description": "दस्तावेज़ों, मीडिया और उत्पादन फ़ाइलों को सुरक्षित रूप से केंद्रीकृत करें"
+        }
+      },
+      "business": {
+        "title": "बिजनेस हब",
+        "description": "कंपनियों, नौकरियों, खरीद और वित्त को संभालें",
+        "companies": {
+          "title": "कंपनियों",
+          "description": "विक्रेता संबंध, ग्राहक और साझेदार प्रबंधित करें"
+        },
+        "jobs": {
+          "title": "नौकरियाँ",
+          "description": "पद पोस्ट करें, आवेदन ट्रैक करें, नियुक्ति का प्रबंधन करें"
+        },
+        "procurement": {
+          "title": "खरीद",
+          "description": "खरीदारी, विक्रेता चयन और अनुबंधों को सुव्यवस्थित करें"
+        },
+        "invoices": {
+          "title": "चालान",
+          "description": "स्वचालित अनुस्मारक के साथ चालान बनाएं, भेजें और ट्रैक करें"
+        },
+        "expenses": {
+          "title": "खर्च",
+          "description": "रसीद कैप्चर के साथ खर्चों को रिकॉर्ड करें और वर्गीकृत करें"
+        },
+        "budgets": {
+          "title": "बजट",
+          "description": "वास्तविक समय पर नज़र रखने के साथ बजट की योजना बनाएं, निगरानी करें और नियंत्रित करें"
+        }
+      },
+      "network": {
+        "title": "नेटवर्क हब",
+        "description": "समुदाय, बाज़ार और संसाधन पुस्तकालय का निर्माण करें",
+        "community": {
+          "title": "समुदाय",
+          "description": "उद्योग के पेशेवरों से जुड़ें, ज्ञान साझा करें, सहयोग करें"
+        },
+        "marketplace": {
+          "title": "बाजार",
+          "description": "सेवाओं की खोज करें, प्रतिभा को काम पर रखें, उत्पादन संसाधन खोजें"
+        },
+        "resources": {
+          "title": "संसाधन",
+          "description": "एक्सेस गाइड, टेम्प्लेट और सर्वोत्तम अभ्यास"
+        }
+      },
+      "automations": {
+        "title": "ऑटोमेशन हब",
+        "description": "वर्कफ़्लो, ट्रिगर और दोहराए जाने वाले कार्यों को स्वचालित करें",
+        "workflows": {
+          "title": "वर्कफ़्लो",
+          "description": "दोहराई जाने वाली प्रक्रियाओं के लिए कस्टम स्वचालन अनुक्रम बनाएं"
+        },
+        "triggers": {
+          "title": "चलाता है",
+          "description": "इवेंट-संचालित क्रियाएँ सेट करें जो स्वचालित रूप से प्रतिक्रिया देती हैं"
+        },
+        "scheduled": {
+          "title": "नियत कार्य",
+          "description": "लचीली शेड्यूलिंग के साथ आवर्ती कार्यों को स्वचालित करें"
+        }
+      },
+      "intelligence": {
+        "title": "इंटेलिजेंस हब",
+        "description": "रिपोर्ट, विश्लेषण और अंतर्दृष्टि उत्पन्न करें",
+        "reports": {
+          "title": "रिपोर्टों",
+          "description": "लचीले विज़ुअलाइज़ेशन और निर्यात के साथ कस्टम रिपोर्ट बनाएं"
+        },
+        "analytics": {
+          "title": "एनालिटिक्स",
+          "description": "KPI ट्रैक करें, रुझानों पर नज़र रखें, प्रदर्शन मापें"
+        },
+        "insights": {
+          "title": "इनसाइट्स",
+          "description": "एआई-संचालित अनुशंसाएँ और पूर्वानुमानित विश्लेषण प्राप्त करें"
+        }
+      },
+      "system": {
+        "title": "सिस्टम हब",
+        "description": "व्यवस्थापक, सेटिंग्स और उपयोगकर्ता प्रोफ़ाइल कॉन्फ़िगर करें",
+        "admin": {
+          "title": "व्यवस्थापक",
+          "description": "संगठन सेटिंग्स, सुरक्षा और कॉन्फ़िगरेशन प्रबंधित करें"
+        },
+        "settings": {
+          "title": "सेटिंग्स",
+          "description": "प्राथमिकताएँ, एकीकरण और प्लेटफ़ॉर्म व्यवहार को अनुकूलित करें"
+        },
+        "profiles": {
+          "title": "उपयोगकर्ता प्रोफ़ाइल",
+          "description": "टीम प्रोफ़ाइल, भूमिकाएँ और पहुँच अनुमतियाँ प्रबंधित करें"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "आपके दल की प्रत्येक भूमिका के लिए निर्मित",
+      "subtitle": "सटीक अनुमतियों के साथ 11 ब्रांडेड भूमिकाएँ",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "दंतकथा",
+        "description": "प्लेटफ़ॉर्म सुपर एडमिन - सभी संगठनों पर पूर्ण नियंत्रण"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "प्रेत",
+        "level": "सर्वोच्च प्राधिकारी",
+        "title": "प्रेत",
+        "description": "संपूर्ण सिस्टम प्रशासन और अप्रतिबंधित पहुंच। प्लेटफ़ॉर्म दिशा को आकार दें और उद्यम निरीक्षण बनाए रखें।"
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "हवाबाज़",
+        "level": "रणनीतिक नेतृत्व",
+        "title": "हवाबाज़",
+        "description": "क्रॉस-प्रोजेक्ट दृश्यता, संसाधन आवंटन और कार्यकारी विश्लेषण। बड़े पैमाने पर उच्च स्तरीय उत्पादन रणनीति को नेविगेट करें।"
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "तलवार चलानेवाला",
+        "level": "परियोजना नेतृत्व",
+        "title": "तलवार चलानेवाला",
+        "description": "संपूर्ण प्रोजेक्ट निर्माण और संपादन अधिकार. पूर्ण नियंत्रण के साथ अवधारणा से समापन तक उत्पादन का नेतृत्व करें।"
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "नाविक",
+        "level": "समन्वय",
+        "title": "नाविक",
+        "description": "परियोजना समन्वय, कार्य असाइनमेंट और टीम मार्गदर्शन। जटिल वर्कफ़्लो के माध्यम से पाठ्यक्रम को चार्ट करें।"
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "विचलनकर्ता",
+        "level": "कार्यान्वयन",
+        "title": "विचलनकर्ता",
+        "description": "स्थापित ढाँचे के भीतर कार्य को पूरा करने पर ध्यान केंद्रित किया गया। सौंपी गई जिम्मेदारियों पर गुणवत्तापूर्ण कार्य करें।"
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "आक्रमण करनेवाला",
+        "level": "सीखना एवं अवलोकन",
+        "title": "आक्रमण करनेवाला",
+        "description": "सीखने और बढ़ने के लिए केवल-देखें पहुंच। अपने कौशल का निर्माण करने वाले नवागंतुकों के लिए बिल्कुल सही।"
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "विक्रेता",
+        "level": "दायरा वितरण",
+        "title": "विक्रेता",
+        "description": "बाहरी सेवा प्रदाताओं के लिए लक्षित पहुंच। डिलिवरेबल्स अपलोड करें और अनुबंधित कार्य पूरा करें।"
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "आगंतुक",
+        "level": "सीमित दृश्यता",
+        "title": "आगंतुक",
+        "description": "बाहरी हितधारकों के लिए अस्थायी, केवल पढ़ने योग्य पहुंच। कार्यप्रवाह को बाधित किए बिना सूचित रहें।"
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "साथी",
+        "level": "रणनीतिक सहयोग",
+        "title": "साथी",
+        "description": "विश्वसनीय बाहरी सहयोगियों के लिए गहन एकीकरण। दो-तरफा डेटा साझाकरण और संयुक्त वर्कफ़्लो प्रबंधन।"
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "राजदूत",
+        "level": "सामुदायिक चैंपियंस",
+        "title": "राजदूत",
+        "description": "एटीएलवीएस का प्रतिनिधित्व करें, उपयोगकर्ताओं का समर्थन करें और सहयोग को बढ़ावा दें। आयोजनों की मेजबानी करें, सामग्री बनाएं, पारिस्थितिकी तंत्र का विकास करें।"
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "एंटरप्राइज-ग्रेड सुरक्षा",
+      "subtitle": "आपका डेटा हर स्तर पर सुरक्षित है",
+      "feature1Title": "पंक्ति-स्तरीय सुरक्षा",
+      "feature1Description": "801 आरएलएस नीतियां यह सुनिश्चित करती हैं कि उपयोगकर्ता केवल वही देखें जो उन्हें देखना चाहिए",
+      "feature2Title": "भूमिका-आधारित पहुंच",
+      "feature2Description": "45+ विस्तृत अनुमतियों के साथ 11 ब्रांडेड भूमिकाएँ",
+      "feature3Title": "एन्क्रिप्टेड भंडारण",
+      "feature3Description": "आराम और पारगमन के दौरान सभी डेटा एन्क्रिप्ट किया गया",
+      "feature4Title": "ऑडिट लॉगिंग",
+      "feature4Description": "सभी सिस्टम गतिविधि का पूरा ऑडिट ट्रेल",
+      "feature5Title": "एसओसी 2 अनुरूप",
+      "feature5Description": "एंटरप्राइज़-ग्रेड सुरक्षा मानक",
+      "feature6Title": "जीडीपीआर तैयार",
+      "feature6Description": "डेटा गोपनीयता नियमों का पूर्ण अनुपालन"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
-      "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "title": "दुनिया भर में प्रोडक्शन टीमों द्वारा विश्वसनीय",
+      "subtitle": "वास्तविक निर्माताओं की वास्तविक कहानियाँ",
+      "testimonial1Quote": "एटीएलवीएस ने हमारे त्योहारों के प्रबंधन के तरीके को बदल दिया। सब कुछ एक ही स्थान पर, हर कोई एक ही पृष्ठ पर। अंत में।",
+      "testimonial1Author": "सारा चेन",
+      "testimonial1Role": "प्रोडक्शन डायरेक्टर, प्रमुख संगीत समारोह",
+      "testimonial1Title": "प्रोडक्शन डायरेक्टर, प्रमुख संगीत समारोह",
+      "testimonial2Quote": "आरबीएसी प्रणाली हमारी जटिल संगठन संरचना के लिए बिल्कुल उपयुक्त है। उत्पादन के लिए उचित पहुंच नियंत्रण? क्रांतिकारी.",
+      "testimonial2Author": "मार्कस रोड्रिग्ज",
+      "testimonial2Role": "लाइव इवेंट कंपनी के संचालन उपाध्यक्ष",
+      "testimonial2Title": "लाइव इवेंट कंपनी के संचालन उपाध्यक्ष",
+      "testimonial3Quote": "हमने पहली तिमाही में बजट वृद्धि में 40% की कटौती की। वित्तीय दृश्यता वैध रूप से गेम-चेंजिंग है।",
+      "testimonial3Author": "जेनिफ़र पार्क",
+      "testimonial3Role": "सीएफओ, कॉर्पोरेट इवेंट एजेंसी",
+      "testimonial3Title": "सीएफओ, कॉर्पोरेट इवेंट एजेंसी",
+      "jamesCookQuote": "वैज्ञानिकों के तीन जहाजों का प्रबंधन करना, जो सोचते हैं कि वे ही मुख्य पात्र हैं? एटीएलवीएस ने क्रेडिट के लिए प्रतिस्पर्धा करने के बजाय सभी को एकजुट रखा होता और वास्तव में एक साथ काम किया होता।",
+      "jamesCookAuthor": "कप्तान जेम्स कुक",
+      "jamesCookRole": "ब्रिटिश रॉयल नेवी एक्सप्लोरर (1728-1779)",
+      "zhengYiSaoQuote": "मैंने पायरेसी को फॉर्च्यून 500 कंपनी में बदल दिया, अपनी माफी के लिए बातचीत की और अमीरों को सेवानिवृत्त कर दिया। एटीएलवीएस उन लोगों के लिए है जो समझते हैं कि अपरंपरागत परिचालनों को अभी भी ठोस प्रबंधन की आवश्यकता है।",
+      "zhengYiSaoAuthor": "झेंग यी साओ",
+      "zhengYiSaoRole": "चीनी समुद्री डाकू नेता (1775-1844)",
+      "captainAhabQuote": "बड़ी तस्वीर पर विचार किए बिना हर महासागर में एक विशिष्ट लक्ष्य का पीछा करना? एटीएलवीएस आपको केवल व्यक्तिगत उद्देश्यों पर नहीं, बल्कि वास्तविक व्यावसायिक योजना पर ध्यान केंद्रित रखता है।",
+      "captainAhabAuthor": "कप्तान अहाब",
+      "captainAhabRole": "व्हेलिंग कप्तान, पेक्वॉड",
+      "graceOMalleyQuote": "महारानी एलिज़ाबेथ के साथ समान रूप से बातचीत की गई। एटीएलवीएस आपको हर बैठक में अपना डेटा तैयार रखने और आत्मविश्वास बढ़ाने में मदद करता है।",
+      "graceOMalleyAuthor": "ग्रेस ओ'मैली \"ग्रेने म्होल\"",
+      "graceOMalleyRole": "आयरिश समुद्री डाकू रानी और सरदार (लगभग 1530-1603)",
+      "sinbadQuote": "जिस तरह से मेरा जहाज़ टूटता रहा लेकिन फिर भी मैं वापस चला गया? यह सिर्फ ख़राब योजना है. एटीएलवीएस वह संरचना प्रदान करता है जिसकी मेरे निर्णय लेने के लिए स्पष्ट रूप से आवश्यकता है।",
+      "sinbadAuthor": "सिनबाद नाविक",
+      "sinbadRole": "महान व्यापारी नाविक, अरेबियन नाइट्स",
+      "longJohnSilverQuote": "यदि बिल्लियों में स्कर्वी और विश्वास संबंधी समस्याएं हैं तो समुद्री डाकुओं को प्रबंधित करना वस्तुतः बिल्लियों को पालने जैसा है। एटीएलवीएस का हितधारक प्रबंधन सभी को एकजुट रखता है, तब भी जब वे एक-दूसरे के खिलाफ साजिश रच रहे हों।",
+      "longJohnSilverAuthor": "लांग जॉन सिल्वर",
+      "longJohnSilverRole": "क्वार्टरमास्टर और समुद्री डाकू कुक, ट्रेजर आइलैंड",
+      "horatioHornblowerQuote": "मानसिक रूप से पूरी तरह टूट जाने के बावजूद फ्रांसीसियों से लड़ना ईमानदारी से मेरे लिए बहुत अच्छा अनुभव है। एटीएलवीएस सभी सामरिक चीजों को व्यवस्थित रखता है ताकि आप वास्तविक मिशन पर ध्यान केंद्रित कर सकें।",
+      "horatioHornblowerAuthor": "होरेशियो हॉर्नब्लोअर",
+      "horatioHornblowerRole": "रॉयल नेवी ऑफिसर (सी.एस. फॉरेस्टर उपन्यास)",
+      "captainNemoQuote": "एक पनडुब्बी में एक साधु बनना वास्तव में बहुत अंतर्मुखी-कोडित है, लेकिन मुझे भी टीम समन्वय की आवश्यकता थी। एटीएलवीएस तब भी काम करता है जब आप अकेले काम कर रहे हों।",
+      "captainNemoAuthor": "कप्तान निमो",
+      "captainNemoRole": "कमांडर, नॉटिलस (समुद्र के नीचे बीस हजार लीग)",
+      "odysseusQuote": "क्रू के प्रत्येक सदस्य को खो दिया क्योंकि मैं संदिग्ध विकल्प चुनता रहा। एटीएलवीएस ऐसा होता कि 'हमें यह देखने की ज़रूरत नहीं है कि सायरन किस बारे में हैं' और ईमानदारी से कहें तो? वैध।",
+      "odysseusAuthor": "ओडीसियस/यूलिसिस",
+      "odysseusRole": "इथाका के राजा, यूनानी नायक (द ओडिसी)",
+      "blackbeardQuote": "जब आप मैन्युअल रूप से समन्वय कर रहे होते हैं तो चार जहाजों के साथ पूरे बंदरगाह को अवरुद्ध करना अलग-अलग प्रभाव डालता है। एटीएलवीएस ने मुझे समुद्र में संचालन की दृष्टि से सबसे कुशल समुद्री डाकू बना दिया होता।",
+      "blackbeardAuthor": "कैप्टन एडवर्ड टीच \"ब्लैकबीर्ड\"",
+      "blackbeardRole": "समुद्री डाकू कमांडर (सी. 1680-1718)",
+      "captainMarvelQuote": "30 वर्षों तक बिना जांच किए अंतरिक्ष आपात स्थितियों को संभालने के लिए गायब हो गया। एटीएलवीएस के संचार उपकरणों ने मुझे उन सभी को परेशान न करने में मदद की जिनकी मैं परवाह करता हूं।",
+      "captainMarvelAuthor": "कैप्टन मार्वल / कैरल डेनवर",
+      "captainMarvelRole": "वायु सेना पायलट और कॉस्मिक हीरो (एमसीयू)",
+      "captainJanewayQuote": "मैंने अपने दल को बचाने के लिए कई बार टेम्पोरल प्राइम डायरेक्टिव का उल्लंघन किया, लेकिन मैंने कभी भी अपने प्रोजेक्ट की समयसीमा का उल्लंघन नहीं किया। नैतिकता जटिल होने पर भी एटीएलवीएस प्राथमिकताएं स्पष्ट रखता है।",
+      "captainJanewayAuthor": "कैप्टन कैथरीन जानवे",
+      "captainJanewayRole": "स्टारफ़्लीट कैप्टन, यूएसएस वोयाजर (स्टार ट्रेक: वोयाजर)",
+      "moanaQuote": "माउई को मेरा गुरु माना जाता था, लेकिन उन्होंने ज्यादातर समय भावनात्मक रूप से अनुपलब्ध रहने में बिताया। जब आपकी टीम कठिन हो रही हो तो एटीएलवीएस डिलिवरेबल्स को ट्रैक करता है।",
+      "moanaAuthor": "मोआना",
+      "moanaRole": "वेफ़ाइंडर और द्वीप प्रमुख (डिज़्नी का मोआना)",
+      "captainJackSparrowQuote": "किसी दल का प्रबंधन करना, जबकि वस्तुतः कोई नहीं जानता कि वे कार्यरत हैं या केवल अराजकता के लिए साथ हैं? एटीएलवीएस स्पष्टता प्रदान करता है जो मेरी पूरी भावना में नहीं है।",
+      "captainJackSparrowAuthor": "कप्तान जैक स्पैरो",
+      "captainJackSparrowRole": "समुद्री डाकू कप्तान, ब्लैक पर्ल (पाइरेट्स ऑफ द कैरेबियन)",
+      "popeyeQuote": "मेरा पूरा व्यक्तित्व 'आगे की योजना बनाने से हठपूर्वक इनकार करने वाला' है। एटीएलवीएस कमरे में वह वयस्क है जिसकी मुझे स्पष्ट रूप से आवश्यकता है लेकिन मैं इसे स्वीकार नहीं करूंगा।",
+      "popeyeAuthor": "पोपेय द सेलर मैन",
+      "popeyeRole": "नाविक और ऑलिव ऑयल का रक्षक (कार्टून चरित्र)",
+      "captainPicardQuote": "प्रथम संपर्क स्थितियों और राजनयिक संकटों के माध्यम से एक विविध दल का नेतृत्व करना? जब दांव सचमुच गांगेय होते हैं तो एटीएलवीएस सभी को एकजुट रखता है।",
+      "captainPicardAuthor": "कैप्टन जीन-ल्यूक पिकार्ड",
+      "captainPicardRole": "स्टारफ्लीट कैप्टन, यूएसएस एंटरप्राइज (स्टार ट्रेक: टीएनजी)",
+      "captainSiskoQuote": "एक ऐसे स्टेशन की कमान संभाल रहे हैं जिसका कुछ हिस्सा सैन्य अड्डा, कुछ व्यापारिक केंद्र, कुछ शरणार्थी केंद्र है? जब प्रत्येक हितधारक की अलग-अलग प्राथमिकताएँ होती हैं तो एटीएलवीएस आपको जटिलता का प्रबंधन करने में मदद करता है।",
+      "captainSiskoAuthor": "कैप्टन बेंजामिन सिस्को",
+      "captainSiskoRole": "स्टारफ़्लीट कमांडर, डीप स्पेस नाइन (स्टार ट्रेक: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "पारदर्शी मूल्य निर्धारण",
+      "subtitle": "एकल ठेकेदारों से लेकर उद्यम उत्पादकों तक",
+      "monthly": "महीने के",
+      "annually": "हर साल",
+      "save20": "20% बचाएं",
+      "community": {
+        "name": "समुदाय",
+        "price": "मुक्त",
+        "period": "हमेशा के लिए",
+        "description": "आरंभ करने के लिए बिल्कुल सही",
+        "feature1": "रेडर भूमिका पहुंच",
+        "feature2": "बुनियादी कार्य प्रबंधन",
+        "feature3": "समुदाय का समर्थन",
+        "cta": "निःशुल्क आरंभ करें"
+      },
+      "pro": {
+        "name": "प्रो",
+        "price": "$12",
+        "period": "प्रति महीने",
+        "annualPrice": "$10/माह (वार्षिक बिल)",
+        "description": "स्वतंत्र ठेकेदारों के लिए",
+        "feature1": "विचलनकर्ता और आक्रमणकारी भूमिकाएँ",
+        "feature2": "उन्नत कार्य प्रबंधन",
+        "feature3": "प्राथमिकता समर्थन",
+        "cta": "निशुल्क आजमाइश शुरु करें"
+      },
+      "team": {
+        "name": "टीम",
+        "badge": "सबसे लोकप्रिय",
+        "price": "$120",
+        "period": "प्रति महीने",
+        "annualPrice": "$100/माह (वार्षिक बिल)",
+        "description": "छोटी से मध्यम टीमों के लिए (2-10 सीटें)",
+        "feature1": "सभी प्रो सुविधाएँ",
+        "feature2": "विक्रेता प्रबंधन",
+        "feature3": "दल का सहयोग",
+        "cta": "निशुल्क आजमाइश शुरु करें"
+      },
       "starter": {
-        "name": "Starter",
+        "name": "स्टार्टर",
         "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "period": "प्रति उपयोगकर्ता/माह",
+        "description": "फ्रीलांसरों और छोटी टीमों के लिए बिल्कुल सही",
+        "feature1": "5 उपयोगकर्ताओं तक",
+        "feature2": "10 सक्रिय परियोजनाएँ",
+        "feature3": "बुनियादी रिपोर्टिंग",
+        "feature4": "ई - मेल समर्थन",
+        "feature5": "10GB स्टोरेज",
+        "cta": "निशुल्क आजमाइश शुरु करें"
       },
       "professional": {
-        "name": "Professional",
+        "name": "पेशेवर",
         "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "period": "प्रति उपयोगकर्ता/माह",
+        "description": "बढ़ती उत्पादन कंपनियों के लिए",
+        "feature1": "25 उपयोगकर्ताओं तक",
+        "feature2": "असीमित परियोजनाएँ",
+        "feature3": "उन्नत विश्लेषण",
+        "feature4": "प्राथमिकता समर्थन",
+        "feature5": "100GB स्टोरेज",
+        "feature6": "कस्टम भूमिकाएँ",
+        "feature7": "एपीआई पहुंच",
+        "cta": "निशुल्क आजमाइश शुरु करें",
+        "popular": "सबसे लोकप्रिय"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "उद्यम",
+        "price": "रिवाज़",
+        "period": "बिक्री से संपर्क करें",
+        "annualPrice": "$1000/माह (वार्षिक बिल)",
+        "description": "बड़े संगठनों और एजेंसियों के लिए",
+        "feature1": "असीमित उपयोगकर्ता",
+        "feature2": "असीमित परियोजनाएँ",
+        "feature3": "कस्टम एकीकरण",
+        "feature4": "समर्पित समर्थन",
+        "feature5": "असीमित भंडारण",
+        "feature6": "एसएसओ और एसएएमएल",
+        "feature7": "एसएलए गारंटी",
+        "feature8": "कस्टम प्रशिक्षण",
+        "cta": "बिक्री से संपर्क करें"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "अक्सर पूछे जाने वाले प्रश्नों",
+      "subtitle": "सब कुछ जो आपके लिए जानना ज़रूरी है",
+      "question1": "निःशुल्क परीक्षण कब तक है?",
+      "answer1": "14 दिन, किसी क्रेडिट कार्ड की आवश्यकता नहीं। सभी सुविधाओं तक पूर्ण पहुंच.",
+      "question2": "क्या मैं कभी भी रद्द कर सकता हूँ?",
+      "answer2": "हाँ। किसी भी समय रद्द करें. कोई दीर्घकालिक अनुबंध या प्रतिबद्धता नहीं।",
+      "question3": "आप कौन सी भुगतान पद्धतियां स्वीकार करते हैं?",
+      "answer3": "हम उद्यम योजनाओं के लिए सभी प्रमुख क्रेडिट कार्ड, एसीएच और वायर ट्रांसफर स्वीकार करते हैं।",
+      "question4": "क्या मेरा डेटा सुरक्षित है?",
+      "answer4": "हाँ। एंटरप्राइज-ग्रेड एन्क्रिप्शन, एसओसी 2 अनुरूप, जीडीपीआर तैयार। आपका डेटा हर स्तर पर सुरक्षित है.",
+      "question5": "क्या आप प्रशिक्षण देते हैं?",
+      "answer5": "हाँ। सभी योजनाओं के लिए स्व-सेवा संसाधन, साथ ही एंटरप्राइज़ ग्राहकों के लिए समर्पित प्रशिक्षण।",
+      "question6": "क्या मैं अपना मौजूदा डेटा आयात कर सकता हूँ?",
+      "answer6": "हाँ। हम सीएसवी आयात उपकरण प्रदान करते हैं और एंटरप्राइज़ योजनाओं के लिए कस्टम डेटा माइग्रेशन में सहायता कर सकते हैं।",
+      "q1": "निःशुल्क परीक्षण कब तक है?",
+      "a1": "14 दिन, किसी क्रेडिट कार्ड की आवश्यकता नहीं। सभी सुविधाओं तक पूर्ण पहुंच.",
+      "q2": "क्या मैं कभी भी रद्द कर सकता हूँ?",
+      "a2": "हाँ। किसी भी समय रद्द करें. कोई दीर्घकालिक अनुबंध या प्रतिबद्धता नहीं।",
+      "q3": "आप कौन सी भुगतान पद्धतियां स्वीकार करते हैं?",
+      "a3": "हम उद्यम योजनाओं के लिए सभी प्रमुख क्रेडिट कार्ड, एसीएच और वायर ट्रांसफर स्वीकार करते हैं।",
+      "q4": "क्या मेरा डेटा सुरक्षित है?",
+      "a4": "हाँ। एंटरप्राइज-ग्रेड एन्क्रिप्शन, एसओसी 2 अनुरूप, जीडीपीआर तैयार। आपका डेटा हर स्तर पर सुरक्षित है.",
+      "q5": "क्या आप प्रशिक्षण देते हैं?",
+      "a5": "हाँ। सभी योजनाओं के लिए स्व-सेवा संसाधन, साथ ही एंटरप्राइज़ ग्राहकों के लिए समर्पित प्रशिक्षण।",
+      "q6": "क्या मैं अपना मौजूदा डेटा आयात कर सकता हूँ?",
+      "a6": "हाँ। हम सीएसवी आयात उपकरण प्रदान करते हैं और एंटरप्राइज़ योजनाओं के लिए कस्टम डेटा माइग्रेशन में सहायता कर सकते हैं।"
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "क्या आप अपने उत्पादन वर्कफ़्लो को बदलने के लिए तैयार हैं?",
+      "subtitle": "एटीएलवीएस का उपयोग करने वाले हजारों उत्पादन पेशेवरों से जुड़ें",
+      "ctaPrimary": "निशुल्क आजमाइश शुरु करें",
+      "ctaSecondary": "शेड्यूल डेमो",
+      "trustIndicators": "किसी क्रेडिट कार्ड की आवश्यकता नहीं • 14-दिवसीय निःशुल्क परीक्षण • किसी भी समय रद्द करें",
+      "primary": "निशुल्क आजमाइश शुरु करें",
+      "secondary": "शेड्यूल डेमो",
+      "noCard": "किसी क्रेडिट कार्ड की आवश्यकता नहीं"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "tagline": "अनुभवात्मक उत्पादन टीमों के लिए परियोजना प्रबंधन प्रणाली",
+      "productTitle": "उत्पाद",
+      "companyTitle": "कंपनी",
+      "resourcesTitle": "संसाधन",
+      "legalTitle": "कानूनी",
+      "product": "उत्पाद",
+      "features": "विशेषताएँ",
+      "pricing": "मूल्य निर्धारण",
+      "demo": "डेमो",
+      "integrations": "एकीकरण",
+      "docs": "प्रलेखन",
+      "apiReference": "एपीआई संदर्भ",
+      "changelog": "बदलाव का",
+      "caseStudies": "मामले का अध्ययन",
+      "templates": "टेम्पलेट्स",
+      "company": "कंपनी",
+      "aboutUs": "हमारे बारे में",
+      "blog": "ब्लॉग",
+      "careers": "करियर",
+      "contact": "संपर्क",
+      "press": "प्रेस",
+      "partners": "भागीदारों",
+      "customers": "ग्राहकों",
+      "events": "घटनाएँ",
+      "legal": "कानूनी",
+      "privacy": "गोपनीयता नीति",
+      "terms": "सेवा की शर्तें",
+      "security": "सुरक्षा",
+      "support": "सहायता",
+      "helpCenter": "सहायता केंद्र",
+      "community": "समुदाय",
+      "status": "सिस्टम स्थिति",
+      "roiCalculator": "आरओआई कैलकुलेटर",
+      "copyright": "© 2025 एटीएलवीएस। सर्वाधिकार सुरक्षित।"
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "आपके पसंदीदा टूल के साथ एकीकृत होता है",
+      "subtitle": "एटीएलवीएस को उन उपकरणों से कनेक्ट करें जिनका आप पहले से उपयोग कर रहे हैं",
+      "comingSoon": "अधिक एकीकरण जल्द ही आ रहे हैं"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "व्यावसायिक उत्पादन प्रबंधन समाधान",
+          "headlineHighlight": "अनुभवात्मक टीमों के लिए",
+          "subheadline": "एक केंद्रीकृत मंच से व्यापक परियोजना, कार्यबल, संपत्ति और वित्तीय प्रबंधन। असाधारण अनुभव प्रदान करने वाले पेशेवरों के लिए डिज़ाइन किया गया।",
+          "supportingCopy": "त्योहारों से लेकर कॉर्पोरेट आयोजनों और गहन अनुभवों तक-एटीएलवीएस सफल उत्पादन प्रबंधन के लिए आवश्यक संरचना और निरीक्षण प्रदान करता है।",
+          "ctaPrimary": "निःशुल्क परीक्षण प्रारंभ करें",
+          "ctaSecondary": "प्रदर्शन का अनुरोध करें",
+          "trustIndicators": "किसी क्रेडिट कार्ड की आवश्यकता नहीं • 14-दिवसीय परीक्षण • किसी भी समय रद्द करें",
+          "platformScreenshot": "प्लेटफ़ॉर्म स्क्रीनशॉट"
+        },
+        "trustBar": {
+          "trustedBy": "दुनिया भर के उत्पादन पेशेवरों द्वारा विश्वसनीय"
+        },
+        "problem": {
+          "title": "उत्पादन प्रबंधन चुनौती",
+          "subtitle": "उद्योग-व्यापी अक्षमताएँ",
+          "pain1Title": "खंडित प्रणालियाँ",
+          "pain1Description": "टीमें स्प्रेडशीट, ईमेल और विभिन्न परियोजना प्रबंधन टूल सहित कई डिस्कनेक्ट किए गए प्लेटफार्मों का उपयोग करती हैं",
+          "pain2Title": "सूचना हानि",
+          "pain2Description": "परिवर्तन और टीम हैंडऑफ़ के दौरान महत्वपूर्ण परियोजना विवरण खो जाते हैं",
+          "pain3Title": "बजट की अधिकता",
+          "pain3Description": "उचित वित्तीय निरीक्षण के बिना, लागत अनुमान से अधिक हो जाती है",
+          "pain4Title": "संचार टूटना",
+          "pain4Description": "विक्रेताओं, चालक दल के सदस्यों और हितधारकों को समन्वय संबंधी कठिनाइयों का अनुभव होता है"
+        },
+        "solution": {
+          "title": "व्यापक मंच. पूर्ण नियंत्रण.",
+          "subtitle": "एकीकृत उत्पादन प्रबंधन",
+          "feature1Title": "केंद्रीकृत मंच",
+          "feature1Description": "सभी परियोजनाओं, कर्मियों और संसाधनों का प्रबंधन एक ही स्थान से किया जाता है",
+          "feature2Title": "वास्तविक समय अपडेट",
+          "feature2Description": "त्वरित सिंक्रनाइज़ेशन यह सुनिश्चित करता है कि टीम के सभी सदस्यों के पास वर्तमान जानकारी हो",
+          "feature3Title": "वित्तीय निरीक्षण",
+          "feature3Description": "सटीकता और सटीकता के साथ बजट, खर्च और चालान को ट्रैक करें",
+          "feature4Title": "विक्रेता प्रबंधन",
+          "feature4Description": "उचित निरीक्षण सुनिश्चित करते हुए पेशेवर संबंध बनाए रखें"
+        },
+        "howItWorks": {
+          "title": "कार्यान्वयन प्रक्रिया",
+          "subtitle": "कुशल सेटअप और तैनाती",
+          "step1Title": "अपना संगठन स्थापित करें",
+          "step1Description": "अपनी संगठनात्मक संरचना कॉन्फ़िगर करें और अपनी टीम को शामिल करें",
+          "step2Title": "अपनी परियोजनाओं को परिभाषित करें",
+          "step2Description": "प्रोडक्शन, सक्रियण और कार्यस्थान स्थापित करें",
+          "step3Title": "भूमिकाएँ और जिम्मेदारियाँ सौंपें",
+          "step3Description": "उचित पहुंच स्तर और स्पष्ट जवाबदेही प्रदान करें",
+          "step4Title": "निष्पादित एवं मॉनिटर करें",
+          "step4Description": "प्रगति पर नज़र रखें, बजट प्रबंधित करें, असाधारण परिणाम दें"
+        },
+        "testimonials": {
+          "title": "दुनिया भर के प्रोडक्शन प्रोफेशनल्स द्वारा विश्वसनीय",
+          "subtitle": "उद्योग जगत के नेताओं से सिद्ध परिणाम",
+          "testimonial1Quote": "एटीएलवीएस हमारे त्योहार संचालन के प्रबंधन के लिए एक उत्कृष्ट समाधान साबित हुआ है। सब कुछ सुव्यवस्थित है और हमारी टीम उचित समन्वय बनाए रखती है।",
+          "testimonial1Author": "सारा चेन",
+          "testimonial1Role": "प्रोडक्शन डायरेक्टर, प्रमुख संगीत समारोह",
+          "testimonial2Quote": "भूमिका-आधारित अभिगम नियंत्रण प्रणाली वही प्रदान करती है जो हमें अपने संगठनात्मक ढांचे के लिए आवश्यक थी। अंत में, उत्पादन टीमों के लिए उचित सुरक्षा और पहुंच प्रबंधन।",
+          "testimonial2Author": "मार्कस रोड्रिग्ज",
+          "testimonial2Role": "लाइव इवेंट कंपनी के संचालन उपाध्यक्ष",
+          "testimonial3Quote": "हमने पहली तिमाही में बजट की अधिकता को 40% तक कम कर दिया। वित्तीय दृश्यता और ट्रैकिंग क्षमताएं वास्तव में प्रभावशाली हैं।",
+          "testimonial3Author": "जेनिफ़र पार्क",
+          "testimonial3Role": "सीएफओ, कॉर्पोरेट इवेंट एजेंसी"
+        },
+        "pricing": {
+          "title": "व्यावसायिक मूल्य निर्धारण संरचना"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "उत्पादन प्रबंधन जो काम करता है",
+          "headlineHighlight": "कोई बीएस नहीं",
+          "subheadline": "एक ही स्थान से प्रोजेक्ट, क्रू, संपत्ति और बजट प्रबंधित करें। उन लोगों के लिए बनाया गया जो वास्तव में काम करते हैं।",
+          "supportingCopy": "त्यौहार, कॉर्पोरेट कार्यक्रम, गहन सक्रियता-एटीएलवीएस इसे बिना किसी लाग-लपेट के संभालता है।",
+          "ctaPrimary": "निःशुल्क प्रारंभ करें",
+          "ctaSecondary": "देखो यह कैसे काम करता है",
+          "trustIndicators": "कोई क्रेडिट कार्ड नहीं • 14-दिवसीय परीक्षण • किसी भी समय रद्द करें",
+          "platformScreenshot": "प्लेटफ़ॉर्म स्क्रीनशॉट"
+        },
+        "trustBar": {
+          "trustedBy": "उत्पादन टीमों द्वारा उपयोग किया जाता है जो काम पूरा करते हैं"
+        },
+        "problem": {
+          "title": "प्रोडक्शन मेस",
+          "subtitle": "वही कहानी, अलग दिन",
+          "pain1Title": "उपकरण अराजकता",
+          "pain1Description": "स्प्रेडशीट, स्लैक, ईमेल, रैंडम Google डॉक्स—आपका वर्कफ़्लो हर जगह बिखरा हुआ है",
+          "pain2Title": "गुम जानकारी",
+          "pain2Description": "फ़ाइलें गायब हो जाती हैं. किसी ने इसे भेजा है... कहीं. इसे ढूंढने में शुभकामनाएँ",
+          "pain3Title": "बजट रेंगना",
+          "pain3Description": "लागतें आप पर अचानक हावी हो जाती हैं। जब तक आप इसे पकड़ते हैं, तब तक आपका बजट खत्म हो चुका होता है",
+          "pain4Title": "संचार में खराबी",
+          "pain4Description": "विक्रेता अपडेट से चूक जाते हैं, क्रू पुरानी जानकारी के साथ काम करता है, हितधारक वही प्रश्न पूछते रहते हैं"
+        },
+        "solution": {
+          "title": "एक मंच. वास्तव में काम करता है.",
+          "subtitle": "सब कुछ जहां होना चाहिए",
+          "feature1Title": "एकीकृत प्रणाली",
+          "feature1Description": "परियोजनाएँ, लोग, संसाधन- सभी एक ही स्थान पर जो वास्तव में मायने रखता है",
+          "feature2Title": "वास्तविक समय अपडेट",
+          "feature2Description": "परिवर्तन तुरंत होते हैं. हर कोई एक ही चीज़ देखता है",
+          "feature3Title": "बजट ट्रैकिंग",
+          "feature3Description": "प्रत्येक डॉलर पर नज़र रखें. कोई आश्चर्य नहीं, कोई बहाना नहीं",
+          "feature4Title": "विक्रेता समन्वय",
+          "feature4Description": "नियंत्रण खोए बिना साझेदारों को लूप में रखें"
+        },
+        "howItWorks": {
+          "title": "यह काम किस प्रकार करता है",
+          "subtitle": "उठो और तेजी से दौड़ो",
+          "step1Title": "अपना संगठन स्थापित करें",
+          "step1Description": "अपनी संरचना बनाएं, अपनी टीम जोड़ें",
+          "step2Title": "अपने प्रोजेक्ट बनाएं",
+          "step2Description": "उत्पादनों और कार्यक्षेत्रों का मानचित्र तैयार करें",
+          "step3Title": "भूमिकाएँ सौंपें",
+          "step3Description": "लोगों को सही पहुंच दें, इससे अधिक कुछ नहीं",
+          "step4Title": "इसे संपन्न करें",
+          "step4Description": "प्रगति पर नज़र रखें, बजट प्रबंधित करें, समय पर शिपिंग करें"
+        },
+        "testimonials": {
+          "title": "वास्तविक टीमें, वास्तविक परिणाम",
+          "subtitle": "कोई मार्केटिंग नहीं बोलती",
+          "testimonial1Quote": "एटीएलवीएस ने हमारे त्योहार की अव्यवस्था को ठीक किया। सब कुछ एक ही स्थान पर है, हर कोई जानता है कि क्या हो रहा है। अंत में।",
+          "testimonial1Author": "सारा चेन",
+          "testimonial1Role": "प्रोडक्शन डायरेक्टर, प्रमुख संगीत समारोह",
+          "testimonial2Quote": "अनुमति प्रणाली बिल्कुल वही है जिसकी हमें आवश्यकता थी। कोई और अधिक दुःस्वप्न तक पहुंच नहीं।",
+          "testimonial2Author": "मार्कस रोड्रिग्ज",
+          "testimonial2Role": "लाइव इवेंट कंपनी के संचालन उपाध्यक्ष",
+          "testimonial3Quote": "पहली तिमाही में बजट में 40% की कटौती। ट्रैकिंग वास्तव में काम करती है।",
+          "testimonial3Author": "जेनिफ़र पार्क",
+          "testimonial3Role": "सीएफओ, कॉर्पोरेट इवेंट एजेंसी"
+        },
+        "pricing": {
+          "title": "सीधा मूल्य निर्धारण"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "उत्पादन प्रबंधन जो वास्तव में काम करता है",
+          "headlineHighlight": "अनुभवात्मक टीमों के लिए",
+          "subheadline": "एक ही कमांड सेंटर से अपने प्रोजेक्ट, क्रू, संपत्ति और बजट को नेविगेट करें। उन लोगों के लिए बनाया गया है जो अविस्मरणीय अनुभव बनाते हैं।",
+          "supportingCopy": "चाहे आप त्योहारों, कॉर्पोरेट आयोजनों, या गहन सक्रियणों का निर्माण कर रहे हों - एटीएलवीएस अवधारणा से लेकर पर्दा कॉल तक के पाठ्यक्रम को चार्ट करता है।",
+          "ctaPrimary": "आज ही नि:शुल्क प्रारंभ करें",
+          "ctaSecondary": "इसे क्रियान्वित रूप में देखें",
+          "trustIndicators": "कोई क्रेडिट कार्ड नहीं • 14-दिवसीय परीक्षण • किसी भी समय रद्द करें",
+          "platformScreenshot": "प्लेटफ़ॉर्म स्क्रीनशॉट"
+        },
+        "trustBar": {
+          "trustedBy": "दुनिया भर की उत्पादन टीमों द्वारा विश्वसनीय"
+        },
+        "problem": {
+          "title": "उत्पादन अराजकता समस्या",
+          "subtitle": "आप ड्रिल जानते हैं",
+          "pain1Title": "उपकरण अधिभार",
+          "pain1Description": "स्प्रेडशीट, स्लैक, ईमेल, वह Google डॉक जिसे कोई नहीं ढूंढ सकता—आपका वर्कफ़्लो एक दर्जन प्लेटफ़ॉर्म पर बिखरा हुआ है",
+          "pain2Title": "सूचना ब्लैक होल",
+          "pain2Description": "हैंडऑफ़ के दौरान महत्वपूर्ण विवरण गायब हो जाते हैं। वह फ़ाइल अवश्य ही किसी ने कहीं भेजी होगी...",
+          "pain3Title": "बजट आश्चर्य",
+          "pain3Description": "लागतें छाया में बढ़ जाती हैं। जब तक आप ध्यान दें, आप पहले ही ख़त्म हो चुके होते हैं",
+          "pain4Title": "संचार बहाव",
+          "pain4Description": "विक्रेता अपडेट से चूक जाते हैं, क्रू पुरानी जानकारी से काम चलाता है, हितधारक एक ही प्रश्न दो बार पूछते हैं"
+        },
+        "solution": {
+          "title": "एक मंच. शून्य अराजकता.",
+          "subtitle": "सब कुछ सही जगह मे है",
+          "feature1Title": "एकीकृत कमांड सेंटर",
+          "feature1Description": "परियोजनाएँ, लोग और संसाधन सभी निर्माण में आगे बढ़ रहे हैं",
+          "feature2Title": "रीयल-टाइम सिंक",
+          "feature2Description": "अपडेट तुरंत प्रवाहित होते हैं. हर कोई एक ही चार्ट से काम कर रहा है",
+          "feature3Title": "बजट रडार",
+          "feature3Description": "वास्तविक समय में प्रत्येक डॉलर को ट्रैक करें। कोई आश्चर्य नहीं, कोई अतिरेक नहीं",
+          "feature4Title": "विक्रेता समन्वय",
+          "feature4Description": "जहाज को छोड़े बिना बाहरी साझेदारों को लूप में रखें"
+        },
+        "howItWorks": {
+          "title": "यह काम किस प्रकार करता है",
+          "subtitle": "महीनों में नहीं, मिनटों में यात्रा तय करें",
+          "step1Title": "अपना संगठन लॉन्च करें",
+          "step1Description": "अपनी संरचना स्थापित करें और अपने दल को उसमें ले आएं",
+          "step2Title": "अपनी परियोजनाओं का चार्ट बनाएं",
+          "step2Description": "उत्पादनों, सक्रियणों और कार्यस्थानों का मानचित्र तैयार करें",
+          "step3Title": "भूमिकाएँ और मिशन सौंपें",
+          "step3Description": "सभी को सही पहुँच और स्पष्ट जिम्मेदारियाँ दें",
+          "step4Title": "नेविगेट करें और वितरित करें",
+          "step4Description": "प्रगति की निगरानी करें, बजट प्रबंधित करें, त्रुटिहीन ढंग से कार्यान्वित करें"
+        },
+        "testimonials": {
+          "title": "दुनिया भर में प्रोडक्शन टीमों द्वारा विश्वसनीय",
+          "subtitle": "वास्तविक निर्माताओं की वास्तविक कहानियाँ",
+          "testimonial1Quote": "एटीएलवीएस ने हमारे त्योहारों के प्रबंधन के तरीके को बदल दिया। सब कुछ एक ही स्थान पर, हर कोई एक ही पृष्ठ पर। अंत में।",
+          "testimonial1Author": "सारा चेन",
+          "testimonial1Role": "प्रोडक्शन डायरेक्टर, प्रमुख संगीत समारोह",
+          "testimonial2Quote": "आरबीएसी प्रणाली हमारी जटिल संगठन संरचना के लिए बिल्कुल उपयुक्त है। उत्पादन के लिए उचित पहुंच नियंत्रण? क्रांतिकारी.",
+          "testimonial2Author": "मार्कस रोड्रिग्ज",
+          "testimonial2Role": "लाइव इवेंट कंपनी के संचालन उपाध्यक्ष",
+          "testimonial3Quote": "हमने पहली तिमाही में बजट वृद्धि में 40% की कटौती की। वित्तीय दृश्यता वैध रूप से गेम-चेंजिंग है।",
+          "testimonial3Author": "जेनिफ़र पार्क",
+          "testimonial3Role": "सीएफओ, कॉर्पोरेट इवेंट एजेंसी"
+        },
+        "pricing": {
+          "title": "पारदर्शी मूल्य निर्धारण जो मापता है"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "उत्पादन प्रबंधन जो अलग प्रभाव डालता है",
+          "headlineHighlight": "इवेंट क्रिएटर्स के लिए",
+          "subheadline": "अपने प्रोजेक्ट, क्रू, गियर और बजट को एक ऐप से चलाएं। उन लोगों के लिए बनाया गया है जो वास्तव में अनुभव बनाते हैं।",
+          "supportingCopy": "त्यौहार, ब्रांड सक्रियता, गहन आयोजन- एटीएलवीएस विचार से लेकर कार्यान्वयन तक सब कुछ व्यवस्थित रखता है।",
+          "ctaPrimary": "निःशुल्क प्रारंभ करें",
+          "ctaSecondary": "इसकी जांच - पड़ताल करें",
+          "trustIndicators": "किसी क्रेडिट कार्ड की आवश्यकता नहीं • निःशुल्क परीक्षण • जब भी रद्द करें",
+          "platformScreenshot": "प्लेटफ़ॉर्म स्क्रीनशॉट"
+        },
+        "trustBar": {
+          "trustedBy": "उत्पादन टीमों द्वारा हर जगह उपयोग किया जाता है"
+        },
+        "problem": {
+          "title": "प्रोडक्शन मेसी एएफ है",
+          "subtitle": "हम सभी वहाँ रहे है",
+          "pain1Title": "बहुत सारे ऐप्स",
+          "pain1Description": "स्प्रैडशीट्स, स्लैक, ईमेल, वह यादृच्छिक Google डॉक - सब कुछ हर जगह है और यह अराजकता है",
+          "pain2Title": "फ़ाइलें गायब हो जाती हैं",
+          "pain2Description": "किसी ने वह फ़ाइल कहीं भेज दी... अब इसे कोई नहीं ढूंढ सकता. क्लासिक.",
+          "pain3Title": "बजट जाता है Brr",
+          "pain3Description": "लागत बढ़ती रहती है. जब तक आप ध्यान दें, आपका बजट बहुत अधिक हो चुका होता है",
+          "pain4Title": "संचार अंतराल 💬",
+          "pain4Description": "टीम के सदस्य अपडेट से चूक जाते हैं और पुरानी जानकारी के साथ काम करते हैं"
+        },
+        "solution": {
+          "title": "एक मंच. पूर्ण नियंत्रण. 🎯",
+          "subtitle": "सब कुछ एक ही स्थान पर",
+          "feature1Title": "कमांड सेंटर 🎮",
+          "feature1Description": "आपके सभी प्रोजेक्ट, टीम और संसाधन एक ही हब में",
+          "feature2Title": "लाइव सिंक ⚡",
+          "feature2Description": "अपडेट तुरंत होते हैं. हर कोई जुड़ा रहता है",
+          "feature3Title": "बजट ट्रैकर 💰",
+          "feature3Description": "वास्तविक समय में प्रत्येक डॉलर देखें। कोई आश्चर्य नहीं",
+          "feature4Title": "टीम समन्वय 🤝",
+          "feature4Description": "सभी को अपडेट और एक ही पेज पर रखें"
+        },
+        "howItWorks": {
+          "title": "यह काम किस प्रकार करता है",
+          "subtitle": "सचमुच मिनटों में आरंभ करें",
+          "step1Title": "अपना संगठन स्थापित करें",
+          "step1Description": "अपनी टीम संरचना बनाएं और सभी को जोड़ें",
+          "step2Title": "प्रोजेक्ट बनाएं",
+          "step2Description": "अपने आयोजनों और प्रस्तुतियों का नक्शा तैयार करें",
+          "step3Title": "भूमिकाएँ सौंपें",
+          "step3Description": "लोगों को सही अनुमतियाँ दें",
+          "step4Title": "इसे भेज दो",
+          "step4Description": "हर चीज़ पर नज़र रखें, बजट प्रबंधित करें, पूरी तरह से कार्यान्वित करें"
+        },
+        "testimonials": {
+          "title": "वास्तविक टीमें एटीएलवीएस का उपयोग कर रही हैं",
+          "subtitle": "वास्तविक लोगों से वास्तविक प्रतिक्रिया",
+          "testimonial1Quote": "त्योहारों के प्रबंधन के लिए एटीएलवीएस ओपी है। सब कुछ व्यवस्थित है, हर कोई समन्वयित है। 10/10 अनुशंसा करेंगे.",
+          "testimonial1Author": "सारा चेन",
+          "testimonial1Role": "प्रोडक्शन डायरेक्टर, प्रमुख संगीत समारोह",
+          "testimonial2Quote": "अनुमति प्रणाली आग है. आख़िरकार हमारी टीम को उचित पहुंच नियंत्रण मिल गया।",
+          "testimonial2Author": "मार्कस रोड्रिग्ज",
+          "testimonial2Role": "लाइव इवेंट कंपनी के संचालन उपाध्यक्ष",
+          "testimonial3Quote": "हमने पहली तिमाही में बजट समस्याओं में 40% की कटौती की। पैसे की ट्रैकिंग सीधे तौर पर आश्चर्यजनक है।",
+          "testimonial3Author": "जेनिफ़र पार्क",
+          "testimonial3Role": "सीएफओ, कॉर्पोरेट इवेंट एजेंसी"
+        },
+        "pricing": {
+          "title": "मूल्य निर्धारण जो अलग-अलग हिट करता है"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "अपने प्रोडक्शन गेम का स्तर बढ़ाएं 🎮",
+          "headlineHighlight": "इवेंट क्रिएटर्स के लिए",
+          "subheadline": "एक सुपर ऐप से प्रोजेक्ट, टीम, गियर और पैसा प्रबंधित करें ✨ महाकाव्य अनुभव बनाने वाले रचनाकारों के लिए बनाया गया 🚀",
+          "supportingCopy": "त्यौहार, कार्यक्रम, गतिविधियाँ—एटीएलवीएस शुरू से अंत तक सब कुछ व्यवस्थित रखता है 🎯",
+          "ctaPrimary": "निःशुल्क प्रारंभ करें 🚀",
+          "ctaSecondary": "डेमो देखें 👀",
+          "trustIndicators": "किसी कार्ड की आवश्यकता नहीं • निःशुल्क परीक्षण • किसी भी समय रद्द करें ✌️",
+          "platformScreenshot": "प्लेटफ़ॉर्म स्क्रीनशॉट"
+        },
+        "trustBar": {
+          "trustedBy": "दुनिया भर में उत्पादन टीमों द्वारा उपयोग किया जाता है 🌍"
+        },
+        "problem": {
+          "title": "उत्पादन अव्यवस्थित हो सकता है 😅",
+          "subtitle": "परिचित लग रहा है?",
+          "pain1Title": "ऐप ओवरलोड 📱",
+          "pain1Description": "बहुत सारे ऐप्स, बहुत अधिक अराजकता। सब कुछ बिखरा हुआ है और ढूंढना मुश्किल है 🤯",
+          "pain2Title": "खोई हुई फ़ाइलें 📂",
+          "pain2Description": "फ़ाइलें शून्य में गायब हो जाती हैं. किसी ने इसे भेजा है... कहीं... शुभकामनाएँ! 🔍",
+          "pain3Title": "बजट आश्चर्य 💸",
+          "pain3Description": "पैसे गायब होते रहते हैं. जब तक आप ध्यान दें, आपका बजट खत्म हो चुका होता है 😬",
+          "pain4Title": "टीम कन्फ्यूजन 🤷",
+          "pain4Description": "लोग अपडेट मिस कर देते हैं, पुरानी जानकारी के साथ काम करते हैं, वही प्रश्न पूछते हैं"
+        },
+        "solution": {
+          "title": "एक ऐप. पूर्ण नियंत्रण. 💪",
+          "subtitle": "आप की जरूरत की सभी चीज़ें एक ही स्थान पर",
+          "feature1Title": "कमांड सेंटर 🎮",
+          "feature1Description": "एक डैशबोर्ड में सभी प्रोजेक्ट, टीम और गियर",
+          "feature2Title": "त्वरित सिंक ⚡",
+          "feature2Description": "अपडेट वास्तविक समय में होते हैं। हर कोई जुड़ा रहता है",
+          "feature3Title": "मनी ट्रैकर 💰",
+          "feature3Description": "प्रत्येक डॉलर पर नजर रखें. कोई आश्चर्य नहीं, कोई तनाव नहीं",
+          "feature4Title": "टीम सहयोग 🤝",
+          "feature4Description": "सभी को जानकारी में रखें और मिलकर काम करें"
+        },
+        "howItWorks": {
+          "title": "यह कैसे काम करता है ⚙️",
+          "subtitle": "बहुत तेजी से शुरुआत करें",
+          "step1Title": "अपनी टीम बनाएं 👥",
+          "step1Description": "अपना संगठन स्थापित करें और अपना दल जोड़ें",
+          "step2Title": "प्रोजेक्ट बनाएं 📋",
+          "step2Description": "अपने सभी आयोजनों और प्रस्तुतियों का नक्शा तैयार करें",
+          "step3Title": "अनुमतियाँ सेट करें 🔐",
+          "step3Description": "सभी को सही पहुंच स्तर दें",
+          "step4Title": "लॉन्च करें और जीतें 🏆",
+          "step4Description": "प्रगति पर नज़र रखें, धन का प्रबंधन करें, पूरी तरह से कार्यान्वित करें"
+        },
+        "testimonials": {
+          "title": "टीमों को एटीएलवीएस पसंद है",
+          "subtitle": "वास्तविक उपयोगकर्ताओं से वास्तविक समीक्षाएँ",
+          "testimonial1Quote": "एटीएलवीएस सचमुच त्योहारों के लिए बिल्कुल उपयुक्त है। सब कुछ व्यवस्थित है, हर कोई समन्वयित है। 100/10! 🔥",
+          "testimonial1Author": "सारा चेन",
+          "testimonial1Role": "प्रोडक्शन डायरेक्टर, प्रमुख संगीत समारोह",
+          "testimonial2Quote": "अनुमति प्रणाली शेफ का चुंबन है 👌 अंत में उचित पहुंच नियंत्रण!",
+          "testimonial2Author": "मार्कस रोड्रिग्ज",
+          "testimonial2Role": "लाइव इवेंट कंपनी के संचालन उपाध्यक्ष",
+          "testimonial3Quote": "हमने पहली तिमाही में बजट संबंधी मुद्दों में 40% की कटौती की। ट्रैकिंग पागलपन भरी है! 🎯",
+          "testimonial3Author": "जेनिफ़र पार्क",
+          "testimonial3Role": "सीएफओ, कॉर्पोरेट इवेंट एजेंसी"
+        },
+        "pricing": {
+          "title": "मूल्य निर्धारण वास्तव में उचित है ✨"
+        }
+      }
     }
   }
 }

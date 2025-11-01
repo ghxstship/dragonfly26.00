@@ -402,333 +402,934 @@
   "marketing": {
     "nav": {
       "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
+      "solutions": "Giải pháp",
+      "features": "Đặc trưng",
+      "pricing": "Định giá",
+      "docs": "Tài liệu",
       "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "company": "Công ty",
+      "signIn": "Đăng nhập",
+      "startFree": "Bắt đầu miễn phí",
+      "toggleMenu": "Chuyển đổi menu"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Giải pháp theo ngành",
+        "subtitle": "Quy trình làm việc được xây dựng có mục đích cho mọi loại hình sản xuất giải trí trực tiếp"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Hòa nhạc & Lưu diễn",
+        "description": "Hợp lý hóa việc định tuyến, lập ngân sách, hậu cần và quản lý đoàn trong các hoạt động tổ chức chuyến lưu diễn toàn cầu — từ hoạt động ở địa điểm nhỏ đến sản xuất ở quy mô đấu trường."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Lễ hội âm nhạc & nghệ thuật",
+        "description": "Tập trung quy trình công việc cho các sự kiện kéo dài nhiều ngày, nhiều giai đoạn — hợp nhất hoạt động sản xuất, nhân tài, nhà cung cấp và tuân thủ dưới một hệ thống chỉ huy."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Sự kiện nhập vai và trải nghiệm",
+        "description": "Thiết kế và vận hành các thế giới tương tác, sắp đặt và trải nghiệm có thương hiệu với khả năng hiển thị đầy đủ từ phát triển sáng tạo đến thực hiện trực tiếp."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Sản phẩm sân khấu và trực tiếp",
+        "description": "Quản lý các nhóm sáng tạo, lịch trình kỹ thuật và tài sản sản xuất cho hoạt động giải trí dựa trên sân khấu và biểu diễn."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "Phim, Truyền hình & Truyền thông",
+        "description": "Điều phối các hoạt động tiền sản xuất, tại hiện trường và tổng hợp báo cáo bằng các công cụ được xây dựng để đồng bộ hóa giữa các bộ phận và minh bạch tài chính."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Kích hoạt thương hiệu & Chiến dịch tiếp thị",
+        "description": "Thực hiện các cửa sổ bật lên, khởi chạy và trải nghiệm theo hướng chiến dịch — tích hợp tính năng theo dõi nội dung, hậu cần và ROI vào một bảng điều khiển thông minh."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Sự kiện doanh nghiệp & tư nhân",
+        "description": "Mang lại trải nghiệm hoàn hảo cho các cuộc họp nội bộ, các buổi họp mặt cấp cao và các cuộc gặp gỡ cấp cao với kế hoạch hợp lý và sự phối hợp giữa nhà cung cấp."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Triển lãm & Hội nghị Thương mại",
+        "description": "Đơn giản hóa việc xây dựng gian hàng, hậu cần cho nhà triển lãm và quan hệ tài trợ với việc quản lý dự án toàn diện và phân tích thời gian thực."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Sức khỏe, Sức khỏe & Phong cách sống",
+        "description": "Tối ưu hóa chương trình, nhân sự và luồng khách cho các khóa tu, sự kiện thể dục và trải nghiệm chăm sóc sức khỏe — nơi chi tiết và bầu không khí quan trọng nhất."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "Quản lý sản xuất thực sự hiệu quả",
+      "headlineHighlight": "Dành cho nhóm trải nghiệm",
+      "subheadline": "Điều hướng các dự án, đội ngũ, tài sản và ngân sách của bạn từ một trung tâm chỉ huy duy nhất. Được xây dựng cho những người tạo ra những trải nghiệm khó quên.",
+      "supportingCopy": "Cho dù bạn đang sản xuất các lễ hội, sự kiện của công ty hay các hoạt động kích hoạt phong phú—ATLVS sẽ lập biểu đồ từ ý tưởng đến kết thúc.",
+      "ctaPrimary": "Bắt đầu miễn phí ngay hôm nay",
+      "ctaSecondary": "Xem nó trong hành động",
+      "trustIndicators": "Không cần thẻ tín dụng • Dùng thử 14 ngày • Hủy bất cứ lúc nào",
+      "platformScreenshot": "Ảnh chụp màn hình nền tảng"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Được các đội sản xuất trên toàn thế giới tin cậy"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "Vấn đề hỗn loạn sản xuất",
+      "subtitle": "Bạn biết khoan",
+      "pain1Title": "Quá tải công cụ",
+      "pain1Description": "Bảng tính, Slack, email, một tài liệu Google Doc mà không ai có thể tìm thấy—quy trình làm việc của bạn nằm rải rác trên hàng chục nền tảng",
+      "pain2Title": "Thông tin hố đen",
+      "pain2Description": "Các chi tiết quan trọng sẽ biến mất trong quá trình bàn giao. Chắc chắn ai đó đã gửi tập tin đó... ở đâu đó",
+      "pain3Title": "Bất ngờ về ngân sách",
+      "pain3Description": "Chi phí leo lên trong bóng tối. Đến lúc bạn nhận ra thì bạn đã kết thúc rồi",
+      "pain4Title": "Truyền thông trôi dạt",
+      "pain4Description": "Nhà cung cấp bỏ lỡ thông tin cập nhật, nhóm xử lý thông tin cũ, các bên liên quan đặt câu hỏi giống nhau hai lần"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "Một nền tảng. Không hỗn loạn.",
+      "subtitle": "Mọi thứ đều ở đúng vị trí của nó",
+      "feature1Title": "Trung tâm chỉ huy thống nhất",
+      "feature1Description": "Các dự án, con người và nguồn lực đều đồng hành cùng nhau",
+      "feature2Title": "Đồng bộ hóa thời gian thực",
+      "feature2Description": "Cập nhật chảy ngay lập tức. Mọi người đều làm việc trên cùng một biểu đồ",
+      "feature3Title": "Radar ngân sách",
+      "feature3Description": "Theo dõi từng đô la trong thời gian thực. Không có bất ngờ, không có vượt quá",
+      "feature4Title": "Điều phối nhà cung cấp",
+      "feature4Description": "Giữ liên lạc với các đối tác bên ngoài mà không từ bỏ con tàu"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "Nó hoạt động như thế nào",
+      "subtitle": "Ra khơi trong vài phút, không phải vài tháng",
+      "step1Title": "Ra mắt tổ chức của bạn",
+      "step1Description": "Thiết lập cấu trúc của bạn và đưa phi hành đoàn của bạn lên tàu",
+      "step2Title": "Lập biểu đồ cho dự án của bạn",
+      "step2Description": "Lập bản đồ sản xuất, kích hoạt và không gian làm việc",
+      "step3Title": "Chỉ định vai trò và nhiệm vụ",
+      "step3Description": "Cung cấp cho mọi người quyền truy cập phù hợp và trách nhiệm rõ ràng",
+      "step4Title": "Điều hướng & Phân phối",
+      "step4Description": "Theo dõi tiến độ, quản lý ngân sách, thực hiện hoàn hảo"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "Mọi thứ bạn cần để sản xuất ở quy mô lớn",
+      "subtitle": "Sáu trung tâm tích hợp để kiểm soát sản xuất hoàn chỉnh",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Trung tâm sản xuất",
+        "description": "Quản lý dự án, sự kiện, con người, tài sản, địa điểm và tệp",
+        "feature1": "Lập kế hoạch dự án & sự kiện",
+        "feature2": "Quản lý đội & phi hành đoàn",
+        "feature3": "Theo dõi và kiểm kê tài sản",
+        "feature4": "Phối hợp địa điểm và địa điểm"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "Trung tâm kinh doanh",
+        "description": "Xử lý các công ty, công việc, mua sắm và tài chính",
+        "feature1": "Quản lý nhà cung cấp & công ty",
+        "feature2": "Đăng tuyển và tuyển dụng",
+        "feature3": "Mua sắm và mua sắm",
+        "feature4": "Theo dõi ngân sách và chi phí"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Trung tâm mạng",
+        "description": "Xây dựng cộng đồng, thị trường và thư viện tài nguyên",
+        "feature1": "Cộng đồng & thảo luận",
+        "feature2": "Thị trường & dịch vụ",
+        "feature3": "Thư viện tài nguyên",
+        "feature4": "Kết nối ngành"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "Trung tâm tự động hóa",
+        "description": "Tự động hóa quy trình công việc, trình kích hoạt và các tác vụ lặp đi lặp lại",
+        "feature1": "Tự động hóa quy trình làm việc tùy chỉnh",
+        "feature2": "Trình kích hoạt theo hướng sự kiện",
+        "feature3": "Thực hiện nhiệm vụ theo lịch trình",
+        "feature4": "Đường ống tích hợp"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "Trung tâm thông minh",
+        "description": "Tạo báo cáo, phân tích và thông tin chi tiết",
+        "feature1": "Báo cáo tùy chỉnh",
+        "feature2": "Phân tích thời gian thực",
+        "feature3": "Thông tin chi tiết mang tính dự đoán",
+        "feature4": "Số liệu hiệu suất"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "Trung tâm hệ thống",
+        "description": "Định cấu hình quản trị viên, cài đặt và hồ sơ người dùng",
+        "feature1": "Quản lý người dùng và vai trò",
+        "feature2": "Cấu hình hệ thống",
+        "feature3": "Tùy chỉnh hồ sơ",
+        "feature4": "Bảo mật và quyền"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "Mọi thứ bạn cần để sản xuất ở quy mô lớn",
+        "subtitle": "Sáu trung tâm tích hợp được thiết kế cho các nhóm sản xuất trải nghiệm"
+      },
+      "production": {
+        "title": "Trung tâm sản xuất",
+        "description": "Quản lý dự án, sự kiện, con người, tài sản, địa điểm và tệp",
+        "projects": {
+          "title": "Dự án",
+          "description": "Tổ chức và theo dõi sản xuất từ ​​ý tưởng đến đình công"
+        },
+        "events": {
+          "title": "Sự kiện",
+          "description": "Lên lịch, điều phối và quản lý mọi chi tiết và dòng thời gian"
+        },
+        "people": {
+          "title": "Mọi người",
+          "description": "Quản lý sự phân công của đội, tình trạng sẵn sàng và lập kế hoạch"
+        },
+        "assets": {
+          "title": "Tài sản",
+          "description": "Theo dõi thiết bị, hàng tồn kho và tài nguyên trong quá trình sản xuất"
+        },
+        "locations": {
+          "title": "Địa điểm",
+          "description": "Điều phối địa điểm, địa điểm và hậu cần cơ sở"
+        },
+        "files": {
+          "title": "Tập tin",
+          "description": "Tập trung tài liệu, phương tiện và tệp sản xuất một cách an toàn"
+        }
+      },
+      "business": {
+        "title": "Trung tâm kinh doanh",
+        "description": "Xử lý các công ty, công việc, mua sắm và tài chính",
+        "companies": {
+          "title": "Công ty",
+          "description": "Quản lý các mối quan hệ với nhà cung cấp, khách hàng và đối tác"
+        },
+        "jobs": {
+          "title": "Việc làm",
+          "description": "Đăng vị trí, theo dõi hồ sơ ứng tuyển, quản lý tuyển dụng"
+        },
+        "procurement": {
+          "title": "Mua sắm",
+          "description": "Hợp lý hóa việc mua hàng, lựa chọn nhà cung cấp và hợp đồng"
+        },
+        "invoices": {
+          "title": "Hóa đơn",
+          "description": "Tạo, gửi và theo dõi hóa đơn bằng lời nhắc tự động"
+        },
+        "expenses": {
+          "title": "Chi phí",
+          "description": "Ghi lại và phân loại chi phí bằng cách chụp biên nhận"
+        },
+        "budgets": {
+          "title": "Ngân sách",
+          "description": "Lập kế hoạch, giám sát và kiểm soát ngân sách bằng tính năng theo dõi thời gian thực"
+        }
+      },
+      "network": {
+        "title": "Trung tâm mạng",
+        "description": "Xây dựng cộng đồng, thị trường và thư viện tài nguyên",
+        "community": {
+          "title": "Cộng đồng",
+          "description": "Kết nối với các chuyên gia trong ngành, chia sẻ kiến ​​thức, cộng tác"
+        },
+        "marketplace": {
+          "title": "Thị trường",
+          "description": "Khám phá dịch vụ, tuyển dụng nhân tài, tìm nguồn lực sản xuất"
+        },
+        "resources": {
+          "title": "Tài nguyên",
+          "description": "Hướng dẫn truy cập, mẫu và cách thực hành tốt nhất"
+        }
+      },
+      "automations": {
+        "title": "Trung tâm tự động hóa",
+        "description": "Tự động hóa quy trình công việc, trình kích hoạt và các tác vụ lặp đi lặp lại",
+        "workflows": {
+          "title": "Quy trình làm việc",
+          "description": "Xây dựng trình tự tự động hóa tùy chỉnh cho các quy trình lặp đi lặp lại"
+        },
+        "triggers": {
+          "title": "Trình kích hoạt",
+          "description": "Thiết lập các hành động theo sự kiện có khả năng phản hồi tự động"
+        },
+        "scheduled": {
+          "title": "Nhiệm vụ theo lịch trình",
+          "description": "Tự động hóa các tác vụ định kỳ với lịch trình linh hoạt"
+        }
+      },
+      "intelligence": {
+        "title": "Trung tâm thông minh",
+        "description": "Tạo báo cáo, phân tích và thông tin chi tiết",
+        "reports": {
+          "title": "Báo cáo",
+          "description": "Tạo báo cáo tùy chỉnh với khả năng hiển thị và xuất linh hoạt"
+        },
+        "analytics": {
+          "title": "Phân tích",
+          "description": "Theo dõi KPI, theo dõi xu hướng, đo lường hiệu suất"
+        },
+        "insights": {
+          "title": "Thông tin chi tiết",
+          "description": "Nhận các đề xuất và phân tích dự đoán do AI cung cấp"
+        }
+      },
+      "system": {
+        "title": "Trung tâm hệ thống",
+        "description": "Định cấu hình quản trị viên, cài đặt và hồ sơ người dùng",
+        "admin": {
+          "title": "Quản trị viên",
+          "description": "Quản lý cài đặt tổ chức, bảo mật và cấu hình"
+        },
+        "settings": {
+          "title": "Cài đặt",
+          "description": "Tùy chỉnh tùy chọn, tích hợp và hành vi nền tảng"
+        },
+        "profiles": {
+          "title": "Hồ sơ người dùng",
+          "description": "Quản lý hồ sơ nhóm, vai trò và quyền truy cập"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Được xây dựng cho mọi vai trò trong phi hành đoàn của bạn",
+      "subtitle": "11 vai trò có thương hiệu với quyền chính xác",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Huyền thoại",
+        "description": "Nền tảng Super Admin - Toàn quyền kiểm soát trên tất cả các tổ chức"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "Ma",
+        "level": "Cơ quan tối cao",
+        "title": "Ma",
+        "description": "Quản trị hệ thống hoàn chỉnh và truy cập không hạn chế. Định hướng nền tảng và duy trì sự giám sát doanh nghiệp."
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "Phi công",
+        "level": "Lãnh đạo chiến lược",
+        "title": "Phi công",
+        "description": "Khả năng hiển thị giữa các dự án, phân bổ nguồn lực và phân tích điều hành. Điều hướng chiến lược sản xuất cấp cao ở quy mô lớn."
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "đấu sĩ",
+        "level": "Lãnh đạo dự án",
+        "title": "đấu sĩ",
+        "description": "Toàn quyền tạo và chỉnh sửa dự án. Dẫn dắt sản xuất từ ​​ý tưởng đến hoàn thành với sự kiểm soát hoàn toàn."
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "Hoa tiêu",
+        "level": "Phối hợp",
+        "title": "Hoa tiêu",
+        "description": "Phối hợp dự án, phân công nhiệm vụ và hướng dẫn nhóm. Lập biểu đồ khóa học thông qua các quy trình công việc phức tạp."
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "độ lệch",
+        "level": "Thi hành",
+        "title": "độ lệch",
+        "description": "Hoàn thành nhiệm vụ tập trung trong khuôn khổ đã được thiết lập. Thực hiện công việc có chất lượng theo trách nhiệm được giao."
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "Phi cơ",
+        "level": "Học tập & Quan sát",
+        "title": "Phi cơ",
+        "description": "Quyền truy cập chỉ xem để học hỏi và phát triển. Hoàn hảo cho người mới bắt đầu xây dựng kỹ năng của họ."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "Người bán",
+        "level": "Phân phối trong phạm vi",
+        "title": "Người bán",
+        "description": "Truy cập có mục tiêu cho các nhà cung cấp dịch vụ bên ngoài. Tải lên các sản phẩm bàn giao và hoàn thành công việc theo hợp đồng."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "khách truy cập",
+        "level": "Tầm nhìn hạn chế",
+        "title": "khách truy cập",
+        "description": "Quyền truy cập tạm thời, chỉ đọc cho các bên liên quan bên ngoài. Luôn cập nhật thông tin mà không làm gián đoạn quy trình công việc."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "Cộng sự",
+        "level": "Hợp tác chiến lược",
+        "title": "Cộng sự",
+        "description": "Tích hợp sâu cho các cộng tác viên bên ngoài đáng tin cậy. Chia sẻ dữ liệu hai chiều và quản lý quy trình làm việc chung."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "đại sứ",
+        "level": "Nhà vô địch cộng đồng",
+        "title": "đại sứ",
+        "description": "Đại diện cho ATLVS, hỗ trợ người dùng và thúc đẩy sự cộng tác. Tổ chức sự kiện, tạo nội dung, phát triển hệ sinh thái."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Bảo mật cấp doanh nghiệp",
+      "subtitle": "Dữ liệu của bạn được bảo vệ ở mọi cấp độ",
+      "feature1Title": "Bảo mật cấp hàng",
+      "feature1Description": "Chính sách 801 RLS đảm bảo người dùng chỉ nhìn thấy những gì họ nên xem",
+      "feature2Title": "Quyền truy cập dựa trên vai trò",
+      "feature2Description": "11 vai trò được gắn thương hiệu với hơn 45 quyền chi tiết",
+      "feature3Title": "Bộ nhớ được mã hóa",
+      "feature3Description": "Tất cả dữ liệu được mã hóa khi lưu trữ và truyền tải",
+      "feature4Title": "Ghi nhật ký kiểm tra",
+      "feature4Description": "Hoàn thành quá trình kiểm tra tất cả hoạt động của hệ thống",
+      "feature5Title": "Tuân thủ SOC 2",
+      "feature5Description": "Tiêu chuẩn bảo mật cấp doanh nghiệp",
+      "feature6Title": "Sẵn sàng tuân thủ GDPR",
+      "feature6Description": "Tuân thủ đầy đủ các quy định về bảo mật dữ liệu"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
+      "title": "Được các nhóm sản xuất trên toàn thế giới tin cậy",
+      "subtitle": "Câu chuyện có thật từ những nhà sản xuất thực sự",
+      "testimonial1Quote": "ATLVS đã thay đổi cách chúng tôi quản lý lễ hội. Mọi thứ ở một nơi, mọi người trên cùng một trang. Cuối cùng.",
       "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
+      "testimonial1Role": "Giám đốc sản xuất, Lễ hội âm nhạc lớn",
+      "testimonial1Title": "Giám đốc sản xuất, Lễ hội âm nhạc lớn",
+      "testimonial2Quote": "Hệ thống RBAC hoàn hảo cho cấu trúc tổ chức phức tạp của chúng tôi. Kiểm soát truy cập thích hợp cho sản xuất? Mang tính cách mạng.",
+      "testimonial2Author": "Marcus Rodríguez",
+      "testimonial2Role": "Phó Giám đốc Điều hành, Công ty Sự kiện Trực tiếp",
+      "testimonial2Title": "Phó Giám đốc Điều hành, Công ty Sự kiện Trực tiếp",
+      "testimonial3Quote": "Chúng tôi đã cắt giảm 40% bội chi ngân sách trong quý đầu tiên. Khả năng hiển thị tài chính có thể thay đổi cuộc chơi một cách hợp pháp.",
       "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "testimonial3Role": "Giám đốc tài chính, Cơ quan tổ chức sự kiện doanh nghiệp",
+      "testimonial3Title": "Giám đốc tài chính, Cơ quan tổ chức sự kiện doanh nghiệp",
+      "jamesCookQuote": "Quản lý ba con tàu của các nhà khoa học đều nghĩ họ là nhân vật chính? ATLVS sẽ giúp mọi người liên kết và thực sự làm việc cùng nhau thay vì cạnh tranh giành tín dụng.",
+      "jamesCookAuthor": "Thuyền trưởng James Cook",
+      "jamesCookRole": "Nhà thám hiểm Hải quân Hoàng gia Anh (1728-1779)",
+      "zhengYiSaoQuote": "Tôi đã biến hoạt động vi phạm bản quyền thành một công ty nằm trong danh sách Fortune 500, đàm phán ân xá cho chính mình và nghỉ hưu giàu có. ATLVS dành cho những người hiểu rằng các hoạt động độc đáo vẫn cần có sự quản lý vững chắc.",
+      "zhengYiSaoAuthor": "Zheng Yi Sao",
+      "zhengYiSaoRole": "Thủ lĩnh cướp biển Trung Quốc (1775-1844)",
+      "captainAhabQuote": "Theo đuổi một mục tiêu cụ thể trên mọi đại dương mà không xem xét đến bức tranh toàn cảnh? ATLVS giúp bạn tập trung vào kế hoạch kinh doanh thực tế chứ không chỉ vào mục tiêu cá nhân.",
+      "captainAhabAuthor": "Thuyền trưởng A-háp",
+      "captainAhabRole": "Thuyền trưởng săn cá voi, Pequod",
+      "graceOMalleyQuote": "Được đàm phán với Nữ hoàng Elizabeth một cách bình đẳng. ATLVS giúp bạn xuất hiện trong mọi cuộc họp với dữ liệu sẵn sàng và tăng cường sự tự tin cho bạn.",
+      "graceOMalleyAuthor": "Grace O'Malley \"Gráinne Mhaol\"",
+      "graceOMalleyRole": "Nữ hoàng và thủ lĩnh cướp biển Ireland (khoảng 1530-1603)",
+      "sinbadQuote": "Cái kiểu tôi liên tục bị đắm tàu ​​nhưng vẫn quay ra được? Đó chỉ là kế hoạch kém. ATLVS cung cấp cấu trúc mà tôi cần rõ ràng để đưa ra quyết định.",
+      "sinbadAuthor": "Thủy thủ Sinbad",
+      "sinbadRole": "Thủy thủ lái buôn huyền thoại, Đêm Ả Rập",
+      "longJohnSilverQuote": "Quản lý cướp biển theo nghĩa đen là chăn mèo nếu mèo có vấn đề về bệnh scorbut và lòng tin. Khả năng quản lý các bên liên quan của ATLVS giúp mọi người luôn đồng thuận, ngay cả khi họ đang âm mưu chống lại nhau.",
+      "longJohnSilverAuthor": "Long John Bạc",
+      "longJohnSilverRole": "Quản lý quân nhu & Đầu bếp cướp biển, Đảo kho báu",
+      "horatioHornblowerQuote": "Chiến đấu với quân Pháp trong khi đang suy sụp tinh thần hoàn toàn đối với tôi thực sự rất có thương hiệu. ATLVS sắp xếp tất cả nội dung chiến thuật để bạn có thể tập trung vào nhiệm vụ thực tế.",
+      "horatioHornblowerAuthor": "Người thổi kèn Horatio",
+      "horatioHornblowerRole": "Sĩ quan Hải quân Hoàng gia (tiểu thuyết của CS Forester)",
+      "captainNemoQuote": "Làm ẩn sĩ trong tàu ngầm thực ra là một người rất hướng nội, nhưng ngay cả tôi cũng cần sự phối hợp nhóm. ATLVS hoạt động ngay cả khi bạn làm việc một mình.",
+      "captainNemoAuthor": "thuyền trưởng Nê-mô",
+      "captainNemoRole": "Chỉ huy Nautilus (Hai vạn dặm dưới biển)",
+      "odysseusQuote": "Mất từng thành viên phi hành đoàn vì tôi liên tục đưa ra những lựa chọn đáng ngờ. Thành thật mà nói, ATLVS sẽ giống như 'chúng ta không cần xem Sirens nói về cái gì' và thành thật mà nói thì sao? Có hiệu lực.",
+      "odysseusAuthor": "Odysseus/Ulysses",
+      "odysseusRole": "Vua Ithaca, Anh hùng Hy Lạp (The Odyssey)",
+      "blackbeardQuote": "Việc chặn toàn bộ bến cảng bằng bốn con tàu sẽ có tác dụng khác nhau khi bạn phối hợp thủ công. ATLVS sẽ biến tôi thành cướp biển hoạt động hiệu quả nhất trên biển.",
+      "blackbeardAuthor": "Thuyền trưởng Edward dạy \"Râu đen\"",
+      "blackbeardRole": "Chỉ huy cướp biển (khoảng 1680-1718)",
+      "captainMarvelQuote": "Đã biến mất trong 30 năm để giải quyết các trường hợp khẩn cấp về không gian mà không đăng ký. Các công cụ liên lạc của ATLVS sẽ giúp tôi không làm ma những người mà tôi quan tâm.",
+      "captainMarvelAuthor": "Captain Marvel/Caro Danvers",
+      "captainMarvelRole": "Phi công Không quân & Anh hùng Vũ trụ (MCU)",
+      "captainJanewayQuote": "Tôi đã nhiều lần vi phạm Chỉ thị của Thủ tướng tạm thời để cứu phi hành đoàn của mình, nhưng tôi chưa bao giờ vi phạm tiến độ dự án của mình. ATLVS đảm bảo các ưu tiên rõ ràng ngay cả khi vấn đề đạo đức trở nên phức tạp.",
+      "captainJanewayAuthor": "Thuyền trưởng Kathryn Janeway",
+      "captainJanewayRole": "Thuyền trưởng Starfleet, USS Voyager (Star Trek: Voyager)",
+      "moanaQuote": "Maui được cho là người cố vấn của tôi nhưng phần lớn thời gian lại không có cảm xúc. ATLVS theo dõi kết quả phân phối khi nhóm của bạn gặp khó khăn.",
+      "moanaAuthor": "Moana",
+      "moanaRole": "Wayfinder & Island Chief (Disney's Moana)",
+      "captainJackSparrowQuote": "Quản lý một nhóm khi thực sự không ai biết liệu họ có được tuyển dụng hay chỉ vì sự hỗn loạn? ATLVS cung cấp sự rõ ràng mà toàn bộ cảm xúc của tôi thì không.",
+      "captainJackSparrowAuthor": "Thuyền trưởng Jack Sparrow",
+      "captainJackSparrowRole": "Thuyền trưởng cướp biển, Ngọc trai đen (Cướp biển vùng Caribe)",
+      "popeyeQuote": "Toàn bộ tính cách của tôi là 'cứng đầu không chịu lên kế hoạch trước'. ATLVS là người lớn trong phòng mà tôi rõ ràng cần nhưng không thừa nhận.",
+      "popeyeAuthor": "Thủy thủ Popeye",
+      "popeyeRole": "Thủy thủ & Người bảo vệ Olive Oyl (Nhân vật hoạt hình)",
+      "captainPicardQuote": "Dẫn dắt một nhóm đa dạng vượt qua các tình huống tiếp xúc đầu tiên và khủng hoảng ngoại giao? ATLVS giúp mọi người liên kết với nhau khi tiền đặt cược theo đúng nghĩa đen.",
+      "captainPicardAuthor": "Thuyền trưởng Jean-Luc Picard",
+      "captainPicardRole": "Thuyền trưởng Starfleet, USS Enterprise (Star Trek: TNG)",
+      "captainSiskoQuote": "Chỉ huy một trạm vừa là căn cứ quân sự, vừa là trung tâm thương mại, vừa là trung tâm tị nạn? ATLVS giúp bạn quản lý sự phức tạp khi mỗi bên liên quan có những ưu tiên khác nhau.",
+      "captainSiskoAuthor": "Thuyền trưởng Benjamin Sisko",
+      "captainSiskoRole": "Chỉ huy Starfleet, Deep Space Nine (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Giá cả minh bạch",
+      "subtitle": "Từ nhà thầu đơn lẻ đến nhà sản xuất doanh nghiệp",
+      "monthly": "hàng tháng",
+      "annually": "Hàng năm",
+      "save20": "Tiết kiệm 20%",
+      "community": {
+        "name": "Cộng đồng",
+        "price": "Miễn phí",
+        "period": "mãi mãi",
+        "description": "Hoàn hảo để bắt đầu",
+        "feature1": "Truy cập vai trò Raider",
+        "feature2": "Quản lý tác vụ cơ bản",
+        "feature3": "Hỗ trợ cộng đồng",
+        "cta": "Bắt đầu miễn phí"
+      },
+      "pro": {
+        "name": "chuyên nghiệp",
+        "price": "$12",
+        "period": "mỗi tháng",
+        "annualPrice": "$10/tháng (thanh toán hàng năm)",
+        "description": "Đối với nhà thầu độc lập",
+        "feature1": "Vai trò của Deviator & Raider",
+        "feature2": "Quản lý tác vụ nâng cao",
+        "feature3": "Hỗ trợ ưu tiên",
+        "cta": "Bắt đầu dùng thử miễn phí"
+      },
+      "team": {
+        "name": "Đội",
+        "badge": "Phổ biến nhất",
+        "price": "$120",
+        "period": "mỗi tháng",
+        "annualPrice": "$100/tháng (thanh toán hàng năm)",
+        "description": "Dành cho các đội vừa và nhỏ (2-10 chỗ)",
+        "feature1": "Tất cả các tính năng chuyên nghiệp",
+        "feature2": "Quản lý nhà cung cấp",
+        "feature3": "Hợp tác nhóm",
+        "cta": "Bắt đầu dùng thử miễn phí"
+      },
       "starter": {
-        "name": "Starter",
+        "name": "người mới bắt đầu",
         "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "period": "mỗi người dùng/tháng",
+        "description": "Hoàn hảo cho dịch giả tự do và các nhóm nhỏ",
+        "feature1": "Tối đa 5 người dùng",
+        "feature2": "10 dự án đang hoạt động",
+        "feature3": "Báo cáo cơ bản",
+        "feature4": "Hỗ trợ qua email",
+        "feature5": "Dung lượng lưu trữ 10GB",
+        "cta": "Bắt đầu dùng thử miễn phí"
       },
       "professional": {
-        "name": "Professional",
+        "name": "Chuyên nghiệp",
         "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "period": "mỗi người dùng/tháng",
+        "description": "Đối với các công ty sản xuất đang phát triển",
+        "feature1": "Tối đa 25 người dùng",
+        "feature2": "Dự án không giới hạn",
+        "feature3": "Phân tích nâng cao",
+        "feature4": "Hỗ trợ ưu tiên",
+        "feature5": "Dung lượng lưu trữ 100GB",
+        "feature6": "Vai trò tùy chỉnh",
+        "feature7": "Truy cập API",
+        "cta": "Bắt đầu dùng thử miễn phí",
+        "popular": "Phổ biến nhất"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
+        "name": "Doanh nghiệp",
+        "price": "Phong tục",
+        "period": "liên hệ bán hàng",
+        "annualPrice": "$1000/tháng (thanh toán hàng năm)",
+        "description": "Dành cho các tổ chức, cơ quan lớn",
+        "feature1": "Người dùng không giới hạn",
+        "feature2": "Dự án không giới hạn",
+        "feature3": "Tích hợp tùy chỉnh",
+        "feature4": "Hỗ trợ chuyên dụng",
+        "feature5": "Lưu trữ không giới hạn",
         "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "feature7": "Đảm bảo SLA",
+        "feature8": "Đào tạo tùy chỉnh",
+        "cta": "Liên hệ bán hàng"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Câu hỏi thường gặp",
+      "subtitle": "Mọi thứ bạn cần biết",
+      "question1": "Thời gian dùng thử miễn phí là bao lâu?",
+      "answer1": "14 ngày, không cần thẻ tín dụng. Toàn quyền truy cập vào tất cả các tính năng.",
+      "question2": "Tôi có thể hủy bất cứ lúc nào không?",
+      "answer2": "Đúng. Hủy bỏ bất cứ lúc nào. Không có hợp đồng hoặc cam kết dài hạn.",
+      "question3": "Những phương thức thanh toán nào bạn chấp nhận?",
+      "answer3": "Chúng tôi chấp nhận tất cả các thẻ tín dụng, ACH và chuyển khoản ngân hàng chính cho các gói doanh nghiệp.",
+      "question4": "Dữ liệu của tôi có an toàn không?",
+      "answer4": "Đúng. Mã hóa cấp doanh nghiệp, tuân thủ SOC 2, sẵn sàng GDPR. Dữ liệu của bạn được bảo vệ ở mọi cấp độ.",
+      "question5": "Bạn có cung cấp đào tạo?",
+      "answer5": "Đúng. Tài nguyên tự phục vụ cho tất cả các gói, cùng với chương trình đào tạo dành riêng cho khách hàng Doanh nghiệp.",
+      "question6": "Tôi có thể nhập dữ liệu hiện có của mình không?",
+      "answer6": "Đúng. Chúng tôi cung cấp các công cụ nhập CSV và có thể hỗ trợ di chuyển dữ liệu tùy chỉnh cho các gói Doanh nghiệp.",
+      "q1": "Thời gian dùng thử miễn phí là bao lâu?",
+      "a1": "14 ngày, không cần thẻ tín dụng. Toàn quyền truy cập vào tất cả các tính năng.",
+      "q2": "Tôi có thể hủy bất cứ lúc nào không?",
+      "a2": "Đúng. Hủy bỏ bất cứ lúc nào. Không có hợp đồng hoặc cam kết dài hạn.",
+      "q3": "Những phương thức thanh toán nào bạn chấp nhận?",
+      "a3": "Chúng tôi chấp nhận tất cả các thẻ tín dụng, ACH và chuyển khoản ngân hàng chính cho các gói doanh nghiệp.",
+      "q4": "Dữ liệu của tôi có an toàn không?",
+      "a4": "Đúng. Mã hóa cấp doanh nghiệp, tuân thủ SOC 2, sẵn sàng GDPR. Dữ liệu của bạn được bảo vệ ở mọi cấp độ.",
+      "q5": "Bạn có cung cấp đào tạo?",
+      "a5": "Đúng. Tài nguyên tự phục vụ cho tất cả các gói, cùng với chương trình đào tạo dành riêng cho khách hàng Doanh nghiệp.",
+      "q6": "Tôi có thể nhập dữ liệu hiện có của mình không?",
+      "a6": "Đúng. Chúng tôi cung cấp các công cụ nhập CSV và có thể hỗ trợ di chuyển dữ liệu tùy chỉnh cho các gói Doanh nghiệp."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Sẵn sàng để chuyển đổi quy trình sản xuất của bạn?",
+      "subtitle": "Tham gia cùng hàng ngàn chuyên gia sản xuất bằng ATLVS",
+      "ctaPrimary": "Bắt đầu dùng thử miễn phí",
+      "ctaSecondary": "Lên lịch trình diễn",
+      "trustIndicators": "Không cần thẻ tín dụng • Dùng thử miễn phí 14 ngày • Hủy bất cứ lúc nào",
+      "primary": "Bắt đầu dùng thử miễn phí",
+      "secondary": "Lên lịch trình diễn",
+      "noCard": "Không cần thẻ tín dụng"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
+      "tagline": "Hệ thống quản lý dự án dành cho các nhóm sản xuất có kinh nghiệm",
+      "productTitle": "Sản phẩm",
+      "companyTitle": "Công ty",
+      "resourcesTitle": "Tài nguyên",
+      "legalTitle": "Hợp pháp",
+      "product": "Sản phẩm",
+      "features": "Đặc trưng",
+      "pricing": "Định giá",
+      "demo": "Thử nghiệm",
+      "integrations": "Tích hợp",
+      "docs": "Tài liệu",
+      "apiReference": "Tham khảo API",
+      "changelog": "Nhật ký thay đổi",
+      "caseStudies": "Nghiên cứu điển hình",
+      "templates": "Mẫu",
+      "company": "Công ty",
+      "aboutUs": "Về chúng tôi",
       "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "careers": "Nghề nghiệp",
+      "contact": "Liên hệ",
+      "press": "Nhấn",
+      "partners": "Đối tác",
+      "customers": "Khách hàng",
+      "events": "Sự kiện",
+      "legal": "Hợp pháp",
+      "privacy": "Chính sách bảo mật",
+      "terms": "Điều khoản dịch vụ",
+      "security": "Bảo vệ",
+      "support": "Ủng hộ",
+      "helpCenter": "Trung tâm trợ giúp",
+      "community": "Cộng đồng",
+      "status": "Trạng thái hệ thống",
+      "roiCalculator": "Công cụ tính ROI",
+      "copyright": "© 2025 ATLVS. Mọi quyền được bảo lưu."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Tích hợp với các công cụ yêu thích của bạn",
+      "subtitle": "Kết nối ATLVS với các công cụ bạn đã sử dụng",
+      "comingSoon": "Sắp có thêm nhiều tích hợp"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "Giải pháp quản lý sản xuất chuyên nghiệp",
+          "headlineHighlight": "Dành cho nhóm trải nghiệm",
+          "subheadline": "Quản lý toàn diện dự án, lực lượng lao động, tài sản và tài chính từ một nền tảng tập trung. Được thiết kế cho các chuyên gia mang lại trải nghiệm đặc biệt.",
+          "supportingCopy": "Từ các lễ hội đến các sự kiện của công ty và những trải nghiệm phong phú—ATLVS cung cấp cấu trúc và khả năng giám sát cần thiết để quản lý sản xuất thành công.",
+          "ctaPrimary": "Bắt đầu dùng thử miễn phí",
+          "ctaSecondary": "Yêu cầu trình diễn",
+          "trustIndicators": "Không cần thẻ tín dụng • Dùng thử 14 ngày • Hủy bất cứ lúc nào",
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+        },
+        "trustBar": {
+          "trustedBy": "Được các chuyên gia sản xuất trên toàn thế giới tin cậy"
+        },
+        "problem": {
+          "title": "Thử thách quản lý sản xuất",
+          "subtitle": "Sự thiếu hiệu quả trong toàn ngành",
+          "pain1Title": "Hệ thống phân mảnh",
+          "pain1Description": "Các nhóm sử dụng nhiều nền tảng bị ngắt kết nối bao gồm bảng tính, email và các công cụ quản lý dự án khác nhau",
+          "pain2Title": "Mất thông tin",
+          "pain2Description": "Các chi tiết quan trọng của dự án bị mất trong quá trình chuyển đổi và chuyển giao nhóm",
+          "pain3Title": "Vượt ngân sách",
+          "pain3Description": "Nếu không có sự giám sát tài chính phù hợp, chi phí sẽ vượt quá dự toán",
+          "pain4Title": "Sự cố truyền thông",
+          "pain4Description": "Các nhà cung cấp, thành viên phi hành đoàn và các bên liên quan gặp khó khăn trong việc phối hợp"
+        },
+        "solution": {
+          "title": "Nền tảng toàn diện. Kiểm soát hoàn toàn.",
+          "subtitle": "Quản lý sản xuất tích hợp",
+          "feature1Title": "Nền tảng tập trung",
+          "feature1Description": "Tất cả các dự án, nhân sự và tài nguyên được quản lý từ một địa điểm",
+          "feature2Title": "Cập nhật theo thời gian thực",
+          "feature2Description": "Đồng bộ hóa tức thì đảm bảo tất cả thành viên trong nhóm có thông tin cập nhật",
+          "feature3Title": "Giám sát tài chính",
+          "feature3Description": "Theo dõi ngân sách, chi phí và hóa đơn một cách chính xác và chính xác",
+          "feature4Title": "Quản lý nhà cung cấp",
+          "feature4Description": "Duy trì các mối quan hệ chuyên nghiệp đồng thời đảm bảo sự giám sát phù hợp"
+        },
+        "howItWorks": {
+          "title": "Quy trình thực hiện",
+          "subtitle": "Thiết lập và triển khai hiệu quả",
+          "step1Title": "Thành lập tổ chức của bạn",
+          "step1Description": "Định cấu hình cơ cấu tổ chức và tham gia nhóm của bạn",
+          "step2Title": "Xác định dự án của bạn",
+          "step2Description": "Thiết lập sản phẩm, kích hoạt và không gian làm việc",
+          "step3Title": "Chỉ định vai trò và trách nhiệm",
+          "step3Description": "Cung cấp mức độ truy cập phù hợp và trách nhiệm giải trình rõ ràng",
+          "step4Title": "Thực hiện & Giám sát",
+          "step4Description": "Theo dõi tiến độ, quản lý ngân sách, mang lại kết quả vượt trội"
+        },
+        "testimonials": {
+          "title": "Được các chuyên gia sản xuất trên toàn thế giới tin cậy",
+          "subtitle": "Kết quả đã được chứng minh từ các nhà lãnh đạo ngành",
+          "testimonial1Quote": "ATLVS đã được chứng minh là một giải pháp tuyệt vời để quản lý hoạt động lễ hội của chúng tôi. Mọi thứ đều được tổ chức tốt và nhóm của chúng tôi duy trì sự phối hợp phù hợp.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Giám đốc sản xuất, Lễ hội âm nhạc lớn",
+          "testimonial2Quote": "Hệ thống kiểm soát truy cập dựa trên vai trò cung cấp chính xác những gì chúng tôi cần cho cơ cấu tổ chức của mình. Cuối cùng, quản lý quyền truy cập và bảo mật thích hợp cho các nhóm sản xuất.",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Phó Giám đốc Điều hành, Công ty Sự kiện Trực tiếp",
+          "testimonial3Quote": "Chúng tôi đã giảm bội chi ngân sách tới 40% trong quý đầu tiên. Khả năng hiển thị và theo dõi tài chính thực sự ấn tượng.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "Giám đốc tài chính, Cơ quan tổ chức sự kiện doanh nghiệp"
+        },
+        "pricing": {
+          "title": "Cơ cấu giá chuyên nghiệp"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "Quản lý sản xuất hiệu quả",
+          "headlineHighlight": "Không có BS",
+          "subheadline": "Quản lý dự án, đội ngũ, tài sản và ngân sách từ một nơi. Được xây dựng cho những người thực sự làm việc.",
+          "supportingCopy": "Lễ hội, sự kiện của công ty, hoạt động hấp dẫn—ATLVS xử lý nó một cách dễ dàng.",
+          "ctaPrimary": "Bắt đầu miễn phí",
+          "ctaSecondary": "Xem cách nó hoạt động",
+          "trustIndicators": "Không cần thẻ tín dụng • Dùng thử 14 ngày • Hủy bất cứ lúc nào",
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+        },
+        "trustBar": {
+          "trustedBy": "Được sử dụng bởi các nhóm sản xuất, những người hoàn thành công việc"
+        },
+        "problem": {
+          "title": "Sự lộn xộn trong sản xuất",
+          "subtitle": "Cùng một câu chuyện, ngày khác",
+          "pain1Title": "Công cụ hỗn loạn",
+          "pain1Description": "Bảng tính, Slack, email, Google Docs ngẫu nhiên—quy trình làm việc của bạn nằm rải rác khắp nơi",
+          "pain2Title": "Thiếu thông tin",
+          "pain2Description": "Các tập tin biến mất. Ai đó đã gửi nó... ở đâu đó. Chúc may mắn tìm thấy nó",
+          "pain3Title": "Tăng ngân sách",
+          "pain3Description": "Chi phí đè nặng lên bạn. Vào thời điểm bạn bắt được nó, bạn đã vượt quá ngân sách",
+          "pain4Title": "Sự cố truyền thông",
+          "pain4Description": "Nhà cung cấp bỏ lỡ thông tin cập nhật, nhóm làm việc với thông tin cũ, các bên liên quan liên tục đặt những câu hỏi giống nhau"
+        },
+        "solution": {
+          "title": "Một nền tảng. Thực tế hoạt động.",
+          "subtitle": "Mọi thứ nên ở đúng nơi",
+          "feature1Title": "Hệ thống hợp nhất",
+          "feature1Description": "Dự án, con người, tài nguyên—tất cả ở cùng một nơi và thực sự có ý nghĩa",
+          "feature2Title": "Cập nhật theo thời gian thực",
+          "feature2Description": "Những thay đổi xảy ra ngay lập tức. Mọi người đều nhìn thấy điều giống nhau",
+          "feature3Title": "Theo dõi ngân sách",
+          "feature3Description": "Theo dõi từng đô la. Không có bất ngờ, không có lời bào chữa",
+          "feature4Title": "Điều phối nhà cung cấp",
+          "feature4Description": "Luôn cập nhật thông tin cho đối tác mà không mất quyền kiểm soát"
+        },
+        "howItWorks": {
+          "title": "Nó hoạt động như thế nào",
+          "subtitle": "Hãy đứng dậy và chạy thật nhanh",
+          "step1Title": "Thiết lập tổ chức của bạn",
+          "step1Description": "Xây dựng cấu trúc của bạn, thêm nhóm của bạn",
+          "step2Title": "Tạo dự án của bạn",
+          "step2Description": "Lập bản đồ sản xuất và không gian làm việc",
+          "step3Title": "Chỉ định vai trò",
+          "step3Description": "Cung cấp cho mọi người quyền truy cập phù hợp, không có gì hơn",
+          "step4Title": "Hoàn thành công việc",
+          "step4Description": "Theo dõi tiến độ, quản lý ngân sách, giao hàng đúng hẹn"
+        },
+        "testimonials": {
+          "title": "Đội thực sự, kết quả thực sự",
+          "subtitle": "Không có tiếp thị nói",
+          "testimonial1Quote": "ATLVS đã khắc phục sự hỗn loạn trong lễ hội của chúng tôi. Mọi thứ đều ở một nơi, mọi người đều biết chuyện gì đang xảy ra. Cuối cùng.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Giám đốc sản xuất, Lễ hội âm nhạc lớn",
+          "testimonial2Quote": "Hệ thống cấp phép chính xác là những gì chúng tôi cần. Không còn những cơn ác mộng truy cập.",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Phó Giám đốc Điều hành, Công ty Sự kiện Trực tiếp",
+          "testimonial3Quote": "Cắt giảm ngân sách vượt 40% trong quý đầu tiên Việc theo dõi thực sự hoạt động.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "Giám đốc tài chính, Cơ quan tổ chức sự kiện doanh nghiệp"
+        },
+        "pricing": {
+          "title": "Định giá đơn giản"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "Quản lý sản xuất thực sự hiệu quả",
+          "headlineHighlight": "Dành cho nhóm trải nghiệm",
+          "subheadline": "Điều hướng các dự án, đội ngũ, tài sản và ngân sách của bạn từ một trung tâm chỉ huy duy nhất. Được xây dựng cho những người tạo ra những trải nghiệm khó quên.",
+          "supportingCopy": "Cho dù bạn đang sản xuất các lễ hội, sự kiện của công ty hay các hoạt động kích hoạt phong phú—ATLVS sẽ lập biểu đồ từ ý tưởng đến kết thúc.",
+          "ctaPrimary": "Bắt đầu miễn phí ngay hôm nay",
+          "ctaSecondary": "Xem nó trong hành động",
+          "trustIndicators": "Không cần thẻ tín dụng • Dùng thử 14 ngày • Hủy bất cứ lúc nào",
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+        },
+        "trustBar": {
+          "trustedBy": "Được các đội sản xuất trên toàn thế giới tin cậy"
+        },
+        "problem": {
+          "title": "Vấn đề hỗn loạn sản xuất",
+          "subtitle": "Bạn biết khoan",
+          "pain1Title": "Quá tải công cụ",
+          "pain1Description": "Bảng tính, Slack, email, một tài liệu Google Doc mà không ai có thể tìm thấy—quy trình làm việc của bạn nằm rải rác trên hàng chục nền tảng",
+          "pain2Title": "Thông tin hố đen",
+          "pain2Description": "Các chi tiết quan trọng sẽ biến mất trong quá trình bàn giao. Chắc chắn ai đó đã gửi tập tin đó... ở đâu đó",
+          "pain3Title": "Bất ngờ về ngân sách",
+          "pain3Description": "Chi phí leo lên trong bóng tối. Đến lúc bạn nhận ra thì bạn đã kết thúc rồi",
+          "pain4Title": "Truyền thông trôi dạt",
+          "pain4Description": "Nhà cung cấp bỏ lỡ thông tin cập nhật, nhóm xử lý thông tin cũ, các bên liên quan đặt câu hỏi giống nhau hai lần"
+        },
+        "solution": {
+          "title": "Một nền tảng. Không hỗn loạn.",
+          "subtitle": "Mọi thứ đều ở đúng vị trí của nó",
+          "feature1Title": "Trung tâm chỉ huy thống nhất",
+          "feature1Description": "Các dự án, con người và nguồn lực đều đồng hành cùng nhau",
+          "feature2Title": "Đồng bộ hóa thời gian thực",
+          "feature2Description": "Cập nhật chảy ngay lập tức. Mọi người đều làm việc trên cùng một biểu đồ",
+          "feature3Title": "Radar ngân sách",
+          "feature3Description": "Theo dõi từng đô la trong thời gian thực. Không có bất ngờ, không có vượt quá",
+          "feature4Title": "Điều phối nhà cung cấp",
+          "feature4Description": "Giữ liên lạc với các đối tác bên ngoài mà không từ bỏ con tàu"
+        },
+        "howItWorks": {
+          "title": "Nó hoạt động như thế nào",
+          "subtitle": "Ra khơi trong vài phút, không phải vài tháng",
+          "step1Title": "Ra mắt tổ chức của bạn",
+          "step1Description": "Thiết lập cấu trúc của bạn và đưa phi hành đoàn của bạn lên tàu",
+          "step2Title": "Lập biểu đồ cho dự án của bạn",
+          "step2Description": "Lập bản đồ sản xuất, kích hoạt và không gian làm việc",
+          "step3Title": "Chỉ định vai trò và nhiệm vụ",
+          "step3Description": "Cung cấp cho mọi người quyền truy cập phù hợp và trách nhiệm rõ ràng",
+          "step4Title": "Điều hướng & Phân phối",
+          "step4Description": "Theo dõi tiến độ, quản lý ngân sách, thực hiện hoàn hảo"
+        },
+        "testimonials": {
+          "title": "Được các nhóm sản xuất trên toàn thế giới tin cậy",
+          "subtitle": "Câu chuyện có thật từ những nhà sản xuất thực sự",
+          "testimonial1Quote": "ATLVS đã thay đổi cách chúng tôi quản lý lễ hội. Mọi thứ ở một nơi, mọi người trên cùng một trang. Cuối cùng.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Giám đốc sản xuất, Lễ hội âm nhạc lớn",
+          "testimonial2Quote": "Hệ thống RBAC hoàn hảo cho cấu trúc tổ chức phức tạp của chúng tôi. Kiểm soát truy cập thích hợp cho sản xuất? Mang tính cách mạng.",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Phó Giám đốc Điều hành, Công ty Sự kiện Trực tiếp",
+          "testimonial3Quote": "Chúng tôi đã cắt giảm 40% bội chi ngân sách trong quý đầu tiên. Khả năng hiển thị tài chính có thể thay đổi cuộc chơi một cách hợp pháp.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "Giám đốc tài chính, Cơ quan tổ chức sự kiện doanh nghiệp"
+        },
+        "pricing": {
+          "title": "Định giá minh bạch và có quy mô"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "Quản lý sản xuất tạo ra sự khác biệt",
+          "headlineHighlight": "Dành cho người tạo sự kiện",
+          "subheadline": "Điều hành các dự án, đội ngũ, thiết bị và ngân sách của bạn từ một ứng dụng. Dành cho những người thực sự tạo ra trải nghiệm.",
+          "supportingCopy": "Lễ hội, hoạt động kích hoạt thương hiệu, sự kiện hấp dẫn—ATLVS giúp mọi thứ được tổ chức từ ý tưởng đến thực thi.",
+          "ctaPrimary": "Bắt đầu miễn phí",
+          "ctaSecondary": "Kiểm tra nó",
+          "trustIndicators": "Không cần thẻ tín dụng • Dùng thử miễn phí • Hủy bất cứ khi nào",
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+        },
+        "trustBar": {
+          "trustedBy": "Được sử dụng bởi các đội sản xuất ở khắp mọi nơi"
+        },
+        "problem": {
+          "title": "Quá trình sản xuất AF lộn xộn",
+          "subtitle": "Tất cả chúng ta đã ở đó",
+          "pain1Title": "Quá nhiều ứng dụng",
+          "pain1Description": "Bảng tính, Slack, email, Google Doc ngẫu nhiên—mọi thứ ở khắp mọi nơi và thật hỗn loạn",
+          "pain2Title": "Tập tin bị thiếu",
+          "pain2Description": "Ai đó đã gửi tập tin đó... ở đâu đó. Bây giờ không ai có thể tìm thấy nó. Cổ điển.",
+          "pain3Title": "Ngân sách đi Brr",
+          "pain3Description": "Chi phí tiếp tục tăng lên. Vào thời điểm bạn nhận ra, bạn đã vượt quá ngân sách",
+          "pain4Title": "Độ trễ giao tiếp 💬",
+          "pain4Description": "Các thành viên trong nhóm bỏ lỡ các cập nhật và làm việc với thông tin cũ"
+        },
+        "solution": {
+          "title": "Một nền tảng. Kiểm soát tổng thể. 🎯",
+          "subtitle": "Mọi thứ ở một nơi",
+          "feature1Title": "Trung tâm chỉ huy 🎮",
+          "feature1Description": "Tất cả các dự án, nhóm và tài nguyên của bạn trong một trung tâm",
+          "feature2Title": "Đồng bộ trực tiếp ⚡",
+          "feature2Description": "Cập nhật diễn ra ngay lập tức. Mọi người luôn kết nối",
+          "feature3Title": "Trình theo dõi ngân sách 💰",
+          "feature3Description": "Xem từng đô la trong thời gian thực. Không có gì ngạc nhiên",
+          "feature4Title": "Phối hợp nhóm 🤝",
+          "feature4Description": "Giữ cho mọi người được cập nhật và trên cùng một trang"
+        },
+        "howItWorks": {
+          "title": "Nó hoạt động như thế nào",
+          "subtitle": "Bắt đầu trong vài phút theo đúng nghĩa đen",
+          "step1Title": "Thiết lập tổ chức của bạn",
+          "step1Description": "Xây dựng cấu trúc nhóm của bạn và thêm mọi người",
+          "step2Title": "Tạo dự án",
+          "step2Description": "Vạch ra các sự kiện và sản phẩm của bạn",
+          "step3Title": "Chỉ định vai trò",
+          "step3Description": "Cung cấp cho mọi người quyền phù hợp",
+          "step4Title": "Gửi nó",
+          "step4Description": "Theo dõi mọi thứ, quản lý ngân sách, thực hiện hoàn hảo"
+        },
+        "testimonials": {
+          "title": "Các nhóm thực sự sử dụng ATLVS",
+          "subtitle": "Phản hồi thực tế từ những người thực tế",
+          "testimonial1Quote": "ATLVS là OP để quản lý lễ hội. Mọi thứ đều được tổ chức, mọi người đều được đồng bộ hóa. 10/10 muốn giới thiệu.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Giám đốc sản xuất, Lễ hội âm nhạc lớn",
+          "testimonial2Quote": "Hệ thống cấp phép đang cháy. Cuối cùng đã có quyền kiểm soát truy cập thích hợp cho nhóm của chúng tôi.",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Phó Giám đốc Điều hành, Công ty Sự kiện Trực tiếp",
+          "testimonial3Quote": "Chúng tôi đã cắt giảm 40% các vấn đề về ngân sách trong quý đầu tiên. Việc theo dõi tiền thật tuyệt vời.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "Giám đốc tài chính, Cơ quan tổ chức sự kiện doanh nghiệp"
+        },
+        "pricing": {
+          "title": "Giá cả khác nhau"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "Nâng cấp trò chơi sản xuất của bạn 🎮",
+          "headlineHighlight": "Dành cho người tạo sự kiện",
+          "subheadline": "Quản lý dự án, nhóm, thiết bị và tiền từ một siêu ứng dụng ✨ Được xây dựng dành cho những người sáng tạo tạo ra trải nghiệm tuyệt vời 🚀",
+          "supportingCopy": "Lễ hội, sự kiện, hoạt động—ATLVS giúp mọi thứ được ngăn nắp từ đầu đến cuối 🎯",
+          "ctaPrimary": "Bắt đầu miễn phí 🚀",
+          "ctaSecondary": "Xem bản trình diễn 👀",
+          "trustIndicators": "Không cần thẻ • Dùng thử miễn phí • Hủy bất cứ lúc nào ✌️",
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+        },
+        "trustBar": {
+          "trustedBy": "Được sử dụng bởi các nhóm sản xuất trên toàn thế giới 🌍"
+        },
+        "problem": {
+          "title": "Quá trình sản xuất có thể hỗn loạn 😅",
+          "subtitle": "Nghe có vẻ quen thuộc?",
+          "pain1Title": "Quá tải ứng dụng 📱",
+          "pain1Description": "Quá nhiều ứng dụng, quá nhiều sự hỗn loạn. Mọi thứ đều rải rác và khó tìm 🤯",
+          "pain2Title": "Tập tin bị mất 📂",
+          "pain2Description": "Các tập tin biến mất vào khoảng trống. Ai đó đã gửi nó... ở đâu đó... chúc may mắn! 🔍",
+          "pain3Title": "Bất ngờ về ngân sách 💸",
+          "pain3Description": "Tiền cứ thế biến mất. Đến lúc bạn nhận ra thì bạn đã vượt quá ngân sách rồi 😬",
+          "pain4Title": "Sự nhầm lẫn của đội 🤷",
+          "pain4Description": "Mọi người bỏ lỡ thông tin cập nhật, làm việc với thông tin cũ, hỏi những câu hỏi tương tự"
+        },
+        "solution": {
+          "title": "Một ứng dụng. Kiểm soát hoàn toàn. 💪",
+          "subtitle": "Mọi thứ bạn cần ở một nơi",
+          "feature1Title": "Trung tâm chỉ huy 🎮",
+          "feature1Description": "Tất cả các dự án, nhóm và thiết bị trong một bảng điều khiển",
+          "feature2Title": "Đồng bộ tức thì ⚡",
+          "feature2Description": "Cập nhật diễn ra trong thời gian thực. Mọi người luôn kết nối",
+          "feature3Title": "Trình theo dõi tiền 💰",
+          "feature3Description": "Xem từng đô la. Không có bất ngờ, không có căng thẳng",
+          "feature4Title": "Hợp tác nhóm 🤝",
+          "feature4Description": "Luôn cập nhật mọi người và làm việc cùng nhau"
+        },
+        "howItWorks": {
+          "title": "Nó hoạt động như thế nào ⚙️",
+          "subtitle": "Bắt đầu siêu nhanh",
+          "step1Title": "Xây dựng đội ngũ của bạn 👥",
+          "step1Description": "Thiết lập tổ chức của bạn và thêm nhóm của bạn",
+          "step2Title": "Tạo dự án 📋",
+          "step2Description": "Lập bản đồ tất cả các sự kiện và sản phẩm của bạn",
+          "step3Title": "Đặt quyền 🔐",
+          "step3Description": "Cung cấp cho mọi người cấp độ truy cập phù hợp",
+          "step4Title": "Ra mắt và giành chiến thắng 🏆",
+          "step4Description": "Theo dõi tiến độ, quản lý tiền, thực hiện hoàn hảo"
+        },
+        "testimonials": {
+          "title": "Các đội yêu thích ATLVS 💙",
+          "subtitle": "Đánh giá thực tế từ người dùng thực tế",
+          "testimonial1Quote": "ATLVS thực sự hoàn hảo cho các lễ hội. Mọi thứ đều được tổ chức, mọi người đều được đồng bộ hóa. 100/10! 🔥",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Giám đốc sản xuất, Lễ hội âm nhạc lớn",
+          "testimonial2Quote": "Hệ thống cấp phép là nụ hôn của đầu bếp 👌 Cuối cùng là kiểm soát quyền truy cập thích hợp!",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Phó Giám đốc Điều hành, Công ty Sự kiện Trực tiếp",
+          "testimonial3Quote": "Chúng tôi đã cắt giảm 40% vấn đề ngân sách trong quý đầu tiên. Việc theo dõi thật điên rồ! 🎯",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "Giám đốc tài chính, Cơ quan tổ chức sự kiện doanh nghiệp"
+        },
+        "pricing": {
+          "title": "Giá cả thực sự hợp lý ✨"
+        }
+      }
     }
   }
 }

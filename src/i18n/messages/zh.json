@@ -316,333 +316,934 @@
   "marketing": {
     "nav": {
       "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "solutions": "解决方案",
+      "features": "特征",
+      "pricing": "定价",
+      "docs": "文档",
+      "blog": "博客",
+      "company": "公司",
+      "signIn": "登入",
+      "startFree": "免费开始",
+      "toggleMenu": "切换菜单"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "行业解决方案",
+        "subtitle": "为每种类型的现场娱乐制作专门构建的工作流程"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "音乐会和巡演",
+        "description": "简化全球巡演运营中的路线、预算、物流和工作人员管理——从小型场馆运营到竞技场规模的制作。"
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "音乐艺术节",
+        "description": "集中处理多天、多阶段活动的工作流程——将生产、人才、供应商和合规性统一在一个指挥系统下。"
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "沉浸式体验活动",
+        "description": "设计和运营互动世界、装置和品牌体验，从创意开发到现场执行，具有全面的可视性。"
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "戏剧和现场制作",
+        "description": "管理舞台和表演娱乐的创意团队、技术计划和制作资产。"
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "电影、电视和媒体",
+        "description": "使用为跨部门同步和财务透明度而构建的工具来协调预制作、现场操作和总结报告。"
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "品牌激活和营销活动",
+        "description": "执行弹出窗口、发布和活动驱动的体验 - 将创意、物流和投资回报率跟踪集成到一个智能仪表板中。"
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "企业及私人活动",
+        "description": "通过简化的规划和供应商协调，为内部会议、务虚会和高调聚会提供完美的体验。"
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "贸易展览和会议",
+        "description": "通过端到端项目管理和实时分析简化展位搭建、参展商物流和赞助商关系。"
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "健康、保健和生活方式",
+        "description": "优化静修、健身活动和健康体验的规划、人员配备和宾客流程——细节和氛围最重要。"
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "切实有效的生产管理",
+      "headlineHighlight": "对于经验丰富的团队",
+      "subheadline": "从单一指挥中心管理您的项目、人员、资产和预算。专为创造难忘体验的人们而打造。",
+      "supportingCopy": "无论您是在制作节日、企业活动还是沉浸式活动，ATLVS 都能绘制出从概念到谢幕的整个过程。",
+      "ctaPrimary": "今天开始免费",
+      "ctaSecondary": "查看实际效果",
+      "trustIndicators": "没有信用卡 • 14 天试用期 • 随时取消",
+      "platformScreenshot": "平台截图"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "受到全球制作团队的信赖"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "生产混乱问题",
+      "subtitle": "你知道演习",
+      "pain1Title": "工具过载",
+      "pain1Description": "电子表格、Slack、电子邮件、无人能找到的 Google 文档 — 您的工作流程分散在十几个平台上",
+      "pain2Title": "信息黑洞",
+      "pain2Description": "关键细节在交接期间消失。肯定有人将该文件发送到...某处",
+      "pain3Title": "预算惊喜",
+      "pain3Description": "成本在阴影中悄然攀升。当你注意到的时候，你已经结束了",
+      "pain4Title": "沟通漂移",
+      "pain4Description": "供应商错过更新，工作人员处理旧信息，利益相关者两次提出相同的问题"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "一个平台。零混沌。",
+      "subtitle": "一切都在它正确的地方",
+      "feature1Title": "统一指挥中心",
+      "feature1Description": "项目、人员和资源齐头并进",
+      "feature2Title": "实时同步",
+      "feature2Description": "更新立即流动。每个人都在同一个图表上工作",
+      "feature3Title": "预算雷达",
+      "feature3Description": "实时追踪每一美元。没有意外，没有超支",
+      "feature4Title": "供应商协调",
+      "feature4Description": "让外部合作伙伴了解情况而不放弃船舶"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "它是如何运作的",
+      "subtitle": "只需几分钟而不是几个月即可起航",
+      "step1Title": "启动您的组织",
+      "step1Description": "建立你的结构并让你的船员上船",
+      "step2Title": "绘制您的项目图表",
+      "step2Description": "规划生产、激活和工作空间",
+      "step3Title": "分配角色和任务",
+      "step3Description": "给予每个人正确的访问权限和明确的责任",
+      "step4Title": "导航和交付",
+      "step4Description": "监控进度、管理预算、完美执行"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "大规模生产所需的一切",
+      "subtitle": "用于完整生产控制的六个集成中心",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "生产中心",
+        "description": "管理项目、事件、人员、资产、位置和文件",
+        "feature1": "项目及活动策划",
+        "feature2": "团队及船员管理",
+        "feature3": "资产跟踪和库存",
+        "feature4": "地点和场地协调"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "商业中心",
+        "description": "处理公司、工作、采购和财务",
+        "feature1": "供应商和公司管理",
+        "feature2": "职位发布和招聘",
+        "feature3": "采购与采购",
+        "feature4": "预算和费用跟踪"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "网络集线器",
+        "description": "建立社区、市场和资源库",
+        "feature1": "社区和讨论",
+        "feature2": "市场和服务",
+        "feature3": "资源库",
+        "feature4": "行业联系"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "自动化中心",
+        "description": "自动化工作流程、触发器和重复任务",
+        "feature1": "自定义工作流程自动化",
+        "feature2": "事件驱动的触发器",
+        "feature3": "计划任务执行",
+        "feature4": "集成管道"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "情报中心",
+        "description": "生成报告、分析和见解",
+        "feature1": "定制报告",
+        "feature2": "实时分析",
+        "feature3": "预测性见解",
+        "feature4": "绩效指标"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "系统中心",
+        "description": "配置管理员、设置和用户配置文件",
+        "feature1": "用户和角色管理",
+        "feature2": "系统配置",
+        "feature3": "型材定制",
+        "feature4": "安全和权限"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "大规模生产所需的一切",
+        "subtitle": "专为体验式制作团队设计的六个集成中心"
+      },
+      "production": {
+        "title": "生产中心",
+        "description": "管理项目、事件、人员、资产、位置和文件",
+        "projects": {
+          "title": "项目",
+          "description": "组织和跟踪从概念到罢工的制作"
+        },
+        "events": {
+          "title": "活动",
+          "description": "安排、协调和管理每个细节和时间表"
+        },
+        "people": {
+          "title": "人们",
+          "description": "管理船员分配、可用性和日程安排"
+        },
+        "assets": {
+          "title": "资产",
+          "description": "跟踪整个生产过程中的设备、库存和资源"
+        },
+        "locations": {
+          "title": "地点",
+          "description": "协调场馆、地点和设施物流"
+        },
+        "files": {
+          "title": "文件",
+          "description": "安全地集中文档、媒体和生产文件"
+        }
+      },
+      "business": {
+        "title": "商业中心",
+        "description": "处理公司、工作、采购和财务",
+        "companies": {
+          "title": "公司",
+          "description": "管理供应商关系、客户和合作伙伴"
+        },
+        "jobs": {
+          "title": "工作机会",
+          "description": "发布职位、跟踪申请、管理招聘"
+        },
+        "procurement": {
+          "title": "采购",
+          "description": "简化采购、供应商选择和合同"
+        },
+        "invoices": {
+          "title": "发票",
+          "description": "通过自动提醒创建、发送和跟踪发票"
+        },
+        "expenses": {
+          "title": "开支",
+          "description": "通过收据捕获记录和分类费用"
+        },
+        "budgets": {
+          "title": "预算",
+          "description": "通过实时跟踪来计划、监控和控制预算"
+        }
+      },
+      "network": {
+        "title": "网络集线器",
+        "description": "建立社区、市场和资源库",
+        "community": {
+          "title": "社区",
+          "description": "与行业专家联系、分享知识、协作"
+        },
+        "marketplace": {
+          "title": "市场",
+          "description": "发现服务、雇用人才、寻找生产资源"
+        },
+        "resources": {
+          "title": "资源",
+          "description": "访问指南、模板和最佳实践"
+        }
+      },
+      "automations": {
+        "title": "自动化中心",
+        "description": "自动化工作流程、触发器和重复任务",
+        "workflows": {
+          "title": "工作流程",
+          "description": "为重复流程构建自定义自动化序列"
+        },
+        "triggers": {
+          "title": "触发器",
+          "description": "设置自动响应的事件驱动操作"
+        },
+        "scheduled": {
+          "title": "计划任务",
+          "description": "通过灵活的调度自动执行重复任务"
+        }
+      },
+      "intelligence": {
+        "title": "情报中心",
+        "description": "生成报告、分析和见解",
+        "reports": {
+          "title": "报告",
+          "description": "创建具有灵活可视化和导出功能的自定义报告"
+        },
+        "analytics": {
+          "title": "分析",
+          "description": "跟踪 KPI、监控趋势、衡量绩效"
+        },
+        "insights": {
+          "title": "见解",
+          "description": "获取人工智能驱动的建议和预测分析"
+        }
+      },
+      "system": {
+        "title": "系统中心",
+        "description": "配置管理员、设置和用户配置文件",
+        "admin": {
+          "title": "行政",
+          "description": "管理组织设置、安全性和配置"
+        },
+        "settings": {
+          "title": "设置",
+          "description": "自定义首选项、集成和平台行为"
+        },
+        "profiles": {
+          "title": "用户资料",
+          "description": "管理团队资料、角色和访问权限"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "专为您的团队中的每个角色而打造",
+      "subtitle": "11个品牌角色，权限精准",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "传奇",
+        "description": "平台超级管理员 - 完全控制所有组织"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "幻影",
+        "level": "最高权力机构",
+        "title": "幻影",
+        "description": "完整的系统管理和无限制的访问。塑造平台方向并维护企业监督。"
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "飞行员",
+        "level": "战略领导力",
+        "title": "飞行员",
+        "description": "跨项目可见性、资源分配和执行分析。大规模实施高水平生产战略。"
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "角斗士",
+        "level": "项目领导",
+        "title": "角斗士",
+        "description": "完整的项目创建和编辑权限。以完全控制的方式引导制作从概念到完成。"
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "航海家",
+        "level": "协调",
+        "title": "航海家",
+        "description": "项目协调、任务分配和团队指导。通过复杂的工作流程绘制路线图。"
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "偏差者",
+        "level": "执行",
+        "title": "偏差者",
+        "description": "在既定框架内集中完成任务。按照指定的职责交付高质量的工作。"
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "袭击者",
+        "level": "学习与观察",
+        "title": "袭击者",
+        "description": "仅查看学习和成长的权限。非常适合新人培养技能。"
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "小贩",
+        "level": "范围交付",
+        "title": "小贩",
+        "description": "外部服务提供商的有针对性的访问。上传可交付成果并履行合同工作。"
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "游客",
+        "level": "能见度有限",
+        "title": "游客",
+        "description": "外部利益相关者的临时只读访问权限。在不中断工作流程的情况下随时了解情况。"
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "伙伴",
+        "level": "战略合作",
+        "title": "伙伴",
+        "description": "为值得信赖的外部合作者进行深度集成。双向数据共享和联合工作流程管理。"
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "大使",
+        "level": "社区冠军",
+        "title": "大使",
+        "description": "代表 ATLVS、支持用户并促进协作。举办活动、创建内容、发展生态系统。"
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "企业级安全",
+      "subtitle": "您的数据在各个层面都受到保护",
+      "feature1Title": "行级安全性",
+      "feature1Description": "801 RLS 策略确保用户只看到他们应该看到的内容",
+      "feature2Title": "基于角色的访问",
+      "feature2Description": "11 个品牌角色，具有 45 多个精细权限",
+      "feature3Title": "加密存储",
+      "feature3Description": "所有数据在静态和传输过程中均经过加密",
+      "feature4Title": "审计日志记录",
+      "feature4Description": "所有系统活动的完整审计跟踪",
+      "feature5Title": "符合 SOC 2 标准",
+      "feature5Description": "企业级安全标准",
+      "feature6Title": "GDPR 就绪",
+      "feature6Description": "完全遵守数据隐私法规"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
-      "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "title": "受到全球生产团队的信赖",
+      "subtitle": "来自真实制作人的真实故事",
+      "testimonial1Quote": "ATLVS 改变了我们管理节日的方式。一切都集中在一个地方，每个人都在同一页面上。最后。",
+      "testimonial1Author": "萨拉·陈",
+      "testimonial1Role": "大型音乐节制作总监",
+      "testimonial1Title": "大型音乐节制作总监",
+      "testimonial2Quote": "RBAC 系统非常适合我们复杂的组织结构。适当的生产访问控制？革命性的。",
+      "testimonial2Author": "马库斯·罗德里格斯",
+      "testimonial2Role": "现场活动公司运营副总裁",
+      "testimonial2Title": "现场活动公司运营副总裁",
+      "testimonial3Quote": "第一季度我们将预算超支削减了 40%。财务可见性确实正在改变游戏规则。",
+      "testimonial3Author": "詹妮弗·帕克",
+      "testimonial3Role": "企业活动代理机构首席财务官",
+      "testimonial3Title": "企业活动代理机构首席财务官",
+      "jamesCookQuote": "管理三艘科学家船，他们都认为自己是主角？ ATLVS 会让每个人保持一致并真正合作，而不是争夺荣誉。",
+      "jamesCookAuthor": "詹姆斯·库克船长",
+      "jamesCookRole": "英国皇家海军探险家（1728-1779）",
+      "zhengYiSaoQuote": "我把盗版变成了财富 500 强公司，谈判了自己的特赦，并富裕地退休了。 ATLVS 适合那些了解非常规运营仍然需要可靠管理的人们。",
+      "zhengYiSaoAuthor": "郑一嫂",
+      "zhengYiSaoRole": "中国海盗领袖（1775-1844）",
+      "captainAhabQuote": "跨越大洋追逐一个特定目标而不考虑大局？ ATLVS 让您专注于实际的商业计划，而不仅仅是个人目标。",
+      "captainAhabAuthor": "亚哈船长",
+      "captainAhabRole": "佩阔德捕鲸船长",
+      "graceOMalleyQuote": "与伊丽莎白女王平等谈判。 ATLVS 帮助您在每次会议时准备好数据并增强信心。",
+      "graceOMalleyAuthor": "格蕾丝·奥马利“Gráinne Mhaol”",
+      "graceOMalleyRole": "爱尔兰海盗女王和酋长（约 1530-1603 年）",
+      "sinbadQuote": "就这样我不断遭遇海难，但还是又出去了？这只是糟糕的计划。 ATLVS 提供了我的决策明确需要的结构。",
+      "sinbadAuthor": "水手辛巴达",
+      "sinbadRole": "传奇商船水手、天方夜谭",
+      "longJohnSilverQuote": "如果猫患有坏血病和信任问题，那么管理海盗实际上就是在放养猫。 ATLVS 的利益相关者管理使每个人保持一致，即使他们相互密谋。",
+      "longJohnSilverAuthor": "长约翰·西尔弗",
+      "longJohnSilverRole": "金银岛军需官和海盗厨师",
+      "horatioHornblowerQuote": "老实说，在精神完全崩溃的情况下与法国人作战对我来说非常符合品牌。 ATLVS 将所有战术内容组织起来，以便您可以专注于实际任务。",
+      "horatioHornblowerAuthor": "霍雷肖·霍恩布洛尔",
+      "horatioHornblowerRole": "皇家海军军官（C.S. 福雷斯特小说）",
+      "captainNemoQuote": "在潜艇里当隐士其实是非常内向的，但即使是我也需要团队协调。即使您独自工作，ATLVS 也能发挥作用。",
+      "captainNemoAuthor": "尼莫船长",
+      "captainNemoRole": "指挥官，鹦鹉螺号（海底两万里）",
+      "odysseusQuote": "因为我不断做出可疑的选择，所以失去了每一位船员。 ATLVS 会说“我们不需要了解警报器的含义”，说实话？有效的。",
+      "odysseusAuthor": "奥德修斯/尤利西斯",
+      "odysseusRole": "伊萨卡国王，希腊英雄（奥德赛）",
+      "blackbeardQuote": "当您手动协调时，用四艘船封锁整个港口的效果会有所不同。 ATLVS 会让我成为海上行动效率最高的海盗。",
+      "blackbeardAuthor": "爱德华·蒂奇船长“黑胡子”",
+      "blackbeardRole": "海盗指挥官（约 1680-1718）",
+      "captainMarvelQuote": "失踪了 30 年，处理太空紧急情况而没有报到。ATLVS 的通讯工具可以帮助我不至于让我关心的每个人都成为幽灵。",
+      "captainMarvelAuthor": "惊奇队长 / 卡罗尔·丹弗斯",
+      "captainMarvelRole": "空军飞行员和宇宙英雄 (MCU)",
+      "captainJanewayQuote": "为了拯救我的船员，我多次违反了时间最高指令，但我从未违反过我的项目时间表。即使道德变得复杂，ATLVS 也会保持优先顺序清晰。",
+      "captainJanewayAuthor": "凯瑟琳·珍妮薇船长",
+      "captainJanewayRole": "星际舰队船长，航海者号航空母舰（星际迷航：航海者号）",
+      "moanaQuote": "毛伊岛本应是我的导师，但大部分时间都在情感上无法发挥作用。当您的团队遇到困难时，ATLVS 会跟踪可交付成果。",
+      "moanaAuthor": "莫阿娜",
+      "moanaRole": "寻路者和岛长（迪士尼莫阿娜）",
+      "captainJackSparrowQuote": "在没有人知道他们是否受雇或只是在混乱中管理团队的情况下？ ATLVS 提供了我的整个氛围所没有的清晰度。",
+      "captainJackSparrowAuthor": "杰克·斯帕罗船长",
+      "captainJackSparrowRole": "海盗船长、黑珍珠号（加勒比海盗）",
+      "popeyeQuote": "我的整个性格就是“固执地拒绝提前计划”。 ATLVS 是房间里的成年人，我显然需要但不会承认。",
+      "popeyeAuthor": "大力水手水手男",
+      "popeyeRole": "水手与奥利弗·欧伊尔的保护者（卡通人物）",
+      "captainPicardQuote": "带领多元化的船员应对首次接触情况和外交危机？当赌注是巨大的时，ATLVS 让每个人都保持一致。",
+      "captainPicardAuthor": "让-吕克·皮卡德船长",
+      "captainPicardRole": "企业号星际舰队舰长（星际迷航：TNG）",
+      "captainSiskoQuote": "指挥一个既是军事基地、又是贸易中心、又是难民中心的基地？当每个利益相关者都有不同的优先级时，ATLVS 可以帮助您管理复杂性。",
+      "captainSiskoAuthor": "本杰明·西斯科队长",
+      "captainSiskoRole": "深空九号星际舰队指挥官（星际迷航：DS9）"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "透明定价",
+      "subtitle": "从个体承包商到企业生产者",
+      "monthly": "每月",
+      "annually": "每年",
+      "save20": "节省 20%",
+      "community": {
+        "name": "社区",
+        "price": "自由的",
+        "period": "永远",
+        "description": "非常适合入门",
+        "feature1": "掠夺者角色访问",
+        "feature2": "基本任务管理",
+        "feature3": "社区支持",
+        "cta": "免费开始使用"
+      },
+      "pro": {
+        "name": "专业版",
+        "price": "12 美元",
+        "period": "每月",
+        "annualPrice": "10 美元/月（按年计费）",
+        "description": "对于独立承包商",
+        "feature1": "偏差者和袭击者角色",
+        "feature2": "高级任务管理",
+        "feature3": "优先支持",
+        "cta": "开始免费试用"
+      },
+      "team": {
+        "name": "团队",
+        "badge": "最受欢迎",
+        "price": "120 美元",
+        "period": "每月",
+        "annualPrice": "$100/月（按年计费）",
+        "description": "适合中小型团队（2-10 个席位）",
+        "feature1": "所有专业版功能",
+        "feature2": "供应商管理",
+        "feature3": "团队协作",
+        "cta": "开始免费试用"
+      },
       "starter": {
-        "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "name": "起动机",
+        "price": "29 美元",
+        "period": "每个用户/月",
+        "description": "非常适合自由职业者和小型团队",
+        "feature1": "最多 5 个用户",
+        "feature2": "10 个活跃项目",
+        "feature3": "基本报告",
+        "feature4": "电子邮件支持",
+        "feature5": "10GB存储空间",
+        "cta": "开始免费试用"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "专业的",
+        "price": "79 美元",
+        "period": "每个用户/月",
+        "description": "对于成长型生产企业",
+        "feature1": "最多 25 个用户",
+        "feature2": "无限项目",
+        "feature3": "高级分析",
+        "feature4": "优先支持",
+        "feature5": "100GB存储空间",
+        "feature6": "自定义角色",
+        "feature7": "API访问",
+        "cta": "开始免费试用",
+        "popular": "最受欢迎"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "企业",
+        "price": "风俗",
+        "period": "联系销售人员",
+        "annualPrice": "$1000/月（按年计费）",
+        "description": "对于大型组织和机构",
+        "feature1": "无限用户",
+        "feature2": "无限项目",
+        "feature3": "定制集成",
+        "feature4": "专注支持",
+        "feature5": "无限存储",
+        "feature6": "单点登录和SAML",
+        "feature7": "SLA保证",
+        "feature8": "定制培训",
+        "cta": "联系销售人员"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "常见问题解答",
+      "subtitle": "你需要知道的一切",
+      "question1": "免费试用多长时间？",
+      "answer1": "14 天，无需信用卡。完全访问所有功能。",
+      "question2": "我可以随时取消吗？",
+      "answer2": "是的。随时取消。没有长期合同或承诺。",
+      "question3": "你们接受什么付款方式？",
+      "answer3": "我们接受企业计划的所有主要信用卡、ACH 和电汇。",
+      "question4": "我的数据安全吗？",
+      "answer4": "是的。企业级加密、符合 SOC 2 标准、GDPR 就绪。您的数据在各个层面都受到保护。",
+      "question5": "你们提供培训吗？",
+      "answer5": "是的。适用于所有计划的自助服务资源，以及针对企业客户的专门培训。",
+      "question6": "我可以导入现有数据吗？",
+      "answer6": "是的。我们提供 CSV 导入工具，并可以协助企业计划的自定义数据迁移。",
+      "q1": "免费试用多长时间？",
+      "a1": "14 天，无需信用卡。完全访问所有功能。",
+      "q2": "我可以随时取消吗？",
+      "a2": "是的。随时取消。没有长期合同或承诺。",
+      "q3": "你们接受什么付款方式？",
+      "a3": "我们接受企业计划的所有主要信用卡、ACH 和电汇。",
+      "q4": "我的数据安全吗？",
+      "a4": "是的。企业级加密、符合 SOC 2 标准、GDPR 就绪。您的数据在各个层面都受到保护。",
+      "q5": "你们提供培训吗？",
+      "a5": "是的。适用于所有计划的自助服务资源，以及针对企业客户的专门培训。",
+      "q6": "我可以导入现有数据吗？",
+      "a6": "是的。我们提供 CSV 导入工具，并可以协助企业计划的自定义数据迁移。"
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "准备好转变您的生产工作流程了吗？",
+      "subtitle": "使用 ATLVS 加入数千名制作专业人士的行列",
+      "ctaPrimary": "开始免费试用",
+      "ctaSecondary": "安排演示",
+      "trustIndicators": "无需信用卡 • 14 天免费试用 • 随时取消",
+      "primary": "开始免费试用",
+      "secondary": "安排演示",
+      "noCard": "无需信用卡"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "tagline": "体验式制作团队的项目管理系统",
+      "productTitle": "产品",
+      "companyTitle": "公司",
+      "resourcesTitle": "资源",
+      "legalTitle": "合法的",
+      "product": "产品",
+      "features": "特征",
+      "pricing": "定价",
+      "demo": "演示",
+      "integrations": "集成",
+      "docs": "文档",
+      "apiReference": "API参考",
+      "changelog": "变更日志",
+      "caseStudies": "案例研究",
+      "templates": "模板",
+      "company": "公司",
+      "aboutUs": "关于我们",
+      "blog": "博客",
+      "careers": "职业机会",
+      "contact": "接触",
+      "press": "按",
+      "partners": "合作伙伴",
+      "customers": "顾客",
+      "events": "活动",
+      "legal": "合法的",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "security": "安全",
+      "support": "支持",
+      "helpCenter": "帮助中心",
+      "community": "社区",
+      "status": "系统状态",
+      "roiCalculator": "投资回报率计算器",
+      "copyright": "© 2025 ATLVS。版权所有。"
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "与您最喜欢的工具集成",
+      "subtitle": "将 ATLVS 与您已使用的工具连接起来",
+      "comingSoon": "更多集成即将推出"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "专业生产管理解决方案",
+          "headlineHighlight": "对于经验丰富的团队",
+          "subheadline": "通过集中平台进行全面的项目、劳动力、资产和财务管理。专为提供卓越体验的专业人士而设计。",
+          "supportingCopy": "从节日到企业活动和沉浸式体验，ATLVS 提供了成功的制作管理所需的结构和监督。",
+          "ctaPrimary": "开始免费试用",
+          "ctaSecondary": "请求演示",
+          "trustIndicators": "无需信用卡 • 14 天试用期 • 随时取消",
+          "platformScreenshot": "平台截图"
+        },
+        "trustBar": {
+          "trustedBy": "受到全球生产专业人士的信赖"
+        },
+        "problem": {
+          "title": "生产管理挑战",
+          "subtitle": "全行业效率低下",
+          "pain1Title": "分散的系统",
+          "pain1Description": "团队利用多个互不相连的平台，包括电子表格、电子邮件和各种项目管理工具",
+          "pain2Title": "信息丢失",
+          "pain2Description": "关键项目细节在过渡和团队交接期间丢失",
+          "pain3Title": "预算超支",
+          "pain3Description": "如果没有适当的财务监督，成本就会超出预期",
+          "pain4Title": "沟通障碍",
+          "pain4Description": "供应商、船员和利益相关者遇到协调困难"
+        },
+        "solution": {
+          "title": "综合平台。完全控制。",
+          "subtitle": "一体化生产管理",
+          "feature1Title": "集中平台",
+          "feature1Description": "所有项目、人员和资源均在一个位置进行管理",
+          "feature2Title": "实时更新",
+          "feature2Description": "即时同步确保所有团队成员都掌握最新信息",
+          "feature3Title": "财务监督",
+          "feature3Description": "精确、准确地跟踪预算、费用和发票",
+          "feature4Title": "供应商管理",
+          "feature4Description": "维持专业关系，同时确保适当的监督"
+        },
+        "howItWorks": {
+          "title": "实施流程",
+          "subtitle": "高效的设置和部署",
+          "step1Title": "建立你的组织",
+          "step1Description": "配置您的组织结构并加入您的团队",
+          "step2Title": "定义您的项目",
+          "step2Description": "建立生产、激活和工作空间",
+          "step3Title": "分配角色和职责",
+          "step3Description": "提供适当的访问级别和明确的责任",
+          "step4Title": "执行和监控",
+          "step4Description": "跟踪进度、管理预算、交付卓越成果"
+        },
+        "testimonials": {
+          "title": "受到全球制作专业人士的信赖",
+          "subtitle": "来自行业领导者的验证结果",
+          "testimonial1Quote": "事实证明，ATLVS 是管理我们节日运营的出色解决方案。一切都井井有条，我们的团队保持着适当的协调。",
+          "testimonial1Author": "萨拉·陈",
+          "testimonial1Role": "大型音乐节制作总监",
+          "testimonial2Quote": "基于角色的访问控制系统恰好提供了我们组织结构所需的内容。最后，为生产团队提供适当的安全和访问管理。",
+          "testimonial2Author": "马库斯·罗德里格斯",
+          "testimonial2Role": "现场活动公司运营副总裁",
+          "testimonial3Quote": "第一季度我们将预算超支减少了 40%。财务可视性和跟踪能力确实令人印象深刻。",
+          "testimonial3Author": "詹妮弗·帕克",
+          "testimonial3Role": "企业活动代理机构首席财务官"
+        },
+        "pricing": {
+          "title": "专业的定价结构"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "有效的生产管理",
+          "headlineHighlight": "无BS",
+          "subheadline": "从一处管理项目、人员、资产和预算。专为真正从事这项工作的人而设计。",
+          "supportingCopy": "节日、企业活动、沉浸式活动——ATLVS 都能轻松应对。",
+          "ctaPrimary": "免费开始",
+          "ctaSecondary": "看看它是如何运作的",
+          "trustIndicators": "没有信用卡 • 14 天试用期 • 随时取消",
+          "platformScreenshot": "平台截图"
+        },
+        "trustBar": {
+          "trustedBy": "由完成工作的生产团队使用"
+        },
+        "problem": {
+          "title": "生产混乱",
+          "subtitle": "相同的故事，不同的日子",
+          "pain1Title": "工具混乱",
+          "pain1Description": "电子表格、Slack、电子邮件、随机 Google 文档 — 您的工作流程分散在各处",
+          "pain2Title": "缺少信息",
+          "pain2Description": "文件消失。有人将其发送到...某个地方。祝你好运找到它",
+          "pain3Title": "预算蠕变",
+          "pain3Description": "成本悄悄地降临到你身上。当你抓住它的时候，你已经超出了预算",
+          "pain4Title": "通讯故障",
+          "pain4Description": "供应商错过更新，工作人员使用旧信息，利益相关者不断问同样的问题"
+        },
+        "solution": {
+          "title": "一个平台。实际上有效。",
+          "subtitle": "一切都在它应该在的地方",
+          "feature1Title": "统一系统",
+          "feature1Description": "项目、人员、资源——全部集中在一个真正有意义的地方",
+          "feature2Title": "实时更新",
+          "feature2Description": "改变立即发生。每个人都看到同样的事情",
+          "feature3Title": "预算跟踪",
+          "feature3Description": "跟踪每一美元。没有惊喜，没有借口",
+          "feature4Title": "供应商协调",
+          "feature4Description": "让合作伙伴了解情况而不会失去控制"
+        },
+        "howItWorks": {
+          "title": "它是如何运作的",
+          "subtitle": "快速启动并运行",
+          "step1Title": "设置您的组织",
+          "step1Description": "建立你的结构，添加你的团队",
+          "step2Title": "创建您的项目",
+          "step2Description": "规划生产和工作空间",
+          "step3Title": "分配角色",
+          "step3Description": "给人们正确的访问权限，仅此而已",
+          "step4Title": "完成它",
+          "step4Description": "跟踪进度、管理预算、按时发货"
+        },
+        "testimonials": {
+          "title": "真正的团队，真正的结果",
+          "subtitle": "不讲营销",
+          "testimonial1Quote": "ATLVS 解决了我们节日期间的混乱局面。一切都集中在一处，每个人都知道发生了什么。最后。",
+          "testimonial1Author": "萨拉·陈",
+          "testimonial1Role": "大型音乐节制作总监",
+          "testimonial2Quote": "权限系统正是我们所需要的。不再有访问噩梦。",
+          "testimonial2Author": "马库斯·罗德里格斯",
+          "testimonial2Role": "现场活动公司运营副总裁",
+          "testimonial3Quote": "第一季度预算削减超支 40%。跟踪确实有效。",
+          "testimonial3Author": "詹妮弗·帕克",
+          "testimonial3Role": "企业活动代理机构首席财务官"
+        },
+        "pricing": {
+          "title": "直接定价"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "切实有效的生产管理",
+          "headlineHighlight": "对于经验丰富的团队",
+          "subheadline": "从单一指挥中心管理您的项目、人员、资产和预算。专为创造难忘体验的人们而打造。",
+          "supportingCopy": "无论您是在制作节日、企业活动还是沉浸式活动，ATLVS 都能绘制出从概念到谢幕的整个过程。",
+          "ctaPrimary": "今天开始免费",
+          "ctaSecondary": "查看实际效果",
+          "trustIndicators": "没有信用卡 • 14 天试用期 • 随时取消",
+          "platformScreenshot": "平台截图"
+        },
+        "trustBar": {
+          "trustedBy": "受到全球制作团队的信赖"
+        },
+        "problem": {
+          "title": "生产混乱问题",
+          "subtitle": "你知道演习",
+          "pain1Title": "工具过载",
+          "pain1Description": "电子表格、Slack、电子邮件、无人能找到的 Google 文档 — 您的工作流程分散在十几个平台上",
+          "pain2Title": "信息黑洞",
+          "pain2Description": "关键细节在交接期间消失。肯定有人将该文件发送到...某处",
+          "pain3Title": "预算惊喜",
+          "pain3Description": "成本在阴影中悄然攀升。当你注意到的时候，你已经结束了",
+          "pain4Title": "沟通漂移",
+          "pain4Description": "供应商错过更新，工作人员处理旧信息，利益相关者两次提出相同的问题"
+        },
+        "solution": {
+          "title": "一个平台。零混沌。",
+          "subtitle": "一切都在它正确的地方",
+          "feature1Title": "统一指挥中心",
+          "feature1Description": "项目、人员和资源齐头并进",
+          "feature2Title": "实时同步",
+          "feature2Description": "更新立即流动。每个人都在同一个图表上工作",
+          "feature3Title": "预算雷达",
+          "feature3Description": "实时追踪每一美元。没有意外，没有超支",
+          "feature4Title": "供应商协调",
+          "feature4Description": "让外部合作伙伴了解情况而不放弃船舶"
+        },
+        "howItWorks": {
+          "title": "它是如何运作的",
+          "subtitle": "只需几分钟而不是几个月即可起航",
+          "step1Title": "启动您的组织",
+          "step1Description": "建立你的结构并让你的船员上船",
+          "step2Title": "绘制您的项目图表",
+          "step2Description": "规划生产、激活和工作空间",
+          "step3Title": "分配角色和任务",
+          "step3Description": "给予每个人正确的访问权限和明确的责任",
+          "step4Title": "导航和交付",
+          "step4Description": "监控进度、管理预算、完美执行"
+        },
+        "testimonials": {
+          "title": "受到全球生产团队的信赖",
+          "subtitle": "来自真实制作人的真实故事",
+          "testimonial1Quote": "ATLVS 改变了我们管理节日的方式。一切都集中在一个地方，每个人都在同一页面上。最后。",
+          "testimonial1Author": "萨拉·陈",
+          "testimonial1Role": "大型音乐节制作总监",
+          "testimonial2Quote": "RBAC 系统非常适合我们复杂的组织结构。适当的生产访问控制？革命性的。",
+          "testimonial2Author": "马库斯·罗德里格斯",
+          "testimonial2Role": "现场活动公司运营副总裁",
+          "testimonial3Quote": "第一季度我们将预算超支削减了 40%。财务可见性确实正在改变游戏规则。",
+          "testimonial3Author": "詹妮弗·帕克",
+          "testimonial3Role": "企业活动代理机构首席财务官"
+        },
+        "pricing": {
+          "title": "可扩展的透明定价"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "与众不同的生产管理",
+          "headlineHighlight": "对于活动创作者",
+          "subheadline": "通过一个应用程序运行您的项目、人员、装备和预算。专为真正创造体验的人们而设计。",
+          "supportingCopy": "节日、品牌活动、沉浸式活动——ATLVS 使从创意到执行的一切都井井有条。",
+          "ctaPrimary": "免费开始",
+          "ctaSecondary": "一探究竟",
+          "trustIndicators": "无需信用卡 • 免费试用 • 随时取消",
+          "platformScreenshot": "平台截图"
+        },
+        "trustBar": {
+          "trustedBy": "各地的制作团队都在使用"
+        },
+        "problem": {
+          "title": "AF 制作混乱",
+          "subtitle": "我们都去过那里",
+          "pain1Title": "应用程序太多",
+          "pain1Description": "电子表格、Slack、电子邮件、随机的 Google 文档——一切都无处不在，而且很混乱",
+          "pain2Title": "文件丢失",
+          "pain2Description": "有人将该文件发送到...某个地方。现在没人能找到它。经典的。",
+          "pain3Title": "预算增加",
+          "pain3Description": "成本不断上升。当你注意到的时候，你已经远远超出了预算",
+          "pain4Title": "沟通滞后💬",
+          "pain4Description": "团队成员错过更新并使用旧信息"
+        },
+        "solution": {
+          "title": "一个平台。完全控制。 🎯",
+          "subtitle": "一切都在一处",
+          "feature1Title": "指挥中心🎮",
+          "feature1Description": "您的所有项目、团队和资源都集中在一个中心",
+          "feature2Title": "实时同步⚡",
+          "feature2Description": "更新立即发生。每个人都保持联系",
+          "feature3Title": "预算追踪器💰",
+          "feature3Description": "实时查看每一美元。没有惊喜",
+          "feature4Title": "团队协调🤝",
+          "feature4Description": "让每个人都了解最新情况并保持同步"
+        },
+        "howItWorks": {
+          "title": "它是如何运作的",
+          "subtitle": "只需几分钟即可开始",
+          "step1Title": "设置您的组织",
+          "step1Description": "构建您的团队结构并添加每个人",
+          "step2Title": "创建项目",
+          "step2Description": "规划您的活动和制作",
+          "step3Title": "分配角色",
+          "step3Description": "给予人们正确的权限",
+          "step4Title": "运送它",
+          "step4Description": "跟踪一切、管理预算、完美执行"
+        },
+        "testimonials": {
+          "title": "使用 ATLVS 的真实团队",
+          "subtitle": "来自实际人员的实际反馈",
+          "testimonial1Quote": "ATLVS 是管理节日的 OP。一切都井井有条，每个人都同步。 10/10 会推荐。",
+          "testimonial1Author": "萨拉·陈",
+          "testimonial1Role": "大型音乐节制作总监",
+          "testimonial2Quote": "权限系统很火。终于为我们的团队获得了适当的访问控制。",
+          "testimonial2Author": "马库斯·罗德里格斯",
+          "testimonial2Role": "现场活动公司运营副总裁",
+          "testimonial3Quote": "我们第一季度将预算问题减少了 40%。资金追踪非常惊人。",
+          "testimonial3Author": "詹妮弗·帕克",
+          "testimonial3Role": "企业活动代理机构首席财务官"
+        },
+        "pricing": {
+          "title": "定价不同"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "升级您的制作游戏🎮",
+          "headlineHighlight": "对于活动创作者",
+          "subheadline": "通过一个超级应用程序管理项目、团队、装备和资金 ✨ 专为创造史诗般体验的创作者而打造 🚀",
+          "supportingCopy": "节日、活动、活动——ATLVS 让一切从始至终都井井有条🎯",
+          "ctaPrimary": "免费开始🚀",
+          "ctaSecondary": "查看演示👀",
+          "trustIndicators": "无需卡• 免费试用• 随时取消✌️",
+          "platformScreenshot": "平台截图"
+        },
+        "trustBar": {
+          "trustedBy": "被世界各地的制作团队使用🌍"
+        },
+        "problem": {
+          "title": "生产可能会很混乱😅",
+          "subtitle": "听起来很熟悉吗？",
+          "pain1Title": "应用程序超载📱",
+          "pain1Description": "应用程序太多，混乱不堪。东西都散乱了，很难找🤯",
+          "pain2Title": "丢失的文件📂",
+          "pain2Description": "文件消失在虚空中。有人将其发送...某处...祝你好运！ 🔍",
+          "pain3Title": "预算惊喜💸",
+          "pain3Description": "金钱不断消失。当您注意到时，您已经超出预算了😬",
+          "pain4Title": "团队混乱🤷",
+          "pain4Description": "人们错过更新、使用旧信息、提出同样的问题"
+        },
+        "solution": {
+          "title": "一个应用程序。完全控制。 💪",
+          "subtitle": "您所需的一切都集中在一处",
+          "feature1Title": "指挥中心🎮",
+          "feature1Description": "所有项目、团队和装备都集中在一个仪表板中",
+          "feature2Title": "即时同步⚡",
+          "feature2Description": "更新是实时发生的。每个人都保持联系",
+          "feature3Title": "金钱追踪器💰",
+          "feature3Description": "留意每一块钱。没有惊喜，没有压力",
+          "feature4Title": "团队合作🤝",
+          "feature4Description": "让每个人都了解情况并共同努力"
+        },
+        "howItWorks": {
+          "title": "它是如何运作的⚙️",
+          "subtitle": "上手超级快",
+          "step1Title": "建立你的团队👥",
+          "step1Description": "设置您的组织并添加您的团队",
+          "step2Title": "创建项目📋",
+          "step2Description": "规划出您所有的活动和作品",
+          "step3Title": "设置权限🔐",
+          "step3Description": "为每个人提供正确的访问级别",
+          "step4Title": "启动并赢取🏆",
+          "step4Description": "跟踪进度、管理资金、完美执行"
+        },
+        "testimonials": {
+          "title": "团队热爱 ATLVS 💙",
+          "subtitle": "来自真实用户的真实评论",
+          "testimonial1Quote": "ATLVS 确实非常适合节日。一切都井井有条，每个人都同步。 100/10！ 🔥",
+          "testimonial1Author": "萨拉·陈",
+          "testimonial1Role": "大型音乐节制作总监",
+          "testimonial2Quote": "权限系统是厨师之吻👌终于有了正确的访问控制！",
+          "testimonial2Author": "马库斯·罗德里格斯",
+          "testimonial2Role": "现场活动公司运营副总裁",
+          "testimonial3Quote": "我们第一季度将预算问题削减了 40%。追踪太疯狂了！ 🎯",
+          "testimonial3Author": "詹妮弗·帕克",
+          "testimonial3Role": "企业活动代理机构首席财务官"
+        },
+        "pricing": {
+          "title": "价格其实很公道✨"
+        }
+      }
     }
   }
 }

@@ -402,333 +402,934 @@
   "marketing": {
     "nav": {
       "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "solutions": "الحلول",
+      "features": "سمات",
+      "pricing": "التسعير",
+      "docs": "المستندات",
+      "blog": "مدونة",
+      "company": "شركة",
+      "signIn": "تسجيل الدخول",
+      "startFree": "ابدأ مجانًا",
+      "toggleMenu": "تبديل القائمة"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "الحلول حسب الصناعة",
+        "subtitle": "سير عمل مصمم خصيصًا لكل نوع من أنواع الإنتاج الترفيهي المباشر"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "الحفلات والجولات",
+        "description": "قم بتبسيط التوجيه، وإعداد الميزانية، والخدمات اللوجستية، وإدارة الطاقم عبر عمليات الجولات السياحية العالمية - بدءًا من جولات الأماكن الصغيرة وحتى الإنتاج على نطاق واسع."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "مهرجانات الموسيقى والفن",
+        "description": "قم بمركزية سير العمل للأحداث المتعددة الأيام والمراحل - توحيد الإنتاج والمواهب والموردين والامتثال تحت نظام قيادة واحد."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "أحداث غامرة وتجريبية",
+        "description": "قم بتصميم وتشغيل العوالم والمنشآت والتجارب ذات العلامات التجارية التفاعلية مع رؤية كاملة بدءًا من التطوير الإبداعي وحتى التنفيذ المباشر."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "الإنتاج المسرحي والحيوي",
+        "description": "إدارة الفرق الإبداعية والجداول الفنية وأصول الإنتاج للترفيه القائم على المسرح والأداء."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "السينما والتلفزيون والإعلام",
+        "description": "قم بتنسيق عمليات ما قبل الإنتاج والعمليات المحددة وإعداد التقارير باستخدام أدوات مصممة للمزامنة بين الأقسام والشفافية المالية."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "تفعيل العلامة التجارية والحملات التسويقية",
+        "description": "قم بتنفيذ النوافذ المنبثقة وعمليات الإطلاق والتجارب المستندة إلى الحملات - مع دمج تتبع الإبداع واللوجستيات وعائد الاستثمار في لوحة معلومات ذكية واحدة."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "أحداث الشركات والخاصة",
+        "description": "يمكنك تقديم تجارب لا تشوبها شائبة للاجتماعات الداخلية والخلوات والتجمعات رفيعة المستوى من خلال التخطيط المبسط والتنسيق مع البائعين."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "المعارض التجارية والاتفاقيات",
+        "description": "قم بتبسيط عمليات إنشاء الأكشاك والخدمات اللوجستية للعارضين وعلاقات الرعاية مع إدارة المشروع الشاملة والتحليلات في الوقت الفعلي."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "الصحة والعافية ونمط الحياة",
+        "description": "قم بتحسين البرمجة والتوظيف وتدفق الضيوف للخلوات وفعاليات اللياقة البدنية وتجارب العافية - حيث تكون التفاصيل والأجواء أكثر أهمية."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "إدارة الإنتاج التي تعمل بالفعل",
+      "headlineHighlight": "للفرق التجريبية",
+      "subheadline": "انتقل إلى مشاريعك وطاقمك وأصولك وميزانياتك من مركز قيادة واحد. صُمم للأشخاص الذين يصنعون تجارب لا تُنسى.",
+      "supportingCopy": "سواء كنت تنتج مهرجانات، أو فعاليات للشركات، أو أنشطة تنشيطية غامرة، فإن ALVS ترسم المسار بدءًا من المفهوم وحتى الستار.",
+      "ctaPrimary": "ابدأ مجانًا اليوم",
+      "ctaSecondary": "شاهده عمليًا",
+      "trustIndicators": "لا توجد بطاقة ائتمانية • نسخة تجريبية مدتها 14 يومًا • قم بالإلغاء في أي وقت",
+      "platformScreenshot": "لقطة شاشة للمنصة"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "موثوق به من قبل فرق الإنتاج في جميع أنحاء العالم"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "مشكلة فوضى الإنتاج",
+      "subtitle": "أنت تعرف التدريبات",
+      "pain1Title": "التحميل الزائد للأداة",
+      "pain1Description": "جداول البيانات، وSlack، والبريد الإلكتروني، ومستند Google واحد لا يمكن لأحد العثور عليه - سير العمل الخاص بك منتشر عبر عشرات الأنظمة الأساسية",
+      "pain2Title": "معلومات عن الثقوب السوداء",
+      "pain2Description": "تختفي التفاصيل المهمة أثناء عمليات التسليم. بالتأكيد أرسل شخص ما هذا الملف... في مكان ما",
+      "pain3Title": "مفاجآت الميزانية",
+      "pain3Description": "التكاليف تزحف في الظل. وبحلول الوقت الذي تلاحظ فيه، تكون قد انتهيت بالفعل",
+      "pain4Title": "الانجراف الاتصالات",
+      "pain4Description": "يفتقد البائعون التحديثات، ويعمل الطاقم على المعلومات القديمة، ويطرح أصحاب المصلحة نفس الأسئلة مرتين"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "منصة واحدة. صفر الفوضى.",
+      "subtitle": "كل شيء في مكانه الصحيح",
+      "feature1Title": "مركز القيادة الموحد",
+      "feature1Description": "المشاريع والأشخاص والموارد كلها تبحر في التشكيل",
+      "feature2Title": "مزامنة في الوقت الحقيقي",
+      "feature2Description": "تتدفق التحديثات على الفور. الجميع يعمل من نفس المخطط",
+      "feature3Title": "رادار الميزانية",
+      "feature3Description": "تتبع كل دولار في الوقت الحقيقي. لا مفاجآت ولا تجاوزات",
+      "feature4Title": "تنسيق البائعين",
+      "feature4Description": "أبقِ الشركاء الخارجيين على اطلاع دون التخلي عن السفينة"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "كيف يعمل",
+      "subtitle": "أبحر في دقائق، وليس أشهر",
+      "step1Title": "إطلاق مؤسستك",
+      "step1Description": "قم بإعداد الهيكل الخاص بك وإحضار طاقمك على متنه",
+      "step2Title": "رسم مشاريعك",
+      "step2Description": "رسم خريطة للإنتاج والتنشيط ومساحات العمل",
+      "step3Title": "تعيين الأدوار والمهام",
+      "step3Description": "امنح الجميع حق الوصول الصحيح والمسؤوليات الواضحة",
+      "step4Title": "التنقل والتسليم",
+      "step4Description": "مراقبة التقدم، وإدارة الميزانيات، وتنفيذ لا تشوبه شائبة"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "كل ما تحتاجه لإنتاجه على نطاق واسع",
+      "subtitle": "ستة محاور متكاملة للتحكم الكامل في الإنتاج",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "محور الإنتاج",
+        "description": "إدارة المشاريع والأحداث والأشخاص والأصول والمواقع والملفات",
+        "feature1": "تخطيط المشاريع والفعاليات",
+        "feature2": "إدارة الفريق والطاقم",
+        "feature3": "تتبع الأصول والمخزون",
+        "feature4": "تنسيق الموقع والمكان"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "مركز الأعمال",
+        "description": "التعامل مع الشركات والوظائف والمشتريات والمالية",
+        "feature1": "إدارة البائعين والشركات",
+        "feature2": "إعلانات الوظائف والتوظيف",
+        "feature3": "المشتريات والشراء",
+        "feature4": "تتبع الميزانية والنفقات"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "مركز الشبكة",
+        "description": "بناء المجتمع والسوق ومكتبة الموارد",
+        "feature1": "المجتمع والمناقشات",
+        "feature2": "السوق والخدمات",
+        "feature3": "مكتبة الموارد",
+        "feature4": "اتصالات الصناعة"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "مركز الأتمتة",
+        "description": "أتمتة سير العمل والمشغلات والمهام المتكررة",
+        "feature1": "أتمتة سير العمل المخصص",
+        "feature2": "مشغلات يحركها الحدث",
+        "feature3": "تنفيذ المهمة المجدولة",
+        "feature4": "خطوط أنابيب التكامل"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "مركز الاستخبارات",
+        "description": "إنشاء التقارير والتحليلات والرؤى",
+        "feature1": "التقارير المخصصة",
+        "feature2": "تحليلات في الوقت الحقيقي",
+        "feature3": "رؤى تنبؤية",
+        "feature4": "مقاييس الأداء"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "مركز النظام",
+        "description": "تكوين المسؤول والإعدادات وملفات تعريف المستخدمين",
+        "feature1": "إدارة المستخدم والأدوار",
+        "feature2": "تكوين النظام",
+        "feature3": "تخصيص الملف الشخصي",
+        "feature4": "الأمن والأذونات"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "كل ما تحتاجه لإنتاجه على نطاق واسع",
+        "subtitle": "ستة محاور متكاملة مصممة لفرق الإنتاج التجريبية"
+      },
+      "production": {
+        "title": "محور الإنتاج",
+        "description": "إدارة المشاريع والأحداث والأشخاص والأصول والمواقع والملفات",
+        "projects": {
+          "title": "المشاريع",
+          "description": "تنظيم وتتبع الإنتاج من المفهوم إلى الإضراب"
+        },
+        "events": {
+          "title": "الأحداث",
+          "description": "جدولة وتنسيق وإدارة كل التفاصيل والجدول الزمني"
+        },
+        "people": {
+          "title": "الناس",
+          "description": "إدارة مهام الطاقم والتوافر والجدولة"
+        },
+        "assets": {
+          "title": "أصول",
+          "description": "تتبع المعدات والمخزون والموارد عبر عمليات الإنتاج"
+        },
+        "locations": {
+          "title": "المواقع",
+          "description": "تنسيق الأماكن والمواقع والخدمات اللوجستية للمنشأة"
+        },
+        "files": {
+          "title": "ملفات",
+          "description": "مركزية المستندات والوسائط وملفات الإنتاج بشكل آمن"
+        }
+      },
+      "business": {
+        "title": "مركز الأعمال",
+        "description": "التعامل مع الشركات والوظائف والمشتريات والمالية",
+        "companies": {
+          "title": "شركات",
+          "description": "إدارة علاقات البائعين والعملاء والشركاء"
+        },
+        "jobs": {
+          "title": "وظائف",
+          "description": "نشر الوظائف، وتتبع الطلبات، وإدارة التوظيف"
+        },
+        "procurement": {
+          "title": "شراء",
+          "description": "تبسيط عمليات الشراء واختيار البائعين والعقود"
+        },
+        "invoices": {
+          "title": "الفواتير",
+          "description": "قم بإنشاء الفواتير وإرسالها وتتبعها باستخدام التذكيرات الآلية"
+        },
+        "expenses": {
+          "title": "نفقات",
+          "description": "تسجيل وتصنيف النفقات مع التقاط الإيصال"
+        },
+        "budgets": {
+          "title": "الميزانيات",
+          "description": "تخطيط الميزانيات ومراقبتها والتحكم فيها من خلال التتبع في الوقت الفعلي"
+        }
+      },
+      "network": {
+        "title": "مركز الشبكة",
+        "description": "بناء المجتمع والسوق ومكتبة الموارد",
+        "community": {
+          "title": "مجتمع",
+          "description": "تواصل مع محترفي الصناعة وشارك المعرفة والتعاون"
+        },
+        "marketplace": {
+          "title": "السوق",
+          "description": "اكتشف الخدمات، وقم بتوظيف المواهب، وابحث عن موارد الإنتاج"
+        },
+        "resources": {
+          "title": "موارد",
+          "description": "الوصول إلى الأدلة والقوالب وأفضل الممارسات"
+        }
+      },
+      "automations": {
+        "title": "مركز الأتمتة",
+        "description": "أتمتة سير العمل والمشغلات والمهام المتكررة",
+        "workflows": {
+          "title": "سير العمل",
+          "description": "إنشاء تسلسلات أتمتة مخصصة للعمليات المتكررة"
+        },
+        "triggers": {
+          "title": "المشغلات",
+          "description": "قم بإعداد الإجراءات المستندة إلى الأحداث والتي تستجيب تلقائيًا"
+        },
+        "scheduled": {
+          "title": "المهام المجدولة",
+          "description": "أتمتة المهام المتكررة مع جدولة مرنة"
+        }
+      },
+      "intelligence": {
+        "title": "مركز الاستخبارات",
+        "description": "إنشاء التقارير والتحليلات والرؤى",
+        "reports": {
+          "title": "التقارير",
+          "description": "إنشاء تقارير مخصصة ذات تصور مرن وتصدير"
+        },
+        "analytics": {
+          "title": "التحليلات",
+          "description": "تتبع مؤشرات الأداء الرئيسية، ومراقبة الاتجاهات، وقياس الأداء"
+        },
+        "insights": {
+          "title": "رؤى",
+          "description": "احصل على توصيات مدعومة بالذكاء الاصطناعي والتحليلات التنبؤية"
+        }
+      },
+      "system": {
+        "title": "مركز النظام",
+        "description": "تكوين المسؤول والإعدادات وملفات تعريف المستخدمين",
+        "admin": {
+          "title": "مسؤل",
+          "description": "إدارة إعدادات المؤسسة والأمان والتكوين"
+        },
+        "settings": {
+          "title": "إعدادات",
+          "description": "تخصيص التفضيلات وعمليات التكامل وسلوك النظام الأساسي"
+        },
+        "profiles": {
+          "title": "ملفات تعريف المستخدمين",
+          "description": "إدارة ملفات تعريف الفريق والأدوار وأذونات الوصول"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "مُصممة لتناسب كل دور في طاقمك",
+      "subtitle": "11 دورًا مميزًا بأذونات دقيقة",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "أسطورة",
+        "description": "المشرف الفائق للمنصة - تحكم كامل في جميع المؤسسات"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "فانتوم",
+        "level": "الهيئة العليا",
+        "title": "فانتوم",
+        "description": "إدارة النظام كاملة والوصول غير المقيد. تشكيل اتجاه النظام الأساسي والحفاظ على مراقبة المؤسسة."
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "طيار",
+        "level": "القيادة الاستراتيجية",
+        "title": "طيار",
+        "description": "الرؤية عبر المشاريع، وتخصيص الموارد، والتحليلات التنفيذية. التنقل في استراتيجية الإنتاج رفيعة المستوى على نطاق واسع."
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "المصارع",
+        "level": "قيادة المشروع",
+        "title": "المصارع",
+        "description": "الحقوق الكاملة لإنشاء المشروع وتحريره. قيادة الإنتاج من المفهوم إلى الاكتمال مع التحكم الكامل."
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "الملاح",
+        "level": "تنسيق",
+        "title": "الملاح",
+        "description": "تنسيق المشروع وتعيين المهام وتوجيه الفريق. قم بتخطيط الدورة من خلال مسارات العمل المعقدة."
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "المنحرف",
+        "level": "تنفيذ",
+        "title": "المنحرف",
+        "description": "التركيز على إكمال المهام ضمن الأطر المعمول بها. تقديم عمل جيد في المسؤوليات المعينة."
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "رايدر",
+        "level": "التعلم والملاحظة",
+        "title": "رايدر",
+        "description": "إمكانية الوصول للعرض فقط للتعلم والنمو. مثالية للوافدين الجدد لبناء مهاراتهم."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "بائع",
+        "level": "التسليم ضمن النطاق",
+        "title": "بائع",
+        "description": "الوصول المستهدف لمقدمي الخدمات الخارجيين. تحميل التسليمات والوفاء بالعمل المتعاقد عليه."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "زائر",
+        "level": "رؤية محدودة",
+        "title": "زائر",
+        "description": "وصول مؤقت للقراءة فقط لأصحاب المصلحة الخارجيين. ابق على اطلاع دون تعطيل سير العمل."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "شريك",
+        "level": "التعاون الاستراتيجي",
+        "title": "شريك",
+        "description": "التكامل العميق للمتعاونين الخارجيين الموثوق بهم. تبادل البيانات في اتجاهين وإدارة سير العمل المشترك."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "سفير",
+        "level": "أبطال المجتمع",
+        "title": "سفير",
+        "description": "تمثيل ATLVS ودعم المستخدمين وتعزيز التعاون. استضافة الأحداث، وإنشاء المحتوى، وتنمية النظام البيئي."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "أمان على مستوى المؤسسات",
+      "subtitle": "بياناتك محمية على كل المستويات",
+      "feature1Title": "الأمان على مستوى الصف",
+      "feature1Description": "تضمن سياسات 801 RLS أن يرى المستخدمون فقط ما ينبغي لهم رؤيته",
+      "feature2Title": "الوصول القائم على الدور",
+      "feature2Description": "11 دورًا يحمل علامة تجارية مع أكثر من 45 إذنًا تفصيليًا",
+      "feature3Title": "التخزين المشفر",
+      "feature3Description": "جميع البيانات مشفرة أثناء الراحة وأثناء النقل",
+      "feature4Title": "تسجيل التدقيق",
+      "feature4Description": "مسار التدقيق الكامل لجميع أنشطة النظام",
+      "feature5Title": "متوافق مع SOC 2",
+      "feature5Description": "معايير الأمان على مستوى المؤسسات",
+      "feature6Title": "اللائحة العامة لحماية البيانات جاهزة",
+      "feature6Description": "الامتثال الكامل للوائح خصوصية البيانات"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
-      "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "title": "موثوق به من قبل فرق الإنتاج في جميع أنحاء العالم",
+      "subtitle": "قصص حقيقية من منتجين حقيقيين",
+      "testimonial1Quote": "لقد غيرت ATLVS طريقة إدارتنا للمهرجانات. كل شيء في مكان واحد، الجميع في نفس الصفحة. أخيراً.",
+      "testimonial1Author": "سارة تشين",
+      "testimonial1Role": "مدير الإنتاج، مهرجان الموسيقى الكبرى",
+      "testimonial1Title": "مدير الإنتاج، مهرجان الموسيقى الكبرى",
+      "testimonial2Quote": "يعد نظام RBAC مثاليًا لهيكلنا التنظيمي المعقد. التحكم السليم في الوصول للإنتاج؟ ثوري.",
+      "testimonial2Author": "ماركوس رودريجيز",
+      "testimonial2Role": "نائب الرئيس للعمليات، شركة الأحداث الحية",
+      "testimonial2Title": "نائب الرئيس للعمليات، شركة الأحداث الحية",
+      "testimonial3Quote": "لقد خفضنا تجاوزات الميزانية بنسبة 40٪ في الربع الأول. إن الرؤية المالية تغير قواعد اللعبة بشكل شرعي.",
+      "testimonial3Author": "جنيفر بارك",
+      "testimonial3Role": "المدير المالي لوكالة أحداث الشركات",
+      "testimonial3Title": "المدير المالي لوكالة أحداث الشركات",
+      "jamesCookQuote": "إدارة ثلاث سفن من العلماء الذين يعتقدون جميعًا أنهم الشخصية الرئيسية؟ كان من الممكن أن تحافظ ATLVS على توافق الجميع والعمل معًا فعليًا بدلاً من التنافس على الائتمان.",
+      "jamesCookAuthor": "الكابتن جيمس كوك",
+      "jamesCookRole": "مستكشف البحرية الملكية البريطانية (1728-1779)",
+      "zhengYiSaoQuote": "لقد حولت القرصنة إلى إحدى شركات فورتشن 500، وتفاوضت على العفو الخاص بي، وتقاعدت من الأثرياء. ATLVS مخصص للأشخاص الذين يدركون أن العمليات غير التقليدية لا تزال بحاجة إلى إدارة قوية.",
+      "zhengYiSaoAuthor": "تشنغ يي ساو",
+      "zhengYiSaoRole": "زعيم القراصنة الصيني (1775-1844)",
+      "captainAhabQuote": "هل تسعى إلى تحقيق هدف محدد عبر كل المحيطات دون النظر إلى الصورة الأكبر؟ تحافظ ATLVS على تركيزك على خطة العمل الفعلية، وليس فقط الأهداف الشخصية.",
+      "captainAhabAuthor": "كابتن ايهاب",
+      "captainAhabRole": "كابتن صيد الحيتان، بيكود",
+      "graceOMalleyQuote": "تم التفاوض مع الملكة إليزابيث على قدم المساواة. تساعدك ATLVS على حضور كل اجتماع ببياناتك جاهزة وتعزيز ثقتك بنفسك.",
+      "graceOMalleyAuthor": "جريس أومالي \"Gráinne Mhaol\"",
+      "graceOMalleyRole": "ملكة القراصنة الأيرلندية وزعيمة القبيلة (حوالي 1530-1603)",
+      "sinbadQuote": "الطريقة التي ظللت أتحطم بها السفينة ولكني خرجت منها رغم ذلك؟ هذا مجرد تخطيط سيئ. توفر ATLVS البنية التي تحتاجها عملية اتخاذ القرار بشكل واضح.",
+      "sinbadAuthor": "سندباد البحار",
+      "sinbadRole": "بحار التاجر الأسطوري، الليالي العربية",
+      "longJohnSilverQuote": "إدارة القراصنة هي حرفيًا رعي القطط إذا كانت القطط تعاني من مشاكل في داء الاسقربوط والثقة. تحافظ إدارة أصحاب المصلحة في ATLVS على توافق الجميع، حتى عندما يتآمرون ضد بعضهم البعض.",
+      "longJohnSilverAuthor": "لونج جون سيلفر",
+      "longJohnSilverRole": "مسؤول التموين والطباخ القراصنة، جزيرة الكنز",
+      "horatioHornblowerQuote": "إن محاربة الفرنسيين أثناء الإصابة بانهيار عقلي كامل هو بصراحة أمر مهم للغاية بالنسبة لي. تحافظ ATLVS على تنظيم جميع العناصر التكتيكية حتى تتمكن من التركيز على المهمة الفعلية.",
+      "horatioHornblowerAuthor": "هوراشيو هورنبلور",
+      "horatioHornblowerRole": "ضابط البحرية الملكية (روايات سي إس فورستر)",
+      "captainNemoQuote": "كوني ناسكًا في غواصة هو في الواقع نوع من الانطواء، لكن حتى أنا كنت بحاجة إلى التنسيق مع الفريق. تعمل ATLVS حتى عندما تعمل بمفردك.",
+      "captainNemoAuthor": "الكابتن نيمو",
+      "captainNemoRole": "القائد نوتيلوس (عشرون ألف فرسخ تحت البحر)",
+      "odysseusQuote": "لقد فقدت كل فرد من أفراد الطاقم لأنني واصلت اتخاذ خيارات مشكوك فيها. كان من الممكن أن تكون ATLVS مثل \"لسنا بحاجة لمعرفة ما تدور حوله صفارات الإنذار\" وبصراحة؟ صالح.",
+      "odysseusAuthor": "أوديسيوس / يوليسيس",
+      "odysseusRole": "ملك إيثاكا، البطل اليوناني (الأوديسة)",
+      "blackbeardQuote": "يبدو إغلاق ميناء بأكمله بأربع سفن أمرًا مختلفًا عندما تقوم بالتنسيق يدويًا. كان من الممكن أن تجعلني ATLVS القرصان الأكثر كفاءة من الناحية التشغيلية في البحار.",
+      "blackbeardAuthor": "الكابتن إدوارد تيتش \"بلاكبيرد\"",
+      "blackbeardRole": "قائد القراصنة (حوالي 1680-1718)",
+      "captainMarvelQuote": "اختفيت لمدة 30 عامًا أثناء تعاملي مع حالات الطوارئ الفضائية دون تسجيل الوصول. كانت أدوات الاتصال الخاصة بـ ATLVS ستساعدني على عدم شبح كل من أهتم به.",
+      "captainMarvelAuthor": "كابتن مارفل / كارول دانفرز",
+      "captainMarvelRole": "طيار القوة الجوية والبطل الكوني (MCU)",
+      "captainJanewayQuote": "لقد انتهكت التوجيه الرئيسي المؤقت عدة مرات لإنقاذ طاقمي، لكنني لم أنتهك الجداول الزمنية لمشروعي مطلقًا. تحافظ ATLVS على الأولويات واضحة حتى عندما تصبح الأخلاقيات معقدة.",
+      "captainJanewayAuthor": "الكابتن كاثرين جانواي",
+      "captainJanewayRole": "كابتن أسطول النجوم، يو إس إس فوييجر (ستار تريك: فوييجر)",
+      "moanaQuote": "كان من المفترض أن يكون ماوي معلمي ولكنه قضى معظم الوقت غير متاح عاطفياً. تقوم ATLVS بتتبع التسليمات عندما يكون فريقك صعبًا.",
+      "moanaAuthor": "موانا",
+      "moanaRole": "وايفايندر ورئيس الجزيرة (موانا ديزني)",
+      "captainJackSparrowQuote": "إدارة الطاقم عندما لا يعرف أحد حرفيًا ما إذا كانوا موظفين أم أنهم على استعداد للفوضى؟ يوفر ATLVS الوضوح الذي لا يوفره مظهري بالكامل.",
+      "captainJackSparrowAuthor": "الكابتن جاك سبارو",
+      "captainJackSparrowRole": "كابتن القراصنة، اللؤلؤة السوداء (قراصنة الكاريبي)",
+      "popeyeQuote": "شخصيتي بأكملها هي \"ترفض بعناد التخطيط للمستقبل\". ATLVS هو الشخص البالغ الموجود في الغرفة والذي أحتاجه بوضوح ولكنني لن أعترف بذلك.",
+      "popeyeAuthor": "بوباي الرجل البحار",
+      "popeyeRole": "حامي البحار وزيت الزيتون (شخصية كرتونية)",
+      "captainPicardQuote": "هل تقود طاقمًا متنوعًا خلال مواقف الاتصال الأولى والأزمات الدبلوماسية؟ تحافظ ATLVS على توافق الجميع عندما تكون المخاطر مجرية حرفيًا.",
+      "captainPicardAuthor": "الكابتن جان لوك بيكار",
+      "captainPicardRole": "كابتن ستارفليت، يو إس إس إنتربرايز (ستار تريك: TNG)",
+      "captainSiskoQuote": "هل تقود محطة تمثل جزءًا من قاعدة عسكرية ومركزًا تجاريًا وجزءًا من مركز اللاجئين؟ تساعدك ATLVS على إدارة التعقيد عندما يكون لكل صاحب مصلحة أولويات مختلفة.",
+      "captainSiskoAuthor": "الكابتن بنيامين سيسكو",
+      "captainSiskoRole": "قائد أسطول النجوم، الفضاء العميق التاسع (ستار تريك: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "تسعير شفاف",
+      "subtitle": "من المقاولين المنفردين إلى منتجي المؤسسات",
+      "monthly": "شهريا",
+      "annually": "سنويا",
+      "save20": "وفر 20%",
+      "community": {
+        "name": "مجتمع",
+        "price": "حر",
+        "period": "للأبد",
+        "description": "مثالية للبدء",
+        "feature1": "الوصول إلى دور رايدر",
+        "feature2": "إدارة المهام الأساسية",
+        "feature3": "دعم المجتمع",
+        "cta": "ابدأ مجانًا"
+      },
+      "pro": {
+        "name": "برو",
+        "price": "12 دولارًا",
+        "period": "كل شهر",
+        "annualPrice": "10 دولارات شهريًا (يتم إصدار الفاتورة سنويًا)",
+        "description": "للمقاولين المستقلين",
+        "feature1": "أدوار المنحرف والمغير",
+        "feature2": "إدارة المهام المتقدمة",
+        "feature3": "دعم الأولوية",
+        "cta": "ابدأ النسخة التجريبية المجانية"
+      },
+      "team": {
+        "name": "فريق",
+        "badge": "الأكثر شعبية",
+        "price": "120 دولارًا",
+        "period": "كل شهر",
+        "annualPrice": "100 دولار شهريًا (يتم إصدار الفاتورة سنويًا)",
+        "description": "للفرق الصغيرة والمتوسطة (2-10 مقاعد)",
+        "feature1": "جميع ميزات برو",
+        "feature2": "إدارة البائعين",
+        "feature3": "تعاون الفريق",
+        "cta": "ابدأ النسخة التجريبية المجانية"
+      },
       "starter": {
-        "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "name": "بداية",
+        "price": "29 دولارًا",
+        "period": "لكل مستخدم/شهر",
+        "description": "مثالية للعاملين لحسابهم الخاص والفرق الصغيرة",
+        "feature1": "ما يصل إلى 5 مستخدمين",
+        "feature2": "10 مشاريع نشطة",
+        "feature3": "التقارير الأساسية",
+        "feature4": "دعم البريد الإلكتروني",
+        "feature5": "مساحة تخزين 10 جيجابايت",
+        "cta": "ابدأ النسخة التجريبية المجانية"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "احترافي",
+        "price": "79 دولارًا",
+        "period": "لكل مستخدم/شهر",
+        "description": "لشركات الإنتاج المتنامية",
+        "feature1": "ما يصل إلى 25 مستخدمًا",
+        "feature2": "مشاريع غير محدودة",
+        "feature3": "تحليلات متقدمة",
+        "feature4": "دعم الأولوية",
+        "feature5": "مساحة تخزين 100 جيجابايت",
+        "feature6": "الأدوار المخصصة",
+        "feature7": "الوصول إلى واجهة برمجة التطبيقات",
+        "cta": "ابدأ النسخة التجريبية المجانية",
+        "popular": "الأكثر شعبية"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "مَشرُوع",
+        "price": "مخصص",
+        "period": "الاتصال بالمبيعات",
+        "annualPrice": "1000 دولار شهريًا (يتم إصدار الفاتورة سنويًا)",
+        "description": "للمؤسسات والوكالات الكبيرة",
+        "feature1": "عدد غير محدود من المستخدمين",
+        "feature2": "مشاريع غير محدودة",
+        "feature3": "عمليات التكامل المخصصة",
+        "feature4": "دعم مخصص",
+        "feature5": "تخزين غير محدود",
+        "feature6": "الدخول الموحّد (SSO) وSAML",
+        "feature7": "ضمان جيش تحرير السودان",
+        "feature8": "تدريب مخصص",
+        "cta": "اتصل بالمبيعات"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "الأسئلة المتداولة",
+      "subtitle": "كل ما تحتاج إلى معرفته",
+      "question1": "ما هي مدة النسخة التجريبية المجانية؟",
+      "answer1": "14 يوما، لا حاجة لبطاقة الائتمان. الوصول الكامل إلى كافة الميزات.",
+      "question2": "هل يمكنني الإلغاء في أي وقت؟",
+      "answer2": "نعم. إلغاء في أي وقت. لا توجد عقود أو التزامات طويلة الأجل.",
+      "question3": "ما هي طرق الدفع التي تقبلونها؟",
+      "answer3": "نحن نقبل جميع بطاقات الائتمان الرئيسية وACH والتحويلات البنكية لخطط المؤسسات.",
+      "question4": "هل بياناتي آمنة؟",
+      "answer4": "نعم. تشفير على مستوى المؤسسات، متوافق مع SOC 2، وجاهز للقانون العام لحماية البيانات (GDPR). بياناتك محمية على كل المستويات.",
+      "question5": "هل تقدمون التدريب؟",
+      "answer5": "نعم. موارد الخدمة الذاتية لجميع الخطط، بالإضافة إلى التدريب المخصص لعملاء المؤسسات.",
+      "question6": "هل يمكنني استيراد بياناتي الحالية؟",
+      "answer6": "نعم. نحن نقدم أدوات استيراد ملف CSV ويمكننا المساعدة في عمليات ترحيل البيانات المخصصة لخطط المؤسسات.",
+      "q1": "ما هي مدة النسخة التجريبية المجانية؟",
+      "a1": "14 يوما، لا حاجة لبطاقة الائتمان. الوصول الكامل إلى كافة الميزات.",
+      "q2": "هل يمكنني الإلغاء في أي وقت؟",
+      "a2": "نعم. إلغاء في أي وقت. لا توجد عقود أو التزامات طويلة الأجل.",
+      "q3": "ما هي طرق الدفع التي تقبلونها؟",
+      "a3": "نحن نقبل جميع بطاقات الائتمان الرئيسية وACH والتحويلات البنكية لخطط المؤسسات.",
+      "q4": "هل بياناتي آمنة؟",
+      "a4": "نعم. تشفير على مستوى المؤسسات، متوافق مع SOC 2، وجاهز للقانون العام لحماية البيانات (GDPR). بياناتك محمية على كل المستويات.",
+      "q5": "هل تقدمون التدريب؟",
+      "a5": "نعم. موارد الخدمة الذاتية لجميع الخطط، بالإضافة إلى التدريب المخصص لعملاء المؤسسات.",
+      "q6": "هل يمكنني استيراد بياناتي الحالية؟",
+      "a6": "نعم. نحن نقدم أدوات استيراد ملف CSV ويمكننا المساعدة في عمليات ترحيل البيانات المخصصة لخطط المؤسسات."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "هل أنت مستعد لتحويل سير عمل الإنتاج لديك؟",
+      "subtitle": "انضم إلى الآلاف من محترفي الإنتاج الذين يستخدمون ATLVS",
+      "ctaPrimary": "ابدأ النسخة التجريبية المجانية",
+      "ctaSecondary": "جدولة العرض التوضيحي",
+      "trustIndicators": "لا حاجة لبطاقة ائتمانية • نسخة تجريبية مجانية مدتها 14 يومًا • يمكنك الإلغاء في أي وقت",
+      "primary": "ابدأ النسخة التجريبية المجانية",
+      "secondary": "جدولة العرض التوضيحي",
+      "noCard": "لا حاجة لبطاقة الائتمان"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "tagline": "نظام إدارة المشاريع لفرق الإنتاج التجريبي",
+      "productTitle": "منتج",
+      "companyTitle": "شركة",
+      "resourcesTitle": "موارد",
+      "legalTitle": "قانوني",
+      "product": "منتج",
+      "features": "سمات",
+      "pricing": "التسعير",
+      "demo": "تجريبي",
+      "integrations": "التكامل",
+      "docs": "التوثيق",
+      "apiReference": "مرجع واجهة برمجة التطبيقات",
+      "changelog": "سجل التغيير",
+      "caseStudies": "دراسات الحالة",
+      "templates": "قوالب",
+      "company": "شركة",
+      "aboutUs": "معلومات عنا",
+      "blog": "مدونة",
+      "careers": "وظائف",
+      "contact": "اتصال",
+      "press": "يضعط",
+      "partners": "الشركاء",
+      "customers": "عملاء",
+      "events": "الأحداث",
+      "legal": "قانوني",
+      "privacy": "سياسة الخصوصية",
+      "terms": "شروط الخدمة",
+      "security": "حماية",
+      "support": "يدعم",
+      "helpCenter": "مركز المساعدة",
+      "community": "مجتمع",
+      "status": "حالة النظام",
+      "roiCalculator": "حاسبة العائد على الاستثمار",
+      "copyright": "© 2025 أتلفس. جميع الحقوق محفوظة."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "يتكامل مع أدواتك المفضلة",
+      "subtitle": "قم بتوصيل ATLVS بالأدوات التي تستخدمها بالفعل",
+      "comingSoon": "المزيد من عمليات التكامل قريبا"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "حلول إدارة الإنتاج المهنية",
+          "headlineHighlight": "للفرق التجريبية",
+          "subheadline": "إدارة شاملة للمشروع والقوى العاملة والأصول والإدارة المالية من منصة مركزية. مصممة للمحترفين الذين يقدمون تجارب استثنائية.",
+          "supportingCopy": "من المهرجانات إلى فعاليات الشركات والتجارب الغامرة، توفر ATLVS الهيكل والإشراف اللازم لإدارة الإنتاج الناجحة.",
+          "ctaPrimary": "ابدأ التجربة المجانية",
+          "ctaSecondary": "طلب مظاهرة",
+          "trustIndicators": "لا حاجة لبطاقة ائتمانية • نسخة تجريبية مدتها 14 يومًا • يمكنك الإلغاء في أي وقت",
+          "platformScreenshot": "لقطة شاشة للمنصة"
+        },
+        "trustBar": {
+          "trustedBy": "موثوق به من قبل محترفي الإنتاج في جميع أنحاء العالم"
+        },
+        "problem": {
+          "title": "تحدي إدارة الإنتاج",
+          "subtitle": "عدم الكفاءة على مستوى الصناعة",
+          "pain1Title": "الأنظمة المجزأة",
+          "pain1Description": "تستخدم الفرق منصات متعددة غير متصلة بما في ذلك جداول البيانات والبريد الإلكتروني وأدوات إدارة المشاريع المتنوعة",
+          "pain2Title": "فقدان المعلومات",
+          "pain2Description": "يتم فقدان تفاصيل المشروع الهامة أثناء التحولات وعمليات تسليم الفريق",
+          "pain3Title": "تجاوزات الميزانية",
+          "pain3Description": "وبدون الرقابة المالية المناسبة، تتجاوز التكاليف التوقعات",
+          "pain4Title": "أعطال الاتصالات",
+          "pain4Description": "يواجه البائعون وأفراد الطاقم وأصحاب المصلحة صعوبات في التنسيق"
+        },
+        "solution": {
+          "title": "منصة شاملة. السيطرة الكاملة.",
+          "subtitle": "إدارة الإنتاج المتكاملة",
+          "feature1Title": "منصة مركزية",
+          "feature1Description": "تتم إدارة جميع المشاريع والموظفين والموارد من مكان واحد",
+          "feature2Title": "تحديثات في الوقت الحقيقي",
+          "feature2Description": "تضمن المزامنة الفورية حصول جميع أعضاء الفريق على المعلومات الحالية",
+          "feature3Title": "الرقابة المالية",
+          "feature3Description": "تتبع الميزانيات والنفقات والفواتير بدقة ودقة",
+          "feature4Title": "إدارة البائعين",
+          "feature4Description": "الحفاظ على العلاقات المهنية مع ضمان الرقابة المناسبة"
+        },
+        "howItWorks": {
+          "title": "عملية التنفيذ",
+          "subtitle": "الإعداد والنشر الفعال",
+          "step1Title": "أسس مؤسستك",
+          "step1Description": "قم بتكوين الهيكل التنظيمي الخاص بك وانضم إلى فريقك",
+          "step2Title": "حدد مشاريعك",
+          "step2Description": "إنشاء الإنتاج والتنشيط ومساحات العمل",
+          "step3Title": "تعيين الأدوار والمسؤوليات",
+          "step3Description": "توفير مستويات الوصول المناسبة والمساءلة الواضحة",
+          "step4Title": "تنفيذ ومراقبة",
+          "step4Description": "تتبع التقدم وإدارة الميزانيات وتحقيق نتائج استثنائية"
+        },
+        "testimonials": {
+          "title": "موثوق به من قبل محترفي الإنتاج في جميع أنحاء العالم",
+          "subtitle": "نتائج مثبتة من قادة الصناعة",
+          "testimonial1Quote": "لقد أثبتت ATLVS أنها حل ممتاز لإدارة عمليات المهرجانات لدينا. كل شيء منظم جيدًا ويحافظ فريقنا على التنسيق المناسب.",
+          "testimonial1Author": "سارة تشين",
+          "testimonial1Role": "مدير الإنتاج، مهرجان الموسيقى الكبرى",
+          "testimonial2Quote": "يوفر نظام التحكم في الوصول القائم على الأدوار ما نحتاجه بالضبط لهيكلنا التنظيمي. وأخيرًا، الأمان المناسب وإدارة الوصول لفرق الإنتاج.",
+          "testimonial2Author": "ماركوس رودريجيز",
+          "testimonial2Role": "نائب الرئيس للعمليات، شركة الأحداث الحية",
+          "testimonial3Quote": "لقد خفضنا تجاوزات الميزانية بنسبة 40٪ في الربع الأول. إن الرؤية المالية وقدرات التتبع مثيرة للإعجاب حقًا.",
+          "testimonial3Author": "جنيفر بارك",
+          "testimonial3Role": "المدير المالي لوكالة أحداث الشركات"
+        },
+        "pricing": {
+          "title": "هيكل التسعير الاحترافي"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "إدارة الإنتاج التي تعمل",
+          "headlineHighlight": "لا بكالوريوس",
+          "subheadline": "إدارة المشاريع والطاقم والأصول والميزانيات من مكان واحد. مصممة للأشخاص الذين يقومون بالعمل بالفعل.",
+          "supportingCopy": "المهرجانات، وفعاليات الشركات، وعمليات التنشيط الغامرة - تتعامل ALVS مع هذه الأمور دون أي زغب.",
+          "ctaPrimary": "ابدأ مجانًا",
+          "ctaSecondary": "انظر كيف يعمل",
+          "trustIndicators": "لا توجد بطاقة ائتمانية • نسخة تجريبية مدتها 14 يومًا • قم بالإلغاء في أي وقت",
+          "platformScreenshot": "لقطة شاشة للمنصة"
+        },
+        "trustBar": {
+          "trustedBy": "يتم استخدامه من قبل فرق الإنتاج التي تنجز المهام"
+        },
+        "problem": {
+          "title": "فوضى الإنتاج",
+          "subtitle": "نفس القصة، يوم مختلف",
+          "pain1Title": "فوضى الأداة",
+          "pain1Description": "جداول البيانات، وSlack، والبريد الإلكتروني، ومحرر مستندات Google العشوائي - سير العمل الخاص بك منتشر في كل مكان",
+          "pain2Title": "معلومات مفقودة",
+          "pain2Description": "تختفي الملفات. أرسله شخص ما... في مكان ما. حظا سعيدا في العثور عليه",
+          "pain3Title": "زحف الميزانية",
+          "pain3Description": "التكاليف تتسلل إليك. بحلول الوقت الذي تلتقطه فيه، تكون قد تجاوزت الميزانية",
+          "pain4Title": "انهيار الاتصالات",
+          "pain4Description": "يفتقد البائعون التحديثات، ويعمل الطاقم بالمعلومات القديمة، ويستمر أصحاب المصلحة في طرح نفس الأسئلة"
+        },
+        "solution": {
+          "title": "منصة واحدة. يعمل في الواقع.",
+          "subtitle": "كل شيء حيث ينبغي أن يكون",
+          "feature1Title": "النظام الموحد",
+          "feature1Description": "المشاريع والأشخاص والموارد - كل ذلك في مكان واحد منطقي بالفعل",
+          "feature2Title": "تحديثات في الوقت الحقيقي",
+          "feature2Description": "التغييرات تحدث على الفور. الجميع يرى نفس الشيء",
+          "feature3Title": "تتبع الميزانية",
+          "feature3Description": "تتبع كل دولار. لا مفاجآت ولا أعذار",
+          "feature4Title": "تنسيق البائعين",
+          "feature4Description": "إبقاء الشركاء في الحلقة دون فقدان السيطرة"
+        },
+        "howItWorks": {
+          "title": "كيف يعمل",
+          "subtitle": "انهض واركض بسرعة",
+          "step1Title": "قم بإعداد مؤسستك",
+          "step1Description": "بناء الهيكل الخاص بك، إضافة فريقك",
+          "step2Title": "أنشئ مشاريعك",
+          "step2Description": "رسم خريطة للإنتاج ومساحات العمل",
+          "step3Title": "تعيين الأدوار",
+          "step3Description": "امنح الناس حق الوصول، لا أكثر",
+          "step4Title": "أنجزها",
+          "step4Description": "تتبع التقدم وإدارة الميزانيات والشحن في الوقت المحدد"
+        },
+        "testimonials": {
+          "title": "فرق حقيقية، نتائج حقيقية",
+          "subtitle": "لا يوجد كلام تسويقي",
+          "testimonial1Quote": "أصلح ATLVS فوضى المهرجان لدينا. كل شيء في مكان واحد، والجميع يعرف ما يحدث. أخيراً.",
+          "testimonial1Author": "سارة تشين",
+          "testimonial1Role": "مدير الإنتاج، مهرجان الموسيقى الكبرى",
+          "testimonial2Quote": "نظام الأذونات هو بالضبط ما نحتاجه. لا مزيد من كوابيس الوصول.",
+          "testimonial2Author": "ماركوس رودريجيز",
+          "testimonial2Role": "نائب الرئيس للعمليات، شركة الأحداث الحية",
+          "testimonial3Quote": "خفض الميزانية يتجاوز 40% في الربع الأول التتبع يعمل في الواقع.",
+          "testimonial3Author": "جنيفر بارك",
+          "testimonial3Role": "المدير المالي لوكالة أحداث الشركات"
+        },
+        "pricing": {
+          "title": "التسعير المباشر"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "إدارة الإنتاج التي تعمل بالفعل",
+          "headlineHighlight": "للفرق التجريبية",
+          "subheadline": "انتقل إلى مشاريعك وطاقمك وأصولك وميزانياتك من مركز قيادة واحد. صُمم للأشخاص الذين يصنعون تجارب لا تُنسى.",
+          "supportingCopy": "سواء كنت تنتج مهرجانات، أو فعاليات للشركات، أو أنشطة تنشيطية غامرة، فإن ALVS ترسم المسار بدءًا من المفهوم وحتى الستار.",
+          "ctaPrimary": "ابدأ مجانًا اليوم",
+          "ctaSecondary": "شاهده عمليًا",
+          "trustIndicators": "لا توجد بطاقة ائتمانية • نسخة تجريبية مدتها 14 يومًا • قم بالإلغاء في أي وقت",
+          "platformScreenshot": "لقطة شاشة للمنصة"
+        },
+        "trustBar": {
+          "trustedBy": "موثوق به من قبل فرق الإنتاج في جميع أنحاء العالم"
+        },
+        "problem": {
+          "title": "مشكلة فوضى الإنتاج",
+          "subtitle": "أنت تعرف التدريبات",
+          "pain1Title": "التحميل الزائد للأداة",
+          "pain1Description": "جداول البيانات، وSlack، والبريد الإلكتروني، ومستند Google واحد لا يمكن لأحد العثور عليه - سير العمل الخاص بك منتشر عبر عشرات الأنظمة الأساسية",
+          "pain2Title": "معلومات عن الثقوب السوداء",
+          "pain2Description": "تختفي التفاصيل المهمة أثناء عمليات التسليم. بالتأكيد أرسل شخص ما هذا الملف... في مكان ما",
+          "pain3Title": "مفاجآت الميزانية",
+          "pain3Description": "التكاليف تزحف في الظل. وبحلول الوقت الذي تلاحظ فيه، تكون قد انتهيت بالفعل",
+          "pain4Title": "الانجراف الاتصالات",
+          "pain4Description": "يفتقد البائعون التحديثات، ويعمل الطاقم على المعلومات القديمة، ويطرح أصحاب المصلحة نفس الأسئلة مرتين"
+        },
+        "solution": {
+          "title": "منصة واحدة. صفر الفوضى.",
+          "subtitle": "كل شيء في مكانه الصحيح",
+          "feature1Title": "مركز القيادة الموحد",
+          "feature1Description": "المشاريع والأشخاص والموارد كلها تبحر في التشكيل",
+          "feature2Title": "مزامنة في الوقت الحقيقي",
+          "feature2Description": "تتدفق التحديثات على الفور. الجميع يعمل من نفس المخطط",
+          "feature3Title": "رادار الميزانية",
+          "feature3Description": "تتبع كل دولار في الوقت الحقيقي. لا مفاجآت ولا تجاوزات",
+          "feature4Title": "تنسيق البائعين",
+          "feature4Description": "أبقِ الشركاء الخارجيين على اطلاع دون التخلي عن السفينة"
+        },
+        "howItWorks": {
+          "title": "كيف يعمل",
+          "subtitle": "أبحر في دقائق، وليس أشهر",
+          "step1Title": "إطلاق مؤسستك",
+          "step1Description": "قم بإعداد الهيكل الخاص بك وإحضار طاقمك على متنه",
+          "step2Title": "رسم مشاريعك",
+          "step2Description": "رسم خريطة للإنتاج والتنشيط ومساحات العمل",
+          "step3Title": "تعيين الأدوار والمهام",
+          "step3Description": "امنح الجميع حق الوصول الصحيح والمسؤوليات الواضحة",
+          "step4Title": "التنقل والتسليم",
+          "step4Description": "مراقبة التقدم، وإدارة الميزانيات، وتنفيذ لا تشوبه شائبة"
+        },
+        "testimonials": {
+          "title": "موثوق به من قبل فرق الإنتاج في جميع أنحاء العالم",
+          "subtitle": "قصص حقيقية من منتجين حقيقيين",
+          "testimonial1Quote": "لقد غيرت ATLVS طريقة إدارتنا للمهرجانات. كل شيء في مكان واحد، الجميع في نفس الصفحة. أخيراً.",
+          "testimonial1Author": "سارة تشين",
+          "testimonial1Role": "مدير الإنتاج، مهرجان الموسيقى الكبرى",
+          "testimonial2Quote": "يعد نظام RBAC مثاليًا لهيكلنا التنظيمي المعقد. التحكم السليم في الوصول للإنتاج؟ ثوري.",
+          "testimonial2Author": "ماركوس رودريجيز",
+          "testimonial2Role": "نائب الرئيس للعمليات، شركة الأحداث الحية",
+          "testimonial3Quote": "لقد خفضنا تجاوزات الميزانية بنسبة 40٪ في الربع الأول. إن الرؤية المالية تغير قواعد اللعبة بشكل شرعي.",
+          "testimonial3Author": "جنيفر بارك",
+          "testimonial3Role": "المدير المالي لوكالة أحداث الشركات"
+        },
+        "pricing": {
+          "title": "أسعار شفافة قابلة للقياس"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "إدارة الإنتاج التي تضرب بشكل مختلف",
+          "headlineHighlight": "لمنشئي الأحداث",
+          "subheadline": "قم بتشغيل مشاريعك وطاقمك ومعداتك وميزانياتك من تطبيق واحد. صُنع للأشخاص الذين يخلقون التجارب بالفعل.",
+          "supportingCopy": "المهرجانات، وتنشيط العلامات التجارية، والأحداث الغامرة - تحافظ ATLVS على تنظيم كل شيء بدءًا من الفكرة وحتى التنفيذ.",
+          "ctaPrimary": "ابدأ مجانًا",
+          "ctaSecondary": "تحقق من ذلك",
+          "trustIndicators": "لا حاجة لبطاقة الائتمان • تجربة مجانية • قم بالإلغاء في أي وقت",
+          "platformScreenshot": "لقطة شاشة للمنصة"
+        },
+        "trustBar": {
+          "trustedBy": "تستخدم من قبل فرق الإنتاج في كل مكان"
+        },
+        "problem": {
+          "title": "الإنتاج فوضوي AF",
+          "subtitle": "لقد كنا جميعا هناك",
+          "pain1Title": "تطبيقات كثيرة جدًا",
+          "pain1Description": "جداول البيانات، وSlack، والبريد الإلكتروني، ومستندات Google العشوائية - كل شيء في كل مكان والفوضى",
+          "pain2Title": "الملفات تختفي",
+          "pain2Description": "شخص ما أرسل هذا الملف... في مكان ما. الآن لا يمكن لأحد العثور عليه. كلاسيكي.",
+          "pain3Title": "الميزانية تذهب إلى Br",
+          "pain3Description": "التكاليف تستمر في الارتفاع. بحلول الوقت الذي تلاحظ فيه، تكون قد تجاوزت الميزانية بكثير",
+          "pain4Title": "تأخر الاتصالات 💬",
+          "pain4Description": "يفتقد أعضاء الفريق التحديثات ويعملون بالمعلومات القديمة"
+        },
+        "solution": {
+          "title": "منصة واحدة. السيطرة الكاملة. 🎯",
+          "subtitle": "كل شيء في مكان واحد",
+          "feature1Title": "مركز القيادة 🎮",
+          "feature1Description": "جميع مشاريعك وفريقك ومواردك في مركز واحد",
+          "feature2Title": "المزامنة المباشرة ⚡",
+          "feature2Description": "التحديثات تحدث على الفور. الجميع يبقى على اتصال",
+          "feature3Title": "تعقب الميزانية 💰",
+          "feature3Description": "شاهد كل دولار في الوقت الحقيقي. لا مفاجآت",
+          "feature4Title": "تنسيق الفريق 🤝",
+          "feature4Description": "إبقاء الجميع على اطلاع وعلى نفس الصفحة"
+        },
+        "howItWorks": {
+          "title": "كيف يعمل",
+          "subtitle": "ابدأ في دقائق معدودة حرفيًا",
+          "step1Title": "قم بإعداد مؤسستك",
+          "step1Description": "بناء هيكل فريقك وإضافة الجميع",
+          "step2Title": "إنشاء المشاريع",
+          "step2Description": "رسم خريطة للأحداث والإنتاج الخاص بك",
+          "step3Title": "تعيين الأدوار",
+          "step3Description": "امنح الأشخاص الأذونات الصحيحة",
+          "step4Title": "اشحنها",
+          "step4Description": "تتبع كل شيء وإدارة الميزانيات والتنفيذ بشكل مثالي"
+        },
+        "testimonials": {
+          "title": "فرق حقيقية باستخدام ATLVS",
+          "subtitle": "ردود الفعل الفعلية من الناس الفعليين",
+          "testimonial1Quote": "ATLVS هو OP لإدارة المهرجانات. كل شيء منظم، والجميع متزامن. 10/10 سيوصي.",
+          "testimonial1Author": "سارة تشين",
+          "testimonial1Role": "مدير الإنتاج، مهرجان الموسيقى الكبرى",
+          "testimonial2Quote": "نظام الأذونات نار. أخيرًا حصلنا على التحكم المناسب في الوصول لفريقنا.",
+          "testimonial2Author": "ماركوس رودريجيز",
+          "testimonial2Role": "نائب الرئيس للعمليات، شركة الأحداث الحية",
+          "testimonial3Quote": "لقد خفضنا مشاكل الميزانية بنسبة 40٪ في الربع الأول. تتبع الأموال أمر مذهل.",
+          "testimonial3Author": "جنيفر بارك",
+          "testimonial3Role": "المدير المالي لوكالة أحداث الشركات"
+        },
+        "pricing": {
+          "title": "التسعير الذي يضرب مختلفة"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "ارفع مستوى لعبة الإنتاج الخاصة بك 🎮",
+          "headlineHighlight": "لمنشئي الأحداث",
+          "subheadline": "قم بإدارة المشاريع والفريق والعتاد والمال من تطبيق واحد رائع ✨ مصمم للمبدعين الذين يقدمون تجارب ملحمية 🚀",
+          "supportingCopy": "المهرجانات والفعاليات والأنشطة — تحافظ ATLVS على كل شيء منظمًا من البداية إلى النهاية 🎯",
+          "ctaPrimary": "ابدأ مجانًا 🚀",
+          "ctaSecondary": "شاهد العرض التوضيحي 👀",
+          "trustIndicators": "لا حاجة للبطاقة • تجربة مجانية • قم بالإلغاء في أي وقت ✌️",
+          "platformScreenshot": "لقطة شاشة للمنصة"
+        },
+        "trustBar": {
+          "trustedBy": "تستخدمه فرق الإنتاج في جميع أنحاء العالم 🌍"
+        },
+        "problem": {
+          "title": "يمكن أن يكون الإنتاج فوضويًا 😅",
+          "subtitle": "يبدو مألوفا؟",
+          "pain1Title": "التحميل الزائد للتطبيق 📱",
+          "pain1Description": "الكثير من التطبيقات، الكثير من الفوضى. كل شيء مبعثر ويصعب العثور عليه 🤯",
+          "pain2Title": "الملفات المفقودة 📂",
+          "pain2Description": "الملفات تختفي في الفراغ. أرسلها شخص ما... في مكان ما... حظا سعيدا! 🔍",
+          "pain3Title": "مفاجأة الميزانية 💸",
+          "pain3Description": "المال يستمر في الاختفاء. بحلول الوقت الذي تلاحظ فيه، تكون قد تجاوزت الميزانية 😬",
+          "pain4Title": "ارتباك الفريق 🤷",
+          "pain4Description": "يفتقد الناس التحديثات، ويعملون مع المعلومات القديمة، ويطرحون نفس الأسئلة"
+        },
+        "solution": {
+          "title": "تطبيق واحد. السيطرة الكاملة. 💪",
+          "subtitle": "كل ما تحتاجه في مكان واحد",
+          "feature1Title": "مركز القيادة 🎮",
+          "feature1Description": "جميع المشاريع والفريق والعتاد في لوحة تحكم واحدة",
+          "feature2Title": "مزامنة فورية ⚡",
+          "feature2Description": "التحديثات تحدث في الوقت الحقيقي. الجميع يبقى على اتصال",
+          "feature3Title": "تعقب الأموال 💰",
+          "feature3Description": "مشاهدة كل دولار. لا مفاجآت، لا الإجهاد",
+          "feature4Title": "فريق التعاون 🤝",
+          "feature4Description": "إبقاء الجميع في الحلقة والعمل معا"
+        },
+        "howItWorks": {
+          "title": "كيف يعمل ⚙️",
+          "subtitle": "ابدأ بسرعة فائقة",
+          "step1Title": "بناء فريقك 👥",
+          "step1Description": "قم بإعداد مؤسستك وأضف طاقمك",
+          "step2Title": "إنشاء مشاريع 📋",
+          "step2Description": "رسم خريطة لجميع الأحداث والإنتاج الخاص بك",
+          "step3Title": "تعيين الأذونات 🔐",
+          "step3Description": "امنح الجميع مستوى الوصول الصحيح",
+          "step4Title": "أطلق واربح 🏆",
+          "step4Description": "تتبع التقدم وإدارة الأموال والتنفيذ بشكل مثالي"
+        },
+        "testimonials": {
+          "title": "الفرق تحب ATLVS 💙",
+          "subtitle": "تقييمات حقيقية من مستخدمين حقيقيين",
+          "testimonial1Quote": "ATLVS مثالي حرفيًا للمهرجانات. كل شيء منظم، والجميع متزامن. 100/10! 🔥",
+          "testimonial1Author": "سارة تشين",
+          "testimonial1Role": "مدير الإنتاج، مهرجان الموسيقى الكبرى",
+          "testimonial2Quote": "نظام الأذونات هو قبلة الشيف 👌 وأخيرًا التحكم المناسب في الوصول!",
+          "testimonial2Author": "ماركوس رودريجيز",
+          "testimonial2Role": "نائب الرئيس للعمليات، شركة الأحداث الحية",
+          "testimonial3Quote": "لقد خفضنا مشكلات الميزانية بنسبة 40٪ في الربع الأول. التتبع مجنون! 🎯",
+          "testimonial3Author": "جنيفر بارك",
+          "testimonial3Role": "المدير المالي لوكالة أحداث الشركات"
+        },
+        "pricing": {
+          "title": "التسعير عادل في الواقع ✨"
+        }
+      }
     }
   }
 }

@@ -401,334 +401,935 @@
   },
   "marketing": {
     "nav": {
-      "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
+      "logo": "ATLV'ler",
+      "solutions": "Çözümler",
+      "features": "Özellikler",
+      "pricing": "Fiyatlandırma",
+      "docs": "Dokümanlar",
       "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "company": "Şirket",
+      "signIn": "Oturum aç",
+      "startFree": "Ücretsiz Başlayın",
+      "toggleMenu": "Menüyü değiştir"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Sektöre Göre Çözümler",
+        "subtitle": "Her tür canlı eğlence prodüksiyonu için amaca uygun iş akışları"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Konserler ve Turlar",
+        "description": "Küçük mekan koşularından arena ölçekli prodüksiyonlara kadar küresel tur operasyonlarında yönlendirme, bütçeleme, lojistik ve ekip yönetimini kolaylaştırın."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Müzik ve Sanat Festivalleri",
+        "description": "Çok günlü, çok aşamalı etkinlikler için iş akışlarını merkezileştirin; üretimi, yetenekleri, satıcıları ve uyumluluğu tek bir komuta sistemi altında birleştirin."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Sürükleyici ve Deneyimsel Etkinlikler",
+        "description": "Yaratıcı geliştirmeden canlı uygulamaya kadar tam görünürlükle etkileşimli dünyalar, kurulumlar ve markalı deneyimler tasarlayın ve çalıştırın."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Tiyatro ve Canlı Prodüksiyonlar",
+        "description": "Sahne ve performansa dayalı eğlence için yaratıcı ekipleri, teknik programları ve prodüksiyon varlıklarını yönetin."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "Film, TV ve Medya",
+        "description": "Departmanlar arası senkronizasyon ve finansal şeffaflık için oluşturulmuş araçlarla üretim öncesi, setteki operasyonları ve sarma raporlamasını koordine edin."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Marka Aktivasyonları ve Pazarlama Kampanyaları",
+        "description": "Yaratıcılığı, lojistik ve yatırım getirisi takibini tek bir akıllı kontrol panelinde entegre ederek açılır pencereleri, lansmanları ve kampanya odaklı deneyimleri gerçekleştirin."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Kurumsal ve Özel Etkinlikler",
+        "description": "Kolaylaştırılmış planlama ve tedarikçi koordinasyonu ile şirket içi toplantılar, dinlenmeler ve yüksek profilli toplantılar için kusursuz deneyimler sunun."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Ticari Fuarlar ve Kongreler",
+        "description": "Uçtan uca proje yönetimi ve gerçek zamanlı analizlerle stant kurulumlarını, katılımcı lojistiğini ve sponsor ilişkilerini basitleştirin."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Sağlık, Sağlıklı Yaşam ve Yaşam Tarzı",
+        "description": "Ayrıntıların ve atmosferin en önemli olduğu dinlenme yerleri, fitness etkinlikleri ve sağlıklı yaşam deneyimleri için programlamayı, personel sayısını ve misafir akışını optimize edin."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "Gerçekten İşe Yarayan Üretim Yönetimi",
+      "headlineHighlight": "Deneyimsel Ekipler İçin",
+      "subheadline": "Projelerinizde, ekibinizde, varlıklarınızda ve bütçelerinizde tek bir komuta merkezinden gezinin. Unutulmaz deneyimler yaratan insanlar için tasarlandı.",
+      "supportingCopy": "İster festivaller, ister kurumsal etkinlikler, isterse sürükleyici aktivasyonlar yapıyor olun; ATLVS, konseptten perde çağrısına kadar gidişatın planını yapar.",
+      "ctaPrimary": "Bugün Ücretsiz Başlayın",
+      "ctaSecondary": "İş Başında Görün",
+      "trustIndicators": "Kredi kartı yok • 14 günlük deneme • İstediğiniz zaman iptal edin",
+      "platformScreenshot": "Platform Ekran Görüntüsü"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Dünya çapındaki üretim ekiplerinin güvendiği"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "Üretim Kaosu Sorunu",
+      "subtitle": "Matkabı biliyorsun",
+      "pain1Title": "Takım Aşırı Yükü",
+      "pain1Description": "E-tablolar, Slack, e-posta, kimsenin bulamayacağı bir Google Dokümanı; iş akışınız bir düzine platforma dağılmış durumda",
+      "pain2Title": "Bilgi Kara Delikleri",
+      "pain2Description": "Aktarım sırasında kritik ayrıntılar kaybolur. Birisi kesinlikle bu dosyayı... bir yere göndermiş",
+      "pain3Title": "Bütçe Sürprizleri",
+      "pain3Description": "Maliyetler gölgede kalıyor. fark ettiğinde çoktan bitmiş oluyorsun",
+      "pain4Title": "İletişim Kayması",
+      "pain4Description": "Satıcılar güncellemeleri kaçırıyor, ekip eski bilgiler üzerinde çalışıyor, paydaşlar aynı soruları iki kez soruyor"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "Tek Platform. Sıfır Kaos.",
+      "subtitle": "Her şey yerli yerinde",
+      "feature1Title": "Birleşik Komuta Merkezi",
+      "feature1Description": "Projeler, insanlar ve kaynakların tümü bir oluşum halinde seyrediyor",
+      "feature2Title": "Gerçek Zamanlı Senkronizasyon",
+      "feature2Description": "Güncellemeler anında akıyor. Herkes aynı grafikten çalışıyor",
+      "feature3Title": "Bütçe Radarı",
+      "feature3Description": "Her doları gerçek zamanlı olarak takip edin. Sürpriz yok, aşırılık yok",
+      "feature4Title": "Satıcı Koordinasyonu",
+      "feature4Description": "Gemiyi başkalarına vermeden dış ortakları döngünün içinde tutun"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "Nasıl Çalışır?",
+      "subtitle": "Aylar değil dakikalar içinde yelken açın",
+      "step1Title": "Kuruluşunuzu Başlatın",
+      "step1Description": "Yapınızı kurun ve mürettebatınızı gemiye alın",
+      "step2Title": "Projelerinizi Çizelgeleyin",
+      "step2Description": "Prodüksiyonları, aktivasyonları ve çalışma alanlarını haritalandırın",
+      "step3Title": "Rolleri ve Görevleri Atayın",
+      "step3Description": "Herkese doğru erişimi ve net sorumlulukları verin",
+      "step4Title": "Gezin ve Teslim Et",
+      "step4Description": "İlerlemeyi izleyin, bütçeleri yönetin, kusursuz bir şekilde yürütün"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "Büyük Ölçekte Üretmeniz Gereken Her Şey",
+      "subtitle": "Tam üretim kontrolü için altı entegre merkez",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Üretim Merkezi",
+        "description": "Projeleri, etkinlikleri, kişileri, varlıkları, konumları ve dosyaları yönetin",
+        "feature1": "Proje ve etkinlik planlama",
+        "feature2": "Ekip ve ekip yönetimi",
+        "feature3": "Varlık takibi ve envanter",
+        "feature4": "Yer ve mekan koordinasyonu"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "İş Merkezi",
+        "description": "Şirketleri, işleri, satın alma ve finans konularını yönetin",
+        "feature1": "Satıcı ve şirket yönetimi",
+        "feature2": "İş ilanları ve işe alım",
+        "feature3": "Tedarik ve satın alma",
+        "feature4": "Bütçe ve gider takibi"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Ağ Merkezi",
+        "description": "Topluluk, pazar yeri ve kaynak kitaplığı oluşturun",
+        "feature1": "Topluluk ve tartışmalar",
+        "feature2": "Pazar yeri ve hizmetler",
+        "feature3": "Kaynak kitaplığı",
+        "feature4": "Endüstri bağlantıları"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "Otomasyon Merkezi",
+        "description": "İş akışlarını, tetikleyicileri ve tekrarlanan görevleri otomatikleştirin",
+        "feature1": "Özel iş akışı otomasyonu",
+        "feature2": "Olay odaklı tetikleyiciler",
+        "feature3": "Zamanlanmış görev yürütme",
+        "feature4": "Entegrasyon hatları"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "İstihbarat Merkezi",
+        "description": "Raporlar, analizler ve öngörüler oluşturun",
+        "feature1": "Özel raporlar",
+        "feature2": "Gerçek zamanlı analiz",
+        "feature3": "Tahmine dayalı bilgiler",
+        "feature4": "Performans metrikleri"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "Sistem Merkezi",
+        "description": "Yöneticiyi, ayarları ve kullanıcı profillerini yapılandırma",
+        "feature1": "Kullanıcı ve rol yönetimi",
+        "feature2": "Sistem konfigürasyonu",
+        "feature3": "Profil özelleştirme",
+        "feature4": "Güvenlik ve izinler"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "Büyük Ölçekte Üretmeniz Gereken Her Şey",
+        "subtitle": "Deneyimsel üretim ekipleri için tasarlanmış altı entegre merkez"
+      },
+      "production": {
+        "title": "Üretim Merkezi",
+        "description": "Projeleri, etkinlikleri, kişileri, varlıkları, konumları ve dosyaları yönetin",
+        "projects": {
+          "title": "Projeler",
+          "description": "Prodüksiyonları konseptten greve kadar organize edin ve takip edin"
+        },
+        "events": {
+          "title": "Olaylar",
+          "description": "Her ayrıntıyı ve zaman çizelgesini planlayın, koordine edin ve yönetin"
+        },
+        "people": {
+          "title": "İnsanlar",
+          "description": "Mürettebat atamalarını, kullanılabilirliği ve planlamayı yönetin"
+        },
+        "assets": {
+          "title": "Varlıklar",
+          "description": "Üretimler genelinde ekipmanı, envanteri ve kaynakları takip edin"
+        },
+        "locations": {
+          "title": "Konumlar",
+          "description": "Mekanları, sahaları ve tesis lojistiğini koordine edin"
+        },
+        "files": {
+          "title": "Dosyalar",
+          "description": "Belgeleri, medyayı ve üretim dosyalarını güvenli bir şekilde merkezileştirin"
+        }
+      },
+      "business": {
+        "title": "İş Merkezi",
+        "description": "Şirketleri, işleri, satın alma ve finans konularını yönetin",
+        "companies": {
+          "title": "Şirketler",
+          "description": "Satıcı ilişkilerini, müşterilerini ve iş ortaklarını yönetin"
+        },
+        "jobs": {
+          "title": "İşler",
+          "description": "Pozisyonları yayınlayın, başvuruları takip edin, işe alımları yönetin"
+        },
+        "procurement": {
+          "title": "Tedarik",
+          "description": "Satın alma, satıcı seçimi ve sözleşmeleri kolaylaştırın"
+        },
+        "invoices": {
+          "title": "Faturalar",
+          "description": "Otomatik hatırlatıcılarla fatura oluşturun, gönderin ve takip edin"
+        },
+        "expenses": {
+          "title": "Giderler",
+          "description": "Makbuz yakalama özelliğiyle giderleri kaydedin ve kategorilere ayırın"
+        },
+        "budgets": {
+          "title": "Bütçeler",
+          "description": "Gerçek zamanlı izlemeyle bütçeleri planlayın, izleyin ve kontrol edin"
+        }
+      },
+      "network": {
+        "title": "Ağ Merkezi",
+        "description": "Topluluk, pazar yeri ve kaynak kitaplığı oluşturun",
+        "community": {
+          "title": "Toplum",
+          "description": "Sektör profesyonelleriyle bağlantı kurun, bilgiyi paylaşın, işbirliği yapın"
+        },
+        "marketplace": {
+          "title": "Pazar yeri",
+          "description": "Hizmetleri keşfedin, yetenekleri işe alın, üretim kaynaklarını bulun"
+        },
+        "resources": {
+          "title": "Kaynaklar",
+          "description": "Kılavuzlara, şablonlara ve en iyi uygulamalara erişin"
+        }
+      },
+      "automations": {
+        "title": "Otomasyon Merkezi",
+        "description": "İş akışlarını, tetikleyicileri ve tekrarlanan görevleri otomatikleştirin",
+        "workflows": {
+          "title": "İş akışları",
+          "description": "Tekrarlanan işlemler için özel otomasyon dizileri oluşturun"
+        },
+        "triggers": {
+          "title": "Tetikleyiciler",
+          "description": "Otomatik olarak yanıt veren olaya dayalı eylemleri ayarlayın"
+        },
+        "scheduled": {
+          "title": "Zamanlanmış Görevler",
+          "description": "Esnek planlamayla yinelenen görevleri otomatikleştirin"
+        }
+      },
+      "intelligence": {
+        "title": "İstihbarat Merkezi",
+        "description": "Raporlar, analizler ve öngörüler oluşturun",
+        "reports": {
+          "title": "Raporlar",
+          "description": "Esnek görselleştirme ve dışa aktarma ile özel raporlar oluşturun"
+        },
+        "analytics": {
+          "title": "Analitik",
+          "description": "KPI'ları takip edin, trendleri izleyin, performansı ölçün"
+        },
+        "insights": {
+          "title": "Analizler",
+          "description": "Yapay zeka destekli öneriler ve tahmine dayalı analizler alın"
+        }
+      },
+      "system": {
+        "title": "Sistem Merkezi",
+        "description": "Yöneticiyi, ayarları ve kullanıcı profillerini yapılandırma",
+        "admin": {
+          "title": "Yönetici",
+          "description": "Kuruluş ayarlarını, güvenliği ve yapılandırmayı yönetin"
+        },
+        "settings": {
+          "title": "Ayarlar",
+          "description": "Tercihleri, entegrasyonları ve platform davranışını özelleştirin"
+        },
+        "profiles": {
+          "title": "Kullanıcı Profilleri",
+          "description": "Ekip profillerini, rollerini ve erişim izinlerini yönetin"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Ekibinizdeki Her Rol İçin Tasarlandı",
+      "subtitle": "Hassas izinlere sahip 11 markalı rol",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Efsane",
+        "description": "Platform Süper Yöneticisi - Tüm kuruluşlarda tam kontrol"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "Hayalet",
+        "level": "Yüksek Otorite",
+        "title": "Hayalet",
+        "description": "Tam sistem yönetimi ve sınırsız erişim. Platformun yönünü şekillendirin ve kurumsal gözetimi sürdürün."
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "Havacı",
+        "level": "Stratejik Liderlik",
+        "title": "Havacı",
+        "description": "Projeler arası görünürlük, kaynak tahsisi ve yönetici analitiği. Büyük ölçekte üst düzey üretim stratejisinde gezinin."
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "Gladyatör",
+        "level": "Proje Liderliği",
+        "title": "Gladyatör",
+        "description": "Tam proje oluşturma ve düzenleme hakları. Konsept aşamasından tamamlanma aşamasına kadar tam kontrolle prodüksiyonlara liderlik edin."
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "Gezgin",
+        "level": "Koordinasyon",
+        "title": "Gezgin",
+        "description": "Proje koordinasyonu, görev ataması ve ekip rehberliği. Karmaşık iş akışları aracılığıyla rotayı çizin."
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "Saptırıcı",
+        "level": "Uygulamak",
+        "title": "Saptırıcı",
+        "description": "Yerleşik çerçeveler dahilinde odaklanmış görev tamamlama. Atanan sorumluluklar konusunda kaliteli işler sunun."
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "Baskıncı",
+        "level": "Öğrenme ve Gözlem",
+        "title": "Baskıncı",
+        "description": "Öğrenmek ve büyümek için salt görüntüleme erişimi. Yeni gelenlerin becerilerini geliştirmeleri için mükemmeldir."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "Satıcı",
+        "level": "Kapsamlı Teslimat",
+        "title": "Satıcı",
+        "description": "Harici servis sağlayıcılar için hedefli erişim. Teslimatları yükleyin ve sözleşmeli işleri yerine getirin."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "Ziyaretçi",
+        "level": "Sınırlı Görünürlük",
+        "title": "Ziyaretçi",
+        "description": "Dış paydaşlar için geçici, salt okunur erişim. İş akışlarını aksatmadan gelişmelerden haberdar olun."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "Ortak",
+        "level": "Stratejik İşbirliği",
+        "title": "Ortak",
+        "description": "Güvenilir dış işbirlikçiler için derin entegrasyon. İki yönlü veri paylaşımı ve ortak iş akışı yönetimi."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "Büyükelçi",
+        "level": "Topluluk Şampiyonları",
+        "title": "Büyükelçi",
+        "description": "ATLVS'yi temsil edin, kullanıcıları destekleyin ve işbirliğini teşvik edin. Etkinliklere ev sahipliği yapın, içerik oluşturun, ekosistemi büyütün."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Kurumsal Düzeyde Güvenlik",
+      "subtitle": "Verileriniz her düzeyde korunuyor",
+      "feature1Title": "Satır Düzeyinde Güvenlik",
+      "feature1Description": "801 RLS politikaları, kullanıcıların yalnızca görmeleri gerekenleri görmelerini sağlar",
+      "feature2Title": "Rol Tabanlı Erişim",
+      "feature2Description": "45'ten fazla ayrıntılı izne sahip 11 markalı rol",
+      "feature3Title": "Şifreli Depolama",
+      "feature3Description": "Kullanılmayan ve aktarılan tüm veriler şifrelenir",
+      "feature4Title": "Denetim Günlüğü",
+      "feature4Description": "Tüm sistem etkinliğinin eksiksiz denetim takibi",
+      "feature5Title": "SOC 2 Uyumlu",
+      "feature5Description": "Kurumsal düzeyde güvenlik standartları",
+      "feature6Title": "GDPR'ye Hazır",
+      "feature6Description": "Veri gizliliği düzenlemelerine tam uyum"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
+      "title": "Dünya Çapındaki Üretim Ekiplerinin Güvendiği",
+      "subtitle": "Gerçek yapımcılardan gerçek hikayeler",
+      "testimonial1Quote": "ATLVS, festivalleri yönetme şeklimizi değiştirdi. Her şey tek bir yerde, herkes aynı sayfada. Nihayet.",
       "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
+      "testimonial1Role": "Yapım Direktörü, Büyük Müzik Festivali",
+      "testimonial1Title": "Yapım Direktörü, Büyük Müzik Festivali",
+      "testimonial2Quote": "RBAC sistemi karmaşık organizasyon yapımız için mükemmeldir. Üretim için uygun erişim kontrolü? Devrimci.",
       "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "testimonial2Role": "Operasyonlardan Sorumlu Başkan Yardımcısı, Canlı Etkinlikler Şirketi",
+      "testimonial2Title": "Operasyonlardan Sorumlu Başkan Yardımcısı, Canlı Etkinlikler Şirketi",
+      "testimonial3Quote": "İlk çeyrekte bütçe aşımlarını %40 oranında azalttık. Finansal görünürlük yasal olarak oyunun kurallarını değiştiriyor.",
+      "testimonial3Author": "Jennifer Parkı",
+      "testimonial3Role": "CFO, Kurumsal Etkinlik Ajansı",
+      "testimonial3Title": "CFO, Kurumsal Etkinlik Ajansı",
+      "jamesCookQuote": "Her biri kendilerinin ana karakter olduğunu düşünen üç bilim adamı gemisini mi yönetiyorsunuz? ATLVS, kredi için rekabet etmek yerine herkesin aynı hizada olmasını ve fiilen birlikte çalışmasını sağlardı.",
+      "jamesCookAuthor": "Kaptan James Cook",
+      "jamesCookRole": "İngiliz Kraliyet Donanması Kaşifi (1728-1779)",
+      "zhengYiSaoQuote": "Korsanlığı bir Fortune 500 şirketine dönüştürdüm, kendi afımı müzakere ettim ve zengin bir şekilde emekli oldum. ATLVS, alışılmamış operasyonların hala sağlam bir yönetime ihtiyaç duyduğunu anlayan kişiler içindir.",
+      "zhengYiSaoAuthor": "Zheng Yi Sao",
+      "zhengYiSaoRole": "Çinli Korsan Lideri (1775-1844)",
+      "captainAhabQuote": "Büyük resmi düşünmeden her okyanusta belirli bir hedefi mi kovalıyorsunuz? ATLVS, yalnızca kişisel hedeflere değil, gerçek iş planına odaklanmanızı sağlar.",
+      "captainAhabAuthor": "Kaptan Ahab",
+      "captainAhabRole": "Balina avcısı kaptanı Pequod",
+      "graceOMalleyQuote": "Kraliçe Elizabeth ile eşit olarak müzakere edildi. ATLVS, her toplantıya verileriniz hazır ve kendinize olan güveniniz tam olarak katılmanıza yardımcı olur.",
+      "graceOMalleyAuthor": "Grace O'Malley \"Gráinne Mhaol\"",
+      "graceOMalleyRole": "İrlanda Korsan Kraliçesi ve Reisi (c. 1530-1603)",
+      "sinbadQuote": "Sürekli gemi kazası geçirmeme rağmen yine de dışarı çıkmam mı? Bu sadece kötü planlama. ATLVS karar verme sürecimin açıkça ihtiyaç duyduğu yapıyı sağlıyor.",
+      "sinbadAuthor": "Denizci Sinbad",
+      "sinbadRole": "Efsanevi Tüccar Denizci, Binbir Gece Masalları",
+      "longJohnSilverQuote": "Korsanları yönetmek, eğer kedilerde iskorbüt ve güven sorunları varsa tam anlamıyla kedileri gütmek demektir. ATLVS'nin paydaş yönetimi, birbirlerine karşı komplo kurarken bile herkesi aynı hizada tutar.",
+      "longJohnSilverAuthor": "Uzun John Gümüş",
+      "longJohnSilverRole": "Malzeme Sorumlusu ve Korsan Aşçı, Treasure Island",
+      "horatioHornblowerQuote": "Tam bir zihinsel çöküntü yaşarken Fransızlarla savaşmak benim için açıkçası çok markaya uygun. ATLVS, asıl göreve odaklanabilmeniz için tüm taktiksel şeyleri düzenli tutar.",
+      "horatioHornblowerAuthor": "Horatio Boynuz Üfleyici",
+      "horatioHornblowerRole": "Kraliyet Donanması Subayı (C.S. Forester romanları)",
+      "captainNemoQuote": "Denizaltıda münzevi olmak aslında çok içe dönük kodlu bir şey ama benim bile ekip koordinasyonuna ihtiyacım vardı. ATLVS yalnız çalışırken bile çalışır.",
+      "captainNemoAuthor": "Kaptan Nemo",
+      "captainNemoRole": "Komutan, Nautilus (Denizler Altında Yirmi Bin Fersah)",
+      "odysseusQuote": "Sürekli şüpheli seçimler yaptığım için mürettebatın her bir üyesini kaybettim. ATLVS 'Sirenlerin neyle ilgili olduğunu görmemize gerek yok' gibi olurdu ve dürüst olmak gerekirse? Geçerli.",
+      "odysseusAuthor": "Odysseus/Ulysses",
+      "odysseusRole": "Ithaca Kralı, Yunan Kahramanı (Odyssey)",
+      "blackbeardQuote": "Dört gemiyle bir limanın tamamını bloke etmek, manuel olarak koordine ettiğinizde farklı sonuçlar verir. ATLVS beni denizlerdeki operasyonel açıdan en verimli korsan yapardı.",
+      "blackbeardAuthor": "Kaptan Edward Teach \"Karasakal\"",
+      "blackbeardRole": "Korsan Komutanı (c. 1680-1718)",
+      "captainMarvelQuote": "30 yıldır uzaydaki acil durumlarla ilgilenmeden ortadan kaybolmuştu. ATLVS'nin iletişim araçları, değer verdiğim herkesi hayaletten uzak tutmama yardımcı olurdu.",
+      "captainMarvelAuthor": "Kaptan Marvel / Carol Danvers",
+      "captainMarvelRole": "Hava Kuvvetleri Pilotu ve Kozmik Kahraman (MCU)",
+      "captainJanewayQuote": "Mürettebatımı kurtarmak için Geçici Prime Direktifini birçok kez ihlal ettim, ancak proje zaman çizelgesini asla ihlal etmedim. ATLVS, etik karmaşıklaştığında bile öncelikleri net tutar.",
+      "captainJanewayAuthor": "Kaptan Kathryn Janeway",
+      "captainJanewayRole": "Yıldız Filosu Kaptanı, USS Voyager (Star Trek: Voyager)",
+      "moanaQuote": "Maui'nin benim akıl hocam olması gerekiyordu ama zamanının çoğunu duygusal olarak müsait olmamakla geçirdi. ATLVS, ekibiniz zor durumdayken teslimatları takip eder.",
+      "moanaAuthor": "Moana",
+      "moanaRole": "Wayfinder ve Ada Şefi (Disney'in Moana'sı)",
+      "captainJackSparrowQuote": "Kelimenin tam anlamıyla hiç kimse onların işe alınıp alınmadığını veya sadece kaos için orada olup olmadıklarını bilmediği bir ekibi yönetmek mi? ATLVS, tüm ortamımın sağlayamadığı bir netlik sağlıyor.",
+      "captainJackSparrowAuthor": "Kaptan Jack Sparrow",
+      "captainJackSparrowRole": "Korsan Kaptan, Siyah İnci (Karayip Korsanları)",
+      "popeyeQuote": "Bütün kişiliğim 'inatla ileriyi planlamayı reddediyor'. ATLVS odadaki açıkça ihtiyaç duyduğum ama kabul etmeyeceğim yetişkin.",
+      "popeyeAuthor": "Denizci Adam Temel Reis",
+      "popeyeRole": "Denizci ve Zeytin Yağı'nın Koruyucusu (Çizgi Film Karakteri)",
+      "captainPicardQuote": "İlk temas durumlarında ve diplomatik krizlerde çeşitliliğe sahip bir ekibe liderlik etmek mi istiyorsunuz? ATLVS, riskler tam anlamıyla galaktik olduğunda herkesi aynı hizada tutar.",
+      "captainPicardAuthor": "Kaptan Jean-Luc Picard",
+      "captainPicardRole": "Yıldız Filosu Kaptanı, USS Enterprise (Star Trek: TNG)",
+      "captainSiskoQuote": "Kısmen askeri üs, kısmen ticaret merkezi, kısmen mülteci merkezi olan bir istasyonu mu yönetiyorsunuz? ATLVS, her paydaşın farklı önceliklere sahip olduğu durumlarda karmaşıklığı yönetmenize yardımcı olur.",
+      "captainSiskoAuthor": "Kaptan Benjamin Sisko",
+      "captainSiskoRole": "Yıldız Filosu Komutanı, Derin Uzay Dokuz (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Şeffaf fiyatlandırma",
+      "subtitle": "Tek başına yüklenicilerden kurumsal üreticilere",
+      "monthly": "Aylık",
+      "annually": "Yıllık",
+      "save20": "%20 tasarruf edin",
+      "community": {
+        "name": "Toplum",
+        "price": "Özgür",
+        "period": "sonsuza kadar",
+        "description": "Başlamak için mükemmel",
+        "feature1": "Raider rolü erişimi",
+        "feature2": "Temel görev yönetimi",
+        "feature3": "Topluluk desteği",
+        "cta": "Ücretsiz Başlayın"
+      },
+      "pro": {
+        "name": "Profesyonel",
+        "price": "12 dolar",
+        "period": "aylık",
+        "annualPrice": "Aylık 10$ (yıllık olarak faturalandırılır)",
+        "description": "Bağımsız yükleniciler için",
+        "feature1": "Saptırıcı ve Baskıncı rolleri",
+        "feature2": "Gelişmiş görev yönetimi",
+        "feature3": "Öncelikli destek",
+        "cta": "Ücretsiz Denemeyi Başlat"
+      },
+      "team": {
+        "name": "Takım",
+        "badge": "En Popüler",
+        "price": "120$",
+        "period": "aylık",
+        "annualPrice": "100$/ay (yıllık olarak faturalandırılır)",
+        "description": "Küçük ve orta ölçekli takımlar için (2-10 koltuk)",
+        "feature1": "Tüm Pro özellikleri",
+        "feature2": "Satıcı yönetimi",
+        "feature3": "Ekip işbirliği",
+        "cta": "Ücretsiz Denemeyi Başlat"
+      },
       "starter": {
-        "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "name": "Başlangıç",
+        "price": "29 dolar",
+        "period": "kullanıcı başına/ay",
+        "description": "Serbest çalışanlar ve küçük ekipler için mükemmel",
+        "feature1": "5 kullanıcıya kadar",
+        "feature2": "10 aktif proje",
+        "feature3": "Temel raporlama",
+        "feature4": "E-posta desteği",
+        "feature5": "10GB depolama",
+        "cta": "Ücretsiz Denemeyi Başlat"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "Profesyonel",
+        "price": "79$",
+        "period": "kullanıcı başına/ay",
+        "description": "Büyüyen üretim şirketleri için",
+        "feature1": "25 kullanıcıya kadar",
+        "feature2": "Sınırsız proje",
+        "feature3": "Gelişmiş analitik",
+        "feature4": "Öncelikli destek",
+        "feature5": "100GB depolama",
+        "feature6": "Özel roller",
+        "feature7": "API erişimi",
+        "cta": "Ücretsiz Denemeyi Başlat",
+        "popular": "En Popüler"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "Girişim",
+        "price": "Gelenek",
+        "period": "satış ekibiyle iletişime geçin",
+        "annualPrice": "1000$/ay (yıllık olarak faturalandırılır)",
+        "description": "Büyük organizasyon ve ajanslar için",
+        "feature1": "Sınırsız kullanıcı",
+        "feature2": "Sınırsız proje",
+        "feature3": "Özel entegrasyonlar",
+        "feature4": "Özel destek",
+        "feature5": "Sınırsız depolama",
+        "feature6": "TOA ve SAML",
+        "feature7": "SLA garantisi",
+        "feature8": "Özel eğitim",
+        "cta": "Satış Ekibiyle İletişime Geçin"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Sıkça Sorulan Sorular",
+      "subtitle": "Bilmeniz gereken her şey",
+      "question1": "Ücretsiz deneme süresi ne kadardır?",
+      "answer1": "14 gün, kredi kartı gerekmiyor. Tüm özelliklere tam erişim.",
+      "question2": "İstediğim zaman iptal edebilir miyim?",
+      "answer2": "Evet. İstediğiniz zaman iptal edin. Uzun vadeli sözleşmeler veya taahhütler yoktur.",
+      "question3": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+      "answer3": "Kurumsal planlar için tüm önemli kredi kartlarını, ACH'yi ve banka havalelerini kabul ediyoruz.",
+      "question4": "Verilerim güvende mi?",
+      "answer4": "Evet. Kurumsal düzeyde şifreleme, SOC 2 uyumlu, GDPR'ye hazır. Verileriniz her düzeyde korunur.",
+      "question5": "Eğitim sunuyor musunuz?",
+      "answer5": "Evet. Tüm planlar için self servis kaynaklar ve ayrıca Kurumsal müşteriler için özel eğitim.",
+      "question6": "Mevcut verilerimi içe aktarabilir miyim?",
+      "answer6": "Evet. CSV içe aktarma araçları sağlıyoruz ve Kurumsal planlar için özel veri geçişlerinde yardımcı olabiliriz.",
+      "q1": "Ücretsiz deneme süresi ne kadardır?",
+      "a1": "14 gün, kredi kartı gerekmiyor. Tüm özelliklere tam erişim.",
+      "q2": "İstediğim zaman iptal edebilir miyim?",
+      "a2": "Evet. İstediğiniz zaman iptal edin. Uzun vadeli sözleşmeler veya taahhütler yoktur.",
+      "q3": "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+      "a3": "Kurumsal planlar için tüm önemli kredi kartlarını, ACH'yi ve banka havalelerini kabul ediyoruz.",
+      "q4": "Verilerim güvende mi?",
+      "a4": "Evet. Kurumsal düzeyde şifreleme, SOC 2 uyumlu, GDPR'ye hazır. Verileriniz her düzeyde korunur.",
+      "q5": "Eğitim sunuyor musunuz?",
+      "a5": "Evet. Tüm planlar için self servis kaynaklar ve ayrıca Kurumsal müşteriler için özel eğitim.",
+      "q6": "Mevcut verilerimi içe aktarabilir miyim?",
+      "a6": "Evet. CSV içe aktarma araçları sağlıyoruz ve Kurumsal planlar için özel veri geçişlerinde yardımcı olabiliriz."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Üretim İş Akışınızı Dönüştürmeye Hazır mısınız?",
+      "subtitle": "ATLVS kullanan binlerce üretim profesyoneline katılın",
+      "ctaPrimary": "Ücretsiz Denemeyi Başlat",
+      "ctaSecondary": "Demo Planla",
+      "trustIndicators": "Kredi kartı gerekmez • 14 günlük ücretsiz deneme • İstediğiniz zaman iptal edin",
+      "primary": "Ücretsiz Denemeyi Başlat",
+      "secondary": "Demo Planla",
+      "noCard": "Kredi kartına gerek yok"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
+      "tagline": "Deneyimsel üretim ekipleri için proje yönetim sistemi",
+      "productTitle": "Ürün",
+      "companyTitle": "Şirket",
+      "resourcesTitle": "Kaynaklar",
+      "legalTitle": "Yasal",
+      "product": "Ürün",
+      "features": "Özellikler",
+      "pricing": "Fiyatlandırma",
+      "demo": "Demo",
+      "integrations": "Entegrasyonlar",
+      "docs": "Dokümantasyon",
+      "apiReference": "API Referansı",
+      "changelog": "Değişiklik günlüğü",
+      "caseStudies": "Vaka Çalışmaları",
+      "templates": "Şablonlar",
+      "company": "Şirket",
+      "aboutUs": "Hakkımızda",
       "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "careers": "Kariyer",
+      "contact": "Temas etmek",
+      "press": "Basmak",
+      "partners": "Ortaklar",
+      "customers": "Müşteriler",
+      "events": "Olaylar",
+      "legal": "Yasal",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Hizmet Şartları",
+      "security": "Güvenlik",
+      "support": "Destek",
+      "helpCenter": "Yardım Merkezi",
+      "community": "Toplum",
+      "status": "Sistem Durumu",
+      "roiCalculator": "ROI Hesaplayıcı",
+      "copyright": "© 2025 ATLVS. Her hakkı saklıdır."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Favori Araçlarınızla Bütünleşir",
+      "subtitle": "ATLVS'yi halihazırda kullandığınız araçlara bağlayın",
+      "comingSoon": "Yakında daha fazla entegrasyon gelecek"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "Profesyonel Üretim Yönetimi Çözümleri",
+          "headlineHighlight": "Deneyimsel Ekipler İçin",
+          "subheadline": "Merkezi bir platformdan kapsamlı proje, iş gücü, varlık ve finansal yönetim. Olağanüstü deneyimler sunan profesyoneller için tasarlandı.",
+          "supportingCopy": "Festivallerden kurumsal etkinliklere ve sürükleyici deneyimlere kadar ATLVS, başarılı prodüksiyon yönetimi için gereken yapıyı ve gözetimi sağlar.",
+          "ctaPrimary": "Ücretsiz Denemeye Başlayın",
+          "ctaSecondary": "Gösteri İste",
+          "trustIndicators": "Kredi kartı gerekmez • 14 günlük deneme • İstediğiniz zaman iptal edin",
+          "platformScreenshot": "Platform Ekran Görüntüsü"
+        },
+        "trustBar": {
+          "trustedBy": "Dünya çapındaki prodüksiyon profesyonellerinin güvendiği"
+        },
+        "problem": {
+          "title": "Üretim Yönetimi Zorluğu",
+          "subtitle": "Sektör çapında verimsizlikler",
+          "pain1Title": "Parçalanmış Sistemler",
+          "pain1Description": "Ekipler; e-tablolar, e-posta ve çeşitli proje yönetimi araçları dahil olmak üzere birden fazla bağlantısız platformdan yararlanır",
+          "pain2Title": "Bilgi Kaybı",
+          "pain2Description": "Geçişler ve ekip devirleri sırasında kritik proje ayrıntıları kayboluyor",
+          "pain3Title": "Bütçe Aşımları",
+          "pain3Description": "Uygun mali gözetim olmadan maliyetler tahminleri aşıyor",
+          "pain4Title": "İletişim Arızaları",
+          "pain4Description": "Satıcılar, ekip üyeleri ve paydaşlar koordinasyon zorlukları yaşıyor"
+        },
+        "solution": {
+          "title": "Kapsamlı Platform. Tam Kontrol.",
+          "subtitle": "Entegre üretim yönetimi",
+          "feature1Title": "Merkezi Platform",
+          "feature1Description": "Tüm projeler, personel ve kaynaklar tek bir yerden yönetilir",
+          "feature2Title": "Gerçek Zamanlı Güncellemeler",
+          "feature2Description": "Anında senkronizasyon, tüm ekip üyelerinin güncel bilgilere sahip olmasını sağlar",
+          "feature3Title": "Mali Gözetim",
+          "feature3Description": "Bütçeleri, harcamaları ve faturaları hassas ve doğru bir şekilde takip edin",
+          "feature4Title": "Satıcı Yönetimi",
+          "feature4Description": "Uygun gözetimi sağlarken profesyonel ilişkileri sürdürün"
+        },
+        "howItWorks": {
+          "title": "Uygulama Süreci",
+          "subtitle": "Verimli kurulum ve dağıtım",
+          "step1Title": "Organizasyonunuzu Kurun",
+          "step1Description": "Organizasyon yapınızı yapılandırın ve ekibinize katılın",
+          "step2Title": "Projelerinizi Tanımlayın",
+          "step2Description": "Prodüksiyonlar, aktivasyonlar ve çalışma alanları oluşturun",
+          "step3Title": "Rolleri ve Sorumlulukları Atayın",
+          "step3Description": "Uygun erişim düzeyleri ve net hesap verebilirlik sağlayın",
+          "step4Title": "Yürüt ve İzle",
+          "step4Description": "İlerlemeyi takip edin, bütçeleri yönetin, olağanüstü sonuçlar sunun"
+        },
+        "testimonials": {
+          "title": "Dünya Çapındaki Prodüksiyon Profesyonellerinin Güvendiği",
+          "subtitle": "Endüstri liderlerinden kanıtlanmış sonuçlar",
+          "testimonial1Quote": "ATLVS, festival operasyonlarımızı yönetmek için mükemmel bir çözüm olduğunu kanıtladı. Her şey iyi organize edilmiş durumda ve ekibimiz uygun koordinasyonu sağlıyor.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Yapım Direktörü, Büyük Müzik Festivali",
+          "testimonial2Quote": "Rol tabanlı erişim kontrol sistemi, organizasyon yapımız için tam olarak ihtiyacımız olanı sağlıyor. Son olarak üretim ekipleri için uygun güvenlik ve erişim yönetimi.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Operasyonlardan Sorumlu Başkan Yardımcısı, Canlı Etkinlikler Şirketi",
+          "testimonial3Quote": "İlk çeyrekte bütçe aşımlarını %40 oranında azalttık. Finansal görünürlük ve takip yetenekleri gerçekten etkileyici.",
+          "testimonial3Author": "Jennifer Parkı",
+          "testimonial3Role": "CFO, Kurumsal Etkinlik Ajansı"
+        },
+        "pricing": {
+          "title": "Profesyonel Fiyatlandırma Yapısı"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "Çalışan Üretim Yönetimi",
+          "headlineHighlight": "BS yok",
+          "subheadline": "Projeleri, mürettebatı, varlıkları ve bütçeleri tek yerden yönetin. İşi gerçekten yapan insanlar için tasarlandı.",
+          "supportingCopy": "Festivaller, kurumsal etkinlikler, sürükleyici aktivasyonlar; ATLVS bunları sorunsuz bir şekilde hallediyor.",
+          "ctaPrimary": "Ücretsiz Başlayın",
+          "ctaSecondary": "Nasıl Çalıştığını Görün",
+          "trustIndicators": "Kredi kartı yok • 14 günlük deneme • İstediğiniz zaman iptal edin",
+          "platformScreenshot": "Platform Ekran Görüntüsü"
+        },
+        "trustBar": {
+          "trustedBy": "İşleri halleden üretim ekipleri tarafından kullanılır"
+        },
+        "problem": {
+          "title": "Üretim Karmaşası",
+          "subtitle": "Aynı hikaye, farklı gün",
+          "pain1Title": "Araç Kaosu",
+          "pain1Description": "E-tablolar, Slack, e-posta, rastgele Google Dokümanları; iş akışınız her yere dağılmış durumda",
+          "pain2Title": "Eksik Bilgi",
+          "pain2Description": "Dosyalar kayboluyor. Birisi onu gönderdi... bir yere. Onu bulmada iyi şanslar",
+          "pain3Title": "Bütçe Sürünmesi",
+          "pain3Description": "Maliyetler size sinsice yaklaşır. Yakaladığınızda bütçenizi aşmış olursunuz",
+          "pain4Title": "İletişim Arızası",
+          "pain4Description": "Satıcılar güncellemeleri kaçırıyor, ekip eski bilgilerle çalışıyor, paydaşlar aynı soruları sormaya devam ediyor"
+        },
+        "solution": {
+          "title": "Tek Platform. Aslında Çalışıyor.",
+          "subtitle": "Her şey olması gerektiği yerde",
+          "feature1Title": "Birleşik Sistem",
+          "feature1Description": "Projeler, insanlar, kaynaklar; hepsi gerçekten anlamlı olan tek bir yerde",
+          "feature2Title": "Gerçek Zamanlı Güncellemeler",
+          "feature2Description": "Değişiklikler anında gerçekleşir. Herkes aynı şeyi görüyor",
+          "feature3Title": "Bütçe Takibi",
+          "feature3Description": "Her doları takip edin. Sürpriz yok, bahane yok",
+          "feature4Title": "Satıcı Koordinasyonu",
+          "feature4Description": "Kontrolü kaybetmeden iş ortaklarını döngünün içinde tutun"
+        },
+        "howItWorks": {
+          "title": "Nasıl Çalışır?",
+          "subtitle": "Hızla ayağa kalkıp koşmaya başlayın",
+          "step1Title": "Kuruluşunuzu Kurun",
+          "step1Description": "Yapınızı oluşturun, ekibinizi ekleyin",
+          "step2Title": "Projelerinizi Oluşturun",
+          "step2Description": "Prodüksiyonları ve çalışma alanlarını haritalandırın",
+          "step3Title": "Rolleri Ata",
+          "step3Description": "İnsanlara doğru erişimi verin, daha fazlasını değil",
+          "step4Title": "Yaptırın",
+          "step4Description": "İlerlemeyi takip edin, bütçeleri yönetin, zamanında gönderin"
+        },
+        "testimonials": {
+          "title": "Gerçek Takımlar, Gerçek Sonuçlar",
+          "subtitle": "Pazarlama konuşması yok",
+          "testimonial1Quote": "ATLVS festival kaosunu düzeltti. Her şey bir yerde, herkes ne olduğunu biliyor. Nihayet.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Yapım Direktörü, Büyük Müzik Festivali",
+          "testimonial2Quote": "İzin sistemi tam olarak ihtiyacımız olan şeydi. Artık erişim kabusu yok.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Operasyonlardan Sorumlu Başkan Yardımcısı, Canlı Etkinlikler Şirketi",
+          "testimonial3Quote": "Bütçe kesintileri ilk çeyrekte %40'ı aştı. İzleme aslında işe yarıyor.",
+          "testimonial3Author": "Jennifer Parkı",
+          "testimonial3Role": "CFO, Kurumsal Etkinlik Ajansı"
+        },
+        "pricing": {
+          "title": "Kolay fiyatlandırma"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "Gerçekten İşe Yarayan Üretim Yönetimi",
+          "headlineHighlight": "Deneyimsel Ekipler İçin",
+          "subheadline": "Projelerinizde, ekibinizde, varlıklarınızda ve bütçelerinizde tek bir komuta merkezinden gezinin. Unutulmaz deneyimler yaratan insanlar için tasarlandı.",
+          "supportingCopy": "İster festivaller, ister kurumsal etkinlikler, isterse sürükleyici aktivasyonlar yapıyor olun; ATLVS, konseptten perde çağrısına kadar gidişatın planını yapar.",
+          "ctaPrimary": "Bugün Ücretsiz Başlayın",
+          "ctaSecondary": "İş Başında Görün",
+          "trustIndicators": "Kredi kartı yok • 14 günlük deneme • İstediğiniz zaman iptal edin",
+          "platformScreenshot": "Platform Ekran Görüntüsü"
+        },
+        "trustBar": {
+          "trustedBy": "Dünya çapındaki üretim ekiplerinin güvendiği"
+        },
+        "problem": {
+          "title": "Üretim Kaosu Sorunu",
+          "subtitle": "Matkabı biliyorsun",
+          "pain1Title": "Takım Aşırı Yükü",
+          "pain1Description": "E-tablolar, Slack, e-posta, kimsenin bulamayacağı bir Google Dokümanı; iş akışınız bir düzine platforma dağılmış durumda",
+          "pain2Title": "Bilgi Kara Delikleri",
+          "pain2Description": "Aktarım sırasında kritik ayrıntılar kaybolur. Birisi kesinlikle bu dosyayı... bir yere göndermiş",
+          "pain3Title": "Bütçe Sürprizleri",
+          "pain3Description": "Maliyetler gölgede kalıyor. fark ettiğinde çoktan bitmiş oluyorsun",
+          "pain4Title": "İletişim Kayması",
+          "pain4Description": "Satıcılar güncellemeleri kaçırıyor, ekip eski bilgiler üzerinde çalışıyor, paydaşlar aynı soruları iki kez soruyor"
+        },
+        "solution": {
+          "title": "Tek Platform. Sıfır Kaos.",
+          "subtitle": "Her şey yerli yerinde",
+          "feature1Title": "Birleşik Komuta Merkezi",
+          "feature1Description": "Projeler, insanlar ve kaynakların tümü bir oluşum halinde seyrediyor",
+          "feature2Title": "Gerçek Zamanlı Senkronizasyon",
+          "feature2Description": "Güncellemeler anında akıyor. Herkes aynı grafikten çalışıyor",
+          "feature3Title": "Bütçe Radarı",
+          "feature3Description": "Her doları gerçek zamanlı olarak takip edin. Sürpriz yok, aşırılık yok",
+          "feature4Title": "Satıcı Koordinasyonu",
+          "feature4Description": "Gemiyi başkalarına vermeden dış ortakları döngünün içinde tutun"
+        },
+        "howItWorks": {
+          "title": "Nasıl Çalışır?",
+          "subtitle": "Aylar değil dakikalar içinde yelken açın",
+          "step1Title": "Kuruluşunuzu Başlatın",
+          "step1Description": "Yapınızı kurun ve mürettebatınızı gemiye alın",
+          "step2Title": "Projelerinizi Çizelgeleyin",
+          "step2Description": "Prodüksiyonları, aktivasyonları ve çalışma alanlarını haritalandırın",
+          "step3Title": "Rolleri ve Görevleri Atayın",
+          "step3Description": "Herkese doğru erişimi ve net sorumlulukları verin",
+          "step4Title": "Gezin ve Teslim Et",
+          "step4Description": "İlerlemeyi izleyin, bütçeleri yönetin, kusursuz bir şekilde yürütün"
+        },
+        "testimonials": {
+          "title": "Dünya Çapındaki Üretim Ekiplerinin Güvendiği",
+          "subtitle": "Gerçek yapımcılardan gerçek hikayeler",
+          "testimonial1Quote": "ATLVS, festivalleri yönetme şeklimizi değiştirdi. Her şey tek bir yerde, herkes aynı sayfada. Nihayet.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Yapım Direktörü, Büyük Müzik Festivali",
+          "testimonial2Quote": "RBAC sistemi karmaşık organizasyon yapımız için mükemmeldir. Üretim için uygun erişim kontrolü? Devrimci.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Operasyonlardan Sorumlu Başkan Yardımcısı, Canlı Etkinlikler Şirketi",
+          "testimonial3Quote": "İlk çeyrekte bütçe aşımlarını %40 oranında azalttık. Finansal görünürlük yasal olarak oyunun kurallarını değiştiriyor.",
+          "testimonial3Author": "Jennifer Parkı",
+          "testimonial3Role": "CFO, Kurumsal Etkinlik Ajansı"
+        },
+        "pricing": {
+          "title": "Ölçeklenen şeffaf fiyatlandırma"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "Farklı Etkileyen Üretim Yönetimi",
+          "headlineHighlight": "Etkinlik Yaratıcıları İçin",
+          "subheadline": "Projelerinizi, ekibinizi, ekipmanlarınızı ve bütçelerinizi tek bir uygulamadan yönetin. Gerçekten deneyimler yaratan insanlar için üretildi.",
+          "supportingCopy": "Festivaller, marka aktivasyonları, sürükleyici etkinlikler; ATLVS, fikirden uygulamaya kadar her şeyi organize eder.",
+          "ctaPrimary": "Ücretsiz Başlayın",
+          "ctaSecondary": "Buna bir bak",
+          "trustIndicators": "Kredi kartına gerek yok • Ücretsiz deneme • İstediğiniz zaman iptal edin",
+          "platformScreenshot": "Platform Ekran Görüntüsü"
+        },
+        "trustBar": {
+          "trustedBy": "Her yerde üretim ekipleri tarafından kullanılıyor"
+        },
+        "problem": {
+          "title": "Üretim Dağınık AF",
+          "subtitle": "Hepimiz oradaydık",
+          "pain1Title": "Çok Fazla Uygulama",
+          "pain1Description": "E-tablolar, Slack, e-posta, şu rastgele Google Dokümanı; her şey her yerde ve kaos",
+          "pain2Title": "Dosyalar Kayboluyor",
+          "pain2Description": "Birisi o dosyayı... bir yere gönderdi. Artık kimse onu bulamıyor. Klasik.",
+          "pain3Title": "Bütçe Brr'ye Gidiyor",
+          "pain3Description": "Maliyetler artmaya devam ediyor. Farkına vardığınızda bütçenizi çoktan aşmış olursunuz",
+          "pain4Title": "İletişim Gecikmesi 💬",
+          "pain4Description": "Ekip üyeleri güncellemeleri kaçırıyor ve eski bilgilerle çalışıyor"
+        },
+        "solution": {
+          "title": "Tek Platform. Tam Kontrol. 🎯",
+          "subtitle": "Her şey tek bir yerde",
+          "feature1Title": "Komuta Merkezi 🎮",
+          "feature1Description": "Tüm projeleriniz, ekibiniz ve kaynaklarınız tek merkezde",
+          "feature2Title": "Canlı Senkronizasyon ⚡",
+          "feature2Description": "Güncellemeler anında gerçekleşir. Herkes bağlantıda kalır",
+          "feature3Title": "Bütçe Takibi 💰",
+          "feature3Description": "Her doları gerçek zamanlı olarak görün. Sürpriz yok",
+          "feature4Title": "Takım Koordinasyonu 🤝",
+          "feature4Description": "Herkesi güncel ve aynı sayfada tutun"
+        },
+        "howItWorks": {
+          "title": "Nasıl Çalışır?",
+          "subtitle": "Kelimenin tam anlamıyla birkaç dakika içinde başlayın",
+          "step1Title": "Kuruluşunuzu Kurun",
+          "step1Description": "Ekip yapınızı oluşturun ve herkesi ekleyin",
+          "step2Title": "Proje Oluştur",
+          "step2Description": "Etkinliklerinizi ve prodüksiyonlarınızı haritalandırın",
+          "step3Title": "Rolleri Ata",
+          "step3Description": "İnsanlara doğru izinleri verin",
+          "step4Title": "Gönder",
+          "step4Description": "Her şeyi takip edin, bütçeleri yönetin, mükemmel şekilde uygulayın"
+        },
+        "testimonials": {
+          "title": "ATLVS Kullanan Gerçek Ekipler",
+          "subtitle": "Gerçek insanlardan gerçek geri bildirimler",
+          "testimonial1Quote": "ATLVS festivalleri yönetme konusunda OP'dir. Her şey organize edildi, herkes senkronize edildi. 10/10 tavsiye ederim.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Yapım Direktörü, Büyük Müzik Festivali",
+          "testimonial2Quote": "İzin sistemi yangındır. Sonunda ekibimiz için uygun erişim kontrolünü sağladık.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Operasyonlardan Sorumlu Başkan Yardımcısı, Canlı Etkinlikler Şirketi",
+          "testimonial3Quote": "İlk çeyrekte bütçe sıkıntısını %40 oranında azalttık. Para takibi kesinlikle şaşırtıcı.",
+          "testimonial3Author": "Jennifer Parkı",
+          "testimonial3Role": "CFO, Kurumsal Etkinlik Ajansı"
+        },
+        "pricing": {
+          "title": "Farklı vuran fiyatlandırma"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "Üretim Oyununuzun Seviyesini Yükseltin 🎮",
+          "headlineHighlight": "Etkinlik Yaratıcıları İçin",
+          "subheadline": "Projeleri, ekibi, ekipmanı ve parayı tek bir süper uygulamadan yönetin ✨ Efsanevi deneyimler yaratan yaratıcılar için geliştirildi 🚀",
+          "supportingCopy": "Festivaller, etkinlikler, aktivasyonlar—ATLVS her şeyi baştan sona organize eder 🎯",
+          "ctaPrimary": "Ücretsiz Başlayın 🚀",
+          "ctaSecondary": "Demoya bakın 👀",
+          "trustIndicators": "Karta gerek yok • Ücretsiz deneme • İstediğiniz zaman iptal edin ✌️",
+          "platformScreenshot": "Platform Ekran Görüntüsü"
+        },
+        "trustBar": {
+          "trustedBy": "Dünya çapındaki üretim ekipleri tarafından kullanılıyor 🌍"
+        },
+        "problem": {
+          "title": "Üretim Kaotik Olabilir 😅",
+          "subtitle": "Tanıdık geliyor mu?",
+          "pain1Title": "Uygulama Aşırı Yüklenmesi 📱",
+          "pain1Description": "Çok fazla uygulama, çok fazla kaos. Her şey dağınık ve bulunması zor 🤯",
+          "pain2Title": "Kayıp Dosyalar 📂",
+          "pain2Description": "Dosyalar boşluğa kayboluyor. Birisi bunu gönderdi... bir yere... iyi şanslar! 🔍",
+          "pain3Title": "Bütçe Sürprizi 💸",
+          "pain3Description": "Para kaybolmaya devam ediyor. Fark ettiğinizde bütçenizi aşmış olursunuz 😬",
+          "pain4Title": "Takım Karmaşası 🤷",
+          "pain4Description": "İnsanlar güncellemeleri kaçırıyor, eski bilgilerle çalışıyor, aynı soruları soruyor"
+        },
+        "solution": {
+          "title": "Tek Uygulama. Tam Kontrol. 💪",
+          "subtitle": "İhtiyacınız olan her şey tek bir yerde",
+          "feature1Title": "Komuta Merkezi 🎮",
+          "feature1Description": "Tüm projeler, ekip ve ekipmanlar tek bir kontrol panelinde",
+          "feature2Title": "Anında Senkronizasyon ⚡",
+          "feature2Description": "Güncellemeler gerçek zamanlı olarak gerçekleşir. Herkes bağlantıda kalır",
+          "feature3Title": "Para Takibi 💰",
+          "feature3Description": "Her dolara dikkat edin. Sürpriz yok, stres yok",
+          "feature4Title": "Takım İşbirliği 🤝",
+          "feature4Description": "Herkesi gelişmelerden haberdar edin ve birlikte çalışın"
+        },
+        "howItWorks": {
+          "title": "Nasıl Çalışır?",
+          "subtitle": "Süper hızlı başlayın",
+          "step1Title": "Takımınızı Oluşturun 👥",
+          "step1Description": "Kuruluşunuzu kurun ve ekibinizi ekleyin",
+          "step2Title": "Projeler Oluşturun 📋",
+          "step2Description": "Tüm etkinliklerinizin ve prodüksiyonlarınızın haritasını çıkarın",
+          "step3Title": "İzinleri Ayarla 🔐",
+          "step3Description": "Herkese doğru erişim düzeyini verin",
+          "step4Title": "Başlat ve Kazan 🏆",
+          "step4Description": "İlerlemeyi takip edin, parayı yönetin, mükemmel şekilde uygulayın"
+        },
+        "testimonials": {
+          "title": "Takımlar ATLVS'yi Seviyor 💙",
+          "subtitle": "Gerçek kullanıcılardan gerçek yorumlar",
+          "testimonial1Quote": "ATLVS festivaller için tam anlamıyla mükemmel. Her şey organize edildi, herkes senkronize edildi. 100/10! 🔥",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Yapım Direktörü, Büyük Müzik Festivali",
+          "testimonial2Quote": "İzin sistemi şefin öpücüğüdür 👌 Sonunda uygun erişim kontrolü!",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Operasyonlardan Sorumlu Başkan Yardımcısı, Canlı Etkinlikler Şirketi",
+          "testimonial3Quote": "Bütçe sorunlarını ilk çeyrekte %40 oranında azalttık. Takip çılgınca! 🎯",
+          "testimonial3Author": "Jennifer Parkı",
+          "testimonial3Role": "CFO, Kurumsal Etkinlik Ajansı"
+        },
+        "pricing": {
+          "title": "Fiyatlandırma aslında adil ✨"
+        }
+      }
     }
   }
 }

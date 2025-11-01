@@ -401,334 +401,935 @@
   },
   "marketing": {
     "nav": {
-      "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "logo": "АТЛВС",
+      "solutions": "Решения",
+      "features": "Функции",
+      "pricing": "Цены",
+      "docs": "Документы",
+      "blog": "Блог",
+      "company": "Компания",
+      "signIn": "Войти",
+      "startFree": "Начать бесплатно",
+      "toggleMenu": "Переключить меню"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Решения по отраслям",
+        "subtitle": "Специально разработанные рабочие процессы для любого типа развлекательного производства"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Концерты и гастроли",
+        "description": "Оптимизируйте маршрутизацию, бюджетирование, логистику и управление командой в рамках глобальных туропераций — от небольших площадок до постановок масштаба арены."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Музыкальные и художественные фестивали",
+        "description": "Централизуйте рабочие процессы для многодневных и многоэтапных мероприятий, объединив производство, таланты, поставщиков и соблюдение требований в рамках одной командной системы."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Захватывающие и экспериментальные мероприятия",
+        "description": "Создавайте и управляйте интерактивными мирами, инсталляциями и фирменными впечатлениями с полной прозрачностью — от творческой разработки до живого исполнения."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Театральные и живые постановки",
+        "description": "Управляйте творческими группами, техническими расписаниями и производственными активами для развлечений на сцене и в рамках представлений."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "Кино, телевидение и СМИ",
+        "description": "Координируйте подготовку к съемкам и съемочную площадку, а также готовьте отчеты с помощью инструментов, созданных для межведомственной синхронизации и финансовой прозрачности."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Активация бренда и маркетинговые кампании",
+        "description": "Запускайте всплывающие окна, запускайте и управляйте кампаниями, интегрируя креатив, логистику и отслеживание рентабельности инвестиций в одну интеллектуальную панель управления."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Корпоративные и частные мероприятия",
+        "description": "Обеспечьте безупречный опыт внутренних встреч, выездных семинаров и встреч высокого уровня с помощью оптимизированного планирования и координации поставщиков."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Выставки и конгрессы",
+        "description": "Упростите строительство стендов, логистику экспонентов и отношения со спонсорами благодаря комплексному управлению проектами и аналитике в реальном времени."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Здоровье, благополучие и образ жизни",
+        "description": "Оптимизируйте программу, кадровое обеспечение и поток гостей для ретритов, фитнес-мероприятий и оздоровительных мероприятий — там, где детали и атмосфера имеют наибольшее значение."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "Управление производством, которое действительно работает",
+      "headlineHighlight": "Для экспериментальных команд",
+      "subheadline": "Управляйте своими проектами, командой, активами и бюджетами из единого командного центра. Создан для людей, которые создают незабываемые впечатления.",
+      "supportingCopy": "Независимо от того, организуете ли вы фестивали, корпоративные мероприятия или иммерсивные мероприятия — ATLVS прокладывает путь от концепции до занавеса.",
+      "ctaPrimary": "Начните бесплатно сегодня",
+      "ctaSecondary": "Посмотрите это в действии",
+      "trustIndicators": "Нет кредитной карты • 14-дневная пробная версия • Отмена в любой момент",
+      "platformScreenshot": "Скриншот платформы"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Нам доверяют производственные команды по всему миру"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "Проблема производственного хаоса",
+      "subtitle": "Ты знаешь упражнение",
+      "pain1Title": "Перегрузка инструмента",
+      "pain1Description": "Таблицы, Slack, электронная почта и тот самый Google Doc, который никто не может найти — ваш рабочий процесс разбросан по дюжине платформ.",
+      "pain2Title": "Информационные черные дыры",
+      "pain2Description": "Критические детали исчезают во время передачи управления. Кто-то определенно отправил этот файл... куда-то",
+      "pain3Title": "Бюджетные сюрпризы",
+      "pain3Description": "Затраты скрываются в тени. К тому времени, как вы заметите, вы уже закончили",
+      "pain4Title": "Коммуникационный дрейф",
+      "pain4Description": "Поставщики пропускают обновления, команда обрабатывает старую информацию, заинтересованные стороны задают одни и те же вопросы дважды"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "Одна платформа. Ноль хаоса.",
+      "subtitle": "Все на своем месте",
+      "feature1Title": "Единый командный центр",
+      "feature1Description": "Проекты, люди и ресурсы — все плывет в строю",
+      "feature2Title": "Синхронизация в реальном времени",
+      "feature2Description": "Обновления приходят мгновенно. Все работают по одной и той же схеме",
+      "feature3Title": "Бюджетный радар",
+      "feature3Description": "Отслеживайте каждый доллар в режиме реального времени. Никаких сюрпризов, никаких перерасходов",
+      "feature4Title": "Координация поставщиков",
+      "feature4Description": "Держите внешних партнеров в курсе, не выдавая корабль"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "Как это работает",
+      "subtitle": "Отправьтесь в плавание за считанные минуты, а не месяцы",
+      "step1Title": "Запустите свою организацию",
+      "step1Description": "Создайте свою структуру и приведите на борт свою команду.",
+      "step2Title": "Составьте график своих проектов",
+      "step2Description": "Составьте карту производств, активаций и рабочих пространств",
+      "step3Title": "Назначьте роли и миссии",
+      "step3Description": "Предоставьте каждому правильный доступ и четкие обязанности",
+      "step4Title": "Навигация и доставка",
+      "step4Description": "Отслеживайте прогресс, управляйте бюджетом, выполняйте безупречно"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "Все, что вам нужно для масштабного производства",
+      "subtitle": "Шесть интегрированных хабов для полного контроля производства",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Производственный центр",
+        "description": "Управляйте проектами, событиями, людьми, активами, местоположениями и файлами",
+        "feature1": "Планирование проектов и мероприятий",
+        "feature2": "Управление командой и экипажем",
+        "feature3": "Отслеживание и инвентаризация активов",
+        "feature4": "Координация локации и места проведения"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "Бизнес-центр",
+        "description": "Управление компаниями, рабочими местами, закупками и финансами",
+        "feature1": "Управление поставщиками и компанией",
+        "feature2": "Объявления о вакансиях и прием на работу",
+        "feature3": "Закупки и закупки",
+        "feature4": "Отслеживание бюджета и расходов"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Сетевой концентратор",
+        "description": "Создайте сообщество, торговую площадку и библиотеку ресурсов.",
+        "feature1": "Сообщество и обсуждения",
+        "feature2": "Торговая площадка и услуги",
+        "feature3": "Библиотека ресурсов",
+        "feature4": "Связи с промышленностью"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "Центр автоматизации",
+        "description": "Автоматизируйте рабочие процессы, триггеры и повторяющиеся задачи.",
+        "feature1": "Автоматизация индивидуальных рабочих процессов",
+        "feature2": "Триггеры, управляемые событиями",
+        "feature3": "Выполнение задачи по расписанию",
+        "feature4": "Интеграционные конвейеры"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "Интеллектуальный центр",
+        "description": "Создавайте отчеты, аналитику и идеи",
+        "feature1": "Пользовательские отчеты",
+        "feature2": "Аналитика в реальном времени",
+        "feature3": "Прогнозная информация",
+        "feature4": "Показатели производительности"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "Системный хаб",
+        "description": "Настройка администратора, настроек и профилей пользователей",
+        "feature1": "Управление пользователями и ролями",
+        "feature2": "Конфигурация системы",
+        "feature3": "Настройка профиля",
+        "feature4": "Безопасность и разрешения"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "Все, что вам нужно для масштабного производства",
+        "subtitle": "Шесть интегрированных центров, предназначенных для экспериментальных производственных команд"
+      },
+      "production": {
+        "title": "Производственный центр",
+        "description": "Управляйте проектами, событиями, людьми, активами, местоположениями и файлами",
+        "projects": {
+          "title": "Проекты",
+          "description": "Организация и отслеживание производства от концепции до забастовки"
+        },
+        "events": {
+          "title": "События",
+          "description": "Планируйте, координируйте и управляйте каждой деталью и графиком"
+        },
+        "people": {
+          "title": "Люди",
+          "description": "Управляйте назначением экипажа, доступностью и расписанием"
+        },
+        "assets": {
+          "title": "Ресурсы",
+          "description": "Отслеживайте оборудование, инвентарь и ресурсы на всех производствах"
+        },
+        "locations": {
+          "title": "Локации",
+          "description": "Координация площадок, площадок и логистики объектов"
+        },
+        "files": {
+          "title": "Файлы",
+          "description": "Надежно централизуйте документы, мультимедиа и производственные файлы"
+        }
+      },
+      "business": {
+        "title": "Бизнес-центр",
+        "description": "Управление компаниями, рабочими местами, закупками и финансами",
+        "companies": {
+          "title": "Компании",
+          "description": "Управление отношениями с поставщиками, клиентами и партнерами"
+        },
+        "jobs": {
+          "title": "Вакансии",
+          "description": "Публикуйте вакансии, отслеживайте заявки, управляйте наймом"
+        },
+        "procurement": {
+          "title": "Приобретение",
+          "description": "Оптимизация закупок, выбора поставщиков и заключения контрактов"
+        },
+        "invoices": {
+          "title": "Счета-фактуры",
+          "description": "Создавайте, отправляйте и отслеживайте счета с помощью автоматических напоминаний."
+        },
+        "expenses": {
+          "title": "Затраты",
+          "description": "Записывайте и классифицируйте расходы с помощью сбора квитанций"
+        },
+        "budgets": {
+          "title": "Бюджеты",
+          "description": "Планируйте, отслеживайте и контролируйте бюджеты с отслеживанием в реальном времени."
+        }
+      },
+      "network": {
+        "title": "Сетевой концентратор",
+        "description": "Создайте сообщество, торговую площадку и библиотеку ресурсов.",
+        "community": {
+          "title": "Сообщество",
+          "description": "Общайтесь с профессионалами отрасли, делитесь знаниями, сотрудничайте"
+        },
+        "marketplace": {
+          "title": "Торговая площадка",
+          "description": "Откройте для себя услуги, наймите таланты, найдите производственные ресурсы"
+        },
+        "resources": {
+          "title": "Ресурсы",
+          "description": "Получите доступ к руководствам, шаблонам и передовым практикам."
+        }
+      },
+      "automations": {
+        "title": "Центр автоматизации",
+        "description": "Автоматизируйте рабочие процессы, триггеры и повторяющиеся задачи.",
+        "workflows": {
+          "title": "Рабочие процессы",
+          "description": "Создавайте собственные последовательности автоматизации для повторяющихся процессов."
+        },
+        "triggers": {
+          "title": "Триггеры",
+          "description": "Настройте действия, управляемые событиями, которые реагируют автоматически"
+        },
+        "scheduled": {
+          "title": "Запланированные задачи",
+          "description": "Автоматизируйте повторяющиеся задачи с помощью гибкого планирования."
+        }
+      },
+      "intelligence": {
+        "title": "Интеллектуальный центр",
+        "description": "Создавайте отчеты, аналитику и идеи",
+        "reports": {
+          "title": "Отчеты",
+          "description": "Создавайте собственные отчеты с гибкой визуализацией и экспортом."
+        },
+        "analytics": {
+          "title": "Аналитика",
+          "description": "Отслеживайте ключевые показатели эффективности, отслеживайте тенденции, измеряйте производительность"
+        },
+        "insights": {
+          "title": "Информация",
+          "description": "Получайте рекомендации и прогнозную аналитику на основе искусственного интеллекта"
+        }
+      },
+      "system": {
+        "title": "Системный хаб",
+        "description": "Настройка администратора, настроек и профилей пользователей",
+        "admin": {
+          "title": "Админ",
+          "description": "Управление настройками, безопасностью и конфигурацией организации"
+        },
+        "settings": {
+          "title": "Настройки",
+          "description": "Настройте предпочтения, интеграцию и поведение платформы."
+        },
+        "profiles": {
+          "title": "Профили пользователей",
+          "description": "Управляйте профилями команды, ролями и разрешениями доступа"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Создан для любой роли в вашей команде",
+      "subtitle": "11 фирменных ролей с точными разрешениями",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Легенда",
+        "description": "Суперадминистратор платформы — полный контроль во всех организациях."
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "Фантом",
+        "level": "Верховный орган",
+        "title": "Фантом",
+        "description": "Полное администрирование системы и неограниченный доступ. Формируйте направление платформы и осуществляйте надзор за предприятием."
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "Авиатор",
+        "level": "Стратегическое лидерство",
+        "title": "Авиатор",
+        "description": "Межпроектная прозрачность, распределение ресурсов и исполнительная аналитика. Используйте масштабную производственную стратегию высокого уровня."
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "Гладиатор",
+        "level": "Руководство проекта",
+        "title": "Гладиатор",
+        "description": "Полные права на создание и редактирование проекта. Ведите производство от концепции до завершения под полным контролем."
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "Навигатор",
+        "level": "Координация",
+        "title": "Навигатор",
+        "description": "Координация проекта, постановка задач и руководство командой. Проложите курс через сложные рабочие процессы."
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "Девиатор",
+        "level": "Исполнение",
+        "title": "Девиатор",
+        "description": "Целенаправленное выполнение задач в установленных рамках. Качественно выполнять возложенные обязанности."
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "Рейдер",
+        "level": "Обучение и наблюдение",
+        "title": "Рейдер",
+        "description": "Доступ только для просмотра для обучения и развития. Идеально подходит для новичков, развивающих свои навыки."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "Продавец",
+        "level": "Ограниченная доставка",
+        "title": "Продавец",
+        "description": "Целевой доступ для внешних поставщиков услуг. Загружайте результаты и выполняйте контрактные работы."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "Посетитель",
+        "level": "Ограниченная видимость",
+        "title": "Посетитель",
+        "description": "Временный доступ только для чтения для внешних заинтересованных сторон. Будьте в курсе, не нарушая рабочие процессы."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "Партнер",
+        "level": "Стратегическое сотрудничество",
+        "title": "Партнер",
+        "description": "Глубокая интеграция для доверенных внешних сотрудников. Двусторонний обмен данными и совместное управление рабочими процессами."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "посол",
+        "level": "Чемпионы сообщества",
+        "title": "посол",
+        "description": "Представляйте интересы ATLVS, поддерживайте пользователей и содействуйте сотрудничеству. Проводите мероприятия, создавайте контент, развивайте экосистему."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Безопасность корпоративного уровня",
+      "subtitle": "Ваши данные защищены на всех уровнях",
+      "feature1Title": "Безопасность на уровне строк",
+      "feature1Description": "Политики 801 RLS гарантируют, что пользователи видят только то, что им нужно.",
+      "feature2Title": "Ролевой доступ",
+      "feature2Description": "11 фирменных ролей с более чем 45 детальными разрешениями.",
+      "feature3Title": "Зашифрованное хранилище",
+      "feature3Description": "Все данные зашифрованы при хранении и передаче",
+      "feature4Title": "Журнал аудита",
+      "feature4Description": "Полный контроль всей активности системы",
+      "feature5Title": "Соответствие SOC 2",
+      "feature5Description": "Стандарты безопасности корпоративного уровня",
+      "feature6Title": "GDPR готов",
+      "feature6Description": "Полное соблюдение правил конфиденциальности данных."
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
-      "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "title": "Нам доверяют производственные команды по всему миру",
+      "subtitle": "Реальные истории от реальных продюсеров",
+      "testimonial1Quote": "ATLVS изменил то, как мы управляем фестивалями. Все в одном месте, все на одной странице. Окончательно.",
+      "testimonial1Author": "Сара Чен",
+      "testimonial1Role": "Директор-постановщик, Большой музыкальный фестиваль",
+      "testimonial1Title": "Директор-постановщик, Большой музыкальный фестиваль",
+      "testimonial2Quote": "Система RBAC идеально подходит для нашей сложной организационной структуры. Надлежащий контроль доступа на производстве? Революционный.",
+      "testimonial2Author": "Маркус Родригес",
+      "testimonial2Role": "Вице-президент по операциям, компания Live Events",
+      "testimonial2Title": "Вице-президент по операциям, компания Live Events",
+      "testimonial3Quote": "В первом квартале мы сократили перерасход бюджета на 40%. Финансовая прозрачность действительно меняет правила игры.",
+      "testimonial3Author": "Дженнифер Парк",
+      "testimonial3Role": "Финансовый директор, Агентство корпоративных мероприятий",
+      "testimonial3Title": "Финансовый директор, Агентство корпоративных мероприятий",
+      "jamesCookQuote": "Управлять тремя кораблями учёных, которые считают себя главным героем? ATLVS позволила бы всем работать сообща, а не конкурировать за кредит.",
+      "jamesCookAuthor": "капитан Джеймс Кук",
+      "jamesCookRole": "Исследователь Британского королевского флота (1728-1779)",
+      "zhengYiSaoQuote": "Я превратил пиратство в компанию из списка Fortune 500, договорился о собственной амнистии и вышел на пенсию богатым. ATLVS предназначен для людей, которые понимают, что нетрадиционные операции по-прежнему нуждаются в надежном управлении.",
+      "zhengYiSaoAuthor": "Чжэн И Сао",
+      "zhengYiSaoRole": "Лидер китайских пиратов (1775-1844)",
+      "captainAhabQuote": "Преследуете одну конкретную цель через каждый океан, не рассматривая общую картину? ATLVS позволяет вам сосредоточиться на реальном бизнес-плане, а не только на личных целях.",
+      "captainAhabAuthor": "Капитан Ахав",
+      "captainAhabRole": "Капитан китобойного промысла, Пекод",
+      "graceOMalleyQuote": "Переговоры с королевой Елизаветой вели на равных. ATLVS помогает вам приходить на каждую встречу с готовыми данными и с большей уверенностью.",
+      "graceOMalleyAuthor": "Грейс О'Мэлли \"Грайнн Маол\"",
+      "graceOMalleyRole": "Ирландская королева пиратов и вождь (ок. 1530–1603)",
+      "sinbadQuote": "Как я терпел кораблекрушение, но все равно возвращался? Это просто плохое планирование. ATLVS обеспечивает структуру, необходимую для принятия решений.",
+      "sinbadAuthor": "Синдбад-мореход",
+      "sinbadRole": "Легендарный моряк-торговец, «Тысяча и одна ночь»",
+      "longJohnSilverQuote": "Управлять пиратами — это буквально пасти кошек, если у кошек была цинга и проблемы с доверием. Управление заинтересованными сторонами ATLVS поддерживает согласованность действий всех, даже когда они замышляют заговор друг против друга.",
+      "longJohnSilverAuthor": "Лонг Джон Сильвер",
+      "longJohnSilverRole": "Интендант и повар-пират, Остров сокровищ",
+      "horatioHornblowerQuote": "Честно говоря, для меня очень стильно сражаться с французами, находясь в состоянии полного психического расстройства. ATLVS систематизирует все тактические вещи, чтобы вы могли сосредоточиться на реальной миссии.",
+      "horatioHornblowerAuthor": "Горацио Хорнблауэр",
+      "horatioHornblowerRole": "Офицер Королевского флота (романы К.С. Форестера)",
+      "captainNemoQuote": "Быть отшельником на подводной лодке на самом деле очень интровертно, но даже мне требовалась командная координация. ATLVS работает, даже если вы работаете один.",
+      "captainNemoAuthor": "Капитан Немо",
+      "captainNemoRole": "Командир Наутилуса (Двадцать тысяч лье под водой)",
+      "odysseusQuote": "Потерял каждого члена экипажа, потому что продолжал делать сомнительный выбор. ATLVS сказал бы: «Нам не нужно знать, о чем сирены», и, честно говоря? Действительный.",
+      "odysseusAuthor": "Одиссей/Улисс",
+      "odysseusRole": "Царь Итаки, греческий герой («Одиссея»)",
+      "blackbeardQuote": "Блокирование всей гавани четырьмя кораблями выглядит по-другому, если вы координируете действия вручную. ATLVS сделал бы меня самым эффективным пиратом на море.",
+      "blackbeardAuthor": "Капитан Эдвард Тич «Чёрная Борода»",
+      "blackbeardRole": "Командир пиратов (ок. 1680-1718)",
+      "captainMarvelQuote": "Пропал на 30 лет, разбираясь с чрезвычайными ситуациями в космосе, не зарегистрировавшись. Средства связи ATLVS помогли бы мне не стать призраком всех, кто мне дорог.",
+      "captainMarvelAuthor": "Капитан Марвел / Кэрол Дэнверс",
+      "captainMarvelRole": "Пилот ВВС и космический герой (MCU)",
+      "captainJanewayQuote": "Я несколько раз нарушал Временную Главную Директиву, чтобы спасти свою команду, но никогда не нарушал сроки своего проекта. ATLVS сохраняет четкость приоритетов, даже когда этические вопросы становятся сложными.",
+      "captainJanewayAuthor": "Капитан Кэтрин Джейнвей",
+      "captainJanewayRole": "Капитан Звездного Флота, военный корабль США «Вояджер» («Звездный путь: Вояджер»)",
+      "moanaQuote": "Мауи должен был стать моим наставником, но большую часть времени проводил эмоционально недоступным. ATLVS отслеживает результаты, когда у вашей команды возникают трудности.",
+      "moanaAuthor": "Моана",
+      "moanaRole": "Путеводитель и вождь острова (Диснеевская Моана)",
+      "captainJackSparrowQuote": "Управлять командой, когда буквально никто не знает, работают ли они или просто ради хаоса? ATLVS обеспечивает ясность, которую не дает вся моя атмосфера.",
+      "captainJackSparrowAuthor": "Капитан Джек Воробей",
+      "captainJackSparrowRole": "Капитан пиратов, Черная Жемчужина (Пираты Карибского моря)",
+      "popeyeQuote": "Вся моя личность «упрямо отказывается планировать заранее». ATLVS — взрослый в комнате, который мне явно нужен, но в этом я не признаюсь.",
+      "popeyeAuthor": "Попай-моряк",
+      "popeyeRole": "Защитники Сейлор и Олив Ойл (мультипликационный персонаж)",
+      "captainPicardQuote": "Руководить разнообразной командой в ситуациях первого контакта и дипломатических кризисах? ATLVS помогает всем объединиться, когда ставки буквально галактические.",
+      "captainPicardAuthor": "Капитан Жан-Люк Пикард",
+      "captainPicardRole": "Капитан Звездного Флота, USS Enterprise (Звездный путь: TNG)",
+      "captainSiskoQuote": "Командовать станцией, которая является частично военной базой, частично торговым центром, частично центром беженцев? ATLVS помогает вам управлять сложностью, когда у всех заинтересованных сторон разные приоритеты.",
+      "captainSiskoAuthor": "Капитан Бенджамин Сиско",
+      "captainSiskoRole": "Командующий Звездным Флотом, Deep Space Nine (Звездный путь: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Прозрачное ценообразование",
+      "subtitle": "От индивидуальных подрядчиков до корпоративных продюсеров",
+      "monthly": "Ежемесячно",
+      "annually": "Ежегодно",
+      "save20": "Сэкономьте 20%",
+      "community": {
+        "name": "Сообщество",
+        "price": "Бесплатно",
+        "period": "навсегда",
+        "description": "Идеально подходит для начала",
+        "feature1": "Доступ к роли Рейдера",
+        "feature2": "Базовое управление задачами",
+        "feature3": "Поддержка сообщества",
+        "cta": "Начни бесплатно"
+      },
+      "pro": {
+        "name": "Про",
+        "price": "12 долларов США",
+        "period": "помесячно",
+        "annualPrice": "10 долларов США в месяц (оплачивается ежегодно)",
+        "description": "Для независимых подрядчиков",
+        "feature1": "Роли Девиатора и Рейдера",
+        "feature2": "Расширенное управление задачами",
+        "feature3": "Приоритетная поддержка",
+        "cta": "Начать бесплатную пробную версию"
+      },
+      "team": {
+        "name": "Команда",
+        "badge": "Самый популярный",
+        "price": "120 долларов США",
+        "period": "помесячно",
+        "annualPrice": "100 долларов США в месяц (оплачивается ежегодно)",
+        "description": "Для небольших и средних команд (2-10 мест)",
+        "feature1": "Все функции Pro",
+        "feature2": "Управление поставщиками",
+        "feature3": "Командное сотрудничество",
+        "cta": "Начать бесплатную пробную версию"
+      },
       "starter": {
-        "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "name": "Стартер",
+        "price": "29 долларов США",
+        "period": "за пользователя/месяц",
+        "description": "Идеально подходит для фрилансеров и небольших команд.",
+        "feature1": "До 5 пользователей",
+        "feature2": "10 активных проектов",
+        "feature3": "Базовая отчетность",
+        "feature4": "Поддержка по электронной почте",
+        "feature5": "10 ГБ памяти",
+        "cta": "Начать бесплатную пробную версию"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "Профессиональный",
+        "price": "79 долларов США",
+        "period": "за пользователя/месяц",
+        "description": "Для растущих производственных компаний",
+        "feature1": "До 25 пользователей",
+        "feature2": "Неограниченное количество проектов",
+        "feature3": "Расширенная аналитика",
+        "feature4": "Приоритетная поддержка",
+        "feature5": "100 ГБ памяти",
+        "feature6": "Пользовательские роли",
+        "feature7": "Доступ через API",
+        "cta": "Начать бесплатную пробную версию",
+        "popular": "Самый популярный"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "Предприятие",
+        "price": "Обычай",
+        "period": "контактный отдел продаж",
+        "annualPrice": "1000 долларов в месяц (оплачивается ежегодно)",
+        "description": "Для крупных организаций и агентств",
+        "feature1": "Неограниченное количество пользователей",
+        "feature2": "Неограниченное количество проектов",
+        "feature3": "Пользовательские интеграции",
+        "feature4": "Специализированная поддержка",
+        "feature5": "Неограниченное хранилище",
+        "feature6": "Единый вход и SAML",
+        "feature7": "гарантия SLA",
+        "feature8": "Индивидуальное обучение",
+        "cta": "Свяжитесь с отделом продаж"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Часто задаваемые вопросы",
+      "subtitle": "Все, что вам нужно знать",
+      "question1": "Как долго длится бесплатная пробная версия?",
+      "answer1": "14 дней, кредитная карта не требуется. Полный доступ ко всем функциям.",
+      "question2": "Могу ли я отменить в любое время?",
+      "answer2": "Да. Отменить в любое время. Никаких долгосрочных контрактов и обязательств.",
+      "question3": "Какие способы оплаты вы принимаете?",
+      "answer3": "Мы принимаем все основные кредитные карты, ACH и банковские переводы для корпоративных планов.",
+      "question4": "Мои данные в безопасности?",
+      "answer4": "Да. Шифрование корпоративного уровня, соответствие SOC 2, соответствие GDPR. Ваши данные защищены на всех уровнях.",
+      "question5": "Вы предлагаете обучение?",
+      "answer5": "Да. Ресурсы самообслуживания для всех планов, а также специальное обучение для корпоративных клиентов.",
+      "question6": "Могу ли я импортировать существующие данные?",
+      "answer6": "Да. Мы предоставляем инструменты импорта CSV и можем помочь с пользовательской миграцией данных для планов Enterprise.",
+      "q1": "Как долго длится бесплатная пробная версия?",
+      "a1": "14 дней, кредитная карта не требуется. Полный доступ ко всем функциям.",
+      "q2": "Могу ли я отменить в любое время?",
+      "a2": "Да. Отменить в любое время. Никаких долгосрочных контрактов и обязательств.",
+      "q3": "Какие способы оплаты вы принимаете?",
+      "a3": "Мы принимаем все основные кредитные карты, ACH и банковские переводы для корпоративных планов.",
+      "q4": "Мои данные в безопасности?",
+      "a4": "Да. Шифрование корпоративного уровня, соответствие SOC 2, соответствие GDPR. Ваши данные защищены на всех уровнях.",
+      "q5": "Вы предлагаете обучение?",
+      "a5": "Да. Ресурсы самообслуживания для всех планов, а также специальное обучение для корпоративных клиентов.",
+      "q6": "Могу ли я импортировать существующие данные?",
+      "a6": "Да. Мы предоставляем инструменты импорта CSV и можем помочь с пользовательской миграцией данных для планов Enterprise."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Готовы преобразовать свой производственный процесс?",
+      "subtitle": "Присоединяйтесь к тысячам профессионалов производства, использующих ATLVS",
+      "ctaPrimary": "Начать бесплатную пробную версию",
+      "ctaSecondary": "Запланировать демонстрацию",
+      "trustIndicators": "Кредитная карта не требуется • 14-дневная бесплатная пробная версия • Отмена в любое время",
+      "primary": "Начать бесплатную пробную версию",
+      "secondary": "Запланировать демонстрацию",
+      "noCard": "Кредитная карта не требуется"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "tagline": "Система управления проектами для опытных производственных команд",
+      "productTitle": "Продукт",
+      "companyTitle": "Компания",
+      "resourcesTitle": "Ресурсы",
+      "legalTitle": "Юридический",
+      "product": "Продукт",
+      "features": "Функции",
+      "pricing": "Цены",
+      "demo": "Демо",
+      "integrations": "Интеграции",
+      "docs": "Документация",
+      "apiReference": "Справочник по API",
+      "changelog": "Журнал изменений",
+      "caseStudies": "Тематические исследования",
+      "templates": "Шаблоны",
+      "company": "Компания",
+      "aboutUs": "О нас",
+      "blog": "Блог",
+      "careers": "Карьера",
+      "contact": "Контакт",
+      "press": "Нажимать",
+      "partners": "Партнеры",
+      "customers": "Клиенты",
+      "events": "События",
+      "legal": "Юридический",
+      "privacy": "политика конфиденциальности",
+      "terms": "Условия использования",
+      "security": "Безопасность",
+      "support": "Поддерживать",
+      "helpCenter": "Справочный центр",
+      "community": "Сообщество",
+      "status": "Статус системы",
+      "roiCalculator": "Калькулятор рентабельности инвестиций",
+      "copyright": "© 2025 АТЛВС. Все права защищены."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Интегрируется с вашими любимыми инструментами",
+      "subtitle": "Подключите ATLVS к инструментам, которые вы уже используете",
+      "comingSoon": "Скоро появятся новые интеграции"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "Профессиональные решения для управления производством",
+          "headlineHighlight": "Для экспериментальных команд",
+          "subheadline": "Комплексное управление проектами, рабочей силой, активами и финансами с централизованной платформы. Создан для профессионалов, которые дарят исключительные впечатления.",
+          "supportingCopy": "От фестивалей до корпоративных мероприятий и захватывающих событий — ATLVS обеспечивает структуру и контроль, необходимые для успешного управления производством.",
+          "ctaPrimary": "Начать бесплатную пробную версию",
+          "ctaSecondary": "Запросить демонстрацию",
+          "trustIndicators": "Кредитная карта не требуется • 14-дневная пробная версия • Отмена в любое время",
+          "platformScreenshot": "Скриншот платформы"
+        },
+        "trustBar": {
+          "trustedBy": "Нам доверяют профессионалы производства по всему миру"
+        },
+        "problem": {
+          "title": "Задача управления производством",
+          "subtitle": "Общеотраслевая неэффективность",
+          "pain1Title": "Фрагментированные системы",
+          "pain1Description": "Команды используют несколько автономных платформ, включая электронные таблицы, электронную почту и различные инструменты управления проектами.",
+          "pain2Title": "Потеря информации",
+          "pain2Description": "Важные детали проекта теряются во время переходов и передачи команд.",
+          "pain3Title": "Перерасход бюджета",
+          "pain3Description": "Без надлежащего финансового контроля затраты превышают прогнозы.",
+          "pain4Title": "Сбои в общении",
+          "pain4Description": "Поставщики, члены экипажа и заинтересованные стороны испытывают трудности с координацией"
+        },
+        "solution": {
+          "title": "Комплексная платформа. Полный контроль.",
+          "subtitle": "Комплексное управление производством",
+          "feature1Title": "Централизованная платформа",
+          "feature1Description": "Управление всеми проектами, персоналом и ресурсами из одного места",
+          "feature2Title": "Обновления в реальном времени",
+          "feature2Description": "Мгновенная синхронизация гарантирует, что все члены команды будут иметь актуальную информацию.",
+          "feature3Title": "Финансовый надзор",
+          "feature3Description": "Отслеживайте бюджеты, расходы и счета с точностью и точностью.",
+          "feature4Title": "Управление поставщиками",
+          "feature4Description": "Поддерживать профессиональные отношения, обеспечивая при этом надлежащий надзор"
+        },
+        "howItWorks": {
+          "title": "Процесс реализации",
+          "subtitle": "Эффективная установка и развертывание",
+          "step1Title": "Создайте свою организацию",
+          "step1Description": "Настройте свою организационную структуру и подключите свою команду",
+          "step2Title": "Определите свои проекты",
+          "step2Description": "Создание производств, активаций и рабочих пространств",
+          "step3Title": "Распределите роли и обязанности",
+          "step3Description": "Обеспечить соответствующие уровни доступа и четкую подотчетность",
+          "step4Title": "Выполнение и мониторинг",
+          "step4Description": "Отслеживайте прогресс, управляйте бюджетом, добивайтесь исключительных результатов"
+        },
+        "testimonials": {
+          "title": "Нам доверяют профессионалы производства по всему миру",
+          "subtitle": "Проверенные результаты от лидеров отрасли",
+          "testimonial1Quote": "ATLVS оказался отличным решением для управления нашей фестивальной деятельностью. Все хорошо организовано, и наша команда поддерживает правильную координацию.",
+          "testimonial1Author": "Сара Чен",
+          "testimonial1Role": "Директор-постановщик, Большой музыкальный фестиваль",
+          "testimonial2Quote": "Ролевая система контроля доступа обеспечивает именно то, что нам нужно для нашей организационной структуры. Наконец, надлежащее управление безопасностью и доступом для производственных групп.",
+          "testimonial2Author": "Маркус Родригес",
+          "testimonial2Role": "Вице-президент по операциям, компания Live Events",
+          "testimonial3Quote": "В первом квартале мы сократили перерасход бюджета на 40%. Возможности финансовой прозрачности и отслеживания действительно впечатляют.",
+          "testimonial3Author": "Дженнифер Парк",
+          "testimonial3Role": "Финансовый директор, Агентство корпоративных мероприятий"
+        },
+        "pricing": {
+          "title": "Профессиональная структура ценообразования"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "Управление производством, которое работает",
+          "headlineHighlight": "Нет чуши",
+          "subheadline": "Управляйте проектами, командой, активами и бюджетами из одного места. Создан для людей, которые действительно делают работу.",
+          "supportingCopy": "Фестивали, корпоративные мероприятия, иммерсивные мероприятия — ATLVS справится с этим без проблем.",
+          "ctaPrimary": "Начать бесплатно",
+          "ctaSecondary": "Посмотрите, как это работает",
+          "trustIndicators": "Нет кредитной карты • 14-дневная пробная версия • Отмена в любой момент",
+          "platformScreenshot": "Скриншот платформы"
+        },
+        "trustBar": {
+          "trustedBy": "Используется производственными командами, которые выполняют работу"
+        },
+        "problem": {
+          "title": "Производственный беспорядок",
+          "subtitle": "Та же история, другой день",
+          "pain1Title": "Инструментальный хаос",
+          "pain1Description": "Таблицы, Slack, электронная почта, случайные документы Google — ваш рабочий процесс разбросан повсюду.",
+          "pain2Title": "Отсутствует информация",
+          "pain2Description": "Файлы исчезают. Кто-то отправил это... куда-то. Удачи в поиске",
+          "pain3Title": "Расползание бюджета",
+          "pain3Description": "Затраты настигают вас. К тому времени, как вы это поймете, ваш бюджет превысит бюджет.",
+          "pain4Title": "Сбой в общении",
+          "pain4Description": "Поставщики пропускают обновления, команда работает со старой информацией, заинтересованные стороны продолжают задавать одни и те же вопросы"
+        },
+        "solution": {
+          "title": "Одна платформа. На самом деле работает.",
+          "subtitle": "Всё там, где должно быть",
+          "feature1Title": "Единая система",
+          "feature1Description": "Проекты, люди, ресурсы — все в одном месте, что действительно имеет смысл",
+          "feature2Title": "Обновления в реальном времени",
+          "feature2Description": "Изменения происходят мгновенно. Все видят одно и то же",
+          "feature3Title": "Отслеживание бюджета",
+          "feature3Description": "Отслеживайте каждый доллар. Никаких сюрпризов, никаких оправданий",
+          "feature4Title": "Координация поставщиков",
+          "feature4Description": "Держите партнеров в курсе событий, не теряя контроля"
+        },
+        "howItWorks": {
+          "title": "Как это работает",
+          "subtitle": "Быстро вставай и беги",
+          "step1Title": "Настройте свою организацию",
+          "step1Description": "Создайте свою структуру, добавьте свою команду",
+          "step2Title": "Создавайте свои проекты",
+          "step2Description": "Планируйте производства и рабочие места",
+          "step3Title": "Назначить роли",
+          "step3Description": "Дайте людям право доступа, не более того",
+          "step4Title": "Сделай это",
+          "step4Description": "Отслеживайте прогресс, управляйте бюджетом, отправляйте вовремя"
+        },
+        "testimonials": {
+          "title": "Настоящие команды, реальные результаты",
+          "subtitle": "Никаких маркетинговых слов",
+          "testimonial1Quote": "ATLVS исправил наш фестивальный хаос. Все в одном месте, все знают, что происходит. Окончательно.",
+          "testimonial1Author": "Сара Чен",
+          "testimonial1Role": "Директор-постановщик, Большой музыкальный фестиваль",
+          "testimonial2Quote": "Система разрешений — это именно то, что нам нужно. Больше никаких кошмаров доступа.",
+          "testimonial2Author": "Маркус Родригес",
+          "testimonial2Role": "Вице-президент по операциям, компания Live Events",
+          "testimonial3Quote": "Сократить перерасход бюджета на 40% в первом квартале. Отслеживание действительно работает.",
+          "testimonial3Author": "Дженнифер Парк",
+          "testimonial3Role": "Финансовый директор, Агентство корпоративных мероприятий"
+        },
+        "pricing": {
+          "title": "Прямые цены"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "Управление производством, которое действительно работает",
+          "headlineHighlight": "Для экспериментальных команд",
+          "subheadline": "Управляйте своими проектами, командой, активами и бюджетами из единого командного центра. Создан для людей, которые создают незабываемые впечатления.",
+          "supportingCopy": "Независимо от того, организуете ли вы фестивали, корпоративные мероприятия или иммерсивные мероприятия — ATLVS прокладывает путь от концепции до занавеса.",
+          "ctaPrimary": "Начните бесплатно сегодня",
+          "ctaSecondary": "Посмотрите это в действии",
+          "trustIndicators": "Нет кредитной карты • 14-дневная пробная версия • Отмена в любой момент",
+          "platformScreenshot": "Скриншот платформы"
+        },
+        "trustBar": {
+          "trustedBy": "Нам доверяют производственные команды по всему миру"
+        },
+        "problem": {
+          "title": "Проблема производственного хаоса",
+          "subtitle": "Ты знаешь упражнение",
+          "pain1Title": "Перегрузка инструмента",
+          "pain1Description": "Таблицы, Slack, электронная почта и тот самый Google Doc, который никто не может найти — ваш рабочий процесс разбросан по дюжине платформ.",
+          "pain2Title": "Информационные черные дыры",
+          "pain2Description": "Критические детали исчезают во время передачи управления. Кто-то определенно отправил этот файл... куда-то",
+          "pain3Title": "Бюджетные сюрпризы",
+          "pain3Description": "Затраты скрываются в тени. К тому времени, как вы заметите, вы уже закончили",
+          "pain4Title": "Коммуникационный дрейф",
+          "pain4Description": "Поставщики пропускают обновления, команда обрабатывает старую информацию, заинтересованные стороны задают одни и те же вопросы дважды"
+        },
+        "solution": {
+          "title": "Одна платформа. Ноль хаоса.",
+          "subtitle": "Все на своем месте",
+          "feature1Title": "Единый командный центр",
+          "feature1Description": "Проекты, люди и ресурсы — все плывет в строю",
+          "feature2Title": "Синхронизация в реальном времени",
+          "feature2Description": "Обновления приходят мгновенно. Все работают по одной и той же схеме",
+          "feature3Title": "Бюджетный радар",
+          "feature3Description": "Отслеживайте каждый доллар в режиме реального времени. Никаких сюрпризов, никаких перерасходов",
+          "feature4Title": "Координация поставщиков",
+          "feature4Description": "Держите внешних партнеров в курсе, не выдавая корабль"
+        },
+        "howItWorks": {
+          "title": "Как это работает",
+          "subtitle": "Отправьтесь в плавание за считанные минуты, а не месяцы",
+          "step1Title": "Запустите свою организацию",
+          "step1Description": "Создайте свою структуру и приведите на борт свою команду.",
+          "step2Title": "Составьте график своих проектов",
+          "step2Description": "Составьте карту производств, активаций и рабочих пространств",
+          "step3Title": "Назначьте роли и миссии",
+          "step3Description": "Предоставьте каждому правильный доступ и четкие обязанности",
+          "step4Title": "Навигация и доставка",
+          "step4Description": "Отслеживайте прогресс, управляйте бюджетом, выполняйте безупречно"
+        },
+        "testimonials": {
+          "title": "Нам доверяют производственные команды по всему миру",
+          "subtitle": "Реальные истории от реальных продюсеров",
+          "testimonial1Quote": "ATLVS изменил то, как мы управляем фестивалями. Все в одном месте, все на одной странице. Окончательно.",
+          "testimonial1Author": "Сара Чен",
+          "testimonial1Role": "Директор-постановщик, Большой музыкальный фестиваль",
+          "testimonial2Quote": "Система RBAC идеально подходит для нашей сложной организационной структуры. Надлежащий контроль доступа на производстве? Революционный.",
+          "testimonial2Author": "Маркус Родригес",
+          "testimonial2Role": "Вице-президент по операциям, компания Live Events",
+          "testimonial3Quote": "В первом квартале мы сократили перерасход бюджета на 40%. Финансовая прозрачность действительно меняет правила игры.",
+          "testimonial3Author": "Дженнифер Парк",
+          "testimonial3Role": "Финансовый директор, Агентство корпоративных мероприятий"
+        },
+        "pricing": {
+          "title": "Прозрачное ценообразование, которое масштабируется"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "Управление производством, которое поражает иначе",
+          "headlineHighlight": "Для создателей мероприятий",
+          "subheadline": "Управляйте своими проектами, командой, оборудованием и бюджетами из одного приложения. Создано для людей, которые действительно создают впечатления.",
+          "supportingCopy": "Фестивали, бренд-активации, иммерсивные мероприятия — ATLVS обеспечивает организацию всего, от идеи до реализации.",
+          "ctaPrimary": "Начать бесплатно",
+          "ctaSecondary": "Проверьте это",
+          "trustIndicators": "Кредитная карта не требуется • Бесплатная пробная версия • Отмена в любое время",
+          "platformScreenshot": "Скриншот платформы"
+        },
+        "trustBar": {
+          "trustedBy": "Используется производственными группами повсюду"
+        },
+        "problem": {
+          "title": "Производство беспорядочное AF",
+          "subtitle": "Мы все были там",
+          "pain1Title": "Слишком много приложений",
+          "pain1Description": "Таблицы, Slack, электронная почта, случайные документы Google — все повсюду, и это хаос.",
+          "pain2Title": "Файлы пропадают",
+          "pain2Description": "Кто-то отправил этот файл... куда-то. Теперь никто не может его найти. Классика.",
+          "pain3Title": "Бюджет идет Брр",
+          "pain3Description": "Затраты продолжают расти. К тому времени, как вы это заметите, вы уже значительно превысили бюджет.",
+          "pain4Title": "Задержка в общении 💬",
+          "pain4Description": "Члены команды пропускают обновления и работают со старой информацией"
+        },
+        "solution": {
+          "title": "Одна платформа. Тотальный контроль. 🎯",
+          "subtitle": "Все в одном месте",
+          "feature1Title": "Командный центр 🎮",
+          "feature1Description": "Все ваши проекты, команда и ресурсы в одном хабе",
+          "feature2Title": "Живая синхронизация ⚡",
+          "feature2Description": "Обновления происходят мгновенно. Все остаются на связи",
+          "feature3Title": "Трекер бюджета 💰",
+          "feature3Description": "Смотрите каждый доллар в режиме реального времени. Никаких сюрпризов",
+          "feature4Title": "Координация команды 🤝",
+          "feature4Description": "Держите всех в курсе событий и на одной странице"
+        },
+        "howItWorks": {
+          "title": "Как это работает",
+          "subtitle": "Начните работу буквально за несколько минут",
+          "step1Title": "Настройте свою организацию",
+          "step1Description": "Создайте структуру своей команды и добавьте всех",
+          "step2Title": "Создание проектов",
+          "step2Description": "Планируйте свои мероприятия и постановки",
+          "step3Title": "Назначить роли",
+          "step3Description": "Дайте людям правильные разрешения",
+          "step4Title": "Отправьте это",
+          "step4Description": "Отслеживайте все, управляйте бюджетом, выполняйте идеально"
+        },
+        "testimonials": {
+          "title": "Реальные команды, использующие ATLVS",
+          "subtitle": "Реальные отзывы реальных людей",
+          "testimonial1Quote": "ATLVS — это операционная система для управления фестивалями. Все организовано, все синхронизированы. 10/10 рекомендую.",
+          "testimonial1Author": "Сара Чен",
+          "testimonial1Role": "Директор-постановщик, Большой музыкальный фестиваль",
+          "testimonial2Quote": "Система разрешений просто огонь. Наконец-то мы получили надлежащий контроль доступа для нашей команды.",
+          "testimonial2Author": "Маркус Родригес",
+          "testimonial2Role": "Вице-президент по операциям, компания Live Events",
+          "testimonial3Quote": "В первом квартале мы сократили бюджетные проблемы на 40%. Отслеживание денег просто потрясающее.",
+          "testimonial3Author": "Дженнифер Парк",
+          "testimonial3Role": "Финансовый директор, Агентство корпоративных мероприятий"
+        },
+        "pricing": {
+          "title": "Цены, которые поражают воображение"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "Повышайте уровень своей производственной игры 🎮",
+          "headlineHighlight": "Для создателей мероприятий",
+          "subheadline": "Управляйте проектами, командой, оборудованием и деньгами в одном суперприложении ✨ Создано для авторов, которые создают невероятные впечатления 🚀",
+          "supportingCopy": "Фестивали, мероприятия, акции — ATLVS держит все организованным от начала до конца 🎯",
+          "ctaPrimary": "Начни бесплатно 🚀",
+          "ctaSecondary": "Смотрите демо 👀",
+          "trustIndicators": "Карта не требуется • Бесплатная пробная версия • Отмена в любое время ✌️",
+          "platformScreenshot": "Скриншот платформы"
+        },
+        "trustBar": {
+          "trustedBy": "Используется производственными группами по всему миру 🌍"
+        },
+        "problem": {
+          "title": "Производство может быть хаотичным 😅",
+          "subtitle": "Звучит знакомо?",
+          "pain1Title": "Перегрузка приложения 📱",
+          "pain1Description": "Слишком много приложений, слишком много хаоса. Все разбросано и трудно найти 🤯",
+          "pain2Title": "Потерянные файлы 📂",
+          "pain2Description": "Файлы исчезают в пустоте. Кто-то отправил... куда-то... удачи! 🔍",
+          "pain3Title": "Бюджетный сюрприз 💸",
+          "pain3Description": "Деньги продолжают исчезать. К тому времени, как вы заметите, вы превысили бюджет 😬",
+          "pain4Title": "Неразбериха в команде 🤷",
+          "pain4Description": "Люди пропускают обновления, работают со старой информацией, задают одни и те же вопросы"
+        },
+        "solution": {
+          "title": "Одно приложение. Полный контроль. 💪",
+          "subtitle": "Все, что вам нужно в одном месте",
+          "feature1Title": "Командный центр 🎮",
+          "feature1Description": "Все проекты, команда и оборудование на одной панели",
+          "feature2Title": "Мгновенная синхронизация ⚡",
+          "feature2Description": "Обновления происходят в режиме реального времени. Все остаются на связи",
+          "feature3Title": "Трекер денег 💰",
+          "feature3Description": "Следите за каждым долларом. Никаких сюрпризов, никакого стресса",
+          "feature4Title": "Коллективная работа 🤝",
+          "feature4Description": "Держите всех в курсе и работайте вместе"
+        },
+        "howItWorks": {
+          "title": "Как это работает ⚙️",
+          "subtitle": "Начните очень быстро",
+          "step1Title": "Создайте свою команду 👥",
+          "step1Description": "Настройте свою организацию и добавьте свою команду",
+          "step2Title": "Создавайте проекты 📋",
+          "step2Description": "Составьте план всех ваших мероприятий и постановок",
+          "step3Title": "Установить разрешения 🔐",
+          "step3Description": "Предоставьте каждому правильный уровень доступа",
+          "step4Title": "Запусти и выиграй 🏆",
+          "step4Description": "Отслеживайте прогресс, управляйте деньгами, выполняйте идеально"
+        },
+        "testimonials": {
+          "title": "Команды любят ATLVS 💙",
+          "subtitle": "Реальные отзывы реальных пользователей",
+          "testimonial1Quote": "ATLVS буквально идеален для фестивалей. Все организовано, все синхронизированы. 100/10! 🔥",
+          "testimonial1Author": "Сара Чен",
+          "testimonial1Role": "Директор-постановщик, Большой музыкальный фестиваль",
+          "testimonial2Quote": "Разрешительная система - поцелуй шеф-повара 👌 Наконец-то правильный контроль доступа!",
+          "testimonial2Author": "Маркус Родригес",
+          "testimonial2Role": "Вице-президент по операциям, компания Live Events",
+          "testimonial3Quote": "В первом квартале мы сократили бюджетные проблемы на 40%. Отслеживание безумное! 🎯",
+          "testimonial3Author": "Дженнифер Парк",
+          "testimonial3Role": "Финансовый директор, Агентство корпоративных мероприятий"
+        },
+        "pricing": {
+          "title": "Цены действительно справедливые ✨"
+        }
+      }
     }
   }
 }

@@ -402,333 +402,934 @@
   "marketing": {
     "nav": {
       "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "solutions": "Solusi",
+      "features": "Fitur",
+      "pricing": "Harga",
+      "docs": "dokumen",
+      "blog": "blog",
+      "company": "Perusahaan",
+      "signIn": "Masuk",
+      "startFree": "Mulai Gratis",
+      "toggleMenu": "Alihkan menu"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Solusi berdasarkan Industri",
+        "subtitle": "Alur kerja yang dibuat khusus untuk setiap jenis produksi hiburan langsung"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Konser & Tur",
+        "description": "Menyederhanakan perutean, penganggaran, logistik, dan manajemen kru di seluruh operasi tur global — mulai dari venue kecil hingga produksi skala arena."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Festival Musik & Seni",
+        "description": "Sentralisasikan alur kerja untuk acara multi-hari dan multi-tahap — menyatukan produksi, talenta, vendor, dan kepatuhan dalam satu sistem perintah."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Acara yang Imersif & Berpengalaman",
+        "description": "Rancang dan operasikan dunia interaktif, instalasi, dan pengalaman bermerek dengan visibilitas penuh mulai dari pengembangan kreatif hingga eksekusi langsung."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Produksi Teater & Langsung",
+        "description": "Kelola tim kreatif, jadwal teknis, dan aset produksi untuk hiburan berbasis panggung dan pertunjukan."
       },
       "filmTv": {
         "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "description": "Koordinasikan pra-produksi, operasi yang telah ditetapkan, dan gabungkan pelaporan dengan alat yang dibuat untuk sinkronisasi lintas departemen dan transparansi keuangan."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Aktivasi Merek & Kampanye Pemasaran",
+        "description": "Jalankan pop-up, peluncuran, dan pengalaman berbasis kampanye — mengintegrasikan materi iklan, logistik, dan pelacakan ROI ke dalam satu dasbor cerdas."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Acara Perusahaan & Pribadi",
+        "description": "Memberikan pengalaman sempurna untuk rapat internal, retret, dan pertemuan penting dengan perencanaan yang efisien dan koordinasi vendor."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Pameran & Konvensi Dagang",
+        "description": "Sederhanakan pembangunan stan, logistik peserta pameran, dan hubungan sponsor dengan manajemen proyek menyeluruh dan analisis waktu nyata."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Kesehatan, Kebugaran & Gaya Hidup",
+        "description": "Optimalkan program, staf, dan arus tamu untuk retret, acara kebugaran, dan pengalaman kesehatan — yang mengutamakan detail dan suasana."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "Manajemen Produksi Yang Sebenarnya Berfungsi",
+      "headlineHighlight": "Untuk Tim Berpengalaman",
+      "subheadline": "Navigasikan proyek, kru, aset, dan anggaran Anda dari satu pusat komando. Dibangun untuk orang-orang yang menciptakan pengalaman tak terlupakan.",
+      "supportingCopy": "Baik Anda memproduksi festival, acara perusahaan, atau aktivasi yang mendalam—ATLVS memetakan arah mulai dari konsep hingga panggilan tirai.",
+      "ctaPrimary": "Mulai Gratis Hari Ini",
+      "ctaSecondary": "Lihat Aksinya",
+      "trustIndicators": "Tanpa kartu kredit • Uji coba 14 hari • Batalkan kapan saja",
+      "platformScreenshot": "Tangkapan Layar Platform"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Dipercaya oleh tim produksi di seluruh dunia"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "Masalah Kekacauan Produksi",
+      "subtitle": "Anda tahu latihannya",
+      "pain1Title": "Kelebihan Alat",
+      "pain1Description": "Spreadsheet, Slack, email, yang tidak dapat ditemukan oleh siapa pun di Google Dokumen—alur kerja Anda tersebar di banyak platform",
+      "pain2Title": "Informasi Lubang Hitam",
+      "pain2Description": "Detail penting hilang selama serah terima. Seseorang pasti mengirim file itu... ke suatu tempat",
+      "pain3Title": "Kejutan Anggaran",
+      "pain3Description": "Biaya merangkak naik dalam bayang-bayang. Pada saat Anda menyadarinya, Anda sudah selesai",
+      "pain4Title": "Penyimpangan Komunikasi",
+      "pain4Description": "Vendor melewatkan pembaruan, kru mengerjakan informasi lama, pemangku kepentingan menanyakan pertanyaan yang sama dua kali"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "Satu Platform. Nol Kekacauan.",
+      "subtitle": "Semuanya ada pada tempatnya",
+      "feature1Title": "Pusat Komando Terpadu",
+      "feature1Description": "Proyek, orang, dan sumber daya semuanya berjalan dalam formasi",
+      "feature2Title": "Sinkronisasi Waktu Nyata",
+      "feature2Description": "Pembaruan mengalir secara instan. Semua orang bekerja dari grafik yang sama",
+      "feature3Title": "Radar Anggaran",
+      "feature3Description": "Lacak setiap dolar secara real-time. Tidak ada kejutan, tidak ada pembengkakan",
+      "feature4Title": "Koordinasi Vendor",
+      "feature4Description": "Selalu beri tahu mitra eksternal tanpa memberikan informasinya"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "Cara Kerjanya",
+      "subtitle": "Berlayar dalam hitungan menit, bukan bulan",
+      "step1Title": "Luncurkan Organisasi Anda",
+      "step1Description": "Siapkan struktur Anda dan bawa kru Anda ke dalamnya",
+      "step2Title": "Bagan Proyek Anda",
+      "step2Description": "Memetakan produksi, aktivasi, dan ruang kerja",
+      "step3Title": "Tetapkan Peran & Misi",
+      "step3Description": "Berikan setiap orang akses yang tepat dan tanggung jawab yang jelas",
+      "step4Title": "Navigasi & Kirim",
+      "step4Description": "Pantau kemajuan, kelola anggaran, jalankan dengan sempurna"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "Semua yang Anda Butuhkan untuk Diproduksi dalam Skala Besar",
+      "subtitle": "Enam hub terintegrasi untuk kontrol produksi lengkap",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Pusat Produksi",
+        "description": "Kelola proyek, acara, orang, aset, lokasi, dan file",
+        "feature1": "Perencanaan proyek & acara",
+        "feature2": "Manajemen tim & kru",
+        "feature3": "Pelacakan & inventaris aset",
+        "feature4": "Koordinasi lokasi & tempat"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "Pusat Bisnis",
+        "description": "Menangani perusahaan, pekerjaan, pengadaan, dan keuangan",
+        "feature1": "Vendor & manajemen perusahaan",
+        "feature2": "Postingan pekerjaan & perekrutan",
+        "feature3": "Pengadaan & pembelian",
+        "feature4": "Pelacakan anggaran & pengeluaran"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Pusat Jaringan",
+        "description": "Bangun komunitas, pasar, dan perpustakaan sumber daya",
+        "feature1": "Komunitas & diskusi",
+        "feature2": "Pasar & layanan",
+        "feature3": "Perpustakaan sumber daya",
+        "feature4": "Koneksi industri"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "Pusat Otomasi",
+        "description": "Otomatiskan alur kerja, pemicu, dan tugas berulang",
+        "feature1": "Otomatisasi alur kerja khusus",
+        "feature2": "Pemicu yang didorong oleh peristiwa",
+        "feature3": "Eksekusi tugas terjadwal",
+        "feature4": "Jalur pipa integrasi"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "Pusat Intelijen",
+        "description": "Hasilkan laporan, analitik, dan wawasan",
+        "feature1": "Laporan khusus",
+        "feature2": "Analisis waktu nyata",
+        "feature3": "Wawasan prediktif",
+        "feature4": "Metrik kinerja"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "Pusat Sistem",
+        "description": "Konfigurasikan admin, pengaturan, dan profil pengguna",
+        "feature1": "Manajemen pengguna & peran",
+        "feature2": "Konfigurasi sistem",
+        "feature3": "Kustomisasi profil",
+        "feature4": "Keamanan & izin"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "Semua yang Anda Butuhkan untuk Diproduksi dalam Skala Besar",
+        "subtitle": "Enam hub terintegrasi yang dirancang untuk tim produksi berpengalaman"
+      },
+      "production": {
+        "title": "Pusat Produksi",
+        "description": "Kelola proyek, acara, orang, aset, lokasi, dan file",
+        "projects": {
+          "title": "Proyek",
+          "description": "Atur dan lacak produksi mulai dari konsep hingga pemogokan"
+        },
+        "events": {
+          "title": "Acara",
+          "description": "Jadwalkan, koordinasikan, dan kelola setiap detail dan garis waktu"
+        },
+        "people": {
+          "title": "Rakyat",
+          "description": "Kelola penugasan kru, ketersediaan, dan penjadwalan"
+        },
+        "assets": {
+          "title": "Aktiva",
+          "description": "Lacak peralatan, inventaris, dan sumber daya di seluruh produksi"
+        },
+        "locations": {
+          "title": "Lokasi",
+          "description": "Mengkoordinasikan tempat, lokasi, dan logistik fasilitas"
+        },
+        "files": {
+          "title": "File",
+          "description": "Sentralisasi dokumen, media, dan file produksi dengan aman"
+        }
+      },
+      "business": {
+        "title": "Pusat Bisnis",
+        "description": "Menangani perusahaan, pekerjaan, pengadaan, dan keuangan",
+        "companies": {
+          "title": "Perusahaan",
+          "description": "Kelola hubungan vendor, klien, dan mitra"
+        },
+        "jobs": {
+          "title": "Pekerjaan",
+          "description": "Posting posisi, lacak lamaran, kelola perekrutan"
+        },
+        "procurement": {
+          "title": "Pengadaan",
+          "description": "Menyederhanakan pembelian, pemilihan vendor, dan kontrak"
+        },
+        "invoices": {
+          "title": "Faktur",
+          "description": "Buat, kirim, dan lacak faktur dengan pengingat otomatis"
+        },
+        "expenses": {
+          "title": "Pengeluaran",
+          "description": "Catat dan kategorikan pengeluaran dengan pengambilan tanda terima"
+        },
+        "budgets": {
+          "title": "Anggaran",
+          "description": "Rencanakan, pantau, dan kendalikan anggaran dengan pelacakan waktu nyata"
+        }
+      },
+      "network": {
+        "title": "Pusat Jaringan",
+        "description": "Bangun komunitas, pasar, dan perpustakaan sumber daya",
+        "community": {
+          "title": "Masyarakat",
+          "description": "Terhubung dengan pakar industri, berbagi pengetahuan, berkolaborasi"
+        },
+        "marketplace": {
+          "title": "Pasar",
+          "description": "Temukan layanan, pekerjakan talenta, temukan sumber daya produksi"
+        },
+        "resources": {
+          "title": "Sumber daya",
+          "description": "Akses panduan, templat, dan praktik terbaik"
+        }
+      },
+      "automations": {
+        "title": "Pusat Otomasi",
+        "description": "Otomatiskan alur kerja, pemicu, dan tugas berulang",
+        "workflows": {
+          "title": "Alur kerja",
+          "description": "Buat urutan otomatisasi khusus untuk proses berulang"
+        },
+        "triggers": {
+          "title": "Pemicu",
+          "description": "Siapkan tindakan berdasarkan peristiwa yang merespons secara otomatis"
+        },
+        "scheduled": {
+          "title": "Tugas Terjadwal",
+          "description": "Otomatiskan tugas berulang dengan penjadwalan fleksibel"
+        }
+      },
+      "intelligence": {
+        "title": "Pusat Intelijen",
+        "description": "Hasilkan laporan, analitik, dan wawasan",
+        "reports": {
+          "title": "Laporan",
+          "description": "Buat laporan khusus dengan visualisasi dan ekspor yang fleksibel"
+        },
+        "analytics": {
+          "title": "Analisis",
+          "description": "Lacak KPI, pantau tren, ukur kinerja"
+        },
+        "insights": {
+          "title": "Wawasan",
+          "description": "Dapatkan rekomendasi dan analisis prediktif yang didukung AI"
+        }
+      },
+      "system": {
+        "title": "Pusat Sistem",
+        "description": "Konfigurasikan admin, pengaturan, dan profil pengguna",
+        "admin": {
+          "title": "Admin",
+          "description": "Kelola pengaturan organisasi, keamanan, dan konfigurasi"
+        },
+        "settings": {
+          "title": "Pengaturan",
+          "description": "Sesuaikan preferensi, integrasi, dan perilaku platform"
+        },
+        "profiles": {
+          "title": "Profil Pengguna",
+          "description": "Kelola profil tim, peran, dan izin akses"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Dibuat untuk Setiap Peran di Kru Anda",
+      "subtitle": "11 peran bermerek dengan izin yang tepat",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Legenda",
+        "description": "Platform Super Admin - Kontrol penuh di semua organisasi"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "Hantu",
+        "level": "Otoritas Tertinggi",
+        "title": "Hantu",
+        "description": "Administrasi sistem lengkap dan akses tidak terbatas. Membentuk arah platform dan mempertahankan pengawasan perusahaan."
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "Penerbang",
+        "level": "Kepemimpinan Strategis",
+        "title": "Penerbang",
+        "description": "Visibilitas lintas proyek, alokasi sumber daya, dan analisis eksekutif. Arahkan strategi produksi tingkat tinggi dalam skala besar."
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "Budak",
+        "level": "Kepemimpinan Proyek",
+        "title": "Budak",
+        "description": "Hak pembuatan dan pengeditan proyek penuh. Pimpin produksi dari konsep hingga penyelesaian dengan kontrol penuh."
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "navigator",
+        "level": "Koordinasi",
+        "title": "navigator",
+        "description": "Koordinasi proyek, penugasan tugas, dan bimbingan tim. Buat bagan kursus melalui alur kerja yang kompleks."
       },
       "deviator": {
+        "name": "Deviator",
+        "level": "Eksekusi",
         "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "description": "Penyelesaian tugas terfokus dalam kerangka kerja yang ditetapkan. Memberikan pekerjaan berkualitas sesuai tanggung jawab yang diberikan."
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "Penjarah",
+        "level": "Pembelajaran & Observasi",
+        "title": "Penjarah",
+        "description": "Akses hanya lihat untuk belajar dan berkembang. Sempurna untuk pendatang baru yang membangun keterampilan mereka."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "Penjual",
+        "level": "Pengiriman Tercakup",
+        "title": "Penjual",
+        "description": "Akses yang ditargetkan untuk penyedia layanan eksternal. Unggah kiriman dan penuhi pekerjaan kontrak."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "Pengunjung",
+        "level": "Visibilitas Terbatas",
+        "title": "Pengunjung",
+        "description": "Akses sementara dan hanya baca untuk pemangku kepentingan eksternal. Tetap terinformasi tanpa mengganggu alur kerja."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "Mitra",
+        "level": "Kolaborasi Strategis",
+        "title": "Mitra",
+        "description": "Integrasi mendalam untuk kolaborator eksternal tepercaya. Berbagi data dua arah dan manajemen alur kerja bersama."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "Duta besar",
+        "level": "Juara Komunitas",
+        "title": "Duta besar",
+        "description": "Mewakili ATLVS, mendukung pengguna, dan membina kolaborasi. Selenggarakan acara, buat konten, kembangkan ekosistem."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Keamanan Tingkat Perusahaan",
+      "subtitle": "Data Anda dilindungi di setiap tingkat",
+      "feature1Title": "Keamanan Tingkat Baris",
+      "feature1Description": "Kebijakan 801 RLS memastikan pengguna hanya melihat apa yang seharusnya mereka lihat",
+      "feature2Title": "Akses Berbasis Peran",
+      "feature2Description": "11 peran bermerek dengan 45+ izin terperinci",
+      "feature3Title": "Penyimpanan Terenkripsi",
+      "feature3Description": "Semua data dienkripsi saat istirahat dan transit",
+      "feature4Title": "Pencatatan Audit",
+      "feature4Description": "Jejak audit lengkap dari semua aktivitas sistem",
+      "feature5Title": "Sesuai SOC 2",
+      "feature5Description": "Standar keamanan tingkat perusahaan",
+      "feature6Title": "Siap untuk GDPR",
+      "feature6Description": "Kepatuhan penuh terhadap peraturan privasi data"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
+      "title": "Dipercaya oleh Tim Produksi di Seluruh Dunia",
+      "subtitle": "Kisah nyata dari produser sungguhan",
+      "testimonial1Quote": "ATLVS mengubah cara kami mengelola festival. Semuanya di satu tempat, semua orang di halaman yang sama. Akhirnya.",
       "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
+      "testimonial1Role": "Direktur Produksi, Festival Musik Besar",
+      "testimonial1Title": "Direktur Produksi, Festival Musik Besar",
+      "testimonial2Quote": "Sistem RBAC sempurna untuk struktur organisasi kami yang kompleks. Kontrol akses yang tepat untuk produksi? Revolusioner.",
       "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
+      "testimonial2Role": "Wakil Presiden Operasi, Perusahaan Acara Langsung",
+      "testimonial2Title": "Wakil Presiden Operasi, Perusahaan Acara Langsung",
+      "testimonial3Quote": "Kami mengurangi pembengkakan anggaran sebesar 40% pada kuartal pertama. Visibilitas finansial benar-benar mengubah keadaan.",
       "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "testimonial3Role": "CFO, Agen Acara Perusahaan",
+      "testimonial3Title": "CFO, Agen Acara Perusahaan",
+      "jamesCookQuote": "Mengelola tiga kapal ilmuwan yang semuanya mengira mereka adalah karakter utama? ATLVS akan membuat semua orang selaras dan benar-benar bekerja sama alih-alih bersaing untuk mendapatkan kredit.",
+      "jamesCookAuthor": "Kapten James Cook",
+      "jamesCookRole": "Penjelajah Angkatan Laut Kerajaan Inggris (1728-1779)",
+      "zhengYiSaoQuote": "Saya mengubah pembajakan menjadi perusahaan Fortune 500, menegosiasikan amnesti saya sendiri, dan pensiun dengan kekayaan. ATLVS diperuntukkan bagi masyarakat yang memahami bahwa operasi non-konvensional masih memerlukan manajemen yang solid.",
+      "zhengYiSaoAuthor": "Zheng Yi Sao",
+      "zhengYiSaoRole": "Pemimpin Bajak Laut Tiongkok (1775-1844)",
+      "captainAhabQuote": "Mengejar satu tujuan tertentu di setiap lautan tanpa mempertimbangkan gambaran yang lebih besar? ATLVS membuat Anda tetap fokus pada rencana bisnis sebenarnya, bukan hanya tujuan pribadi.",
+      "captainAhabAuthor": "Kapten Ahab",
+      "captainAhabRole": "Kapten Penangkapan Ikan Paus, Pequod",
+      "graceOMalleyQuote": "Bernegosiasi dengan Ratu Elizabeth secara setara. ATLVS membantu Anda hadir di setiap pertemuan dengan data siap dan kepercayaan diri Anda meningkat.",
+      "graceOMalleyAuthor": "Grace O'Malley \"Gráinne Mhaol\"",
+      "graceOMalleyRole": "Ratu & Kepala Suku Bajak Laut Irlandia (c. 1530-1603)",
+      "sinbadQuote": "Cara saya terus mengalami karam tetapi masih keluar lagi? Itu hanya perencanaan yang buruk. ATLVS menyediakan struktur yang jelas dibutuhkan dalam pengambilan keputusan saya.",
+      "sinbadAuthor": "Sinbad sang Pelaut",
+      "sinbadRole": "Pelaut Pedagang Legendaris, Malam Arab",
+      "longJohnSilverQuote": "Mengelola bajak laut secara harfiah berarti menggembalakan kucing jika kucing tersebut menderita penyakit kudis dan masalah kepercayaan. Manajemen pemangku kepentingan ATLVS menjaga semua orang tetap selaras, bahkan ketika mereka sedang bersekongkol satu sama lain.",
+      "longJohnSilverAuthor": "Long John Perak",
+      "longJohnSilverRole": "Quartermaster & Juru Masak Bajak Laut, Pulau Harta Karun",
+      "horatioHornblowerQuote": "Melawan Prancis sambil mengalami gangguan mental sejujurnya sangat cocok bagi saya. ATLVS mengatur semua hal taktis sehingga Anda dapat fokus pada misi sebenarnya.",
+      "horatioHornblowerAuthor": "Horatio Hornblower",
+      "horatioHornblowerRole": "Perwira Angkatan Laut Kerajaan (novel C.S. Forester)",
+      "captainNemoQuote": "Menjadi seorang pertapa di kapal selam sebenarnya merupakan kode yang sangat introvert, tetapi saya pun membutuhkan koordinasi tim. ATLVS bekerja bahkan ketika Anda bekerja sendiri.",
+      "captainNemoAuthor": "Kapten Nemo",
+      "captainNemoRole": "Komandan, Nautilus (Dua Puluh Ribu Liga Bawah Laut)",
+      "odysseusQuote": "Kehilangan setiap anggota kru karena saya terus membuat pilihan yang meragukan. ATLVS akan seperti 'kita tidak perlu melihat apa itu Sirene' dan sejujurnya? Sah.",
+      "odysseusAuthor": "Odiseus/Ulysses",
+      "odysseusRole": "Raja Ithaca, Pahlawan Yunani (The Odyssey)",
+      "blackbeardQuote": "Memblokir seluruh pelabuhan dengan empat kapal akan menghasilkan efek yang berbeda jika Anda berkoordinasi secara manual. ATLVS akan menjadikan saya bajak laut yang paling efisien secara operasional di lautan.",
+      "blackbeardAuthor": "Kapten Edward Ajarkan \"Blackbeard\"",
+      "blackbeardRole": "Komandan Bajak Laut (c. 1680-1718)",
+      "captainMarvelQuote": "Hilang selama 30 tahun menangani keadaan darurat luar angkasa tanpa check-in. Alat komunikasi ATLVS akan membantu saya untuk tidak membuat takut semua orang yang saya sayangi.",
+      "captainMarvelAuthor": "Kapten Marvel / Carol Danvers",
+      "captainMarvelRole": "Pilot Angkatan Udara & Pahlawan Kosmik (MCU)",
+      "captainJanewayQuote": "Saya melanggar Petunjuk Utama Duniawi beberapa kali untuk menyelamatkan kru saya, namun saya tidak pernah melanggar jadwal proyek saya. ATLVS menjaga prioritas tetap jelas bahkan ketika etika menjadi rumit.",
+      "captainJanewayAuthor": "Kapten Kathryn Janeway",
+      "captainJanewayRole": "Kapten Starfleet, USS Voyager (Star Trek: Voyager)",
+      "moanaQuote": "Maui seharusnya menjadi mentor saya tetapi menghabiskan sebagian besar waktunya dengan tidak tersedia secara emosional. ATLVS melacak kiriman saat tim Anda sedang kesulitan.",
+      "moanaAuthor": "Moana",
+      "moanaRole": "Wayfinder & Kepala Pulau (Disney's Moana)",
+      "captainJackSparrowQuote": "Mengelola kru ketika sebenarnya tidak ada yang tahu apakah mereka sedang bekerja atau hanya akan melakukan kekacauan? ATLVS memberikan kejelasan yang tidak dimiliki seluruh getaran saya.",
+      "captainJackSparrowAuthor": "Kapten Jack Sparrow",
+      "captainJackSparrowRole": "Kapten Bajak Laut, Mutiara Hitam (Bajak Laut Karibia)",
+      "popeyeQuote": "Seluruh kepribadian saya adalah 'keras kepala menolak membuat rencana ke depan.' ATLVS adalah orang dewasa di ruangan yang jelas-jelas saya butuhkan tetapi tidak mau saya akui.",
+      "popeyeAuthor": "Popeye si Pelaut",
+      "popeyeRole": "Pelindung Sailor & Olive Oyl (Karakter Kartun)",
+      "captainPicardQuote": "Memimpin kru yang beragam melalui situasi kontak pertama dan krisis diplomatik? ATLVS membuat semua orang tetap selaras ketika taruhannya sangat besar.",
+      "captainPicardAuthor": "Kapten Jean-Luc Picard",
+      "captainPicardRole": "Kapten Starfleet, USS Enterprise (Star Trek: TNG)",
+      "captainSiskoQuote": "Memerintahkan stasiun yang sebagian merupakan pangkalan militer, sebagian pusat perdagangan, sebagian lagi pusat pengungsi? ATLVS membantu Anda mengelola kompleksitas ketika setiap pemangku kepentingan memiliki prioritas berbeda.",
+      "captainSiskoAuthor": "Kapten Benyamin Sisko",
+      "captainSiskoRole": "Komandan Starfleet, Deep Space Nine (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Penetapan harga yang transparan",
+      "subtitle": "Dari kontraktor tunggal hingga produsen perusahaan",
+      "monthly": "Bulanan",
+      "annually": "Setiap tahun",
+      "save20": "Hemat 20%",
+      "community": {
+        "name": "Masyarakat",
+        "price": "Bebas",
+        "period": "selamanya",
+        "description": "Sempurna untuk memulai",
+        "feature1": "Akses peran perampok",
+        "feature2": "Manajemen tugas dasar",
+        "feature3": "Dukungan komunitas",
+        "cta": "Memulai Gratis"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$12",
+        "period": "per bulan",
+        "annualPrice": "$10/bulan (ditagih setiap tahun)",
+        "description": "Untuk kontraktor independen",
+        "feature1": "Peran Deviator & Raider",
+        "feature2": "Manajemen tugas tingkat lanjut",
+        "feature3": "Dukungan prioritas",
+        "cta": "Mulai Uji Coba Gratis"
+      },
+      "team": {
+        "name": "Tim",
+        "badge": "Paling Populer",
+        "price": "$120",
+        "period": "per bulan",
+        "annualPrice": "$100/bulan (ditagih setiap tahun)",
+        "description": "Untuk tim kecil hingga menengah (2-10 kursi)",
+        "feature1": "Semua fitur Pro",
+        "feature2": "Manajemen vendor",
+        "feature3": "Kolaborasi tim",
+        "cta": "Mulai Uji Coba Gratis"
+      },
       "starter": {
         "name": "Starter",
         "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "period": "per pengguna/bulan",
+        "description": "Sempurna untuk pekerja lepas dan tim kecil",
+        "feature1": "Hingga 5 pengguna",
+        "feature2": "10 proyek aktif",
+        "feature3": "Pelaporan dasar",
+        "feature4": "Dukungan email",
+        "feature5": "Penyimpanan 10GB",
+        "cta": "Mulai Uji Coba Gratis"
       },
       "professional": {
-        "name": "Professional",
+        "name": "Profesional",
         "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "period": "per pengguna/bulan",
+        "description": "Untuk perusahaan produksi yang sedang berkembang",
+        "feature1": "Hingga 25 pengguna",
+        "feature2": "Proyek tanpa batas",
+        "feature3": "Analisis tingkat lanjut",
+        "feature4": "Dukungan prioritas",
+        "feature5": "Penyimpanan 100GB",
+        "feature6": "Peran khusus",
+        "feature7": "akses API",
+        "cta": "Mulai Uji Coba Gratis",
+        "popular": "Paling Populer"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
+        "name": "Perusahaan",
+        "price": "Kebiasaan",
+        "period": "hubungi penjualan",
+        "annualPrice": "$1000/bulan (ditagih setiap tahun)",
+        "description": "Untuk organisasi dan instansi besar",
+        "feature1": "Pengguna tidak terbatas",
+        "feature2": "Proyek tanpa batas",
+        "feature3": "Integrasi khusus",
+        "feature4": "Dukungan khusus",
+        "feature5": "Penyimpanan tidak terbatas",
         "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "feature7": "jaminan SLA",
+        "feature8": "Pelatihan khusus",
+        "cta": "Hubungi Penjualan"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Pertanyaan yang Sering Diajukan",
+      "subtitle": "Segala sesuatu yang perlu Anda ketahui",
+      "question1": "Berapa lama uji coba gratisnya?",
+      "answer1": "14 hari, tidak diperlukan kartu kredit. Akses penuh ke semua fitur.",
+      "question2": "Bisakah saya membatalkannya kapan saja?",
+      "answer2": "Ya. Batalkan kapan saja. Tidak ada kontrak atau komitmen jangka panjang.",
+      "question3": "Metode pembayaran apa yang Anda terima?",
+      "answer3": "Kami menerima semua kartu kredit utama, ACH, dan transfer bank untuk paket perusahaan.",
+      "question4": "Apakah data saya aman?",
+      "answer4": "Ya. Enkripsi tingkat perusahaan, sesuai SOC 2, siap GDPR. Data Anda dilindungi di setiap tingkat.",
+      "question5": "Apakah Anda menawarkan pelatihan?",
+      "answer5": "Ya. Sumber daya layanan mandiri untuk semua paket, ditambah pelatihan khusus untuk pelanggan Perusahaan.",
+      "question6": "Bisakah saya mengimpor data saya yang sudah ada?",
+      "answer6": "Ya. Kami menyediakan alat impor CSV dan dapat membantu migrasi data khusus untuk paket Perusahaan.",
+      "q1": "Berapa lama uji coba gratisnya?",
+      "a1": "14 hari, tidak diperlukan kartu kredit. Akses penuh ke semua fitur.",
+      "q2": "Bisakah saya membatalkannya kapan saja?",
+      "a2": "Ya. Batalkan kapan saja. Tidak ada kontrak atau komitmen jangka panjang.",
+      "q3": "Metode pembayaran apa yang Anda terima?",
+      "a3": "Kami menerima semua kartu kredit utama, ACH, dan transfer bank untuk paket perusahaan.",
+      "q4": "Apakah data saya aman?",
+      "a4": "Ya. Enkripsi tingkat perusahaan, sesuai SOC 2, siap GDPR. Data Anda dilindungi di setiap tingkat.",
+      "q5": "Apakah Anda menawarkan pelatihan?",
+      "a5": "Ya. Sumber daya layanan mandiri untuk semua paket, ditambah pelatihan khusus untuk pelanggan Perusahaan.",
+      "q6": "Bisakah saya mengimpor data saya yang sudah ada?",
+      "a6": "Ya. Kami menyediakan alat impor CSV dan dapat membantu migrasi data khusus untuk paket Perusahaan."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Siap Mengubah Alur Kerja Produksi Anda?",
+      "subtitle": "Bergabunglah dengan ribuan profesional produksi menggunakan ATLVS",
+      "ctaPrimary": "Mulai Uji Coba Gratis",
+      "ctaSecondary": "Jadwalkan Demo",
+      "trustIndicators": "Tidak diperlukan kartu kredit • Uji coba gratis selama 14 hari • Batalkan kapan saja",
+      "primary": "Mulai Uji Coba Gratis",
+      "secondary": "Jadwalkan Demo",
+      "noCard": "Tidak diperlukan kartu kredit"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
+      "tagline": "Sistem manajemen proyek untuk tim produksi berpengalaman",
+      "productTitle": "Produk",
+      "companyTitle": "Perusahaan",
+      "resourcesTitle": "Sumber daya",
+      "legalTitle": "Legal",
+      "product": "Produk",
+      "features": "Fitur",
+      "pricing": "Harga",
+      "demo": "Demo",
+      "integrations": "Integrasi",
+      "docs": "Dokumentasi",
+      "apiReference": "Referensi API",
+      "changelog": "log perubahan",
+      "caseStudies": "Studi Kasus",
+      "templates": "Templat",
+      "company": "Perusahaan",
+      "aboutUs": "Tentang Kami",
+      "blog": "blog",
+      "careers": "Karier",
+      "contact": "Kontak",
+      "press": "Tekan",
+      "partners": "Mitra",
+      "customers": "Pelanggan",
+      "events": "Acara",
       "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "privacy": "Kebijakan Privasi",
+      "terms": "Ketentuan Layanan",
+      "security": "Keamanan",
+      "support": "Mendukung",
+      "helpCenter": "Pusat Bantuan",
+      "community": "Masyarakat",
+      "status": "Status Sistem",
+      "roiCalculator": "Kalkulator ROI",
+      "copyright": "© 2025 ATLVS. Semua hak dilindungi undang-undang."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Terintegrasi Dengan Alat Favorit Anda",
+      "subtitle": "Hubungkan ATLVS dengan alat yang sudah Anda gunakan",
+      "comingSoon": "Integrasi lainnya akan segera hadir"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "Solusi Manajemen Produksi Profesional",
+          "headlineHighlight": "Untuk Tim Berpengalaman",
+          "subheadline": "Manajemen proyek, tenaga kerja, aset, dan keuangan yang komprehensif dari platform terpusat. Dirancang untuk para profesional yang memberikan pengalaman luar biasa.",
+          "supportingCopy": "Dari festival hingga acara perusahaan dan pengalaman mendalam—ATLVS menyediakan struktur dan pengawasan yang diperlukan untuk manajemen produksi yang sukses.",
+          "ctaPrimary": "Mulai Uji Coba Gratis",
+          "ctaSecondary": "Minta Demonstrasi",
+          "trustIndicators": "Tidak diperlukan kartu kredit • Uji coba 14 hari • Batalkan kapan saja",
+          "platformScreenshot": "Tangkapan Layar Platform"
+        },
+        "trustBar": {
+          "trustedBy": "Dipercaya oleh para profesional produksi di seluruh dunia"
+        },
+        "problem": {
+          "title": "Tantangan Manajemen Produksi",
+          "subtitle": "Inefisiensi di seluruh industri",
+          "pain1Title": "Sistem Terfragmentasi",
+          "pain1Description": "Tim menggunakan berbagai platform yang tidak terhubung termasuk spreadsheet, email, dan berbagai alat manajemen proyek",
+          "pain2Title": "Kehilangan Informasi",
+          "pain2Description": "Detail proyek yang penting hilang selama transisi dan serah terima tim",
+          "pain3Title": "Pembengkakan Anggaran",
+          "pain3Description": "Tanpa pengawasan keuangan yang tepat, biaya akan melebihi proyeksi",
+          "pain4Title": "Gangguan Komunikasi",
+          "pain4Description": "Vendor, awak kapal, dan pemangku kepentingan mengalami kesulitan koordinasi"
+        },
+        "solution": {
+          "title": "Platform Komprehensif. Kontrol Penuh.",
+          "subtitle": "Manajemen produksi yang terintegrasi",
+          "feature1Title": "Platform Terpusat",
+          "feature1Description": "Semua proyek, personel, dan sumber daya dikelola dari satu lokasi",
+          "feature2Title": "Pembaruan Waktu Nyata",
+          "feature2Description": "Sinkronisasi instan memastikan semua anggota tim memiliki informasi terkini",
+          "feature3Title": "Pengawasan Keuangan",
+          "feature3Description": "Lacak anggaran, pengeluaran, dan faktur dengan presisi dan akurat",
+          "feature4Title": "Manajemen Vendor",
+          "feature4Description": "Jaga hubungan profesional sambil memastikan pengawasan yang tepat"
+        },
+        "howItWorks": {
+          "title": "Proses Implementasi",
+          "subtitle": "Penyiapan dan penerapan yang efisien",
+          "step1Title": "Bentuk Organisasi Anda",
+          "step1Description": "Konfigurasikan struktur organisasi Anda dan bergabunglah dengan tim Anda",
+          "step2Title": "Tentukan Proyek Anda",
+          "step2Description": "Tetapkan produksi, aktivasi, dan ruang kerja",
+          "step3Title": "Tetapkan Peran & Tanggung Jawab",
+          "step3Description": "Memberikan tingkat akses yang sesuai dan akuntabilitas yang jelas",
+          "step4Title": "Jalankan & Pantau",
+          "step4Description": "Lacak kemajuan, kelola anggaran, berikan hasil luar biasa"
+        },
+        "testimonials": {
+          "title": "Dipercaya oleh Profesional Produksi di Seluruh Dunia",
+          "subtitle": "Hasil yang terbukti dari para pemimpin industri",
+          "testimonial1Quote": "ATLVS telah terbukti menjadi solusi terbaik untuk mengelola operasional festival kami. Semuanya terorganisir dengan baik dan tim kami menjaga koordinasi yang baik.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Direktur Produksi, Festival Musik Besar",
+          "testimonial2Quote": "Sistem kontrol akses berbasis peran menyediakan apa yang kami perlukan untuk struktur organisasi kami. Terakhir, keamanan dan manajemen akses yang tepat untuk tim produksi.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Wakil Presiden Operasi, Perusahaan Acara Langsung",
+          "testimonial3Quote": "Kami mengurangi pembengkakan anggaran sebesar 40% pada kuartal pertama. Visibilitas finansial dan kemampuan pelacakan benar-benar mengesankan.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Agen Acara Perusahaan"
+        },
+        "pricing": {
+          "title": "Struktur Penetapan Harga Profesional"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "Manajemen Produksi Yang Berhasil",
+          "headlineHighlight": "Tidak ada gelar sarjana",
+          "subheadline": "Kelola proyek, kru, aset, dan anggaran dari satu tempat. Dibangun untuk orang-orang yang benar-benar melakukan pekerjaan.",
+          "supportingCopy": "Festival, acara perusahaan, aktivasi yang mendalam—ATLVS menanganinya tanpa kesulitan.",
+          "ctaPrimary": "Mulai Gratis",
+          "ctaSecondary": "Lihat Cara Kerjanya",
+          "trustIndicators": "Tanpa kartu kredit • Uji coba 14 hari • Batalkan kapan saja",
+          "platformScreenshot": "Tangkapan Layar Platform"
+        },
+        "trustBar": {
+          "trustedBy": "Digunakan oleh tim produksi yang menyelesaikan pekerjaan"
+        },
+        "problem": {
+          "title": "Kekacauan Produksi",
+          "subtitle": "Cerita yang sama, hari yang berbeda",
+          "pain1Title": "Alat Kekacauan",
+          "pain1Description": "Spreadsheet, Slack, email, Google Dokumen acak—alur kerja Anda tersebar di mana-mana",
+          "pain2Title": "Informasi Hilang",
+          "pain2Description": "File hilang. Seseorang mengirimkannya... ke suatu tempat. Semoga berhasil menemukannya",
+          "pain3Title": "Anggaran Merayap",
+          "pain3Description": "Biaya membebani Anda. Pada saat Anda menangkapnya, Anda sudah melebihi anggaran",
+          "pain4Title": "Gangguan Komunikasi",
+          "pain4Description": "Vendor melewatkan pembaruan, kru bekerja dengan informasi lama, pemangku kepentingan terus menanyakan pertanyaan yang sama"
+        },
+        "solution": {
+          "title": "Satu Platform. Sebenarnya Berfungsi.",
+          "subtitle": "Segala sesuatu di tempat yang seharusnya",
+          "feature1Title": "Sistem Terpadu",
+          "feature1Description": "Proyek, orang, sumber daya—semuanya ada di satu tempat yang benar-benar masuk akal",
+          "feature2Title": "Pembaruan Waktu Nyata",
+          "feature2Description": "Perubahan terjadi secara instan. Semua orang melihat hal yang sama",
+          "feature3Title": "Pelacakan Anggaran",
+          "feature3Description": "Lacak setiap dolar. Tidak ada kejutan, tidak ada alasan",
+          "feature4Title": "Koordinasi Vendor",
+          "feature4Description": "Selalu beri tahu mitra tanpa kehilangan kendali"
+        },
+        "howItWorks": {
+          "title": "Cara Kerjanya",
+          "subtitle": "Bangun dan berlari dengan cepat",
+          "step1Title": "Siapkan Organisasi Anda",
+          "step1Description": "Bangun struktur Anda, tambahkan tim Anda",
+          "step2Title": "Buat Proyek Anda",
+          "step2Description": "Memetakan produksi dan ruang kerja",
+          "step3Title": "Tetapkan Peran",
+          "step3Description": "Beri orang akses yang tepat, tidak lebih",
+          "step4Title": "Selesaikan",
+          "step4Description": "Lacak kemajuan, kelola anggaran, kirim tepat waktu"
+        },
+        "testimonials": {
+          "title": "Tim Nyata, Hasil Nyata",
+          "subtitle": "Tidak ada pembicaraan pemasaran",
+          "testimonial1Quote": "ATLVS memperbaiki kekacauan festival kami. Semuanya ada di satu tempat, semua orang tahu apa yang terjadi. Akhirnya.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Direktur Produksi, Festival Musik Besar",
+          "testimonial2Quote": "Sistem izin persis seperti yang kami butuhkan. Tidak ada lagi mimpi buruk akses.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Wakil Presiden Operasi, Perusahaan Acara Langsung",
+          "testimonial3Quote": "Potong anggaran melebihi 40% pada kuartal pertama. Pelacakannya benar-benar berfungsi.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Agen Acara Perusahaan"
+        },
+        "pricing": {
+          "title": "Penetapan harga langsung"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "Manajemen Produksi Yang Sebenarnya Berfungsi",
+          "headlineHighlight": "Untuk Tim Berpengalaman",
+          "subheadline": "Navigasikan proyek, kru, aset, dan anggaran Anda dari satu pusat komando. Dibangun untuk orang-orang yang menciptakan pengalaman tak terlupakan.",
+          "supportingCopy": "Baik Anda memproduksi festival, acara perusahaan, atau aktivasi yang mendalam—ATLVS memetakan arah mulai dari konsep hingga panggilan tirai.",
+          "ctaPrimary": "Mulai Gratis Hari Ini",
+          "ctaSecondary": "Lihat Aksinya",
+          "trustIndicators": "Tanpa kartu kredit • Uji coba 14 hari • Batalkan kapan saja",
+          "platformScreenshot": "Tangkapan Layar Platform"
+        },
+        "trustBar": {
+          "trustedBy": "Dipercaya oleh tim produksi di seluruh dunia"
+        },
+        "problem": {
+          "title": "Masalah Kekacauan Produksi",
+          "subtitle": "Anda tahu latihannya",
+          "pain1Title": "Kelebihan Alat",
+          "pain1Description": "Spreadsheet, Slack, email, yang tidak dapat ditemukan oleh siapa pun di Google Dokumen—alur kerja Anda tersebar di banyak platform",
+          "pain2Title": "Informasi Lubang Hitam",
+          "pain2Description": "Detail penting hilang selama serah terima. Seseorang pasti mengirim file itu... ke suatu tempat",
+          "pain3Title": "Kejutan Anggaran",
+          "pain3Description": "Biaya merangkak naik dalam bayang-bayang. Pada saat Anda menyadarinya, Anda sudah selesai",
+          "pain4Title": "Penyimpangan Komunikasi",
+          "pain4Description": "Vendor melewatkan pembaruan, kru mengerjakan informasi lama, pemangku kepentingan menanyakan pertanyaan yang sama dua kali"
+        },
+        "solution": {
+          "title": "Satu Platform. Nol Kekacauan.",
+          "subtitle": "Semuanya ada pada tempatnya",
+          "feature1Title": "Pusat Komando Terpadu",
+          "feature1Description": "Proyek, orang, dan sumber daya semuanya berjalan dalam formasi",
+          "feature2Title": "Sinkronisasi Waktu Nyata",
+          "feature2Description": "Pembaruan mengalir secara instan. Semua orang bekerja dari grafik yang sama",
+          "feature3Title": "Radar Anggaran",
+          "feature3Description": "Lacak setiap dolar secara real-time. Tidak ada kejutan, tidak ada pembengkakan",
+          "feature4Title": "Koordinasi Vendor",
+          "feature4Description": "Selalu beri tahu mitra eksternal tanpa memberikan informasinya"
+        },
+        "howItWorks": {
+          "title": "Cara Kerjanya",
+          "subtitle": "Berlayar dalam hitungan menit, bukan bulan",
+          "step1Title": "Luncurkan Organisasi Anda",
+          "step1Description": "Siapkan struktur Anda dan bawa kru Anda ke dalamnya",
+          "step2Title": "Bagan Proyek Anda",
+          "step2Description": "Memetakan produksi, aktivasi, dan ruang kerja",
+          "step3Title": "Tetapkan Peran & Misi",
+          "step3Description": "Berikan setiap orang akses yang tepat dan tanggung jawab yang jelas",
+          "step4Title": "Navigasi & Kirim",
+          "step4Description": "Pantau kemajuan, kelola anggaran, jalankan dengan sempurna"
+        },
+        "testimonials": {
+          "title": "Dipercaya oleh Tim Produksi di Seluruh Dunia",
+          "subtitle": "Kisah nyata dari produser sungguhan",
+          "testimonial1Quote": "ATLVS mengubah cara kami mengelola festival. Semuanya di satu tempat, semua orang di halaman yang sama. Akhirnya.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Direktur Produksi, Festival Musik Besar",
+          "testimonial2Quote": "Sistem RBAC sempurna untuk struktur organisasi kami yang kompleks. Kontrol akses yang tepat untuk produksi? Revolusioner.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Wakil Presiden Operasi, Perusahaan Acara Langsung",
+          "testimonial3Quote": "Kami mengurangi pembengkakan anggaran sebesar 40% pada kuartal pertama. Visibilitas finansial benar-benar mengubah keadaan.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Agen Acara Perusahaan"
+        },
+        "pricing": {
+          "title": "Penetapan harga transparan yang berskala"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "Manajemen Produksi Yang Berbeda-beda",
+          "headlineHighlight": "Untuk Pembuat Acara",
+          "subheadline": "Jalankan proyek, kru, perlengkapan, dan anggaran Anda dari satu aplikasi. Dibuat untuk orang-orang yang benar-benar menciptakan pengalaman.",
+          "supportingCopy": "Festival, aktivasi merek, acara yang imersif—ATLVS mengatur segalanya mulai dari ide hingga eksekusi.",
+          "ctaPrimary": "Mulai Gratis",
+          "ctaSecondary": "Coba lihat",
+          "trustIndicators": "Tidak perlu kartu kredit • Uji coba gratis • Batalkan kapan saja",
+          "platformScreenshot": "Tangkapan Layar Platform"
+        },
+        "trustBar": {
+          "trustedBy": "Digunakan oleh tim produksi di mana pun"
+        },
+        "problem": {
+          "title": "Produksi adalah AF Berantakan",
+          "subtitle": "Kita semua pernah ke sana",
+          "pain1Title": "Terlalu Banyak Aplikasi",
+          "pain1Description": "Spreadsheet, Slack, email, Google Doc acak itu—semuanya ada di mana-mana dan kacau balau",
+          "pain2Title": "File Hilang",
+          "pain2Description": "Seseorang mengirim file itu... ke suatu tempat. Sekarang tidak ada yang bisa menemukannya. Klasik.",
+          "pain3Title": "Anggaran Berjalan Brr",
+          "pain3Description": "Biaya terus meningkat. Pada saat Anda menyadarinya, anggaran Anda sudah melebihi anggaran",
+          "pain4Title": "Keterlambatan Komunikasi 💬",
+          "pain4Description": "Anggota tim melewatkan pembaruan dan bekerja dengan informasi lama"
+        },
+        "solution": {
+          "title": "Satu Platform. Kontrol Total. 🎯",
+          "subtitle": "Semuanya di satu tempat",
+          "feature1Title": "Pusat Komando 🎮",
+          "feature1Description": "Semua proyek, tim, dan sumber daya Anda dalam satu hub",
+          "feature2Title": "Sinkronisasi Langsung ⚡",
+          "feature2Description": "Pembaruan terjadi secara instan. Semua orang tetap terhubung",
+          "feature3Title": "Pelacak Anggaran 💰",
+          "feature3Description": "Lihat setiap dolar secara real-time. Tidak ada kejutan",
+          "feature4Title": "Koordinasi Tim 🤝",
+          "feature4Description": "Selalu perbarui semua orang dan pada halaman yang sama"
+        },
+        "howItWorks": {
+          "title": "Cara Kerjanya",
+          "subtitle": "Mulailah dalam hitungan menit",
+          "step1Title": "Siapkan Organisasi Anda",
+          "step1Description": "Bangun struktur tim Anda dan tambahkan semua orang",
+          "step2Title": "Buat Proyek",
+          "step2Description": "Petakan acara dan produksi Anda",
+          "step3Title": "Tetapkan Peran",
+          "step3Description": "Berikan izin yang tepat kepada orang-orang",
+          "step4Title": "Kirimkan itu",
+          "step4Description": "Lacak semuanya, kelola anggaran, jalankan dengan sempurna"
+        },
+        "testimonials": {
+          "title": "Tim Nyata Menggunakan ATLVS",
+          "subtitle": "Umpan balik aktual dari orang-orang nyata",
+          "testimonial1Quote": "ATLVS adalah OP untuk mengelola festival. Semuanya terorganisir, semua orang tersinkronisasi. 10/10 akan merekomendasikan.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Direktur Produksi, Festival Musik Besar",
+          "testimonial2Quote": "Sistem perizinannya api. Akhirnya mendapatkan kontrol akses yang tepat untuk tim kami.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Wakil Presiden Operasi, Perusahaan Acara Langsung",
+          "testimonial3Quote": "Kami mengurangi masalah anggaran sebesar 40% pada kuartal pertama. Pelacakan uang sungguh luar biasa.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Agen Acara Perusahaan"
+        },
+        "pricing": {
+          "title": "Penetapan harga yang berbeda-beda"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "Tingkatkan Game Produksi Anda 🎮",
+          "headlineHighlight": "Untuk Pembuat Acara",
+          "subheadline": "Kelola proyek, tim, perlengkapan & uang dari satu aplikasi super ✨ Dibuat untuk kreator yang menciptakan pengalaman epik 🚀",
+          "supportingCopy": "Festival, acara, aktivasi—ATLVS mengatur semuanya dari awal hingga akhir 🎯",
+          "ctaPrimary": "Mulai Gratis 🚀",
+          "ctaSecondary": "Lihat Demo 👀",
+          "trustIndicators": "Tidak perlu kartu • Uji coba gratis • Batalkan kapan saja ✌️",
+          "platformScreenshot": "Tangkapan Layar Platform"
+        },
+        "trustBar": {
+          "trustedBy": "Digunakan oleh tim produksi di seluruh dunia 🌍"
+        },
+        "problem": {
+          "title": "Produksi Bisa Kacau 😅",
+          "subtitle": "Kedengarannya familier?",
+          "pain1Title": "Kelebihan Aplikasi 📱",
+          "pain1Description": "Terlalu banyak aplikasi, terlalu banyak kekacauan. Semuanya berserakan dan sulit ditemukan 🤯",
+          "pain2Title": "File Hilang 📂",
+          "pain2Description": "File menghilang ke dalam kehampaan. Seseorang mengirimkannya... ke suatu tempat... semoga berhasil! 🔍",
+          "pain3Title": "Kejutan Anggaran 💸",
+          "pain3Description": "Uang terus menghilang. Saat Anda menyadarinya, anggaran Anda sudah melebihi 😬",
+          "pain4Title": "Kebingungan Tim 🤷",
+          "pain4Description": "Orang-orang melewatkan pembaruan, bekerja dengan info lama, menanyakan pertanyaan yang sama"
+        },
+        "solution": {
+          "title": "Satu Aplikasi. Kontrol Penuh. 💪",
+          "subtitle": "Semua yang Anda butuhkan di satu tempat",
+          "feature1Title": "Pusat Komando 🎮",
+          "feature1Description": "Semua proyek, tim & perlengkapan dalam satu dasbor",
+          "feature2Title": "Sinkronisasi Instan ⚡",
+          "feature2Description": "Pembaruan terjadi secara real-time. Semua orang tetap terhubung",
+          "feature3Title": "Pelacak Uang 💰",
+          "feature3Description": "Perhatikan setiap dolar. Tidak ada kejutan, tidak ada stres",
+          "feature4Title": "Kolaborasi Tim 🤝",
+          "feature4Description": "Selalu beri tahu semua orang dan bekerja sama"
+        },
+        "howItWorks": {
+          "title": "Cara Kerjanya ⚙️",
+          "subtitle": "Mulailah dengan sangat cepat",
+          "step1Title": "Bangun Tim Anda 👥",
+          "step1Description": "Siapkan organisasi Anda dan tambahkan kru Anda",
+          "step2Title": "Buat Proyek 📋",
+          "step2Description": "Petakan semua acara dan produksi Anda",
+          "step3Title": "Tetapkan Izin 🔐",
+          "step3Description": "Berikan setiap orang tingkat akses yang tepat",
+          "step4Title": "Luncurkan & Menangkan 🏆",
+          "step4Description": "Lacak kemajuan, kelola uang, jalankan dengan sempurna"
+        },
+        "testimonials": {
+          "title": "Tim Suka ATLVS 💙",
+          "subtitle": "Ulasan nyata dari pengguna nyata",
+          "testimonial1Quote": "ATLVS benar-benar sempurna untuk festival. Semuanya terorganisir, semua orang tersinkronisasi. 100/10! 🔥",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Direktur Produksi, Festival Musik Besar",
+          "testimonial2Quote": "Sistem izinnya sangat bagus 👌 Akhirnya kontrol akses tepat!",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "Wakil Presiden Operasi, Perusahaan Acara Langsung",
+          "testimonial3Quote": "Kami memangkas masalah anggaran sebesar 40% pada kuartal pertama. Pelacakannya gila! 🎯",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Agen Acara Perusahaan"
+        },
+        "pricing": {
+          "title": "Harga itu sebenarnya adil ✨"
+        }
+      }
     }
   }
 }

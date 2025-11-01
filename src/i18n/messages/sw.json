@@ -401,334 +401,935 @@
   },
   "marketing": {
     "nav": {
-      "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "logo": "Atlvs",
+      "solutions": "Suluhisho",
+      "features": "Vipengee",
+      "pricing": "Bei",
+      "docs": "Hati",
+      "blog": "Blogi",
+      "company": "Kampuni",
+      "signIn": "Ingia",
+      "startFree": "Anza bure",
+      "toggleMenu": "Kubadilisha menyu"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Suluhisho na tasnia",
+        "subtitle": "Utiririshaji wa kazi uliojengwa kwa kila aina ya uzalishaji wa burudani wa moja kwa moja"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Matamasha na utalii",
+        "description": "Njia ya kuelekeza, bajeti, vifaa, na usimamizi wa wafanyakazi katika shughuli za utalii wa ulimwengu-kutoka ukumbi mdogo unaendesha hadi uzalishaji wa kiwango cha uwanja."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Sherehe za Muziki na Sanaa",
+        "description": "Kufanya kazi kwa njia ya kazi kwa siku nyingi, hafla za hatua nyingi-uzalishaji wa kuunganisha, talanta, wachuuzi, na kufuata chini ya mfumo mmoja wa amri."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Matukio ya kuzama na ya uzoefu",
+        "description": "Kubuni na kuendesha ulimwengu wa maingiliano, mitambo, na uzoefu wa chapa na mwonekano kamili kutoka kwa maendeleo ya ubunifu hadi utekelezaji wa moja kwa moja."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Uzalishaji wa Theatrical & Live",
+        "description": "Simamia timu za ubunifu, ratiba za kiufundi, na mali za uzalishaji kwa hatua na burudani ya msingi wa utendaji."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "Filamu, TV & Media",
+        "description": "Kuratibu utengenezaji wa kabla, shughuli zilizowekwa, na kuripoti na zana zilizojengwa kwa usawazishaji wa idara na uwazi wa kifedha."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Uanzishaji wa chapa na kampeni za uuzaji",
+        "description": "Tekeleza pop-ups, uzinduzi, na uzoefu unaoendeshwa na kampeni-kuunganisha ubunifu, vifaa, na ufuatiliaji wa ROI kwenye dashibodi moja ya akili."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Matukio ya ushirika na ya kibinafsi",
+        "description": "Toa uzoefu usio na usawa kwa mikutano ya ndani, mafungo, na mikusanyiko ya hali ya juu na mipango iliyoratibiwa na uratibu wa muuzaji."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Maonyesho ya biashara na mikusanyiko",
+        "description": "Kurahisisha ujenzi wa Booth, vifaa vya kuonyesha, na uhusiano wa wafadhili na usimamizi wa miradi ya mwisho na uchambuzi wa wakati halisi."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Afya, Ustawi na Maisha",
+        "description": "Boresha programu, wafanyikazi, na mtiririko wa wageni kwa mafungo, hafla za mazoezi ya mwili, na uzoefu wa ustawi - ambapo undani na mazingira yanafaa zaidi."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "Usimamizi wa uzalishaji ambao hufanya kazi",
+      "headlineHighlight": "Kwa timu za uzoefu",
+      "subheadline": "Nenda miradi yako, wafanyakazi, mali, na bajeti kutoka kituo kimoja cha amri. Imejengwa kwa watu ambao huunda uzoefu usioweza kusahaulika.",
+      "supportingCopy": "Ikiwa unazalisha sherehe, hafla za ushirika, au uanzishaji wa kuzama -ATLVS chati kozi kutoka kwa dhana hadi simu ya pazia.",
+      "ctaPrimary": "Anza bure leo",
+      "ctaSecondary": "Ione inachukua hatua",
+      "trustIndicators": "Hakuna Kadi ya Mkopo • Jaribio la siku 14 • Ghairi wakati wowote",
+      "platformScreenshot": "Picha ya jukwaa"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Kuaminiwa na timu za uzalishaji ulimwenguni"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "Shida ya machafuko ya uzalishaji",
+      "subtitle": "Unajua kuchimba visima",
+      "pain1Title": "Chombo cha kupakia zaidi",
+      "pain1Description": "Lahajedwali, Slack, Barua pepe, ambayo Doc moja ya Google Hakuna mtu anayeweza kupata - Utiririshaji wako wa kazi umetawanyika kwenye majukwaa kadhaa",
+      "pain2Title": "Habari shimo nyeusi",
+      "pain2Description": "Maelezo muhimu hutoweka wakati wa mikoba. Mtu hakika alituma faili hiyo ... mahali pengine",
+      "pain3Title": "Bajeti inashangaza",
+      "pain3Description": "Gharama huenda kwenye vivuli. Kwa wakati utagundua, tayari umekwisha",
+      "pain4Title": "Mawasiliano Drift",
+      "pain4Description": "Wauzaji wanakosa sasisho, wafanyakazi hufanya kazi kwa habari ya zamani, wadau huuliza maswali yale yale mara mbili"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "Jukwaa moja. Machafuko ya sifuri.",
+      "subtitle": "Kila kitu mahali pake pa kulia",
+      "feature1Title": "Kituo cha Amri cha Umoja",
+      "feature1Description": "Miradi, watu, na rasilimali zote zinazosafiri katika malezi",
+      "feature2Title": "Usawazishaji wa wakati halisi",
+      "feature2Description": "Sasisho hutiririka mara moja. Kila mtu anafanya kazi kutoka chati ile ile",
+      "feature3Title": "Bajeti rada",
+      "feature3Description": "Fuatilia kila dola kwa wakati halisi. Hakuna mshangao, hakuna kupita",
+      "feature4Title": "Uratibu wa muuzaji",
+      "feature4Description": "Weka washirika wa nje kwenye kitanzi bila kutoa meli"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "Jinsi inavyofanya kazi",
+      "subtitle": "Weka meli kwa dakika, sio miezi",
+      "step1Title": "Anzisha shirika lako",
+      "step1Description": "Sanidi muundo wako na ulete wafanyakazi wako ndani",
+      "step2Title": "Chati miradi yako",
+      "step2Description": "Ramani za uzalishaji, uanzishaji, na nafasi za kazi",
+      "step3Title": "Agiza majukumu na misheni",
+      "step3Description": "Mpe kila mtu ufikiaji sahihi na majukumu wazi",
+      "step4Title": "Nenda na uwasilishe",
+      "step4Description": "Fuatilia maendeleo, dhibiti bajeti, utekeleze bila makosa"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "Kila kitu unahitaji kutoa kwa kiwango",
+      "subtitle": "Sehemu sita zilizojumuishwa kwa udhibiti kamili wa uzalishaji",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Kitovu cha uzalishaji",
+        "description": "Simamia miradi, hafla, watu, mali, maeneo, na faili",
+        "feature1": "Mradi na Upangaji wa Tukio",
+        "feature2": "Timu na Usimamizi wa wafanyakazi",
+        "feature3": "Ufuatiliaji wa mali na hesabu",
+        "feature4": "Mahali na Uratibu wa Ukumbi"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "Kitovu cha biashara",
+        "description": "Kushughulikia kampuni, kazi, ununuzi, na fedha",
+        "feature1": "Muuzaji na Usimamizi wa Kampuni",
+        "feature2": "Machapisho ya kazi na kuajiri",
+        "feature3": "Ununuzi na ununuzi",
+        "feature4": "Bajeti na ufuatiliaji wa gharama"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Kitovu cha Mtandao",
+        "description": "Jenga jamii, soko, na maktaba ya rasilimali",
+        "feature1": "Jamii na majadiliano",
+        "feature2": "Soko na Huduma",
+        "feature3": "Maktaba ya rasilimali",
+        "feature4": "Viunganisho vya Viwanda"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "Automatisering Hub",
+        "description": "Kufanya kazi kwa nguvu, vichocheo, na kazi za kurudia",
+        "feature1": "Automatisering ya kazi ya kawaida",
+        "feature2": "Vichocheo vinavyoendeshwa na tukio",
+        "feature3": "Utekelezaji wa kazi uliopangwa",
+        "feature4": "Bomba za ujumuishaji"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "Ujuzi Hub",
+        "description": "Tengeneza ripoti, uchambuzi, na ufahamu",
+        "feature1": "Ripoti za kawaida",
+        "feature2": "Uchambuzi wa wakati halisi",
+        "feature3": "Ufahamu wa utabiri",
+        "feature4": "Metriki za utendaji"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "Mfumo Hub",
+        "description": "Sanidi Usimamizi, Mipangilio, na Profaili za Mtumiaji",
+        "feature1": "Mtumiaji na Usimamizi wa jukumu",
+        "feature2": "Usanidi wa mfumo",
+        "feature3": "Ubinafsishaji wa Profaili",
+        "feature4": "Usalama na ruhusa"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "Kila kitu unahitaji kutoa kwa kiwango",
+        "subtitle": "Sehemu sita zilizojumuishwa iliyoundwa kwa timu za uzalishaji wa uzoefu"
+      },
+      "production": {
+        "title": "Kitovu cha uzalishaji",
+        "description": "Simamia miradi, hafla, watu, mali, maeneo, na faili",
+        "projects": {
+          "title": "Miradi",
+          "description": "Panga na ufuatilie uzalishaji kutoka kwa dhana hadi mgomo"
+        },
+        "events": {
+          "title": "Matukio",
+          "description": "Panga, kuratibu, na kusimamia kila undani na ratiba"
+        },
+        "people": {
+          "title": "Watu",
+          "description": "Simamia mgawo wa wafanyakazi, upatikanaji, na ratiba"
+        },
+        "assets": {
+          "title": "Mali",
+          "description": "Kufuatilia vifaa, hesabu, na rasilimali kwa uzalishaji"
+        },
+        "locations": {
+          "title": "Maeneo",
+          "description": "Kuratibu kumbi, tovuti, na vifaa vya kituo"
+        },
+        "files": {
+          "title": "Faili",
+          "description": "Nyaraka za kati, media, na faili za uzalishaji salama"
+        }
+      },
+      "business": {
+        "title": "Kitovu cha biashara",
+        "description": "Kushughulikia kampuni, kazi, ununuzi, na fedha",
+        "companies": {
+          "title": "Kampuni",
+          "description": "Simamia uhusiano wa muuzaji, wateja, na washirika"
+        },
+        "jobs": {
+          "title": "Kazi",
+          "description": "Nafasi za chapisho, matumizi ya kufuatilia, kusimamia kuajiri"
+        },
+        "procurement": {
+          "title": "Ununuzi",
+          "description": "Ununuzi wa mkondo, uteuzi wa muuzaji, na mikataba"
+        },
+        "invoices": {
+          "title": "Ankara",
+          "description": "Unda, tuma, na ufuatilie ankara na ukumbusho wa kiotomatiki"
+        },
+        "expenses": {
+          "title": "Gharama",
+          "description": "Rekodi na uainishe gharama na kukamata risiti"
+        },
+        "budgets": {
+          "title": "Bajeti",
+          "description": "Panga, kufuatilia, na kudhibiti bajeti na ufuatiliaji wa wakati halisi"
+        }
+      },
+      "network": {
+        "title": "Kitovu cha Mtandao",
+        "description": "Jenga jamii, soko, na maktaba ya rasilimali",
+        "community": {
+          "title": "Jamii",
+          "description": "Ungana na faida za tasnia, shiriki maarifa, shirikiana"
+        },
+        "marketplace": {
+          "title": "Soko",
+          "description": "Gundua huduma, talanta ya kuajiri, pata rasilimali za uzalishaji"
+        },
+        "resources": {
+          "title": "Rasilimali",
+          "description": "Miongozo ya ufikiaji, templeti, na mazoea bora"
+        }
+      },
+      "automations": {
+        "title": "Automatisering Hub",
+        "description": "Kufanya kazi kwa nguvu, vichocheo, na kazi za kurudia",
+        "workflows": {
+          "title": "Mtiririko wa kazi",
+          "description": "Jenga mlolongo wa mitambo ya mitambo ya michakato ya kurudia"
+        },
+        "triggers": {
+          "title": "Vichocheo",
+          "description": "Sanidi hatua zinazoendeshwa na tukio ambazo hujibu kiatomati"
+        },
+        "scheduled": {
+          "title": "Kazi zilizopangwa",
+          "description": "Ondoa kazi za kurudia na ratiba rahisi"
+        }
+      },
+      "intelligence": {
+        "title": "Ujuzi Hub",
+        "description": "Tengeneza ripoti, uchambuzi, na ufahamu",
+        "reports": {
+          "title": "Ripoti",
+          "description": "Unda ripoti maalum na taswira rahisi na usafirishaji"
+        },
+        "analytics": {
+          "title": "Uchambuzi",
+          "description": "Fuatilia KPIs, Mfumo wa Kufuatilia, Utendaji wa kipimo"
+        },
+        "insights": {
+          "title": "Ufahamu",
+          "description": "Pata mapendekezo ya nguvu ya AI na uchambuzi wa utabiri"
+        }
+      },
+      "system": {
+        "title": "Mfumo Hub",
+        "description": "Sanidi Usimamizi, Mipangilio, na Profaili za Mtumiaji",
+        "admin": {
+          "title": "Admin",
+          "description": "Simamia mipangilio ya shirika, usalama, na usanidi"
+        },
+        "settings": {
+          "title": "Mipangilio",
+          "description": "Badilisha upendeleo, ujumuishaji, na tabia ya jukwaa"
+        },
+        "profiles": {
+          "title": "Profaili za watumiaji",
+          "description": "Simamia maelezo mafupi ya timu, majukumu, na ruhusa za ufikiaji"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Imejengwa kwa kila jukumu kwenye wafanyakazi wako",
+      "subtitle": "Majukumu 11 yaliyo na ruhusa sahihi",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Hadithi",
+        "description": "Admin Super Admin - Udhibiti kamili kwa mashirika yote"
       },
       "phantom": {
+        "name": "Phantom",
+        "level": "Mamlaka kuu",
         "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "description": "Utawala kamili wa mfumo na ufikiaji usiozuiliwa. Mwelekeo wa jukwaa na kudumisha usimamizi wa biashara."
       },
       "aviator": {
+        "name": "Aviator",
+        "level": "Uongozi wa kimkakati",
         "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "description": "Mwonekano wa mradi wa msalaba, ugawaji wa rasilimali, na uchambuzi wa mtendaji. Nenda mkakati wa kiwango cha juu cha uzalishaji kwa kiwango."
       },
       "gladiator": {
+        "name": "Gladiator",
+        "level": "Uongozi wa Mradi",
         "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "description": "Uundaji kamili wa mradi na haki za uhariri. Kuongoza uzalishaji kutoka kwa dhana hadi kukamilika na udhibiti kamili."
       },
       "navigator": {
+        "name": "Navigator",
+        "level": "Uratibu",
         "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "description": "Uratibu wa mradi, mgawo wa kazi, na mwongozo wa timu. Chati kozi kupitia kazi ngumu."
       },
       "deviator": {
+        "name": "Deviator",
+        "level": "Utekelezaji",
         "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "description": "Kukamilika kwa kazi ndani ya mifumo iliyoanzishwa. Toa kazi bora kwa majukumu uliyopewa."
       },
       "raider": {
+        "name": "Raider",
+        "level": "Kujifunza na uchunguzi",
         "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "description": "Angalia tu ufikiaji wa kujifunza na kukua. Kamili kwa wageni kujenga ujuzi wao."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "Muuzaji",
+        "level": "Uwasilishaji wa Scoped",
+        "title": "Muuzaji",
+        "description": "Ufikiaji unaolengwa kwa watoa huduma za nje. Sasisha zinazowasilishwa na utimize kazi iliyo na mkataba."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "Mgeni",
+        "level": "Mwonekano mdogo",
+        "title": "Mgeni",
+        "description": "Ufikiaji wa muda mfupi, wa kusoma tu kwa wadau wa nje. Kaa na habari bila kuvuruga kazi."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "Mwenzi",
+        "level": "Ushirikiano wa kimkakati",
+        "title": "Mwenzi",
+        "description": "Ushirikiano wa kina kwa washirika wa nje wanaoaminika. Kushiriki kwa data mbili na usimamizi wa pamoja wa kazi."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "Balozi",
+        "level": "Mabingwa wa Jamii",
+        "title": "Balozi",
+        "description": "Kuwakilisha ATLV, watumiaji wa msaada, na kushirikiana. Matukio ya mwenyeji, tengeneza yaliyomo, kukuza mfumo wa ikolojia."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Usalama wa kiwango cha biashara",
+      "subtitle": "Takwimu zako zinalindwa katika kila ngazi",
+      "feature1Title": "Usalama wa kiwango cha safu",
+      "feature1Description": "Sera 801 RLS zinahakikisha watumiaji wanaona tu kile wanapaswa",
+      "feature2Title": "Ufikiaji wa msingi wa jukumu",
+      "feature2Description": "Majukumu 11 yenye alama na ruhusa za granular 45+",
+      "feature3Title": "Hifadhi iliyosimbwa",
+      "feature3Description": "Takwimu zote zilizosimbwa wakati wa kupumzika na kwa usafirishaji",
+      "feature4Title": "Ukaguzi wa ukaguzi",
+      "feature4Description": "Njia kamili ya ukaguzi wa shughuli zote za mfumo",
+      "feature5Title": "SOC 2 inazingatia",
+      "feature5Description": "Viwango vya usalama wa kiwango cha biashara",
+      "feature6Title": "GDPR tayari",
+      "feature6Description": "Kuzingatia kamili na kanuni za faragha za data"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
+      "title": "Kuaminiwa na timu za uzalishaji ulimwenguni",
+      "subtitle": "Hadithi halisi kutoka kwa wazalishaji halisi",
+      "testimonial1Quote": "ATLVS ilibadilisha jinsi tunavyosimamia sherehe. Kila kitu katika sehemu moja, kila mtu kwenye ukurasa mmoja. Mwishowe.",
       "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
+      "testimonial1Role": "Mkurugenzi wa Uzalishaji, Tamasha kuu la Muziki",
+      "testimonial1Title": "Mkurugenzi wa Uzalishaji, Tamasha kuu la Muziki",
+      "testimonial2Quote": "Mfumo wa RBAC ni kamili kwa muundo wetu wa org. Udhibiti sahihi wa ufikiaji kwa uzalishaji? Mapinduzi.",
       "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
+      "testimonial2Role": "VP ya Operesheni, Kampuni ya Matukio ya moja kwa moja",
+      "testimonial2Title": "VP ya Operesheni, Kampuni ya Matukio ya moja kwa moja",
+      "testimonial3Quote": "Tunakata bajeti inayozidi kwa 40% katika robo ya kwanza. Mwonekano wa kifedha ni kihalali cha kubadilisha mchezo.",
       "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "testimonial3Role": "CFO, Wakala wa Matukio ya Ushirika",
+      "testimonial3Title": "CFO, Wakala wa Matukio ya Ushirika",
+      "jamesCookQuote": "Kusimamia meli tatu za wanasayansi ambao wote wanafikiria ndio tabia kuu? ATLVS ingeweka kila mtu kusawazishwa na kweli kufanya kazi pamoja badala ya kushindana kwa mkopo.",
+      "jamesCookAuthor": "Kapteni James Cook",
+      "jamesCookRole": "Briteni Royal Navy Explorer (1728-1779)",
+      "zhengYiSaoQuote": "Niligeuza uharamia kuwa kampuni ya Bahati 500, nilijadili msamaha wangu mwenyewe, na nilistaafu tajiri. ATLV ni kwa watu ambao wanaelewa kuwa shughuli zisizo za kawaida bado zinahitaji usimamizi thabiti.",
+      "zhengYiSaoAuthor": "Zheng Yi Sao",
+      "zhengYiSaoRole": "Kiongozi wa Pirate wa China (1775-1844)",
+      "captainAhabQuote": "Kufukuza lengo moja maalum kwa kila bahari bila kuzingatia picha kubwa? ATLVS inakufanya uzingatia mpango halisi wa biashara, sio malengo ya kibinafsi tu.",
+      "captainAhabAuthor": "Kapteni Ahabu",
+      "captainAhabRole": "Nahodha wa Whaling, Pequod",
+      "graceOMalleyQuote": "Kujadiliwa na Malkia Elizabeth kama sawa. ATLV inakusaidia kuonyesha kila mkutano na data yako tayari na ujasiri wako.",
+      "graceOMalleyAuthor": "Neema O'Malley \"Gráinne Mhaol\"",
+      "graceOMalleyRole": "Malkia wa Pirate wa Ireland & Chieftain (c. 1530-1603)",
+      "sinbadQuote": "Njia ambayo niliendelea kuharibiwa meli lakini bado nikarudi? Hiyo ni mipango duni tu. ATLVS hutoa muundo wa maamuzi yangu inahitajika wazi.",
+      "sinbadAuthor": "Sinbad baharia",
+      "sinbadRole": "Sailor ya hadithi ya hadithi, usiku wa Arabia",
+      "longJohnSilverQuote": "Kusimamia maharamia ni paka za ufugaji ikiwa paka zilikuwa na maswala ya dharau na ya uaminifu. Usimamizi wa wadau wa ATLVS huweka kila mtu kusawazishwa, hata wakati wanapanga njama dhidi ya kila mmoja.",
+      "longJohnSilverAuthor": "Long John Fedha",
+      "longJohnSilverRole": "Quartermaster & Pirate Cook, Kisiwa cha Hazina",
+      "horatioHornblowerQuote": "Kupambana na Mfaransa wakati kuwa na shida kamili ya akili ni kwa uaminifu sana kwangu. ATLVS huweka vitu vyote vya busara vilivyoandaliwa ili uweze kuzingatia utume halisi.",
+      "horatioHornblowerAuthor": "Horatio Hornblower",
+      "horatioHornblowerRole": "Afisa wa Jeshi la Jeshi la Royal (C.S. Riwaya za Forester)",
+      "captainNemoQuote": "Kuwa mtaalam katika manowari ni kweli ni ya ndani sana, lakini hata nilihitaji uratibu wa timu. ATLVS inafanya kazi hata wakati unafanya kazi peke yako.",
+      "captainNemoAuthor": "Kapteni Nemo",
+      "captainNemoRole": "Kamanda, Nautilus (ligi elfu ishirini chini ya bahari)",
+      "odysseusQuote": "Nilipoteza kila mwanachama wa wafanyakazi kwa sababu niliendelea kufanya uchaguzi usio na shaka. Atlvs zingekuwa kama 'Hatuitaji kuona nini sauti ni kuhusu' na kwa uaminifu? Halali.",
+      "odysseusAuthor": "Odysseus/Ulysses",
+      "odysseusRole": "Mfalme wa Ithaca, shujaa wa Uigiriki (Odyssey)",
+      "blackbeardQuote": "Kuzuia bandari nzima na meli nne hupiga tofauti wakati unaratibu mwenyewe. ATLVS ingenifanya niwe pirate inayofaa zaidi kwenye bahari.",
+      "blackbeardAuthor": "Kapteni Edward Fundisha \"Blackbeard\"",
+      "blackbeardRole": "Kamanda wa Pirate (c. 1680-1718)",
+      "captainMarvelQuote": "Kutoweka kwa miaka 30 kushughulikia dharura za nafasi bila kuangalia ndani. Zana za mawasiliano za ATLVS zingenisaidia sio roho kila mtu ninayemjali.",
+      "captainMarvelAuthor": "Nahodha Marvel / Carol Danvers",
+      "captainMarvelRole": "Pilot ya Jeshi la Anga na shujaa wa cosmic (MCU)",
+      "captainJanewayQuote": "Nilikiuka Maagizo Kuu ya Kidunia mara kadhaa ili kuokoa wafanyakazi wangu, lakini sikuwahi kukiuka ratiba yangu ya mradi. ATLVS huweka vipaumbele wazi hata wakati maadili yanakuwa ngumu.",
+      "captainJanewayAuthor": "Kapteni Kathryn Janeway",
+      "captainJanewayRole": "Nahodha wa Starfleet, USS Voyager (Star Trek: Voyager)",
+      "moanaQuote": "Maui alitakiwa kuwa mshauri wangu lakini alitumia wakati mwingi kuwa haipatikani kihemko. ATLVS inafuatilia wakati timu yako inakuwa ngumu.",
+      "moanaAuthor": "Moana",
+      "moanaRole": "Wayfinder & Kisiwa cha Kisiwa (Disney's Moana)",
+      "captainJackSparrowQuote": "Kusimamia wafanyakazi wakati kwa kweli hakuna mtu anajua ikiwa wameajiriwa au tu kwa machafuko? ATLVS hutoa ufafanuzi kwamba vibe yangu yote haifanyi.",
+      "captainJackSparrowAuthor": "Kapteni Jack Sparrow",
+      "captainJackSparrowRole": "Nahodha wa Pirate, Lulu Nyeusi (Maharamia wa Karibiani)",
+      "popeyeQuote": "Utu wangu wote ni 'kwa ukaidi anakataa kupanga mapema.' Atlvs ndiye mtu mzima katika chumba ambacho ninahitaji wazi lakini haitakubali.",
+      "popeyeAuthor": "Popeye mtu wa baharia",
+      "popeyeRole": "Mlinzi wa Sailor & Olive Oyl (Tabia ya Katuni)",
+      "captainPicardQuote": "Kuongoza wafanyakazi tofauti kupitia hali ya kwanza ya mawasiliano na misiba ya kidiplomasia? Atlvs huweka kila mtu kuendana wakati vigingi ni kweli galactic.",
+      "captainPicardAuthor": "Kapteni Jean-Luc Picard",
+      "captainPicardRole": "Nahodha wa Starfleet, USS Enterprise (Star Trek: TNG)",
+      "captainSiskoQuote": "Kuamuru kituo ambacho ni sehemu ya jeshi, sehemu ya biashara ya kitovu, kituo cha wakimbizi? ATLVs hukusaidia kudhibiti ugumu wakati kila wadau ana vipaumbele tofauti.",
+      "captainSiskoAuthor": "Kapteni Benjamin Sisko",
+      "captainSiskoRole": "Kamanda wa Starfleet, Nafasi ya kina cha Tisa (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Bei ya uwazi",
+      "subtitle": "Kutoka kwa wakandarasi wa solo hadi wazalishaji wa biashara",
+      "monthly": "Kila mwezi",
+      "annually": "Kila mwaka",
+      "save20": "Okoa 20%",
+      "community": {
+        "name": "Jamii",
+        "price": "Bure",
+        "period": "milele",
+        "description": "Kamili kwa kuanza",
+        "feature1": "Ufikiaji wa jukumu la Raider",
+        "feature2": "Usimamizi wa kazi ya msingi",
+        "feature3": "Msaada wa jamii",
+        "cta": "Anza bure"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$ 12",
+        "period": "kwa mwezi",
+        "annualPrice": "$ 10/mwezi (kulipwa kila mwaka)",
+        "description": "Kwa wakandarasi wa kujitegemea",
+        "feature1": "Majukumu ya Deviator & Raider",
+        "feature2": "Usimamizi wa kazi wa hali ya juu",
+        "feature3": "Msaada wa kipaumbele",
+        "cta": "Anza jaribio la bure"
+      },
+      "team": {
+        "name": "Timu",
+        "badge": "Maarufu zaidi",
+        "price": "$ 120",
+        "period": "kwa mwezi",
+        "annualPrice": "$ 100/mwezi (kulipwa kila mwaka)",
+        "description": "Kwa timu ndogo hadi za kati (viti 2-10)",
+        "feature1": "Vipengele vyote vya Pro",
+        "feature2": "Usimamizi wa muuzaji",
+        "feature3": "Ushirikiano wa timu",
+        "cta": "Anza jaribio la bure"
+      },
       "starter": {
-        "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "name": "Nyota",
+        "price": "$ 29",
+        "period": "kwa mtumiaji/mwezi",
+        "description": "Kamili kwa wafanyabiashara na timu ndogo",
+        "feature1": "Hadi watumiaji 5",
+        "feature2": "Miradi 10 inayotumika",
+        "feature3": "Ripoti ya kimsingi",
+        "feature4": "Msaada wa barua pepe",
+        "feature5": "Hifadhi ya 10GB",
+        "cta": "Anza jaribio la bure"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "Mtaalam",
+        "price": "$ 79",
+        "period": "kwa mtumiaji/mwezi",
+        "description": "Kwa kampuni zinazokua za uzalishaji",
+        "feature1": "Hadi watumiaji 25",
+        "feature2": "Miradi isiyo na kikomo",
+        "feature3": "Uchambuzi wa hali ya juu",
+        "feature4": "Msaada wa kipaumbele",
+        "feature5": "Hifadhi ya 100GB",
+        "feature6": "Majukumu ya kawaida",
+        "feature7": "Ufikiaji wa API",
+        "cta": "Anza jaribio la bure",
+        "popular": "Maarufu zaidi"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "Biashara",
+        "price": "Kawaida",
+        "period": "mauzo ya mawasiliano",
+        "annualPrice": "$ 1000/mwezi (kulipwa kila mwaka)",
+        "description": "Kwa mashirika makubwa na wakala",
+        "feature1": "Watumiaji wasio na kikomo",
+        "feature2": "Miradi isiyo na kikomo",
+        "feature3": "Ujumuishaji wa kawaida",
+        "feature4": "Msaada wa kujitolea",
+        "feature5": "Hifadhi isiyo na kikomo",
+        "feature6": "SSO & Saml",
+        "feature7": "Dhamana ya SLA",
+        "feature8": "Mafunzo ya kawaida",
+        "cta": "Mauzo ya mawasiliano"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Maswali yanayoulizwa mara kwa mara",
+      "subtitle": "Kila kitu unahitaji kujua",
+      "question1": "Jaribio la bure ni la muda gani?",
+      "answer1": "Siku 14, hakuna kadi ya mkopo inahitajika. Ufikiaji kamili wa huduma zote.",
+      "question2": "Je! Ninaweza kughairi wakati wowote?",
+      "answer2": "Ndio. Ghairi wakati wowote. Hakuna mikataba ya muda mrefu au ahadi.",
+      "question3": "Je! Unakubali njia gani za malipo?",
+      "answer3": "Tunakubali kadi zote kuu za mkopo, ACH, na uhamishaji wa waya kwa mipango ya biashara.",
+      "question4": "Data yangu iko salama?",
+      "answer4": "Ndio. Usimbuaji wa kiwango cha biashara, Ushirikiano wa SoC 2, GDPR tayari. Takwimu zako zinalindwa katika kila ngazi.",
+      "question5": "Je! Unatoa mafunzo?",
+      "answer5": "Ndio. Rasilimali za huduma ya kibinafsi kwa mipango yote, pamoja na mafunzo ya kujitolea kwa wateja wa biashara.",
+      "question6": "Je! Ninaweza kuingiza data yangu iliyopo?",
+      "answer6": "Ndio. Tunatoa zana za uingizaji wa CSV na zinaweza kusaidia na uhamishaji wa data maalum kwa mipango ya biashara.",
+      "q1": "Jaribio la bure ni la muda gani?",
+      "a1": "Siku 14, hakuna kadi ya mkopo inahitajika. Ufikiaji kamili wa huduma zote.",
+      "q2": "Je! Ninaweza kughairi wakati wowote?",
+      "a2": "Ndio. Ghairi wakati wowote. Hakuna mikataba ya muda mrefu au ahadi.",
+      "q3": "Je! Unakubali njia gani za malipo?",
+      "a3": "Tunakubali kadi zote kuu za mkopo, ACH, na uhamishaji wa waya kwa mipango ya biashara.",
+      "q4": "Data yangu iko salama?",
+      "a4": "Ndio. Usimbuaji wa kiwango cha biashara, Ushirikiano wa SoC 2, GDPR tayari. Takwimu zako zinalindwa katika kila ngazi.",
+      "q5": "Je! Unatoa mafunzo?",
+      "a5": "Ndio. Rasilimali za huduma ya kibinafsi kwa mipango yote, pamoja na mafunzo ya kujitolea kwa wateja wa biashara.",
+      "q6": "Je! Ninaweza kuingiza data yangu iliyopo?",
+      "a6": "Ndio. Tunatoa zana za uingizaji wa CSV na zinaweza kusaidia na uhamishaji wa data maalum kwa mipango ya biashara."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Uko tayari kubadilisha mtiririko wako wa uzalishaji?",
+      "subtitle": "Jiunge na maelfu ya wataalamu wa uzalishaji wanaotumia ATLV",
+      "ctaPrimary": "Anza jaribio la bure",
+      "ctaSecondary": "Ratiba Demo",
+      "trustIndicators": "Hakuna Kadi ya Mkopo Inayohitajika • Jaribio la Bure la Siku 14 • Ghairi wakati wowote",
+      "primary": "Anza jaribio la bure",
+      "secondary": "Ratiba Demo",
+      "noCard": "Hakuna kadi ya mkopo inahitajika"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
+      "tagline": "Mfumo wa usimamizi wa mradi kwa timu za uzalishaji wa uzoefu",
+      "productTitle": "Bidhaa",
+      "companyTitle": "Kampuni",
+      "resourcesTitle": "Rasilimali",
+      "legalTitle": "Halali",
+      "product": "Bidhaa",
+      "features": "Vipengee",
+      "pricing": "Bei",
+      "demo": "Demo",
+      "integrations": "Ujumuishaji",
+      "docs": "Hati",
+      "apiReference": "Rejea ya API",
       "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "caseStudies": "Masomo ya kesi",
+      "templates": "Templeti",
+      "company": "Kampuni",
+      "aboutUs": "Kuhusu sisi",
+      "blog": "Blogi",
+      "careers": "Kazi",
+      "contact": "Wasiliana",
+      "press": "Bonyeza",
+      "partners": "Washirika",
+      "customers": "Wateja",
+      "events": "Matukio",
+      "legal": "Halali",
+      "privacy": "Sera ya faragha",
+      "terms": "Masharti ya Huduma",
+      "security": "Usalama",
+      "support": "Msaada",
+      "helpCenter": "Kituo cha Msaada",
+      "community": "Jamii",
+      "status": "Hali ya Mfumo",
+      "roiCalculator": "Calculator ya ROI",
+      "copyright": "© 2025 Atlvs. Haki zote zimehifadhiwa."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Inajumuisha na zana zako unazozipenda",
+      "subtitle": "Unganisha ATLV na zana unazotumia tayari",
+      "comingSoon": "Ujumuishaji zaidi unakuja hivi karibuni"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "Ufumbuzi wa usimamizi wa uzalishaji wa kitaalam",
+          "headlineHighlight": "Kwa timu za uzoefu",
+          "subheadline": "Mradi kamili, wafanyikazi, mali, na usimamizi wa kifedha kutoka jukwaa kuu. Iliyoundwa kwa wataalamu ambao hutoa uzoefu wa kipekee.",
+          "supportingCopy": "Kutoka kwa sherehe hadi hafla za ushirika na uzoefu wa ndani -ATLV hutoa muundo na usimamizi unaohitajika kwa usimamizi mzuri wa uzalishaji.",
+          "ctaPrimary": "Anza jaribio la bure",
+          "ctaSecondary": "Ombi la ombi",
+          "trustIndicators": "Hakuna Kadi ya Mkopo Inayohitajika • Jaribio la Siku 14 • Ghairi wakati wowote",
+          "platformScreenshot": "Picha ya jukwaa"
+        },
+        "trustBar": {
+          "trustedBy": "Kuaminiwa na wataalamu wa uzalishaji ulimwenguni"
+        },
+        "problem": {
+          "title": "Changamoto ya Usimamizi wa Uzalishaji",
+          "subtitle": "Ufanisi wa tasnia nzima",
+          "pain1Title": "Mifumo iliyogawanyika",
+          "pain1Description": "Timu hutumia majukwaa mengi yaliyokataliwa pamoja na lahajedwali, barua pepe, na zana mbali mbali za usimamizi wa mradi",
+          "pain2Title": "Upotezaji wa habari",
+          "pain2Description": "Maelezo muhimu ya mradi hupotea wakati wa mabadiliko na mikono ya timu",
+          "pain3Title": "Bajeti inazidi",
+          "pain3Description": "Bila usimamizi sahihi wa kifedha, gharama zinazidi makadirio",
+          "pain4Title": "Uvunjaji wa mawasiliano",
+          "pain4Description": "Wauzaji, wanachama wa wafanyakazi, na wadau wanapata shida za uratibu"
+        },
+        "solution": {
+          "title": "Jukwaa kamili. Udhibiti kamili.",
+          "subtitle": "Usimamizi wa Uzalishaji Jumuishi",
+          "feature1Title": "Jukwaa kuu",
+          "feature1Description": "Miradi yote, wafanyikazi, na rasilimali zinazosimamiwa kutoka eneo moja",
+          "feature2Title": "Sasisho za wakati halisi",
+          "feature2Description": "Maingiliano ya papo hapo inahakikisha washiriki wote wa timu wana habari za sasa",
+          "feature3Title": "Uangalizi wa kifedha",
+          "feature3Description": "Fuatilia bajeti, gharama, na ankara kwa usahihi na usahihi",
+          "feature4Title": "Usimamizi wa muuzaji",
+          "feature4Description": "Kudumisha uhusiano wa kitaalam wakati wa kuhakikisha uangalizi sahihi"
+        },
+        "howItWorks": {
+          "title": "Mchakato wa utekelezaji",
+          "subtitle": "Usanidi mzuri na kupelekwa",
+          "step1Title": "Anzisha shirika lako",
+          "step1Description": "Sanidi muundo wako wa shirika na kwenye timu yako",
+          "step2Title": "Fafanua miradi yako",
+          "step2Description": "Anzisha uzalishaji, uanzishaji, na nafasi za kazi",
+          "step3Title": "Agiza majukumu na majukumu",
+          "step3Description": "Toa viwango sahihi vya ufikiaji na uwajibikaji wazi",
+          "step4Title": "Kutekeleza na kufuatilia",
+          "step4Description": "Fuatilia maendeleo, dhibiti bajeti, toa matokeo ya kipekee"
+        },
+        "testimonials": {
+          "title": "Kuaminiwa na wataalamu wa uzalishaji ulimwenguni",
+          "subtitle": "Imethibitishwa matokeo kutoka kwa viongozi wa tasnia",
+          "testimonial1Quote": "ATLVS imeonekana kuwa suluhisho bora kwa kusimamia shughuli zetu za tamasha. Kila kitu kimepangwa vizuri na timu yetu inashikilia uratibu sahihi.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Mkurugenzi wa Uzalishaji, Tamasha kuu la Muziki",
+          "testimonial2Quote": "Mfumo wa udhibiti wa msingi wa jukumu hutoa kile tulichohitaji kwa muundo wetu wa shirika. Mwishowe, usalama sahihi na usimamizi wa ufikiaji kwa timu za uzalishaji.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "VP ya Operesheni, Kampuni ya Matukio ya moja kwa moja",
+          "testimonial3Quote": "Tulipunguza bajeti inayozidi kwa 40% katika robo ya kwanza. Kuonekana kwa kifedha na uwezo wa kufuatilia ni ya kuvutia kweli.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Wakala wa Matukio ya Ushirika"
+        },
+        "pricing": {
+          "title": "Muundo wa bei ya kitaalam"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "Usimamizi wa uzalishaji ambao unafanya kazi",
+          "headlineHighlight": "Hakuna BS",
+          "subheadline": "Simamia miradi, wafanyakazi, mali, na bajeti kutoka sehemu moja. Imejengwa kwa watu ambao hufanya kazi hiyo.",
+          "supportingCopy": "Sherehe, hafla za ushirika, uanzishaji wa kuzama -ATLV hushughulikia bila fluff.",
+          "ctaPrimary": "Anza bure",
+          "ctaSecondary": "Tazama jinsi inavyofanya kazi",
+          "trustIndicators": "Hakuna Kadi ya Mkopo • Jaribio la siku 14 • Ghairi wakati wowote",
+          "platformScreenshot": "Picha ya jukwaa"
+        },
+        "trustBar": {
+          "trustedBy": "Inatumiwa na timu za uzalishaji ambao hufanya mambo kufanywa"
+        },
+        "problem": {
+          "title": "Fujo la uzalishaji",
+          "subtitle": "Hadithi hiyo hiyo, siku tofauti",
+          "pain1Title": "Machafuko ya zana",
+          "pain1Description": "Lahajedwali, slack, barua pepe, hati za google bila mpangilio -mtiririko wako wa kazi umetawanyika kila mahali",
+          "pain2Title": "Habari inayokosekana",
+          "pain2Description": "Faili zinatoweka. Mtu aliituma ... mahali pengine. Bahati nzuri kuipata",
+          "pain3Title": "Bajeti huenda",
+          "pain3Description": "Gharama zinakua juu yako. Kufikia wakati unakamata, uko juu ya bajeti",
+          "pain4Title": "Kuvunjika kwa mawasiliano",
+          "pain4Description": "Wauzaji wanakosa sasisho, wafanyakazi hufanya kazi na habari za zamani, wadau wanaendelea kuuliza maswali yale yale"
+        },
+        "solution": {
+          "title": "Jukwaa moja. Kweli inafanya kazi.",
+          "subtitle": "Kila kitu ambapo inapaswa kuwa",
+          "feature1Title": "Mfumo wa umoja",
+          "feature1Description": "Miradi, watu, rasilimali - zote katika sehemu moja ambayo ina maana",
+          "feature2Title": "Sasisho za wakati halisi",
+          "feature2Description": "Mabadiliko hufanyika mara moja. Kila mtu anaona kitu kimoja",
+          "feature3Title": "Ufuatiliaji wa Bajeti",
+          "feature3Description": "Fuatilia kila dola. Hakuna mshangao, hakuna udhuru",
+          "feature4Title": "Uratibu wa muuzaji",
+          "feature4Description": "Weka washirika kwenye kitanzi bila kupoteza udhibiti"
+        },
+        "howItWorks": {
+          "title": "Jinsi inavyofanya kazi",
+          "subtitle": "Amka na kukimbia haraka",
+          "step1Title": "Sanidi org yako",
+          "step1Description": "Jenga muundo wako, ongeza timu yako",
+          "step2Title": "Unda miradi yako",
+          "step2Description": "Ramani za uzalishaji na nafasi za kazi",
+          "step3Title": "Agiza majukumu",
+          "step3Description": "Wape watu ufikiaji sahihi, hakuna zaidi",
+          "step4Title": "Ifanyie",
+          "step4Description": "Fuatilia maendeleo, dhibiti bajeti, meli kwa wakati"
+        },
+        "testimonials": {
+          "title": "Timu halisi, matokeo halisi",
+          "subtitle": "Hakuna Uuzaji wa Uuzaji",
+          "testimonial1Quote": "ATLVS ilirekebisha machafuko yetu ya tamasha. Kila kitu kiko katika sehemu moja, kila mtu anajua kinachotokea. Mwishowe.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Mkurugenzi wa Uzalishaji, Tamasha kuu la Muziki",
+          "testimonial2Quote": "Mfumo wa ruhusa ndivyo tulivyohitaji. Hakuna ndoto zaidi za ufikiaji.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "VP ya Operesheni, Kampuni ya Matukio ya moja kwa moja",
+          "testimonial3Quote": "Kata bajeti inazidi 40% robo ya kwanza. Ufuatiliaji kweli hufanya kazi.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Wakala wa Matukio ya Ushirika"
+        },
+        "pricing": {
+          "title": "Bei ya moja kwa moja"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "Usimamizi wa uzalishaji ambao hufanya kazi",
+          "headlineHighlight": "Kwa timu za uzoefu",
+          "subheadline": "Nenda miradi yako, wafanyakazi, mali, na bajeti kutoka kituo kimoja cha amri. Imejengwa kwa watu ambao huunda uzoefu usioweza kusahaulika.",
+          "supportingCopy": "Ikiwa unazalisha sherehe, hafla za ushirika, au uanzishaji wa kuzama -ATLVS chati kozi kutoka kwa dhana hadi simu ya pazia.",
+          "ctaPrimary": "Anza bure leo",
+          "ctaSecondary": "Ione inachukua hatua",
+          "trustIndicators": "Hakuna Kadi ya Mkopo • Jaribio la siku 14 • Ghairi wakati wowote",
+          "platformScreenshot": "Picha ya jukwaa"
+        },
+        "trustBar": {
+          "trustedBy": "Kuaminiwa na timu za uzalishaji ulimwenguni"
+        },
+        "problem": {
+          "title": "Shida ya machafuko ya uzalishaji",
+          "subtitle": "Unajua kuchimba visima",
+          "pain1Title": "Chombo cha kupakia zaidi",
+          "pain1Description": "Lahajedwali, Slack, Barua pepe, ambayo Doc moja ya Google Hakuna mtu anayeweza kupata - Utiririshaji wako wa kazi umetawanyika kwenye majukwaa kadhaa",
+          "pain2Title": "Habari shimo nyeusi",
+          "pain2Description": "Maelezo muhimu hutoweka wakati wa mikoba. Mtu hakika alituma faili hiyo ... mahali pengine",
+          "pain3Title": "Bajeti inashangaza",
+          "pain3Description": "Gharama huenda kwenye vivuli. Kwa wakati utagundua, tayari umekwisha",
+          "pain4Title": "Mawasiliano Drift",
+          "pain4Description": "Wauzaji wanakosa sasisho, wafanyakazi hufanya kazi kwa habari ya zamani, wadau huuliza maswali yale yale mara mbili"
+        },
+        "solution": {
+          "title": "Jukwaa moja. Machafuko ya sifuri.",
+          "subtitle": "Kila kitu mahali pake pa kulia",
+          "feature1Title": "Kituo cha Amri cha Umoja",
+          "feature1Description": "Miradi, watu, na rasilimali zote zinazosafiri katika malezi",
+          "feature2Title": "Usawazishaji wa wakati halisi",
+          "feature2Description": "Sasisho hutiririka mara moja. Kila mtu anafanya kazi kutoka chati ile ile",
+          "feature3Title": "Bajeti rada",
+          "feature3Description": "Fuatilia kila dola kwa wakati halisi. Hakuna mshangao, hakuna kupita",
+          "feature4Title": "Uratibu wa muuzaji",
+          "feature4Description": "Weka washirika wa nje kwenye kitanzi bila kutoa meli"
+        },
+        "howItWorks": {
+          "title": "Jinsi inavyofanya kazi",
+          "subtitle": "Weka meli kwa dakika, sio miezi",
+          "step1Title": "Anzisha shirika lako",
+          "step1Description": "Sanidi muundo wako na ulete wafanyakazi wako ndani",
+          "step2Title": "Chati miradi yako",
+          "step2Description": "Ramani za uzalishaji, uanzishaji, na nafasi za kazi",
+          "step3Title": "Agiza majukumu na misheni",
+          "step3Description": "Mpe kila mtu ufikiaji sahihi na majukumu wazi",
+          "step4Title": "Nenda na uwasilishe",
+          "step4Description": "Fuatilia maendeleo, dhibiti bajeti, utekeleze bila makosa"
+        },
+        "testimonials": {
+          "title": "Kuaminiwa na timu za uzalishaji ulimwenguni",
+          "subtitle": "Hadithi halisi kutoka kwa wazalishaji halisi",
+          "testimonial1Quote": "ATLVS ilibadilisha jinsi tunavyosimamia sherehe. Kila kitu katika sehemu moja, kila mtu kwenye ukurasa mmoja. Mwishowe.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Mkurugenzi wa Uzalishaji, Tamasha kuu la Muziki",
+          "testimonial2Quote": "Mfumo wa RBAC ni kamili kwa muundo wetu wa org. Udhibiti sahihi wa ufikiaji kwa uzalishaji? Mapinduzi.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "VP ya Operesheni, Kampuni ya Matukio ya moja kwa moja",
+          "testimonial3Quote": "Tunakata bajeti inayozidi kwa 40% katika robo ya kwanza. Mwonekano wa kifedha ni kihalali cha kubadilisha mchezo.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Wakala wa Matukio ya Ushirika"
+        },
+        "pricing": {
+          "title": "Bei ya uwazi ambayo mizani"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "Usimamizi wa uzalishaji ambao unapata tofauti",
+          "headlineHighlight": "Kwa waundaji wa hafla",
+          "subheadline": "Run miradi yako, wafanyakazi, gia, na bajeti kutoka kwa programu moja. Imetengenezwa kwa watu ambao kwa kweli huunda uzoefu.",
+          "supportingCopy": "Sherehe, uanzishaji wa chapa, hafla za kuzama -ATLV huweka kila kitu kupangwa kutoka kwa wazo hadi utekelezaji.",
+          "ctaPrimary": "Anza bure",
+          "ctaSecondary": "Angalia",
+          "trustIndicators": "Hakuna Kadi ya Mkopo Inahitajika • Jaribio la Bure • Ghairi Wakati wowote",
+          "platformScreenshot": "Picha ya jukwaa"
+        },
+        "trustBar": {
+          "trustedBy": "Inatumiwa na timu za uzalishaji kila mahali"
+        },
+        "problem": {
+          "title": "Uzalishaji ni fujo AF",
+          "subtitle": "Wote tumekuwa huko",
+          "pain1Title": "Programu nyingi sana",
+          "pain1Description": "Lahajedwali, Slack, Barua pepe, Hiyo Hati ya Google bila mpangilio - Kila kitu kiko kila mahali na ni machafuko",
+          "pain2Title": "Faili zinapotea",
+          "pain2Description": "Mtu alituma faili hiyo ... mahali pengine. Sasa hakuna mtu anayeweza kuipata. Classic.",
+          "pain3Title": "Bajeti inakwenda BRR",
+          "pain3Description": "Gharama endelea kwenda juu. Kufikia wakati utagundua, uko juu ya bajeti",
+          "pain4Title": "Mawasiliano LAG 💬",
+          "pain4Description": "Washiriki wa timu wanakosa sasisho na kufanya kazi na habari ya zamani"
+        },
+        "solution": {
+          "title": "Jukwaa moja. Udhibiti wa Jumla. 🎯",
+          "subtitle": "Kila kitu mahali pamoja",
+          "feature1Title": "Kituo cha Amri 🎮",
+          "feature1Description": "Miradi yako yote, timu, na rasilimali katika kitovu kimoja",
+          "feature2Title": "Kusawazisha moja kwa moja ⚡",
+          "feature2Description": "Sasisho hufanyika mara moja. Kila mtu anakaa ameunganishwa",
+          "feature3Title": "Tracker ya bajeti 💰",
+          "feature3Description": "Tazama kila dola kwa wakati halisi. Hakuna mshangao",
+          "feature4Title": "Uratibu wa timu 🤝",
+          "feature4Description": "Weka kila mtu kusasishwa na kwenye ukurasa huo huo"
+        },
+        "howItWorks": {
+          "title": "Jinsi inavyofanya kazi",
+          "subtitle": "Anza katika dakika halisi",
+          "step1Title": "Sanidi org yako",
+          "step1Description": "Jenga muundo wa timu yako na ongeza kila mtu",
+          "step2Title": "Unda miradi",
+          "step2Description": "Ramani nje ya hafla zako na uzalishaji",
+          "step3Title": "Agiza majukumu",
+          "step3Description": "Wape watu ruhusa sahihi",
+          "step4Title": "Usafirishe",
+          "step4Description": "Fuatilia kila kitu, dhibiti bajeti, utekeleze kikamilifu"
+        },
+        "testimonials": {
+          "title": "Timu za kweli zinazotumia ATLVS",
+          "subtitle": "Maoni halisi kutoka kwa watu halisi",
+          "testimonial1Quote": "ATLVS ni OP ya kusimamia sherehe. Kila kitu kimeandaliwa, kila mtu amesawazishwa. 10/10 ingependekeza.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Mkurugenzi wa Uzalishaji, Tamasha kuu la Muziki",
+          "testimonial2Quote": "Mfumo wa ruhusa ni moto. Mwishowe nilipata udhibiti sahihi wa ufikiaji kwa timu yetu.",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "VP ya Operesheni, Kampuni ya Matukio ya moja kwa moja",
+          "testimonial3Quote": "Tunakata shida za bajeti na 40% robo ya kwanza. Ufuatiliaji wa pesa ni moja kwa moja kushangaza.",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Wakala wa Matukio ya Ushirika"
+        },
+        "pricing": {
+          "title": "Bei ambayo inapiga tofauti"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "Kiwango cha mchezo wako wa uzalishaji 🎮",
+          "headlineHighlight": "Kwa waundaji wa hafla",
+          "subheadline": "Dhibiti miradi, timu, gia na pesa kutoka kwa programu moja bora ✨ Kujengwa kwa waundaji ambao hufanya uzoefu wa Epic 🚀",
+          "supportingCopy": "Sherehe, Matukio, Uanzishaji -ATLV huweka kila kitu kilichopangwa kutoka mwanzo hadi kumaliza 🎯",
+          "ctaPrimary": "Anza bure 🚀",
+          "ctaSecondary": "Tazama demo 👀",
+          "trustIndicators": "Hakuna Kadi Inayohitajika • Jaribio la Bure • Ghairi wakati wowote ✌️",
+          "platformScreenshot": "Picha ya jukwaa"
+        },
+        "trustBar": {
+          "trustedBy": "Inatumiwa na timu za uzalishaji ulimwenguni 🌍"
+        },
+        "problem": {
+          "title": "Uzalishaji unaweza kuwa machafuko 😅",
+          "subtitle": "Sauti ya kawaida?",
+          "pain1Title": "Programu ya kupakia 📱",
+          "pain1Description": "Programu nyingi sana, machafuko mengi. Kila kitu kimetawanyika na ngumu kupata 🤯",
+          "pain2Title": "Faili zilizopotea 📂",
+          "pain2Description": "Faili hupotea ndani ya utupu. Mtu aliituma ... mahali pengine ... bahati nzuri! 🔍",
+          "pain3Title": "Mshangao wa Bajeti 💸",
+          "pain3Description": "Pesa inaendelea kutoweka. Kufikia wakati utagundua, uko juu ya bajeti 😬",
+          "pain4Title": "Machafuko ya timu 🤷",
+          "pain4Description": "Watu wanakosa sasisho, fanya kazi na habari ya zamani, uliza maswali yale yale"
+        },
+        "solution": {
+          "title": "Programu moja. Udhibiti kamili. 💪",
+          "subtitle": "Kila kitu unahitaji mahali pamoja",
+          "feature1Title": "Kituo cha Amri 🎮",
+          "feature1Description": "Miradi yote, timu na gia kwenye dashibodi moja",
+          "feature2Title": "Usawazishaji wa papo hapo ⚡",
+          "feature2Description": "Sasisho hufanyika kwa wakati halisi. Kila mtu anakaa ameunganishwa",
+          "feature3Title": "Tracker ya pesa 💰",
+          "feature3Description": "Tazama kila dola. Hakuna mshangao, hakuna mafadhaiko",
+          "feature4Title": "Collab ya Timu 🤝",
+          "feature4Description": "Weka kila mtu kwenye kitanzi na ufanye kazi pamoja"
+        },
+        "howItWorks": {
+          "title": "Jinsi inavyofanya kazi ⚙️",
+          "subtitle": "Anza Super haraka",
+          "step1Title": "Jenga timu yako 👥",
+          "step1Description": "Sanidi org yako na ongeza wafanyakazi wako",
+          "step2Title": "Unda miradi 📋",
+          "step2Description": "Ramani nje ya hafla zako zote na uzalishaji",
+          "step3Title": "Weka ruhusa 🔐",
+          "step3Description": "Mpe kila mtu kiwango sahihi cha ufikiaji",
+          "step4Title": "Zindua & Win 🏆",
+          "step4Description": "Fuatilia maendeleo, dhibiti pesa, utekeleze kikamilifu"
+        },
+        "testimonials": {
+          "title": "Timu zinapenda ATLVS 💙",
+          "subtitle": "Maoni halisi kutoka kwa watumiaji halisi",
+          "testimonial1Quote": "ATLV ni kamili kwa sherehe. Kila kitu kimeandaliwa, kila mtu amesawazishwa. 100/10! 🔥",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Mkurugenzi wa Uzalishaji, Tamasha kuu la Muziki",
+          "testimonial2Quote": "Mfumo wa ruhusa ni busu ya Chef 👌 Mwishowe udhibiti sahihi wa ufikiaji!",
+          "testimonial2Author": "Marcus Rodriguez",
+          "testimonial2Role": "VP ya Operesheni, Kampuni ya Matukio ya moja kwa moja",
+          "testimonial3Quote": "Tunakata maswala ya bajeti na 40% robo ya kwanza. Ufuatiliaji ni mwendawazimu! 🎯",
+          "testimonial3Author": "Jennifer Park",
+          "testimonial3Role": "CFO, Wakala wa Matukio ya Ushirika"
+        },
+        "pricing": {
+          "title": "Bei hiyo ni sawa ✨"
+        }
+      }
     }
   }
 }

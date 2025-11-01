@@ -402,333 +402,934 @@
   "marketing": {
     "nav": {
       "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "solutions": "పరిష్కారాలు",
+      "features": "ఫీచర్లు",
+      "pricing": "ధర నిర్ణయించడం",
+      "docs": "డాక్స్",
+      "blog": "బ్లాగు",
+      "company": "కంపెనీ",
+      "signIn": "సైన్ ఇన్ చేయండి",
+      "startFree": "ఉచితంగా ప్రారంభించండి",
+      "toggleMenu": "మెనుని టోగుల్ చేయండి"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "పరిశ్రమ ద్వారా పరిష్కారాలు",
+        "subtitle": "ప్రతి రకమైన లైవ్ ఎంటర్‌టైన్‌మెంట్ ప్రొడక్షన్ కోసం పర్పస్-బిల్ట్ వర్క్‌ఫ్లోలు"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "కచేరీలు & పర్యటన",
+        "description": "గ్లోబల్ టూర్ కార్యకలాపాలలో రూటింగ్, బడ్జెటింగ్, లాజిస్టిక్స్ మరియు క్రూ మేనేజ్‌మెంట్‌ను క్రమబద్ధీకరించండి - చిన్న వేదిక పరుగుల నుండి అరేనా-స్కేల్ ప్రొడక్షన్‌ల వరకు."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "సంగీతం & కళా ఉత్సవాలు",
+        "description": "బహుళ-రోజుల, బహుళ-దశల ఈవెంట్‌ల కోసం వర్క్‌ఫ్లోలను కేంద్రీకరించండి - ఉత్పత్తి, ప్రతిభ, విక్రేతలు మరియు ఒకే కమాండ్ సిస్టమ్‌లో సమ్మతిని ఏకం చేయడం."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "లీనమయ్యే & అనుభవపూర్వక ఈవెంట్‌లు",
+        "description": "సృజనాత్మక అభివృద్ధి నుండి ప్రత్యక్ష అమలు వరకు పూర్తి దృశ్యమానతతో ఇంటరాక్టివ్ ప్రపంచాలు, ఇన్‌స్టాలేషన్‌లు మరియు బ్రాండెడ్ అనుభవాలను రూపొందించండి మరియు నిర్వహించండి."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "థియేట్రికల్ & లైవ్ ప్రొడక్షన్స్",
+        "description": "వేదిక మరియు పనితీరు ఆధారిత వినోదం కోసం సృజనాత్మక బృందాలు, సాంకేతిక షెడ్యూల్‌లు మరియు నిర్మాణ ఆస్తులను నిర్వహించండి."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "సినిమా, టీవీ & మీడియా",
+        "description": "క్రాస్-డిపార్ట్‌మెంటల్ సింక్ మరియు ఆర్థిక పారదర్శకత కోసం రూపొందించిన సాధనాలతో ప్రీ-ప్రొడక్షన్, ఆన్-సెట్ ఆపరేషన్‌లు మరియు ర్యాప్ రిపోర్టింగ్‌ను సమన్వయం చేయండి."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "బ్రాండ్ యాక్టివేషన్‌లు & మార్కెటింగ్ ప్రచారాలు",
+        "description": "పాప్-అప్‌లు, లాంచ్‌లు మరియు ప్రచార-ఆధారిత అనుభవాలను అమలు చేయండి — సృజనాత్మక, లాజిస్టిక్స్ మరియు ROI ట్రాకింగ్‌ను ఒక తెలివైన డాష్‌బోర్డ్‌లో ఏకీకృతం చేయడం."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "కార్పొరేట్ & ప్రైవేట్ ఈవెంట్‌లు",
+        "description": "క్రమబద్ధమైన ప్రణాళిక మరియు విక్రేత సమన్వయంతో అంతర్గత సమావేశాలు, తిరోగమనాలు మరియు ఉన్నత స్థాయి సమావేశాల కోసం దోషరహిత అనుభవాలను అందించండి."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "వాణిజ్య ప్రదర్శనలు & సమావేశాలు",
+        "description": "ఎండ్-టు-ఎండ్ ప్రాజెక్ట్ మేనేజ్‌మెంట్ మరియు రియల్ టైమ్ అనలిటిక్స్‌తో బూత్ బిల్డ్‌లు, ఎగ్జిబిటర్ లాజిస్టిక్స్ మరియు స్పాన్సర్ సంబంధాలను సులభతరం చేయండి."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "ఆరోగ్యం, ఆరోగ్యం & జీవనశైలి",
+        "description": "తిరోగమనాలు, ఫిట్‌నెస్ ఈవెంట్‌లు మరియు వెల్‌నెస్ అనుభవాల కోసం ప్రోగ్రామింగ్, సిబ్బంది మరియు అతిథి ప్రవాహాన్ని ఆప్టిమైజ్ చేయండి — ఇక్కడ వివరాలు మరియు వాతావరణం చాలా ముఖ్యమైనవి."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "వాస్తవానికి పని చేసే ఉత్పత్తి నిర్వహణ",
+      "headlineHighlight": "అనుభవపూర్వక బృందాల కోసం",
+      "subheadline": "ఒకే కమాండ్ సెంటర్ నుండి మీ ప్రాజెక్ట్‌లు, సిబ్బంది, ఆస్తులు మరియు బడ్జెట్‌లను నావిగేట్ చేయండి. మరపురాని అనుభవాలను సృష్టించే వ్యక్తుల కోసం నిర్మించబడింది.",
+      "supportingCopy": "మీరు పండుగలు, కార్పొరేట్ ఈవెంట్‌లు లేదా లీనమయ్యే యాక్టివేషన్‌లను ఉత్పత్తి చేస్తున్నా-ATLVS కాన్సెప్ట్ నుండి కర్టెన్ కాల్ వరకు కోర్సును చార్ట్ చేస్తుంది.",
+      "ctaPrimary": "ఈరోజే ఉచితంగా ప్రారంభించండి",
+      "ctaSecondary": "ఇది చర్యలో చూడండి",
+      "trustIndicators": "క్రెడిట్ కార్డ్ లేదు • 14-రోజుల ట్రయల్ • ఎప్పుడైనా రద్దు చేయండి",
+      "platformScreenshot": "ప్లాట్‌ఫారమ్ స్క్రీన్‌షాట్"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "ప్రపంచవ్యాప్తంగా ఉన్న నిర్మాణ బృందాలు విశ్వసించాయి"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "ఉత్పత్తి గందరగోళ సమస్య",
+      "subtitle": "మీకు డ్రిల్ తెలుసు",
+      "pain1Title": "సాధనం ఓవర్‌లోడ్",
+      "pain1Description": "స్ప్రెడ్‌షీట్‌లు, స్లాక్, ఇమెయిల్, ఎవరూ కనుగొనలేని ఒక Google డాక్-మీ వర్క్‌ఫ్లో డజను ప్లాట్‌ఫారమ్‌లలో చెల్లాచెదురుగా ఉంది",
+      "pain2Title": "సమాచారం బ్లాక్ హోల్స్",
+      "pain2Description": "హ్యాండ్‌ఆఫ్‌ల సమయంలో క్లిష్టమైన వివరాలు అదృశ్యమవుతాయి. ఎవరో ఖచ్చితంగా ఆ ఫైల్‌ను... ఎక్కడికో పంపించారు",
+      "pain3Title": "బడ్జెట్ ఆశ్చర్యాలు",
+      "pain3Description": "ఖర్చులు కనువిందు చేస్తాయి. మీరు గమనించే సమయానికి, మీరు ఇప్పటికే దాటిపోయారు",
+      "pain4Title": "కమ్యూనికేషన్ డ్రిఫ్ట్",
+      "pain4Description": "విక్రేతలు అప్‌డేట్‌లను కోల్పోతారు, సిబ్బంది పాత సమాచారం నుండి పని చేస్తారు, వాటాదారులు ఒకే ప్రశ్నలను రెండుసార్లు అడుగుతారు"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "ఒక వేదిక. జీరో ఖోస్.",
+      "subtitle": "ప్రతిదీ దాని సరైన స్థలంలో ఉంది",
+      "feature1Title": "యూనిఫైడ్ కమాండ్ సెంటర్",
+      "feature1Description": "ప్రాజెక్ట్‌లు, వ్యక్తులు మరియు వనరులు అన్నీ నిర్మాణంలో ఉన్నాయి",
+      "feature2Title": "నిజ-సమయ సమకాలీకరణ",
+      "feature2Description": "నవీకరణలు తక్షణమే ప్రవహిస్తాయి. అందరూ ఒకే చార్ట్ నుండి పని చేస్తున్నారు",
+      "feature3Title": "బడ్జెట్ రాడార్",
+      "feature3Description": "నిజ సమయంలో ప్రతి డాలర్‌ను ట్రాక్ చేయండి. ఆశ్చర్యం లేదు, అతిక్రమించలేదు",
+      "feature4Title": "విక్రేత సమన్వయం",
+      "feature4Description": "ఓడను ఇవ్వకుండా బాహ్య భాగస్వాములను లూప్‌లో ఉంచండి"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "ఇది ఎలా పనిచేస్తుంది",
+      "subtitle": "నెలల్లో కాకుండా నిమిషాల్లో ప్రయాణించండి",
+      "step1Title": "మీ సంస్థను ప్రారంభించండి",
+      "step1Description": "మీ నిర్మాణాన్ని సెటప్ చేయండి మరియు మీ సిబ్బందిని పైకి తీసుకురండి",
+      "step2Title": "మీ ప్రాజెక్ట్‌లను చార్ట్ చేయండి",
+      "step2Description": "ప్రొడక్షన్‌లు, యాక్టివేషన్‌లు మరియు వర్క్‌స్పేస్‌లను మ్యాప్ చేయండి",
+      "step3Title": "పాత్రలు & మిషన్లను కేటాయించండి",
+      "step3Description": "ప్రతి ఒక్కరికీ సరైన యాక్సెస్ మరియు స్పష్టమైన బాధ్యతలను అందించండి",
+      "step4Title": "నావిగేట్ & బట్వాడా",
+      "step4Description": "పురోగతిని పర్యవేక్షించండి, బడ్జెట్‌లను నిర్వహించండి, దోషరహితంగా అమలు చేయండి"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "మీరు స్కేల్ వద్ద ఉత్పత్తి చేయవలసిన ప్రతిదీ",
+      "subtitle": "పూర్తి ఉత్పత్తి నియంత్రణ కోసం ఆరు ఇంటిగ్రేటెడ్ హబ్‌లు",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "ప్రొడక్షన్ హబ్",
+        "description": "ప్రాజెక్ట్‌లు, ఈవెంట్‌లు, వ్యక్తులు, ఆస్తులు, స్థానాలు మరియు ఫైల్‌లను నిర్వహించండి",
+        "feature1": "ప్రాజెక్ట్ & ఈవెంట్ ప్లానింగ్",
+        "feature2": "బృందం & సిబ్బంది నిర్వహణ",
+        "feature3": "ఆస్తి ట్రాకింగ్ & ఇన్వెంటరీ",
+        "feature4": "స్థానం & వేదిక సమన్వయం"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "వ్యాపార కేంద్రం",
+        "description": "కంపెనీలు, ఉద్యోగాలు, సేకరణ మరియు ఆర్థిక వ్యవహారాలను నిర్వహించండి",
+        "feature1": "విక్రేత & కంపెనీ నిర్వహణ",
+        "feature2": "ఉద్యోగ నియామకాలు & నియామకాలు",
+        "feature3": "సేకరణ & కొనుగోలు",
+        "feature4": "బడ్జెట్ & ఖర్చు ట్రాకింగ్"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "నెట్‌వర్క్ హబ్",
+        "description": "సంఘం, మార్కెట్‌ప్లేస్ మరియు రిసోర్స్ లైబ్రరీని నిర్మించండి",
+        "feature1": "సంఘం & చర్చలు",
+        "feature2": "మార్కెట్‌ప్లేస్ & సేవలు",
+        "feature3": "రిసోర్స్ లైబ్రరీ",
+        "feature4": "పరిశ్రమ కనెక్షన్లు"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "ఆటోమేషన్స్ హబ్",
+        "description": "వర్క్‌ఫ్లోలు, ట్రిగ్గర్‌లు మరియు పునరావృత విధులను ఆటోమేట్ చేయండి",
+        "feature1": "కస్టమ్ వర్క్‌ఫ్లో ఆటోమేషన్",
+        "feature2": "ఈవెంట్-ఆధారిత ట్రిగ్గర్‌లు",
+        "feature3": "షెడ్యూల్డ్ టాస్క్ ఎగ్జిక్యూషన్",
+        "feature4": "ఇంటిగ్రేషన్ పైప్లైన్లు"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "ఇంటెలిజెన్స్ హబ్",
+        "description": "నివేదికలు, విశ్లేషణలు మరియు అంతర్దృష్టులను రూపొందించండి",
+        "feature1": "అనుకూల నివేదికలు",
+        "feature2": "నిజ-సమయ విశ్లేషణలు",
+        "feature3": "ప్రిడిక్టివ్ అంతర్దృష్టులు",
+        "feature4": "పనితీరు కొలమానాలు"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "సిస్టమ్ హబ్",
+        "description": "అడ్మిన్, సెట్టింగ్‌లు మరియు వినియోగదారు ప్రొఫైల్‌లను కాన్ఫిగర్ చేయండి",
+        "feature1": "వినియోగదారు & పాత్ర నిర్వహణ",
+        "feature2": "సిస్టమ్ కాన్ఫిగరేషన్",
+        "feature3": "ప్రొఫైల్ అనుకూలీకరణ",
+        "feature4": "భద్రత & అనుమతులు"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "మీరు స్కేల్ వద్ద ఉత్పత్తి చేయవలసిన ప్రతిదీ",
+        "subtitle": "ప్రయోగాత్మక ఉత్పత్తి బృందాల కోసం రూపొందించిన ఆరు ఇంటిగ్రేటెడ్ హబ్‌లు"
+      },
+      "production": {
+        "title": "ప్రొడక్షన్ హబ్",
+        "description": "ప్రాజెక్ట్‌లు, ఈవెంట్‌లు, వ్యక్తులు, ఆస్తులు, స్థానాలు మరియు ఫైల్‌లను నిర్వహించండి",
+        "projects": {
+          "title": "ప్రాజెక్టులు",
+          "description": "కాన్సెప్ట్ నుండి సమ్మె వరకు ప్రొడక్షన్‌లను నిర్వహించండి మరియు ట్రాక్ చేయండి"
+        },
+        "events": {
+          "title": "ఈవెంట్స్",
+          "description": "ప్రతి వివరాలు మరియు కాలక్రమాన్ని షెడ్యూల్ చేయండి, సమన్వయం చేయండి మరియు నిర్వహించండి"
+        },
+        "people": {
+          "title": "ప్రజలు",
+          "description": "సిబ్బంది అసైన్‌మెంట్‌లు, లభ్యత మరియు షెడ్యూల్‌ను నిర్వహించండి"
+        },
+        "assets": {
+          "title": "ఆస్తులు",
+          "description": "ప్రొడక్షన్‌లలో పరికరాలు, ఇన్వెంటరీ మరియు వనరులను ట్రాక్ చేయండి"
+        },
+        "locations": {
+          "title": "స్థానాలు",
+          "description": "వేదికలు, సైట్‌లు మరియు సౌకర్యాల లాజిస్టిక్‌లను సమన్వయం చేయండి"
+        },
+        "files": {
+          "title": "ఫైల్‌లు",
+          "description": "పత్రాలు, మీడియా మరియు ఉత్పత్తి ఫైల్‌లను సురక్షితంగా కేంద్రీకరించండి"
+        }
+      },
+      "business": {
+        "title": "వ్యాపార కేంద్రం",
+        "description": "కంపెనీలు, ఉద్యోగాలు, సేకరణ మరియు ఆర్థిక వ్యవహారాలను నిర్వహించండి",
+        "companies": {
+          "title": "కంపెనీలు",
+          "description": "విక్రేత సంబంధాలు, క్లయింట్లు మరియు భాగస్వాములను నిర్వహించండి"
+        },
+        "jobs": {
+          "title": "ఉద్యోగాలు",
+          "description": "స్థానాలను పోస్ట్ చేయండి, అప్లికేషన్‌లను ట్రాక్ చేయండి, నియామకాన్ని నిర్వహించండి"
+        },
+        "procurement": {
+          "title": "సేకరణ",
+          "description": "కొనుగోలు, విక్రేత ఎంపిక మరియు ఒప్పందాలను క్రమబద్ధీకరించండి"
+        },
+        "invoices": {
+          "title": "ఇన్‌వాయిస్‌లు",
+          "description": "ఆటోమేటెడ్ రిమైండర్‌లతో ఇన్‌వాయిస్‌లను సృష్టించండి, పంపండి మరియు ట్రాక్ చేయండి"
+        },
+        "expenses": {
+          "title": "ఖర్చులు",
+          "description": "రసీదు క్యాప్చర్‌తో ఖర్చులను రికార్డ్ చేయండి మరియు వర్గీకరించండి"
+        },
+        "budgets": {
+          "title": "బడ్జెట్లు",
+          "description": "నిజ-సమయ ట్రాకింగ్‌తో బడ్జెట్‌లను ప్లాన్ చేయండి, పర్యవేక్షించండి మరియు నియంత్రించండి"
+        }
+      },
+      "network": {
+        "title": "నెట్‌వర్క్ హబ్",
+        "description": "సంఘం, మార్కెట్‌ప్లేస్ మరియు రిసోర్స్ లైబ్రరీని నిర్మించండి",
+        "community": {
+          "title": "సంఘం",
+          "description": "పరిశ్రమ నిపుణులతో కనెక్ట్ అవ్వండి, జ్ఞానాన్ని పంచుకోండి, సహకరించండి"
+        },
+        "marketplace": {
+          "title": "మార్కెట్ ప్లేస్",
+          "description": "సేవలను కనుగొనండి, ప్రతిభను నియమించుకోండి, ఉత్పత్తి వనరులను కనుగొనండి"
+        },
+        "resources": {
+          "title": "వనరులు",
+          "description": "గైడ్‌లు, టెంప్లేట్‌లు మరియు ఉత్తమ అభ్యాసాలను యాక్సెస్ చేయండి"
+        }
+      },
+      "automations": {
+        "title": "ఆటోమేషన్స్ హబ్",
+        "description": "వర్క్‌ఫ్లోలు, ట్రిగ్గర్‌లు మరియు పునరావృత విధులను ఆటోమేట్ చేయండి",
+        "workflows": {
+          "title": "వర్క్‌ఫ్లోలు",
+          "description": "పునరావృత ప్రక్రియల కోసం అనుకూల ఆటోమేషన్ సీక్వెన్స్‌లను రూపొందించండి"
+        },
+        "triggers": {
+          "title": "ట్రిగ్గర్స్",
+          "description": "స్వయంచాలకంగా ప్రతిస్పందించే ఈవెంట్-ఆధారిత చర్యలను సెటప్ చేయండి"
+        },
+        "scheduled": {
+          "title": "షెడ్యూల్డ్ పనులు",
+          "description": "సౌకర్యవంతమైన షెడ్యూలింగ్‌తో పునరావృతమయ్యే పనులను ఆటోమేట్ చేయండి"
+        }
+      },
+      "intelligence": {
+        "title": "ఇంటెలిజెన్స్ హబ్",
+        "description": "నివేదికలు, విశ్లేషణలు మరియు అంతర్దృష్టులను రూపొందించండి",
+        "reports": {
+          "title": "నివేదికలు",
+          "description": "సౌకర్యవంతమైన విజువలైజేషన్ మరియు ఎగుమతితో అనుకూల నివేదికలను సృష్టించండి"
+        },
+        "analytics": {
+          "title": "విశ్లేషణలు",
+          "description": "KPIలను ట్రాక్ చేయండి, ట్రెండ్‌లను పర్యవేక్షించండి, పనితీరును కొలవండి"
+        },
+        "insights": {
+          "title": "అంతర్దృష్టులు",
+          "description": "AI-ఆధారిత సిఫార్సులు మరియు అంచనా విశ్లేషణలను పొందండి"
+        }
+      },
+      "system": {
+        "title": "సిస్టమ్ హబ్",
+        "description": "అడ్మిన్, సెట్టింగ్‌లు మరియు వినియోగదారు ప్రొఫైల్‌లను కాన్ఫిగర్ చేయండి",
+        "admin": {
+          "title": "అడ్మిన్",
+          "description": "సంస్థ సెట్టింగ్‌లు, భద్రత మరియు కాన్ఫిగరేషన్‌ను నిర్వహించండి"
+        },
+        "settings": {
+          "title": "సెట్టింగ్‌లు",
+          "description": "ప్రాధాన్యతలు, ఇంటిగ్రేషన్‌లు మరియు ప్లాట్‌ఫారమ్ ప్రవర్తనను అనుకూలీకరించండి"
+        },
+        "profiles": {
+          "title": "వినియోగదారు ప్రొఫైల్‌లు",
+          "description": "బృంద ప్రొఫైల్‌లు, పాత్రలు మరియు యాక్సెస్ అనుమతులను నిర్వహించండి"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "మీ సిబ్బందిలో ప్రతి పాత్ర కోసం నిర్మించబడింది",
+      "subtitle": "ఖచ్చితమైన అనుమతులతో 11 బ్రాండ్ పాత్రలు",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "లెజెండ్",
+        "description": "ప్లాట్‌ఫారమ్ సూపర్ అడ్మిన్ - అన్ని సంస్థలలో పూర్తి నియంత్రణ"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "ఫాంటమ్",
+        "level": "సుప్రీం అథారిటీ",
+        "title": "ఫాంటమ్",
+        "description": "పూర్తి సిస్టమ్ అడ్మినిస్ట్రేషన్ మరియు అనియంత్రిత యాక్సెస్. ప్లాట్‌ఫారమ్ దిశను రూపొందించండి మరియు సంస్థ పర్యవేక్షణను నిర్వహించండి."
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "ఏవియేటర్",
+        "level": "వ్యూహాత్మక నాయకత్వం",
+        "title": "ఏవియేటర్",
+        "description": "క్రాస్-ప్రాజెక్ట్ విజిబిలిటీ, రిసోర్స్ కేటాయింపు మరియు ఎగ్జిక్యూటివ్ అనలిటిక్స్. స్కేల్‌లో ఉన్నత-స్థాయి ఉత్పత్తి వ్యూహాన్ని నావిగేట్ చేయండి."
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "గ్లాడియేటర్",
+        "level": "ప్రాజెక్ట్ నాయకత్వం",
+        "title": "గ్లాడియేటర్",
+        "description": "పూర్తి ప్రాజెక్ట్ సృష్టి మరియు ఎడిటింగ్ హక్కులు. పూర్తి నియంత్రణతో కాన్సెప్ట్ నుండి కంప్లీట్ వరకు లీడ్ ప్రొడక్షన్స్."
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "నావిగేటర్",
+        "level": "సమన్వయం",
+        "title": "నావిగేటర్",
+        "description": "ప్రాజెక్ట్ కోఆర్డినేషన్, టాస్క్ అసైన్‌మెంట్ మరియు టీమ్ గైడెన్స్. సంక్లిష్ట వర్క్‌ఫ్లోల ద్వారా కోర్సును చార్ట్ చేయండి."
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "ఫిరాయింపుదారుడు",
+        "level": "అమలు",
+        "title": "ఫిరాయింపుదారుడు",
+        "description": "ఏర్పాటు చేసిన ఫ్రేమ్‌వర్క్‌లలోనే ఫోకస్డ్ టాస్క్ పూర్తి. అప్పగించిన బాధ్యతలపై నాణ్యమైన పనిని అందించండి."
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "రైడర్",
+        "level": "అభ్యాసం & పరిశీలన",
+        "title": "రైడర్",
+        "description": "తెలుసుకోవడానికి మరియు వృద్ధి చెందడానికి వీక్షణ-మాత్రమే యాక్సెస్. వారి నైపుణ్యాలను పెంపొందించుకునే కొత్తవారికి పర్ఫెక్ట్."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "విక్రేత",
+        "level": "స్కోప్డ్ డెలివరీ",
+        "title": "విక్రేత",
+        "description": "బాహ్య సేవా ప్రదాతల కోసం లక్ష్య యాక్సెస్. డెలివరీలను అప్‌లోడ్ చేయండి మరియు కాంట్రాక్ట్ చేసిన పనిని పూర్తి చేయండి."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "సందర్శకుడు",
+        "level": "పరిమిత దృశ్యమానత",
+        "title": "సందర్శకుడు",
+        "description": "బాహ్య వాటాదారుల కోసం తాత్కాలిక, చదవడానికి మాత్రమే యాక్సెస్. వర్క్‌ఫ్లోలకు అంతరాయం కలగకుండా సమాచారంతో ఉండండి."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "భాగస్వామి",
+        "level": "వ్యూహాత్మక సహకారం",
+        "title": "భాగస్వామి",
+        "description": "విశ్వసనీయ బాహ్య సహకారుల కోసం లోతైన ఏకీకరణ. రెండు-మార్గం డేటా భాగస్వామ్యం మరియు ఉమ్మడి వర్క్‌ఫ్లో నిర్వహణ."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "రాయబారి",
+        "level": "కమ్యూనిటీ ఛాంపియన్స్",
+        "title": "రాయబారి",
+        "description": "ATLVSకి ప్రాతినిధ్యం వహించండి, వినియోగదారులకు మద్దతు ఇవ్వండి మరియు సహకారాన్ని ప్రోత్సహించండి. ఈవెంట్‌లను హోస్ట్ చేయండి, కంటెంట్‌ను సృష్టించండి, పర్యావరణ వ్యవస్థను పెంచండి."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "ఎంటర్‌ప్రైజ్-గ్రేడ్ సెక్యూరిటీ",
+      "subtitle": "మీ డేటా ప్రతి స్థాయిలో రక్షించబడుతుంది",
+      "feature1Title": "వరుస-స్థాయి భద్రత",
+      "feature1Description": "801 RLS విధానాలు వినియోగదారులు తాము ఏమి చూడాలో మాత్రమే చూస్తారు",
+      "feature2Title": "పాత్ర-ఆధారిత యాక్సెస్",
+      "feature2Description": "45+ గ్రాన్యులర్ అనుమతులతో 11 బ్రాండ్ పాత్రలు",
+      "feature3Title": "గుప్తీకరించిన నిల్వ",
+      "feature3Description": "మొత్తం డేటా విశ్రాంతి సమయంలో మరియు రవాణాలో గుప్తీకరించబడింది",
+      "feature4Title": "ఆడిట్ లాగింగ్",
+      "feature4Description": "అన్ని సిస్టమ్ కార్యాచరణ యొక్క పూర్తి ఆడిట్ ట్రయిల్",
+      "feature5Title": "SOC 2 కంప్లైంట్",
+      "feature5Description": "ఎంటర్‌ప్రైజ్-గ్రేడ్ భద్రతా ప్రమాణాలు",
+      "feature6Title": "GDPR సిద్ధంగా ఉంది",
+      "feature6Description": "డేటా గోప్యతా నిబంధనలతో పూర్తి సమ్మతి"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
-      "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "title": "ప్రపంచవ్యాప్తంగా ఉత్పత్తి బృందాలు విశ్వసించాయి",
+      "subtitle": "నిజమైన నిర్మాతల నుండి నిజమైన కథలు",
+      "testimonial1Quote": "మేము పండుగలను ఎలా నిర్వహించాలో ATLVS మార్చింది. అంతా ఒకే చోట, అందరూ ఒకే పేజీలో ఉంటారు. చివరగా.",
+      "testimonial1Author": "సారా చెన్",
+      "testimonial1Role": "ప్రొడక్షన్ డైరెక్టర్, మేజర్ మ్యూజిక్ ఫెస్టివల్",
+      "testimonial1Title": "ప్రొడక్షన్ డైరెక్టర్, మేజర్ మ్యూజిక్ ఫెస్టివల్",
+      "testimonial2Quote": "RBAC సిస్టమ్ మా సంక్లిష్టమైన ఆర్గ్ నిర్మాణానికి సరైనది. ఉత్పత్తి కోసం సరైన యాక్సెస్ నియంత్రణ? విప్లవకారుడు.",
+      "testimonial2Author": "మార్కస్ రోడ్రిగ్జ్",
+      "testimonial2Role": "కార్యకలాపాల VP, లైవ్ ఈవెంట్స్ కంపెనీ",
+      "testimonial2Title": "కార్యకలాపాల VP, లైవ్ ఈవెంట్స్ కంపెనీ",
+      "testimonial3Quote": "మేము మొదటి త్రైమాసికంలో బడ్జెట్ ఓవర్‌రన్‌లను 40% తగ్గించాము. ఆర్థిక దృశ్యమానత చట్టబద్ధంగా గేమ్-మారుతోంది.",
+      "testimonial3Author": "జెన్నిఫర్ పార్క్",
+      "testimonial3Role": "CFO, కార్పొరేట్ ఈవెంట్స్ ఏజెన్సీ",
+      "testimonial3Title": "CFO, కార్పొరేట్ ఈవెంట్స్ ఏజెన్సీ",
+      "jamesCookQuote": "శాస్త్రవేత్తల యొక్క మూడు నౌకలను నిర్వహించడం, వారు ప్రధాన పాత్ర అని అందరూ భావిస్తున్నారా? ATLVS ప్రతి ఒక్కరినీ సమలేఖనం చేసి, క్రెడిట్ కోసం పోటీ పడకుండా కలిసి పని చేస్తుంది.",
+      "jamesCookAuthor": "కెప్టెన్ జేమ్స్ కుక్",
+      "jamesCookRole": "బ్రిటిష్ రాయల్ నేవీ ఎక్స్‌ప్లోరర్ (1728-1779)",
+      "zhengYiSaoQuote": "నేను పైరసీని ఫార్చ్యూన్ 500 కంపెనీగా మార్చాను, నా స్వంత క్షమాభిక్ష గురించి చర్చించాను మరియు రిటైర్ అయ్యాను. ATLVS అనేది సాంప్రదాయేతర కార్యకలాపాలకు ఇప్పటికీ పటిష్టమైన నిర్వహణ అవసరమని అర్థం చేసుకున్న వ్యక్తుల కోసం ఉద్దేశించబడింది.",
+      "zhengYiSaoAuthor": "జెంగ్ యి సావో",
+      "zhengYiSaoRole": "చైనీస్ పైరేట్ లీడర్ (1775-1844)",
+      "captainAhabQuote": "పెద్ద చిత్రాన్ని పరిగణనలోకి తీసుకోకుండా ప్రతి సముద్రంలో ఒక నిర్దిష్ట లక్ష్యాన్ని వెంబడిస్తున్నారా? ATLVS మిమ్మల్ని వ్యక్తిగత లక్ష్యాలపై కాకుండా వాస్తవ వ్యాపార ప్రణాళికపై దృష్టి సారిస్తుంది.",
+      "captainAhabAuthor": "కెప్టెన్ అహాబ్",
+      "captainAhabRole": "వేలింగ్ కెప్టెన్, పెకోడ్",
+      "graceOMalleyQuote": "క్వీన్ ఎలిజబెత్‌తో సమానంగా చర్చలు జరిపారు. ATLVS మీ డేటాను సిద్ధంగా ఉంచుకుని మరియు మీ ఆత్మవిశ్వాసాన్ని ప్రతి సమావేశానికి చూపించడంలో మీకు సహాయపడుతుంది.",
+      "graceOMalleyAuthor": "గ్రేస్ ఓ'మల్లీ \"గ్రెయిన్ మ్హాల్\"",
+      "graceOMalleyRole": "ఐరిష్ పైరేట్ క్వీన్ & చీఫ్‌టైన్ (c. 1530-1603)",
+      "sinbadQuote": "నేను ఓడ ధ్వంసానికి గురవుతూనే ఉన్నాను, కానీ తిరిగి వెళ్ళిన విధానం? అది కేవలం పేలవమైన ప్రణాళిక. ATLVS నా నిర్ణయం తీసుకోవడానికి స్పష్టంగా అవసరమైన నిర్మాణాన్ని అందిస్తుంది.",
+      "sinbadAuthor": "సిన్బాద్ ది సెయిలర్",
+      "sinbadRole": "లెజెండరీ మర్చంట్ సెయిలర్, అరేబియన్ నైట్స్",
+      "longJohnSilverQuote": "పిల్లులకు స్కర్వీ మరియు ట్రస్ట్ సమస్యలు ఉన్నట్లయితే సముద్రపు దొంగలను నిర్వహించడం అనేది అక్షరాలా పిల్లులను మేపడం. ATLVS యొక్క వాటాదారుల నిర్వహణ ప్రతి ఒక్కరికి వ్యతిరేకంగా పన్నాగం పన్నినప్పటికీ, ప్రతి ఒక్కరినీ సమలేఖనం చేస్తుంది.",
+      "longJohnSilverAuthor": "లాంగ్ జాన్ సిల్వర్",
+      "longJohnSilverRole": "క్వార్టర్‌మాస్టర్ & పైరేట్ కుక్, ట్రెజర్ ఐలాండ్",
+      "horatioHornblowerQuote": "పూర్తి మానసిక క్షీణతతో ఫ్రెంచ్‌తో పోరాడడం నాకు నిజాయితీగా చాలా బ్రాండ్‌గా ఉంది. ATLVS అన్ని వ్యూహాత్మక అంశాలను క్రమబద్ధంగా ఉంచుతుంది కాబట్టి మీరు అసలు మిషన్‌పై దృష్టి పెట్టవచ్చు.",
+      "horatioHornblowerAuthor": "హోరాషియో హార్న్‌బ్లోవర్",
+      "horatioHornblowerRole": "రాయల్ నేవీ ఆఫీసర్ (C.S. ఫారెస్టర్ నవలలు)",
+      "captainNemoQuote": "జలాంతర్గామిలో సన్యాసిగా ఉండటం నిజానికి చాలా అంతర్ముఖ-కోడెడ్, కానీ నాకు కూడా టీమ్ కోఆర్డినేషన్ అవసరం. మీరు ఒంటరిగా పని చేస్తున్నప్పుడు కూడా ATLVS పని చేస్తుంది.",
+      "captainNemoAuthor": "కెప్టెన్ నెమో",
+      "captainNemoRole": "కమాండర్, నాటిలస్ (ఇరవై వేల లీగ్స్ అండర్ ది సీ)",
+      "odysseusQuote": "నేను ప్రశ్నార్థకమైన ఎంపికలు చేస్తూనే ఉన్నందున ప్రతి ఒక్క సిబ్బందిని కోల్పోయాను. ATLVS 'సైరన్‌ల గురించి మనం చూడవలసిన అవసరం లేదు' మరియు నిజాయితీగా ఉండేదా? చెల్లుబాటు అవుతుంది.",
+      "odysseusAuthor": "ఒడిస్సియస్/యులిస్సెస్",
+      "odysseusRole": "ఇతాకా రాజు, గ్రీక్ హీరో (ది ఒడిస్సీ)",
+      "blackbeardQuote": "మీరు మాన్యువల్‌గా సమన్వయం చేస్తున్నప్పుడు నాలుగు నౌకలతో మొత్తం హార్బర్‌ను నిరోధించడం భిన్నంగా ఉంటుంది. ATLVS నన్ను సముద్రాలపై అత్యంత సమర్థవంతమైన పైరేట్‌గా మార్చింది.",
+      "blackbeardAuthor": "కెప్టెన్ ఎడ్వర్డ్ టీచ్ \"బ్లాక్ బియర్డ్\"",
+      "blackbeardRole": "పైరేట్ కమాండర్ (c. 1680-1718)",
+      "captainMarvelQuote": "30 సంవత్సరాలుగా స్పేస్ ఎమర్జెన్సీలను చెక్ ఇన్ చేయకుండానే హ్యాండిల్ చేయడం మాయమైంది. ATLVS యొక్క కమ్యూనికేషన్ టూల్స్ నేను శ్రద్ధ వహించే ప్రతి ఒక్కరినీ భ్రష్టు పట్టించకుండా ఉండేందుకు నాకు సహాయపడింది.",
+      "captainMarvelAuthor": "కెప్టెన్ మార్వెల్ / కరోల్ డాన్వర్స్",
+      "captainMarvelRole": "ఎయిర్ ఫోర్స్ పైలట్ & కాస్మిక్ హీరో (MCU)",
+      "captainJanewayQuote": "నా సిబ్బందిని రక్షించడానికి నేను టెంపోరల్ ప్రైమ్ డైరెక్టివ్‌ను చాలాసార్లు ఉల్లంఘించాను, కానీ నేను నా ప్రాజెక్ట్ టైమ్‌లైన్‌లను ఎప్పుడూ ఉల్లంఘించలేదు. నైతికత సంక్లిష్టంగా ఉన్నప్పటికీ ATLVS ప్రాధాన్యతలను స్పష్టంగా ఉంచుతుంది.",
+      "captainJanewayAuthor": "కెప్టెన్ కాథరిన్ జాన్వే",
+      "captainJanewayRole": "స్టార్‌ఫ్లీట్ కెప్టెన్, USS వాయేజర్ (స్టార్ ట్రెక్: వాయేజర్)",
+      "moanaQuote": "మౌయి నా గురువుగా ఉండవలసి ఉంది కానీ ఎక్కువ సమయం మానసికంగా అందుబాటులో లేకుండా గడిపాడు. మీ బృందం కష్టంగా ఉన్నప్పుడు ATLVS డెలివరీలను ట్రాక్ చేస్తుంది.",
+      "moanaAuthor": "మోనా",
+      "moanaRole": "వేఫైండర్ & ఐలాండ్ చీఫ్ (డిస్నీ మోనా)",
+      "captainJackSparrowQuote": "వారు ఉద్యోగంలో ఉన్నారా లేదా గందరగోళం కోసం ఎవరికీ తెలియనప్పుడు సిబ్బందిని నిర్వహించాలా? ATLVS నా మొత్తం వైబ్ లేని స్పష్టతను అందిస్తుంది.",
+      "captainJackSparrowAuthor": "కెప్టెన్ జాక్ స్పారో",
+      "captainJackSparrowRole": "పైరేట్ కెప్టెన్, బ్లాక్ పెర్ల్ (పైరేట్స్ ఆఫ్ ది కరీబియన్)",
+      "popeyeQuote": "నా మొత్తం వ్యక్తిత్వం 'ముందుకు ప్లాన్ చేయడానికి మొండిగా నిరాకరిస్తుంది.' ATLVS గదిలో ఉన్న పెద్దలు నాకు స్పష్టంగా అవసరం కానీ ఒప్పుకోరు.",
+      "popeyeAuthor": "పొపాయ్ ది సెయిలర్ మ్యాన్",
+      "popeyeRole": "సెయిలర్ & ఆలివ్ ఆయిల్స్ ప్రొటెక్టర్ (కార్టూన్ క్యారెక్టర్)",
+      "captainPicardQuote": "మొదటి సంప్రదింపు పరిస్థితులు మరియు దౌత్యపరమైన సంక్షోభాల ద్వారా విభిన్న సిబ్బందిని నడిపిస్తున్నారా? వాటాలు అక్షరాలా గెలాక్సీగా ఉన్నప్పుడు ATLVS ప్రతి ఒక్కరినీ సమలేఖనం చేస్తుంది.",
+      "captainPicardAuthor": "కెప్టెన్ జీన్-లూక్ పికార్డ్",
+      "captainPicardRole": "స్టార్‌ఫ్లీట్ కెప్టెన్, USS ఎంటర్‌ప్రైజ్ (స్టార్ ట్రెక్: TNG)",
+      "captainSiskoQuote": "భాగమైన సైనిక స్థావరం, పార్ట్ ట్రేడింగ్ హబ్, పార్ట్ రెఫ్యూజీ సెంటర్‌గా ఉన్న స్టేషన్‌ను కమాండ్ చేస్తున్నారా? ప్రతి వాటాదారు వేర్వేరు ప్రాధాన్యతలను కలిగి ఉన్నప్పుడు సంక్లిష్టతను నిర్వహించడంలో ATLVS మీకు సహాయపడుతుంది.",
+      "captainSiskoAuthor": "కెప్టెన్ బెంజమిన్ సిస్కో",
+      "captainSiskoRole": "స్టార్‌ఫ్లీట్ కమాండర్, డీప్ స్పేస్ నైన్ (స్టార్ ట్రెక్: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "పారదర్శక ధర",
+      "subtitle": "సోలో కాంట్రాక్టర్ల నుండి ఎంటర్‌ప్రైజ్ నిర్మాతల వరకు",
+      "monthly": "నెలవారీ",
+      "annually": "వార్షికంగా",
+      "save20": "20% ఆదా చేయండి",
+      "community": {
+        "name": "సంఘం",
+        "price": "ఉచిత",
+        "period": "ఎప్పటికీ",
+        "description": "ప్రారంభించడానికి పర్ఫెక్ట్",
+        "feature1": "రైడర్ పాత్ర యాక్సెస్",
+        "feature2": "ప్రాథమిక విధి నిర్వహణ",
+        "feature3": "సంఘం మద్దతు",
+        "cta": "ఉచితంగా ప్రారంభించండి"
+      },
+      "pro": {
+        "name": "ప్రో",
+        "price": "$12",
+        "period": "నెలకు",
+        "annualPrice": "నెలకు $10 (సంవత్సరానికి బిల్లు)",
+        "description": "స్వతంత్ర కాంట్రాక్టర్ల కోసం",
+        "feature1": "డివియేటర్ & రైడర్ పాత్రలు",
+        "feature2": "అధునాతన విధి నిర్వహణ",
+        "feature3": "ప్రాధాన్యత మద్దతు",
+        "cta": "ఉచిత ట్రయల్ ప్రారంభించండి"
+      },
+      "team": {
+        "name": "జట్టు",
+        "badge": "అత్యంత ప్రజాదరణ పొందినది",
+        "price": "$120",
+        "period": "నెలకు",
+        "annualPrice": "నెలకు $100 (సంవత్సరానికి బిల్లు)",
+        "description": "చిన్న మరియు మధ్యస్థ జట్లకు (2-10 సీట్లు)",
+        "feature1": "అన్ని ప్రో లక్షణాలు",
+        "feature2": "విక్రేత నిర్వహణ",
+        "feature3": "జట్టు సహకారం",
+        "cta": "ఉచిత ట్రయల్ ప్రారంభించండి"
+      },
       "starter": {
-        "name": "Starter",
+        "name": "స్టార్టర్",
         "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "period": "ప్రతి వినియోగదారు/నెలకు",
+        "description": "ఫ్రీలాన్సర్లు మరియు చిన్న జట్లకు పర్ఫెక్ట్",
+        "feature1": "గరిష్టంగా 5 మంది వినియోగదారులు",
+        "feature2": "10 క్రియాశీల ప్రాజెక్ట్‌లు",
+        "feature3": "ప్రాథమిక రిపోర్టింగ్",
+        "feature4": "ఇమెయిల్ మద్దతు",
+        "feature5": "10GB నిల్వ",
+        "cta": "ఉచిత ట్రయల్ ప్రారంభించండి"
       },
       "professional": {
-        "name": "Professional",
+        "name": "వృత్తిపరమైన",
         "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "period": "ప్రతి వినియోగదారు/నెలకు",
+        "description": "పెరుగుతున్న ఉత్పత్తి సంస్థల కోసం",
+        "feature1": "గరిష్టంగా 25 మంది వినియోగదారులు",
+        "feature2": "అపరిమిత ప్రాజెక్టులు",
+        "feature3": "అధునాతన విశ్లేషణలు",
+        "feature4": "ప్రాధాన్యత మద్దతు",
+        "feature5": "100GB నిల్వ",
+        "feature6": "అనుకూల పాత్రలు",
+        "feature7": "API యాక్సెస్",
+        "cta": "ఉచిత ట్రయల్ ప్రారంభించండి",
+        "popular": "అత్యంత ప్రజాదరణ పొందినది"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
+        "name": "సంస్థ",
+        "price": "కస్టమ్",
+        "period": "అమ్మకాలను సంప్రదించండి",
+        "annualPrice": "నెలకు $1000 (సంవత్సరానికి బిల్లు)",
+        "description": "పెద్ద సంస్థలు మరియు ఏజెన్సీల కోసం",
+        "feature1": "అపరిమిత వినియోగదారులు",
+        "feature2": "అపరిమిత ప్రాజెక్టులు",
+        "feature3": "కస్టమ్ ఇంటిగ్రేషన్లు",
+        "feature4": "అంకితమైన మద్దతు",
+        "feature5": "అపరిమిత నిల్వ",
         "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "feature7": "SLA హామీ",
+        "feature8": "కస్టమ్ శిక్షణ",
+        "cta": "విక్రయాలను సంప్రదించండి"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "తరచుగా అడిగే ప్రశ్నలు",
+      "subtitle": "మీరు తెలుసుకోవలసిన ప్రతిదీ",
+      "question1": "ఉచిత ట్రయల్ ఎంతకాలం ఉంటుంది?",
+      "answer1": "14 రోజులు, క్రెడిట్ కార్డ్ అవసరం లేదు. అన్ని ఫీచర్లకు పూర్తి యాక్సెస్.",
+      "question2": "నేను ఎప్పుడైనా రద్దు చేయవచ్చా?",
+      "answer2": "అవును. ఎప్పుడైనా రద్దు చేయండి. దీర్ఘకాలిక ఒప్పందాలు లేదా కట్టుబాట్లు లేవు.",
+      "question3": "మీరు ఏ చెల్లింపు పద్ధతులను అంగీకరిస్తారు?",
+      "answer3": "మేము ఎంటర్‌ప్రైజ్ ప్లాన్‌ల కోసం అన్ని ప్రధాన క్రెడిట్ కార్డ్‌లు, ACH మరియు వైర్ బదిలీలను అంగీకరిస్తాము.",
+      "question4": "నా డేటా సురక్షితంగా ఉందా?",
+      "answer4": "అవును. ఎంటర్‌ప్రైజ్-గ్రేడ్ ఎన్‌క్రిప్షన్, SOC 2 కంప్లైంట్, GDPR సిద్ధంగా ఉంది. మీ డేటా ప్రతి స్థాయిలో రక్షించబడుతుంది.",
+      "question5": "మీరు శిక్షణ ఇస్తున్నారా?",
+      "answer5": "అవును. అన్ని ప్లాన్‌ల కోసం స్వీయ-సేవ వనరులు, అలాగే ఎంటర్‌ప్రైజ్ కస్టమర్‌ల కోసం ప్రత్యేక శిక్షణ.",
+      "question6": "నేను ఇప్పటికే ఉన్న నా డేటాను దిగుమతి చేసుకోవచ్చా?",
+      "answer6": "అవును. మేము CSV దిగుమతి సాధనాలను అందిస్తాము మరియు ఎంటర్‌ప్రైజ్ ప్లాన్‌ల కోసం అనుకూల డేటా మైగ్రేషన్‌లకు సహాయం చేస్తాము.",
+      "q1": "ఉచిత ట్రయల్ ఎంతకాలం ఉంటుంది?",
+      "a1": "14 రోజులు, క్రెడిట్ కార్డ్ అవసరం లేదు. అన్ని ఫీచర్లకు పూర్తి యాక్సెస్.",
+      "q2": "నేను ఎప్పుడైనా రద్దు చేయవచ్చా?",
+      "a2": "అవును. ఎప్పుడైనా రద్దు చేయండి. దీర్ఘకాలిక ఒప్పందాలు లేదా కట్టుబాట్లు లేవు.",
+      "q3": "మీరు ఏ చెల్లింపు పద్ధతులను అంగీకరిస్తారు?",
+      "a3": "మేము ఎంటర్‌ప్రైజ్ ప్లాన్‌ల కోసం అన్ని ప్రధాన క్రెడిట్ కార్డ్‌లు, ACH మరియు వైర్ బదిలీలను అంగీకరిస్తాము.",
+      "q4": "నా డేటా సురక్షితంగా ఉందా?",
+      "a4": "అవును. ఎంటర్‌ప్రైజ్-గ్రేడ్ ఎన్‌క్రిప్షన్, SOC 2 కంప్లైంట్, GDPR సిద్ధంగా ఉంది. మీ డేటా ప్రతి స్థాయిలో రక్షించబడుతుంది.",
+      "q5": "మీరు శిక్షణ ఇస్తున్నారా?",
+      "a5": "అవును. అన్ని ప్లాన్‌ల కోసం స్వీయ-సేవ వనరులు, అలాగే ఎంటర్‌ప్రైజ్ కస్టమర్‌ల కోసం ప్రత్యేక శిక్షణ.",
+      "q6": "నేను ఇప్పటికే ఉన్న నా డేటాను దిగుమతి చేసుకోవచ్చా?",
+      "a6": "అవును. మేము CSV దిగుమతి సాధనాలను అందిస్తాము మరియు ఎంటర్‌ప్రైజ్ ప్లాన్‌ల కోసం అనుకూల డేటా మైగ్రేషన్‌లకు సహాయం చేస్తాము."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "మీ ఉత్పత్తి వర్క్‌ఫ్లోను మార్చడానికి సిద్ధంగా ఉన్నారా?",
+      "subtitle": "ATLVSని ఉపయోగించి వేలాది మంది ఉత్పత్తి నిపుణులతో చేరండి",
+      "ctaPrimary": "ఉచిత ట్రయల్ ప్రారంభించండి",
+      "ctaSecondary": "షెడ్యూల్ డెమో",
+      "trustIndicators": "క్రెడిట్ కార్డ్ అవసరం లేదు • 14-రోజుల ఉచిత ట్రయల్ • ఎప్పుడైనా రద్దు చేయండి",
+      "primary": "ఉచిత ట్రయల్ ప్రారంభించండి",
+      "secondary": "షెడ్యూల్ డెమో",
+      "noCard": "క్రెడిట్ కార్డ్ అవసరం లేదు"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "tagline": "ప్రయోగాత్మక ఉత్పత్తి బృందాల కోసం ప్రాజెక్ట్ నిర్వహణ వ్యవస్థ",
+      "productTitle": "ఉత్పత్తి",
+      "companyTitle": "కంపెనీ",
+      "resourcesTitle": "వనరులు",
+      "legalTitle": "చట్టపరమైన",
+      "product": "ఉత్పత్తి",
+      "features": "ఫీచర్లు",
+      "pricing": "ధర నిర్ణయించడం",
+      "demo": "డెమో",
+      "integrations": "ఇంటిగ్రేషన్లు",
+      "docs": "డాక్యుమెంటేషన్",
+      "apiReference": "API సూచన",
+      "changelog": "చేంజ్లాగ్",
+      "caseStudies": "కేస్ స్టడీస్",
+      "templates": "టెంప్లేట్లు",
+      "company": "కంపెనీ",
+      "aboutUs": "మా గురించి",
+      "blog": "బ్లాగు",
+      "careers": "కెరీర్లు",
+      "contact": "సంప్రదించండి",
+      "press": "నొక్కండి",
+      "partners": "భాగస్వాములు",
+      "customers": "వినియోగదారులు",
+      "events": "ఈవెంట్స్",
+      "legal": "చట్టపరమైన",
+      "privacy": "గోప్యతా విధానం",
+      "terms": "సేవా నిబంధనలు",
+      "security": "భద్రత",
+      "support": "మద్దతు",
+      "helpCenter": "సహాయ కేంద్రం",
+      "community": "సంఘం",
+      "status": "సిస్టమ్ స్థితి",
+      "roiCalculator": "ROI కాలిక్యులేటర్",
+      "copyright": "© 2025 ATLVS. అన్ని హక్కులు ప్రత్యేకించబడ్డాయి."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "మీకు ఇష్టమైన సాధనాలతో అనుసంధానించబడుతుంది",
+      "subtitle": "మీరు ఇప్పటికే ఉపయోగించే సాధనాలతో ATLVSని కనెక్ట్ చేయండి",
+      "comingSoon": "మరిన్ని ఏకీకరణలు త్వరలో రానున్నాయి"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "వృత్తిపరమైన ఉత్పత్తి నిర్వహణ సొల్యూషన్స్",
+          "headlineHighlight": "అనుభవపూర్వక బృందాల కోసం",
+          "subheadline": "కేంద్రీకృత ప్లాట్‌ఫారమ్ నుండి సమగ్ర ప్రాజెక్ట్, వర్క్‌ఫోర్స్, ఆస్తి మరియు ఆర్థిక నిర్వహణ. అసాధారణమైన అనుభవాలను అందించే నిపుణుల కోసం రూపొందించబడింది.",
+          "supportingCopy": "పండుగల నుండి కార్పొరేట్ ఈవెంట్‌లు మరియు లీనమయ్యే అనుభవాల వరకు- ATLVS విజయవంతమైన ఉత్పత్తి నిర్వహణకు అవసరమైన నిర్మాణం మరియు పర్యవేక్షణను అందిస్తుంది.",
+          "ctaPrimary": "ఉచిత ట్రయల్ ప్రారంభించండి",
+          "ctaSecondary": "అభ్యర్థన ప్రదర్శన",
+          "trustIndicators": "క్రెడిట్ కార్డ్ అవసరం లేదు • 14-రోజుల ట్రయల్ • ఎప్పుడైనా రద్దు చేయండి",
+          "platformScreenshot": "ప్లాట్‌ఫారమ్ స్క్రీన్‌షాట్"
+        },
+        "trustBar": {
+          "trustedBy": "ప్రపంచవ్యాప్తంగా ఉత్పత్తి నిపుణులచే విశ్వసించబడింది"
+        },
+        "problem": {
+          "title": "ప్రొడక్షన్ మేనేజ్‌మెంట్ ఛాలెంజ్",
+          "subtitle": "పరిశ్రమ-వ్యాప్త అసమర్థత",
+          "pain1Title": "ఫ్రాగ్మెంటెడ్ సిస్టమ్స్",
+          "pain1Description": "స్ప్రెడ్‌షీట్‌లు, ఇమెయిల్ మరియు వివిధ ప్రాజెక్ట్ మేనేజ్‌మెంట్ టూల్స్‌తో సహా బహుళ డిస్‌కనెక్ట్ ప్లాట్‌ఫారమ్‌లను టీమ్‌లు ఉపయోగించుకుంటాయి",
+          "pain2Title": "సమాచార నష్టం",
+          "pain2Description": "పరివర్తనలు మరియు జట్టు హ్యాండ్‌ఆఫ్‌ల సమయంలో క్లిష్టమైన ప్రాజెక్ట్ వివరాలు పోతాయి",
+          "pain3Title": "బడ్జెట్ ఓవర్‌రన్‌లు",
+          "pain3Description": "సరైన ఆర్థిక పర్యవేక్షణ లేకుండా, ఖర్చులు అంచనాలను మించిపోతాయి",
+          "pain4Title": "కమ్యూనికేషన్ విచ్ఛిన్నాలు",
+          "pain4Description": "విక్రేతలు, సిబ్బంది సభ్యులు మరియు వాటాదారులు సమన్వయ సమస్యలను ఎదుర్కొంటారు"
+        },
+        "solution": {
+          "title": "సమగ్ర వేదిక. పూర్తి నియంత్రణ.",
+          "subtitle": "ఇంటిగ్రేటెడ్ ప్రొడక్షన్ మేనేజ్‌మెంట్",
+          "feature1Title": "కేంద్రీకృత వేదిక",
+          "feature1Description": "అన్ని ప్రాజెక్ట్‌లు, సిబ్బంది మరియు వనరులు ఒకే స్థానం నుండి నిర్వహించబడతాయి",
+          "feature2Title": "నిజ-సమయ నవీకరణలు",
+          "feature2Description": "తక్షణ సమకాలీకరణ జట్టు సభ్యులందరికీ ప్రస్తుత సమాచారం ఉందని నిర్ధారిస్తుంది",
+          "feature3Title": "ఆర్థిక పర్యవేక్షణ",
+          "feature3Description": "ఖచ్చితత్వం మరియు ఖచ్చితత్వంతో బడ్జెట్‌లు, ఖర్చులు మరియు ఇన్‌వాయిస్‌లను ట్రాక్ చేయండి",
+          "feature4Title": "విక్రేత నిర్వహణ",
+          "feature4Description": "సరైన పర్యవేక్షణను నిర్ధారించేటప్పుడు వృత్తిపరమైన సంబంధాలను కొనసాగించండి"
+        },
+        "howItWorks": {
+          "title": "అమలు ప్రక్రియ",
+          "subtitle": "సమర్థవంతమైన సెటప్ మరియు విస్తరణ",
+          "step1Title": "మీ సంస్థను స్థాపించండి",
+          "step1Description": "మీ సంస్థాగత నిర్మాణాన్ని కాన్ఫిగర్ చేయండి మరియు మీ బృందాన్ని ఆన్‌బోర్డ్ చేయండి",
+          "step2Title": "మీ ప్రాజెక్ట్‌లను నిర్వచించండి",
+          "step2Description": "ప్రొడక్షన్‌లు, యాక్టివేషన్‌లు మరియు వర్క్‌స్పేస్‌లను ఏర్పాటు చేయండి",
+          "step3Title": "పాత్రలు & బాధ్యతలను అప్పగించండి",
+          "step3Description": "తగిన యాక్సెస్ స్థాయిలు మరియు స్పష్టమైన జవాబుదారీతనం అందించండి",
+          "step4Title": "ఎగ్జిక్యూట్ & మానిటర్",
+          "step4Description": "పురోగతిని ట్రాక్ చేయండి, బడ్జెట్‌లను నిర్వహించండి, అసాధారణమైన ఫలితాలను అందించండి"
+        },
+        "testimonials": {
+          "title": "ప్రపంచవ్యాప్తంగా ఉత్పత్తి నిపుణులచే విశ్వసించబడింది",
+          "subtitle": "పరిశ్రమ నాయకుల నుండి నిరూపితమైన ఫలితాలు",
+          "testimonial1Quote": "మా పండుగ కార్యకలాపాలను నిర్వహించడానికి ATLVS ఒక అద్భుతమైన పరిష్కారంగా నిరూపించబడింది. ప్రతిదీ చక్కగా నిర్వహించబడింది మరియు మా బృందం సరైన సమన్వయాన్ని నిర్వహిస్తుంది.",
+          "testimonial1Author": "సారా చెన్",
+          "testimonial1Role": "ప్రొడక్షన్ డైరెక్టర్, మేజర్ మ్యూజిక్ ఫెస్టివల్",
+          "testimonial2Quote": "రోల్-బేస్డ్ యాక్సెస్ కంట్రోల్ సిస్టమ్ మా సంస్థాగత నిర్మాణానికి అవసరమైన వాటిని ఖచ్చితంగా అందిస్తుంది. చివరగా, ఉత్పత్తి బృందాలకు సరైన భద్రత మరియు యాక్సెస్ నిర్వహణ.",
+          "testimonial2Author": "మార్కస్ రోడ్రిగ్జ్",
+          "testimonial2Role": "కార్యకలాపాల VP, లైవ్ ఈవెంట్స్ కంపెనీ",
+          "testimonial3Quote": "మేము మొదటి త్రైమాసికంలో బడ్జెట్ ఓవర్‌రన్‌లను 40% తగ్గించాము. ఆర్థిక దృశ్యమానత మరియు ట్రాకింగ్ సామర్థ్యాలు నిజంగా ఆకట్టుకుంటాయి.",
+          "testimonial3Author": "జెన్నిఫర్ పార్క్",
+          "testimonial3Role": "CFO, కార్పొరేట్ ఈవెంట్స్ ఏజెన్సీ"
+        },
+        "pricing": {
+          "title": "వృత్తిపరమైన ధరల నిర్మాణం"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "పని చేసే ఉత్పత్తి నిర్వహణ",
+          "headlineHighlight": "BS లేదు",
+          "subheadline": "ప్రాజెక్ట్‌లు, సిబ్బంది, ఆస్తులు మరియు బడ్జెట్‌లను ఒకే స్థలం నుండి నిర్వహించండి. వాస్తవానికి పని చేసే వ్యక్తుల కోసం నిర్మించబడింది.",
+          "supportingCopy": "పండుగలు, కార్పోరేట్ ఈవెంట్‌లు, లీనమయ్యే యాక్టివేషన్‌లు-ATLVS ఫ్లాఫ్ లేకుండా నిర్వహిస్తుంది.",
+          "ctaPrimary": "ఉచితంగా ప్రారంభించండి",
+          "ctaSecondary": "ఇది ఎలా పనిచేస్తుందో చూడండి",
+          "trustIndicators": "క్రెడిట్ కార్డ్ లేదు • 14-రోజుల ట్రయల్ • ఎప్పుడైనా రద్దు చేయండి",
+          "platformScreenshot": "ప్లాట్‌ఫారమ్ స్క్రీన్‌షాట్"
+        },
+        "trustBar": {
+          "trustedBy": "అంశాలను పూర్తి చేసే ప్రొడక్షన్ టీమ్‌ల ద్వారా ఉపయోగించబడుతుంది"
+        },
+        "problem": {
+          "title": "ఉత్పత్తి గందరగోళం",
+          "subtitle": "అదే కథ, వేరే రోజు",
+          "pain1Title": "టూల్ ఖోస్",
+          "pain1Description": "స్ప్రెడ్‌షీట్‌లు, స్లాక్, ఇమెయిల్, యాదృచ్ఛిక Google డాక్స్-మీ వర్క్‌ఫ్లో ప్రతిచోటా చెల్లాచెదురుగా ఉంది",
+          "pain2Title": "సమాచారం లేదు",
+          "pain2Description": "ఫైళ్లు మాయమవుతాయి. ఎవరో పంపించారు... ఎక్కడికో. అది దొరకడం అదృష్టం",
+          "pain3Title": "బడ్జెట్ క్రీప్",
+          "pain3Description": "ఖర్చులు మీపైకి వస్తాయి. మీరు దానిని పట్టుకునే సమయానికి, మీరు బడ్జెట్‌ను మించిపోయారు",
+          "pain4Title": "కమ్యూనికేషన్ బ్రేక్‌డౌన్",
+          "pain4Description": "విక్రేతలు అప్‌డేట్‌లను కోల్పోతారు, సిబ్బంది పాత సమాచారంతో పని చేస్తారు, వాటాదారులు అవే ప్రశ్నలను అడుగుతూ ఉంటారు"
+        },
+        "solution": {
+          "title": "ఒక వేదిక. నిజానికి పనిచేస్తుంది.",
+          "subtitle": "ఎక్కడ ఉండాలో ప్రతిదీ",
+          "feature1Title": "ఏకీకృత వ్యవస్థ",
+          "feature1Description": "ప్రాజెక్ట్‌లు, వ్యక్తులు, వనరులు-అన్నీ ఒకే చోట వాస్తవంగా అర్థవంతంగా ఉంటాయి",
+          "feature2Title": "నిజ-సమయ నవీకరణలు",
+          "feature2Description": "మార్పులు తక్షణమే జరుగుతాయి. అందరూ అదే చూస్తారు",
+          "feature3Title": "బడ్జెట్ ట్రాకింగ్",
+          "feature3Description": "ప్రతి డాలర్‌ను ట్రాక్ చేయండి. ఆశ్చర్యం లేదు, సాకులు లేవు",
+          "feature4Title": "విక్రేత సమన్వయం",
+          "feature4Description": "నియంత్రణ కోల్పోకుండా భాగస్వాములను లూప్‌లో ఉంచండి"
+        },
+        "howItWorks": {
+          "title": "ఇది ఎలా పనిచేస్తుంది",
+          "subtitle": "లేచి వేగంగా పరుగెత్తండి",
+          "step1Title": "మీ సంస్థను సెటప్ చేయండి",
+          "step1Description": "మీ నిర్మాణాన్ని రూపొందించండి, మీ బృందాన్ని జోడించండి",
+          "step2Title": "మీ ప్రాజెక్ట్‌లను సృష్టించండి",
+          "step2Description": "ప్రొడక్షన్స్ మరియు వర్క్‌స్పేస్‌లను మ్యాప్ చేయండి",
+          "step3Title": "పాత్రలను కేటాయించండి",
+          "step3Description": "వ్యక్తులకు సరైన యాక్సెస్ ఇవ్వండి, ఇంకేమీ లేదు",
+          "step4Title": "ఇది పూర్తి చేయండి",
+          "step4Description": "పురోగతిని ట్రాక్ చేయండి, బడ్జెట్‌లను నిర్వహించండి, సమయానికి రవాణా చేయండి"
+        },
+        "testimonials": {
+          "title": "నిజమైన జట్లు, నిజమైన ఫలితాలు",
+          "subtitle": "మార్కెటింగ్ మాట్లాడలేదు",
+          "testimonial1Quote": "ATLVS మా పండుగ గందరగోళాన్ని పరిష్కరించింది. అంతా ఒకే చోట ఉంది, ఏమి జరుగుతుందో అందరికీ తెలుసు. చివరగా.",
+          "testimonial1Author": "సారా చెన్",
+          "testimonial1Role": "ప్రొడక్షన్ డైరెక్టర్, మేజర్ మ్యూజిక్ ఫెస్టివల్",
+          "testimonial2Quote": "అనుమతుల వ్యవస్థ ఖచ్చితంగా మనకు అవసరమైనది. పీడకలలను యాక్సెస్ చేయవద్దు.",
+          "testimonial2Author": "మార్కస్ రోడ్రిగ్జ్",
+          "testimonial2Role": "కార్యకలాపాల VP, లైవ్ ఈవెంట్స్ కంపెనీ",
+          "testimonial3Quote": "కట్ బడ్జెట్ మొదటి త్రైమాసికంలో 40% మించిపోయింది. ట్రాకింగ్ నిజానికి పనిచేస్తుంది.",
+          "testimonial3Author": "జెన్నిఫర్ పార్క్",
+          "testimonial3Role": "CFO, కార్పొరేట్ ఈవెంట్స్ ఏజెన్సీ"
+        },
+        "pricing": {
+          "title": "సూటిగా ధర"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "వాస్తవానికి పని చేసే ఉత్పత్తి నిర్వహణ",
+          "headlineHighlight": "అనుభవపూర్వక బృందాల కోసం",
+          "subheadline": "ఒకే కమాండ్ సెంటర్ నుండి మీ ప్రాజెక్ట్‌లు, సిబ్బంది, ఆస్తులు మరియు బడ్జెట్‌లను నావిగేట్ చేయండి. మరపురాని అనుభవాలను సృష్టించే వ్యక్తుల కోసం నిర్మించబడింది.",
+          "supportingCopy": "మీరు పండుగలు, కార్పొరేట్ ఈవెంట్‌లు లేదా లీనమయ్యే యాక్టివేషన్‌లను ఉత్పత్తి చేస్తున్నా-ATLVS కాన్సెప్ట్ నుండి కర్టెన్ కాల్ వరకు కోర్సును చార్ట్ చేస్తుంది.",
+          "ctaPrimary": "ఈరోజే ఉచితంగా ప్రారంభించండి",
+          "ctaSecondary": "ఇది చర్యలో చూడండి",
+          "trustIndicators": "క్రెడిట్ కార్డ్ లేదు • 14-రోజుల ట్రయల్ • ఎప్పుడైనా రద్దు చేయండి",
+          "platformScreenshot": "ప్లాట్‌ఫారమ్ స్క్రీన్‌షాట్"
+        },
+        "trustBar": {
+          "trustedBy": "ప్రపంచవ్యాప్తంగా ఉన్న నిర్మాణ బృందాలు విశ్వసించాయి"
+        },
+        "problem": {
+          "title": "ఉత్పత్తి గందరగోళ సమస్య",
+          "subtitle": "మీకు డ్రిల్ తెలుసు",
+          "pain1Title": "సాధనం ఓవర్‌లోడ్",
+          "pain1Description": "స్ప్రెడ్‌షీట్‌లు, స్లాక్, ఇమెయిల్, ఎవరూ కనుగొనలేని ఒక Google డాక్-మీ వర్క్‌ఫ్లో డజను ప్లాట్‌ఫారమ్‌లలో చెల్లాచెదురుగా ఉంది",
+          "pain2Title": "సమాచారం బ్లాక్ హోల్స్",
+          "pain2Description": "హ్యాండ్‌ఆఫ్‌ల సమయంలో క్లిష్టమైన వివరాలు అదృశ్యమవుతాయి. ఎవరో ఖచ్చితంగా ఆ ఫైల్‌ను... ఎక్కడికో పంపించారు",
+          "pain3Title": "బడ్జెట్ ఆశ్చర్యాలు",
+          "pain3Description": "ఖర్చులు కనువిందు చేస్తాయి. మీరు గమనించే సమయానికి, మీరు ఇప్పటికే దాటిపోయారు",
+          "pain4Title": "కమ్యూనికేషన్ డ్రిఫ్ట్",
+          "pain4Description": "విక్రేతలు అప్‌డేట్‌లను కోల్పోతారు, సిబ్బంది పాత సమాచారం నుండి పని చేస్తారు, వాటాదారులు ఒకే ప్రశ్నలను రెండుసార్లు అడుగుతారు"
+        },
+        "solution": {
+          "title": "ఒక వేదిక. జీరో ఖోస్.",
+          "subtitle": "ప్రతిదీ దాని సరైన స్థలంలో ఉంది",
+          "feature1Title": "యూనిఫైడ్ కమాండ్ సెంటర్",
+          "feature1Description": "ప్రాజెక్ట్‌లు, వ్యక్తులు మరియు వనరులు అన్నీ నిర్మాణంలో ఉన్నాయి",
+          "feature2Title": "నిజ-సమయ సమకాలీకరణ",
+          "feature2Description": "నవీకరణలు తక్షణమే ప్రవహిస్తాయి. అందరూ ఒకే చార్ట్ నుండి పని చేస్తున్నారు",
+          "feature3Title": "బడ్జెట్ రాడార్",
+          "feature3Description": "నిజ సమయంలో ప్రతి డాలర్‌ను ట్రాక్ చేయండి. ఆశ్చర్యం లేదు, అతిక్రమించలేదు",
+          "feature4Title": "విక్రేత సమన్వయం",
+          "feature4Description": "ఓడను ఇవ్వకుండా బాహ్య భాగస్వాములను లూప్‌లో ఉంచండి"
+        },
+        "howItWorks": {
+          "title": "ఇది ఎలా పనిచేస్తుంది",
+          "subtitle": "నెలల్లో కాకుండా నిమిషాల్లో ప్రయాణించండి",
+          "step1Title": "మీ సంస్థను ప్రారంభించండి",
+          "step1Description": "మీ నిర్మాణాన్ని సెటప్ చేయండి మరియు మీ సిబ్బందిని పైకి తీసుకురండి",
+          "step2Title": "మీ ప్రాజెక్ట్‌లను చార్ట్ చేయండి",
+          "step2Description": "ప్రొడక్షన్‌లు, యాక్టివేషన్‌లు మరియు వర్క్‌స్పేస్‌లను మ్యాప్ చేయండి",
+          "step3Title": "పాత్రలు & మిషన్లను కేటాయించండి",
+          "step3Description": "ప్రతి ఒక్కరికీ సరైన యాక్సెస్ మరియు స్పష్టమైన బాధ్యతలను అందించండి",
+          "step4Title": "నావిగేట్ & బట్వాడా",
+          "step4Description": "పురోగతిని పర్యవేక్షించండి, బడ్జెట్‌లను నిర్వహించండి, దోషరహితంగా అమలు చేయండి"
+        },
+        "testimonials": {
+          "title": "ప్రపంచవ్యాప్తంగా ఉత్పత్తి బృందాలు విశ్వసించాయి",
+          "subtitle": "నిజమైన నిర్మాతల నుండి నిజమైన కథలు",
+          "testimonial1Quote": "మేము పండుగలను ఎలా నిర్వహించాలో ATLVS మార్చింది. అంతా ఒకే చోట, అందరూ ఒకే పేజీలో ఉంటారు. చివరగా.",
+          "testimonial1Author": "సారా చెన్",
+          "testimonial1Role": "ప్రొడక్షన్ డైరెక్టర్, మేజర్ మ్యూజిక్ ఫెస్టివల్",
+          "testimonial2Quote": "RBAC సిస్టమ్ మా సంక్లిష్టమైన ఆర్గ్ నిర్మాణానికి సరైనది. ఉత్పత్తి కోసం సరైన యాక్సెస్ నియంత్రణ? విప్లవకారుడు.",
+          "testimonial2Author": "మార్కస్ రోడ్రిగ్జ్",
+          "testimonial2Role": "కార్యకలాపాల VP, లైవ్ ఈవెంట్స్ కంపెనీ",
+          "testimonial3Quote": "మేము మొదటి త్రైమాసికంలో బడ్జెట్ ఓవర్‌రన్‌లను 40% తగ్గించాము. ఆర్థిక దృశ్యమానత చట్టబద్ధంగా గేమ్-మారుతోంది.",
+          "testimonial3Author": "జెన్నిఫర్ పార్క్",
+          "testimonial3Role": "CFO, కార్పొరేట్ ఈవెంట్స్ ఏజెన్సీ"
+        },
+        "pricing": {
+          "title": "స్కేల్ చేసే పారదర్శక ధర"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "విభిన్నమైన హిట్స్ ప్రొడక్షన్ మేనేజ్‌మెంట్",
+          "headlineHighlight": "ఈవెంట్ సృష్టికర్తల కోసం",
+          "subheadline": "ఒక యాప్ నుండి మీ ప్రాజెక్ట్‌లు, సిబ్బంది, గేర్ మరియు బడ్జెట్‌లను అమలు చేయండి. వాస్తవానికి అనుభవాలను సృష్టించే వ్యక్తుల కోసం రూపొందించబడింది.",
+          "supportingCopy": "పండుగలు, బ్రాండ్ యాక్టివేషన్‌లు, లీనమయ్యే ఈవెంట్‌లు-ATLVS ఆలోచన నుండి అమలు వరకు ప్రతిదీ నిర్వహించబడుతుంది.",
+          "ctaPrimary": "ఉచితంగా ప్రారంభించండి",
+          "ctaSecondary": "దీన్ని తనిఖీ చేయండి",
+          "trustIndicators": "క్రెడిట్ కార్డ్ అవసరం లేదు • ఉచిత ట్రయల్ • ఎప్పుడైనా రద్దు చేయండి",
+          "platformScreenshot": "ప్లాట్‌ఫారమ్ స్క్రీన్‌షాట్"
+        },
+        "trustBar": {
+          "trustedBy": "ప్రతిచోటా ఉత్పత్తి బృందాలు ఉపయోగించబడతాయి"
+        },
+        "problem": {
+          "title": "ఉత్పత్తి మెస్సీ AF",
+          "subtitle": "మేమంతా అక్కడే ఉన్నాం",
+          "pain1Title": "చాలా యాప్‌లు",
+          "pain1Description": "స్ప్రెడ్‌షీట్‌లు, స్లాక్, ఇమెయిల్, యాదృచ్ఛిక Google డాక్-అన్నీ ప్రతిచోటా ఉన్నాయి మరియు ఇది గందరగోళంగా ఉంది",
+          "pain2Title": "ఫైల్‌లు కనిపించకుండా పోయాయి",
+          "pain2Description": "ఆ ఫైల్ ఎవరో... ఎక్కడికో పంపారు. ఇప్పుడు ఎవరూ కనుగొనలేరు. క్లాసిక్.",
+          "pain3Title": "బడ్జెట్ గోస్ బ్రదర్",
+          "pain3Description": "ఖర్చులు పెరుగుతూనే ఉంటాయి. మీరు గమనించే సమయానికి, మీరు బడ్జెట్‌ను మించిపోయారు",
+          "pain4Title": "కమ్యూనికేషన్ లాగ్ 💬",
+          "pain4Description": "బృంద సభ్యులు అప్‌డేట్‌లను కోల్పోతారు మరియు పాత సమాచారంతో పని చేస్తారు"
+        },
+        "solution": {
+          "title": "ఒక వేదిక. మొత్తం నియంత్రణ. 🎯",
+          "subtitle": "అంతా ఒకే చోట",
+          "feature1Title": "కమాండ్ సెంటర్ 🎮",
+          "feature1Description": "మీ అన్ని ప్రాజెక్ట్‌లు, బృందం మరియు వనరులు ఒకే హబ్‌లో ఉంటాయి",
+          "feature2Title": "ప్రత్యక్ష సమకాలీకరణ ⚡",
+          "feature2Description": "నవీకరణలు తక్షణమే జరుగుతాయి. అందరూ కనెక్ట్ అయి ఉంటారు",
+          "feature3Title": "బడ్జెట్ ట్రాకర్ 💰",
+          "feature3Description": "ప్రతి డాలర్‌ను నిజ సమయంలో చూడండి. ఆశ్చర్యం లేదు",
+          "feature4Title": "టీమ్ కోఆర్డినేషన్ 🤝",
+          "feature4Description": "ప్రతి ఒక్కరినీ నవీకరించండి మరియు ఒకే పేజీలో ఉంచండి"
+        },
+        "howItWorks": {
+          "title": "ఇది ఎలా పనిచేస్తుంది",
+          "subtitle": "అక్షరాలా నిమిషాల్లో ప్రారంభించండి",
+          "step1Title": "మీ సంస్థను సెటప్ చేయండి",
+          "step1Description": "మీ జట్టు నిర్మాణాన్ని రూపొందించండి మరియు ప్రతి ఒక్కరినీ జోడించండి",
+          "step2Title": "ప్రాజెక్ట్‌లను సృష్టించండి",
+          "step2Description": "మీ ఈవెంట్‌లు మరియు ప్రొడక్షన్‌లను మ్యాప్ చేయండి",
+          "step3Title": "పాత్రలను కేటాయించండి",
+          "step3Description": "ప్రజలకు సరైన అనుమతులు ఇవ్వండి",
+          "step4Title": "దానిని పంపండి",
+          "step4Description": "అన్నింటినీ ట్రాక్ చేయండి, బడ్జెట్‌లను నిర్వహించండి, ఖచ్చితంగా అమలు చేయండి"
+        },
+        "testimonials": {
+          "title": "ATLVSని ఉపయోగించే నిజమైన జట్లు",
+          "subtitle": "వాస్తవ వ్యక్తుల నుండి వాస్తవ అభిప్రాయం",
+          "testimonial1Quote": "ATLVS అనేది పండుగల నిర్వహణకు OP. ప్రతిదీ నిర్వహించబడింది, ప్రతి ఒక్కరూ సమకాలీకరించబడ్డారు. 10/10 సిఫార్సు చేస్తుంది.",
+          "testimonial1Author": "సారా చెన్",
+          "testimonial1Role": "ప్రొడక్షన్ డైరెక్టర్, మేజర్ మ్యూజిక్ ఫెస్టివల్",
+          "testimonial2Quote": "అనుమతుల వ్యవస్థ అగ్ని. చివరకు మా బృందానికి సరైన యాక్సెస్ నియంత్రణ వచ్చింది.",
+          "testimonial2Author": "మార్కస్ రోడ్రిగ్జ్",
+          "testimonial2Role": "కార్యకలాపాల VP, లైవ్ ఈవెంట్స్ కంపెనీ",
+          "testimonial3Quote": "మేము బడ్జెట్ సమస్యలను మొదటి త్రైమాసికంలో 40% తగ్గించాము. డబ్బు ట్రాకింగ్ సూటిగా అద్భుతంగా ఉంది.",
+          "testimonial3Author": "జెన్నిఫర్ పార్క్",
+          "testimonial3Role": "CFO, కార్పొరేట్ ఈవెంట్స్ ఏజెన్సీ"
+        },
+        "pricing": {
+          "title": "భిన్నంగా ఉండే ధర"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "లెవెల్ అప్ యువర్ ప్రొడక్షన్ గేమ్ 🎮",
+          "headlineHighlight": "ఈవెంట్ సృష్టికర్తల కోసం",
+          "subheadline": "ఒక సూపర్ యాప్ నుండి ప్రాజెక్ట్‌లు, బృందం, గేర్ & డబ్బును నిర్వహించండి ✨ పురాణ అనుభవాలను అందించే సృష్టికర్తల కోసం రూపొందించబడింది 🚀",
+          "supportingCopy": "పండుగలు, ఈవెంట్‌లు, యాక్టివేషన్‌లు-ATLVS ప్రారంభం నుండి ముగింపు వరకు ప్రతిదీ క్రమబద్ధంగా ఉంచుతుంది 🎯",
+          "ctaPrimary": "ఉచితంగా ప్రారంభించండి 🚀",
+          "ctaSecondary": "డెమో 👀 చూడండి",
+          "trustIndicators": "కార్డ్ అవసరం లేదు • ఉచిత ట్రయల్ • ఎప్పుడైనా రద్దు చేయండి ✌️",
+          "platformScreenshot": "ప్లాట్‌ఫారమ్ స్క్రీన్‌షాట్"
+        },
+        "trustBar": {
+          "trustedBy": "ప్రపంచవ్యాప్తంగా ప్రొడక్షన్ టీమ్‌ల ద్వారా ఉపయోగించబడుతుంది 🌍"
+        },
+        "problem": {
+          "title": "ఉత్పత్తి అస్తవ్యస్తంగా ఉండవచ్చు 😅",
+          "subtitle": "తెలిసిన కదూ?",
+          "pain1Title": "యాప్ ఓవర్‌లోడ్ 📱",
+          "pain1Description": "చాలా యాప్‌లు, చాలా గందరగోళం. అంతా చెల్లాచెదురుగా ఉంది మరియు కనుక్కోవడం కష్టం 🤯",
+          "pain2Title": "కోల్పోయిన ఫైల్‌లు 📂",
+          "pain2Description": "ఫైల్‌లు శూన్యంలో అదృశ్యమవుతాయి. ఎవరో పంపారు... ఎక్కడికో... శుభం! 🔍",
+          "pain3Title": "బడ్జెట్ ఆశ్చర్యం 💸",
+          "pain3Description": "డబ్బు కనుమరుగవుతూనే ఉంటుంది. మీరు గమనించే సమయానికి, మీరు బడ్జెట్‌ను మించిపోయారు 😬",
+          "pain4Title": "జట్టు గందరగోళం 🤷",
+          "pain4Description": "వ్యక్తులు అప్‌డేట్‌లను కోల్పోతారు, పాత సమాచారంతో పని చేస్తారు, అదే ప్రశ్నలను అడగండి"
+        },
+        "solution": {
+          "title": "ఒక యాప్. పూర్తి నియంత్రణ. 💪",
+          "subtitle": "మీకు కావలసినవన్నీ ఒకే చోట",
+          "feature1Title": "కమాండ్ సెంటర్ 🎮",
+          "feature1Description": "ఒకే డ్యాష్‌బోర్డ్‌లో అన్ని ప్రాజెక్ట్‌లు, టీమ్ & గేర్",
+          "feature2Title": "తక్షణ సమకాలీకరణ ⚡",
+          "feature2Description": "అప్‌డేట్‌లు నిజ సమయంలో జరుగుతాయి. అందరూ కనెక్ట్ అయి ఉంటారు",
+          "feature3Title": "మనీ ట్రాకర్ 💰",
+          "feature3Description": "ప్రతి డాలర్ చూడండి. ఆశ్చర్యం లేదు, ఒత్తిడి లేదు",
+          "feature4Title": "టీమ్ కొల్లాబ్ 🤝",
+          "feature4Description": "అందరినీ లూప్‌లో ఉంచండి మరియు కలిసి పని చేయండి"
+        },
+        "howItWorks": {
+          "title": "ఇది ఎలా పని చేస్తుంది ⚙️",
+          "subtitle": "అతి వేగంగా ప్రారంభించండి",
+          "step1Title": "మీ బృందాన్ని నిర్మించుకోండి 👥",
+          "step1Description": "మీ ఆర్గ్‌ని సెటప్ చేయండి మరియు మీ సిబ్బందిని జోడించండి",
+          "step2Title": "ప్రాజెక్ట్‌లను సృష్టించండి 📋",
+          "step2Description": "మీ అన్ని ఈవెంట్‌లు మరియు ప్రొడక్షన్‌లను మ్యాప్ చేయండి",
+          "step3Title": "అనుమతులను సెట్ చేయండి 🔐",
+          "step3Description": "ప్రతి ఒక్కరికీ సరైన యాక్సెస్ స్థాయిని అందించండి",
+          "step4Title": "ప్రారంభించండి & గెలవండి 🏆",
+          "step4Description": "పురోగతిని ట్రాక్ చేయండి, డబ్బును నిర్వహించండి, సంపూర్ణంగా అమలు చేయండి"
+        },
+        "testimonials": {
+          "title": "జట్లు ATLVS 💙ని ఇష్టపడతాయి",
+          "subtitle": "నిజమైన వినియోగదారుల నుండి నిజమైన సమీక్షలు",
+          "testimonial1Quote": "ATLVS పండుగలకు అక్షరాలా సరైనది. ప్రతిదీ నిర్వహించబడింది, ప్రతి ఒక్కరూ సమకాలీకరించబడ్డారు. 100/10! 🔥",
+          "testimonial1Author": "సారా చెన్",
+          "testimonial1Role": "ప్రొడక్షన్ డైరెక్టర్, మేజర్ మ్యూజిక్ ఫెస్టివల్",
+          "testimonial2Quote": "అనుమతి వ్యవస్థ చెఫ్ యొక్క ముద్దు 👌 చివరగా సరైన యాక్సెస్ నియంత్రణ!",
+          "testimonial2Author": "మార్కస్ రోడ్రిగ్జ్",
+          "testimonial2Role": "కార్యకలాపాల VP, లైవ్ ఈవెంట్స్ కంపెనీ",
+          "testimonial3Quote": "మేము బడ్జెట్ సమస్యలను మొదటి త్రైమాసికంలో 40% తగ్గించాము. ట్రాకింగ్ పిచ్చిగా ఉంది! 🎯",
+          "testimonial3Author": "జెన్నిఫర్ పార్క్",
+          "testimonial3Role": "CFO, కార్పొరేట్ ఈవెంట్స్ ఏజెన్సీ"
+        },
+        "pricing": {
+          "title": "ధర నిజంగా సరసమైనది ✨"
+        }
+      }
     }
   }
 }

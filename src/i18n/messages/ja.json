@@ -402,333 +402,934 @@
   "marketing": {
     "nav": {
       "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "solutions": "ソリューション",
+      "features": "特徴",
+      "pricing": "価格設定",
+      "docs": "ドキュメント",
+      "blog": "ブログ",
+      "company": "会社",
+      "signIn": "サインイン",
+      "startFree": "無料で始める",
+      "toggleMenu": "メニューの切り替え"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "業界別のソリューション",
+        "subtitle": "あらゆるタイプのライブエンターテイメント制作に特化したワークフロー"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "コンサートとツアー",
+        "description": "小規模な会場の運営からアリーナ規模のプロダクションまで、世界中のツアー運営全体でルーティング、予算編成、物流、乗務員の管理を合理化します。"
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "音楽と芸術のフェスティバル",
+        "description": "複数日にまたがる複数ステージのイベントのワークフローを一元化し、制作、人材、ベンダー、コンプライアンスを 1 つのコマンド システムの下に統合します。"
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "没入型＆体験型イベント",
+        "description": "クリエイティブな開発からライブ実行まで完全に可視化して、インタラクティブな世界、インスタレーション、ブランドエクスペリエンスを設計および運用します。"
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "演劇およびライブ作品",
+        "description": "ステージやパフォーマンスベースのエンターテイメントのクリエイティブ チーム、技術スケジュール、制作資産を管理します。"
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "映画、テレビ、メディア",
+        "description": "部門間の同期と財務の透明性を実現するために構築されたツールを使用して、制作前、撮影現場の運用を調整し、レポートをまとめます。"
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "ブランドの活性化とマーケティング キャンペーン",
+        "description": "ポップアップ、ローンチ、キャンペーン主導のエクスペリエンスを実行し、クリエイティブ、ロジスティクス、ROI 追跡を 1 つのインテリジェントなダッシュボードに統合します。"
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "企業およびプライベートイベント",
+        "description": "合理化された計画とベンダー調整により、社内会議、リトリート、注目を集める集まりに完璧なエクスペリエンスを提供します。"
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "トレードショーとコンベンション",
+        "description": "エンドツーエンドのプロジェクト管理とリアルタイム分析により、ブースの構築、出展者の物流、スポンサーとの関係を簡素化します。"
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "健康、ウェルネス、ライフスタイル",
+        "description": "細部と雰囲気が最も重要なリトリート、フィットネス イベント、ウェルネス体験のプログラム、スタッフ配置、ゲストの流れを最適化します。"
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "実際に動く生産管理",
+      "headlineHighlight": "経験豊富なチーム向け",
+      "subheadline": "単一のコマンド センターからプロジェクト、スタッフ、資産、予算を管理します。忘れられない体験を生み出す人々のために作られました。",
+      "supportingCopy": "フェスティバル、企業イベント、没入型アクティベーションのいずれをプロデュースする場合でも、ATLVS はコンセプトからカーテン コールまでのコースを計画します。",
+      "ctaPrimary": "今すぐ無料で始めましょう",
+      "ctaSecondary": "実際に見てみる",
+      "trustIndicators": "クレジット カードなし • 14 日間のトライアル • いつでもキャンセル可能",
+      "platformScreenshot": "プラットフォームのスクリーンショット"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "世界中の制作チームから信頼されています"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "生産のカオス問題",
+      "subtitle": "あなたはドリルを知っています",
+      "pain1Title": "ツールの過負荷",
+      "pain1Description": "スプレッドシート、Slack、電子メール、1 つの Google ドキュメントでは誰も見つけることができません。ワークフローは十数のプラットフォームに分散しています。",
+      "pain2Title": "情報ブラックホール",
+      "pain2Description": "重要な詳細は引き継ぎ中に消えてしまいます。誰かが間違いなくそのファイルをどこかに送った",
+      "pain3Title": "予算のサプライズ",
+      "pain3Description": "費用は影で忍び寄る。気づいたときにはもう終わってる",
+      "pain4Title": "コミュニケーションドリフト",
+      "pain4Description": "ベンダーは最新情報を見逃し、スタッフは古い情報を無視し、関係者は同じ質問を 2 回繰り返します"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "1 つのプラットフォーム。ゼロカオス。",
+      "subtitle": "すべてが適切な場所に",
+      "feature1Title": "統合コマンドセンター",
+      "feature1Description": "プロジェクト、人材、リソースはすべて隊列を組んで航行しています",
+      "feature2Title": "リアルタイム同期",
+      "feature2Description": "更新は即座に行われます。全員が同じチャートに基づいて作業しています",
+      "feature3Title": "予算レーダー",
+      "feature3Description": "リアルタイムであらゆるドルを追跡します。驚きもオーバーランもありません",
+      "feature4Title": "ベンダー調整",
+      "feature4Description": "船を譲渡せずに外部パートナーと情報を共有し続ける"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "仕組み",
+      "subtitle": "数か月ではなく数分で出航",
+      "step1Title": "組織を立ち上げる",
+      "step1Description": "構造をセットアップし、乗組員を乗せます",
+      "step2Title": "プロジェクトをグラフ化する",
+      "step2Description": "プロダクション、アクティベーション、ワークスペースの計画を立てる",
+      "step3Title": "役割とミッションを割り当てる",
+      "step3Description": "全員に適切なアクセス権と明確な責任を与える",
+      "step4Title": "ナビゲートして配達する",
+      "step4Description": "進捗状況を監視し、予算を管理し、完璧に実行します"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "大規模に生産するために必要なものがすべて揃っています",
+      "subtitle": "完全な生産管理のための 6 つの統合ハブ",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "生産ハブ",
+        "description": "プロジェクト、イベント、人、資産、場所、ファイルを管理する",
+        "feature1": "プロジェクト＆イベント企画",
+        "feature2": "チームとクルーの管理",
+        "feature3": "資産の追跡と在庫",
+        "feature4": "場所と会場の調整"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "ビジネスハブ",
+        "description": "会社、仕事、調達、財務を処理する",
+        "feature1": "ベンダーと会社の管理",
+        "feature2": "求人情報と採用",
+        "feature3": "調達・購入",
+        "feature4": "予算と経費の追跡"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "ネットワークハブ",
+        "description": "コミュニティ、マーケットプレイス、リソース ライブラリを構築する",
+        "feature1": "コミュニティとディスカッション",
+        "feature2": "マーケットプレイスとサービス",
+        "feature3": "リソースライブラリ",
+        "feature4": "業界とのつながり"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "オートメーションハブ",
+        "description": "ワークフロー、トリガー、反復的なタスクを自動化する",
+        "feature1": "カスタムワークフローの自動化",
+        "feature2": "イベント駆動型トリガー",
+        "feature3": "スケジュールされたタスクの実行",
+        "feature4": "統合パイプライン"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "インテリジェンスハブ",
+        "description": "レポート、分析、洞察を生成する",
+        "feature1": "カスタムレポート",
+        "feature2": "リアルタイム分析",
+        "feature3": "予測的な洞察",
+        "feature4": "パフォーマンス指標"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "システムハブ",
+        "description": "管理者、設定、およびユーザープロファイルを構成する",
+        "feature1": "ユーザーとロールの管理",
+        "feature2": "システム構成",
+        "feature3": "プロファイルのカスタマイズ",
+        "feature4": "セキュリティと権限"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "大規模に生産するために必要なものがすべて揃っています",
+        "subtitle": "体験制作チーム向けに設計された 6 つの統合ハブ"
+      },
+      "production": {
+        "title": "生産ハブ",
+        "description": "プロジェクト、イベント、人、資産、場所、ファイルを管理する",
+        "projects": {
+          "title": "プロジェクト",
+          "description": "コンセプトからストライクまで制作を整理し追跡する"
+        },
+        "events": {
+          "title": "イベント",
+          "description": "あらゆる詳細とタイムラインをスケジュール、調整、管理します"
+        },
+        "people": {
+          "title": "人々",
+          "description": "乗務員の割り当て、空き状況、スケジュールを管理する"
+        },
+        "assets": {
+          "title": "資産",
+          "description": "生産全体にわたる機器、在庫、リソースを追跡する"
+        },
+        "locations": {
+          "title": "所在地",
+          "description": "会場、会場、施設の物流を調整する"
+        },
+        "files": {
+          "title": "ファイル",
+          "description": "ドキュメント、メディア、制作ファイルを安全に一元管理"
+        }
+      },
+      "business": {
+        "title": "ビジネスハブ",
+        "description": "会社、仕事、調達、財務を処理する",
+        "companies": {
+          "title": "企業",
+          "description": "ベンダーとの関係、クライアント、パートナーを管理する"
+        },
+        "jobs": {
+          "title": "求人",
+          "description": "ポジションの掲載、応募の追跡、採用の管理"
+        },
+        "procurement": {
+          "title": "調達",
+          "description": "購入、ベンダーの選択、契約を合理化する"
+        },
+        "invoices": {
+          "title": "請求書",
+          "description": "自動リマインダーを使用して請求書の作成、送信、追跡を行う"
+        },
+        "expenses": {
+          "title": "経費",
+          "description": "領収書キャプチャによる経費の記録と分類"
+        },
+        "budgets": {
+          "title": "予算",
+          "description": "リアルタイムの追跡により予算を計画、監視、制御します"
+        }
+      },
+      "network": {
+        "title": "ネットワークハブ",
+        "description": "コミュニティ、マーケットプレイス、リソース ライブラリを構築する",
+        "community": {
+          "title": "コミュニティ",
+          "description": "業界の専門家とつながり、知識を共有し、コラボレーションします"
+        },
+        "marketplace": {
+          "title": "市場",
+          "description": "サービスの発見、人材の雇用、生産リソースの検索"
+        },
+        "resources": {
+          "title": "リソース",
+          "description": "ガイド、テンプレート、ベスト プラクティスにアクセスする"
+        }
+      },
+      "automations": {
+        "title": "オートメーションハブ",
+        "description": "ワークフロー、トリガー、反復的なタスクを自動化する",
+        "workflows": {
+          "title": "ワークフロー",
+          "description": "反復的なプロセス向けにカスタム自動化シーケンスを構築する"
+        },
+        "triggers": {
+          "title": "トリガー",
+          "description": "自動的に応答するイベント駆動型アクションを設定する"
+        },
+        "scheduled": {
+          "title": "スケジュールされたタスク",
+          "description": "柔軟なスケジュール設定で定期的なタスクを自動化"
+        }
+      },
+      "intelligence": {
+        "title": "インテリジェンスハブ",
+        "description": "レポート、分析、洞察を生成する",
+        "reports": {
+          "title": "レポート",
+          "description": "柔軟な視覚化とエクスポートを備えたカスタム レポートの作成"
+        },
+        "analytics": {
+          "title": "分析",
+          "description": "KPIの追跡、傾向の監視、パフォーマンスの測定"
+        },
+        "insights": {
+          "title": "洞察",
+          "description": "AI を活用した推奨事項と予測分析を取得する"
+        }
+      },
+      "system": {
+        "title": "システムハブ",
+        "description": "管理者、設定、およびユーザープロファイルを構成する",
+        "admin": {
+          "title": "管理者",
+          "description": "組織の設定、セキュリティ、構成を管理する"
+        },
+        "settings": {
+          "title": "設定",
+          "description": "設定、統合、プラットフォームの動作をカスタマイズする"
+        },
+        "profiles": {
+          "title": "ユーザープロフィール",
+          "description": "チームのプロフィール、役割、アクセス権限を管理する"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "乗組員のあらゆる役割に合わせて構築",
+      "subtitle": "正確な権限を備えた 11 個のブランドロール",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "伝説",
+        "description": "プラットフォーム スーパー管理者 - すべての組織にわたるフル コントロール"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "ファントム",
+        "level": "最高権威",
+        "title": "ファントム",
+        "description": "完全なシステム管理と無制限のアクセス。プラットフォームの方向性を形成し、企業の監視を維持します。"
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "飛行士",
+        "level": "戦略的リーダーシップ",
+        "title": "飛行士",
+        "description": "プロジェクト間の可視性、リソースの割り当て、エグゼクティブ分析。大規模な高レベルの生産戦略をナビゲートします。"
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "剣闘士",
+        "level": "プロジェクトのリーダーシップ",
+        "title": "剣闘士",
+        "description": "プロジェクトの完全な作成および編集権限。完全な制御により、コンセプトから完成まで制作をリードします。"
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "ナビゲーター",
+        "level": "調整",
+        "title": "ナビゲーター",
+        "description": "プロジェクトの調整、タスクの割り当て、チームの指導。複雑なワークフローを通じてコースを計画します。"
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "デビエーター",
+        "level": "実行",
+        "title": "デビエーター",
+        "description": "確立されたフレームワーク内で集中的にタスクを完了します。割り当てられた責任に基づいて質の高い仕事を提供します。"
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "レイダー",
+        "level": "学習と観察",
+        "title": "レイダー",
+        "description": "学習して成長するための表示のみのアクセス。初心者がスキルを身につけるのに最適です。"
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "ベンダー",
+        "level": "範囲指定された配信",
+        "title": "ベンダー",
+        "description": "外部サービスプロバイダーの対象を絞ったアクセス。成果物をアップロードし、契約した作業を遂行します。"
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "ビジター",
+        "level": "限られた可視性",
+        "title": "ビジター",
+        "description": "外部関係者向けの一時的な読み取り専用アクセス。ワークフローを中断することなく最新情報を入手できます。"
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "パートナー",
+        "level": "戦略的コラボレーション",
+        "title": "パートナー",
+        "description": "信頼できる外部コラボレーターとの緊密な統合。双方向のデータ共有と共同ワークフロー管理。"
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "大使",
+        "level": "コミュニティチャンピオン",
+        "title": "大使",
+        "description": "ATLVS を代表し、ユーザーをサポートし、コラボレーションを促進します。イベントを主催し、コンテンツを作成し、エコシステムを成長させます。"
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "エンタープライズグレードのセキュリティ",
+      "subtitle": "データはあらゆるレベルで保護されます",
+      "feature1Title": "行レベルのセキュリティ",
+      "feature1Description": "801 RLS ポリシーにより、ユーザーは見るべきものだけを表示できるようになります",
+      "feature2Title": "役割ベースのアクセス",
+      "feature2Description": "45以上のきめ細かな権限を持つ11のブランドロール",
+      "feature3Title": "暗号化されたストレージ",
+      "feature3Description": "保存中および転送中のすべてのデータが暗号化される",
+      "feature4Title": "監査ログ",
+      "feature4Description": "すべてのシステムアクティビティの完全な監査証跡",
+      "feature5Title": "SOC2準拠",
+      "feature5Description": "エンタープライズグレードのセキュリティ標準",
+      "feature6Title": "GDPR対応",
+      "feature6Description": "データプライバシー規制への完全な準拠"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
-      "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "title": "世界中の制作チームから信頼されています",
+      "subtitle": "本物のプロデューサーによる本物のストーリー",
+      "testimonial1Quote": "ATLVS はフェスティバルの管理方法を変革しました。すべてが 1 か所にあり、全員が同じ認識を持っています。ついに。",
+      "testimonial1Author": "サラ・チェン",
+      "testimonial1Role": "メジャーミュージックフェスティバルのプロダクションディレクター",
+      "testimonial1Title": "メジャーミュージックフェスティバルのプロダクションディレクター",
+      "testimonial2Quote": "RBAC システムは、当社の複雑な組織構造に最適です。実稼働環境に対する適切なアクセス制御?革命的。",
+      "testimonial2Author": "マーカス・ロドリゲス",
+      "testimonial2Role": "ライブイベント会社運営担当副社長",
+      "testimonial2Title": "ライブイベント会社運営担当副社長",
+      "testimonial3Quote": "第 1 四半期には予算超過を 40% 削減しました。財務上の可視性は当然ながら状況を一変させます。",
+      "testimonial3Author": "ジェニファー・パーク",
+      "testimonial3Role": "CFO、企業イベント代理店",
+      "testimonial3Title": "CFO、企業イベント代理店",
+      "jamesCookQuote": "自分たちが主人公だと思っている科学者の船を 3 隻管理しているのですか? ATLVS があれば、功績を競うのではなく、全員が足並みをそろえて実際に協力することができたでしょう。",
+      "jamesCookAuthor": "キャプテン・ジェームス・クック",
+      "jamesCookRole": "英国王立海軍探検家 (1728-1779)",
+      "zhengYiSaoQuote": "私は海賊行為をフォーチュン 500 企業に成長させ、自らの恩赦を交渉し、裕福な生活を終えました。 ATLVS は、型破りな運用には依然として確実な管理が必要であることを理解している人向けです。",
+      "zhengYiSaoAuthor": "ジェン・イーサオ",
+      "zhengYiSaoRole": "中国の海賊のリーダー (1775-1844)",
+      "captainAhabQuote": "全体像を考慮せずに、あらゆる海を越えて 1 つの特定の目標を追いかけますか? ATLVS を使用すると、個人的な目標だけでなく、実際のビジネス プランに集中できます。",
+      "captainAhabAuthor": "エイハブ船長",
+      "captainAhabRole": "ピークォッド捕鯨船長",
+      "graceOMalleyQuote": "エリザベス女王と対等な立場で交渉した。 ATLVS は、データを準備して自信を持ってすべての会議に出席するのに役立ちます。",
+      "graceOMalleyAuthor": "グレース・オマリー「グレイン・マオル」",
+      "graceOMalleyRole": "アイルランドの海賊女王と族長 (1530 年頃 - 1603 年)",
+      "sinbadQuote": "難破を繰り返しながらも戻ってきた方法は？それは単に計画が悪いだけです。 ATLVS は、私の意思決定に明らかに必要な構造を提供します。",
+      "sinbadAuthor": "船乗りシンドバッド",
+      "sinbadRole": "伝説の商船員 アラビアンナイト",
+      "longJohnSilverQuote": "海賊を管理することは、猫が壊血病や信頼の問題を抱えていた場合、文字通り猫を集めるようなものです。 ATLVS の利害関係者管理により、たとえ互いに陰謀を企てている場合でも、全員が足並みをそろえることができます。",
+      "longJohnSilverAuthor": "ロング・ジョン・シルバー",
+      "longJohnSilverRole": "トレジャーアイランドの補給官兼海賊コック",
+      "horatioHornblowerQuote": "完全に精神的に衰弱しつつフランス人と戦うのは、正直言って私にとって非常にブランドに合っている。 ATLVS はすべての戦術的な要素を整理し、実際のミッションに集中できるようにします。",
+      "horatioHornblowerAuthor": "ホレイショ ホーンブロワー",
+      "horatioHornblowerRole": "英国海軍士官 (C.S. フォレスターの小説)",
+      "captainNemoQuote": "潜水艦の隠者であることは実際には非常に内向的なコードですが、私でもチームの調整が必要でした。 ATLVS は、一人で作業している場合でも機能します。",
+      "captainNemoAuthor": "ネモ船長",
+      "captainNemoRole": "司令官、ノーチラス号 (海底二万マイル)",
+      "odysseusQuote": "疑わしい選択をし続けたせいで、乗組員全員を失いました。 ATLVSは「セイレーンの内容を見る必要はない」と思っただろうし、正直に言えば？有効。",
+      "odysseusAuthor": "オデュッセウス/ユリシーズ",
+      "odysseusRole": "イサカの王、ギリシャの英雄（オデュッセイア）",
+      "blackbeardQuote": "手動で調整している場合、4 隻の船で港全体をブロックする場合の攻撃は異なります。 ATLVS があれば、私は海上で最も作戦効率の高い海賊になっていたでしょう。",
+      "blackbeardAuthor": "エドワード・ティーチ船長「黒ひげ」",
+      "blackbeardRole": "海賊司令官 (c. 1680-1718)",
+      "captainMarvelQuote": "チェックインせずに宇宙の緊急事態に対処して 30 年間失踪しました。ATLVS のコミュニケーション ツールがあれば、大切な人全員をゴーストにせずに済んだでしょう。",
+      "captainMarvelAuthor": "キャプテン・マーベル / キャロル・ダンバース",
+      "captainMarvelRole": "空軍パイロット & コズミック ヒーロー (MCU)",
+      "captainJanewayQuote": "私は乗組員を救うためにTemporal Prime指令に何度も違反しましたが、プロジェクトのスケジュールに違反したことは一度もありませんでした。 ATLVS は、倫理が複雑になった場合でも優先順位を明確に保ちます。",
+      "captainJanewayAuthor": "キャスリン・ジェインウェイ大尉",
+      "captainJanewayRole": "宇宙艦隊艦長、USS ボイジャー (スタートレック: ボイジャー)",
+      "moanaQuote": "マウイは私の指導者になるはずだったが、ほとんどの時間を感情的に対応できずに過ごした。 ATLVS は、チームが困難な場合に成果物を追跡します。",
+      "moanaAuthor": "モアナ",
+      "moanaRole": "ウェイファインダーと島の酋長 (ディズニーのモアナ)",
+      "captainJackSparrowQuote": "彼らが雇用されているのか、それとも混乱に参加しているだけなのか文字通り誰も分からない状況で乗組員を管理するのでしょうか？ ATLVS は、私の雰囲気全体にはない明瞭さを提供します。",
+      "captainJackSparrowAuthor": "キャプテン・ジャック・スパロウ",
+      "captainJackSparrowRole": "海賊船長 ブラックパール (パイレーツ・オブ・カリビアン)",
+      "popeyeQuote": "私の性格は「前もって計画することを頑なに拒否する」という性格です。 ATLVS は、私が明らかに必要としているが、認めたくないこの部屋にいる大人です。",
+      "popeyeAuthor": "ポパイ・ザ・セーラーマン",
+      "popeyeRole": "セーラー＆オリーブオイルのプロテクター (漫画のキャラクター)",
+      "captainPicardQuote": "多様な乗組員を率いてファーストコンタクトの状況や外交危機を乗り越える? ATLVS は、賭け金が文字通り銀河系の場合でも、全員の連携を保ちます。",
+      "captainPicardAuthor": "ジャン＝リュック・ピカード大尉",
+      "captainPicardRole": "宇宙艦隊艦長、USS エンタープライズ (スタートレック: TNG)",
+      "captainSiskoQuote": "一部は軍事基地、一部は貿易拠点、一部は難民センターであるステーションを指揮しているのでしょうか？ ATLVS は、関係者ごとに優先順位が異なる場合に、複雑さを管理するのに役立ちます。",
+      "captainSiskoAuthor": "ベンジャミン・シスコ船長",
+      "captainSiskoRole": "宇宙艦隊司令官、ディープ・スペース・ナイン (スタートレック: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "透明性のある価格設定",
+      "subtitle": "個人請負業者から企業プロデューサーまで",
+      "monthly": "毎月",
+      "annually": "毎年",
+      "save20": "20% 割引",
+      "community": {
+        "name": "コミュニティ",
+        "price": "無料",
+        "period": "永遠に",
+        "description": "始めるのに最適",
+        "feature1": "レイダーロールへのアクセス",
+        "feature2": "基本的なタスク管理",
+        "feature3": "コミュニティサポート",
+        "cta": "無料で始めましょう"
+      },
+      "pro": {
+        "name": "プロ",
+        "price": "12ドル",
+        "period": "月あたり",
+        "annualPrice": "$10/月 (毎年請求)",
+        "description": "独立請負業者向け",
+        "feature1": "デビエイターとレイダーの役割",
+        "feature2": "高度なタスク管理",
+        "feature3": "優先サポート",
+        "cta": "無料トライアルを開始する"
+      },
+      "team": {
+        "name": "チーム",
+        "badge": "最も人気のある",
+        "price": "120ドル",
+        "period": "月あたり",
+        "annualPrice": "$100/月 (毎年請求)",
+        "description": "中小規模のチーム向け (2 ～ 10 席)",
+        "feature1": "すべてのプロ機能",
+        "feature2": "ベンダー管理",
+        "feature3": "チームのコラボレーション",
+        "cta": "無料トライアルを開始する"
+      },
       "starter": {
-        "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "name": "スターター",
+        "price": "29ドル",
+        "period": "ユーザーあたり/月",
+        "description": "フリーランサーや小規模チームに最適",
+        "feature1": "最大5人のユーザー",
+        "feature2": "10のアクティブなプロジェクト",
+        "feature3": "基本的なレポート作成",
+        "feature4": "電子メールサポート",
+        "feature5": "10GBのストレージ",
+        "cta": "無料トライアルを開始する"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "プロ",
+        "price": "79ドル",
+        "period": "ユーザーあたり/月",
+        "description": "成長する制作会社のために",
+        "feature1": "最大25ユーザー",
+        "feature2": "無制限のプロジェクト",
+        "feature3": "高度な分析",
+        "feature4": "優先サポート",
+        "feature5": "100GBのストレージ",
+        "feature6": "カスタムロール",
+        "feature7": "APIアクセス",
+        "cta": "無料トライアルを開始する",
+        "popular": "最も人気のある"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "企業",
+        "price": "カスタム",
+        "period": "営業担当者に連絡する",
+        "annualPrice": "$1000/月 (毎年請求)",
+        "description": "大規模な組織や代理店向け",
+        "feature1": "無制限のユーザー",
+        "feature2": "無制限のプロジェクト",
+        "feature3": "カスタム統合",
+        "feature4": "献身的なサポート",
+        "feature5": "無制限のストレージ",
+        "feature6": "SSO と SAML",
+        "feature7": "SLA保証",
+        "feature8": "カスタムトレーニング",
+        "cta": "営業担当者へのお問い合わせ"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "よくある質問",
+      "subtitle": "知っておくべきことすべて",
+      "question1": "無料トライアルの期間はどれくらいですか?",
+      "answer1": "14 日間、クレジット カードは必要ありません。すべての機能へのフルアクセス。",
+      "question2": "いつでもキャンセルできますか?",
+      "answer2": "はい。いつでもキャンセルできます。長期の契約や約束はありません。",
+      "question3": "どのような支払い方法を利用できますか?",
+      "answer3": "エンタープライズ プランでは、すべての主要なクレジット カード、ACH、電信送金をご利用いただけます。",
+      "question4": "私のデータは安全ですか?",
+      "answer4": "はい。エンタープライズ グレードの暗号化、SOC 2 準拠、GDPR 対応。データはあらゆるレベルで保護されます。",
+      "question5": "トレーニングは提供していますか?",
+      "answer5": "はい。すべてのプランのセルフサービス リソースに加え、エンタープライズ顧客向けの専用トレーニングも提供します。",
+      "question6": "既存のデータをインポートできますか?",
+      "answer6": "はい。 CSV インポート ツールを提供し、エンタープライズ プランのカスタム データ移行を支援できます。",
+      "q1": "無料トライアルの期間はどれくらいですか?",
+      "a1": "14 日間、クレジット カードは必要ありません。すべての機能へのフルアクセス。",
+      "q2": "いつでもキャンセルできますか?",
+      "a2": "はい。いつでもキャンセルできます。長期の契約や約束はありません。",
+      "q3": "どのような支払い方法を利用できますか?",
+      "a3": "エンタープライズ プランでは、すべての主要なクレジット カード、ACH、電信送金をご利用いただけます。",
+      "q4": "私のデータは安全ですか?",
+      "a4": "はい。エンタープライズ グレードの暗号化、SOC 2 準拠、GDPR 対応。データはあらゆるレベルで保護されます。",
+      "q5": "トレーニングは提供していますか?",
+      "a5": "はい。すべてのプランのセルフサービス リソースに加え、エンタープライズ顧客向けの専用トレーニングも提供します。",
+      "q6": "既存のデータをインポートできますか?",
+      "a6": "はい。 CSV インポート ツールを提供し、エンタープライズ プランのカスタム データ移行を支援できます。"
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "制作ワークフローを変革する準備はできていますか?",
+      "subtitle": "ATLVS を使用して何千人もの制作プロフェッショナルに加わりましょう",
+      "ctaPrimary": "無料トライアルを開始する",
+      "ctaSecondary": "デモのスケジュールを設定する",
+      "trustIndicators": "クレジット カードは必要ありません • 14 日間の無料トライアル • いつでもキャンセル可能",
+      "primary": "無料トライアルを開始する",
+      "secondary": "デモのスケジュールを設定する",
+      "noCard": "クレジットカードは必要ありません"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "tagline": "体験制作チーム向けのプロジェクト管理システム",
+      "productTitle": "製品",
+      "companyTitle": "会社",
+      "resourcesTitle": "リソース",
+      "legalTitle": "法律上の",
+      "product": "製品",
+      "features": "特徴",
+      "pricing": "価格設定",
+      "demo": "デモ",
+      "integrations": "統合",
+      "docs": "ドキュメント",
+      "apiReference": "APIリファレンス",
+      "changelog": "変更履歴",
+      "caseStudies": "ケーススタディ",
+      "templates": "テンプレート",
+      "company": "会社",
+      "aboutUs": "私たちについて",
+      "blog": "ブログ",
+      "careers": "キャリア",
+      "contact": "接触",
+      "press": "プレス",
+      "partners": "パートナー",
+      "customers": "お客様",
+      "events": "イベント",
+      "legal": "法律上の",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "security": "安全",
+      "support": "サポート",
+      "helpCenter": "ヘルプセンター",
+      "community": "コミュニティ",
+      "status": "システムステータス",
+      "roiCalculator": "ROI 計算ツール",
+      "copyright": "© 2025 ATLVS.無断転載を禁じます。"
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "お気に入りのツールと統合",
+      "subtitle": "ATLVS をすでに使用しているツールに接続する",
+      "comingSoon": "さらに多くの統合が近日中に予定されています"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "プロフェッショナルな生産管理ソリューション",
+          "headlineHighlight": "経験豊富なチーム向け",
+          "subheadline": "一元化されたプラットフォームからの包括的なプロジェクト、労働力、資産、財務管理。優れた体験を提供するプロフェッショナル向けに設計されています。",
+          "supportingCopy": "フェスティバルから企業イベント、没入型体験まで、ATLVS は生産管理を成功させるために必要な構造と監視を提供します。",
+          "ctaPrimary": "無料トライアルを開始する",
+          "ctaSecondary": "デモンストレーションのリクエスト",
+          "trustIndicators": "クレジット カードは必要ありません • 14 日間のトライアル • いつでもキャンセル可能",
+          "platformScreenshot": "プラットフォームのスクリーンショット"
+        },
+        "trustBar": {
+          "trustedBy": "世界中の生産専門家から信頼されています"
+        },
+        "problem": {
+          "title": "生産管理の課題",
+          "subtitle": "業界全体の非効率性",
+          "pain1Title": "断片化されたシステム",
+          "pain1Description": "チームは、スプレッドシート、電子メール、さまざまなプロジェクト管理ツールなど、複数の非接続型プラットフォームを利用します。",
+          "pain2Title": "情報損失",
+          "pain2Description": "移行やチームへの引き継ぎ中にプロジェクトの重要な詳細が失われる",
+          "pain3Title": "予算超過",
+          "pain3Description": "適切な財務監視がなければ、コストは予測を超えてしまう",
+          "pain4Title": "コミュニケーションの断絶",
+          "pain4Description": "ベンダー、乗組員、関係者が調整に困難を経験している"
+        },
+        "solution": {
+          "title": "包括的なプラットフォーム。完全なコントロール。",
+          "subtitle": "一貫した生産管理",
+          "feature1Title": "一元化されたプラットフォーム",
+          "feature1Description": "すべてのプロジェクト、人員、リソースを 1 か所から管理",
+          "feature2Title": "リアルタイム更新",
+          "feature2Description": "即時同期により、チームメンバー全員が最新の情報を確実に入手できるようになります",
+          "feature3Title": "財務監視",
+          "feature3Description": "予算、経費、請求書を正確に追跡します",
+          "feature4Title": "ベンダー管理",
+          "feature4Description": "適切な監督を確保しながら専門的な関係を維持する"
+        },
+        "howItWorks": {
+          "title": "実装プロセス",
+          "subtitle": "効率的なセットアップと展開",
+          "step1Title": "組織を確立する",
+          "step1Description": "組織構造を構成し、チームを参加させる",
+          "step2Title": "プロジェクトを定義する",
+          "step2Description": "プロダクション、アクティベーション、ワークスペースを確立する",
+          "step3Title": "役割と責任を割り当てる",
+          "step3Description": "適切なアクセス レベルと明確な説明責任を提供する",
+          "step4Title": "実行と監視",
+          "step4Description": "進捗状況を追跡し、予算を管理し、優れた結果をもたらします"
+        },
+        "testimonials": {
+          "title": "世界中の制作プロフェッショナルから信頼されています",
+          "subtitle": "業界リーダーによる実証済みの結果",
+          "testimonial1Quote": "ATLVS は、フェスティバル運営を管理するための優れたソリューションであることが証明されています。すべてがうまく組織されており、私たちのチームは適切な調整を維持しています。",
+          "testimonial1Author": "サラ・チェン",
+          "testimonial1Role": "メジャーミュージックフェスティバルのプロダクションディレクター",
+          "testimonial2Quote": "役割ベースのアクセス制御システムは、組織構造に必要なものを正確に提供します。最後に、制作チーム向けの適切なセキュリティとアクセス管理。",
+          "testimonial2Author": "マーカス・ロドリゲス",
+          "testimonial2Role": "ライブイベント会社運営担当副社長",
+          "testimonial3Quote": "第 1 四半期には予算超過を 40% 削減しました。財務の可視性と追跡機能は本当に素晴らしいです。",
+          "testimonial3Author": "ジェニファー・パーク",
+          "testimonial3Role": "CFO、企業イベント代理店"
+        },
+        "pricing": {
+          "title": "プロフェッショナルの価格体系"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "機能する生産管理",
+          "headlineHighlight": "BSなし",
+          "subheadline": "プロジェクト、スタッフ、資産、予算を 1 か所から管理します。実際に作業を行う人向けに構築されています。",
+          "supportingCopy": "フェスティバル、企業イベント、没入型アクティベーションなど、ATLVS はそれを綿密に処理します。",
+          "ctaPrimary": "無料で始める",
+          "ctaSecondary": "仕組みを見る",
+          "trustIndicators": "クレジット カードなし • 14 日間のトライアル • いつでもキャンセル可能",
+          "platformScreenshot": "プラットフォームのスクリーンショット"
+        },
+        "trustBar": {
+          "trustedBy": "作業を完了する制作チームによって使用されます"
+        },
+        "problem": {
+          "title": "生産上の混乱",
+          "subtitle": "同じ話、別の日",
+          "pain1Title": "ツールカオス",
+          "pain1Description": "スプレッドシート、Slack、メール、ランダムな Google ドキュメントなど、ワークフローはあらゆる場所に分散されています。",
+          "pain2Title": "不足している情報",
+          "pain2Description": "ファイルが消えてしまいます。誰かがそれをどこかに送りました。頑張って見つけてね",
+          "pain3Title": "予算の増加",
+          "pain3Description": "コストが忍び寄ってきます。気づいたときには予算オーバー",
+          "pain4Title": "コミュニケーションの断絶",
+          "pain4Description": "ベンダーは最新情報を見逃し、スタッフは古い情報を使って作業し、関係者は同じ質問をし続ける"
+        },
+        "solution": {
+          "title": "1 つのプラットフォーム。実際に動作します。",
+          "subtitle": "あるべきところにすべてが",
+          "feature1Title": "統一システム",
+          "feature1Description": "プロジェクト、人材、リソース - すべてが 1 か所に集約されており、実際に意味をなしています",
+          "feature2Title": "リアルタイム更新",
+          "feature2Description": "変化は瞬時に起こります。誰もが同じものを見ます",
+          "feature3Title": "予算の追跡",
+          "feature3Description": "あらゆるドルを追跡します。驚きも言い訳もありません",
+          "feature4Title": "ベンダー調整",
+          "feature4Description": "コントロールを失うことなくパートナーを常に最新の状態に保ちます"
+        },
+        "howItWorks": {
+          "title": "仕組み",
+          "subtitle": "素早く立ち上がって実行する",
+          "step1Title": "組織をセットアップする",
+          "step1Description": "構造を構築し、チームを追加します",
+          "step2Title": "プロジェクトを作成する",
+          "step2Description": "プロダクションとワークスペースの計画を立てる",
+          "step3Title": "役割の割り当て",
+          "step3Description": "人々に適切なアクセスを与えるだけで十分です",
+          "step4Title": "やり遂げる",
+          "step4Description": "進捗状況の追跡、予算の管理、予定通りの出荷"
+        },
+        "testimonials": {
+          "title": "本物のチーム、本物の結果",
+          "subtitle": "マーケティング的な話は一切しない",
+          "testimonial1Quote": "ATLVS はフェスティバルの混乱を修正してくれました。すべてが 1 か所にあり、誰もが何が起こっているかを知っています。ついに。",
+          "testimonial1Author": "サラ・チェン",
+          "testimonial1Role": "メジャーミュージックフェスティバルのプロダクションディレクター",
+          "testimonial2Quote": "権限システムはまさに私たちが必要としていたものです。アクセスの悪夢はもうありません。",
+          "testimonial2Author": "マーカス・ロドリゲス",
+          "testimonial2Role": "ライブイベント会社運営担当副社長",
+          "testimonial3Quote": "第1四半期の削減予算は40％超過。追跡は実際に機能します。",
+          "testimonial3Author": "ジェニファー・パーク",
+          "testimonial3Role": "CFO、企業イベント代理店"
+        },
+        "pricing": {
+          "title": "わかりやすい価格設定"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "実際に動く生産管理",
+          "headlineHighlight": "経験豊富なチーム向け",
+          "subheadline": "単一のコマンド センターからプロジェクト、スタッフ、資産、予算を管理します。忘れられない体験を生み出す人々のために作られました。",
+          "supportingCopy": "フェスティバル、企業イベント、没入型アクティベーションのいずれをプロデュースする場合でも、ATLVS はコンセプトからカーテン コールまでのコースを計画します。",
+          "ctaPrimary": "今すぐ無料で始めましょう",
+          "ctaSecondary": "実際に見てみる",
+          "trustIndicators": "クレジット カードなし • 14 日間のトライアル • いつでもキャンセル可能",
+          "platformScreenshot": "プラットフォームのスクリーンショット"
+        },
+        "trustBar": {
+          "trustedBy": "世界中の制作チームから信頼されています"
+        },
+        "problem": {
+          "title": "生産のカオス問題",
+          "subtitle": "あなたはドリルを知っています",
+          "pain1Title": "ツールの過負荷",
+          "pain1Description": "スプレッドシート、Slack、電子メール、1 つの Google ドキュメントでは誰も見つけることができません。ワークフローは十数のプラットフォームに分散しています。",
+          "pain2Title": "情報ブラックホール",
+          "pain2Description": "重要な詳細は引き継ぎ中に消えてしまいます。誰かが間違いなくそのファイルをどこかに送った",
+          "pain3Title": "予算のサプライズ",
+          "pain3Description": "費用は影で忍び寄る。気づいたときにはもう終わってる",
+          "pain4Title": "コミュニケーションドリフト",
+          "pain4Description": "ベンダーは最新情報を見逃し、スタッフは古い情報を無視し、関係者は同じ質問を 2 回繰り返します"
+        },
+        "solution": {
+          "title": "1 つのプラットフォーム。ゼロカオス。",
+          "subtitle": "すべてが適切な場所に",
+          "feature1Title": "統合コマンドセンター",
+          "feature1Description": "プロジェクト、人材、リソースはすべて隊列を組んで航行しています",
+          "feature2Title": "リアルタイム同期",
+          "feature2Description": "更新は即座に行われます。全員が同じチャートに基づいて作業しています",
+          "feature3Title": "予算レーダー",
+          "feature3Description": "リアルタイムであらゆるドルを追跡します。驚きもオーバーランもありません",
+          "feature4Title": "ベンダー調整",
+          "feature4Description": "船を譲渡せずに外部パートナーと情報を共有し続ける"
+        },
+        "howItWorks": {
+          "title": "仕組み",
+          "subtitle": "数か月ではなく数分で出航",
+          "step1Title": "組織を立ち上げる",
+          "step1Description": "構造をセットアップし、乗組員を乗せます",
+          "step2Title": "プロジェクトをグラフ化する",
+          "step2Description": "プロダクション、アクティベーション、ワークスペースの計画を立てる",
+          "step3Title": "役割とミッションを割り当てる",
+          "step3Description": "全員に適切なアクセス権と明確な責任を与える",
+          "step4Title": "ナビゲートして配達する",
+          "step4Description": "進捗状況を監視し、予算を管理し、完璧に実行します"
+        },
+        "testimonials": {
+          "title": "世界中の制作チームから信頼されています",
+          "subtitle": "本物のプロデューサーによる本物のストーリー",
+          "testimonial1Quote": "ATLVS はフェスティバルの管理方法を変革しました。すべてが 1 か所にあり、全員が同じ認識を持っています。ついに。",
+          "testimonial1Author": "サラ・チェン",
+          "testimonial1Role": "メジャーミュージックフェスティバルのプロダクションディレクター",
+          "testimonial2Quote": "RBAC システムは、当社の複雑な組織構造に最適です。実稼働環境に対する適切なアクセス制御?革命的。",
+          "testimonial2Author": "マーカス・ロドリゲス",
+          "testimonial2Role": "ライブイベント会社運営担当副社長",
+          "testimonial3Quote": "第 1 四半期には予算超過を 40% 削減しました。財務上の可視性は当然ながら状況を一変させます。",
+          "testimonial3Author": "ジェニファー・パーク",
+          "testimonial3Role": "CFO、企業イベント代理店"
+        },
+        "pricing": {
+          "title": "スケールに応じた透明性のある価格設定"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "ひと味違う生産管理",
+          "headlineHighlight": "イベントクリエイター向け",
+          "subheadline": "プロジェクト、スタッフ、機材、予算を 1 つのアプリから実行します。実際にエクスペリエンスを作成する人向けに作られています。",
+          "supportingCopy": "フェスティバル、ブランドのアクティベーション、没入型イベントなど、ATLVS はアイデアから実行まですべてを整理します。",
+          "ctaPrimary": "無料で始める",
+          "ctaSecondary": "それをチェックしてください",
+          "trustIndicators": "クレジット カードは必要ありません • 無料トライアル • いつでもキャンセル可能",
+          "platformScreenshot": "プラットフォームのスクリーンショット"
+        },
+        "trustBar": {
+          "trustedBy": "あらゆる場所の制作チームによって使用されています"
+        },
+        "problem": {
+          "title": "制作はめちゃくちゃAF",
+          "subtitle": "私たちは皆そこに行ったことがある",
+          "pain1Title": "アプリが多すぎます",
+          "pain1Description": "スプレッドシート、Slack、電子メール、ランダムな Google ドキュメントなど、あらゆるものがどこにでもあり、混沌としています。",
+          "pain2Title": "ファイルが行方不明になる",
+          "pain2Description": "誰かがそのファイルを…どこかに送りました。今では誰もそれを見つけることができません。クラシック。",
+          "pain3Title": "予算が進む",
+          "pain3Description": "コストは上昇し続けます。気づいた時には予算を大幅にオーバー",
+          "pain4Title": "通信ラグ💬",
+          "pain4Description": "チームメンバーは更新を見逃し、古い情報で作業します"
+        },
+        "solution": {
+          "title": "1 つのプラットフォーム。トータルコントロール。 🎯",
+          "subtitle": "すべてを 1 か所に",
+          "feature1Title": "コマンドセンター 🎮",
+          "feature1Description": "すべてのプロジェクト、チーム、リソースを 1 つのハブに",
+          "feature2Title": "ライブ同期 ⚡",
+          "feature2Description": "更新は即座に行われます。誰もがつながりを保つ",
+          "feature3Title": "予算トラッカー 💰",
+          "feature3Description": "リアルタイムですべてのドルを確認します。驚くことはありません",
+          "feature4Title": "チームの調整🤝",
+          "feature4Description": "全員が常に最新情報を共有し、同じ認識を共有できるようにする"
+        },
+        "howItWorks": {
+          "title": "仕組み",
+          "subtitle": "文字通り数分で始められます",
+          "step1Title": "組織をセットアップする",
+          "step1Description": "チーム構造を構築し、全員を追加します",
+          "step2Title": "プロジェクトの作成",
+          "step2Description": "イベントや制作の計画を立てる",
+          "step3Title": "役割の割り当て",
+          "step3Description": "ユーザーに適切な権限を与える",
+          "step4Title": "出荷してください",
+          "step4Description": "すべてを追跡し、予算を管理し、完璧に実行します"
+        },
+        "testimonials": {
+          "title": "ATLVS を使用した実際のチーム",
+          "subtitle": "実際の人々からの実際のフィードバック",
+          "testimonial1Quote": "ATLVS はフェスティバルを運営するための OP です。すべてが整理され、全員が同期しています。 10/10をお勧めします。",
+          "testimonial1Author": "サラ・チェン",
+          "testimonial1Role": "メジャーミュージックフェスティバルのプロダクションディレクター",
+          "testimonial2Quote": "権限システムは危険です。ついに私たちのチームに適切なアクセス制御が与えられました。",
+          "testimonial2Author": "マーカス・ロドリゲス",
+          "testimonial2Role": "ライブイベント会社運営担当副社長",
+          "testimonial3Quote": "第 1 四半期では予算の問題を 40% 削減しました。お金の追跡は本当に素晴らしいです。",
+          "testimonial3Author": "ジェニファー・パーク",
+          "testimonial3Role": "CFO、企業イベント代理店"
+        },
+        "pricing": {
+          "title": "異なる価格設定"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "プロダクション ゲームをレベルアップ 🎮",
+          "headlineHighlight": "イベントクリエイター向け",
+          "subheadline": "プロジェクト、チーム、ギア、お金を 1 つのスーパーアプリで管理✨ 素晴らしい体験を生み出すクリエイターのために構築されました 🚀",
+          "supportingCopy": "フェスティバル、イベント、アクティベーション — ATLVS は最初から最後まですべてを整理します 🎯",
+          "ctaPrimary": "無料で始めましょう 🚀",
+          "ctaSecondary": "デモを見る 👀",
+          "trustIndicators": "カードは必要ありません • 無料トライアル • いつでもキャンセル可能 ✌️",
+          "platformScreenshot": "プラットフォームのスクリーンショット"
+        },
+        "trustBar": {
+          "trustedBy": "世界中の制作チームによって使用されています 🌍"
+        },
+        "problem": {
+          "title": "生産は混乱する可能性があります 😅",
+          "subtitle": "おなじみですね？",
+          "pain1Title": "アプリの過負荷 📱",
+          "pain1Description": "アプリが多すぎて混乱しすぎます。すべてが散在していて見つけるのが難しい🤯",
+          "pain2Title": "ファイルを紛失しました 📂",
+          "pain2Description": "ファイルは虚空に消えます。誰かが送ってくれました...どこかで...頑張ってください! 🔍",
+          "pain3Title": "予算サプライズ 💸",
+          "pain3Description": "お金はどんどん消えていきます。気づいたら予算オーバー😬",
+          "pain4Title": "チームの混乱🤷",
+          "pain4Description": "人々は最新情報を見逃したり、古い情報を使って作業したり、同じ質問をしたりします"
+        },
+        "solution": {
+          "title": "1つのアプリ。フルコントロール。 💪",
+          "subtitle": "必要なものがすべて 1 か所に",
+          "feature1Title": "コマンドセンター 🎮",
+          "feature1Description": "すべてのプロジェクト、チーム、ギアを 1 つのダッシュボードに",
+          "feature2Title": "インスタント同期 ⚡",
+          "feature2Description": "更新はリアルタイムで行われます。誰もがつながりを保つ",
+          "feature3Title": "マネートラッカー 💰",
+          "feature3Description": "すべてのドルに注目してください。驚きもストレスもありません",
+          "feature4Title": "チームコラボ🤝",
+          "feature4Description": "全員が最新情報を把握して協力できるようにする"
+        },
+        "howItWorks": {
+          "title": "仕組み ⚙️",
+          "subtitle": "すぐに始めましょう",
+          "step1Title": "チームを構築しましょう 👥",
+          "step1Description": "組織を設定してスタッフを追加する",
+          "step2Title": "プロジェクトを作成する 📋",
+          "step2Description": "すべてのイベントとプロダクションを計画する",
+          "step3Title": "権限を設定する 🔐",
+          "step3Description": "全員に適切なアクセスレベルを与える",
+          "step4Title": "起動して勝利を収めましょう 🏆",
+          "step4Description": "進捗状況の追跡、資金管理、完璧な実行"
+        },
+        "testimonials": {
+          "title": "チームはATLVSが大好きです 💙",
+          "subtitle": "実際のユーザーからのリアルなレビュー",
+          "testimonial1Quote": "ATLVS は文字通りフェスティバルに最適です。すべてが整理され、全員が同期しています。 100/10! 🔥",
+          "testimonial1Author": "サラ・チェン",
+          "testimonial1Role": "メジャーミュージックフェスティバルのプロダクションディレクター",
+          "testimonial2Quote": "許可システムはシェフのキスです👌 ついに適切なアクセス制御！",
+          "testimonial2Author": "マーカス・ロドリゲス",
+          "testimonial2Role": "ライブイベント会社運営担当副社長",
+          "testimonial3Quote": "第 1 四半期では予算の問題を 40% 削減しました。追跡はめちゃくちゃです！ 🎯",
+          "testimonial3Author": "ジェニファー・パーク",
+          "testimonial3Role": "CFO、企業イベント代理店"
+        },
+        "pricing": {
+          "title": "実に良心的な価格設定✨"
+        }
+      }
     }
   }
 }

@@ -402,333 +402,934 @@
   "marketing": {
     "nav": {
       "logo": "ATLVS",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu",
-      "solutions": "Solutions"
+      "solutions": "Soluções",
+      "features": "Características",
+      "pricing": "Preços",
+      "docs": "Documentos",
+      "blog": "Blogue",
+      "company": "Empresa",
+      "signIn": "Entrar",
+      "startFree": "Comece grátis",
+      "toggleMenu": "Alternar menu"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Soluções por Indústria",
+        "subtitle": "Fluxos de trabalho específicos para cada tipo de produção de entretenimento ao vivo"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Concertos e turnês",
+        "description": "Simplifique o roteamento, o orçamento, a logística e o gerenciamento de equipe em operações de turnês globais, desde pequenas apresentações em locais até produções em escala de arena."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Festivais de música e arte",
+        "description": "Centralize fluxos de trabalho para eventos de vários dias e vários estágios, unindo produção, talentos, fornecedores e conformidade em um único sistema de comando."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Eventos imersivos e experienciais",
+        "description": "Projete e opere mundos interativos, instalações e experiências de marca com visibilidade total, desde o desenvolvimento criativo até a execução ao vivo."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Produções teatrais e ao vivo",
+        "description": "Gerencie equipes criativas, cronogramas técnicos e ativos de produção para entretenimento baseado em palco e performance."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "Cinema, TV e mídia",
+        "description": "Coordene a pré-produção, as operações no set e os relatórios finais com ferramentas criadas para sincronização entre departamentos e transparência financeira."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Ativações de marca e campanhas de marketing",
+        "description": "Execute pop-ups, lançamentos e experiências baseadas em campanhas, integrando criação, logística e rastreamento de ROI em um painel inteligente."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Eventos Corporativos e Privados",
+        "description": "Ofereça experiências perfeitas para reuniões internas, retiros e reuniões de alto nível com planejamento simplificado e coordenação de fornecedores."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Feiras e Convenções",
+        "description": "Simplifique a construção de estandes, a logística dos expositores e as relações com os patrocinadores com gerenciamento de projetos ponta a ponta e análises em tempo real."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Saúde, bem-estar e estilo de vida",
+        "description": "Otimize a programação, a equipe e o fluxo de convidados para retiros, eventos de fitness e experiências de bem-estar – onde os detalhes e a atmosfera são mais importantes."
       }
     },
     "hero": {
-      "headline": "The Project Management System for",
-      "headlineHighlight": "Experiential Production Teams",
-      "subheadline": "Unify your projects, workforce, assets, and finances in one powerful platform designed specifically for experiential entertainment production.",
-      "supportingCopy": "From festivals to corporate events, concerts to immersive experiences—ATLVS gives production teams the clarity, control, and collaboration they need to deliver unforgettable moments.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "Schedule a Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "headline": "Gestão de produção que realmente funciona",
+      "headlineHighlight": "Para equipes experienciais",
+      "subheadline": "Navegue pelos seus projetos, equipe, ativos e orçamentos a partir de um único centro de comando. Construído para pessoas que criam experiências inesquecíveis.",
+      "supportingCopy": "Esteja você produzindo festivais, eventos corporativos ou ativações imersivas, o ATLVS traça o caminho desde o conceito até a chamada ao palco.",
+      "ctaPrimary": "Comece gratuitamente hoje",
+      "ctaSecondary": "Veja em ação",
+      "trustIndicators": "Sem cartão de crédito • Teste de 14 dias • Cancele a qualquer momento",
+      "platformScreenshot": "Captura de tela da plataforma"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Aprovado por equipes de produção em todo o mundo"
     },
     "problem": {
-      "title": "The Production Management Challenge",
-      "subtitle": "Managing live entertainment production is complex",
-      "pain1Title": "Scattered Tools",
-      "pain1Description": "Teams juggle spreadsheets, emails, and multiple disconnected platforms",
-      "pain2Title": "Lost Information",
-      "pain2Description": "Critical details slip through the cracks during handoffs and transitions",
-      "pain3Title": "Budget Overruns",
-      "pain3Description": "Without real-time visibility, costs spiral out of control",
-      "pain4Title": "Communication Gaps",
-      "pain4Description": "Vendors, crew, and stakeholders struggle to stay aligned"
+      "title": "O problema do caos na produção",
+      "subtitle": "Você sabe o que fazer",
+      "pain1Title": "Sobrecarga de ferramenta",
+      "pain1Description": "Planilhas, Slack, e-mail, aquele documento do Google que ninguém consegue encontrar – seu fluxo de trabalho está espalhado por uma dúzia de plataformas",
+      "pain2Title": "Buracos Negros de Informação",
+      "pain2Description": "Detalhes críticos desaparecem durante as transferências. Alguém definitivamente enviou esse arquivo... para algum lugar",
+      "pain3Title": "Surpresas orçamentárias",
+      "pain3Description": "Os custos sobem nas sombras. Quando você perceber, você já acabou",
+      "pain4Title": "Desvio de comunicação",
+      "pain4Description": "Os fornecedores perdem atualizações, a equipe trabalha com informações antigas, as partes interessadas fazem as mesmas perguntas duas vezes"
     },
     "solution": {
-      "title": "One Platform. Complete Control.",
-      "subtitle": "ATLVS brings everything together",
-      "feature1Title": "Unified Workspace",
-      "feature1Description": "All your projects, teams, and resources in one place",
-      "feature2Title": "Real-Time Collaboration",
-      "feature2Description": "Everyone stays in sync with live updates and notifications",
-      "feature3Title": "Financial Clarity",
-      "feature3Description": "Track budgets, expenses, and invoices with precision",
-      "feature4Title": "Vendor Management",
-      "feature4Description": "Streamline procurement and vendor relationships"
+      "title": "Uma plataforma. Caos Zero.",
+      "subtitle": "Tudo no seu lugar certo",
+      "feature1Title": "Centro de Comando Unificado",
+      "feature1Description": "Projetos, pessoas e recursos, todos navegando em formação",
+      "feature2Title": "Sincronização em tempo real",
+      "feature2Description": "As atualizações fluem instantaneamente. Todos estão trabalhando no mesmo gráfico",
+      "feature3Title": "Radar de orçamento",
+      "feature3Description": "Acompanhe cada dólar em tempo real. Sem surpresas, sem excessos",
+      "feature4Title": "Coordenação de Fornecedores",
+      "feature4Description": "Mantenha os parceiros externos informados sem entregar o navio"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Get started in minutes, not months",
-      "step1Title": "Create Your Organization",
-      "step1Description": "Set up your company structure and invite your team",
-      "step2Title": "Build Your Projects",
-      "step2Description": "Define productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Tasks",
-      "step3Description": "Give team members the right access and responsibilities",
-      "step4Title": "Track & Deliver",
-      "step4Description": "Monitor progress, manage budgets, and execute flawlessly"
+      "title": "Como funciona",
+      "subtitle": "Navegue em minutos, não em meses",
+      "step1Title": "Lance sua organização",
+      "step1Description": "Monte sua estrutura e traga sua tripulação a bordo",
+      "step2Title": "Trace seus projetos",
+      "step2Description": "Mapeie produções, ativações e espaços de trabalho",
+      "step3Title": "Atribuir funções e missões",
+      "step3Description": "Dê a todos o acesso certo e responsabilidades claras",
+      "step4Title": "Navegue e entregue",
+      "step4Description": "Monitore o progresso, gerencie orçamentos e execute perfeitamente"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production management",
+      "title": "Tudo o que você precisa para produzir em grande escala",
+      "subtitle": "Seis hubs integrados para controle completo da produção",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Centro de Produção",
+        "description": "Gerencie projetos, eventos, pessoas, ativos, locais e arquivos",
+        "feature1": "Planejamento de projetos e eventos",
+        "feature2": "Gerenciamento de equipe e tripulação",
+        "feature3": "Rastreamento e inventário de ativos",
+        "feature4": "Coordenação de localização e local"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "Centro de Negócios",
+        "description": "Lidar com empresas, empregos, compras e finanças",
+        "feature1": "Gestão de fornecedores e empresas",
+        "feature2": "Anúncios de emprego e contratações",
+        "feature3": "Aquisições e compras",
+        "feature4": "Acompanhamento de orçamento e despesas"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Hub de rede",
+        "description": "Construa comunidade, mercado e biblioteca de recursos",
+        "feature1": "Comunidade e discussões",
+        "feature2": "Mercado e serviços",
+        "feature3": "Biblioteca de recursos",
+        "feature4": "Conexões da indústria"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "Centro de automações",
+        "description": "Automatize fluxos de trabalho, gatilhos e tarefas repetitivas",
+        "feature1": "Automação de fluxo de trabalho personalizado",
+        "feature2": "Gatilhos orientados a eventos",
+        "feature3": "Execução de tarefa agendada",
+        "feature4": "Pipelines de integração"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "Centro de Inteligência",
+        "description": "Gere relatórios, análises e insights",
+        "feature1": "Relatórios personalizados",
+        "feature2": "Análise em tempo real",
+        "feature3": "Insights preditivos",
+        "feature4": "Métricas de desempenho"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "Hub do sistema",
+        "description": "Configurar administradores, configurações e perfis de usuário",
+        "feature1": "Gerenciamento de usuários e funções",
+        "feature2": "Configuração do sistema",
+        "feature3": "Personalização do perfil",
+        "feature4": "Segurança e permissões"
+      }
+    },
+    "detailedFeatures": {
+      "hero": {
+        "title": "Tudo o que você precisa para produzir em grande escala",
+        "subtitle": "Seis hubs integrados projetados para equipes de produção experienciais"
+      },
+      "production": {
+        "title": "Centro de Produção",
+        "description": "Gerencie projetos, eventos, pessoas, ativos, locais e arquivos",
+        "projects": {
+          "title": "Projetos",
+          "description": "Organize e acompanhe as produções desde o conceito até o lançamento"
+        },
+        "events": {
+          "title": "Eventos",
+          "description": "Programe, coordene e gerencie todos os detalhes e cronogramas"
+        },
+        "people": {
+          "title": "Pessoas",
+          "description": "Gerenciar atribuições de tripulação, disponibilidade e agendamento"
+        },
+        "assets": {
+          "title": "Ativos",
+          "description": "Rastreie equipamentos, estoque e recursos em todas as produções"
+        },
+        "locations": {
+          "title": "Locais",
+          "description": "Coordenar locais, locais e logística de instalações"
+        },
+        "files": {
+          "title": "Arquivos",
+          "description": "Centralize documentos, mídia e arquivos de produção com segurança"
+        }
+      },
+      "business": {
+        "title": "Centro de Negócios",
+        "description": "Lidar com empresas, empregos, compras e finanças",
+        "companies": {
+          "title": "Empresas",
+          "description": "Gerenciar relacionamentos com fornecedores, clientes e parceiros"
+        },
+        "jobs": {
+          "title": "Empregos",
+          "description": "Publique vagas, acompanhe inscrições, gerencie contratações"
+        },
+        "procurement": {
+          "title": "Aquisições",
+          "description": "Simplifique compras, seleção de fornecedores e contratos"
+        },
+        "invoices": {
+          "title": "Faturas",
+          "description": "Crie, envie e acompanhe faturas com lembretes automatizados"
+        },
+        "expenses": {
+          "title": "Despesas",
+          "description": "Registre e classifique despesas com captura de recibos"
+        },
+        "budgets": {
+          "title": "Orçamentos",
+          "description": "Planeje, monitore e controle orçamentos com acompanhamento em tempo real"
+        }
+      },
+      "network": {
+        "title": "Hub de rede",
+        "description": "Construa comunidade, mercado e biblioteca de recursos",
+        "community": {
+          "title": "Comunidade",
+          "description": "Conecte-se com profissionais do setor, compartilhe conhecimento, colabore"
+        },
+        "marketplace": {
+          "title": "Mercado",
+          "description": "Descubra serviços, contrate talentos, encontre recursos de produção"
+        },
+        "resources": {
+          "title": "Recursos",
+          "description": "Acesse guias, modelos e práticas recomendadas"
+        }
+      },
+      "automations": {
+        "title": "Centro de automações",
+        "description": "Automatize fluxos de trabalho, gatilhos e tarefas repetitivas",
+        "workflows": {
+          "title": "Fluxos de trabalho",
+          "description": "Crie sequências de automação personalizadas para processos repetitivos"
+        },
+        "triggers": {
+          "title": "Gatilhos",
+          "description": "Configure ações orientadas por eventos que respondam automaticamente"
+        },
+        "scheduled": {
+          "title": "Tarefas agendadas",
+          "description": "Automatize tarefas recorrentes com agendamento flexível"
+        }
+      },
+      "intelligence": {
+        "title": "Centro de Inteligência",
+        "description": "Gere relatórios, análises e insights",
+        "reports": {
+          "title": "Relatórios",
+          "description": "Crie relatórios personalizados com visualização e exportação flexíveis"
+        },
+        "analytics": {
+          "title": "Análise",
+          "description": "Rastreie KPIs, monitore tendências, meça o desempenho"
+        },
+        "insights": {
+          "title": "Percepções",
+          "description": "Obtenha recomendações e análises preditivas baseadas em IA"
+        }
+      },
+      "system": {
+        "title": "Hub do sistema",
+        "description": "Configurar administradores, configurações e perfis de usuário",
+        "admin": {
+          "title": "Administrador",
+          "description": "Gerenciar configurações, segurança e configuração da organização"
+        },
+        "settings": {
+          "title": "Configurações",
+          "description": "Personalize preferências, integrações e comportamento da plataforma"
+        },
+        "profiles": {
+          "title": "Perfis de usuário",
+          "description": "Gerenciar perfis de equipe, funções e permissões de acesso"
+        }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Team",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Criado para todas as funções da sua equipe",
+      "subtitle": "11 funções de marca com permissões precisas",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Lenda",
+        "description": "Superadministrador da plataforma – Controle total em todas as organizações"
       },
       "phantom": {
-        "title": "Phantom",
-        "description": "Organization Super Admin - Manage your entire organization"
+        "name": "Fantasma",
+        "level": "Autoridade Suprema",
+        "title": "Fantasma",
+        "description": "Administração completa do sistema e acesso irrestrito. Definir a direção da plataforma e manter a supervisão empresarial."
       },
       "aviator": {
-        "title": "Aviator",
-        "description": "Strategic Leader - Oversee multiple projects and reporting"
+        "name": "Aviador",
+        "level": "Liderança Estratégica",
+        "title": "Aviador",
+        "description": "Visibilidade entre projetos, alocação de recursos e análises executivas. Navegue pela estratégia de produção de alto nível em escala."
       },
       "gladiator": {
-        "title": "Gladiator",
-        "description": "Project Manager - Full project control and team assignment"
+        "name": "Gladiador",
+        "level": "Liderança de Projeto",
+        "title": "Gladiador",
+        "description": "Direitos totais de criação e edição do projeto. Lidere produções desde o conceito até a conclusão com controle total."
       },
       "navigator": {
-        "title": "Navigator",
-        "description": "Department Manager - Manage your department or area"
+        "name": "Navegador",
+        "level": "Coordenação",
+        "title": "Navegador",
+        "description": "Coordenação de projetos, atribuição de tarefas e orientação de equipe. Trace o curso por meio de fluxos de trabalho complexos."
       },
       "deviator": {
-        "title": "Deviator",
-        "description": "Team Lead - Lead your team and assign tasks"
+        "name": "Desviador",
+        "level": "Execução",
+        "title": "Desviador",
+        "description": "Conclusão de tarefas focada dentro de estruturas estabelecidas. Entregar trabalho de qualidade nas responsabilidades atribuídas."
       },
       "raider": {
-        "title": "Raider",
-        "description": "Team Member - Execute assigned tasks"
+        "name": "Invasor",
+        "level": "Aprendizagem e Observação",
+        "title": "Invasor",
+        "description": "Acesso somente visualização para aprender e crescer. Perfeito para iniciantes que desenvolvem suas habilidades."
       },
       "vendor": {
-        "title": "Vendor",
-        "description": "External Contractor - Limited vendor-specific access"
+        "name": "Fornecedor",
+        "level": "Entrega com escopo definido",
+        "title": "Fornecedor",
+        "description": "Acesso direcionado para provedores de serviços externos. Carregue entregas e cumpra o trabalho contratado."
       },
       "visitor": {
-        "title": "Visitor",
-        "description": "Temporary Access - Custom permissions with expiration"
+        "name": "Visitante",
+        "level": "Visibilidade Limitada",
+        "title": "Visitante",
+        "description": "Acesso temporário somente leitura para partes interessadas externas. Mantenha-se informado sem interromper os fluxos de trabalho."
       },
       "partner": {
-        "title": "Partner",
-        "description": "Read-Only Stakeholder - View-only access"
+        "name": "Parceiro",
+        "level": "Colaboração Estratégica",
+        "title": "Parceiro",
+        "description": "Integração profunda para colaboradores externos confiáveis. Compartilhamento bidirecional de dados e gerenciamento conjunto de fluxo de trabalho."
       },
       "ambassador": {
-        "title": "Ambassador",
-        "description": "Marketing Affiliate - Marketing content only"
+        "name": "Embaixador",
+        "level": "Campeões da comunidade",
+        "title": "Embaixador",
+        "description": "Representar ATLVS, apoiar usuários e promover a colaboração. Organize eventos, crie conteúdo, expanda o ecossistema."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Segurança de nível empresarial",
+      "subtitle": "Seus dados estão protegidos em todos os níveis",
+      "feature1Title": "Segurança em nível de linha",
+      "feature1Description": "As políticas 801 RLS garantem que os usuários vejam apenas o que deveriam",
+      "feature2Title": "Acesso baseado em função",
+      "feature2Description": "11 funções de marca com mais de 45 permissões granulares",
+      "feature3Title": "Armazenamento criptografado",
+      "feature3Description": "Todos os dados criptografados em repouso e em trânsito",
+      "feature4Title": "Registro de auditoria",
+      "feature4Description": "Trilha de auditoria completa de todas as atividades do sistema",
+      "feature5Title": "Compatível com SOC 2",
+      "feature5Description": "Padrões de segurança de nível empresarial",
+      "feature6Title": "Pronto para GDPR",
+      "feature6Description": "Conformidade total com os regulamentos de privacidade de dados"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "See what our customers have to say",
-      "testimonial1Quote": "ATLVS transformed how we manage our festivals. Everything in one place, everyone on the same page.",
+      "title": "Aprovado por equipes de produção em todo o mundo",
+      "subtitle": "Histórias reais de produtores reais",
+      "testimonial1Quote": "ATLVS transformou a forma como gerenciamos festivais. Tudo em um só lugar, todos na mesma página. Finalmente.",
       "testimonial1Author": "Sarah Chen",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Finally, proper access control for production.",
-      "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut our budget overruns by 40% in the first quarter. The financial visibility is game-changing.",
-      "testimonial3Author": "Jennifer Park",
-      "testimonial3Title": "CFO, Corporate Events Agency"
+      "testimonial1Role": "Diretor de Produção, Grande Festival de Música",
+      "testimonial1Title": "Diretor de Produção, Grande Festival de Música",
+      "testimonial2Quote": "O sistema RBAC é perfeito para nossa estrutura organizacional complexa. Controle de acesso adequado para produção? Revolucionário.",
+      "testimonial2Author": "Marcus Rodríguez",
+      "testimonial2Role": "Vice-presidente de operações, empresa de eventos ao vivo",
+      "testimonial2Title": "Vice-presidente de operações, empresa de eventos ao vivo",
+      "testimonial3Quote": "Reduzimos os excedentes orçamentais em 40% no primeiro trimestre. A visibilidade financeira é legitimamente revolucionária.",
+      "testimonial3Author": "Jennifer Parque",
+      "testimonial3Role": "CFO, Agência de Eventos Corporativos",
+      "testimonial3Title": "CFO, Agência de Eventos Corporativos",
+      "jamesCookQuote": "Gerenciando três naves de cientistas que pensam que são os personagens principais? A ATLVS teria mantido todos alinhados e realmente trabalhando juntos, em vez de competir por crédito.",
+      "jamesCookAuthor": "Capitão James Cook",
+      "jamesCookRole": "Explorador da Marinha Real Britânica (1728-1779)",
+      "zhengYiSaoQuote": "Transformei a pirataria em uma empresa Fortune 500, negociei minha própria anistia e me aposentei rico. ATLVS é para pessoas que entendem que operações não convencionais ainda precisam de uma gestão sólida.",
+      "zhengYiSaoAuthor": "Zheng Yi São",
+      "zhengYiSaoRole": "Líder Pirata Chinês (1775-1844)",
+      "captainAhabQuote": "Perseguir um objetivo específico em cada oceano sem considerar o panorama geral? ATLVS mantém você focado no plano de negócios real, não apenas nos objetivos pessoais.",
+      "captainAhabAuthor": "Capitão Acabe",
+      "captainAhabRole": "Capitão Baleeiro, Pequod",
+      "graceOMalleyQuote": "Negociou com a Rainha Elizabeth como iguais. O ATLVS ajuda você a comparecer a todas as reuniões com seus dados prontos e com mais confiança.",
+      "graceOMalleyAuthor": "Grace O'Malley \"Gráinne Mhaol\"",
+      "graceOMalleyRole": "Rainha e chefe pirata irlandês (c. 1530-1603)",
+      "sinbadQuote": "A maneira como continuei naufragando, mas ainda assim voltei? Isso é apenas um mau planejamento. ATLVS fornece a estrutura que minha tomada de decisão claramente precisava.",
+      "sinbadAuthor": "Sinbad, o Marinheiro",
+      "sinbadRole": "Marinheiro Mercante Lendário, Mil e Uma Noites",
+      "longJohnSilverQuote": "Gerenciar piratas é literalmente pastorear gatos se eles tivessem escorbuto e problemas de confiança. A gestão das partes interessadas da ATLVS mantém todos alinhados, mesmo quando conspiram uns contra os outros.",
+      "longJohnSilverAuthor": "Long John Prata",
+      "longJohnSilverRole": "Intendente e Cozinheiro Pirata, Ilha do Tesouro",
+      "horatioHornblowerQuote": "Lutar contra os franceses enquanto tenho um colapso mental completo é, honestamente, muito marcante para mim. O ATLVS mantém todo o material tático organizado para que você possa se concentrar na missão real.",
+      "horatioHornblowerAuthor": "Horácio Hornblower",
+      "horatioHornblowerRole": "Oficial da Marinha Real (romances de CS Forester)",
+      "captainNemoQuote": "Ser um eremita em um submarino é, na verdade, um código muito introvertido, mas até eu precisava de coordenação de equipe. ATLVS funciona mesmo quando você está trabalhando sozinho.",
+      "captainNemoAuthor": "Capitão Nemo",
+      "captainNemoRole": "Comandante, Nautilus (Vinte Mil Léguas Submarinas)",
+      "odysseusQuote": "Perdi todos os membros da tripulação porque continuei fazendo escolhas questionáveis. ATLVS teria dito 'não precisamos ver o que as sereias fazem' e honestamente? Válido.",
+      "odysseusAuthor": "Odisseu/Ulisses",
+      "odysseusRole": "Rei de Ítaca, herói grego (A Odisséia)",
+      "blackbeardQuote": "Bloquear um porto inteiro com quatro navios tem resultados diferentes quando você coordena manualmente. ATLVS teria me tornado o pirata operacionalmente mais eficiente dos mares.",
+      "blackbeardAuthor": "Capitão Edward ensina \"Barba Negra\"",
+      "blackbeardRole": "Comandante Pirata (c. 1680-1718)",
+      "captainMarvelQuote": "Desapareceu por 30 anos, lidando com emergências espaciais sem fazer check-in. As ferramentas de comunicação do ATLVS teriam me ajudado a não fantasiar todas as pessoas de quem gosto.",
+      "captainMarvelAuthor": "Capitã Marvel/Carol Danvers",
+      "captainMarvelRole": "Piloto da Força Aérea e Herói Cósmico (MCU)",
+      "captainJanewayQuote": "Violei a Primeira Diretriz Temporal diversas vezes para salvar minha tripulação, mas nunca violei os cronogramas do meu projeto. ATLVS mantém as prioridades claras mesmo quando a ética se complica.",
+      "captainJanewayAuthor": "Capitã Kathryn Janeway",
+      "captainJanewayRole": "Capitão da Frota Estelar, USS Voyager (Star Trek: Voyager)",
+      "moanaQuote": "Maui deveria ser meu mentor, mas passava a maior parte do tempo emocionalmente indisponível. ATLVS rastreia resultados quando sua equipe está enfrentando dificuldades.",
+      "moanaAuthor": "Moana",
+      "moanaRole": "Wayfinder e Chefe da Ilha (Moana da Disney)",
+      "captainJackSparrowQuote": "Gerenciar uma equipe quando literalmente ninguém sabe se eles estão empregados ou apenas acompanhando o caos? ATLVS fornece uma clareza que toda a minha vibração não oferece.",
+      "captainJackSparrowAuthor": "Capitão Jack Sparrow",
+      "captainJackSparrowRole": "Capitão Pirata, Pérola Negra (Piratas do Caribe)",
+      "popeyeQuote": "Toda a minha personalidade é 'teimosamente se recusa a planejar com antecedência'. ATLVS é o adulto na sala que eu claramente preciso, mas não admito.",
+      "popeyeAuthor": "Popeye, o marinheiro",
+      "popeyeRole": "Protetor de Sailor & Olive Oyl (personagem de desenho animado)",
+      "captainPicardQuote": "Liderando uma equipe diversificada em situações de primeiro contato e crises diplomáticas? ATLVS mantém todos alinhados quando o que está em jogo é literalmente galáctico.",
+      "captainPicardAuthor": "Capitão Jean-Luc Picard",
+      "captainPicardRole": "Capitão da Frota Estelar, USS Enterprise (Star Trek: TNG)",
+      "captainSiskoQuote": "Comandando uma estação que é parte base militar, parte centro comercial e parte centro de refugiados? O ATLVS ajuda você a gerenciar a complexidade quando cada parte interessada tem prioridades diferentes.",
+      "captainSiskoAuthor": "Capitão Benjamin Sisko",
+      "captainSiskoRole": "Comandante da Frota Estelar, Deep Space Nine (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent Pricing That Scales With You",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Preços transparentes",
+      "subtitle": "De empreiteiros individuais a produtores empresariais",
+      "monthly": "Mensal",
+      "annually": "Anualmente",
+      "save20": "Economize 20%",
+      "community": {
+        "name": "Comunidade",
+        "price": "Livre",
+        "period": "para sempre",
+        "description": "Perfeito para começar",
+        "feature1": "Acesso à função Raider",
+        "feature2": "Gerenciamento básico de tarefas",
+        "feature3": "Apoio comunitário",
+        "cta": "Comece gratuitamente"
+      },
+      "pro": {
+        "name": "Pró",
+        "price": "US$ 12",
+        "period": "por mês",
+        "annualPrice": "US$ 10/mês (cobrado anualmente)",
+        "description": "Para contratantes independentes",
+        "feature1": "Funções de Desviador e Invasor",
+        "feature2": "Gerenciamento avançado de tarefas",
+        "feature3": "Suporte prioritário",
+        "cta": "Comece o teste gratuito"
+      },
+      "team": {
+        "name": "Equipe",
+        "badge": "Mais populares",
+        "price": "US$ 120",
+        "period": "por mês",
+        "annualPrice": "US$ 100/mês (cobrado anualmente)",
+        "description": "Para equipes pequenas e médias (2 a 10 vagas)",
+        "feature1": "Todos os recursos profissionais",
+        "feature2": "Gestão de fornecedores",
+        "feature3": "Colaboração em equipe",
+        "cta": "Comece o teste gratuito"
+      },
       "starter": {
-        "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "name": "Iniciante",
+        "price": "US$ 29",
+        "period": "por usuário/mês",
+        "description": "Perfeito para freelancers e pequenas equipes",
+        "feature1": "Até 5 usuários",
+        "feature2": "10 projetos ativos",
+        "feature3": "Relatórios básicos",
+        "feature4": "Suporte por e-mail",
+        "feature5": "10 GB de armazenamento",
+        "cta": "Comece o teste gratuito"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "Profissional",
+        "price": "US$ 79",
+        "period": "por usuário/mês",
+        "description": "Para empresas de produção em crescimento",
+        "feature1": "Até 25 usuários",
+        "feature2": "Projetos ilimitados",
+        "feature3": "Análise avançada",
+        "feature4": "Suporte prioritário",
+        "feature5": "100 GB de armazenamento",
+        "feature6": "Funções personalizadas",
+        "feature7": "Acesso à API",
+        "cta": "Comece o teste gratuito",
+        "popular": "Mais populares"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "Empresa",
+        "price": "Personalizado",
+        "period": "entre em contato com vendas",
+        "annualPrice": "US$ 1.000/mês (cobrado anualmente)",
+        "description": "Para grandes organizações e agências",
+        "feature1": "Usuários ilimitados",
+        "feature2": "Projetos ilimitados",
+        "feature3": "Integrações personalizadas",
+        "feature4": "Suporte dedicado",
+        "feature5": "Armazenamento ilimitado",
+        "feature6": "SSO e SAML",
+        "feature7": "Garantia de SLA",
+        "feature8": "Treinamento personalizado",
+        "cta": "Entre em contato com vendas"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes, cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Perguntas frequentes",
+      "subtitle": "Tudo que você precisa saber",
+      "question1": "Quanto tempo dura o teste gratuito?",
+      "answer1": "14 dias, sem necessidade de cartão de crédito. Acesso total a todos os recursos.",
+      "question2": "Posso cancelar a qualquer momento?",
+      "answer2": "Sim. Cancele a qualquer momento. Sem contratos ou compromissos de longo prazo.",
+      "question3": "Quais métodos de pagamento você aceita?",
+      "answer3": "Aceitamos todos os principais cartões de crédito, ACH e transferências eletrônicas para planos empresariais.",
+      "question4": "Meus dados estão seguros?",
+      "answer4": "Sim. Criptografia de nível empresarial, compatível com SOC 2 e pronta para GDPR. Seus dados estão protegidos em todos os níveis.",
+      "question5": "Você oferece treinamento?",
+      "answer5": "Sim. Recursos de autoatendimento para todos os planos, além de treinamento dedicado para clientes empresariais.",
+      "question6": "Posso importar meus dados existentes?",
+      "answer6": "Sim. Fornecemos ferramentas de importação de CSV e podemos ajudar com migrações de dados personalizadas para planos empresariais.",
+      "q1": "Quanto tempo dura o teste gratuito?",
+      "a1": "14 dias, sem necessidade de cartão de crédito. Acesso total a todos os recursos.",
+      "q2": "Posso cancelar a qualquer momento?",
+      "a2": "Sim. Cancele a qualquer momento. Sem contratos ou compromissos de longo prazo.",
+      "q3": "Quais métodos de pagamento você aceita?",
+      "a3": "Aceitamos todos os principais cartões de crédito, ACH e transferências eletrônicas para planos empresariais.",
+      "q4": "Meus dados estão seguros?",
+      "a4": "Sim. Criptografia de nível empresarial, compatível com SOC 2 e pronta para GDPR. Seus dados estão protegidos em todos os níveis.",
+      "q5": "Você oferece treinamento?",
+      "a5": "Sim. Recursos de autoatendimento para todos os planos, além de treinamento dedicado para clientes empresariais.",
+      "q6": "Posso importar meus dados existentes?",
+      "a6": "Sim. Fornecemos ferramentas de importação de CSV e podemos ajudar com migrações de dados personalizadas para planos empresariais."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Pronto para transformar seu fluxo de trabalho de produção?",
+      "subtitle": "Junte-se a milhares de profissionais de produção usando ATLVS",
+      "ctaPrimary": "Comece o teste gratuito",
+      "ctaSecondary": "Agendar demonstração",
+      "trustIndicators": "Não é necessário cartão de crédito • Teste gratuito de 14 dias • Cancele a qualquer momento",
+      "primary": "Comece o teste gratuito",
+      "secondary": "Agendar demonstração",
+      "noCard": "Não é necessário cartão de crédito"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Documentation",
-      "changelog": "Changelog",
-      "company": "Company",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "tagline": "O sistema de gerenciamento de projetos para equipes de produção experienciais",
+      "productTitle": "Produto",
+      "companyTitle": "Empresa",
+      "resourcesTitle": "Recursos",
+      "legalTitle": "Jurídico",
+      "product": "Produto",
+      "features": "Características",
+      "pricing": "Preços",
+      "demo": "Demonstração",
+      "integrations": "Integrações",
+      "docs": "Documentação",
+      "apiReference": "Referência de API",
+      "changelog": "Registro de alterações",
+      "caseStudies": "Estudos de caso",
+      "templates": "Modelos",
+      "company": "Empresa",
+      "aboutUs": "Sobre nós",
+      "blog": "Blogue",
+      "careers": "Carreiras",
+      "contact": "Contato",
+      "press": "Imprensa",
+      "partners": "Parceiros",
+      "customers": "Clientes",
+      "events": "Eventos",
+      "legal": "Jurídico",
+      "privacy": "política de Privacidade",
+      "terms": "Termos de Serviço",
+      "security": "Segurança",
+      "support": "Apoiar",
+      "helpCenter": "Central de Ajuda",
+      "community": "Comunidade",
+      "status": "Status do sistema",
+      "roiCalculator": "Calculadora de ROI",
+      "copyright": "© 2025 ATLVS. Todos os direitos reservados."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Integra-se com suas ferramentas favoritas",
+      "subtitle": "Conecte o ATLVS com as ferramentas que você já usa",
+      "comingSoon": "Mais integrações em breve"
+    },
+    "generational": {
+      "baby-boomer": {
+        "hero": {
+          "headline": "Soluções profissionais de gerenciamento de produção",
+          "headlineHighlight": "Para equipes experienciais",
+          "subheadline": "Gerenciamento abrangente de projetos, força de trabalho, ativos e financeiro a partir de uma plataforma centralizada. Projetado para profissionais que proporcionam experiências excepcionais.",
+          "supportingCopy": "De festivais a eventos corporativos e experiências imersivas, o ATLVS fornece a estrutura e a supervisão necessárias para um gerenciamento de produção bem-sucedido.",
+          "ctaPrimary": "Comece o teste gratuito",
+          "ctaSecondary": "Solicitar demonstração",
+          "trustIndicators": "Não é necessário cartão de crédito • Teste de 14 dias • Cancele a qualquer momento",
+          "platformScreenshot": "Captura de tela da plataforma"
+        },
+        "trustBar": {
+          "trustedBy": "Aprovado por profissionais de produção em todo o mundo"
+        },
+        "problem": {
+          "title": "O desafio da gestão da produção",
+          "subtitle": "Ineficiências em toda a indústria",
+          "pain1Title": "Sistemas Fragmentados",
+          "pain1Description": "As equipes utilizam diversas plataformas desconectadas, incluindo planilhas, e-mail e diversas ferramentas de gerenciamento de projetos.",
+          "pain2Title": "Perda de informações",
+          "pain2Description": "Detalhes críticos do projeto são perdidos durante transições e transferências de equipe",
+          "pain3Title": "Estouros de orçamento",
+          "pain3Description": "Sem supervisão financeira adequada, os custos excedem as projeções",
+          "pain4Title": "Falhas na comunicação",
+          "pain4Description": "Fornecedores, membros da tripulação e partes interessadas enfrentam dificuldades de coordenação"
+        },
+        "solution": {
+          "title": "Plataforma abrangente. Controle completo.",
+          "subtitle": "Gestão integrada da produção",
+          "feature1Title": "Plataforma Centralizada",
+          "feature1Description": "Todos os projetos, pessoal e recursos gerenciados em um único local",
+          "feature2Title": "Atualizações em tempo real",
+          "feature2Description": "A sincronização instantânea garante que todos os membros da equipe tenham informações atualizadas",
+          "feature3Title": "Supervisão Financeira",
+          "feature3Description": "Acompanhe orçamentos, despesas e faturas com precisão e exatidão",
+          "feature4Title": "Gestão de Fornecedores",
+          "feature4Description": "Manter relacionamentos profissionais, garantindo a supervisão adequada"
+        },
+        "howItWorks": {
+          "title": "Processo de Implementação",
+          "subtitle": "Configuração e implantação eficientes",
+          "step1Title": "Estabeleça sua organização",
+          "step1Description": "Configure sua estrutura organizacional e integre sua equipe",
+          "step2Title": "Defina seus projetos",
+          "step2Description": "Estabeleça produções, ativações e espaços de trabalho",
+          "step3Title": "Atribuir funções e responsabilidades",
+          "step3Description": "Fornecer níveis de acesso apropriados e responsabilidade clara",
+          "step4Title": "Executar e monitorar",
+          "step4Description": "Acompanhe o progresso, gerencie orçamentos e obtenha resultados excepcionais"
+        },
+        "testimonials": {
+          "title": "Aprovado por profissionais de produção em todo o mundo",
+          "subtitle": "Resultados comprovados por líderes do setor",
+          "testimonial1Quote": "O ATLVS provou ser uma excelente solução para a gestão das operações do nosso festival. Tudo está bem organizado e nossa equipe mantém uma coordenação adequada.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Diretor de Produção, Grande Festival de Música",
+          "testimonial2Quote": "O sistema de controle de acesso baseado em funções fornece exatamente o que precisávamos para nossa estrutura organizacional. Por fim, segurança adequada e gerenciamento de acesso para equipes de produção.",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Vice-presidente de operações, empresa de eventos ao vivo",
+          "testimonial3Quote": "Reduzimos os estouros orçamentários em 40% no primeiro trimestre. A visibilidade financeira e os recursos de rastreamento são genuinamente impressionantes.",
+          "testimonial3Author": "Jennifer Parque",
+          "testimonial3Role": "CFO, Agência de Eventos Corporativos"
+        },
+        "pricing": {
+          "title": "Estrutura de preços profissional"
+        }
+      },
+      "gen-x": {
+        "hero": {
+          "headline": "Gestão de produção que funciona",
+          "headlineHighlight": "Sem besteira",
+          "subheadline": "Gerencie projetos, equipe, ativos e orçamentos em um só lugar. Construído para pessoas que realmente fazem o trabalho.",
+          "supportingCopy": "Festivais, eventos corporativos, ativações imersivas - o ATLVS cuida disso sem complicações.",
+          "ctaPrimary": "Comece grátis",
+          "ctaSecondary": "Veja como funciona",
+          "trustIndicators": "Sem cartão de crédito • Teste de 14 dias • Cancele a qualquer momento",
+          "platformScreenshot": "Captura de tela da plataforma"
+        },
+        "trustBar": {
+          "trustedBy": "Usado por equipes de produção que realizam tarefas"
+        },
+        "problem": {
+          "title": "A bagunça da produção",
+          "subtitle": "Mesma história, dia diferente",
+          "pain1Title": "Caos de ferramentas",
+          "pain1Description": "Planilhas, Slack, e-mail, Google Docs aleatórios – seu fluxo de trabalho está espalhado por todos os lugares",
+          "pain2Title": "Informações ausentes",
+          "pain2Description": "Os arquivos desaparecem. Alguém enviou... para algum lugar. Boa sorte em encontrá-lo",
+          "pain3Title": "Aumento do orçamento",
+          "pain3Description": "Os custos se aproximam de você. No momento em que você percebe, você está acima do orçamento",
+          "pain4Title": "Quebra de comunicação",
+          "pain4Description": "Os fornecedores perdem atualizações, a equipe trabalha com informações antigas, as partes interessadas continuam fazendo as mesmas perguntas"
+        },
+        "solution": {
+          "title": "Uma plataforma. Na verdade funciona.",
+          "subtitle": "Tudo onde deveria estar",
+          "feature1Title": "Sistema Unificado",
+          "feature1Description": "Projetos, pessoas, recursos – tudo em um só lugar que realmente faz sentido",
+          "feature2Title": "Atualizações em tempo real",
+          "feature2Description": "As mudanças acontecem instantaneamente. Todo mundo vê a mesma coisa",
+          "feature3Title": "Acompanhamento de orçamento",
+          "feature3Description": "Acompanhe cada dólar. Sem surpresas, sem desculpas",
+          "feature4Title": "Coordenação de Fornecedores",
+          "feature4Description": "Mantenha os parceiros informados sem perder o controle"
+        },
+        "howItWorks": {
+          "title": "Como funciona",
+          "subtitle": "Comece a correr rapidamente",
+          "step1Title": "Configure sua organização",
+          "step1Description": "Construa sua estrutura, adicione sua equipe",
+          "step2Title": "Crie seus projetos",
+          "step2Description": "Mapeie produções e espaços de trabalho",
+          "step3Title": "Atribuir funções",
+          "step3Description": "Dê às pessoas o acesso certo, nada mais",
+          "step4Title": "Faça isso",
+          "step4Description": "Acompanhe o progresso, gerencie orçamentos e envie dentro do prazo"
+        },
+        "testimonials": {
+          "title": "Equipes reais, resultados reais",
+          "subtitle": "Não há conversa de marketing",
+          "testimonial1Quote": "ATLVS consertou o caos do nosso festival. Tudo está em um só lugar, todo mundo sabe o que está acontecendo. Finalmente.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Diretor de Produção, Grande Festival de Música",
+          "testimonial2Quote": "O sistema de permissões é exatamente o que precisávamos. Chega de pesadelos de acesso.",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Vice-presidente de operações, empresa de eventos ao vivo",
+          "testimonial3Quote": "Corte de excedentes orçamentários em 40% no primeiro trimestre. O rastreamento realmente funciona.",
+          "testimonial3Author": "Jennifer Parque",
+          "testimonial3Role": "CFO, Agência de Eventos Corporativos"
+        },
+        "pricing": {
+          "title": "Preços simples"
+        }
+      },
+      "millennial": {
+        "hero": {
+          "headline": "Gestão de produção que realmente funciona",
+          "headlineHighlight": "Para equipes experienciais",
+          "subheadline": "Navegue pelos seus projetos, equipe, ativos e orçamentos a partir de um único centro de comando. Construído para pessoas que criam experiências inesquecíveis.",
+          "supportingCopy": "Esteja você produzindo festivais, eventos corporativos ou ativações imersivas, o ATLVS traça o caminho desde o conceito até a chamada ao palco.",
+          "ctaPrimary": "Comece gratuitamente hoje",
+          "ctaSecondary": "Veja em ação",
+          "trustIndicators": "Sem cartão de crédito • Teste de 14 dias • Cancele a qualquer momento",
+          "platformScreenshot": "Captura de tela da plataforma"
+        },
+        "trustBar": {
+          "trustedBy": "Aprovado por equipes de produção em todo o mundo"
+        },
+        "problem": {
+          "title": "O problema do caos na produção",
+          "subtitle": "Você sabe o que fazer",
+          "pain1Title": "Sobrecarga de ferramenta",
+          "pain1Description": "Planilhas, Slack, e-mail, aquele documento do Google que ninguém consegue encontrar – seu fluxo de trabalho está espalhado por uma dúzia de plataformas",
+          "pain2Title": "Buracos Negros de Informação",
+          "pain2Description": "Detalhes críticos desaparecem durante as transferências. Alguém definitivamente enviou esse arquivo... para algum lugar",
+          "pain3Title": "Surpresas orçamentárias",
+          "pain3Description": "Os custos sobem nas sombras. Quando você perceber, você já acabou",
+          "pain4Title": "Desvio de comunicação",
+          "pain4Description": "Os fornecedores perdem atualizações, a equipe trabalha com informações antigas, as partes interessadas fazem as mesmas perguntas duas vezes"
+        },
+        "solution": {
+          "title": "Uma plataforma. Caos Zero.",
+          "subtitle": "Tudo no seu lugar certo",
+          "feature1Title": "Centro de Comando Unificado",
+          "feature1Description": "Projetos, pessoas e recursos, todos navegando em formação",
+          "feature2Title": "Sincronização em tempo real",
+          "feature2Description": "As atualizações fluem instantaneamente. Todos estão trabalhando no mesmo gráfico",
+          "feature3Title": "Radar de orçamento",
+          "feature3Description": "Acompanhe cada dólar em tempo real. Sem surpresas, sem excessos",
+          "feature4Title": "Coordenação de Fornecedores",
+          "feature4Description": "Mantenha os parceiros externos informados sem entregar o navio"
+        },
+        "howItWorks": {
+          "title": "Como funciona",
+          "subtitle": "Navegue em minutos, não em meses",
+          "step1Title": "Lance sua organização",
+          "step1Description": "Monte sua estrutura e traga sua tripulação a bordo",
+          "step2Title": "Trace seus projetos",
+          "step2Description": "Mapeie produções, ativações e espaços de trabalho",
+          "step3Title": "Atribuir funções e missões",
+          "step3Description": "Dê a todos o acesso certo e responsabilidades claras",
+          "step4Title": "Navegue e entregue",
+          "step4Description": "Monitore o progresso, gerencie orçamentos e execute perfeitamente"
+        },
+        "testimonials": {
+          "title": "Aprovado por equipes de produção em todo o mundo",
+          "subtitle": "Histórias reais de produtores reais",
+          "testimonial1Quote": "ATLVS transformou a forma como gerenciamos festivais. Tudo em um só lugar, todos na mesma página. Finalmente.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Diretor de Produção, Grande Festival de Música",
+          "testimonial2Quote": "O sistema RBAC é perfeito para nossa estrutura organizacional complexa. Controle de acesso adequado para produção? Revolucionário.",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Vice-presidente de operações, empresa de eventos ao vivo",
+          "testimonial3Quote": "Reduzimos os excedentes orçamentais em 40% no primeiro trimestre. A visibilidade financeira é legitimamente revolucionária.",
+          "testimonial3Author": "Jennifer Parque",
+          "testimonial3Role": "CFO, Agência de Eventos Corporativos"
+        },
+        "pricing": {
+          "title": "Preços transparentes e escalonáveis"
+        }
+      },
+      "gen-z": {
+        "hero": {
+          "headline": "Gestão de produção que atinge diferente",
+          "headlineHighlight": "Para criadores de eventos",
+          "subheadline": "Execute seus projetos, equipe, equipamentos e orçamentos em um único aplicativo. Feito para pessoas que realmente criam experiências.",
+          "supportingCopy": "Festivais, ativações de marcas, eventos imersivos – o ATLVS mantém tudo organizado, desde a ideia até a execução.",
+          "ctaPrimary": "Comece grátis",
+          "ctaSecondary": "Confira",
+          "trustIndicators": "Não é necessário cartão de crédito • Teste gratuito • Cancele quando quiser",
+          "platformScreenshot": "Captura de tela da plataforma"
+        },
+        "trustBar": {
+          "trustedBy": "Usado por equipes de produção em todos os lugares"
+        },
+        "problem": {
+          "title": "A produção é bagunçada AF",
+          "subtitle": "Todos nós já estivemos lá",
+          "pain1Title": "Muitos aplicativos",
+          "pain1Description": "Planilhas, Slack, e-mail, aquele Google Doc aleatório – tudo está em todo lugar e é um caos",
+          "pain2Title": "Arquivos desaparecem",
+          "pain2Description": "Alguém enviou aquele arquivo... para algum lugar. Agora ninguém consegue encontrá-lo. Clássico.",
+          "pain3Title": "Orçamento vai para Brr",
+          "pain3Description": "Os custos continuam subindo. Quando você percebe, você já ultrapassou o orçamento",
+          "pain4Title": "Atraso na comunicação 💬",
+          "pain4Description": "Os membros da equipe perdem atualizações e trabalham com informações antigas"
+        },
+        "solution": {
+          "title": "Uma plataforma. Controle Total. 🎯",
+          "subtitle": "Tudo em um só lugar",
+          "feature1Title": "Centro de Comando 🎮",
+          "feature1Description": "Todos os seus projetos, equipe e recursos em um único hub",
+          "feature2Title": "Sincronização ao vivo ⚡",
+          "feature2Description": "As atualizações acontecem instantaneamente. Todos ficam conectados",
+          "feature3Title": "Rastreador de orçamento 💰",
+          "feature3Description": "Veja cada dólar em tempo real. Sem surpresas",
+          "feature4Title": "Coordenação de Equipe 🤝",
+          "feature4Description": "Mantenha todos atualizados e na mesma página"
+        },
+        "howItWorks": {
+          "title": "Como funciona",
+          "subtitle": "Comece literalmente em minutos",
+          "step1Title": "Configure sua organização",
+          "step1Description": "Construa a estrutura da sua equipe e adicione todos",
+          "step2Title": "Criar projetos",
+          "step2Description": "Mapeie seus eventos e produções",
+          "step3Title": "Atribuir funções",
+          "step3Description": "Dê às pessoas as permissões certas",
+          "step4Title": "Envie",
+          "step4Description": "Acompanhe tudo, gerencie orçamentos, execute com perfeição"
+        },
+        "testimonials": {
+          "title": "Equipes reais usando ATLVS",
+          "subtitle": "Feedback real de pessoas reais",
+          "testimonial1Quote": "ATLVS é OP para gestão de festivais. Tudo está organizado, todos estão sincronizados. 10/10 recomendaria.",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Diretor de Produção, Grande Festival de Música",
+          "testimonial2Quote": "O sistema de permissões está em chamas. Finalmente consegui o controle de acesso adequado para nossa equipe.",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Vice-presidente de operações, empresa de eventos ao vivo",
+          "testimonial3Quote": "Reduzimos os problemas orçamentais em 40% no primeiro trimestre. O rastreamento do dinheiro é incrível.",
+          "testimonial3Author": "Jennifer Parque",
+          "testimonial3Role": "CFO, Agência de Eventos Corporativos"
+        },
+        "pricing": {
+          "title": "Preços que atingem diferentes"
+        }
+      },
+      "gen-alpha": {
+        "hero": {
+          "headline": "Aumente o nível do seu jogo de produção 🎮",
+          "headlineHighlight": "Para criadores de eventos",
+          "subheadline": "Gerencie projetos, equipe, equipamentos e dinheiro em um super aplicativo ✨ Criado para criadores que criam experiências épicas 🚀",
+          "supportingCopy": "Festivais, eventos, ativações – o ATLVS mantém tudo organizado do início ao fim 🎯",
+          "ctaPrimary": "Comece grátis 🚀",
+          "ctaSecondary": "Veja a demonstração 👀",
+          "trustIndicators": "Não é necessário cartão • Teste gratuito • Cancele a qualquer momento ✌️",
+          "platformScreenshot": "Captura de tela da plataforma"
+        },
+        "trustBar": {
+          "trustedBy": "Usado por equipes de produção em todo o mundo 🌍"
+        },
+        "problem": {
+          "title": "A produção pode ser caótica 😅",
+          "subtitle": "Parece familiar?",
+          "pain1Title": "Sobrecarga de aplicativo 📱",
+          "pain1Description": "Muitos aplicativos, muito caos. Tudo está espalhado e difícil de encontrar 🤯",
+          "pain2Title": "Arquivos perdidos 📂",
+          "pain2Description": "Os arquivos desaparecem no vazio. Alguém enviou... para algum lugar... boa sorte! 🔍",
+          "pain3Title": "Surpresa Orçamentária 💸",
+          "pain3Description": "O dinheiro continua desaparecendo. Quando você percebe, você está acima do orçamento 😬",
+          "pain4Title": "Confusão da equipe 🤷",
+          "pain4Description": "As pessoas perdem atualizações, trabalham com informações antigas, fazem as mesmas perguntas"
+        },
+        "solution": {
+          "title": "Um aplicativo. Controle total. 💪",
+          "subtitle": "Tudo que você precisa em um só lugar",
+          "feature1Title": "Centro de Comando 🎮",
+          "feature1Description": "Todos os projetos, equipe e equipamentos em um painel",
+          "feature2Title": "Sincronização instantânea ⚡",
+          "feature2Description": "As atualizações acontecem em tempo real. Todos ficam conectados",
+          "feature3Title": "Rastreador de dinheiro 💰",
+          "feature3Description": "Observe cada dólar. Sem surpresas, sem estresse",
+          "feature4Title": "Equipe Colaboração 🤝",
+          "feature4Description": "Mantenha todos informados e trabalhando juntos"
+        },
+        "howItWorks": {
+          "title": "Como funciona ⚙️",
+          "subtitle": "Comece super rápido",
+          "step1Title": "Monte sua equipe 👥",
+          "step1Description": "Configure sua organização e adicione sua equipe",
+          "step2Title": "Criar projetos 📋",
+          "step2Description": "Mapeie todos os seus eventos e produções",
+          "step3Title": "Definir permissões 🔐",
+          "step3Description": "Dê a todos o nível de acesso correto",
+          "step4Title": "Lance e ganhe 🏆",
+          "step4Description": "Acompanhe o progresso, gerencie o dinheiro e execute com perfeição"
+        },
+        "testimonials": {
+          "title": "As equipes adoram ATLVS 💙",
+          "subtitle": "Avaliações reais de usuários reais",
+          "testimonial1Quote": "ATLVS é literalmente perfeito para festivais. Tudo está organizado, todos estão sincronizados. 100/10! 🔥",
+          "testimonial1Author": "Sarah Chen",
+          "testimonial1Role": "Diretor de Produção, Grande Festival de Música",
+          "testimonial2Quote": "O sistema de permissão é beijo do chef. 👌 Finalmente controle de acesso adequado!",
+          "testimonial2Author": "Marcus Rodríguez",
+          "testimonial2Role": "Vice-presidente de operações, empresa de eventos ao vivo",
+          "testimonial3Quote": "Reduzimos as questões orçamentárias em 40% no primeiro trimestre. O rastreamento é uma loucura! 🎯",
+          "testimonial3Author": "Jennifer Parque",
+          "testimonial3Role": "CFO, Agência de Eventos Corporativos"
+        },
+        "pricing": {
+          "title": "Preço realmente justo ✨"
+        }
+      }
     }
   }
 }
