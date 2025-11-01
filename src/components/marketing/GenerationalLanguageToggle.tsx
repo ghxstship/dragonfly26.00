@@ -23,18 +23,20 @@ export function GenerationalLanguageToggle() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-full sm:w-auto">
       <Button
         variant="outline"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 font-tech text-sm"
+        className="flex items-center gap-2 font-tech text-sm w-full sm:w-auto justify-between sm:justify-start"
         aria-label="Change generational language variant"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <span className="text-base" aria-hidden="true">{currentConfig.icon}</span>
-        <span className="hidden sm:inline">{currentConfig.label}</span>
+        <span className="flex items-center gap-2">
+          <span className="text-base" aria-hidden="true">{currentConfig.icon}</span>
+          <span className="sm:inline">{currentConfig.label}</span>
+        </span>
         <ChevronDown 
           className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
           aria-hidden="true"
@@ -52,47 +54,47 @@ export function GenerationalLanguageToggle() {
           
           {/* Dropdown */}
           <div 
-            className="absolute right-0 top-full mt-2 w-72 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg z-50 overflow-hidden"
+            className="absolute left-0 sm:left-auto sm:right-0 top-full mt-2 w-[calc(100vw-2rem)] sm:w-72 max-w-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg z-50 overflow-hidden"
             role="menu"
             aria-label="Generational language options"
           >
-            <div className="p-3 border-b border-gray-200 dark:border-gray-700">
-              <h3 className="font-heading text-sm uppercase text-gray-900 dark:text-gray-100">
+            <div className="p-2 sm:p-3 border-b border-gray-200 dark:border-gray-700">
+              <h3 className="font-heading text-xs sm:text-sm uppercase text-gray-900 dark:text-gray-100">
                 Language Style
               </h3>
-              <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+              <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mt-0.5 sm:mt-1">
                 Choose how you want to read our content
               </p>
             </div>
             
-            <div className="max-h-96 overflow-y-auto">
+            <div className="max-h-[60vh] sm:max-h-96 overflow-y-auto">
               {Object.values(GENERATIONAL_VARIANTS).map((config) => (
                 <button
                   key={config.variant}
                   onClick={() => handleVariantChange(config.variant)}
-                  className={`w-full px-4 py-3 flex items-start gap-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors ${
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 flex items-start gap-2 sm:gap-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors ${
                     variant === config.variant ? 'bg-gray-50 dark:bg-gray-700/50' : ''
                   }`}
                   role="menuitem"
                   aria-label={`Switch to ${config.label} language style`}
                 >
-                  <span className="text-2xl flex-shrink-0 mt-0.5" aria-hidden="true">
+                  <span className="text-xl sm:text-2xl flex-shrink-0 mt-0.5" aria-hidden="true">
                     {config.icon}
                   </span>
                   
                   <div className="flex-1 text-left min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="font-heading text-sm uppercase text-gray-900 dark:text-gray-100">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <span className="font-heading text-xs sm:text-sm uppercase text-gray-900 dark:text-gray-100 truncate">
                         {config.label}
                       </span>
                       {variant === config.variant && (
-                        <Check className="h-4 w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-label="Currently selected" />
+                        <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-label="Currently selected" />
                       )}
                     </div>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">
+                    <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mt-0.5 line-clamp-2">
                       {config.description}
                     </p>
-                    <p className="text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
                       {config.ageRange}
                     </p>
                   </div>
@@ -100,8 +102,8 @@ export function GenerationalLanguageToggle() {
               ))}
             </div>
             
-            <div className="p-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-              <p className="text-xs text-gray-600 dark:text-gray-400">
+            <div className="p-2 sm:p-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+              <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
                 Your preference is saved locally and won&apos;t affect other users
               </p>
             </div>

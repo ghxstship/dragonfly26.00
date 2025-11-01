@@ -134,10 +134,12 @@ export function MarketingNav(): JSX.Element {
               
               {/* Secondary Settings - Bottom (iOS/Android Pattern) */}
               <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
-                <div className="flex items-center justify-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-3">
                   <LanguageSwitcher />
                   <GenerationalLanguageToggle />
-                  <ThemeToggle />
+                  <div className="flex justify-center">
+                    <ThemeToggle />
+                  </div>
                 </div>
               </div>
             </div>

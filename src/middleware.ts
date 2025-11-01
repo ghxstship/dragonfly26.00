@@ -48,7 +48,7 @@ export const config = {
   matcher: [
     // Match all paths including root
     '/',
-    // Match all locale-prefixed paths
+    // Match all locale-prefixed paths (all 20 supported locales)
     '/(en|es|fr|zh|hi|ar|ko|vi|pt|de|ja|ru|id|ur|bn|ta|te|mr|tr|sw)/:path*',
     /*
      * Match all other request paths except for the ones starting with:
