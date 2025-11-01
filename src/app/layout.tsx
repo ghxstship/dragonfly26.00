@@ -83,28 +83,12 @@ export function reportWebVitals(metric: any) {
   // In production, send to analytics service
 }
 
+// Since we have locale-based routing with [locale], the root layout
+// just passes children through. The [locale]/layout.tsx handles <html> and <body>.
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${pressStart2P.variable} ${antonSC.variable} ${bebasNeue.variable} ${shareTechMono.variable} ${shareTech.variable} font-tech`}>
-        <QueryProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster />
-          </ThemeProvider>
-        </QueryProvider>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
-  )
+  return children
 }
