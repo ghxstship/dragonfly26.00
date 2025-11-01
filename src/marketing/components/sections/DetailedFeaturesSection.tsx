@@ -1,7 +1,7 @@
 "use client"
 
-import { 
-import { useTranslations } from "next-intl"useGenerationalMarketing } from "@/hooks/use-generational-marketing"
+import { useTranslations } from "next-intl"
+import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, border, container, height, cards } from "@/design-tokens"
 import { 

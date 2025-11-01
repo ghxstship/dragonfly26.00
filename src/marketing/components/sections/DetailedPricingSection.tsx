@@ -155,7 +155,7 @@ const ROLES = {
   ambassador: {
     icon: Star,
     type: "External Role",
-    accessLevel: {t("pricing.community.name")},
+    accessLevel: "Community",
     permissions: "Represent",
     gradient: "from-pink-500 to-orange-500",
     abilities: [
