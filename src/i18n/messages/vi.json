@@ -462,7 +462,9 @@
       "ctaPrimary": "Bắt đầu miễn phí ngay hôm nay",
       "ctaSecondary": "Xem nó trong hành động",
       "trustIndicators": "Không cần thẻ tín dụng • Dùng thử 14 ngày • Hủy bất cứ lúc nào",
-      "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+      "platformScreenshot": "Ảnh chụp màn hình nền tảng",
+      "headlineHighlightPrefix": "Dành cho",
+      "headlineHighlightMain": "nhóm trải nghiệm"
     },
     "trustBar": {
       "trustedBy": "Được các đội sản xuất trên toàn thế giới tin cậy"
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "Bắt đầu dùng thử miễn phí",
           "ctaSecondary": "Yêu cầu trình diễn",
           "trustIndicators": "Không cần thẻ tín dụng • Dùng thử 14 ngày • Hủy bất cứ lúc nào",
-          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng",
+          "headlineHighlightPrefix": "Dành cho",
+          "headlineHighlightMain": "nhóm trải nghiệm"
         },
         "trustBar": {
           "trustedBy": "Được các chuyên gia sản xuất trên toàn thế giới tin cậy"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "Bắt đầu miễn phí",
           "ctaSecondary": "Xem cách nó hoạt động",
           "trustIndicators": "Không cần thẻ tín dụng • Dùng thử 14 ngày • Hủy bất cứ lúc nào",
-          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "Không có BS"
         },
         "trustBar": {
           "trustedBy": "Được sử dụng bởi các nhóm sản xuất, những người hoàn thành công việc"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "Bắt đầu miễn phí ngay hôm nay",
           "ctaSecondary": "Xem nó trong hành động",
           "trustIndicators": "Không cần thẻ tín dụng • Dùng thử 14 ngày • Hủy bất cứ lúc nào",
-          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng",
+          "headlineHighlightPrefix": "Dành cho",
+          "headlineHighlightMain": "nhóm trải nghiệm"
         },
         "trustBar": {
           "trustedBy": "Được các đội sản xuất trên toàn thế giới tin cậy"
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "Bắt đầu miễn phí",
           "ctaSecondary": "Kiểm tra nó",
           "trustIndicators": "Không cần thẻ tín dụng • Dùng thử miễn phí • Hủy bất cứ khi nào",
-          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng",
+          "headlineHighlightPrefix": "Dành cho",
+          "headlineHighlightMain": "người tạo sự kiện"
         },
         "trustBar": {
           "trustedBy": "Được sử dụng bởi các đội sản xuất ở khắp mọi nơi"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "Bắt đầu miễn phí 🚀",
           "ctaSecondary": "Xem bản trình diễn 👀",
           "trustIndicators": "Không cần thẻ • Dùng thử miễn phí • Hủy bất cứ lúc nào ✌️",
-          "platformScreenshot": "Ảnh chụp màn hình nền tảng"
+          "platformScreenshot": "Ảnh chụp màn hình nền tảng",
+          "headlineHighlightPrefix": "Dành cho",
+          "headlineHighlightMain": "người tạo sự kiện"
         },
         "trustBar": {
           "trustedBy": "Được sử dụng bởi các nhóm sản xuất trên toàn thế giới 🌍"

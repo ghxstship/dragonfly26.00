@@ -462,7 +462,9 @@
       "ctaPrimary": "Anza bure leo",
       "ctaSecondary": "Ione inachukua hatua",
       "trustIndicators": "Hakuna Kadi ya Mkopo • Jaribio la siku 14 • Ghairi wakati wowote",
-      "platformScreenshot": "Picha ya jukwaa"
+      "platformScreenshot": "Picha ya jukwaa",
+      "headlineHighlightPrefix": "Kwa",
+      "headlineHighlightMain": "timu za uzoefu"
     },
     "trustBar": {
       "trustedBy": "Kuaminiwa na timu za uzalishaji ulimwenguni"
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "Anza jaribio la bure",
           "ctaSecondary": "Ombi la ombi",
           "trustIndicators": "Hakuna Kadi ya Mkopo Inayohitajika • Jaribio la Siku 14 • Ghairi wakati wowote",
-          "platformScreenshot": "Picha ya jukwaa"
+          "platformScreenshot": "Picha ya jukwaa",
+          "headlineHighlightPrefix": "Kwa",
+          "headlineHighlightMain": "timu za uzoefu"
         },
         "trustBar": {
           "trustedBy": "Kuaminiwa na wataalamu wa uzalishaji ulimwenguni"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "Anza bure",
           "ctaSecondary": "Tazama jinsi inavyofanya kazi",
           "trustIndicators": "Hakuna Kadi ya Mkopo • Jaribio la siku 14 • Ghairi wakati wowote",
-          "platformScreenshot": "Picha ya jukwaa"
+          "platformScreenshot": "Picha ya jukwaa",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "Hakuna BS"
         },
         "trustBar": {
           "trustedBy": "Inatumiwa na timu za uzalishaji ambao hufanya mambo kufanywa"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "Anza bure leo",
           "ctaSecondary": "Ione inachukua hatua",
           "trustIndicators": "Hakuna Kadi ya Mkopo • Jaribio la siku 14 • Ghairi wakati wowote",
-          "platformScreenshot": "Picha ya jukwaa"
+          "platformScreenshot": "Picha ya jukwaa",
+          "headlineHighlightPrefix": "Kwa",
+          "headlineHighlightMain": "timu za uzoefu"
         },
         "trustBar": {
           "trustedBy": "Kuaminiwa na timu za uzalishaji ulimwenguni"
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "Anza bure",
           "ctaSecondary": "Angalia",
           "trustIndicators": "Hakuna Kadi ya Mkopo Inahitajika • Jaribio la Bure • Ghairi Wakati wowote",
-          "platformScreenshot": "Picha ya jukwaa"
+          "platformScreenshot": "Picha ya jukwaa",
+          "headlineHighlightPrefix": "Kwa",
+          "headlineHighlightMain": "waundaji wa hafla"
         },
         "trustBar": {
           "trustedBy": "Inatumiwa na timu za uzalishaji kila mahali"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "Anza bure 🚀",
           "ctaSecondary": "Tazama demo 👀",
           "trustIndicators": "Hakuna Kadi Inayohitajika • Jaribio la Bure • Ghairi wakati wowote ✌️",
-          "platformScreenshot": "Picha ya jukwaa"
+          "platformScreenshot": "Picha ya jukwaa",
+          "headlineHighlightPrefix": "Kwa",
+          "headlineHighlightMain": "waundaji wa hafla"
         },
         "trustBar": {
           "trustedBy": "Inatumiwa na timu za uzalishaji ulimwenguni 🌍"

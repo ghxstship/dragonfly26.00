@@ -376,7 +376,9 @@
       "ctaPrimary": "今天开始免费",
       "ctaSecondary": "查看实际效果",
       "trustIndicators": "没有信用卡 • 14 天试用期 • 随时取消",
-      "platformScreenshot": "平台截图"
+      "platformScreenshot": "平台截图",
+      "headlineHighlightPrefix": "对于",
+      "headlineHighlightMain": "经验丰富的团队"
     },
     "trustBar": {
       "trustedBy": "受到全球制作团队的信赖"
@@ -918,7 +920,9 @@
           "ctaPrimary": "开始免费试用",
           "ctaSecondary": "请求演示",
           "trustIndicators": "无需信用卡 • 14 天试用期 • 随时取消",
-          "platformScreenshot": "平台截图"
+          "platformScreenshot": "平台截图",
+          "headlineHighlightPrefix": "对于",
+          "headlineHighlightMain": "经验丰富的团队"
         },
         "trustBar": {
           "trustedBy": "受到全球生产专业人士的信赖"
@@ -985,7 +989,9 @@
           "ctaPrimary": "免费开始",
           "ctaSecondary": "看看它是如何运作的",
           "trustIndicators": "没有信用卡 • 14 天试用期 • 随时取消",
-          "platformScreenshot": "平台截图"
+          "platformScreenshot": "平台截图",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "无BS"
         },
         "trustBar": {
           "trustedBy": "由完成工作的生产团队使用"
@@ -1052,7 +1058,9 @@
           "ctaPrimary": "今天开始免费",
           "ctaSecondary": "查看实际效果",
           "trustIndicators": "没有信用卡 • 14 天试用期 • 随时取消",
-          "platformScreenshot": "平台截图"
+          "platformScreenshot": "平台截图",
+          "headlineHighlightPrefix": "对于",
+          "headlineHighlightMain": "经验丰富的团队"
         },
         "trustBar": {
           "trustedBy": "受到全球制作团队的信赖"
@@ -1119,7 +1127,9 @@
           "ctaPrimary": "免费开始",
           "ctaSecondary": "一探究竟",
           "trustIndicators": "无需信用卡 • 免费试用 • 随时取消",
-          "platformScreenshot": "平台截图"
+          "platformScreenshot": "平台截图",
+          "headlineHighlightPrefix": "对于",
+          "headlineHighlightMain": "活动创作者"
         },
         "trustBar": {
           "trustedBy": "各地的制作团队都在使用"
@@ -1186,7 +1196,9 @@
           "ctaPrimary": "免费开始🚀",
           "ctaSecondary": "查看演示👀",
           "trustIndicators": "无需卡• 免费试用• 随时取消✌️",
-          "platformScreenshot": "平台截图"
+          "platformScreenshot": "平台截图",
+          "headlineHighlightPrefix": "对于",
+          "headlineHighlightMain": "活动创作者"
         },
         "trustBar": {
           "trustedBy": "被世界各地的制作团队使用🌍"

@@ -7891,7 +7891,9 @@
       "ctaPrimary": "Start Free Today",
       "ctaSecondary": "See It in Action",
       "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot"
+      "platformScreenshot": "Platform Screenshot",
+      "headlineHighlightPrefix": "For",
+      "headlineHighlightMain": "Experiential Teams"
     },
     "trustBar": {
       "trustedBy": "Trusted by production teams worldwide"
@@ -8433,7 +8435,9 @@
           "ctaPrimary": "Begin Free Trial",
           "ctaSecondary": "Request Demonstration",
           "trustIndicators": "No credit card required • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot"
+          "platformScreenshot": "Platform Screenshot",
+          "headlineHighlightPrefix": "For",
+          "headlineHighlightMain": "Experiential Teams"
         },
         "trustBar": {
           "trustedBy": "Trusted by production professionals worldwide"
@@ -8500,7 +8504,9 @@
           "ctaPrimary": "Start Free",
           "ctaSecondary": "See How It Works",
           "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot"
+          "platformScreenshot": "Platform Screenshot",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "No BS"
         },
         "trustBar": {
           "trustedBy": "Used by production teams who get stuff done"
@@ -8567,7 +8573,9 @@
           "ctaPrimary": "Start Free Today",
           "ctaSecondary": "See It in Action",
           "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot"
+          "platformScreenshot": "Platform Screenshot",
+          "headlineHighlightPrefix": "For",
+          "headlineHighlightMain": "Experiential Teams"
         },
         "trustBar": {
           "trustedBy": "Trusted by production teams worldwide"
@@ -8634,7 +8642,9 @@
           "ctaPrimary": "Start Free",
           "ctaSecondary": "Check It Out",
           "trustIndicators": "No credit card needed • Free trial • Cancel whenever",
-          "platformScreenshot": "Platform Screenshot"
+          "platformScreenshot": "Platform Screenshot",
+          "headlineHighlightPrefix": "For",
+          "headlineHighlightMain": "Event Creators"
         },
         "trustBar": {
           "trustedBy": "Used by production teams everywhere"
@@ -8701,7 +8711,9 @@
           "ctaPrimary": "Start Free 🚀",
           "ctaSecondary": "See Demo 👀",
           "trustIndicators": "No card needed • Free trial • Cancel anytime ✌️",
-          "platformScreenshot": "Platform Screenshot"
+          "platformScreenshot": "Platform Screenshot",
+          "headlineHighlightPrefix": "For",
+          "headlineHighlightMain": "Event Creators"
         },
         "trustBar": {
           "trustedBy": "Used by production teams worldwide 🌍"
@@ -8769,7 +8781,9 @@
         "subheadline": "Comprehensive project, workforce, asset, and financial management from a centralized platform. Designed for professionals who deliver exceptional experiences.",
         "supportingCopy": "From festivals to corporate events and immersive experiences—ATLVS provides the structure and oversight needed for successful production management.",
         "ctaPrimary": "Begin Free Trial",
-        "ctaSecondary": "Request Demonstration"
+        "ctaSecondary": "Request Demonstration",
+        "headlineHighlightPrefix": "For",
+        "headlineHighlightMain": "Experiential Teams"
       },
       "problem": {
         "title": "The Production Management Challenge",
@@ -8808,7 +8822,9 @@
         "subheadline": "Manage projects, crew, assets, and budgets without the usual platform bloat. Built for people who actually do the work.",
         "supportingCopy": "Festivals, corporate events, immersive experiences—ATLVS gets out of your way so you can get things done.",
         "ctaPrimary": "Try It Free",
-        "ctaSecondary": "See Demo"
+        "ctaSecondary": "See Demo",
+        "headlineHighlightPrefix": "For",
+        "headlineHighlightMain": "Experiential Teams"
       },
       "problem": {
         "title": "The Production Management Problem",
@@ -8847,7 +8863,9 @@
         "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
         "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
         "ctaPrimary": "Start Free Today",
-        "ctaSecondary": "See It in Action"
+        "ctaSecondary": "See It in Action",
+        "headlineHighlightPrefix": "For",
+        "headlineHighlightMain": "Experiential Teams"
       },
       "problem": {
         "title": "The Production Chaos Problem",
@@ -8886,7 +8904,9 @@
         "subheadline": "Manage projects, crew, assets, and budgets from one place. No cap, it actually works.",
         "supportingCopy": "Festivals, corporate events, immersive experiences—ATLVS is the platform that doesn't make you want to rage quit.",
         "ctaPrimary": "Start Free",
-        "ctaSecondary": "See Demo"
+        "ctaSecondary": "See Demo",
+        "headlineHighlightPrefix": "For",
+        "headlineHighlightMain": "Experiential Teams"
       },
       "problem": {
         "title": "The Production Chaos Is Real",
@@ -8925,7 +8945,9 @@
         "subheadline": "Manage projects, crew, assets, and budgets from your command center. Built for creators who make epic experiences.",
         "supportingCopy": "Festivals, events, immersive worlds—ATLVS is your co-pilot from idea to launch.",
         "ctaPrimary": "Start Free 🚀",
-        "ctaSecondary": "Watch Demo 🎮"
+        "ctaSecondary": "Watch Demo 🎮",
+        "headlineHighlightPrefix": "For",
+        "headlineHighlightMain": "Experiential Teams"
       },
       "problem": {
         "title": "Production Chaos = Game Over",

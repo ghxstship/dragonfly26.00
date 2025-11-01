@@ -19,7 +19,10 @@ export function HeroSection(): JSX.Element {
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-title uppercase text-gray-900 dark:text-white mb-6 leading-tight">
             {tGen('hero.headline')}{" "}
-            <span className="text-blue-600">{tGen('hero.headlineHighlight')}</span>
+            {tGen('hero.headlineHighlightPrefix') && (
+              <span className="text-gray-900 dark:text-white">{tGen('hero.headlineHighlightPrefix')}{" "}</span>
+            )}
+            <span className="text-blue-600">{tGen('hero.headlineHighlightMain') || tGen('hero.headlineHighlight')}</span>
           </h1>
 
           {/* Subheadline */}

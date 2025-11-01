@@ -462,7 +462,9 @@
       "ctaPrimary": "Comece gratuitamente hoje",
       "ctaSecondary": "Veja em ação",
       "trustIndicators": "Sem cartão de crédito • Teste de 14 dias • Cancele a qualquer momento",
-      "platformScreenshot": "Captura de tela da plataforma"
+      "platformScreenshot": "Captura de tela da plataforma",
+      "headlineHighlightPrefix": "Para",
+      "headlineHighlightMain": "equipes experienciais"
     },
     "trustBar": {
       "trustedBy": "Aprovado por equipes de produção em todo o mundo"
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "Comece o teste gratuito",
           "ctaSecondary": "Solicitar demonstração",
           "trustIndicators": "Não é necessário cartão de crédito • Teste de 14 dias • Cancele a qualquer momento",
-          "platformScreenshot": "Captura de tela da plataforma"
+          "platformScreenshot": "Captura de tela da plataforma",
+          "headlineHighlightPrefix": "Para",
+          "headlineHighlightMain": "equipes experienciais"
         },
         "trustBar": {
           "trustedBy": "Aprovado por profissionais de produção em todo o mundo"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "Comece grátis",
           "ctaSecondary": "Veja como funciona",
           "trustIndicators": "Sem cartão de crédito • Teste de 14 dias • Cancele a qualquer momento",
-          "platformScreenshot": "Captura de tela da plataforma"
+          "platformScreenshot": "Captura de tela da plataforma",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "Sem besteira"
         },
         "trustBar": {
           "trustedBy": "Usado por equipes de produção que realizam tarefas"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "Comece gratuitamente hoje",
           "ctaSecondary": "Veja em ação",
           "trustIndicators": "Sem cartão de crédito • Teste de 14 dias • Cancele a qualquer momento",
-          "platformScreenshot": "Captura de tela da plataforma"
+          "platformScreenshot": "Captura de tela da plataforma",
+          "headlineHighlightPrefix": "Para",
+          "headlineHighlightMain": "equipes experienciais"
         },
         "trustBar": {
           "trustedBy": "Aprovado por equipes de produção em todo o mundo"
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "Comece grátis",
           "ctaSecondary": "Confira",
           "trustIndicators": "Não é necessário cartão de crédito • Teste gratuito • Cancele quando quiser",
-          "platformScreenshot": "Captura de tela da plataforma"
+          "platformScreenshot": "Captura de tela da plataforma",
+          "headlineHighlightPrefix": "Para",
+          "headlineHighlightMain": "criadores de eventos"
         },
         "trustBar": {
           "trustedBy": "Usado por equipes de produção em todos os lugares"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "Comece grátis 🚀",
           "ctaSecondary": "Veja a demonstração 👀",
           "trustIndicators": "Não é necessário cartão • Teste gratuito • Cancele a qualquer momento ✌️",
-          "platformScreenshot": "Captura de tela da plataforma"
+          "platformScreenshot": "Captura de tela da plataforma",
+          "headlineHighlightPrefix": "Para",
+          "headlineHighlightMain": "criadores de eventos"
         },
         "trustBar": {
           "trustedBy": "Usado por equipes de produção em todo o mundo 🌍"

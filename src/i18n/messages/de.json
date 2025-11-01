@@ -462,7 +462,9 @@
       "ctaPrimary": "Starten Sie noch heute kostenlos",
       "ctaSecondary": "Sehen Sie es in Aktion",
       "trustIndicators": "Keine Kreditkarte • 14-tägige Testversion • Jederzeit kündbar",
-      "platformScreenshot": "Plattform-Screenshot"
+      "platformScreenshot": "Plattform-Screenshot",
+      "headlineHighlightPrefix": "Für",
+      "headlineHighlightMain": "erlebnisorientierte Teams"
     },
     "trustBar": {
       "trustedBy": "Produktionsteams weltweit vertrauen darauf"
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "Starten Sie die kostenlose Testversion",
           "ctaSecondary": "Vorführung anfordern",
           "trustIndicators": "Keine Kreditkarte erforderlich • 14-tägige Testversion • Jederzeit kündbar",
-          "platformScreenshot": "Plattform-Screenshot"
+          "platformScreenshot": "Plattform-Screenshot",
+          "headlineHighlightPrefix": "Für",
+          "headlineHighlightMain": "erlebnisorientierte Teams"
         },
         "trustBar": {
           "trustedBy": "Produktionsprofis weltweit vertrauen darauf"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "Kostenlos starten",
           "ctaSecondary": "Sehen Sie, wie es funktioniert",
           "trustIndicators": "Keine Kreditkarte • 14-tägige Testversion • Jederzeit kündbar",
-          "platformScreenshot": "Plattform-Screenshot"
+          "platformScreenshot": "Plattform-Screenshot",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "Kein Blödsinn"
         },
         "trustBar": {
           "trustedBy": "Wird von Produktionsteams verwendet, die Dinge erledigen"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "Starten Sie noch heute kostenlos",
           "ctaSecondary": "Sehen Sie es in Aktion",
           "trustIndicators": "Keine Kreditkarte • 14-tägige Testversion • Jederzeit kündbar",
-          "platformScreenshot": "Plattform-Screenshot"
+          "platformScreenshot": "Plattform-Screenshot",
+          "headlineHighlightPrefix": "Für",
+          "headlineHighlightMain": "erlebnisorientierte Teams"
         },
         "trustBar": {
           "trustedBy": "Produktionsteams weltweit vertrauen darauf"
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "Kostenlos starten",
           "ctaSecondary": "Hör zu",
           "trustIndicators": "Keine Kreditkarte erforderlich • Kostenlose Testversion • jederzeit kündbar",
-          "platformScreenshot": "Plattform-Screenshot"
+          "platformScreenshot": "Plattform-Screenshot",
+          "headlineHighlightPrefix": "Für",
+          "headlineHighlightMain": "Event-Ersteller"
         },
         "trustBar": {
           "trustedBy": "Wird von Produktionsteams überall verwendet"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "Kostenlos starten 🚀",
           "ctaSecondary": "Siehe Demo 👀",
           "trustIndicators": "Keine Karte erforderlich • Kostenlose Testversion • Jederzeit kündbar ✌️",
-          "platformScreenshot": "Plattform-Screenshot"
+          "platformScreenshot": "Plattform-Screenshot",
+          "headlineHighlightPrefix": "Für",
+          "headlineHighlightMain": "Event-Ersteller"
         },
         "trustBar": {
           "trustedBy": "Wird von Produktionsteams weltweit verwendet 🌍"

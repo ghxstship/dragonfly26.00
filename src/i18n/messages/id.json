@@ -462,7 +462,9 @@
       "ctaPrimary": "Mulai Gratis Hari Ini",
       "ctaSecondary": "Lihat Aksinya",
       "trustIndicators": "Tanpa kartu kredit • Uji coba 14 hari • Batalkan kapan saja",
-      "platformScreenshot": "Tangkapan Layar Platform"
+      "platformScreenshot": "Tangkapan Layar Platform",
+      "headlineHighlightPrefix": "Untuk",
+      "headlineHighlightMain": "Tim Berpengalaman"
     },
     "trustBar": {
       "trustedBy": "Dipercaya oleh tim produksi di seluruh dunia"
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "Mulai Uji Coba Gratis",
           "ctaSecondary": "Minta Demonstrasi",
           "trustIndicators": "Tidak diperlukan kartu kredit • Uji coba 14 hari • Batalkan kapan saja",
-          "platformScreenshot": "Tangkapan Layar Platform"
+          "platformScreenshot": "Tangkapan Layar Platform",
+          "headlineHighlightPrefix": "Untuk",
+          "headlineHighlightMain": "Tim Berpengalaman"
         },
         "trustBar": {
           "trustedBy": "Dipercaya oleh para profesional produksi di seluruh dunia"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "Mulai Gratis",
           "ctaSecondary": "Lihat Cara Kerjanya",
           "trustIndicators": "Tanpa kartu kredit • Uji coba 14 hari • Batalkan kapan saja",
-          "platformScreenshot": "Tangkapan Layar Platform"
+          "platformScreenshot": "Tangkapan Layar Platform",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "Tidak ada gelar sarjana"
         },
         "trustBar": {
           "trustedBy": "Digunakan oleh tim produksi yang menyelesaikan pekerjaan"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "Mulai Gratis Hari Ini",
           "ctaSecondary": "Lihat Aksinya",
           "trustIndicators": "Tanpa kartu kredit • Uji coba 14 hari • Batalkan kapan saja",
-          "platformScreenshot": "Tangkapan Layar Platform"
+          "platformScreenshot": "Tangkapan Layar Platform",
+          "headlineHighlightPrefix": "Untuk",
+          "headlineHighlightMain": "Tim Berpengalaman"
         },
         "trustBar": {
           "trustedBy": "Dipercaya oleh tim produksi di seluruh dunia"
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "Mulai Gratis",
           "ctaSecondary": "Coba lihat",
           "trustIndicators": "Tidak perlu kartu kredit • Uji coba gratis • Batalkan kapan saja",
-          "platformScreenshot": "Tangkapan Layar Platform"
+          "platformScreenshot": "Tangkapan Layar Platform",
+          "headlineHighlightPrefix": "Untuk",
+          "headlineHighlightMain": "Pembuat Acara"
         },
         "trustBar": {
           "trustedBy": "Digunakan oleh tim produksi di mana pun"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "Mulai Gratis 🚀",
           "ctaSecondary": "Lihat Demo 👀",
           "trustIndicators": "Tidak perlu kartu • Uji coba gratis • Batalkan kapan saja ✌️",
-          "platformScreenshot": "Tangkapan Layar Platform"
+          "platformScreenshot": "Tangkapan Layar Platform",
+          "headlineHighlightPrefix": "Untuk",
+          "headlineHighlightMain": "Pembuat Acara"
         },
         "trustBar": {
           "trustedBy": "Digunakan oleh tim produksi di seluruh dunia 🌍"

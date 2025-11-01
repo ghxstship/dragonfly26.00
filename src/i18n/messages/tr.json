@@ -462,7 +462,9 @@
       "ctaPrimary": "Bugün Ücretsiz Başlayın",
       "ctaSecondary": "İş Başında Görün",
       "trustIndicators": "Kredi kartı yok • 14 günlük deneme • İstediğiniz zaman iptal edin",
-      "platformScreenshot": "Platform Ekran Görüntüsü"
+      "platformScreenshot": "Platform Ekran Görüntüsü",
+      "headlineHighlightPrefix": "İçin",
+      "headlineHighlightMain": "Deneyimsel Ekipler"
     },
     "trustBar": {
       "trustedBy": "Dünya çapındaki üretim ekiplerinin güvendiği"
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "Ücretsiz Denemeye Başlayın",
           "ctaSecondary": "Gösteri İste",
           "trustIndicators": "Kredi kartı gerekmez • 14 günlük deneme • İstediğiniz zaman iptal edin",
-          "platformScreenshot": "Platform Ekran Görüntüsü"
+          "platformScreenshot": "Platform Ekran Görüntüsü",
+          "headlineHighlightPrefix": "İçin",
+          "headlineHighlightMain": "Deneyimsel Ekipler"
         },
         "trustBar": {
           "trustedBy": "Dünya çapındaki prodüksiyon profesyonellerinin güvendiği"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "Ücretsiz Başlayın",
           "ctaSecondary": "Nasıl Çalıştığını Görün",
           "trustIndicators": "Kredi kartı yok • 14 günlük deneme • İstediğiniz zaman iptal edin",
-          "platformScreenshot": "Platform Ekran Görüntüsü"
+          "platformScreenshot": "Platform Ekran Görüntüsü",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "BS yok"
         },
         "trustBar": {
           "trustedBy": "İşleri halleden üretim ekipleri tarafından kullanılır"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "Bugün Ücretsiz Başlayın",
           "ctaSecondary": "İş Başında Görün",
           "trustIndicators": "Kredi kartı yok • 14 günlük deneme • İstediğiniz zaman iptal edin",
-          "platformScreenshot": "Platform Ekran Görüntüsü"
+          "platformScreenshot": "Platform Ekran Görüntüsü",
+          "headlineHighlightPrefix": "İçin",
+          "headlineHighlightMain": "Deneyimsel Ekipler"
         },
         "trustBar": {
           "trustedBy": "Dünya çapındaki üretim ekiplerinin güvendiği"
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "Ücretsiz Başlayın",
           "ctaSecondary": "Buna bir bak",
           "trustIndicators": "Kredi kartına gerek yok • Ücretsiz deneme • İstediğiniz zaman iptal edin",
-          "platformScreenshot": "Platform Ekran Görüntüsü"
+          "platformScreenshot": "Platform Ekran Görüntüsü",
+          "headlineHighlightPrefix": "İçin",
+          "headlineHighlightMain": "Etkinlik Yaratıcıları"
         },
         "trustBar": {
           "trustedBy": "Her yerde üretim ekipleri tarafından kullanılıyor"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "Ücretsiz Başlayın 🚀",
           "ctaSecondary": "Demoya bakın 👀",
           "trustIndicators": "Karta gerek yok • Ücretsiz deneme • İstediğiniz zaman iptal edin ✌️",
-          "platformScreenshot": "Platform Ekran Görüntüsü"
+          "platformScreenshot": "Platform Ekran Görüntüsü",
+          "headlineHighlightPrefix": "İçin",
+          "headlineHighlightMain": "Etkinlik Yaratıcıları"
         },
         "trustBar": {
           "trustedBy": "Dünya çapındaki üretim ekipleri tarafından kullanılıyor 🌍"

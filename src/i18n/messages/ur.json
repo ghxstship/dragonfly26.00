@@ -462,7 +462,9 @@
       "ctaPrimary": "آج مفت شروع کریں",
       "ctaSecondary": "اسے ایکشن میں دیکھیں",
       "trustIndicators": "کوئی کریڈٹ کارڈ • 14 دن کی آزمائش • کسی بھی وقت منسوخ کریں",
-      "platformScreenshot": "پلیٹ فارم اسکرین شاٹ"
+      "platformScreenshot": "پلیٹ فارم اسکرین شاٹ",
+      "headlineHighlightPrefix": "کے لئے",
+      "headlineHighlightMain": "تجرباتی ٹیموں"
     },
     "trustBar": {
       "trustedBy": "دنیا بھر میں پروڈکشن ٹیموں کے ذریعہ بھروسہ کیا"
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "مفت آزمائش شروع کریں",
           "ctaSecondary": "مظاہرے کی درخواست کریں",
           "trustIndicators": "کسی بھی کریڈٹ کارڈ کی ضرورت نہیں • 14 دن کی آزمائش • کسی بھی وقت منسوخ کریں",
-          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ"
+          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ",
+          "headlineHighlightPrefix": "کے لئے",
+          "headlineHighlightMain": "تجرباتی ٹیموں"
         },
         "trustBar": {
           "trustedBy": "دنیا بھر میں پروڈکشن پروفیشنلز کے ذریعہ بھروسہ کیا"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "مفت شروع کریں",
           "ctaSecondary": "دیکھیں کہ یہ کیسے کام کرتا ہے",
           "trustIndicators": "کوئی کریڈٹ کارڈ • 14 دن کی آزمائش • کسی بھی وقت منسوخ کریں",
-          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ"
+          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "کوئی بی ایس نہیں"
         },
         "trustBar": {
           "trustedBy": "پروڈکشن ٹیموں کے ذریعہ استعمال کیا جاتا ہے جو کام کر لیتے ہیں"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "آج مفت شروع کریں",
           "ctaSecondary": "اسے ایکشن میں دیکھیں",
           "trustIndicators": "کوئی کریڈٹ کارڈ • 14 دن کی آزمائش • کسی بھی وقت منسوخ کریں",
-          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ"
+          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ",
+          "headlineHighlightPrefix": "کے لئے",
+          "headlineHighlightMain": "تجرباتی ٹیموں"
         },
         "trustBar": {
           "trustedBy": "دنیا بھر میں پروڈکشن ٹیموں کے ذریعہ بھروسہ کیا"
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "مفت شروع کریں",
           "ctaSecondary": "اسے چیک کریں",
           "trustIndicators": "کسی کریڈٹ کارڈ کی ضرورت نہیں • مفت آزمائش • جب بھی منسوخ کریں",
-          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ"
+          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ",
+          "headlineHighlightPrefix": "کے لئے",
+          "headlineHighlightMain": "واقعہ تخلیق کاروں"
         },
         "trustBar": {
           "trustedBy": "ہر جگہ پروڈکشن ٹیموں کے ذریعہ استعمال کیا جاتا ہے"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "مفت شروع کریں 🚀",
           "ctaSecondary": "ڈیمو دیکھیں 👀",
           "trustIndicators": "کسی کارڈ کی ضرورت نہیں • مفت آزمائش • کسی بھی وقت منسوخ کریں ✌",
-          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ"
+          "platformScreenshot": "پلیٹ فارم اسکرین شاٹ",
+          "headlineHighlightPrefix": "کے لئے",
+          "headlineHighlightMain": "واقعہ تخلیق کاروں"
         },
         "trustBar": {
           "trustedBy": "دنیا بھر میں پروڈکشن ٹیموں کے ذریعہ استعمال کیا جاتا ہے"

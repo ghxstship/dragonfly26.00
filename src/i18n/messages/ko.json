@@ -462,7 +462,9 @@
       "ctaPrimary": "오늘 무료로 시작하세요",
       "ctaSecondary": "실제 사례 보기",
       "trustIndicators": "신용카드 없음 • 14일 무료 체험 • 언제든지 취소 가능",
-      "platformScreenshot": "플랫폼 스크린샷"
+      "platformScreenshot": "플랫폼 스크린샷",
+      "headlineHighlightPrefix": "용",
+      "headlineHighlightMain": "체험팀"
     },
     "trustBar": {
       "trustedBy": "전 세계 생산팀의 신뢰를 받고 있습니다."
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "무료 평가판 시작",
           "ctaSecondary": "시연 요청",
           "trustIndicators": "신용카드가 필요하지 않습니다. • 14일 무료 체험 • 언제든지 취소 가능",
-          "platformScreenshot": "플랫폼 스크린샷"
+          "platformScreenshot": "플랫폼 스크린샷",
+          "headlineHighlightPrefix": "용",
+          "headlineHighlightMain": "체험팀"
         },
         "trustBar": {
           "trustedBy": "전 세계 생산 전문가들의 신뢰를 받는"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "무료로 시작하세요",
           "ctaSecondary": "작동 방식 보기",
           "trustIndicators": "신용카드 없음 • 14일 무료 체험 • 언제든지 취소 가능",
-          "platformScreenshot": "플랫폼 스크린샷"
+          "platformScreenshot": "플랫폼 스크린샷",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "학사 없음"
         },
         "trustBar": {
           "trustedBy": "작업을 완료하는 프로덕션 팀에서 사용"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "오늘 무료로 시작하세요",
           "ctaSecondary": "실제 사례 보기",
           "trustIndicators": "신용카드 없음 • 14일 무료 체험 • 언제든지 취소 가능",
-          "platformScreenshot": "플랫폼 스크린샷"
+          "platformScreenshot": "플랫폼 스크린샷",
+          "headlineHighlightPrefix": "용",
+          "headlineHighlightMain": "체험팀"
         },
         "trustBar": {
           "trustedBy": "전 세계 생산팀의 신뢰를 받고 있습니다."
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "무료로 시작하세요",
           "ctaSecondary": "확인해 보세요",
           "trustIndicators": "신용카드가 필요하지 않습니다. • 무료 평가판 • 언제든지 취소할 수 있습니다.",
-          "platformScreenshot": "플랫폼 스크린샷"
+          "platformScreenshot": "플랫폼 스크린샷",
+          "headlineHighlightPrefix": "용",
+          "headlineHighlightMain": "이벤트 제작자"
         },
         "trustBar": {
           "trustedBy": "전 세계의 생산팀에서 사용"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "무료로 시작하세요 🚀",
           "ctaSecondary": "데모 보기 🙌",
           "trustIndicators": "카드가 필요하지 않습니다. • 무료 평가판 • 언제든지 취소할 수 있습니다 ✌️",
-          "platformScreenshot": "플랫폼 스크린샷"
+          "platformScreenshot": "플랫폼 스크린샷",
+          "headlineHighlightPrefix": "용",
+          "headlineHighlightMain": "이벤트 제작자"
         },
         "trustBar": {
           "trustedBy": "전 세계 생산팀에서 사용 🌍"

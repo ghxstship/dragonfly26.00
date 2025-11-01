@@ -462,7 +462,9 @@
       "ctaPrimary": "今すぐ無料で始めましょう",
       "ctaSecondary": "実際に見てみる",
       "trustIndicators": "クレジット カードなし • 14 日間のトライアル • いつでもキャンセル可能",
-      "platformScreenshot": "プラットフォームのスクリーンショット"
+      "platformScreenshot": "プラットフォームのスクリーンショット",
+      "headlineHighlightPrefix": "向け",
+      "headlineHighlightMain": "経験豊富なチーム"
     },
     "trustBar": {
       "trustedBy": "世界中の制作チームから信頼されています"
@@ -1004,7 +1006,9 @@
           "ctaPrimary": "無料トライアルを開始する",
           "ctaSecondary": "デモンストレーションのリクエスト",
           "trustIndicators": "クレジット カードは必要ありません • 14 日間のトライアル • いつでもキャンセル可能",
-          "platformScreenshot": "プラットフォームのスクリーンショット"
+          "platformScreenshot": "プラットフォームのスクリーンショット",
+          "headlineHighlightPrefix": "向け",
+          "headlineHighlightMain": "経験豊富なチーム"
         },
         "trustBar": {
           "trustedBy": "世界中の生産専門家から信頼されています"
@@ -1071,7 +1075,9 @@
           "ctaPrimary": "無料で始める",
           "ctaSecondary": "仕組みを見る",
           "trustIndicators": "クレジット カードなし • 14 日間のトライアル • いつでもキャンセル可能",
-          "platformScreenshot": "プラットフォームのスクリーンショット"
+          "platformScreenshot": "プラットフォームのスクリーンショット",
+          "headlineHighlightPrefix": "",
+          "headlineHighlightMain": "BSなし"
         },
         "trustBar": {
           "trustedBy": "作業を完了する制作チームによって使用されます"
@@ -1138,7 +1144,9 @@
           "ctaPrimary": "今すぐ無料で始めましょう",
           "ctaSecondary": "実際に見てみる",
           "trustIndicators": "クレジット カードなし • 14 日間のトライアル • いつでもキャンセル可能",
-          "platformScreenshot": "プラットフォームのスクリーンショット"
+          "platformScreenshot": "プラットフォームのスクリーンショット",
+          "headlineHighlightPrefix": "向け",
+          "headlineHighlightMain": "経験豊富なチーム"
         },
         "trustBar": {
           "trustedBy": "世界中の制作チームから信頼されています"
@@ -1205,7 +1213,9 @@
           "ctaPrimary": "無料で始める",
           "ctaSecondary": "それをチェックしてください",
           "trustIndicators": "クレジット カードは必要ありません • 無料トライアル • いつでもキャンセル可能",
-          "platformScreenshot": "プラットフォームのスクリーンショット"
+          "platformScreenshot": "プラットフォームのスクリーンショット",
+          "headlineHighlightPrefix": "向け",
+          "headlineHighlightMain": "イベントクリエイター"
         },
         "trustBar": {
           "trustedBy": "あらゆる場所の制作チームによって使用されています"
@@ -1272,7 +1282,9 @@
           "ctaPrimary": "無料で始めましょう 🚀",
           "ctaSecondary": "デモを見る 👀",
           "trustIndicators": "カードは必要ありません • 無料トライアル • いつでもキャンセル可能 ✌️",
-          "platformScreenshot": "プラットフォームのスクリーンショット"
+          "platformScreenshot": "プラットフォームのスクリーンショット",
+          "headlineHighlightPrefix": "向け",
+          "headlineHighlightMain": "イベントクリエイター"
         },
         "trustBar": {
           "trustedBy": "世界中の制作チームによって使用されています 🌍"
