@@ -15,6 +15,11 @@ const intlMiddleware = createIntlMiddleware({
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   
+  // Skip middleware for auth callback - it doesn't need locale prefix
+  if (pathname === '/auth/callback') {
+    return await updateSession(request)
+  }
+  
   // Handle root path explicitly - redirect to default locale
   if (pathname === '/') {
     return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url))
@@ -48,6 +53,8 @@ export const config = {
   matcher: [
     // Match all paths including root
     '/',
+    // Match auth callback (needs to be handled separately)
+    '/auth/callback',
     // Match all locale-prefixed paths (all 20 supported locales)
     '/(en|es|fr|zh|hi|ar|ko|vi|pt|de|ja|ru|id|ur|bn|ta|te|mr|tr|sw)/:path*',
     /*
