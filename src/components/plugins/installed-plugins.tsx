@@ -25,10 +25,10 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
       {installations.map((installation: any) => (
         <Card key={installation.id}>
           <CardContent className="p-4 sm:p-6">
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
+            <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
               <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex-shrink-0" />
               <div className="flex-1">
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-2">
+                <div className="flex items-start justify-between mb-2">
                   <div>
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                       <h3 className="text-lg font-semibold">{installation.plugin?.name}</h3>

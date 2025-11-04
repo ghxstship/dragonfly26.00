@@ -159,7 +159,7 @@ export default function InviteColleaguesPage() {
             <div className="space-y-4">
               {invites.map((invite: any, index: number) => (
                 <div key={index} className="space-y-3 p-4 border rounded-lg">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                  <div className="flex items-start gap-2">
                     <div className="flex-1 space-y-3">
                       {/* Email */}
                       <div className="space-y-2">
@@ -249,7 +249,7 @@ export default function InviteColleaguesPage() {
 
             {/* Info */}
             <div className="bg-muted/50 p-4 rounded-lg space-y-2">
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+              <div className="flex items-start gap-2">
                 <Users className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
                 <div className="space-y-1">
                   <p className="text-sm ">Team roles explained</p>

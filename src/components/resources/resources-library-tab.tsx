@@ -158,7 +158,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
           return (
             <Card key={resource.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+                <div className="flex items-start gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <TypeIcon className="h-5 w-5 text-primary"  aria-hidden="true" />
                   </div>

@@ -126,7 +126,7 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
       {/* Status Messages */}
       {status === "success" && (
         <Alert>
-          <CheckCircle2 className="h-4 w-4" />
+          <CheckCircle2 className="h-4 w-4 flex-shrink-0" />
           <AlertDescription>
             Successfully imported {file?.name}. Your data has been added to the module.
           </AlertDescription>

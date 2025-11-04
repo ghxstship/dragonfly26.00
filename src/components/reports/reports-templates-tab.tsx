@@ -79,7 +79,7 @@ export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTempl
         {templates.map((template: any) => (
           <Card key={template.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Template: ${t(template.nameKey)}`}>
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <FileStack className="h-8 w-8 text-blue-600" aria-hidden="true" />
                 <Badge variant="secondary" aria-label={`Category: ${t(template.categoryKey)}`}>{t(template.categoryKey)}</Badge>
               </div>

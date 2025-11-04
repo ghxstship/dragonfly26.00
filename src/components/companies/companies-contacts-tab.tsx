@@ -192,7 +192,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                 onClick={() => setSelectedContact(c)}
               >
                 <CardHeader>
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+                  <div className="flex items-start gap-3">
                     <Avatar className="h-12 w-12" aria-hidden="true">
                       <AvatarImage 
                         src={c.avatar} 

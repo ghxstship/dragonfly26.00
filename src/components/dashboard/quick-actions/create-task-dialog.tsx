@@ -89,7 +89,7 @@ export function CreateTaskDialog({ open, onOpenChange, workspaceId, userId, onSu
         <DialogHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-950">
-              <CheckSquare className="h-5 w-5 text-purple-600" />
+              <CheckSquare className="h-5 w-5 text-purple-600 flex-shrink-0" />
             </div>
             <div>
               <DialogTitle>Create Task</DialogTitle>

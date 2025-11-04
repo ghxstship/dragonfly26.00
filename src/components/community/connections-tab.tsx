@@ -221,7 +221,7 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
           filteredConnections.map((connection: any) => (
             <Card key={connection.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-4 sm:p-6">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
+                <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
                   {/* Avatar */}
                   <Avatar className="h-16 w-16">
                     <AvatarImage src={connection.image} />
@@ -232,7 +232,7 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                    <div className="flex items-start justify-between gap-2">
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <h3 className="font-semibold truncate">{connection.name}</h3>
@@ -352,19 +352,19 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
         </CardHeader>
         <CardContent>
           <ul className="space-y-2 text-sm">
-            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+            <li className="flex items-start gap-2">
               <span className="text-primary flex-shrink-0">•</span>
               <span>Connect with colleagues from recent productions and events</span>
             </li>
-            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+            <li className="flex items-start gap-2">
               <span className="text-primary flex-shrink-0">•</span>
               <span>Engage with posts and share your own experiences to increase visibility</span>
             </li>
-            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+            <li className="flex items-start gap-2">
               <span className="text-primary flex-shrink-0">•</span>
               <span>Endorse connections for their skills to strengthen relationships</span>
             </li>
-            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+            <li className="flex items-start gap-2">
               <span className="text-primary flex-shrink-0">•</span>
               <span>Join industry groups and participate in discussions</span>
             </li>

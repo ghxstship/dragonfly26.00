@@ -92,7 +92,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
                   {complianceReports.filter(r => (r as any).status === "current").length}
                 </p>
               </div>
-              <CheckCircle2 className="h-8 w-8 text-green-600" aria-hidden="true" />
+              <CheckCircle2 className="h-8 w-8 text-green-600 flex-shrink-0" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
@@ -143,8 +143,8 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
         {complianceReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-4 sm:p-6">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4 flex-1">
+              <div className="flex items-start justify-between">
+                <div className="flex items-start gap-2 md:gap-3 lg:gap-4 flex-1">
                   <Shield className="h-8 w-8 text-blue-600 mt-1" />
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">

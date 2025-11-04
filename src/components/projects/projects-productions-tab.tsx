@@ -146,13 +146,13 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
           return (
             <Card key={production.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <CardTitle className="text-lg line-clamp-1">{production.name}</CardTitle>
                     <CardDescription className="mt-1">{production.code}</CardDescription>
                   </div>
                   <Badge variant="secondary" className={getHealthColor(production.health)}>
-                    {production.health === 'healthy' && <CheckCircle2 className="h-4 w-4 mr-1" aria-hidden="true" />}
+                    {production.health === 'healthy' && <CheckCircle2 className="h-4 w-4 mr-1 flex-shrink-0" aria-hidden="true" />}
                     {production.health === 'at_risk' && <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />}
                     {production.health === 'critical' && <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />}
                     {production.health}

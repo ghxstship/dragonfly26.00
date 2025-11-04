@@ -113,7 +113,7 @@ export function OnboardingProgressCard({
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     {isComplete ? (
-                      <CheckCircle2 className="h-4 w-4 text-green-500" />
+                      <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
                     ) : task.status === "in_progress" ? (
                       <Clock className="h-4 w-4 text-blue-500" />
                     ) : (
@@ -150,7 +150,7 @@ export function OnboardingProgressCard({
           )}
           {onMarkComplete && overallProgress === 100 && (
             <Button size="sm" className="flex-1" onClick={onMarkComplete}>
-              <CheckCircle2 className="h-4 w-4 mr-1" />
+              <CheckCircle2 className="h-4 w-4 mr-1 flex-shrink-0" />
               Complete
             </Button>
           )}
@@ -193,7 +193,7 @@ export function GoalProgressCard({
   return (
     <Card>
       <CardHeader className="pb-3">
-        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+        <div className="flex items-start justify-between">
           <CardTitle className="text-sm line-clamp-2">{goalTitle}</CardTitle>
           <Badge variant={config.variant as any} className="ml-2">
             {config.label}

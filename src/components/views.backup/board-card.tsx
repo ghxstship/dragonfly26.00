@@ -43,7 +43,7 @@ export function BoardCard({ item, schema, onClick, isDragging }: BoardCardProps)
       )}
       onClick={onClick}
     >
-      <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+      <div className="flex items-start gap-2">
         <div
           {...attributes}
           {...listeners}

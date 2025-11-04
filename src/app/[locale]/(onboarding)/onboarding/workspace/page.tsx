@@ -267,15 +267,15 @@ export default function WorkspacePage() {
                     <p className="text-sm ">You&apos;ll receive:</p>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <Check className="h-4 w-4 text-green-500" />
+                        <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                         Organization Admin (Phantom) role
                       </li>
                       <li className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <Check className="h-4 w-4 text-green-500" />
+                        <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                         Full access to workspace settings
                       </li>
                       <li className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <Check className="h-4 w-4 text-green-500" />
+                        <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
                         Ability to invite team members
                       </li>
                     </ul>

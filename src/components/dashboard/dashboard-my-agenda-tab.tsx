@@ -167,7 +167,7 @@ export function DashboardMyAgendaTab({ workspaceId = '', userId = '' }: Dashboar
                 }}
                 aria-label={t('viewEvent', { title: event.title as string })}
               >
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                   <div className="flex-1 space-y-2">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <h3 className="font-semibold">{event.title}</h3>

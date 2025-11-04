@@ -96,7 +96,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
           return (
             <Card key={index} role="article">
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex items-start justify-between">
                   <div>
                     <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Award className="h-5 w-5 text-purple-600" aria-hidden="true" />

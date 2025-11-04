@@ -94,7 +94,7 @@ export function DependenciesManager({
     <div className="space-y-4">
       {/* Warning if blocked */}
       {hasBlockedDependencies && (
-        <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-yellow-50 dark:bg-yellow-950 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+        <div className="flex items-start gap-2 p-3 bg-yellow-50 dark:bg-yellow-950 border border-yellow-200 dark:border-yellow-800 rounded-lg">
           <AlertCircle className="h-4 w-4 text-yellow-600 dark:text-yellow-400 mt-0.5" />
           <div className="text-sm text-yellow-800 dark:text-yellow-200">
             This item is blocked. Complete blocking items before marking this as done.

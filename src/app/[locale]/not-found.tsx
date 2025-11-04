@@ -57,15 +57,15 @@ export default async function LocalizedNotFound({
             {t('whatYouCanDo')}
           </h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+            <li className="flex items-start gap-2">
               <span className="text-primary mt-0.5">•</span>
               <span>{t('checkUrl')}</span>
             </li>
-            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+            <li className="flex items-start gap-2">
               <span className="text-primary mt-0.5">•</span>
               <span>{t('goBack')}</span>
             </li>
-            <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+            <li className="flex items-start gap-2">
               <span className="text-primary mt-0.5">•</span>
               <span>{t('visitHomepage')}</span>
             </li>

@@ -137,7 +137,7 @@ export function CertificationsTab() {
             certifications.map((cert: any) => (
               <Card key={cert.id}>
                 <CardContent className="pt-6 space-y-4">
-                  <div className="flex flex-wrap flex-col md:flex-row justify-between items-start">
+                  <div className="flex justify-between items-start">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <div className={`h-2 w-2 rounded-full ${getStatusColor(cert.status)}`} />
                       <h4 className="font-semibold">

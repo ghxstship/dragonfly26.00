@@ -57,7 +57,7 @@ function getStatusConfig(type: string, status: string) {
         return {
           variant: "default",
           className: "bg-green-500 hover:bg-green-600 text-white",
-          icon: <CheckCircle2 className="h-3 w-3" />,
+          icon: <CheckCircle2 className="h-3 w-3 flex-shrink-0" />,
           label: "Active"
         }
       case "on_leave":
@@ -105,7 +105,7 @@ function getStatusConfig(type: string, status: string) {
         return {
           variant: "default",
           className: "bg-green-500 hover:bg-green-600 text-white",
-          icon: <CheckCircle2 className="h-3 w-3" />,
+          icon: <CheckCircle2 className="h-3 w-3 flex-shrink-0" />,
           label: "Approved"
         }
       case "denied":
@@ -139,7 +139,7 @@ function getStatusConfig(type: string, status: string) {
         return {
           variant: "default",
           className: "bg-green-500 hover:bg-green-600 text-white",
-          icon: <CheckCircle2 className="h-3 w-3" />,
+          icon: <CheckCircle2 className="h-3 w-3 flex-shrink-0" />,
           label: "Compliant"
         }
       case "warning":

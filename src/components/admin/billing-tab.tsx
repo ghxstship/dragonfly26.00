@@ -110,7 +110,7 @@ export function BillingTab() {
           <CardTitle className="text-base">{t('admin.billingTab.currentPlan')}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{t(currentPlan.nameKey)}</h3>
               <p className="text-muted-foreground mt-1">
@@ -169,7 +169,7 @@ export function BillingTab() {
       {/* Payment Method */}
       <Card>
         <CardHeader>
-          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+          <div className="flex items-start justify-between">
             <CardTitle className="text-base">{t('admin.billingTab.paymentMethod')}</CardTitle>
             <Button variant="outline" size="sm">{t('admin.billingTab.update')}</Button>
           </div>

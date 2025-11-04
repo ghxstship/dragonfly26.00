@@ -215,7 +215,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         <Card>
           <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Compliance Rate</CardTitle>
-            <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
+            <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">94%</div>
@@ -237,7 +237,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
             {spendingPolicies.map((policy: any) => (
               <Card key={policy.id} className={!policy.isActive ? 'opacity-60' : ''}>
                 <CardContent className="pt-6" aria-hidden="true">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex items-start justify-between">
                     <div className="space-y-2 flex-1">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <h4 className="font-semibold">{policy.nameKey ? t(policy.nameKey) : policy.name}</h4>
@@ -297,7 +297,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                 <Card key={card.id} className={card.status === 'suspended' ? 'opacity-60 border-red-300' : ''}>
                   <CardContent className="pt-6" aria-hidden="true">
                     <div className="space-y-3">
-                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                      <div className="flex items-start justify-between">
                         <div className="space-y-1">
                           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                             <h4 className="font-semibold">{card.cardHolder}</h4>
@@ -381,7 +381,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                   }`}
                 >
                   <CardContent className="pt-6" aria-hidden="true">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                    <div className="flex items-start justify-between">
                       <div className="space-y-2 flex-1">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <h4 className="font-semibold">{violation.policyName}</h4>
@@ -408,7 +408,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                         {violation.status === 'pending' && (
                           <div className="flex flex-wrap gap-2 mt-3">
                             <Button size="sm" variant="outline">
-                              <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
+                              <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
                               Approve
                             </Button>
                             <Button size="sm" variant="outline">
@@ -425,7 +425,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
             ) : (
               <div className="flex flex-wrap items-center justify-center h-32 text-muted-foreground">
                 <div className="text-center">
-                  <CheckCircle2 className="h-8 w-8" aria-hidden="true"  />
+                  <CheckCircle2 className="h-8 w-8 flex-shrink-0" aria-hidden="true"  />
                   <p className="text-sm">No policy violations</p>
                   <p className="text-xs mt-1">All spending is in compliance</p>
                 </div>

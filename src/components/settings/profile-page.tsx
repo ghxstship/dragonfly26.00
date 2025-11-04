@@ -135,7 +135,7 @@ export function ProfilePage() {
             </CardHeader>
             <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
               {/* Profile Picture */}
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
+              <div className="flex items-start gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
                 <Avatar className="h-32 w-32">
                   <AvatarImage src={avatarUrl} />
                   <AvatarFallback className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">

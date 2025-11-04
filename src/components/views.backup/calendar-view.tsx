@@ -385,7 +385,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                           className="p-3 rounded-lg border bg-card hover:bg-accent cursor-pointer transition-colors"
                           onClick={() => onItemClick?.(item)}
                         >
-                          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                          <div className="flex items-start justify-between">
                             <div className="flex-1">
                               <div className="font-medium">{getDisplayValue(item, schema)}</div>
                               {item.description && (

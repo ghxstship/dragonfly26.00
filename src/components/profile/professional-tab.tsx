@@ -221,7 +221,7 @@ export function ProfessionalTab() {
           ) : (
             experiences.map((exp: any) => (
               <div key={exp.id} className="border rounded-lg p-4 space-y-4">
-                <div className="flex flex-wrap flex-col md:flex-row justify-between items-start">
+                <div className="flex justify-between items-start">
                   <h4 className="font-semibold">{t('profile.professional.experienceEntry')}</h4>
                   <Button
                     variant="ghost"
@@ -337,7 +337,7 @@ export function ProfessionalTab() {
           ) : (
             education.map((edu: any) => (
               <div key={edu.id} className="border rounded-lg p-4 space-y-4">
-                <div className="flex flex-wrap flex-col md:flex-row justify-between items-start">
+                <div className="flex justify-between items-start">
                   <h4 className="font-semibold">{t('profile.professional.educationEntry')}</h4>
                   <Button
                     variant="ghost"

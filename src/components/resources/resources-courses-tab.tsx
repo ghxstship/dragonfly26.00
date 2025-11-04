@@ -128,7 +128,7 @@ export function ResourcesCoursesTab({ workspaceId, moduleId, tabSlug }: TabCompo
         {filteredCourses.map((course: any) => (
           <Card key={course.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+              <div className="flex items-start gap-3">
                 <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-950">
                   <GraduationCap className="h-5 w-5 text-purple-600" aria-hidden="true" />
                 </div>

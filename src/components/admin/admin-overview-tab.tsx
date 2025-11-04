@@ -122,7 +122,7 @@ export function AdminOverviewTab() {
           <CardContent>
             <div className="space-y-4">
               {recentActivity.map((activity: any, index: number) => (
-                <div key={index} className="flex flex-wrap flex-col md:flex-row items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
+                <div key={index} className="flex items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
                   <div className={`h-2 w-2 rounded-full mt-2 ${
                     (activity as any).type === "complete" ? "bg-green-500" :
                     (activity as any).type === "create" ? "bg-blue-500" :
@@ -166,7 +166,7 @@ export function AdminOverviewTab() {
                     <Badge variant={(item as any).status === "healthy" ? "default" : "secondary"}>
                       {(item as any).status === "healthy" ? (
                         <>
-                          <CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" />
+                          <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />
                           {t('admin.healthy')}
                         </>
                       ) : (

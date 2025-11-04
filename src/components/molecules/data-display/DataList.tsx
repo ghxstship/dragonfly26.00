@@ -132,7 +132,7 @@ export function DataList({
 function DefaultListItem({ item }: { item: DataListItem }) {
   return (
     <div className="space-y-2">
-      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+      <div className="flex items-start justify-between">
         <div>
           <h3 className="font-semibold">{item.name || item.title || 'Untitled'}</h3>
           {item.description && (

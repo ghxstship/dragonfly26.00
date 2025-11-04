@@ -117,7 +117,7 @@ export function ReviewForm({
         <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
           <div className="flex flex-wrap flex-col items-center justify-center py-4 md:py-6 lg:py-8 text-center">
             <div className="h-16 w-16 rounded-full bg-green-500/10 flex flex-wrap items-center justify-center mb-4">
-              <CheckCircle2 className="h-8 w-8 text-green-600" />
+              <CheckCircle2 className="h-8 w-8 text-green-600 flex-shrink-0" />
             </div>
             <h3 className="text-lg font-semibold mb-2">Thank you for your review!</h3>
             <p className="text-sm text-muted-foreground mb-4">

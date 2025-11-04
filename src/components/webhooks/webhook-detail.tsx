@@ -63,7 +63,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
               <CardContent>
                 {webhook.is_active ? (
                   <Badge variant="default" className="bg-green-600">
-                    <CheckCircle2 className="h-3 w-3 mr-1" />
+                    <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />
                     Active
                   </Badge>
                 ) : (
@@ -172,12 +172,12 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
             {mockDeliveries.map((delivery: any) => (
               <Card key={delivery.id}>
                 <CardContent className="p-4">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-2">
+                  <div className="flex items-start justify-between mb-2">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Badge variant="outline">{delivery.event_type}</Badge>
                       {(delivery as any).status === "success" ? (
                         <Badge variant="default" className="bg-green-600">
-                          <CheckCircle2 className="h-3 w-3 mr-1" />
+                          <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />
                           Success
                         </Badge>
                       ) : (

@@ -96,14 +96,14 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
         {vendorsData.map((vendor: any) => (
           <Card key={vendor.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
+              <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
                 <Avatar className="h-16 w-16">
                   <AvatarFallback className="bg-primary/10 text-primary text-base md:text-lg lg:text-xl">
                     {vendor.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1 space-y-2">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                  <div className="flex items-start justify-between gap-2">
                     <div>
                       <CardTitle className="text-lg">{vendor.name}</CardTitle>
                       <CardDescription className="mt-1">

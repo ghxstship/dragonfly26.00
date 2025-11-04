@@ -176,7 +176,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                   size="icon"
                   onClick={handleCopyLink}
                 >
-                  {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                  {copied ? <Check className="h-4 w-4 flex-shrink-0" /> : <Copy className="h-4 w-4" />}
                 </Button>
               </div>
             )}

@@ -153,7 +153,7 @@ export function PluginsTab() {
   const renderPluginCard = (plugin: Plugin) => (
     <Card key={plugin.id}>
       <CardHeader>
-        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+        <div className="flex items-start justify-between">
           <div className="flex flex-wrap gap-3 flex-1">
             <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{plugin.icon}</div>
             <div className="flex-1">
@@ -161,7 +161,7 @@ export function PluginsTab() {
                 <CardTitle className="text-base">{plugin.name}</CardTitle>
                 {plugin.installed && (
                   <Badge variant="default">
-                    <CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" />
+                    <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />
                     Installed
                   </Badge>
                 )}
@@ -269,7 +269,7 @@ export function PluginsTab() {
             {t('plugins.install')}s ({plugins.length})
           </TabsTrigger>
           <TabsTrigger value="installed">
-            <CheckCircle2 className="h-4 w-4 mr-2" aria-hidden="true" />
+            <CheckCircle2 className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />
             Installed ({installedPlugins.length})
           </TabsTrigger>
           <TabsTrigger value="available">

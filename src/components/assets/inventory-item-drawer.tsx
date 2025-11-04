@@ -34,7 +34,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
         <div className="flex flex-wrap flex-col h-full">
           {/* Header */}
           <SheetHeader className="p-4 sm:p-6 pb-4 border-b">
-            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+            <div className="flex items-start justify-between">
               <div className="flex-1">
                 <SheetTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{item.name}</SheetTitle>
                 <p className="text-sm text-muted-foreground mt-1">SKU: {item.sku || 'N/A'}</p>

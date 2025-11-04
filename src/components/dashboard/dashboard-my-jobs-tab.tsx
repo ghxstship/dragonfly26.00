@@ -146,9 +146,9 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                 onClick={() => job.id && router.push(`/workspace/${workspaceId}/people/personnel?id=${job.id}`)}
               >
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                   <div className="flex-1 space-y-3">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                    <div className="flex items-start justify-between">
                       <div>
                         <h3 className="font-semibold">{job.title}</h3>
                         <p className="text-sm text-muted-foreground mt-1">{job.client}</p>

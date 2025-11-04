@@ -140,7 +140,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
               >
                 <div className="space-y-3">
                   {/* Header */}
-                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex items-start justify-between">
                     <div>
                       <h3 className="font-semibold">{travel.title}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{travel.project}</p>
@@ -149,7 +149,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                       <p className="font-semibold text-lg">{travel.totalCost}</p>
                       <Badge variant="secondary" className={getStatusColor(travel.status)}>
                         {travel.status === "confirmed" ? (
-                          <CheckCircle2 className="h-4 w-4 mr-1" aria-hidden="true" />
+                          <CheckCircle2 className="h-4 w-4 mr-1 flex-shrink-0" aria-hidden="true" />
                         ) : (
                           <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />
                         )}
@@ -178,7 +178,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                   {/* Travel Details */}
                   <div className="space-y-2 pt-2 border-t">
                     {/* Flights */}
-                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                    <div className="flex items-start gap-2">
                       <Plane className="h-4 w-4 text-blue-600 mt-0.5" aria-hidden="true" />
                       <div className="flex-1">
                         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
@@ -192,7 +192,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
 
                     {/* Hotel */}
                     {travel.hotel && (
-                      <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                      <div className="flex items-start gap-2">
                         <Hotel className="h-4 w-4 text-purple-600 mt-0.5" aria-hidden="true" />
                         <div className="flex-1">
                           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
@@ -207,7 +207,7 @@ export function DashboardMyTravelTab({ workspaceId = '', userId = '' }: Dashboar
                     )}
 
                     {/* Ground Transport */}
-                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                    <div className="flex items-start gap-2">
                       <Car className="h-4 w-4 text-orange-600 mt-0.5" aria-hidden="true" />
                       <div className="flex-1">
                         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">

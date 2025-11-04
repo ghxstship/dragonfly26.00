@@ -126,7 +126,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
         {filteredGuides.map((guide: any) => (
           <Card key={guide.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+              <div className="flex items-start gap-3">
                 <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-950">
                   <Book className="h-5 w-5 text-blue-600" aria-hidden="true" />
                 </div>

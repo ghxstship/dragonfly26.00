@@ -158,7 +158,7 @@ export function InviteTab() {
         </Badge>
       case "accepted":
         return <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-          <Check className="h-3 w-3 mr-1" aria-hidden="true" />
+          <Check className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />
           {t('admin.invite.status.accepted')}
         </Badge>
       case "expired":
@@ -264,7 +264,7 @@ export function InviteTab() {
                         aria-label={t('admin.invite.copyLink')}
                       >
                         {copiedId === invitation.id ? (
-                          <Check className="h-4 w-4 text-green-600" aria-hidden="true" />
+                          <Check className="h-4 w-4 text-green-600 flex-shrink-0" aria-hidden="true" />
                         ) : (
                           <Copy className="h-4 w-4" aria-hidden="true" />
                         )}

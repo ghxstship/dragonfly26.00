@@ -94,7 +94,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
         <Card>
           <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">{t('open')}</CardTitle>
-            <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
+            <CheckCircle2 className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
@@ -150,8 +150,8 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
           return (
             <Card key={grant.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1">
+                <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                  <div className="flex items-start gap-3 flex-1">
                     <div className="p-2 rounded-lg bg-green-100 dark:bg-green-950">
                       <CircleDollarSign className="h-5 w-5 text-green-600" aria-hidden="true" />
                     </div>
@@ -215,7 +215,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                     <p className="text-sm font-medium">Requirements:</p>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {grant.requirements.slice(0, 3).map((req: string, i: number) => (
-                        <li key={i} className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                        <li key={i} className="flex items-start gap-2">
                           <CheckCircle2 className="h-3 w-3 mt-0.5 text-green-600 flex-shrink-0" />
                           <span>{req}</span>
                         </li>

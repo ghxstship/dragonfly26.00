@@ -30,7 +30,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
   if (variances.length === 0) {
     return (
       <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-        <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
+        <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4 flex-shrink-0" />
         <h3 className="text-lg font-semibold mb-2">No Variances Found</h3>
         <p className="text-muted-foreground">All counted quantities match expected values</p>
       </div>
@@ -61,7 +61,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
             <Card key={variance.id} className="p-4">
               <div className="space-y-4">
                 {/* Item Header */}
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h4 className="font-semibold">{variance.item_name}</h4>
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 mt-2 text-sm">
@@ -124,7 +124,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                     onClick={() => onAccept(variance.id, 'accepted')}
                     className="flex-1"
                   >
-                    <CheckCircle className="h-4 w-4 mr-2" />
+                    <CheckCircle className="h-4 w-4 mr-2 flex-shrink-0" />
                     Accept & Adjust Stock
                   </Button>
                   <Button 

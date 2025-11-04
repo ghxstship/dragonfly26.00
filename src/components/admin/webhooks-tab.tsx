@@ -173,14 +173,14 @@ export function WebhooksTab() {
         {webhooks.map((webhook: any) => (
           <Card key={webhook?.id}>
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                     <CardTitle className="text-base">{webhook?.name}</CardTitle>
                     <Badge variant={webhook?.active ? "default" : "secondary"}>
                       {webhook?.active ? (
                         <>
-                          <CheckCircle2 className="h-3 w-3 mr-1" />
+                          <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />
                           Active
                         </>
                       ) : (
@@ -202,7 +202,7 @@ export function WebhooksTab() {
                         {webhook?.totalCalls} calls
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                        <CheckCircle2 className="h-3 w-3" />
+                        <CheckCircle2 className="h-3 w-3 flex-shrink-0" />
                         {webhook?.successRate}% success rate
                       </div>
                       {webhook?.lastTriggered && (
@@ -293,7 +293,7 @@ export function WebhooksTab() {
             <p className="text-muted-foreground">
               Webhooks allow you to receive real-time notifications when events occur in your organization.
             </p>
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg">
+            <div className="flex items-start gap-2 p-3 bg-blue-50 dark:bg-blue-950 rounded-lg">
               <AlertCircle className="h-4 w-4 text-blue-600 flex-shrink-0 mt-0.5" />
               <div className="text-xs text-blue-900 dark:text-blue-100">
                 <p className="font-medium mb-1">Security Best Practices</p>
@@ -341,7 +341,7 @@ export function WebhooksTab() {
               <Label>{t('admin.webhooksTab.eventsToSubscribe')}</Label>
               <div className="max-h-[300px] overflow-y-auto space-y-2 p-3 border rounded-lg">
                 {availableEvents.map((event: any) => (
-                  <div key={event.id} className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-2 hover:bg-accent rounded">
+                  <div key={event.id} className="flex items-start gap-3 p-2 hover:bg-accent rounded">
                     <input
                       type="checkbox"
                       id={event.id}

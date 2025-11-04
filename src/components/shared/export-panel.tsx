@@ -145,7 +145,7 @@ export function ExportPanel({ onExport }: ExportPanelProps) {
       {/* Success Message */}
       {exported && (
         <Alert>
-          <CheckCircle2 className="h-4 w-4" />
+          <CheckCircle2 className="h-4 w-4 flex-shrink-0" />
           <AlertDescription>
             Export successful! Your file is downloading now.
           </AlertDescription>

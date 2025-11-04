@@ -44,7 +44,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="w-full sm:max-w-4xl overflow-y-auto">
         <SheetHeader>
-          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <SheetTitle>{report.name}</SheetTitle>
               <p className="text-sm text-muted-foreground mt-1">{report.description}</p>

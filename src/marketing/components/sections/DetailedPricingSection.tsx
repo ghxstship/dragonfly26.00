@@ -362,11 +362,11 @@ export function DetailedPricingSection(): JSX.Element {
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">COLLABORATION</h4>
                   <ul className={spacing.listTight}>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Community Access</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Industry Resources</span>
                     </li>
@@ -376,15 +376,15 @@ export function DetailedPricingSection(): JSX.Element {
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">FUNDAMENTALS</h4>
                   <ul className={spacing.listTight}>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Basic Project Management</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Single User Seat</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Community Support Forum</span>
                     </li>
@@ -425,15 +425,15 @@ export function DetailedPricingSection(): JSX.Element {
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">EFFICIENCY</h4>
                   <ul className={spacing.listTight}>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Standardized Datasets</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Universal Workflows</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Transparent Reporting</span>
                     </li>
@@ -443,15 +443,15 @@ export function DetailedPricingSection(): JSX.Element {
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">PRO FEATURES</h4>
                   <ul className={spacing.listTight}>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Advanced Project Tools</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Priority Email Support</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Enhanced Analytics Dashboard</span>
                     </li>
@@ -497,15 +497,15 @@ export function DetailedPricingSection(): JSX.Element {
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">TEAM MANAGEMENT</h4>
                   <ul className={spacing.listTight}>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Tiered Access Controls</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Global Templates</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Team Collaboration Hub</span>
                     </li>
@@ -515,19 +515,19 @@ export function DetailedPricingSection(): JSX.Element {
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">INTEGRATIONS</h4>
                   <ul className={spacing.listTight}>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Unlimited API Integrations</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Open Source Automations</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Webhook Support</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Premium Support (24hr response)</span>
                     </li>
@@ -574,19 +574,19 @@ export function DetailedPricingSection(): JSX.Element {
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">ENTERPRISE CONTROL</h4>
                   <ul className={spacing.listTight}>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Advanced Permissions</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Custom Data Fields</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Personalized Views</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>SSO & SAML Integration</span>
                     </li>
@@ -596,27 +596,27 @@ export function DetailedPricingSection(): JSX.Element {
                 <div>
                   <h4 className="text-xs uppercase text-gray-500 dark:text-gray-500 mb-3 font-heading uppercase">AI & INTELLIGENCE</h4>
                   <ul className={spacing.listTight}>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>AI Agents & Insights</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Smart Recommendations</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Predictive Resource Planning</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Dedicated Account Manager</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>24/7 Priority Support</span>
                     </li>
-                    <li className="flex flex-wrap flex-col md:flex-row items-start text-sm">
+                    <li className="flex items-start text-sm">
                       <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>Custom Onboarding & Training</span>
                     </li>

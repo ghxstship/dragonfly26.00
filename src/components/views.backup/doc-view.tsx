@@ -177,7 +177,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {/* Example comments */}
               <div className="space-y-2">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                <div className="flex items-start gap-2">
                   <Avatar className="h-6 w-6">
                     <AvatarFallback>JD</AvatarFallback>
                   </Avatar>
@@ -193,7 +193,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
                 </div>
               </div>
               <div className="space-y-2">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                <div className="flex items-start gap-2">
                   <Avatar className="h-6 w-6">
                     <AvatarFallback>JS</AvatarFallback>
                   </Avatar>

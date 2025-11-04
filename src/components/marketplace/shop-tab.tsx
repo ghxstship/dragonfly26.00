@@ -175,7 +175,7 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
 
             <CardHeader className="p-4">
               <div className="space-y-2">
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                <div className="flex items-start justify-between gap-2">
                   <p className="font-semibold line-clamp-2 text-sm">{item.name}</p>
                   {getStockBadge(item.status || 'available')}
                 </div>

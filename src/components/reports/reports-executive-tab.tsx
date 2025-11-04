@@ -96,7 +96,7 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
         {executiveReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Executive report: ${t(report.titleKey)}`}>
             <CardContent className="p-4 sm:p-6">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                     <Crown className="h-5 w-5 text-purple-600" aria-hidden="true" />

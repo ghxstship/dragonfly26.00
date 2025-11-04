@@ -60,7 +60,7 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
         {customViews.map((view: any) => (
           <Card key={view.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                     <CardTitle className="text-lg">{t(view.nameKey)}</CardTitle>

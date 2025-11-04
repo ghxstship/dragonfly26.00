@@ -271,7 +271,7 @@ export function PhotoTabContent() {
                 size="sm"
                 onClick={saveCapturedPhoto}
               >
-                <Check className="h-4 w-4 mr-2" />
+                <Check className="h-4 w-4 mr-2 flex-shrink-0" />
                 Save Photo
               </Button>
             </div>

@@ -138,7 +138,7 @@ export function MarketplaceProductDetailDrawer({
             {/* Product Info */}
             <div className="space-y-4">
               <div className="space-y-2">
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                   <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{product.name}</h1>
                   {getStockBadge(product.status)}
                 </div>
@@ -269,7 +269,7 @@ export function MarketplaceProductDetailDrawer({
                       <h3 className="font-semibold">Key Features:</h3>
                       <ul className="space-y-2">
                         {product.features.map((feature: any, idx: number) => (
-                          <li key={idx} className="flex flex-wrap flex-col md:flex-row items-start gap-2 text-sm">
+                          <li key={idx} className="flex items-start gap-2 text-sm">
                             <Award className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                             <span>{feature}</span>
                           </li>
@@ -297,7 +297,7 @@ export function MarketplaceProductDetailDrawer({
                 {product.specifications && Object.keys(product.specifications).length > 0 ? (
                   <div className="space-y-2">
                     {Object.entries(product.specifications).map(([key, value]) => (
-                      <div key={key} className="flex flex-wrap flex-col md:flex-row items-start justify-between py-2 border-b last:border-0">
+                      <div key={key} className="flex items-start justify-between py-2 border-b last:border-0">
                         <span className="text-sm font-medium text-muted-foreground">{key}</span>
                         <span className="text-sm text-right">{value}</span>
                       </div>
@@ -323,7 +323,7 @@ export function MarketplaceProductDetailDrawer({
                   <div className="space-y-4">
                     {product.reviews.map((review: any) => (
                       <div key={review.id} className="space-y-2 p-4 border rounded-lg">
-                        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                        <div className="flex items-start justify-between">
                           <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                             <Avatar className="h-8 w-8">
                               <AvatarFallback className="bg-primary/10 text-primary text-xs">

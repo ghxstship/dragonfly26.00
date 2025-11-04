@@ -109,7 +109,7 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
                   {Math.round(operationalReports.reduce((sum: number, r) => sum + r.metrics.efficiency, 0) / operationalReports.length)}%
                 </p>
               </div>
-              <CheckCircle2 className="h-8 w-8 text-green-600" aria-hidden="true" />
+              <CheckCircle2 className="h-8 w-8 text-green-600 flex-shrink-0" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>

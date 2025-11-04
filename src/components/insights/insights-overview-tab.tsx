@@ -99,7 +99,7 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
                 <p className="text-sm text-muted-foreground">{t('onTrack')}</p>
                 <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-2 text-green-600" aria-live="polite">9</p>
               </div>
-              <CheckCircle2 className="h-8 w-8 text-green-600" aria-hidden="true" />
+              <CheckCircle2 className="h-8 w-8 text-green-600 flex-shrink-0" aria-hidden="true" />
             </div>
           </CardContent>
         </Card>
@@ -140,11 +140,11 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
           <div className="space-y-4">
             {strategicInsights.map((insight: any) => (
               <div key={insight.id} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-3">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-start gap-3">
                     {insight.type === "opportunity" && <TrendingUp className="h-5 w-5 text-green-600 mt-1" aria-hidden="true" />}
                     {insight.type === "risk" && <AlertTriangle className="h-5 w-5 text-yellow-600 mt-1" aria-hidden="true" />}
-                    {insight.type === "achievement" && <CheckCircle2 className="h-5 w-5 text-blue-600 mt-1" aria-hidden="true" />}
+                    {insight.type === "achievement" && <CheckCircle2 className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" aria-hidden="true" />}
                     <div>
                       <h4 className="font-semibold">{t(insight.titleKey)}</h4>
                       <p className="text-sm text-muted-foreground mt-1">{t(insight.descriptionKey)}</p>

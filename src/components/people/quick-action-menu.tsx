@@ -117,7 +117,7 @@ export function QuickActionMenu({
           <>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => onApprovePending(pendingApprovalsCount)}>
-              <CheckCircle2 className="h-4 w-4 mr-2" />
+              <CheckCircle2 className="h-4 w-4 mr-2 flex-shrink-0" />
               Approve Pending ({pendingApprovalsCount})
             </DropdownMenuItem>
           </>

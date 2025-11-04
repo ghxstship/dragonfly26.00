@@ -131,7 +131,7 @@ export function AssigneeSelector({
                         {user.email}
                       </div>
                     </div>
-                    {isAssigned && <Check className="h-4 w-4" />}
+                    {isAssigned && <Check className="h-4 w-4 flex-shrink-0" />}
                   </DropdownMenuItem>
                 )
               })}

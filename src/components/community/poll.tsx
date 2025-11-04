@@ -146,7 +146,7 @@ export function Poll({
                     >
                       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between relative z-10">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
-                          {userVotedThis && <Check className="h-4 w-4 text-primary" />}
+                          {userVotedThis && <Check className="h-4 w-4 text-primary flex-shrink-0" />}
                           <span className={cn(
                             "text-sm",
                             (isWinning || userVotedThis) && "font-semibold"

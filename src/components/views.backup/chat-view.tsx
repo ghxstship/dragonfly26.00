@@ -108,7 +108,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
             <span className={cn("font-medium", isReply ? "text-sm" : "text-sm")}>{msg.userName}</span>
             <span className="text-xs text-muted-foreground">{formatTime(msg.timestamp)}</span>
-            {msg.read && <CheckCheck className="h-3 w-3 text-primary" />}
+            {msg.read && <CheckCheck className="h-3 w-3 text-primary flex-shrink-0" />}
           </div>
           <div className={cn("whitespace-pre-wrap", isReply ? "text-sm" : "")}>
             {msg.content}

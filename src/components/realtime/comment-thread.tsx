@@ -88,7 +88,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                     </Avatar>
 
                     <div className="flex-1 space-y-2">
-                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                      <div className="flex items-start justify-between">
                         <div>
                           <p className="font-medium text-sm">{comment.created_by}</p>
                           <p className="text-xs text-muted-foreground">

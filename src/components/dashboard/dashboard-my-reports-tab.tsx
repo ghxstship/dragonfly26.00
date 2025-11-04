@@ -175,9 +175,9 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                   onClick={() => router.push(`/workspace/${workspaceId}/reports/templates?id=${report.id}`)}
                 >
-                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                  <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
-                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                      <div className="flex items-start justify-between">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <div className="p-2 bg-primary/10 rounded">
                             <Icon className="h-4 w-4 text-primary" aria-hidden="true" />

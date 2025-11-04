@@ -241,7 +241,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
 
                     {/* Studio Info */}
                     <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                      <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                             <h3 className="text-base md:text-lg lg:text-xl font-semibold truncate">{studio.name}</h3>

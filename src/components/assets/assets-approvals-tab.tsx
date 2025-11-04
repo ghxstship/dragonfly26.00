@@ -43,7 +43,7 @@ export default function AssetsApprovalsTab() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'approved':
-        return <CheckCircle className="h-4 w-4 text-green-600" aria-hidden="true" />
+        return <CheckCircle className="h-4 w-4 text-green-600 flex-shrink-0" aria-hidden="true" />
       case 'rejected':
         return <XCircle className="h-4 w-4 text-red-600" aria-hidden="true" />
       case 'pending':

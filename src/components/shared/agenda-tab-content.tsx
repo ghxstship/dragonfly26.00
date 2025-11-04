@@ -262,13 +262,13 @@ function AgendaItemCard({
       <div className="flex flex-wrap gap-3">
         <div className="flex-shrink-0 mt-0.5">
           {item.completed ? (
-            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
           ) : (
             <Circle className="h-5 w-5 text-muted-foreground" />
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+          <div className="flex items-start justify-between gap-2">
             <div className={cn(
               "font-medium text-sm",
               item.completed && "line-through text-muted-foreground"

@@ -106,7 +106,7 @@ export function MarketplaceCartDrawer({
 
                         {/* Product Details */}
                         <div className="flex-1 space-y-1">
-                          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                          <div className="flex items-start justify-between gap-2">
                             <div className="flex-1">
                               <p className="font-semibold text-sm line-clamp-2">{item.name}</p>
                               {item.assignee_name && (

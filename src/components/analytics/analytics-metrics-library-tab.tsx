@@ -91,7 +91,7 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
           {savedMetrics.filter(m => m.isFavorite).map((metric: any) => (
             <Card key={metric.id} className="hover:shadow-md transition-shadow">
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                       <CardTitle className="text-base">{t(metric.nameKey)}</CardTitle>

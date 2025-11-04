@@ -161,7 +161,7 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         <Card>
           <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Accepted</CardTitle>
-            <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
+            <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.accepted}</div>

@@ -170,8 +170,8 @@ export default function SelectPlanPage() {
                   {/* Features */}
                   <ul className="space-y-3">
                     {features.slice(0, 8).map((feature: any, idx: number) => (
-                      <li key={idx} className="flex flex-wrap flex-col md:flex-row items-start gap-2">
-                        <Check className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-green-500 shrink-0 mt-0.5 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}

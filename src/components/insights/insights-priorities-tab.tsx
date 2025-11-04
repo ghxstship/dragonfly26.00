@@ -162,7 +162,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
         {priorities.map((priority: any) => (
           <Card key={priority.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-4 sm:p-6">
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
+              <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
                 <div className="flex flex-wrap items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 font-bold text-base md:text-lg lg:text-xl flex-shrink-0">
                   {priority.rank}
                 </div>

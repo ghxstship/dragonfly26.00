@@ -227,7 +227,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
         <Card>
           <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
             <CardTitle className="text-sm font-medium" aria-hidden="true">Approved Today</CardTitle>
-            <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
+            <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">1</div>
@@ -263,7 +263,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
               pendingApprovals.map((approval: any) => (
                 <Card key={approval.id} className="border-l-4 border-l-primary">
                   <CardContent className="pt-6" aria-hidden="true">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                    <div className="flex items-start justify-between">
                       <div className="space-y-1 flex-1">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <h4 className="font-semibold">{approval.reference}</h4>
@@ -301,7 +301,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                             onClick={() => handleApprove(approval.id)}
                             disabled={actionLoading === approval.id}
                           >
-                            <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
+                            <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
                             Approve
                           </Button>
                         </div>
@@ -313,7 +313,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
             ) : (
               <div className="flex flex-wrap items-center justify-center h-32 text-muted-foreground">
                 <div className="text-center">
-                  <CheckCircle2 className="h-8 w-8" aria-hidden="true"  />
+                  <CheckCircle2 className="h-8 w-8 flex-shrink-0" aria-hidden="true"  />
                   <p className="text-sm">No pending approvals</p>
                   <p className="text-xs mt-1">You&apos;re all caught up!</p>
                 </div>
@@ -376,7 +376,7 @@ export function FinanceApprovalsTab({ data, loading }: FinanceApprovalsTabProps)
                       : 'bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300'
                   }`}>
                     {activity.action === 'Approved' ? (
-                      <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
                     ) : (
                       <XCircle className="h-4 w-4" aria-hidden="true" />
                     )}

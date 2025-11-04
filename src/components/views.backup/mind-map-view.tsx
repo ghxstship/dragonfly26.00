@@ -83,7 +83,7 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
     const hasChildren = node.children.length > 0
 
     return (
-      <div key={node.id} className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+      <div key={node.id} className="flex items-start gap-2">
         <div className="flex flex-wrap flex-col items-center">
           {/* Node */}
           <div

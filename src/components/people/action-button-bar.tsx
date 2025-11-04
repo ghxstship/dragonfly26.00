@@ -78,7 +78,7 @@ export function ActionButtonBar({
 
         {onApprove && pendingApprovals > 0 && (
           <Button onClick={onApprove} variant="outline" size="sm" className="relative">
-            <CheckCircle2 className="h-4 w-4 mr-2" />
+            <CheckCircle2 className="h-4 w-4 mr-2 flex-shrink-0" />
             Approve
             <Badge variant="destructive" className="ml-2 h-5 w-5 flex flex-wrap items-center justify-center p-0 text-xs">
               {pendingApprovals}

@@ -65,9 +65,9 @@ export default function CompletePage() {
         <div className="flex flex-wrap justify-center">
           <div className="relative">
             <div className="absolute sm:relative sm:inset-auto inset-0 animate-ping sm:relative sm:inset-auto">
-              <CheckCircle2 className="h-24 w-24 text-green-500 opacity-75" />
+              <CheckCircle2 className="h-24 w-24 text-green-500 opacity-75 flex-shrink-0" />
             </div>
-            <CheckCircle2 className="h-24 w-24 text-green-500 relative" />
+            <CheckCircle2 className="h-24 w-24 text-green-500 relative flex-shrink-0" />
           </div>
         </div>
 
@@ -94,8 +94,8 @@ export default function CompletePage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid gap-2 md:gap-3 lg:gap-4 text-left">
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
-                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 p-3 rounded-lg border">
+                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="">Profile Complete</p>
                   <p className="text-sm text-muted-foreground">
@@ -104,8 +104,8 @@ export default function CompletePage() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
-                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 p-3 rounded-lg border">
+                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="">Workspace Created</p>
                   <p className="text-sm text-muted-foreground">
@@ -114,8 +114,8 @@ export default function CompletePage() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
-                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 p-3 rounded-lg border">
+                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="">Plan Selected</p>
                   <p className="text-sm text-muted-foreground">

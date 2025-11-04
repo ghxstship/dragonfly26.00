@@ -98,8 +98,8 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
           return (
             <Card key={rec.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start gap-3">
                     <div className="p-2 bg-accent rounded-lg">
                       <Icon className={`h-6 w-6 ${rec.color}`} />
                     </div>

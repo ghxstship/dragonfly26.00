@@ -125,7 +125,7 @@ export function QuickView({
             <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Header */}
               <div className="space-y-3">
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                <div className="flex items-start justify-between gap-2">
                   <div className="flex-1 space-y-2">
                     {product.category && (
                       <Badge variant="secondary">{product.category}</Badge>

@@ -169,7 +169,7 @@ export function PendingApprovalsWidget({
     <Card>
       <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium">Pending Approvals</CardTitle>
-        <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
+        <CheckCircle2 className="h-4 w-4 text-muted-foreground flex-shrink-0" />
       </CardHeader>
       <CardContent>
         <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalCount as any}</div>
@@ -232,7 +232,7 @@ export function AlertsWidget({
       <CardContent>
         {alertCount === 0 ? (
           <div className="text-center py-4">
-            <CheckCircle2 className="h-8 w-8 text-green-500 mx-auto mb-2" />
+            <CheckCircle2 className="h-8 w-8 text-green-500 mx-auto mb-2 flex-shrink-0" />
             <p className="text-sm text-muted-foreground">All clear!</p>
           </div>
         ) : (
@@ -242,7 +242,7 @@ export function AlertsWidget({
             
             <div className="mt-4 space-y-2">
               {alerts.slice(0, 3).map((alert, i) => (
-                <div key={i} className="flex flex-wrap flex-col md:flex-row items-start gap-2 text-sm">
+                <div key={i} className="flex items-start gap-2 text-sm">
                   <StatusDot 
                     status={alert.type === "compliance" ? "error" : "warning"} 
                     size="sm" 

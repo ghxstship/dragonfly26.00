@@ -453,7 +453,7 @@ export function AppearanceTab() {
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Use Organization Typography Toggle */}
-          <div className="flex flex-wrap flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 items-start">
             <div className="space-y-0.5">
               <Label htmlFor="use-org-typography">Use Organization Typography</Label>
               <p className="text-sm text-muted-foreground">

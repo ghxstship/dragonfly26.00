@@ -25,7 +25,7 @@ export function AutomationsList({ automations, onUpdate }: AutomationsListProps)
       {automations.map((automation: any) => (
         <Card key={automation.id}>
           <CardContent className="p-4 sm:p-6">
-            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+            <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                   <Zap className={`h-5 w-5 ${automation.is_active ? "text-purple-600" : "text-muted-foreground"}`} />

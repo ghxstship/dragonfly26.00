@@ -230,7 +230,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
           <Card key={post.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-4 sm:p-6">
               {/* Post Header */}
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
+              <div className="flex items-start justify-between mb-4">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Avatar className="h-10 w-10">
                     <AvatarImage src={post.authorImage} />

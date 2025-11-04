@@ -79,7 +79,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         const icons: Record<string, React.ReactNode> = {
           planned: <Calendar className="h-4 w-4 mr-1" aria-hidden="true" />,
           in_progress: <Clock className="h-4 w-4 mr-1" aria-hidden="true" />,
-          completed: <CheckCircle2 className="h-4 w-4 mr-1" aria-hidden="true" />,
+          completed: <CheckCircle2 className="h-4 w-4 mr-1 flex-shrink-0" aria-hidden="true" />,
         }
         return (
           <Badge variant="outline" className={`${colors[value] || ''} flex items-center w-fit`}>

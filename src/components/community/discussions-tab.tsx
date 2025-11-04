@@ -291,7 +291,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                   {/* Content Column */}
                   <div className="flex-1 min-w-0">
                     {/* Header */}
-                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 mb-2">
+                    <div className="flex items-start gap-2 mb-2">
                       {discussion.pinned && (
                         <Pin className="h-4 w-4 text-primary flex-shrink-0 mt-1"  aria-hidden="true" />
                       )}

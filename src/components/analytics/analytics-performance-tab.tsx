@@ -97,7 +97,7 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
                 </div>
                 <Badge variant={(area as any).status === "above" ? "default" : "secondary"} className={(area as any).status === "above" ? "bg-green-600" : "bg-yellow-600"}>
                   {(area as any).status === "above" ? (
-                    <><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Above Benchmark</>
+                    <><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" /> Above Benchmark</>
                   ) : (
                     <><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Below Benchmark</>
                   )}

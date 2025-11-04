@@ -85,7 +85,7 @@ export function APITokensPageContent() {
                   <p className="text-sm text-muted-foreground">Active</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{activeTokens}</p>
                 </div>
-                <CheckCircle2 className="h-8 w-8 text-green-600" />
+                <CheckCircle2 className="h-8 w-8 text-green-600 flex-shrink-0" />
               </div>
             </CardContent>
           </Card>

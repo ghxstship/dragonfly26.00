@@ -111,7 +111,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
           </div>
           {copied && (
             <Alert>
-              <CheckCircle2 className="h-4 w-4" />
+              <CheckCircle2 className="h-4 w-4 flex-shrink-0" />
               <AlertDescription>Link copied to clipboard!</AlertDescription>
             </Alert>
           )}
@@ -157,7 +157,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
           </div>
           {sent && (
             <Alert>
-              <CheckCircle2 className="h-4 w-4" />
+              <CheckCircle2 className="h-4 w-4 flex-shrink-0" />
               <AlertDescription>Invitation sent successfully!</AlertDescription>
             </Alert>
           )}

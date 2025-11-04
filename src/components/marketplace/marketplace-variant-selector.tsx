@@ -145,7 +145,7 @@ export function VariantSelector({
                     >
                       {value}
                       {isSelected && (
-                        <Check className="ml-1 h-3 w-3" />
+                        <Check className="ml-1 h-3 w-3 flex-shrink-0" />
                       )}
                       {!isAvailable && (
                         <span className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">

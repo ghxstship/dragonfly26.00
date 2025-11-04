@@ -150,15 +150,14 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
                 }}
                 aria-label={t('viewTask', { title: task.title || 'Task' })}
               >
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
-                  <Checkbox 
-                    checked={task.completed}
-                    className="mt-1"
+                <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
+                  <Checkbox checked={task.completed}
+                    className="mt-1 flex-shrink-0"
                     aria-label={`Mark ${task.title} as ${task.completed ? 'incomplete' : 'complete'}`}
                   />
                   
                   <div className="flex-1 space-y-2">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                    <div className="flex items-start justify-between gap-2">
                       <div className="flex-1">
                         <h3 className="font-semibold">{task.title}</h3>
                         <p className="text-sm text-muted-foreground mt-1">{task.project}</p>
@@ -192,7 +191,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
 
                       {task.subtasks.total > 0 && (
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                          <CheckSquare className="h-3.5 w-3.5" aria-hidden="true" />
+                          <CheckSquare className="h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
                           {task.subtasks.completed}/{task.subtasks.total} {t('subtasks')}
                         </div>
                       )}

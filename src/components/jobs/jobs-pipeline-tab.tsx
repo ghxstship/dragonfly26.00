@@ -185,7 +185,7 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
                       aria-label={t('aria.jobCard', { title: job.name })}
                     >
                       <CardHeader className="p-3" aria-hidden="true">
-                        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                        <div className="flex items-start justify-between">
                           <CardTitle className="text-sm font-medium line-clamp-2" aria-hidden="true">
                             {job.name}
                           </CardTitle>

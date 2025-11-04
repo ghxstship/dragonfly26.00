@@ -122,7 +122,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
             return (
               <Card key={index} role="article">
                 <CardHeader>
-                  <div className="flex flex-wrap flex-col md:flex-row flex-col sm:flex-row flex-col md:flex-row flex-col sm:flex-col md:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 items-start">
                     <div className="flex-1">
                       <CardTitle className="text-base sm:text-lg">{data.metric}</CardTitle>
                       <CardDescription className="text-xs sm:text-sm">
@@ -165,7 +165,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
                     </div>
 
                     {/* Insights */}
-                    <div className="flex flex-wrap flex-col md:flex-row flex-col md:flex-row items-start sm:items-center gap-2 p-3 bg-accent rounded-lg text-xs sm:text-sm">
+                    <div className="flex sm:items-center gap-2 p-3 bg-accent rounded-lg text-xs sm:text-sm items-start">
                       <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5 sm:mt-0" aria-hidden="true" />
                       <p className="leading-relaxed">
                         {data.trend === "up" ? "Positive" : "Negative"} trend over the last {isMobile ? '3' : '6'} months with 

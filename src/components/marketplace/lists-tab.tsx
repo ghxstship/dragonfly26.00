@@ -105,8 +105,8 @@ export function ListsTab({ data = [], loading: loadingProp = false }: ListsTabPr
         {listsData.map((list: any) => (
           <Card key={list.id} className="hover:shadow-lg transition-shadow group">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+              <div className="flex items-start justify-between">
+                <div className="flex items-start gap-3">
                   {getListIcon(list.name)}
                   <div className="space-y-1 flex-1">
                     <CardTitle className="text-lg line-clamp-1">{list.name}</CardTitle>

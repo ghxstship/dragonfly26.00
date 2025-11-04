@@ -168,8 +168,8 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
           {reviewsData.map((review: any) => (
             <Card key={review.id}>
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start gap-3">
                     <Avatar>
                       <AvatarFallback>
                         {review.assignee_name?.split(' ').map((n: string) => n[0]).join('') || "U"}

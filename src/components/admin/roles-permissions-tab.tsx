@@ -100,7 +100,7 @@ export function RolesPermissionsTab() {
               onClick={() => handleViewRole(role.slug)}
             >
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex items-start justify-between">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                     <div 
                       className="p-2 rounded-lg"

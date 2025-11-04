@@ -136,7 +136,7 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
                   
                   {/* Content */}
                   <div className="flex-1 pt-0.5">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                    <div className="flex items-start justify-between gap-2">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
                         {activity.user && (
                           <Avatar className="h-6 w-6">

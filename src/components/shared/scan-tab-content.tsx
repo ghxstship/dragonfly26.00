@@ -294,7 +294,7 @@ export function ScanTabContent() {
                 size="sm"
                 onClick={saveScan}
               >
-                <Check className="h-4 w-4 mr-2" />
+                <Check className="h-4 w-4 mr-2 flex-shrink-0" />
                 Save Scan
               </Button>
             </div>

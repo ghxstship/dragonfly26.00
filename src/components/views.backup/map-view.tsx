@@ -145,7 +145,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
                     onItemClick?.(item)
                   }}
                 >
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                  <div className="flex items-start gap-2">
                     <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
                       <div className="font-medium text-sm">

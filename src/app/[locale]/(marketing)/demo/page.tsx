@@ -40,7 +40,7 @@ export default async function DemoPage({ params }: { params: Promise<{ locale: s
                   "Reporting and analytics dashboards",
                   "Mobile app features for on-site teams",
                 ].map((item) => (
-                  <li key={item} className="flex flex-wrap flex-col md:flex-row items-start">
+                  <li key={item} className="flex items-start">
                     <Check className="text-green-500 mr-3 mt-0.5 flex-shrink-0" size={20} />
                     <span className="text-gray-700 dark:text-gray-300">{item}</span>
                   </li>

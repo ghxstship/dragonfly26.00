@@ -80,8 +80,8 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
           {upcomingReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-4 sm:p-6">
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4 flex-1">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start gap-2 md:gap-3 lg:gap-4 flex-1">
                     <Calendar className="h-8 w-8 text-blue-600 mt-1" aria-hidden="true" />
                     <div className="flex-1">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
@@ -142,8 +142,8 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
           {pastReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
               <CardContent className="p-4 sm:p-6">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
-                  <CheckCircle className="h-8 w-8 text-green-600 mt-1" aria-hidden="true" />
+                <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
+                  <CheckCircle className="h-8 w-8 text-green-600 mt-1 flex-shrink-0" aria-hidden="true" />
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                       <h4 className="font-semibold">{t(review.titleKey)}</h4>
@@ -165,7 +165,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                       <p className="text-sm font-medium mb-2">{t('keyOutcomes')}</p>
                       <ul className="space-y-1">
                         {review.outcomes.map((outcome: any, idx: number) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex flex-wrap flex-col md:flex-row items-start gap-2">
+                          <li key={idx} className="flex text-sm text-muted-foreground gap-2 items-start">
                             <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
                             {outcome}
                           </li>

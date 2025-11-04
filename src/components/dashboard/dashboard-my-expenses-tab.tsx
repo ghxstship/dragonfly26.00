@@ -87,7 +87,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
           emptyMessage={t('noExpenses')}
           renderItem={(expense) => (
             <div className="space-y-2">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div>
                   <h3 className="font-semibold">{expense.name}</h3>
                   <p className="text-sm text-muted-foreground mt-1">{expense.description}</p>

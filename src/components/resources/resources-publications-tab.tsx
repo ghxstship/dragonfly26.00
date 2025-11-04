@@ -130,8 +130,8 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         {filteredPublications.map((publication: any) => (
           <Card key={publication.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1">
+              <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                <div className="flex items-start gap-3 flex-1">
                   <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-950">
                     <FileText className="h-5 w-5 text-orange-600" aria-hidden="true" />
                   </div>

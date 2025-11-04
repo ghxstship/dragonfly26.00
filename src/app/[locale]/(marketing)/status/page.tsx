@@ -164,7 +164,7 @@ export default async function StatusPage({ params }: { params: Promise<{ locale:
             </div>
           ) : (
             <div className="text-center py-12">
-              <CheckCircle2 className="mx-auto text-green-600 mb-4" size={48} />
+              <CheckCircle2 className="mx-auto text-green-600 mb-4 flex-shrink-0" size={48} />
               <p className="text-lg text-gray-600 dark:text-gray-300">
                 No incidents in the last 30 days
               </p>

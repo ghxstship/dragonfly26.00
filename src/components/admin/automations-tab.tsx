@@ -77,7 +77,7 @@ export function AutomationsTab() {
         {automations.map((automation: any) => (
           <Card key={automation.id}>
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                     <CardTitle className="text-base">{automation.name}</CardTitle>

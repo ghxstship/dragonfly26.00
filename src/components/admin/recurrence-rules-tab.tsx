@@ -138,7 +138,7 @@ export function RecurrenceRulesTab() {
         {rules.map((rule: any) => (
           <Card key={rule.id}>
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                     <CardTitle className="text-base">{(rule.nameKey ? t(rule.nameKey) : rule.name)}</CardTitle>

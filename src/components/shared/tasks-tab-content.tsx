@@ -186,7 +186,7 @@ export function TasksTabContent() {
             <div className="px-4 pb-4 space-y-2">
               {activeTasks.length === 0 ? (
                 <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4 flex-shrink-0" />
                   <p className="text-sm font-medium">All caught up!</p>
                   <p className="text-xs text-muted-foreground mt-1">
                     No active tasks
@@ -210,7 +210,7 @@ export function TasksTabContent() {
             <div className="px-4 pb-4 space-y-2">
               {overdueTasks.length === 0 ? (
                 <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4 flex-shrink-0" />
                   <p className="text-sm font-medium">Nothing overdue</p>
                   <p className="text-xs text-muted-foreground mt-1">
                     You&apos;re on track!
@@ -281,13 +281,13 @@ function TaskCard({
       <div className="flex flex-wrap gap-3">
         <div className="flex-shrink-0 mt-0.5">
           {isCompleted ? (
-            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
           ) : (
             <Circle className="h-5 w-5 text-muted-foreground" />
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+          <div className="flex items-start justify-between gap-2">
             <div className={cn(
               "font-medium text-sm",
               isCompleted && "line-through text-muted-foreground"

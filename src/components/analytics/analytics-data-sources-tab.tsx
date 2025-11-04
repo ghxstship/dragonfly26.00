@@ -117,7 +117,7 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
                     className={(source as any).status === "connected" ? "bg-green-600" : "bg-yellow-600"}
                   >
                     {(source as any).status === "connected" ? (
-                      <><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Connected</>
+                      <><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" /> Connected</>
                     ) : (
                       <><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Warning</>
                     )}

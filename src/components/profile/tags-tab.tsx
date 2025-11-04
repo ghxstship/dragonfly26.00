@@ -107,7 +107,7 @@ export function TagsTab() {
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Info Banner */}
-      <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950">
+      <div className="flex items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950">
         <Info className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" aria-hidden="true" />
         <div>
           <h3 className="font-semibold text-blue-900 dark:text-blue-100">

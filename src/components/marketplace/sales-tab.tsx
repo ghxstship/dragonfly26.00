@@ -33,11 +33,11 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle2 className="h-3 w-3 mr-1" />{t('completed')}</Badge>
+        return <Badge className="bg-green-600"><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />{t('completed')}</Badge>
       case "in-progress":
         return <Badge className="bg-blue-600"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />{t('inProgress')}</Badge>
       case "confirmed":
-        return <Badge className="bg-purple-600"><CheckCircle2 className="h-3 w-3 mr-1" />{t('confirmed')}</Badge>
+        return <Badge className="bg-purple-600"><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />{t('confirmed')}</Badge>
       case "pending":
         return <Badge variant="outline"><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('pending')}</Badge>
       case "cancelled":
@@ -83,7 +83,7 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
           <CardHeader className="pb-3">
             <CardDescription>Completed Sales</CardDescription>
             <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <CheckCircle2 className="h-6 w-6 text-green-600" />
+              <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0" />
               {completedSales}
             </CardTitle>
           </CardHeader>
@@ -124,7 +124,7 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
           {salesData.map((sale: any) => (
             <Card key={sale.id}>
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex items-start justify-between">
                   <div className="space-y-1">
                     <CardTitle className="text-lg">{sale.name}</CardTitle>
                     <CardDescription>

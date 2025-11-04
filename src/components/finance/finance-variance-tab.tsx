@@ -237,7 +237,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                 <CardContent className="pt-6" aria-hidden="true">
                   <div className="space-y-3">
                     {/* Header */}
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                    <div className="flex items-start justify-between">
                       <div className="space-y-1">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                           <h4 className="font-semibold">{variance.categoryKey ? t(variance.categoryKey) : variance.category}</h4>
@@ -277,7 +277,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                     </div>
 
                     {/* Root Cause */}
-                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-muted rounded-md">
+                    <div className="flex items-start gap-2 p-3 bg-muted rounded-md">
                       <Info className="h-4 w-4" aria-hidden="true" />
                       <div className="space-y-1 flex-1">
                         <p className="text-xs font-medium">Root Cause</p>
@@ -382,7 +382,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
 
               <div className="pt-4 border-t">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                  <CheckCircle2 className="h-4 w-4" aria-hidden="true"  />
+                  <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
                   <span className="text-muted-foreground">Average variance: <strong className="text-green-600">+$1.0k</strong></span>
                 </div>
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm mt-2">

@@ -216,13 +216,13 @@ export function ProductsTab({ data = [], loading: loadingProp = false }: Product
               </>
             ) : (
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4 flex-1">
+                <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                  <div className="flex items-start gap-2 md:gap-3 lg:gap-4 flex-1">
                     <div className="w-24 h-24 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded flex flex-wrap items-center justify-center flex-shrink-0">
                       <Package className="h-12 w-12 text-muted-foreground/30" aria-hidden="true" />
                     </div>
                     <div className="space-y-2 flex-1">
-                      <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                      <div className="flex items-start justify-between gap-2">
                         <div>
                           <p className="font-semibold">{product.name}</p>
                           <p className="text-xs text-muted-foreground">by {product.assignee_name}</p>

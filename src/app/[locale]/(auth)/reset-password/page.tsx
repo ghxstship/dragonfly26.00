@@ -93,7 +93,7 @@ export default function ResetPasswordPage() {
               <div className="relative">
                 <div className="absolute sm:relative sm:inset-auto inset-0 bg-green-500/20 rounded-full blur-2xl sm:relative sm:inset-auto" />
                 <div className="relative bg-green-500/10 p-6 rounded-full">
-                  <CheckCircle2 className="w-16 h-16 text-green-500" />
+                  <CheckCircle2 className="w-16 h-16 text-green-500 flex-shrink-0" />
                 </div>
               </div>
             </div>

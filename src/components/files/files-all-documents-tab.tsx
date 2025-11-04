@@ -108,7 +108,7 @@ export function AllDocumentsTab({ data, loading }: AllDocumentsTabProps) {
                   key={item.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                 >
-                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex items-start justify-between">
                     <div className="space-y-1">
                       <h3 className="font-semibold">{item.name || item.title || 'Untitled'}</h3>
                       <p className="text-sm text-muted-foreground">

@@ -95,7 +95,7 @@ export default function AssetsAdvancesTab() {
               (advances as any[]).map((advance: any) => (
                 <TableRow key={advance.id as string}>
                   <TableCell>
-                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                    <div className="flex items-start gap-2">
                       <Package className="h-4 w-4 mt-1 text-muted-foreground" aria-hidden="true" />
                       <div>
                         <div className="font-medium">{advance.asset_item}</div>

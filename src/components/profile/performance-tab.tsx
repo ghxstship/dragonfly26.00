@@ -71,7 +71,7 @@ export function PerformanceTab() {
       value: 4.6,
       maxValue: 5.0,
       trend: "up",
-      icon: <CheckCircle2 className="h-4 w-4" aria-hidden="true" />,
+      icon: <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true" />,
     },
   ]
 
@@ -194,7 +194,7 @@ export function PerformanceTab() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2 border-b pb-4">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div>
                   <p className="font-medium text-sm">{t('profile.performance.feedback-1')}</p>
                   <p className="text-xs text-muted-foreground">{t('profile.performance.feedback-1-description')}</p>
@@ -211,7 +211,7 @@ export function PerformanceTab() {
             </div>
 
             <div className="space-y-2 border-b pb-4">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div>
                   <p className="font-medium text-sm">{t('profile.performance.feedback-2')}</p>
                   <p className="text-xs text-muted-foreground">{t('profile.performance.feedback-2-description')}</p>
@@ -228,7 +228,7 @@ export function PerformanceTab() {
             </div>
 
             <div className="space-y-2">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div>
                   <p className="font-medium text-sm">{t('profile.performance.feedback-3')}</p>
                   <p className="text-xs text-muted-foreground">{t('profile.performance.feedback-3-description')}</p>

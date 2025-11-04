@@ -143,7 +143,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
         {companies.map((company: any) => (
           <Card key={company.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
+              <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
                 <Avatar className="h-12 w-12" aria-hidden="true">
                   <AvatarImage 
                     src={company.logo} 

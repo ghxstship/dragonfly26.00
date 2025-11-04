@@ -174,7 +174,7 @@ export function PTOCalendarWidget({
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <span className="font-bold">{balance} days</span>
             {isAvailable ? (
-              <CheckCircle2 className="h-4 w-4 text-green-500" />
+              <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
             ) : (
               <X className="h-4 w-4 text-red-500" />
             )}
@@ -210,7 +210,7 @@ export function PTOCalendarWidget({
           >
             {isAvailable ? (
               <>
-                <CheckCircle2 className="h-4 w-4 mr-2" />
+                <CheckCircle2 className="h-4 w-4 mr-2 flex-shrink-0" />
                 Request PTO ({totalDays} days)
               </>
             ) : (

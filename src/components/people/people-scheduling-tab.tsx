@@ -234,7 +234,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                                     <AlertTriangle className="h-4 w-4 text-yellow-600" />
                                   )}
                                   {shift.is_confirmed && (
-                                    <CheckCircle2 className="h-4 w-4 text-green-600" />
+                                    <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
                                   )}
                                 </div>
                               </div>
@@ -268,7 +268,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
               <span>{t('conflict')}</span>
             </div>
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-green-600" />
+              <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
               <span>{t('confirmed')}</span>
             </div>
           </div>

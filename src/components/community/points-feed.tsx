@@ -130,7 +130,7 @@ export function PointsFeed({
         <CardContent className={compact ? "pt-0" : ""}>
           <div className="space-y-3">
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="flex flex-wrap flex-col md:flex-row items-start gap-3 animate-pulse">
+              <div key={i} className="flex items-start gap-3 animate-pulse">
                 <div className="h-8 w-8 rounded-full bg-muted" />
                 <div className="flex-1 space-y-2">
                   <div className="h-3 bg-muted rounded w-32" />
@@ -163,7 +163,7 @@ export function PointsFeed({
               return (
                 <div
                   key={transaction.id}
-                  className="flex flex-col md:flex-row items-start gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
+                  className="flex gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors items-start"
                 >
                   {/* Icon */}
                   <div className={cn(
@@ -175,7 +175,7 @@ export function PointsFeed({
 
                   {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                    <div className="flex items-start justify-between gap-2">
                       <p className="text-sm font-medium">
                         {transaction.description || actionInfo.label}
                       </p>

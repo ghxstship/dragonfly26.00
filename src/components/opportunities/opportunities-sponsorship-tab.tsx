@@ -28,7 +28,7 @@ export function OpportunitiesSponsorshipTab({ workspaceId = '', userId = '' }: O
   const renderCard = (sponsor: any) => (
     <Card className="hover:shadow-lg transition-shadow cursor-pointer">
       <CardHeader>
-        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+        <div className="flex items-start justify-between">
           <CardTitle className="text-lg">{sponsor.brand || sponsor.name}</CardTitle>
           <Badge variant={sponsor.status === 'active' ? 'default' : 'secondary'}>
             {sponsor.status}

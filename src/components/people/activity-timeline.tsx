@@ -108,7 +108,7 @@ function TimelineEventItem({
 
       {/* Content */}
       <div className="flex-1 min-w-0 pb-4">
-        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 mb-1">
+        <div className="flex items-start justify-between gap-2 mb-1">
           <p className="text-sm font-medium">{event.title}</p>
           <span className="text-xs text-muted-foreground whitespace-nowrap overflow-hidden text-ellipsis">
             {timeAgo}
@@ -152,7 +152,7 @@ function getEventConfig(type: TimelineEvent['type']) {
       label: "PTO"
     },
     onboarding: {
-      icon: <CheckCircle2 className="h-4 w-4 text-green-600" />,
+      icon: <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />,
       bgColor: "bg-green-100 dark:bg-green-900",
       label: "Onboarding"
     },
@@ -201,7 +201,7 @@ export function ActivityTimelineCompact({
       {events.slice(0, maxItems).map((event: any) => {
         const config = getEventConfig(event.type)
         return (
-          <div key={event.id} className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+          <div key={event.id} className="flex items-start gap-2">
             <div className={cn(
               "h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0",
               config.bgColor

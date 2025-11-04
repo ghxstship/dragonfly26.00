@@ -141,7 +141,7 @@ export default async function SecurityPage({ params }: { params: Promise<{ local
                 key={item.name}
                 className="mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6 text-center max-w-sm md:max-w-none"
               >
-                <CheckCircle2 className="mx-auto text-green-600 mb-3" size={32} />
+                <CheckCircle2 className="mx-auto text-green-600 mb-3 flex-shrink-0" size={32} />
                 <h3 className="font-heading uppercase text-gray-900 dark:text-white mb-2">
                   {item.name}
                 </h3>

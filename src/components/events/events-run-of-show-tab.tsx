@@ -164,7 +164,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                           {cue.number || index + 1}
                         </div>
                         {(cue as any).status === 'completed' && (
-                          <CheckCircle2 className="h-4 w-4 mx-auto" aria-hidden="true" />
+                          <CheckCircle2 className="h-4 w-4 mx-auto flex-shrink-0" aria-hidden="true" />
                         )}
                         {(cue as any).status === 'warning' && (
                           <AlertCircle className="h-4 w-4 mx-auto" aria-hidden="true" />

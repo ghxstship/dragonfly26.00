@@ -175,7 +175,7 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
               {termsByLetter[letter].map((term: any) => (
                 <Card key={term.id} className="hover:shadow-md transition-shadow">
                   <CardHeader>
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                    <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                       <div className="flex-1">
                         <CardTitle className="text-lg">{term.name}</CardTitle>
                         {term.alternate_names && term.alternate_names.length > 0 && (

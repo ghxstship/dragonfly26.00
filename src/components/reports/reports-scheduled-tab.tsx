@@ -70,7 +70,7 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
         {scheduledReports.map((report: any) => (
           <Card key={report.id} role="article" aria-label={`Scheduled report: ${t(report.nameKey)}`}>
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="space-y-1">
                   <CardTitle id={`report-${report.id}`}>{t(report.nameKey)}</CardTitle>
                   <CardDescription className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">

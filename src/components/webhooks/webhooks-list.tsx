@@ -27,13 +27,13 @@ export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
           onClick={() => onSelect(webhook)}
         >
           <CardContent className="p-4 sm:p-6">
-            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+            <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                   <h3 className="font-semibold text-lg">{webhook.name}</h3>
                   {webhook.is_active ? (
                     <Badge variant="default" className="bg-green-600">
-                      <CheckCircle2 className="h-3 w-3 mr-1" />
+                      <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />
                       Active
                     </Badge>
                   ) : (

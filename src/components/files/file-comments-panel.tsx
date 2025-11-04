@@ -143,7 +143,7 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
               </span>
               {comment.is_resolved && (
                 <Badge variant="outline" className="text-xs">
-                  <Check className="h-3 w-3 mr-1" />
+                  <Check className="h-3 w-3 mr-1 flex-shrink-0" />
                   Resolved
                 </Badge>
               )}
@@ -162,7 +162,7 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
             </Button>
             {!comment.is_resolved && (
               <Button variant="ghost" size="sm" className="h-7 text-xs">
-                <Check className="h-3 w-3 mr-1" />
+                <Check className="h-3 w-3 mr-1 flex-shrink-0" />
                 Resolve
               </Button>
             )}

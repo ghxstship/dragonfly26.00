@@ -170,7 +170,7 @@ export function ChecklistTemplatesTab() {
                 key={template.id}
                 className="p-4 border rounded-lg hover:bg-accent/50"
               >
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex items-start justify-between">
                   <div className="flex flex-wrap gap-3 flex-1">
                     <ListChecks className="h-5 w-5 text-muted-foreground mt-0.5" aria-hidden="true" />
                     <div className="flex-1">

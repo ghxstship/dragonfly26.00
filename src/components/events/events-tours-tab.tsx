@@ -140,7 +140,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                       onClick={() => setSelectedStop(stop)}
                     >
                       <CardContent className="pt-6">
-                        <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                        <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                           <div className="flex-1">
                             {/* Header */}
                             <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-3">

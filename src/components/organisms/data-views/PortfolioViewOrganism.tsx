@@ -111,13 +111,13 @@ export function PortfolioViewOrganism({
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "on-track":
-        return <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
+        return <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
       case "at-risk":
         return <AlertCircle className="h-4 w-4" aria-hidden="true" />
       case "delayed":
         return <AlertCircle className="h-4 w-4" aria-hidden="true" />
       case "completed":
-        return <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
+        return <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
       default:
         return <Clock className="h-4 w-4" aria-hidden="true" />
     }
@@ -268,7 +268,7 @@ export function PortfolioViewOrganism({
                 onClick={() => onItemClick?.(data.find((d: any) => d.id === project.id)!)}
               >
                 <CardHeader>
-                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                  <div className="flex items-start justify-between">
                     <div className="flex-1 min-w-0">
                       <CardTitle className="text-base line-clamp-1">{project.name}</CardTitle>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2">

@@ -192,7 +192,7 @@ export function EndorsementsTab() {
             {skillEndorsements.map((skillEndorsement: any) => (
               <div
                 key={skillEndorsement.skill}
-                className="flex flex-col md:flex-row items-start justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
+                className="flex justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors items-start"
               >
                 <div className="space-y-1">
                   <p className="font-medium">{skillEndorsement.skill}</p>
@@ -246,7 +246,7 @@ export function EndorsementsTab() {
                     </AvatarFallback>
                   </Avatar>
                   <div className="flex-1 space-y-2">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                    <div className="flex items-start justify-between">
                       <div>
                         <p className="font-semibold">{endorsement.endorserName}</p>
                         <p className="text-sm text-muted-foreground">

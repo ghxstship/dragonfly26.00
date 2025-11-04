@@ -172,7 +172,7 @@ export function InsightsPageContent() {
                   <p className="text-sm text-muted-foreground">Completed</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{stats.completed}</p>
                 </div>
-                <CheckCircle2 className="h-8 w-8 text-blue-600" />
+                <CheckCircle2 className="h-8 w-8 text-blue-600 flex-shrink-0" />
               </div>
             </CardContent>
           </Card>

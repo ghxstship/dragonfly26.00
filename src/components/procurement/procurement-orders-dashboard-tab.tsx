@@ -161,7 +161,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
                       {stageOrders.map((order: any) => (
                         <Card key={order.id} className="p-3 hover:shadow-md transition-shadow cursor-pointer">
                           <div className="space-y-2">
-                            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                            <div className="flex items-start justify-between">
                               <div className="flex-1 min-w-0">
                                 <div className="font-medium text-sm truncate">{order.title || order.po_number}</div>
                                 <div className="text-xs text-muted-foreground truncate">{order.vendor}</div>

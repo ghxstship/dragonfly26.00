@@ -224,7 +224,7 @@ export function NotificationsTabContent() {
             </div>
           </div>
           <div className="flex-1 min-w-0">
-            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+            <div className="flex items-start justify-between gap-2">
               <div className="font-medium text-sm">{notification.title}</div>
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 {!notification.read && (
@@ -249,7 +249,7 @@ export function NotificationsTabContent() {
                     markAsRead(notification.id)
                   }}
                 >
-                  <CheckCircle2 className="h-3 w-3 mr-1" />
+                  <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />
                   Mark read
                 </Button>
               )}
@@ -279,7 +279,7 @@ export function NotificationsTabContent() {
             className="w-full gap-2 justify-center max-w-full"
             onClick={markAllAsRead}
           >
-            <CheckCheck className="h-4 w-4" />
+            <CheckCheck className="h-4 w-4 flex-shrink-0" />
             Mark all as read ({unreadCount})
           </Button>
         </div>
@@ -317,7 +317,7 @@ export function NotificationsTabContent() {
               )}
               {notifications.length === 0 && (
                 <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4 flex-shrink-0" />
                   <p className="text-sm font-medium">All caught up!</p>
                   <p className="text-xs text-muted-foreground mt-1">
                     No new notifications
@@ -336,7 +336,7 @@ export function NotificationsTabContent() {
                 .map(renderNotification)}
               {notifications.filter((n) => !n.read).length === 0 && (
                 <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <CheckCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4 flex-shrink-0" />
                   <p className="text-sm font-medium">All caught up!</p>
                   <p className="text-xs text-muted-foreground mt-1">
                     No unread notifications

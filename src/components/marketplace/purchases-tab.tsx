@@ -35,9 +35,9 @@ export function PurchasesTab({ data = [], loading: loadingProp = false }: Purcha
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('completed')}</Badge>
+        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />{t('completed')}</Badge>
       case "delivered":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('delivered')}</Badge>
+        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />{t('delivered')}</Badge>
       case "shipped":
         return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" aria-hidden="true" />{t('shipped')}</Badge>
       case "processing":
@@ -156,8 +156,8 @@ export function PurchasesTab({ data = [], loading: loadingProp = false }: Purcha
         {purchasesData.map((purchase: any) => (
           <Card key={purchase.id} className="hover:shadow-md transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+              <div className="flex items-start justify-between">
+                <div className="flex items-start gap-3">
                   {getPurchaseTypeIcon(purchase.name)}
                   <div className="space-y-1">
                     <CardTitle className="text-lg">{purchase.name}</CardTitle>

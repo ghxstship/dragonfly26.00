@@ -168,7 +168,7 @@ export function WorkspaceSwitcher() {
                 )}
               </div>
               {currentWorkspace?.id === workspace.id && (
-                <Check className="h-4 w-4" />
+                <Check className="h-4 w-4 flex-shrink-0" />
               )}
             </DropdownMenuItem>
           ))}

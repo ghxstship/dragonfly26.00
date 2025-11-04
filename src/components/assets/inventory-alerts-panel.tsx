@@ -144,7 +144,7 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
             </div>
           ) : alerts.length === 0 ? (
             <div className="p-4 md:p-4 sm:p-6 md:p-8 text-center text-muted-foreground">
-              <CheckCircle className="h-12 w-12 mx-auto mb-2 opacity-50" />
+              <CheckCircle className="h-12 w-12 mx-auto mb-2 opacity-50 flex-shrink-0" />
               <p>No active alerts</p>
               <p className="text-xs mt-1">All inventory levels look good!</p>
             </div>
@@ -152,7 +152,7 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
             <div className="divide-y">
               {alerts.map(alert => (
                 <div key={alert.id} className="p-4 hover:bg-accent transition-colors">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+                  <div className="flex items-start gap-3">
                     <div className="mt-0.5">{getAlertIcon(alert.alert_type)}</div>
                     <div className="flex-1 space-y-1">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">

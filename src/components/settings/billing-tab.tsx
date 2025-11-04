@@ -197,7 +197,7 @@ export function BillingTab() {
   const getStatusBadge = (status: Invoice["status"]) => {
     switch (status) {
       case "paid":
-        return <Badge variant="default" className="bg-green-500"><CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" />Paid</Badge>
+        return <Badge variant="default" className="bg-green-500"><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />Paid</Badge>
       case "pending":
         return <Badge variant="secondary"><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" />Pending</Badge>
       case "failed":
@@ -216,7 +216,7 @@ export function BillingTab() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.name}</h3>
               <p className="text-muted-foreground mt-1">
@@ -259,7 +259,7 @@ export function BillingTab() {
       {/* Payment Method */}
       <Card>
         <CardHeader>
-          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+          <div className="flex items-start justify-between">
             <div>
               <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <CreditCard className="h-5 w-5" aria-hidden="true" />
@@ -476,7 +476,7 @@ export function BillingTab() {
                   <ul className="space-y-1">
                     {plans.find(p => p.id === selectedPlan)?.features.map((feature: any, index: number) => (
                       <li key={index} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-green-500" aria-hidden="true" />
+                        <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" aria-hidden="true" />
                         {feature}
                       </li>
                     ))}

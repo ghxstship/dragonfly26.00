@@ -27,7 +27,7 @@ export function InstallPrompt() {
     <div className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:w-full md:w-96">
       <Card>
         <CardContent className="p-4">
-          <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+          <div className="flex items-start gap-3">
             <div className="flex-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                 <Download className="h-5 w-5 text-primary" />

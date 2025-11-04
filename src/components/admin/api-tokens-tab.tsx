@@ -168,7 +168,7 @@ export function ApiTokensTab() {
           return (
             <Card key={token.id}>
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+                <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                       <CardTitle className="text-base">{token.name}</CardTitle>
@@ -177,7 +177,7 @@ export function ApiTokensTab() {
                         (token as any).status === "expired" ? "secondary" :
                         "destructive"
                       }>
-                        {(token as any).status === "active" && <CheckCircle2 className="h-3 w-3 mr-1" />}
+                        {(token as any).status === "active" && <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />}
                         {token.status.charAt(0).toUpperCase() + token.status.slice(1)}
                       </Badge>
                       <Badge variant="outline">{token.scope}</Badge>
@@ -265,7 +265,7 @@ export function ApiTokensTab() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
+            <div className="flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
               <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
               <div className="text-xs text-amber-900 dark:text-amber-100">
                 <p className="font-medium mb-1">{t('admin.apiTokensTab.warningTitle')}</p>
@@ -374,7 +374,7 @@ export function ApiTokensTab() {
               </div>
             </div>
 
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
+            <div className="flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
               <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
               <p className="text-xs text-amber-900 dark:text-amber-100">
                 Store this token securely. For security reasons, it won&apos;t be shown again.

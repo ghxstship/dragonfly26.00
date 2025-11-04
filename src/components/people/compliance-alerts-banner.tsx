@@ -103,7 +103,7 @@ function ComplianceAlertItem({
 
   return (
     <Alert className={cn(config.bg, config.border, "relative pr-12")}>
-      <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+      <div className="flex items-start gap-3">
         <div className="mt-0.5">{config.icon}</div>
         <div className="flex-1 min-w-0">
           <AlertDescription className="text-sm">

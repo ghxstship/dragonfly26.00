@@ -199,7 +199,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
           <CardContent>
             <div className="space-y-4">
               {(recentActivity as any[]).map((activity: any, index: number) => (
-                <div key={index} className="flex flex-wrap flex-col md:flex-row items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
+                <div key={index} className="flex items-start gap-3 pb-3 border-b last:border-0 last:pb-0">
                   <div className={`h-2 w-2 rounded-full mt-2 ${
                     activity.action === 'Checked Out' ? "bg-blue-500" :
                     activity.action === 'Checked In' ? "bg-green-500" :

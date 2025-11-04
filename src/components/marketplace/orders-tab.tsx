@@ -35,11 +35,11 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('completed')}</Badge>
+        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />{t('completed')}</Badge>
       case "in-progress":
         return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" aria-hidden="true" />{t('inProgress')}</Badge>
       case "approved":
-        return <Badge className="bg-purple-600"><CheckCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('approved')}</Badge>
+        return <Badge className="bg-purple-600"><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />{t('approved')}</Badge>
       case "submitted":
         return <Badge className="bg-cyan-600"><FileText className="h-3 w-3 mr-1" aria-hidden="true" />{t('submitted')}</Badge>
       case "draft":
@@ -156,8 +156,8 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
         {ordersData.map((order: any) => (
           <Card key={order.id} className="hover:shadow-md transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+              <div className="flex items-start justify-between">
+                <div className="flex items-start gap-3">
                   {getOrderTypeIcon(order.name)}
                   <div className="space-y-1">
                     <CardTitle className="text-lg">{order.name}</CardTitle>

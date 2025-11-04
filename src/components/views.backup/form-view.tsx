@@ -103,7 +103,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                 >
                   {copied ? (
                     <>
-                      <Check className="h-4 w-4 mr-1" />
+                      <Check className="h-4 w-4 mr-1 flex-shrink-0" />
                       Copied
                     </>
                   ) : (

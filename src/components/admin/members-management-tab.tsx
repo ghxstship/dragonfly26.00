@@ -237,7 +237,7 @@ export function MembersManagementTab() {
   const getStatusIcon = (status: Member["status"]) => {
     switch (status) {
       case "active":
-        return <CheckCircle2 className="h-4 w-4 text-green-500" aria-hidden="true" />
+        return <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" aria-hidden="true" />
       case "pending":
         return <Clock className="h-4 w-4 text-yellow-500" aria-hidden="true" />
       case "suspended":

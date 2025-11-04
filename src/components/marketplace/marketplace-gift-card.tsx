@@ -187,7 +187,7 @@ export function GiftCardInput({
       ) : (
         <Card className="border-purple-200 dark:border-purple-900 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30">
           <CardHeader className="pb-3">
-            <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+            <div className="flex items-start justify-between">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <div className="h-10 w-10 rounded-full bg-purple-500/10 flex flex-wrap items-center justify-center">
                   <Gift className="h-5 w-5 text-purple-600 dark:text-purple-400" />

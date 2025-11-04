@@ -149,7 +149,7 @@ export function TeamTab() {
   const getStatusIcon = (status: TeamMember["status"]) => {
     switch (status) {
       case "active":
-        return <CheckCircle2 className="h-4 w-4 text-green-500" />
+        return <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
       case "pending":
         return <Clock className="h-4 w-4 text-yellow-500" />
       case "suspended":

@@ -130,15 +130,15 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
         {servicesData.map((service: any) => (
           <Card key={service.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 md:gap-3 lg:gap-4">
+              <div className="flex items-start justify-between">
+                <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
                   <Avatar className="h-12 w-12">
                     <AvatarFallback className="bg-primary/10 text-primary">
                       {service.assignee_name?.split(' ').map((n: string) => n[0]).join('') || "SE"}
                     </AvatarFallback>
                   </Avatar>
                   <div className="space-y-1 flex-1">
-                    <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2">
+                    <div className="flex items-start justify-between gap-2">
                       <CardTitle className="text-lg">{service.assignee_name}</CardTitle>
                       {getLevelBadge(service.priority)}
                     </div>

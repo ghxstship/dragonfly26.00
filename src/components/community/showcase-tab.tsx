@@ -169,7 +169,7 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
             <Card key={post.id} className="overflow-hidden md:block">
               <CardContent className="p-4 sm:p-6">
                 {/* Post Header */}
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
+                <div className="flex items-start justify-between mb-4">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                     <Avatar className="h-12 w-12">
                       <AvatarImage src={post.authorImage} />

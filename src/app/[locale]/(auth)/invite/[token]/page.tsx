@@ -153,7 +153,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
       <div className="w-full space-y-3 md:space-y-4 lg:space-y-6 max-w-full">
         {/* Header */}
         <div className="text-center space-y-2">
-          <CheckCircle2 className="h-16 w-16 text-primary mx-auto mb-4" />
+          <CheckCircle2 className="h-16 w-16 text-primary mx-auto mb-4 flex-shrink-0" />
           <h1 className="text-lg md:text-xl lg:text-2xl md:text-xl md:text-2xl lg:text-3xl lg:text-4xl font-title uppercase">You&apos;ve been invited!</h1>
           <p className="text-muted-foreground text-lg">
             {invitation.inviter_name} invited you to join their team
@@ -170,7 +170,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Organization */}
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
+            <div className="flex items-start gap-3 p-3 rounded-lg border">
               <Building2 className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm ">Organization</p>
@@ -181,7 +181,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             </div>
 
             {/* Workspace */}
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
+            <div className="flex items-start gap-3 p-3 rounded-lg border">
               <Building2 className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm ">Workspace</p>
@@ -192,7 +192,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             </div>
 
             {/* Email */}
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
+            <div className="flex items-start gap-3 p-3 rounded-lg border">
               <Mail className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm ">Invited Email</p>
@@ -203,7 +203,7 @@ export default function AcceptInvitationPage({ params }: AcceptInvitationPagePro
             </div>
 
             {/* Role */}
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 rounded-lg border">
+            <div className="flex items-start gap-3 p-3 rounded-lg border">
               <UserCheck className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm ">Your Role</p>

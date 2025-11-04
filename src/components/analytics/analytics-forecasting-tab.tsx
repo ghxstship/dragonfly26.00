@@ -110,7 +110,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
                 </div>
 
                 {/* Insights */}
-                <div className="p-4 bg-accent rounded-lg flex flex-wrap flex-col md:flex-row items-start gap-3">
+                <div className="flex p-4 bg-accent rounded-lg gap-3 items-start">
                   <Target className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
                   <div>
                     <p className="font-medium mb-1">{t('forecastInsight')}</p>
@@ -125,7 +125,7 @@ export function AnalyticsForecastingTab({ data = [], loading = false }: Analytic
 
                 {/* Warning for low confidence */}
                 {forecast.forecast[3].confidence < 85 && (
-                  <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg flex flex-wrap flex-col md:flex-row items-start gap-2">
+                  <div className="flex p-3 bg-yellow-50 border border-yellow-200 rounded-lg gap-2 items-start">
                     <AlertCircle className="h-4 w-4 text-yellow-600 mt-0.5" aria-hidden="true" />
                     <p className="text-sm text-yellow-800">
                       Long-term forecast confidence is below 85%. Consider reviewing assumptions and market conditions.

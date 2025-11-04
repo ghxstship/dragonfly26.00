@@ -92,7 +92,7 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
           <Card key={item.id} className="overflow-hidden md:block">
             {/* Header */}
             <CardHeader className="pb-3">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Avatar>
                     <AvatarFallback>

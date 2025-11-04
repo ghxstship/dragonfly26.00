@@ -66,7 +66,7 @@ export function IntegrationsTab() {
         {integrations.map((integration: any) => (
           <Card key={integration.id}>
             <CardHeader>
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
+              <div className="flex items-start justify-between">
                 <div className="flex flex-wrap gap-3 flex-1">
                   <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{integration.icon}</div>
                   <div className="flex-1">
@@ -74,7 +74,7 @@ export function IntegrationsTab() {
                       <CardTitle className="text-base">{integration.name}</CardTitle>
                       {integration.connected && (
                         <Badge variant="default">
-                          <CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" />
+                          <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />
                           {t('admin.integrationsTab.connected')}
                         </Badge>
                       )}

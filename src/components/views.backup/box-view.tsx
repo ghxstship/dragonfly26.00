@@ -115,7 +115,7 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
 
                 <CardContent className={cn("p-4", !item.cover_image && "pt-6")}>
                   {/* Header */}
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 mb-2">
+                  <div className="flex items-start gap-2 mb-2">
                     <div className="flex-1 min-w-0">
                       <h4 className="font-semibold text-sm line-clamp-2">
                         {item.name || item.title || "Untitled"}

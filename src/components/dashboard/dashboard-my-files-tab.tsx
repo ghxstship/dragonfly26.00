@@ -191,9 +191,9 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
                   onClick={() => router.push(`/workspace/${workspaceId}/files/all-documents?id=${file.id}`)}
                 >
-                  <div className="flex flex-wrap flex-col md:flex-row items-start justify-between gap-2 md:gap-3 lg:gap-4">
+                  <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
-                      <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+                      <div className="flex items-start gap-3">
                         <div className={`p-2 bg-gray-100 dark:bg-gray-800 rounded ${getTypeColor(file.type)}`}>
                           <Icon className="h-4 w-4" aria-hidden="true" />
                         </div>

@@ -48,7 +48,7 @@ export function MiniProfileCard({
     <Card className={className}>
       <CardContent className="p-4 space-y-3">
         {/* Header */}
-        <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+        <div className="flex items-start gap-3">
           <Avatar className="h-12 w-12">
             <AvatarImage src={personnel.avatar} />
             <AvatarFallback>{initials}</AvatarFallback>

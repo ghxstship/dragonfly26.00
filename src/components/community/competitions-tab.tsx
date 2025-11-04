@@ -501,7 +501,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
 
                   <div className="p-4 sm:p-6">
                     {/* Header */}
-                    <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 mb-3">
+                    <div className="flex items-start gap-3 mb-3">
                       <div className="p-2 rounded-lg bg-primary/10">
                         <CategoryIcon className="h-5 w-5 text-primary"  aria-hidden="true" />
                       </div>

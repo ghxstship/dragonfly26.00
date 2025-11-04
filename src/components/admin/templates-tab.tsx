@@ -57,7 +57,7 @@ export function TemplatesTab() {
                   key={category.id}
                   className="p-4 border rounded-lg hover:bg-accent/50 cursor-pointer transition-colors"
                 >
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+                  <div className="flex items-start gap-3">
                     <div className="p-2 rounded-md bg-primary/10">
                       <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
                     </div>

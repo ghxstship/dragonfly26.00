@@ -56,15 +56,15 @@ export default function GlobalError({
                 What You Can Do:
               </h2>
               <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                <li className="flex items-start gap-2">
                   <span className="text-violet-600 dark:text-violet-400 mt-0.5">•</span>
                   <span>Refresh the page and try again</span>
                 </li>
-                <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                <li className="flex items-start gap-2">
                   <span className="text-violet-600 dark:text-violet-400 mt-0.5">•</span>
                   <span>Clear your browser cache and cookies</span>
                 </li>
-                <li className="flex flex-wrap flex-col md:flex-row items-start gap-2">
+                <li className="flex items-start gap-2">
                   <span className="text-violet-600 dark:text-violet-400 mt-0.5">•</span>
                   <span>Contact support if the problem persists</span>
                 </li>

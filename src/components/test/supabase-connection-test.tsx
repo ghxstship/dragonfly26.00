@@ -145,9 +145,9 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
         )}
 
         {Object.entries(results).map(([test, result]: [string, any]) => (
-          <div key={test} className="flex flex-wrap flex-col md:flex-row items-start gap-3 p-3 border rounded-lg">
+          <div key={test} className="flex items-start gap-3 p-3 border rounded-lg">
             {result.success ? (
-              <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5" />
+              <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
             ) : (
               <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
             )}

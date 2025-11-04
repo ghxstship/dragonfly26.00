@@ -148,8 +148,8 @@ export function IntegrationsTab() {
     return (
       <Card key={integration.id}>
         <CardHeader>
-          <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-            <div className="flex flex-wrap flex-col md:flex-row items-start gap-3">
+          <div className="flex items-start justify-between">
+            <div className="flex items-start gap-3">
               <div className="p-2 rounded-lg bg-primary/10">
                 <Icon className="h-5 w-5 text-primary" />
               </div>
@@ -163,7 +163,7 @@ export function IntegrationsTab() {
             <Badge variant={integration.connected ? "default" : "outline"}>
               {integration.connected ? (
                 <>
-                  <Check className="h-3 w-3 mr-1" />
+                  <Check className="h-3 w-3 mr-1 flex-shrink-0" />
                   {t('settings.integrationsTab.connected')}
                 </>
               ) : (

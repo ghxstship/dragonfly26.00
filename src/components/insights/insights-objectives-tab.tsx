@@ -129,8 +129,8 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
         {objectives.map((objective: any) => (
           <Card key={objective.id} className="hover:shadow-md transition-shadow">
             <CardContent className="p-4 sm:p-6">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1">
+              <div className="flex items-start justify-between">
+                <div className="flex items-start gap-3 flex-1">
                   <Target className="h-6 w-6 text-blue-600 mt-1" aria-hidden="true" />
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
@@ -140,7 +140,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
                         className={objective.status === "on_track" ? "bg-green-600" : "bg-yellow-600"}
                       >
                         {objective.status === "on_track" ? (
-                          <><CheckCircle2 className="h-3 w-3 mr-1" aria-hidden="true" /> On Track</>
+                          <><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" /> On Track</>
                         ) : (
                           "At Risk"
                         )}

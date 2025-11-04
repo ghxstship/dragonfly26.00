@@ -77,7 +77,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
             onClick={() => onGoalClick(goal)}
           >
             <CardContent className="p-4 sm:p-6">
-              <div className="flex flex-wrap flex-col md:flex-row items-start justify-between mb-4">
+              <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                     <h3 className="text-lg font-semibold">{goal.name}</h3>

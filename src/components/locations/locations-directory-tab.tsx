@@ -161,8 +161,8 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
           return (
             <Card key={location.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <div className="flex flex-wrap flex-col md:flex-row items-start justify-between">
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-3 flex-1 min-w-0">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start gap-3 flex-1 min-w-0">
                     <div className="p-2 rounded-lg bg-primary/10">
                       <TypeIcon className="h-4 w-4 text-primary" aria-hidden="true" />
                     </div>
@@ -187,7 +187,7 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
               <CardContent className="space-y-3">
                 {/* Address */}
                 {location.address && (
-                  <div className="flex flex-wrap flex-col md:flex-row items-start gap-2 text-sm">
+                  <div className="flex items-start gap-2 text-sm">
                     <Navigation className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="flex-1">
                       <div>{location.address}</div>
