@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useGenerationalLanguage } from '@/contexts/GenerationalLanguageContext';
 import type { GenerationalVariant } from '@/types/generational-language';
 
@@ -17,20 +17,33 @@ import type { GenerationalVariant } from '@/types/generational-language';
  */
 export function useGenerationalMarketing() {
   const t = useTranslations('marketing');
-  const tGenerational = useTranslations('marketing.generational');
+  const locale = useLocale();
   const { variant } = useGenerationalLanguage();
+  
+  // Always load generational translations (required by React hooks rules)
+  // We'll just not use them for non-English locales
+  const tGenerational = useTranslations('marketing.generational');
   
   /**
    * Get generational variant of marketing copy
    * Falls back to default if variant not available
+   * 
+   * NOTE: Generational variants are only available in English.
+   * For non-English locales, always use standard marketing copy.
    */
   const tGen = (key: string): string => {
+    // For non-English locales, always use standard marketing copy
+    // Generational variants are only available in English
+    if (locale !== 'en') {
+      return t(key);
+    }
+    
     // For default and millennial, use standard marketing copy
     if (variant === 'default' || variant === 'millennial') {
       return t(key);
     }
     
-    // Try to get generational variant
+    // Try to get generational variant (English only)
     try {
       // Attempt to access the generational variant
       // Format: marketing.generational.{variant}.{key}

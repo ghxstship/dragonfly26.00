@@ -6,12 +6,10 @@ import { ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { spacing, padding, border, height, container } from "@/design-tokens"
 import { useGenerationalMarketing } from "@/hooks/use-generational-marketing"
-import { useTranslations } from "next-intl"
 
 export function HeroSection(): JSX.Element {
-  const t = useTranslations('marketing')
-
   const { tGen } = useGenerationalMarketing()
+  
   return (
     <section className={cn("relative pt-32 pb-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950", padding.sectionX)}>
       <div className={cn("mx-auto", container['6xl'])}>

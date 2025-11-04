@@ -76,7 +76,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale)
 
   // Get messages for this locale
-  const messages = await getMessages()
+  const messages = await getMessages({ locale })
   
   // Check if locale is RTL
   const dir = isRTL(locale) ? 'rtl' : 'ltr'

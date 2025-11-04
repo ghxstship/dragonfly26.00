@@ -348,7 +348,9 @@ export function DetailedPricingSection(): JSX.Element {
           {/* Pricing Grid */}
           <div className={cn(cards.grid1to4, "mb-8 md:mb-12 lg:mb-16 animate-in fade-in-50 duration-1000 delay-500")}>
             {/* Community */}
-            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300", cards.marketing, cards.paddingMd)}>
+            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col", cards.marketing, cards.paddingMd)}>
+              {/* Badge placeholder for consistent spacing */}
+              <div className="h-7 mb-4" aria-hidden="true"></div>
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Community</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">Free</span>
@@ -403,7 +405,9 @@ export function DetailedPricingSection(): JSX.Element {
             </div>
 
             {/* Pro */}
-            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300", cards.marketing, cards.paddingMd)}>
+            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col", cards.marketing, cards.paddingMd)}>
+              {/* Badge placeholder for consistent spacing */}
+              <div className="h-7 mb-4" aria-hidden="true"></div>
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Pro</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">
@@ -469,11 +473,14 @@ export function DetailedPricingSection(): JSX.Element {
             </div>
 
             {/* Team - Featured */}
-            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border-4 border-purple-600 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 relative lg:scale-105", cards.marketing, cards.paddingMd)}>
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-heading uppercase w-max mx-auto">
-                MOST POPULAR
+            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border-4 border-purple-600 hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 flex flex-col lg:scale-105", cards.marketing, cards.paddingMd)}>
+              {/* Most Popular Badge - consistently positioned at top */}
+              <div className="flex justify-center mb-4">
+                <span className="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-heading uppercase">
+                  MOST POPULAR
+                </span>
               </div>
-              <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0 font-heading uppercase">Team</h3>
+              <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Team</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">
                   ${isAnnual ? '100' : '120'}
@@ -547,7 +554,9 @@ export function DetailedPricingSection(): JSX.Element {
             </div>
 
             {/* Enterprise */}
-            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300", cards.marketing, cards.paddingMd)}>
+            <div className={cn("bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col", cards.marketing, cards.paddingMd)}>
+              {/* Badge placeholder for consistent spacing */}
+              <div className="h-7 mb-4" aria-hidden="true"></div>
               <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">Enterprise</h3>
               <div className="mb-4">
                 <span className="text-4xl sm:text-5xl font-title uppercase text-gray-900 dark:text-white">

@@ -12,8 +12,6 @@ import { PricingSection } from "@/marketing/components/sections/PricingSection"
 import { SecuritySection } from "@/marketing/components/sections/SecuritySection"
 import { FAQSection } from "@/marketing/components/sections/FAQSection"
 import { CTASection } from "@/marketing/components/sections/CTASection"
-import { MarketingNav } from "@/marketing/components/MarketingNav"
-import { MarketingFooter } from "@/marketing/components/MarketingFooter"
 import { setRequestLocale } from 'next-intl/server'
 
 export const dynamic = 'force-dynamic'
@@ -36,24 +34,21 @@ export default async function Home({ params }: PageProps) {
   }
   
   // Otherwise, show marketing page (for atlvs.one)
+  // Note: MarketingNav and MarketingFooter are rendered by the layout
   return (
-    <>
-      <MarketingNav />
-      <main>
-        <HeroSection />
-        <TrustBar />
-        <ProblemSection />
-        <SolutionSection />
-        <FeaturesOverviewSection />
-        <HowItWorksSection />
-        <RolesSection />
-        <TestimonialsSection />
-        <PricingSection />
-        <SecuritySection />
-        <FAQSection />
-        <CTASection />
-      </main>
-      <MarketingFooter />
-    </>
+    <main>
+      <HeroSection />
+      <TrustBar />
+      <ProblemSection />
+      <SolutionSection />
+      <FeaturesOverviewSection />
+      <HowItWorksSection />
+      <RolesSection />
+      <TestimonialsSection />
+      <PricingSection />
+      <SecuritySection />
+      <FAQSection />
+      <CTASection />
+    </main>
   )
 }

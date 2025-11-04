@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import { useGenerationalLanguage } from '@/contexts/GenerationalLanguageContext';
 import { GENERATIONAL_VARIANTS, type GenerationalVariant } from '@/types/generational-language';
 import { Button } from '@/components/ui/button';
@@ -11,8 +12,10 @@ export function GenerationalLanguageToggle() {
   const { variant, setVariant } = useGenerationalLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const locale = useLocale();
 
   const currentConfig = GENERATIONAL_VARIANTS[variant];
+  const isEnglish = locale === 'en';
 
   const handleVariantChange = (newVariant: GenerationalVariant) => {
     setVariant(newVariant);
@@ -27,11 +30,13 @@ export function GenerationalLanguageToggle() {
       <Button
         variant="outline"
         size="sm"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => isEnglish && setIsOpen(!isOpen)}
+        disabled={!isEnglish}
         className="flex items-center gap-2 font-tech text-sm w-full sm:w-auto justify-between sm:justify-start"
-        aria-label="Change generational language variant"
+        aria-label={isEnglish ? "Change generational language variant" : "Generational variants only available in English"}
         aria-expanded={isOpen}
         aria-haspopup="true"
+        title={!isEnglish ? "Generational variants only available in English" : undefined}
       >
         <span className="flex items-center gap-2">
           <span className="text-base" aria-hidden="true">{currentConfig.icon}</span>

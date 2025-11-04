@@ -24,7 +24,9 @@ export function PricingSection(): JSX.Element {
         
         <div className={cn("mb-12", grid.cards4)}>
           {/* Community */}
-          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
+          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 flex flex-col", padding.section)}>
+            {/* Badge placeholder for consistent spacing */}
+            <div className="h-8 mb-4" aria-hidden="true"></div>
             <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{tGen('pricing.community.name')}</h3>
             <div className="mb-4">
               <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{tGen('pricing.community.price')}</span>
@@ -51,7 +53,9 @@ export function PricingSection(): JSX.Element {
           </div>
 
           {/* Pro */}
-          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
+          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 flex flex-col", padding.section)}>
+            {/* Badge placeholder for consistent spacing */}
+            <div className="h-8 mb-4" aria-hidden="true"></div>
             <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{tGen('pricing.pro.name')}</h3>
             <div className="mb-4">
               <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{tGen('pricing.pro.price')}</span>
@@ -79,11 +83,14 @@ export function PricingSection(): JSX.Element {
           </div>
 
           {/* Team */}
-          <div className={cn("border-2 border-blue-600 rounded-xl relative bg-white dark:bg-gray-800", padding.section)}>
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 sm:relative sm:top-0 sm:left-0 sm:translate-x-0 sm:mb-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-heading uppercase w-max mx-auto">
-              {tGen('pricing.team.badge')}
+          <div className={cn("border-2 border-blue-600 rounded-xl bg-white dark:bg-gray-800 flex flex-col", padding.section)}>
+            {/* Most Popular Badge - consistently positioned at top */}
+            <div className="flex justify-center mb-4">
+              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-heading uppercase">
+                {tGen('pricing.team.badge')}
+              </span>
             </div>
-            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 mt-8 sm:mt-0 font-heading uppercase">{tGen('pricing.team.name')}</h3>
+            <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{tGen('pricing.team.name')}</h3>
             <div className="mb-4">
               <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{tGen('pricing.team.price')}</span>
               <span className="text-gray-600 dark:text-gray-400">/{tGen('pricing.team.period')}</span>
@@ -110,7 +117,9 @@ export function PricingSection(): JSX.Element {
           </div>
 
           {/* Enterprise */}
-          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800", padding.section)}>
+          <div className={cn("border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 flex flex-col", padding.section)}>
+            {/* Badge placeholder for consistent spacing */}
+            <div className="h-8 mb-4" aria-hidden="true"></div>
             <h3 className="text-xl sm:text-2xl text-gray-900 dark:text-white mb-2 font-heading uppercase">{tGen('pricing.enterprise.name')}</h3>
             <div className="mb-4">
               <span className="text-3xl sm:text-4xl font-heading uppercase text-gray-900 dark:text-white">{tGen('pricing.enterprise.price')}</span>
