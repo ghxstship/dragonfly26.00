@@ -61,7 +61,7 @@ export default function LoginPage() {
         <div className="text-center space-y-4">
           <Link href="/" className="inline-block">
             <div className="font-pixel text-2xl sm:text-3xl md:text-4xl tracking-wider text-foreground">
-              ATLVS
+              (ATLVS)
             </div>
           </Link>
           <div>
