@@ -20,9 +20,8 @@ export function GenerationalLanguageToggle() {
   const handleVariantChange = (newVariant: GenerationalVariant) => {
     setVariant(newVariant);
     setIsOpen(false);
-    // Force full page reload to apply new variant
-    // This ensures the GenerationalLanguageProvider picks up the new value from localStorage
-    window.location.reload();
+    // Use router refresh instead of full page reload for smoother transition
+    router.refresh();
   };
 
   return (
