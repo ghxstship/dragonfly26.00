@@ -18,6 +18,7 @@ export default function SignupPage() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [inviteCode, setInviteCode] = useState("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [showPassword, setShowPassword] = useState(false)
@@ -52,6 +53,27 @@ export default function SignupPage() {
 
     if (!hasLowercase || !hasUppercase || !hasDigit || !hasSymbol) {
       setError("Password must contain at least one lowercase letter, one uppercase letter, one digit, and one symbol")
+      setLoading(false)
+      return
+    }
+
+    // GATED SIGNUP: Validate email is authorized
+    try {
+      const validationRes = await fetch('/api/auth/validate-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, invite_code: inviteCode || undefined }),
+      })
+
+      const validation = await validationRes.json()
+
+      if (!validation.authorized) {
+        // Redirect to waitlist with email pre-filled
+        router.push(`/waitlist?email=${encodeURIComponent(email)}`)
+        return
+      }
+    } catch (err) {
+      setError("Failed to validate signup. Please try again.")
       setLoading(false)
       return
     }
@@ -165,6 +187,19 @@ export default function SignupPage() {
               </div>
               <p className="text-xs text-muted-foreground">
                 Must be at least 8 characters with lowercase, uppercase, digit, and symbol
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="inviteCode">Invite Code (Optional)</Label>
+              <Input 
+                id="inviteCode" 
+                placeholder="Enter code if you have one"
+                value={inviteCode} 
+                onChange={(e) => setInviteCode(e.target.value)}
+              />
+              <p className="text-xs text-muted-foreground">
+                This platform is invite-only. Don&apos;t have a code? <Link href="/waitlist" className="text-primary hover:underline">Join the waitlist</Link>
               </p>
             </div>
 
