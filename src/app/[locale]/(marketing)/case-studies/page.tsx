@@ -3,6 +3,8 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { setRequestLocale } from 'next-intl/server'
 import { SectionHeading } from "@/marketing/components/atoms/SectionHeading"
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import { container, grid } from "@/design-tokens"
 import { cn } from "@/lib/utils"
 
@@ -95,9 +97,11 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
               {/* Image */}
               <div className={cn(index % 2 === 1 && "md:col-start-2")}>
                 <div className="relative rounded-xl overflow-hidden shadow-2xl">
-                  <img
+                  <Image
                     src={study.image}
                     alt={study.company}
+                    width={800}
+                    height={600}
                     className="w-full h-auto"
                   />
                 </div>

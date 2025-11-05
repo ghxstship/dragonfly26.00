@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import { Search, Plus, Filter, Grid, List } from 'lucide-react'
 import { useCatalogSearch, useCatalogCategories } from '@/hooks/use-asset-catalog'
 import { useCatalogAssets } from '@/hooks/use-catalog-assets'
@@ -155,9 +156,11 @@ export function AssetCatalogBrowser({
                 >
                   {/* Image */}
                   {item.thumbnail_url && (
-                    <img
+                    <Image
                       src={item.thumbnail_url}
                       alt={item.name}
+                      width={400}
+                      height={128}
                       className="w-full h-32 object-cover rounded-md mb-3"
                     />
                   )}

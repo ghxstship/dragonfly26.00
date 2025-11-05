@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { shouldUseMockData } from '@/lib/demo-mode'
-import { GLOBAL_CATALOG_WORKSPACE_ID } from '@/lib/api/asset-catalog'
+
+// Global catalog workspace ID for asset catalog
+const GLOBAL_CATALOG_WORKSPACE_ID = '00000000-0000-0000-0000-000000000000'
 
 /**
  * Universal hook for fetching module data

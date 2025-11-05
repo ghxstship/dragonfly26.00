@@ -1,13 +1,13 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useEventsData } from '@/hooks/use-events-data'
+import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 import { Calendar, MapPin, Users, Clock } from 'lucide-react'
 
 export function EventsOverviewTab(): JSX.Element {
   const t = useTranslations('events.overview')
-  const { events, loading } = useEventsData()
+  const { data: events, loading } = useModuleData('events', 'overview')
 
   const columns = [
     {
