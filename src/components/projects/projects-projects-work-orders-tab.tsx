@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Plus, Search } from "lucide-react"
+import { Plus, Search, Wrench } from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
 import { useParams } from "next/navigation"
 import { useState } from "react"
@@ -21,7 +21,7 @@ export function ProjectsWorkOrdersTab({ data, loading }: ProjectsWorkOrdersTabPr
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'projects', 'projects-work-orders')
+  const { data: hookData, loading: hookLoading, error } = useModuleData(workspaceId, 'projects', 'projects-work-orders')
   const fetchedData = data || hookData
   const fetchLoading = loading !== undefined ? loading : hookLoading
   
@@ -39,6 +39,18 @@ export function ProjectsWorkOrdersTab({ data, loading }: ProjectsWorkOrdersTabPr
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Wrench className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load work orders</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
       </div>
     )

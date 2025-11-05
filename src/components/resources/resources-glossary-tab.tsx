@@ -11,8 +11,7 @@ import {
   Plus,
   Filter,
   Info,
-  Link as LinkIcon
-} from "lucide-react"
+  Link as LinkIcon, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useState } from "react"
 import { useTranslations } from 'next-intl'
@@ -22,7 +21,7 @@ import type { TabComponentProps } from "@/types"
 export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('resources.glossary')
   const tCommon = useTranslations('common')
-  const { data: terms, loading } = useModuleData(workspaceId, 'resources', 'glossary')
+  const { data: terms, loading, error } = useModuleData(workspaceId, 'resources', 'glossary')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null)
 
@@ -73,6 +72,19 @@ export function ResourcesGlossaryTab({ workspaceId, moduleId, tabSlug }: TabComp
     }
     return colors[category] || 'bg-gray-100 text-gray-800 dark:bg-gray-950 dark:text-gray-400'
   }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">

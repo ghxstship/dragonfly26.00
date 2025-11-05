@@ -14,8 +14,7 @@ import {
   Package,
   Truck,
   Plus,
-  Download
-} from "lucide-react"
+  Download, Calendar} from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
@@ -26,7 +25,7 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
   const t = useTranslations('business.procurement.ordersDashboard')
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
-  const { data: orders, loading } = useModuleData(workspaceId, 'procurement', 'orders')
+  const { data: orders, loading, error } = useModuleData(workspaceId, 'procurement', 'orders')
 
   if (loading) {
     return (
@@ -78,6 +77,19 @@ export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }
   const overdueOrders = orders.filter((o: any) => 
     new Date(o.expected_delivery) < new Date() && o.status !== 'received'
   ).length
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">

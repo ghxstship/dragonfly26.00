@@ -17,8 +17,7 @@ import {
   Download,
   Upload,
   Maximize2,
-  Plus
-} from "lucide-react"
+  Plus, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
@@ -34,7 +33,7 @@ interface SiteMap {
 export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.locations.site_maps')
   const tCommon = useTranslations('common')
-  const { data: siteMaps, loading } = useModuleData(workspaceId, 'locations', 'site-maps')
+  const { data: siteMaps, loading, error } = useModuleData(workspaceId, 'locations', 'site-maps')
   const [selectedMap, setSelectedMap] = useState<SiteMap | null>(null)
   const [activeLayers, setActiveLayers] = useState<string[]>(['floor-plan'])
   const [zoom, setZoom] = useState(100)
@@ -70,6 +69,19 @@ export function LocationsSiteMapsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   const zones = selectedMap?.zones || []
   const connections = selectedMap?.connections || []
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <main role="main" aria-label={t('title')}>

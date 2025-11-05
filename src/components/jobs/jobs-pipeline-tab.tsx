@@ -23,7 +23,7 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
   const t = useTranslations('business.jobs.pipeline')
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
-  const { data: jobs, loading } = useModuleData(workspaceId, 'jobs', 'pipeline')
+  const { data: jobs, loading, error } = useModuleData(workspaceId, 'jobs', 'pipeline')
 
   if (loading) {
     return (
@@ -87,6 +87,19 @@ export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponent
     const estimatedValue = typeof (job as any).estimated_value === 'number' ? (job as any).estimated_value : 0
     return sum + estimatedValue
   }, 0)
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">

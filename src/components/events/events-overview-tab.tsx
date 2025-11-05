@@ -13,7 +13,7 @@ interface TabComponentProps {
 
 export function EventsOverviewTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('events.overview')
-  const { data: events, loading } = useModuleData(workspaceId, 'events', 'overview')
+  const { data: events, loading, error } = useModuleData(workspaceId, 'events', 'overview')
 
   const columns = [
     {
@@ -65,6 +65,18 @@ export function EventsOverviewTab({ workspaceId }: TabComponentProps): JSX.Eleme
       value: new Set(events?.map(e => e.location_id)).size || 0
     }
   ]
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load events</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="space-y-6">

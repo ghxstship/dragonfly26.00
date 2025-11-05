@@ -18,8 +18,7 @@ import {
   Phone,
   Mail,
   Globe,
-  Map as MapIcon
-} from "lucide-react"
+  Map as MapIcon, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
@@ -27,7 +26,7 @@ import type { TabComponentProps } from "@/types"
 export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.locations.directory')
   const tCommon = useTranslations('common')
-  const { data: locations, loading } = useModuleData(workspaceId, 'locations', 'directory')
+  const { data: locations, loading, error } = useModuleData(workspaceId, 'locations', 'directory')
   const [searchQuery, setSearchQuery] = useState('')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
@@ -81,6 +80,19 @@ export function LocationsDirectoryTab({ workspaceId, moduleId, tabSlug }: TabCom
     location.address?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     location.city?.toLowerCase().includes(searchQuery.toLowerCase())
   )
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <main role="main" aria-label={t('title')}>

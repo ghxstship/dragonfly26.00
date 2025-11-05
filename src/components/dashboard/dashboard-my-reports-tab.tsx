@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { FileBarChart, Star, Calendar, Download, Eye, Plus, Clock, TrendingUp, BarChart3, PieChart } from "lucide-react"
+import { FileBarChart, Star, Calendar, Download, Eye, Plus, Clock, TrendingUp, BarChart3, PieChart, FileText } from "lucide-react"
 import { useMyReports } from "@/hooks/use-dashboard-data"
 import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
@@ -13,7 +13,7 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
   const router = useRouter()
   const t = useTranslations('dashboard.my-reports')
   const tCommon = useTranslations('common')
-  const { reports, loading } = useMyReports(workspaceId, userId)
+  const { reports, loading, error } = useMyReports(workspaceId, userId)
   
 
   
@@ -45,6 +45,22 @@ export function DashboardMyReportsTab({ workspaceId = '', userId = '' }: Dashboa
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div 
+        className="flex items-center justify-center h-full"
+        role="alert"
+        aria-live="assertive"
+      >
+        <div className="text-center">
+          <FileText className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
       </div>
     )

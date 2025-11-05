@@ -194,8 +194,8 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardDescription>Asset Categories</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.asset_categories || 0}</CardTitle>
+            <CardDescription>Asset Types</CardDescription>
+            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.asset_types || 0}</CardTitle>
           </CardHeader>
         </Card>
         <Card>

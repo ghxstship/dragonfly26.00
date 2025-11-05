@@ -12,7 +12,7 @@ import type { TabComponentProps } from "@/types"
 export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.projects.budgets')
   const tCommon = useTranslations('common')
-  const { data: budgets, loading } = useModuleData(workspaceId, 'projects', 'budgets')
+  const { data: budgets, loading, error } = useModuleData(workspaceId, 'projects', 'budgets')
   const [filterStatus, setFilterStatus] = useState<string>('all')
 
   if (loading) {
@@ -26,6 +26,18 @@ export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabCompon
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <DollarSign className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load budgets</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
       </div>
     )

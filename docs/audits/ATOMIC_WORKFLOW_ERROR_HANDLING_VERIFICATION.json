@@ -1,0 +1,998 @@
+{
+  "timestamp": "2025-11-05T06:25:26.342Z",
+  "summary": {
+    "total": 252,
+    "withErrorHandling": 112,
+    "withoutErrorHandling": 140,
+    "percentComplete": 44.4
+  },
+  "details": {
+    "hasErrorBlock": 148,
+    "hasErrorVariable": 146,
+    "hasIsErrorVariable": 146,
+    "hasLoadingState": 148,
+    "complete": 112
+  },
+  "missing": [
+    {
+      "path": "admin/admin-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/api-tokens-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/automations-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/billing-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/checklist-templates-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/custom-statuses-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/integrations-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/invite-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/members-management-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/members-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/organization-settings-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/organization-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/plugins-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/recurrence-rules-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/roles-permissions-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/security-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/templates-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "admin/webhooks-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-comparisons-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-custom-views-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-data-sources-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-forecasting-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-metrics-library-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-performance-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-pivot-tables-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-realtime-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "analytics/analytics-trends-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "assets/assets-catalog-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "assets/assets-maintenance-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "assets/catalog-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "assets/counts-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "assets/inventory-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "assets/maintenance-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/activity-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/community-spotlight-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/competitions-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/connections-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/discussions-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/events-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/news-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/showcase-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "community/studios-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "companies/companies-contracts-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "companies/companies-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "dashboard/dashboard-my-expenses-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "events/events-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "events/events-run-of-show-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "files/files-folders-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "files/files-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "finance/finance-accounts-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-cash-flow-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-forecasts-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-gl-codes-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-payroll-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-policies-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-revenue-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-scenarios-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-taxes-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "finance/finance-variance-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "insights/insights-benchmarks-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-intelligence-feed-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-key-results-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-objectives-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-patterns-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-priorities-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-progress-tracking-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-recommendations-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-reviews-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "insights/insights-success-metrics-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "jobs/jobs-postings-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "jobs/jobs-requisitions-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "jobs/jobs-rfps-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "jobs/jobs-shortlists-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "jobs/jobs-work-orders-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "locations/locations-bookings-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "locations/locations-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/favorites-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/lists-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/marketplace-orders-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/marketplace-shop-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/marketplace-spotlight-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/orders-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/products-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/purchases-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/reviews-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/sales-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/services-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/shop-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/spotlight-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "marketplace/vendors-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "members/create-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "members/invite-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "opportunities/opportunities-careers-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "opportunities/opportunities-grants-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "opportunities/opportunities-jobs-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "opportunities/opportunities-sponsorship-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "opportunities/opportunities-spotlight-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "people/people-availability-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "people/people-directory-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "people/people-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "procurement/procurement-agreements-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "procurement/procurement-audits-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "procurement/procurement-fulfillment-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "procurement/procurement-line-items-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "procurement/procurement-matching-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "procurement/procurement-procurement-approvals-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "procurement/procurement-receiving-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "procurement/procurement-requisitions-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/access-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "profile/basic-info-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/certifications-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/emergency-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/endorsements-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/health-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/history-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/performance-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/professional-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/social-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/tags-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "profile/travel-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "reports/reports-archived-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-builder-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-compliance-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-custom-builder-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-executive-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-exports-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-operational-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-overview-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-scheduled-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "reports/reports-templates-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "resources/resources-spotlight-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": true,
+      "hasIsErrorVariable": true,
+      "hasLoadingState": false
+    },
+    {
+      "path": "settings/account-tab.tsx",
+      "hasErrorBlock": true,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    },
+    {
+      "path": "settings/appearance-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "settings/automations-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "settings/billing-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "settings/integrations-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "settings/team-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": false
+    },
+    {
+      "path": "settings/typography-tab.tsx",
+      "hasErrorBlock": false,
+      "hasErrorVariable": false,
+      "hasIsErrorVariable": false,
+      "hasLoadingState": true
+    }
+  ]
+}

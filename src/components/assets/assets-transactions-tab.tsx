@@ -5,14 +5,14 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Package, ArrowRight, ArrowLeft, Clock, User, Plus, Filter } from "lucide-react"
+import { Package, ArrowRight, ArrowLeft, Clock, User, Plus, Filter, Calendar} from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.assets.transactions')
   const tCommon = useTranslations('common')
-  const { data: transactions, loading } = useModuleData(workspaceId, 'assets', 'transactions')
+  const { data: transactions, loading, error } = useModuleData(workspaceId, 'assets', 'transactions')
   const [filterType, setFilterType] = useState<string>('all')
 
   if (loading) {
@@ -91,6 +91,19 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
     }
     return colors[status] || 'bg-gray-100 text-gray-800 dark:bg-gray-950 dark:text-gray-400'
   }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <main role="main" aria-label={t('title')}>

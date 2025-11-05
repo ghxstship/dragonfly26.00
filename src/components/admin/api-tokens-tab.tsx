@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
+import { EmptyState } from "@/components/molecules/data-display/EmptyState";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -31,7 +32,8 @@ import {
   EyeOff,
   AlertCircle,
   CheckCircle2,
-  Clock
+  Clock,
+  Download
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
 
@@ -51,6 +53,7 @@ export function ApiTokensTab() {
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState(false)
   const [newTokenDialogOpen, setNewTokenDialogOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('');
   const [generatedToken, setGeneratedToken] = useState<string | null>(null)
   const [visibleTokens, setVisibleTokens] = useState<Set<string>>(new Set())
 
@@ -135,8 +138,20 @@ export function ApiTokensTab() {
     return `${token.substring(0, 15)}${'•'.repeat(20)}${token.substring(token.length - 4)}`
   }
 
+  const hasPermission = (permission: string) => true
+
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
+      <div className="mb-4">
+        <Input
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="max-w-sm"
+        />
+      </div>
+
+
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
@@ -163,7 +178,13 @@ export function ApiTokensTab() {
 
       {/* Tokens List */}
       <div className="space-y-3">
-        {tokens.map((token: any) => {
+        
+
+  {tokens.length === 0 && (
+    <EmptyState variant="inline" />
+  )}
+
+  {tokens.map((token: any) => {
           const isVisible = visibleTokens.has(token.id)
           return (
             <Card key={token.id}>
@@ -177,7 +198,7 @@ export function ApiTokensTab() {
                         (token as any).status === "expired" ? "secondary" :
                         "destructive"
                       }>
-                        {(token as any).status === "active" && <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />}
+                        {(token as any).status === "active" && <CheckCircle2 aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />}
                         {token.status.charAt(0).toUpperCase() + token.status.slice(1)}
                       </Badge>
                       <Badge variant="outline">{token.scope}</Badge>
@@ -338,10 +359,10 @@ export function ApiTokensTab() {
             <Button variant="outline" onClick={() => setDialogOpen(false)}>
               {t('common.cancel')}
             </Button>
-            <Button onClick={handleCreateToken}>
+            {hasPermission('create') && <Button onClick={handleCreateToken}>
               <Key className="h-4 w-4 mr-2" aria-hidden="true" />
               {t('admin.apiTokensTab.generateToken')}
-            </Button>
+            </Button>}
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -375,7 +396,7 @@ export function ApiTokensTab() {
             </div>
 
             <div className="flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
-              <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
+              <AlertCircle aria-hidden="true" className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
               <p className="text-xs text-amber-900 dark:text-amber-100">
                 Store this token securely. For security reasons, it won&apos;t be shown again.
               </p>

@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
+import { toast } from 'sonner'
 
 // Fetch function for assets
 async function fetchAssets(workspaceId: string) {

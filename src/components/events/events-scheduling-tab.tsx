@@ -12,7 +12,7 @@ import type { TabComponentProps } from "@/types"
 export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.events.scheduling')
   const tCommon = useTranslations('common')
-  const { data: schedules, loading } = useModuleData(workspaceId, 'events', 'scheduling')
+  const { data: schedules, loading, error } = useModuleData(workspaceId, 'events', 'scheduling')
   const [filterStatus, setFilterStatus] = useState<string>('all')
 
   if (loading) {
@@ -84,6 +84,19 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
     }
     return colors[priority] || 'bg-gray-100 text-gray-800 dark:bg-gray-950 dark:text-gray-400'
   }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <main role="main" aria-label={t('title')}>

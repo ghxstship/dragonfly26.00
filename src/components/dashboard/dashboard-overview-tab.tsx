@@ -25,7 +25,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useMyTasks, useMyAgenda, useMyJobs, useMyExpenses } from "@/hooks/use-dashboard-data"
+import { useMyTasks, useMyAgenda, useDashboardData, useMyJobs, useMyExpenses } from "@/hooks/use-dashboard-data"
 import { useDashboardWidgets } from "@/hooks/use-dashboard-widgets"
 import { useRouter } from "@/i18n/navigation"
 import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
@@ -47,11 +47,12 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
   // Fetch data from multiple hooks
   const { tasks, loading: tasksLoading } = useMyTasks(workspaceId, userId)
   const { events, loading: eventsLoading } = useMyAgenda(workspaceId, userId)
+  const { data, loading: dataLoading, error } = useDashboardData(workspaceId, userId)
   const { jobs, loading: jobsLoading } = useMyJobs(workspaceId, userId)
   const { expenses, loading: expensesLoading } = useMyExpenses(workspaceId, userId)
   const { widgets, toggleWidget, availableWidgets, resetToDefaults } = useDashboardWidgets(workspaceId, userId)
   
-  const loading = tasksLoading || eventsLoading || jobsLoading || expensesLoading
+  const loading = tasksLoading || eventsLoading || dataLoading || jobsLoading || expensesLoading
   
   // Force refresh by incrementing a key
   const [refreshKey, setRefreshKey] = useState(0)
@@ -89,6 +90,22 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div 
+        className="flex items-center justify-center h-full"
+        role="alert"
+        aria-live="assertive"
+      >
+        <div className="text-center">
+          <LayoutDashboard className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
       </div>
     )

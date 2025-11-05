@@ -22,7 +22,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
   const router = useRouter()
   const t = useTranslations('dashboard.jobs')
   const tCommon = useTranslations('common')
-  const { jobs, loading } = useMyJobs(workspaceId, userId)
+  const { jobs, loading, error } = useMyJobs(workspaceId, userId)
   
   // Transform real jobs data
   const jobsList = jobs.map((job: any) => ({
@@ -55,6 +55,22 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div 
+        className="flex items-center justify-center h-full"
+        role="alert"
+        aria-live="assertive"
+      >
+        <div className="text-center">
+          <Briefcase className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
       </div>
     )

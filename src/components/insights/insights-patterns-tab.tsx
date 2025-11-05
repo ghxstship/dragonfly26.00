@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
+import { Calendar } from 'lucide-react'
 
 interface TabComponentProps {
   workspaceId: string
@@ -13,7 +14,7 @@ interface TabComponentProps {
 
 export function InsightsPatternsTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('insights.patterns')
-  const { data, loading } = useModuleData(workspaceId, 'insights', 'patterns-tab')
+  const { data, loading, error } = useModuleData(workspaceId, 'insights', 'patterns-tab')
 
   const columns = [
     {
@@ -42,6 +43,18 @@ export function InsightsPatternsTab({ workspaceId }: TabComponentProps): JSX.Ele
       sortable: true
     }
   ]
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <DataTableOrganism

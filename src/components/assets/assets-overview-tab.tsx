@@ -14,14 +14,14 @@ import { Package,
   CheckCircle2,
   Clock,
   Plus,
-  Download } from "lucide-react"
+  Download, Calendar} from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.assets.overview')
   const tCommon = useTranslations('common')
-  const { data: assets, loading } = useModuleData(workspaceId, 'assets', 'overview')
+  const { data: assets, loading, error } = useModuleData(workspaceId, 'assets', 'overview')
 
   if (loading) {
     return (
@@ -76,6 +76,19 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
     { id: 2, type: 'info', message: '15 assets have low stock levels', priority: 'medium' },
     { id: 3, type: 'success', message: 'Asset utilization up 12% this month', priority: 'low' },
   ]
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <main role="main" aria-label={t('title')}>

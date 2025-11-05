@@ -14,7 +14,7 @@ import type { TabComponentProps } from "@/types"
 export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.events.tours')
   const tCommon = useTranslations('common')
-  const { data: tourStops, loading } = useModuleData(workspaceId, 'events', 'tours')
+  const { data: tourStops, loading, error } = useModuleData(workspaceId, 'events', 'tours')
   const [selectedStop, setSelectedStop] = useState<any>(null)
 
   if (loading) {
@@ -54,6 +54,19 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
   const totalTravelDays = tourStops.filter((s: any) => s.type === 'travel').length
   const totalBudget = tourStops.reduce((sum: number, s: any) => sum + (Number(s.budget) || 0), 0)
   const completedStops = tourStops.filter((s: any) => s.status === 'completed').length
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <main role="main" aria-label={t('title')}>

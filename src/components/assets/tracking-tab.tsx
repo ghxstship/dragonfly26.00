@@ -26,7 +26,7 @@ import type { TabComponentProps } from "@/types"
 export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.assets.tracking')
   const tCommon = useTranslations('common')
-  const { data: trackingData, loading } = useModuleData(workspaceId, 'assets', 'tracking')
+  const { data: trackingData, loading, error } = useModuleData(workspaceId, 'assets', 'tracking')
   const [scannerOpen, setScannerOpen] = useState(false)
   const [statusFilter, setStatusFilter] = useState<string | null>(null)
 
@@ -146,6 +146,19 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
     if (item.status !== 'checked_out' || !item.expected_return) return false
     return new Date(item.expected_return) < new Date()
   }).length
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">

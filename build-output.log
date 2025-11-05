@@ -1,0 +1,508 @@
+
+> atlvs@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.5
+   - Environments: .env
+   - Experiments (use with caution):
+     · clientTraceMetadata
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.3min
+   Linting and checking validity of types ...
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/1498) ...
+   Generating static pages (374/1498) 
+   Generating static pages (748/1498) 
+   Generating static pages (1123/1498) 
+ ✓ Generating static pages (1498/1498)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                              Size  First Load JS
+┌ ○ /_not-found                                         855 B         221 kB
+├ ● /[locale]                                         5.24 kB         259 kB
+├   ├ /en
+├   ├ /es
+├   ├ /fr
+├   └ [+17 more paths]
+├ ● /[locale]/admin                                    1.5 kB         645 kB
+├   ├ /en/admin
+├   ├ /es/admin
+├   ├ /fr/admin
+├   └ [+17 more paths]
+├ ● /[locale]/admin/waitlist                          11.7 kB         315 kB
+├   ├ /en/admin/waitlist
+├   ├ /es/admin/waitlist
+├   ├ /fr/admin/waitlist
+├   └ [+17 more paths]
+├ ● /[locale]/api-tokens                              9.94 kB         284 kB
+├   ├ /en/api-tokens
+├   ├ /es/api-tokens
+├   ├ /fr/api-tokens
+├   └ [+17 more paths]
+├ ● /[locale]/auth-check                              4.21 kB         289 kB
+├   ├ /en/auth-check
+├   ├ /es/auth-check
+├   ├ /fr/auth-check
+├   └ [+17 more paths]
+├ ● /[locale]/automations                             8.42 kB         287 kB
+├   ├ /en/automations
+├   ├ /es/automations
+├   ├ /fr/automations
+├   └ [+17 more paths]
+├ ● /[locale]/blog                                    4.58 kB         253 kB
+├   ├ /en/blog
+├   ├ /es/blog
+├   ├ /fr/blog
+├   └ [+17 more paths]
+├ ● /[locale]/careers                                   369 B         223 kB
+├   ├ /en/careers
+├   ├ /es/careers
+├   ├ /fr/careers
+├   └ [+17 more paths]
+├ ● /[locale]/careers/[id]                              370 B         223 kB
+├   ├ /en/careers/captain-community
+├   ├ /en/careers/captain-finance
+├   ├ /en/careers/captain-marketing
+├   └ [+297 more paths]
+├ ● /[locale]/case-studies                              859 B         235 kB
+├   ├ /en/case-studies
+├   ├ /es/case-studies
+├   ├ /fr/case-studies
+├   └ [+17 more paths]
+├ ● /[locale]/changelog                                 863 B         228 kB
+├   ├ /en/changelog
+├   ├ /es/changelog
+├   ├ /fr/changelog
+├   └ [+17 more paths]
+├ ● /[locale]/community                                 861 B         228 kB
+├   ├ /en/community
+├   ├ /es/community
+├   ├ /fr/community
+├   └ [+17 more paths]
+├ ● /[locale]/company                                 4.41 kB         253 kB
+├   ├ /en/company
+├   ├ /es/company
+├   ├ /fr/company
+├   └ [+17 more paths]
+├ ● /[locale]/compare                                   850 B         230 kB
+├   ├ /en/compare
+├   ├ /es/compare
+├   ├ /fr/compare
+├   └ [+17 more paths]
+├ ● /[locale]/contact                                   852 B         221 kB
+├   ├ /en/contact
+├   ├ /es/contact
+├   ├ /fr/contact
+├   └ [+17 more paths]
+├ ● /[locale]/customers                                 861 B         228 kB
+├   ├ /en/customers
+├   ├ /es/customers
+├   ├ /fr/customers
+├   └ [+17 more paths]
+├ ● /[locale]/demo                                      370 B         223 kB
+├   ├ /en/demo
+├   ├ /es/demo
+├   ├ /fr/demo
+├   └ [+17 more paths]
+├ ● /[locale]/docs                                      369 B         223 kB
+├   ├ /en/docs
+├   ├ /es/docs
+├   ├ /fr/docs
+├   └ [+17 more paths]
+├ ● /[locale]/docs/api                                1.75 kB         222 kB
+├   ├ /en/docs/api
+├   ├ /es/docs/api
+├   ├ /fr/docs/api
+├   └ [+17 more paths]
+├ ● /[locale]/events                                    861 B         228 kB
+├   ├ /en/events
+├   ├ /es/events
+├   ├ /fr/events
+├   └ [+17 more paths]
+├ ● /[locale]/features                                5.86 kB         257 kB
+├   ├ /en/features
+├   ├ /es/features
+├   ├ /fr/features
+├   └ [+17 more paths]
+├ ● /[locale]/forgot-password                         7.29 kB         299 kB
+├   ├ /en/forgot-password
+├   ├ /es/forgot-password
+├   ├ /fr/forgot-password
+├   └ [+17 more paths]
+├ ● /[locale]/help                                    2.69 kB         232 kB
+├   ├ /en/help
+├   ├ /es/help
+├   ├ /fr/help
+├   └ [+17 more paths]
+├ ● /[locale]/insights                                10.7 kB         390 kB
+├   ├ /en/insights
+├   ├ /es/insights
+├   ├ /fr/insights
+├   └ [+17 more paths]
+├ ● /[locale]/integrations                              863 B         228 kB
+├   ├ /en/integrations
+├   ├ /es/integrations
+├   ├ /fr/integrations
+├   └ [+17 more paths]
+├ ƒ /[locale]/invite/[token]                          7.21 kB         284 kB
+├ ● /[locale]/legal/privacy                             854 B         221 kB
+├   ├ /en/legal/privacy
+├   ├ /es/legal/privacy
+├   ├ /fr/legal/privacy
+├   └ [+17 more paths]
+├ ● /[locale]/legal/terms                               856 B         221 kB
+├   ├ /en/legal/terms
+├   ├ /es/legal/terms
+├   ├ /fr/legal/terms
+├   └ [+17 more paths]
+├ ● /[locale]/login                                   7.92 kB         299 kB
+├   ├ /en/login
+├   ├ /es/login
+├   ├ /fr/login
+├   └ [+17 more paths]
+├ ● /[locale]/offline                                 3.93 kB         233 kB
+├   ├ /en/offline
+├   ├ /es/offline
+├   ├ /fr/offline
+├   └ [+17 more paths]
+├ ● /[locale]/onboarding/complete                     7.36 kB         299 kB
+├   ├ /en/onboarding/complete
+├   ├ /es/onboarding/complete
+├   ├ /fr/onboarding/complete
+├   └ [+17 more paths]
+├ ● /[locale]/onboarding/invite                       9.84 kB         330 kB
+├   ├ /en/onboarding/invite
+├   ├ /es/onboarding/invite
+├   ├ /fr/onboarding/invite
+├   └ [+17 more paths]
+├ ● /[locale]/onboarding/plan                         9.36 kB         301 kB
+├   ├ /en/onboarding/plan
+├   ├ /es/onboarding/plan
+├   ├ /fr/onboarding/plan
+├   └ [+17 more paths]
+├ ● /[locale]/onboarding/welcome                      10.6 kB         302 kB
+├   ├ /en/onboarding/welcome
+├   ├ /es/onboarding/welcome
+├   ├ /fr/onboarding/welcome
+├   └ [+17 more paths]
+├ ● /[locale]/onboarding/workspace                    15.5 kB         311 kB
+├   ├ /en/onboarding/workspace
+├   ├ /es/onboarding/workspace
+├   ├ /fr/onboarding/workspace
+├   └ [+17 more paths]
+├ ● /[locale]/partners                                  862 B         228 kB
+├   ├ /en/partners
+├   ├ /es/partners
+├   ├ /fr/partners
+├   └ [+17 more paths]
+├ ● /[locale]/plugins                                 7.32 kB         279 kB
+├   ├ /en/plugins
+├   ├ /es/plugins
+├   ├ /fr/plugins
+├   └ [+17 more paths]
+├ ● /[locale]/press                                     862 B         228 kB
+├   ├ /en/press
+├   ├ /es/press
+├   ├ /fr/press
+├   └ [+17 more paths]
+├ ● /[locale]/pricing                                 5.71 kB         259 kB
+├   ├ /en/pricing
+├   ├ /es/pricing
+├   ├ /fr/pricing
+├   └ [+17 more paths]
+├ ● /[locale]/reports                                 14.1 kB         404 kB
+├   ├ /en/reports
+├   ├ /es/reports
+├   ├ /fr/reports
+├   └ [+17 more paths]
+├ ● /[locale]/reset-password                          8.15 kB         300 kB
+├   ├ /en/reset-password
+├   ├ /es/reset-password
+├   ├ /fr/reset-password
+├   └ [+17 more paths]
+├ ● /[locale]/roi-calculator                            861 B         228 kB
+├   ├ /en/roi-calculator
+├   ├ /es/roi-calculator
+├   ├ /fr/roi-calculator
+├   └ [+17 more paths]
+├ ● /[locale]/security                                2.67 kB         230 kB
+├   ├ /en/security
+├   ├ /es/security
+├   ├ /fr/security
+├   └ [+17 more paths]
+├ ● /[locale]/signup                                  9.19 kB         336 kB
+├   ├ /en/signup
+├   ├ /es/signup
+├   ├ /fr/signup
+├   └ [+17 more paths]
+├ ● /[locale]/solutions                               6.61 kB         255 kB
+├   ├ /en/solutions
+├   ├ /es/solutions
+├   ├ /fr/solutions
+├   └ [+17 more paths]
+├ ● /[locale]/status                                   1.1 kB         228 kB
+├   ├ /en/status
+├   ├ /es/status
+├   ├ /fr/status
+├   └ [+17 more paths]
+├ ● /[locale]/templates                                 862 B         228 kB
+├   ├ /en/templates
+├   ├ /es/templates
+├   ├ /fr/templates
+├   └ [+17 more paths]
+├ ● /[locale]/verify-email                            7.08 kB         299 kB
+├   ├ /en/verify-email
+├   ├ /es/verify-email
+├   ├ /fr/verify-email
+├   └ [+17 more paths]
+├ ● /[locale]/waitlist                                9.57 kB         297 kB
+├   ├ /en/waitlist
+├   ├ /es/waitlist
+├   ├ /fr/waitlist
+├   └ [+17 more paths]
+├ ● /[locale]/waitlist/status                         9.03 kB         289 kB
+├   ├ /en/waitlist/status
+├   ├ /es/waitlist/status
+├   ├ /fr/waitlist/status
+├   └ [+17 more paths]
+├ ● /[locale]/webhooks                                8.19 kB         278 kB
+├   ├ /en/webhooks
+├   ├ /es/webhooks
+├   ├ /fr/webhooks
+├   └ [+17 more paths]
+├ ƒ /[locale]/workspace/[workspaceId]/[module]        2.34 kB         651 kB
+├ ƒ /[locale]/workspace/[workspaceId]/[module]/[tab]   142 kB         925 kB
+├ ƒ /api/access                                         854 B         221 kB
+├ ƒ /api/account                                        855 B         221 kB
+├ ƒ /api/accounts                                       852 B         221 kB
+├ ƒ /api/activations                                    854 B         221 kB
+├ ƒ /api/active                                         855 B         221 kB
+├ ƒ /api/activities                                     854 B         221 kB
+├ ƒ /api/admin/invite-codes/create                      854 B         221 kB
+├ ƒ /api/admin/waitlist/approve                         856 B         221 kB
+├ ƒ /api/admin/waitlist/list                            856 B         221 kB
+├ ƒ /api/admin/waitlist/reject                          855 B         221 kB
+├ ƒ /api/advances                                       855 B         221 kB
+├ ƒ /api/agreements                                     853 B         221 kB
+├ ƒ /api/all-documents                                  853 B         221 kB
+├ ƒ /api/all-events                                     856 B         221 kB
+├ ƒ /api/appearance                                     853 B         221 kB
+├ ƒ /api/applicants                                     855 B         221 kB
+├ ƒ /api/apply-migration                                855 B         221 kB
+├ ƒ /api/approvals                                      854 B         221 kB
+├ ƒ /api/archive                                        852 B         221 kB
+├ ƒ /api/archived                                       855 B         221 kB
+├ ƒ /api/assignments                                    855 B         221 kB
+├ ƒ /api/audits                                         854 B         221 kB
+├ ƒ /api/auth/validate-signup                           854 B         221 kB
+├ ƒ /api/automations                                    854 B         221 kB
+├ ƒ /api/benchmarks                                     854 B         221 kB
+├ ƒ /api/bids                                           855 B         221 kB
+├ ƒ /api/billing                                        853 B         221 kB
+├ ƒ /api/bim-models                                     854 B         221 kB
+├ ƒ /api/blocks                                         854 B         221 kB
+├ ƒ /api/bookings                                       854 B         221 kB
+├ ƒ /api/budgets                                        853 B         221 kB
+├ ƒ /api/calendar                                       854 B         221 kB
+├ ƒ /api/call-sheets                                    854 B         221 kB
+├ ƒ /api/cash-flow                                      854 B         221 kB
+├ ƒ /api/catalog                                        855 B         221 kB
+├ ƒ /api/certifications                                 855 B         221 kB
+├ ƒ /api/checklists                                     855 B         221 kB
+├ ƒ /api/companies-compliance                           852 B         221 kB
+├ ƒ /api/companies-invoices                             854 B         221 kB
+├ ƒ /api/companies-reviews                              854 B         221 kB
+├ ƒ /api/companies-work-orders                          854 B         221 kB
+├ ƒ /api/comparisons                                    854 B         221 kB
+├ ƒ /api/competitions                                   851 B         221 kB
+├ ƒ /api/completed                                      853 B         221 kB
+├ ƒ /api/compliance                                     854 B         221 kB
+├ ƒ /api/connections                                    853 B         221 kB
+├ ƒ /api/contacts                                       854 B         221 kB
+├ ƒ /api/contracts                                      855 B         221 kB
+├ ƒ /api/coordination                                   854 B         221 kB
+├ ƒ /api/costs                                          853 B         221 kB
+├ ƒ /api/counts                                         855 B         221 kB
+├ ƒ /api/courses                                        853 B         221 kB
+├ ƒ /api/custom-builder                                 854 B         221 kB
+├ ƒ /api/custom-views                                   854 B         221 kB
+├ ƒ /api/data-deletion                                  854 B         221 kB
+├ ƒ /api/data-export                                    855 B         221 kB
+├ ƒ /api/data-import                                    853 B         221 kB
+├ ƒ /api/data-sources                                   852 B         221 kB
+├ ƒ /api/deliverables                                   854 B         221 kB
+├ ƒ /api/directory                                      854 B         221 kB
+├ ƒ /api/discussions                                    855 B         221 kB
+├ ƒ /api/dispatch                                       854 B         221 kB
+├ ƒ /api/docs                                           853 B         221 kB
+├ ƒ /api/documents                                      854 B         221 kB
+├ ƒ /api/emergency                                      854 B         221 kB
+├ ƒ /api/endorsements                                   854 B         221 kB
+├ ƒ /api/equipment                                      854 B         221 kB
+├ ƒ /api/estimates                                      854 B         221 kB
+├ ƒ /api/executive                                      855 B         221 kB
+├ ƒ /api/expenses                                       854 B         221 kB
+├ ƒ /api/exports                                        850 B         221 kB
+├ ƒ /api/favorites                                      855 B         221 kB
+├ ƒ /api/feature-flags                                  854 B         221 kB
+├ ƒ /api/forecasting                                    854 B         221 kB
+├ ƒ /api/forecasts                                      855 B         221 kB
+├ ƒ /api/fulfillment                                    855 B         221 kB
+├ ƒ /api/gl-codes                                       853 B         221 kB
+├ ƒ /api/glossary                                       855 B         221 kB
+├ ƒ /api/grants                                         855 B         221 kB
+├ ƒ /api/guides                                         855 B         221 kB
+├ ƒ /api/health                                         855 B         221 kB
+├ ƒ /api/healthz                                        855 B         221 kB
+├ ƒ /api/history                                        854 B         221 kB
+├ ƒ /api/incidents                                      855 B         221 kB
+├ ƒ /api/info                                           852 B         221 kB
+├ ƒ /api/insurance-permits                              854 B         221 kB
+├ ƒ /api/integrations                                   853 B         221 kB
+├ ƒ /api/intelligence-feed                              854 B         221 kB
+├ ƒ /api/internal                                       852 B         221 kB
+├ ƒ /api/inventory                                      852 B         221 kB
+├ ƒ /api/invitations/accept                             853 B         221 kB
+├ ƒ /api/invitations/send                               853 B         221 kB
+├ ƒ /api/invite                                         854 B         221 kB
+├ ƒ /api/invoices                                       853 B         221 kB
+├ ƒ /api/itineraries                                    854 B         221 kB
+├ ƒ /api/jobs-compliance                                855 B         221 kB
+├ ƒ /api/jobs-invoices                                  855 B         221 kB
+├ ƒ /api/key-results                                    854 B         221 kB
+├ ƒ /api/library                                        853 B         221 kB
+├ ƒ /api/line-items                                     855 B         221 kB
+├ ƒ /api/lists                                          855 B         221 kB
+├ ƒ /api/logistics                                      855 B         221 kB
+├ ƒ /api/maintenance                                    858 B         221 kB
+├ ƒ /api/management                                     854 B         221 kB
+├ ƒ /api/matching                                       854 B         221 kB
+├ ƒ /api/media-assets                                   853 B         221 kB
+├ ƒ /api/metrics-library                                854 B         221 kB
+├ ƒ /api/milestones                                     854 B         221 kB
+├ ƒ /api/my-agenda                                      856 B         221 kB
+├ ƒ /api/my-assets                                      853 B         221 kB
+├ ƒ /api/my-expenses                                    856 B         221 kB
+├ ƒ /api/my-files                                       853 B         221 kB
+├ ƒ /api/my-jobs                                        855 B         221 kB
+├ ƒ /api/my-orders                                      854 B         221 kB
+├ ƒ /api/my-reports                                     854 B         221 kB
+├ ƒ /api/my-tasks                                       854 B         221 kB
+├ ƒ /api/my-travel                                      853 B         221 kB
+├ ƒ /api/news                                           854 B         221 kB
+├ ƒ /api/objectives                                     854 B         221 kB
+├ ƒ /api/offers                                         856 B         221 kB
+├ ƒ /api/onboarding                                     852 B         221 kB
+├ ƒ /api/openings                                       853 B         221 kB
+├ ƒ /api/operational                                    854 B         221 kB
+├ ƒ /api/orders                                         853 B         221 kB
+├ ƒ /api/orders-dashboard                               854 B         221 kB
+├ ƒ /api/organization                                   854 B         221 kB
+├ ƒ /api/organizations                                  853 B         221 kB
+├ ƒ /api/payments                                       855 B         221 kB
+├ ƒ /api/payroll                                        853 B         221 kB
+├ ƒ /api/performance                                    853 B         221 kB
+├ ƒ /api/permissions                                    853 B         221 kB
+├ ƒ /api/personnel                                      852 B         221 kB
+├ ƒ /api/pipeline                                       852 B         221 kB
+├ ƒ /api/pivot-tables                                   853 B         221 kB
+├ ƒ /api/plugins                                        854 B         221 kB
+├ ƒ /api/policies                                       855 B         221 kB
+├ ƒ /api/priorities                                     855 B         221 kB
+├ ƒ /api/procurement-approvals                          853 B         221 kB
+├ ƒ /api/production-reports                             855 B         221 kB
+├ ƒ /api/productions                                    852 B         221 kB
+├ ƒ /api/products                                       855 B         221 kB
+├ ƒ /api/professional                                   857 B         221 kB
+├ ƒ /api/progress-tracking                              856 B         221 kB
+├ ƒ /api/projects-checklists                            855 B         221 kB
+├ ƒ /api/projects-work-orders                           853 B         221 kB
+├ ƒ /api/publications                                   855 B         221 kB
+├ ƒ /api/purchases                                      854 B         221 kB
+├ ƒ /api/realtime                                       854 B         221 kB
+├ ƒ /api/receiving                                      854 B         221 kB
+├ ƒ /api/recommendations                                854 B         221 kB
+├ ƒ /api/reconciliation                                 854 B         221 kB
+├ ƒ /api/recruiting                                     856 B         221 kB
+├ ƒ /api/rehearsals                                     854 B         221 kB
+├ ƒ /api/requisitions                                   855 B         221 kB
+├ ƒ /api/reservations                                   852 B         221 kB
+├ ƒ /api/revenue                                        854 B         221 kB
+├ ƒ /api/reviews                                        853 B         221 kB
+├ ƒ /api/rfps                                           857 B         221 kB
+├ ƒ /api/riders                                         855 B         221 kB
+├ ƒ /api/rules                                          855 B         221 kB
+├ ƒ /api/run-of-show                                    855 B         221 kB
+├ ƒ /api/safety                                         854 B         221 kB
+├ ƒ /api/sales                                          853 B         221 kB
+├ ƒ /api/scenarios                                      855 B         221 kB
+├ ƒ /api/schedule                                       857 B         221 kB
+├ ƒ /api/scheduled                                      853 B         221 kB
+├ ƒ /api/scheduling                                     854 B         221 kB
+├ ƒ /api/scopes-of-work                                 852 B         221 kB
+├ ƒ /api/security                                       854 B         221 kB
+├ ƒ /api/sentry-example-api                             854 B         221 kB
+├ ƒ /api/services                                       853 B         221 kB
+├ ƒ /api/settings                                       853 B         221 kB
+├ ƒ /api/shared                                         854 B         221 kB
+├ ƒ /api/shipping-receiving                             855 B         221 kB
+├ ƒ /api/shop                                           853 B         221 kB
+├ ƒ /api/shortlists                                     856 B         221 kB
+├ ƒ /api/showcase                                       855 B         221 kB
+├ ƒ /api/site-maps                                      856 B         221 kB
+├ ƒ /api/social                                         854 B         221 kB
+├ ƒ /api/spatial-features                               856 B         221 kB
+├ ƒ /api/spotlight                                      854 B         221 kB
+├ ƒ /api/statuses                                       855 B         221 kB
+├ ƒ /api/stripe/create-checkout                         855 B         221 kB
+├ ƒ /api/stripe/create-portal                           856 B         221 kB
+├ ƒ /api/stripe/webhook                                 854 B         221 kB
+├ ƒ /api/studios                                        855 B         221 kB
+├ ƒ /api/subcontractor-profile                          853 B         221 kB
+├ ƒ /api/subscriptions/create-checkout                  859 B         221 kB
+├ ƒ /api/success-metrics                                855 B         221 kB
+├ ƒ /api/tags                                           853 B         221 kB
+├ ƒ /api/tasks                                          855 B         221 kB
+├ ƒ /api/taxes                                          855 B         221 kB
+├ ƒ /api/team                                           856 B         221 kB
+├ ƒ /api/teams                                          854 B         221 kB
+├ ƒ /api/tech-specs                                     853 B         221 kB
+├ ƒ /api/templates                                      853 B         221 kB
+├ ƒ /api/timekeeping                                    855 B         221 kB
+├ ƒ /api/tokens                                         854 B         221 kB
+├ ƒ /api/tours                                          852 B         221 kB
+├ ƒ /api/tracking                                       855 B         221 kB
+├ ƒ /api/training                                       855 B         221 kB
+├ ƒ /api/trainings                                      855 B         221 kB
+├ ƒ /api/transactions                                   855 B         221 kB
+├ ƒ /api/travel                                         854 B         221 kB
+├ ƒ /api/trends                                         854 B         221 kB
+├ ƒ /api/troubleshooting                                854 B         221 kB
+├ ƒ /api/utilities                                      851 B         221 kB
+├ ƒ /api/variance                                       854 B         221 kB
+├ ƒ /api/vendors                                        855 B         221 kB
+├ ƒ /api/waitlist/check                                 855 B         221 kB
+├ ƒ /api/waitlist/submit                                854 B         221 kB
+├ ƒ /api/warehousing                                    853 B         221 kB
+├ ƒ /api/webhooks/stripe                                852 B         221 kB
+├ ƒ /api/work-orders                                    855 B         221 kB
+├ ƒ /auth/callback                                      854 B         221 kB
+├ ƒ /icon                                               853 B         221 kB
+└ ○ /sentry-example-page                              2.84 kB         223 kB
++ First Load JS shared by all                          220 kB
+  ├ chunks/4bd1b696-8c0d1fadcf00c60b.js               54.4 kB
+  ├ chunks/504-624075123e4af2cd.js                     126 kB
+  ├ chunks/52774a7f-20f16e351fc32b83.js               36.8 kB
+  └ other shared chunks (total)                       3.56 kB
+
+
+ƒ Middleware                                           550 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

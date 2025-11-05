@@ -3,7 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Plus, Search } from "lucide-react"
+import { Plus, Search, Calendar} from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
 import { useParams } from "next/navigation"
 import { useState } from "react"
@@ -23,7 +23,7 @@ export function BudgetsTab({ data, loading }: BudgetsTabProps) {
   const workspaceId = params?.workspaceId as string
   
   // Fetch data if not provided
-  const { data: hookData, loading: hookLoading } = useModuleData(workspaceId, 'finance', 'budgets')
+  const { data: hookData, loading: hookLoading, error } = useModuleData(workspaceId, 'finance', 'budgets')
   const fetchedData = data || hookData
   const fetchLoading = loading !== undefined ? loading : hookLoading
   
@@ -50,6 +50,19 @@ export function BudgetsTab({ data, loading }: BudgetsTabProps) {
       </div>
     )
   }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">

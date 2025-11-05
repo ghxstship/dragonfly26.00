@@ -141,9 +141,8 @@ export function useCatalogBrowse(category?: string, subcategory?: string) {
  */
 export function useCatalogCategories() {
   const [categories, setCategories] = useState<Array<{
-    asset_category: string
     category: string
-    subcategory: string
+    subcategory: string | null
     item_count: number
   }>>([])
   const [loading, setLoading] = useState(true)
@@ -173,12 +172,10 @@ export function useCatalogCategories() {
 export function useCatalogStatistics() {
   const [statistics, setStatistics] = useState<{
     total_items: number
-    asset_categories: number
     categories: number
     subcategories: number
     manufacturers: number
-    total_related_names: number
-    avg_related_names_per_item: number
+    asset_types: number
   } | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<unknown>(null)

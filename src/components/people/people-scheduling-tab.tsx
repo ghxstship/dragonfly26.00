@@ -22,7 +22,7 @@ import type { TabComponentProps } from "@/types"
 export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.people.scheduling')
   const tCommon = useTranslations('common')
-  const { data: shifts, loading } = useModuleData(workspaceId, 'people', 'scheduling')
+  const { data: shifts, loading, error } = useModuleData(workspaceId, 'people', 'scheduling')
   const [viewMode, setViewMode] = useState<'week' | 'month'>('week')
   const [currentDate, setCurrentDate] = useState(new Date())
 
@@ -81,6 +81,19 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
   const conflicts = shifts.filter((s: any) => s.has_conflict).length
   const overtimeShifts = shifts.filter((s: any) => s.is_overtime).length
   const totalHours = shifts.reduce((sum: number, s: any) => sum + (s.hours || 8), 0)
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <main role="main" aria-label={t('title')}>

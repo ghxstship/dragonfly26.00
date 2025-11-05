@@ -18,7 +18,7 @@ import { Play,
   CheckCircle2,
   Plus,
   Download,
-  Edit } from "lucide-react"
+  Edit, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
@@ -26,7 +26,7 @@ import type { TabComponentProps } from "@/types"
 export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.events.run_of_show')
   const tCommon = useTranslations('common')
-  const { data, loading }: { data?: any, loading?: boolean } = useModuleData(workspaceId, 'events', 'run-of-show')
+  const { data, loading, error }: { data?: any, loading?: boolean, error?: Error | null } = useModuleData(workspaceId, 'events', 'run-of-show')
   const runOfShow = (data || []) as any[]
   const [currentCue, setCurrentCue] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
@@ -43,6 +43,18 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
       </div>
     )
@@ -96,6 +108,19 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
   const completedCues = runOfShow.filter((c: any) => c.status === 'completed').length
   const progress = runOfShow.length > 0 ? (completedCues / runOfShow.length) * 100 : 0
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <main role="main" aria-label={t('title')}>

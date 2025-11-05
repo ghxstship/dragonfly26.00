@@ -1,17 +1,25 @@
 {
-  "timestamp": "2025-11-05T05:48:09.909Z",
+  "timestamp": "2025-11-05T06:34:27.674Z",
   "summary": {
     "totalWorkflows": 20,
-    "completeWorkflows": 20,
-    "incompleteWorkflows": 230,
+    "completeWorkflows": 19,
+    "incompleteWorkflows": 229,
     "brokenWorkflows": 0,
-    "missingFunctionality": 0,
+    "missingFunctionality": 1,
     "integrationGaps": 0,
     "roleGaps": 0
   },
   "gaps": {
     "critical": [],
-    "high": [],
+    "high": [
+      {
+        "type": "MISSING_ERROR_HANDLING",
+        "hook": "use-assets-data.ts",
+        "severity": "HIGH",
+        "impact": "Data operations can fail silently",
+        "remediation": "Add try-catch blocks and error notifications to use-assets-data.ts"
+      }
+    ],
     "medium": [
       {
         "type": "INCOMPLETE_WORKFLOW",
@@ -2057,37 +2065,32 @@
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/admin-overview-tab.tsx",
         "missing": [
-          "read",
           "error_handling",
           "loading_state"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling, loading_state"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/api-tokens-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/automations-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
@@ -2103,49 +2106,42 @@
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/checklist-templates-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/custom-statuses-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/integrations-tab.tsx",
         "missing": [
-          "read",
           "error_handling",
           "loading_state"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling, loading_state"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/members-management-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
@@ -2161,93 +2157,82 @@
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/plugins-tab.tsx",
         "missing": [
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/recurrence-rules-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/roles-permissions-tab.tsx",
         "missing": [
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/security-tab.tsx",
         "missing": [
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/templates-tab.tsx",
         "missing": [
-          "read",
           "error_handling",
           "loading_state"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling, loading_state"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "admin/webhooks-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in admin",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "settings/appearance-tab.tsx",
         "missing": [
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in settings",
-        "remediation": "Add missing workflow elements: error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "settings/automations-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in settings",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
@@ -2263,25 +2248,21 @@
         "type": "INCOMPLETE_WORKFLOW",
         "component": "settings/integrations-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in settings",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
         "component": "settings/team-tab.tsx",
         "missing": [
-          "read",
-          "error_handling",
-          "loading_state"
+          "error_handling"
         ],
         "severity": "MEDIUM",
         "impact": "User experience degradation in settings",
-        "remediation": "Add missing workflow elements: read, error_handling, loading_state"
+        "remediation": "Add missing workflow elements: error_handling"
       },
       {
         "type": "INCOMPLETE_WORKFLOW",
@@ -2333,12 +2314,6 @@
         "severity": "MEDIUM",
         "impact": "User experience degradation in profile",
         "remediation": "Add missing workflow elements: error_handling"
-      },
-      {
-        "type": "MISSING_NOTIFICATION_SYSTEM",
-        "severity": "MEDIUM",
-        "impact": "Users not notified of errors or success",
-        "remediation": "Install and configure toast notification library"
       }
     ],
     "low": []
@@ -2370,7 +2345,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-my-agenda-tab.tsx": {
@@ -2382,7 +2357,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-my-assets-tab.tsx": {
@@ -2394,7 +2369,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-my-expenses-tab.tsx": {
@@ -2418,7 +2393,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-my-jobs-tab.tsx": {
@@ -2430,7 +2405,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-my-orders-tab.tsx": {
@@ -2442,7 +2417,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-my-reports-tab.tsx": {
@@ -2454,7 +2429,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-my-tasks-tab.tsx": {
@@ -2466,7 +2441,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-my-travel-tab.tsx": {
@@ -2478,7 +2453,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "dashboard-overview-tab.tsx": {
@@ -2490,7 +2465,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           }
         }
@@ -2533,7 +2508,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "projects-compliance-tab.tsx": {
@@ -2798,7 +2773,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "events-rehearsals-tab.tsx": {
             "hasCreate": false,
@@ -2845,7 +2820,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "events-shipping-receiving-tab.tsx": {
@@ -3008,7 +2983,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "people-teams-tab.tsx": {
@@ -3075,7 +3050,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "assets-approvals-tab.tsx": {
@@ -3087,7 +3062,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "assets-catalog-tab.tsx": {
@@ -3099,7 +3074,7 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "assets-maintenance-tab.tsx": {
@@ -3112,7 +3087,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "assets-overview-tab.tsx": {
             "hasCreate": false,
@@ -3123,7 +3098,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "assets-tracking-tab.tsx": {
@@ -3147,7 +3122,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "catalog-tab.tsx": {
@@ -3159,7 +3134,7 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "counts-tab.tsx": {
@@ -3171,7 +3146,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "inventory-tab.tsx": {
@@ -3183,7 +3158,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "maintenance-tab.tsx": {
@@ -3196,7 +3171,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "tracking-tab.tsx": {
             "hasCreate": false,
@@ -3262,7 +3237,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "locations-coordination-tab.tsx": {
             "hasCreate": false,
@@ -3437,7 +3412,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "files-insurance-permits-tab.tsx": {
             "hasCreate": false,
@@ -3548,8 +3523,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "community-spotlight-tab.tsx": {
             "hasCreate": false,
@@ -3573,7 +3548,7 @@
             "hasErrorHandling": true,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "connections-tab.tsx": {
             "hasCreate": false,
@@ -3585,7 +3560,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "discussions-tab.tsx": {
             "hasCreate": false,
@@ -3597,7 +3572,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "events-tab.tsx": {
             "hasCreate": false,
@@ -3609,7 +3584,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "news-tab.tsx": {
             "hasCreate": false,
@@ -3621,7 +3596,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "showcase-tab.tsx": {
             "hasCreate": false,
@@ -3632,8 +3607,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "studios-tab.tsx": {
             "hasCreate": false,
@@ -3677,7 +3652,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "lists-tab.tsx": {
@@ -3689,8 +3664,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "marketplace-orders-tab.tsx": {
             "hasCreate": false,
@@ -3702,7 +3677,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "marketplace-shop-tab.tsx": {
             "hasCreate": false,
@@ -3714,7 +3689,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "marketplace-spotlight-tab.tsx": {
             "hasCreate": false,
@@ -3737,7 +3712,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "products-tab.tsx": {
@@ -3749,8 +3724,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "purchases-tab.tsx": {
             "hasCreate": false,
@@ -3761,7 +3736,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reviews-tab.tsx": {
@@ -3773,8 +3748,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "sales-tab.tsx": {
             "hasCreate": false,
@@ -3785,7 +3760,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "services-tab.tsx": {
@@ -3797,7 +3772,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "shop-tab.tsx": {
@@ -3809,8 +3784,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "spotlight-tab.tsx": {
             "hasCreate": false,
@@ -3821,8 +3796,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "vendors-tab.tsx": {
             "hasCreate": false,
@@ -3833,8 +3808,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           }
         }
       },
@@ -3861,7 +3836,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "resources-glossary-tab.tsx": {
             "hasCreate": false,
@@ -3873,7 +3848,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "resources-grants-tab.tsx": {
             "hasCreate": false,
@@ -3885,7 +3860,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "resources-guides-tab.tsx": {
             "hasCreate": false,
@@ -3897,7 +3872,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "resources-library-tab.tsx": {
             "hasCreate": false,
@@ -3909,7 +3884,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "resources-publications-tab.tsx": {
             "hasCreate": false,
@@ -3921,7 +3896,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "resources-spotlight-tab.tsx": {
             "hasCreate": false,
@@ -3945,7 +3920,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           }
         }
       },
@@ -4049,7 +4024,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "companies-deliverables-tab.tsx": {
             "hasCreate": false,
@@ -4276,7 +4251,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "jobs-postings-tab.tsx": {
@@ -4289,7 +4264,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "jobs-recruiting-tab.tsx": {
             "hasCreate": false,
@@ -4313,7 +4288,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "jobs-rfps-tab.tsx": {
             "hasCreate": false,
@@ -4438,7 +4413,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "procurement-orders-tab.tsx": {
@@ -4486,7 +4461,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "procurement-requisitions-tab.tsx": {
@@ -4547,7 +4522,7 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "finance-budgets-tab.tsx": {
@@ -4571,7 +4546,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "finance-expenses-tab.tsx": {
@@ -4631,7 +4606,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "finance-payments-tab.tsx": {
@@ -4667,7 +4642,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "finance-reconciliation-tab.tsx": {
@@ -4703,7 +4678,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "finance-taxes-tab.tsx": {
@@ -4739,7 +4714,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           }
         }
@@ -4768,7 +4743,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "analytics-custom-views-tab.tsx": {
@@ -4780,8 +4755,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "analytics-data-sources-tab.tsx": {
             "hasCreate": false,
@@ -4792,8 +4767,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "analytics-forecasting-tab.tsx": {
             "hasCreate": false,
@@ -4804,7 +4779,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "analytics-metrics-library-tab.tsx": {
@@ -4816,7 +4791,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "analytics-overview-tab.tsx": {
@@ -4828,7 +4803,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "analytics-performance-tab.tsx": {
@@ -4840,7 +4815,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "analytics-pivot-tables-tab.tsx": {
@@ -4852,7 +4827,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "analytics-realtime-tab.tsx": {
@@ -4864,7 +4839,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "analytics-trends-tab.tsx": {
@@ -4876,7 +4851,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           }
         }
@@ -4905,7 +4880,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reports-builder-tab.tsx": {
@@ -4918,7 +4893,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "reports-compliance-tab.tsx": {
             "hasCreate": false,
@@ -4929,7 +4904,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reports-custom-builder-tab.tsx": {
@@ -4941,7 +4916,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reports-executive-tab.tsx": {
@@ -4953,7 +4928,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reports-exports-tab.tsx": {
@@ -4965,7 +4940,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reports-operational-tab.tsx": {
@@ -4977,7 +4952,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reports-overview-tab.tsx": {
@@ -4989,7 +4964,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reports-scheduled-tab.tsx": {
@@ -5001,7 +4976,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "reports-templates-tab.tsx": {
@@ -5013,7 +4988,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           }
         }
@@ -5043,7 +5018,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "insights-intelligence-feed-tab.tsx": {
@@ -5055,7 +5030,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "insights-key-results-tab.tsx": {
@@ -5067,8 +5042,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "insights-objectives-tab.tsx": {
             "hasCreate": false,
@@ -5079,8 +5054,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "insights-overview-tab.tsx": {
             "hasCreate": false,
@@ -5091,7 +5066,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "insights-patterns-tab.tsx": {
@@ -5104,7 +5079,7 @@
             "hasErrorHandling": false,
             "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "insights-priorities-tab.tsx": {
             "hasCreate": false,
@@ -5115,7 +5090,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "insights-progress-tracking-tab.tsx": {
@@ -5127,7 +5102,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "insights-recommendations-tab.tsx": {
@@ -5139,7 +5114,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "insights-reviews-tab.tsx": {
@@ -5151,7 +5126,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "insights-success-metrics-tab.tsx": {
@@ -5163,7 +5138,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           }
         }
@@ -5193,39 +5168,39 @@
         "workflows": {
           "admin-overview-tab.tsx": {
             "hasCreate": false,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
             "hasSearch": false,
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "api-tokens-tab.tsx": {
             "hasCreate": true,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": false,
             "hasDelete": true,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "automations-tab.tsx": {
             "hasCreate": false,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasLoadingState": true,
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "billing-tab.tsx": {
             "hasCreate": true,
@@ -5236,67 +5211,67 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "checklist-templates-tab.tsx": {
             "hasCreate": true,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "custom-statuses-tab.tsx": {
             "hasCreate": true,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "integrations-tab.tsx": {
             "hasCreate": false,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": false,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "invite-tab.tsx": {
             "hasCreate": false,
             "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
-            "hasSearch": false,
+            "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "members-management-tab.tsx": {
             "hasCreate": true,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": true,
             "hasDelete": true,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "members-overview-tab.tsx": {
@@ -5320,8 +5295,8 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "organization-tab.tsx": {
             "hasCreate": false,
@@ -5332,8 +5307,8 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "plugins-tab.tsx": {
             "hasCreate": false,
@@ -5343,20 +5318,20 @@
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
+            "hasLoadingState": true,
             "hasEmptyState": true,
-            "hasPermissionCheck": false
+            "hasPermissionCheck": true
           },
           "recurrence-rules-tab.tsx": {
             "hasCreate": true,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": true,
             "hasDelete": true,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "roles-permissions-tab.tsx": {
@@ -5367,11 +5342,23 @@
             "hasSearch": false,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "security-tab.tsx": {
+            "hasCreate": false,
+            "hasRead": true,
+            "hasUpdate": false,
+            "hasDelete": false,
+            "hasSearch": true,
+            "hasExport": true,
+            "hasErrorHandling": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
+          },
+          "templates-tab.tsx": {
             "hasCreate": false,
             "hasRead": true,
             "hasUpdate": false,
@@ -5380,31 +5367,19 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": false,
-            "hasEmptyState": false,
-            "hasPermissionCheck": true
-          },
-          "templates-tab.tsx": {
-            "hasCreate": false,
-            "hasRead": false,
-            "hasUpdate": false,
-            "hasDelete": false,
-            "hasSearch": false,
-            "hasExport": true,
-            "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": false
           },
           "webhooks-tab.tsx": {
             "hasCreate": true,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": true,
             "hasDelete": true,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           }
         }
@@ -5430,7 +5405,7 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "appearance-tab.tsx": {
@@ -5438,22 +5413,22 @@
             "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
-            "hasSearch": false,
+            "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasLoadingState": true,
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "automations-tab.tsx": {
             "hasCreate": true,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": true,
             "hasDelete": true,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
+            "hasLoadingState": true,
             "hasEmptyState": true,
             "hasPermissionCheck": true
           },
@@ -5462,35 +5437,35 @@
             "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
-            "hasSearch": false,
+            "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "integrations-tab.tsx": {
             "hasCreate": false,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "team-tab.tsx": {
             "hasCreate": false,
-            "hasRead": false,
+            "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
             "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
-            "hasLoadingState": false,
-            "hasEmptyState": false,
+            "hasLoadingState": true,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "typography-tab.tsx": {
@@ -5498,11 +5473,11 @@
             "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
-            "hasSearch": false,
+            "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           }
         }
@@ -5533,8 +5508,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": false,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "basic-info-tab.tsx": {
             "hasCreate": false,
@@ -5545,8 +5520,8 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "certifications-tab.tsx": {
             "hasCreate": false,
@@ -5557,8 +5532,8 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "emergency-tab.tsx": {
             "hasCreate": false,
@@ -5569,8 +5544,8 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "endorsements-tab.tsx": {
             "hasCreate": false,
@@ -5581,8 +5556,8 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "health-tab.tsx": {
             "hasCreate": false,
@@ -5593,8 +5568,8 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "history-tab.tsx": {
             "hasCreate": false,
@@ -5605,7 +5580,7 @@
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "performance-tab.tsx": {
@@ -5613,12 +5588,12 @@
             "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
-            "hasSearch": false,
+            "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": false,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "professional-tab.tsx": {
             "hasCreate": false,
@@ -5629,20 +5604,20 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "social-tab.tsx": {
             "hasCreate": false,
             "hasRead": true,
             "hasUpdate": false,
             "hasDelete": false,
-            "hasSearch": false,
+            "hasSearch": true,
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           },
           "tags-tab.tsx": {
             "hasCreate": false,
@@ -5653,7 +5628,7 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
+            "hasEmptyState": true,
             "hasPermissionCheck": true
           },
           "travel-tab.tsx": {
@@ -5665,8 +5640,8 @@
             "hasExport": true,
             "hasErrorHandling": true,
             "hasLoadingState": true,
-            "hasEmptyState": false,
-            "hasPermissionCheck": false
+            "hasEmptyState": true,
+            "hasPermissionCheck": true
           }
         }
       }
@@ -5705,7 +5680,7 @@
         "usesSupabase": false
       },
       "use-assets-data.ts": {
-        "hasErrorHandling": true,
+        "hasErrorHandling": false,
         "hasRealtimeSubscription": true,
         "hasOptimisticUpdates": false,
         "hasCaching": true,
@@ -6521,7 +6496,7 @@
     },
     "errorHandling": {
       "hasGlobalBoundary": true,
-      "hasToastSystem": false
+      "hasToastSystem": true
     },
     "integrations": {
       "supabase": true,

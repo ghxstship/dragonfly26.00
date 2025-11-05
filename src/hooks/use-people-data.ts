@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { toast } from 'sonner'
 
 // Hook for Personnel
 export function usePersonnel(workspaceId: string) {
@@ -11,21 +12,28 @@ export function usePersonnel(workspaceId: string) {
 
   useEffect(() => {
     async function fetchPersonnel() {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('personnel')
-        .select(`
-          *,
-          teams:team_members(team:team_id(name))
-        `)
-        .eq('workspace_id', workspaceId)
-        .order('last_name', { ascending: true })
-
-      if (!error && data) {
-        setPersonnel(data)
+      try {  
+        if (!workspaceId) return
+        
+        const { data, error } = await supabase
+          .from('personnel')
+          .select(`
+            *,
+            teams:team_members(team:team_id(name))
+          `)
+          .eq('workspace_id', workspaceId)
+          .order('last_name', { ascending: true })
+  
+        if (!error && data) {
+          setPersonnel(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-      setLoading(false)
     }
 
     fetchPersonnel()
@@ -55,22 +63,29 @@ export function useTeams(workspaceId: string) {
 
   useEffect(() => {
     async function fetchTeams() {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('teams')
-        .select(`
-          *,
-          lead:personnel!leader_id(first_name, last_name),
-          members:team_members(count)
-        `)
-        .eq('workspace_id', workspaceId)
-        .order('name', { ascending: true })
-
-      if (!error && data) {
-        setTeams(data)
+      try {  
+        if (!workspaceId) return
+        
+        const { data, error } = await supabase
+          .from('teams')
+          .select(`
+            *,
+            lead:personnel!leader_id(first_name, last_name),
+            members:team_members(count)
+          `)
+          .eq('workspace_id', workspaceId)
+          .order('name', { ascending: true })
+  
+        if (!error && data) {
+          setTeams(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-      setLoading(false)
     }
 
     fetchTeams()
@@ -100,27 +115,34 @@ export function useTimeEntries(workspaceId: string, personnelId?: string) {
 
   useEffect(() => {
     async function fetchTimeEntries() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('time_entries')
-        .select(`
-          *,
-          personnel:personnel!personnel_id(first_name, last_name),
-          production:production_id(name)
-        `)
-        .eq('workspace_id', workspaceId)
-
-      if (personnelId) {
-        query = query.eq('personnel_id', personnelId)
+      try {  
+        if (!workspaceId) return
+        
+        let query = supabase
+          .from('time_entries')
+          .select(`
+            *,
+            personnel:personnel!personnel_id(first_name, last_name),
+            production:production_id(name)
+          `)
+          .eq('workspace_id', workspaceId)
+  
+        if (personnelId) {
+          query = query.eq('personnel_id', personnelId)
+        }
+  
+        const { data, error } = await query.order('start_time', { ascending: false })
+  
+        if (!error && data) {
+          setTimeEntries(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-
-      const { data, error } = await query.order('start_time', { ascending: false })
-
-      if (!error && data) {
-        setTimeEntries(data)
-      }
-      setLoading(false)
     }
 
     fetchTimeEntries()
@@ -150,21 +172,28 @@ export function useTraining(workspaceId: string) {
 
   useEffect(() => {
     async function fetchTrainingRecords() {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('training_records')
-        .select(`
-          *,
-          personnel:personnel!personnel_id(first_name, last_name)
-        `)
-        .eq('workspace_id', workspaceId)
-        .order('completion_date', { ascending: false })
-
-      if (!error && data) {
-        setTraining(data)
+      try {  
+        if (!workspaceId) return
+        
+        const { data, error } = await supabase
+          .from('training_records')
+          .select(`
+            *,
+            personnel:personnel!personnel_id(first_name, last_name)
+          `)
+          .eq('workspace_id', workspaceId)
+          .order('completion_date', { ascending: false })
+  
+        if (!error && data) {
+          setTraining(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-      setLoading(false)
     }
 
     fetchTrainingRecords()
@@ -194,27 +223,34 @@ export function useAssignments(workspaceId: string, personnelId?: string) {
 
   useEffect(() => {
     async function fetchAssignments() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('personnel_assignments')
-        .select(`
-          *,
-          personnel:personnel!personnel_id(first_name, last_name),
-          production:productions!production_id(name)
-        `)
-        .eq('workspace_id', workspaceId)
-
-      if (personnelId) {
-        query = query.eq('personnel_id', personnelId)
+      try {  
+        if (!workspaceId) return
+        
+        let query = supabase
+          .from('personnel_assignments')
+          .select(`
+            *,
+            personnel:personnel!personnel_id(first_name, last_name),
+            production:productions!production_id(name)
+          `)
+          .eq('workspace_id', workspaceId)
+  
+        if (personnelId) {
+          query = query.eq('personnel_id', personnelId)
+        }
+  
+        const { data, error } = await query.order('created_at', { ascending: false })
+  
+        if (!error && data) {
+          setAssignments(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-
-      const { data, error } = await query.order('created_at', { ascending: false })
-
-      if (!error && data) {
-        setAssignments(data)
-      }
-      setLoading(false)
     }
 
     fetchAssignments()
@@ -244,18 +280,25 @@ export function useJobOpenings(workspaceId: string) {
 
   useEffect(() => {
     async function fetchJobOpenings() {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('job_openings')
-        .select('*')
-        .eq('workspace_id', workspaceId)
-        .order('created_at', { ascending: false })
-
-      if (!error && data) {
-        setOpenings(data)
+      try {  
+        if (!workspaceId) return
+        
+        const { data, error } = await supabase
+          .from('job_openings')
+          .select('*')
+          .eq('workspace_id', workspaceId)
+          .order('created_at', { ascending: false })
+  
+        if (!error && data) {
+          setOpenings(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-      setLoading(false)
     }
 
     fetchJobOpenings()
@@ -285,26 +328,33 @@ export function useJobApplicants(workspaceId: string, jobOpeningId?: string) {
 
   useEffect(() => {
     async function fetchApplicants() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('job_applicants')
-        .select(`
-          *,
-          job_opening:job_openings!job_opening_id(title)
-        `)
-        .eq('workspace_id', workspaceId)
-
-      if (jobOpeningId) {
-        query = query.eq('job_opening_id', jobOpeningId)
+      try {  
+        if (!workspaceId) return
+        
+        let query = supabase
+          .from('job_applicants')
+          .select(`
+            *,
+            job_opening:job_openings!job_opening_id(title)
+          `)
+          .eq('workspace_id', workspaceId)
+  
+        if (jobOpeningId) {
+          query = query.eq('job_opening_id', jobOpeningId)
+        }
+  
+        const { data, error } = await query.order('created_at', { ascending: false })
+  
+        if (!error && data) {
+          setApplicants(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-
-      const { data, error } = await query.order('created_at', { ascending: false })
-
-      if (!error && data) {
-        setApplicants(data)
-      }
-      setLoading(false)
     }
 
     fetchApplicants()

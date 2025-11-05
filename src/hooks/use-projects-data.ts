@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { toast } from 'sonner'
 
 // Hook for Productions list
 export function useProductions(workspaceId: string) {
@@ -11,24 +12,31 @@ export function useProductions(workspaceId: string) {
 
   useEffect(() => {
     async function fetchProductions() {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('productions')
-        .select(`
-          *,
-          workspace:workspaces!workspace_id(name),
-          project_manager:profiles!project_manager_id(first_name, last_name),
-          tasks:project_tasks(count),
-          milestones:project_milestones(count)
-        `)
-        .eq('workspace_id', workspaceId)
-        .order('created_at', { ascending: false })
-
-      if (!error && data) {
-        setProductions(data)
+      try {  
+        if (!workspaceId) return
+        
+        const { data, error } = await supabase
+          .from('productions')
+          .select(`
+            *,
+            workspace:workspaces!workspace_id(name),
+            project_manager:profiles!project_manager_id(first_name, last_name),
+            tasks:project_tasks(count),
+            milestones:project_milestones(count)
+          `)
+          .eq('workspace_id', workspaceId)
+          .order('created_at', { ascending: false })
+  
+        if (!error && data) {
+          setProductions(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-      setLoading(false)
     }
 
     fetchProductions()
@@ -64,27 +72,34 @@ export function useTasks(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchTasks() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('project_tasks')
-        .select(`
-          *,
-          production:production_id(name),
-          assignee:profiles!assignee_id(first_name, last_name)
-        `)
-        .eq('workspace_id', workspaceId)
-
-      if (productionId) {
-        query = query.eq('production_id', productionId)
+      try {  
+        if (!workspaceId) return
+        
+        let query = supabase
+          .from('project_tasks')
+          .select(`
+            *,
+            production:production_id(name),
+            assignee:profiles!assignee_id(first_name, last_name)
+          `)
+          .eq('workspace_id', workspaceId)
+  
+        if (productionId) {
+          query = query.eq('production_id', productionId)
+        }
+  
+        const { data, error} = await query.order('due_date', { ascending: true })
+  
+        if (!error && data) {
+          setTasks(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-
-      const { data, error} = await query.order('due_date', { ascending: true })
-
-      if (!error && data) {
-        setTasks(data)
-      }
-      setLoading(false)
     }
 
     fetchTasks()
@@ -120,27 +135,34 @@ export function useMilestones(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchMilestones() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('project_milestones')
-        .select(`
-          *,
-          production:production_id(name),
-          tasks:project_tasks(count)
-        `)
-        .eq('workspace_id', workspaceId)
-
-      if (productionId) {
-        query = query.eq('production_id', productionId)
+      try {  
+        if (!workspaceId) return
+        
+        let query = supabase
+          .from('project_milestones')
+          .select(`
+            *,
+            production:production_id(name),
+            tasks:project_tasks(count)
+          `)
+          .eq('workspace_id', workspaceId)
+  
+        if (productionId) {
+          query = query.eq('production_id', productionId)
+        }
+  
+        const { data, error } = await query.order('due_date', { ascending: true })
+  
+        if (!error && data) {
+          setMilestones(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-
-      const { data, error } = await query.order('due_date', { ascending: true })
-
-      if (!error && data) {
-        setMilestones(data)
-      }
-      setLoading(false)
     }
 
     fetchMilestones()
@@ -176,26 +198,33 @@ export function useCompliance(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchCompliance() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('project_compliance')
-        .select(`
-          *,
-          production:production_id(name)
-        `)
-        .eq('workspace_id', workspaceId)
-
-      if (productionId) {
-        query = query.eq('production_id', productionId)
+      try {  
+        if (!workspaceId) return
+        
+        let query = supabase
+          .from('project_compliance')
+          .select(`
+            *,
+            production:production_id(name)
+          `)
+          .eq('workspace_id', workspaceId)
+  
+        if (productionId) {
+          query = query.eq('production_id', productionId)
+        }
+  
+        const { data, error } = await query.order('expiry_date', { ascending: true })
+  
+        if (!error && data) {
+          setCompliance(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-
-      const { data, error } = await query.order('expiry_date', { ascending: true })
-
-      if (!error && data) {
-        setCompliance(data)
-      }
-      setLoading(false)
     }
 
     fetchCompliance()
@@ -231,26 +260,33 @@ export function useSafety(workspaceId: string, productionId?: string) {
 
   useEffect(() => {
     async function fetchSafety() {
-      if (!workspaceId) return
-      
-      let query = supabase
-        .from('project_safety')
-        .select(`
-          *,
-          production:production_id(name)
-        `)
-        .eq('workspace_id', workspaceId)
-
-      if (productionId) {
-        query = query.eq('production_id', productionId)
+      try {  
+        if (!workspaceId) return
+        
+        let query = supabase
+          .from('project_safety')
+          .select(`
+            *,
+            production:production_id(name)
+          `)
+          .eq('workspace_id', workspaceId)
+  
+        if (productionId) {
+          query = query.eq('production_id', productionId)
+        }
+  
+        const { data, error } = await query.order('created_at', { ascending: false })
+  
+        if (!error && data) {
+          setSafety(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-
-      const { data, error } = await query.order('created_at', { ascending: false })
-
-      if (!error && data) {
-        setSafety(data)
-      }
-      setLoading(false)
     }
 
     fetchSafety()
@@ -286,15 +322,22 @@ export function useProductionSummary(productionId: string) {
 
   useEffect(() => {
     async function fetchSummary() {
-      const { data, error } = await supabase
-        .rpc('get_production_summary', {
-          p_production_id: productionId
-        })
-
-      if (!error && data) {
-        setSummary(data)
+      try {  
+        const { data, error } = await supabase
+          .rpc('get_production_summary', {
+            p_production_id: productionId
+          })
+  
+        if (!error && data) {
+          setSummary(data)
+        }
+        setLoading(false)
+  
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        toast.error('Failed to load data. Please try again.');
+        setLoading(false);
       }
-      setLoading(false)
     }
 
     if (productionId) {

@@ -16,8 +16,7 @@ import {
   Plus,
   Filter,
   Search,
-  ExternalLink
-} from "lucide-react"
+  ExternalLink, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
@@ -29,7 +28,7 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
   const t = useTranslations('business.companies.organizations')
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
-  const { data: companies, loading } = useModuleData(workspaceId, 'companies', 'organizations')
+  const { data: companies, loading, error } = useModuleData(workspaceId, 'companies', 'organizations')
 
   if (loading) {
     return (
@@ -80,6 +79,19 @@ export function CompaniesOrganizationsTab({ workspaceId, moduleId, tabSlug }: Ta
       .substring(0, 2)
       .toUpperCase()
   }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">

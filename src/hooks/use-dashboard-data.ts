@@ -104,34 +104,44 @@ export function useDashboardData(workspaceId: string, userId: string) {
 export function useMyAgenda(workspaceId: string, userId: string) {
   const [events, setEvents] = useState<DashboardEvent[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchUpcomingEvents = async () => {
-    if (!workspaceId) return
-    
-    // Demo mode: use mock data
-    if (shouldUseMockData()) {
-      await simulateDelay(300)
-      setEvents(mockEvents as any)
-      setLoading(false)
-      return
-    }
-    
-    // Production mode: use Supabase
-    const { data: { user } } = await supabase.auth.getUser()
-    const { data, error } = await supabase
-      .from('events')
-      .select('*, location:location_id(name)')
-      .eq('workspace_id', workspaceId)
-      .or(`created_by.eq.${userId},attendees.cs.{${userId}}`)
-      .gte('start_time', new Date().toISOString())
-      .order('start_time', { ascending: true })
-      .limit(50)
+    try {
+      if (!workspaceId) return
+      
+      // Demo mode: use mock data
+      if (shouldUseMockData()) {
+        await simulateDelay(300)
+        setEvents(mockEvents as any)
+        setLoading(false)
+        return
+      }
+      
+      // Production mode: use Supabase
+      const { data: { user } } = await supabase.auth.getUser()
+      const { data, error: queryError } = await supabase
+        .from('events')
+        .select('*, location:location_id(name)')
+        .eq('workspace_id', workspaceId)
+        .or(`created_by.eq.${userId},attendees.cs.{${userId}}`)
+        .gte('start_time', new Date().toISOString())
+        .order('start_time', { ascending: true })
+        .limit(50)
 
-    if (!error && data) {
-      setEvents(data)
+      if (queryError) throw queryError
+
+      if (data) {
+        setEvents(data)
+        setError(null)
+      }
+    } catch (err) {
+      console.error('Error fetching agenda:', err)
+      setError(err as Error)
+    } finally {
+      setLoading(false)
     }
-    setLoading(false)
   }
 
   useEffect(() => {
@@ -162,32 +172,42 @@ export function useMyAgenda(workspaceId: string, userId: string) {
     }
   }, [workspaceId, userId])
 
-  return { events, loading, refresh: fetchUpcomingEvents }
+  return { events, loading, error, refresh: fetchUpcomingEvents }
 }
 
 // Hook for My Tasks
 export function useMyTasks(workspaceId: string, userId: string) {
   const [tasks, setTasks] = useState<Task[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyTasks = async () => {
-      if (!workspaceId) return
-      
-      const { data: { user } } = await supabase.auth.getUser()
-      const { data, error } = await supabase
-        .from('project_tasks')
-        .select('*, production:production_id(name)')
-        .eq('workspace_id', workspaceId)
-        .or(`assignee_id.eq.${userId},created_by.eq.${userId}`)
-        .neq('status', 'completed')
-        .order('due_date', { ascending: true })
-        .limit(100)
+      try {
+        if (!workspaceId) return
+        
+        const { data: { user } } = await supabase.auth.getUser()
+        const { data, error: queryError } = await supabase
+          .from('project_tasks')
+          .select('*, production:production_id(name)')
+          .eq('workspace_id', workspaceId)
+          .or(`assignee_id.eq.${userId},created_by.eq.${userId}`)
+          .neq('status', 'completed')
+          .order('due_date', { ascending: true })
+          .limit(100)
 
-      if (!error && data) {
-        setTasks(data)
+        if (queryError) throw queryError
+
+        if (data) {
+          setTasks(data)
+          setError(null)
+        }
+      } catch (err) {
+        console.error('Error fetching tasks:', err)
+        setError(err as Error)
+      } finally {
+        setLoading(false)
       }
-      setLoading(false)
     }
 
   useEffect(() => {
@@ -215,35 +235,45 @@ export function useMyTasks(workspaceId: string, userId: string) {
 
   const refresh = fetchMyTasks
 
-  return { tasks, loading, refresh }
+  return { tasks, loading, error, refresh }
 }
 
 // Hook for My Expenses
 export function useMyExpenses(workspaceId: string, userId: string) {
   const [expenses, setExpenses] = useState<DashboardExpense[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyExpenses = async () => {
-      if (!workspaceId) return
-      
-      const { data: { user } } = await supabase.auth.getUser()
-      const { data, error } = await supabase
-        .from('expense_reports')
-        .select(`
-          *,
-          items:expense_items(*),
-          production:production_id(name)
-        `)
-        .eq('workspace_id', workspaceId)
-        .eq('submitted_by', userId)
-        .order('submitted_date', { ascending: false })
-        .limit(50)
+      try {
+        if (!workspaceId) return
+        
+        const { data: { user } } = await supabase.auth.getUser()
+        const { data, error: queryError } = await supabase
+          .from('expense_reports')
+          .select(`
+            *,
+            items:expense_items(*),
+            production:production_id(name)
+          `)
+          .eq('workspace_id', workspaceId)
+          .eq('submitted_by', userId)
+          .order('submitted_date', { ascending: false })
+          .limit(50)
 
-      if (!error && data) {
-        setExpenses(data)
+        if (queryError) throw queryError
+
+        if (data) {
+          setExpenses(data)
+          setError(null)
+        }
+      } catch (err) {
+        console.error('Error fetching expenses:', err)
+        setError(err as Error)
+      } finally {
+        setLoading(false)
       }
-      setLoading(false)
     }
 
   useEffect(() => {
@@ -271,19 +301,21 @@ export function useMyExpenses(workspaceId: string, userId: string) {
 
   const refresh = fetchMyExpenses
 
-  return { expenses, loading, refresh }
+  return { expenses, loading, error, refresh }
 }
 
 // Hook for My Jobs (personnel assignments)
 export function useMyJobs(workspaceId: string, userId: string) {
   const [jobs, setJobs] = useState<DashboardJob[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyJobs = async () => {
+    try {
       if (!workspaceId) return
       
-      const { data, error } = await supabase
+      const { data, error: queryError } = await supabase
         .from('personnel_assignments')
         .select(`
           *,
@@ -296,11 +328,19 @@ export function useMyJobs(workspaceId: string, userId: string) {
         .order('start_date', { ascending: false })
         .limit(50)
 
-      if (!error && data) {
+      if (queryError) throw queryError
+
+      if (data) {
         setJobs(data)
+        setError(null)
       }
+    } catch (err) {
+      console.error('Error fetching jobs:', err)
+      setError(err as Error)
+    } finally {
       setLoading(false)
     }
+  }
 
   useEffect(() => {
     fetchMyJobs()
@@ -326,19 +366,21 @@ export function useMyJobs(workspaceId: string, userId: string) {
 
   const refresh = fetchMyJobs
 
-  return { jobs, loading, refresh }
+  return { jobs, loading, error, refresh }
 }
 
 // Hook for My Assets
 export function useMyAssets(workspaceId: string, userId: string) {
   const [assets, setAssets] = useState<DashboardAsset[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyAssets = async () => {
+    try {
       if (!workspaceId) return
       
-      const { data, error } = await supabase
+      const { data, error: queryError } = await supabase
         .from('assets')
         .select(`
           *,
@@ -349,11 +391,19 @@ export function useMyAssets(workspaceId: string, userId: string) {
         .order('created_at', { ascending: false })
         .limit(100)
 
-      if (!error && data) {
+      if (queryError) throw queryError
+
+      if (data) {
         setAssets(data)
+        setError(null)
       }
+    } catch (err) {
+      console.error('Error fetching assets:', err)
+      setError(err as Error)
+    } finally {
       setLoading(false)
     }
+  }
 
   useEffect(() => {
     fetchMyAssets()
@@ -379,19 +429,21 @@ export function useMyAssets(workspaceId: string, userId: string) {
 
   const refresh = fetchMyAssets
 
-  return { assets, loading, refresh }
+  return { assets, loading, error, refresh }
 }
 
 // Hook for My Orders
 export function useMyOrders(workspaceId: string, userId: string) {
   const [orders, setOrders] = useState<DashboardOrder[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyOrders = async () => {
+    try {
       if (!workspaceId) return
       
-      const { data, error } = await supabase
+      const { data, error: queryError } = await supabase
         .from('marketplace_orders')
         .select(`
           *,
@@ -403,11 +455,19 @@ export function useMyOrders(workspaceId: string, userId: string) {
         .order('created_at', { ascending: false })
         .limit(50)
 
-      if (!error && data) {
+      if (queryError) throw queryError
+
+      if (data) {
         setOrders(data)
+        setError(null)
       }
+    } catch (err) {
+      console.error('Error fetching orders:', err)
+      setError(err as Error)
+    } finally {
       setLoading(false)
     }
+  }
 
   useEffect(() => {
     fetchMyOrders()
@@ -433,19 +493,21 @@ export function useMyOrders(workspaceId: string, userId: string) {
 
   const refresh = fetchMyOrders
 
-  return { orders, loading, refresh }
+  return { orders, loading, error, refresh }
 }
 
 // Hook for My Advances
 export function useMyAdvances(workspaceId: string, userId: string) {
   const [advances, setAdvances] = useState<DashboardAdvance[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyAdvances = async () => {
+    try {
       if (!workspaceId) return
       
-      const { data, error } = await supabase
+      const { data, error: queryError } = await supabase
         .from('production_advances')
         .select(`
           *,
@@ -460,11 +522,19 @@ export function useMyAdvances(workspaceId: string, userId: string) {
         .order('created_at', { ascending: false })
         .limit(50)
 
-      if (!error && data) {
+      if (queryError) throw queryError
+
+      if (data) {
         setAdvances(data)
+        setError(null)
       }
+    } catch (err) {
+      console.error('Error fetching advances:', err)
+      setError(err as Error)
+    } finally {
       setLoading(false)
     }
+  }
 
   useEffect(() => {
     fetchMyAdvances()
@@ -490,19 +560,21 @@ export function useMyAdvances(workspaceId: string, userId: string) {
 
   const refresh = fetchMyAdvances
 
-  return { advances, loading, refresh }
+  return { advances, loading, error, refresh }
 }
 
 // Hook for My Reports
 export function useMyReports(workspaceId: string, userId: string) {
   const [reports, setReports] = useState<Report[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyReports = async () => {
+    try {
       if (!workspaceId) return
       
-      const { data, error } = await supabase
+      const { data, error: queryError } = await supabase
         .from('report_templates')
         .select('*')
         .eq('workspace_id', workspaceId)
@@ -510,11 +582,19 @@ export function useMyReports(workspaceId: string, userId: string) {
         .order('created_at', { ascending: false })
         .limit(50)
 
-      if (!error && data) {
+      if (queryError) throw queryError
+
+      if (data) {
         setReports(data)
+        setError(null)
       }
+    } catch (err) {
+      console.error('Error fetching reports:', err)
+      setError(err as Error)
+    } finally {
       setLoading(false)
     }
+  }
 
   useEffect(() => {
     fetchMyReports()
@@ -540,19 +620,21 @@ export function useMyReports(workspaceId: string, userId: string) {
 
   const refresh = fetchMyReports
 
-  return { reports, loading, refresh }
+  return { reports, loading, error, refresh }
 }
 
 // Hook for My Files  
 export function useMyFiles(workspaceId: string, userId: string) {
   const [files, setFiles] = useState<DashboardFile[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyFiles = async () => {
+    try {
       if (!workspaceId) return
       
-      const { data, error } = await supabase
+      const { data, error: queryError } = await supabase
         .from('files')
         .select(`
           *,
@@ -563,11 +645,19 @@ export function useMyFiles(workspaceId: string, userId: string) {
         .order('created_at', { ascending: false })
         .limit(50)
 
-      if (!error && data) {
+      if (queryError) throw queryError
+
+      if (data) {
         setFiles(data)
+        setError(null)
       }
+    } catch (err) {
+      console.error('Error fetching files:', err)
+      setError(err as Error)
+    } finally {
       setLoading(false)
     }
+  }
 
   useEffect(() => {
     fetchMyFiles()
@@ -593,34 +683,43 @@ export function useMyFiles(workspaceId: string, userId: string) {
 
   const refresh = fetchMyFiles
 
-  return { files, loading, refresh }
+  return { files, loading, error, refresh }
 }
 
 // Hook for My Travel
 export function useMyTravel(workspaceId: string, userId: string) {
   const [travels, setTravels] = useState<DashboardTravel[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<Error | null>(null)
   const supabase = createClient()
 
   const fetchMyTravel = async () => {
-      if (!workspaceId) return
-      
-      const { data, error } = await supabase
-        .from('travel_arrangements')
-        .select(`
-          *,
-          production:production_id(name)
-        `)
-        .eq('workspace_id', workspaceId)
-        .eq('user_id', userId)
-        .gte('departure_date', new Date().toISOString())
-        .order('departure_date', { ascending: true })
-        .limit(50)
+      try {
+        if (!workspaceId) return
+        
+        const { data, error: queryError } = await supabase
+          .from('travel_itineraries')
+          .select(`
+            *,
+            traveler:traveler_id(first_name, last_name)
+          `)
+          .eq('workspace_id', workspaceId)
+          .eq('traveler_id', userId)
+          .order('departure_date', { ascending: true })
+          .limit(50)
 
-      if (!error && data) {
-        setTravels(data)
+        if (queryError) throw queryError
+
+        if (data) {
+          setTravels(data)
+          setError(null)
+        }
+      } catch (err) {
+        console.error('Error fetching travel:', err)
+        setError(err as Error)
+      } finally {
+        setLoading(false)
       }
-      setLoading(false)
     }
 
   useEffect(() => {
@@ -647,5 +746,5 @@ export function useMyTravel(workspaceId: string, userId: string) {
 
   const refresh = fetchMyTravel
 
-  return { travels, loading, refresh }
+  return { travels, loading, error, refresh }
 }

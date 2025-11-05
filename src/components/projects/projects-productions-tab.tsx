@@ -17,7 +17,8 @@ import {
   Clock,
   Plus,
   Filter,
-  Search
+  Search,
+  Film
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import { useModuleData } from "@/hooks/use-module-data"
@@ -26,7 +27,7 @@ import type { TabComponentProps } from "@/types"
 export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.projects.productions')
   const tCommon = useTranslations('common')
-  const { data: productions, loading } = useModuleData(workspaceId, 'projects', 'productions')
+  const { data: productions, loading, error } = useModuleData(workspaceId, 'projects', 'productions')
 
   if (loading) {
     return (
@@ -39,6 +40,18 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" aria-hidden="true"></div>
           <p className="text-muted-foreground">{t('loadingMessage')}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Film className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load productions</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
       </div>
     )

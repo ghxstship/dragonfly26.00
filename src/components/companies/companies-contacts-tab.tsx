@@ -54,7 +54,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
   const t = useTranslations('business.companies.contacts')
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
-  const { data: contacts, loading } = useModuleData(workspaceId, 'companies', 'contacts')
+  const { data: contacts, loading, error } = useModuleData(workspaceId, 'companies', 'contacts')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null)
 
@@ -111,6 +111,19 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
   const primaryContacts = contacts.filter((c: any) => (c as Contact).is_primary).length
   const totalCompanies = new Set(contacts.map((c: any) => (c as Contact).company)).size
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">

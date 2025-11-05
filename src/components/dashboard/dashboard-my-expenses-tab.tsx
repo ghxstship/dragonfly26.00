@@ -30,9 +30,25 @@ import type { DashboardTabProps } from "@/lib/dashboard-tab-components"
 export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: DashboardTabProps) {
   const router = useRouter()
   const t = useTranslations('dashboard.expenses')
-  const { expenses, loading } = useMyExpenses(workspaceId, userId)
+  const { expenses, loading, error } = useMyExpenses(workspaceId, userId)
   
   if (loading) return <LoadingSpinner message={t('loadingMessage')} />
+
+  if (error) {
+    return (
+      <div 
+        className="flex items-center justify-center h-full"
+        role="alert"
+        aria-live="assertive"
+      >
+        <div className="text-center">
+          <DollarSign className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load expenses</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
 
   // Transform data
   const expensesList = expenses.map((exp: any) => ({

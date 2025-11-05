@@ -13,8 +13,7 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   Download,
-  RefreshCw
-} from "lucide-react"
+  RefreshCw, Calendar} from "lucide-react"
 import { useModuleData } from "@/hooks/use-module-data"
 import { Plus } from "lucide-react"
 import type { TabComponentProps } from "@/types"
@@ -26,7 +25,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
   const t = useTranslations('business.finance.overview')
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
-  const { data: financeData, loading } = useModuleData(workspaceId, 'finance', 'overview')
+  const { data: financeData, loading, error } = useModuleData(workspaceId, 'finance', 'overview')
 
   if (loading) {
     return (
@@ -87,6 +86,19 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
   const maxRevenue = Math.max(...monthlyData.map((d: any) => d.revenue))
   const maxExpense = Math.max(...monthlyData.map((d: any) => d.expenses))
   const maxValue = Math.max(maxRevenue, maxExpense)
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
+        <div className="text-center">
+          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <p className="text-muted-foreground">Failed to load data</p>
+          <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
+        </div>
+      </div>
+    )
+  }
+
 
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
