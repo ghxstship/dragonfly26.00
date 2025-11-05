@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl"
 import { cn } from "@/lib/utils"
 import { spacing, grid, padding, border, container, height } from "@/design-tokens"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
-import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { CountrySelector } from "@/components/layout/country-selector"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { GenerationalLanguageToggle } from "@/components/marketing/GenerationalLanguageToggle"
 
@@ -48,9 +48,9 @@ export function MarketingNav(): JSX.Element {
               </Link>
             </div>
 
-            {/* CTA Buttons + Theme/Language Toggles */}
+            {/* CTA Buttons + Country/Theme Toggles */}
             <div className="hidden md:flex flex-wrap md:flex-nowrap items-center space-x-2">
-              <LanguageSwitcher />
+              <CountrySelector />
               <GenerationalLanguageToggle />
               <ThemeToggle />
               <div className="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-2" />
@@ -135,7 +135,7 @@ export function MarketingNav(): JSX.Element {
               {/* Secondary Settings - Bottom (iOS/Android Pattern) */}
               <div className="pt-3 border-t border-gray-200 dark:border-gray-800">
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-3">
-                  <LanguageSwitcher />
+                  <CountrySelector />
                   <GenerationalLanguageToggle />
                   <div className="flex justify-center">
                     <ThemeToggle />

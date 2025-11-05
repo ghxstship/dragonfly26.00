@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { createClient } from "@/lib/supabase/client"
 import { Eye, EyeOff } from "lucide-react"
-import { LanguageSwitcher } from "@/components/layout/language-switcher"
+import { CountrySelector } from "@/components/layout/country-selector"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 export default function SignupPage() {
@@ -119,9 +119,9 @@ export default function SignupPage() {
 
   return (
     <div className="min-h-screen flex flex-wrap items-center justify-center bg-background p-4">
-      {/* Language and Theme Toggles - Top Right */}
+      {/* Country and Theme Toggles - Top Right */}
       <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
-        <LanguageSwitcher />
+        <CountrySelector />
         <ThemeToggle />
       </div>
 

@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Loader2, Search, CheckCircle2, Clock, XCircle, Mail } from 'lucide-react'
-import { LanguageSwitcher } from '@/components/layout/language-switcher'
+import { CountrySelector } from '@/components/layout/country-selector'
 import { ThemeToggle } from '@/components/layout/theme-toggle'
 import { WAITLIST_STATUS_LABELS, WAITLIST_STATUS_COLORS } from '@/types/waitlist'
 import type { WaitlistCheckResponse } from '@/types/waitlist'
@@ -61,9 +61,9 @@ export default function WaitlistStatusPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      {/* Language and Theme Toggles */}
+      {/* Country and Theme Toggles */}
       <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
-        <LanguageSwitcher />
+        <CountrySelector />
         <ThemeToggle />
       </div>
 

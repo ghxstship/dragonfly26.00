@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { CheckCircle2, Loader2, AlertCircle } from 'lucide-react'
-import { LanguageSwitcher } from '@/components/layout/language-switcher'
+import { CountrySelector } from '@/components/layout/country-selector'
 import { ThemeToggle } from '@/components/layout/theme-toggle'
 import { REFERRAL_SOURCES } from '@/types/waitlist'
 import type { WaitlistSubmitRequest, WaitlistSubmitResponse } from '@/types/waitlist'
@@ -67,11 +67,11 @@ export default function WaitlistPage() {
   if (success && response) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background p-4">
-        {/* Language and Theme Toggles */}
-        <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
-          <LanguageSwitcher />
-          <ThemeToggle />
-        </div>
+      {/* Country and Theme Toggles */}
+      <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+        <CountrySelector />
+        <ThemeToggle />
+      </div>
 
         <Card className="max-w-2xl w-full">
           <CardHeader className="text-center">
@@ -132,9 +132,9 @@ export default function WaitlistPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      {/* Language and Theme Toggles */}
+      {/* Country and Theme Toggles */}
       <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
-        <LanguageSwitcher />
+        <CountrySelector />
         <ThemeToggle />
       </div>
 
