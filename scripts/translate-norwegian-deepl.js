@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
 /**
- * NORWEGIAN TRANSLATION SCRIPT
- * Uses @vitalets/google-translate-api (free, no API key needed)
- * Translates ALL content from English to Norwegian
+ * NORWEGIAN TRANSLATION SCRIPT - DEEPL VERSION
+ * Uses deepl-node (free tier: 500,000 chars/month)
+ * More reliable than Google Translate free tier
+ * 
+ * Install: npm install deepl-node
+ * Get free API key: https://www.deepl.com/pro-api
  */
 
 const fs = require('fs')
@@ -11,21 +14,36 @@ const path = require('path')
 
 const MESSAGES_DIR = path.join(__dirname, '../src/i18n/messages')
 
-console.log('🇳🇴 NORWEGIAN TRANSLATION SYSTEM\n')
+console.log('🇳🇴 NORWEGIAN TRANSLATION SYSTEM (DeepL)\n')
 console.log('This script will translate ALL content to Norwegian (Norsk)')
 console.log('=' .repeat(80) + '\n')
 
-// Check if translation library is installed
-let translate
+// Check if DeepL library is installed
+let deepl
 try {
-  const translateModule = require('@vitalets/google-translate-api')
-  translate = translateModule.translate || translateModule.default || translateModule
-  console.log('✅ Translation library loaded\n')
+  const deeplModule = require('deepl-node')
+  console.log('✅ DeepL library loaded\n')
+  
+  // Check for API key
+  const apiKey = process.env.DEEPL_API_KEY
+  if (!apiKey) {
+    console.log('❌ DeepL API key not found')
+    console.log('\n📦 Setup instructions:')
+    console.log('   1. Get free API key: https://www.deepl.com/pro-api')
+    console.log('   2. Set environment variable: export DEEPL_API_KEY="your-key-here"')
+    console.log('   3. Run this script again')
+    console.log('\nFree tier: 500,000 characters/month (plenty for this translation)')
+    process.exit(1)
+  }
+  
+  deepl = new deeplModule.Translator(apiKey)
+  console.log('✅ DeepL API key configured\n')
 } catch (error) {
-  console.log('❌ Translation library not found')
-  console.log('\n📦 Please install the translation library:')
-  console.log('   npm install @vitalets/google-translate-api')
-  console.log('\nThen run this script again.')
+  console.log('❌ DeepL library not found')
+  console.log('\n📦 Please install the DeepL library:')
+  console.log('   npm install deepl-node')
+  console.log('\nThen get a free API key from: https://www.deepl.com/pro-api')
+  console.log('And run: export DEEPL_API_KEY="your-key-here"')
   process.exit(1)
 }
 
@@ -33,7 +51,7 @@ try {
 const enPath = path.join(MESSAGES_DIR, 'en.json')
 const enData = JSON.parse(fs.readFileSync(enPath, 'utf-8'))
 
-// Helper function to delay between API calls to avoid rate limiting
+// Helper function to delay between API calls
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
 // Recursively translate all strings in an object
@@ -51,15 +69,15 @@ async function translateObject(obj, path = '') {
     } else if (typeof value === 'string') {
       // Translate string values
       try {
-        // Add longer delay to avoid rate limiting (500ms instead of 100ms)
-        await delay(500)
+        // Small delay to be respectful to API
+        await delay(50)
         
-        const { text } = await translate(value, { to: 'no' })
-        result[key] = text
+        const translation = await deepl.translateText(value, null, 'nb')
+        result[key] = translation.text
         
         count++
-        // Show progress for every 50th translation
-        if (count % 50 === 0) {
+        // Show progress for every 100th translation
+        if (count % 100 === 0) {
           process.stdout.write('.')
         }
       } catch (error) {
@@ -76,7 +94,7 @@ async function translateObject(obj, path = '') {
 
 // Count total strings to translate
 function countStrings(obj) {
-  let count = 0
+  let count = 0;
   for (const key in obj) {
     const value = obj[key]
     if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
@@ -93,8 +111,8 @@ async function translateNorwegian() {
   const totalKeys = countStrings(enData)
   console.log(`📝 Translating Norwegian (Norsk)...`)
   console.log(`   Total keys to translate: ${totalKeys}`)
-  console.log(`   Delay: 500ms per request (to avoid rate limiting)`)
-  console.log(`   This will take approximately ${Math.ceil(totalKeys * 0.5 / 60)} minutes\n`)
+  console.log(`   Using DeepL API (more reliable than Google Translate)`)
+  console.log(`   This will take approximately ${Math.ceil(totalKeys * 0.05 / 60)} minutes\n`)
   
   const startTime = Date.now()
   
@@ -116,8 +134,8 @@ async function translateNorwegian() {
     console.log('   1. Test language switcher with Norwegian')
     console.log('   2. Have native Norwegian speakers proofread translations')
     console.log('   3. Make adjustments as needed')
-    console.log('\n💡 Note: These are machine translations.')
-    console.log('   Recommended: Have native speakers review for accuracy and cultural fit.')
+    console.log('\n💡 Note: DeepL provides high-quality translations.')
+    console.log('   Still recommended: Have native speakers review for accuracy and cultural fit.')
     
   } catch (error) {
     console.error(`\n❌ Error translating Norwegian: ${error.message}`)
@@ -127,7 +145,7 @@ async function translateNorwegian() {
 
 // Run the translation
 console.log('🚀 Starting Norwegian translation...\n')
-console.log('📡 Using free Google Translate API (no API key needed)\n')
+console.log('📡 Using DeepL API (professional quality)\n')
 
 translateNorwegian().catch(error => {
   console.error('\n❌ Fatal error:', error)
