@@ -8,6 +8,8 @@ import { locales, isRTL } from '@/i18n/config'
 import { GenerationalLanguageClientProvider } from '@/components/providers/generational-language-provider'
 import { ThemeProvider } from "@/components/theme-provider"
 import { QueryProvider } from "@/components/providers/query-provider"
+import { LocaleProvider } from "@/contexts/LocaleContext"
+import { GDPRBanner } from "@/components/compliance/gdpr-banner"
 import { Toaster } from "@/components/ui/toaster"
 import "../globals.css"
 
@@ -93,8 +95,11 @@ export default async function LocaleLayout({
           >
             <NextIntlClientProvider locale={locale} messages={messages}>
               <GenerationalLanguageClientProvider>
-                {children}
-                <Toaster />
+                <LocaleProvider defaultCountry="US">
+                  {children}
+                  <Toaster />
+                  <GDPRBanner />
+                </LocaleProvider>
               </GenerationalLanguageClientProvider>
             </NextIntlClientProvider>
           </ThemeProvider>

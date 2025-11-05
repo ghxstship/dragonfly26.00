@@ -43,7 +43,7 @@ import { CommandPalette } from "./command-palette"
 import { BreadcrumbNav } from "./breadcrumb-nav"
 import { QuickActions } from "./quick-actions"
 import { ThemeToggle } from "./theme-toggle"
-import { LanguageSwitcher } from "./language-switcher"
+import { CountrySelector } from "./country-selector"
 import { CreateMenu } from "./create-menu"
 import { MobileMenu } from "./mobile-menu"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
@@ -371,8 +371,8 @@ export function TopBar() {
           {/* Theme Toggle */}
           <ThemeToggle />
 
-          {/* Language Switcher */}
-          <LanguageSwitcher />
+          {/* Country/Region Selector (replaces language switcher) */}
+          <CountrySelector />
 
           {/* Divider */}
           <div className="hidden md:block h-6 w-px bg-border mx-1" />

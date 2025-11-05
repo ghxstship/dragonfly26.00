@@ -51,6 +51,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/edge-config": "^1.4.2",
     "@vercel/speed-insights": "^1.2.0",
+    "@vitalets/google-translate-api": "^9.2.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^1.0.0",
