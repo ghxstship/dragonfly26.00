@@ -1,12 +1,19 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useInsightsData } from '@/hooks/use-insights-data'
+import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 
-export function InsightsPatternsTab(): JSX.Element {
+interface TabComponentProps {
+  workspaceId: string
+  moduleId?: string
+  tabSlug?: string
+}
+
+
+export function InsightsPatternsTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('insights.patterns')
-  const { data, loading } = useInsightsData()
+  const { data, loading } = useModuleData(workspaceId, 'insights', 'patterns-tab')
 
   const columns = [
     {
@@ -42,7 +49,7 @@ export function InsightsPatternsTab(): JSX.Element {
       columns={columns}
       loading={loading}
       searchPlaceholder={t('search')}
-      emptyStateMessage={t('emptyState')}
+      emptyMessage={t('emptyState')}
     />
   )
 }

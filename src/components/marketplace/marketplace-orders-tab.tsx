@@ -1,12 +1,19 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useMarketplaceData } from '@/hooks/use-marketplace-data'
+import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 
-export function MarketplaceOrdersTab(): JSX.Element {
+interface TabComponentProps {
+  workspaceId: string
+  moduleId?: string
+  tabSlug?: string
+}
+
+
+export function MarketplaceOrdersTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('marketplace.orders')
-  const { data, loading } = useMarketplaceData()
+  const { data, loading } = useModuleData(workspaceId, 'marketplace', 'orders-tab')
 
   const columns = [
     {
@@ -42,7 +49,7 @@ export function MarketplaceOrdersTab(): JSX.Element {
       columns={columns}
       loading={loading}
       searchPlaceholder={t('search')}
-      emptyStateMessage={t('emptyState')}
+      emptyMessage={t('emptyState')}
     />
   )
 }

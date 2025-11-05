@@ -1,12 +1,19 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { usePeopleData } from '@/hooks/use-people-data'
+import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 
-export function PeopleDirectoryTab(): JSX.Element {
+interface TabComponentProps {
+  workspaceId: string
+  moduleId?: string
+  tabSlug?: string
+}
+
+
+export function PeopleDirectoryTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('people.directory')
-  const { data, loading } = usePeopleData()
+  const { data, loading } = useModuleData(workspaceId, 'people', 'directory-tab')
 
   const columns = [
     {
@@ -42,7 +49,7 @@ export function PeopleDirectoryTab(): JSX.Element {
       columns={columns}
       loading={loading}
       searchPlaceholder={t('search')}
-      emptyStateMessage={t('emptyState')}
+      emptyMessage={t('emptyState')}
     />
   )
 }

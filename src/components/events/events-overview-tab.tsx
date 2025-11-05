@@ -5,9 +5,15 @@ import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 import { Calendar, MapPin, Users, Clock } from 'lucide-react'
 
-export function EventsOverviewTab(): JSX.Element {
+interface TabComponentProps {
+  workspaceId: string
+  moduleId?: string
+  tabSlug?: string
+}
+
+export function EventsOverviewTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('events.overview')
-  const { data: events, loading } = useModuleData('events', 'overview')
+  const { data: events, loading } = useModuleData(workspaceId, 'events', 'overview')
 
   const columns = [
     {
@@ -81,7 +87,7 @@ export function EventsOverviewTab(): JSX.Element {
         columns={columns}
         loading={loading}
         searchPlaceholder={t('search')}
-        emptyStateMessage={t('emptyState')}
+        emptyMessage={t('emptyState')}
       />
     </div>
   )

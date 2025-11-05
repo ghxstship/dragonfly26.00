@@ -1,12 +1,19 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useReportsData } from '@/hooks/use-reports-data'
+import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 
-export function ReportsBuilderTab(): JSX.Element {
+interface TabComponentProps {
+  workspaceId: string
+  moduleId?: string
+  tabSlug?: string
+}
+
+
+export function ReportsBuilderTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('reports.builder')
-  const { data, loading } = useReportsData()
+  const { data, loading } = useModuleData(workspaceId, 'reports', 'builder-tab')
 
   const columns = [
     {
@@ -42,7 +49,7 @@ export function ReportsBuilderTab(): JSX.Element {
       columns={columns}
       loading={loading}
       searchPlaceholder={t('search')}
-      emptyStateMessage={t('emptyState')}
+      emptyMessage={t('emptyState')}
     />
   )
 }

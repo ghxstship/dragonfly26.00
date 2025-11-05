@@ -1,12 +1,18 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useFilesData } from '@/hooks/use-files-data'
+import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 
-export function FilesFoldersTab(): JSX.Element {
+interface TabComponentProps {
+  workspaceId: string
+  moduleId?: string
+  tabSlug?: string
+}
+
+export function FilesFoldersTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('files.folders')
-  const { data, loading } = useFilesData()
+  const { data: folders, loading } = useModuleData(workspaceId, 'files', 'folders')
 
   const columns = [
     {
@@ -38,11 +44,11 @@ export function FilesFoldersTab(): JSX.Element {
 
   return (
     <DataTableOrganism
-      data={data || []}
+      data={folders || []}
       columns={columns}
       loading={loading}
       searchPlaceholder={t('search')}
-      emptyStateMessage={t('emptyState')}
+      emptyMessage={t('emptyState')}
     />
   )
 }

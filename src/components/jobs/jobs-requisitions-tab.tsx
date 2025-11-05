@@ -1,12 +1,19 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useJobsData } from '@/hooks/use-jobs-data'
+import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 
-export function JobsRequisitionsTab(): JSX.Element {
+interface TabComponentProps {
+  workspaceId: string
+  moduleId?: string
+  tabSlug?: string
+}
+
+
+export function JobsRequisitionsTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('jobs.requisitions')
-  const { data, loading } = useJobsData()
+  const { data, loading } = useModuleData(workspaceId, 'jobs', 'requisitions-tab')
 
   const columns = [
     {
@@ -42,7 +49,7 @@ export function JobsRequisitionsTab(): JSX.Element {
       columns={columns}
       loading={loading}
       searchPlaceholder={t('search')}
-      emptyStateMessage={t('emptyState')}
+      emptyMessage={t('emptyState')}
     />
   )
 }

@@ -1,12 +1,19 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import { useLocationsData } from '@/hooks/use-locations-data'
+import { useModuleData } from '@/hooks/use-module-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 
-export function LocationsBookingsTab(): JSX.Element {
+interface TabComponentProps {
+  workspaceId: string
+  moduleId?: string
+  tabSlug?: string
+}
+
+
+export function LocationsBookingsTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('locations.bookings')
-  const { data, loading } = useLocationsData()
+  const { data, loading } = useModuleData(workspaceId, 'locations', 'bookings-tab')
 
   const columns = [
     {
@@ -42,7 +49,7 @@ export function LocationsBookingsTab(): JSX.Element {
       columns={columns}
       loading={loading}
       searchPlaceholder={t('search')}
-      emptyStateMessage={t('emptyState')}
+      emptyMessage={t('emptyState')}
     />
   )
 }
