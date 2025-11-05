@@ -1,0 +1,739 @@
+{
+  "timestamp": "2025-11-05T04:34:38.534Z",
+  "summary": {
+    "totalHubs": 5,
+    "totalModules": 20,
+    "totalWorkflows": 19,
+    "completeWorkflows": 19,
+    "incompleteWorkflows": 0,
+    "lifecycleWorkflows": 1,
+    "lifecycleComplete": 1,
+    "workflowCompleteness": "100.0%",
+    "lifecycleCompleteness": "100.0%"
+  },
+  "hubs": {
+    "production": {
+      "hub": "production",
+      "modules": {
+        "dashboard": {
+          "exists": true,
+          "tabs": [
+            "dashboard-my-advances-tab.tsx",
+            "dashboard-my-agenda-tab.tsx",
+            "dashboard-my-assets-tab.tsx",
+            "dashboard-my-expenses-tab.tsx",
+            "dashboard-my-files-tab.tsx",
+            "dashboard-my-jobs-tab.tsx",
+            "dashboard-my-orders-tab.tsx",
+            "dashboard-my-reports-tab.tsx",
+            "dashboard-my-tasks-tab.tsx",
+            "dashboard-my-travel-tab.tsx",
+            "dashboard-overview-tab.tsx"
+          ]
+        },
+        "projects": {
+          "exists": true,
+          "tabs": [
+            "projects-activations-tab.tsx",
+            "projects-budgets-tab.tsx",
+            "projects-compliance-tab.tsx",
+            "projects-costs-tab.tsx",
+            "projects-milestones-tab.tsx",
+            "projects-overview-tab.tsx",
+            "projects-productions-tab.tsx",
+            "projects-projects-checklists-tab.tsx",
+            "projects-projects-work-orders-tab.tsx",
+            "projects-safety-tab.tsx",
+            "projects-schedule-tab.tsx",
+            "projects-tasks-tab.tsx"
+          ]
+        },
+        "events": {
+          "exists": true,
+          "tabs": [
+            "events-activities-tab.tsx",
+            "events-all-events-tab.tsx",
+            "events-blocks-tab.tsx",
+            "events-bookings-tab.tsx",
+            "events-calendar-tab.tsx",
+            "events-equipment-tab.tsx",
+            "events-incidents-tab.tsx",
+            "events-internal-tab.tsx",
+            "events-itineraries-tab.tsx",
+            "events-overview-tab.tsx",
+            "events-rehearsals-tab.tsx",
+            "events-reservations-tab.tsx",
+            "events-run-of-show-tab.tsx",
+            "events-scheduling-tab.tsx",
+            "events-shipping-receiving-tab.tsx",
+            "events-tours-tab.tsx",
+            "events-trainings-tab.tsx"
+          ]
+        },
+        "people": {
+          "exists": true,
+          "tabs": [
+            "people-applicants-tab.tsx",
+            "people-assignments-tab.tsx",
+            "people-availability-tab.tsx",
+            "people-directory-tab.tsx",
+            "people-onboarding-tab.tsx",
+            "people-openings-tab.tsx",
+            "people-overview-tab.tsx",
+            "people-personnel-tab.tsx",
+            "people-scheduling-tab.tsx",
+            "people-teams-tab.tsx",
+            "people-timekeeping-tab.tsx",
+            "people-training-tab.tsx"
+          ]
+        },
+        "assets": {
+          "exists": true,
+          "tabs": [
+            "assets-advances-tab.tsx",
+            "assets-approvals-tab.tsx",
+            "assets-catalog-tab.tsx",
+            "assets-maintenance-tab.tsx",
+            "assets-overview-tab.tsx",
+            "assets-tracking-tab.tsx",
+            "assets-transactions-tab.tsx",
+            "catalog-tab.tsx",
+            "counts-tab.tsx",
+            "inventory-tab.tsx",
+            "maintenance-tab.tsx",
+            "tracking-tab.tsx"
+          ]
+        },
+        "locations": {
+          "exists": true,
+          "tabs": [
+            "locations-access-tab.tsx",
+            "locations-bim-models-tab.tsx",
+            "locations-bookings-tab.tsx",
+            "locations-coordination-tab.tsx",
+            "locations-directory-tab.tsx",
+            "locations-logistics-tab.tsx",
+            "locations-overview-tab.tsx",
+            "locations-site-maps-tab.tsx",
+            "locations-spatial-features-tab.tsx",
+            "locations-utilities-tab.tsx",
+            "locations-warehousing-tab.tsx"
+          ]
+        },
+        "files": {
+          "exists": true,
+          "tabs": [
+            "files-all-documents-tab.tsx",
+            "files-archive-tab.tsx",
+            "files-call-sheets-tab.tsx",
+            "files-contracts-tab.tsx",
+            "files-folders-tab.tsx",
+            "files-insurance-permits-tab.tsx",
+            "files-media-assets-tab.tsx",
+            "files-overview-tab.tsx",
+            "files-production-reports-tab.tsx",
+            "files-riders-tab.tsx",
+            "files-shared-tab.tsx",
+            "files-tech-specs-tab.tsx"
+          ]
+        }
+      },
+      "completeness": 0,
+      "totalWorkflows": 0,
+      "completeWorkflows": 0
+    },
+    "business": {
+      "hub": "business",
+      "modules": {
+        "companies": {
+          "exists": true,
+          "tabs": [
+            "companies-bids-tab.tsx",
+            "companies-companies-compliance-tab.tsx",
+            "companies-companies-invoices-tab.tsx",
+            "companies-companies-reviews-tab.tsx",
+            "companies-companies-work-orders-tab.tsx",
+            "companies-contacts-tab.tsx",
+            "companies-contracts-tab.tsx",
+            "companies-deliverables-tab.tsx",
+            "companies-documents-tab.tsx",
+            "companies-organizations-tab.tsx",
+            "companies-overview-tab.tsx",
+            "companies-scopes-of-work-tab.tsx",
+            "companies-subcontractor-profile-tab.tsx"
+          ]
+        },
+        "jobs": {
+          "exists": true,
+          "tabs": [
+            "jobs-active-tab.tsx",
+            "jobs-archived-tab.tsx",
+            "jobs-checklists-tab.tsx",
+            "jobs-completed-tab.tsx",
+            "jobs-dispatch-tab.tsx",
+            "jobs-estimates-tab.tsx",
+            "jobs-jobs-compliance-tab.tsx",
+            "jobs-jobs-invoices-tab.tsx",
+            "jobs-offers-tab.tsx",
+            "jobs-overview-tab.tsx",
+            "jobs-pipeline-tab.tsx",
+            "jobs-postings-tab.tsx",
+            "jobs-recruiting-tab.tsx",
+            "jobs-requisitions-tab.tsx",
+            "jobs-rfps-tab.tsx",
+            "jobs-shortlists-tab.tsx",
+            "jobs-work-orders-tab.tsx"
+          ]
+        },
+        "procurement": {
+          "exists": true,
+          "tabs": [
+            "procurement-agreements-tab.tsx",
+            "procurement-audits-tab.tsx",
+            "procurement-fulfillment-tab.tsx",
+            "procurement-line-items-tab.tsx",
+            "procurement-matching-tab.tsx",
+            "procurement-orders-dashboard-tab.tsx",
+            "procurement-orders-tab.tsx",
+            "procurement-overview-tab.tsx",
+            "procurement-procurement-approvals-tab.tsx",
+            "procurement-receiving-tab.tsx",
+            "procurement-requisitions-tab.tsx"
+          ]
+        },
+        "finance": {
+          "exists": true,
+          "tabs": [
+            "finance-accounts-tab.tsx",
+            "finance-approvals-tab.tsx",
+            "finance-budgets-tab.tsx",
+            "finance-cash-flow-tab.tsx",
+            "finance-expenses-tab.tsx",
+            "finance-forecasts-tab.tsx",
+            "finance-gl-codes-tab.tsx",
+            "finance-invoices-tab.tsx",
+            "finance-overview-tab.tsx",
+            "finance-payments-tab.tsx",
+            "finance-payroll-tab.tsx",
+            "finance-policies-tab.tsx",
+            "finance-reconciliation-tab.tsx",
+            "finance-revenue-tab.tsx",
+            "finance-scenarios-tab.tsx",
+            "finance-taxes-tab.tsx",
+            "finance-transactions-tab.tsx",
+            "finance-variance-tab.tsx"
+          ]
+        }
+      },
+      "completeness": 0,
+      "totalWorkflows": 0,
+      "completeWorkflows": 0
+    },
+    "network": {
+      "hub": "network",
+      "modules": {
+        "community": {
+          "exists": true,
+          "tabs": [
+            "activity-tab.tsx",
+            "community-spotlight-tab.tsx",
+            "competitions-tab.tsx",
+            "connections-tab.tsx",
+            "discussions-tab.tsx",
+            "events-tab.tsx",
+            "news-tab.tsx",
+            "showcase-tab.tsx",
+            "studios-tab.tsx"
+          ]
+        },
+        "marketplace": {
+          "exists": true,
+          "tabs": [
+            "favorites-tab.tsx",
+            "lists-tab.tsx",
+            "marketplace-orders-tab.tsx",
+            "marketplace-shop-tab.tsx",
+            "marketplace-spotlight-tab.tsx",
+            "orders-tab.tsx",
+            "products-tab.tsx",
+            "purchases-tab.tsx",
+            "reviews-tab.tsx",
+            "sales-tab.tsx",
+            "services-tab.tsx",
+            "shop-tab.tsx",
+            "spotlight-tab.tsx",
+            "vendors-tab.tsx"
+          ]
+        },
+        "resources": {
+          "exists": true,
+          "tabs": [
+            "resources-courses-tab.tsx",
+            "resources-glossary-tab.tsx",
+            "resources-grants-tab.tsx",
+            "resources-guides-tab.tsx",
+            "resources-library-tab.tsx",
+            "resources-publications-tab.tsx",
+            "resources-spotlight-tab.tsx",
+            "resources-troubleshooting-tab.tsx"
+          ]
+        }
+      },
+      "completeness": 0,
+      "totalWorkflows": 0,
+      "completeWorkflows": 0
+    },
+    "intelligence": {
+      "hub": "intelligence",
+      "modules": {
+        "reports": {
+          "exists": true,
+          "tabs": [
+            "reports-archived-tab.tsx",
+            "reports-builder-tab.tsx",
+            "reports-compliance-tab.tsx",
+            "reports-custom-builder-tab.tsx",
+            "reports-executive-tab.tsx",
+            "reports-exports-tab.tsx",
+            "reports-operational-tab.tsx",
+            "reports-overview-tab.tsx",
+            "reports-scheduled-tab.tsx",
+            "reports-templates-tab.tsx"
+          ]
+        },
+        "analytics": {
+          "exists": true,
+          "tabs": [
+            "analytics-comparisons-tab.tsx",
+            "analytics-custom-views-tab.tsx",
+            "analytics-data-sources-tab.tsx",
+            "analytics-forecasting-tab.tsx",
+            "analytics-metrics-library-tab.tsx",
+            "analytics-overview-tab.tsx",
+            "analytics-performance-tab.tsx",
+            "analytics-pivot-tables-tab.tsx",
+            "analytics-realtime-tab.tsx",
+            "analytics-trends-tab.tsx"
+          ]
+        },
+        "insights": {
+          "exists": true,
+          "tabs": [
+            "insights-benchmarks-tab.tsx",
+            "insights-intelligence-feed-tab.tsx",
+            "insights-key-results-tab.tsx",
+            "insights-objectives-tab.tsx",
+            "insights-overview-tab.tsx",
+            "insights-patterns-tab.tsx",
+            "insights-priorities-tab.tsx",
+            "insights-progress-tracking-tab.tsx",
+            "insights-recommendations-tab.tsx",
+            "insights-reviews-tab.tsx",
+            "insights-success-metrics-tab.tsx"
+          ]
+        }
+      },
+      "completeness": 0,
+      "totalWorkflows": 0,
+      "completeWorkflows": 0
+    },
+    "system": {
+      "hub": "system",
+      "modules": {
+        "admin": {
+          "exists": true,
+          "tabs": [
+            "admin-overview-tab.tsx",
+            "api-tokens-tab.tsx",
+            "automations-tab.tsx",
+            "billing-tab.tsx",
+            "checklist-templates-tab.tsx",
+            "custom-statuses-tab.tsx",
+            "integrations-tab.tsx",
+            "invite-tab.tsx",
+            "members-management-tab.tsx",
+            "members-overview-tab.tsx",
+            "organization-settings-tab.tsx",
+            "organization-tab.tsx",
+            "plugins-tab.tsx",
+            "recurrence-rules-tab.tsx",
+            "roles-permissions-tab.tsx",
+            "security-tab.tsx",
+            "templates-tab.tsx",
+            "webhooks-tab.tsx"
+          ]
+        },
+        "settings": {
+          "exists": true,
+          "tabs": [
+            "account-tab.tsx",
+            "appearance-tab.tsx",
+            "automations-tab.tsx",
+            "billing-tab.tsx",
+            "integrations-tab.tsx",
+            "team-tab.tsx",
+            "typography-tab.tsx"
+          ]
+        },
+        "profile": {
+          "exists": true,
+          "tabs": [
+            "access-tab.tsx",
+            "basic-info-tab.tsx",
+            "certifications-tab.tsx",
+            "emergency-tab.tsx",
+            "endorsements-tab.tsx",
+            "health-tab.tsx",
+            "history-tab.tsx",
+            "performance-tab.tsx",
+            "professional-tab.tsx",
+            "social-tab.tsx",
+            "tags-tab.tsx",
+            "travel-tab.tsx"
+          ]
+        }
+      },
+      "completeness": 0,
+      "totalWorkflows": 0,
+      "completeWorkflows": 0
+    }
+  },
+  "workflows": {
+    "production": [
+      {
+        "name": "project_creation",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "event_management",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "people_management",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "asset_lifecycle",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "location_management",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "file_management",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      }
+    ],
+    "business": [
+      {
+        "name": "vendor_management",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "procurement",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "financial_management",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "hiring",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      }
+    ],
+    "network": [
+      {
+        "name": "community_engagement",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "marketplace",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "resource_sharing",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      }
+    ],
+    "intelligence": [
+      {
+        "name": "reporting",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "analytics",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "insights",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      }
+    ],
+    "system": [
+      {
+        "name": "organization_setup",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "user_management",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      },
+      {
+        "name": "automation",
+        "complete": true,
+        "missing": {
+          "tables": [],
+          "hooks": [],
+          "components": []
+        },
+        "warnings": []
+      }
+    ]
+  },
+  "lifecycle": {
+    "festival_production": {
+      "name": "Complete Festival Production Lifecycle",
+      "phases": [
+        {
+          "phase": "pre_production",
+          "duration": "6-12 months",
+          "criticalPath": true,
+          "workflows": [
+            {
+              "name": "project_creation",
+              "complete": true
+            },
+            {
+              "name": "vendor_management",
+              "complete": true
+            },
+            {
+              "name": "procurement",
+              "complete": true
+            },
+            {
+              "name": "financial_management",
+              "complete": true
+            },
+            {
+              "name": "hiring",
+              "complete": true
+            }
+          ],
+          "complete": true
+        },
+        {
+          "phase": "planning",
+          "duration": "3-6 months",
+          "criticalPath": true,
+          "workflows": [
+            {
+              "name": "event_management",
+              "complete": true
+            },
+            {
+              "name": "location_management",
+              "complete": true
+            },
+            {
+              "name": "people_management",
+              "complete": true
+            },
+            {
+              "name": "asset_lifecycle",
+              "complete": true
+            }
+          ],
+          "complete": true
+        },
+        {
+          "phase": "execution",
+          "duration": "1-7 days",
+          "criticalPath": true,
+          "workflows": [
+            {
+              "name": "event_management",
+              "complete": true
+            },
+            {
+              "name": "asset_lifecycle",
+              "complete": true
+            },
+            {
+              "name": "people_management",
+              "complete": true
+            },
+            {
+              "name": "location_management",
+              "complete": true
+            }
+          ],
+          "complete": true
+        },
+        {
+          "phase": "post_production",
+          "duration": "1-3 months",
+          "criticalPath": true,
+          "workflows": [
+            {
+              "name": "financial_management",
+              "complete": true
+            },
+            {
+              "name": "reporting",
+              "complete": true
+            },
+            {
+              "name": "analytics",
+              "complete": true
+            },
+            {
+              "name": "asset_lifecycle",
+              "complete": true
+            }
+          ],
+          "complete": true
+        },
+        {
+          "phase": "archival",
+          "duration": "ongoing",
+          "criticalPath": false,
+          "workflows": [
+            {
+              "name": "file_management",
+              "complete": true
+            },
+            {
+              "name": "reporting",
+              "complete": true
+            },
+            {
+              "name": "insights",
+              "complete": true
+            }
+          ],
+          "complete": true
+        }
+      ],
+      "complete": true,
+      "criticalPathBlocked": false
+    }
+  },
+  "gaps": {
+    "critical": [],
+    "high": [],
+    "medium": [],
+    "low": []
+  },
+  "recommendations": []
+}

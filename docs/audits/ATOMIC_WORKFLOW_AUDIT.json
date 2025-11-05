@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-11-05T04:34:24.507Z",
+  "summary": {
+    "totalComponents": 504,
+    "totalHooks": 50,
+    "criticalGaps": 0,
+    "highGaps": 0,
+    "mediumGaps": 0,
+    "lowGaps": 0
+  },
+  "gaps": []
+}

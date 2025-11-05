@@ -1,0 +1,909 @@
+{
+  "timestamp": "2025-11-04T22:49:10.692Z",
+  "implicitWorkflows": {
+    "complete_event_execution": {
+      "name": "complete_event_execution",
+      "displayName": "Complete Event Execution (Load-in to Load-out)",
+      "description": "End-to-end event execution workflow",
+      "modules": [
+        "events",
+        "assets",
+        "people",
+        "locations",
+        "files"
+      ],
+      "totalSteps": 8,
+      "criticalSteps": 7,
+      "integrationPoints": 4,
+      "gaps": [
+        {
+          "type": "broken_integration",
+          "integration": "events.run_of_show → people.scheduling",
+          "sourceExists": false,
+          "targetExists": true,
+          "severity": "HIGH"
+        },
+        {
+          "type": "broken_integration",
+          "integration": "events.shipping_receiving → assets.transactions",
+          "sourceExists": false,
+          "targetExists": true,
+          "severity": "HIGH"
+        }
+      ],
+      "risks": [
+        {
+          "type": "complex_critical_path",
+          "message": "Workflow has many critical steps, increasing failure risk",
+          "severity": "MEDIUM"
+        },
+        {
+          "type": "high_module_coupling",
+          "message": "Workflow spans many modules, increasing coordination complexity",
+          "severity": "MEDIUM"
+        }
+      ],
+      "completeness": "77.8"
+    },
+    "vendor_to_payment": {
+      "name": "vendor_to_payment",
+      "displayName": "Vendor Onboarding to Payment",
+      "description": "Complete vendor lifecycle from onboarding to final payment",
+      "modules": [
+        "companies",
+        "procurement",
+        "finance",
+        "files"
+      ],
+      "totalSteps": 9,
+      "criticalSteps": 8,
+      "integrationPoints": 5,
+      "gaps": [
+        {
+          "type": "broken_integration",
+          "integration": "companies.work_orders → procurement.orders",
+          "sourceExists": false,
+          "targetExists": true,
+          "severity": "HIGH"
+        }
+      ],
+      "risks": [
+        {
+          "type": "complex_critical_path",
+          "message": "Workflow has many critical steps, increasing failure risk",
+          "severity": "MEDIUM"
+        }
+      ],
+      "completeness": "88.9"
+    },
+    "hiring_to_deployment": {
+      "name": "hiring_to_deployment",
+      "displayName": "Hiring to Field Deployment",
+      "description": "Complete hiring workflow from requisition to field deployment",
+      "modules": [
+        "jobs",
+        "people",
+        "profile",
+        "files",
+        "events"
+      ],
+      "totalSteps": 10,
+      "criticalSteps": 10,
+      "integrationPoints": 5,
+      "gaps": [
+        {
+          "type": "broken_integration",
+          "integration": "people.onboarding → profile.basic_info",
+          "sourceExists": true,
+          "targetExists": false,
+          "severity": "HIGH"
+        },
+        {
+          "type": "broken_integration",
+          "integration": "profile.certifications → people.training",
+          "sourceExists": false,
+          "targetExists": true,
+          "severity": "HIGH"
+        }
+      ],
+      "risks": [
+        {
+          "type": "complex_critical_path",
+          "message": "Workflow has many critical steps, increasing failure risk",
+          "severity": "MEDIUM"
+        },
+        {
+          "type": "high_module_coupling",
+          "message": "Workflow spans many modules, increasing coordination complexity",
+          "severity": "MEDIUM"
+        }
+      ],
+      "completeness": "80.0"
+    },
+    "budget_to_actuals": {
+      "name": "budget_to_actuals",
+      "displayName": "Budget Planning to Actuals Reconciliation",
+      "description": "Financial planning and tracking workflow",
+      "modules": [
+        "projects",
+        "finance",
+        "procurement",
+        "reports"
+      ],
+      "totalSteps": 8,
+      "criticalSteps": 7,
+      "integrationPoints": 5,
+      "gaps": [],
+      "risks": [
+        {
+          "type": "complex_critical_path",
+          "message": "Workflow has many critical steps, increasing failure risk",
+          "severity": "MEDIUM"
+        }
+      ],
+      "completeness": "100.0"
+    },
+    "asset_procurement_to_deployment": {
+      "name": "asset_procurement_to_deployment",
+      "displayName": "Asset Procurement to Field Deployment",
+      "description": "Asset acquisition and deployment workflow",
+      "modules": [
+        "procurement",
+        "assets",
+        "finance",
+        "events",
+        "locations"
+      ],
+      "totalSteps": 10,
+      "criticalSteps": 9,
+      "integrationPoints": 5,
+      "gaps": [],
+      "risks": [
+        {
+          "type": "complex_critical_path",
+          "message": "Workflow has many critical steps, increasing failure risk",
+          "severity": "MEDIUM"
+        },
+        {
+          "type": "high_module_coupling",
+          "message": "Workflow spans many modules, increasing coordination complexity",
+          "severity": "MEDIUM"
+        }
+      ],
+      "completeness": "100.0"
+    },
+    "incident_to_resolution": {
+      "name": "incident_to_resolution",
+      "displayName": "Incident Reporting to Resolution",
+      "description": "Safety incident management workflow",
+      "modules": [
+        "events",
+        "people",
+        "files",
+        "admin",
+        "companies"
+      ],
+      "totalSteps": 7,
+      "criticalSteps": 6,
+      "integrationPoints": 4,
+      "gaps": [
+        {
+          "type": "broken_integration",
+          "integration": "events.incidents → files.production_reports",
+          "sourceExists": true,
+          "targetExists": false,
+          "severity": "HIGH"
+        },
+        {
+          "type": "broken_integration",
+          "integration": "events.incidents → companies.compliance",
+          "sourceExists": true,
+          "targetExists": false,
+          "severity": "HIGH"
+        },
+        {
+          "type": "broken_integration",
+          "integration": "events.incidents → admin.security",
+          "sourceExists": true,
+          "targetExists": false,
+          "severity": "HIGH"
+        }
+      ],
+      "risks": [
+        {
+          "type": "complex_critical_path",
+          "message": "Workflow has many critical steps, increasing failure risk",
+          "severity": "MEDIUM"
+        },
+        {
+          "type": "high_module_coupling",
+          "message": "Workflow spans many modules, increasing coordination complexity",
+          "severity": "MEDIUM"
+        }
+      ],
+      "completeness": "66.7"
+    },
+    "reporting_to_insights": {
+      "name": "reporting_to_insights",
+      "displayName": "Data Collection to Actionable Insights",
+      "description": "Intelligence workflow from raw data to recommendations",
+      "modules": [
+        "analytics",
+        "reports",
+        "insights"
+      ],
+      "totalSteps": 8,
+      "criticalSteps": 4,
+      "integrationPoints": 4,
+      "gaps": [
+        {
+          "type": "broken_integration",
+          "integration": "analytics.data_sources → analytics.metrics_library",
+          "sourceExists": false,
+          "targetExists": false,
+          "severity": "HIGH"
+        }
+      ],
+      "risks": [],
+      "completeness": "85.7"
+    }
+  },
+  "dependencyGraph": {
+    "nodes": [
+      "dashboard",
+      "projects",
+      "events",
+      "people",
+      "assets",
+      "locations",
+      "files",
+      "companies",
+      "jobs",
+      "procurement",
+      "finance",
+      "community",
+      "marketplace",
+      "resources",
+      "reports",
+      "analytics",
+      "insights",
+      "admin",
+      "settings",
+      "profile"
+    ],
+    "edges": [
+      {
+        "from": "projects",
+        "to": "dashboard",
+        "type": "depends_on"
+      },
+      {
+        "from": "events",
+        "to": "dashboard",
+        "type": "depends_on"
+      },
+      {
+        "from": "people",
+        "to": "dashboard",
+        "type": "depends_on"
+      },
+      {
+        "from": "assets",
+        "to": "dashboard",
+        "type": "depends_on"
+      },
+      {
+        "from": "files",
+        "to": "dashboard",
+        "type": "depends_on"
+      },
+      {
+        "from": "finance",
+        "to": "dashboard",
+        "type": "depends_on"
+      },
+      {
+        "from": "jobs",
+        "to": "dashboard",
+        "type": "depends_on"
+      },
+      {
+        "from": "finance",
+        "to": "projects",
+        "type": "depends_on"
+      },
+      {
+        "from": "people",
+        "to": "projects",
+        "type": "depends_on"
+      },
+      {
+        "from": "projects",
+        "to": "events",
+        "type": "provides_to"
+      },
+      {
+        "from": "projects",
+        "to": "assets",
+        "type": "provides_to"
+      },
+      {
+        "from": "projects",
+        "to": "locations",
+        "type": "provides_to"
+      },
+      {
+        "from": "projects",
+        "to": "files",
+        "type": "provides_to"
+      },
+      {
+        "from": "projects",
+        "to": "reports",
+        "type": "provides_to"
+      },
+      {
+        "from": "projects",
+        "to": "events",
+        "type": "depends_on"
+      },
+      {
+        "from": "assets",
+        "to": "events",
+        "type": "depends_on"
+      },
+      {
+        "from": "people",
+        "to": "events",
+        "type": "depends_on"
+      },
+      {
+        "from": "locations",
+        "to": "events",
+        "type": "depends_on"
+      },
+      {
+        "from": "events",
+        "to": "files",
+        "type": "provides_to"
+      },
+      {
+        "from": "events",
+        "to": "reports",
+        "type": "provides_to"
+      },
+      {
+        "from": "events",
+        "to": "analytics",
+        "type": "provides_to"
+      },
+      {
+        "from": "profile",
+        "to": "people",
+        "type": "depends_on"
+      },
+      {
+        "from": "jobs",
+        "to": "people",
+        "type": "depends_on"
+      },
+      {
+        "from": "people",
+        "to": "events",
+        "type": "provides_to"
+      },
+      {
+        "from": "people",
+        "to": "projects",
+        "type": "provides_to"
+      },
+      {
+        "from": "people",
+        "to": "assets",
+        "type": "provides_to"
+      },
+      {
+        "from": "people",
+        "to": "reports",
+        "type": "provides_to"
+      },
+      {
+        "from": "procurement",
+        "to": "assets",
+        "type": "depends_on"
+      },
+      {
+        "from": "finance",
+        "to": "assets",
+        "type": "depends_on"
+      },
+      {
+        "from": "assets",
+        "to": "events",
+        "type": "provides_to"
+      },
+      {
+        "from": "assets",
+        "to": "locations",
+        "type": "provides_to"
+      },
+      {
+        "from": "assets",
+        "to": "reports",
+        "type": "provides_to"
+      },
+      {
+        "from": "projects",
+        "to": "locations",
+        "type": "depends_on"
+      },
+      {
+        "from": "locations",
+        "to": "events",
+        "type": "provides_to"
+      },
+      {
+        "from": "locations",
+        "to": "assets",
+        "type": "provides_to"
+      },
+      {
+        "from": "locations",
+        "to": "reports",
+        "type": "provides_to"
+      },
+      {
+        "from": "files",
+        "to": "projects",
+        "type": "provides_to"
+      },
+      {
+        "from": "files",
+        "to": "events",
+        "type": "provides_to"
+      },
+      {
+        "from": "files",
+        "to": "companies",
+        "type": "provides_to"
+      },
+      {
+        "from": "files",
+        "to": "finance",
+        "type": "provides_to"
+      },
+      {
+        "from": "files",
+        "to": "companies",
+        "type": "depends_on"
+      },
+      {
+        "from": "companies",
+        "to": "procurement",
+        "type": "provides_to"
+      },
+      {
+        "from": "companies",
+        "to": "finance",
+        "type": "provides_to"
+      },
+      {
+        "from": "companies",
+        "to": "jobs",
+        "type": "provides_to"
+      },
+      {
+        "from": "companies",
+        "to": "jobs",
+        "type": "depends_on"
+      },
+      {
+        "from": "jobs",
+        "to": "people",
+        "type": "provides_to"
+      },
+      {
+        "from": "jobs",
+        "to": "finance",
+        "type": "provides_to"
+      },
+      {
+        "from": "companies",
+        "to": "procurement",
+        "type": "depends_on"
+      },
+      {
+        "from": "finance",
+        "to": "procurement",
+        "type": "depends_on"
+      },
+      {
+        "from": "procurement",
+        "to": "assets",
+        "type": "provides_to"
+      },
+      {
+        "from": "procurement",
+        "to": "finance",
+        "type": "provides_to"
+      },
+      {
+        "from": "procurement",
+        "to": "reports",
+        "type": "provides_to"
+      },
+      {
+        "from": "projects",
+        "to": "finance",
+        "type": "depends_on"
+      },
+      {
+        "from": "procurement",
+        "to": "finance",
+        "type": "depends_on"
+      },
+      {
+        "from": "companies",
+        "to": "finance",
+        "type": "depends_on"
+      },
+      {
+        "from": "finance",
+        "to": "reports",
+        "type": "provides_to"
+      },
+      {
+        "from": "finance",
+        "to": "analytics",
+        "type": "provides_to"
+      },
+      {
+        "from": "finance",
+        "to": "insights",
+        "type": "provides_to"
+      },
+      {
+        "from": "people",
+        "to": "community",
+        "type": "depends_on"
+      },
+      {
+        "from": "community",
+        "to": "marketplace",
+        "type": "provides_to"
+      },
+      {
+        "from": "community",
+        "to": "marketplace",
+        "type": "depends_on"
+      },
+      {
+        "from": "companies",
+        "to": "marketplace",
+        "type": "depends_on"
+      },
+      {
+        "from": "marketplace",
+        "to": "procurement",
+        "type": "provides_to"
+      },
+      {
+        "from": "marketplace",
+        "to": "finance",
+        "type": "provides_to"
+      },
+      {
+        "from": "resources",
+        "to": "people",
+        "type": "provides_to"
+      },
+      {
+        "from": "resources",
+        "to": "community",
+        "type": "provides_to"
+      },
+      {
+        "from": "reports",
+        "to": "insights",
+        "type": "provides_to"
+      },
+      {
+        "from": "analytics",
+        "to": "reports",
+        "type": "provides_to"
+      },
+      {
+        "from": "analytics",
+        "to": "insights",
+        "type": "provides_to"
+      },
+      {
+        "from": "analytics",
+        "to": "insights",
+        "type": "depends_on"
+      },
+      {
+        "from": "reports",
+        "to": "insights",
+        "type": "depends_on"
+      },
+      {
+        "from": "profile",
+        "to": "people",
+        "type": "provides_to"
+      },
+      {
+        "from": "profile",
+        "to": "jobs",
+        "type": "provides_to"
+      }
+    ],
+    "circularDependencies": [],
+    "orphanedModules": [
+      "admin",
+      "settings"
+    ],
+    "criticalModules": [
+      {
+        "module": "projects",
+        "consumerCount": 5,
+        "consumers": [
+          "events",
+          "assets",
+          "locations",
+          "files",
+          "reports"
+        ]
+      },
+      {
+        "module": "events",
+        "consumerCount": 3,
+        "consumers": [
+          "files",
+          "reports",
+          "analytics"
+        ]
+      },
+      {
+        "module": "people",
+        "consumerCount": 4,
+        "consumers": [
+          "events",
+          "projects",
+          "assets",
+          "reports"
+        ]
+      },
+      {
+        "module": "assets",
+        "consumerCount": 3,
+        "consumers": [
+          "events",
+          "locations",
+          "reports"
+        ]
+      },
+      {
+        "module": "locations",
+        "consumerCount": 3,
+        "consumers": [
+          "events",
+          "assets",
+          "reports"
+        ]
+      },
+      {
+        "module": "files",
+        "consumerCount": 4,
+        "consumers": [
+          "projects",
+          "events",
+          "companies",
+          "finance"
+        ]
+      },
+      {
+        "module": "companies",
+        "consumerCount": 3,
+        "consumers": [
+          "procurement",
+          "finance",
+          "jobs"
+        ]
+      },
+      {
+        "module": "procurement",
+        "consumerCount": 3,
+        "consumers": [
+          "assets",
+          "finance",
+          "reports"
+        ]
+      },
+      {
+        "module": "finance",
+        "consumerCount": 3,
+        "consumers": [
+          "reports",
+          "analytics",
+          "insights"
+        ]
+      }
+    ]
+  },
+  "roleAccess": {
+    "roles": [
+      {
+        "role": "legend",
+        "workflowAccess": "FULL",
+        "restrictions": "NONE",
+        "criticalPaths": "ALL"
+      },
+      {
+        "role": "phantom",
+        "workflowAccess": 7,
+        "restrictions": "Organization-scoped",
+        "criticalPaths": "ALL within organization"
+      },
+      {
+        "role": "aviator",
+        "workflowAccess": 4,
+        "restrictions": "Project-scoped, view-only finance",
+        "criticalPaths": "Project execution, reporting"
+      },
+      {
+        "role": "gladiator",
+        "workflowAccess": 4,
+        "restrictions": "Project-scoped, budget approval required",
+        "criticalPaths": "Project execution"
+      },
+      {
+        "role": "navigator",
+        "workflowAccess": 2,
+        "restrictions": "Department-scoped, view-only finance",
+        "criticalPaths": "Department operations"
+      },
+      {
+        "role": "deviator",
+        "workflowAccess": 1,
+        "restrictions": "Team-scoped, task management only",
+        "criticalPaths": "Team task execution"
+      },
+      {
+        "role": "raider",
+        "workflowAccess": 1,
+        "restrictions": "Assigned tasks only, view-only",
+        "criticalPaths": "Individual task completion"
+      },
+      {
+        "role": "vendor",
+        "workflowAccess": 1,
+        "restrictions": "Own contracts only, limited visibility",
+        "criticalPaths": "Deliverable submission, invoicing"
+      },
+      {
+        "role": "visitor",
+        "workflowAccess": "CUSTOM",
+        "restrictions": "Configured per-instance, time-limited",
+        "criticalPaths": "Varies by configuration"
+      },
+      {
+        "role": "partner",
+        "workflowAccess": "FULL",
+        "restrictions": "Read-only across all workflows",
+        "criticalPaths": "NONE (observer only)"
+      },
+      {
+        "role": "ambassador",
+        "workflowAccess": 0,
+        "restrictions": "Marketing content only",
+        "criticalPaths": "NONE"
+      }
+    ],
+    "workflowCoverage": {
+      "complete_event_execution": [
+        "phantom",
+        "aviator",
+        "gladiator",
+        "navigator",
+        "deviator",
+        "raider"
+      ],
+      "vendor_to_payment": [
+        "phantom",
+        "vendor"
+      ],
+      "hiring_to_deployment": [
+        "phantom"
+      ],
+      "budget_to_actuals": [
+        "phantom",
+        "aviator",
+        "gladiator"
+      ],
+      "asset_procurement_to_deployment": [
+        "phantom",
+        "aviator",
+        "gladiator",
+        "navigator"
+      ],
+      "incident_to_resolution": [
+        "phantom",
+        "gladiator"
+      ],
+      "reporting_to_insights": [
+        "phantom",
+        "aviator"
+      ]
+    },
+    "accessGaps": [
+      {
+        "workflow": "vendor_to_payment",
+        "accessibleBy": [
+          "phantom",
+          "vendor"
+        ],
+        "severity": "MEDIUM",
+        "message": "Workflow only accessible by 2 role(s)"
+      },
+      {
+        "workflow": "hiring_to_deployment",
+        "accessibleBy": [
+          "phantom"
+        ],
+        "severity": "MEDIUM",
+        "message": "Workflow only accessible by 1 role(s)"
+      },
+      {
+        "workflow": "incident_to_resolution",
+        "accessibleBy": [
+          "phantom",
+          "gladiator"
+        ],
+        "severity": "MEDIUM",
+        "message": "Workflow only accessible by 2 role(s)"
+      },
+      {
+        "workflow": "reporting_to_insights",
+        "accessibleBy": [
+          "phantom",
+          "aviator"
+        ],
+        "severity": "MEDIUM",
+        "message": "Workflow only accessible by 2 role(s)"
+      }
+    ]
+  },
+  "summary": {
+    "totalImplicitWorkflows": 7,
+    "completeImplicitWorkflows": 2,
+    "averageCompleteness": "85.6",
+    "totalGaps": 9,
+    "totalRisks": 10,
+    "criticalModules": 9,
+    "accessGaps": 4
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "title": "Implicit Workflow Gaps Detected",
+      "description": "9 gaps found in cross-module workflows",
+      "action": "Review and implement missing integration points",
+      "impact": "Prevents seamless end-to-end workflow execution"
+    },
+    {
+      "priority": "MEDIUM",
+      "title": "Critical Module Dependencies",
+      "description": "9 modules are critical integration points",
+      "action": "Ensure high availability and robust error handling for critical modules",
+      "impact": "Failure of critical modules affects multiple workflows"
+    },
+    {
+      "priority": "LOW",
+      "title": "Limited Workflow Access",
+      "description": "4 workflows have limited role access",
+      "action": "Review role permissions to ensure appropriate workflow access",
+      "impact": "Some workflows may not be accessible to users who need them"
+    }
+  ]
+}

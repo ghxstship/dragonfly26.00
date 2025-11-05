@@ -1,0 +1,927 @@
+{
+  "timestamp": "2025-11-05T04:08:41.406Z",
+  "summary": {
+    "totalMigrations": 147,
+    "renamed": 147,
+    "skipped": 3,
+    "backupLocation": "/Users/julianclarkson/Documents/Dragonfly26.00/supabase/migrations/backup_complete_1762315721312"
+  },
+  "categories": [
+    {
+      "name": "foundation",
+      "count": 11
+    },
+    {
+      "name": "modules",
+      "count": 8
+    },
+    {
+      "name": "core_data",
+      "count": 22
+    },
+    {
+      "name": "security",
+      "count": 59
+    },
+    {
+      "name": "features",
+      "count": 3
+    },
+    {
+      "name": "performance",
+      "count": 25
+    },
+    {
+      "name": "fixes",
+      "count": 4
+    },
+    {
+      "name": "other",
+      "count": 18
+    }
+  ],
+  "migrations": [
+    {
+      "sequence": 1,
+      "filename": "001_foundation_foundation_foundation.sql",
+      "category": "foundation",
+      "originalName": "001_foundation_foundation.sql"
+    },
+    {
+      "sequence": 2,
+      "filename": "002_foundation_foundation_projects_module.sql",
+      "category": "foundation",
+      "originalName": "002_foundation_projects_module.sql"
+    },
+    {
+      "sequence": 3,
+      "filename": "003_foundation_foundation_events_module.sql",
+      "category": "foundation",
+      "originalName": "003_foundation_events_module.sql"
+    },
+    {
+      "sequence": 4,
+      "filename": "004_foundation_foundation_people_module.sql",
+      "category": "foundation",
+      "originalName": "004_foundation_people_module.sql"
+    },
+    {
+      "sequence": 5,
+      "filename": "005_foundation_foundation_assets_module.sql",
+      "category": "foundation",
+      "originalName": "005_foundation_assets_module.sql"
+    },
+    {
+      "sequence": 6,
+      "filename": "006_foundation_foundation_locations_module.sql",
+      "category": "foundation",
+      "originalName": "006_foundation_locations_module.sql"
+    },
+    {
+      "sequence": 7,
+      "filename": "007_foundation_foundation_files_companies_modules.sql",
+      "category": "foundation",
+      "originalName": "007_foundation_files_companies_modules.sql"
+    },
+    {
+      "sequence": 8,
+      "filename": "008_foundation_foundation_branded_rbac_system.sql",
+      "category": "foundation",
+      "originalName": "008_foundation_branded_rbac_system.sql"
+    },
+    {
+      "sequence": 9,
+      "filename": "009_foundation_foundation_subscriptions_and_invitations.sql",
+      "category": "foundation",
+      "originalName": "009_foundation_subscriptions_and_invitations.sql"
+    },
+    {
+      "sequence": 10,
+      "filename": "010_foundation_api_layer_functions.sql",
+      "category": "foundation",
+      "originalName": "010_api_layer_functions.sql"
+    },
+    {
+      "sequence": 11,
+      "filename": "011_foundation_foundation_storage_layer.sql",
+      "category": "foundation",
+      "originalName": "010_foundation_storage_layer.sql"
+    },
+    {
+      "sequence": 12,
+      "filename": "012_modules_modules_missing_modules_analytics_insights.sql",
+      "category": "modules",
+      "originalName": "011_modules_missing_modules_analytics_insights.sql"
+    },
+    {
+      "sequence": 13,
+      "filename": "013_modules_modules_finance_procurement_modules.sql",
+      "category": "modules",
+      "originalName": "012_modules_finance_procurement_modules.sql"
+    },
+    {
+      "sequence": 14,
+      "filename": "014_modules_modules_remaining_modules.sql",
+      "category": "modules",
+      "originalName": "013_modules_remaining_modules.sql"
+    },
+    {
+      "sequence": 15,
+      "filename": "015_modules_modules_opportunities_module.sql",
+      "category": "modules",
+      "originalName": "014_modules_opportunities_module.sql"
+    },
+    {
+      "sequence": 16,
+      "filename": "016_modules_modules_add_jobs_module_rls_policies.sql",
+      "category": "modules",
+      "originalName": "015_modules_add_jobs_module_rls_policies.sql"
+    },
+    {
+      "sequence": 17,
+      "filename": "017_modules_modules_add_reports_module_rls_policies.sql",
+      "category": "modules",
+      "originalName": "016_modules_add_reports_module_rls_policies.sql"
+    },
+    {
+      "sequence": 18,
+      "filename": "018_modules_security_add_analytics_insights_rls_policies.sql",
+      "category": "modules",
+      "originalName": "027_security_add_analytics_insights_rls_policies.sql"
+    },
+    {
+      "sequence": 19,
+      "filename": "019_modules_performance_finance_optimization_ramp_runway.sql",
+      "category": "modules",
+      "originalName": "057_performance_finance_optimization_ramp_runway.sql"
+    },
+    {
+      "sequence": 20,
+      "filename": "020_core_data_onboarding_tracking.sql",
+      "category": "core",
+      "originalName": "013_onboarding_tracking.sql"
+    },
+    {
+      "sequence": 21,
+      "filename": "021_core_data_security_fix_onboarding_rls_policies.sql",
+      "category": "core",
+      "originalName": "017_security_fix_onboarding_rls_policies.sql"
+    },
+    {
+      "sequence": 22,
+      "filename": "022_core_data_update_subscription_pricing.sql",
+      "category": "core",
+      "originalName": "017_update_subscription_pricing.sql"
+    },
+    {
+      "sequence": 23,
+      "filename": "023_core_data_add_job_title_to_profiles.sql",
+      "category": "core",
+      "originalName": "018_add_job_title_to_profiles.sql"
+    },
+    {
+      "sequence": 24,
+      "filename": "024_core_data_add_names_to_profiles.sql",
+      "category": "core",
+      "originalName": "020_add_names_to_profiles.sql"
+    },
+    {
+      "sequence": 25,
+      "filename": "025_core_data_travel_arrangements_table.sql",
+      "category": "core",
+      "originalName": "024_travel_arrangements_table.sql"
+    },
+    {
+      "sequence": 26,
+      "filename": "026_core_data_add_workspace_id_to_company_contacts.sql",
+      "category": "core",
+      "originalName": "025_add_workspace_id_to_company_contacts.sql"
+    },
+    {
+      "sequence": 27,
+      "filename": "027_core_data_profiles_fields.sql",
+      "category": "core",
+      "originalName": "030_profiles_complete_fields.sql"
+    },
+    {
+      "sequence": 28,
+      "filename": "028_core_data_profiles_extended_health_travel.sql",
+      "category": "core",
+      "originalName": "031_profiles_extended_health_travel.sql"
+    },
+    {
+      "sequence": 29,
+      "filename": "029_core_data_add_profile_foreign_keys.sql",
+      "category": "core",
+      "originalName": "032_add_profile_foreign_keys.sql"
+    },
+    {
+      "sequence": 30,
+      "filename": "030_core_data_refactor_production_advances.sql",
+      "category": "core",
+      "originalName": "034_refactor_production_advances.sql"
+    },
+    {
+      "sequence": 31,
+      "filename": "031_core_data_update_asset_categories.sql",
+      "category": "core",
+      "originalName": "035_update_asset_categories.sql"
+    },
+    {
+      "sequence": 32,
+      "filename": "032_core_data_seed_global_asset_catalog.sql",
+      "category": "core",
+      "originalName": "036_seed_global_asset_catalog.sql"
+    },
+    {
+      "sequence": 33,
+      "filename": "033_core_data_seed_catalog.sql",
+      "category": "core",
+      "originalName": "037_seed_catalog_part2.sql"
+    },
+    {
+      "sequence": 34,
+      "filename": "034_core_data_seed_catalog.sql",
+      "category": "core",
+      "originalName": "038_seed_catalog_part3.sql"
+    },
+    {
+      "sequence": 35,
+      "filename": "035_core_data_seed_catalog.sql",
+      "category": "core",
+      "originalName": "039_seed_catalog_part4.sql"
+    },
+    {
+      "sequence": 36,
+      "filename": "036_core_data_create_global_catalog_workspace.sql",
+      "category": "core",
+      "originalName": "040_5_create_global_catalog_workspace.sql"
+    },
+    {
+      "sequence": 37,
+      "filename": "037_core_data_features_add_missing_profile_foreign_keys.sql",
+      "category": "core",
+      "originalName": "045_features_add_missing_profile_foreign_keys.sql"
+    },
+    {
+      "sequence": 38,
+      "filename": "038_core_data_performance_catalog_subcategories_optimization.sql",
+      "category": "core",
+      "originalName": "049_performance_catalog_subcategories_optimization.sql"
+    },
+    {
+      "sequence": 39,
+      "filename": "039_core_data_performance_catalog_optimization.sql",
+      "category": "core",
+      "originalName": "050_performance_catalog_final_optimization.sql"
+    },
+    {
+      "sequence": 40,
+      "filename": "040_core_data_fixes_fix_profile_foreign_keys.sql",
+      "category": "core",
+      "originalName": "072_fixes_fix_profile_foreign_keys.sql"
+    },
+    {
+      "sequence": 41,
+      "filename": "041_core_data_fixes_fix_profile_foreign_keys.sql",
+      "category": "core",
+      "originalName": "080_fixes_fix_profile_foreign_keys.sql"
+    },
+    {
+      "sequence": 42,
+      "filename": "042_security_missing_tab_features.sql",
+      "category": "security",
+      "originalName": "012_missing_tab_features.sql"
+    },
+    {
+      "sequence": 43,
+      "filename": "043_security_security_add_comments_rls_policies.sql",
+      "category": "security",
+      "originalName": "018_security_add_comments_rls_policies.sql"
+    },
+    {
+      "sequence": 44,
+      "filename": "044_security_security_rls_performance_optimization.sql",
+      "category": "security",
+      "originalName": "019_security_rls_performance_optimization.sql"
+    },
+    {
+      "sequence": 45,
+      "filename": "045_security_security_rls_performance_optimization.sql",
+      "category": "security",
+      "originalName": "020_security_rls_performance_optimization_part2.sql"
+    },
+    {
+      "sequence": 46,
+      "filename": "046_security_security_rls_optimization_remaining_policies.sql",
+      "category": "security",
+      "originalName": "021_security_rls_optimization_remaining_policies.sql"
+    },
+    {
+      "sequence": 47,
+      "filename": "047_security_security_rls_optimization_cleanup.sql",
+      "category": "security",
+      "originalName": "022_security_rls_optimization_final_cleanup.sql"
+    },
+    {
+      "sequence": 48,
+      "filename": "048_security_security_fix_rls_linter_warnings.sql",
+      "category": "security",
+      "originalName": "023_security_fix_rls_linter_warnings_complete.sql"
+    },
+    {
+      "sequence": 49,
+      "filename": "049_security_security_branded_rbac_rls_system.sql",
+      "category": "security",
+      "originalName": "024_security_branded_rbac_rls_system.sql"
+    },
+    {
+      "sequence": 50,
+      "filename": "050_security_security_fix_people_project_tables_rls.sql",
+      "category": "security",
+      "originalName": "025_security_fix_people_project_tables_rls.sql"
+    },
+    {
+      "sequence": 51,
+      "filename": "051_security_security_add_resources_rls_policies.sql",
+      "category": "security",
+      "originalName": "026_security_add_resources_rls_policies.sql"
+    },
+    {
+      "sequence": 52,
+      "filename": "052_security_security_add_data_sources_rls_policies.sql",
+      "category": "security",
+      "originalName": "028_security_add_data_sources_rls_policies.sql"
+    },
+    {
+      "sequence": 53,
+      "filename": "053_security_security_fix_people_project_tables_rls.sql",
+      "category": "security",
+      "originalName": "029_security_fix_people_project_tables_rls_old.sql"
+    },
+    {
+      "sequence": 54,
+      "filename": "054_security_security_fix_permissions_rls_performance.sql",
+      "category": "security",
+      "originalName": "030_security_fix_permissions_rls_performance_deferred.sql"
+    },
+    {
+      "sequence": 55,
+      "filename": "055_security_security_fix_hierarchy_rollup_permissions.sql",
+      "category": "security",
+      "originalName": "031_security_fix_hierarchy_rollup_permissions_deferred.sql"
+    },
+    {
+      "sequence": 56,
+      "filename": "056_security_security_fix_all_422_rls_warnings.sql",
+      "category": "security",
+      "originalName": "032_security_fix_all_422_rls_warnings_deferred.sql"
+    },
+    {
+      "sequence": 57,
+      "filename": "057_security_architecture_organizational_hierarchy.sql",
+      "category": "security",
+      "originalName": "033_architecture_organizational_hierarchy.sql"
+    },
+    {
+      "sequence": 58,
+      "filename": "058_security_architecture_database_normalization.sql",
+      "category": "security",
+      "originalName": "034_architecture_database_normalization.sql"
+    },
+    {
+      "sequence": 59,
+      "filename": "059_security_features_add_workspace_id_to_resources.sql",
+      "category": "security",
+      "originalName": "035_features_add_workspace_id_to_resources.sql"
+    },
+    {
+      "sequence": 60,
+      "filename": "060_security_features_create_agreements_table.sql",
+      "category": "security",
+      "originalName": "036_features_create_agreements_table.sql"
+    },
+    {
+      "sequence": 61,
+      "filename": "061_security_features_work_orders_system.sql",
+      "category": "security",
+      "originalName": "037_features_work_orders_system.sql"
+    },
+    {
+      "sequence": 62,
+      "filename": "062_security_features_subcontractor_compliance.sql",
+      "category": "security",
+      "originalName": "038_features_subcontractor_compliance.sql"
+    },
+    {
+      "sequence": 63,
+      "filename": "063_security_features_communication_invoicing.sql",
+      "category": "security",
+      "originalName": "039_features_communication_invoicing.sql"
+    },
+    {
+      "sequence": 64,
+      "filename": "064_security_features_checklists_workflows.sql",
+      "category": "security",
+      "originalName": "040_features_checklists_workflows.sql"
+    },
+    {
+      "sequence": 65,
+      "filename": "065_security_features_cost_tracking_recruiting.sql",
+      "category": "security",
+      "originalName": "041_features_cost_tracking_recruiting.sql"
+    },
+    {
+      "sequence": 66,
+      "filename": "066_security_features_inventory_storage_policies.sql",
+      "category": "security",
+      "originalName": "044_features_inventory_storage_policies.sql"
+    },
+    {
+      "sequence": 67,
+      "filename": "067_security_features_background_jobs_pg_cron.sql",
+      "category": "security",
+      "originalName": "046_features_background_jobs_pg_cron.sql"
+    },
+    {
+      "sequence": 68,
+      "filename": "068_security_features_create_missing_tables_partial.sql",
+      "category": "security",
+      "originalName": "048_features_create_missing_tables_partial.sql"
+    },
+    {
+      "sequence": 69,
+      "filename": "069_security_performance_fix_performance_warnings.sql",
+      "category": "security",
+      "originalName": "056_performance_fix_performance_warnings.sql"
+    },
+    {
+      "sequence": 70,
+      "filename": "070_security_performance_inventory_sortly_optimization.sql",
+      "category": "security",
+      "originalName": "058_performance_inventory_sortly_optimization.sql"
+    },
+    {
+      "sequence": 71,
+      "filename": "071_security_enhancements_field_comments.sql",
+      "category": "security",
+      "originalName": "064_enhancements_field_comments.sql"
+    },
+    {
+      "sequence": 72,
+      "filename": "072_security_enhancements_presence_system.sql",
+      "category": "security",
+      "originalName": "065_enhancements_presence_system.sql"
+    },
+    {
+      "sequence": 73,
+      "filename": "073_security_user_dashboard_widgets.sql",
+      "category": "security",
+      "originalName": "065_user_dashboard_widgets.sql"
+    },
+    {
+      "sequence": 74,
+      "filename": "074_security_enhancements_public_dashboard_sharing.sql",
+      "category": "security",
+      "originalName": "066_enhancements_public_dashboard_sharing.sql"
+    },
+    {
+      "sequence": 75,
+      "filename": "075_security_enhancements_rollup_fields.sql",
+      "category": "security",
+      "originalName": "067_enhancements_rollup_fields.sql"
+    },
+    {
+      "sequence": 76,
+      "filename": "076_security_enhancements_sso_saml.sql",
+      "category": "security",
+      "originalName": "068_enhancements_sso_saml.sql"
+    },
+    {
+      "sequence": 77,
+      "filename": "077_security_enhancements_version_history.sql",
+      "category": "security",
+      "originalName": "069_enhancements_version_history.sql"
+    },
+    {
+      "sequence": 78,
+      "filename": "078_security_enhancements_gated_invite_waitlist_system.sql",
+      "category": "security",
+      "originalName": "070_enhancements_gated_invite_waitlist_system.sql"
+    },
+    {
+      "sequence": 79,
+      "filename": "079_security_enhancements_workflow_remediation_tables.sql",
+      "category": "security",
+      "originalName": "071_enhancements_workflow_remediation_tables.sql"
+    },
+    {
+      "sequence": 80,
+      "filename": "080_security_fixes_fix_missing_tables_and_relationships.sql",
+      "category": "security",
+      "originalName": "073_fixes_fix_missing_tables_and_relationships.sql"
+    },
+    {
+      "sequence": 81,
+      "filename": "081_security_fixes_fix_security_warnings.sql",
+      "category": "security",
+      "originalName": "076_fixes_fix_security_warnings_complete.sql"
+    },
+    {
+      "sequence": 82,
+      "filename": "082_security_fixes_fix_all_warnings.sql",
+      "category": "security",
+      "originalName": "077_fixes_fix_all_warnings.sql"
+    },
+    {
+      "sequence": 83,
+      "filename": "083_security_fixes_fix_organizations_select_policy.sql",
+      "category": "security",
+      "originalName": "079_fixes_fix_organizations_select_policy.sql"
+    },
+    {
+      "sequence": 84,
+      "filename": "084_security_fixes_fix_12_warnings.sql",
+      "category": "security",
+      "originalName": "082_fixes_fix_final_12_warnings_deferred.sql"
+    },
+    {
+      "sequence": 85,
+      "filename": "085_security_fixes_fix_security_warnings.sql",
+      "category": "security",
+      "originalName": "083_fixes_fix_security_warnings_deferred.sql"
+    },
+    {
+      "sequence": 86,
+      "filename": "086_security_fixes_fix_materialized_view_security.sql",
+      "category": "security",
+      "originalName": "085_fixes_fix_materialized_view_security_deferred.sql"
+    },
+    {
+      "sequence": 87,
+      "filename": "087_security_add_drop_if_exists_to_late_migrations.sql",
+      "category": "security",
+      "originalName": "089_add_drop_if_exists_to_late_migrations.sql"
+    },
+    {
+      "sequence": 88,
+      "filename": "088_security_fix_people_project_tables_rls.sql",
+      "category": "security",
+      "originalName": "113_fix_people_project_tables_rls_old.sql"
+    },
+    {
+      "sequence": 89,
+      "filename": "089_security_drop_duplicate_policies.sql",
+      "category": "security",
+      "originalName": "114_drop_duplicate_policies_deferred.sql"
+    },
+    {
+      "sequence": 90,
+      "filename": "090_security_fix_12_warnings.sql",
+      "category": "security",
+      "originalName": "115_fix_final_12_warnings_deferred.sql"
+    },
+    {
+      "sequence": 91,
+      "filename": "091_security_fix_security_warnings.sql",
+      "category": "security",
+      "originalName": "117_fix_security_warnings_deferred.sql"
+    },
+    {
+      "sequence": 92,
+      "filename": "092_security_fix_materialized_view_security.sql",
+      "category": "security",
+      "originalName": "119_fix_materialized_view_security_deferred.sql"
+    },
+    {
+      "sequence": 93,
+      "filename": "093_security_fix_permissions_rls_performance.sql",
+      "category": "security",
+      "originalName": "120_fix_permissions_rls_performance_deferred.sql"
+    },
+    {
+      "sequence": 94,
+      "filename": "094_security_fix_hierarchy_rollup_permissions.sql",
+      "category": "security",
+      "originalName": "123_fix_hierarchy_rollup_permissions_deferred.sql"
+    },
+    {
+      "sequence": 95,
+      "filename": "095_security_typography_settings.sql",
+      "category": "security",
+      "originalName": "128_typography_settings_deferred.sql"
+    },
+    {
+      "sequence": 96,
+      "filename": "096_security_fix_all_422_rls_warnings.sql",
+      "category": "security",
+      "originalName": "20251021_fix_all_422_rls_warnings_deferred.sql"
+    },
+    {
+      "sequence": 97,
+      "filename": "097_security_create_missing_tables_partial.sql",
+      "category": "security",
+      "originalName": "20251020124531_create_missing_tables_partial.sql"
+    },
+    {
+      "sequence": 98,
+      "filename": "098_features_features_inventory_functions.sql",
+      "category": "features",
+      "originalName": "043_features_inventory_functions.sql"
+    },
+    {
+      "sequence": 99,
+      "filename": "099_features_features_add_billing_cycle_to_subscriptions.sql",
+      "category": "features",
+      "originalName": "047_features_add_billing_cycle_to_subscriptions.sql"
+    },
+    {
+      "sequence": 100,
+      "filename": "100_features_communications_equipment.sql",
+      "category": "features",
+      "originalName": "061_communications_equipment.sql"
+    },
+    {
+      "sequence": 101,
+      "filename": "101_performance_add_related_names_field.sql",
+      "category": "performance",
+      "originalName": "040_add_related_names_field.sql"
+    },
+    {
+      "sequence": 102,
+      "filename": "102_performance_performance_performance_indexes.sql",
+      "category": "performance",
+      "originalName": "051_performance_performance_indexes_v2.sql"
+    },
+    {
+      "sequence": 103,
+      "filename": "103_performance_performance_essential_indexes.sql",
+      "category": "performance",
+      "originalName": "052_performance_essential_indexes.sql"
+    },
+    {
+      "sequence": 104,
+      "filename": "104_performance_performance_add_missing_foreign_key_indexes.sql",
+      "category": "performance",
+      "originalName": "053_performance_add_missing_foreign_key_indexes.sql"
+    },
+    {
+      "sequence": 105,
+      "filename": "105_performance_performance_cleanup_unused_indexes.sql",
+      "category": "performance",
+      "originalName": "054_performance_cleanup_unused_indexes.sql"
+    },
+    {
+      "sequence": 106,
+      "filename": "106_performance_performance_performance_optimization_indexes.sql",
+      "category": "performance",
+      "originalName": "055_performance_performance_optimization_indexes.sql"
+    },
+    {
+      "sequence": 107,
+      "filename": "107_performance_performance_remove_duplicate_location_access_index.sql",
+      "category": "performance",
+      "originalName": "059_performance_remove_duplicate_location_access_index.sql"
+    },
+    {
+      "sequence": 108,
+      "filename": "108_performance_performance_add_foreign_key_indexes.sql",
+      "category": "performance",
+      "originalName": "060_performance_add_foreign_key_indexes_deferred.sql"
+    },
+    {
+      "sequence": 109,
+      "filename": "109_performance_performance_add_remaining_foreign_key_indexes.sql",
+      "category": "performance",
+      "originalName": "061_performance_add_remaining_foreign_key_indexes_deferred.sql"
+    },
+    {
+      "sequence": 110,
+      "filename": "110_performance_performance_drop_unused_indexes.sql",
+      "category": "performance",
+      "originalName": "062_performance_drop_unused_indexes_deferred.sql"
+    },
+    {
+      "sequence": 111,
+      "filename": "111_performance_performance_restore_workspace_indexes.sql",
+      "category": "performance",
+      "originalName": "063_performance_restore_workspace_indexes_deferred.sql"
+    },
+    {
+      "sequence": 112,
+      "filename": "112_performance_fixes_resolve_database_linter_issues.sql",
+      "category": "performance",
+      "originalName": "078_fixes_resolve_database_linter_issues.sql"
+    },
+    {
+      "sequence": 113,
+      "filename": "113_performance_fixes_resolve_database_linter_issues.sql",
+      "category": "performance",
+      "originalName": "081_fixes_resolve_database_linter_issues_old.sql"
+    },
+    {
+      "sequence": 114,
+      "filename": "114_performance_fixes_resolve_remaining_linter_issues.sql",
+      "category": "performance",
+      "originalName": "086_fixes_resolve_remaining_linter_issues_deferred.sql"
+    },
+    {
+      "sequence": 115,
+      "filename": "115_performance_fixes_resolve_all_remaining_linter_issues.sql",
+      "category": "performance",
+      "originalName": "087_fixes_resolve_all_remaining_linter_issues_deferred.sql"
+    },
+    {
+      "sequence": 116,
+      "filename": "116_performance_fixes_resolve_audit_foreign_keys.sql",
+      "category": "performance",
+      "originalName": "088_fixes_resolve_audit_foreign_keys_deferred.sql"
+    },
+    {
+      "sequence": 117,
+      "filename": "117_performance_resolve_database_linter_issues.sql",
+      "category": "performance",
+      "originalName": "110_resolve_database_linter_issues_old.sql"
+    },
+    {
+      "sequence": 118,
+      "filename": "118_performance_add_foreign_key_indexes.sql",
+      "category": "performance",
+      "originalName": "116_add_foreign_key_indexes_deferred.sql"
+    },
+    {
+      "sequence": 119,
+      "filename": "119_performance_add_remaining_foreign_key_indexes.sql",
+      "category": "performance",
+      "originalName": "121_add_remaining_foreign_key_indexes_deferred.sql"
+    },
+    {
+      "sequence": 120,
+      "filename": "120_performance_drop_unused_indexes.sql",
+      "category": "performance",
+      "originalName": "122_drop_unused_indexes_deferred.sql"
+    },
+    {
+      "sequence": 121,
+      "filename": "121_performance_resolve_remaining_linter_issues.sql",
+      "category": "performance",
+      "originalName": "124_resolve_remaining_linter_issues_deferred.sql"
+    },
+    {
+      "sequence": 122,
+      "filename": "122_performance_resolve_all_remaining_linter_issues.sql",
+      "category": "performance",
+      "originalName": "125_resolve_all_remaining_linter_issues_deferred.sql"
+    },
+    {
+      "sequence": 123,
+      "filename": "123_performance_resolve_audit_foreign_keys.sql",
+      "category": "performance",
+      "originalName": "126_resolve_audit_foreign_keys_deferred.sql"
+    },
+    {
+      "sequence": 124,
+      "filename": "124_performance_restore_workspace_indexes.sql",
+      "category": "performance",
+      "originalName": "127_restore_workspace_indexes_deferred.sql"
+    },
+    {
+      "sequence": 125,
+      "filename": "125_performance_demo_data_isolation_simple.sql",
+      "category": "performance",
+      "originalName": "201_demo_data_isolation_simple.sql"
+    },
+    {
+      "sequence": 126,
+      "filename": "126_fixes_fixes_fix_all_function_errors.sql",
+      "category": "fixes",
+      "originalName": "074_fixes_fix_all_function_errors.sql"
+    },
+    {
+      "sequence": 127,
+      "filename": "127_fixes_fixes_fix_remaining_function_errors.sql",
+      "category": "fixes",
+      "originalName": "075_fixes_fix_remaining_function_errors.sql"
+    },
+    {
+      "sequence": 128,
+      "filename": "128_fixes_fixes_fix_function_search_path.sql",
+      "category": "fixes",
+      "originalName": "084_fixes_fix_function_search_path_deferred.sql"
+    },
+    {
+      "sequence": 129,
+      "filename": "129_fixes_fix_function_search_path.sql",
+      "category": "fixes",
+      "originalName": "118_fix_function_search_path_deferred.sql"
+    },
+    {
+      "sequence": 130,
+      "filename": "130_other_comprehensive_site_infrastructure.sql",
+      "category": "other",
+      "originalName": "041_comprehensive_site_infrastructure.sql"
+    },
+    {
+      "sequence": 131,
+      "filename": "131_other_comprehensive_site_services.sql",
+      "category": "other",
+      "originalName": "042_comprehensive_site_services.sql"
+    },
+    {
+      "sequence": 132,
+      "filename": "132_other_features_consolidate_remove_job_tables.sql",
+      "category": "other",
+      "originalName": "042_features_consolidate_remove_job_tables.sql"
+    },
+    {
+      "sequence": 133,
+      "filename": "133_other_comprehensive_site_safety.sql",
+      "category": "other",
+      "originalName": "043_comprehensive_site_safety.sql"
+    },
+    {
+      "sequence": 134,
+      "filename": "134_other_comprehensive_site_vehicles.sql",
+      "category": "other",
+      "originalName": "044_comprehensive_site_vehicles.sql"
+    },
+    {
+      "sequence": 135,
+      "filename": "135_other_comprehensive_heavy_equipment.sql",
+      "category": "other",
+      "originalName": "045_comprehensive_heavy_equipment.sql"
+    },
+    {
+      "sequence": 136,
+      "filename": "136_other_comprehensive_event_rentals.sql",
+      "category": "other",
+      "originalName": "047_comprehensive_event_rentals_part1.sql"
+    },
+    {
+      "sequence": 137,
+      "filename": "137_other_comprehensive_event_rentals.sql",
+      "category": "other",
+      "originalName": "048_comprehensive_event_rentals_part2.sql"
+    },
+    {
+      "sequence": 138,
+      "filename": "138_other_comprehensive_backline.sql",
+      "category": "other",
+      "originalName": "049_comprehensive_backline.sql"
+    },
+    {
+      "sequence": 139,
+      "filename": "139_other_comprehensive_signage.sql",
+      "category": "other",
+      "originalName": "050_comprehensive_signage.sql"
+    },
+    {
+      "sequence": 140,
+      "filename": "140_other_restaurant_equipment.sql",
+      "category": "other",
+      "originalName": "051_restaurant_equipment.sql"
+    },
+    {
+      "sequence": 141,
+      "filename": "141_other_bar_supplies_refrigeration.sql",
+      "category": "other",
+      "originalName": "052_bar_supplies_refrigeration.sql"
+    },
+    {
+      "sequence": 142,
+      "filename": "142_other_office_admin_supplies.sql",
+      "category": "other",
+      "originalName": "053_office_admin_supplies.sql"
+    },
+    {
+      "sequence": 143,
+      "filename": "143_other_janitorial_supplies.sql",
+      "category": "other",
+      "originalName": "054_janitorial_supplies.sql"
+    },
+    {
+      "sequence": 144,
+      "filename": "144_other_event_rentals_expansion.sql",
+      "category": "other",
+      "originalName": "055_event_rentals_expansion.sql"
+    },
+    {
+      "sequence": 145,
+      "filename": "145_other_film_tv_grip_electric.sql",
+      "category": "other",
+      "originalName": "056_film_tv_grip_electric.sql"
+    },
+    {
+      "sequence": 146,
+      "filename": "146_other_site_power_nema_electrical.sql",
+      "category": "other",
+      "originalName": "058_site_power_nema_electrical.sql"
+    },
+    {
+      "sequence": 147,
+      "filename": "147_other_it_equipment.sql",
+      "category": "other",
+      "originalName": "060_it_equipment.sql"
+    }
+  ]
+}

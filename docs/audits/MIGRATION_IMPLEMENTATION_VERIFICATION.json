@@ -1,0 +1,459 @@
+{
+  "timestamp": "2025-11-05T04:21:10.669Z",
+  "summary": {
+    "totalMigrations": 148,
+    "applied": 73,
+    "pending": 75,
+    "missing": 0,
+    "completionPercentage": "49.32",
+    "sequenceIntegrity": "COMPLETE"
+  },
+  "categories": [
+    {
+      "name": "foundation",
+      "applied": 11,
+      "pending": 0,
+      "total": 11,
+      "percentage": "100.0"
+    },
+    {
+      "name": "modules",
+      "applied": 7,
+      "pending": 1,
+      "total": 8,
+      "percentage": "87.5"
+    },
+    {
+      "name": "core_data",
+      "applied": 0,
+      "pending": 0,
+      "total": 0,
+      "percentage": 0
+    },
+    {
+      "name": "security",
+      "applied": 36,
+      "pending": 20,
+      "total": 56,
+      "percentage": "64.3"
+    },
+    {
+      "name": "features",
+      "applied": 1,
+      "pending": 2,
+      "total": 3,
+      "percentage": "33.3"
+    },
+    {
+      "name": "performance",
+      "applied": 7,
+      "pending": 18,
+      "total": 25,
+      "percentage": "28.0"
+    },
+    {
+      "name": "fixes",
+      "applied": 0,
+      "pending": 4,
+      "total": 4,
+      "percentage": "0.0"
+    },
+    {
+      "name": "other",
+      "applied": 0,
+      "pending": 18,
+      "total": 18,
+      "percentage": "0.0"
+    },
+    {
+      "name": "data",
+      "applied": 0,
+      "pending": 1,
+      "total": 1,
+      "percentage": "0.0"
+    }
+  ],
+  "pendingMigrations": [
+    {
+      "number": "014",
+      "filename": "014_modules_modules_remaining_modules.sql"
+    },
+    {
+      "number": "022",
+      "filename": "022_core_data_update_subscription_pricing.sql"
+    },
+    {
+      "number": "023",
+      "filename": "023_core_data_add_job_title_to_profiles.sql"
+    },
+    {
+      "number": "026",
+      "filename": "026_core_data_add_workspace_id_to_company_contacts.sql"
+    },
+    {
+      "number": "027",
+      "filename": "027_core_data_profiles_fields.sql"
+    },
+    {
+      "number": "028",
+      "filename": "028_core_data_profiles_extended_health_travel.sql"
+    },
+    {
+      "number": "029",
+      "filename": "029_core_data_add_profile_foreign_keys.sql"
+    },
+    {
+      "number": "033",
+      "filename": "033_core_data_seed_catalog.sql"
+    },
+    {
+      "number": "036",
+      "filename": "036_core_data_create_global_catalog_workspace.sql"
+    },
+    {
+      "number": "037",
+      "filename": "037_core_data_features_add_missing_profile_foreign_keys.sql"
+    },
+    {
+      "number": "038",
+      "filename": "038_core_data_performance_catalog_subcategories_optimization.sql"
+    },
+    {
+      "number": "039",
+      "filename": "039_core_data_performance_catalog_optimization.sql"
+    },
+    {
+      "number": "046",
+      "filename": "046_security_security_rls_optimization_remaining_policies.sql"
+    },
+    {
+      "number": "062",
+      "filename": "062_security_features_subcontractor_compliance.sql"
+    },
+    {
+      "number": "063",
+      "filename": "063_security_features_communication_invoicing.sql"
+    },
+    {
+      "number": "064",
+      "filename": "064_security_features_checklists_workflows.sql"
+    },
+    {
+      "number": "066",
+      "filename": "066_security_features_inventory_storage_policies.sql"
+    },
+    {
+      "number": "069",
+      "filename": "069_security_performance_fix_performance_warnings.sql"
+    },
+    {
+      "number": "070",
+      "filename": "070_security_performance_inventory_sortly_optimization.sql"
+    },
+    {
+      "number": "071",
+      "filename": "071_security_enhancements_field_comments.sql"
+    },
+    {
+      "number": "072",
+      "filename": "072_security_enhancements_presence_system.sql"
+    },
+    {
+      "number": "073",
+      "filename": "073_security_user_dashboard_widgets.sql"
+    },
+    {
+      "number": "076",
+      "filename": "076_security_enhancements_sso_saml.sql"
+    },
+    {
+      "number": "077",
+      "filename": "077_security_enhancements_version_history.sql"
+    },
+    {
+      "number": "078",
+      "filename": "078_security_enhancements_gated_invite_waitlist_system.sql"
+    },
+    {
+      "number": "079",
+      "filename": "079_security_enhancements_workflow_remediation_tables.sql"
+    },
+    {
+      "number": "082",
+      "filename": "082_security_fixes_fix_all_warnings.sql"
+    },
+    {
+      "number": "086",
+      "filename": "086_security_fixes_fix_materialized_view_security.sql"
+    },
+    {
+      "number": "088",
+      "filename": "088_security_fix_people_project_tables_rls.sql"
+    },
+    {
+      "number": "095",
+      "filename": "095_security_typography_settings.sql"
+    },
+    {
+      "number": "096",
+      "filename": "096_security_fix_all_422_rls_warnings.sql"
+    },
+    {
+      "number": "097",
+      "filename": "097_security_create_missing_tables_partial.sql"
+    },
+    {
+      "number": "098",
+      "filename": "098_features_features_inventory_functions.sql"
+    },
+    {
+      "number": "099",
+      "filename": "099_features_features_add_billing_cycle_to_subscriptions.sql"
+    },
+    {
+      "number": "106",
+      "filename": "106_performance_performance_performance_optimization_indexes.sql"
+    },
+    {
+      "number": "107",
+      "filename": "107_performance_performance_remove_duplicate_location_access_index.sql"
+    },
+    {
+      "number": "108",
+      "filename": "108_performance_performance_add_foreign_key_indexes.sql"
+    },
+    {
+      "number": "109",
+      "filename": "109_performance_performance_add_remaining_foreign_key_indexes.sql"
+    },
+    {
+      "number": "111",
+      "filename": "111_performance_performance_restore_workspace_indexes.sql"
+    },
+    {
+      "number": "112",
+      "filename": "112_performance_fixes_resolve_database_linter_issues.sql"
+    },
+    {
+      "number": "114",
+      "filename": "114_performance_fixes_resolve_remaining_linter_issues.sql"
+    },
+    {
+      "number": "115",
+      "filename": "115_performance_fixes_resolve_all_remaining_linter_issues.sql"
+    },
+    {
+      "number": "116",
+      "filename": "116_performance_fixes_resolve_audit_foreign_keys.sql"
+    },
+    {
+      "number": "117",
+      "filename": "117_performance_resolve_database_linter_issues.sql"
+    },
+    {
+      "number": "118",
+      "filename": "118_performance_add_foreign_key_indexes.sql"
+    },
+    {
+      "number": "119",
+      "filename": "119_performance_add_remaining_foreign_key_indexes.sql"
+    },
+    {
+      "number": "120",
+      "filename": "120_performance_drop_unused_indexes.sql"
+    },
+    {
+      "number": "121",
+      "filename": "121_performance_resolve_remaining_linter_issues.sql"
+    },
+    {
+      "number": "122",
+      "filename": "122_performance_resolve_all_remaining_linter_issues.sql"
+    },
+    {
+      "number": "123",
+      "filename": "123_performance_resolve_audit_foreign_keys.sql"
+    },
+    {
+      "number": "124",
+      "filename": "124_performance_restore_workspace_indexes.sql"
+    },
+    {
+      "number": "125",
+      "filename": "125_performance_demo_data_isolation_simple.sql"
+    },
+    {
+      "number": "126",
+      "filename": "126_fixes_fixes_fix_all_function_errors.sql"
+    },
+    {
+      "number": "127",
+      "filename": "127_fixes_fixes_fix_remaining_function_errors.sql"
+    },
+    {
+      "number": "128",
+      "filename": "128_fixes_fixes_fix_function_search_path.sql"
+    },
+    {
+      "number": "129",
+      "filename": "129_fixes_fix_function_search_path.sql"
+    },
+    {
+      "number": "130",
+      "filename": "130_other_comprehensive_site_infrastructure.sql"
+    },
+    {
+      "number": "131",
+      "filename": "131_other_comprehensive_site_services.sql"
+    },
+    {
+      "number": "132",
+      "filename": "132_other_features_consolidate_remove_job_tables.sql"
+    },
+    {
+      "number": "133",
+      "filename": "133_other_comprehensive_site_safety.sql"
+    },
+    {
+      "number": "134",
+      "filename": "134_other_comprehensive_site_vehicles.sql"
+    },
+    {
+      "number": "135",
+      "filename": "135_other_comprehensive_heavy_equipment.sql"
+    },
+    {
+      "number": "136",
+      "filename": "136_other_comprehensive_event_rentals.sql"
+    },
+    {
+      "number": "137",
+      "filename": "137_other_comprehensive_event_rentals.sql"
+    },
+    {
+      "number": "138",
+      "filename": "138_other_comprehensive_backline.sql"
+    },
+    {
+      "number": "139",
+      "filename": "139_other_comprehensive_signage.sql"
+    },
+    {
+      "number": "140",
+      "filename": "140_other_restaurant_equipment.sql"
+    },
+    {
+      "number": "141",
+      "filename": "141_other_bar_supplies_refrigeration.sql"
+    },
+    {
+      "number": "142",
+      "filename": "142_other_office_admin_supplies.sql"
+    },
+    {
+      "number": "143",
+      "filename": "143_other_janitorial_supplies.sql"
+    },
+    {
+      "number": "144",
+      "filename": "144_other_event_rentals_expansion.sql"
+    },
+    {
+      "number": "145",
+      "filename": "145_other_film_tv_grip_electric.sql"
+    },
+    {
+      "number": "146",
+      "filename": "146_other_site_power_nema_electrical.sql"
+    },
+    {
+      "number": "147",
+      "filename": "147_other_it_equipment.sql"
+    },
+    {
+      "number": "148",
+      "filename": "148_data_consolidated_seed_data.sql"
+    }
+  ],
+  "gaps": [],
+  "appliedMigrations": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "024",
+    "025",
+    "030",
+    "031",
+    "032",
+    "034",
+    "035",
+    "040",
+    "041",
+    "042",
+    "043",
+    "044",
+    "045",
+    "047",
+    "048",
+    "049",
+    "050",
+    "051",
+    "052",
+    "053",
+    "054",
+    "055",
+    "056",
+    "057",
+    "058",
+    "059",
+    "060",
+    "061",
+    "065",
+    "067",
+    "068",
+    "074",
+    "075",
+    "080",
+    "081",
+    "083",
+    "084",
+    "085",
+    "087",
+    "089",
+    "090",
+    "091",
+    "092",
+    "093",
+    "094",
+    "100",
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "110",
+    "113"
+  ],
+  "verification": {
+    "allMigrationsPresent": true,
+    "sequenceComplete": true,
+    "fullyImplemented": false
+  }
+}

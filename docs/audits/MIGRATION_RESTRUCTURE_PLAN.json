@@ -1,0 +1,3695 @@
+{
+  "timestamp": "2025-11-05T01:32:10.761Z",
+  "summary": {
+    "totalMigrations": 130,
+    "activeMigrations": 105,
+    "deprecatedMigrations": 25,
+    "appliedMigrations": 85,
+    "categories": [
+      {
+        "name": "foundation",
+        "count": 10
+      },
+      {
+        "name": "modules",
+        "count": 6
+      },
+      {
+        "name": "security",
+        "count": 16
+      },
+      {
+        "name": "architecture",
+        "count": 2
+      },
+      {
+        "name": "performance",
+        "count": 15
+      },
+      {
+        "name": "features",
+        "count": 14
+      },
+      {
+        "name": "enhancements",
+        "count": 8
+      },
+      {
+        "name": "fixes",
+        "count": 17
+      },
+      {
+        "name": "unknown",
+        "count": 42
+      }
+    ],
+    "totalTables": 27
+  },
+  "categories": {
+    "foundation": [
+      {
+        "filename": "000_foundation.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "000 foundation",
+        "size": 16934,
+        "tables": 15,
+        "policies": 10,
+        "indexes": 20,
+        "functions": 2,
+        "dependencies": [
+          "MIGRATION",
+          "IF",
+          "update_updated_at",
+          "validate_user_role_scope",
+          "roles",
+          "subscription_tier",
+          "organizations",
+          "DELETE",
+          "TEXT",
+          "super"
+        ],
+        "content": "-- =============================================\n-- FOUNDATION MIGRATION - Complete Database Setup\n-- Version: 000\n-- =============================================\n\n-- =============================================\n-- EXTENSIONS\n-- =============================================\n\nCREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";\nCREATE EXTENSION IF NOT EXISTS \"pg_trgm\"; -- For full-text search\nCREATE EXTENSION IF NOT EXISTS \"pgcrypto\"; -- For encryption\n\n-- =============================================\n-"
+      },
+      {
+        "filename": "001_projects_module.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "001",
+        "size": 14160,
+        "tables": 5,
+        "policies": 12,
+        "indexes": 21,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "venue_id",
+          "auth",
+          "productions",
+          "project_tasks",
+          "UUID",
+          "ON",
+          "project_milestones"
+        ],
+        "content": "-- =============================================\n-- PROJECTS MODULE - Productions, Tasks, Milestones, Compliance\n-- Migration: 001\n-- =============================================\n\n-- =============================================\n-- PRODUCTIONS (Main Projects Table)\n-- =============================================\n\nCREATE TABLE productions (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    \n    -- Basic Info\n    na"
+      },
+      {
+        "filename": "002_events_module.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "002",
+        "size": 11333,
+        "tables": 4,
+        "policies": 8,
+        "indexes": 28,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "productions",
+          "TEXT",
+          "location_id",
+          "events",
+          "auth",
+          "show",
+          "INTERVAL",
+          "ON"
+        ],
+        "content": "-- =============================================\n-- EVENTS MODULE - Performances, Rehearsals, Bookings, Run of Show\n-- Migration: 002\n-- =============================================\n\n-- =============================================\n-- EVENTS\n-- =============================================\n\nCREATE TABLE events (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    production_id UUID REFERENCES productions(id) ON DELET"
+      },
+      {
+        "filename": "003_people_module.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "003",
+        "size": 15733,
+        "tables": 7,
+        "policies": 14,
+        "indexes": 29,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "auth",
+          "TEXT",
+          "personnel",
+          "productions",
+          "project_tasks",
+          "INTERVAL",
+          "job_openings",
+          "teams"
+        ],
+        "content": "-- =============================================\n-- PEOPLE MODULE - Personnel, Teams, Time Tracking, Training\n-- Migration: 003\n-- =============================================\n\n-- =============================================\n-- PERSONNEL\n-- =============================================\n\nCREATE TABLE personnel (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    user_id UUID REFERENCES auth.users(id) ON DELETE SET N"
+      },
+      {
+        "filename": "004_assets_module.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "004",
+        "size": 11192,
+        "tables": 4,
+        "policies": 8,
+        "indexes": 23,
+        "functions": 0,
+        "dependencies": [
+          "Advances",
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "asset_tag",
+          "IN",
+          "location_id",
+          "auth",
+          "assets",
+          "personnel"
+        ],
+        "content": "-- =============================================\n-- ASSETS MODULE - Equipment, Inventory, Maintenance, Production Advances\n-- Migration: 004\n-- =============================================\n\n-- =============================================\n-- ASSET CATALOG\n-- =============================================\n\nCREATE TABLE assets (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    \n    -- Basic Info\n    name TEXT NOT NUL"
+      },
+      {
+        "filename": "005_locations_module.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "005",
+        "size": 10439,
+        "tables": 4,
+        "policies": 8,
+        "indexes": 13,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "locations",
+          "auth",
+          "INTEGER",
+          "JSONB",
+          "ON",
+          "site_maps",
+          "location_access"
+        ],
+        "content": "-- =============================================\n-- LOCATIONS MODULE - Venues, Facilities, Site Maps\n-- Migration: 005\n-- =============================================\n\n-- =============================================\n-- LOCATIONS\n-- =============================================\n\nCREATE TABLE locations (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    \n    -- Basic Info\n    name TEXT NOT NULL,\n    type TEXT NOT NU"
+      },
+      {
+        "filename": "006_files_companies_modules.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "006",
+        "size": 10471,
+        "tables": 7,
+        "policies": 4,
+        "indexes": 18,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "file_categories",
+          "TEXT",
+          "file_type",
+          "productions",
+          "events",
+          "INTEGER",
+          "files",
+          "auth"
+        ],
+        "content": "-- =============================================\n-- FILES & COMPANIES MODULES\n-- Migration: 006\n-- =============================================\n\n-- =============================================\n-- FILES MODULE\n-- =============================================\n\n-- File Categories\nCREATE TABLE file_categories (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    \n    name TEXT NOT NULL,\n    slug TEXT NOT NULL,\n    paren"
+      },
+      {
+        "filename": "007_branded_rbac_system.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "007 branded rbac system",
+        "size": 27916,
+        "tables": 6,
+        "policies": 6,
+        "indexes": 9,
+        "functions": 5,
+        "dependencies": [
+          "categories",
+          "DROP",
+          "TEXT",
+          "identifier",
+          "Super",
+          "super",
+          "admin",
+          "and",
+          "CATEGORIES",
+          "Management"
+        ],
+        "content": "-- =====================================================\n-- BRANDED RBAC SYSTEM - COMPREHENSIVE IMPLEMENTATION\n-- =====================================================\n-- Creates the full role-based access control system with:\n-- - 11 branded roles (Legend → Ambassador)\n-- - 12 permission categories\n-- - Role hierarchy and inheritance\n-- - Time-limited access support\n-- - Scope-based permissions (organization, project, team)\n-- =====================================================\n\n-- Drop exist"
+      },
+      {
+        "filename": "008_subscriptions_and_invitations.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "008 subscriptions and invitations",
+        "size": 17308,
+        "tables": 5,
+        "policies": 11,
+        "indexes": 15,
+        "functions": 5,
+        "dependencies": [
+          "management",
+          "PLANS",
+          "TEXT",
+          "companies",
+          "organizations",
+          "DELETE",
+          "workspaces",
+          "stripe_customer_id",
+          "subscription_plans",
+          "subscriptions"
+        ],
+        "content": "-- =====================================================\n-- SUBSCRIPTIONS & INVITATIONS SYSTEM\n-- =====================================================\n-- Adds support for:\n-- - Stripe subscription management\n-- - Team invitations (within and outside organization)\n-- - Usage tracking and limits\n-- =====================================================\n\n-- =====================================================\n-- 1. SUBSCRIPTION PLANS (Static reference data)\n-- ====================================="
+      },
+      {
+        "filename": "009_storage_layer.sql",
+        "location": "active",
+        "category": "foundation",
+        "description": "009",
+        "size": 8582,
+        "tables": 0,
+        "policies": 19,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "storage",
+          "organization_members",
+          "workspaces",
+          "the"
+        ],
+        "content": "-- =============================================\n-- LAYER 2: STORAGE LAYER\n-- Supabase Storage RLS Policies\n-- Migration: 009\n-- =============================================\n\n-- =============================================\n-- IMPORTANT: STORAGE BUCKET CREATION\n-- =============================================\n-- Storage buckets cannot be created via SQL migrations in Supabase.\n-- Buckets must be created using the Supabase Dashboard or CLI.\n-- \n-- See supabase/storage-buckets-config.sql for buck"
+      }
+    ],
+    "modules": [
+      {
+        "filename": "011_missing_modules_analytics_insights.sql",
+        "location": "active",
+        "category": "modules",
+        "description": "011",
+        "size": 11751,
+        "tables": 9,
+        "policies": 0,
+        "indexes": 17,
+        "functions": 0,
+        "dependencies": [
+          "ORIGINAL",
+          "workspaces",
+          "DELETE",
+          "auth",
+          "TEXT",
+          "data_sources",
+          "objectives",
+          "analytics_views",
+          "benchmarks",
+          "key_results"
+        ],
+        "content": "-- =============================================\n-- ANALYTICS & INSIGHTS MODULES (MISSING FROM ORIGINAL)\n-- Migration: 011\n-- =============================================\n\n-- =============================================\n-- ANALYTICS MODULE\n-- =============================================\n\n-- Custom Metrics (already exists, but adding more fields)\n-- Already created in 008_remaining_modules.sql\n\n-- Data Sources\nCREATE TABLE data_sources (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    w"
+      },
+      {
+        "filename": "015_finance_procurement_modules.sql",
+        "location": "active",
+        "category": "modules",
+        "description": "007",
+        "size": 12283,
+        "tables": 11,
+        "policies": 0,
+        "indexes": 16,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "productions",
+          "TEXT",
+          "auth",
+          "budgets",
+          "budget_line_items",
+          "companies",
+          "invoices",
+          "expense_reports"
+        ],
+        "content": "-- =============================================\n-- FINANCE & PROCUREMENT MODULES\n-- Migration: 007\n-- =============================================\n\n-- =============================================\n-- FINANCE MODULE\n-- =============================================\n\n-- Budgets\nCREATE TABLE budgets (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    production_id UUID REFERENCES productions(id) ON DELETE CASCADE,\n   "
+      },
+      {
+        "filename": "016_remaining_modules.sql",
+        "location": "active",
+        "category": "modules",
+        "description": "008",
+        "size": 15216,
+        "tables": 13,
+        "policies": 0,
+        "indexes": 13,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "auth",
+          "is_featured",
+          "community_posts",
+          "companies",
+          "TEXT",
+          "productions",
+          "marketplace_orders",
+          "marketplace_products"
+        ],
+        "content": "-- =============================================\n-- REMAINING MODULES - Community, Marketplace, Jobs, Reports, Resources\n-- Migration: 008\n-- =============================================\n\n-- =============================================\n-- COMMUNITY MODULE\n-- =============================================\n\n-- Community Posts\nCREATE TABLE community_posts (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID REFERENCES workspaces(id) ON DELETE CASCADE,\n    \n    type TEXT NOT N"
+      },
+      {
+        "filename": "094_opportunities_module.sql",
+        "location": "active",
+        "category": "modules",
+        "description": "094 opportunities module",
+        "size": 13414,
+        "tables": 5,
+        "policies": 20,
+        "indexes": 19,
+        "functions": 1,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "auth",
+          "Tracking",
+          "Resources",
+          "opportunity_jobs",
+          "opportunity_careers",
+          "opportunity_sponsorships",
+          "opportunity_grants"
+        ],
+        "content": "-- =====================================================\n-- OPPORTUNITIES MODULE - Database Schema\n-- =====================================================\n-- New module for Jobs, Careers, Sponsorship, and Grants\n-- Includes web scraping support for global grant discovery\n-- Date: 2025-01-20\n-- =====================================================\n\n-- =====================================================\n-- OPPORTUNITY JOBS TABLE\n-- =====================================================\n-- Contra"
+      },
+      {
+        "filename": "20251014000000_add_jobs_module_rls_policies.sql",
+        "location": "active",
+        "category": "modules",
+        "description": "20251014000000",
+        "size": 4344,
+        "tables": 0,
+        "policies": 8,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "all",
+          "job_contracts",
+          "workspace_members",
+          "rfps",
+          "QUERIES",
+          "pg_policies"
+        ],
+        "content": "-- =============================================\n-- Add RLS Policies for Jobs Module\n-- Migration: 20251014000000\n-- =============================================\n-- \n-- ISSUE: Tables job_contracts and rfps have RLS enabled but ZERO policies defined\n-- IMPACT: Complete data access blockage on all Jobs module tabs\n-- FIX: Create comprehensive RLS policies for both tables\n--\n-- =============================================\n\n-- =============================================\n-- JOB CONTRACTS RLS POLI"
+      },
+      {
+        "filename": "20251014010000_add_reports_module_rls_policies.sql",
+        "location": "active",
+        "category": "modules",
+        "description": "20251014010000_add_reports_module_rls_policies.sql",
+        "size": 6376,
+        "tables": 0,
+        "policies": 12,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "report_templates",
+          "workspace_members",
+          "data_sources",
+          "custom_metrics",
+          "QUERIES",
+          "pg_policies"
+        ],
+        "content": "-- =============================================\n-- REPORTS MODULE RLS POLICIES\n-- =============================================\n-- Migration: 20251014010000_add_reports_module_rls_policies.sql\n-- Purpose: Add missing RLS policies for Reports module tables\n-- Issue: RLS was enabled but no policies were created, causing \"Error Loading Data\"\n-- Tables: report_templates, data_sources, custom_metrics\n-- =============================================\n\n-- =============================================\n-"
+      }
+    ],
+    "security": [
+      {
+        "filename": "019_fix_onboarding_rls_policies.sql",
+        "location": "active",
+        "category": "security",
+        "description": "Fix onboarding RLS policies and missing table",
+        "size": 7264,
+        "tables": 1,
+        "policies": 10,
+        "indexes": 4,
+        "functions": 0,
+        "dependencies": [
+          "organizations",
+          "organization_members",
+          "when",
+          "members",
+          "DROP",
+          "creators",
+          "workspaces",
+          "organization_id",
+          "schema",
+          "DELETE"
+        ],
+        "content": "-- Migration: Fix onboarding RLS policies and missing table\n-- Issue: Users cannot complete onboarding due to missing INSERT RLS policies and missing workspace_members table\n\n-- ==============================================\n-- 1. Fix organizations INSERT policy\n-- ==============================================\nDROP POLICY IF EXISTS \"Authenticated users can create organizations\" ON organizations;\nCREATE POLICY \"Authenticated users can create organizations\"\n    ON organizations FOR INSERT\n    TO "
+      },
+      {
+        "filename": "021_add_comments_rls_policies.sql",
+        "location": "active",
+        "category": "security",
+        "description": "Add missing Row Level Security policies for the comments table",
+        "size": 2097,
+        "tables": 0,
+        "policies": 4,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "comments",
+          "workspace_members",
+          "pg_policies"
+        ],
+        "content": "-- =============================================\n-- MIGRATION: Add RLS Policies for Comments Table\n-- =============================================\n-- Date: October 13, 2025\n-- Description: Add missing Row Level Security policies for the comments table\n--              to allow workspace members to read and write comments\n\n-- =============================================\n-- COMMENTS TABLE RLS POLICIES\n-- =============================================\n\n-- Policy: Allow users to view comments in wor"
+      },
+      {
+        "filename": "083_rls_performance_optimization.sql",
+        "location": "active",
+        "category": "security",
+        "description": "RLS Performance Optimization",
+        "size": 18813,
+        "tables": 0,
+        "policies": 44,
+        "indexes": 3,
+        "functions": 3,
+        "dependencies": [
+          "information_schema",
+          "workspace_members",
+          "organization_members",
+          "organizations",
+          "workspaces",
+          "Members",
+          "user_roles",
+          "notifications",
+          "productions",
+          "project_tasks"
+        ],
+        "content": "-- Migration: RLS Performance Optimization\n-- Date: October 19, 2025\n-- Purpose: Fix auth_rls_initplan warnings by wrapping auth functions in subqueries\n-- Issue: auth.<function>() calls are re-evaluated for each row causing performance degradation\n-- Solution: Replace (SELECT (SELECT auth.uid())) with (select (SELECT (SELECT auth.uid()))) to evaluate once per query\n\n-- ============================================================\n-- PART 0: ADD STATUS COLUMNS TO MEMBERSHIP TABLES\n-- ============"
+      },
+      {
+        "filename": "084_rls_performance_optimization_part2.sql",
+        "location": "active",
+        "category": "security",
+        "description": "RLS Performance Optimization Part 2",
+        "size": 1427,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Part",
+          "was",
+          "handles",
+          "serves",
+          "pg_proc",
+          "is_workspace_member_optimized"
+        ],
+        "content": "-- Migration: RLS Performance Optimization Part 2\n-- Date: October 19, 2025\n-- Purpose: Optimize RLS policies for additional existing tables\n-- Note: Only applies to tables that currently exist in the database\n\n-- ============================================================\n-- OPTIMIZE EXISTING TABLES WITH WORKSPACE-SCOPED POLICIES\n-- ============================================================\n\n-- The main performance optimization was completed in migration 083.\n-- This migration handles any re"
+      },
+      {
+        "filename": "085_rls_optimization_remaining_policies.sql",
+        "location": "active",
+        "category": "security",
+        "description": "RLS Optimization - Remaining Policies",
+        "size": 5018,
+        "tables": 0,
+        "policies": 10,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "members",
+          "user_role_assignments",
+          "organization_members",
+          "workspace_members",
+          "Advances",
+          "advances",
+          "production_advances",
+          "productions",
+          "organizations",
+          "workspaces"
+        ],
+        "content": "-- Migration: RLS Optimization - Remaining Policies\n-- Date: October 19, 2025\n-- Purpose: Fix remaining unoptimized policies found after migration 083\n\n-- ============================================================\n-- FIX REMAINING UNOPTIMIZED POLICIES\n-- ============================================================\n\n-- User Role Assignments\nDROP POLICY IF EXISTS \"User role assignments viewable by organization members\" ON user_role_assignments;\nCREATE POLICY \"User role assignments viewable by or"
+      },
+      {
+        "filename": "087_rls_optimization_final_cleanup.sql",
+        "location": "active",
+        "category": "security",
+        "description": "RLS Optimization - Final Cleanup",
+        "size": 3585,
+        "tables": 0,
+        "policies": 1,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "rate",
+          "pg_policies",
+          "STATUS",
+          "achieved"
+        ],
+        "content": "-- Migration: RLS Optimization - Final Cleanup\n-- Date: October 19, 2025\n-- Purpose: Optimize ALL remaining unoptimized policies (final pass)\n-- Target: 100% optimization rate\n\n-- ============================================================\n-- OPTIMIZE ALL REMAINING TABLES WITH DYNAMIC SQL\n-- ============================================================\n\nDO $$\nDECLARE\n    policy_record RECORD;\n    new_qual TEXT;\nBEGIN\n    -- Loop through all unoptimized policies\n    FOR policy_record IN \n        "
+      },
+      {
+        "filename": "090_fix_rls_linter_warnings_complete.sql",
+        "location": "active",
+        "category": "security",
+        "description": "090 fix rls linter warnings complete",
+        "size": 29027,
+        "tables": 0,
+        "policies": 38,
+        "indexes": 0,
+        "functions": 1,
+        "dependencies": [
+          "to",
+          "table_has_column",
+          "information_schema",
+          "user_roles",
+          "organization_members",
+          "comments",
+          "workspace_members",
+          "marketplace_products",
+          "job_contracts",
+          "rfps"
+        ],
+        "content": "-- =====================================================\n-- RLS LINTER REMEDIATION - COMPLETE FIX\n-- =====================================================\n-- Fixes all Supabase linter warnings:\n-- 1. Auth RLS InitPlan: Wraps auth.uid() in SELECT subqueries (31 policies)\n-- 2. Multiple Permissive Policies: Consolidates duplicate policies (7 tables)\n-- =====================================================\n\n-- Helper function to check if table and column exist\nCREATE OR REPLACE FUNCTION table_has_c"
+      },
+      {
+        "filename": "102_branded_rbac_rls_system.sql",
+        "location": "active",
+        "category": "security",
+        "description": "102",
+        "size": 23753,
+        "tables": 1,
+        "policies": 9,
+        "indexes": 0,
+        "functions": 4,
+        "dependencies": [
+          "super",
+          "date",
+          "CATEGORIES",
+          "TEXT",
+          "settings",
+          "members",
+          "details",
+          "team",
+          "schedule",
+          "budget"
+        ],
+        "content": "-- =============================================\n-- BRANDED RBAC/RLS SYSTEM WITH HIERARCHY INTEGRATION\n-- Migration: 102\n-- Date: January 20, 2025\n-- Purpose: Implement 11 branded roles with hierarchy-aware permissions\n-- =============================================\n\n-- =============================================\n-- PART 1: UPDATE ROLES TABLE WITH BRANDED ROLES\n-- =============================================\n\n-- Update existing roles with new branded definitions\nUPDATE roles SET \n    descrip"
+      },
+      {
+        "filename": "113_fix_people_project_tables_rls.sql",
+        "location": "active",
+        "category": "security",
+        "description": "Fix People & Project Tables RLS Warnings (SAFE VERSION)",
+        "size": 6242,
+        "tables": 0,
+        "policies": 6,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Supabase",
+          "pg_tables",
+          "people_keyboard_shortcuts",
+          "workspace_members",
+          "people_org_chart",
+          "project_calendar",
+          "activations",
+          "productions",
+          "approval_requests",
+          "asset_maintenance"
+        ],
+        "content": "-- Migration 113: Fix People & Project Tables RLS Warnings (SAFE VERSION)\n-- Created: 2025-10-21\n-- Purpose: Fix remaining auth RLS initplan and multiple permissive policy warnings\n-- Impact: Resolves final 82 linter warnings from Supabase database linter\n-- Note: All operations wrapped in table existence checks\n\n-- ============================================================================\n-- PART 1: FIX AUTH RLS INITPLAN WARNINGS (12 warnings) - SAFE\n-- ======================================="
+      },
+      {
+        "filename": "20251013230000_add_resources_rls_policies.sql",
+        "location": "active",
+        "category": "security",
+        "description": "026",
+        "size": 2378,
+        "tables": 0,
+        "policies": 4,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "resources",
+          "workspace_members",
+          "POLICY"
+        ],
+        "content": "-- =============================================\n-- Add RLS Policies for Resources Table\n-- Migration: 026\n-- =============================================\n-- The resources table has RLS enabled but was missing policies\n-- This was causing \"Error Loading Data\" for all resources module tabs\n\n-- Resources policies\nDROP POLICY IF EXISTS \"Users can view resources in their workspace\" ON resources;\nCREATE POLICY \"Users can view resources in their workspace\"\n    ON resources FOR SELECT\n    USING (\n    "
+      },
+      {
+        "filename": "20251014020000_add_analytics_insights_rls_policies.sql",
+        "location": "active",
+        "category": "security",
+        "description": "20251014020000_add_analytics_insights_rls_policies.sql",
+        "size": 16024,
+        "tables": 0,
+        "policies": 32,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "analytics_views",
+          "workspace_members",
+          "benchmarks",
+          "objectives",
+          "key_results",
+          "strategic_priorities",
+          "strategic_reviews",
+          "ai_recommendations",
+          "intelligence_feed",
+          "QUERIES"
+        ],
+        "content": "-- =============================================\n-- ANALYTICS & INSIGHTS MODULES RLS POLICIES\n-- =============================================\n-- Migration: 20251014020000_add_analytics_insights_rls_policies.sql\n-- Purpose: Add missing RLS policies for Analytics and Insights module tables\n-- Issue: RLS was enabled but no policies were created, causing \"Error Loading Data\"\n-- Tables: analytics_views, benchmarks, data_sources (shared with Reports),\n--         objectives, key_results, strategic_pri"
+      },
+      {
+        "filename": "20251014030000_add_data_sources_rls_policies.sql",
+        "location": "active",
+        "category": "security",
+        "description": "20251014030000_add_data_sources_rls_policies.sql",
+        "size": 3509,
+        "tables": 0,
+        "policies": 4,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "pg_policies",
+          "data_sources",
+          "workspace_members"
+        ],
+        "content": "-- =============================================\n-- DATA SOURCES TABLE RLS POLICIES\n-- =============================================\n-- Migration: 20251014030000_add_data_sources_rls_policies.sql\n-- Purpose: Add missing RLS policies for data_sources table\n-- Issue: Table had RLS enabled but no policies, causing \"Error Loading Data\"\n-- Used By: Analytics module (Data Sources tab) and Reports module\n-- =============================================\n\n-- SELECT: Users can view data sources in their w"
+      },
+      {
+        "filename": "113_fix_people_project_tables_rls_old.sql",
+        "location": "deprecated",
+        "category": "security",
+        "description": "Fix People & Project Tables RLS Warnings",
+        "size": 13632,
+        "tables": 0,
+        "policies": 19,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Supabase",
+          "people_keyboard_shortcuts",
+          "workspace_members",
+          "people_org_chart",
+          "project_calendar",
+          "activations",
+          "productions",
+          "approval_requests",
+          "asset_maintenance",
+          "asset_transactions"
+        ],
+        "content": "-- Migration 113: Fix People & Project Tables RLS Warnings\n-- Created: 2025-10-21\n-- Purpose: Fix remaining auth RLS initplan and multiple permissive policy warnings\n-- Impact: Resolves final 82 linter warnings from Supabase database linter\n\n-- ============================================================================\n-- PART 1: FIX AUTH RLS INITPLAN WARNINGS (12 warnings)\n-- ============================================================================\n\n-- People keyboard shortcuts table - fix "
+      },
+      {
+        "filename": "120_fix_permissions_rls_performance_deferred.sql",
+        "location": "deprecated",
+        "category": "security",
+        "description": "Fix Permissions RLS Performance",
+        "size": 577,
+        "tables": 0,
+        "policies": 1,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "DROP",
+          "permissions"
+        ],
+        "content": "-- Migration 120: Fix Permissions RLS Performance\n-- Created: 2025-10-22\n-- Purpose: Optimize permissions table RLS policy to prevent per-row auth.uid() evaluation\n-- Impact: Resolves auth_rls_initplan warning for permissions table\n\n-- Drop the existing policy that causes per-row evaluation\nDROP POLICY IF EXISTS \"permissions_policy\" ON permissions;\n\n-- Recreate with optimized (SELECT auth.uid()) syntax\n-- This ensures auth.uid() is evaluated once per query, not per row\nCREATE POLICY \"permissions"
+      },
+      {
+        "filename": "123_fix_hierarchy_rollup_permissions_deferred.sql",
+        "location": "deprecated",
+        "category": "security",
+        "description": "Fix Materialized View Refresh Permissions",
+        "size": 2695,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 1,
+        "dependencies": [
+          "denied",
+          "run",
+          "owner",
+          "projects",
+          "productions",
+          "activations",
+          "workspaces",
+          "with",
+          "refresh_hierarchy_rollup",
+          "WHEN"
+        ],
+        "content": "-- Migration 120: Fix Materialized View Refresh Permissions\n-- Created: 2025-10-23\n-- Purpose: Grant necessary permissions for hierarchy_rollup refresh triggers\n-- Impact: Resolves \"permission denied for materialized view hierarchy_rollup\" error\n\n-- The issue: Triggers need to refresh the materialized view, but the refresh function\n-- runs with the privileges of the user who triggered it (authenticated users).\n-- Solution: Make the refresh function run with SECURITY DEFINER so it executes\n-- wit"
+      },
+      {
+        "filename": "20251021_fix_all_422_rls_warnings_deferred.sql",
+        "location": "deprecated",
+        "category": "security",
+        "description": "20251021 fix all 422 rls warnings deferred",
+        "size": 21689,
+        "tables": 0,
+        "policies": 44,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "resolves",
+          "user_advances",
+          "workspace_members",
+          "user_agenda",
+          "user_assets",
+          "user_expenses",
+          "user_files",
+          "user_jobs",
+          "user_orders",
+          "user_reports"
+        ],
+        "content": "-- Migration: Fix ALL 422 RLS Warnings\n-- Generated: 2025-10-21\n-- \n-- This migration resolves:\n-- 1. Auth RLS InitPlan warnings (40): Wrap auth.uid() in subqueries for performance\n-- 2. Multiple Permissive Policies warnings (382): Consolidate duplicate policies\n--\n-- Total warnings resolved: 422 → 0\n\n-- ============================================================================\n-- PART 1: FIX AUTH RLS INITPLAN WARNINGS (40 warnings)\n-- =========================================================="
+      }
+    ],
+    "architecture": [
+      {
+        "filename": "100_organizational_hierarchy.sql",
+        "location": "active",
+        "category": "architecture",
+        "description": "100",
+        "size": 16460,
+        "tables": 2,
+        "policies": 4,
+        "indexes": 21,
+        "functions": 4,
+        "dependencies": [
+          "organizations",
+          "DELETE",
+          "TEXT",
+          "auth",
+          "productions",
+          "code",
+          "venue_id",
+          "locations",
+          "Phase",
+          "projects"
+        ],
+        "content": "-- =============================================\n-- ORGANIZATIONAL HIERARCHY IMPLEMENTATION\n-- Migration: 100\n-- Date: January 20, 2025\n-- Purpose: Implement 5-level hierarchy: Organization → Projects → Productions → Activations → Workspace\n-- =============================================\n\n-- =============================================\n-- LEVEL 2: PROJECTS (Strategic Initiatives)\n-- =============================================\n\nCREATE TABLE projects (\n    id UUID PRIMARY KEY DEFAULT gen_rando"
+      },
+      {
+        "filename": "101_database_normalization.sql",
+        "location": "active",
+        "category": "architecture",
+        "description": "101",
+        "size": 20223,
+        "tables": 4,
+        "policies": 5,
+        "indexes": 32,
+        "functions": 4,
+        "dependencies": [
+          "CREATE",
+          "get_workspace_from_production",
+          "productions",
+          "activations",
+          "a",
+          "workspaces",
+          "w",
+          "COLUMN",
+          "across",
+          "ALTER"
+        ],
+        "content": "-- =============================================\n-- DATABASE NORMALIZATION & OPTIMIZATION\n-- Migration: 101\n-- Date: January 20, 2025\n-- Purpose: Normalize all relationships, eliminate redundancies, standardize patterns\n-- =============================================\n\n-- =============================================\n-- PART 1: STANDARDIZED ENUMS\n-- =============================================\n\n-- Unified status enum\nCREATE TYPE entity_status AS ENUM (\n    'draft',\n    'planning',\n    'active',"
+      }
+    ],
+    "performance": [
+      {
+        "filename": "057_catalog_subcategories_optimization.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "057",
+        "size": 19362,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 1,
+        "functions": 1,
+        "dependencies": [
+          "OPTIMIZATION",
+          "assets",
+          "COLUMN",
+          "Boxes",
+          "UPDATE",
+          "Equipment",
+          "Supplies",
+          "Tape",
+          "Chemicals",
+          "Cords"
+        ],
+        "content": "-- =============================================\n-- CATALOG SUBCATEGORIES & ORGANIZATION OPTIMIZATION\n-- Migration: 057\n-- Purpose: Add proper subcategory structure and fix miscategorizations\n-- =============================================\n\n-- =============================================\n-- PART 1: Add subcategory column if not exists\n-- =============================================\n\nALTER TABLE assets ADD COLUMN IF NOT EXISTS subcategory TEXT;\n\nCREATE INDEX IF NOT EXISTS idx_assets_subcategor"
+      },
+      {
+        "filename": "059_catalog_final_optimization.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "059",
+        "size": 15931,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 1,
+        "functions": 1,
+        "dependencies": [
+          "janitorial",
+          "assets",
+          "Sign",
+          "COLUMN",
+          "Supplies",
+          "stand",
+          "screen",
+          "Screens",
+          "projector",
+          "vinyl"
+        ],
+        "content": "-- =============================================\n-- FINAL CATALOG OPTIMIZATION & CLEANUP\n-- Migration: 059\n-- Purpose: Fix duplicates, add industry terms, complete multi-industry coverage\n-- =============================================\n\n-- =============================================\n-- PART 1: Remove Duplicate Items\n-- =============================================\n\n-- Remove duplicate wet floor sign from janitorial (keep in safety)\nDELETE FROM assets \nWHERE workspace_id = '00000000-0000-0000-"
+      },
+      {
+        "filename": "074_performance_indexes_v2.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "074",
+        "size": 385,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "is",
+          "numbering"
+        ],
+        "content": "-- =====================================================\n-- PERFORMANCE INDEXES V2\n-- Migration: 074\n-- Date: 2025-10-19\n-- =====================================================\n-- Skipped - indexes added in later migrations\n-- This migration is intentionally empty to maintain migration numbering\n-- =====================================================\n\nSELECT 1; -- No-op migration\n"
+      },
+      {
+        "filename": "075_essential_indexes.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "075 essential indexes",
+        "size": 2195,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 13,
+        "functions": 0,
+        "dependencies": [
+          "assets",
+          "ON",
+          "asset_transactions",
+          "asset_maintenance",
+          "ADVANCES",
+          "production_advances"
+        ],
+        "content": "-- =====================================================\n-- Performance Optimization: Essential Database Indexes\n-- Created: October 15, 2025\n-- Purpose: Optimize query performance for React Query hooks\n-- Approach: Only indexes for actively used tables\n-- =====================================================\n\n-- ASSETS MODULE (used by useAssets hook)\nCREATE INDEX IF NOT EXISTS idx_assets_workspace_status \n  ON assets(workspace_id, status);\n\nCREATE INDEX IF NOT EXISTS idx_assets_workspace_locati"
+      },
+      {
+        "filename": "080_add_missing_foreign_key_indexes.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "080",
+        "size": 394,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "is",
+          "numbering"
+        ],
+        "content": "-- =====================================================\n-- ADD MISSING FOREIGN KEY INDEXES\n-- Migration: 080\n-- Date: 2025-10-19\n-- =====================================================\n-- Skipped - indexes added in later migrations\n-- This migration is intentionally empty to maintain migration numbering\n-- =====================================================\n\nSELECT 1; -- No-op migration\n"
+      },
+      {
+        "filename": "081_cleanup_unused_indexes.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "Removes unused indexes identified by Supabase Performance Advisor",
+        "size": 10058,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "should",
+          "USAGE",
+          "MODULE",
+          "ADVANCES",
+          "BIM",
+          "FEATURES",
+          "NOTES",
+          "pg_stat_user_indexes",
+          "pg_index",
+          "SCHEMA"
+        ],
+        "content": "-- Migration: Cleanup Unused Indexes\n-- Description: Removes unused indexes identified by Supabase Performance Advisor\n-- This reduces index maintenance overhead and improves write performance\n-- Date: 2025-10-19\n\n-- ============================================================================\n-- ANALYSIS NOTES\n-- ============================================================================\n-- The following indexes have never been used according to pg_stat_user_indexes\n-- Removing them will:\n-- 1."
+      },
+      {
+        "filename": "103_performance_optimization_indexes.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "Performance Optimization Indexes",
+        "size": 5232,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 21,
+        "functions": 0,
+        "dependencies": [
+          "Indexes",
+          "project_tasks",
+          "events",
+          "ON",
+          "assets",
+          "personnel",
+          "relationship",
+          "workspaces",
+          "productions",
+          "notifications"
+        ],
+        "content": "-- Migration 103: Performance Optimization Indexes\n-- Created: 2025-01-20\n-- Purpose: Add performance indexes for frequently queried tables\n-- Note: Only creates indexes for columns that actually exist in the schema\n\n-- ============================================================================\n-- PROJECT TASKS INDEXES\n-- ============================================================================\n\n-- Index for workspace-based task queries\nCREATE INDEX IF NOT EXISTS idx_project_tasks_workspace_"
+      },
+      {
+        "filename": "104_fix_performance_warnings.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "Fix Supabase Performance Warnings",
+        "size": 21268,
+        "tables": 0,
+        "policies": 37,
+        "indexes": 6,
+        "functions": 1,
+        "dependencies": [
+          "per",
+          "productions",
+          "project_tasks",
+          "workspace_members",
+          "project_milestones",
+          "access",
+          "location_access",
+          "scopes_of_work",
+          "approval_requests",
+          "information_schema"
+        ],
+        "content": "-- Migration 104: Fix Supabase Performance Warnings\n-- Created: 2025-10-21\n-- Purpose: Resolve auth RLS initplan, multiple permissive policies, and duplicate index warnings\n-- Impact: Improves query performance at scale by optimizing RLS policies and indexes\n\n-- ============================================================================\n-- PART 1: FIX AUTH RLS INITPLAN WARNINGS\n-- ============================================================================\n-- Replace auth.uid() with (select aut"
+      },
+      {
+        "filename": "20251015000000_finance_optimization_ramp_runway.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "20251015000000 finance optimization ramp runway",
+        "size": 34134,
+        "tables": 19,
+        "policies": 19,
+        "indexes": 62,
+        "functions": 0,
+        "dependencies": [
+          "enhances",
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "productions",
+          "IN",
+          "auth",
+          "spending_policies",
+          "financial_transactions",
+          "expense_items"
+        ],
+        "content": "-- =============================================\n-- FINANCE MODULE OPTIMIZATION\n-- Ramp + Runway + Prism.fm Integration\n-- Migration: 20251015000000\n-- =============================================\n-- \n-- This migration enhances the Finance module to be competitive with:\n-- - Ramp.com: Spend management, policy enforcement, automated approvals\n-- - Runway.com: FP&A, scenario planning, forecasting, variance analysis\n-- - Prism.fm: Show settlements, deal tracking, financial insights\n--\n-- ========="
+      },
+      {
+        "filename": "20251015010000_inventory_sortly_optimization.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "20251015010000",
+        "size": 24239,
+        "tables": 6,
+        "policies": 12,
+        "indexes": 31,
+        "functions": 4,
+        "dependencies": [
+          "by",
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "inventory_folders",
+          "A",
+          "association",
+          "locations",
+          "auth",
+          "assets"
+        ],
+        "content": "-- =============================================\n-- INVENTORY MODULE OPTIMIZATION - Sortly Competitive Features\n-- Migration: 20251015010000\n-- \n-- Enhancements:\n-- 1. Photo management (up to 8 photos per item)\n-- 2. Barcode/QR code support with generation\n-- 3. Folder/subfolder organization by location\n-- 4. Low stock alerts and thresholds\n-- 5. Enhanced custom fields\n-- 6. Location-based tracking\n-- 7. Item variants and conditions\n-- 8. Stock movement history\n-- 9. Export-ready views\n-- ======"
+      },
+      {
+        "filename": "20251023000001_remove_duplicate_location_access_index.sql",
+        "location": "active",
+        "category": "performance",
+        "description": "Remove Duplicate Index on location_access",
+        "size": 491,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "location_access",
+          "location_id",
+          "migration"
+        ],
+        "content": "-- Migration: Remove Duplicate Index on location_access\n-- Issue: Table location_access has duplicate indexes on location_id column\n-- Resolution: Drop idx_location_access_location_id (from migration 121)\n--            Keep idx_location_access_location (from migration 005)\n-- Created: 2025-10-23\n\n-- Drop the duplicate index\nDROP INDEX IF EXISTS idx_location_access_location_id;\n\n-- Verify the original index still exists\n-- idx_location_access_location (from migration 005) remains active\n"
+      },
+      {
+        "filename": "116_add_foreign_key_indexes_deferred.sql",
+        "location": "deprecated",
+        "category": "performance",
+        "description": "Add Foreign Key Indexes (Safe Version)",
+        "size": 4098,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 1,
+        "functions": 1,
+        "dependencies": [
+          "create_index_if_column_exists",
+          "information_schema"
+        ],
+        "content": "-- Migration 116: Add Foreign Key Indexes (Safe Version)\nCREATE OR REPLACE FUNCTION create_index_if_column_exists(p_table text, p_column text, p_index text) RETURNS void AS $$\nBEGIN\n  IF EXISTS (SELECT 1 FROM information_schema.columns WHERE table_schema='public' AND table_name=p_table AND column_name=p_column) THEN\n    EXECUTE format('CREATE INDEX IF NOT EXISTS %I ON %I(%I)', p_index, p_table, p_column);\n  END IF;\nEND;\n$$ LANGUAGE plpgsql;\n\n-- Apply all indexes (only creates if column exists)\nS"
+      },
+      {
+        "filename": "121_add_remaining_foreign_key_indexes_deferred.sql",
+        "location": "deprecated",
+        "category": "performance",
+        "description": "Add Remaining Foreign Key Indexes",
+        "size": 9895,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 1,
+        "functions": 1,
+        "dependencies": [
+          "from",
+          "create_index_if_column_exists",
+          "information_schema",
+          "DROP",
+          "IF"
+        ],
+        "content": "-- Migration 121: Add Remaining Foreign Key Indexes\n-- Created: 2025-10-22\n-- Purpose: Add indexes for all remaining unindexed foreign keys\n-- Impact: Resolves 200+ unindexed foreign key warnings\n\n-- Reuse the helper function from migration 116\nCREATE OR REPLACE FUNCTION create_index_if_column_exists(p_table text, p_column text, p_index text) \nRETURNS void AS $$\nBEGIN\n  IF EXISTS (\n    SELECT 1 FROM information_schema.columns \n    WHERE table_schema='public' AND table_name=p_table AND column_nam"
+      },
+      {
+        "filename": "122_drop_unused_indexes_deferred.sql",
+        "location": "deprecated",
+        "category": "performance",
+        "description": "Drop Unused Indexes",
+        "size": 4828,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [],
+        "content": "-- Migration 122: Drop Unused Indexes\n-- Created: 2025-10-22\n-- Purpose: Remove indexes that have never been used\n-- Impact: Reduces database overhead and improves write performance\n\n-- Drop unused indexes that have never been scanned\n-- These indexes consume space and slow down writes without providing query benefits\n\n-- People module unused indexes\nDROP INDEX IF EXISTS idx_people_keyboard_shortcuts_workspace_id;\nDROP INDEX IF EXISTS idx_people_keyboard_shortcuts_status;\nDROP INDEX IF EXISTS id"
+      },
+      {
+        "filename": "127_restore_workspace_indexes_deferred.sql",
+        "location": "deprecated",
+        "category": "performance",
+        "description": "Re-create workspace_id indexes that were incorrectly dropped in migration 126",
+        "size": 4820,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 29,
+        "functions": 0,
+        "dependencies": [
+          "pg_stat_user_indexes",
+          "traffic",
+          "restores",
+          "insight_forecasts",
+          "insight_patterns",
+          "insight_recommendations",
+          "insight_scenarios",
+          "insight_segments",
+          "insight_summaries",
+          "insight_what_if"
+        ],
+        "content": "-- =====================================================================================\n-- Migration: 127_restore_workspace_indexes.sql\n-- Description: Re-create workspace_id indexes that were incorrectly dropped in migration 126\n-- \n-- EXPLANATION: Migration 126 dropped workspace_id indexes based on pg_stat_user_indexes\n-- showing idx_scan = 0. However, this is misleading because:\n-- 1. The database has no production traffic yet\n-- 2. Foreign key indexes are ALWAYS needed for referential integ"
+      }
+    ],
+    "features": [
+      {
+        "filename": "20251013192000_add_workspace_id_to_resources.sql",
+        "location": "active",
+        "category": "features",
+        "description": "020",
+        "size": 4514,
+        "tables": 0,
+        "policies": 12,
+        "indexes": 4,
+        "functions": 0,
+        "dependencies": [
+          "code",
+          "workspaces",
+          "DELETE",
+          "courses",
+          "grants",
+          "marketplace_products",
+          "workspace_members",
+          "COLUMN"
+        ],
+        "content": "-- =============================================\n-- Fix missing workspace_id columns\n-- Migration: 020\n-- =============================================\n-- Adds workspace_id to courses, grants, and marketplace_products tables\n-- These tables were missing workspace_id but the application code expects it\n\n-- Add workspace_id to courses table\nALTER TABLE courses\nADD COLUMN workspace_id UUID REFERENCES workspaces(id) ON DELETE CASCADE;\n\n-- Add workspace_id to grants table\nALTER TABLE grants\nADD COLUM"
+      },
+      {
+        "filename": "20251014060000_create_agreements_table.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251014060000 create agreements table",
+        "size": 3964,
+        "tables": 1,
+        "policies": 4,
+        "indexes": 5,
+        "functions": 0,
+        "dependencies": [
+          "scopes",
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "companies",
+          "document_url",
+          "auth",
+          "agreements",
+          "user_roles",
+          "roles"
+        ],
+        "content": "-- Create agreements table for procurement module\n-- Agreements are different from scopes of work:\n-- - Agreements: Master Service Agreements, Framework Agreements, Blanket Purchase Agreements\n-- - Scopes of Work: Project-specific deliverables and contracts\n\nCREATE TABLE agreements (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    \n    -- Agreement details\n    name TEXT NOT NULL,\n    agreement_type TEXT NOT NULL C"
+      },
+      {
+        "filename": "20251015000001_work_orders_system.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015000001",
+        "size": 7818,
+        "tables": 2,
+        "policies": 6,
+        "indexes": 8,
+        "functions": 1,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "productions",
+          "job_contracts",
+          "project_tasks",
+          "companies",
+          "auth",
+          "work_orders",
+          "ON"
+        ],
+        "content": "-- =============================================\n-- WORK ORDERS SYSTEM - Core HeyPros Feature\n-- Migration: 20251015000001\n-- =============================================\n-- Fast dispatching, scheduling, and subcontractor management\n\n-- =============================================\n-- WORK ORDERS\n-- =============================================\n\nCREATE TABLE work_orders (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCAD"
+      },
+      {
+        "filename": "20251015000002_subcontractor_compliance.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015000002",
+        "size": 12527,
+        "tables": 4,
+        "policies": 8,
+        "indexes": 11,
+        "functions": 2,
+        "dependencies": [
+          "companies",
+          "DELETE",
+          "workspaces",
+          "authorized_categories",
+          "files",
+          "verified_by",
+          "auth",
+          "RULES",
+          "TEXT",
+          "auto_verify_on_upload"
+        ],
+        "content": "-- =============================================\n-- SUBCONTRACTOR COMPLIANCE TRACKING\n-- Migration: 20251015000002\n-- =============================================\n-- Track subcontractor documents, compliance, ratings, and authorization\n\n-- =============================================\n-- SUBCONTRACTOR PROFILES\n-- =============================================\n\nCREATE TABLE subcontractor_profiles (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    company_id UUID NOT NULL UNIQUE REFERENCES c"
+      },
+      {
+        "filename": "20251015000003_communication_invoicing.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015000003",
+        "size": 14851,
+        "tables": 6,
+        "policies": 12,
+        "indexes": 18,
+        "functions": 1,
+        "dependencies": [
+          "THREADS",
+          "history",
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "auth",
+          "communication_threads",
+          "company_id",
+          "companies",
+          "work_orders"
+        ],
+        "content": "-- =============================================\n-- COMMUNICATION THREADS & INVOICE MANAGEMENT\n-- Migration: 20251015000003\n-- =============================================\n-- Searchable communication history and one-click invoicing\n\n-- =============================================\n-- COMMUNICATION THREADS\n-- =============================================\n\nCREATE TABLE communication_threads (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(i"
+      },
+      {
+        "filename": "20251015000004_checklists_workflows.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015000004",
+        "size": 16911,
+        "tables": 7,
+        "policies": 14,
+        "indexes": 14,
+        "functions": 2,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "rules",
+          "auth",
+          "checklist_templates",
+          "checklists",
+          "approval_workflows",
+          "resolved_at",
+          "approval_requests"
+        ],
+        "content": "-- =============================================\n-- CHECKLISTS & APPROVAL WORKFLOWS\n-- Migration: 20251015000004\n-- =============================================\n-- Automated checklists, reminders, and standardized approval processes\n\n-- =============================================\n-- CHECKLIST TEMPLATES\n-- =============================================\n\nCREATE TABLE checklist_templates (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) "
+      },
+      {
+        "filename": "20251015000005_cost_tracking_recruiting.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015000005",
+        "size": 14993,
+        "tables": 4,
+        "policies": 8,
+        "indexes": 16,
+        "functions": 4,
+        "dependencies": [
+          "and",
+          "workspaces",
+          "DELETE",
+          "TEXT",
+          "project_cost_categories",
+          "productions",
+          "companies",
+          "auth",
+          "compensation_type",
+          "deadline"
+        ],
+        "content": "-- =============================================\n-- ENHANCED COST TRACKING & RECRUITING\n-- Migration: 20251015000005\n-- =============================================\n-- Automatic cost aggregation and subcontractor recruiting/hiring\n\n-- =============================================\n-- ENHANCED COST TRACKING\n-- =============================================\n\nCREATE TABLE project_cost_categories (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces"
+      },
+      {
+        "filename": "20251015000006_consolidate_remove_job_tables.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015000006",
+        "size": 3083,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "removes",
+          "QUERY",
+          "to",
+          "information_schema",
+          "SCHEMA"
+        ],
+        "content": "-- =============================================\n-- CONSOLIDATE: Remove Old Job-Specific Tables\n-- Migration: 20251015000006\n-- =============================================\n-- \n-- This migration removes the old job-specific tables that are now\n-- replaced by general-purpose tables created in migrations 20251015000001-5\n--\n-- OLD SYSTEM (Being Removed):\n-- - job_work_orders → work_orders\n-- - job_estimates → estimates\n-- - job_invoices → subcontractor_invoices\n-- - job_compliance_documents → sub"
+      },
+      {
+        "filename": "20251015020000_inventory_functions.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015020000",
+        "size": 16620,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 10,
+        "dependencies": [
+          "adjust_inventory_stock",
+          "TEXT",
+          "inventory_items",
+          "transfer_inventory_stock",
+          "search_inventory_by_code",
+          "inventory_folders",
+          "f",
+          "generate_item_qr_code",
+          "update_inventory_photos",
+          "get_inventory_dashboard_metrics"
+        ],
+        "content": "-- =============================================\n-- INVENTORY MODULE FUNCTIONS\n-- Migration: 20251015020000\n--\n-- Database functions for inventory operations:\n-- 1. Stock adjustments and movements\n-- 2. Barcode/QR search and lookup\n-- 3. Inventory reports and exports\n-- 4. Batch operations\n-- =============================================\n\n-- =============================================\n-- STOCK ADJUSTMENT FUNCTION\n-- =============================================\n\nCREATE OR REPLACE FUNCTION adju"
+      },
+      {
+        "filename": "20251015030000_inventory_storage_policies.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015030000",
+        "size": 4580,
+        "tables": 0,
+        "policies": 4,
+        "indexes": 0,
+        "functions": 1,
+        "dependencies": [
+          "storage",
+          "workspaces",
+          "organization_members",
+          "WHEN",
+          "skipped",
+          "FOR",
+          "to",
+          "cleanup_inventory_photos",
+          "inventory_items",
+          "FUNCTION"
+        ],
+        "content": "-- =============================================\n-- INVENTORY PHOTOS STORAGE POLICIES\n-- Migration: 20251015030000\n--\n-- Storage policies for inventory-photos bucket\n-- Enables workspace-scoped photo management\n-- =============================================\n\n-- =============================================\n-- STORAGE POLICIES FOR INVENTORY-PHOTOS BUCKET\n-- =============================================\n\n-- Note: Storage policies require proper permissions\n-- If these fail, they should be create"
+      },
+      {
+        "filename": "20251015210000_add_missing_profile_foreign_keys.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251015210000",
+        "size": 14663,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 9,
+        "functions": 0,
+        "dependencies": [
+          "user",
+          "information_schema",
+          "profiles",
+          "DELETE",
+          "estimates",
+          "subcontractor_invoices",
+          "work_orders",
+          "project_costs",
+          "ADVANCES",
+          "production_advances"
+        ],
+        "content": "-- =====================================================\n-- ADD MISSING PROFILE FOREIGN KEY CONSTRAINTS\n-- Migration: 20251015210000\n-- Date: 2025-10-15\n-- =====================================================\n-- \n-- Purpose: Add missing foreign key constraints from user-referencing \n-- columns to profiles(id) to enable PostgREST relationship discovery.\n-- This fixes remaining \"Could not find a relationship\" errors.\n-- =====================================================\n\n-- ==================="
+      },
+      {
+        "filename": "20251023000000_background_jobs_pg_cron.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251023000000 background jobs pg cron",
+        "size": 6908,
+        "tables": 2,
+        "policies": 1,
+        "indexes": 2,
+        "functions": 3,
+        "dependencies": [
+          "extension",
+          "IF",
+          "SCHEMA",
+          "TO",
+          "invitations",
+          "Sunday",
+          "audit_logs",
+          "auth",
+          "CONFLICT",
+          "to"
+        ],
+        "content": "-- Enable pg_cron extension for background job scheduling\n-- This allows automated tasks like cleanup, notifications, analytics aggregation, etc.\n\n-- Enable the pg_cron extension\nCREATE EXTENSION IF NOT EXISTS pg_cron;\n\n-- Grant usage to postgres role\nGRANT USAGE ON SCHEMA cron TO postgres;\n\n-- ============================================================================\n-- SCHEDULED JOBS\n-- ============================================================================\n\n-- Job 1: Clean up expired i"
+      },
+      {
+        "filename": "20251025_add_billing_cycle_to_subscriptions.sql",
+        "location": "active",
+        "category": "features",
+        "description": "20251025 add billing cycle to subscriptions",
+        "size": 1180,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 1,
+        "functions": 0,
+        "dependencies": [
+          "information_schema",
+          "subscriptions",
+          "COLUMN"
+        ],
+        "content": "-- =====================================================\n-- ADD BILLING CYCLE TO SUBSCRIPTIONS\n-- =====================================================\n-- Add billing_cycle field to track monthly vs annual billing\n-- =====================================================\n\n-- Add billing_cycle column if it doesn't exist\nDO $$ \nBEGIN\n  IF NOT EXISTS (\n    SELECT 1 FROM information_schema.columns \n    WHERE table_name = 'subscriptions' \n    AND column_name = 'billing_cycle'\n  ) THEN\n    ALTER TABLE "
+      },
+      {
+        "filename": "20251020124531_create_missing_tables_partial.sql",
+        "location": "deprecated",
+        "category": "features",
+        "description": "20251020124531 create missing tables partial",
+        "size": 296558,
+        "tables": 95,
+        "policies": 380,
+        "indexes": 380,
+        "functions": 0,
+        "dependencies": [
+          "creates",
+          "information_schema",
+          "auth",
+          "rules",
+          "workspaces",
+          "DELETE",
+          "metadata",
+          "TEXT",
+          "data",
+          "automations"
+        ],
+        "content": "-- Create Missing Database Tables\n-- Generated: 2025-10-20T12:45:31.490Z\n-- Total Tables: 95\n\n-- This migration creates all missing database tables identified in the audit\n-- Each table includes:\n-- - Standard fields (id, workspace_id, name, description, status)\n-- - JSONB fields for flexible data storage\n-- - Audit fields (created_at, updated_at, created_by, updated_by)\n-- - Soft delete support (deleted_at, deleted_by)\n-- - Appropriate indexes for performance\n-- - Row Level Security (RLS) polic"
+      }
+    ],
+    "enhancements": [
+      {
+        "filename": "20251103183000_field_comments.sql",
+        "location": "active",
+        "category": "enhancements",
+        "description": "20251103183000 field comments",
+        "size": 5161,
+        "tables": 1,
+        "policies": 4,
+        "indexes": 5,
+        "functions": 3,
+        "dependencies": [
+          "specific",
+          "auth",
+          "DELETE",
+          "context",
+          "organizations",
+          "field_comments",
+          "pg_policies",
+          "organization_members",
+          "to",
+          "update_field_comments_updated_at"
+        ],
+        "content": "-- Field-Level Comments System\n-- Allows users to comment on specific fields within records\n\n-- Create field_comments table\nCREATE TABLE IF NOT EXISTS field_comments (\n  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  \n  -- Reference to the record and field\n  table_name TEXT NOT NULL,\n  record_id UUID NOT NULL,\n  field_name TEXT NOT NULL,\n  \n  -- Comment content\n  content TEXT NOT NULL,\n  \n  -- User who created the comment\n  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,\n  \n"
+      },
+      {
+        "filename": "20251103183100_presence_system.sql",
+        "location": "active",
+        "category": "enhancements",
+        "description": "20251103183100 presence system",
+        "size": 4220,
+        "tables": 1,
+        "policies": 2,
+        "indexes": 3,
+        "functions": 2,
+        "dependencies": [
+          "auth",
+          "DELETE",
+          "organizations",
+          "information_schema",
+          "user_presence",
+          "pg_policies",
+          "organization_members",
+          "to",
+          "update_user_presence",
+          "CONFLICT"
+        ],
+        "content": "-- Real-time Presence System\n\nCREATE TABLE IF NOT EXISTS user_presence (\n  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,\n  workspace_id UUID,\n  page_url TEXT,\n  is_active BOOLEAN NOT NULL DEFAULT true,\n  last_seen_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n  metadata JSONB DEFAULT '{}',\n  organization_id UUID REFERENCES organizations(id) ON DELETE CASCADE,\n  CONSTRAINT user_presence_user_workspace_unique UNIQUE (user_id, workspace"
+      },
+      {
+        "filename": "20251103183200_public_dashboard_sharing.sql",
+        "location": "active",
+        "category": "enhancements",
+        "description": "20251103183200 public dashboard sharing",
+        "size": 3577,
+        "tables": 1,
+        "policies": 4,
+        "indexes": 3,
+        "functions": 1,
+        "dependencies": [
+          "auth",
+          "DELETE",
+          "context",
+          "organizations",
+          "public_dashboard_shares",
+          "organization_members",
+          "to",
+          "validate_public_share_access",
+          "supabase_realtime",
+          "FUNCTION"
+        ],
+        "content": "-- Public Dashboard Sharing System\n-- Allows dashboards to be shared publicly with unique URLs\n\nCREATE TABLE IF NOT EXISTS public_dashboard_shares (\n  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  \n  -- Dashboard reference\n  dashboard_id UUID NOT NULL,\n  \n  -- Unique share token\n  share_token TEXT NOT NULL UNIQUE DEFAULT encode(gen_random_bytes(32), 'base64'),\n  \n  -- Share settings\n  is_active BOOLEAN NOT NULL DEFAULT true,\n  password_hash TEXT,\n  expires_at TIMESTAMPTZ,\n  \n  -- Access track"
+      },
+      {
+        "filename": "20251103183300_rollup_fields.sql",
+        "location": "active",
+        "category": "enhancements",
+        "description": "20251103183300 rollup fields",
+        "size": 1840,
+        "tables": 1,
+        "policies": 1,
+        "indexes": 2,
+        "functions": 1,
+        "dependencies": [
+          "Fields",
+          "organizations",
+          "DELETE",
+          "rollup_field_definitions",
+          "organization_members",
+          "to",
+          "calculate_rollup",
+          "FUNCTION"
+        ],
+        "content": "-- Rollup & Aggregation Fields System\n\nCREATE TABLE IF NOT EXISTS rollup_field_definitions (\n  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  name TEXT NOT NULL,\n  source_table TEXT NOT NULL,\n  target_table TEXT NOT NULL,\n  link_field TEXT NOT NULL,\n  aggregation_type TEXT NOT NULL CHECK (aggregation_type IN ('SUM', 'AVG', 'COUNT', 'MIN', 'MAX', 'CONCAT')),\n  source_field TEXT,\n  filter_conditions JSONB,\n  organization_id UUID REFERENCES organizations(id) ON DELETE CASCADE,\n  created_at TIMEST"
+      },
+      {
+        "filename": "20251103183400_sso_saml.sql",
+        "location": "active",
+        "category": "enhancements",
+        "description": "20251103183400 sso saml",
+        "size": 2199,
+        "tables": 2,
+        "policies": 2,
+        "indexes": 4,
+        "functions": 0,
+        "dependencies": [
+          "System",
+          "organizations",
+          "DELETE",
+          "sso_providers",
+          "CREATE",
+          "organization_members",
+          "sso_login_attempts"
+        ],
+        "content": "-- SSO/SAML Configuration System\n\nCREATE TABLE IF NOT EXISTS sso_providers (\n  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  name TEXT NOT NULL,\n  provider_type TEXT NOT NULL CHECK (provider_type IN ('SAML', 'OIDC', 'OAuth2')),\n  is_active BOOLEAN NOT NULL DEFAULT true,\n  config JSONB NOT NULL,\n  organization_id UUID NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,\n  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n  CONSTRAINT sso_provid"
+      },
+      {
+        "filename": "20251103183500_version_history.sql",
+        "location": "active",
+        "category": "enhancements",
+        "description": "20251103183500 version history",
+        "size": 2127,
+        "tables": 1,
+        "policies": 1,
+        "indexes": 3,
+        "functions": 1,
+        "dependencies": [
+          "History",
+          "auth",
+          "DELETE",
+          "organizations",
+          "version_history",
+          "history",
+          "organization_members",
+          "to",
+          "snapshot",
+          "create_version_snapshot"
+        ],
+        "content": "-- Version History System\n\nCREATE TABLE IF NOT EXISTS version_history (\n  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  table_name TEXT NOT NULL,\n  record_id UUID NOT NULL,\n  version_number INTEGER NOT NULL DEFAULT 1,\n  changes JSONB NOT NULL,\n  previous_data JSONB,\n  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,\n  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),\n  organization_id UUID REFERENCES organizations(id) ON DELETE CASCADE,\n  CONSTRAINT version_history_unique UNIQU"
+      },
+      {
+        "filename": "20251104183600_gated_invite_waitlist_system.sql",
+        "location": "active",
+        "category": "enhancements",
+        "description": "20251104183600 gated invite waitlist system",
+        "size": 15274,
+        "tables": 3,
+        "policies": 9,
+        "indexes": 12,
+        "functions": 5,
+        "dependencies": [
+          "prospective",
+          "email",
+          "use_case",
+          "auth",
+          "DELETE",
+          "Tracking",
+          "invitations",
+          "waitlist",
+          "TABLE",
+          "COLUMN"
+        ],
+        "content": "-- =====================================================\n-- GATED INVITE & WAITLIST SYSTEM\n-- =====================================================\n-- Implements comprehensive waitlist and invite code system\n-- to restrict platform access to invited users only\n-- Version: 1.0\n-- Created: 2025-01-24\n-- =====================================================\n\n-- =====================================================\n-- 1. WAITLIST TABLE\n-- =====================================================\n-- Stor"
+      },
+      {
+        "filename": "20251104214000_workflow_remediation_tables.sql",
+        "location": "active",
+        "category": "enhancements",
+        "description": "20251104214000",
+        "size": 29338,
+        "tables": 11,
+        "policies": 29,
+        "indexes": 45,
+        "functions": 0,
+        "dependencies": [
+          "the",
+          "name",
+          "TEXT",
+          "asset_type",
+          "auth",
+          "asset_catalog",
+          "user_roles",
+          "roles",
+          "ur",
+          "update_updated_at"
+        ],
+        "content": "-- =============================================\n-- WORKFLOW REMEDIATION: Missing Critical Tables\n-- Migration: 20251104214000\n-- Date: November 4, 2025\n-- Purpose: Create 11 missing tables to complete workflow infrastructure\n-- =============================================\n\n-- =============================================\n-- 1. ASSET CATALOG TABLE (BESPOKE GLOBAL CATALOG)\n-- =============================================\n-- Purpose: Global reference catalog of all available asset types\n-- This i"
+      }
+    ],
+    "fixes": [
+      {
+        "filename": "067_fix_profile_foreign_keys.sql",
+        "location": "active",
+        "category": "fixes",
+        "description": "067",
+        "size": 468,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "is",
+          "numbering"
+        ],
+        "content": "-- =====================================================\n-- FIX PROFILE FOREIGN KEY CONSTRAINTS (SAFE VERSION)\n-- Migration: 067\n-- Date: 2025-10-19\n-- =====================================================\n-- Skipped - tables created in later migrations\n-- This migration is intentionally empty to maintain migration numbering\n-- Foreign keys will be added when tables are created\n-- =====================================================\n\nSELECT 1; -- No-op migration\n"
+      },
+      {
+        "filename": "068_fix_missing_tables_and_relationships.sql",
+        "location": "active",
+        "category": "fixes",
+        "description": "068 fix missing tables and relationships",
+        "size": 18538,
+        "tables": 4,
+        "policies": 8,
+        "indexes": 33,
+        "functions": 2,
+        "dependencies": [
+          "adds",
+          "and",
+          "issues",
+          "system",
+          "BIM",
+          "locations",
+          "DELETE",
+          "workspaces",
+          "TEXT",
+          "files"
+        ],
+        "content": "-- =============================================\n-- FIX MISSING TABLES AND RELATIONSHIPS\n-- Migration: 068\n-- Date: 2025-10-15\n-- =============================================\n-- This migration adds missing tables that are referenced in the UI:\n-- 1. location_bim_models - BIM Models for locations\n-- 2. location_bim_clashes - Clash detection and coordination issues\n-- 3. location_features - Spatial features and GIS layers\n-- 4. file_folders - File organization system\n-- =========================="
+      },
+      {
+        "filename": "091_fix_all_function_errors.sql",
+        "location": "active",
+        "category": "fixes",
+        "description": "091 fix all function errors",
+        "size": 9501,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 8,
+        "dependencies": [
+          "ERRORS",
+          "errors",
+          "linter",
+          "check_plan_limit",
+          "and",
+          "subscriptions",
+          "subscription_plans",
+          "productions",
+          "workspaces",
+          "organization_members"
+        ],
+        "content": "-- =====================================================\n-- FIX ALL FUNCTION ERRORS - ZERO TOLERANCE\n-- =====================================================\n-- Fixes all remaining database function errors from linter\n-- =====================================================\n\n-- 1. Fix check_plan_limit - projects table doesn't exist, should be productions\nCREATE OR REPLACE FUNCTION check_plan_limit(\n  p_organization_id UUID,\n  p_limit_type TEXT -- 'productions', 'members', 'storage'\n) RETURNS BOO"
+      },
+      {
+        "filename": "092_fix_remaining_function_errors.sql",
+        "location": "active",
+        "category": "fixes",
+        "description": "092 fix remaining function errors",
+        "size": 1992,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 1,
+        "dependencies": [
+          "ERRORS",
+          "actual",
+          "has_permission",
+          "TEXT",
+          "user_roles",
+          "role_permissions",
+          "rp",
+          "permissions",
+          "p",
+          "permission_categories"
+        ],
+        "content": "-- =====================================================\n-- FIX REMAINING FUNCTION ERRORS - FINAL PASS\n-- =====================================================\n-- Fixes all remaining errors based on actual schema\n-- =====================================================\n\n-- 1. Fix has_permission - use slug instead of action, proper schema\nCREATE OR REPLACE FUNCTION has_permission(\n    p_user_id UUID,\n    p_permission_category TEXT,\n    p_permission_action TEXT,\n    p_resource UUID DEFAULT NULL\n)\n"
+      },
+      {
+        "filename": "093_fix_security_warnings_complete.sql",
+        "location": "active",
+        "category": "fixes",
+        "description": "093 fix security warnings complete",
+        "size": 30610,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "statements",
+          "signatures",
+          "the",
+          "pg_proc",
+          "check_advance_overdue",
+          "generate_run_of_show",
+          "get_personnel_hours",
+          "handle_new_user",
+          "update_work_order_actual_cost",
+          "update_compliance_doc_status"
+        ],
+        "content": "-- Generated ALTER FUNCTION statements for 63 functions\n-- Run this to get the actual function signatures from the database:\n\nDO $$\nDECLARE\n    func_sig TEXT;\nBEGIN\n    SELECT pg_get_function_identity_arguments(oid) INTO func_sig\n    FROM pg_proc \n    WHERE proname = 'check_advance_overdue' AND pronamespace = 'public'::regnamespace\n    LIMIT 1;\n    \n    IF func_sig IS NOT NULL THEN\n        EXECUTE format('ALTER FUNCTION check_advance_overdue(%s) SET search_path = ''''', func_sig);\n        RAISE "
+      },
+      {
+        "filename": "105_fix_all_warnings.sql",
+        "location": "active",
+        "category": "fixes",
+        "description": "Fix All Remaining Supabase Warnings",
+        "size": 20190,
+        "tables": 0,
+        "policies": 10,
+        "indexes": 50,
+        "functions": 1,
+        "dependencies": [
+          "information_schema",
+          "activations",
+          "agreements",
+          "ai_recommendations",
+          "analytics_comparisons",
+          "analytics_custom_views",
+          "analytics_metrics_library",
+          "analytics_pivot_tables",
+          "analytics_trends",
+          "analytics_views"
+        ],
+        "content": "-- Migration 105: Fix All Remaining Supabase Warnings\n-- Created: 2025-10-21\n-- Purpose: Comprehensive fix for unindexed foreign keys, RLS policies, and security warnings\n-- Impact: Improves performance, security, and eliminates all linter warnings\n\n-- ============================================================================\n-- PART 1: CREATE INDEXES FOR UNINDEXED FOREIGN KEYS (SAFE)\n-- ============================================================================\n-- Using DO blocks to handle n"
+      },
+      {
+        "filename": "110_resolve_database_linter_issues.sql",
+        "location": "active",
+        "category": "fixes",
+        "description": "Safely resolve Supabase database linter issues",
+        "size": 12589,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 2,
+        "functions": 1,
+        "dependencies": [
+          "to",
+          "create_index_if_table_exists",
+          "pg_tables",
+          "public",
+          "DROP",
+          "IF",
+          "COMMENTS",
+          "safely",
+          "performance",
+          "time"
+        ],
+        "content": "-- =====================================================\n-- Migration: 110_resolve_database_linter_issues_safe.sql\n-- Description: Safely resolve Supabase database linter issues\n-- - Add indexes for unindexed foreign keys (performance)\n-- - Remove unused indexes (reduce write overhead)\n-- - All operations wrapped in table existence checks\n-- =====================================================\n\n-- =====================================================\n-- PART 1: ADD INDEXES FOR UNINDEXED FOREIGN"
+      },
+      {
+        "filename": "20251013182249_fix_organizations_select_policy.sql",
+        "location": "active",
+        "category": "fixes",
+        "description": "20251013182249 fix organizations select policy",
+        "size": 469,
+        "tables": 0,
+        "policies": 1,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "during",
+          "organizations"
+        ],
+        "content": "-- Fix: Organizations SELECT policy blocking workspace creation during onboarding\n-- Issue: INSERT...RETURNING failed because SELECT policy required membership before user was added\n-- Solution: Allow all authenticated users to SELECT organizations (read-only is safe)\n\nDROP POLICY IF EXISTS \"Users can view their organizations\" ON organizations;\nCREATE POLICY \"Users can view their organizations\"\n    ON organizations FOR SELECT\n    TO authenticated\n    USING (true);\n"
+      },
+      {
+        "filename": "067_fix_profile_foreign_keys.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "067",
+        "size": 15535,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 9,
+        "functions": 0,
+        "dependencies": [
+          "user",
+          "information_schema",
+          "profiles",
+          "DELETE",
+          "work_orders",
+          "project_costs",
+          "ADVANCES",
+          "production_advances",
+          "subcontractor_reviews",
+          "estimates"
+        ],
+        "content": "-- =====================================================\n-- FIX PROFILE FOREIGN KEY CONSTRAINTS\n-- Migration: 067\n-- Date: 2025-10-15\n-- =====================================================\n-- \n-- Purpose: Add missing foreign key constraints from user-referencing \n-- columns to profiles(id) to enable PostgREST relationship discovery.\n--\n-- This fixes \"Could not find a relationship between X and 'profiles'\" errors\n-- =====================================================\n\n-- ====================="
+      },
+      {
+        "filename": "110_resolve_database_linter_issues_old.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "Resolve Supabase database linter issues",
+        "size": 13230,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 52,
+        "functions": 0,
+        "dependencies": [
+          "pg_tables",
+          "hiring_application_responses",
+          "hiring_applications",
+          "hospitality_reservations",
+          "ON",
+          "insight_alerts",
+          "insight_anomalies",
+          "insight_correlations",
+          "insight_forecasts",
+          "insight_patterns"
+        ],
+        "content": "-- =====================================================\n-- Migration: 110_resolve_database_linter_issues.sql\n-- Description: Resolve Supabase database linter issues\n-- - Add indexes for unindexed foreign keys (performance)\n-- - Remove unused indexes (reduce write overhead)\n-- =====================================================\n\n-- =====================================================\n-- PART 1: ADD INDEXES FOR UNINDEXED FOREIGN KEYS\n-- =====================================================\n\n--"
+      },
+      {
+        "filename": "115_fix_final_12_warnings_deferred.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "Fix Final 12 Auth RLS Warnings",
+        "size": 2718,
+        "tables": 0,
+        "policies": 3,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "people_keyboard_shortcuts",
+          "workspace_members",
+          "people_org_chart",
+          "project_calendar"
+        ],
+        "content": "-- Migration 115: Fix Final 12 Auth RLS Warnings\n-- Created: 2025-10-21\n-- Purpose: Fix the 3 tables that still have old separate policies\n-- Impact: Resolves final 15 warnings (12 auth + 3 duplicate)\n\n-- People keyboard shortcuts - drop old policies and create consolidated one\nDROP POLICY IF EXISTS \"Users can view people_keyboard_shortcuts in their workspace\" ON people_keyboard_shortcuts;\nDROP POLICY IF EXISTS \"Users can insert people_keyboard_shortcuts in their workspace\" ON people_keyboard_sh"
+      },
+      {
+        "filename": "117_fix_security_warnings_deferred.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "Fix Security Warnings",
+        "size": 944,
+        "tables": 0,
+        "policies": 1,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "permissions",
+          "CASCADE",
+          "information_schema"
+        ],
+        "content": "-- Migration 117: Fix Security Warnings\n-- Created: 2025-10-22\n-- Purpose: Remove SECURITY DEFINER views and enable RLS on permissions table\n-- Impact: Resolves 7 security warnings\n\n-- Drop all SECURITY DEFINER views\nDROP VIEW IF EXISTS inventory_valuation_by_folder CASCADE;\nDROP VIEW IF EXISTS items_requiring_attention CASCADE;\nDROP VIEW IF EXISTS active_alerts_summary CASCADE;\nDROP VIEW IF EXISTS production_summary CASCADE;\nDROP VIEW IF EXISTS project_summary CASCADE;\nDROP VIEW IF EXISTS stock"
+      },
+      {
+        "filename": "118_fix_function_search_path_deferred.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "Fix Function Search Path Security",
+        "size": 2906,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Search",
+          "pg_proc",
+          "pg_namespace",
+          "p",
+          "WHEN",
+          "pg_matviews",
+          "hierarchy_rollup",
+          "anon",
+          "authenticated"
+        ],
+        "content": "-- Migration 118: Fix Function Search Path Security\n-- Created: 2025-10-22\n-- Purpose: Add search_path to all functions and fix materialized view security\n-- Impact: Resolves 44 security warnings\n\n-- Set search_path for all functions using their full signatures from pg_proc\nDO $$\nDECLARE\n  func_record RECORD;\nBEGIN\n  FOR func_record IN\n    SELECT \n      p.oid,\n      n.nspname as schema_name,\n      p.proname as func_name,\n      pg_get_function_identity_arguments(p.oid) as func_args\n    FROM pg_pr"
+      },
+      {
+        "filename": "119_fix_materialized_view_security_deferred.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "Fix Materialized View Security",
+        "size": 1082,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "the",
+          "pg_matviews",
+          "public",
+          "hierarchy_rollup",
+          "PUBLIC",
+          "anon",
+          "authenticated",
+          "service_role",
+          "API"
+        ],
+        "content": "-- Migration 119: Fix Materialized View Security\n-- Created: 2025-10-22\n-- Purpose: Properly secure hierarchy_rollup materialized view\n-- Impact: Resolves materialized view API exposure warning\n\n-- The issue is that materialized views are exposed via PostgREST by default\n-- We need to completely revoke access from the API roles (anon, authenticated)\n-- and only allow access through specific functions or service role\n\nDO $$\nBEGIN\n  IF EXISTS (\n    SELECT 1 FROM pg_matviews \n    WHERE schemaname ="
+      },
+      {
+        "filename": "124_resolve_remaining_linter_issues_deferred.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "Resolve remaining Supabase database linter issues",
+        "size": 11933,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 53,
+        "functions": 0,
+        "dependencies": [
+          "job_contracts",
+          "job_interviews",
+          "job_offers",
+          "job_onboarding",
+          "job_openings",
+          "job_postings",
+          "job_requisitions",
+          "key_results",
+          "location_access",
+          "location_amenities"
+        ],
+        "content": "-- =====================================================================================\n-- Migration: 124_resolve_remaining_linter_issues.sql\n-- Description: Resolve remaining Supabase database linter issues\n-- - Add indexes for unindexed foreign keys (performance)\n-- - Remove unused indexes (reduce write overhead)\n-- =====================================================================================\n\n-- =====================================================================================\n-- "
+      },
+      {
+        "filename": "125_resolve_all_remaining_linter_issues_deferred.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "Resolve ALL remaining Supabase database linter issues (1227 issues)",
+        "size": 4495,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 29,
+        "functions": 0,
+        "dependencies": [
+          "insight_forecasts",
+          "insight_patterns",
+          "insight_recommendations",
+          "insight_scenarios",
+          "insight_segments",
+          "insight_summaries",
+          "insight_what_if",
+          "job_applications",
+          "job_candidates",
+          "job_interviews"
+        ],
+        "content": "-- =====================================================================================\n-- Migration: 125_resolve_all_remaining_linter_issues.sql  \n-- Description: Resolve ALL remaining Supabase database linter issues (1227 issues)\n-- Generated: 2025-10-23T14:12:40.155Z\n-- =====================================================================================\n\n-- =====================================================================================\n-- PART 1: ADD INDEXES FOR UNINDEXED FOREIGN KEYS"
+      },
+      {
+        "filename": "126_resolve_audit_foreign_keys_deferred.sql",
+        "location": "deprecated",
+        "category": "fixes",
+        "description": "Add indexes for audit trail foreign keys (created_by, updated_by, deleted_by)",
+        "size": 10765,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 70,
+        "functions": 0,
+        "dependencies": [
+          "location_zones",
+          "marketplace_favorites",
+          "marketplace_lists",
+          "marketplace_orders",
+          "marketplace_products",
+          "marketplace_purchases",
+          "marketplace_reviews",
+          "marketplace_sales",
+          "marketplace_services",
+          "marketplace_vendors"
+        ],
+        "content": "-- =====================================================================================\n-- Migration: 126_resolve_audit_foreign_keys.sql\n-- Description: Add indexes for audit trail foreign keys (created_by, updated_by, deleted_by)\n-- and remove workspace_id indexes that are not being used by the query planner\n-- =====================================================================================\n\n-- =====================================================================================\n-- PART 1"
+      }
+    ],
+    "unknown": [
+      {
+        "filename": "010_api_layer_functions.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "010",
+        "size": 16383,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 15,
+        "dependencies": [
+          "CHECK",
+          "CREATE",
+          "has_permission",
+          "TEXT",
+          "user_roles",
+          "roles",
+          "r",
+          "role_permissions",
+          "rp",
+          "permissions"
+        ],
+        "content": "-- =============================================\n-- LAYER 3: API LAYER - Custom RPC Functions\n-- Database Functions for Business Logic & Complex Queries\n-- Migration: 010\n-- =============================================\n\n-- =============================================\n-- PERMISSION CHECK FUNCTIONS\n-- =============================================\n\n-- Check if user has specific permission\nCREATE OR REPLACE FUNCTION has_permission(\n    p_user_id UUID,\n    p_permission_category TEXT,\n    p_permissi"
+      },
+      {
+        "filename": "012_missing_tab_features.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "012",
+        "size": 16827,
+        "tables": 12,
+        "policies": 0,
+        "indexes": 33,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "productions",
+          "TEXT",
+          "auth",
+          "tours",
+          "events",
+          "locations",
+          "personnel",
+          "payroll"
+        ],
+        "content": "-- =============================================\n-- MISSING TAB FEATURES FOR EXISTING MODULES\n-- Migration: 012\n-- =============================================\n\n-- =============================================\n-- EVENTS MODULE - Additional Features\n-- =============================================\n\n-- Tours (Multi-city tour schedules)\nCREATE TABLE tours (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    production_"
+      },
+      {
+        "filename": "013_onboarding_tracking.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "013 onboarding tracking",
+        "size": 4227,
+        "tables": 1,
+        "policies": 3,
+        "indexes": 3,
+        "functions": 2,
+        "dependencies": [
+          "tracking",
+          "auth",
+          "DELETE",
+          "theme",
+          "profiles",
+          "pg_tables",
+          "pg_policies",
+          "update_updated_at",
+          "to",
+          "user"
+        ],
+        "content": "-- =====================================================\n-- ONBOARDING TRACKING\n-- Adds onboarding completion tracking to profiles\n-- =====================================================\n\n-- Create profiles table if it doesn't exist\n-- This extends auth.users with additional user data\nCREATE TABLE IF NOT EXISTS profiles (\n    id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,\n    \n    -- Basic profile info\n    full_name TEXT,\n    avatar_url TEXT,\n    bio TEXT,\n    \n    -- Preferen"
+      },
+      {
+        "filename": "017_update_subscription_pricing.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "017 update subscription pricing",
+        "size": 7302,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "PRICING",
+          "plans",
+          "pg_tables",
+          "subscription_plans",
+          "TABLE",
+          "tiers"
+        ],
+        "content": "-- =====================================================\n-- UPDATE SUBSCRIPTION PRICING TIERS\n-- =====================================================\n-- Updates subscription plans with new pricing structure:\n-- - Network: Free Forever (Ambassador, Passenger)\n-- - Crew: $10/$12 monthly/annual (+ Merchant, Raider, Visitor)\n-- - Team: $20/$24 monthly/annual (+ Deviator)\n-- - Pro: $30/$36 monthly/annual (+ Navigator)\n-- - Core: $50/$60 monthly/annual (+ Aviator)\n-- - Executive: $100/$120 monthly/an"
+      },
+      {
+        "filename": "018_add_job_title_to_profiles.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "018 add job title to profiles",
+        "size": 668,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 2,
+        "functions": 0,
+        "dependencies": [
+          "profiles",
+          "the",
+          "COLUMN",
+          "COMPLETE"
+        ],
+        "content": "-- =====================================================\n-- ADD JOB_TITLE TO PROFILES\n-- Adds job_title column to profiles table for onboarding\n-- =====================================================\n\n-- Add job_title column to profiles table\nALTER TABLE profiles \nADD COLUMN IF NOT EXISTS job_title TEXT;\n\n-- Create index for faster queries\nCREATE INDEX IF NOT EXISTS idx_profiles_job_title ON profiles(job_title);\n\n-- Comment on the column\nCOMMENT ON COLUMN profiles.job_title IS 'User job title o"
+      },
+      {
+        "filename": "020_add_names_to_profiles.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "020",
+        "size": 2153,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 4,
+        "functions": 1,
+        "dependencies": [
+          "profiles",
+          "first",
+          "POSITION",
+          "to",
+          "handle_new_user",
+          "CONFLICT",
+          "COLUMN",
+          "COMPLETE"
+        ],
+        "content": "-- =====================================================\n-- ADD FIRST_NAME AND LAST_NAME TO PROFILES\n-- Fixes relationship errors for user joins\n-- Migration: 020\n-- =====================================================\n\n-- Add first_name and last_name columns to profiles table\nALTER TABLE profiles \nADD COLUMN IF NOT EXISTS first_name TEXT,\nADD COLUMN IF NOT EXISTS last_name TEXT;\n\n-- Create indexes for faster queries\nCREATE INDEX IF NOT EXISTS idx_profiles_first_name ON profiles(first_name);\nCR"
+      },
+      {
+        "filename": "024_travel_arrangements_table.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "024 travel arrangements table",
+        "size": 4476,
+        "tables": 1,
+        "policies": 2,
+        "indexes": 5,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "auth",
+          "productions",
+          "TEXT",
+          "travel_arrangements",
+          "ON",
+          "update_updated_at",
+          "organization_members",
+          "supabase_realtime"
+        ],
+        "content": "-- =============================================\n-- TRAVEL ARRANGEMENTS TABLE\n-- For My Travel dashboard tab\n-- =============================================\n\nCREATE TABLE travel_arrangements (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    \n    -- User and Project\n    user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,\n    production_id UUID REFERENCES productions(id) ON DELETE SET NULL,\n    \n    "
+      },
+      {
+        "filename": "025_add_workspace_id_to_company_contacts.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "025",
+        "size": 1758,
+        "tables": 0,
+        "policies": 2,
+        "indexes": 1,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "the",
+          "companies",
+          "ALTER",
+          "company_contacts",
+          "organization_members",
+          "COLUMN"
+        ],
+        "content": "-- =============================================\n-- Add workspace_id to company_contacts table\n-- Migration: 025\n-- Date: 2025-10-13\n-- =============================================\n\n-- Add workspace_id column to company_contacts\nALTER TABLE company_contacts \nADD COLUMN workspace_id UUID REFERENCES workspaces(id) ON DELETE CASCADE;\n\n-- Populate workspace_id from the parent company\nUPDATE company_contacts cc\nSET workspace_id = c.workspace_id\nFROM companies c\nWHERE cc.company_id = c.id;\n\n-- Make w"
+      },
+      {
+        "filename": "030_profiles_complete_fields.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "030 profiles complete fields",
+        "size": 5423,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 7,
+        "functions": 1,
+        "dependencies": [
+          "JSONB",
+          "profiles",
+          "to",
+          "sync_profile_full_name",
+          "OLD",
+          "first",
+          "POSITION",
+          "DROP",
+          "TABLE",
+          "including"
+        ],
+        "content": "-- =====================================================\n-- PROFILE FIELDS COMPLETION\n-- Adds all necessary fields for complete profile management\n-- =====================================================\n\n-- Add name fields\nALTER TABLE profiles ADD COLUMN IF NOT EXISTS first_name TEXT;\nALTER TABLE profiles ADD COLUMN IF NOT EXISTS last_name TEXT;\n\n-- Add contact fields\nALTER TABLE profiles ADD COLUMN IF NOT EXISTS phone TEXT;\nALTER TABLE profiles ADD COLUMN IF NOT EXISTS date_of_birth DATE;\n\n-- "
+      },
+      {
+        "filename": "031_profiles_extended_health_travel.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "031 profiles extended health travel",
+        "size": 4057,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 6,
+        "functions": 0,
+        "dependencies": [
+          "EXTENSIONS",
+          "TEXT",
+          "profiles",
+          "COLUMN",
+          "strings",
+          "needs",
+          "IS",
+          "for",
+          "preferences"
+        ],
+        "content": "-- =====================================================\n-- PROFILE EXTENDED FIELDS - Health & Travel\n-- Adds comprehensive health and travel management fields\n-- =====================================================\n\n-- =============================================\n-- HEALTH INFORMATION EXTENSIONS\n-- =============================================\n\n-- Add detailed health tracking fields\nALTER TABLE profiles ADD COLUMN IF NOT EXISTS dietary_restrictions JSONB DEFAULT '[]'::jsonb;\nALTER TABLE profi"
+      },
+      {
+        "filename": "032_add_profile_foreign_keys.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "032",
+        "size": 19852,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 15,
+        "functions": 0,
+        "dependencies": [
+          "all",
+          "profiles",
+          "DELETE",
+          "information_schema",
+          "report_templates",
+          "budgets",
+          "financial_transactions",
+          "production_advances",
+          "community_posts",
+          "connections"
+        ],
+        "content": "-- =====================================================\n-- ADD PROFILE FOREIGN KEY CONSTRAINTS\n-- Migration: 032\n-- Date: 2025-10-14\n-- =====================================================\n-- \n-- Purpose: Add explicit foreign key constraints from all user-referencing \n-- columns to profiles(id) to enable PostgREST relationship discovery.\n--\n-- Since profiles.id = auth.users.id (same UUID), these constraints are valid\n-- and enable automatic joins in Supabase queries without breaking existing\n-"
+      },
+      {
+        "filename": "034_refactor_production_advances.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "034",
+        "size": 8199,
+        "tables": 1,
+        "policies": 4,
+        "indexes": 13,
+        "functions": 1,
+        "dependencies": [
+          "ADVANCES",
+          "financial",
+          "advances",
+          "workspaces",
+          "DELETE",
+          "production_id",
+          "productions",
+          "companies",
+          "asset_category",
+          "assets"
+        ],
+        "content": "-- =============================================\n-- REFACTOR PRODUCTION ADVANCES MODULE\n-- Migration: 034\n-- Purpose: Refactor from financial advances to procurement-style production advances\n-- =============================================\n\n-- Drop existing production_advances table\nDROP TABLE IF EXISTS production_advances CASCADE;\n\n-- Create new production_advances table with procurement fields\nCREATE TABLE production_advances (\n    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n    workspace_"
+      },
+      {
+        "filename": "035_update_asset_categories.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "035",
+        "size": 1804,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 1,
+        "functions": 0,
+        "dependencies": [
+          "assets",
+          "COLUMN"
+        ],
+        "content": "-- =============================================\n-- UPDATE ASSET CATEGORIES\n-- Migration: 035\n-- Purpose: Add new asset categories for procurement-style advances\n-- =============================================\n\n-- Update assets table to include new category types\nALTER TABLE assets DROP CONSTRAINT IF EXISTS assets_type_check;\nALTER TABLE assets ADD CONSTRAINT assets_type_check CHECK (type IN (\n    'site_infrastructure',\n    'site_services', \n    'site_safety',\n    'site_vehicles',\n    'heavy_eq"
+      },
+      {
+        "filename": "040_add_related_names_field.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "040",
+        "size": 2876,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 1,
+        "functions": 1,
+        "dependencies": [
+          "descriptions",
+          "assets",
+          "FROM",
+          "LIKE",
+          "COLUMN",
+          "for",
+          "search_assets",
+          "TEXT",
+          "lowest",
+          "FUNCTION"
+        ],
+        "content": "-- =============================================\n-- ADD RELATED NAMES FIELD TO ASSETS\n-- Migration: 040\n-- Purpose: Separate searchable alternative names from descriptions\n-- =============================================\n\n-- Add related_names field for alternative/searchable names\nALTER TABLE assets ADD COLUMN IF NOT EXISTS related_names TEXT[] DEFAULT '{}';\n\n-- Create GIN index for efficient array searching\nCREATE INDEX IF NOT EXISTS idx_assets_related_names_gin ON assets USING gin (related_nam"
+      },
+      {
+        "filename": "041_comprehensive_site_infrastructure.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "041",
+        "size": 18767,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "and",
+          "CONFLICT",
+          "ModSpace",
+          "office",
+          "area",
+          "walls",
+          "desk",
+          "two",
+          "industry",
+          "vents"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE SITE INFRASTRUCTURE CATALOG\n-- Migration: 041\n-- Based on: ULine, Conex, ModSpace, Mobile Mini, Temps Only, Temps Unlimited\n-- =============================================\n\n-- Create global catalog organization and workspace for system-wide asset data\n-- First, create system user for created_by reference\nINSERT INTO auth.users (id, email, encrypted_password, email_confirmed_at, created_at, updated_at, raw_app_meta_data, raw_user_"
+      },
+      {
+        "filename": "042_comprehensive_site_services.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "042",
+        "size": 21363,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Generac",
+          "full",
+          "box",
+          "and",
+          "generator",
+          "load",
+          "panel",
+          "Lex",
+          "Box",
+          "breakouts"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE SITE SERVICES CATALOG\n-- Migration: 042\n-- Based on: Generac, Cummins, Atlas Copco, Progress Solar, MovinCool, Mr. Heater, SpaceX StarLink\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- GENERATORS (Based on Ge"
+      },
+      {
+        "filename": "043_comprehensive_site_safety.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "043",
+        "size": 20600,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Amerex",
+          "tag",
+          "dioxide",
+          "blanket",
+          "label",
+          "MediTac",
+          "kit",
+          "first",
+          "Industrial",
+          "log"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE SITE SAFETY CATALOG\n-- Migration: 043\n-- Based on: Amerex, Ansul, MediTac, 3M, Honeywell, MSA, Moldex, Brady, Lithonia\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- FIRE EXTINGUISHERS (Based on Amerex, Ansul,"
+      },
+      {
+        "filename": "044_comprehensive_site_vehicles.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "044",
+        "size": 14440,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Club",
+          "golf",
+          "gas",
+          "Polaris",
+          "Ford",
+          "pickup",
+          "truck",
+          "Diesel",
+          "diesel",
+          "Dually"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE SITE VEHICLES CATALOG\n-- Migration: 044\n-- Based on: Club Car, Yamaha, Polaris, John Deere, Ford, Isuzu, Mercedes, U-Haul\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- GOLF CARTS (Based on Club Car, Yamaha, E"
+      },
+      {
+        "filename": "045_comprehensive_heavy_equipment.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "045",
+        "size": 18661,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Toyota",
+          "forklift",
+          "Genie",
+          "deck",
+          "sites",
+          "scissor",
+          "light",
+          "work",
+          "JLG",
+          "telehandler"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE HEAVY EQUIPMENT CATALOG\n-- Migration: 045\n-- Based on: Genie, JLG, Toyota Forklifts, Hyster, Crown, Skyjack, Haulotte, Bobcat, Caterpillar\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- FORKLIFTS (Based on Toy"
+      },
+      {
+        "filename": "047_comprehensive_event_rentals_part1.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "047",
+        "size": 15696,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Lifetime",
+          "one",
+          "event",
+          "Chiavari",
+          "ivory",
+          "pad",
+          "National",
+          "optional"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE EVENT RENTALS CATALOG - PART 1\n-- Migration: 047\n-- Tables, Chairs, Linens\n-- Based on: Classic Party Rentals, CORT Events, Chiavari Company, Lifetime, CV Linens\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- "
+      },
+      {
+        "filename": "048_comprehensive_event_rentals_part2.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "048",
+        "size": 19988,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "CV",
+          "Your",
+          "Snap",
+          "all",
+          "round",
+          "Intellistage",
+          "Greatmats",
+          "colors",
+          "Tensator",
+          "Chrome"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE EVENT RENTALS CATALOG - PART 2\n-- Migration: 048\n-- Linens, Draping, Staging, Dance Floors, Stanchions\n-- Based on: CV Linens, BBJ Linen, Rose Brand, Intellistage, Snap Drape\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- ===================================="
+      },
+      {
+        "filename": "049_comprehensive_backline.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "049",
+        "size": 18967,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Pearl",
+          "Studio",
+          "Drum",
+          "box",
+          "cajon",
+          "Fender",
+          "G",
+          "Ampeg",
+          "Roland",
+          "Pioneer"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE BACKLINE EQUIPMENT CATALOG\n-- Migration: 049\n-- Based on: Sweetwater, Guitar Center, Pearl, Roland, Fender, Marshall, Ampeg, Pioneer, Technics, Shure, Sennheiser\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- "
+      },
+      {
+        "filename": "050_comprehensive_signage.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "050",
+        "size": 19081,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "ULine",
+          "easel",
+          "Plasticade",
+          "Sign",
+          "sign",
+          "wet",
+          "Brady",
+          "Displays",
+          "Visibility",
+          "BeachFlag"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE SIGNAGE CATALOG\n-- Migration: 050\n-- Based on: ULine, Brady, Plasticade, Displays2go, BackdropOutlet, VistaPrint\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- SIGN HOLDERS - ACRYLIC (Based on ULine, Displays2"
+      },
+      {
+        "filename": "051_restaurant_equipment.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "051",
+        "size": 13669,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "WebstaurantStore",
+          "grates",
+          "Oven",
+          "oven",
+          "option"
+        ],
+        "content": "-- =============================================\n-- COMPREHENSIVE RESTAURANT EQUIPMENT CATALOG\n-- Migration: 051\n-- Based on: WebstaurantStore, Sunbelt Rentals, Herc Rentals\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- COOKING EQUIPMENT (Based on WebstaurantStore)\n-- ====="
+      },
+      {
+        "filename": "052_bar_supplies_refrigeration.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "052",
+        "size": 14038,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "CATALOG",
+          "WebstaurantStore",
+          "Portable",
+          "unit",
+          "Beach",
+          "jug",
+          "Jug",
+          "bottles",
+          "bottle"
+        ],
+        "content": "-- =============================================\n-- BAR SUPPLIES & REFRIGERATION CATALOG\n-- Migration: 052\n-- Based on: WebstaurantStore, Sunbelt Rentals, Herc Rentals\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- BAR EQUIPMENT (Based on WebstaurantStore)\n-- ==============="
+      },
+      {
+        "filename": "053_office_admin_supplies.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "053",
+        "size": 14328,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Staples",
+          "printer",
+          "bin",
+          "stand",
+          "easel"
+        ],
+        "content": "-- =============================================\n-- OFFICE & ADMIN SUPPLIES CATALOG\n-- Migration: 053\n-- Based on: Staples, Sunbelt Rentals, EquipmentShare\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- OFFICE FURNITURE (Based on Staples)\n-- ================================="
+      },
+      {
+        "filename": "054_janitorial_supplies.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "054",
+        "size": 13748,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "WebstaurantStore",
+          "Loop",
+          "loop",
+          "mop",
+          "blend",
+          "Commercial",
+          "trash",
+          "lid",
+          "Heavy",
+          "cans"
+        ],
+        "content": "-- =============================================\n-- JANITORIAL SUPPLIES CATALOG\n-- Migration: 054\n-- Based on: WebstaurantStore, Staples, Sunbelt Rentals\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- CLEANING EQUIPMENT (Based on WebstaurantStore, Sunbelt)\n-- ==============="
+      },
+      {
+        "filename": "055_event_rentals_expansion.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "055",
+        "size": 15802,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "EventsTable",
+          "risers",
+          "Bulb",
+          "bulb",
+          "lights",
+          "vintage",
+          "cord",
+          "hard"
+        ],
+        "content": "-- =============================================\n-- EVENT RENTALS EXPANSION - Lounge, Bars, Decor\n-- Migration: 055\n-- Based on: EventsTable, Herc Rentals, Classic Party Rentals, CORT Events\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============================================\n-- LOUNGE FURNITURE (Based on EventsTabl"
+      },
+      {
+        "filename": "056_film_tv_grip_electric.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "056",
+        "size": 19193,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Matthews",
+          "arm",
+          "standard",
+          "Cord",
+          "cord",
+          "box",
+          "splitter",
+          "FRAMES",
+          "frame",
+          "or"
+        ],
+        "content": "-- =============================================\n-- FILM/TV GRIP & ELECTRIC EQUIPMENT CATALOG\n-- Migration: 056\n-- Critical equipment for film/TV production\n-- Based on: Industry standard grip/electric packages, Matthews Studio Equipment, Modern Studio Equipment\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n-- =============="
+      },
+      {
+        "filename": "058_site_power_nema_electrical.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "058",
+        "size": 18481,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "Hubbell",
+          "plug",
+          "cords",
+          "industry",
+          "status",
+          "existing",
+          "box",
+          "cord",
+          "ACCESSORIES",
+          "rated"
+        ],
+        "content": "-- =============================================\n-- SITE POWER - NEMA ELECTRICAL EQUIPMENT\n-- Migration: 058\n-- Purpose: Add NEMA plugs, outlets, receptacles, adapters and complete electrical distribution\n-- Based on: Hubbell, Leviton, Pass & Seymour, Legrand electrical catalogs\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, related_names, tags, specifications, created_by) VALUES\n\n"
+      },
+      {
+        "filename": "060_it_equipment.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "060",
+        "size": 14369,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "unit",
+          "optional",
+          "computer"
+        ],
+        "content": "-- =============================================\n-- IT EQUIPMENT CATALOG\n-- Migration: 060\n-- Purpose: Add IT infrastructure (networking, power, computers)\n-- Based on: Cisco, Ubiquiti, TP-Link, APC, CyberPower, Dell, HP\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, subcategory, manufacturer, model_number, related_names, tags, industry_tags, specifications, created_by) VALUES\n\n-- ============================"
+      },
+      {
+        "filename": "061_communications_equipment.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "061",
+        "size": 16744,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "rechargeable",
+          "radio",
+          "high",
+          "battery",
+          "UHF",
+          "for",
+          "mobile",
+          "system",
+          "intercom",
+          "detection"
+        ],
+        "content": "-- =============================================\n-- COMMUNICATIONS EQUIPMENT CATALOG\n-- Migration: 061\n-- Purpose: Add communications equipment (radios, intercoms, paging)\n-- Based on: Motorola, Kenwood, BaoFeng, Midland, RCA, Pyle\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, subcategory, manufacturer, model_number, related_names, tags, industry_tags, specifications, created_by) VALUES\n\n-- ================="
+      },
+      {
+        "filename": "065_user_dashboard_widgets.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "User customizable dashboard widgets",
+        "size": 2585,
+        "tables": 1,
+        "policies": 4,
+        "indexes": 3,
+        "functions": 0,
+        "dependencies": [
+          "workspaces",
+          "DELETE",
+          "auth",
+          "INTEGER",
+          "user_dashboard_widgets",
+          "update_updated_at",
+          "TABLE",
+          "COLUMN",
+          "IS",
+          "configuration"
+        ],
+        "content": "-- =============================================\n-- USER DASHBOARD WIDGETS\n-- Migration: 065\n-- Description: User customizable dashboard widgets\n-- =============================================\n\n-- User Dashboard Widgets Table\nCREATE TABLE user_dashboard_widgets (\n    id TEXT PRIMARY KEY,\n    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,\n    user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,\n    \n    name TEXT NOT NULL,\n    type TEXT NOT NULL,\n    positi"
+      },
+      {
+        "filename": "089_add_drop_if_exists_to_late_migrations.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "089 add drop if exists to late migrations",
+        "size": 1099,
+        "tables": 0,
+        "policies": 1,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "runs",
+          "files",
+          "COMPLETE"
+        ],
+        "content": "-- =====================================================\n-- ADD DROP IF EXISTS TO LATE MIGRATIONS\n-- =====================================================\n-- This migration runs BEFORE the 202510* migrations\n-- and ensures all policies can be safely recreated\n-- =====================================================\n\n-- This file intentionally left empty - the actual fixes\n-- are applied directly to the 202510* migration files\n-- by adding DROP IF EXISTS before each CREATE POLICY\n\n-- The followin"
+      },
+      {
+        "filename": "201_demo_data_isolation_simple.sql",
+        "location": "active",
+        "category": "unknown",
+        "description": "201",
+        "size": 2462,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 7,
+        "functions": 2,
+        "dependencies": [
+          "SYSTEM",
+          "to",
+          "is_demo_user",
+          "profiles",
+          "get_user_demo_mode",
+          "organizations",
+          "workspaces",
+          "projects",
+          "productions",
+          "activations"
+        ],
+        "content": "-- =============================================\n-- DEMO DATA ISOLATION SYSTEM (Simplified)\n-- Migration: 201\n-- Date: January 2025\n-- Purpose: Add demo flags and helper functions only\n-- =============================================\n\n-- Add is_demo flag to core tables (IF NOT EXISTS to be safe)\nALTER TABLE organizations ADD COLUMN IF NOT EXISTS is_demo BOOLEAN DEFAULT false;\nALTER TABLE profiles ADD COLUMN IF NOT EXISTS is_demo BOOLEAN DEFAULT false;\nALTER TABLE workspaces ADD COLUMN IF NOT EXI"
+      },
+      {
+        "filename": "036_seed_global_asset_catalog.sql",
+        "location": "deprecated",
+        "category": "unknown",
+        "description": "036",
+        "size": 17452,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "for",
+          "CONFLICT",
+          "box",
+          "Box",
+          "heater",
+          "tag",
+          "dioxide",
+          "blanket",
+          "label",
+          "first"
+        ],
+        "content": "-- =============================================\n-- SEED GLOBAL ASSET CATALOG\n-- Migration: 036\n-- Purpose: Pre-populate comprehensive multi-industry asset catalog\n-- =============================================\n\n-- Create a global organization for catalog items (if not exists)\nINSERT INTO organizations (id, name, slug)\nVALUES (\n    '00000000-0000-0000-0000-000000000001',\n    'Global Catalog System',\n    'global-catalog'\n)\nON CONFLICT (id) DO NOTHING;\n\n-- Create a global workspace for catalog i"
+      },
+      {
+        "filename": "037_seed_catalog_part2.sql",
+        "location": "deprecated",
+        "category": "unknown",
+        "description": "037",
+        "size": 13978,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "of",
+          "deck",
+          "light"
+        ],
+        "content": "-- =============================================\n-- SEED GLOBAL ASSET CATALOG - PART 2\n-- Migration: 037\n-- Continuation of comprehensive asset catalog\n-- =============================================\n\n-- =============================================\n-- SITE VEHICLES CATALOG\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, tags, specifications, created_by) VALUES\n-- Golf Carts\n('0000"
+      },
+      {
+        "filename": "038_seed_catalog_part3.sql",
+        "location": "deprecated",
+        "category": "unknown",
+        "description": "038",
+        "size": 18739,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "pad",
+          "Chrome",
+          "Black",
+          "easel",
+          "Sign",
+          "sign"
+        ],
+        "content": "-- =============================================\n-- SEED GLOBAL ASSET CATALOG - PART 3\n-- Migration: 038\n-- Event Rentals, Signage, Backline, and Admin Categories\n-- =============================================\n\n-- =============================================\n-- EVENT RENTALS CATALOG\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufacturer, model_number, tags, specifications, created_by) VALUES\n-- Tables"
+      },
+      {
+        "filename": "039_seed_catalog_part4.sql",
+        "location": "deprecated",
+        "category": "unknown",
+        "description": "039",
+        "size": 10360,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 5,
+        "functions": 0,
+        "dependencies": [
+          "platform",
+          "Staff",
+          "access",
+          "credential",
+          "areas",
+          "Crew",
+          "meals",
+          "assets",
+          "gin_trgm_ops",
+          "for"
+        ],
+        "content": "-- =============================================\n-- SEED GLOBAL ASSET CATALOG - PART 4\n-- Migration: 039\n-- Administrative & Logistics Categories (Access, Credentials, Parking, Meals, Flights, Lodging, Rental Cars)\n-- =============================================\n\n-- =============================================\n-- ACCESS (Business/Operations Apps) CATALOG\n-- =============================================\n\nINSERT INTO assets (workspace_id, name, description, type, asset_category, category, manufa"
+      },
+      {
+        "filename": "040_5_create_global_catalog_workspace.sql",
+        "location": "deprecated",
+        "category": "unknown",
+        "description": "040 5 create global catalog workspace",
+        "size": 0,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [],
+        "content": ""
+      },
+      {
+        "filename": "114_drop_duplicate_policies_deferred.sql",
+        "location": "deprecated",
+        "category": "unknown",
+        "description": "Drop Duplicate Policies",
+        "size": 3317,
+        "tables": 0,
+        "policies": 0,
+        "indexes": 0,
+        "functions": 0,
+        "dependencies": [
+          "migration",
+          "activations",
+          "approval_requests",
+          "asset_maintenance",
+          "asset_transactions",
+          "assets",
+          "bids",
+          "bookings",
+          "budgets",
+          "community_posts"
+        ],
+        "content": "-- Migration 114: Drop Duplicate Policies\n-- Created: 2025-10-21\n-- Purpose: Remove old duplicate policies that are causing \"multiple permissive policies\" warnings\n-- Impact: Resolves remaining 68 duplicate policy warnings\n\n-- Drop old \"manage\" and \"view\" policies - keep only consolidated policies from migration 113\nDROP POLICY IF EXISTS \"Users can manage activations with permission\" ON activations;\nDROP POLICY IF EXISTS \"Users can view activations with permission\" ON activations;\n\nDROP POLICY I"
+      },
+      {
+        "filename": "128_typography_settings_deferred.sql",
+        "location": "deprecated",
+        "category": "unknown",
+        "description": "Add typography customization at organization and user levels",
+        "size": 9606,
+        "tables": 0,
+        "policies": 4,
+        "indexes": 2,
+        "functions": 2,
+        "dependencies": [
+          "at",
+          "and",
+          "COLUMN",
+          "organization",
+          "to",
+          "get_user_typography_settings",
+          "profiles",
+          "organization_members",
+          "om",
+          "settings"
+        ],
+        "content": "-- =====================================================================================\n-- TYPOGRAPHY SETTINGS MIGRATION\n-- =====================================================================================\n-- Description: Add typography customization at organization and user levels\n-- Version: 128\n-- Created: 2025-01-25\n-- Dependencies: Requires organizations and user_profiles tables\n-- =====================================================================================\n\n-- ==============="
+      }
+    ]
+  },
+  "restructurePlan": [
+    {
+      "oldName": "000_foundation.sql",
+      "newName": "001_foundation_foundation.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 1
+    },
+    {
+      "oldName": "001_projects_module.sql",
+      "newName": "002_foundation_projects_module.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 2
+    },
+    {
+      "oldName": "002_events_module.sql",
+      "newName": "003_foundation_events_module.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 3
+    },
+    {
+      "oldName": "003_people_module.sql",
+      "newName": "004_foundation_people_module.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 4
+    },
+    {
+      "oldName": "004_assets_module.sql",
+      "newName": "005_foundation_assets_module.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 5
+    },
+    {
+      "oldName": "005_locations_module.sql",
+      "newName": "006_foundation_locations_module.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 6
+    },
+    {
+      "oldName": "006_files_companies_modules.sql",
+      "newName": "007_foundation_files_companies_modules.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 7
+    },
+    {
+      "oldName": "007_branded_rbac_system.sql",
+      "newName": "008_foundation_branded_rbac_system.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 8
+    },
+    {
+      "oldName": "008_subscriptions_and_invitations.sql",
+      "newName": "009_foundation_subscriptions_and_invitations.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 9
+    },
+    {
+      "oldName": "009_storage_layer.sql",
+      "newName": "010_foundation_storage_layer.sql",
+      "location": "active",
+      "phase": 1,
+      "category": "foundation",
+      "sequence": 10
+    },
+    {
+      "oldName": "011_missing_modules_analytics_insights.sql",
+      "newName": "011_modules_missing_modules_analytics_insights.sql",
+      "location": "active",
+      "phase": 2,
+      "category": "modules",
+      "sequence": 11
+    },
+    {
+      "oldName": "015_finance_procurement_modules.sql",
+      "newName": "012_modules_finance_procurement_modules.sql",
+      "location": "active",
+      "phase": 2,
+      "category": "modules",
+      "sequence": 12
+    },
+    {
+      "oldName": "016_remaining_modules.sql",
+      "newName": "013_modules_remaining_modules.sql",
+      "location": "active",
+      "phase": 2,
+      "category": "modules",
+      "sequence": 13
+    },
+    {
+      "oldName": "094_opportunities_module.sql",
+      "newName": "014_modules_opportunities_module.sql",
+      "location": "active",
+      "phase": 2,
+      "category": "modules",
+      "sequence": 14
+    },
+    {
+      "oldName": "20251014000000_add_jobs_module_rls_policies.sql",
+      "newName": "015_modules_add_jobs_module_rls_policies.sql",
+      "location": "active",
+      "phase": 2,
+      "category": "modules",
+      "sequence": 15
+    },
+    {
+      "oldName": "20251014010000_add_reports_module_rls_policies.sql",
+      "newName": "016_modules_add_reports_module_rls_policies.sql",
+      "location": "active",
+      "phase": 2,
+      "category": "modules",
+      "sequence": 16
+    },
+    {
+      "oldName": "019_fix_onboarding_rls_policies.sql",
+      "newName": "017_security_fix_onboarding_rls_policies.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 17
+    },
+    {
+      "oldName": "021_add_comments_rls_policies.sql",
+      "newName": "018_security_add_comments_rls_policies.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 18
+    },
+    {
+      "oldName": "083_rls_performance_optimization.sql",
+      "newName": "019_security_rls_performance_optimization.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 19
+    },
+    {
+      "oldName": "084_rls_performance_optimization_part2.sql",
+      "newName": "020_security_rls_performance_optimization_part2.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 20
+    },
+    {
+      "oldName": "085_rls_optimization_remaining_policies.sql",
+      "newName": "021_security_rls_optimization_remaining_policies.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 21
+    },
+    {
+      "oldName": "087_rls_optimization_final_cleanup.sql",
+      "newName": "022_security_rls_optimization_final_cleanup.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 22
+    },
+    {
+      "oldName": "090_fix_rls_linter_warnings_complete.sql",
+      "newName": "023_security_fix_rls_linter_warnings_complete.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 23
+    },
+    {
+      "oldName": "102_branded_rbac_rls_system.sql",
+      "newName": "024_security_branded_rbac_rls_system.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 24
+    },
+    {
+      "oldName": "113_fix_people_project_tables_rls.sql",
+      "newName": "025_security_fix_people_project_tables_rls.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 25
+    },
+    {
+      "oldName": "20251013230000_add_resources_rls_policies.sql",
+      "newName": "026_security_add_resources_rls_policies.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 26
+    },
+    {
+      "oldName": "20251014020000_add_analytics_insights_rls_policies.sql",
+      "newName": "027_security_add_analytics_insights_rls_policies.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 27
+    },
+    {
+      "oldName": "20251014030000_add_data_sources_rls_policies.sql",
+      "newName": "028_security_add_data_sources_rls_policies.sql",
+      "location": "active",
+      "phase": 3,
+      "category": "security",
+      "sequence": 28
+    },
+    {
+      "oldName": "113_fix_people_project_tables_rls_old.sql",
+      "newName": "029_security_fix_people_project_tables_rls_old.sql",
+      "location": "deprecated",
+      "phase": 3,
+      "category": "security",
+      "sequence": 29
+    },
+    {
+      "oldName": "120_fix_permissions_rls_performance_deferred.sql",
+      "newName": "030_security_fix_permissions_rls_performance_deferred.sql",
+      "location": "deprecated",
+      "phase": 3,
+      "category": "security",
+      "sequence": 30
+    },
+    {
+      "oldName": "123_fix_hierarchy_rollup_permissions_deferred.sql",
+      "newName": "031_security_fix_hierarchy_rollup_permissions_deferred.sql",
+      "location": "deprecated",
+      "phase": 3,
+      "category": "security",
+      "sequence": 31
+    },
+    {
+      "oldName": "20251021_fix_all_422_rls_warnings_deferred.sql",
+      "newName": "032_security_fix_all_422_rls_warnings_deferred.sql",
+      "location": "deprecated",
+      "phase": 3,
+      "category": "security",
+      "sequence": 32
+    },
+    {
+      "oldName": "100_organizational_hierarchy.sql",
+      "newName": "033_architecture_organizational_hierarchy.sql",
+      "location": "active",
+      "phase": 4,
+      "category": "architecture",
+      "sequence": 33
+    },
+    {
+      "oldName": "101_database_normalization.sql",
+      "newName": "034_architecture_database_normalization.sql",
+      "location": "active",
+      "phase": 4,
+      "category": "architecture",
+      "sequence": 34
+    },
+    {
+      "oldName": "20251013192000_add_workspace_id_to_resources.sql",
+      "newName": "035_features_add_workspace_id_to_resources.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 35
+    },
+    {
+      "oldName": "20251014060000_create_agreements_table.sql",
+      "newName": "036_features_create_agreements_table.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 36
+    },
+    {
+      "oldName": "20251015000001_work_orders_system.sql",
+      "newName": "037_features_work_orders_system.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 37
+    },
+    {
+      "oldName": "20251015000002_subcontractor_compliance.sql",
+      "newName": "038_features_subcontractor_compliance.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 38
+    },
+    {
+      "oldName": "20251015000003_communication_invoicing.sql",
+      "newName": "039_features_communication_invoicing.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 39
+    },
+    {
+      "oldName": "20251015000004_checklists_workflows.sql",
+      "newName": "040_features_checklists_workflows.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 40
+    },
+    {
+      "oldName": "20251015000005_cost_tracking_recruiting.sql",
+      "newName": "041_features_cost_tracking_recruiting.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 41
+    },
+    {
+      "oldName": "20251015000006_consolidate_remove_job_tables.sql",
+      "newName": "042_features_consolidate_remove_job_tables.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 42
+    },
+    {
+      "oldName": "20251015020000_inventory_functions.sql",
+      "newName": "043_features_inventory_functions.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 43
+    },
+    {
+      "oldName": "20251015030000_inventory_storage_policies.sql",
+      "newName": "044_features_inventory_storage_policies.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 44
+    },
+    {
+      "oldName": "20251015210000_add_missing_profile_foreign_keys.sql",
+      "newName": "045_features_add_missing_profile_foreign_keys.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 45
+    },
+    {
+      "oldName": "20251023000000_background_jobs_pg_cron.sql",
+      "newName": "046_features_background_jobs_pg_cron.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 46
+    },
+    {
+      "oldName": "20251025_add_billing_cycle_to_subscriptions.sql",
+      "newName": "047_features_add_billing_cycle_to_subscriptions.sql",
+      "location": "active",
+      "phase": 5,
+      "category": "features",
+      "sequence": 47
+    },
+    {
+      "oldName": "20251020124531_create_missing_tables_partial.sql",
+      "newName": "048_features_create_missing_tables_partial.sql",
+      "location": "deprecated",
+      "phase": 5,
+      "category": "features",
+      "sequence": 48
+    },
+    {
+      "oldName": "057_catalog_subcategories_optimization.sql",
+      "newName": "049_performance_catalog_subcategories_optimization.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 49
+    },
+    {
+      "oldName": "059_catalog_final_optimization.sql",
+      "newName": "050_performance_catalog_final_optimization.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 50
+    },
+    {
+      "oldName": "074_performance_indexes_v2.sql",
+      "newName": "051_performance_performance_indexes_v2.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 51
+    },
+    {
+      "oldName": "075_essential_indexes.sql",
+      "newName": "052_performance_essential_indexes.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 52
+    },
+    {
+      "oldName": "080_add_missing_foreign_key_indexes.sql",
+      "newName": "053_performance_add_missing_foreign_key_indexes.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 53
+    },
+    {
+      "oldName": "081_cleanup_unused_indexes.sql",
+      "newName": "054_performance_cleanup_unused_indexes.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 54
+    },
+    {
+      "oldName": "103_performance_optimization_indexes.sql",
+      "newName": "055_performance_performance_optimization_indexes.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 55
+    },
+    {
+      "oldName": "104_fix_performance_warnings.sql",
+      "newName": "056_performance_fix_performance_warnings.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 56
+    },
+    {
+      "oldName": "20251015000000_finance_optimization_ramp_runway.sql",
+      "newName": "057_performance_finance_optimization_ramp_runway.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 57
+    },
+    {
+      "oldName": "20251015010000_inventory_sortly_optimization.sql",
+      "newName": "058_performance_inventory_sortly_optimization.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 58
+    },
+    {
+      "oldName": "20251023000001_remove_duplicate_location_access_index.sql",
+      "newName": "059_performance_remove_duplicate_location_access_index.sql",
+      "location": "active",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 59
+    },
+    {
+      "oldName": "116_add_foreign_key_indexes_deferred.sql",
+      "newName": "060_performance_add_foreign_key_indexes_deferred.sql",
+      "location": "deprecated",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 60
+    },
+    {
+      "oldName": "121_add_remaining_foreign_key_indexes_deferred.sql",
+      "newName": "061_performance_add_remaining_foreign_key_indexes_deferred.sql",
+      "location": "deprecated",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 61
+    },
+    {
+      "oldName": "122_drop_unused_indexes_deferred.sql",
+      "newName": "062_performance_drop_unused_indexes_deferred.sql",
+      "location": "deprecated",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 62
+    },
+    {
+      "oldName": "127_restore_workspace_indexes_deferred.sql",
+      "newName": "063_performance_restore_workspace_indexes_deferred.sql",
+      "location": "deprecated",
+      "phase": 6,
+      "category": "performance",
+      "sequence": 63
+    },
+    {
+      "oldName": "20251103183000_field_comments.sql",
+      "newName": "064_enhancements_field_comments.sql",
+      "location": "active",
+      "phase": 7,
+      "category": "enhancements",
+      "sequence": 64
+    },
+    {
+      "oldName": "20251103183100_presence_system.sql",
+      "newName": "065_enhancements_presence_system.sql",
+      "location": "active",
+      "phase": 7,
+      "category": "enhancements",
+      "sequence": 65
+    },
+    {
+      "oldName": "20251103183200_public_dashboard_sharing.sql",
+      "newName": "066_enhancements_public_dashboard_sharing.sql",
+      "location": "active",
+      "phase": 7,
+      "category": "enhancements",
+      "sequence": 66
+    },
+    {
+      "oldName": "20251103183300_rollup_fields.sql",
+      "newName": "067_enhancements_rollup_fields.sql",
+      "location": "active",
+      "phase": 7,
+      "category": "enhancements",
+      "sequence": 67
+    },
+    {
+      "oldName": "20251103183400_sso_saml.sql",
+      "newName": "068_enhancements_sso_saml.sql",
+      "location": "active",
+      "phase": 7,
+      "category": "enhancements",
+      "sequence": 68
+    },
+    {
+      "oldName": "20251103183500_version_history.sql",
+      "newName": "069_enhancements_version_history.sql",
+      "location": "active",
+      "phase": 7,
+      "category": "enhancements",
+      "sequence": 69
+    },
+    {
+      "oldName": "20251104183600_gated_invite_waitlist_system.sql",
+      "newName": "070_enhancements_gated_invite_waitlist_system.sql",
+      "location": "active",
+      "phase": 7,
+      "category": "enhancements",
+      "sequence": 70
+    },
+    {
+      "oldName": "20251104214000_workflow_remediation_tables.sql",
+      "newName": "071_enhancements_workflow_remediation_tables.sql",
+      "location": "active",
+      "phase": 7,
+      "category": "enhancements",
+      "sequence": 71
+    },
+    {
+      "oldName": "067_fix_profile_foreign_keys.sql",
+      "newName": "072_fixes_fix_profile_foreign_keys.sql",
+      "location": "active",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 72
+    },
+    {
+      "oldName": "068_fix_missing_tables_and_relationships.sql",
+      "newName": "073_fixes_fix_missing_tables_and_relationships.sql",
+      "location": "active",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 73
+    },
+    {
+      "oldName": "091_fix_all_function_errors.sql",
+      "newName": "074_fixes_fix_all_function_errors.sql",
+      "location": "active",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 74
+    },
+    {
+      "oldName": "092_fix_remaining_function_errors.sql",
+      "newName": "075_fixes_fix_remaining_function_errors.sql",
+      "location": "active",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 75
+    },
+    {
+      "oldName": "093_fix_security_warnings_complete.sql",
+      "newName": "076_fixes_fix_security_warnings_complete.sql",
+      "location": "active",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 76
+    },
+    {
+      "oldName": "105_fix_all_warnings.sql",
+      "newName": "077_fixes_fix_all_warnings.sql",
+      "location": "active",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 77
+    },
+    {
+      "oldName": "110_resolve_database_linter_issues.sql",
+      "newName": "078_fixes_resolve_database_linter_issues.sql",
+      "location": "active",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 78
+    },
+    {
+      "oldName": "20251013182249_fix_organizations_select_policy.sql",
+      "newName": "079_fixes_fix_organizations_select_policy.sql",
+      "location": "active",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 79
+    },
+    {
+      "oldName": "067_fix_profile_foreign_keys.sql",
+      "newName": "080_fixes_fix_profile_foreign_keys.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 80
+    },
+    {
+      "oldName": "110_resolve_database_linter_issues_old.sql",
+      "newName": "081_fixes_resolve_database_linter_issues_old.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 81
+    },
+    {
+      "oldName": "115_fix_final_12_warnings_deferred.sql",
+      "newName": "082_fixes_fix_final_12_warnings_deferred.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 82
+    },
+    {
+      "oldName": "117_fix_security_warnings_deferred.sql",
+      "newName": "083_fixes_fix_security_warnings_deferred.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 83
+    },
+    {
+      "oldName": "118_fix_function_search_path_deferred.sql",
+      "newName": "084_fixes_fix_function_search_path_deferred.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 84
+    },
+    {
+      "oldName": "119_fix_materialized_view_security_deferred.sql",
+      "newName": "085_fixes_fix_materialized_view_security_deferred.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 85
+    },
+    {
+      "oldName": "124_resolve_remaining_linter_issues_deferred.sql",
+      "newName": "086_fixes_resolve_remaining_linter_issues_deferred.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 86
+    },
+    {
+      "oldName": "125_resolve_all_remaining_linter_issues_deferred.sql",
+      "newName": "087_fixes_resolve_all_remaining_linter_issues_deferred.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 87
+    },
+    {
+      "oldName": "126_resolve_audit_foreign_keys_deferred.sql",
+      "newName": "088_fixes_resolve_audit_foreign_keys_deferred.sql",
+      "location": "deprecated",
+      "phase": 8,
+      "category": "fixes",
+      "sequence": 88
+    }
+  ],
+  "allTables": [
+    "agreements",
+    "assets",
+    "budgets",
+    "checklist_templates",
+    "communication_threads",
+    "community_posts",
+    "data_sources",
+    "events",
+    "field_comments",
+    "file_categories",
+    "locations",
+    "personnel",
+    "production_advances",
+    "productions",
+    "profiles",
+    "project_cost_categories",
+    "projects",
+    "public_dashboard_shares",
+    "rollup_field_definitions",
+    "sso_providers",
+    "subcontractor_profiles",
+    "tours",
+    "travel_arrangements",
+    "user_dashboard_widgets",
+    "user_presence",
+    "version_history",
+    "work_orders"
+  ]
+}

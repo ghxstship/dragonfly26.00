@@ -1,0 +1,196 @@
+{
+  "timestamp": "2025-11-04T22:49:50.806Z",
+  "accessGaps": [
+    {
+      "workflow": "vendor_to_payment",
+      "currentRoles": [
+        "phantom",
+        "vendor"
+      ],
+      "recommendedRoles": [
+        "phantom",
+        "aviator",
+        "gladiator",
+        "vendor"
+      ],
+      "rationale": "Procurement managers (Aviator/Gladiator) need visibility into vendor payments"
+    },
+    {
+      "workflow": "hiring_to_deployment",
+      "currentRoles": [
+        "phantom"
+      ],
+      "recommendedRoles": [
+        "phantom",
+        "aviator",
+        "gladiator",
+        "navigator"
+      ],
+      "rationale": "HR managers and project managers need to manage hiring workflows"
+    },
+    {
+      "workflow": "incident_to_resolution",
+      "currentRoles": [
+        "phantom",
+        "gladiator"
+      ],
+      "recommendedRoles": [
+        "phantom",
+        "aviator",
+        "gladiator",
+        "navigator",
+        "deviator"
+      ],
+      "rationale": "Safety officers and department managers need incident management access"
+    },
+    {
+      "workflow": "reporting_to_insights",
+      "currentRoles": [
+        "phantom",
+        "aviator"
+      ],
+      "recommendedRoles": [
+        "phantom",
+        "aviator",
+        "gladiator",
+        "navigator"
+      ],
+      "rationale": "Analysts and managers at all levels need reporting and insights access"
+    }
+  ],
+  "updatedMatrix": {
+    "legend": {
+      "workflows": "ALL",
+      "restrictions": "NONE",
+      "criticalPaths": "ALL"
+    },
+    "phantom": {
+      "workflows": [
+        "complete_event_execution",
+        "vendor_to_payment",
+        "hiring_to_deployment",
+        "budget_to_actuals",
+        "asset_procurement_to_deployment",
+        "incident_to_resolution",
+        "reporting_to_insights"
+      ],
+      "restrictions": "Organization-scoped",
+      "criticalPaths": "ALL within organization"
+    },
+    "aviator": {
+      "workflows": [
+        "complete_event_execution",
+        "vendor_to_payment",
+        "hiring_to_deployment",
+        "budget_to_actuals",
+        "asset_procurement_to_deployment",
+        "incident_to_resolution",
+        "reporting_to_insights"
+      ],
+      "restrictions": "Project-scoped, view-only finance",
+      "criticalPaths": "Project execution, reporting"
+    },
+    "gladiator": {
+      "workflows": [
+        "complete_event_execution",
+        "vendor_to_payment",
+        "hiring_to_deployment",
+        "budget_to_actuals",
+        "asset_procurement_to_deployment",
+        "incident_to_resolution",
+        "reporting_to_insights"
+      ],
+      "restrictions": "Project-scoped, budget approval required",
+      "criticalPaths": "Project execution"
+    },
+    "navigator": {
+      "workflows": [
+        "complete_event_execution",
+        "hiring_to_deployment",
+        "asset_procurement_to_deployment",
+        "incident_to_resolution",
+        "reporting_to_insights"
+      ],
+      "restrictions": "Department-scoped, view-only finance",
+      "criticalPaths": "Department operations"
+    },
+    "deviator": {
+      "workflows": [
+        "complete_event_execution",
+        "incident_to_resolution"
+      ],
+      "restrictions": "Team-scoped, task management only",
+      "criticalPaths": "Team task execution"
+    },
+    "raider": {
+      "workflows": [
+        "complete_event_execution"
+      ],
+      "restrictions": "Assigned tasks only, view-only",
+      "criticalPaths": "Individual task completion"
+    },
+    "vendor": {
+      "workflows": [
+        "vendor_to_payment"
+      ],
+      "restrictions": "Own contracts only, limited visibility",
+      "criticalPaths": "Deliverable submission, invoicing"
+    },
+    "visitor": {
+      "workflows": "CUSTOM",
+      "restrictions": "Configured per-instance, time-limited",
+      "criticalPaths": "Varies by configuration"
+    },
+    "partner": {
+      "workflows": "ALL",
+      "restrictions": "Read-only across all workflows",
+      "criticalPaths": "NONE (observer only)"
+    },
+    "ambassador": {
+      "workflows": [],
+      "restrictions": "Marketing content only",
+      "criticalPaths": "NONE"
+    }
+  },
+  "summary": {
+    "gapsAddressed": 4,
+    "rolesExpanded": 4,
+    "newAccessGrants": 10
+  },
+  "changes": [
+    {
+      "workflow": "vendor_to_payment",
+      "addedRoles": [
+        "aviator",
+        "gladiator"
+      ],
+      "rationale": "Procurement managers (Aviator/Gladiator) need visibility into vendor payments"
+    },
+    {
+      "workflow": "hiring_to_deployment",
+      "addedRoles": [
+        "aviator",
+        "gladiator",
+        "navigator"
+      ],
+      "rationale": "HR managers and project managers need to manage hiring workflows"
+    },
+    {
+      "workflow": "incident_to_resolution",
+      "addedRoles": [
+        "aviator",
+        "navigator",
+        "deviator"
+      ],
+      "rationale": "Safety officers and department managers need incident management access"
+    },
+    {
+      "workflow": "reporting_to_insights",
+      "addedRoles": [
+        "gladiator",
+        "navigator"
+      ],
+      "rationale": "Analysts and managers at all levels need reporting and insights access"
+    }
+  ]
+}
