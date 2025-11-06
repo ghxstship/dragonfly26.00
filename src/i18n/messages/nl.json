@@ -1156,7 +1156,26 @@
     "numberOfOccurrences": "Number of occurrences"
   },
   "import": {
-    "uploadPrompt": "Click to upload or drag and drop"
+    "title": "Import Data",
+    "selectFile": "Select File",
+    "fileSelected": "File Selected",
+    "dragDropFile": "Drag and drop file here",
+    "supportedFormats": "Supported formats: CSV, JSON, Excel",
+    "mapFields": "Map Fields",
+    "sourceField": "Source Field",
+    "targetField": "Target Field",
+    "preview": "Preview Data",
+    "importing": "Importing...",
+    "importComplete": "Import Complete",
+    "importSuccess": "Successfully imported {count} records",
+    "importFailed": "Import Failed",
+    "importError": "Failed to import data. Please check the file format.",
+    "rowsProcessed": "Rows Processed",
+    "rowsSuccessful": "Rows Successful",
+    "rowsFailed": "Rows Failed",
+    "validateData": "Validate Data",
+    "skipErrors": "Skip Errors",
+    "batchSize": "Batch Size"
   },
   "templates": {
     "standardChecklist": "Standard checklist for new projects",
@@ -7831,944 +7850,944 @@
   "marketing": {
     "nav": {
       "logo": "(ATLVS)",
-      "solutions": "Solutions",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu"
+      "solutions": "Oplossingen",
+      "features": "Functies",
+      "pricing": "Prijzen",
+      "docs": "Documenten",
+      "blog": "Bloggen",
+      "company": "Bedrijf",
+      "signIn": "Inloggen",
+      "startFree": "Begin gratis",
+      "toggleMenu": "Schakelmenu"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Oplossingen per branche",
+        "subtitle": "Speciaal gebouwde workflows voor elk type live-entertainmentproductie"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Concerten en toeren",
+        "description": "Stroomlijn de routeplanning, budgettering, logistiek en crewmanagement voor wereldwijde touroperaties – van kleine locaties tot producties op arena-schaal."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Muziek- en kunstfestivals",
+        "description": "Centraliseer workflows voor meerdaagse evenementen met meerdere fasen, waarbij productie, talent, leveranciers en compliance onder één commandosysteem worden verenigd."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Meeslepende en ervaringsgerichte evenementen",
+        "description": "Ontwerp en beheer interactieve werelden, installaties en merkervaringen met volledige zichtbaarheid, van creatieve ontwikkeling tot live uitvoering."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Theater- en liveproducties",
+        "description": "Beheer creatieve teams, technische schema's en productiemiddelen voor podium- en prestatiegebaseerd entertainment."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "Film, televisie en media",
+        "description": "Coördineer de pre-productie, de werkzaamheden op de set en de wrap-rapportage met tools die zijn ontwikkeld voor synchronisatie tussen afdelingen en financiële transparantie."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Merkactivaties en marketingcampagnes",
+        "description": "Voer pop-ups, lanceringen en campagnegestuurde ervaringen uit – integreer creatieve, logistieke en ROI-tracking in één intelligent dashboard."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Bedrijfs- en privé-evenementen",
+        "description": "Bied onberispelijke ervaringen voor interne vergaderingen, retraites en spraakmakende bijeenkomsten met gestroomlijnde planning en leverancierscoördinatie."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Beurzen en congressen",
+        "description": "Vereenvoudig de standbouw, de logistiek van exposanten en sponsorrelaties met end-to-end projectbeheer en realtime analyses."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Gezondheid, welzijn en levensstijl",
+        "description": "Optimaliseer de programmering, personeelsbezetting en gastenstroom voor retraites, fitnessevenementen en wellnesservaringen, waarbij details en sfeer het belangrijkst zijn."
       }
     },
     "hero": {
-      "headline": "Production Management That Actually Works",
-      "headlineHighlight": "For Experiential Teams",
-      "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
-      "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "See It in Action",
-      "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot",
-      "headlineHighlightPrefix": "For",
-      "headlineHighlightMain": "Experiential Teams"
+      "headline": "Productiebeheer dat echt werkt",
+      "headlineHighlight": "Voor ervaringsgerichte teams",
+      "subheadline": "Navigeer door uw projecten, personeel, middelen en budgetten vanuit één commandocentrum. Gebouwd voor de mensen die onvergetelijke ervaringen creëren.",
+      "supportingCopy": "Of u nu festivals, bedrijfsevenementen of meeslepende activaties produceert: ATLVS stippelt de koers uit, van concept tot gordijnoproep.",
+      "ctaPrimary": "Begin vandaag nog gratis",
+      "ctaSecondary": "Zie het in actie",
+      "trustIndicators": "Geen creditcard • 14 dagen op proef • Op elk moment opzeggen",
+      "platformScreenshot": "Platformscreenshot",
+      "headlineHighlightPrefix": "Voor",
+      "headlineHighlightMain": "Ervaringsgerichte teams"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Vertrouwd door productieteams over de hele wereld"
     },
     "problem": {
-      "title": "The Production Chaos Problem",
-      "subtitle": "You know the drill",
-      "pain1Title": "Tool Overload",
-      "pain1Description": "Spreadsheets, Slack, email, that one Google Doc nobody can find—your workflow is scattered across a dozen platforms",
-      "pain2Title": "Information Black Holes",
-      "pain2Description": "Critical details vanish during handoffs. Someone definitely sent that file... somewhere",
-      "pain3Title": "Budget Surprises",
-      "pain3Description": "Costs creep up in the shadows. By the time you notice, you're already over",
-      "pain4Title": "Communication Drift",
-      "pain4Description": "Vendors miss updates, crew works off old info, stakeholders ask the same questions twice"
+      "title": "Het productiechaosprobleem",
+      "subtitle": "Je kent de oefening",
+      "pain1Title": "Overbelasting van gereedschap",
+      "pain1Description": "Spreadsheets, Slack, e-mail, dat ene Google-document dat niemand kan vinden: uw workflow is verspreid over een tiental platforms",
+      "pain2Title": "Informatie Zwarte gaten",
+      "pain2Description": "Kritieke details verdwijnen tijdens de overdracht. Iemand heeft dat bestand zeker ergens naartoe gestuurd",
+      "pain3Title": "Budgetverrassingen",
+      "pain3Description": "De kosten kruipen in de schaduw. Tegen de tijd dat je het merkt, ben je al voorbij",
+      "pain4Title": "Communicatie drift",
+      "pain4Description": "Verkopers missen updates, het personeel werkt aan oude informatie en belanghebbenden stellen twee keer dezelfde vragen"
     },
     "solution": {
-      "title": "One Platform. Zero Chaos.",
-      "subtitle": "Everything in its right place",
-      "feature1Title": "Unified Command Center",
-      "feature1Description": "Projects, people, and resources all sailing in formation",
-      "feature2Title": "Real-Time Sync",
-      "feature2Description": "Updates flow instantly. Everyone's working from the same chart",
-      "feature3Title": "Budget Radar",
-      "feature3Description": "Track every dollar in real-time. No surprises, no overruns",
-      "feature4Title": "Vendor Coordination",
-      "feature4Description": "Keep external partners in the loop without giving away the ship"
+      "title": "Eén platform. Geen chaos.",
+      "subtitle": "Alles op de juiste plaats",
+      "feature1Title": "Verenigd Commandocentrum",
+      "feature1Description": "Projecten, mensen en middelen varen allemaal in formatie",
+      "feature2Title": "Realtime synchronisatie",
+      "feature2Description": "Updates stromen onmiddellijk binnen. Iedereen werkt vanuit hetzelfde diagram",
+      "feature3Title": "Begrotingsradar",
+      "feature3Description": "Volg elke dollar in realtime. Geen verrassingen, geen overschrijdingen",
+      "feature4Title": "Coördinatie van leveranciers",
+      "feature4Description": "Houd externe partners op de hoogte zonder het schip weg te geven"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Set sail in minutes, not months",
-      "step1Title": "Launch Your Organization",
-      "step1Description": "Set up your structure and bring your crew aboard",
-      "step2Title": "Chart Your Projects",
-      "step2Description": "Map out productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Missions",
-      "step3Description": "Give everyone the right access and clear responsibilities",
-      "step4Title": "Navigate & Deliver",
-      "step4Description": "Monitor progress, manage budgets, execute flawlessly"
+      "title": "Hoe het werkt",
+      "subtitle": "Vaar binnen enkele minuten uit, niet in maanden",
+      "step1Title": "Lanceer uw organisatie",
+      "step1Description": "Zet uw structuur op en breng uw bemanning aan boord",
+      "step2Title": "Breng uw projecten in kaart",
+      "step2Description": "Breng producties, activaties en werkplekken in kaart",
+      "step3Title": "Wijs rollen en missies toe",
+      "step3Description": "Geef iedereen de juiste toegang en duidelijke verantwoordelijkheden",
+      "step4Title": "Navigeren en bezorgen",
+      "step4Description": "Bewaak de voortgang, beheer budgetten en voer feilloos uit"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production control",
+      "title": "Alles wat u nodig heeft om op schaal te produceren",
+      "subtitle": "Zes geïntegreerde hubs voor volledige productiecontrole",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Productie hub",
+        "description": "Beheer projecten, evenementen, mensen, middelen, locaties en bestanden",
+        "feature1": "Project- en evenementenplanning",
+        "feature2": "Team- en crewmanagement",
+        "feature3": "Activa volgen en inventariseren",
+        "feature4": "Locatie- en locatiecoördinatie"
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "title": "Zakencentrum",
+        "description": "Behandel bedrijven, banen, inkoop en financiën",
+        "feature1": "Leveranciers- en bedrijfsmanagement",
+        "feature2": "Vacatures en werving",
+        "feature3": "Inkoop & inkoop",
+        "feature4": "Budget- en onkostenregistratie"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Netwerk hub",
+        "description": "Bouw een community, marktplaats en bronnenbibliotheek",
+        "feature1": "Gemeenschap en discussies",
+        "feature2": "Marktplaats & diensten",
+        "feature3": "Bronnenbibliotheek",
+        "feature4": "Industrieverbindingen"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "Automatiseringshub",
+        "description": "Automatiseer workflows, triggers en repetitieve taken",
+        "feature1": "Aangepaste workflowautomatisering",
+        "feature2": "Gebeurtenisgestuurde triggers",
+        "feature3": "Geplande taakuitvoering",
+        "feature4": "Integratiepijplijnen"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "Intelligentie hub",
+        "description": "Genereer rapporten, analyses en inzichten",
+        "feature1": "Aangepaste rapporten",
+        "feature2": "Realtime analyses",
+        "feature3": "Voorspellende inzichten",
+        "feature4": "Prestatiestatistieken"
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "title": "Systeemhub",
+        "description": "Configureer beheerders, instellingen en gebruikersprofielen",
+        "feature1": "Gebruikers- en rollenbeheer",
+        "feature2": "Systeemconfiguratie",
+        "feature3": "Profielaanpassing",
+        "feature4": "Beveiliging en machtigingen"
       }
     },
     "detailedFeatures": {
       "hero": {
-        "title": "Everything You Need to Produce at Scale",
-        "subtitle": "Six integrated hubs designed for experiential production teams"
+        "title": "Alles wat u nodig heeft om op schaal te produceren",
+        "subtitle": "Zes geïntegreerde hubs ontworpen voor ervaringsgerichte productieteams"
       },
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
+        "title": "Productie hub",
+        "description": "Beheer projecten, evenementen, mensen, middelen, locaties en bestanden",
         "projects": {
-          "title": "Projects",
-          "description": "Organize and track productions from concept to strike"
+          "title": "Projecten",
+          "description": "Organiseer en volg producties van concept tot staking"
         },
         "events": {
-          "title": "Events",
-          "description": "Schedule, coordinate, and manage every detail and timeline"
+          "title": "Evenementen",
+          "description": "Plan, coördineer en beheer elk detail en tijdlijn"
         },
         "people": {
-          "title": "People",
-          "description": "Manage crew assignments, availability, and scheduling"
+          "title": "Mensen",
+          "description": "Beheer de toewijzingen, beschikbaarheid en planning van de bemanning"
         },
         "assets": {
-          "title": "Assets",
-          "description": "Track equipment, inventory, and resources across productions"
+          "title": "Activa",
+          "description": "Volg apparatuur, inventaris en middelen voor alle producties"
         },
         "locations": {
-          "title": "Locations",
-          "description": "Coordinate venues, sites, and facility logistics"
+          "title": "Locaties",
+          "description": "Coördineer locaties, locaties en facilitaire logistiek"
         },
         "files": {
-          "title": "Files",
-          "description": "Centralize documents, media, and production files securely"
+          "title": "Bestanden",
+          "description": "Centraliseer documenten, media en productiebestanden veilig"
         }
       },
       "business": {
-        "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
+        "title": "Zakencentrum",
+        "description": "Behandel bedrijven, banen, inkoop en financiën",
         "companies": {
-          "title": "Companies",
-          "description": "Manage vendor relationships, clients, and partners"
+          "title": "Bedrijven",
+          "description": "Beheer leveranciersrelaties, klanten en partners"
         },
         "jobs": {
-          "title": "Jobs",
-          "description": "Post positions, track applications, manage hiring"
+          "title": "Banen",
+          "description": "Plaats vacatures, volg sollicitaties en beheer de werving"
         },
         "procurement": {
-          "title": "Procurement",
-          "description": "Streamline purchasing, vendor selection, and contracts"
+          "title": "Inkoop",
+          "description": "Stroomlijn inkoop, leveranciersselectie en contracten"
         },
         "invoices": {
-          "title": "Invoices",
-          "description": "Create, send, and track invoices with automated reminders"
+          "title": "Facturen",
+          "description": "Maak, verzend en volg facturen met geautomatiseerde herinneringen"
         },
         "expenses": {
-          "title": "Expenses",
-          "description": "Record and categorize expenses with receipt capture"
+          "title": "Uitgaven",
+          "description": "Registreer en categoriseer uitgaven met het vastleggen van bonnen"
         },
         "budgets": {
-          "title": "Budgets",
-          "description": "Plan, monitor, and control budgets with real-time tracking"
+          "title": "Budgetten",
+          "description": "Plan, bewaak en beheer budgetten met realtime tracking"
         }
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
+        "title": "Netwerk hub",
+        "description": "Bouw een community, marktplaats en bronnenbibliotheek",
         "community": {
-          "title": "Community",
-          "description": "Connect with industry pros, share knowledge, collaborate"
+          "title": "Gemeenschap",
+          "description": "Maak contact met professionals uit de sector, deel kennis, werk samen"
         },
         "marketplace": {
-          "title": "Marketplace",
-          "description": "Discover services, hire talent, find production resources"
+          "title": "Marktplaats",
+          "description": "Ontdek diensten, huur talent in, vind productiemiddelen"
         },
         "resources": {
-          "title": "Resources",
-          "description": "Access guides, templates, and best practices"
+          "title": "Bronnen",
+          "description": "Krijg toegang tot handleidingen, sjablonen en best practices"
         }
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
+        "title": "Automatiseringshub",
+        "description": "Automatiseer workflows, triggers en repetitieve taken",
         "workflows": {
-          "title": "Workflows",
-          "description": "Build custom automation sequences for repetitive processes"
+          "title": "Werkstromen",
+          "description": "Bouw aangepaste automatiseringsreeksen voor repetitieve processen"
         },
         "triggers": {
           "title": "Triggers",
-          "description": "Set up event-driven actions that respond automatically"
+          "description": "Zet gebeurtenisgestuurde acties op die automatisch reageren"
         },
         "scheduled": {
-          "title": "Scheduled Tasks",
-          "description": "Automate recurring tasks with flexible scheduling"
+          "title": "Geplande taken",
+          "description": "Automatiseer terugkerende taken met flexibele planning"
         }
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
+        "title": "Intelligentie hub",
+        "description": "Genereer rapporten, analyses en inzichten",
         "reports": {
-          "title": "Reports",
-          "description": "Create custom reports with flexible visualization and export"
+          "title": "Rapporten",
+          "description": "Maak aangepaste rapporten met flexibele visualisatie en export"
         },
         "analytics": {
-          "title": "Analytics",
-          "description": "Track KPIs, monitor trends, measure performance"
+          "title": "Analyse",
+          "description": "Volg KPI's, volg trends, meet prestaties"
         },
         "insights": {
-          "title": "Insights",
-          "description": "Get AI-powered recommendations and predictive analytics"
+          "title": "Inzichten",
+          "description": "Ontvang op AI gebaseerde aanbevelingen en voorspellende analyses"
         }
       },
       "system": {
-        "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
+        "title": "Systeemhub",
+        "description": "Configureer beheerders, instellingen en gebruikersprofielen",
         "admin": {
-          "title": "Admin",
-          "description": "Manage organization settings, security, and configuration"
+          "title": "Beheerder",
+          "description": "Beheer organisatie-instellingen, beveiliging en configuratie"
         },
         "settings": {
-          "title": "Settings",
-          "description": "Customize preferences, integrations, and platform behavior"
+          "title": "Instellingen",
+          "description": "Pas voorkeuren, integraties en platformgedrag aan"
         },
         "profiles": {
-          "title": "User Profiles",
-          "description": "Manage team profiles, roles, and access permissions"
+          "title": "Gebruikersprofielen",
+          "description": "Beheer teamprofielen, rollen en toegangsrechten"
         }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Crew",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Gebouwd voor elke rol in uw team",
+      "subtitle": "11 merkrollen met nauwkeurige machtigingen",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Legende",
+        "description": "Platform Super Admin - Volledige controle voor alle organisaties"
       },
       "phantom": {
-        "name": "Phantom",
-        "level": "Supreme Authority",
-        "title": "Phantom",
-        "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
+        "name": "Fantoom",
+        "level": "Opperste Autoriteit",
+        "title": "Fantoom",
+        "description": "Compleet systeembeheer en onbeperkte toegang. Vorm de richting van het platform en onderhoud het toezicht op de onderneming."
       },
       "aviator": {
-        "name": "Aviator",
-        "level": "Strategic Leadership",
-        "title": "Aviator",
-        "description": "Cross-project visibility, resource allocation, and executive analytics. Navigate high-level production strategy at scale."
+        "name": "Vliegenier",
+        "level": "Strategisch Leiderschap",
+        "title": "Vliegenier",
+        "description": "Inzicht in meerdere projecten, toewijzing van middelen en analyses van managers. Navigeer op grote schaal naar een productiestrategie op hoog niveau."
       },
       "gladiator": {
         "name": "Gladiator",
-        "level": "Project Leadership",
+        "level": "Projectleiding",
         "title": "Gladiator",
-        "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
+        "description": "Volledige rechten voor het maken en bewerken van projecten. Leid producties van concept tot voltooiing met volledige controle."
       },
       "navigator": {
         "name": "Navigator",
-        "level": "Coordination",
+        "level": "Coördinatie",
         "title": "Navigator",
-        "description": "Project coordination, task assignment, and team guidance. Chart the course through complex workflows."
+        "description": "Projectcoördinatie, taaktoewijzing en teambegeleiding. Breng de koers in kaart via complexe workflows."
       },
       "deviator": {
-        "name": "Deviator",
-        "level": "Execution",
-        "title": "Deviator",
-        "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
+        "name": "Afwijker",
+        "level": "Uitvoering",
+        "title": "Afwijker",
+        "description": "Gerichte taakvoltooiing binnen vastgestelde kaders. Kwaliteitswerk leveren met toegewezen verantwoordelijkheden."
       },
       "raider": {
-        "name": "Raider",
-        "level": "Learning & Observation",
-        "title": "Raider",
-        "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
+        "name": "Overvaller",
+        "level": "Leren en observeren",
+        "title": "Overvaller",
+        "description": "Alleen-lezen toegang om te leren en te groeien. Perfect voor nieuwkomers die hun vaardigheden willen vergroten."
       },
       "vendor": {
-        "name": "Vendor",
-        "level": "Scoped Delivery",
-        "title": "Vendor",
-        "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
+        "name": "Leverancier",
+        "level": "Omvangrijke levering",
+        "title": "Leverancier",
+        "description": "Gerichte toegang voor externe dienstverleners. Upload deliverables en voer gecontracteerd werk uit."
       },
       "visitor": {
-        "name": "Visitor",
-        "level": "Limited Visibility",
-        "title": "Visitor",
-        "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
+        "name": "Bezoeker",
+        "level": "Beperkte zichtbaarheid",
+        "title": "Bezoeker",
+        "description": "Tijdelijke, alleen-lezen toegang voor externe belanghebbenden. Blijf op de hoogte zonder de workflows te verstoren."
       },
       "partner": {
         "name": "Partner",
-        "level": "Strategic Collaboration",
+        "level": "Strategische samenwerking",
         "title": "Partner",
-        "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
+        "description": "Diepe integratie voor vertrouwde externe medewerkers. Gegevensuitwisseling in twee richtingen en gezamenlijk workflowbeheer."
       },
       "ambassador": {
-        "name": "Ambassador",
-        "level": "Community Champions",
-        "title": "Ambassador",
-        "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
+        "name": "Ambassadeur",
+        "level": "Gemeenschapskampioenen",
+        "title": "Ambassadeur",
+        "description": "Vertegenwoordig ATLVS, ondersteun gebruikers en stimuleer samenwerking. Organiseer evenementen, creëer inhoud, laat het ecosysteem groeien."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Beveiliging op ondernemingsniveau",
+      "subtitle": "Uw gegevens worden op elk niveau beschermd",
+      "feature1Title": "Beveiliging op rijniveau",
+      "feature1Description": "801 RLS-beleid zorgt ervoor dat gebruikers alleen zien wat ze zouden moeten zien",
+      "feature2Title": "Op rollen gebaseerde toegang",
+      "feature2Description": "11 merkrollen met meer dan 45 gedetailleerde machtigingen",
+      "feature3Title": "Gecodeerde opslag",
+      "feature3Description": "Alle gegevens worden in rust en onderweg versleuteld",
+      "feature4Title": "Auditregistratie",
+      "feature4Description": "Volledige audittrail van alle systeemactiviteiten",
+      "feature5Title": "SOC 2-compatibel",
+      "feature5Description": "Beveiligingsstandaarden op bedrijfsniveau",
+      "feature6Title": "AVG gereed",
+      "feature6Description": "Volledige naleving van de regelgeving inzake gegevensprivacy"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "Real stories from real producers",
-      "testimonial1Quote": "ATLVS transformed how we manage festivals. Everything in one place, everyone on the same page. Finally.",
+      "title": "Vertrouwd door productieteams wereldwijd",
+      "subtitle": "Echte verhalen van echte producenten",
+      "testimonial1Quote": "ATLVS heeft de manier waarop we festivals beheren getransformeerd. Alles op één plek, iedereen op dezelfde pagina. Eindelijk.",
       "testimonial1Author": "Sarah Chen",
-      "testimonial1Role": "Production Director, Major Music Festival",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Proper access control for production? Revolutionary.",
+      "testimonial1Role": "Productiedirecteur, groot muziekfestival",
+      "testimonial1Title": "Productiedirecteur, groot muziekfestival",
+      "testimonial2Quote": "Het RBAC-systeem is perfect voor onze complexe organisatiestructuur. Goede toegangscontrole voor productie? Revolutionair.",
       "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Role": "VP of Operations, Live Events Company",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
+      "testimonial2Role": "VP Operations, Live Events Company",
+      "testimonial2Title": "VP Operations, Live Events Company",
+      "testimonial3Quote": "We hebben de budgetoverschrijdingen in het eerste kwartaal met 40% teruggedrongen. De financiële zichtbaarheid is terecht baanbrekend.",
       "testimonial3Author": "Jennifer Park",
-      "testimonial3Role": "CFO, Corporate Events Agency",
-      "testimonial3Title": "CFO, Corporate Events Agency",
-      "jamesCookQuote": "Managing three ships of scientists who all think they're the main character? ATLVS would've kept everyone aligned and actually working together instead of competing for credit.",
-      "jamesCookAuthor": "Captain James Cook",
-      "jamesCookRole": "British Royal Navy Explorer (1728-1779)",
-      "zhengYiSaoQuote": "I turned piracy into a Fortune 500 company, negotiated my own amnesty, and retired wealthy. ATLVS is for people who understand that unconventional operations still need solid management.",
+      "testimonial3Role": "CFO, Bedrijfsevenementenbureau",
+      "testimonial3Title": "CFO, Bedrijfsevenementenbureau",
+      "jamesCookQuote": "Het managen van drie schepen met wetenschappers die allemaal denken dat zij de hoofdpersoon zijn? ATLVS zou iedereen op één lijn hebben gehouden en daadwerkelijk hebben samengewerkt in plaats van te strijden om krediet.",
+      "jamesCookAuthor": "Kapitein James Cook",
+      "jamesCookRole": "Britse ontdekkingsreiziger van de Royal Navy (1728-1779)",
+      "zhengYiSaoQuote": "Ik maakte van piraterij een Fortune 500-bedrijf, onderhandelde over mijn eigen amnestie en ging rijk met pensioen. ATLVS is voor mensen die begrijpen dat onconventionele operaties nog steeds een solide management vereisen.",
       "zhengYiSaoAuthor": "Zheng Yi Sao",
-      "zhengYiSaoRole": "Chinese Pirate Leader (1775-1844)",
-      "captainAhabQuote": "Chasing one specific goal across every ocean without considering the bigger picture? ATLVS keeps you focused on the actual business plan, not just personal objectives.",
-      "captainAhabAuthor": "Captain Ahab",
-      "captainAhabRole": "Whaling Captain, Pequod",
-      "graceOMalleyQuote": "Negotiated with Queen Elizabeth as equals. ATLVS helps you show up to every meeting with your data ready and your confidence up.",
-      "graceOMalleyAuthor": "Grace O'Malley \"Gráinne Mhaol\"",
-      "graceOMalleyRole": "Irish Pirate Queen & Chieftain (c. 1530-1603)",
-      "sinbadQuote": "The way I kept getting shipwrecked but still went back out? That's just poor planning. ATLVS provides the structure my decision-making clearly needed.",
-      "sinbadAuthor": "Sinbad the Sailor",
-      "sinbadRole": "Legendary Merchant Sailor, Arabian Nights",
-      "longJohnSilverQuote": "Managing pirates is literally herding cats if the cats had scurvy and trust issues. ATLVS's stakeholder management keeps everyone aligned, even when they're plotting against each other.",
-      "longJohnSilverAuthor": "Long John Silver",
-      "longJohnSilverRole": "Quartermaster & Pirate Cook, Treasure Island",
-      "horatioHornblowerQuote": "Fighting the French while having a full mental breakdown is honestly very on-brand for me. ATLVS keeps all the tactical stuff organized so you can focus on the actual mission.",
-      "horatioHornblowerAuthor": "Horatio Hornblower",
-      "horatioHornblowerRole": "Royal Navy Officer (C.S. Forester novels)",
-      "captainNemoQuote": "Being a hermit in a submarine is actually very introvert-coded, but even I needed team coordination. ATLVS works even when you're working alone.",
-      "captainNemoAuthor": "Captain Nemo",
-      "captainNemoRole": "Commander, Nautilus (Twenty Thousand Leagues Under the Sea)",
-      "odysseusQuote": "Lost every single crew member because I kept making questionable choices. ATLVS would've been like 'we don't need to see what the Sirens are about' and honestly? Valid.",
+      "zhengYiSaoRole": "Chinese piratenleider (1775-1844)",
+      "captainAhabQuote": "Eén specifiek doel nastreven in elke oceaan zonder rekening te houden met het grotere geheel? ATLVS houdt u gefocust op het daadwerkelijke businessplan, niet alleen op persoonlijke doelstellingen.",
+      "captainAhabAuthor": "Kapitein Achab",
+      "captainAhabRole": "Walviskapitein, Pequod",
+      "graceOMalleyQuote": "Onderhandelde met koningin Elizabeth als gelijken. Met ATLVS kunt u bij elke vergadering verschijnen met uw gegevens bij de hand en uw zelfvertrouwen.",
+      "graceOMalleyAuthor": "Grace O'Malley \"Grainne Mhaol\"",
+      "graceOMalleyRole": "Ierse piratenkoningin en hoofdman (ca. 1530-1603)",
+      "sinbadQuote": "De manier waarop ik steeds schipbreuk leed, maar toch weer naar buiten ging? Dat is gewoon een slechte planning. ATLVS biedt de structuur die mijn besluitvorming duidelijk nodig had.",
+      "sinbadAuthor": "Sinbad de zeeman",
+      "sinbadRole": "Legendarische koopman, Arabian Nights",
+      "longJohnSilverQuote": "Het beheren van piraten is letterlijk het hoeden van katten als de katten scheurbuik- en vertrouwensproblemen hadden. Het stakeholdermanagement van ATLVS houdt iedereen op één lijn, zelfs als ze tegen elkaar aan het complot zijn.",
+      "longJohnSilverAuthor": "Lange John Zilver",
+      "longJohnSilverRole": "Kwartiermeester en piratenkok, Treasure Island",
+      "horatioHornblowerQuote": "Vechten tegen de Fransen terwijl ik een volledige zenuwinzinking heb, is eerlijk gezegd heel on-brand voor mij. ATLVS houdt alle tactische zaken georganiseerd, zodat jij je kunt concentreren op de daadwerkelijke missie.",
+      "horatioHornblowerAuthor": "Horatio Hoornblazer",
+      "horatioHornblowerRole": "Royal Navy Officer (CS Forester-romans)",
+      "captainNemoQuote": "Een kluizenaar zijn in een onderzeeër is eigenlijk heel introvert, maar zelfs ik had teamcoördinatie nodig. ATLVS werkt zelfs als u alleen werkt.",
+      "captainNemoAuthor": "Kapitein Nemo",
+      "captainNemoRole": "Commandant, Nautilus (twintigduizend mijlen onder zee)",
+      "odysseusQuote": "Ik verloor elk bemanningslid omdat ik twijfelachtige keuzes bleef maken. ATLVS zou zijn geweest van ‘we hoeven niet te zien waar de Sirenen over gaan’ en eerlijk gezegd? Geldig.",
       "odysseusAuthor": "Odysseus/Ulysses",
-      "odysseusRole": "King of Ithaca, Greek Hero (The Odyssey)",
-      "blackbeardQuote": "Blocking an entire harbor with four ships hits different when you're coordinating manually. ATLVS would've made me the most operationally efficient pirate on the seas.",
-      "blackbeardAuthor": "Captain Edward Teach \"Blackbeard\"",
-      "blackbeardRole": "Pirate Commander (c. 1680-1718)",
-      "captainMarvelQuote": "Disappeared for 30 years handling space emergencies without checking in. ATLVS's communication tools would've helped me not ghost everyone I care about.",
-      "captainMarvelAuthor": "Captain Marvel / Carol Danvers",
-      "captainMarvelRole": "Air Force Pilot & Cosmic Hero (MCU)",
-      "captainJanewayQuote": "I violated the Temporal Prime Directive multiple times to save my crew, but I never violated my project timelines. ATLVS keeps priorities clear even when ethics get complicated.",
-      "captainJanewayAuthor": "Captain Kathryn Janeway",
-      "captainJanewayRole": "Starfleet Captain, USS Voyager (Star Trek: Voyager)",
-      "moanaQuote": "Maui was supposed to be my mentor but spent most of the time being emotionally unavailable. ATLVS tracks deliverables when your team is being difficult.",
+      "odysseusRole": "Koning van Ithaca, Griekse held (De Odyssee)",
+      "blackbeardQuote": "Een hele haven blokkeren met vier schepen heeft een andere uitwerking als je handmatig coördineert. ATLVS zou mij de operationeel meest efficiënte piraat op zee hebben gemaakt.",
+      "blackbeardAuthor": "Kapitein Edward leert \"Blackbeard\"",
+      "blackbeardRole": "Piratencommandant (ca. 1680-1718)",
+      "captainMarvelQuote": "Dertig jaar lang verdwenen bij het afhandelen van noodsituaties in de ruimte zonder in te checken. De communicatiemiddelen van ATLVS zouden me hebben geholpen om niet iedereen waar ik om geef te spooken.",
+      "captainMarvelAuthor": "Kapitein Marvel / Carol Danvers",
+      "captainMarvelRole": "Luchtmachtpiloot en kosmische held (MCU)",
+      "captainJanewayQuote": "Ik heb de Tijdelijke Prime-richtlijn meerdere keren overtreden om mijn bemanning te redden, maar ik heb nooit mijn projecttijdlijnen geschonden. ATLVS houdt de prioriteiten helder, zelfs als de ethiek ingewikkeld wordt.",
+      "captainJanewayAuthor": "Kapitein Kathryn Janeway",
+      "captainJanewayRole": "Starfleet-kapitein, USS Voyager (Star Trek: Voyager)",
+      "moanaQuote": "Maui zou mijn mentor zijn, maar was het grootste deel van de tijd emotioneel niet beschikbaar. ATLVS houdt de resultaten bij als uw team het moeilijk heeft.",
       "moanaAuthor": "Moana",
-      "moanaRole": "Wayfinder & Island Chief (Disney's Moana)",
-      "captainJackSparrowQuote": "Managing a crew when literally no one knows if they're employed or just along for the chaos? ATLVS provides clarity that my entire vibe does not.",
-      "captainJackSparrowAuthor": "Captain Jack Sparrow",
-      "captainJackSparrowRole": "Pirate Captain, Black Pearl (Pirates of the Caribbean)",
-      "popeyeQuote": "My whole personality is 'stubbornly refuses to plan ahead.' ATLVS is the adult in the room that I clearly need but won't admit to.",
-      "popeyeAuthor": "Popeye the Sailor Man",
-      "popeyeRole": "Sailor & Olive Oyl's Protector (Cartoon Character)",
-      "captainPicardQuote": "Leading a diverse crew through first contact situations and diplomatic crises? ATLVS keeps everyone aligned when the stakes are literally galactic.",
-      "captainPicardAuthor": "Captain Jean-Luc Picard",
-      "captainPicardRole": "Starfleet Captain, USS Enterprise (Star Trek: TNG)",
-      "captainSiskoQuote": "Commanding a station that's part military base, part trading hub, part refugee center? ATLVS helps you manage complexity when every stakeholder has different priorities.",
-      "captainSiskoAuthor": "Captain Benjamin Sisko",
-      "captainSiskoRole": "Starfleet Commander, Deep Space Nine (Star Trek: DS9)"
+      "moanaRole": "Wayfinder en eilandchef (Disney's Moana)",
+      "captainJackSparrowQuote": "Een team beheren terwijl letterlijk niemand weet of ze in dienst zijn of alleen maar meewerken aan de chaos? ATLVS biedt duidelijkheid die mijn hele sfeer niet biedt.",
+      "captainJackSparrowAuthor": "Kapitein Jack Sparrow",
+      "captainJackSparrowRole": "Piratenkapitein, Black Pearl (Pirates of the Caribbean)",
+      "popeyeQuote": "Mijn hele persoonlijkheid is 'weigert koppig vooruit te plannen'. ATLVS is de volwassene in de kamer die ik duidelijk nodig heb, maar niet wil toegeven.",
+      "popeyeAuthor": "Popeye de Zeeman",
+      "popeyeRole": "Sailor & Olive Oyl's beschermer (stripfiguur)",
+      "captainPicardQuote": "Een diverse ploeg leiden door eerste-contactsituaties en diplomatieke crises? ATLVS houdt iedereen op één lijn als de inzet letterlijk galactisch is.",
+      "captainPicardAuthor": "Kapitein Jean-Luc Picard",
+      "captainPicardRole": "Starfleet-kapitein, USS Enterprise (Star Trek: TNG)",
+      "captainSiskoQuote": "Commandant zijn over een station dat deels een militaire basis, deels handelscentrum en deels vluchtelingencentrum is? ATLVS helpt u de complexiteit te beheersen wanneer elke stakeholder andere prioriteiten heeft.",
+      "captainSiskoAuthor": "Kapitein Benjamin Sisko",
+      "captainSiskoRole": "Starfleet-commandant, Deep Space Nine (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent pricing",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Transparante prijzen",
+      "subtitle": "Van solo-aannemers tot enterprise-producenten",
+      "monthly": "Maandelijks",
+      "annually": "Jaarlijks",
+      "save20": "Bespaar 20%",
       "community": {
-        "name": "Community",
-        "price": "Free",
-        "period": "forever",
-        "description": "Perfect for getting started",
-        "feature1": "Raider role access",
-        "feature2": "Basic task management",
-        "feature3": "Community support",
-        "cta": "Get Started Free"
+        "name": "Gemeenschap",
+        "price": "Vrij",
+        "period": "voor altijd",
+        "description": "Perfect om aan de slag te gaan",
+        "feature1": "Toegang tot Raider-rol",
+        "feature2": "Basis taakbeheer",
+        "feature3": "Ondersteuning van de gemeenschap",
+        "cta": "Ga gratis aan de slag"
       },
       "pro": {
         "name": "Pro",
-        "price": "$12",
-        "period": "per month",
-        "annualPrice": "$10/month (billed annually)",
-        "description": "For independent contractors",
-        "feature1": "Deviator & Raider roles",
-        "feature2": "Advanced task management",
-        "feature3": "Priority support",
-        "cta": "Start Free Trial"
+        "price": "$ 12",
+        "period": "per maand",
+        "annualPrice": "$ 10/maand (jaarlijks gefactureerd)",
+        "description": "Voor onafhankelijke opdrachtnemers",
+        "feature1": "Deviator- en Raider-rollen",
+        "feature2": "Geavanceerd taakbeheer",
+        "feature3": "Prioritaire ondersteuning",
+        "cta": "Gratis proefperiode starten"
       },
       "team": {
         "name": "Team",
-        "badge": "Most Popular",
-        "price": "$120",
-        "period": "per month",
-        "annualPrice": "$100/month (billed annually)",
-        "description": "For small to medium teams (2-10 seats)",
-        "feature1": "All Pro features",
-        "feature2": "Vendor management",
-        "feature3": "Team collaboration",
-        "cta": "Start Free Trial"
+        "badge": "Meest populair",
+        "price": "$ 120",
+        "period": "per maand",
+        "annualPrice": "$ 100/maand (jaarlijks gefactureerd)",
+        "description": "Voor kleine tot middelgrote teams (2-10 zitplaatsen)",
+        "feature1": "Alle Pro-functies",
+        "feature2": "Leveranciersbeheer",
+        "feature3": "Teamsamenwerking",
+        "cta": "Gratis proefperiode starten"
       },
       "starter": {
         "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "price": "$ 29",
+        "period": "per gebruiker/maand",
+        "description": "Ideaal voor freelancers en kleine teams",
+        "feature1": "Maximaal 5 gebruikers",
+        "feature2": "10 actieve projecten",
+        "feature3": "Basisrapportage",
+        "feature4": "E-mailondersteuning",
+        "feature5": "10 GB opslag",
+        "cta": "Gratis proefperiode starten"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "Professioneel",
+        "price": "$ 79",
+        "period": "per gebruiker/maand",
+        "description": "Voor groeiende productiebedrijven",
+        "feature1": "Maximaal 25 gebruikers",
+        "feature2": "Onbeperkte projecten",
+        "feature3": "Geavanceerde analyses",
+        "feature4": "Prioritaire ondersteuning",
+        "feature5": "100 GB opslag",
+        "feature6": "Aangepaste rollen",
+        "feature7": "API-toegang",
+        "cta": "Gratis proefperiode starten",
+        "popular": "Meest populair"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "annualPrice": "$1000/month (billed annually)",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
-        "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "name": "Onderneming",
+        "price": "Aangepast",
+        "period": "contact opnemen met de verkoop",
+        "annualPrice": "$ 1000/maand (jaarlijks gefactureerd)",
+        "description": "Voor grote organisaties en instanties",
+        "feature1": "Onbeperkte gebruikers",
+        "feature2": "Onbeperkte projecten",
+        "feature3": "Aangepaste integraties",
+        "feature4": "Toegewijde ondersteuning",
+        "feature5": "Onbeperkte opslag",
+        "feature6": "SSO en SAML",
+        "feature7": "SLA-garantie",
+        "feature8": "Aangepaste opleiding",
+        "cta": "Neem contact op met Verkoop"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "question1": "How long is the free trial?",
-      "answer1": "14 days, no credit card required. Full access to all features.",
-      "question2": "Can I cancel anytime?",
-      "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
-      "question3": "What payment methods do you accept?",
-      "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "question4": "Is my data secure?",
-      "answer4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "question5": "Do you offer training?",
-      "answer5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "question6": "Can I import my existing data?",
-      "answer6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans.",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Veelgestelde vragen",
+      "subtitle": "Alles wat u moet weten",
+      "question1": "Hoe lang duurt de gratis proefperiode?",
+      "answer1": "14 dagen, geen creditcard vereist. Volledige toegang tot alle functies.",
+      "question2": "Kan ik op elk moment annuleren?",
+      "answer2": "Ja. Annuleer op elk gewenst moment. Geen langdurige contracten of verplichtingen.",
+      "question3": "Welke betaalmethoden accepteert u?",
+      "answer3": "We accepteren alle gangbare creditcards, ACH en bankoverschrijvingen voor ondernemingsabonnementen.",
+      "question4": "Zijn mijn gegevens veilig?",
+      "answer4": "Ja. Encryptie op ondernemingsniveau, voldoet aan SOC 2, gereed voor AVG. Uw gegevens worden op elk niveau beschermd.",
+      "question5": "Biedt u opleidingen aan?",
+      "answer5": "Ja. Selfservicebronnen voor alle abonnementen, plus speciale training voor Enterprise-klanten.",
+      "question6": "Kan ik mijn bestaande gegevens importeren?",
+      "answer6": "Ja. We bieden CSV-importtools en kunnen helpen met aangepaste gegevensmigraties voor Enterprise-abonnementen.",
+      "q1": "Hoe lang duurt de gratis proefperiode?",
+      "a1": "14 dagen, geen creditcard vereist. Volledige toegang tot alle functies.",
+      "q2": "Kan ik op elk moment annuleren?",
+      "a2": "Ja. Annuleer op elk gewenst moment. Geen langdurige contracten of verplichtingen.",
+      "q3": "Welke betaalmethoden accepteert u?",
+      "a3": "We accepteren alle gangbare creditcards, ACH en bankoverschrijvingen voor ondernemingsabonnementen.",
+      "q4": "Zijn mijn gegevens veilig?",
+      "a4": "Ja. Encryptie op ondernemingsniveau, voldoet aan SOC 2, gereed voor AVG. Uw gegevens worden op elk niveau beschermd.",
+      "q5": "Biedt u opleidingen aan?",
+      "a5": "Ja. Selfservicebronnen voor alle abonnementen, plus speciale training voor Enterprise-klanten.",
+      "q6": "Kan ik mijn bestaande gegevens importeren?",
+      "a6": "Ja. We bieden CSV-importtools en kunnen helpen met aangepaste gegevensmigraties voor Enterprise-abonnementen."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "ctaPrimary": "Start Free Trial",
-      "ctaSecondary": "Schedule Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Klaar om uw productieworkflow te transformeren?",
+      "subtitle": "Sluit u aan bij duizenden productieprofessionals die ATLVS gebruiken",
+      "ctaPrimary": "Gratis proefperiode starten",
+      "ctaSecondary": "Plan een demo",
+      "trustIndicators": "Geen creditcard vereist • Gratis proefperiode van 14 dagen • Annuleer op elk gewenst moment",
+      "primary": "Gratis proefperiode starten",
+      "secondary": "Plan een demo",
+      "noCard": "Geen creditcard vereist"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
+      "tagline": "Het projectmanagementsysteem voor ervaringsgerichte productieteams",
       "productTitle": "Product",
-      "companyTitle": "Company",
-      "resourcesTitle": "Resources",
-      "legalTitle": "Legal",
+      "companyTitle": "Bedrijf",
+      "resourcesTitle": "Bronnen",
+      "legalTitle": "Legaal",
       "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
+      "features": "Functies",
+      "pricing": "Prijzen",
       "demo": "Demo",
-      "integrations": "Integrations",
-      "docs": "Documentation",
-      "apiReference": "API Reference",
-      "changelog": "Changelog",
-      "caseStudies": "Case Studies",
-      "templates": "Templates",
-      "company": "Company",
-      "aboutUs": "About Us",
-      "blog": "Blog",
-      "careers": "Careers",
+      "integrations": "Integraties",
+      "docs": "Documentatie",
+      "apiReference": "API-referentie",
+      "changelog": "Wijzigingslog",
+      "caseStudies": "Casestudies",
+      "templates": "Sjablonen",
+      "company": "Bedrijf",
+      "aboutUs": "Over ons",
+      "blog": "Bloggen",
+      "careers": "Carrières",
       "contact": "Contact",
-      "press": "Press",
+      "press": "Druk op",
       "partners": "Partners",
-      "customers": "Customers",
-      "events": "Events",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "roiCalculator": "ROI Calculator",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "customers": "Klanten",
+      "events": "Evenementen",
+      "legal": "Legaal",
+      "privacy": "Privacybeleid",
+      "terms": "Servicevoorwaarden",
+      "security": "Beveiliging",
+      "support": "Steun",
+      "helpCenter": "Helpcentrum",
+      "community": "Gemeenschap",
+      "status": "Systeemstatus",
+      "roiCalculator": "ROI-calculator",
+      "copyright": "© 2025 ATLVS. Alle rechten voorbehouden."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Integreert met uw favoriete tools",
+      "subtitle": "Verbind ATLVS met de tools die je al gebruikt",
+      "comingSoon": "Binnenkort meer integraties"
     },
     "generational": {
       "baby-boomer": {
         "hero": {
-          "headline": "Professional Production Management Solutions",
-          "headlineHighlight": "For Experiential Teams",
-          "subheadline": "Comprehensive project, workforce, asset, and financial management from a centralized platform. Designed for professionals who deliver exceptional experiences.",
-          "supportingCopy": "From festivals to corporate events and immersive experiences—ATLVS provides the structure and oversight needed for successful production management.",
-          "ctaPrimary": "Begin Free Trial",
-          "ctaSecondary": "Request Demonstration",
-          "trustIndicators": "No credit card required • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
-          "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Experiential Teams"
+          "headline": "Professionele oplossingen voor productiebeheer",
+          "headlineHighlight": "Voor ervaringsgerichte teams",
+          "subheadline": "Uitgebreid project-, personeels-, activa- en financieel beheer vanaf een gecentraliseerd platform. Ontworpen voor professionals die uitzonderlijke ervaringen bieden.",
+          "supportingCopy": "Van festivals tot bedrijfsevenementen en meeslepende ervaringen: ATLVS biedt de structuur en het overzicht die nodig zijn voor succesvol productiemanagement.",
+          "ctaPrimary": "Gratis proefperiode starten",
+          "ctaSecondary": "Demonstratie aanvragen",
+          "trustIndicators": "Geen creditcard vereist • 14 dagen op proef • Annuleer op elk gewenst moment",
+          "platformScreenshot": "Platformscreenshot",
+          "headlineHighlightPrefix": "Voor",
+          "headlineHighlightMain": "Ervaringsgerichte teams"
         },
         "trustBar": {
-          "trustedBy": "Trusted by production professionals worldwide"
+          "trustedBy": "Vertrouwd door productieprofessionals over de hele wereld"
         },
         "problem": {
-          "title": "The Production Management Challenge",
-          "subtitle": "Industry-wide inefficiencies",
-          "pain1Title": "Fragmented Systems",
-          "pain1Description": "Teams utilize multiple disconnected platforms including spreadsheets, email, and various project management tools",
-          "pain2Title": "Information Loss",
-          "pain2Description": "Critical project details are lost during transitions and team handoffs",
-          "pain3Title": "Budget Overruns",
-          "pain3Description": "Without proper financial oversight, costs exceed projections",
-          "pain4Title": "Communication Breakdowns",
-          "pain4Description": "Vendors, crew members, and stakeholders experience coordination difficulties"
+          "title": "De uitdaging voor productiemanagement",
+          "subtitle": "Industriebrede inefficiënties",
+          "pain1Title": "Gefragmenteerde systemen",
+          "pain1Description": "Teams maken gebruik van meerdere niet-verbonden platforms, waaronder spreadsheets, e-mail en verschillende projectmanagementtools",
+          "pain2Title": "Informatieverlies",
+          "pain2Description": "Kritieke projectdetails gaan verloren tijdens transities en teamoverdrachten",
+          "pain3Title": "Budgetoverschrijdingen",
+          "pain3Description": "Zonder goed financieel toezicht overtreffen de kosten de verwachtingen",
+          "pain4Title": "Communicatiestoringen",
+          "pain4Description": "Verkopers, bemanningsleden en belanghebbenden ervaren coördinatieproblemen"
         },
         "solution": {
-          "title": "Comprehensive Platform. Complete Control.",
-          "subtitle": "Integrated production management",
-          "feature1Title": "Centralized Platform",
-          "feature1Description": "All projects, personnel, and resources managed from one location",
-          "feature2Title": "Real-Time Updates",
-          "feature2Description": "Instant synchronization ensures all team members have current information",
-          "feature3Title": "Financial Oversight",
-          "feature3Description": "Track budgets, expenses, and invoices with precision and accuracy",
-          "feature4Title": "Vendor Management",
-          "feature4Description": "Maintain professional relationships while ensuring proper oversight"
+          "title": "Uitgebreid platform. Volledige controle.",
+          "subtitle": "Geïntegreerd productiebeheer",
+          "feature1Title": "Gecentraliseerd platform",
+          "feature1Description": "Alle projecten, personeel en middelen worden vanuit één locatie beheerd",
+          "feature2Title": "Realtime updates",
+          "feature2Description": "Onmiddellijke synchronisatie zorgt ervoor dat alle teamleden over actuele informatie beschikken",
+          "feature3Title": "Financieel toezicht",
+          "feature3Description": "Houd budgetten, uitgaven en facturen nauwkeurig en accuraat bij",
+          "feature4Title": "Leveranciersbeheer",
+          "feature4Description": "Onderhoud professionele relaties en zorg tegelijkertijd voor goed toezicht"
         },
         "howItWorks": {
-          "title": "Implementation Process",
-          "subtitle": "Efficient setup and deployment",
-          "step1Title": "Establish Your Organization",
-          "step1Description": "Configure your organizational structure and onboard your team",
-          "step2Title": "Define Your Projects",
-          "step2Description": "Establish productions, activations, and workspaces",
-          "step3Title": "Assign Roles & Responsibilities",
-          "step3Description": "Provide appropriate access levels and clear accountability",
-          "step4Title": "Execute & Monitor",
-          "step4Description": "Track progress, manage budgets, deliver exceptional results"
+          "title": "Implementatieproces",
+          "subtitle": "Efficiënte installatie en implementatie",
+          "step1Title": "Vestig uw organisatie",
+          "step1Description": "Configureer uw organisatiestructuur en onboard uw team",
+          "step2Title": "Definieer uw projecten",
+          "step2Description": "Inrichten van producties, activaties en werkplekken",
+          "step3Title": "Wijs rollen en verantwoordelijkheden toe",
+          "step3Description": "Zorg voor passende toegangsniveaus en duidelijke verantwoordelijkheid",
+          "step4Title": "Uitvoeren en monitoren",
+          "step4Description": "Volg de voortgang, beheer budgetten en lever uitzonderlijke resultaten"
         },
         "testimonials": {
-          "title": "Trusted by Production Professionals Worldwide",
-          "subtitle": "Proven results from industry leaders",
-          "testimonial1Quote": "ATLVS has proven to be an excellent solution for managing our festival operations. Everything is well-organized and our team maintains proper coordination.",
+          "title": "Vertrouwd door productieprofessionals wereldwijd",
+          "subtitle": "Bewezen resultaten van marktleiders",
+          "testimonial1Quote": "ATLVS heeft bewezen een uitstekende oplossing te zijn voor het beheren van onze festivalactiviteiten. Alles is goed georganiseerd en ons team zorgt voor een goede coördinatie.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The role-based access control system provides exactly what we needed for our organizational structure. Finally, proper security and access management for production teams.",
+          "testimonial1Role": "Productiedirecteur, groot muziekfestival",
+          "testimonial2Quote": "Het op rollen gebaseerde toegangscontrolesysteem biedt precies wat we nodig hadden voor onze organisatiestructuur. Tot slot een goede beveiliging en toegangsbeheer voor productieteams.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We reduced budget overruns by 40% in the first quarter. The financial visibility and tracking capabilities are genuinely impressive.",
+          "testimonial2Role": "VP Operations, Live Events Company",
+          "testimonial3Quote": "In het eerste kwartaal hebben we de budgetoverschrijdingen met 40% teruggedrongen. De financiële zichtbaarheid en trackingmogelijkheden zijn werkelijk indrukwekkend.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Bedrijfsevenementenbureau"
         },
         "pricing": {
-          "title": "Professional Pricing Structure"
+          "title": "Professionele prijsstructuur"
         }
       },
       "gen-x": {
         "hero": {
-          "headline": "Production Management That Works",
-          "headlineHighlight": "No BS",
-          "subheadline": "Manage projects, crew, assets, and budgets from one place. Built for people who actually do the work.",
-          "supportingCopy": "Festivals, corporate events, immersive activations—ATLVS handles it without the fluff.",
-          "ctaPrimary": "Start Free",
-          "ctaSecondary": "See How It Works",
-          "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
+          "headline": "Productiebeheer dat werkt",
+          "headlineHighlight": "Geen BS",
+          "subheadline": "Beheer projecten, personeel, middelen en budgetten vanaf één plek. Gebouwd voor mensen die het werk daadwerkelijk doen.",
+          "supportingCopy": "Festivals, bedrijfsevenementen, meeslepende activaties: ATLVS regelt het zonder poespas.",
+          "ctaPrimary": "Begin gratis",
+          "ctaSecondary": "Zie hoe het werkt",
+          "trustIndicators": "Geen creditcard • 14 dagen op proef • Op elk moment opzeggen",
+          "platformScreenshot": "Platformscreenshot",
           "headlineHighlightPrefix": "",
-          "headlineHighlightMain": "No BS"
+          "headlineHighlightMain": "Geen BS"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams who get stuff done"
+          "trustedBy": "Gebruikt door productieteams die dingen gedaan krijgen"
         },
         "problem": {
-          "title": "The Production Mess",
-          "subtitle": "Same story, different day",
-          "pain1Title": "Tool Chaos",
-          "pain1Description": "Spreadsheets, Slack, email, random Google Docs—your workflow is scattered everywhere",
-          "pain2Title": "Missing Info",
-          "pain2Description": "Files disappear. Someone sent it... somewhere. Good luck finding it",
-          "pain3Title": "Budget Creep",
-          "pain3Description": "Costs sneak up on you. By the time you catch it, you're over budget",
-          "pain4Title": "Communication Breakdown",
-          "pain4Description": "Vendors miss updates, crew works with old info, stakeholders keep asking the same questions"
+          "title": "De productiepuinhoop",
+          "subtitle": "Hetzelfde verhaal, andere dag",
+          "pain1Title": "Gereedschapchaos",
+          "pain1Description": "Spreadsheets, Slack, e-mail, willekeurige Google-documenten: uw workflow is overal verspreid",
+          "pain2Title": "Ontbrekende informatie",
+          "pain2Description": "Bestanden verdwijnen. Iemand heeft het ergens naartoe gestuurd. Veel succes met het vinden ervan",
+          "pain3Title": "Budgetkruip",
+          "pain3Description": "De kosten komen op je af. Tegen de tijd dat je het snapt, ben je over het budget heen",
+          "pain4Title": "Communicatie-uitsplitsing",
+          "pain4Description": "Leveranciers missen updates, de crew werkt met oude informatie, stakeholders blijven dezelfde vragen stellen"
         },
         "solution": {
-          "title": "One Platform. Actually Works.",
-          "subtitle": "Everything where it should be",
-          "feature1Title": "Unified System",
-          "feature1Description": "Projects, people, resources—all in one place that actually makes sense",
-          "feature2Title": "Real-Time Updates",
-          "feature2Description": "Changes happen instantly. Everyone sees the same thing",
-          "feature3Title": "Budget Tracking",
-          "feature3Description": "Track every dollar. No surprises, no excuses",
-          "feature4Title": "Vendor Coordination",
-          "feature4Description": "Keep partners in the loop without losing control"
+          "title": "Eén platform. Werkt eigenlijk.",
+          "subtitle": "Alles waar het moet zijn",
+          "feature1Title": "Uniform systeem",
+          "feature1Description": "Projecten, mensen, middelen – allemaal op één plek die echt logisch is",
+          "feature2Title": "Realtime updates",
+          "feature2Description": "Veranderingen gebeuren onmiddellijk. Iedereen ziet hetzelfde",
+          "feature3Title": "Budget bijhouden",
+          "feature3Description": "Volg elke dollar. Geen verrassingen, geen excuses",
+          "feature4Title": "Coördinatie van leveranciers",
+          "feature4Description": "Houd partners op de hoogte zonder de controle te verliezen"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Get up and running fast",
-          "step1Title": "Set Up Your Org",
-          "step1Description": "Build your structure, add your team",
-          "step2Title": "Create Your Projects",
-          "step2Description": "Map out productions and workspaces",
-          "step3Title": "Assign Roles",
-          "step3Description": "Give people the right access, nothing more",
-          "step4Title": "Get It Done",
-          "step4Description": "Track progress, manage budgets, ship on time"
+          "title": "Hoe het werkt",
+          "subtitle": "Ga snel aan de slag",
+          "step1Title": "Stel uw organisatie in",
+          "step1Description": "Bouw uw structuur, voeg uw team toe",
+          "step2Title": "Creëer uw projecten",
+          "step2Description": "Breng producties en werkruimtes in kaart",
+          "step3Title": "Wijs rollen toe",
+          "step3Description": "Geef mensen de juiste toegang, meer niet",
+          "step4Title": "Krijg het gedaan",
+          "step4Description": "Houd de voortgang bij, beheer budgetten en verzend op tijd"
         },
         "testimonials": {
-          "title": "Real Teams, Real Results",
-          "subtitle": "No marketing speak",
-          "testimonial1Quote": "ATLVS fixed our festival chaos. Everything's in one place, everyone knows what's happening. Finally.",
+          "title": "Echte teams, echte resultaten",
+          "subtitle": "Geen marketingpraat",
+          "testimonial1Quote": "ATLVS heeft onze festivalchaos opgelost. Alles bevindt zich op één plek, iedereen weet wat er gebeurt. Eindelijk.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permissions system is exactly what we needed. No more access nightmares.",
+          "testimonial1Role": "Productiedirecteur, groot muziekfestival",
+          "testimonial2Quote": "Het machtigingssysteem is precies wat we nodig hadden. Geen toegangsnachtmerries meer.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "Cut budget overruns 40% first quarter. The tracking actually works.",
+          "testimonial2Role": "VP Operations, Live Events Company",
+          "testimonial3Quote": "Bezuinigingen op begrotingsoverschrijdingen eerste kwartaal met 40%. Het volgen werkt echt.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Bedrijfsevenementenbureau"
         },
         "pricing": {
-          "title": "Straightforward pricing"
+          "title": "Duidelijke prijzen"
         }
       },
       "millennial": {
         "hero": {
-          "headline": "Production Management That Actually Works",
-          "headlineHighlight": "For Experiential Teams",
-          "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
-          "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
-          "ctaPrimary": "Start Free Today",
-          "ctaSecondary": "See It in Action",
-          "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
-          "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Experiential Teams"
+          "headline": "Productiebeheer dat echt werkt",
+          "headlineHighlight": "Voor ervaringsgerichte teams",
+          "subheadline": "Navigeer door uw projecten, personeel, middelen en budgetten vanuit één commandocentrum. Gebouwd voor de mensen die onvergetelijke ervaringen creëren.",
+          "supportingCopy": "Of u nu festivals, bedrijfsevenementen of meeslepende activaties produceert: ATLVS stippelt de koers uit, van concept tot gordijnoproep.",
+          "ctaPrimary": "Begin vandaag nog gratis",
+          "ctaSecondary": "Zie het in actie",
+          "trustIndicators": "Geen creditcard • 14 dagen op proef • Op elk moment opzeggen",
+          "platformScreenshot": "Platformscreenshot",
+          "headlineHighlightPrefix": "Voor",
+          "headlineHighlightMain": "Ervaringsgerichte teams"
         },
         "trustBar": {
-          "trustedBy": "Trusted by production teams worldwide"
+          "trustedBy": "Vertrouwd door productieteams over de hele wereld"
         },
         "problem": {
-          "title": "The Production Chaos Problem",
-          "subtitle": "You know the drill",
-          "pain1Title": "Tool Overload",
-          "pain1Description": "Spreadsheets, Slack, email, that one Google Doc nobody can find—your workflow is scattered across a dozen platforms",
-          "pain2Title": "Information Black Holes",
-          "pain2Description": "Critical details vanish during handoffs. Someone definitely sent that file... somewhere",
-          "pain3Title": "Budget Surprises",
-          "pain3Description": "Costs creep up in the shadows. By the time you notice, you're already over",
-          "pain4Title": "Communication Drift",
-          "pain4Description": "Vendors miss updates, crew works off old info, stakeholders ask the same questions twice"
+          "title": "Het productiechaosprobleem",
+          "subtitle": "Je kent de oefening",
+          "pain1Title": "Overbelasting van gereedschap",
+          "pain1Description": "Spreadsheets, Slack, e-mail, dat ene Google-document dat niemand kan vinden: uw workflow is verspreid over een tiental platforms",
+          "pain2Title": "Informatie Zwarte gaten",
+          "pain2Description": "Kritieke details verdwijnen tijdens de overdracht. Iemand heeft dat bestand zeker ergens naartoe gestuurd",
+          "pain3Title": "Budgetverrassingen",
+          "pain3Description": "De kosten kruipen in de schaduw. Tegen de tijd dat je het merkt, ben je al voorbij",
+          "pain4Title": "Communicatie drift",
+          "pain4Description": "Verkopers missen updates, het personeel werkt aan oude informatie en belanghebbenden stellen twee keer dezelfde vragen"
         },
         "solution": {
-          "title": "One Platform. Zero Chaos.",
-          "subtitle": "Everything in its right place",
-          "feature1Title": "Unified Command Center",
-          "feature1Description": "Projects, people, and resources all sailing in formation",
-          "feature2Title": "Real-Time Sync",
-          "feature2Description": "Updates flow instantly. Everyone's working from the same chart",
-          "feature3Title": "Budget Radar",
-          "feature3Description": "Track every dollar in real-time. No surprises, no overruns",
-          "feature4Title": "Vendor Coordination",
-          "feature4Description": "Keep external partners in the loop without giving away the ship"
+          "title": "Eén platform. Geen chaos.",
+          "subtitle": "Alles op de juiste plaats",
+          "feature1Title": "Verenigd Commandocentrum",
+          "feature1Description": "Projecten, mensen en middelen varen allemaal in formatie",
+          "feature2Title": "Realtime synchronisatie",
+          "feature2Description": "Updates stromen onmiddellijk binnen. Iedereen werkt vanuit hetzelfde diagram",
+          "feature3Title": "Begrotingsradar",
+          "feature3Description": "Volg elke dollar in realtime. Geen verrassingen, geen overschrijdingen",
+          "feature4Title": "Coördinatie van leveranciers",
+          "feature4Description": "Houd externe partners op de hoogte zonder het schip weg te geven"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Set sail in minutes, not months",
-          "step1Title": "Launch Your Organization",
-          "step1Description": "Set up your structure and bring your crew aboard",
-          "step2Title": "Chart Your Projects",
-          "step2Description": "Map out productions, activations, and workspaces",
-          "step3Title": "Assign Roles & Missions",
-          "step3Description": "Give everyone the right access and clear responsibilities",
-          "step4Title": "Navigate & Deliver",
-          "step4Description": "Monitor progress, manage budgets, execute flawlessly"
+          "title": "Hoe het werkt",
+          "subtitle": "Vaar binnen enkele minuten uit, niet in maanden",
+          "step1Title": "Lanceer uw organisatie",
+          "step1Description": "Zet uw structuur op en breng uw bemanning aan boord",
+          "step2Title": "Breng uw projecten in kaart",
+          "step2Description": "Breng producties, activaties en werkplekken in kaart",
+          "step3Title": "Wijs rollen en missies toe",
+          "step3Description": "Geef iedereen de juiste toegang en duidelijke verantwoordelijkheden",
+          "step4Title": "Navigeren en bezorgen",
+          "step4Description": "Bewaak de voortgang, beheer budgetten en voer feilloos uit"
         },
         "testimonials": {
-          "title": "Trusted by Production Teams Worldwide",
-          "subtitle": "Real stories from real producers",
-          "testimonial1Quote": "ATLVS transformed how we manage festivals. Everything in one place, everyone on the same page. Finally.",
+          "title": "Vertrouwd door productieteams wereldwijd",
+          "subtitle": "Echte verhalen van echte producenten",
+          "testimonial1Quote": "ATLVS heeft de manier waarop we festivals beheren getransformeerd. Alles op één plek, iedereen op dezelfde pagina. Eindelijk.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Proper access control for production? Revolutionary.",
+          "testimonial1Role": "Productiedirecteur, groot muziekfestival",
+          "testimonial2Quote": "Het RBAC-systeem is perfect voor onze complexe organisatiestructuur. Goede toegangscontrole voor productie? Revolutionair.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
+          "testimonial2Role": "VP Operations, Live Events Company",
+          "testimonial3Quote": "We hebben de budgetoverschrijdingen in het eerste kwartaal met 40% teruggedrongen. De financiële zichtbaarheid is terecht baanbrekend.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Bedrijfsevenementenbureau"
         },
         "pricing": {
-          "title": "Transparent pricing that scales"
+          "title": "Transparante prijzen die schaalbaar zijn"
         }
       },
       "gen-z": {
         "hero": {
-          "headline": "Production Management That Hits Different",
-          "headlineHighlight": "For Event Creators",
-          "subheadline": "Run your projects, crew, gear, and budgets from one app. Made for people who actually create experiences.",
-          "supportingCopy": "Festivals, brand activations, immersive events—ATLVS keeps everything organized from idea to execution.",
-          "ctaPrimary": "Start Free",
-          "ctaSecondary": "Check It Out",
-          "trustIndicators": "No credit card needed • Free trial • Cancel whenever",
-          "platformScreenshot": "Platform Screenshot",
-          "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Event Creators"
+          "headline": "Productiemanagement dat anders is",
+          "headlineHighlight": "Voor evenementenmakers",
+          "subheadline": "Beheer uw projecten, personeel, uitrusting en budgetten vanuit één app. Gemaakt voor mensen die daadwerkelijk ervaringen creëren.",
+          "supportingCopy": "Festivals, merkactivaties, meeslepende evenementen: ATLVS houdt alles georganiseerd, van idee tot uitvoering.",
+          "ctaPrimary": "Begin gratis",
+          "ctaSecondary": "Bekijk het eens",
+          "trustIndicators": "Geen creditcard nodig • Gratis proefperiode • Annuleer wanneer u maar wilt",
+          "platformScreenshot": "Platformscreenshot",
+          "headlineHighlightPrefix": "Voor",
+          "headlineHighlightMain": "Makers van evenementen"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams everywhere"
+          "trustedBy": "Overal gebruikt door productieteams"
         },
         "problem": {
-          "title": "Production is Messy AF",
-          "subtitle": "We've all been there",
-          "pain1Title": "Too Many Apps",
-          "pain1Description": "Spreadsheets, Slack, email, that random Google Doc—everything's everywhere and it's chaos",
-          "pain2Title": "Files Go Missing",
-          "pain2Description": "Someone sent that file... somewhere. Now nobody can find it. Classic.",
-          "pain3Title": "Budget Goes Brr",
-          "pain3Description": "Costs keep going up. By the time you notice, you're way over budget",
-          "pain4Title": "Communication Lag 💬",
-          "pain4Description": "Team members miss updates and work with old information"
+          "title": "De productie is Messy AF",
+          "subtitle": "We zijn er allemaal geweest",
+          "pain1Title": "Te veel apps",
+          "pain1Description": "Spreadsheets, Slack, e-mail, dat willekeurige Google-document: alles is overal en het is chaos",
+          "pain2Title": "Bestanden verdwijnen",
+          "pain2Description": "Iemand heeft dat bestand ergens naartoe gestuurd. Nu kan niemand het vinden. Klassiek.",
+          "pain3Title": "Budget gaat Brr",
+          "pain3Description": "De kosten blijven stijgen. Tegen de tijd dat je het merkt, ben je ver boven je budget",
+          "pain4Title": "Communicatievertraging 💬",
+          "pain4Description": "Teamleden missen updates en werken met oude informatie"
         },
         "solution": {
-          "title": "One Platform. Total Control. 🎯",
-          "subtitle": "Everything in one place",
-          "feature1Title": "Command Center 🎮",
-          "feature1Description": "All your projects, team, and resources in one hub",
-          "feature2Title": "Live Sync ⚡",
-          "feature2Description": "Updates happen instantly. Everyone stays connected",
-          "feature3Title": "Budget Tracker 💰",
-          "feature3Description": "See every dollar in real-time. No surprises",
-          "feature4Title": "Team Coordination 🤝",
-          "feature4Description": "Keep everyone updated and on the same page"
+          "title": "Eén platform. Totale controle. 🎯",
+          "subtitle": "Alles op één plek",
+          "feature1Title": "Commandocentrum 🎮",
+          "feature1Description": "Al uw projecten, team en middelen in één hub",
+          "feature2Title": "Live synchronisatie ⚡",
+          "feature2Description": "Updates gebeuren onmiddellijk. Iedereen blijft verbonden",
+          "feature3Title": "Budgettracker 💰",
+          "feature3Description": "Bekijk elke dollar in realtime. Geen verrassingen",
+          "feature4Title": "Teamcoördinatie 🤝",
+          "feature4Description": "Houd iedereen op de hoogte en op dezelfde pagina"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Get started in literally minutes",
-          "step1Title": "Set Up Your Org",
-          "step1Description": "Build your team structure and add everyone",
-          "step2Title": "Create Projects",
-          "step2Description": "Map out your events and productions",
-          "step3Title": "Assign Roles",
-          "step3Description": "Give people the right permissions",
-          "step4Title": "Ship It",
-          "step4Description": "Track everything, manage budgets, execute perfectly"
+          "title": "Hoe het werkt",
+          "subtitle": "Ga binnen letterlijk enkele minuten aan de slag",
+          "step1Title": "Stel uw organisatie in",
+          "step1Description": "Bouw uw teamstructuur op en voeg iedereen toe",
+          "step2Title": "Creëer projecten",
+          "step2Description": "Breng uw evenementen en producties in kaart",
+          "step3Title": "Wijs rollen toe",
+          "step3Description": "Geef mensen de juiste rechten",
+          "step4Title": "Verzend het",
+          "step4Description": "Volg alles, beheer budgetten, voer perfect uit"
         },
         "testimonials": {
-          "title": "Real Teams Using ATLVS",
-          "subtitle": "Actual feedback from actual people",
-          "testimonial1Quote": "ATLVS is OP for managing festivals. Everything's organized, everyone's synced. 10/10 would recommend.",
+          "title": "Echte teams die ATLVS gebruiken",
+          "subtitle": "Echte feedback van echte mensen",
+          "testimonial1Quote": "ATLVS is OP voor het beheren van festivals. Alles is georganiseerd, iedereen is gesynchroniseerd. 10/10 zou aanbevelen.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permissions system is fire. Finally got proper access control for our team.",
+          "testimonial1Role": "Productiedirecteur, groot muziekfestival",
+          "testimonial2Quote": "Het permissiesysteem is vuur. Eindelijk een goede toegangscontrole voor ons team.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget problems by 40% first quarter. The money tracking is straight up amazing.",
+          "testimonial2Role": "VP Operations, Live Events Company",
+          "testimonial3Quote": "We hebben de begrotingsproblemen in het eerste kwartaal met 40% teruggebracht. Het volgen van geld is ronduit geweldig.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Bedrijfsevenementenbureau"
         },
         "pricing": {
-          "title": "Pricing that hits different"
+          "title": "Prijzen die anders raken"
         }
       },
       "gen-alpha": {
         "hero": {
-          "headline": "Level Up Your Production Game 🎮",
-          "headlineHighlight": "For Event Creators",
-          "subheadline": "Manage projects, team, gear & money from one super app ✨ Built for creators who make epic experiences 🚀",
-          "supportingCopy": "Festivals, events, activations—ATLVS keeps everything organized from start to finish 🎯",
-          "ctaPrimary": "Start Free 🚀",
-          "ctaSecondary": "See Demo 👀",
-          "trustIndicators": "No card needed • Free trial • Cancel anytime ✌️",
-          "platformScreenshot": "Platform Screenshot",
-          "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Event Creators"
+          "headline": "Verbeter uw productiegame 🎮",
+          "headlineHighlight": "Voor evenementenmakers",
+          "subheadline": "Beheer projecten, team, uitrusting en geld vanuit één superapp ✨ Gebouwd voor makers die epische ervaringen maken 🚀",
+          "supportingCopy": "Festivals, evenementen, activaties: ATLVS houdt alles van begin tot eind georganiseerd 🎯",
+          "ctaPrimary": "Begin gratis 🚀",
+          "ctaSecondary": "Zie demo 👀",
+          "trustIndicators": "Geen kaart nodig • Gratis proefperiode • Annuleer op elk moment ✌️",
+          "platformScreenshot": "Platformscreenshot",
+          "headlineHighlightPrefix": "Voor",
+          "headlineHighlightMain": "Makers van evenementen"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams worldwide 🌍"
+          "trustedBy": "Gebruikt door productieteams wereldwijd 🌍"
         },
         "problem": {
-          "title": "Production Can Be Chaotic 😅",
-          "subtitle": "Sound familiar?",
-          "pain1Title": "App Overload 📱",
-          "pain1Description": "Too many apps, too much chaos. Everything's scattered and hard to find 🤯",
-          "pain2Title": "Lost Files 📂",
-          "pain2Description": "Files disappear into the void. Someone sent it... somewhere... good luck! 🔍",
-          "pain3Title": "Budget Surprise 💸",
-          "pain3Description": "Money keeps disappearing. By the time you notice, you're over budget 😬",
-          "pain4Title": "Team Confusion 🤷",
-          "pain4Description": "People miss updates, work with old info, ask the same questions"
+          "title": "De productie kan chaotisch zijn 😅",
+          "subtitle": "Klinkt bekend?",
+          "pain1Title": "App-overbelasting 📱",
+          "pain1Description": "Te veel apps, te veel chaos. Alles is verspreid en moeilijk te vinden 🤯",
+          "pain2Title": "Verloren bestanden 📂",
+          "pain2Description": "Bestanden verdwijnen in de leegte. Iemand heeft het gestuurd... ergens... veel succes! 🔍",
+          "pain3Title": "Budgetverrassing 💸",
+          "pain3Description": "Er verdwijnt steeds meer geld. Tegen de tijd dat je het merkt, ben je over het budget heen 😬",
+          "pain4Title": "Teamverwarring 🤷",
+          "pain4Description": "Mensen missen updates, werken met oude info, stellen dezelfde vragen"
         },
         "solution": {
-          "title": "One App. Full Control. 💪",
-          "subtitle": "Everything you need in one place",
-          "feature1Title": "Command Center 🎮",
-          "feature1Description": "All projects, team & gear in one dashboard",
-          "feature2Title": "Instant Sync ⚡",
-          "feature2Description": "Updates happen in real-time. Everyone stays connected",
-          "feature3Title": "Money Tracker 💰",
-          "feature3Description": "Watch every dollar. No surprises, no stress",
-          "feature4Title": "Team Collab 🤝",
-          "feature4Description": "Keep everyone in the loop and working together"
+          "title": "Eén app. Volledige controle. 💪",
+          "subtitle": "Alles wat je nodig hebt op één plek",
+          "feature1Title": "Commandocentrum 🎮",
+          "feature1Description": "Alle projecten, team en uitrusting in één dashboard",
+          "feature2Title": "Directe synchronisatie ⚡",
+          "feature2Description": "Updates gebeuren in realtime. Iedereen blijft verbonden",
+          "feature3Title": "Geldtracker 💰",
+          "feature3Description": "Let op elke dollar. Geen verrassingen, geen stress",
+          "feature4Title": "Teamsamenwerking 🤝",
+          "feature4Description": "Houd iedereen op de hoogte en werk samen"
         },
         "howItWorks": {
-          "title": "How It Works ⚙️",
-          "subtitle": "Get started super fast",
-          "step1Title": "Build Your Team 👥",
-          "step1Description": "Set up your org and add your crew",
-          "step2Title": "Create Projects 📋",
-          "step2Description": "Map out all your events and productions",
-          "step3Title": "Set Permissions 🔐",
-          "step3Description": "Give everyone the right access level",
-          "step4Title": "Launch & Win 🏆",
-          "step4Description": "Track progress, manage money, execute perfectly"
+          "title": "Hoe het werkt ⚙️",
+          "subtitle": "Ga supersnel aan de slag",
+          "step1Title": "Bouw je team 👥",
+          "step1Description": "Stel uw organisatie in en voeg uw ploeg toe",
+          "step2Title": "Maak projecten 📋",
+          "step2Description": "Breng al uw evenementen en producties in kaart",
+          "step3Title": "Machtigingen instellen 🔐",
+          "step3Description": "Geef iedereen het juiste toegangsniveau",
+          "step4Title": "Lanceer en win 🏆",
+          "step4Description": "Volg de voortgang, beheer geld en voer perfect uit"
         },
         "testimonials": {
-          "title": "Teams Love ATLVS 💙",
-          "subtitle": "Real reviews from real users",
-          "testimonial1Quote": "ATLVS is literally perfect for festivals. Everything's organized, everyone's synced. 100/10! 🔥",
+          "title": "Teams houden van ATLVS 💙",
+          "subtitle": "Echte beoordelingen van echte gebruikers",
+          "testimonial1Quote": "ATLVS is letterlijk perfect voor festivals. Alles is georganiseerd, iedereen is gesynchroniseerd. 100/10! 🔥",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permission system is chef's kiss 👌 Finally proper access control!",
+          "testimonial1Role": "Productiedirecteur, groot muziekfestival",
+          "testimonial2Quote": "Het toestemmingssysteem is de kus van de chef 👌 Eindelijk goede toegangscontrole!",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget issues by 40% first quarter. The tracking is insane! 🎯",
+          "testimonial2Role": "VP Operations, Live Events Company",
+          "testimonial3Quote": "We hebben de begrotingsproblemen in het eerste kwartaal met 40% teruggebracht. Het volgen is krankzinnig! 🎯",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Bedrijfsevenementenbureau"
         },
         "pricing": {
-          "title": "Pricing that's actually fair ✨"
+          "title": "Prijzen die eigenlijk eerlijk zijn✨"
         }
       }
     }
@@ -9016,28 +9035,6 @@
     "deleteComment": "Delete Comment",
     "saveComment": "Save Comment",
     "cancelEdit": "Cancel"
-  },
-  "import": {
-    "title": "Import Data",
-    "selectFile": "Select File",
-    "fileSelected": "File Selected",
-    "dragDropFile": "Drag and drop file here",
-    "supportedFormats": "Supported formats: CSV, JSON, Excel",
-    "mapFields": "Map Fields",
-    "sourceField": "Source Field",
-    "targetField": "Target Field",
-    "preview": "Preview Data",
-    "importing": "Importing...",
-    "importComplete": "Import Complete",
-    "importSuccess": "Successfully imported {count} records",
-    "importFailed": "Import Failed",
-    "importError": "Failed to import data. Please check the file format.",
-    "rowsProcessed": "Rows Processed",
-    "rowsSuccessful": "Rows Successful",
-    "rowsFailed": "Rows Failed",
-    "validateData": "Validate Data",
-    "skipErrors": "Skip Errors",
-    "batchSize": "Batch Size"
   },
   "export": {
     "title": "Export Data",

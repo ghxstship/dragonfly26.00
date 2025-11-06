@@ -1156,7 +1156,26 @@
     "numberOfOccurrences": "Number of occurrences"
   },
   "import": {
-    "uploadPrompt": "Click to upload or drag and drop"
+    "title": "Import Data",
+    "selectFile": "Select File",
+    "fileSelected": "File Selected",
+    "dragDropFile": "Drag and drop file here",
+    "supportedFormats": "Supported formats: CSV, JSON, Excel",
+    "mapFields": "Map Fields",
+    "sourceField": "Source Field",
+    "targetField": "Target Field",
+    "preview": "Preview Data",
+    "importing": "Importing...",
+    "importComplete": "Import Complete",
+    "importSuccess": "Successfully imported {count} records",
+    "importFailed": "Import Failed",
+    "importError": "Failed to import data. Please check the file format.",
+    "rowsProcessed": "Rows Processed",
+    "rowsSuccessful": "Rows Successful",
+    "rowsFailed": "Rows Failed",
+    "validateData": "Validate Data",
+    "skipErrors": "Skip Errors",
+    "batchSize": "Batch Size"
   },
   "templates": {
     "standardChecklist": "Standard checklist for new projects",
@@ -7831,944 +7850,944 @@
   "marketing": {
     "nav": {
       "logo": "(ATLVS)",
-      "solutions": "Solutions",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
-      "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu"
+      "solutions": "Ratkaisut",
+      "features": "Ominaisuudet",
+      "pricing": "Hinnoittelu",
+      "docs": "Asiakirjat",
+      "blog": "Blogi",
+      "company": "Yritys",
+      "signIn": "Kirjaudu sisään",
+      "startFree": "Aloita ilmaiseksi",
+      "toggleMenu": "Vaihda valikkoa"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Teollisuuden ratkaisut",
+        "subtitle": "Tarkoituksenmukaisia ​​työnkulkuja kaikenlaiseen elävän viihteen tuotantoon"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Konsertit ja kiertueet",
+        "description": "Virtaviivaista reititystä, budjetointia, logistiikkaa ja miehistön hallintaa maailmanlaajuisissa kiertueissa – pienistä tapahtumapaikoista areenan mittakaavan tuotantoihin."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Musiikki- ja taidefestivaalit",
+        "description": "Keskitä työnkulku monipäiväisiin, monivaiheisiin tapahtumiin – yhdistä tuotanto, kyvyt, toimittajat ja vaatimustenmukaisuus yhden komentojärjestelmän alle."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Mukaansatempaavia ja elämyksellisiä tapahtumia",
+        "description": "Suunnittele ja käytä interaktiivisia maailmoja, installaatioita ja brändättyjä kokemuksia, jotka ovat täysin näkyvissä luovasta kehityksestä live-toteutukseen."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Teatteri- ja live-esitykset",
+        "description": "Hallinnoi luovia ryhmiä, teknisiä aikatauluja ja tuotantoresursseja lava- ja esitykseen perustuvaa viihdettä varten."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "Elokuva, TV ja media",
+        "description": "Koordinoi esituotantoa, paikan päällä tapahtuvaa toimintaa ja wrap-raportointia työkaluilla, jotka on suunniteltu eri osastojen synkronointiin ja talouden läpinäkyvyyteen."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Brändien aktivointi ja markkinointikampanjat",
+        "description": "Suorita ponnahdusikkunoita, julkaisuja ja kampanjalähtöisiä kokemuksia – yhdistä luova, logistiikka ja ROI-seuranta yhdeksi älykkääksi kojelautaksi."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Yritys- ja yksityistilaisuudet",
+        "description": "Tarjoa virheettömät kokemukset sisäisiin kokouksiin, retriiteihin ja korkean profiilin tapaamisiin virtaviivaistetun suunnittelun ja toimittajien koordinoinnin avulla."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Messut ja konferenssit",
+        "description": "Yksinkertaista osastojen rakentamista, näytteilleasettajien logistiikkaa ja sponsorisuhteita kokonaisvaltaisen projektinhallinnan ja reaaliaikaisen analytiikan avulla."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Terveys, hyvinvointi ja elämäntavat",
+        "description": "Optimoi ohjelmointi, henkilöstö ja vierasvirta retriittejä, kuntoilutapahtumia ja hyvinvointikokemuksia varten – missä yksityiskohdilla ja tunnelmalla on eniten merkitystä."
       }
     },
     "hero": {
-      "headline": "Production Management That Actually Works",
-      "headlineHighlight": "For Experiential Teams",
-      "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
-      "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "See It in Action",
-      "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot",
-      "headlineHighlightPrefix": "For",
-      "headlineHighlightMain": "Experiential Teams"
+      "headline": "Tuotannonhallinta, joka todella toimii",
+      "headlineHighlight": "Kokemuksellisille joukkueille",
+      "subheadline": "Navigoi projekteissa, miehistössä, resursseissa ja budjeteissa yhdestä komentokeskuksesta. Rakennettu ihmisille, jotka luovat unohtumattomia kokemuksia.",
+      "supportingCopy": "Olitpa tuottamassa festivaaleja, yritystapahtumia tai mukaansatempaavia aktivaatioita – ALVS kartoittaa kurssin konseptista verhopuheluun.",
+      "ctaPrimary": "Aloita ilmaiseksi tänään",
+      "ctaSecondary": "Katso se toiminnassa",
+      "trustIndicators": "Ei luottokorttia • 14 päivän kokeilu • Peru milloin tahansa",
+      "platformScreenshot": "Alustan kuvakaappaus",
+      "headlineHighlightPrefix": "varten",
+      "headlineHighlightMain": "Kokemukselliset tiimit"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Tuotantotiimit luottavat maailmanlaajuisesti"
     },
     "problem": {
-      "title": "The Production Chaos Problem",
-      "subtitle": "You know the drill",
-      "pain1Title": "Tool Overload",
-      "pain1Description": "Spreadsheets, Slack, email, that one Google Doc nobody can find—your workflow is scattered across a dozen platforms",
-      "pain2Title": "Information Black Holes",
-      "pain2Description": "Critical details vanish during handoffs. Someone definitely sent that file... somewhere",
-      "pain3Title": "Budget Surprises",
-      "pain3Description": "Costs creep up in the shadows. By the time you notice, you're already over",
+      "title": "Tuotantokaaosongelma",
+      "subtitle": "Tiedät harjoituksen",
+      "pain1Title": "Työkalun ylikuormitus",
+      "pain1Description": "Laskentataulukot, Slack, sähköposti, joita yksi Google-dokumentti ei löydä – työnkulkusi on hajallaan kymmenelle alustalle",
+      "pain2Title": "Tiedot mustat aukot",
+      "pain2Description": "Kriittiset yksityiskohdat katoavat vaihtojen aikana. Joku varmasti lähetti sen tiedoston... jonnekin",
+      "pain3Title": "Budjetti yllätyksiä",
+      "pain3Description": "Kustannukset hiipivät varjoissa. Kun huomaat, olet jo ohi",
       "pain4Title": "Communication Drift",
-      "pain4Description": "Vendors miss updates, crew works off old info, stakeholders ask the same questions twice"
+      "pain4Description": "Toimittajat kaipaavat päivityksiä, miehistö käyttää vanhoja tietoja, sidosryhmät kysyvät samoja kysymyksiä kahdesti"
     },
     "solution": {
-      "title": "One Platform. Zero Chaos.",
-      "subtitle": "Everything in its right place",
+      "title": "Yksi alusta. Nolla kaaosta.",
+      "subtitle": "Kaikki oikealla paikallaan",
       "feature1Title": "Unified Command Center",
-      "feature1Description": "Projects, people, and resources all sailing in formation",
-      "feature2Title": "Real-Time Sync",
-      "feature2Description": "Updates flow instantly. Everyone's working from the same chart",
-      "feature3Title": "Budget Radar",
-      "feature3Description": "Track every dollar in real-time. No surprises, no overruns",
-      "feature4Title": "Vendor Coordination",
-      "feature4Description": "Keep external partners in the loop without giving away the ship"
+      "feature1Description": "Projektit, ihmiset ja resurssit kaikki purjehtivat muodostumassa",
+      "feature2Title": "Reaaliaikainen synkronointi",
+      "feature2Description": "Päivitykset virtaavat välittömästi. Kaikki työskentelevät samalla kaaviolla",
+      "feature3Title": "Budjettitutka",
+      "feature3Description": "Seuraa jokaista dollaria reaaliajassa. Ei yllätyksiä, ei ylilyöntejä",
+      "feature4Title": "Toimittajan koordinointi",
+      "feature4Description": "Pidä ulkoiset kumppanit silmukassa luovuttamatta laivaa"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Set sail in minutes, not months",
-      "step1Title": "Launch Your Organization",
-      "step1Description": "Set up your structure and bring your crew aboard",
-      "step2Title": "Chart Your Projects",
-      "step2Description": "Map out productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Missions",
-      "step3Description": "Give everyone the right access and clear responsibilities",
-      "step4Title": "Navigate & Deliver",
-      "step4Description": "Monitor progress, manage budgets, execute flawlessly"
+      "title": "Miten se toimii",
+      "subtitle": "Purjehtii minuuteissa, ei kuukausissa",
+      "step1Title": "Käynnistä organisaatiosi",
+      "step1Description": "Aseta rakenteenne ja tuo miehistö kyytiin",
+      "step2Title": "Kartoita projektisi",
+      "step2Description": "Kartoita tuotannot, aktivaatiot ja työtilat",
+      "step3Title": "Määritä rooleja ja tehtäviä",
+      "step3Description": "Anna kaikille oikeat käyttöoikeudet ja selkeät vastuut",
+      "step4Title": "Navigoi ja toimita",
+      "step4Description": "Seuraa edistymistä, hallitse budjetteja ja suorita virheettömästi"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production control",
+      "title": "Kaikki mitä tarvitset tuotantoon suuressa mittakaavassa",
+      "subtitle": "Kuusi integroitua napaa täydelliseen tuotannon valvontaan",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Tuotantokeskus",
+        "description": "Hallitse projekteja, tapahtumia, ihmisiä, omaisuutta, sijainteja ja tiedostoja",
+        "feature1": "Projekti- ja tapahtumasuunnittelu",
+        "feature2": "Joukkueen ja miehistön hallinta",
+        "feature3": "Omaisuuden seuranta ja varasto",
+        "feature4": "Paikan ja paikan koordinointi"
       },
       "business": {
         "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "description": "Hoida yrityksiä, työpaikkoja, hankintoja ja taloutta",
+        "feature1": "Myyjä ja yrityksen johto",
+        "feature2": "Työpaikkailmoitukset ja rekrytointi",
+        "feature3": "Hankinta & osto",
+        "feature4": "Budjetin ja kulujen seuranta"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Verkkokeskitin",
+        "description": "Rakenna yhteisöä, markkinapaikkaa ja resurssikirjastoa",
+        "feature1": "Yhteisö ja keskustelut",
+        "feature2": "Markkinat ja palvelut",
+        "feature3": "Resurssikirjasto",
+        "feature4": "Teollisuuden yhteydet"
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "title": "Automaatiokeskus",
+        "description": "Automatisoi työnkulkuja, laukaisimia ja toistuvia tehtäviä",
+        "feature1": "Mukautettu työnkulkuautomaatio",
+        "feature2": "Tapahtumaohjatut triggerit",
+        "feature3": "Suunniteltu tehtävän suoritus",
+        "feature4": "Integrointiputket"
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "title": "Tiedustelukeskus",
+        "description": "Luo raportteja, analyyseja ja oivalluksia",
+        "feature1": "Mukautetut raportit",
+        "feature2": "Reaaliaikainen analytiikka",
+        "feature3": "Ennustavat oivallukset",
+        "feature4": "Suorituskykymittarit"
       },
       "system": {
         "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "description": "Määritä järjestelmänvalvojat, asetukset ja käyttäjäprofiilit",
+        "feature1": "Käyttäjien ja roolien hallinta",
+        "feature2": "Järjestelmän konfigurointi",
+        "feature3": "Profiilin mukauttaminen",
+        "feature4": "Suojaus ja käyttöoikeudet"
       }
     },
     "detailedFeatures": {
       "hero": {
-        "title": "Everything You Need to Produce at Scale",
-        "subtitle": "Six integrated hubs designed for experiential production teams"
+        "title": "Kaikki mitä tarvitset tuotantoon suuressa mittakaavassa",
+        "subtitle": "Kuusi integroitua keskitintä, jotka on suunniteltu kokemuksellisille tuotantotiimeille"
       },
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
+        "title": "Tuotantokeskus",
+        "description": "Hallitse projekteja, tapahtumia, ihmisiä, omaisuutta, sijainteja ja tiedostoja",
         "projects": {
-          "title": "Projects",
-          "description": "Organize and track productions from concept to strike"
+          "title": "Projektit",
+          "description": "Järjestä ja seuraa tuotantoja konseptista lakkoon"
         },
         "events": {
-          "title": "Events",
-          "description": "Schedule, coordinate, and manage every detail and timeline"
+          "title": "Tapahtumat",
+          "description": "Ajoita, koordinoi ja hallitse jokaista yksityiskohtaa ja aikajanaa"
         },
         "people": {
-          "title": "People",
-          "description": "Manage crew assignments, availability, and scheduling"
+          "title": "Ihmiset",
+          "description": "Hallitse miehistötehtäviä, saatavuutta ja aikatauluja"
         },
         "assets": {
-          "title": "Assets",
-          "description": "Track equipment, inventory, and resources across productions"
+          "title": "Omaisuus",
+          "description": "Seuraa laitteita, varastoa ja resursseja tuotantojen välillä"
         },
         "locations": {
-          "title": "Locations",
-          "description": "Coordinate venues, sites, and facility logistics"
+          "title": "Sijainnit",
+          "description": "Koordinoi tapahtumapaikat, kohteet ja toimitilojen logistiikka"
         },
         "files": {
-          "title": "Files",
-          "description": "Centralize documents, media, and production files securely"
+          "title": "Tiedostot",
+          "description": "Keskitä asiakirjat, mediat ja tuotantotiedostot turvallisesti"
         }
       },
       "business": {
         "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
+        "description": "Hoida yrityksiä, työpaikkoja, hankintoja ja taloutta",
         "companies": {
-          "title": "Companies",
-          "description": "Manage vendor relationships, clients, and partners"
+          "title": "Yritykset",
+          "description": "Hallitse toimittajasuhteita, asiakkaita ja kumppaneita"
         },
         "jobs": {
-          "title": "Jobs",
-          "description": "Post positions, track applications, manage hiring"
+          "title": "Työpaikat",
+          "description": "Lähetä työpaikkoja, seuraa hakemuksia, hallitse rekrytointia"
         },
         "procurement": {
-          "title": "Procurement",
-          "description": "Streamline purchasing, vendor selection, and contracts"
+          "title": "Hankinta",
+          "description": "Virtaviivaista ostamista, toimittajan valintaa ja sopimuksia"
         },
         "invoices": {
-          "title": "Invoices",
-          "description": "Create, send, and track invoices with automated reminders"
+          "title": "Laskut",
+          "description": "Luo, lähetä ja seuraa laskuja automaattisten muistutusten avulla"
         },
         "expenses": {
-          "title": "Expenses",
-          "description": "Record and categorize expenses with receipt capture"
+          "title": "Kulut",
+          "description": "Tallenna ja luokittele kulut kuittikaappauksella"
         },
         "budgets": {
-          "title": "Budgets",
-          "description": "Plan, monitor, and control budgets with real-time tracking"
+          "title": "Budjetit",
+          "description": "Suunnittele, seuraa ja hallitse budjetteja reaaliaikaisen seurannan avulla"
         }
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
+        "title": "Verkkokeskitin",
+        "description": "Rakenna yhteisöä, markkinapaikkaa ja resurssikirjastoa",
         "community": {
-          "title": "Community",
-          "description": "Connect with industry pros, share knowledge, collaborate"
+          "title": "yhteisössä",
+          "description": "Ota yhteyttä alan ammattilaisiin, jaa tietoa, tee yhteistyötä"
         },
         "marketplace": {
-          "title": "Marketplace",
-          "description": "Discover services, hire talent, find production resources"
+          "title": "Markkinapaikka",
+          "description": "Löydä palveluita, palkkaa osaajia, löydä tuotantoresursseja"
         },
         "resources": {
-          "title": "Resources",
-          "description": "Access guides, templates, and best practices"
+          "title": "Resurssit",
+          "description": "Käytä oppaita, malleja ja parhaita käytäntöjä"
         }
       },
       "automations": {
-        "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
+        "title": "Automaatiokeskus",
+        "description": "Automatisoi työnkulkuja, laukaisimia ja toistuvia tehtäviä",
         "workflows": {
-          "title": "Workflows",
-          "description": "Build custom automation sequences for repetitive processes"
+          "title": "Työnkulut",
+          "description": "Luo mukautettuja automaatiojaksoja toistuville prosesseille"
         },
         "triggers": {
-          "title": "Triggers",
-          "description": "Set up event-driven actions that respond automatically"
+          "title": "Liipaisimet",
+          "description": "Määritä tapahtumapohjaisia ​​toimintoja, jotka vastaavat automaattisesti"
         },
         "scheduled": {
-          "title": "Scheduled Tasks",
-          "description": "Automate recurring tasks with flexible scheduling"
+          "title": "Aikataulutetut tehtävät",
+          "description": "Automatisoi toistuvat tehtävät joustavalla aikataululla"
         }
       },
       "intelligence": {
-        "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
+        "title": "Tiedustelukeskus",
+        "description": "Luo raportteja, analyyseja ja oivalluksia",
         "reports": {
-          "title": "Reports",
-          "description": "Create custom reports with flexible visualization and export"
+          "title": "Raportit",
+          "description": "Luo mukautettuja raportteja joustavan visualisoinnin ja viennin avulla"
         },
         "analytics": {
           "title": "Analytics",
-          "description": "Track KPIs, monitor trends, measure performance"
+          "description": "Seuraa KPI:itä, seuraa trendejä ja mittaa suorituskykyä"
         },
         "insights": {
-          "title": "Insights",
-          "description": "Get AI-powered recommendations and predictive analytics"
+          "title": "Näkemyksiä",
+          "description": "Hanki tekoälypohjaisia ​​suosituksia ja ennakoivaa analytiikkaa"
         }
       },
       "system": {
         "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
+        "description": "Määritä järjestelmänvalvojat, asetukset ja käyttäjäprofiilit",
         "admin": {
           "title": "Admin",
-          "description": "Manage organization settings, security, and configuration"
+          "description": "Hallinnoi organisaation asetuksia, suojausta ja määrityksiä"
         },
         "settings": {
-          "title": "Settings",
-          "description": "Customize preferences, integrations, and platform behavior"
+          "title": "Asetukset",
+          "description": "Mukauta asetuksia, integraatioita ja alustan toimintaa"
         },
         "profiles": {
-          "title": "User Profiles",
-          "description": "Manage team profiles, roles, and access permissions"
+          "title": "Käyttäjäprofiilit",
+          "description": "Hallitse tiimiprofiileja, rooleja ja käyttöoikeuksia"
         }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Crew",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Suunniteltu miehistösi jokaiseen rooliin",
+      "subtitle": "11 merkkiroolia tarkalla luvalla",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Legenda",
+        "description": "Platform Super Admin - Täysi hallinta kaikissa organisaatioissa"
       },
       "phantom": {
         "name": "Phantom",
-        "level": "Supreme Authority",
+        "level": "Korkein auktoriteetti",
         "title": "Phantom",
-        "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
+        "description": "Täydellinen järjestelmänhallinta ja rajoittamaton pääsy. Muotoile alustan suuntaa ja ylläpidä yrityksen valvontaa."
       },
       "aviator": {
-        "name": "Aviator",
-        "level": "Strategic Leadership",
-        "title": "Aviator",
-        "description": "Cross-project visibility, resource allocation, and executive analytics. Navigate high-level production strategy at scale."
+        "name": "Lentäjä",
+        "level": "Strateginen johtajuus",
+        "title": "Lentäjä",
+        "description": "Projektien välinen näkyvyys, resurssien allokointi ja johdon analytiikka. Navigoi korkean tason tuotantostrategiassa mittakaavassa."
       },
       "gladiator": {
-        "name": "Gladiator",
-        "level": "Project Leadership",
-        "title": "Gladiator",
-        "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
+        "name": "Gladiaattori",
+        "level": "Projektin johtajuus",
+        "title": "Gladiaattori",
+        "description": "Täydelliset projektin luonti- ja muokkausoikeudet. Johda tuotantoa konseptista loppuun täysin hallinnassa."
       },
       "navigator": {
-        "name": "Navigator",
-        "level": "Coordination",
-        "title": "Navigator",
-        "description": "Project coordination, task assignment, and team guidance. Chart the course through complex workflows."
+        "name": "Navigaattori",
+        "level": "Koordinointi",
+        "title": "Navigaattori",
+        "description": "Projektin koordinointi, tehtävien jakaminen ja tiimiohjaus. Kartoi kurssi monimutkaisten työnkulkujen avulla."
       },
       "deviator": {
-        "name": "Deviator",
-        "level": "Execution",
-        "title": "Deviator",
-        "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
+        "name": "Poikkeaja",
+        "level": "Toteutus",
+        "title": "Poikkeaja",
+        "description": "Kohdennettu tehtävien suorittaminen vahvistetuissa puitteissa. Suorita laadukasta työtä määrätyissä vastuissa."
       },
       "raider": {
         "name": "Raider",
-        "level": "Learning & Observation",
+        "level": "Oppiminen ja havainnointi",
         "title": "Raider",
-        "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
+        "description": "Vain lukuoikeus oppia ja kasvaa. Täydellinen uusille tulokkaille, jotka kehittävät taitojaan."
       },
       "vendor": {
-        "name": "Vendor",
-        "level": "Scoped Delivery",
-        "title": "Vendor",
-        "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
+        "name": "Myyjä",
+        "level": "Soveltuva toimitus",
+        "title": "Myyjä",
+        "description": "Kohdennettu pääsy ulkoisille palveluntarjoajille. Lataa suoritteita ja suorita sopimustyöt."
       },
       "visitor": {
-        "name": "Visitor",
-        "level": "Limited Visibility",
-        "title": "Visitor",
-        "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
+        "name": "Vierailija",
+        "level": "Rajoitettu näkyvyys",
+        "title": "Vierailija",
+        "description": "Väliaikainen, vain luku -käyttöoikeus ulkoisille sidosryhmille. Pysy ajan tasalla häiritsemättä työnkulkua."
       },
       "partner": {
-        "name": "Partner",
-        "level": "Strategic Collaboration",
-        "title": "Partner",
-        "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
+        "name": "Kumppani",
+        "level": "Strateginen yhteistyö",
+        "title": "Kumppani",
+        "description": "Syvä integrointi luotetuille ulkoisille yhteistyökumppaneille. Kaksisuuntainen tietojen jakaminen ja yhteinen työnkulun hallinta."
       },
       "ambassador": {
-        "name": "Ambassador",
-        "level": "Community Champions",
-        "title": "Ambassador",
-        "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
+        "name": "Suurlähettiläs",
+        "level": "Yhteisön mestarit",
+        "title": "Suurlähettiläs",
+        "description": "Edustaa ATLVS:ää, tukea käyttäjiä ja edistää yhteistyötä. Järjestä tapahtumia, luo sisältöä, kasvata ekosysteemiä."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Yritystason turvallisuus",
+      "subtitle": "Tietosi on suojattu kaikilla tasoilla",
+      "feature1Title": "Rivitason suojaus",
+      "feature1Description": "801 RLS -käytännöt varmistavat, että käyttäjät näkevät vain sen, mitä heidän pitäisi",
+      "feature2Title": "Rooliperusteinen pääsy",
+      "feature2Description": "11 merkkiroolia ja yli 45 yksityiskohtaista käyttöoikeutta",
+      "feature3Title": "Salattu tallennustila",
+      "feature3Description": "Kaikki tiedot salataan lepotilassa ja siirron aikana",
+      "feature4Title": "Tarkastuksen kirjaus",
+      "feature4Description": "Täydellinen kirjausketju kaikista järjestelmän toiminnoista",
+      "feature5Title": "SOC 2 -yhteensopiva",
+      "feature5Description": "Yritystason turvallisuusstandardit",
+      "feature6Title": "GDPR valmis",
+      "feature6Description": "Tietosuojamääräysten täysi noudattaminen"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "Real stories from real producers",
-      "testimonial1Quote": "ATLVS transformed how we manage festivals. Everything in one place, everyone on the same page. Finally.",
+      "title": "Tuotantotiimit luottavat maailmanlaajuisesti",
+      "subtitle": "Oikeita tarinoita oikeilta tuottajilta",
+      "testimonial1Quote": "ATLVS muutti tapaamme hallita festivaaleja. Kaikki yhdessä paikassa, kaikki samalla sivulla. Lopulta.",
       "testimonial1Author": "Sarah Chen",
-      "testimonial1Role": "Production Director, Major Music Festival",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Proper access control for production? Revolutionary.",
+      "testimonial1Role": "Tuotantojohtaja, Major Music Festival",
+      "testimonial1Title": "Tuotantojohtaja, Major Music Festival",
+      "testimonial2Quote": "RBAC-järjestelmä sopii täydellisesti monimutkaiseen organisaatiorakenteeseemme. Oikea kulunvalvonta tuotantoon? Vallankumouksellinen.",
       "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Role": "VP of Operations, Live Events Company",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
+      "testimonial2Role": "Toiminnanjohtaja, Live Events Company",
+      "testimonial2Title": "Toiminnanjohtaja, Live Events Company",
+      "testimonial3Quote": "Leikkasimme budjetin ylityksiä 40 % ensimmäisellä neljänneksellä. Taloudellinen näkyvyys on oikeutetusti pelin muuttava.",
       "testimonial3Author": "Jennifer Park",
-      "testimonial3Role": "CFO, Corporate Events Agency",
-      "testimonial3Title": "CFO, Corporate Events Agency",
-      "jamesCookQuote": "Managing three ships of scientists who all think they're the main character? ATLVS would've kept everyone aligned and actually working together instead of competing for credit.",
-      "jamesCookAuthor": "Captain James Cook",
-      "jamesCookRole": "British Royal Navy Explorer (1728-1779)",
-      "zhengYiSaoQuote": "I turned piracy into a Fortune 500 company, negotiated my own amnesty, and retired wealthy. ATLVS is for people who understand that unconventional operations still need solid management.",
+      "testimonial3Role": "Talousjohtaja, yritystapahtumatoimisto",
+      "testimonial3Title": "Talousjohtaja, yritystapahtumatoimisto",
+      "jamesCookQuote": "Hallitsetko kolmea tiedelaivaa, jotka kaikki luulevat olevansa päähenkilö? ATLVS olisi pitänyt kaikki linjassa ja työskennelleet yhdessä sen sijaan, että olisivat kilpailleet luotoista.",
+      "jamesCookAuthor": "Kapteeni James Cook",
+      "jamesCookRole": "Britannian kuninkaallisen laivaston tutkimusmatkailija (1728-1779)",
+      "zhengYiSaoQuote": "Muutin piratismin Fortune 500 -yritykseksi, neuvottelin oman armahdukseni ja jäin varakkaaksi eläkkeelle. ATLVS on tarkoitettu ihmisille, jotka ymmärtävät, että epätavanomaiset toiminnot vaativat edelleen vankkaa hallintaa.",
       "zhengYiSaoAuthor": "Zheng Yi Sao",
-      "zhengYiSaoRole": "Chinese Pirate Leader (1775-1844)",
-      "captainAhabQuote": "Chasing one specific goal across every ocean without considering the bigger picture? ATLVS keeps you focused on the actual business plan, not just personal objectives.",
-      "captainAhabAuthor": "Captain Ahab",
-      "captainAhabRole": "Whaling Captain, Pequod",
-      "graceOMalleyQuote": "Negotiated with Queen Elizabeth as equals. ATLVS helps you show up to every meeting with your data ready and your confidence up.",
+      "zhengYiSaoRole": "Kiinan merirosvojen johtaja (1775-1844)",
+      "captainAhabQuote": "Jahtaatko yhtä tiettyä tavoitetta jokaisen valtameren yli ottamatta huomioon isompaa kuvaa? ATLVS pitää sinut keskittyneenä varsinaiseen liiketoimintasuunnitelmaan, ei vain henkilökohtaisiin tavoitteisiin.",
+      "captainAhabAuthor": "Kapteeni Ahab",
+      "captainAhabRole": "Valaanpyyntikapteeni, Pequod",
+      "graceOMalleyQuote": "Neuvoteltu kuningatar Elisabetin kanssa tasavertaisina. ATLVS auttaa sinua saapumaan jokaiseen kokoukseen tietosi valmiina ja luottavaisin mielin.",
       "graceOMalleyAuthor": "Grace O'Malley \"Gráinne Mhaol\"",
-      "graceOMalleyRole": "Irish Pirate Queen & Chieftain (c. 1530-1603)",
-      "sinbadQuote": "The way I kept getting shipwrecked but still went back out? That's just poor planning. ATLVS provides the structure my decision-making clearly needed.",
-      "sinbadAuthor": "Sinbad the Sailor",
-      "sinbadRole": "Legendary Merchant Sailor, Arabian Nights",
-      "longJohnSilverQuote": "Managing pirates is literally herding cats if the cats had scurvy and trust issues. ATLVS's stakeholder management keeps everyone aligned, even when they're plotting against each other.",
-      "longJohnSilverAuthor": "Long John Silver",
+      "graceOMalleyRole": "Irlannin merirosvojen kuningatar ja päällikkö (n. 1530-1603)",
+      "sinbadQuote": "Tapa, jolla haaksirikkouduin jatkuvasti, mutta silti palasin ulos? Se on vain huonoa suunnittelua. ATLVS tarjoaa päätöksenteolle selkeästi tarvitseman rakenteen.",
+      "sinbadAuthor": "Sinbad merimies",
+      "sinbadRole": "Legendaarinen Merchant Sailor, Arabian Nights",
+      "longJohnSilverQuote": "Merirosvojen hallinta on kirjaimellisesti kissojen paimentamista, jos kissoilla oli keripukkia ja luottamusongelmia. ATLVS:n sidosryhmien hallinta pitää kaikki linjassa, vaikka he juonisivat toisiaan vastaan.",
+      "longJohnSilverAuthor": "Pitkä John Silver",
       "longJohnSilverRole": "Quartermaster & Pirate Cook, Treasure Island",
-      "horatioHornblowerQuote": "Fighting the French while having a full mental breakdown is honestly very on-brand for me. ATLVS keeps all the tactical stuff organized so you can focus on the actual mission.",
+      "horatioHornblowerQuote": "Taisteleminen ranskalaisia ​​vastaan ​​täysin henkisesti romahtaessani on minulle todella tärkeää. ATLVS pitää kaikki taktiset asiat järjestyksessä, jotta voit keskittyä varsinaiseen tehtävään.",
       "horatioHornblowerAuthor": "Horatio Hornblower",
-      "horatioHornblowerRole": "Royal Navy Officer (C.S. Forester novels)",
-      "captainNemoQuote": "Being a hermit in a submarine is actually very introvert-coded, but even I needed team coordination. ATLVS works even when you're working alone.",
-      "captainNemoAuthor": "Captain Nemo",
-      "captainNemoRole": "Commander, Nautilus (Twenty Thousand Leagues Under the Sea)",
-      "odysseusQuote": "Lost every single crew member because I kept making questionable choices. ATLVS would've been like 'we don't need to see what the Sirens are about' and honestly? Valid.",
+      "horatioHornblowerRole": "Kuninkaallisen laivaston upseeri (C.S. Forester -romaanit)",
+      "captainNemoQuote": "Erakkona oleminen sukellusveneessä on itse asiassa hyvin introverttikoodattua, mutta jopa minä tarvitsin tiimikoordinaatiota. ATLVS toimii myös silloin, kun työskentelet yksin.",
+      "captainNemoAuthor": "Kapteeni Nemo",
+      "captainNemoRole": "Komentaja, Nautilus (Twenty Thousand Leagues Under the Sea)",
+      "odysseusQuote": "Menetin jokaisen miehistön jäsenen, koska tein jatkuvasti kyseenalaisia ​​valintoja. ATLVS olisi ollut kuin \"meidän ei tarvitse nähdä, mistä sireenit ovat\" ja rehellisesti? Voimassa.",
       "odysseusAuthor": "Odysseus/Ulysses",
-      "odysseusRole": "King of Ithaca, Greek Hero (The Odyssey)",
-      "blackbeardQuote": "Blocking an entire harbor with four ships hits different when you're coordinating manually. ATLVS would've made me the most operationally efficient pirate on the seas.",
-      "blackbeardAuthor": "Captain Edward Teach \"Blackbeard\"",
-      "blackbeardRole": "Pirate Commander (c. 1680-1718)",
-      "captainMarvelQuote": "Disappeared for 30 years handling space emergencies without checking in. ATLVS's communication tools would've helped me not ghost everyone I care about.",
-      "captainMarvelAuthor": "Captain Marvel / Carol Danvers",
-      "captainMarvelRole": "Air Force Pilot & Cosmic Hero (MCU)",
-      "captainJanewayQuote": "I violated the Temporal Prime Directive multiple times to save my crew, but I never violated my project timelines. ATLVS keeps priorities clear even when ethics get complicated.",
-      "captainJanewayAuthor": "Captain Kathryn Janeway",
-      "captainJanewayRole": "Starfleet Captain, USS Voyager (Star Trek: Voyager)",
-      "moanaQuote": "Maui was supposed to be my mentor but spent most of the time being emotionally unavailable. ATLVS tracks deliverables when your team is being difficult.",
+      "odysseusRole": "Ithacan kuningas, kreikkalainen sankari (Odysseia)",
+      "blackbeardQuote": "Koko sataman sulkeminen neljällä laivalla osuu eri tavalla, kun koordinoit manuaalisesti. ATLVS olisi tehnyt minusta toiminnallisesti tehokkaimman merirosvon.",
+      "blackbeardAuthor": "Kapteeni Edward opettaa \"mustapartaa\"",
+      "blackbeardRole": "Pirate Commander (n. 1680-1718)",
+      "captainMarvelQuote": "Kadonnut 30 vuodeksi käsitellen avaruushätätilanteita ilman sisäänkirjautumista. ATLVS:n viestintätyökalut olisivat auttaneet minua olemaan haamuistamatta kaikkia, joista välitän.",
+      "captainMarvelAuthor": "Kapteeni Marvel / Carol Danvers",
+      "captainMarvelRole": "Ilmavoimien lentäjä ja kosminen sankari (MCU)",
+      "captainJanewayQuote": "Rikkosin Temporal Prime -direktiiviä useita kertoja pelastaakseni miehistöni, mutta en koskaan rikkonut projektini aikatauluja. ATLVS pitää prioriteetit selvänä, vaikka etiikka monimutkaistuu.",
+      "captainJanewayAuthor": "Kapteeni Kathryn Janeway",
+      "captainJanewayRole": "Tähtilaivaston kapteeni, USS Voyager (Star Trek: Voyager)",
+      "moanaQuote": "Mauin piti olla mentorini, mutta vietti suurimman osan ajasta ollessaan emotionaalisesti tavoitettavissa. ATLVS seuraa suoritteita, kun tiimisi on vaikeaa.",
       "moanaAuthor": "Moana",
       "moanaRole": "Wayfinder & Island Chief (Disney's Moana)",
-      "captainJackSparrowQuote": "Managing a crew when literally no one knows if they're employed or just along for the chaos? ATLVS provides clarity that my entire vibe does not.",
-      "captainJackSparrowAuthor": "Captain Jack Sparrow",
+      "captainJackSparrowQuote": "Hallitsetko miehistöä, kun kirjaimellisesti kukaan ei tiedä, ovatko he töissä vai vain mukana kaaoksessa? ATLVS tarjoaa selkeyttä, jota koko fiilis ei tee.",
+      "captainJackSparrowAuthor": "Kapteeni Jack Sparrow",
       "captainJackSparrowRole": "Pirate Captain, Black Pearl (Pirates of the Caribbean)",
-      "popeyeQuote": "My whole personality is 'stubbornly refuses to plan ahead.' ATLVS is the adult in the room that I clearly need but won't admit to.",
-      "popeyeAuthor": "Popeye the Sailor Man",
-      "popeyeRole": "Sailor & Olive Oyl's Protector (Cartoon Character)",
-      "captainPicardQuote": "Leading a diverse crew through first contact situations and diplomatic crises? ATLVS keeps everyone aligned when the stakes are literally galactic.",
-      "captainPicardAuthor": "Captain Jean-Luc Picard",
-      "captainPicardRole": "Starfleet Captain, USS Enterprise (Star Trek: TNG)",
-      "captainSiskoQuote": "Commanding a station that's part military base, part trading hub, part refugee center? ATLVS helps you manage complexity when every stakeholder has different priorities.",
-      "captainSiskoAuthor": "Captain Benjamin Sisko",
-      "captainSiskoRole": "Starfleet Commander, Deep Space Nine (Star Trek: DS9)"
+      "popeyeQuote": "Koko persoonallisuuteni \"kieltäytyy itsepintaisesti suunnittelemasta eteenpäin\". ATLVS on huoneessa oleva aikuinen, jota selvästi tarvitsen, mutta en myönnä sitä.",
+      "popeyeAuthor": "Popeye merimies",
+      "popeyeRole": "Sailor & Olive Oyl's Protector (sarjakuvahahmo)",
+      "captainPicardQuote": "Johdatko monipuolista miehistöä ensikontaktitilanteissa ja diplomaattisten kriisien läpi? ATLVS pitää kaikki linjassa, kun panokset ovat kirjaimellisesti galaktisia.",
+      "captainPicardAuthor": "Kapteeni Jean-Luc Picard",
+      "captainPicardRole": "Tähtilaivaston kapteeni, USS Enterprise (Star Trek: TNG)",
+      "captainSiskoQuote": "Komentoiko asemaa, joka on osittain sotilastukikohta, osittain kauppakeskus, osittain pakolaiskeskus? ATLVS auttaa hallitsemaan monimutkaisuutta, kun jokaisella sidosryhmällä on erilaiset prioriteetit.",
+      "captainSiskoAuthor": "Kapteeni Benjamin Sisko",
+      "captainSiskoRole": "Tähtilaivaston komentaja, Deep Space Nine (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent pricing",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Läpinäkyvä hinnoittelu",
+      "subtitle": "Yksittäisistä urakoitsijoista yritystuottajiin",
+      "monthly": "Kuukausittain",
+      "annually": "Vuosittain",
+      "save20": "säästä 20 %",
       "community": {
-        "name": "Community",
-        "price": "Free",
-        "period": "forever",
-        "description": "Perfect for getting started",
-        "feature1": "Raider role access",
-        "feature2": "Basic task management",
-        "feature3": "Community support",
-        "cta": "Get Started Free"
+        "name": "yhteisössä",
+        "price": "Ilmainen",
+        "period": "ikuisesti",
+        "description": "Täydellinen aloittamiseen",
+        "feature1": "Raider-roolin käyttöoikeus",
+        "feature2": "Perustehtävien hallinta",
+        "feature3": "yhteisön tukea",
+        "cta": "Aloita ilmainen"
       },
       "pro": {
         "name": "Pro",
-        "price": "$12",
-        "period": "per month",
-        "annualPrice": "$10/month (billed annually)",
-        "description": "For independent contractors",
-        "feature1": "Deviator & Raider roles",
-        "feature2": "Advanced task management",
-        "feature3": "Priority support",
-        "cta": "Start Free Trial"
+        "price": "12 dollaria",
+        "period": "kuukaudessa",
+        "annualPrice": "10 $/kk (laskutetaan vuosittain)",
+        "description": "Riippumattomille urakoitsijoille",
+        "feature1": "Deviator & Raider roolit",
+        "feature2": "Edistynyt tehtävienhallinta",
+        "feature3": "Ensisijainen tuki",
+        "cta": "Aloita ilmainen kokeilu"
       },
       "team": {
-        "name": "Team",
-        "badge": "Most Popular",
-        "price": "$120",
-        "period": "per month",
-        "annualPrice": "$100/month (billed annually)",
-        "description": "For small to medium teams (2-10 seats)",
-        "feature1": "All Pro features",
-        "feature2": "Vendor management",
-        "feature3": "Team collaboration",
-        "cta": "Start Free Trial"
+        "name": "Joukkue",
+        "badge": "Suosituin",
+        "price": "120 dollaria",
+        "period": "kuukaudessa",
+        "annualPrice": "100 $/kk (laskutetaan vuosittain)",
+        "description": "Pienille ja keskikokoisille joukkueille (2-10 paikkaa)",
+        "feature1": "Kaikki Pro-ominaisuudet",
+        "feature2": "Myyjän hallinta",
+        "feature3": "Joukkueen yhteistyö",
+        "cta": "Aloita ilmainen kokeilu"
       },
       "starter": {
-        "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "name": "Käynnistin",
+        "price": "29 dollaria",
+        "period": "käyttäjää kohti/kuukausi",
+        "description": "Täydellinen freelancereille ja pienille ryhmille",
+        "feature1": "Jopa 5 käyttäjää",
+        "feature2": "10 aktiivista projektia",
+        "feature3": "Perusraportointi",
+        "feature4": "Sähköpostituki",
+        "feature5": "10GB tallennustilaa",
+        "cta": "Aloita ilmainen kokeilu"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "Ammattilainen",
+        "price": "79 dollaria",
+        "period": "käyttäjää kohti/kuukausi",
+        "description": "Kasvaville tuotantoyrityksille",
+        "feature1": "Jopa 25 käyttäjää",
+        "feature2": "Rajoittamaton määrä projekteja",
+        "feature3": "Kehittynyt analytiikka",
+        "feature4": "Ensisijainen tuki",
+        "feature5": "100GB tallennustilaa",
+        "feature6": "Mukautetut roolit",
+        "feature7": "API-käyttöoikeus",
+        "cta": "Aloita ilmainen kokeilu",
+        "popular": "Suosituin"
       },
       "enterprise": {
-        "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "annualPrice": "$1000/month (billed annually)",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
+        "name": "Yritys",
+        "price": "Mukautettu",
+        "period": "ota yhteyttä myyntiin",
+        "annualPrice": "1000 $/kk (laskutetaan vuosittain)",
+        "description": "Suurille organisaatioille ja virastoille",
+        "feature1": "Rajoittamaton määrä käyttäjiä",
+        "feature2": "Rajoittamaton määrä projekteja",
+        "feature3": "Mukautetut integraatiot",
+        "feature4": "Omistettu tuki",
+        "feature5": "Rajoittamaton tallennustila",
         "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "feature7": "SLA-takuu",
+        "feature8": "Räätälöity koulutus",
+        "cta": "Ota yhteyttä myyntiin"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "question1": "How long is the free trial?",
-      "answer1": "14 days, no credit card required. Full access to all features.",
-      "question2": "Can I cancel anytime?",
-      "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
-      "question3": "What payment methods do you accept?",
-      "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "question4": "Is my data secure?",
-      "answer4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "question5": "Do you offer training?",
-      "answer5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "question6": "Can I import my existing data?",
-      "answer6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans.",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Usein kysytyt kysymykset",
+      "subtitle": "Kaikki mitä sinun tarvitsee tietää",
+      "question1": "Kuinka kauan ilmainen kokeilujakso on?",
+      "answer1": "14 päivää, luottokorttia ei vaadita. Täysi pääsy kaikkiin ominaisuuksiin.",
+      "question2": "Voinko peruuttaa milloin tahansa?",
+      "answer2": "Kyllä. Peru milloin tahansa. Ei pitkäaikaisia ​​sopimuksia tai sitoumuksia.",
+      "question3": "Mitä maksutapoja hyväksyt?",
+      "answer3": "Hyväksymme kaikki yleisimmät luottokortit, ACH- ja pankkisiirrot yrityssuunnitelmissa.",
+      "question4": "Ovatko tietoni turvassa?",
+      "answer4": "Kyllä. Yritystason salaus, SOC 2 -yhteensopiva, GDPR-valmius. Tietosi on suojattu kaikilla tasoilla.",
+      "question5": "Tarjoatko koulutusta?",
+      "answer5": "Kyllä. Itsepalveluresurssit kaikille suunnitelmille sekä omistettu koulutus Enterprise-asiakkaille.",
+      "question6": "Voinko tuoda olemassa olevat tiedot?",
+      "answer6": "Kyllä. Tarjoamme CSV-tuontityökaluja ja voimme auttaa yrityssuunnitelmien mukautettujen tietojen siirtämisessä.",
+      "q1": "Kuinka kauan ilmainen kokeilujakso on?",
+      "a1": "14 päivää, luottokorttia ei vaadita. Täysi pääsy kaikkiin ominaisuuksiin.",
+      "q2": "Voinko peruuttaa milloin tahansa?",
+      "a2": "Kyllä. Peru milloin tahansa. Ei pitkäaikaisia ​​sopimuksia tai sitoumuksia.",
+      "q3": "Mitä maksutapoja hyväksyt?",
+      "a3": "Hyväksymme kaikki yleisimmät luottokortit, ACH- ja pankkisiirrot yrityssuunnitelmissa.",
+      "q4": "Ovatko tietoni turvassa?",
+      "a4": "Kyllä. Yritystason salaus, SOC 2 -yhteensopiva, GDPR-valmius. Tietosi on suojattu kaikilla tasoilla.",
+      "q5": "Tarjoatko koulutusta?",
+      "a5": "Kyllä. Itsepalveluresurssit kaikille suunnitelmille sekä omistettu koulutus Enterprise-asiakkaille.",
+      "q6": "Voinko tuoda olemassa olevat tiedot?",
+      "a6": "Kyllä. Tarjoamme CSV-tuontityökaluja ja voimme auttaa yrityssuunnitelmien mukautettujen tietojen siirtämisessä."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "ctaPrimary": "Start Free Trial",
-      "ctaSecondary": "Schedule Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Oletko valmis muuttamaan tuotantotyönkulkuasi?",
+      "subtitle": "Liity tuhansien tuotannon ammattilaisten joukkoon ATLVS:n avulla",
+      "ctaPrimary": "Aloita ilmainen kokeilu",
+      "ctaSecondary": "Aikatauluta esittely",
+      "trustIndicators": "Luottokorttia ei tarvita • 14 päivän ilmainen kokeilujakso • Peru milloin tahansa",
+      "primary": "Aloita ilmainen kokeilu",
+      "secondary": "Aikatauluta esittely",
+      "noCard": "Luottokorttia ei vaadita"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "productTitle": "Product",
-      "companyTitle": "Company",
-      "resourcesTitle": "Resources",
-      "legalTitle": "Legal",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
+      "tagline": "Kokemuksellisille tuotantotiimeille tarkoitettu projektinhallintajärjestelmä",
+      "productTitle": "Tuote",
+      "companyTitle": "Yritys",
+      "resourcesTitle": "Resurssit",
+      "legalTitle": "Laillinen",
+      "product": "Tuote",
+      "features": "Ominaisuudet",
+      "pricing": "Hinnoittelu",
       "demo": "Demo",
-      "integrations": "Integrations",
-      "docs": "Documentation",
-      "apiReference": "API Reference",
-      "changelog": "Changelog",
-      "caseStudies": "Case Studies",
-      "templates": "Templates",
-      "company": "Company",
-      "aboutUs": "About Us",
-      "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "press": "Press",
-      "partners": "Partners",
-      "customers": "Customers",
-      "events": "Events",
-      "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "roiCalculator": "ROI Calculator",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "integrations": "Integraatiot",
+      "docs": "Dokumentaatio",
+      "apiReference": "API-viite",
+      "changelog": "Muutosloki",
+      "caseStudies": "Tapaustutkimukset",
+      "templates": "Mallit",
+      "company": "Yritys",
+      "aboutUs": "Tietoja meistä",
+      "blog": "Blogi",
+      "careers": "Ura",
+      "contact": "Ota yhteyttä",
+      "press": "Paina",
+      "partners": "Yhteistyökumppanit",
+      "customers": "Asiakkaat",
+      "events": "Tapahtumat",
+      "legal": "Laillinen",
+      "privacy": "Tietosuojakäytäntö",
+      "terms": "Palveluehdot",
+      "security": "Turvallisuus",
+      "support": "Tukea",
+      "helpCenter": "Ohjekeskus",
+      "community": "yhteisössä",
+      "status": "Järjestelmän tila",
+      "roiCalculator": "ROI-laskin",
+      "copyright": "© 2025 ATLVS. Kaikki oikeudet pidätetään."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Integroituu suosikkityökalujesi kanssa",
+      "subtitle": "Yhdistä ATLVS jo käyttämiisi työkaluihin",
+      "comingSoon": "Lisää integraatioita tulossa pian"
     },
     "generational": {
       "baby-boomer": {
         "hero": {
-          "headline": "Professional Production Management Solutions",
-          "headlineHighlight": "For Experiential Teams",
-          "subheadline": "Comprehensive project, workforce, asset, and financial management from a centralized platform. Designed for professionals who deliver exceptional experiences.",
-          "supportingCopy": "From festivals to corporate events and immersive experiences—ATLVS provides the structure and oversight needed for successful production management.",
-          "ctaPrimary": "Begin Free Trial",
-          "ctaSecondary": "Request Demonstration",
-          "trustIndicators": "No credit card required • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
-          "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Experiential Teams"
+          "headline": "Ammattimaiset tuotannonhallintaratkaisut",
+          "headlineHighlight": "Kokemuksellisille joukkueille",
+          "subheadline": "Kattava projekti-, työvoima-, omaisuus- ja taloushallinta keskitetyltä alustalta. Suunniteltu ammattilaisille, jotka tarjoavat poikkeuksellisia kokemuksia.",
+          "supportingCopy": "Festivaaleista yritystapahtumiin ja mukaansatempaaviin kokemuksiin – ALVS tarjoaa onnistuneeseen tuotannonhallintaan tarvittavan rakenteen ja valvonnan.",
+          "ctaPrimary": "Aloita ilmainen kokeilu",
+          "ctaSecondary": "Pyydä esittelyä",
+          "trustIndicators": "Luottokorttia ei tarvita • 14 päivän kokeilu • Peruuta milloin tahansa",
+          "platformScreenshot": "Alustan kuvakaappaus",
+          "headlineHighlightPrefix": "varten",
+          "headlineHighlightMain": "Kokemukselliset tiimit"
         },
         "trustBar": {
-          "trustedBy": "Trusted by production professionals worldwide"
+          "trustedBy": "Tuotantoalan ammattilaiset luottavat maailmanlaajuisesti"
         },
         "problem": {
-          "title": "The Production Management Challenge",
-          "subtitle": "Industry-wide inefficiencies",
-          "pain1Title": "Fragmented Systems",
-          "pain1Description": "Teams utilize multiple disconnected platforms including spreadsheets, email, and various project management tools",
-          "pain2Title": "Information Loss",
-          "pain2Description": "Critical project details are lost during transitions and team handoffs",
-          "pain3Title": "Budget Overruns",
-          "pain3Description": "Without proper financial oversight, costs exceed projections",
-          "pain4Title": "Communication Breakdowns",
-          "pain4Description": "Vendors, crew members, and stakeholders experience coordination difficulties"
+          "title": "Tuotannonhallinnan haaste",
+          "subtitle": "Toimialan laajuista tehottomuutta",
+          "pain1Title": "Hajanaiset järjestelmät",
+          "pain1Description": "Tiimit käyttävät useita erillisiä alustoja, kuten laskentataulukoita, sähköpostia ja erilaisia ​​projektinhallintatyökaluja",
+          "pain2Title": "Tietojen menetys",
+          "pain2Description": "Kriittiset projektitiedot menetetään siirtymien ja tiimien vaihtojen aikana",
+          "pain3Title": "Budjetin ylitykset",
+          "pain3Description": "Ilman asianmukaista taloudellista valvontaa kustannukset ylittävät ennusteet",
+          "pain4Title": "Viestintähäiriöt",
+          "pain4Description": "Myyjillä, miehistön jäsenillä ja sidosryhmillä on koordinointivaikeuksia"
         },
         "solution": {
-          "title": "Comprehensive Platform. Complete Control.",
-          "subtitle": "Integrated production management",
-          "feature1Title": "Centralized Platform",
-          "feature1Description": "All projects, personnel, and resources managed from one location",
-          "feature2Title": "Real-Time Updates",
-          "feature2Description": "Instant synchronization ensures all team members have current information",
-          "feature3Title": "Financial Oversight",
-          "feature3Description": "Track budgets, expenses, and invoices with precision and accuracy",
-          "feature4Title": "Vendor Management",
-          "feature4Description": "Maintain professional relationships while ensuring proper oversight"
+          "title": "Kattava alusta. Täydellinen valvonta.",
+          "subtitle": "Integroitu tuotannonhallinta",
+          "feature1Title": "Keskitetty alusta",
+          "feature1Description": "Kaikki projektit, henkilöstö ja resurssit hallitaan yhdestä paikasta",
+          "feature2Title": "Reaaliaikaiset päivitykset",
+          "feature2Description": "Välitön synkronointi varmistaa, että kaikilla tiimin jäsenillä on ajantasaiset tiedot",
+          "feature3Title": "Taloudellinen valvonta",
+          "feature3Description": "Seuraa budjetteja, kuluja ja laskuja tarkasti ja tarkasti",
+          "feature4Title": "Myyjän hallinta",
+          "feature4Description": "Ylläpidä ammatillisia suhteita varmistaen samalla kunnollisen valvonnan"
         },
         "howItWorks": {
-          "title": "Implementation Process",
-          "subtitle": "Efficient setup and deployment",
-          "step1Title": "Establish Your Organization",
-          "step1Description": "Configure your organizational structure and onboard your team",
-          "step2Title": "Define Your Projects",
-          "step2Description": "Establish productions, activations, and workspaces",
-          "step3Title": "Assign Roles & Responsibilities",
-          "step3Description": "Provide appropriate access levels and clear accountability",
-          "step4Title": "Execute & Monitor",
-          "step4Description": "Track progress, manage budgets, deliver exceptional results"
+          "title": "Toteutusprosessi",
+          "subtitle": "Tehokas asennus ja käyttöönotto",
+          "step1Title": "Perusta organisaatiosi",
+          "step1Description": "Määritä organisaatiorakenne ja liitä tiimisi",
+          "step2Title": "Määrittele projektisi",
+          "step2Description": "Perusta tuotantoja, aktivaatioita ja työtiloja",
+          "step3Title": "Määritä roolit ja vastuut",
+          "step3Description": "Tarjoa asianmukaiset käyttöoikeustasot ja selkeä vastuullisuus",
+          "step4Title": "Suorita ja tarkkaile",
+          "step4Description": "Seuraa edistymistä, hallitse budjetteja ja anna poikkeuksellisia tuloksia"
         },
         "testimonials": {
-          "title": "Trusted by Production Professionals Worldwide",
-          "subtitle": "Proven results from industry leaders",
-          "testimonial1Quote": "ATLVS has proven to be an excellent solution for managing our festival operations. Everything is well-organized and our team maintains proper coordination.",
+          "title": "Tuotantoammattilaiset luottavat maailmanlaajuisesti",
+          "subtitle": "Todistettuja tuloksia alan johtajilta",
+          "testimonial1Quote": "ATLVS on osoittautunut erinomaiseksi ratkaisuksi festivaalitoiminnan johtamiseen. Kaikki on hyvin järjestetty ja tiimimme ylläpitää asianmukaista koordinaatiota.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The role-based access control system provides exactly what we needed for our organizational structure. Finally, proper security and access management for production teams.",
+          "testimonial1Role": "Tuotantojohtaja, Major Music Festival",
+          "testimonial2Quote": "Roolipohjainen kulunvalvontajärjestelmä tarjoaa juuri sen, mitä tarvitsimme organisaatiorakenteellemme. Lopuksi kunnollinen suojaus ja pääsynhallinta tuotantotiimeille.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We reduced budget overruns by 40% in the first quarter. The financial visibility and tracking capabilities are genuinely impressive.",
+          "testimonial2Role": "Toiminnanjohtaja, Live Events Company",
+          "testimonial3Quote": "Vähensimme budjetin ylityksiä 40 % ensimmäisellä neljänneksellä. Taloudellinen näkyvyys ja seurantaominaisuudet ovat todella vaikuttavia.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "Talousjohtaja, yritystapahtumatoimisto"
         },
         "pricing": {
-          "title": "Professional Pricing Structure"
+          "title": "Ammattimainen hinnoittelurakenne"
         }
       },
       "gen-x": {
         "hero": {
-          "headline": "Production Management That Works",
-          "headlineHighlight": "No BS",
-          "subheadline": "Manage projects, crew, assets, and budgets from one place. Built for people who actually do the work.",
-          "supportingCopy": "Festivals, corporate events, immersive activations—ATLVS handles it without the fluff.",
-          "ctaPrimary": "Start Free",
-          "ctaSecondary": "See How It Works",
-          "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
+          "headline": "Toimiva tuotannonhallinta",
+          "headlineHighlight": "Ei BS:ää",
+          "subheadline": "Hallitse projekteja, miehistöä, omaisuutta ja budjetteja yhdestä paikasta. Rakennettu ihmisille, jotka todella tekevät työn.",
+          "supportingCopy": "Festivaalit, yritystapahtumat, mukaansatempaavat aktivaatiot – ALVS hoitaa sen ilman pörröisyyttä.",
+          "ctaPrimary": "Aloita ilmaiseksi",
+          "ctaSecondary": "Katso, miten se toimii",
+          "trustIndicators": "Ei luottokorttia • 14 päivän kokeilu • Peru milloin tahansa",
+          "platformScreenshot": "Alustan kuvakaappaus",
           "headlineHighlightPrefix": "",
-          "headlineHighlightMain": "No BS"
+          "headlineHighlightMain": "Ei BS:ää"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams who get stuff done"
+          "trustedBy": "Sitä käyttävät tuotantotiimit, jotka tekevät asioita"
         },
         "problem": {
-          "title": "The Production Mess",
-          "subtitle": "Same story, different day",
-          "pain1Title": "Tool Chaos",
-          "pain1Description": "Spreadsheets, Slack, email, random Google Docs—your workflow is scattered everywhere",
-          "pain2Title": "Missing Info",
-          "pain2Description": "Files disappear. Someone sent it... somewhere. Good luck finding it",
+          "title": "Tuotannon sotku",
+          "subtitle": "Sama tarina, eri päivä",
+          "pain1Title": "Työkalu kaaos",
+          "pain1Description": "Laskentataulukot, Slack, sähköposti, satunnaiset Google-dokumentit – työnkulkusi on hajallaan kaikkialla",
+          "pain2Title": "Puuttuvat tiedot",
+          "pain2Description": "Tiedostot katoavat. Joku lähetti sen... jonnekin. Onnea sen löytämiseen",
           "pain3Title": "Budget Creep",
-          "pain3Description": "Costs sneak up on you. By the time you catch it, you're over budget",
-          "pain4Title": "Communication Breakdown",
-          "pain4Description": "Vendors miss updates, crew works with old info, stakeholders keep asking the same questions"
+          "pain3Description": "Kustannukset hiipivät sinulle. Kun saat sen kiinni, olet ylittänyt budjetin",
+          "pain4Title": "Viestintähäiriö",
+          "pain4Description": "Toimittajat kaipaavat päivityksiä, miehistö työskentelee vanhojen tietojen kanssa, sidosryhmät kysyvät jatkuvasti samoja kysymyksiä"
         },
         "solution": {
-          "title": "One Platform. Actually Works.",
-          "subtitle": "Everything where it should be",
-          "feature1Title": "Unified System",
-          "feature1Description": "Projects, people, resources—all in one place that actually makes sense",
-          "feature2Title": "Real-Time Updates",
-          "feature2Description": "Changes happen instantly. Everyone sees the same thing",
-          "feature3Title": "Budget Tracking",
-          "feature3Description": "Track every dollar. No surprises, no excuses",
-          "feature4Title": "Vendor Coordination",
-          "feature4Description": "Keep partners in the loop without losing control"
+          "title": "Yksi alusta. Oikeastaan ​​Toimii.",
+          "subtitle": "Kaikki missä sen pitääkin olla",
+          "feature1Title": "Yhtenäinen järjestelmä",
+          "feature1Description": "Projektit, ihmiset, resurssit – kaikki yhdessä paikassa, joka on todella järkevää",
+          "feature2Title": "Reaaliaikaiset päivitykset",
+          "feature2Description": "Muutokset tapahtuvat välittömästi. Kaikki näkevät saman asian",
+          "feature3Title": "Budjetin seuranta",
+          "feature3Description": "Seuraa jokaista dollaria. Ei yllätyksiä, ei tekosyitä",
+          "feature4Title": "Toimittajan koordinointi",
+          "feature4Description": "Pidä kumppanit ajan tasalla menettämättä hallintaa"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Get up and running fast",
-          "step1Title": "Set Up Your Org",
-          "step1Description": "Build your structure, add your team",
-          "step2Title": "Create Your Projects",
-          "step2Description": "Map out productions and workspaces",
-          "step3Title": "Assign Roles",
-          "step3Description": "Give people the right access, nothing more",
-          "step4Title": "Get It Done",
-          "step4Description": "Track progress, manage budgets, ship on time"
+          "title": "Miten se toimii",
+          "subtitle": "Nouse ja toimi nopeasti",
+          "step1Title": "Perusta organisaatiosi",
+          "step1Description": "Rakenna rakennettasi, lisää tiimisi",
+          "step2Title": "Luo omat projektisi",
+          "step2Description": "Kartoita tuotannot ja työtilat",
+          "step3Title": "Määritä roolit",
+          "step3Description": "Anna ihmisille oikea käyttöoikeus, ei mitään muuta",
+          "step4Title": "Tee se",
+          "step4Description": "Seuraa edistymistä, hallinnoi budjetteja, lähetä ajoissa"
         },
         "testimonials": {
-          "title": "Real Teams, Real Results",
-          "subtitle": "No marketing speak",
-          "testimonial1Quote": "ATLVS fixed our festival chaos. Everything's in one place, everyone knows what's happening. Finally.",
+          "title": "Oikeita joukkueita, todellisia tuloksia",
+          "subtitle": "Ei markkinointi puhu",
+          "testimonial1Quote": "ATLVS korjasi festivaalikaaosemme. Kaikki on yhdessä paikassa, kaikki tietävät mitä tapahtuu. Lopulta.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permissions system is exactly what we needed. No more access nightmares.",
+          "testimonial1Role": "Tuotantojohtaja, Major Music Festival",
+          "testimonial2Quote": "Lupajärjestelmä on juuri sitä mitä tarvitsimme. Ei enää pääsyn painajaisia.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "Cut budget overruns 40% first quarter. The tracking actually works.",
+          "testimonial2Role": "Toiminnanjohtaja, Live Events Company",
+          "testimonial3Quote": "Budjetin leikkaus ylittää 40 prosenttia ensimmäisellä neljänneksellä. Seuranta todella toimii.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "Talousjohtaja, yritystapahtumatoimisto"
         },
         "pricing": {
-          "title": "Straightforward pricing"
+          "title": "Suoraviivainen hinnoittelu"
         }
       },
       "millennial": {
         "hero": {
-          "headline": "Production Management That Actually Works",
-          "headlineHighlight": "For Experiential Teams",
-          "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
-          "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
-          "ctaPrimary": "Start Free Today",
-          "ctaSecondary": "See It in Action",
-          "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
-          "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Experiential Teams"
+          "headline": "Tuotannonhallinta, joka todella toimii",
+          "headlineHighlight": "Kokemuksellisille joukkueille",
+          "subheadline": "Navigoi projekteissa, miehistössä, resursseissa ja budjeteissa yhdestä komentokeskuksesta. Rakennettu ihmisille, jotka luovat unohtumattomia kokemuksia.",
+          "supportingCopy": "Olitpa tuottamassa festivaaleja, yritystapahtumia tai mukaansatempaavia aktivaatioita – ALVS kartoittaa kurssin konseptista verhopuheluun.",
+          "ctaPrimary": "Aloita ilmaiseksi tänään",
+          "ctaSecondary": "Katso se toiminnassa",
+          "trustIndicators": "Ei luottokorttia • 14 päivän kokeilu • Peru milloin tahansa",
+          "platformScreenshot": "Alustan kuvakaappaus",
+          "headlineHighlightPrefix": "varten",
+          "headlineHighlightMain": "Kokemukselliset tiimit"
         },
         "trustBar": {
-          "trustedBy": "Trusted by production teams worldwide"
+          "trustedBy": "Tuotantotiimit luottavat maailmanlaajuisesti"
         },
         "problem": {
-          "title": "The Production Chaos Problem",
-          "subtitle": "You know the drill",
-          "pain1Title": "Tool Overload",
-          "pain1Description": "Spreadsheets, Slack, email, that one Google Doc nobody can find—your workflow is scattered across a dozen platforms",
-          "pain2Title": "Information Black Holes",
-          "pain2Description": "Critical details vanish during handoffs. Someone definitely sent that file... somewhere",
-          "pain3Title": "Budget Surprises",
-          "pain3Description": "Costs creep up in the shadows. By the time you notice, you're already over",
+          "title": "Tuotantokaaosongelma",
+          "subtitle": "Tiedät harjoituksen",
+          "pain1Title": "Työkalun ylikuormitus",
+          "pain1Description": "Laskentataulukot, Slack, sähköposti, joita yksi Google-dokumentti ei löydä – työnkulkusi on hajallaan kymmenelle alustalle",
+          "pain2Title": "Tiedot mustat aukot",
+          "pain2Description": "Kriittiset yksityiskohdat katoavat vaihtojen aikana. Joku varmasti lähetti sen tiedoston... jonnekin",
+          "pain3Title": "Budjetti yllätyksiä",
+          "pain3Description": "Kustannukset hiipivät varjoissa. Kun huomaat, olet jo ohi",
           "pain4Title": "Communication Drift",
-          "pain4Description": "Vendors miss updates, crew works off old info, stakeholders ask the same questions twice"
+          "pain4Description": "Toimittajat kaipaavat päivityksiä, miehistö käyttää vanhoja tietoja, sidosryhmät kysyvät samoja kysymyksiä kahdesti"
         },
         "solution": {
-          "title": "One Platform. Zero Chaos.",
-          "subtitle": "Everything in its right place",
+          "title": "Yksi alusta. Nolla kaaosta.",
+          "subtitle": "Kaikki oikealla paikallaan",
           "feature1Title": "Unified Command Center",
-          "feature1Description": "Projects, people, and resources all sailing in formation",
-          "feature2Title": "Real-Time Sync",
-          "feature2Description": "Updates flow instantly. Everyone's working from the same chart",
-          "feature3Title": "Budget Radar",
-          "feature3Description": "Track every dollar in real-time. No surprises, no overruns",
-          "feature4Title": "Vendor Coordination",
-          "feature4Description": "Keep external partners in the loop without giving away the ship"
+          "feature1Description": "Projektit, ihmiset ja resurssit kaikki purjehtivat muodostumassa",
+          "feature2Title": "Reaaliaikainen synkronointi",
+          "feature2Description": "Päivitykset virtaavat välittömästi. Kaikki työskentelevät samalla kaaviolla",
+          "feature3Title": "Budjettitutka",
+          "feature3Description": "Seuraa jokaista dollaria reaaliajassa. Ei yllätyksiä, ei ylilyöntejä",
+          "feature4Title": "Toimittajan koordinointi",
+          "feature4Description": "Pidä ulkoiset kumppanit silmukassa luovuttamatta laivaa"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Set sail in minutes, not months",
-          "step1Title": "Launch Your Organization",
-          "step1Description": "Set up your structure and bring your crew aboard",
-          "step2Title": "Chart Your Projects",
-          "step2Description": "Map out productions, activations, and workspaces",
-          "step3Title": "Assign Roles & Missions",
-          "step3Description": "Give everyone the right access and clear responsibilities",
-          "step4Title": "Navigate & Deliver",
-          "step4Description": "Monitor progress, manage budgets, execute flawlessly"
+          "title": "Miten se toimii",
+          "subtitle": "Purjehtii minuuteissa, ei kuukausissa",
+          "step1Title": "Käynnistä organisaatiosi",
+          "step1Description": "Aseta rakenteenne ja tuo miehistö kyytiin",
+          "step2Title": "Kartoita projektisi",
+          "step2Description": "Kartoita tuotannot, aktivaatiot ja työtilat",
+          "step3Title": "Määritä rooleja ja tehtäviä",
+          "step3Description": "Anna kaikille oikeat käyttöoikeudet ja selkeät vastuut",
+          "step4Title": "Navigoi ja toimita",
+          "step4Description": "Seuraa edistymistä, hallitse budjetteja ja suorita virheettömästi"
         },
         "testimonials": {
-          "title": "Trusted by Production Teams Worldwide",
-          "subtitle": "Real stories from real producers",
-          "testimonial1Quote": "ATLVS transformed how we manage festivals. Everything in one place, everyone on the same page. Finally.",
+          "title": "Tuotantotiimit luottavat maailmanlaajuisesti",
+          "subtitle": "Oikeita tarinoita oikeilta tuottajilta",
+          "testimonial1Quote": "ATLVS muutti tapaamme hallita festivaaleja. Kaikki yhdessä paikassa, kaikki samalla sivulla. Lopulta.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Proper access control for production? Revolutionary.",
+          "testimonial1Role": "Tuotantojohtaja, Major Music Festival",
+          "testimonial2Quote": "RBAC-järjestelmä sopii täydellisesti monimutkaiseen organisaatiorakenteeseemme. Oikea kulunvalvonta tuotantoon? Vallankumouksellinen.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
+          "testimonial2Role": "Toiminnanjohtaja, Live Events Company",
+          "testimonial3Quote": "Leikkasimme budjetin ylityksiä 40 % ensimmäisellä neljänneksellä. Taloudellinen näkyvyys on oikeutetusti pelin muuttava.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "Talousjohtaja, yritystapahtumatoimisto"
         },
         "pricing": {
-          "title": "Transparent pricing that scales"
+          "title": "Läpinäkyvä hinnoittelu, joka skaalautuu"
         }
       },
       "gen-z": {
         "hero": {
-          "headline": "Production Management That Hits Different",
-          "headlineHighlight": "For Event Creators",
-          "subheadline": "Run your projects, crew, gear, and budgets from one app. Made for people who actually create experiences.",
-          "supportingCopy": "Festivals, brand activations, immersive events—ATLVS keeps everything organized from idea to execution.",
-          "ctaPrimary": "Start Free",
-          "ctaSecondary": "Check It Out",
-          "trustIndicators": "No credit card needed • Free trial • Cancel whenever",
-          "platformScreenshot": "Platform Screenshot",
-          "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Event Creators"
+          "headline": "Tuotannonhallinta, joka osuu eri tavalla",
+          "headlineHighlight": "Tapahtuman luojille",
+          "subheadline": "Suorita projekteja, miehistöä, varusteita ja budjetteja yhdestä sovelluksesta. Tehty ihmisille, jotka todella luovat kokemuksia.",
+          "supportingCopy": "Festivaalit, brändiaktivoinnit, mukaansatempaavat tapahtumat – ALVS pitää kaiken järjestyksessä ideasta toteutukseen.",
+          "ctaPrimary": "Aloita ilmaiseksi",
+          "ctaSecondary": "Tarkista se",
+          "trustIndicators": "Luottokorttia ei tarvita • Ilmainen kokeilu • Peruuta milloin tahansa",
+          "platformScreenshot": "Alustan kuvakaappaus",
+          "headlineHighlightPrefix": "varten",
+          "headlineHighlightMain": "Tapahtuman luojat"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams everywhere"
+          "trustedBy": "Tuotantotiimien käytössä kaikkialla"
         },
         "problem": {
-          "title": "Production is Messy AF",
-          "subtitle": "We've all been there",
-          "pain1Title": "Too Many Apps",
-          "pain1Description": "Spreadsheets, Slack, email, that random Google Doc—everything's everywhere and it's chaos",
-          "pain2Title": "Files Go Missing",
-          "pain2Description": "Someone sent that file... somewhere. Now nobody can find it. Classic.",
-          "pain3Title": "Budget Goes Brr",
-          "pain3Description": "Costs keep going up. By the time you notice, you're way over budget",
-          "pain4Title": "Communication Lag 💬",
-          "pain4Description": "Team members miss updates and work with old information"
+          "title": "Tuotanto on sotkuinen AF",
+          "subtitle": "Olemme kaikki olleet siellä",
+          "pain1Title": "Liian monta sovellusta",
+          "pain1Description": "Laskentataulukot, Slack, sähköposti, se satunnainen Google-dokumentti – kaikki on kaikkialla ja se on kaaosta",
+          "pain2Title": "Tiedostot katoavat",
+          "pain2Description": "Joku lähetti sen tiedoston... jonnekin. Nyt kukaan ei löydä sitä. Klassinen.",
+          "pain3Title": "Budjetti menee Brr",
+          "pain3Description": "Kustannukset jatkavat nousuaan. Kun huomaat, olet ylittänyt budjetin",
+          "pain4Title": "Viestintäviive 💬",
+          "pain4Description": "Tiimin jäsenet kaipaavat päivityksiä ja työskentelevät vanhojen tietojen kanssa"
         },
         "solution": {
-          "title": "One Platform. Total Control. 🎯",
-          "subtitle": "Everything in one place",
-          "feature1Title": "Command Center 🎮",
-          "feature1Description": "All your projects, team, and resources in one hub",
-          "feature2Title": "Live Sync ⚡",
-          "feature2Description": "Updates happen instantly. Everyone stays connected",
-          "feature3Title": "Budget Tracker 💰",
-          "feature3Description": "See every dollar in real-time. No surprises",
-          "feature4Title": "Team Coordination 🤝",
-          "feature4Description": "Keep everyone updated and on the same page"
+          "title": "Yksi alusta. Täydellinen hallinta. 🎯",
+          "subtitle": "Kaikki yhdessä paikassa",
+          "feature1Title": "Komentokeskus 🎮",
+          "feature1Description": "Kaikki projektisi, tiimisi ja resurssit yhdessä keskittimessä",
+          "feature2Title": "Live-synkronointi ⚡",
+          "feature2Description": "Päivitykset tapahtuvat välittömästi. Kaikki pysyvät yhteydessä",
+          "feature3Title": "Budjettiseuranta 💰",
+          "feature3Description": "Katso jokainen dollari reaaliajassa. Ei yllätyksiä",
+          "feature4Title": "Joukkueen koordinointi 🤝",
+          "feature4Description": "Pidä kaikki ajan tasalla ja samalla sivulla"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Get started in literally minutes",
-          "step1Title": "Set Up Your Org",
-          "step1Description": "Build your team structure and add everyone",
-          "step2Title": "Create Projects",
-          "step2Description": "Map out your events and productions",
-          "step3Title": "Assign Roles",
-          "step3Description": "Give people the right permissions",
-          "step4Title": "Ship It",
-          "step4Description": "Track everything, manage budgets, execute perfectly"
+          "title": "Miten se toimii",
+          "subtitle": "Aloita kirjaimellisesti minuuteissa",
+          "step1Title": "Perusta organisaatiosi",
+          "step1Description": "Rakenna tiimisi rakenne ja lisää kaikki",
+          "step2Title": "Luo projekteja",
+          "step2Description": "Kartoita tapahtumasi ja tuotantosi",
+          "step3Title": "Määritä roolit",
+          "step3Description": "Anna ihmisille oikeat luvat",
+          "step4Title": "Lähetä se",
+          "step4Description": "Seuraa kaikkea, hallitse budjetteja ja suorita täydellisesti"
         },
         "testimonials": {
-          "title": "Real Teams Using ATLVS",
-          "subtitle": "Actual feedback from actual people",
-          "testimonial1Quote": "ATLVS is OP for managing festivals. Everything's organized, everyone's synced. 10/10 would recommend.",
+          "title": "Todelliset joukkueet käyttävät ATLVS",
+          "subtitle": "Varsinaista palautetta oikeilta ihmisiltä",
+          "testimonial1Quote": "ATLVS on OP festivaalien hallintaan. Kaikki on järjestetty, kaikki on synkronoitu. 10/10 suosittelen.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permissions system is fire. Finally got proper access control for our team.",
+          "testimonial1Role": "Tuotantojohtaja, Major Music Festival",
+          "testimonial2Quote": "Lupajärjestelmä on tulipalo. Vihdoinkin saatiin kunnollinen kulunvalvonta tiimillemme.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget problems by 40% first quarter. The money tracking is straight up amazing.",
+          "testimonial2Role": "Toiminnanjohtaja, Live Events Company",
+          "testimonial3Quote": "Leikkasimme budjettiongelmia 40 % ensimmäisellä neljänneksellä. Rahan seuranta on suorastaan ​​hämmästyttävää.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "Talousjohtaja, yritystapahtumatoimisto"
         },
         "pricing": {
-          "title": "Pricing that hits different"
+          "title": "Hinnoittelu, joka osuu eri"
         }
       },
       "gen-alpha": {
         "hero": {
-          "headline": "Level Up Your Production Game 🎮",
-          "headlineHighlight": "For Event Creators",
-          "subheadline": "Manage projects, team, gear & money from one super app ✨ Built for creators who make epic experiences 🚀",
-          "supportingCopy": "Festivals, events, activations—ATLVS keeps everything organized from start to finish 🎯",
-          "ctaPrimary": "Start Free 🚀",
-          "ctaSecondary": "See Demo 👀",
-          "trustIndicators": "No card needed • Free trial • Cancel anytime ✌️",
-          "platformScreenshot": "Platform Screenshot",
-          "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Event Creators"
+          "headline": "Nosta tuotantopeliäsi 🎮",
+          "headlineHighlight": "Tapahtuman luojille",
+          "subheadline": "Hallitse projekteja, tiimiä, varusteita ja rahaa yhdellä supersovelluksella ✨ Suunniteltu eeppisiä kokemuksia tekeville sisällöntuottajille 🚀",
+          "supportingCopy": "Festivaalit, tapahtumat, aktivaatiot – ALVS pitää kaiken järjestyksessä alusta loppuun 🎯",
+          "ctaPrimary": "Aloita ilmaiseksi 🚀",
+          "ctaSecondary": "Katso demo 👀",
+          "trustIndicators": "Korttia ei tarvita • Ilmainen kokeilu • Peru milloin tahansa ✌️",
+          "platformScreenshot": "Alustan kuvakaappaus",
+          "headlineHighlightPrefix": "varten",
+          "headlineHighlightMain": "Tapahtuman luojat"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams worldwide 🌍"
+          "trustedBy": "Tuotantotiimien käytössä maailmanlaajuisesti 🌍"
         },
         "problem": {
-          "title": "Production Can Be Chaotic 😅",
-          "subtitle": "Sound familiar?",
-          "pain1Title": "App Overload 📱",
-          "pain1Description": "Too many apps, too much chaos. Everything's scattered and hard to find 🤯",
-          "pain2Title": "Lost Files 📂",
-          "pain2Description": "Files disappear into the void. Someone sent it... somewhere... good luck! 🔍",
-          "pain3Title": "Budget Surprise 💸",
-          "pain3Description": "Money keeps disappearing. By the time you notice, you're over budget 😬",
-          "pain4Title": "Team Confusion 🤷",
-          "pain4Description": "People miss updates, work with old info, ask the same questions"
+          "title": "Tuotanto voi olla kaoottista 😅",
+          "subtitle": "Kuulostaako tutulta?",
+          "pain1Title": "Sovelluksen ylikuormitus 📱",
+          "pain1Description": "Liikaa sovelluksia, liikaa kaaosta. Kaikki on hajallaan ja vaikea löytää 🤯",
+          "pain2Title": "Kadonneet tiedostot 📂",
+          "pain2Description": "Tiedostot katoavat tyhjyyteen. Joku lähetti sen... jonnekin... onnea! 🔍",
+          "pain3Title": "Budjettiyllätys 💸",
+          "pain3Description": "Rahat katoavat jatkuvasti. Kun huomaat, olet ylittänyt budjetin 😬",
+          "pain4Title": "Joukkueen hämmennys 🤷",
+          "pain4Description": "Ihmiset kaipaavat päivityksiä, työskentelevät vanhojen tietojen kanssa, kysyvät samoja kysymyksiä"
         },
         "solution": {
-          "title": "One App. Full Control. 💪",
-          "subtitle": "Everything you need in one place",
-          "feature1Title": "Command Center 🎮",
-          "feature1Description": "All projects, team & gear in one dashboard",
-          "feature2Title": "Instant Sync ⚡",
-          "feature2Description": "Updates happen in real-time. Everyone stays connected",
+          "title": "Yksi sovellus. Täysi hallinta. 💪",
+          "subtitle": "Kaikki mitä tarvitset yhdessä paikassa",
+          "feature1Title": "Komentokeskus 🎮",
+          "feature1Description": "Kaikki projektit, tiimi ja varusteet yhdessä kojelaudassa",
+          "feature2Title": "Pikasynkronointi ⚡",
+          "feature2Description": "Päivitykset tapahtuvat reaaliajassa. Kaikki pysyvät yhteydessä",
           "feature3Title": "Money Tracker 💰",
-          "feature3Description": "Watch every dollar. No surprises, no stress",
-          "feature4Title": "Team Collab 🤝",
-          "feature4Description": "Keep everyone in the loop and working together"
+          "feature3Description": "Katso jokaista dollaria. Ei yllätyksiä, ei stressiä",
+          "feature4Title": "Joukkueen yhteistyö 🤝",
+          "feature4Description": "Pidä kaikki ajan tasalla ja työskentele yhdessä"
         },
         "howItWorks": {
-          "title": "How It Works ⚙️",
-          "subtitle": "Get started super fast",
-          "step1Title": "Build Your Team 👥",
-          "step1Description": "Set up your org and add your crew",
-          "step2Title": "Create Projects 📋",
-          "step2Description": "Map out all your events and productions",
-          "step3Title": "Set Permissions 🔐",
-          "step3Description": "Give everyone the right access level",
-          "step4Title": "Launch & Win 🏆",
-          "step4Description": "Track progress, manage money, execute perfectly"
+          "title": "Miten se toimii ⚙️",
+          "subtitle": "Aloita supernopeasti",
+          "step1Title": "Rakenna tiimisi 👥",
+          "step1Description": "Perusta organisaatiosi ja lisää miehistö",
+          "step2Title": "Luo projekteja 📋",
+          "step2Description": "Kartoita kaikki tapahtumasi ja tuotantosi",
+          "step3Title": "Aseta käyttöoikeudet 🔐",
+          "step3Description": "Anna kaikille oikea käyttöoikeustaso",
+          "step4Title": "Käynnistä ja voita 🏆",
+          "step4Description": "Seuraa edistymistä, hallitse rahaa, suorita täydellisesti"
         },
         "testimonials": {
-          "title": "Teams Love ATLVS 💙",
-          "subtitle": "Real reviews from real users",
-          "testimonial1Quote": "ATLVS is literally perfect for festivals. Everything's organized, everyone's synced. 100/10! 🔥",
+          "title": "Joukkueet rakastavat ATLVS:ää 💙",
+          "subtitle": "Aidot arvostelut oikeilta käyttäjiltä",
+          "testimonial1Quote": "ATLVS on kirjaimellisesti täydellinen festivaaleille. Kaikki on järjestetty, kaikki on synkronoitu. 100/10! 🔥",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permission system is chef's kiss 👌 Finally proper access control!",
+          "testimonial1Role": "Tuotantojohtaja, Major Music Festival",
+          "testimonial2Quote": "Lupajärjestelmä on kokin suudelma 👌 Vihdoinkin kunnollinen kulunvalvonta!",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget issues by 40% first quarter. The tracking is insane! 🎯",
+          "testimonial2Role": "Toiminnanjohtaja, Live Events Company",
+          "testimonial3Quote": "Leikkasimme budjettiongelmia 40 % ensimmäisellä neljänneksellä. Seuranta on mieletöntä! 🎯",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "Talousjohtaja, yritystapahtumatoimisto"
         },
         "pricing": {
-          "title": "Pricing that's actually fair ✨"
+          "title": "Hinnoittelu on todella reilua ✨"
         }
       }
     }
@@ -9016,28 +9035,6 @@
     "deleteComment": "Delete Comment",
     "saveComment": "Save Comment",
     "cancelEdit": "Cancel"
-  },
-  "import": {
-    "title": "Import Data",
-    "selectFile": "Select File",
-    "fileSelected": "File Selected",
-    "dragDropFile": "Drag and drop file here",
-    "supportedFormats": "Supported formats: CSV, JSON, Excel",
-    "mapFields": "Map Fields",
-    "sourceField": "Source Field",
-    "targetField": "Target Field",
-    "preview": "Preview Data",
-    "importing": "Importing...",
-    "importComplete": "Import Complete",
-    "importSuccess": "Successfully imported {count} records",
-    "importFailed": "Import Failed",
-    "importError": "Failed to import data. Please check the file format.",
-    "rowsProcessed": "Rows Processed",
-    "rowsSuccessful": "Rows Successful",
-    "rowsFailed": "Rows Failed",
-    "validateData": "Validate Data",
-    "skipErrors": "Skip Errors",
-    "batchSize": "Batch Size"
   },
   "export": {
     "title": "Export Data",

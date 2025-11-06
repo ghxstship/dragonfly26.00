@@ -1156,7 +1156,26 @@
     "numberOfOccurrences": "Number of occurrences"
   },
   "import": {
-    "uploadPrompt": "Click to upload or drag and drop"
+    "title": "Import Data",
+    "selectFile": "Select File",
+    "fileSelected": "File Selected",
+    "dragDropFile": "Drag and drop file here",
+    "supportedFormats": "Supported formats: CSV, JSON, Excel",
+    "mapFields": "Map Fields",
+    "sourceField": "Source Field",
+    "targetField": "Target Field",
+    "preview": "Preview Data",
+    "importing": "Importing...",
+    "importComplete": "Import Complete",
+    "importSuccess": "Successfully imported {count} records",
+    "importFailed": "Import Failed",
+    "importError": "Failed to import data. Please check the file format.",
+    "rowsProcessed": "Rows Processed",
+    "rowsSuccessful": "Rows Successful",
+    "rowsFailed": "Rows Failed",
+    "validateData": "Validate Data",
+    "skipErrors": "Skip Errors",
+    "batchSize": "Batch Size"
   },
   "templates": {
     "standardChecklist": "Standard checklist for new projects",
@@ -7831,944 +7850,944 @@
   "marketing": {
     "nav": {
       "logo": "(ATLVS)",
-      "solutions": "Solutions",
-      "features": "Features",
-      "pricing": "Pricing",
-      "docs": "Docs",
+      "solutions": "Løsninger",
+      "features": "Funktioner",
+      "pricing": "Prissætning",
+      "docs": "Dokumenter",
       "blog": "Blog",
-      "company": "Company",
-      "signIn": "Sign In",
-      "startFree": "Start Free",
-      "toggleMenu": "Toggle menu"
+      "company": "Selskab",
+      "signIn": "Log ind",
+      "startFree": "Start gratis",
+      "toggleMenu": "Skift menu"
     },
     "solutions": {
       "hero": {
-        "title": "Solutions by Industry",
-        "subtitle": "Purpose-built workflows for every type of live entertainment production"
+        "title": "Løsninger efter branche",
+        "subtitle": "Formålsbyggede arbejdsgange til enhver type live underholdningsproduktion"
       },
       "concerts": {
-        "title": "Concerts & Touring",
-        "description": "Streamline routing, budgeting, logistics, and crew management across global tour operations — from small venue runs to arena-scale productions."
+        "title": "Koncerter & Touring",
+        "description": "Strømlin routing, budgettering, logistik og besætningsstyring på tværs af globale touroperationer - fra små spillesteder til produktioner i arenaskala."
       },
       "festivals": {
-        "title": "Music & Art Festivals",
-        "description": "Centralize workflows for multi-day, multi-stage events — uniting production, talent, vendors, and compliance under one command system."
+        "title": "Musik og kunstfestivaler",
+        "description": "Centraliser arbejdsgange til flerdages begivenheder i flere stadier - foren produktion, talent, leverandører og compliance under ét kommandosystem."
       },
       "immersive": {
-        "title": "Immersive & Experiential Events",
-        "description": "Design and operate interactive worlds, installations, and branded experiences with full visibility from creative development to live execution."
+        "title": "Fordybende og oplevelsesrige begivenheder",
+        "description": "Design og drift interaktive verdener, installationer og brandede oplevelser med fuld synlighed fra kreativ udvikling til live eksekvering."
       },
       "theatrical": {
-        "title": "Theatrical & Live Productions",
-        "description": "Manage creative teams, technical schedules, and production assets for stage and performance-based entertainment."
+        "title": "Teater- og liveproduktioner",
+        "description": "Administrer kreative teams, tekniske tidsplaner og produktionsaktiver til scene- og præstationsbaseret underholdning."
       },
       "filmTv": {
-        "title": "Film, TV & Media",
-        "description": "Coordinate pre-production, on-set operations, and wrap reporting with tools built for cross-departmental sync and financial transparency."
+        "title": "Film, TV og medier",
+        "description": "Koordiner præproduktion, on-set operationer, og omslut rapportering med værktøjer, der er bygget til synkronisering på tværs af afdelinger og finansiel gennemsigtighed."
       },
       "brandActivations": {
-        "title": "Brand Activations & Marketing Campaigns",
-        "description": "Execute pop-ups, launches, and campaign-driven experiences — integrating creative, logistics, and ROI tracking into one intelligent dashboard."
+        "title": "Brandaktiveringer og marketingkampagner",
+        "description": "Udfør pop-ups, lanceringer og kampagnedrevne oplevelser – integrering af kreativitet, logistik og ROI-sporing i ét intelligent dashboard."
       },
       "corporate": {
-        "title": "Corporate & Private Events",
-        "description": "Deliver flawless experiences for internal meetings, retreats, and high-profile gatherings with streamlined planning and vendor coordination."
+        "title": "Firma- og private arrangementer",
+        "description": "Lever fejlfrie oplevelser til interne møder, retreats og højprofilerede sammenkomster med strømlinet planlægning og leverandørkoordinering."
       },
       "tradeShows": {
-        "title": "Trade Shows & Conventions",
-        "description": "Simplify booth builds, exhibitor logistics, and sponsor relations with end-to-end project management and real-time analytics."
+        "title": "Messer og kongresser",
+        "description": "Forenkle standbyg, udstillerlogistik og sponsorrelationer med end-to-end projektledelse og realtidsanalyse."
       },
       "wellness": {
-        "title": "Health, Wellness & Lifestyle",
-        "description": "Optimize programming, staffing, and guest flow for retreats, fitness events, and wellness experiences — where detail and atmosphere matter most."
+        "title": "Sundhed, Wellness & Livsstil",
+        "description": "Optimer programmering, bemanding og gæsteflow til retreats, fitnessbegivenheder og wellnessoplevelser - hvor detaljer og atmosfære betyder mest."
       }
     },
     "hero": {
-      "headline": "Production Management That Actually Works",
-      "headlineHighlight": "For Experiential Teams",
-      "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
-      "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
-      "ctaPrimary": "Start Free Today",
-      "ctaSecondary": "See It in Action",
-      "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-      "platformScreenshot": "Platform Screenshot",
+      "headline": "Produktionsstyring, der rent faktisk virker",
+      "headlineHighlight": "For oplevelseshold",
+      "subheadline": "Naviger i dine projekter, besætning, aktiver og budgetter fra et enkelt kommandocenter. Bygget til de mennesker, der skaber uforglemmelige oplevelser.",
+      "supportingCopy": "Uanset om du producerer festivaler, firmaarrangementer eller fordybende aktiveringer – ATLVS kortlægger kursen fra koncept til gardinopkald.",
+      "ctaPrimary": "Start gratis i dag",
+      "ctaSecondary": "Se det i aktion",
+      "trustIndicators": "Intet kreditkort • 14-dages prøveperiode • Annuller når som helst",
+      "platformScreenshot": "Platform skærmbillede",
       "headlineHighlightPrefix": "For",
-      "headlineHighlightMain": "Experiential Teams"
+      "headlineHighlightMain": "Erfaringshold"
     },
     "trustBar": {
-      "trustedBy": "Trusted by production teams worldwide"
+      "trustedBy": "Betroet af produktionshold over hele verden"
     },
     "problem": {
-      "title": "The Production Chaos Problem",
-      "subtitle": "You know the drill",
-      "pain1Title": "Tool Overload",
-      "pain1Description": "Spreadsheets, Slack, email, that one Google Doc nobody can find—your workflow is scattered across a dozen platforms",
-      "pain2Title": "Information Black Holes",
-      "pain2Description": "Critical details vanish during handoffs. Someone definitely sent that file... somewhere",
-      "pain3Title": "Budget Surprises",
-      "pain3Description": "Costs creep up in the shadows. By the time you notice, you're already over",
-      "pain4Title": "Communication Drift",
-      "pain4Description": "Vendors miss updates, crew works off old info, stakeholders ask the same questions twice"
+      "title": "Produktionskaosproblemet",
+      "subtitle": "Du kender øvelsen",
+      "pain1Title": "Overbelastning af værktøj",
+      "pain1Description": "Regneark, Slack, e-mail, det eneste Google-dokument, som ingen kan finde – din arbejdsgang er spredt ud over et dusin platforme",
+      "pain2Title": "Information Sorte huller",
+      "pain2Description": "Kritiske detaljer forsvinder under overdragelser. Nogen sendte helt sikkert den fil... et eller andet sted",
+      "pain3Title": "Budget overraskelser",
+      "pain3Description": "Omkostningerne kryber op i skyggerne. Når du bemærker det, er du allerede forbi",
+      "pain4Title": "Kommunikationsdrift",
+      "pain4Description": "Leverandører går glip af opdateringer, besætningen arbejder ud af gammel information, interessenter stiller de samme spørgsmål to gange"
     },
     "solution": {
-      "title": "One Platform. Zero Chaos.",
-      "subtitle": "Everything in its right place",
+      "title": "Én platform. Nul kaos.",
+      "subtitle": "Alt på sin rigtige plads",
       "feature1Title": "Unified Command Center",
-      "feature1Description": "Projects, people, and resources all sailing in formation",
-      "feature2Title": "Real-Time Sync",
-      "feature2Description": "Updates flow instantly. Everyone's working from the same chart",
-      "feature3Title": "Budget Radar",
-      "feature3Description": "Track every dollar in real-time. No surprises, no overruns",
-      "feature4Title": "Vendor Coordination",
-      "feature4Description": "Keep external partners in the loop without giving away the ship"
+      "feature1Description": "Projekter, mennesker og ressourcer sejler alle sammen i formation",
+      "feature2Title": "Realtidssynkronisering",
+      "feature2Description": "Opdateringer flyder øjeblikkeligt. Alle arbejder ud fra det samme diagram",
+      "feature3Title": "Budget radar",
+      "feature3Description": "Spor hver dollar i realtid. Ingen overraskelser, ingen overskridelser",
+      "feature4Title": "Leverandørkoordinering",
+      "feature4Description": "Hold eksterne partnere i løkken uden at give skibet væk"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Set sail in minutes, not months",
-      "step1Title": "Launch Your Organization",
-      "step1Description": "Set up your structure and bring your crew aboard",
-      "step2Title": "Chart Your Projects",
-      "step2Description": "Map out productions, activations, and workspaces",
-      "step3Title": "Assign Roles & Missions",
-      "step3Description": "Give everyone the right access and clear responsibilities",
-      "step4Title": "Navigate & Deliver",
-      "step4Description": "Monitor progress, manage budgets, execute flawlessly"
+      "title": "Hvordan det virker",
+      "subtitle": "Sæt sejl på få minutter, ikke måneder",
+      "step1Title": "Start din organisation",
+      "step1Description": "Indstil din struktur og tag dit mandskab om bord",
+      "step2Title": "Kortlæg dine projekter",
+      "step2Description": "Kortlæg produktioner, aktiveringer og arbejdsområder",
+      "step3Title": "Tildel roller og missioner",
+      "step3Description": "Giv alle den rette adgang og klare ansvar",
+      "step4Title": "Naviger og lever",
+      "step4Description": "Overvåg fremskridt, administrer budgetter, eksekver fejlfrit"
     },
     "features": {
-      "title": "Everything You Need to Produce at Scale",
-      "subtitle": "Six integrated hubs for complete production control",
+      "title": "Alt hvad du skal bruge for at producere i stor skala",
+      "subtitle": "Seks integrerede hubs til komplet produktionskontrol",
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
-        "feature1": "Project & event planning",
-        "feature2": "Team & crew management",
-        "feature3": "Asset tracking & inventory",
-        "feature4": "Location & venue coordination"
+        "title": "Produktionshub",
+        "description": "Administrer projekter, begivenheder, personer, aktiver, lokationer og filer",
+        "feature1": "Projekt- og eventplanlægning",
+        "feature2": "Team- og besætningsledelse",
+        "feature3": "Aktiv sporing og beholdning",
+        "feature4": "Koordinering af sted og sted"
       },
       "business": {
         "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
-        "feature1": "Vendor & company management",
-        "feature2": "Job postings & hiring",
-        "feature3": "Procurement & purchasing",
-        "feature4": "Budget & expense tracking"
+        "description": "Håndtere virksomheder, job, indkøb og økonomi",
+        "feature1": "Sælger- og virksomhedsledelse",
+        "feature2": "Jobopslag og ansættelser",
+        "feature3": "Indkøb & indkøb",
+        "feature4": "Budget- og udgiftssporing"
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
-        "feature1": "Community & discussions",
-        "feature2": "Marketplace & services",
-        "feature3": "Resource library",
-        "feature4": "Industry connections"
+        "title": "Netværkshub",
+        "description": "Byg fællesskab, markedsplads og ressourcebibliotek",
+        "feature1": "Fællesskab og diskussioner",
+        "feature2": "Markedsplads og tjenester",
+        "feature3": "Ressourcebibliotek",
+        "feature4": "Industriforbindelser"
       },
       "automations": {
         "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
-        "feature1": "Custom workflow automation",
-        "feature2": "Event-driven triggers",
-        "feature3": "Scheduled task execution",
-        "feature4": "Integration pipelines"
+        "description": "Automatiser arbejdsgange, triggere og gentagne opgaver",
+        "feature1": "Brugerdefineret workflow-automatisering",
+        "feature2": "Hændelsesdrevne udløsere",
+        "feature3": "Planlagt opgaveudførelse",
+        "feature4": "Integrationsrørledninger"
       },
       "intelligence": {
         "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
-        "feature1": "Custom reports",
-        "feature2": "Real-time analytics",
-        "feature3": "Predictive insights",
-        "feature4": "Performance metrics"
+        "description": "Generer rapporter, analyser og indsigt",
+        "feature1": "Brugerdefinerede rapporter",
+        "feature2": "Realtidsanalyse",
+        "feature3": "Forudsigende indsigt",
+        "feature4": "Ydeevnemålinger"
       },
       "system": {
         "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
-        "feature1": "User & role management",
-        "feature2": "System configuration",
-        "feature3": "Profile customization",
-        "feature4": "Security & permissions"
+        "description": "Konfigurer admin, indstillinger og brugerprofiler",
+        "feature1": "Bruger- og rollestyring",
+        "feature2": "Systemkonfiguration",
+        "feature3": "Tilpasning af profil",
+        "feature4": "Sikkerhed og tilladelser"
       }
     },
     "detailedFeatures": {
       "hero": {
-        "title": "Everything You Need to Produce at Scale",
-        "subtitle": "Six integrated hubs designed for experiential production teams"
+        "title": "Alt hvad du skal bruge for at producere i stor skala",
+        "subtitle": "Seks integrerede hubs designet til oplevelsesrige produktionshold"
       },
       "production": {
-        "title": "Production Hub",
-        "description": "Manage projects, events, people, assets, locations, and files",
+        "title": "Produktionshub",
+        "description": "Administrer projekter, begivenheder, personer, aktiver, lokationer og filer",
         "projects": {
-          "title": "Projects",
-          "description": "Organize and track productions from concept to strike"
+          "title": "Projekter",
+          "description": "Organiser og spor produktioner fra idé til strejke"
         },
         "events": {
-          "title": "Events",
-          "description": "Schedule, coordinate, and manage every detail and timeline"
+          "title": "Begivenheder",
+          "description": "Planlæg, koordiner og administrer hver eneste detalje og tidslinje"
         },
         "people": {
-          "title": "People",
-          "description": "Manage crew assignments, availability, and scheduling"
+          "title": "Mennesker",
+          "description": "Administrer besætningsopgaver, tilgængelighed og planlægning"
         },
         "assets": {
-          "title": "Assets",
-          "description": "Track equipment, inventory, and resources across productions"
+          "title": "Aktiver",
+          "description": "Spor udstyr, inventar og ressourcer på tværs af produktioner"
         },
         "locations": {
-          "title": "Locations",
-          "description": "Coordinate venues, sites, and facility logistics"
+          "title": "Steder",
+          "description": "Koordinere spillesteder, lokaliteter og facilitetslogistik"
         },
         "files": {
-          "title": "Files",
-          "description": "Centralize documents, media, and production files securely"
+          "title": "Filer",
+          "description": "Centraliser dokumenter, medier og produktionsfiler sikkert"
         }
       },
       "business": {
         "title": "Business Hub",
-        "description": "Handle companies, jobs, procurement, and finances",
+        "description": "Håndtere virksomheder, job, indkøb og økonomi",
         "companies": {
-          "title": "Companies",
-          "description": "Manage vendor relationships, clients, and partners"
+          "title": "Virksomheder",
+          "description": "Administrer leverandørrelationer, kunder og partnere"
         },
         "jobs": {
           "title": "Jobs",
-          "description": "Post positions, track applications, manage hiring"
+          "description": "Opslå stillinger, spor ansøgninger, administrer ansættelser"
         },
         "procurement": {
-          "title": "Procurement",
-          "description": "Streamline purchasing, vendor selection, and contracts"
+          "title": "Indkøb",
+          "description": "Strømlin indkøb, leverandørvalg og kontrakter"
         },
         "invoices": {
-          "title": "Invoices",
-          "description": "Create, send, and track invoices with automated reminders"
+          "title": "Fakturaer",
+          "description": "Opret, send og spor fakturaer med automatiske påmindelser"
         },
         "expenses": {
-          "title": "Expenses",
-          "description": "Record and categorize expenses with receipt capture"
+          "title": "Udgifter",
+          "description": "Registrer og kategoriser udgifter med kvitteringsregistrering"
         },
         "budgets": {
-          "title": "Budgets",
-          "description": "Plan, monitor, and control budgets with real-time tracking"
+          "title": "Budgetter",
+          "description": "Planlæg, overvåg og kontroller budgetter med sporing i realtid"
         }
       },
       "network": {
-        "title": "Network Hub",
-        "description": "Build community, marketplace, and resource library",
+        "title": "Netværkshub",
+        "description": "Byg fællesskab, markedsplads og ressourcebibliotek",
         "community": {
-          "title": "Community",
-          "description": "Connect with industry pros, share knowledge, collaborate"
+          "title": "Fællesskab",
+          "description": "Kom i kontakt med branchefolk, del viden, samarbejd"
         },
         "marketplace": {
-          "title": "Marketplace",
-          "description": "Discover services, hire talent, find production resources"
+          "title": "Markedsplads",
+          "description": "Opdag tjenester, ansæt talenter, find produktionsressourcer"
         },
         "resources": {
-          "title": "Resources",
-          "description": "Access guides, templates, and best practices"
+          "title": "Ressourcer",
+          "description": "Få adgang til vejledninger, skabeloner og bedste praksis"
         }
       },
       "automations": {
         "title": "Automations Hub",
-        "description": "Automate workflows, triggers, and repetitive tasks",
+        "description": "Automatiser arbejdsgange, triggere og gentagne opgaver",
         "workflows": {
-          "title": "Workflows",
-          "description": "Build custom automation sequences for repetitive processes"
+          "title": "Arbejdsgange",
+          "description": "Byg tilpassede automatiseringssekvenser til gentagne processer"
         },
         "triggers": {
-          "title": "Triggers",
-          "description": "Set up event-driven actions that respond automatically"
+          "title": "Udløsere",
+          "description": "Konfigurer hændelsesdrevne handlinger, der reagerer automatisk"
         },
         "scheduled": {
-          "title": "Scheduled Tasks",
-          "description": "Automate recurring tasks with flexible scheduling"
+          "title": "Planlagte opgaver",
+          "description": "Automatiser tilbagevendende opgaver med fleksibel planlægning"
         }
       },
       "intelligence": {
         "title": "Intelligence Hub",
-        "description": "Generate reports, analytics, and insights",
+        "description": "Generer rapporter, analyser og indsigt",
         "reports": {
-          "title": "Reports",
-          "description": "Create custom reports with flexible visualization and export"
+          "title": "Rapporter",
+          "description": "Opret tilpassede rapporter med fleksibel visualisering og eksport"
         },
         "analytics": {
           "title": "Analytics",
-          "description": "Track KPIs, monitor trends, measure performance"
+          "description": "Spor KPI'er, overvåg trends, mål ydeevne"
         },
         "insights": {
-          "title": "Insights",
-          "description": "Get AI-powered recommendations and predictive analytics"
+          "title": "Indsigt",
+          "description": "Få AI-drevne anbefalinger og forudsigelige analyser"
         }
       },
       "system": {
         "title": "System Hub",
-        "description": "Configure admin, settings, and user profiles",
+        "description": "Konfigurer admin, indstillinger og brugerprofiler",
         "admin": {
           "title": "Admin",
-          "description": "Manage organization settings, security, and configuration"
+          "description": "Administrer organisationsindstillinger, sikkerhed og konfiguration"
         },
         "settings": {
-          "title": "Settings",
-          "description": "Customize preferences, integrations, and platform behavior"
+          "title": "Indstillinger",
+          "description": "Tilpas præferencer, integrationer og platformadfærd"
         },
         "profiles": {
-          "title": "User Profiles",
-          "description": "Manage team profiles, roles, and access permissions"
+          "title": "Brugerprofiler",
+          "description": "Administrer teamprofiler, roller og adgangstilladelser"
         }
       }
     },
     "roles": {
-      "title": "Built for Every Role on Your Crew",
-      "subtitle": "11 branded roles with precise permissions",
+      "title": "Bygget til enhver rolle i dit mandskab",
+      "subtitle": "11 brandede roller med præcise tilladelser",
       "legend": {
-        "title": "Legend",
-        "description": "Platform Super Admin - Full control across all organizations"
+        "title": "Legende",
+        "description": "Platform Super Admin - Fuld kontrol på tværs af alle organisationer"
       },
       "phantom": {
-        "name": "Phantom",
-        "level": "Supreme Authority",
-        "title": "Phantom",
-        "description": "Complete system administration and unrestricted access. Shape platform direction and maintain enterprise oversight."
+        "name": "Fantom",
+        "level": "Øverste Myndighed",
+        "title": "Fantom",
+        "description": "Fuldstændig systemadministration og ubegrænset adgang. Udform platformsretning og bevar virksomhedens overvågning."
       },
       "aviator": {
         "name": "Aviator",
-        "level": "Strategic Leadership",
+        "level": "Strategisk ledelse",
         "title": "Aviator",
-        "description": "Cross-project visibility, resource allocation, and executive analytics. Navigate high-level production strategy at scale."
+        "description": "Synlighed på tværs af projekter, ressourceallokering og ledelsesanalyse. Naviger i produktionsstrategi på højt niveau i stor skala."
       },
       "gladiator": {
         "name": "Gladiator",
-        "level": "Project Leadership",
+        "level": "Projektledelse",
         "title": "Gladiator",
-        "description": "Full project creation and editing rights. Lead productions from concept to completion with complete control."
+        "description": "Fuld projektoprettelse og redigeringsrettigheder. Led produktioner fra idé til færdiggørelse med fuld kontrol."
       },
       "navigator": {
         "name": "Navigator",
-        "level": "Coordination",
+        "level": "Samordning",
         "title": "Navigator",
-        "description": "Project coordination, task assignment, and team guidance. Chart the course through complex workflows."
+        "description": "Projektkoordinering, opgavefordeling og teamvejledning. Kortlæg kurset gennem komplekse arbejdsgange."
       },
       "deviator": {
-        "name": "Deviator",
-        "level": "Execution",
-        "title": "Deviator",
-        "description": "Focused task completion within established frameworks. Deliver quality work on assigned responsibilities."
+        "name": "Afviger",
+        "level": "Udførelse",
+        "title": "Afviger",
+        "description": "Fokuseret opgaveløsning indenfor fastlagte rammer. Levere kvalitetsarbejde på tildelte ansvarsområder."
       },
       "raider": {
         "name": "Raider",
-        "level": "Learning & Observation",
+        "level": "Læring & Observation",
         "title": "Raider",
-        "description": "View-only access to learn and grow. Perfect for newcomers building their skills."
+        "description": "Kun visningsadgang til at lære og vokse. Perfekt til nytilkomne, der opbygger deres færdigheder."
       },
       "vendor": {
-        "name": "Vendor",
-        "level": "Scoped Delivery",
-        "title": "Vendor",
-        "description": "Targeted access for external service providers. Upload deliverables and fulfill contracted work."
+        "name": "Sælger",
+        "level": "Omfanget levering",
+        "title": "Sælger",
+        "description": "Målrettet adgang for eksterne tjenesteudbydere. Upload leverancer og opfyld aftalt arbejde."
       },
       "visitor": {
-        "name": "Visitor",
-        "level": "Limited Visibility",
-        "title": "Visitor",
-        "description": "Temporary, read-only access for external stakeholders. Stay informed without disrupting workflows."
+        "name": "Besøgende",
+        "level": "Begrænset synlighed",
+        "title": "Besøgende",
+        "description": "Midlertidig, skrivebeskyttet adgang for eksterne interessenter. Hold dig informeret uden at forstyrre arbejdsgange."
       },
       "partner": {
         "name": "Partner",
-        "level": "Strategic Collaboration",
+        "level": "Strategisk samarbejde",
         "title": "Partner",
-        "description": "Deep integration for trusted external collaborators. Two-way data sharing and joint workflow management."
+        "description": "Dyb integration for betroede eksterne samarbejdspartnere. To-vejs datadeling og fælles workflow-styring."
       },
       "ambassador": {
-        "name": "Ambassador",
-        "level": "Community Champions",
-        "title": "Ambassador",
-        "description": "Represent ATLVS, support users, and foster collaboration. Host events, create content, grow the ecosystem."
+        "name": "Ambassadør",
+        "level": "Samfundsmestre",
+        "title": "Ambassadør",
+        "description": "Repræsentere ATLVS, støtte brugere og fremme samarbejde. Vær vært for begivenheder, skab indhold, vækst økosystemet."
       }
     },
     "security": {
-      "title": "Enterprise-Grade Security",
-      "subtitle": "Your data is protected at every level",
-      "feature1Title": "Row-Level Security",
-      "feature1Description": "801 RLS policies ensure users only see what they should",
-      "feature2Title": "Role-Based Access",
-      "feature2Description": "11 branded roles with 45+ granular permissions",
-      "feature3Title": "Encrypted Storage",
-      "feature3Description": "All data encrypted at rest and in transit",
-      "feature4Title": "Audit Logging",
-      "feature4Description": "Complete audit trail of all system activity",
-      "feature5Title": "SOC 2 Compliant",
-      "feature5Description": "Enterprise-grade security standards",
-      "feature6Title": "GDPR Ready",
-      "feature6Description": "Full compliance with data privacy regulations"
+      "title": "Sikkerhed i virksomhedsklasse",
+      "subtitle": "Dine data er beskyttet på alle niveauer",
+      "feature1Title": "Sikkerhed på rækkeniveau",
+      "feature1Description": "801 RLS-politikker sikrer, at brugerne kun kan se, hvad de skal",
+      "feature2Title": "Rollebaseret adgang",
+      "feature2Description": "11 brandede roller med mere end 45 granulære tilladelser",
+      "feature3Title": "Krypteret opbevaring",
+      "feature3Description": "Alle data krypteret i hvile og under transport",
+      "feature4Title": "Revisionslogning",
+      "feature4Description": "Komplet revisionsspor af al systemaktivitet",
+      "feature5Title": "SOC 2 kompatibel",
+      "feature5Description": "Sikkerhedsstandarder i virksomhedskvalitet",
+      "feature6Title": "GDPR klar",
+      "feature6Description": "Fuld overholdelse af reglerne om databeskyttelse"
     },
     "testimonials": {
-      "title": "Trusted by Production Teams Worldwide",
-      "subtitle": "Real stories from real producers",
-      "testimonial1Quote": "ATLVS transformed how we manage festivals. Everything in one place, everyone on the same page. Finally.",
+      "title": "Betroet af produktionsteams verden over",
+      "subtitle": "Rigtige historier fra rigtige producenter",
+      "testimonial1Quote": "ATLVS forvandlede, hvordan vi styrer festivaler. Alt på ét sted, alle på samme side. Endelig.",
       "testimonial1Author": "Sarah Chen",
-      "testimonial1Role": "Production Director, Major Music Festival",
-      "testimonial1Title": "Production Director, Major Music Festival",
-      "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Proper access control for production? Revolutionary.",
+      "testimonial1Role": "Produktionsdirektør, Major Music Festival",
+      "testimonial1Title": "Produktionsdirektør, Major Music Festival",
+      "testimonial2Quote": "RBAC-systemet er perfekt til vores komplekse organisationsstruktur. Korrekt adgangskontrol til produktion? Revolutionær.",
       "testimonial2Author": "Marcus Rodriguez",
-      "testimonial2Role": "VP of Operations, Live Events Company",
-      "testimonial2Title": "VP of Operations, Live Events Company",
-      "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
+      "testimonial2Role": "VP of Operations, Live Event Company",
+      "testimonial2Title": "VP of Operations, Live Event Company",
+      "testimonial3Quote": "Vi reducerede budgetoverskridelser med 40 % i første kvartal. Den økonomiske synlighed er lovligt skiftende.",
       "testimonial3Author": "Jennifer Park",
-      "testimonial3Role": "CFO, Corporate Events Agency",
-      "testimonial3Title": "CFO, Corporate Events Agency",
-      "jamesCookQuote": "Managing three ships of scientists who all think they're the main character? ATLVS would've kept everyone aligned and actually working together instead of competing for credit.",
-      "jamesCookAuthor": "Captain James Cook",
+      "testimonial3Role": "CFO, Corporate Event Agency",
+      "testimonial3Title": "CFO, Corporate Event Agency",
+      "jamesCookQuote": "Leder du tre skibe af forskere, der alle tror, ​​de er hovedpersonen? ATLVS ville have holdt alle på linje og faktisk arbejde sammen i stedet for at konkurrere om kredit.",
+      "jamesCookAuthor": "Kaptajn James Cook",
       "jamesCookRole": "British Royal Navy Explorer (1728-1779)",
-      "zhengYiSaoQuote": "I turned piracy into a Fortune 500 company, negotiated my own amnesty, and retired wealthy. ATLVS is for people who understand that unconventional operations still need solid management.",
+      "zhengYiSaoQuote": "Jeg forvandlede piratkopiering til et Fortune 500-firma, forhandlede min egen amnesti og trak mig tilbage som velhavende. ATLVS er for folk, der forstår, at ukonventionelle operationer stadig kræver solid ledelse.",
       "zhengYiSaoAuthor": "Zheng Yi Sao",
-      "zhengYiSaoRole": "Chinese Pirate Leader (1775-1844)",
-      "captainAhabQuote": "Chasing one specific goal across every ocean without considering the bigger picture? ATLVS keeps you focused on the actual business plan, not just personal objectives.",
-      "captainAhabAuthor": "Captain Ahab",
-      "captainAhabRole": "Whaling Captain, Pequod",
-      "graceOMalleyQuote": "Negotiated with Queen Elizabeth as equals. ATLVS helps you show up to every meeting with your data ready and your confidence up.",
+      "zhengYiSaoRole": "Kinesisk piratleder (1775-1844)",
+      "captainAhabQuote": "At jagte ét specifikt mål på tværs af hvert hav uden at overveje det større billede? ATLVS holder dig fokuseret på den faktiske forretningsplan, ikke kun personlige mål.",
+      "captainAhabAuthor": "Kaptajn Akab",
+      "captainAhabRole": "Hvalfangstkaptajn, Pequod",
+      "graceOMalleyQuote": "Forhandlet med dronning Elizabeth som ligemænd. ATLVS hjælper dig med at møde op til hvert møde med dine data klar og din selvtillid op.",
       "graceOMalleyAuthor": "Grace O'Malley \"Gráinne Mhaol\"",
-      "graceOMalleyRole": "Irish Pirate Queen & Chieftain (c. 1530-1603)",
-      "sinbadQuote": "The way I kept getting shipwrecked but still went back out? That's just poor planning. ATLVS provides the structure my decision-making clearly needed.",
-      "sinbadAuthor": "Sinbad the Sailor",
-      "sinbadRole": "Legendary Merchant Sailor, Arabian Nights",
-      "longJohnSilverQuote": "Managing pirates is literally herding cats if the cats had scurvy and trust issues. ATLVS's stakeholder management keeps everyone aligned, even when they're plotting against each other.",
+      "graceOMalleyRole": "Irsk piratdronning og høvding (ca. 1530-1603)",
+      "sinbadQuote": "Måden jeg blev ved med at blive skibbruden på, men alligevel gik ud igen? Det er bare dårlig planlægning. ATLVS giver den struktur, min beslutningstagning klart havde brug for.",
+      "sinbadAuthor": "Sømanden Sinbad",
+      "sinbadRole": "Legendarisk handelssømand, Arabian Nights",
+      "longJohnSilverQuote": "At styre pirater er bogstaveligt talt at hyrde katte, hvis kattene havde skørbug og problemer med tillid. ATLVS' interessentstyring holder alle på linje, selv når de planlægger mod hinanden.",
       "longJohnSilverAuthor": "Long John Silver",
-      "longJohnSilverRole": "Quartermaster & Pirate Cook, Treasure Island",
-      "horatioHornblowerQuote": "Fighting the French while having a full mental breakdown is honestly very on-brand for me. ATLVS keeps all the tactical stuff organized so you can focus on the actual mission.",
+      "longJohnSilverRole": "Kvartermester & Pirate Cook, Treasure Island",
+      "horatioHornblowerQuote": "At kæmpe mod franskmændene og samtidig have et fuldstændigt mentalt sammenbrud er ærligt talt meget on-brand for mig. ATLVS holder alle de taktiske ting organiseret, så du kan fokusere på selve missionen.",
       "horatioHornblowerAuthor": "Horatio Hornblower",
-      "horatioHornblowerRole": "Royal Navy Officer (C.S. Forester novels)",
-      "captainNemoQuote": "Being a hermit in a submarine is actually very introvert-coded, but even I needed team coordination. ATLVS works even when you're working alone.",
-      "captainNemoAuthor": "Captain Nemo",
-      "captainNemoRole": "Commander, Nautilus (Twenty Thousand Leagues Under the Sea)",
-      "odysseusQuote": "Lost every single crew member because I kept making questionable choices. ATLVS would've been like 'we don't need to see what the Sirens are about' and honestly? Valid.",
+      "horatioHornblowerRole": "Royal Navy Officer (C.S. Forester-romaner)",
+      "captainNemoQuote": "At være eneboer i en ubåd er faktisk meget indadvendt kodet, men selv jeg havde brug for teamkoordinering. ATLVS virker, selv når du arbejder alene.",
+      "captainNemoAuthor": "Kaptajn Nemo",
+      "captainNemoRole": "Kommandør, Nautilus (tyve tusinde ligaer under havet)",
+      "odysseusQuote": "Mistede hvert eneste besætningsmedlem, fordi jeg blev ved med at træffe tvivlsomme valg. ATLVS ville have været som 'vi behøver ikke at se, hvad sirenerne handler om' og helt ærligt? Gyldig.",
       "odysseusAuthor": "Odysseus/Ulysses",
-      "odysseusRole": "King of Ithaca, Greek Hero (The Odyssey)",
-      "blackbeardQuote": "Blocking an entire harbor with four ships hits different when you're coordinating manually. ATLVS would've made me the most operationally efficient pirate on the seas.",
-      "blackbeardAuthor": "Captain Edward Teach \"Blackbeard\"",
-      "blackbeardRole": "Pirate Commander (c. 1680-1718)",
-      "captainMarvelQuote": "Disappeared for 30 years handling space emergencies without checking in. ATLVS's communication tools would've helped me not ghost everyone I care about.",
-      "captainMarvelAuthor": "Captain Marvel / Carol Danvers",
+      "odysseusRole": "King of Ithaca, græsk helt (Odysseen)",
+      "blackbeardQuote": "Blokering af en hel havn med fire skibe rammer anderledes, når du koordinerer manuelt. ATLVS ville have gjort mig til den mest operationelt effektive pirat på havet.",
+      "blackbeardAuthor": "Kaptajn Edward underviser \"Sortskæg\"",
+      "blackbeardRole": "Piratkommandør (ca. 1680-1718)",
+      "captainMarvelQuote": "Forsvundet i 30 år med at håndtere nødsituationer i rummet uden at tjekke ind. ATLVS's kommunikationsværktøjer ville have hjulpet mig med ikke at spøge alle, jeg holder af.",
+      "captainMarvelAuthor": "Kaptajn Marvel / Carol Danvers",
       "captainMarvelRole": "Air Force Pilot & Cosmic Hero (MCU)",
-      "captainJanewayQuote": "I violated the Temporal Prime Directive multiple times to save my crew, but I never violated my project timelines. ATLVS keeps priorities clear even when ethics get complicated.",
-      "captainJanewayAuthor": "Captain Kathryn Janeway",
+      "captainJanewayQuote": "Jeg overtrådte det midlertidige primære direktiv flere gange for at redde mit mandskab, men jeg overtrådte aldrig mine projekttidslinjer. ATLVS holder prioriteterne klare, selv når etikken bliver kompliceret.",
+      "captainJanewayAuthor": "Kaptajn Kathryn Janeway",
       "captainJanewayRole": "Starfleet Captain, USS Voyager (Star Trek: Voyager)",
-      "moanaQuote": "Maui was supposed to be my mentor but spent most of the time being emotionally unavailable. ATLVS tracks deliverables when your team is being difficult.",
+      "moanaQuote": "Maui skulle være min mentor, men brugte det meste af tiden på at være følelsesmæssigt utilgængelig. ATLVS sporer leverancer, når dit team har det svært.",
       "moanaAuthor": "Moana",
       "moanaRole": "Wayfinder & Island Chief (Disney's Moana)",
-      "captainJackSparrowQuote": "Managing a crew when literally no one knows if they're employed or just along for the chaos? ATLVS provides clarity that my entire vibe does not.",
-      "captainJackSparrowAuthor": "Captain Jack Sparrow",
-      "captainJackSparrowRole": "Pirate Captain, Black Pearl (Pirates of the Caribbean)",
-      "popeyeQuote": "My whole personality is 'stubbornly refuses to plan ahead.' ATLVS is the adult in the room that I clearly need but won't admit to.",
-      "popeyeAuthor": "Popeye the Sailor Man",
-      "popeyeRole": "Sailor & Olive Oyl's Protector (Cartoon Character)",
-      "captainPicardQuote": "Leading a diverse crew through first contact situations and diplomatic crises? ATLVS keeps everyone aligned when the stakes are literally galactic.",
-      "captainPicardAuthor": "Captain Jean-Luc Picard",
+      "captainJackSparrowQuote": "Leder du en besætning, når bogstaveligt talt ingen ved, om de er ansat eller bare er med på grund af kaosset? ATLVS giver klarhed over, at hele min stemning ikke gør.",
+      "captainJackSparrowAuthor": "Kaptajn Jack Sparrow",
+      "captainJackSparrowRole": "Piratkaptajn, Black Pearl (Pirates of the Caribbean)",
+      "popeyeQuote": "Hele min personlighed er 'stædigt nægter at planlægge fremad.' ATLVS er den voksne i rummet, som jeg klart har brug for, men som jeg ikke vil indrømme.",
+      "popeyeAuthor": "Sømandsmanden Popeye",
+      "popeyeRole": "Sailor & Olive Oyl's Protector (tegneseriefigur)",
+      "captainPicardQuote": "Leder du en mangfoldig besætning gennem førstekontaktsituationer og diplomatiske kriser? ATLVS holder alle på linje, når indsatserne bogstaveligt talt er galaktiske.",
+      "captainPicardAuthor": "Kaptajn Jean-Luc Picard",
       "captainPicardRole": "Starfleet Captain, USS Enterprise (Star Trek: TNG)",
-      "captainSiskoQuote": "Commanding a station that's part military base, part trading hub, part refugee center? ATLVS helps you manage complexity when every stakeholder has different priorities.",
-      "captainSiskoAuthor": "Captain Benjamin Sisko",
+      "captainSiskoQuote": "Befaling af en station, der dels er militærbase, dels handelscentrum, dels flygtningecenter? ATLVS hjælper dig med at håndtere kompleksitet, når hver interessent har forskellige prioriteter.",
+      "captainSiskoAuthor": "Kaptajn Benjamin Sisko",
       "captainSiskoRole": "Starfleet Commander, Deep Space Nine (Star Trek: DS9)"
     },
     "pricing": {
-      "title": "Transparent pricing",
-      "subtitle": "From solo contractors to enterprise producers",
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save20": "Save 20%",
+      "title": "Gennemsigtig prissætning",
+      "subtitle": "Fra soloentreprenører til virksomhedsproducenter",
+      "monthly": "Månedlig",
+      "annually": "Årligt",
+      "save20": "Spar 20%",
       "community": {
-        "name": "Community",
-        "price": "Free",
-        "period": "forever",
-        "description": "Perfect for getting started",
-        "feature1": "Raider role access",
-        "feature2": "Basic task management",
-        "feature3": "Community support",
-        "cta": "Get Started Free"
+        "name": "Fællesskab",
+        "price": "Gratis",
+        "period": "for altid",
+        "description": "Perfekt til at komme i gang med",
+        "feature1": "Raider rolle adgang",
+        "feature2": "Grundlæggende opgavestyring",
+        "feature3": "Fællesskabsstøtte",
+        "cta": "Kom i gang gratis"
       },
       "pro": {
         "name": "Pro",
         "price": "$12",
-        "period": "per month",
-        "annualPrice": "$10/month (billed annually)",
-        "description": "For independent contractors",
-        "feature1": "Deviator & Raider roles",
-        "feature2": "Advanced task management",
-        "feature3": "Priority support",
-        "cta": "Start Free Trial"
+        "period": "om måneden",
+        "annualPrice": "$10/måned (faktureres årligt)",
+        "description": "Til uafhængige entreprenører",
+        "feature1": "Deviator & Raider roller",
+        "feature2": "Avanceret opgavestyring",
+        "feature3": "Prioriteret støtte",
+        "cta": "Start gratis prøveperiode"
       },
       "team": {
-        "name": "Team",
-        "badge": "Most Popular",
+        "name": "Hold",
+        "badge": "Mest populær",
         "price": "$120",
-        "period": "per month",
-        "annualPrice": "$100/month (billed annually)",
-        "description": "For small to medium teams (2-10 seats)",
-        "feature1": "All Pro features",
-        "feature2": "Vendor management",
-        "feature3": "Team collaboration",
-        "cta": "Start Free Trial"
+        "period": "om måneden",
+        "annualPrice": "$100/måned (faktureres årligt)",
+        "description": "For små til mellemstore hold (2-10 pladser)",
+        "feature1": "Alle Pro-funktioner",
+        "feature2": "Leverandørstyring",
+        "feature3": "Team samarbejde",
+        "cta": "Start gratis prøveperiode"
       },
       "starter": {
         "name": "Starter",
-        "price": "$29",
-        "period": "per user/month",
-        "description": "Perfect for freelancers and small teams",
-        "feature1": "Up to 5 users",
-        "feature2": "10 active projects",
-        "feature3": "Basic reporting",
-        "feature4": "Email support",
-        "feature5": "10GB storage",
-        "cta": "Start Free Trial"
+        "price": "29 USD",
+        "period": "per bruger/måned",
+        "description": "Perfekt til freelancere og små teams",
+        "feature1": "Op til 5 brugere",
+        "feature2": "10 aktive projekter",
+        "feature3": "Grundlæggende rapportering",
+        "feature4": "E-mail support",
+        "feature5": "10 GB lagerplads",
+        "cta": "Start gratis prøveperiode"
       },
       "professional": {
-        "name": "Professional",
-        "price": "$79",
-        "period": "per user/month",
-        "description": "For growing production companies",
-        "feature1": "Up to 25 users",
-        "feature2": "Unlimited projects",
-        "feature3": "Advanced analytics",
-        "feature4": "Priority support",
-        "feature5": "100GB storage",
-        "feature6": "Custom roles",
-        "feature7": "API access",
-        "cta": "Start Free Trial",
-        "popular": "Most Popular"
+        "name": "Professionel",
+        "price": "79 USD",
+        "period": "per bruger/måned",
+        "description": "For produktionsvirksomheder i vækst",
+        "feature1": "Op til 25 brugere",
+        "feature2": "Ubegrænsede projekter",
+        "feature3": "Avanceret analyse",
+        "feature4": "Prioriteret støtte",
+        "feature5": "100 GB lagerplads",
+        "feature6": "Tilpassede roller",
+        "feature7": "API-adgang",
+        "cta": "Start gratis prøveperiode",
+        "popular": "Mest populær"
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "Custom",
-        "period": "contact sales",
-        "annualPrice": "$1000/month (billed annually)",
-        "description": "For large organizations and agencies",
-        "feature1": "Unlimited users",
-        "feature2": "Unlimited projects",
-        "feature3": "Custom integrations",
-        "feature4": "Dedicated support",
-        "feature5": "Unlimited storage",
+        "price": "Skik",
+        "period": "kontakte salg",
+        "annualPrice": "$1000/måned (faktureres årligt)",
+        "description": "For store organisationer og bureauer",
+        "feature1": "Ubegrænsede brugere",
+        "feature2": "Ubegrænsede projekter",
+        "feature3": "Brugerdefinerede integrationer",
+        "feature4": "Dedikeret support",
+        "feature5": "Ubegrænset lagerplads",
         "feature6": "SSO & SAML",
-        "feature7": "SLA guarantee",
-        "feature8": "Custom training",
-        "cta": "Contact Sales"
+        "feature7": "SLA garanti",
+        "feature8": "Skræddersyet træning",
+        "cta": "Kontakt Salg"
       }
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Everything you need to know",
-      "question1": "How long is the free trial?",
-      "answer1": "14 days, no credit card required. Full access to all features.",
-      "question2": "Can I cancel anytime?",
-      "answer2": "Yes. Cancel anytime. No long-term contracts or commitments.",
-      "question3": "What payment methods do you accept?",
-      "answer3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "question4": "Is my data secure?",
-      "answer4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "question5": "Do you offer training?",
-      "answer5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "question6": "Can I import my existing data?",
-      "answer6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans.",
-      "q1": "How long is the free trial?",
-      "a1": "14 days, no credit card required. Full access to all features.",
-      "q2": "Can I cancel anytime?",
-      "a2": "Yes. Cancel anytime. No long-term contracts or commitments.",
-      "q3": "What payment methods do you accept?",
-      "a3": "We accept all major credit cards, ACH, and wire transfers for enterprise plans.",
-      "q4": "Is my data secure?",
-      "a4": "Yes. Enterprise-grade encryption, SOC 2 compliant, GDPR ready. Your data is protected at every level.",
-      "q5": "Do you offer training?",
-      "a5": "Yes. Self-service resources for all plans, plus dedicated training for Enterprise customers.",
-      "q6": "Can I import my existing data?",
-      "a6": "Yes. We provide CSV import tools and can assist with custom data migrations for Enterprise plans."
+      "title": "Ofte stillede spørgsmål",
+      "subtitle": "Alt hvad du behøver at vide",
+      "question1": "Hvor lang er den gratis prøveperiode?",
+      "answer1": "14 dage, intet kreditkort påkrævet. Fuld adgang til alle funktioner.",
+      "question2": "Kan jeg annullere når som helst?",
+      "answer2": "Ja. Annuller når som helst. Ingen langsigtede kontrakter eller forpligtelser.",
+      "question3": "Hvilke betalingsmetoder accepterer du?",
+      "answer3": "Vi accepterer alle større kreditkort, ACH og bankoverførsler til virksomhedsplaner.",
+      "question4": "Er mine data sikre?",
+      "answer4": "Ja. Enterprise-grade-kryptering, SOC 2-kompatibel, GDPR klar. Dine data er beskyttet på alle niveauer.",
+      "question5": "Tilbyder du træning?",
+      "answer5": "Ja. Selvbetjeningsressourcer til alle planer plus dedikeret træning til Enterprise-kunder.",
+      "question6": "Kan jeg importere mine eksisterende data?",
+      "answer6": "Ja. Vi leverer CSV-importværktøjer og kan hjælpe med tilpassede datamigreringer til Enterprise-planer.",
+      "q1": "Hvor lang er den gratis prøveperiode?",
+      "a1": "14 dage, intet kreditkort påkrævet. Fuld adgang til alle funktioner.",
+      "q2": "Kan jeg annullere når som helst?",
+      "a2": "Ja. Annuller når som helst. Ingen langsigtede kontrakter eller forpligtelser.",
+      "q3": "Hvilke betalingsmetoder accepterer du?",
+      "a3": "Vi accepterer alle større kreditkort, ACH og bankoverførsler til virksomhedsplaner.",
+      "q4": "Er mine data sikre?",
+      "a4": "Ja. Enterprise-grade-kryptering, SOC 2-kompatibel, GDPR klar. Dine data er beskyttet på alle niveauer.",
+      "q5": "Tilbyder du træning?",
+      "a5": "Ja. Selvbetjeningsressourcer til alle planer plus dedikeret træning til Enterprise-kunder.",
+      "q6": "Kan jeg importere mine eksisterende data?",
+      "a6": "Ja. Vi leverer CSV-importværktøjer og kan hjælpe med tilpassede datamigreringer til Enterprise-planer."
     },
     "cta": {
-      "title": "Ready to Transform Your Production Workflow?",
-      "subtitle": "Join thousands of production professionals using ATLVS",
-      "ctaPrimary": "Start Free Trial",
-      "ctaSecondary": "Schedule Demo",
-      "trustIndicators": "No credit card required • 14-day free trial • Cancel anytime",
-      "primary": "Start Free Trial",
-      "secondary": "Schedule Demo",
-      "noCard": "No credit card required"
+      "title": "Klar til at transformere dit produktionsworkflow?",
+      "subtitle": "Slut dig til tusindvis af produktionsprofessionelle, der bruger ATLVS",
+      "ctaPrimary": "Start gratis prøveperiode",
+      "ctaSecondary": "Planlæg demo",
+      "trustIndicators": "Intet kreditkort påkrævet • 14-dages gratis prøveperiode • Annuller når som helst",
+      "primary": "Start gratis prøveperiode",
+      "secondary": "Planlæg demo",
+      "noCard": "Intet kreditkort påkrævet"
     },
     "footer": {
-      "tagline": "The project management system for experiential production teams",
-      "productTitle": "Product",
-      "companyTitle": "Company",
-      "resourcesTitle": "Resources",
+      "tagline": "Projektledelsessystemet for erfaringsbaserede produktionshold",
+      "productTitle": "Produkt",
+      "companyTitle": "Selskab",
+      "resourcesTitle": "Ressourcer",
       "legalTitle": "Legal",
-      "product": "Product",
-      "features": "Features",
-      "pricing": "Pricing",
+      "product": "Produkt",
+      "features": "Funktioner",
+      "pricing": "Prissætning",
       "demo": "Demo",
-      "integrations": "Integrations",
-      "docs": "Documentation",
-      "apiReference": "API Reference",
-      "changelog": "Changelog",
-      "caseStudies": "Case Studies",
-      "templates": "Templates",
-      "company": "Company",
-      "aboutUs": "About Us",
+      "integrations": "Integrationer",
+      "docs": "Dokumentation",
+      "apiReference": "API-reference",
+      "changelog": "Ændringslog",
+      "caseStudies": "Casestudier",
+      "templates": "Skabeloner",
+      "company": "Selskab",
+      "aboutUs": "Om os",
       "blog": "Blog",
-      "careers": "Careers",
-      "contact": "Contact",
-      "press": "Press",
-      "partners": "Partners",
-      "customers": "Customers",
-      "events": "Events",
+      "careers": "Karrierer",
+      "contact": "Kontakte",
+      "press": "Trykke",
+      "partners": "Partnere",
+      "customers": "Kunder",
+      "events": "Begivenheder",
       "legal": "Legal",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "security": "Security",
-      "support": "Support",
-      "helpCenter": "Help Center",
-      "community": "Community",
-      "status": "System Status",
-      "roiCalculator": "ROI Calculator",
-      "copyright": "© 2025 ATLVS. All rights reserved."
+      "privacy": "Privatlivspolitik",
+      "terms": "Servicevilkår",
+      "security": "Sikkerhed",
+      "support": "Støtte",
+      "helpCenter": "Hjælpecenter",
+      "community": "Fællesskab",
+      "status": "Systemstatus",
+      "roiCalculator": "ROI lommeregner",
+      "copyright": "© 2025 ATLVS. Alle rettigheder forbeholdes."
     },
     "integrations": {
-      "title": "Integrates With Your Favorite Tools",
-      "subtitle": "Connect ATLVS with the tools you already use",
-      "comingSoon": "More integrations coming soon"
+      "title": "Integreres med dine yndlingsværktøjer",
+      "subtitle": "Forbind ATLVS med de værktøjer, du allerede bruger",
+      "comingSoon": "Flere integrationer kommer snart"
     },
     "generational": {
       "baby-boomer": {
         "hero": {
-          "headline": "Professional Production Management Solutions",
-          "headlineHighlight": "For Experiential Teams",
-          "subheadline": "Comprehensive project, workforce, asset, and financial management from a centralized platform. Designed for professionals who deliver exceptional experiences.",
-          "supportingCopy": "From festivals to corporate events and immersive experiences—ATLVS provides the structure and oversight needed for successful production management.",
-          "ctaPrimary": "Begin Free Trial",
-          "ctaSecondary": "Request Demonstration",
-          "trustIndicators": "No credit card required • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
+          "headline": "Professionelle produktionsstyringsløsninger",
+          "headlineHighlight": "For oplevelseshold",
+          "subheadline": "Omfattende projekt-, arbejdsstyrke-, aktiv- og økonomistyring fra en centraliseret platform. Designet til professionelle, der leverer enestående oplevelser.",
+          "supportingCopy": "Fra festivaler til firmaarrangementer og fordybende oplevelser – ATLVS giver den struktur og det overblik, der er nødvendigt for succesfuld produktionsstyring.",
+          "ctaPrimary": "Begynd gratis prøveperiode",
+          "ctaSecondary": "Anmod om demonstration",
+          "trustIndicators": "Intet kreditkort påkrævet • 14-dages prøveperiode • Annuller når som helst",
+          "platformScreenshot": "Platform skærmbillede",
           "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Experiential Teams"
+          "headlineHighlightMain": "Erfaringshold"
         },
         "trustBar": {
-          "trustedBy": "Trusted by production professionals worldwide"
+          "trustedBy": "Betroet af produktionsprofessionelle over hele verden"
         },
         "problem": {
-          "title": "The Production Management Challenge",
-          "subtitle": "Industry-wide inefficiencies",
-          "pain1Title": "Fragmented Systems",
-          "pain1Description": "Teams utilize multiple disconnected platforms including spreadsheets, email, and various project management tools",
-          "pain2Title": "Information Loss",
-          "pain2Description": "Critical project details are lost during transitions and team handoffs",
-          "pain3Title": "Budget Overruns",
-          "pain3Description": "Without proper financial oversight, costs exceed projections",
-          "pain4Title": "Communication Breakdowns",
-          "pain4Description": "Vendors, crew members, and stakeholders experience coordination difficulties"
+          "title": "Produktionsledelsesudfordringen",
+          "subtitle": "Ineffektivitet i hele branchen",
+          "pain1Title": "Fragmenterede systemer",
+          "pain1Description": "Teams bruger flere afbrudte platforme, herunder regneark, e-mail og forskellige projektstyringsværktøjer",
+          "pain2Title": "Informationstab",
+          "pain2Description": "Kritiske projektdetaljer går tabt under overgange og teamoverdragelser",
+          "pain3Title": "Budgetoverskridelser",
+          "pain3Description": "Uden ordentligt finansielt tilsyn overstiger omkostningerne prognoserne",
+          "pain4Title": "Kommunikationsnedbrud",
+          "pain4Description": "Leverandører, besætningsmedlemmer og interessenter oplever koordineringsproblemer"
         },
         "solution": {
-          "title": "Comprehensive Platform. Complete Control.",
-          "subtitle": "Integrated production management",
-          "feature1Title": "Centralized Platform",
-          "feature1Description": "All projects, personnel, and resources managed from one location",
-          "feature2Title": "Real-Time Updates",
-          "feature2Description": "Instant synchronization ensures all team members have current information",
-          "feature3Title": "Financial Oversight",
-          "feature3Description": "Track budgets, expenses, and invoices with precision and accuracy",
-          "feature4Title": "Vendor Management",
-          "feature4Description": "Maintain professional relationships while ensuring proper oversight"
+          "title": "Omfattende platform. Fuldstændig kontrol.",
+          "subtitle": "Integreret produktionsstyring",
+          "feature1Title": "Centraliseret platform",
+          "feature1Description": "Alle projekter, personale og ressourcer styres fra ét sted",
+          "feature2Title": "Realtidsopdateringer",
+          "feature2Description": "Øjeblikkelig synkronisering sikrer, at alle teammedlemmer har aktuelle oplysninger",
+          "feature3Title": "Finansielt tilsyn",
+          "feature3Description": "Spor budgetter, udgifter og fakturaer med præcision og nøjagtighed",
+          "feature4Title": "Leverandørstyring",
+          "feature4Description": "Oprethold professionelle relationer, mens du sikrer ordentligt tilsyn"
         },
         "howItWorks": {
-          "title": "Implementation Process",
-          "subtitle": "Efficient setup and deployment",
-          "step1Title": "Establish Your Organization",
-          "step1Description": "Configure your organizational structure and onboard your team",
-          "step2Title": "Define Your Projects",
-          "step2Description": "Establish productions, activations, and workspaces",
-          "step3Title": "Assign Roles & Responsibilities",
-          "step3Description": "Provide appropriate access levels and clear accountability",
-          "step4Title": "Execute & Monitor",
-          "step4Description": "Track progress, manage budgets, deliver exceptional results"
+          "title": "Implementeringsproces",
+          "subtitle": "Effektiv opsætning og implementering",
+          "step1Title": "Etabler din organisation",
+          "step1Description": "Konfigurer din organisationsstruktur og ombord på dit team",
+          "step2Title": "Definer dine projekter",
+          "step2Description": "Etabler produktioner, aktiveringer og arbejdsrum",
+          "step3Title": "Tildel roller og ansvar",
+          "step3Description": "Sørg for passende adgangsniveauer og klar ansvarlighed",
+          "step4Title": "Udfør & Overvåg",
+          "step4Description": "Spor fremskridt, administrer budgetter, lever enestående resultater"
         },
         "testimonials": {
-          "title": "Trusted by Production Professionals Worldwide",
-          "subtitle": "Proven results from industry leaders",
-          "testimonial1Quote": "ATLVS has proven to be an excellent solution for managing our festival operations. Everything is well-organized and our team maintains proper coordination.",
+          "title": "Betroet af Production Professionals Worldwide",
+          "subtitle": "Dokumenterede resultater fra brancheledere",
+          "testimonial1Quote": "ATLVS har vist sig at være en fremragende løsning til at styre vores festivaldrift. Alt er velorganiseret, og vores team opretholder en ordentlig koordinering.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The role-based access control system provides exactly what we needed for our organizational structure. Finally, proper security and access management for production teams.",
+          "testimonial1Role": "Produktionsdirektør, Major Music Festival",
+          "testimonial2Quote": "Det rollebaserede adgangskontrolsystem giver præcis det, vi havde brug for til vores organisationsstruktur. Endelig ordentlig sikkerhed og adgangsstyring for produktionsteams.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We reduced budget overruns by 40% in the first quarter. The financial visibility and tracking capabilities are genuinely impressive.",
+          "testimonial2Role": "VP of Operations, Live Event Company",
+          "testimonial3Quote": "Vi reducerede budgetoverskridelser med 40 % i første kvartal. Den økonomiske synlighed og sporingsmuligheder er virkelig imponerende.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Corporate Event Agency"
         },
         "pricing": {
-          "title": "Professional Pricing Structure"
+          "title": "Professionel prisstruktur"
         }
       },
       "gen-x": {
         "hero": {
-          "headline": "Production Management That Works",
-          "headlineHighlight": "No BS",
-          "subheadline": "Manage projects, crew, assets, and budgets from one place. Built for people who actually do the work.",
-          "supportingCopy": "Festivals, corporate events, immersive activations—ATLVS handles it without the fluff.",
-          "ctaPrimary": "Start Free",
-          "ctaSecondary": "See How It Works",
-          "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
+          "headline": "Produktionsstyring, der virker",
+          "headlineHighlight": "Ingen BS",
+          "subheadline": "Administrer projekter, besætning, aktiver og budgetter fra ét sted. Bygget til folk, der rent faktisk udfører arbejdet.",
+          "supportingCopy": "Festivaler, firmaarrangementer, fordybende aktiveringer – ATLVS klarer det uden fnug.",
+          "ctaPrimary": "Start gratis",
+          "ctaSecondary": "Se, hvordan det virker",
+          "trustIndicators": "Intet kreditkort • 14-dages prøveperiode • Annuller når som helst",
+          "platformScreenshot": "Platform skærmbillede",
           "headlineHighlightPrefix": "",
-          "headlineHighlightMain": "No BS"
+          "headlineHighlightMain": "Ingen BS"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams who get stuff done"
+          "trustedBy": "Brugt af produktionshold, der får tingene gjort"
         },
         "problem": {
-          "title": "The Production Mess",
-          "subtitle": "Same story, different day",
-          "pain1Title": "Tool Chaos",
-          "pain1Description": "Spreadsheets, Slack, email, random Google Docs—your workflow is scattered everywhere",
-          "pain2Title": "Missing Info",
-          "pain2Description": "Files disappear. Someone sent it... somewhere. Good luck finding it",
-          "pain3Title": "Budget Creep",
-          "pain3Description": "Costs sneak up on you. By the time you catch it, you're over budget",
-          "pain4Title": "Communication Breakdown",
-          "pain4Description": "Vendors miss updates, crew works with old info, stakeholders keep asking the same questions"
+          "title": "Produktionsroden",
+          "subtitle": "Samme historie, anden dag",
+          "pain1Title": "Værktøjskaos",
+          "pain1Description": "Regneark, Slack, e-mail, tilfældige Google Docs – din arbejdsgang er spredt overalt",
+          "pain2Title": "Manglende info",
+          "pain2Description": "Filer forsvinder. Nogen sendte det... et eller andet sted. Held og lykke med at finde den",
+          "pain3Title": "Budget Kryb",
+          "pain3Description": "Omkostningerne sniger sig ind på dig. Når du fanger det, er du over budgettet",
+          "pain4Title": "Kommunikationssammenbrud",
+          "pain4Description": "Leverandører savner opdateringer, besætningen arbejder med gammel information, interessenter bliver ved med at stille de samme spørgsmål"
         },
         "solution": {
-          "title": "One Platform. Actually Works.",
-          "subtitle": "Everything where it should be",
-          "feature1Title": "Unified System",
-          "feature1Description": "Projects, people, resources—all in one place that actually makes sense",
-          "feature2Title": "Real-Time Updates",
-          "feature2Description": "Changes happen instantly. Everyone sees the same thing",
-          "feature3Title": "Budget Tracking",
-          "feature3Description": "Track every dollar. No surprises, no excuses",
-          "feature4Title": "Vendor Coordination",
-          "feature4Description": "Keep partners in the loop without losing control"
+          "title": "Én platform. Virker faktisk.",
+          "subtitle": "Alt hvor det skal være",
+          "feature1Title": "Samlet system",
+          "feature1Description": "Projekter, mennesker, ressourcer – alt sammen ét sted, der rent faktisk giver mening",
+          "feature2Title": "Realtidsopdateringer",
+          "feature2Description": "Ændringer sker med det samme. Alle ser det samme",
+          "feature3Title": "Budget sporing",
+          "feature3Description": "Spor hver dollar. Ingen overraskelser, ingen undskyldninger",
+          "feature4Title": "Leverandørkoordinering",
+          "feature4Description": "Hold partnere i løkken uden at miste kontrollen"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Get up and running fast",
-          "step1Title": "Set Up Your Org",
-          "step1Description": "Build your structure, add your team",
-          "step2Title": "Create Your Projects",
-          "step2Description": "Map out productions and workspaces",
-          "step3Title": "Assign Roles",
-          "step3Description": "Give people the right access, nothing more",
-          "step4Title": "Get It Done",
-          "step4Description": "Track progress, manage budgets, ship on time"
+          "title": "Hvordan det virker",
+          "subtitle": "Kom hurtigt op at køre",
+          "step1Title": "Konfigurer din organisation",
+          "step1Description": "Byg din struktur, tilføj dit team",
+          "step2Title": "Opret dine projekter",
+          "step2Description": "Kortlæg produktioner og arbejdsrum",
+          "step3Title": "Tildel roller",
+          "step3Description": "Giv folk den rigtige adgang, intet mere",
+          "step4Title": "Få det gjort",
+          "step4Description": "Spor fremskridt, administrer budgetter, send til tiden"
         },
         "testimonials": {
-          "title": "Real Teams, Real Results",
-          "subtitle": "No marketing speak",
-          "testimonial1Quote": "ATLVS fixed our festival chaos. Everything's in one place, everyone knows what's happening. Finally.",
+          "title": "Rigtige hold, rigtige resultater",
+          "subtitle": "Ingen markedsføring taler",
+          "testimonial1Quote": "ATLVS fiksede vores festivalkaos. Alt er samlet ét sted, alle ved, hvad der sker. Endelig.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permissions system is exactly what we needed. No more access nightmares.",
+          "testimonial1Role": "Produktionsdirektør, Major Music Festival",
+          "testimonial2Quote": "Tilladelsessystemet er præcis, hvad vi havde brug for. Ikke flere adgangsmareridt.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "Cut budget overruns 40% first quarter. The tracking actually works.",
+          "testimonial2Role": "VP of Operations, Live Event Company",
+          "testimonial3Quote": "Beskæringsbudget overskrider 40 % første kvartal. Sporingen virker faktisk.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Corporate Event Agency"
         },
         "pricing": {
-          "title": "Straightforward pricing"
+          "title": "Lige til priser"
         }
       },
       "millennial": {
         "hero": {
-          "headline": "Production Management That Actually Works",
-          "headlineHighlight": "For Experiential Teams",
-          "subheadline": "Navigate your projects, crew, assets, and budgets from a single command center. Built for the people who create unforgettable experiences.",
-          "supportingCopy": "Whether you're producing festivals, corporate events, or immersive activations—ATLVS charts the course from concept to curtain call.",
-          "ctaPrimary": "Start Free Today",
-          "ctaSecondary": "See It in Action",
-          "trustIndicators": "No credit card • 14-day trial • Cancel anytime",
-          "platformScreenshot": "Platform Screenshot",
+          "headline": "Produktionsstyring, der rent faktisk virker",
+          "headlineHighlight": "For oplevelseshold",
+          "subheadline": "Naviger i dine projekter, besætning, aktiver og budgetter fra et enkelt kommandocenter. Bygget til de mennesker, der skaber uforglemmelige oplevelser.",
+          "supportingCopy": "Uanset om du producerer festivaler, firmaarrangementer eller fordybende aktiveringer – ATLVS kortlægger kursen fra koncept til gardinopkald.",
+          "ctaPrimary": "Start gratis i dag",
+          "ctaSecondary": "Se det i aktion",
+          "trustIndicators": "Intet kreditkort • 14-dages prøveperiode • Annuller når som helst",
+          "platformScreenshot": "Platform skærmbillede",
           "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Experiential Teams"
+          "headlineHighlightMain": "Erfaringshold"
         },
         "trustBar": {
-          "trustedBy": "Trusted by production teams worldwide"
+          "trustedBy": "Betroet af produktionshold over hele verden"
         },
         "problem": {
-          "title": "The Production Chaos Problem",
-          "subtitle": "You know the drill",
-          "pain1Title": "Tool Overload",
-          "pain1Description": "Spreadsheets, Slack, email, that one Google Doc nobody can find—your workflow is scattered across a dozen platforms",
-          "pain2Title": "Information Black Holes",
-          "pain2Description": "Critical details vanish during handoffs. Someone definitely sent that file... somewhere",
-          "pain3Title": "Budget Surprises",
-          "pain3Description": "Costs creep up in the shadows. By the time you notice, you're already over",
-          "pain4Title": "Communication Drift",
-          "pain4Description": "Vendors miss updates, crew works off old info, stakeholders ask the same questions twice"
+          "title": "Produktionskaosproblemet",
+          "subtitle": "Du kender øvelsen",
+          "pain1Title": "Overbelastning af værktøj",
+          "pain1Description": "Regneark, Slack, e-mail, det eneste Google-dokument, som ingen kan finde – din arbejdsgang er spredt ud over et dusin platforme",
+          "pain2Title": "Information Sorte huller",
+          "pain2Description": "Kritiske detaljer forsvinder under overdragelser. Nogen sendte helt sikkert den fil... et eller andet sted",
+          "pain3Title": "Budget overraskelser",
+          "pain3Description": "Omkostningerne kryber op i skyggerne. Når du bemærker det, er du allerede forbi",
+          "pain4Title": "Kommunikationsdrift",
+          "pain4Description": "Leverandører går glip af opdateringer, besætningen arbejder ud af gammel information, interessenter stiller de samme spørgsmål to gange"
         },
         "solution": {
-          "title": "One Platform. Zero Chaos.",
-          "subtitle": "Everything in its right place",
+          "title": "Én platform. Nul kaos.",
+          "subtitle": "Alt på sin rigtige plads",
           "feature1Title": "Unified Command Center",
-          "feature1Description": "Projects, people, and resources all sailing in formation",
-          "feature2Title": "Real-Time Sync",
-          "feature2Description": "Updates flow instantly. Everyone's working from the same chart",
-          "feature3Title": "Budget Radar",
-          "feature3Description": "Track every dollar in real-time. No surprises, no overruns",
-          "feature4Title": "Vendor Coordination",
-          "feature4Description": "Keep external partners in the loop without giving away the ship"
+          "feature1Description": "Projekter, mennesker og ressourcer sejler alle sammen i formation",
+          "feature2Title": "Realtidssynkronisering",
+          "feature2Description": "Opdateringer flyder øjeblikkeligt. Alle arbejder ud fra det samme diagram",
+          "feature3Title": "Budget radar",
+          "feature3Description": "Spor hver dollar i realtid. Ingen overraskelser, ingen overskridelser",
+          "feature4Title": "Leverandørkoordinering",
+          "feature4Description": "Hold eksterne partnere i løkken uden at give skibet væk"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Set sail in minutes, not months",
-          "step1Title": "Launch Your Organization",
-          "step1Description": "Set up your structure and bring your crew aboard",
-          "step2Title": "Chart Your Projects",
-          "step2Description": "Map out productions, activations, and workspaces",
-          "step3Title": "Assign Roles & Missions",
-          "step3Description": "Give everyone the right access and clear responsibilities",
-          "step4Title": "Navigate & Deliver",
-          "step4Description": "Monitor progress, manage budgets, execute flawlessly"
+          "title": "Hvordan det virker",
+          "subtitle": "Sæt sejl på få minutter, ikke måneder",
+          "step1Title": "Start din organisation",
+          "step1Description": "Indstil din struktur og tag dit mandskab om bord",
+          "step2Title": "Kortlæg dine projekter",
+          "step2Description": "Kortlæg produktioner, aktiveringer og arbejdsområder",
+          "step3Title": "Tildel roller og missioner",
+          "step3Description": "Giv alle den rette adgang og klare ansvar",
+          "step4Title": "Naviger og lever",
+          "step4Description": "Overvåg fremskridt, administrer budgetter, eksekver fejlfrit"
         },
         "testimonials": {
-          "title": "Trusted by Production Teams Worldwide",
-          "subtitle": "Real stories from real producers",
-          "testimonial1Quote": "ATLVS transformed how we manage festivals. Everything in one place, everyone on the same page. Finally.",
+          "title": "Betroet af produktionsteams verden over",
+          "subtitle": "Rigtige historier fra rigtige producenter",
+          "testimonial1Quote": "ATLVS forvandlede, hvordan vi styrer festivaler. Alt på ét sted, alle på samme side. Endelig.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The RBAC system is perfect for our complex org structure. Proper access control for production? Revolutionary.",
+          "testimonial1Role": "Produktionsdirektør, Major Music Festival",
+          "testimonial2Quote": "RBAC-systemet er perfekt til vores komplekse organisationsstruktur. Korrekt adgangskontrol til produktion? Revolutionær.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget overruns by 40% in the first quarter. The financial visibility is legitimately game-changing.",
+          "testimonial2Role": "VP of Operations, Live Event Company",
+          "testimonial3Quote": "Vi reducerede budgetoverskridelser med 40 % i første kvartal. Den økonomiske synlighed er lovligt skiftende.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Corporate Event Agency"
         },
         "pricing": {
-          "title": "Transparent pricing that scales"
+          "title": "Gennemsigtige priser, der skalerer"
         }
       },
       "gen-z": {
         "hero": {
-          "headline": "Production Management That Hits Different",
-          "headlineHighlight": "For Event Creators",
-          "subheadline": "Run your projects, crew, gear, and budgets from one app. Made for people who actually create experiences.",
-          "supportingCopy": "Festivals, brand activations, immersive events—ATLVS keeps everything organized from idea to execution.",
-          "ctaPrimary": "Start Free",
-          "ctaSecondary": "Check It Out",
-          "trustIndicators": "No credit card needed • Free trial • Cancel whenever",
-          "platformScreenshot": "Platform Screenshot",
+          "headline": "Produktionsstyring, der rammer anderledes",
+          "headlineHighlight": "Til begivenhedsskabere",
+          "subheadline": "Kør dine projekter, besætning, udstyr og budgetter fra én app. Lavet til mennesker, der rent faktisk skaber oplevelser.",
+          "supportingCopy": "Festivaler, brandaktiveringer, fordybende begivenheder – ATLVS holder alt organiseret fra idé til udførelse.",
+          "ctaPrimary": "Start gratis",
+          "ctaSecondary": "Tjek det ud",
+          "trustIndicators": "Intet kreditkort nødvendigt • Gratis prøveperiode • Annuller når som helst",
+          "platformScreenshot": "Platform skærmbillede",
           "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Event Creators"
+          "headlineHighlightMain": "Event skabere"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams everywhere"
+          "trustedBy": "Brugt af produktionshold overalt"
         },
         "problem": {
-          "title": "Production is Messy AF",
-          "subtitle": "We've all been there",
-          "pain1Title": "Too Many Apps",
-          "pain1Description": "Spreadsheets, Slack, email, that random Google Doc—everything's everywhere and it's chaos",
-          "pain2Title": "Files Go Missing",
-          "pain2Description": "Someone sent that file... somewhere. Now nobody can find it. Classic.",
-          "pain3Title": "Budget Goes Brr",
-          "pain3Description": "Costs keep going up. By the time you notice, you're way over budget",
-          "pain4Title": "Communication Lag 💬",
-          "pain4Description": "Team members miss updates and work with old information"
+          "title": "Produktionen er Messy AF",
+          "subtitle": "Vi har alle været der",
+          "pain1Title": "For mange apps",
+          "pain1Description": "Regneark, Slack, e-mail, det tilfældige Google-dokument – ​​alt er overalt, og det er kaos",
+          "pain2Title": "Filer forsvinder",
+          "pain2Description": "Nogen sendte den fil... et sted. Nu kan ingen finde det. Klassisk.",
+          "pain3Title": "Budget går Brr",
+          "pain3Description": "Omkostningerne bliver ved med at stige. Når du bemærker det, er du langt over budgettet",
+          "pain4Title": "Kommunikationsforsinkelse 💬",
+          "pain4Description": "Teammedlemmer savner opdateringer og arbejder med gammel information"
         },
         "solution": {
-          "title": "One Platform. Total Control. 🎯",
-          "subtitle": "Everything in one place",
-          "feature1Title": "Command Center 🎮",
-          "feature1Description": "All your projects, team, and resources in one hub",
+          "title": "Én platform. Total kontrol. 🎯",
+          "subtitle": "Alt på ét sted",
+          "feature1Title": "Kommandocenter 🎮",
+          "feature1Description": "Alle dine projekter, team og ressourcer i én hub",
           "feature2Title": "Live Sync ⚡",
-          "feature2Description": "Updates happen instantly. Everyone stays connected",
+          "feature2Description": "Opdateringer sker med det samme. Alle forbliver forbundet",
           "feature3Title": "Budget Tracker 💰",
-          "feature3Description": "See every dollar in real-time. No surprises",
-          "feature4Title": "Team Coordination 🤝",
-          "feature4Description": "Keep everyone updated and on the same page"
+          "feature3Description": "Se hver dollar i realtid. Ingen overraskelser",
+          "feature4Title": "Teamkoordinering 🤝",
+          "feature4Description": "Hold alle opdateret og på samme side"
         },
         "howItWorks": {
-          "title": "How It Works",
-          "subtitle": "Get started in literally minutes",
-          "step1Title": "Set Up Your Org",
-          "step1Description": "Build your team structure and add everyone",
-          "step2Title": "Create Projects",
-          "step2Description": "Map out your events and productions",
-          "step3Title": "Assign Roles",
-          "step3Description": "Give people the right permissions",
-          "step4Title": "Ship It",
-          "step4Description": "Track everything, manage budgets, execute perfectly"
+          "title": "Hvordan det virker",
+          "subtitle": "Kom i gang på bogstaveligt talt få minutter",
+          "step1Title": "Konfigurer din organisation",
+          "step1Description": "Byg din teamstruktur og tilføj alle",
+          "step2Title": "Opret projekter",
+          "step2Description": "Kortlæg dine begivenheder og produktioner",
+          "step3Title": "Tildel roller",
+          "step3Description": "Giv folk de rigtige tilladelser",
+          "step4Title": "Send det",
+          "step4Description": "Spor alt, administrer budgetter, eksekver perfekt"
         },
         "testimonials": {
-          "title": "Real Teams Using ATLVS",
-          "subtitle": "Actual feedback from actual people",
-          "testimonial1Quote": "ATLVS is OP for managing festivals. Everything's organized, everyone's synced. 10/10 would recommend.",
+          "title": "Rigtige hold, der bruger ATLVS",
+          "subtitle": "Faktisk feedback fra faktiske mennesker",
+          "testimonial1Quote": "ATLVS er OP til styring af festivaler. Alt er organiseret, alle er synkroniseret. 10/10 vil anbefale.",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permissions system is fire. Finally got proper access control for our team.",
+          "testimonial1Role": "Produktionsdirektør, Major Music Festival",
+          "testimonial2Quote": "Tilladelsessystemet er brand. Endelig fik vi ordentlig adgangskontrol til vores team.",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget problems by 40% first quarter. The money tracking is straight up amazing.",
+          "testimonial2Role": "VP of Operations, Live Event Company",
+          "testimonial3Quote": "Vi reducerede budgetproblemer med 40 % i første kvartal. Pengesporingen er direkte fantastisk.",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Corporate Event Agency"
         },
         "pricing": {
-          "title": "Pricing that hits different"
+          "title": "Prissætning, der rammer anderledes"
         }
       },
       "gen-alpha": {
         "hero": {
-          "headline": "Level Up Your Production Game 🎮",
-          "headlineHighlight": "For Event Creators",
-          "subheadline": "Manage projects, team, gear & money from one super app ✨ Built for creators who make epic experiences 🚀",
-          "supportingCopy": "Festivals, events, activations—ATLVS keeps everything organized from start to finish 🎯",
-          "ctaPrimary": "Start Free 🚀",
-          "ctaSecondary": "See Demo 👀",
-          "trustIndicators": "No card needed • Free trial • Cancel anytime ✌️",
-          "platformScreenshot": "Platform Screenshot",
+          "headline": "Forøg dit produktionsspil i niveau 🎮",
+          "headlineHighlight": "Til begivenhedsskabere",
+          "subheadline": "Administrer projekter, team, udstyr og penge fra én super app ✨ Bygget til skabere, der laver episke oplevelser 🚀",
+          "supportingCopy": "Festivaler, begivenheder, aktiveringer – ATLVS holder alt organiseret fra start til slut 🎯",
+          "ctaPrimary": "Start gratis 🚀",
+          "ctaSecondary": "Se Demo 👀",
+          "trustIndicators": "Intet kort nødvendigt • Gratis prøveperiode • Annuller når som helst ✌️",
+          "platformScreenshot": "Platform skærmbillede",
           "headlineHighlightPrefix": "For",
-          "headlineHighlightMain": "Event Creators"
+          "headlineHighlightMain": "Event skabere"
         },
         "trustBar": {
-          "trustedBy": "Used by production teams worldwide 🌍"
+          "trustedBy": "Anvendes af produktionshold over hele verden 🌍"
         },
         "problem": {
-          "title": "Production Can Be Chaotic 😅",
-          "subtitle": "Sound familiar?",
+          "title": "Produktionen kan være kaotisk 😅",
+          "subtitle": "Lyder det bekendt?",
           "pain1Title": "App Overload 📱",
-          "pain1Description": "Too many apps, too much chaos. Everything's scattered and hard to find 🤯",
-          "pain2Title": "Lost Files 📂",
-          "pain2Description": "Files disappear into the void. Someone sent it... somewhere... good luck! 🔍",
-          "pain3Title": "Budget Surprise 💸",
-          "pain3Description": "Money keeps disappearing. By the time you notice, you're over budget 😬",
-          "pain4Title": "Team Confusion 🤷",
-          "pain4Description": "People miss updates, work with old info, ask the same questions"
+          "pain1Description": "For mange apps, for meget kaos. Alt er spredt og svært at finde 🤯",
+          "pain2Title": "Tabte filer 📂",
+          "pain2Description": "Filer forsvinder ind i tomrummet. Nogen sendte det... et sted... held og lykke! 🔍",
+          "pain3Title": "Budget overraskelse 💸",
+          "pain3Description": "Penge bliver ved med at forsvinde. Når du bemærker, er du over budget 😬",
+          "pain4Title": "Holdforvirring 🤷",
+          "pain4Description": "Folk går glip af opdateringer, arbejder med gammel information, stiller de samme spørgsmål"
         },
         "solution": {
-          "title": "One App. Full Control. 💪",
-          "subtitle": "Everything you need in one place",
-          "feature1Title": "Command Center 🎮",
-          "feature1Description": "All projects, team & gear in one dashboard",
-          "feature2Title": "Instant Sync ⚡",
-          "feature2Description": "Updates happen in real-time. Everyone stays connected",
+          "title": "Én app. Fuld kontrol. 💪",
+          "subtitle": "Alt hvad du behøver på ét sted",
+          "feature1Title": "Kommandocenter 🎮",
+          "feature1Description": "Alle projekter, team og gear i ét dashboard",
+          "feature2Title": "Øjeblikkelig synkronisering ⚡",
+          "feature2Description": "Opdateringer sker i realtid. Alle forbliver forbundet",
           "feature3Title": "Money Tracker 💰",
-          "feature3Description": "Watch every dollar. No surprises, no stress",
+          "feature3Description": "Se hver dollar. Ingen overraskelser, ingen stress",
           "feature4Title": "Team Collab 🤝",
-          "feature4Description": "Keep everyone in the loop and working together"
+          "feature4Description": "Hold alle i løkken og arbejder sammen"
         },
         "howItWorks": {
-          "title": "How It Works ⚙️",
-          "subtitle": "Get started super fast",
-          "step1Title": "Build Your Team 👥",
-          "step1Description": "Set up your org and add your crew",
-          "step2Title": "Create Projects 📋",
-          "step2Description": "Map out all your events and productions",
-          "step3Title": "Set Permissions 🔐",
-          "step3Description": "Give everyone the right access level",
-          "step4Title": "Launch & Win 🏆",
-          "step4Description": "Track progress, manage money, execute perfectly"
+          "title": "Sådan fungerer det ⚙️",
+          "subtitle": "Kom super hurtigt i gang",
+          "step1Title": "Byg dit team 👥",
+          "step1Description": "Konfigurer din organisation og tilføj dit mandskab",
+          "step2Title": "Opret projekter 📋",
+          "step2Description": "Kortlæg alle dine begivenheder og produktioner",
+          "step3Title": "Indstil tilladelser 🔐",
+          "step3Description": "Giv alle det rigtige adgangsniveau",
+          "step4Title": "Start og vind 🏆",
+          "step4Description": "Spor fremskridt, administrer penge, eksekver perfekt"
         },
         "testimonials": {
-          "title": "Teams Love ATLVS 💙",
-          "subtitle": "Real reviews from real users",
-          "testimonial1Quote": "ATLVS is literally perfect for festivals. Everything's organized, everyone's synced. 100/10! 🔥",
+          "title": "Hold elsker ATLVS 💙",
+          "subtitle": "Rigtige anmeldelser fra rigtige brugere",
+          "testimonial1Quote": "ATLVS er bogstaveligt talt perfekt til festivaler. Alt er organiseret, alle er synkroniseret. 100/10! 🔥",
           "testimonial1Author": "Sarah Chen",
-          "testimonial1Role": "Production Director, Major Music Festival",
-          "testimonial2Quote": "The permission system is chef's kiss 👌 Finally proper access control!",
+          "testimonial1Role": "Produktionsdirektør, Major Music Festival",
+          "testimonial2Quote": "Tilladelsessystemet er kokkens kys 👌 Endelig ordentlig adgangskontrol!",
           "testimonial2Author": "Marcus Rodriguez",
-          "testimonial2Role": "VP of Operations, Live Events Company",
-          "testimonial3Quote": "We cut budget issues by 40% first quarter. The tracking is insane! 🎯",
+          "testimonial2Role": "VP of Operations, Live Event Company",
+          "testimonial3Quote": "Vi reducerede budgetproblemer med 40 % i første kvartal. Sporingen er sindssyg! 🎯",
           "testimonial3Author": "Jennifer Park",
-          "testimonial3Role": "CFO, Corporate Events Agency"
+          "testimonial3Role": "CFO, Corporate Event Agency"
         },
         "pricing": {
-          "title": "Pricing that's actually fair ✨"
+          "title": "Prissætning der er faktisk fair ✨"
         }
       }
     }
@@ -9016,28 +9035,6 @@
     "deleteComment": "Delete Comment",
     "saveComment": "Save Comment",
     "cancelEdit": "Cancel"
-  },
-  "import": {
-    "title": "Import Data",
-    "selectFile": "Select File",
-    "fileSelected": "File Selected",
-    "dragDropFile": "Drag and drop file here",
-    "supportedFormats": "Supported formats: CSV, JSON, Excel",
-    "mapFields": "Map Fields",
-    "sourceField": "Source Field",
-    "targetField": "Target Field",
-    "preview": "Preview Data",
-    "importing": "Importing...",
-    "importComplete": "Import Complete",
-    "importSuccess": "Successfully imported {count} records",
-    "importFailed": "Import Failed",
-    "importError": "Failed to import data. Please check the file format.",
-    "rowsProcessed": "Rows Processed",
-    "rowsSuccessful": "Rows Successful",
-    "rowsFailed": "Rows Failed",
-    "validateData": "Validate Data",
-    "skipErrors": "Skip Errors",
-    "batchSize": "Batch Size"
   },
   "export": {
     "title": "Export Data",
