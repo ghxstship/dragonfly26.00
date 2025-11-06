@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from 'next-intl'
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"

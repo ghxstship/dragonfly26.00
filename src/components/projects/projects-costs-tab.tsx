@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Plus, Search, DollarSign } from "lucide-react"
 import { useParams } from "next/navigation"
 import { useState } from "react"
+import { useModuleData } from "@/hooks/use-module-data"
 
 interface CostsTabProps {
   data?: Record<string, unknown>[]

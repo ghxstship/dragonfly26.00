@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Package, Heart, ShoppingCart, Star, Search, SlidersHorizontal, Grid3x3, List } from "lucide-react"
 import { MarketplaceCartDrawer } from "./marketplace-cart-drawer"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 
 interface Product {
   id: string

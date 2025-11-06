@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress"
 import { MapPin, Calendar, Plane, Hotel, Truck, DollarSign, Users, Clock, Plus, Download, Navigation } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import type { TabComponentProps } from "@/types"
+import { useModuleData } from "@/hooks/use-module-data"
 
 export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.events.tours')

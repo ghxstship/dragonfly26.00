@@ -21,6 +21,7 @@ import { Play,
   Edit, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import type { TabComponentProps } from "@/types"
+import { useModuleData } from "@/hooks/use-module-data"
 
 export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.events.run_of_show')

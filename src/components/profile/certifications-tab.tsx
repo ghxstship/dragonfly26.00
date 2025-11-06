@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import {Save, Plus, Trash2, Loader2, ExternalLink, Upload, Download} from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 interface Certification {
   id: string

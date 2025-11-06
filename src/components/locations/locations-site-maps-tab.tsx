@@ -21,6 +21,7 @@ import {
   Plus, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import type { TabComponentProps } from "@/types"
+import { useModuleData } from "@/hooks/use-module-data"
 
 interface SiteMap {
   id: string

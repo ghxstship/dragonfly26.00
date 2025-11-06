@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 interface PerformanceMetric {
   labelKey: string

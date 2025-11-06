@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {Camera, Save, Loader2, Plus} from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 export function BasicInfoTab() {
   const t = useTranslations()

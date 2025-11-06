@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import {Save, Loader2} from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 export function EmergencyContactTab() {
   const t = useTranslations()

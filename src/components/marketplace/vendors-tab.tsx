@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Store, Star, ShieldCheck, Award, TrendingUp, Clock, Search, MessageCircle, Plus } from "lucide-react"
 import { useTranslations } from 'next-intl'
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 
 interface Vendor {
   id: string

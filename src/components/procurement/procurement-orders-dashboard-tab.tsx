@@ -16,8 +16,10 @@ import {
   Plus,
   Download, Calendar} from "lucide-react"
 import type { TabComponentProps } from "@/types"
+import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
+import { useModuleData } from "@/hooks/use-module-data"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 export function ProcurementOrdersDashboardTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {

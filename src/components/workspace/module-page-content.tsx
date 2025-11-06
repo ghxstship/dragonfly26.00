@@ -26,6 +26,7 @@ import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
 import { getCreateButtonLabel } from "@/lib/modules/form-fields-registry"
 import { getSchemaForTab } from "@/lib/data-schemas"
 import type { ViewType, DataItem } from "@/types"
+import { useModuleData } from "@/hooks/use-module-data"
 
 // Mock data generator
 const generateMockData = (count: number): DataItem[] => {

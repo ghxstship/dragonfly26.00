@@ -9,6 +9,7 @@ import { useParams } from "next/navigation"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
+import { useModuleData } from "@/hooks/use-module-data"
 
 interface ShortlistsTabProps {
   data?: Record<string, unknown>[]

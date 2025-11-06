@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { ThumbsUp, MessageSquare, UserPlus, Loader2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 interface Endorsement {
   id: string

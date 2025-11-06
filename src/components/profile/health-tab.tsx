@@ -10,6 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import {Save, Loader2, Plus, X} from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 export function HealthTab() {
   const t = useTranslations()

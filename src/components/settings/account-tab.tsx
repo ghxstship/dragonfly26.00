@@ -36,6 +36,7 @@ import {
   Plus
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 export function AccountTab() {
   const t = useTranslations()

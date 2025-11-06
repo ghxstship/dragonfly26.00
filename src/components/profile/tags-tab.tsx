@@ -18,6 +18,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { useProfileData } from "@/hooks/use-profile-data"
 
 // Mock system tags - will be populated from backend later
 const SYSTEM_TAGS = [

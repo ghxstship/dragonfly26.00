@@ -22,6 +22,7 @@ import {
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
 import type { TabComponentProps } from "@/types"
+import { useModuleData } from "@/hooks/use-module-data"
 
 export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.projects.productions')

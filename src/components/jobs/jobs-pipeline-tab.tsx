@@ -14,8 +14,10 @@ import {
   Clock
 } from "lucide-react"
 import type { TabComponentProps } from "@/types"
+import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
+import { useModuleData } from "@/hooks/use-module-data"
 import { formatCurrency as formatCurrencyLocale, formatDate as formatDateLocale, formatPercentage } from "@/lib/utils/locale-formatting"
 
 export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {

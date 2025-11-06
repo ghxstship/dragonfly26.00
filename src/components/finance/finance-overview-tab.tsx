@@ -18,6 +18,7 @@ import { Plus } from "lucide-react"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
+import { useModuleData } from "@/hooks/use-module-data"
 import { formatCurrency, formatDate, formatPercentage, formatNumber } from "@/lib/utils/locale-formatting"
 
 export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {

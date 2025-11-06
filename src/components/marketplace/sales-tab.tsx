@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { TrendingUp, DollarSign, Package, Clock, CheckCircle2, XCircle, AlertCircle, Search, Download, Plus } from "lucide-react"
+import { TrendingUp, DollarSign, Package, Users, Calendar, Search, Plus, Download, CheckCircle2, Clock, AlertCircle, XCircle } from "lucide-react"
 import { useTranslations } from 'next-intl'
+import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 
 interface Sale {
   id: string
