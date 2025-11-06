@@ -1,0 +1,640 @@
+{
+  "timestamp": "2025-11-06T04:30:36.546Z",
+  "criticalGaps": [
+    {
+      "category": "Database Schema",
+      "title": "Missing table: people",
+      "description": "Table 'people' (People directory) not found in migrations",
+      "impact": "Blocks all workflows requiring this data",
+      "remediation": "Create migration for people table with proper columns, constraints, and RLS policies"
+    },
+    {
+      "category": "Database Schema",
+      "title": "Missing table: jobs",
+      "description": "Table 'jobs' (Job postings) not found in migrations",
+      "impact": "Blocks all workflows requiring this data",
+      "remediation": "Create migration for jobs table with proper columns, constraints, and RLS policies"
+    },
+    {
+      "category": "Database Schema",
+      "title": "Missing table: job_applications",
+      "description": "Table 'job_applications' (Job applications) not found in migrations",
+      "impact": "Blocks all workflows requiring this data",
+      "remediation": "Create migration for job_applications table with proper columns, constraints, and RLS policies"
+    },
+    {
+      "category": "Database Schema",
+      "title": "Missing table: procurement_orders",
+      "description": "Table 'procurement_orders' (Procurement orders) not found in migrations",
+      "impact": "Blocks all workflows requiring this data",
+      "remediation": "Create migration for procurement_orders table with proper columns, constraints, and RLS policies"
+    },
+    {
+      "category": "Database Schema",
+      "title": "Missing table: procurement_items",
+      "description": "Table 'procurement_items' (Procurement items) not found in migrations",
+      "impact": "Blocks all workflows requiring this data",
+      "remediation": "Create migration for procurement_items table with proper columns, constraints, and RLS policies"
+    },
+    {
+      "category": "Database Schema",
+      "title": "Missing table: vendors",
+      "description": "Table 'vendors' (Vendors) not found in migrations",
+      "impact": "Blocks all workflows requiring this data",
+      "remediation": "Create migration for vendors table with proper columns, constraints, and RLS policies"
+    },
+    {
+      "category": "Database Schema",
+      "title": "Missing table: transactions",
+      "description": "Table 'transactions' (Financial transactions) not found in migrations",
+      "impact": "Blocks all workflows requiring this data",
+      "remediation": "Create migration for transactions table with proper columns, constraints, and RLS policies"
+    },
+    {
+      "category": "Database Schema",
+      "title": "Missing table: expenses",
+      "description": "Table 'expenses' (Expenses) not found in migrations",
+      "impact": "Blocks all workflows requiring this data",
+      "remediation": "Create migration for expenses table with proper columns, constraints, and RLS policies"
+    }
+  ],
+  "highGaps": [
+    {
+      "category": "API Coverage",
+      "title": "Missing API: profiles",
+      "description": "No API route found for profiles module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/profiles/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: workspaces",
+      "description": "No API route found for workspaces module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/workspaces/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: projects",
+      "description": "No API route found for projects module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/projects/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: events",
+      "description": "No API route found for events module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/events/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: assets",
+      "description": "No API route found for assets module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/assets/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: locations",
+      "description": "No API route found for locations module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/locations/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: files",
+      "description": "No API route found for files module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/files/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: people",
+      "description": "No API route found for people module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/people/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: companies",
+      "description": "No API route found for companies module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/companies/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: jobs",
+      "description": "No API route found for jobs module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/jobs/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: applications",
+      "description": "No API route found for applications module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/applications/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: procurement",
+      "description": "No API route found for procurement module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/procurement/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: finance",
+      "description": "No API route found for finance module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/finance/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: analytics",
+      "description": "No API route found for analytics module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/analytics/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: reports",
+      "description": "No API route found for reports module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/reports/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "API Coverage",
+      "title": "Missing API: insights",
+      "description": "No API route found for insights module",
+      "impact": "Frontend cannot perform CRUD operations for this module",
+      "remediation": "Create src/app/api/insights/route.ts with GET, POST, PUT, DELETE handlers"
+    },
+    {
+      "category": "Partial Workflow",
+      "title": "User Onboarding workflow incomplete",
+      "description": "Missing files: src/app/[locale]/(auth)/verify/page.tsx",
+      "impact": "Workflow has dead ends - degrades user experience",
+      "remediation": "Implement missing files to complete workflow"
+    },
+    {
+      "category": "Partial Workflow",
+      "title": "Project Management workflow incomplete",
+      "description": "Missing files: src/app/api/projects",
+      "impact": "Workflow has dead ends - degrades user experience",
+      "remediation": "Implement missing files to complete workflow"
+    },
+    {
+      "category": "Partial Workflow",
+      "title": "Event Planning workflow incomplete",
+      "description": "Missing files: src/app/api/events",
+      "impact": "Workflow has dead ends - degrades user experience",
+      "remediation": "Implement missing files to complete workflow"
+    },
+    {
+      "category": "Partial Workflow",
+      "title": "Asset Management workflow incomplete",
+      "description": "Missing files: src/app/api/assets",
+      "impact": "Workflow has dead ends - degrades user experience",
+      "remediation": "Implement missing files to complete workflow"
+    },
+    {
+      "category": "Partial Workflow",
+      "title": "Procurement workflow incomplete",
+      "description": "Missing files: src/app/api/procurement",
+      "impact": "Workflow has dead ends - degrades user experience",
+      "remediation": "Implement missing files to complete workflow"
+    },
+    {
+      "category": "Partial Workflow",
+      "title": "Financial Management workflow incomplete",
+      "description": "Missing files: src/app/api/finance",
+      "impact": "Workflow has dead ends - degrades user experience",
+      "remediation": "Implement missing files to complete workflow"
+    },
+    {
+      "category": "Partial Workflow",
+      "title": "People Management workflow incomplete",
+      "description": "Missing files: src/app/api/people",
+      "impact": "Workflow has dead ends - degrades user experience",
+      "remediation": "Implement missing files to complete workflow"
+    },
+    {
+      "category": "Partial Workflow",
+      "title": "Job Posting & Hiring workflow incomplete",
+      "description": "Missing files: src/app/api/jobs",
+      "impact": "Workflow has dead ends - degrades user experience",
+      "remediation": "Implement missing files to complete workflow"
+    }
+  ],
+  "mediumGaps": [
+    {
+      "category": "Data Hook Quality",
+      "title": "use-dashboard-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-projects-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-events-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-people-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-locations-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-files-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-community-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-marketplace-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-resources-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-companies-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-jobs-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-procurement-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-finance-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-analytics-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-reports-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-insights-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-admin-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-settings-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    },
+    {
+      "category": "Data Hook Quality",
+      "title": "use-profile-data missing React Query",
+      "description": "Hook exists but doesn't use React Query for state management",
+      "impact": "Poor caching, unnecessary re-renders, degraded performance",
+      "remediation": "Integrate useQuery/useMutation from @tanstack/react-query"
+    }
+  ],
+  "lowGaps": [],
+  "workflowStatus": {
+    "User Onboarding": {
+      "status": "PARTIAL",
+      "steps": [
+        "Signup",
+        "Email Verification",
+        "Profile Setup",
+        "Organization Join",
+        "Dashboard Access"
+      ],
+      "completeness": 75,
+      "missingFiles": [
+        "src/app/[locale]/(auth)/verify/page.tsx"
+      ]
+    },
+    "Project Management": {
+      "status": "PARTIAL",
+      "steps": [
+        "Create Project",
+        "Add Team",
+        "Create Tasks",
+        "Track Progress",
+        "Generate Reports"
+      ],
+      "completeness": 67,
+      "missingFiles": [
+        "src/app/api/projects"
+      ]
+    },
+    "Event Planning": {
+      "status": "PARTIAL",
+      "steps": [
+        "Create Event",
+        "Set Schedule",
+        "Assign Resources",
+        "Track Attendance",
+        "Post-Event Analysis"
+      ],
+      "completeness": 67,
+      "missingFiles": [
+        "src/app/api/events"
+      ]
+    },
+    "Asset Management": {
+      "status": "PARTIAL",
+      "steps": [
+        "Register Asset",
+        "Assign Location",
+        "Track Maintenance",
+        "Transfer",
+        "Depreciation"
+      ],
+      "completeness": 67,
+      "missingFiles": [
+        "src/app/api/assets"
+      ]
+    },
+    "Procurement": {
+      "status": "PARTIAL",
+      "steps": [
+        "Create Requisition",
+        "Vendor Selection",
+        "PO Creation",
+        "Receiving",
+        "Invoice Match",
+        "Payment"
+      ],
+      "completeness": 67,
+      "missingFiles": [
+        "src/app/api/procurement"
+      ]
+    },
+    "Financial Management": {
+      "status": "PARTIAL",
+      "steps": [
+        "Create Budget",
+        "Record Transactions",
+        "Track Expenses",
+        "Generate Invoices",
+        "Reports"
+      ],
+      "completeness": 67,
+      "missingFiles": [
+        "src/app/api/finance"
+      ]
+    },
+    "People Management": {
+      "status": "PARTIAL",
+      "steps": [
+        "Add Person",
+        "Assign Role",
+        "Track Availability",
+        "Certifications",
+        "Performance"
+      ],
+      "completeness": 67,
+      "missingFiles": [
+        "src/app/api/people"
+      ]
+    },
+    "Job Posting & Hiring": {
+      "status": "PARTIAL",
+      "steps": [
+        "Create Posting",
+        "Receive Applications",
+        "Screen",
+        "Interview",
+        "Offer"
+      ],
+      "completeness": 67,
+      "missingFiles": [
+        "src/app/api/jobs"
+      ]
+    }
+  },
+  "moduleCompleteness": {
+    "dashboard": {
+      "expected": 11,
+      "found": 11,
+      "percentage": 100,
+      "status": "COMPLETE"
+    },
+    "projects": {
+      "expected": 11,
+      "found": 12,
+      "percentage": 109,
+      "status": "PARTIAL"
+    },
+    "events": {
+      "expected": 14,
+      "found": 17,
+      "percentage": 121,
+      "status": "PARTIAL"
+    },
+    "people": {
+      "expected": 9,
+      "found": 12,
+      "percentage": 133,
+      "status": "PARTIAL"
+    },
+    "assets": {
+      "expected": 8,
+      "found": 12,
+      "percentage": 150,
+      "status": "PARTIAL"
+    },
+    "locations": {
+      "expected": 9,
+      "found": 11,
+      "percentage": 122,
+      "status": "PARTIAL"
+    },
+    "files": {
+      "expected": 10,
+      "found": 12,
+      "percentage": 120,
+      "status": "PARTIAL"
+    },
+    "community": {
+      "expected": 8,
+      "found": 9,
+      "percentage": 113,
+      "status": "PARTIAL"
+    },
+    "marketplace": {
+      "expected": 10,
+      "found": 14,
+      "percentage": 140,
+      "status": "PARTIAL"
+    },
+    "resources": {
+      "expected": 7,
+      "found": 8,
+      "percentage": 114,
+      "status": "PARTIAL"
+    },
+    "companies": {
+      "expected": 11,
+      "found": 13,
+      "percentage": 118,
+      "status": "PARTIAL"
+    },
+    "jobs": {
+      "expected": 15,
+      "found": 17,
+      "percentage": 113,
+      "status": "PARTIAL"
+    },
+    "procurement": {
+      "expected": 10,
+      "found": 11,
+      "percentage": 110,
+      "status": "PARTIAL"
+    },
+    "finance": {
+      "expected": 18,
+      "found": 18,
+      "percentage": 100,
+      "status": "COMPLETE"
+    },
+    "analytics": {
+      "expected": 10,
+      "found": 10,
+      "percentage": 100,
+      "status": "COMPLETE"
+    },
+    "reports": {
+      "expected": 9,
+      "found": 10,
+      "percentage": 111,
+      "status": "PARTIAL"
+    },
+    "insights": {
+      "expected": 10,
+      "found": 11,
+      "percentage": 110,
+      "status": "PARTIAL"
+    },
+    "admin": {
+      "expected": 11,
+      "found": 18,
+      "percentage": 164,
+      "status": "PARTIAL"
+    },
+    "settings": {
+      "expected": 6,
+      "found": 7,
+      "percentage": 117,
+      "status": "PARTIAL"
+    },
+    "profile": {
+      "expected": 11,
+      "found": 12,
+      "percentage": 109,
+      "status": "PARTIAL"
+    }
+  },
+  "summary": {
+    "database": {
+      "tables": "15/23",
+      "rlsPolicies": 1495,
+      "score": 65
+    },
+    "api": {
+      "endpoints": "7/23",
+      "score": 30
+    },
+    "hooks": {
+      "dataHooks": "20/20",
+      "score": 100
+    },
+    "components": {
+      "tabs": "245/208",
+      "score": 118
+    },
+    "rbac": {
+      "implemented": true,
+      "score": 100
+    },
+    "workflows": {
+      "complete": 0,
+      "partial": 8,
+      "broken": 0,
+      "total": 8
+    },
+    "gaps": {
+      "critical": 8,
+      "high": 24,
+      "medium": 19,
+      "low": 0,
+      "total": 51
+    }
+  }
+}

@@ -1,0 +1,1821 @@
+{
+  "timestamp": "2025-11-06T04:57:44.081Z",
+  "metadata": {
+    "auditType": "COMPREHENSIVE_ROLE_BASED_WORKFLOW_AUDIT",
+    "scope": "ALL_ROLES_ALL_MODULES_ALL_WORKFLOWS",
+    "methodology": "ZERO_TOLERANCE_ATOMIC_LEVEL"
+  },
+  "roles": {
+    "legend": {
+      "level": 1,
+      "name": "Legend",
+      "permissions": [
+        "ALL"
+      ],
+      "workflows": [
+        "platform_admin",
+        "org_management",
+        "user_management",
+        "system_config",
+        "billing",
+        "security",
+        "audit_logs",
+        "api_tokens",
+        "webhooks",
+        "plugins"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 10,
+        "completed": 0,
+        "partial": 10,
+        "missing": 0,
+        "completionRate": 0
+      }
+    },
+    "phantom": {
+      "level": 2,
+      "name": "Phantom",
+      "permissions": [
+        "org.*",
+        "project.*"
+      ],
+      "workflows": [
+        "org_settings",
+        "member_mgmt",
+        "role_assign",
+        "project_create",
+        "production_mgmt",
+        "budget_approve",
+        "vendor_mgmt",
+        "reporting"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 8,
+        "completed": 2,
+        "partial": 6,
+        "missing": 0,
+        "completionRate": 25
+      }
+    },
+    "aviator": {
+      "level": 3,
+      "name": "Aviator",
+      "permissions": [
+        "project.*",
+        "reports.view"
+      ],
+      "workflows": [
+        "project_oversight",
+        "cross_project_reports",
+        "strategic_planning",
+        "resource_allocation",
+        "budget_monitor",
+        "team_coord"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 6,
+        "completed": 2,
+        "partial": 4,
+        "missing": 0,
+        "completionRate": 33
+      }
+    },
+    "gladiator": {
+      "level": 4,
+      "name": "Gladiator",
+      "permissions": [
+        "project.manage",
+        "task.*"
+      ],
+      "workflows": [
+        "project_mgmt",
+        "task_assign",
+        "team_mgmt",
+        "budget_mgmt",
+        "procurement_req",
+        "event_planning",
+        "asset_alloc",
+        "reporting"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 8,
+        "completed": 2,
+        "partial": 6,
+        "missing": 0,
+        "completionRate": 25
+      }
+    },
+    "navigator": {
+      "level": 5,
+      "name": "Navigator",
+      "permissions": [
+        "dept.manage",
+        "task.*"
+      ],
+      "workflows": [
+        "dept_mgmt",
+        "task_mgmt",
+        "team_coord",
+        "resource_req",
+        "status_report",
+        "schedule_mgmt"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 6,
+        "completed": 3,
+        "partial": 3,
+        "missing": 0,
+        "completionRate": 50
+      }
+    },
+    "deviator": {
+      "level": 6,
+      "name": "Deviator",
+      "permissions": [
+        "team.manage",
+        "task.assign"
+      ],
+      "workflows": [
+        "team_lead",
+        "task_assign",
+        "progress_track",
+        "issue_escalate",
+        "daily_coord"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 5,
+        "completed": 2,
+        "partial": 3,
+        "missing": 0,
+        "completionRate": 40
+      }
+    },
+    "raider": {
+      "level": 7,
+      "name": "Raider",
+      "permissions": [
+        "task.edit"
+      ],
+      "workflows": [
+        "task_exec",
+        "time_track",
+        "status_update",
+        "doc_access",
+        "collab"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 5,
+        "completed": 1,
+        "partial": 4,
+        "missing": 0,
+        "completionRate": 20
+      }
+    },
+    "vendor": {
+      "level": 8,
+      "name": "Vendor",
+      "permissions": [
+        "vendor.*"
+      ],
+      "workflows": [
+        "vendor_portal",
+        "order_mgmt",
+        "invoice_submit",
+        "product_catalog",
+        "communication"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 5,
+        "completed": 2,
+        "partial": 3,
+        "missing": 0,
+        "completionRate": 40
+      }
+    },
+    "visitor": {
+      "level": 9,
+      "name": "Visitor",
+      "permissions": [
+        "custom"
+      ],
+      "workflows": [
+        "limited_access",
+        "project_view",
+        "doc_review",
+        "temp_collab"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 4,
+        "completed": 2,
+        "partial": 2,
+        "missing": 0,
+        "completionRate": 50
+      }
+    },
+    "partner": {
+      "level": 10,
+      "name": "Partner",
+      "permissions": [
+        "*.view"
+      ],
+      "workflows": [
+        "dashboard_view",
+        "report_access",
+        "project_monitor",
+        "analytics_view"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 4,
+        "completed": 3,
+        "partial": 1,
+        "missing": 0,
+        "completionRate": 75
+      }
+    },
+    "ambassador": {
+      "level": 11,
+      "name": "Ambassador",
+      "permissions": [
+        "marketing.*"
+      ],
+      "workflows": [
+        "marketing_content",
+        "community_engage",
+        "showcase_mgmt",
+        "referral_track"
+      ],
+      "definedInRBAC": true,
+      "workflowStats": {
+        "total": 4,
+        "completed": 1,
+        "partial": 3,
+        "missing": 0,
+        "completionRate": 25
+      }
+    }
+  },
+  "modules": {
+    "dashboard": {
+      "hub": "Production",
+      "tabs": 11,
+      "criticalWorkflows": [
+        "overview",
+        "my_tasks",
+        "my_agenda"
+      ],
+      "componentCount": 11,
+      "componentCoverage": 100,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": false
+    },
+    "projects": {
+      "hub": "Production",
+      "tabs": 11,
+      "criticalWorkflows": [
+        "create",
+        "view",
+        "edit",
+        "archive",
+        "team"
+      ],
+      "componentCount": 12,
+      "componentCoverage": 109,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "events": {
+      "hub": "Production",
+      "tabs": 14,
+      "criticalWorkflows": [
+        "create",
+        "schedule",
+        "resources"
+      ],
+      "componentCount": 17,
+      "componentCoverage": 121,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "people": {
+      "hub": "Production",
+      "tabs": 9,
+      "criticalWorkflows": [
+        "directory",
+        "add",
+        "edit"
+      ],
+      "componentCount": 12,
+      "componentCoverage": 133,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "assets": {
+      "hub": "Production",
+      "tabs": 8,
+      "criticalWorkflows": [
+        "catalog",
+        "register",
+        "track"
+      ],
+      "componentCount": 10,
+      "componentCoverage": 125,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": true,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "locations": {
+      "hub": "Production",
+      "tabs": 9,
+      "criticalWorkflows": [
+        "add",
+        "edit",
+        "bookings"
+      ],
+      "componentCount": 11,
+      "componentCoverage": 122,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": false,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "files": {
+      "hub": "Production",
+      "tabs": 10,
+      "criticalWorkflows": [
+        "upload",
+        "organize",
+        "share"
+      ],
+      "componentCount": 12,
+      "componentCoverage": 120,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": false
+    },
+    "community": {
+      "hub": "Network",
+      "tabs": 8,
+      "criticalWorkflows": [
+        "activity",
+        "discussions"
+      ],
+      "componentCount": 9,
+      "componentCoverage": 113,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": false
+    },
+    "marketplace": {
+      "hub": "Network",
+      "tabs": 10,
+      "criticalWorkflows": [
+        "shop",
+        "orders"
+      ],
+      "componentCount": 14,
+      "componentCoverage": 140,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": false
+    },
+    "resources": {
+      "hub": "Network",
+      "tabs": 7,
+      "criticalWorkflows": [
+        "library",
+        "guides"
+      ],
+      "componentCount": 8,
+      "componentCoverage": 114,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": false
+    },
+    "companies": {
+      "hub": "Business",
+      "tabs": 11,
+      "criticalWorkflows": [
+        "add",
+        "edit",
+        "contacts"
+      ],
+      "componentCount": 13,
+      "componentCoverage": 118,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": false,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "jobs": {
+      "hub": "Business",
+      "tabs": 15,
+      "criticalWorkflows": [
+        "post",
+        "applications"
+      ],
+      "componentCount": 17,
+      "componentCoverage": 113,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "procurement": {
+      "hub": "Business",
+      "tabs": 10,
+      "criticalWorkflows": [
+        "requisition",
+        "po"
+      ],
+      "componentCount": 11,
+      "componentCoverage": 110,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "finance": {
+      "hub": "Business",
+      "tabs": 18,
+      "criticalWorkflows": [
+        "budgets",
+        "transactions"
+      ],
+      "componentCount": 18,
+      "componentCoverage": 100,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": false,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "analytics": {
+      "hub": "Intelligence",
+      "tabs": 10,
+      "criticalWorkflows": [
+        "metrics",
+        "trends"
+      ],
+      "componentCount": 10,
+      "componentCoverage": 100,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": false,
+        "hasPUT": false,
+        "hasDELETE": false,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "reports": {
+      "hub": "Intelligence",
+      "tabs": 9,
+      "criticalWorkflows": [
+        "generate",
+        "export"
+      ],
+      "componentCount": 10,
+      "componentCoverage": 111,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasValidation": true,
+        "hasRBAC": false
+      }
+    },
+    "insights": {
+      "hub": "Intelligence",
+      "tabs": 10,
+      "criticalWorkflows": [
+        "objectives",
+        "kpis"
+      ],
+      "componentCount": 11,
+      "componentCoverage": 110,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": false
+    },
+    "admin": {
+      "hub": "System",
+      "tabs": 18,
+      "criticalWorkflows": [
+        "users",
+        "roles",
+        "settings"
+      ],
+      "componentCount": 18,
+      "componentCoverage": 100,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": false
+    },
+    "settings": {
+      "hub": "System",
+      "tabs": 7,
+      "criticalWorkflows": [
+        "profile",
+        "preferences"
+      ],
+      "componentCount": 7,
+      "componentCoverage": 100,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": true,
+      "apiAnalysis": {
+        "hasGET": true,
+        "hasPOST": true,
+        "hasPUT": true,
+        "hasDELETE": true,
+        "hasValidation": false,
+        "hasRBAC": false
+      }
+    },
+    "profile": {
+      "hub": "System",
+      "tabs": 12,
+      "criticalWorkflows": [
+        "basic_info",
+        "professional"
+      ],
+      "componentCount": 12,
+      "componentCoverage": 100,
+      "hasHook": true,
+      "hookAnalysis": {
+        "hasReactQuery": false,
+        "hasSupabase": true,
+        "hasRealtime": true
+      },
+      "hasAPI": false
+    }
+  },
+  "workflows": {
+    "platform_admin": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "org_management": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "user_management": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "system_config": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "billing": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "security": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "audit_logs": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "api_tokens": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "webhooks": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "plugins": {
+      "legend": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "org_settings": {
+      "phantom": {
+        "completeness": 75,
+        "missing": [
+          "API endpoint"
+        ]
+      }
+    },
+    "member_mgmt": {
+      "phantom": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "role_assign": {
+      "phantom": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "project_create": {
+      "phantom": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "production_mgmt": {
+      "phantom": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "budget_approve": {
+      "phantom": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "vendor_mgmt": {
+      "phantom": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "reporting": {
+      "phantom": {
+        "completeness": 100,
+        "missing": []
+      },
+      "gladiator": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "project_oversight": {
+      "aviator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "cross_project_reports": {
+      "aviator": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "strategic_planning": {
+      "aviator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "resource_allocation": {
+      "aviator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "budget_monitor": {
+      "aviator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "team_coord": {
+      "aviator": {
+        "completeness": 100,
+        "missing": []
+      },
+      "navigator": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "project_mgmt": {
+      "gladiator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "task_assign": {
+      "gladiator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      },
+      "deviator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "team_mgmt": {
+      "gladiator": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "budget_mgmt": {
+      "gladiator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "procurement_req": {
+      "gladiator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "event_planning": {
+      "gladiator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "asset_alloc": {
+      "gladiator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "dept_mgmt": {
+      "navigator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "task_mgmt": {
+      "navigator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "resource_req": {
+      "navigator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "status_report": {
+      "navigator": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "schedule_mgmt": {
+      "navigator": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "team_lead": {
+      "deviator": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "progress_track": {
+      "deviator": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "issue_escalate": {
+      "deviator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "daily_coord": {
+      "deviator": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "task_exec": {
+      "raider": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "time_track": {
+      "raider": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "status_update": {
+      "raider": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "doc_access": {
+      "raider": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "collab": {
+      "raider": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "vendor_portal": {
+      "vendor": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "order_mgmt": {
+      "vendor": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "invoice_submit": {
+      "vendor": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "product_catalog": {
+      "vendor": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "communication": {
+      "vendor": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "limited_access": {
+      "visitor": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "project_view": {
+      "visitor": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "doc_review": {
+      "visitor": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "temp_collab": {
+      "visitor": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "dashboard_view": {
+      "partner": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "report_access": {
+      "partner": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "project_monitor": {
+      "partner": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "analytics_view": {
+      "partner": {
+        "completeness": 100,
+        "missing": []
+      }
+    },
+    "marketing_content": {
+      "ambassador": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "community_engage": {
+      "ambassador": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "showcase_mgmt": {
+      "ambassador": {
+        "completeness": 25,
+        "missing": [
+          "UI components",
+          "data hook",
+          "API endpoint"
+        ]
+      }
+    },
+    "referral_track": {
+      "ambassador": {
+        "completeness": 100,
+        "missing": []
+      }
+    }
+  },
+  "gaps": [
+    {
+      "severity": "HIGH",
+      "category": "API Layer",
+      "role": "ALL",
+      "module": "dashboard",
+      "workflow": "REST_API",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Cannot perform server-side validation or business logic",
+      "remediation": "Create /api/dashboard/route.ts with GET/POST/PUT/DELETE"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API Layer",
+      "role": "ALL",
+      "module": "files",
+      "workflow": "REST_API",
+      "description": "Missing /api/files endpoint",
+      "impact": "Cannot perform server-side validation or business logic",
+      "remediation": "Create /api/files/route.ts with GET/POST/PUT/DELETE"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API Layer",
+      "role": "ALL",
+      "module": "community",
+      "workflow": "REST_API",
+      "description": "Missing /api/community endpoint",
+      "impact": "Cannot perform server-side validation or business logic",
+      "remediation": "Create /api/community/route.ts with GET/POST/PUT/DELETE"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API Layer",
+      "role": "ALL",
+      "module": "marketplace",
+      "workflow": "REST_API",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Cannot perform server-side validation or business logic",
+      "remediation": "Create /api/marketplace/route.ts with GET/POST/PUT/DELETE"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API Layer",
+      "role": "ALL",
+      "module": "resources",
+      "workflow": "REST_API",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Cannot perform server-side validation or business logic",
+      "remediation": "Create /api/resources/route.ts with GET/POST/PUT/DELETE"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API Layer",
+      "role": "ALL",
+      "module": "insights",
+      "workflow": "REST_API",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Cannot perform server-side validation or business logic",
+      "remediation": "Create /api/insights/route.ts with GET/POST/PUT/DELETE"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API Layer",
+      "role": "ALL",
+      "module": "admin",
+      "workflow": "REST_API",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Cannot perform server-side validation or business logic",
+      "remediation": "Create /api/admin/route.ts with GET/POST/PUT/DELETE"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API Layer",
+      "role": "ALL",
+      "module": "profile",
+      "workflow": "REST_API",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Cannot perform server-side validation or business logic",
+      "remediation": "Create /api/profile/route.ts with GET/POST/PUT/DELETE"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "platform_admin",
+      "description": "Legend workflow \"platform_admin\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "org_management",
+      "description": "Legend workflow \"org_management\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "user_management",
+      "description": "Legend workflow \"user_management\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "system_config",
+      "description": "Legend workflow \"system_config\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "billing",
+      "description": "Legend workflow \"billing\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "security",
+      "description": "Legend workflow \"security\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "audit_logs",
+      "description": "Legend workflow \"audit_logs\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "api_tokens",
+      "description": "Legend workflow \"api_tokens\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "webhooks",
+      "description": "Legend workflow \"webhooks\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "legend",
+      "module": "multiple",
+      "workflow": "plugins",
+      "description": "Legend workflow \"plugins\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Workflow Completeness",
+      "role": "phantom",
+      "module": "admin",
+      "workflow": "org_settings",
+      "description": "Phantom workflow \"org_settings\" is 75% complete",
+      "impact": "Missing: API endpoint",
+      "remediation": "Complete missing components: API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "phantom",
+      "module": "multiple",
+      "workflow": "member_mgmt",
+      "description": "Phantom workflow \"member_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "phantom",
+      "module": "multiple",
+      "workflow": "role_assign",
+      "description": "Phantom workflow \"role_assign\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "phantom",
+      "module": "multiple",
+      "workflow": "production_mgmt",
+      "description": "Phantom workflow \"production_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "phantom",
+      "module": "multiple",
+      "workflow": "budget_approve",
+      "description": "Phantom workflow \"budget_approve\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "phantom",
+      "module": "multiple",
+      "workflow": "vendor_mgmt",
+      "description": "Phantom workflow \"vendor_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "aviator",
+      "module": "multiple",
+      "workflow": "project_oversight",
+      "description": "Aviator workflow \"project_oversight\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "aviator",
+      "module": "multiple",
+      "workflow": "strategic_planning",
+      "description": "Aviator workflow \"strategic_planning\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "aviator",
+      "module": "multiple",
+      "workflow": "resource_allocation",
+      "description": "Aviator workflow \"resource_allocation\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "aviator",
+      "module": "multiple",
+      "workflow": "budget_monitor",
+      "description": "Aviator workflow \"budget_monitor\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "gladiator",
+      "module": "multiple",
+      "workflow": "project_mgmt",
+      "description": "Gladiator workflow \"project_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "gladiator",
+      "module": "multiple",
+      "workflow": "task_assign",
+      "description": "Gladiator workflow \"task_assign\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "gladiator",
+      "module": "multiple",
+      "workflow": "budget_mgmt",
+      "description": "Gladiator workflow \"budget_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "gladiator",
+      "module": "multiple",
+      "workflow": "procurement_req",
+      "description": "Gladiator workflow \"procurement_req\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "gladiator",
+      "module": "multiple",
+      "workflow": "event_planning",
+      "description": "Gladiator workflow \"event_planning\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "gladiator",
+      "module": "multiple",
+      "workflow": "asset_alloc",
+      "description": "Gladiator workflow \"asset_alloc\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "navigator",
+      "module": "multiple",
+      "workflow": "dept_mgmt",
+      "description": "Navigator workflow \"dept_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "navigator",
+      "module": "multiple",
+      "workflow": "task_mgmt",
+      "description": "Navigator workflow \"task_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "navigator",
+      "module": "multiple",
+      "workflow": "resource_req",
+      "description": "Navigator workflow \"resource_req\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "deviator",
+      "module": "multiple",
+      "workflow": "task_assign",
+      "description": "Deviator workflow \"task_assign\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "deviator",
+      "module": "multiple",
+      "workflow": "issue_escalate",
+      "description": "Deviator workflow \"issue_escalate\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "deviator",
+      "module": "multiple",
+      "workflow": "daily_coord",
+      "description": "Deviator workflow \"daily_coord\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "raider",
+      "module": "multiple",
+      "workflow": "task_exec",
+      "description": "Raider workflow \"task_exec\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "raider",
+      "module": "multiple",
+      "workflow": "status_update",
+      "description": "Raider workflow \"status_update\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "raider",
+      "module": "multiple",
+      "workflow": "doc_access",
+      "description": "Raider workflow \"doc_access\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "raider",
+      "module": "multiple",
+      "workflow": "collab",
+      "description": "Raider workflow \"collab\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "vendor",
+      "module": "multiple",
+      "workflow": "order_mgmt",
+      "description": "Vendor workflow \"order_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "vendor",
+      "module": "multiple",
+      "workflow": "invoice_submit",
+      "description": "Vendor workflow \"invoice_submit\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "vendor",
+      "module": "multiple",
+      "workflow": "communication",
+      "description": "Vendor workflow \"communication\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "visitor",
+      "module": "multiple",
+      "workflow": "limited_access",
+      "description": "Visitor workflow \"limited_access\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "visitor",
+      "module": "multiple",
+      "workflow": "temp_collab",
+      "description": "Visitor workflow \"temp_collab\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "partner",
+      "module": "multiple",
+      "workflow": "project_monitor",
+      "description": "Partner workflow \"project_monitor\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "ambassador",
+      "module": "multiple",
+      "workflow": "marketing_content",
+      "description": "Ambassador workflow \"marketing_content\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "ambassador",
+      "module": "multiple",
+      "workflow": "community_engage",
+      "description": "Ambassador workflow \"community_engage\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    },
+    {
+      "severity": "HIGH",
+      "category": "Workflow Completeness",
+      "role": "ambassador",
+      "module": "multiple",
+      "workflow": "showcase_mgmt",
+      "description": "Ambassador workflow \"showcase_mgmt\" is 25% complete",
+      "impact": "Missing: UI components, data hook, API endpoint",
+      "remediation": "Complete missing components: UI components, data hook, API endpoint"
+    }
+  ],
+  "summary": {
+    "totalGaps": 53,
+    "critical": 0,
+    "high": 52,
+    "medium": 1,
+    "low": 0,
+    "score": 87,
+    "grade": "A"
+  }
+}

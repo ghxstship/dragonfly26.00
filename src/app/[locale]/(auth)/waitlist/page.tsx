@@ -277,8 +277,8 @@ export default function WaitlistPage() {
         {/* Footer */}
         <p className="text-center text-sm text-muted-foreground">
           Already have an invitation?{' '}
-          <Link href="/signup" className="text-primary hover:underline">
-            Sign up
+          <Link href="/access?tab=invite" className="text-primary hover:underline">
+            Enter invite code
           </Link>
         </p>
       </div>

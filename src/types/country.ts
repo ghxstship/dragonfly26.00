@@ -9,6 +9,7 @@ export interface TaxRates {
   standard?: number
   reduced?: number
   superReduced?: number
+  low?: number
   intermediate?: number
   zero?: number
   state?: Record<string, number>
@@ -36,7 +37,17 @@ export interface ComplianceRules {
   lfpdpppRequired?: boolean
   privacyActRequired?: boolean
   pdpaRequired?: boolean
+  pipaRequired?: boolean
+  difcRequired?: boolean
   popiaRequired?: boolean
+  piplRequired?: boolean
+  fzRequired?: boolean
+  pdpRequired?: boolean
+  kvkkRequired?: boolean
+  pdplRequired?: boolean
+  fadpRequired?: boolean
+  ndprRequired?: boolean
+  dpaRequired?: boolean
   ageRestriction: number
   cookieConsent: 'required' | 'optional'
   dataResidency: string

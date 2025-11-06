@@ -47,7 +47,7 @@ export function PricingSection(): JSX.Element {
                 <span>{tGen('pricing.community.feature3')}</span>
               </li>
             </ul>
-            <Link href="/signup">
+            <Link href="/access">
               <Button variant="outline" className="w-full">{tGen('pricing.community.cta')}</Button>
             </Link>
           </div>

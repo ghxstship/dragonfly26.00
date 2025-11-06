@@ -24,7 +24,7 @@ export function CTASection(): JSX.Element {
         </p>
         
         <div className={cn("flex flex-col sm:flex-row justify-center items-center", spacing.gap)}>
-          <Link href="/signup">
+          <Link href="/access">
             <Button variant="default" size="lg" className="w-full sm:w-auto bg-white dark:bg-gray-800 text-blue-600 hover:bg-gray-100 dark:bg-white dark:text-blue-600 dark:hover:bg-gray-100 dark:hover:bg-gray-800">
               {tGen('cta.ctaPrimary')}
               <ArrowRight className={cn("ml-2", height.icon)} aria-hidden="true" />

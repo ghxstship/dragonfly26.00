@@ -2,29 +2,71 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "@/i18n/navigation"
-import { useRouter } from "@/i18n/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useLocale } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { createClient } from "@/lib/supabase/client"
-import { Eye, EyeOff } from "lucide-react"
+import { Eye, EyeOff, Loader2 } from "lucide-react"
 import { CountrySelector } from "@/components/layout/country-selector"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 export default function SignupPage() {
+  const searchParams = useSearchParams()
   const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState(searchParams.get('email') || "")
   const [password, setPassword] = useState("")
-  const [inviteCode, setInviteCode] = useState("")
+  const [inviteCode, setInviteCode] = useState(searchParams.get('code') || "")
   const [loading, setLoading] = useState(false)
+  const [validating, setValidating] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [showPassword, setShowPassword] = useState(false)
   const router = useRouter()
   const locale = useLocale()
   const supabase = createClient()
+
+  // Validate access on mount
+  useEffect(() => {
+    const validateAccess = async () => {
+      const validated = searchParams.get('validated')
+      const emailParam = searchParams.get('email')
+      const codeParam = searchParams.get('code')
+
+      // If no validation params, redirect to access page
+      if (!validated || !emailParam || !codeParam) {
+        router.push('/access')
+        return
+      }
+
+      // Verify the invite code is still valid
+      try {
+        const res = await fetch('/api/auth/validate-signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            email: emailParam, 
+            invite_code: codeParam 
+          }),
+        })
+
+        const data = await res.json()
+
+        if (!data.authorized) {
+          router.push('/access?tab=invite')
+          return
+        }
+
+        setValidating(false)
+      } catch (err) {
+        router.push('/access')
+      }
+    }
+
+    validateAccess()
+  }, [searchParams, router])
   
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -57,26 +99,8 @@ export default function SignupPage() {
       return
     }
 
-    // GATED SIGNUP: Validate email is authorized
-    try {
-      const validationRes = await fetch('/api/auth/validate-signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, invite_code: inviteCode || undefined }),
-      })
-
-      const validation = await validationRes.json()
-
-      if (!validation.authorized) {
-        // Redirect to waitlist with email pre-filled
-        router.push(`/waitlist?email=${encodeURIComponent(email)}`)
-        return
-      }
-    } catch (err) {
-      setError("Failed to validate signup. Please try again.")
-      setLoading(false)
-      return
-    }
+    // Note: Validation already done on access page, this is just final check
+    // Users should not reach here without valid credentials
 
     const { data, error } = await supabase.auth.signUp({
       email,
@@ -115,6 +139,18 @@ export default function SignupPage() {
     if (error) {
       setError((error as any).message)
     }
+  }
+
+  // Show loading state while validating
+  if (validating) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center space-y-4">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto text-primary" />
+          <p className="text-muted-foreground">Verifying access...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -187,19 +223,6 @@ export default function SignupPage() {
               </div>
               <p className="text-xs text-muted-foreground">
                 Must be at least 8 characters with lowercase, uppercase, digit, and symbol
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="inviteCode">Invite Code (Optional)</Label>
-              <Input 
-                id="inviteCode" 
-                placeholder="Enter code if you have one"
-                value={inviteCode} 
-                onChange={(e) => setInviteCode(e.target.value)}
-              />
-              <p className="text-xs text-muted-foreground">
-                This platform is invite-only. Don&apos;t have a code? <Link href="/waitlist" className="text-primary hover:underline">Join the waitlist</Link>
               </p>
             </div>
 

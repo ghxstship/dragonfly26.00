@@ -190,6 +190,22 @@ CREATE INDEX idx_opportunity_featured_active ON opportunity_featured(active);
 CREATE INDEX idx_opportunity_featured_priority ON opportunity_featured(priority DESC);
 
 -- =====================================================
+-- WORKSPACE MEMBERS TABLE (if not exists)
+-- =====================================================
+-- Create workspace_members table if it doesn't exist yet
+-- (will be created properly in migration 021, but we need it now)
+CREATE TABLE IF NOT EXISTS workspace_members (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    workspace_id UUID NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+    organization_id UUID NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
+    user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+    role TEXT NOT NULL DEFAULT 'member' CHECK (role IN ('owner', 'admin', 'member', 'guest')),
+    invited_by UUID REFERENCES auth.users(id),
+    joined_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    UNIQUE(workspace_id, user_id)
+);
+
+-- =====================================================
 -- ROW LEVEL SECURITY (RLS)
 -- =====================================================
 

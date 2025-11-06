@@ -35,7 +35,7 @@ export function HeroSection(): JSX.Element {
 
           {/* CTAs */}
           <div className={cn("flex flex-col sm:flex-row justify-center items-center", spacing.gap)}>
-            <Link href="/signup">
+            <Link href="/access">
               <Button variant="default" size="lg" className="w-full sm:w-auto">
                 {tGen('hero.ctaPrimary')}
                 <ArrowRight className={cn("ml-2", height.icon)} aria-hidden="true" />

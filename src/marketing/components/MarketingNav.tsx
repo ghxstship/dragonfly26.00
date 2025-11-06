@@ -57,7 +57,7 @@ export function MarketingNav(): JSX.Element {
               <Link href="/login">
                 <Button variant="ghost">{t('signIn')}</Button>
               </Link>
-              <Link href="/signup">
+              <Link href="/access">
                 <Button variant="default">{t('startFree')}</Button>
               </Link>
             </div>
@@ -80,7 +80,7 @@ export function MarketingNav(): JSX.Element {
             <div className="px-4 py-4 space-y-3">
               {/* Primary CTAs - Top (Most Important) */}
               <div className="space-y-2 pb-3 border-b border-gray-200 dark:border-gray-800">
-                <Link href="/signup" className="block">
+                <Link href="/access" className="block">
                   <Button variant="default" className="w-full">{t('startFree')}</Button>
                 </Link>
                 <Link href="/login" className="block">

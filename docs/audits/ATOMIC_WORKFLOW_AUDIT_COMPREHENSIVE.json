@@ -1,0 +1,156 @@
+{
+  "timestamp": "2025-11-06T04:28:53.353Z",
+  "gaps": [
+    {
+      "severity": "CRITICAL",
+      "category": "Database",
+      "title": "Missing 5 critical tables",
+      "description": "tasks, people, jobs, procurement_orders, transactions",
+      "remediation": "Create migrations for missing tables"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing profiles API endpoint",
+      "description": "No API route for profiles",
+      "remediation": "Create src/app/api/profiles/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing projects API endpoint",
+      "description": "No API route for projects",
+      "remediation": "Create src/app/api/projects/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing events API endpoint",
+      "description": "No API route for events",
+      "remediation": "Create src/app/api/events/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing assets API endpoint",
+      "description": "No API route for assets",
+      "remediation": "Create src/app/api/assets/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing people API endpoint",
+      "description": "No API route for people",
+      "remediation": "Create src/app/api/people/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing companies API endpoint",
+      "description": "No API route for companies",
+      "remediation": "Create src/app/api/companies/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing jobs API endpoint",
+      "description": "No API route for jobs",
+      "remediation": "Create src/app/api/jobs/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing procurement API endpoint",
+      "description": "No API route for procurement",
+      "remediation": "Create src/app/api/procurement/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing finance API endpoint",
+      "description": "No API route for finance",
+      "remediation": "Create src/app/api/finance/route.ts"
+    },
+    {
+      "severity": "HIGH",
+      "category": "API",
+      "title": "Missing analytics API endpoint",
+      "description": "No API route for analytics",
+      "remediation": "Create src/app/api/analytics/route.ts"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "Workflow",
+      "title": "Project Management broken",
+      "description": "Missing: src/components/projects/overview-tab.tsx",
+      "remediation": "Implement missing files"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "Workflow",
+      "title": "Event Planning broken",
+      "description": "Missing: src/components/events/overview-tab.tsx",
+      "remediation": "Implement missing files"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "Workflow",
+      "title": "Procurement broken",
+      "description": "Missing: src/components/procurement/orders-tab.tsx",
+      "remediation": "Implement missing files"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "Workflow",
+      "title": "Financial Management broken",
+      "description": "Missing: src/components/finance/budgets-tab.tsx",
+      "remediation": "Implement missing files"
+    }
+  ],
+  "workflows": [
+    {
+      "name": "User Onboarding",
+      "status": "COMPLETE",
+      "missing": []
+    },
+    {
+      "name": "Project Management",
+      "status": "BROKEN",
+      "missing": [
+        "src/components/projects/overview-tab.tsx"
+      ]
+    },
+    {
+      "name": "Event Planning",
+      "status": "BROKEN",
+      "missing": [
+        "src/components/events/overview-tab.tsx"
+      ]
+    },
+    {
+      "name": "Asset Tracking",
+      "status": "COMPLETE",
+      "missing": []
+    },
+    {
+      "name": "Procurement",
+      "status": "BROKEN",
+      "missing": [
+        "src/components/procurement/orders-tab.tsx"
+      ]
+    },
+    {
+      "name": "Financial Management",
+      "status": "BROKEN",
+      "missing": [
+        "src/components/finance/budgets-tab.tsx"
+      ]
+    }
+  ],
+  "summary": {
+    "critical": 5,
+    "high": 10,
+    "medium": 0,
+    "low": 0
+  }
+}

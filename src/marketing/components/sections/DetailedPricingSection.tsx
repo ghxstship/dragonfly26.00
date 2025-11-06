@@ -399,7 +399,7 @@ export function DetailedPricingSection(): JSX.Element {
                 </div>
               </div>
 
-              <Link href="/signup">
+              <Link href="/access">
                 <Button variant="outline" className="w-full">Get Started</Button>
               </Link>
             </div>

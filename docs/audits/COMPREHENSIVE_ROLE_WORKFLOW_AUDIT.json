@@ -1,0 +1,803 @@
+{
+  "timestamp": "2025-11-06T04:56:33.393Z",
+  "gaps": [
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Legend",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Legend cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Legend",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Legend cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Legend",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Legend cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Legend",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Legend cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Legend",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Legend cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Legend",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Legend cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Legend",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Legend cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Legend",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Legend cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Phantom",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Phantom cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Phantom",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Phantom cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Phantom",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Phantom cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Phantom",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Phantom cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Phantom",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Phantom cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Phantom",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Phantom cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Phantom",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Phantom cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Phantom",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Phantom cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Aviator",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Aviator cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Aviator",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Aviator cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Aviator",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Aviator cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Aviator",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Aviator cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Aviator",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Aviator cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Aviator",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Aviator cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Aviator",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Aviator cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Aviator",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Aviator cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Gladiator",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Gladiator cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Gladiator",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Gladiator cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Gladiator",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Gladiator cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Gladiator",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Gladiator cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Gladiator",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Gladiator cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Gladiator",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Gladiator cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Gladiator",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Gladiator cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Gladiator",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Gladiator cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Navigator",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Navigator cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Navigator",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Navigator cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Navigator",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Navigator cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Navigator",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Navigator cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Navigator",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Navigator cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Navigator",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Navigator cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Navigator",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Navigator cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Navigator",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Navigator cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Deviator",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Deviator cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Deviator",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Deviator cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Deviator",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Deviator cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Deviator",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Deviator cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Deviator",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Deviator cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Deviator",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Deviator cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Deviator",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Deviator cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Deviator",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Deviator cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Raider",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Raider cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Raider",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Raider cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Raider",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Raider cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Raider",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Raider cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Raider",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Raider cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Raider",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Raider cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Raider",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Raider cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Raider",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Raider cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Vendor",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Vendor cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Vendor",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Vendor cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Vendor",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Vendor cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Vendor",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Vendor cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Vendor",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Vendor cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Vendor",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Vendor cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Vendor",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Vendor cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Vendor",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Vendor cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Visitor",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Visitor cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Visitor",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Visitor cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Visitor",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Visitor cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Visitor",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Visitor cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Visitor",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Visitor cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Visitor",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Visitor cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Visitor",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Visitor cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Visitor",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Visitor cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Partner",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Partner cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Partner",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Partner cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Partner",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Partner cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Partner",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Partner cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Partner",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Partner cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Partner",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Partner cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Partner",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Partner cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Partner",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Partner cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Ambassador",
+      "module": "dashboard",
+      "description": "Missing /api/dashboard endpoint",
+      "impact": "Ambassador cannot perform CRUD on dashboard",
+      "remediation": "Create /api/dashboard/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Ambassador",
+      "module": "files",
+      "description": "Missing /api/files endpoint",
+      "impact": "Ambassador cannot perform CRUD on files",
+      "remediation": "Create /api/files/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Ambassador",
+      "module": "community",
+      "description": "Missing /api/community endpoint",
+      "impact": "Ambassador cannot perform CRUD on community",
+      "remediation": "Create /api/community/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Ambassador",
+      "module": "marketplace",
+      "description": "Missing /api/marketplace endpoint",
+      "impact": "Ambassador cannot perform CRUD on marketplace",
+      "remediation": "Create /api/marketplace/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Ambassador",
+      "module": "resources",
+      "description": "Missing /api/resources endpoint",
+      "impact": "Ambassador cannot perform CRUD on resources",
+      "remediation": "Create /api/resources/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Ambassador",
+      "module": "insights",
+      "description": "Missing /api/insights endpoint",
+      "impact": "Ambassador cannot perform CRUD on insights",
+      "remediation": "Create /api/insights/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Ambassador",
+      "module": "admin",
+      "description": "Missing /api/admin endpoint",
+      "impact": "Ambassador cannot perform CRUD on admin",
+      "remediation": "Create /api/admin/route.ts"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "API Layer",
+      "role": "Ambassador",
+      "module": "profile",
+      "description": "Missing /api/profile endpoint",
+      "impact": "Ambassador cannot perform CRUD on profile",
+      "remediation": "Create /api/profile/route.ts"
+    }
+  ],
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 88,
+    "low": 0
+  }
+}
