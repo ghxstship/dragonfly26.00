@@ -85,7 +85,7 @@ export function CustomFieldEditor({ fields, onFieldsChange }: CustomFieldEditorP
           key={field.id}
           className="flex flex-col md:flex-row items-center gap-2 p-3 border rounded-lg hover:bg-accent/50"
         >
-          <GripVertical className="h-4 w-4 text-muted-foreground cursor-grab" />
+          <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground cursor-grab" />
           <div className="flex-1">
             <div className="font-medium">{field.name}</div>
             <div className="text-sm text-muted-foreground capitalize">
@@ -96,14 +96,13 @@ export function CustomFieldEditor({ fields, onFieldsChange }: CustomFieldEditorP
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="h-8 w-8">
-                <MoreHorizontal className="h-4 w-4" />
+                <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem>Edit</DropdownMenuItem>
               <DropdownMenuItem>Duplicate</DropdownMenuItem>
-              <DropdownMenuItem
-                className="text-destructive"
+              <DropdownMenuItem aria-hidden="true" className="text-destructive"
                 onClick={() => deleteField(field.id)}
               >
                 Delete
@@ -116,7 +115,7 @@ export function CustomFieldEditor({ fields, onFieldsChange }: CustomFieldEditorP
       <Dialog open={isCreating} onOpenChange={setIsCreating}>
         <DialogTrigger asChild>
           <Button variant="outline" className="w-full gap-2 max-w-full">
-            <Plus className="h-4 w-4" />
+            <Plus aria-hidden="true" className="h-4 w-4" />
             Add custom field
           </Button>
         </DialogTrigger>

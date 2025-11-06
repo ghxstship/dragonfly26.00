@@ -78,15 +78,15 @@ export function ActivityView({ data, schema, onItemClick }: ActivityViewProps) {
   const getActionIcon = (action: string) => {
     switch (action) {
       case "created":
-        return <Plus className="h-3 w-3" />
+        return <Plus aria-hidden="true" className="h-3 w-3" />
       case "updated":
-        return <Edit className="h-3 w-3" />
+        return <Edit aria-hidden="true" className="h-3 w-3" />
       case "deleted":
         return <Trash2 className="h-3 w-3" />
       case "commented":
-        return <MessageSquare className="h-3 w-3" />
+        return <MessageSquare aria-hidden="true" className="h-3 w-3" />
       default:
-        return <ActivityIcon className="h-3 w-3" />
+        return <ActivityIcon aria-hidden="true" className="h-3 w-3" />
     }
   }
 
@@ -110,7 +110,7 @@ export function ActivityView({ data, schema, onItemClick }: ActivityViewProps) {
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <ActivityIcon className="h-5 w-5" />
+          <ActivityIcon aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Activity Stream</h3>
           <Badge variant="secondary">{filteredActivities.length} events</Badge>
         </div>
@@ -118,7 +118,7 @@ export function ActivityView({ data, schema, onItemClick }: ActivityViewProps) {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm">
-                <Filter className="h-4 w-4 mr-2" />
+                <Filter aria-hidden="true" className="h-4 w-4 mr-2" />
                 Filter
                 {(filterByUser.length > 0 || filterByAction.length > 0) && (
                   <Badge variant="secondary" className="ml-2">
@@ -179,9 +179,9 @@ export function ActivityView({ data, schema, onItemClick }: ActivityViewProps) {
                   <div
                     key={activity.id}
                     className="flex flex-col sm:flex-row gap-3 hover:bg-accent p-3 -mx-3 rounded-lg transition-colors cursor-pointer"
-                    onClick={() => onItemClick?.(data.find((d: any) => d.id === activity.id)!)}
+                     role="button" tabIndex={0} onClick={() => onItemClick?.(data.find((d: any) => d.id === activity.id)!)}
                   >
-                    <Avatar className="h-8 w-8 mt-0.5">
+                    <Avatar aria-hidden="true" className="h-8 w-8 mt-0.5">
                       <AvatarFallback>
                         {activity.userName.slice(0, 2).toUpperCase()}
                       </AvatarFallback>

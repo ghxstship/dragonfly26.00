@@ -52,7 +52,7 @@ export function IconButton({
       aria-label={label}
       title={label}
     >
-      <Icon className={iconSizes[size]} aria-hidden="true" />
+      <Icon aria-hidden="true" className={iconSizes[size]} />
     </Button>
   )
 }

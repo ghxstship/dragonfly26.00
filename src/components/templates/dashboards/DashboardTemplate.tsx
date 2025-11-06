@@ -114,7 +114,7 @@ export function DashboardTemplate({
                 disabled={loading}
                 aria-label="Refresh dashboard"
               >
-                <RefreshCw className={cn('h-4 w-4', loading && 'animate-spin')} aria-hidden="true" />
+                <RefreshCw aria-hidden="true" className={cn('h-4 w-4', loading && 'animate-spin')} />
               </Button>
             )}
             {onSettings && (
@@ -124,7 +124,7 @@ export function DashboardTemplate({
                 onClick={onSettings}
                 aria-label="Dashboard settings"
               >
-                <Settings className="h-4 w-4" aria-hidden="true" />
+                <Settings aria-hidden="true" className="h-4 w-4" />
               </Button>
             )}
           </div>

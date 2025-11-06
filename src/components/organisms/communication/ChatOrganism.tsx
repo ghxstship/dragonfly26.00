@@ -81,7 +81,7 @@ export function ChatOrganism({
   return (
     <div className="flex flex-wrap flex-col h-full">
       {/* Messages Area */}
-      <ScrollArea className="flex-1 p-4" ref={scrollRef}>
+      <ScrollArea aria-hidden="true" className="flex-1 p-4" ref={scrollRef}>
         <div className="space-y-4">
           {messages.map((msg: any) => {
             const isOwn = msg.userId === currentUserId || msg.isCurrentUser
@@ -152,7 +152,7 @@ export function ChatOrganism({
               onClick={onAttachFile}
               aria-label={t('chat.attachFile')}
             >
-              <Paperclip className="h-5 w-5" aria-hidden="true" />
+              <Paperclip aria-hidden="true" className="h-5 w-5" />
             </Button>
           )}
           <div className="flex-1">
@@ -170,14 +170,14 @@ export function ChatOrganism({
             size="icon"
             aria-label={t('chat.emoji')}
           >
-            <Smile className="h-5 w-5" aria-hidden="true" />
+            <Smile aria-hidden="true" className="h-5 w-5" />
           </Button>
           <Button
             onClick={handleSend}
             disabled={!inputValue.trim()}
             aria-label={t('chat.send')}
           >
-            <Send className="h-4 w-4" aria-hidden="true" />
+            <Send aria-hidden="true" className="h-4 w-4" />
           </Button>
         </div>
       </div>

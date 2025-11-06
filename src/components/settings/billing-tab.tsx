@@ -199,9 +199,9 @@ export function BillingTab() {
       case "paid":
         return <Badge variant="default" className="bg-green-500"><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />Paid</Badge>
       case "pending":
-        return <Badge variant="secondary"><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" />Pending</Badge>
+        return <Badge variant="secondary"><AlertCircle aria-hidden="true" className="h-3 w-3 mr-1" />Pending</Badge>
       case "failed":
-        return <Badge variant="destructive"><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" />Failed</Badge>
+        return <Badge variant="destructive"><AlertCircle aria-hidden="true" className="h-3 w-3 mr-1" />Failed</Badge>
     }
   }
 
@@ -210,12 +210,12 @@ export function BillingTab() {
       {/* Current Plan */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Zap className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Zap aria-hidden="true" className="h-5 w-5" />
             Current Plan
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="flex items-start justify-between">
             <div>
               <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.name}</h3>
@@ -231,21 +231,21 @@ export function BillingTab() {
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                <Users className="h-4 w-4" aria-hidden="true" />
+                <Users aria-hidden="true" className="h-4 w-4" />
                 Users
               </div>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.users}</p>
             </div>
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                <Database className="h-4 w-4" aria-hidden="true" />
+                <Database aria-hidden="true" className="h-4 w-4" />
                 Storage
               </div>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.storage}GB</p>
             </div>
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" aria-hidden="true" />
+                <Calendar aria-hidden="true" className="h-4 w-4" />
                 Next Billing
               </div>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -261,11 +261,11 @@ export function BillingTab() {
         <CardHeader>
           <div className="flex items-start justify-between">
             <div>
-              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <CreditCard className="h-5 w-5" aria-hidden="true" />
+              <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <CreditCard aria-hidden="true" className="h-5 w-5" />
                 Payment Method
               </CardTitle>
-              <CardDescription className="mt-2">
+              <CardDescription aria-hidden="true" className="mt-2">
                 Manage your payment methods
               </CardDescription>
             </div>
@@ -275,7 +275,7 @@ export function BillingTab() {
         <CardContent>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 p-4 border rounded-lg">
             <div className="h-10 w-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded flex flex-wrap items-center justify-center">
-              <CreditCard className="h-6 w-6 text-white" aria-hidden="true" />
+              <CreditCard aria-hidden="true" className="h-6 w-6 text-white" />
             </div>
             <div className="flex-1">
               <p className="font-medium">Visa ending in 4242</p>
@@ -324,13 +324,13 @@ export function BillingTab() {
                 <Card key={plan.id} className={plan.popular ? "border-primary shadow-lg" : ""}>
                   <CardHeader>
                     {plan.popular && (
-                      <Badge className="w-fit mb-2">Most Popular</Badge>
+                      <Badge aria-hidden="true" className="w-fit mb-2">Most Popular</Badge>
                     )}
                     {plan.price === 0 && (
                       <Badge variant="secondary" className="w-fit mb-2">Free Forever</Badge>
                     )}
-                    <CardTitle className="text-base md:text-lg lg:text-xl">{plan.name}</CardTitle>
-                    <CardDescription className="mt-2">{plan.description}</CardDescription>
+                    <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl">{plan.name}</CardTitle>
+                    <CardDescription aria-hidden="true" className="mt-2">{plan.description}</CardDescription>
                     <div className="mt-4">
                       <span className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">${displayPrice}</span>
                       <span className="text-muted-foreground">
@@ -338,7 +338,7 @@ export function BillingTab() {
                       </span>
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent aria-hidden="true" className="space-y-4">
                     <ul className="space-y-2">
                       {plan.features.map((feature: any, index: number) => (
                         <li key={index} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
@@ -347,8 +347,7 @@ export function BillingTab() {
                         </li>
                       ))}
                     </ul>
-                    <Button 
-                      className="w-full max-w-full"
+                    <Button aria-hidden="true" className="w-full max-w-full"
                       variant={isCurrentPlan ? "default" : "outline"}
                       onClick={() => handleUpgrade(plan.id)}
                       disabled={isCurrentPlan}
@@ -380,7 +379,7 @@ export function BillingTab() {
               >
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-1">
                   <div className="h-10 w-10 rounded-full bg-primary/10 flex flex-wrap items-center justify-center">
-                    <DollarSign className="h-5 w-5 text-primary" aria-hidden="true" />
+                    <DollarSign aria-hidden="true" className="h-5 w-5 text-primary" />
                   </div>
                   <div className="flex-1">
                     <p className="font-medium">{invoice.description}</p>
@@ -402,7 +401,7 @@ export function BillingTab() {
                     onClick={() => handleDownloadInvoice(invoice)}
                     aria-label={t('settings.billing.downloadInvoice')}
                   >
-                    <Download className="h-4 w-4" aria-hidden="true" />
+                    <Download aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
@@ -414,8 +413,8 @@ export function BillingTab() {
       {/* Usage Stats */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <TrendingUp className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <TrendingUp aria-hidden="true" className="h-5 w-5" />
             Usage This Month
           </CardTitle>
         </CardHeader>

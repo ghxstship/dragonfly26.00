@@ -57,7 +57,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
         aria-live="assertive"
       >
         <div className="text-center">
-          <FileText className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <FileText aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -118,7 +118,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
       {/* Summary Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalFiles}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Files</p>
@@ -126,7 +126,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{summary.uploaded}</p>
               <p className="text-xs text-muted-foreground mt-1">Uploaded</p>
@@ -134,7 +134,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.downloaded}</p>
               <p className="text-xs text-muted-foreground mt-1">Downloaded</p>
@@ -142,7 +142,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{summary.favorites}</p>
               <p className="text-xs text-muted-foreground mt-1">Favorites</p>
@@ -150,7 +150,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalSize}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalSize')}</p>
@@ -158,7 +158,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-purple-600">{summary.thisMonth}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('thisMonth')}</p>
@@ -170,7 +170,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
       {/* Storage Breakdown */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">{t('storageByCategory')}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">{t('storageByCategory')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
@@ -195,7 +195,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
       {/* Files List */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">{t('recentFiles')}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">{t('recentFiles')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -205,19 +205,19 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
                 <div
                   key={file.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
-                  onClick={() => router.push(`/workspace/${workspaceId}/files/all-documents?id=${file.id}`)}
+                   role="button" tabIndex={0} onClick={() => router.push(`/workspace/${workspaceId}/files/all-documents?id=${file.id}`)}
                 >
                   <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
                       <div className="flex items-start gap-3">
                         <div className={`p-2 bg-gray-100 dark:bg-gray-800 rounded ${getTypeColor(file.type)}`}>
-                          <Icon className="h-4 w-4" aria-hidden="true" />
+                          <Icon aria-hidden="true" className="h-4 w-4" />
                         </div>
                         <div className="flex-1">
                           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                             <h3 className="font-semibold text-sm">{file.name}</h3>
                             {file.isFavorite && (
-                              <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
+                              <Star aria-hidden="true" className="h-4 w-4 fill-yellow-500 text-yellow-500" />
                             )}
                           </div>
                           <p className="text-xs text-muted-foreground mt-1">{file.project}</p>
@@ -236,22 +236,22 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
 
                       <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <Upload className="h-4 w-4" aria-hidden="true" />
+                          <Upload aria-hidden="true" className="h-4 w-4" />
                           {t('uploaded')}: {file.uploadedDate}
                         </div>
                         <span>•</span>
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <Clock className="h-4 w-4" aria-hidden="true" />
+                          <Clock aria-hidden="true" className="h-4 w-4" />
                           {t('accessed')}: {file.lastAccessed}
                         </div>
                         <span>•</span>
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <Download className="h-4 w-4" aria-hidden="true" />
+                          <Download aria-hidden="true" className="h-4 w-4" />
                           {file.downloads} {t('downloads')}
                         </div>
                         <span>•</span>
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <Eye className="h-4 w-4" aria-hidden="true" />
+                          <Eye aria-hidden="true" className="h-4 w-4" />
                           {file.views} views
                         </div>
                       </div>
@@ -259,11 +259,11 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
 
                     <div className="flex flex-wrap flex-col gap-2">
                       <Button variant="outline" size="sm" className="gap-2">
-                        <Download className="h-3.5 w-3.5" />
+                        <Download aria-hidden="true" className="h-3.5 w-3.5" />
                         Download
                       </Button>
                       <Button variant="outline" size="sm" className="gap-2">
-                        <Eye className="h-3.5 w-3.5" />
+                        <Eye aria-hidden="true" className="h-3.5 w-3.5" />
                         View
                       </Button>
                     </div>
@@ -278,7 +278,7 @@ export function DashboardMyFilesTab({ workspaceId = '', userId = '' }: Dashboard
       {/* Activity Summary */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Activity This Month</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">Activity This Month</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-center">

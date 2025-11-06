@@ -119,7 +119,7 @@ export function ActivityFeed({ activities = mockActivities, limit }: ActivityFee
   const displayed = limit ? activities.slice(0, limit) : activities
 
   return (
-    <ScrollArea className="h-full">
+    <ScrollArea aria-hidden="true" className="h-full">
       <div className="space-y-3 p-4">
         {displayed.map((activity: any) => {
           const Icon = activityIcons[activity.action] || FileText
@@ -127,18 +127,18 @@ export function ActivityFeed({ activities = mockActivities, limit }: ActivityFee
 
           return (
             <Card key={activity.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-4">
+              <CardContent aria-hidden="true" className="p-4">
                 <div className="flex flex-wrap gap-3">
                   <div className={cn("mt-1", colorClass)}>
-                    <Icon className="h-5 w-5" />
+                    <Icon aria-hidden="true" className="h-5 w-5" />
                   </div>
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1 min-w-0">
-                        <Avatar className="h-6 w-6">
+                        <Avatar aria-hidden="true" className="h-6 w-6">
                           <AvatarImage src={`/avatars/${activity.user_id}.jpg`} />
-                          <AvatarFallback className="text-xs">
+                          <AvatarFallback aria-hidden="true" className="text-xs">
                             {getInitials(activity.user_id)}
                           </AvatarFallback>
                         </Avatar>
@@ -158,7 +158,7 @@ export function ActivityFeed({ activities = mockActivities, limit }: ActivityFee
                     {activity.old_value && activity.new_value && (
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2 text-xs">
                         <Badge variant="outline">{activity.old_value.toString()}</Badge>
-                        <ArrowRight className="h-3 w-3" />
+                        <ArrowRight aria-hidden="true" className="h-3 w-3" />
                         <Badge variant="default">{activity.new_value.toString()}</Badge>
                       </div>
                     )}

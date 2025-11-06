@@ -26,11 +26,11 @@ export function InstallPrompt() {
   return (
     <div className="fixed bottom-4 left-4 right-4 z-50 md:left-auto md:w-full md:w-96">
       <Card>
-        <CardContent className="p-4">
+        <CardContent aria-hidden="true" className="p-4">
           <div className="flex items-start gap-3">
             <div className="flex-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
-                <Download className="h-5 w-5 text-primary" />
+                <Download aria-hidden="true" className="h-5 w-5 text-primary" />
                 <h3 className="font-semibold">Install App</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-3">
@@ -55,7 +55,7 @@ export function InstallPrompt() {
               className="h-6 w-6 -mt-1"
               onClick={() => setIsDismissed(true)}
             >
-              <X className="h-4 w-4" />
+              <X aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
         </CardContent>

@@ -61,7 +61,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
         aria-live="assertive"
       >
         <div className="text-center">
-          <AlertCircle className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <AlertCircle aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -192,7 +192,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
       {/* Summary Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalAdvances}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Advances</p>
@@ -200,7 +200,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{summary.pending}</p>
               <p className="text-xs text-muted-foreground mt-1">Pending Approval</p>
@@ -208,7 +208,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalItems}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalItems')}</p>
@@ -216,7 +216,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.itemsOut}</p>
               <p className="text-xs text-muted-foreground mt-1">Items Out</p>
@@ -228,7 +228,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
       {/* Advances List */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">All Advances</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">All Advances</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -239,7 +239,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                 <div
                   key={advance.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
-                  onClick={() => router.push(`/workspace/${workspaceId}/assets/advances?id=${advance.id}`)}
+                   role="button" tabIndex={0} onClick={() => router.push(`/workspace/${workspaceId}/assets/advances?id=${advance.id}`)}
                 >
                   <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
@@ -260,11 +260,11 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
 
                       <div className="flex flex-col md:flex-row flex-wrap items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(advance.status)}>
-                          <StatusIcon className="h-4 w-4 mr-1" aria-hidden="true" />
+                          <StatusIcon aria-hidden="true" className="h-4 w-4 mr-1" />
                           {advance.status}
                         </Badge>
                         <Badge variant="outline" className={getCategoryColor(advance.category)}>
-                          <CategoryIcon className="h-4 w-4 mr-1" aria-hidden="true" />
+                          <CategoryIcon aria-hidden="true" className="h-4 w-4 mr-1" />
                           {getCategoryLabel(advance.category)}
                         </Badge>
                         {advance.assignedUsers > 0 && (
@@ -327,7 +327,7 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
                     </div>
 
                     <Button variant="ghost" size="icon" aria-label="View advance details">
-                      <FileText className="h-4 w-4" aria-hidden="true" />
+                      <FileText aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
@@ -340,8 +340,8 @@ export function DashboardMyAdvancesTab({ workspaceId = '', userId = '' }: Dashbo
       {/* Items Overview */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Package className="h-4 w-4" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Package aria-hidden="true" className="h-4 w-4" />
             Items Overview
           </CardTitle>
         </CardHeader>

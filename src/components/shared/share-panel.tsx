@@ -49,7 +49,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
           onClick={() => setShareType("link")}
           className="justify-start"
         >
-          <LinkIcon className="h-4 w-4 mr-2" />
+          <LinkIcon aria-hidden="true" className="h-4 w-4 mr-2" />
           Copy Link
         </Button>
         <Button
@@ -57,7 +57,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
           onClick={() => setShareType("email")}
           className="justify-start"
         >
-          <Mail className="h-4 w-4 mr-2" />
+          <Mail aria-hidden="true" className="h-4 w-4 mr-2" />
           Send Email
         </Button>
       </div>
@@ -69,7 +69,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="view" id="permission-view" />
             <Label htmlFor="permission-view" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <Globe className="h-4 w-4" />
+              <Globe aria-hidden="true" className="h-4 w-4" />
               <div>
                 <div>View only</div>
                 <div className="text-xs text-muted-foreground">Recipients can view but not edit</div>
@@ -89,7 +89,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="admin" id="permission-admin" />
             <Label htmlFor="permission-admin" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <Lock className="h-4 w-4" />
+              <Lock aria-hidden="true" className="h-4 w-4" />
               <div>
                 <div>Full access</div>
                 <div className="text-xs text-muted-foreground">Recipients can manage all settings</div>
@@ -106,7 +106,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
           <div className="flex flex-wrap gap-2">
             <Input value={shareUrl} readOnly className="font-mono text-sm" />
             <Button onClick={handleCopyLink} variant="outline" size="icon">
-              <Copy className="h-4 w-4" />
+              <Copy aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
           {copied && (
@@ -117,15 +117,15 @@ export function SharePanel({ onShare }: SharePanelProps) {
           )}
           <div className="space-y-2 text-sm">
             <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <input type="checkbox" className="rounded" defaultChecked />
+              <input type="checkbox" className="rounded" defaultChecked  aria-label="checkbox" />
               <span>Allow link sharing</span>
             </label>
             <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <input type="checkbox" className="rounded" />
+              <input type="checkbox" className="rounded"  aria-label="checkbox" />
               <span>Require password</span>
             </label>
             <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <input type="checkbox" className="rounded" />
+              <input type="checkbox" className="rounded"  aria-label="checkbox" />
               <span>Set expiration date</span>
             </label>
           </div>
@@ -162,7 +162,7 @@ export function SharePanel({ onShare }: SharePanelProps) {
             </Alert>
           )}
           <Button onClick={handleSendEmail} disabled={!email} className="w-full max-w-full">
-            <Mail className="h-4 w-4 mr-2" />
+            <Mail aria-hidden="true" className="h-4 w-4 mr-2" />
             Send Invitation
           </Button>
         </div>

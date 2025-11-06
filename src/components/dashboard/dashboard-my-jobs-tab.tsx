@@ -68,7 +68,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
         aria-live="assertive"
       >
         <div className="text-center">
-          <Briefcase className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Briefcase aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -101,7 +101,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
         <h2 id="jobs-stats" className="sr-only">Job Statistics</h2>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-green-600">{activeJobs}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('activeJobs')}</p>
@@ -109,7 +109,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-yellow-600">{pendingJobs}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('pendingJobs')}</p>
@@ -117,7 +117,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-blue-600">{completedJobs}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('completedJobs')}</p>
@@ -125,7 +125,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{jobsList.length}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalJobs')}</p>
@@ -138,19 +138,19 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
       {/* Jobs List */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">All Jobs</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">All Jobs</CardTitle>
         </CardHeader>
         <CardContent>
           {jobsList.length === 0 ? (
             <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-              <Briefcase className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <Briefcase aria-hidden="true" className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">No Jobs Found</h3>
               <p className="text-muted-foreground mb-4">You don&apos;t have any jobs or contracts yet.</p>
               <Button 
                 size="sm"
                 onClick={() => router.push(`/workspace/${workspaceId}/people/personnel`)}
               >
-                <Plus className="h-4 w-4 mr-2" />
+                <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                 Add Contract
               </Button>
             </div>
@@ -160,7 +160,7 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
               <div
                 key={job.id || index}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
-                onClick={() => job.id && router.push(`/workspace/${workspaceId}/people/personnel?id=${job.id}`)}
+                 role="button" tabIndex={0} onClick={() => job.id && router.push(`/workspace/${workspaceId}/people/personnel?id=${job.id}`)}
               >
                 <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                   <div className="flex-1 space-y-3">
@@ -173,20 +173,20 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
 
                     <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                        <Calendar className="h-3.5 w-3.5" />
+                        <Calendar aria-hidden="true" className="h-3.5 w-3.5" />
                         {job.startDate} - {job.endDate}
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                        <MapPin className="h-3.5 w-3.5" />
+                        <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
                         {job.location}
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                        <DollarSign className="h-3.5 w-3.5" />
+                        <DollarSign aria-hidden="true" className="h-3.5 w-3.5" />
                         {job.rate}
                       </div>
                       {job.daysRemaining > 0 && (
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <Clock className="h-3.5 w-3.5" />
+                          <Clock aria-hidden="true" className="h-3.5 w-3.5" />
                           {job.daysRemaining} days remaining
                         </div>
                       )}
@@ -218,10 +218,10 @@ export function DashboardMyJobsTab({ workspaceId = '', userId = '' }: DashboardT
                   
                   <div className="flex flex-wrap flex-col gap-2">
                     <Button variant="ghost" size="icon" aria-label="View job details">
-                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                      <ChevronRight aria-hidden="true" className="h-4 w-4" />
                     </Button>
                     <Button variant="ghost" size="icon" aria-label="View documents">
-                      <FileText className="h-4 w-4" aria-hidden="true" />
+                      <FileText aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>

@@ -102,9 +102,9 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
 
   return (
     <>
-      <Card className={className}>
+      <Card aria-hidden="true" className={className}>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <Trash2 className="h-5 w-5" />
             Trash
           </CardTitle>
@@ -135,7 +135,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
                   >
                     <div className="flex-shrink-0">
                       <div className="h-10 w-10 rounded flex flex-wrap items-center justify-center bg-muted">
-                        <File className="h-5 w-5 text-muted-foreground" />
+                        <File aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
                       </div>
                     </div>
                     
@@ -163,7 +163,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
                           <Loader2 className="h-4 w-4 animate-spin" />
                         ) : (
                           <>
-                            <RotateCcw className="h-4 w-4 mr-1.5" />
+                            <RotateCcw aria-hidden="true" className="h-4 w-4 mr-1.5" />
                             Restore
                           </>
                         )}
@@ -173,7 +173,7 @@ export function FileTrashPanel({ workspaceId, className }: FileTrashPanelProps) 
                         size="sm"
                         onClick={() => handlePermanentDelete(item)}
                       >
-                        <XCircle className="h-4 w-4 text-destructive" />
+                        <XCircle aria-hidden="true" className="h-4 w-4 text-destructive" />
                       </Button>
                     </div>
                   </div>

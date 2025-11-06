@@ -111,7 +111,7 @@ export function TravelProfileTab() {
           <CardTitle>{t('profile.travel.passport')}</CardTitle>
           <CardDescription>{t('profile.travel.passportDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="passportNumber">{t('profile.travel.passportNumber')}</Label>
@@ -160,7 +160,7 @@ export function TravelProfileTab() {
           <CardTitle>{t('profile.travel.trustedTraveler')}</CardTitle>
           <CardDescription>{t('profile.travel.trustedTravelerDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="tsa">{t('profile.travel.tsaPrecheck')}</Label>
@@ -201,7 +201,7 @@ export function TravelProfileTab() {
           <CardTitle>{t('profile.travel.preferences')}</CardTitle>
           <CardDescription>{t('profile.travel.preferencesDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label>{t('profile.travel.seatPreference')}</Label>
             <RadioGroup
@@ -263,7 +263,7 @@ export function TravelProfileTab() {
           <CardTitle>{t('profile.travel.loyaltyPrograms')}</CardTitle>
           <CardDescription>{t('profile.travel.loyaltyDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="frequentFlyer">{t('profile.travel.frequentFlyer')}</Label>
             <Textarea
@@ -295,7 +295,7 @@ export function TravelProfileTab() {
           <CardTitle>{t('profile.travel.specialNeeds')}</CardTitle>
           <CardDescription>{t('profile.travel.specialNeedsDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-3">
             <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
               <Checkbox
@@ -342,7 +342,7 @@ export function TravelProfileTab() {
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />
           ) : (
-            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+            <Save aria-hidden="true" className="h-4 w-4 mr-2" />
           )}
           {t('profile.actions.saveChanges')}
         </Button>

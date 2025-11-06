@@ -113,13 +113,13 @@ export function PortfolioViewOrganism({
       case "on-track":
         return <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
       case "at-risk":
-        return <AlertCircle className="h-4 w-4" aria-hidden="true" />
+        return <AlertCircle aria-hidden="true" className="h-4 w-4" />
       case "delayed":
-        return <AlertCircle className="h-4 w-4" aria-hidden="true" />
+        return <AlertCircle aria-hidden="true" className="h-4 w-4" />
       case "completed":
         return <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
       default:
-        return <Clock className="h-4 w-4" aria-hidden="true" />
+        return <Clock aria-hidden="true" className="h-4 w-4" />
     }
   }
 
@@ -141,7 +141,7 @@ export function PortfolioViewOrganism({
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Briefcase className="h-5 w-5" aria-hidden="true" />
+          <Briefcase aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Portfolio Overview</h3>
           <Badge variant="secondary">{totalProjects} projects</Badge>
         </div>
@@ -153,20 +153,19 @@ export function PortfolioViewOrganism({
           {/* Overview Cards */}
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
             <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Total Projects</CardTitle>
+              <CardHeader aria-hidden="true" className="pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium">Total Projects</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalProjects as any}</div>
               </CardContent>
             </Card>
 
-            <Card
-              className="cursor-pointer hover:bg-accent transition-colors"
+            <Card aria-hidden="true" className="cursor-pointer hover:bg-accent transition-colors"
               onClick={() => setFilterStatus(filterStatus === "on-track" ? null : "on-track")}
             >
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <CardHeader aria-hidden="true" className="pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="text-green-500" aria-hidden="true">●</span> On Track
                 </CardTitle>
               </CardHeader>
@@ -175,12 +174,11 @@ export function PortfolioViewOrganism({
               </CardContent>
             </Card>
 
-            <Card
-              className="cursor-pointer hover:bg-accent transition-colors"
+            <Card aria-hidden="true" className="cursor-pointer hover:bg-accent transition-colors"
               onClick={() => setFilterStatus(filterStatus === "at-risk" ? null : "at-risk")}
             >
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <CardHeader aria-hidden="true" className="pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="text-orange-500" aria-hidden="true">●</span> At Risk
                 </CardTitle>
               </CardHeader>
@@ -189,12 +187,11 @@ export function PortfolioViewOrganism({
               </CardContent>
             </Card>
 
-            <Card
-              className="cursor-pointer hover:bg-accent transition-colors"
+            <Card aria-hidden="true" className="cursor-pointer hover:bg-accent transition-colors"
               onClick={() => setFilterStatus(filterStatus === "delayed" ? null : "delayed")}
             >
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <CardHeader aria-hidden="true" className="pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="text-red-500" aria-hidden="true">●</span> Delayed
                 </CardTitle>
               </CardHeader>
@@ -203,12 +200,11 @@ export function PortfolioViewOrganism({
               </CardContent>
             </Card>
 
-            <Card
-              className="cursor-pointer hover:bg-accent transition-colors"
+            <Card aria-hidden="true" className="cursor-pointer hover:bg-accent transition-colors"
               onClick={() => setFilterStatus(filterStatus === "completed" ? null : "completed")}
             >
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <CardHeader aria-hidden="true" className="pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <span className="text-blue-500" aria-hidden="true">●</span> Completed
                 </CardTitle>
               </CardHeader>
@@ -270,7 +266,7 @@ export function PortfolioViewOrganism({
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="flex-1 min-w-0">
-                      <CardTitle className="text-base line-clamp-1">{project.name}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-base line-clamp-1">{project.name}</CardTitle>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2">
                         <div className={cn("flex items-center gap-1 text-sm", getStatusColor(project.status))}>
                           {getStatusIcon(project.status)}
@@ -281,7 +277,7 @@ export function PortfolioViewOrganism({
                     <div className={cn("w-3 h-3 rounded-full", getHealthColor(project.health))} aria-label={`Health: ${project.health}`} />
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent aria-hidden="true" className="space-y-4">
                   {/* Progress */}
                   <div>
                     <div className="flex flex-wrap justify-between text-sm mb-1">
@@ -328,7 +324,7 @@ export function PortfolioViewOrganism({
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                       {project.team.slice(0, 3).map((member: any, idx: number) => (
                         <Avatar key={idx} className="h-6 w-6 border">
-                          <AvatarFallback className="text-xs">
+                          <AvatarFallback aria-hidden="true" className="text-xs">
                             {member.slice(0, 2).toUpperCase()}
                           </AvatarFallback>
                         </Avatar>

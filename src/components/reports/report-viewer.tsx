@@ -42,7 +42,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
   const t = useTranslations()
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="w-full sm:max-w-4xl overflow-y-auto">
+      <SheetContent aria-hidden="true" className="w-full sm:max-w-4xl overflow-y-auto">
         <SheetHeader>
           <div className="flex items-start justify-between">
             <div>
@@ -54,7 +54,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
                 <UITooltip>
                   <TooltipTrigger asChild>
                     <Button variant="outline" size="icon">
-                      <RefreshCw className="h-4 w-4" />
+                      <RefreshCw aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -74,7 +74,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
                 <UITooltip>
                   <TooltipTrigger asChild>
                     <Button variant="outline" size="icon">
-                      <Download className="h-4 w-4" />
+                      <Download aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -87,7 +87,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
         </SheetHeader>
 
         <Tabs defaultValue="visualization" className="mt-6">
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
+          <TabsList aria-hidden="true" className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
             <TabsTrigger value="visualization">Visualization</TabsTrigger>
             <TabsTrigger value="data">Data</TabsTrigger>
             <TabsTrigger value="settings">Settings</TabsTrigger>
@@ -97,7 +97,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
             <Card>
               <CardHeader>
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-                  <CardTitle className="text-lg">{report.name}</CardTitle>
+                  <CardTitle aria-hidden="true" className="text-lg">{report.name}</CardTitle>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline" className="capitalize">{report.type}</Badge>
                     {report.chart_type && (
@@ -143,7 +143,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Summary Statistics</CardTitle>
+                <CardTitle aria-hidden="true" className="text-sm">Summary Statistics</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
@@ -166,7 +166,7 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
 
           <TabsContent value="data" className="space-y-4">
             <Card>
-              <CardContent className="p-4 sm:p-6">
+              <CardContent aria-hidden="true" className="p-4 sm:p-6">
                 <div className="space-y-2">
                   <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 font-medium pb-2 border-b">
                     <span>Date</span>
@@ -190,9 +190,9 @@ export function ReportViewer({ report, open, onOpenChange }: ReportViewerProps) 
           <TabsContent value="settings" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Report Configuration</CardTitle>
+                <CardTitle aria-hidden="true" className="text-sm">Report Configuration</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent aria-hidden="true" className="space-y-2">
                 <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Data Source</span>
                   <span className="capitalize">{report.data_source}</span>

@@ -70,7 +70,7 @@ export function StatusBadge({
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
     >
-      {Icon && <Icon className="h-4 w-4 mr-1" aria-hidden="true" />}
+      {Icon && <Icon aria-hidden="true" className="h-4 w-4 mr-1" />}
       {displayText}
     </Badge>
   )

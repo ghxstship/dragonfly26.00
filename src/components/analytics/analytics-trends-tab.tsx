@@ -97,7 +97,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <Tabs defaultValue="6months" className="space-y-4">
-        <TabsList className="w-full grid grid-cols-2 sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 h-auto max-w-full">
+        <TabsList aria-hidden="true" className="w-full grid grid-cols-2 sm:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 h-auto max-w-full">
           <TabsTrigger value="3months" className="text-xs sm:text-sm">
             <span className="hidden md:block sm:inline">{t('last')}</span> 3M
           </TabsTrigger>
@@ -124,15 +124,15 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 items-start">
                     <div className="flex-1">
-                      <CardTitle className="text-base sm:text-lg">{data.metric}</CardTitle>
-                      <CardDescription className="text-xs sm:text-sm">
+                      <CardTitle aria-hidden="true" className="text-base sm:text-lg">{data.metric}</CardTitle>
+                      <CardDescription aria-hidden="true" className="text-xs sm:text-sm">
                         {isMobile ? '3-month trend' : '6-month trend analysis'}
                       </CardDescription>
                     </div>
                     <div className="text-left sm:text-right">
                       <p className="text-base md:text-lg lg:text-xl sm:text-lg md:text-xl lg:text-2xl font-bold">{data.current}</p>
                       <Badge variant="outline" className={`${bgColor} ${trendColor} mt-2 text-xs`}>
-                        <TrendIcon className="h-3 w-3 mr-1" aria-hidden="true" />
+                        <TrendIcon aria-hidden="true" className="h-3 w-3 mr-1" />
                         {data.change}
                       </Badge>
                     </div>
@@ -166,7 +166,7 @@ export function AnalyticsTrendsTab({ data = [], loading = false }: AnalyticsTren
 
                     {/* Insights */}
                     <div className="flex sm:items-center gap-2 p-3 bg-accent rounded-lg text-xs sm:text-sm items-start">
-                      <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5 sm:mt-0" aria-hidden="true" />
+                      <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5 sm:mt-0" />
                       <p className="leading-relaxed">
                         {data.trend === "up" ? "Positive" : "Negative"} trend over the last {isMobile ? '3' : '6'} months with 
                         <span className="font-medium"> {data.change} </span>

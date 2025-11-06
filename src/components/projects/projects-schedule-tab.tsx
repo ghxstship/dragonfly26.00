@@ -49,7 +49,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load schedule</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -105,9 +105,9 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
       {/* Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('totalTasks')}</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('totalTasks')}</CardTitle>
+            <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{tasks.length}</div>
@@ -118,9 +118,9 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('criticalPath')}</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('criticalPath')}</CardTitle>
+            <AlertTriangle aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{criticalPath.length}</div>
@@ -129,9 +129,9 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('blocked')}</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('blocked')}</CardTitle>
+            <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">{blockedTasks.length}</div>
@@ -140,8 +140,8 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('progress')}</CardTitle>
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('progress')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground flex-shrink-0" aria-hidden="true" />
           </CardHeader>
           <CardContent>
@@ -170,21 +170,21 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
               </Button>
               <div className="border-l pl-2 ml-2 flex flex-wrap gap-1">
                 <Button variant="ghost" size="icon" aria-label="Zoom out">
-                  <ZoomOut className="h-4 w-4" aria-hidden="true" />
+                  <ZoomOut aria-hidden="true" className="h-4 w-4" />
                 </Button>
                 <Button variant="ghost" size="icon" aria-label="Zoom in">
-                  <ZoomIn className="h-4 w-4" aria-hidden="true" />
+                  <ZoomIn aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
               <div className="border-l pl-2 ml-2 flex flex-wrap gap-1">
                 <Button variant="ghost" size="icon" aria-label="Previous period">
-                  <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+                  <ChevronLeft aria-hidden="true" className="h-4 w-4" />
                 </Button>
                 <Button variant="outline" size="sm">
                   {t('today')}
                 </Button>
                 <Button variant="ghost" size="icon" aria-label="Next period">
-                  <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                  <ChevronRight aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -244,7 +244,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
                         {task.assignee && (
                           <div className="flex-shrink-0 w-32">
                             <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm text-muted-foreground">
-                              <Users className="h-4 w-4" aria-hidden="true" />
+                              <Users aria-hidden="true" className="h-4 w-4" />
                               <span className="truncate">{task.assignee}</span>
                             </div>
                           </div>
@@ -270,10 +270,10 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
       {/* Critical Path Alert */}
       {criticalPath.length > 0 && (
-        <Card className="border-red-200 dark:border-red-900">
+        <Card aria-hidden="true" className="border-red-200 dark:border-red-900">
           <CardHeader>
-            <CardTitle className="text-red-600 flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+            <CardTitle aria-hidden="true" className="text-red-600 flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <AlertTriangle aria-hidden="true" className="h-4 w-4" />
               {t('criticalPathItems')}
             </CardTitle>
             <CardDescription>
@@ -300,7 +300,7 @@ export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
       {tasks.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               icon={Calendar}
               mainMessage={t('emptyMainMessage')}

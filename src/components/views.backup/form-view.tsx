@@ -45,7 +45,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
         {/* Header */}
         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <FileInput className="h-5 w-5" />
+            <FileInput aria-hidden="true" className="h-5 w-5" />
             <h3 className="font-semibold">Form Builder</h3>
             <Badge variant="secondary">{data.length} submissions</Badge>
           </div>
@@ -63,7 +63,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
               <CardTitle>Form Fields</CardTitle>
               <CardDescription>Configure the fields for your form</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent aria-hidden="true" className="space-y-4">
               {(formFields as any[]).map((field: any) => (
                 <div key={field.id} className="flex flex-wrap flex-col md:flex-row items-center gap-3 p-3 border rounded-lg">
                   <div className="flex-1">
@@ -103,12 +103,12 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                 >
                   {copied ? (
                     <>
-                      <Check className="h-4 w-4 mr-1 flex-shrink-0" />
+                      <Check aria-hidden="true" className="h-4 w-4 mr-1 flex-shrink-0" />
                       Copied
                     </>
                   ) : (
                     <>
-                      <Copy className="h-4 w-4 mr-1" />
+                      <Copy aria-hidden="true" className="h-4 w-4 mr-1" />
                       Copy
                     </>
                   )}
@@ -126,7 +126,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                 <CardTitle>Contact Form</CardTitle>
                 <CardDescription>Fill out the form below to get in touch</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent aria-hidden="true" className="space-y-4">
                 {(formFields as any[]).map((field: any) => (
                   <div key={field.id} className="space-y-2">
                     <Label htmlFor={field.id}>
@@ -144,7 +144,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                     )}
                   </div>
                 ))}
-                <Button className="w-full max-w-full">Submit</Button>
+                <Button aria-hidden="true" className="w-full max-w-full">Submit</Button>
               </CardContent>
             </Card>
           </div>
@@ -157,7 +157,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
               <CardHeader>
                 <CardTitle>Form Settings</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent aria-hidden="true" className="space-y-4">
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div className="space-y-0.5">
                     <Label>Allow Multiple Submissions</Label>
@@ -199,7 +199,7 @@ export function FormView({ data, schema, onItemClick }: FormViewProps) {
                     <div
                       key={item.id}
                       className="py-3 hover:bg-accent transition-colors cursor-pointer rounded px-2 -mx-2"
-                      onClick={() => onItemClick?.(item)}
+                       role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                     >
                       <div className="font-medium text-sm">
                         {item.name || item.email || "Anonymous"}

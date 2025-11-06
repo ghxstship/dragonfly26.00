@@ -77,8 +77,8 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
           cancelled: 'bg-gray-500/10 text-gray-700 border-gray-200',
         }
         const icons: Record<string, React.ReactNode> = {
-          planned: <Calendar className="h-4 w-4 mr-1" aria-hidden="true" />,
-          in_progress: <Clock className="h-4 w-4 mr-1" aria-hidden="true" />,
+          planned: <Calendar aria-hidden="true" className="h-4 w-4 mr-1" />,
+          in_progress: <Clock aria-hidden="true" className="h-4 w-4 mr-1" />,
           completed: <CheckCircle2 className="h-4 w-4 mr-1 flex-shrink-0" aria-hidden="true" />,
         }
         return (
@@ -105,7 +105,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         if (!value || value.length === 0) return <span className="text-muted-foreground">-</span>
         return (
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm">{value.length} team {value.length === 1 ? 'member' : 'members'}</span>
           </div>
         )
@@ -147,7 +147,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
         if (!value || value === 0) return <span className="text-muted-foreground">-</span>
         return (
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-orange-600">
-            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+            <AlertTriangle aria-hidden="true" className="h-4 w-4" />
             <span className="font-medium">{value}</span>
           </div>
         )
@@ -244,27 +244,27 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
       {/* Quick Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Active Counts</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-orange-600">{activeCounts}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-orange-600">{activeCounts}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Planned</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-blue-600">{plannedCounts}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-blue-600">{plannedCounts}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('completed')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-green-600">{completedCounts}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-green-600">{completedCounts}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Total Variances</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{totalDiscrepancies}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{totalDiscrepancies}</CardTitle>
           </CardHeader>
         </Card>
       </div>
@@ -282,7 +282,7 @@ export function CountsTab({ data, loading, workspaceId }: CountsTabProps) {
             <div className={`w-2 h-2 rounded-full ${option.color} mr-1.5`} />
             {option.labelKey ? t(option.labelKey) : option.label}
             <span className="ml-1 text-xs opacity-70">({option.count})</span>
-            {statusFilter === option.value && <X className="h-4 w-4 ml-1" aria-hidden="true" />}
+            {statusFilter === option.value && <X aria-hidden="true" className="h-4 w-4 ml-1" />}
           </Badge>
         ))}
         {statusFilter && (

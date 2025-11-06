@@ -107,7 +107,7 @@ export function Poll({
   const showResults = userHasVoted || isExpired || totalVotes > 0
 
   return (
-    <Card className={cn("p-4", className)}>
+    <Card aria-hidden="true" className={cn("p-4", className)}>
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
         <Badge variant="secondary" className="text-xs">
@@ -115,7 +115,7 @@ export function Poll({
         </Badge>
         {expiresAt && (
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs text-muted-foreground">
-            <Clock className="h-3 w-3" />
+            <Clock aria-hidden="true" className="h-3 w-3" />
             {timeRemaining()}
           </div>
         )}
@@ -146,7 +146,7 @@ export function Poll({
                     >
                       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between relative z-10">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
-                          {userVotedThis && <Check className="h-4 w-4 text-primary flex-shrink-0" />}
+                          {userVotedThis && <Check aria-hidden="true" className="h-4 w-4 text-primary flex-shrink-0" />}
                           <span className={cn(
                             "text-sm",
                             (isWinning || userVotedThis) && "font-semibold"

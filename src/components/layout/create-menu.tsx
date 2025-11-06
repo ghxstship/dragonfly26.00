@@ -175,7 +175,7 @@ export function CreateMenu({
         onClick={() => handleActionClick(action)}
         className="gap-2 cursor-pointer"
       >
-        <Icon className="h-4 w-4" />
+        <Icon aria-hidden="true" className="h-4 w-4" />
         <span className="flex-1">{action.name}</span>
         {action.keyboard_shortcut && (
           <kbd className="inline-flex flex-col md:flex-row items-center gap-0.5 font-mono text-[11px] text-muted-foreground opacity-70">{action.keyboard_shortcut}</kbd>
@@ -188,8 +188,7 @@ export function CreateMenu({
             }}
             className="ml-1"
           >
-            <Star
-              className={`h-3.5 w-3.5 ${
+            <Star aria-hidden="true" className={`h-3.5 w-3.5 ${
                 isFavorite ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'
               }`}
             />
@@ -205,7 +204,7 @@ export function CreateMenu({
         <TooltipTrigger asChild>
           <DropdownMenuTrigger asChild>
             <Button size="sm" className="gap-2 h-9">
-              <Plus className="h-4 w-4" />
+              <Plus aria-hidden="true" className="h-4 w-4" />
               <span className="hidden md:block sm:inline">{t('common.new')}</span>
             </Button>
           </DropdownMenuTrigger>
@@ -219,11 +218,11 @@ export function CreateMenu({
       <DropdownMenuContent align="end" className="w-full sm:w-80 p-0">
         {/* Search Header */}
         <div className="p-2 border-b sticky top-0 bg-background z-10">
-          <DropdownMenuLabel className="px-2 py-1.5">
+          <DropdownMenuLabel aria-hidden="true" className="px-2 py-1.5">
             {t('create.createNew')}
           </DropdownMenuLabel>
           <div className="relative mt-2">
-            <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+            <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
             <Input
               placeholder={t('search.searchActions')}
               value={searchQuery as any}
@@ -239,7 +238,7 @@ export function CreateMenu({
             {/* Favorites */}
             {filteredFavoriteActions.length > 0 && (
               <>
-                <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
+                <DropdownMenuLabel aria-hidden="true" className="text-xs text-muted-foreground px-2">
                   {t('common.favorites')}
                 </DropdownMenuLabel>
                 {filteredFavoriteActions.map((action: any) => renderActionItem(action, true))}
@@ -250,7 +249,7 @@ export function CreateMenu({
             {/* Core Actions */}
             {groupedActions.core.length > 0 && (
               <>
-                <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
+                <DropdownMenuLabel aria-hidden="true" className="text-xs text-muted-foreground px-2">
                   {t('create.coreItems')}
                 </DropdownMenuLabel>
                 {groupedActions.core.map((action: any) => renderActionItem(action, true))}
@@ -261,7 +260,7 @@ export function CreateMenu({
             {groupedActions.advanced.length > 0 && (
               <>
                 <DropdownMenuSeparator />
-                <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
+                <DropdownMenuLabel aria-hidden="true" className="text-xs text-muted-foreground px-2">
                   {t('create.advancedItems')}
                 </DropdownMenuLabel>
                 {groupedActions.advanced.map((action: any) => renderActionItem(action, true))}
@@ -272,7 +271,7 @@ export function CreateMenu({
             {groupedActions.admin.length > 0 && (
               <>
                 <DropdownMenuSeparator />
-                <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
+                <DropdownMenuLabel aria-hidden="true" className="text-xs text-muted-foreground px-2">
                   {t('create.adminConfig')}
                 </DropdownMenuLabel>
                 {groupedActions.admin.map((action: any) => renderActionItem(action, true))}

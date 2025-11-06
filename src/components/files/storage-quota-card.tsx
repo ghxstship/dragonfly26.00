@@ -16,10 +16,10 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
 
   if (loading || !quota) {
     return (
-      <Card className={className}>
+      <Card aria-hidden="true" className={className}>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <HardDrive className="h-5 w-5" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <HardDrive aria-hidden="true" className="h-5 w-5" />
             Storage & Bandwidth
           </CardTitle>
         </CardHeader>
@@ -47,17 +47,17 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
   const isBandwidthWarning = bandwidthPercent > 80
 
   return (
-    <Card className={className}>
+    <Card aria-hidden="true" className={className}>
       <CardHeader>
-        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <HardDrive className="h-5 w-5" />
+        <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+          <HardDrive aria-hidden="true" className="h-5 w-5" />
           Storage & Bandwidth
         </CardTitle>
         <CardDescription>
           Workspace usage and limits
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
+      <CardContent aria-hidden="true" className="space-y-3 md:space-y-4 lg:space-y-6">
         {/* Storage */}
         <div className="space-y-2">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
@@ -72,7 +72,7 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
           />
           {isStorageWarning && (
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-1.5 text-xs text-destructive">
-              <AlertTriangle className="h-3.5 w-3.5" />
+              <AlertTriangle aria-hidden="true" className="h-3.5 w-3.5" />
               Storage quota {storagePercent > 100 ? 'exceeded' : 'nearly full'}
             </div>
           )}
@@ -92,7 +92,7 @@ export function StorageQuotaCard({ workspaceId, className }: StorageQuotaCardPro
           />
           {isBandwidthWarning && (
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-1.5 text-xs text-destructive">
-              <AlertTriangle className="h-3.5 w-3.5" />
+              <AlertTriangle aria-hidden="true" className="h-3.5 w-3.5" />
               Bandwidth quota {bandwidthPercent > 100 ? 'exceeded' : 'nearly exhausted'}
             </div>
           )}

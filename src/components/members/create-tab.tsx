@@ -188,7 +188,7 @@ export function CreateTab() {
           Create member profiles
         </p>
         <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
           Create
         </Button>
       </div>
@@ -196,7 +196,7 @@ export function CreateTab() {
 
       {/* Info Alert */}
       <Alert>
-        <AlertCircle className="h-4 w-4" aria-hidden="true" />
+        <AlertCircle aria-hidden="true" className="h-4 w-4" />
         <AlertTitle>Direct Account Creation</AlertTitle>
         <AlertDescription>
           Creating accounts directly bypasses the invitation process. Users will receive their credentials via email and can log in immediately.
@@ -206,15 +206,15 @@ export function CreateTab() {
       {/* Single User Creation */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <UserPlus className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <UserPlus aria-hidden="true" className="h-5 w-5" />
             Create User Account
           </CardTitle>
           <CardDescription>
             Create a new user account without sending an invitation
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="createEmail">Email Address *</Label>
@@ -284,8 +284,8 @@ export function CreateTab() {
             <>
               <Separator />
               <div className="space-y-2">
-                <Label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Users className="h-4 w-4" aria-hidden="true" />
+                <Label aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                  <Users aria-hidden="true" className="h-4 w-4" />
                   Pending Accounts ({users.length})
                 </Label>
                 <div className="space-y-2 max-h-[250px] overflow-auto border rounded-md p-3">
@@ -310,7 +310,7 @@ export function CreateTab() {
                         size="sm"
                         onClick={() => handleRemoveUser(index)}
                       >
-                        <X className="h-4 w-4" />
+                        <X aria-hidden="true" className="h-4 w-4" />
                       </Button>
                     </div>
                   ))}
@@ -321,7 +321,7 @@ export function CreateTab() {
 
           <div className="flex flex-wrap justify-end">
             <Button onClick={handleCreateUsers} size="lg" disabled={users.length === 0}>
-              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Save aria-hidden="true" className="h-4 w-4 mr-2" />
               Create {users.length > 0 ? `${users.length} ` : ''}Account{users.length !== 1 ? 's' : ''}
             </Button>
           </div>
@@ -331,15 +331,15 @@ export function CreateTab() {
       {/* Bulk Import */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <FileSpreadsheet className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <FileSpreadsheet aria-hidden="true" className="h-5 w-5" />
             Bulk Import
           </CardTitle>
           <CardDescription>
             Import multiple users from CSV or spreadsheet data
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <Alert>
             <AlertDescription>
               <strong>Format:</strong> email, name, role (one user per line)
@@ -350,7 +350,7 @@ export function CreateTab() {
 
           <div className="space-y-2">
             <Label htmlFor="bulkData" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <FileSpreadsheet className="h-4 w-4" aria-hidden="true" />
+              <FileSpreadsheet aria-hidden="true" className="h-4 w-4" />
               User Data
             </Label>
             <Textarea
@@ -370,7 +370,7 @@ export function CreateTab() {
               Clear
             </Button>
             <Button onClick={handleBulkImport}>
-              <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
               Import Users
             </Button>
           </div>

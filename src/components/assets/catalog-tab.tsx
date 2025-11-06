@@ -174,7 +174,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
           onClick={() => handleCopyToWorkspace(item)}
           disabled={copiedItemId === item.id}
         >
-          <Copy className="h-4 w-4 mr-1" aria-hidden="true" />
+          <Copy aria-hidden="true" className="h-4 w-4 mr-1" />
           {copiedItemId === item.id ? 'Copied!' : 'Copy to Inventory'}
         </Button>
       )
@@ -187,37 +187,37 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
       {/* Summary Cards */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('totalItems')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.total_items || 0}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.total_items || 0}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Asset Types</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.asset_types || 0}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.asset_types || 0}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Categories</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.categories || 0}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.categories || 0}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Manufacturers</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.manufacturers || 0}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{statistics?.manufacturers || 0}</CardTitle>
           </CardHeader>
         </Card>
       </div>
 
       {/* Search and Filter Bar */}
       <Card>
-        <CardContent className="pt-6">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="flex flex-wrap gap-2">
             <div className="relative flex-1">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('assets.catalog.searchPlaceholder')}
                 value={searchQuery as any}
@@ -226,7 +226,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
               />
             </div>
             <Select value={categoryFilter as any} onValueChange={setCategoryFilter}>
-              <SelectTrigger className="w-full max-w-[200px]">
+              <SelectTrigger aria-hidden="true" className="w-full max-w-[200px]">
                 <SelectValue placeholder={t('assets.catalog.allCategories')} />
               </SelectTrigger>
               <SelectContent>
@@ -266,8 +266,8 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
         <CardHeader>
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
-              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <BookOpen className="h-4 w-4" aria-hidden="true" />
+              <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <BookOpen aria-hidden="true" className="h-4 w-4" />
                 Asset Catalog
               </CardTitle>
               <CardDescription>
@@ -275,7 +275,7 @@ export function CatalogTab({ data, loading, workspaceId }: CatalogTabProps) {
               </CardDescription>
             </div>
             <Button variant="outline" size="sm">
-              <Plus className="h-4 w-4 mr-1" aria-hidden="true" />
+              <Plus aria-hidden="true" className="h-4 w-4 mr-1" />
               Request New Item
             </Button>
           </div>

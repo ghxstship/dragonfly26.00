@@ -84,7 +84,7 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div>
         <h3 className="font-semibold mb-3 flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />
+          <Star aria-hidden="true" className="h-4 w-4 text-yellow-600 fill-current" />
           Favorite Metrics
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
@@ -94,15 +94,15 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
-                      <CardTitle className="text-base">{t(metric.nameKey)}</CardTitle>
-                      <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />
+                      <CardTitle aria-hidden="true" className="text-base">{t(metric.nameKey)}</CardTitle>
+                      <Star aria-hidden="true" className="h-4 w-4 text-yellow-600 fill-current" />
                     </div>
                     <Badge variant="outline" className="text-xs">{t(metric.categoryKey)}</Badge>
                   </div>
                   <div className="text-right">
                     <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold" aria-live="polite">{metric.lastValue}</p>
                     <p className="text-xs text-green-600 flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <TrendingUp className="h-3 w-3" aria-hidden="true" />
+                      <TrendingUp aria-hidden="true" className="h-3 w-3" />
                       {metric.trend}
                     </p>
                   </div>
@@ -125,13 +125,13 @@ export function AnalyticsMetricsLibraryTab({ data = [], loading = false }: Analy
         <div className="space-y-2">
           {savedMetrics.map((metric: any) => (
             <Card key={metric.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-4">
+              <CardContent aria-hidden="true" className="p-4">
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
                       <h4 className="font-semibold">{t(metric.nameKey)}</h4>
                       <Badge variant="secondary" className="text-xs">{t(metric.categoryKey)}</Badge>
-                      {metric.isFavorite && <Star className="h-4 w-4 text-yellow-600 fill-current" aria-hidden="true" />}
+                      {metric.isFavorite && <Star aria-hidden="true" className="h-4 w-4 text-yellow-600 fill-current" />}
                     </div>
                     <p className="text-sm text-muted-foreground mb-2">{t(metric.descriptionKey)}</p>
                     <div className="p-2 bg-muted rounded text-xs font-mono inline-block">

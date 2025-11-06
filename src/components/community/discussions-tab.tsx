@@ -163,9 +163,9 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
       {/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('discussions')}</div>
-            <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+            <MessageSquare aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{discussions.length}</div>
@@ -174,9 +174,9 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('comments')}</div>
-            <MessageCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <MessageCircle aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -187,9 +187,9 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Hot Topics</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -200,9 +200,9 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Your Posts</div>
-            <Award className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Award aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">7</div>
@@ -214,10 +214,10 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
 
       {/* Search and Sort */}
       <Card>
-        <CardContent className="pt-6">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('searchDiscussions')}
                 value={searchQuery as any}
@@ -228,15 +228,15 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
             <Tabs value={sortBy as any} onValueChange={(v) => setSortBy(v as any)}>
               <TabsList>
                 <TabsTrigger value="hot">
-                  <TrendingUp className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <TrendingUp aria-hidden="true" className="h-4 w-4 mr-2" />
                   Hot
                 </TabsTrigger>
                 <TabsTrigger value="new">
-                  <Clock className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Clock aria-hidden="true" className="h-4 w-4 mr-2" />
                   New
                 </TabsTrigger>
                 <TabsTrigger value="top">
-                  <ArrowUp className="h-4 w-4 mr-2"  aria-hidden="true" />
+                  <ArrowUp aria-hidden="true" className="h-4 w-4 mr-2" />
                   Top
                 </TabsTrigger>
               </TabsList>
@@ -249,7 +249,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
       <div className="space-y-4">
         {filteredDiscussions.length === 0 ? (
           <Card>
-            <CardContent className="p-0">
+            <CardContent aria-hidden="true" className="p-0">
               <EmptyState
                 variant="inline"
                 icon={MessageSquare}
@@ -263,7 +263,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
         ) : (
           filteredDiscussions.map((discussion: any) => (
             <Card key={discussion.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-4">
+              <CardContent aria-hidden="true" className="p-4">
                 <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                   {/* Vote Column */}
                   <div className="flex flex-wrap flex-col md:flex-row flex-col items-center gap-1 min-w-[48px]">
@@ -273,7 +273,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                       className="h-8 w-8 p-0"
                       onClick={() => handleVote(discussion.id, "up")}
                     >
-                      <ArrowUp className="h-4 w-4"  aria-hidden="true" />
+                      <ArrowUp aria-hidden="true" className="h-4 w-4" />
                     </Button>
                     <span className="font-bold text-sm">
                       {discussion.upvotes - discussion.downvotes}
@@ -284,7 +284,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                       className="h-8 w-8 p-0"
                       onClick={() => handleVote(discussion.id, "down")}
                     >
-                      <ArrowDown className="h-4 w-4"  aria-hidden="true" />
+                      <ArrowDown aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </div>
 
@@ -293,7 +293,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                     {/* Header */}
                     <div className="flex items-start gap-2 mb-2">
                       {discussion.pinned && (
-                        <Pin className="h-4 w-4 text-primary flex-shrink-0 mt-1"  aria-hidden="true" />
+                        <Pin aria-hidden="true" className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                       )}
                       <div className="flex-1">
                         <h3 className="font-semibold text-lg mb-1 hover:text-primary cursor-pointer">
@@ -312,13 +312,13 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                           {discussion.awarded && (
                             <>
                               <span>•</span>
-                              <Award className="h-3 w-3 text-yellow-500 fill-current" aria-hidden="true" />
+                              <Award aria-hidden="true" className="h-3 w-3 text-yellow-500 fill-current" />
                             </>
                           )}
                           {discussion.locked && (
                             <>
                               <span>•</span>
-                              <Lock className="h-3 w-3"  aria-hidden="true" />
+                              <Lock aria-hidden="true" className="h-3 w-3" />
                             </>
                           )}
                         </div>
@@ -342,7 +342,7 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                     {/* Action Bar */}
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                       <Button variant="ghost" size="sm" className="h-8">
-                        <MessageCircle className="h-4 w-4 mr-2" aria-hidden="true" />
+                        <MessageCircle aria-hidden="true" className="h-4 w-4 mr-2" />
                         {discussion.comments} Comments
                       </Button>
                       <Button variant="ghost" size="sm" className="h-8">
@@ -350,11 +350,11 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
                         Share
                       </Button>
                       <Button variant="ghost" size="sm" className="h-8">
-                        <Bookmark className="h-4 w-4 mr-2"  aria-hidden="true" />
+                        <Bookmark aria-hidden="true" className="h-4 w-4 mr-2" />
                         Save
                       </Button>
                       <div className="ml-auto flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs text-muted-foreground">
-                        <Eye className="h-3 w-3"  aria-hidden="true" />
+                        <Eye aria-hidden="true" className="h-3 w-3" />
                         {discussion.views.toLocaleString()} views
                       </div>
                     </div>

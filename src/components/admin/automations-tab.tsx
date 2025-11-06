@@ -50,23 +50,23 @@ export function AutomationsTab() {
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.automationsTab.totalAutomations')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{automations.length}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{automations.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.automationsTab.active')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {automations.filter(a => a.enabled).length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.automationsTab.totalRuns')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {automations.reduce((sum: number, a) => sum + a.runsCount, 0)}
             </CardTitle>
           </CardHeader>
@@ -80,12 +80,12 @@ export function AutomationsTab() {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
-                    <CardTitle className="text-base">{automation.name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-base">{automation.name}</CardTitle>
                     <Badge variant={automation.enabled ? "default" : "secondary"}>
                       {automation.enabled ? (
-                        <><Play className="h-3 w-3 mr-1" aria-hidden="true" />{t('admin.automationsTab.active')}</>
+                        <><Play aria-hidden="true" className="h-3 w-3 mr-1" />{t('admin.automationsTab.active')}</>
                       ) : (
-                        <><Pause className="h-3 w-3 mr-1" aria-hidden="true" />{t('admin.automationsTab.paused')}</>
+                        <><Pause aria-hidden="true" className="h-3 w-3 mr-1" />{t('admin.automationsTab.paused')}</>
                       )}
                     </Badge>
                   </div>
@@ -100,7 +100,7 @@ export function AutomationsTab() {
                     onCheckedChange={() => handleToggle(automation.id)}
                   />
                   <Button variant="ghost" size="icon" aria-label={t('common.settings')}>
-                    <Settings className="h-4 w-4" aria-hidden="true" />
+                    <Settings aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </div>
               </div>

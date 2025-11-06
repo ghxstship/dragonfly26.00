@@ -53,17 +53,17 @@ export function ReportsExportsTab({ data = [], loading = false }: ReportsExports
           
           return (
             <Card key={file.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Export file: ${t(file.nameKey)}`}>
-              <CardContent className="p-4">
+              <CardContent aria-hidden="true" className="p-4">
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-1">
-                    <Icon className={`h-10 w-10 ${colorClass}`} aria-hidden="true" />
+                    <Icon aria-hidden="true" className={`h-10 w-10 ${colorClass}`} />
                     <div className="flex-1 min-w-0">
                       <p className="font-medium truncate" id={`file-${file.id}`}>{t(file.nameKey)}</p>
                       <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground mt-1" aria-label={`Size: ${file.size}, Date: ${file.date}, Expires: ${file.expires}`}>
                         <span>{file.size}</span>
                         <span>•</span>
                         <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <Calendar className="h-3 w-3" aria-hidden="true" />
+                          <Calendar aria-hidden="true" className="h-3 w-3" />
                           {file.date}
                         </span>
                         <span>•</span>
@@ -78,7 +78,7 @@ export function ReportsExportsTab({ data = [], loading = false }: ReportsExports
                       {t('ready')}
                     </Badge>
                     <Button size="sm" aria-label={`Download ${t(file.nameKey)}`}>
-                      <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                      <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                       {tCommon('export')}
                     </Button>
                   </div>

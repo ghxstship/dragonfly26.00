@@ -101,12 +101,12 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-3">
                     <div className="p-2 bg-accent rounded-lg">
-                      <Icon className={`h-6 w-6 ${rec.color}`} />
+                      <Icon aria-hidden="true" className={`h-6 w-6 ${rec.color}`} />
                     </div>
                     <div>
                       <Badge variant="outline" className="mb-2">{t(rec.categoryKey)}</Badge>
-                      <CardTitle className="text-base md:text-lg lg:text-xl">{t(rec.titleKey)}</CardTitle>
-                      <CardDescription className="mt-2 text-base">{t(rec.descriptionKey)}</CardDescription>
+                      <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl">{t(rec.titleKey)}</CardTitle>
+                      <CardDescription aria-hidden="true" className="mt-2 text-base">{t(rec.descriptionKey)}</CardDescription>
                     </div>
                   </div>
                   <div className="text-right space-y-1">
@@ -153,7 +153,7 @@ export function InsightsRecommendationsTab({ data = [], loading = false }: Insig
                     </p>
                     <Button>
                       View Details
-                      <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
+                      <ArrowRight aria-hidden="true" className="h-4 w-4 ml-2" />
                     </Button>
                   </div>
                 </div>

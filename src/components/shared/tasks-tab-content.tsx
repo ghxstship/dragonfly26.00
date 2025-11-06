@@ -153,7 +153,7 @@ export function TasksTabContent() {
             </p>
           </div>
           <Button size="sm" className="h-7 gap-1.5">
-            <Plus className="h-3.5 w-3.5" />
+            <Plus aria-hidden="true" className="h-3.5 w-3.5" />
             New
           </Button>
         </div>
@@ -161,7 +161,7 @@ export function TasksTabContent() {
 
       {/* Content */}
       <Tabs defaultValue="active" className="flex-1 flex flex-wrap flex-col min-h-0">
-        <TabsList className="w-full grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4 mt-3 max-w-full">
+        <TabsList aria-hidden="true" className="w-full grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4 mt-3 max-w-full">
           <TabsTrigger value="active">
             Active
             {activeTasks.length > 0 && (
@@ -182,7 +182,7 @@ export function TasksTabContent() {
         </TabsList>
 
         <TabsContent value="active" className="flex-1 mt-3 m-0">
-          <ScrollArea className="h-full">
+          <ScrollArea aria-hidden="true" className="h-full">
             <div className="px-4 pb-4 space-y-2">
               {activeTasks.length === 0 ? (
                 <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
@@ -206,7 +206,7 @@ export function TasksTabContent() {
         </TabsContent>
 
         <TabsContent value="overdue" className="flex-1 mt-3 m-0">
-          <ScrollArea className="h-full">
+          <ScrollArea aria-hidden="true" className="h-full">
             <div className="px-4 pb-4 space-y-2">
               {overdueTasks.length === 0 ? (
                 <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
@@ -231,11 +231,11 @@ export function TasksTabContent() {
         </TabsContent>
 
         <TabsContent value="completed" className="flex-1 mt-3 m-0">
-          <ScrollArea className="h-full">
+          <ScrollArea aria-hidden="true" className="h-full">
             <div className="px-4 pb-4 space-y-2">
               {completedTasks.length === 0 ? (
                 <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-                  <Circle className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <Circle aria-hidden="true" className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">No completed tasks</p>
                   <p className="text-xs text-muted-foreground mt-1">
                     Complete tasks to see them here
@@ -283,7 +283,7 @@ function TaskCard({
           {isCompleted ? (
             <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
           ) : (
-            <Circle className="h-5 w-5 text-muted-foreground" />
+            <Circle aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
           )}
         </div>
         <div className="flex-1 min-w-0">
@@ -315,7 +315,7 @@ function TaskCard({
                 "flex items-center gap-1 text-xs",
                 isOverdue ? "text-destructive" : "text-muted-foreground"
               )}>
-                <Clock className="h-3 w-3" />
+                <Clock aria-hidden="true" className="h-3 w-3" />
                 <span>{formatDate(task.due_date)}</span>
               </div>
             )}

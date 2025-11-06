@@ -36,7 +36,7 @@ export function EmptyState({
         )}
       >
         {Icon && showIcon && (
-          <Icon className="h-8 w-8 text-muted-foreground mb-3" />
+          <Icon aria-hidden="true" className="h-8 w-8 text-muted-foreground mb-3" />
         )}
         <p className="text-sm font-medium text-muted-foreground mb-1">{mainMessage}</p>
         {description && (
@@ -46,7 +46,7 @@ export function EmptyState({
         )}
         {actionLabel && onAction && (
           <Button onClick={onAction} size="sm" variant="outline">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             {actionLabel}
           </Button>
         )}
@@ -64,7 +64,7 @@ export function EmptyState({
         )}
       >
         {Icon && showIcon && (
-          <Icon className="h-10 w-10 text-muted-foreground mb-4" />
+          <Icon aria-hidden="true" className="h-10 w-10 text-muted-foreground mb-4" />
         )}
         <h3 className="text-lg font-semibold mb-2">{mainMessage}</h3>
         {description && (
@@ -74,7 +74,7 @@ export function EmptyState({
         )}
         {actionLabel && onAction && (
           <Button onClick={onAction} size="default">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             {actionLabel}
           </Button>
         )}
@@ -92,7 +92,7 @@ export function EmptyState({
     >
       {Icon && showIcon && (
         <div className="mb-6 rounded-full bg-muted/50 p-4 md:p-4 sm:p-6 md:p-8">
-          <Icon className="h-12 w-12 text-muted-foreground" />
+          <Icon aria-hidden="true" className="h-12 w-12 text-muted-foreground" />
         </div>
       )}
       <h2 className="mb-3 text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold tracking-tight">{mainMessage}</h2>
@@ -103,7 +103,7 @@ export function EmptyState({
       )}
       {actionLabel && onAction && (
         <Button onClick={onAction} size="lg">
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
           {actionLabel}
         </Button>
       )}

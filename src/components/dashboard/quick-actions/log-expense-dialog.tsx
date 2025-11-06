@@ -100,11 +100,11 @@ export function LogExpenseDialog({ open, onOpenChange, workspaceId, userId, onSu
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-green-100 dark:bg-green-950">
-              <Receipt className="h-5 w-5 text-green-600" />
+              <Receipt aria-hidden="true" className="h-5 w-5 text-green-600" />
             </div>
             <div>
               <DialogTitle>Log Expense</DialogTitle>
@@ -152,11 +152,11 @@ export function LogExpenseDialog({ open, onOpenChange, workspaceId, userId, onSu
                       !date && "text-muted-foreground"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    <CalendarIcon aria-hidden="true" className="mr-2 h-4 w-4" />
                     {date ? format(date, "PPP") : <span>Pick a date</span>}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
+                <PopoverContent aria-hidden="true" className="w-auto p-0">
                   <Calendar
                     mode="single"
                     selected={date}
@@ -206,7 +206,7 @@ export function LogExpenseDialog({ open, onOpenChange, workspaceId, userId, onSu
           </div>
 
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 bg-muted rounded-lg">
-            <Upload className="h-4 w-4 text-muted-foreground" />
+            <Upload aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             <span className="text-sm text-muted-foreground">Receipt attachment coming soon</span>
           </div>
 

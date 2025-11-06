@@ -63,10 +63,10 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
-                    <CardTitle className="text-lg">{t(view.nameKey)}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{t(view.nameKey)}</CardTitle>
                     {view.isDefault && (
                       <Badge variant="outline" className="bg-yellow-100 text-yellow-800 border-yellow-200">
-                        <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" />
+                        <Star aria-hidden="true" className="h-3 w-3 mr-1 fill-current" />
                         {t('default')}
                       </Badge>
                     )}
@@ -94,7 +94,7 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Button variant="outline" size="sm">
-                      <Edit className="h-3 w-3 mr-1" aria-hidden="true" />
+                      <Edit aria-hidden="true" className="h-3 w-3 mr-1" />
                       Edit
                     </Button>
                     <Button variant="outline" size="sm">
@@ -109,9 +109,9 @@ export function AnalyticsCustomViewsTab({ data = [], loading = false }: Analytic
       </div>
 
       {/* Create New View Card */}
-      <Card className="border-2 border-dashed">
-        <CardContent className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
-          <Sliders className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" aria-hidden="true" />
+      <Card aria-hidden="true" className="border-2 border-dashed">
+        <CardContent aria-hidden="true" className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
+          <Sliders aria-hidden="true" className="h-12 w-12 mx-auto mb-4 text-muted-foreground opacity-50" />
           <h3 className="font-semibold mb-2">{t('createCustomView')}</h3>
           <p className="text-sm text-muted-foreground mb-4">
             {t('buildPersonalizedDashboard')}

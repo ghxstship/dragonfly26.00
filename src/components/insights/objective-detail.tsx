@@ -70,7 +70,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="w-full max-w-[600px] sm:max-w-[600px] overflow-y-auto">
+      <SheetContent aria-hidden="true" className="w-full max-w-[600px] sm:max-w-[600px] overflow-y-auto">
         <SheetHeader>
           <SheetTitle>{goal.name}</SheetTitle>
         </SheetHeader>
@@ -78,7 +78,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
         <div className="mt-6 space-y-3 md:space-y-4 lg:space-y-6">
           {/* Current Progress */}
           <Card>
-            <CardContent className="p-4 sm:p-6">
+            <CardContent aria-hidden="true" className="p-4 sm:p-6">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
                 <div>
                   <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">
@@ -103,7 +103,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
           </Card>
 
           <Tabs defaultValue="progress">
-            <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
+            <TabsList aria-hidden="true" className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
               <TabsTrigger value="progress">Progress</TabsTrigger>
               <TabsTrigger value="details">Details</TabsTrigger>
               <TabsTrigger value="linked">Linked Items</TabsTrigger>
@@ -113,9 +113,9 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
               {/* Update Progress */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-base">Update Progress</CardTitle>
+                  <CardTitle aria-hidden="true" className="text-base">Update Progress</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent aria-hidden="true" className="space-y-4">
                   <div className="flex flex-wrap gap-2">
                     <Input
                       type="number"
@@ -124,7 +124,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
                       onChange={(e) => setNewProgress(e.target.value)}
                     />
                     <Button onClick={handleUpdateProgress}>
-                      <Plus className="h-4 w-4" />
+                      <Plus aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </div>
                 </CardContent>
@@ -133,7 +133,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
               {/* Progress Chart */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-base">Progress Over Time</CardTitle>
+                  <CardTitle aria-hidden="true" className="text-base">Progress Over Time</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ResponsiveContainer width="100%" height={200}>
@@ -151,7 +151,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
               {/* Progress History */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-base">History</CardTitle>
+                  <CardTitle aria-hidden="true" className="text-base">History</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
@@ -174,7 +174,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
 
             <TabsContent value="details" className="space-y-4">
               <Card>
-                <CardContent className="p-4 sm:p-6 space-y-4">
+                <CardContent aria-hidden="true" className="p-4 sm:p-6 space-y-4">
                   <div>
                     <Label>Description</Label>
                     <p className="text-sm mt-1">{goal.description || t('goals.noDescription')}</p>
@@ -206,7 +206,7 @@ export function ObjectiveDetail({ goal, open, onOpenChange, onUpdate }: GoalDeta
 
             <TabsContent value="linked" className="space-y-4">
               <Card>
-                <CardContent className="p-4 sm:p-6">
+                <CardContent aria-hidden="true" className="p-4 sm:p-6">
                   <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
                     No linked items yet. Link tasks and projects to track progress automatically.
                   </p>

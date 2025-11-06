@@ -86,7 +86,7 @@ export function DateRangePicker({
             )}
             disabled={disabled}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" aria-hidden="true" />
+            <CalendarIcon aria-hidden="true" className="mr-2 h-4 w-4" />
             {value?.from ? (
               value.to ? (
                 <>
@@ -101,7 +101,7 @@ export function DateRangePicker({
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent aria-hidden="true" className="w-auto p-0" align="start">
           <Calendar
             initialFocus
             mode="range"

@@ -104,7 +104,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="outline" size="icon" onClick={previousPeriod}>
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -124,7 +124,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="outline" size="icon" onClick={nextPeriod}>
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -138,7 +138,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="outline" size="icon">
-                  <ZoomOut className="h-4 w-4" />
+                  <ZoomOut aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -158,7 +158,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="outline" size="icon">
-                  <ZoomIn className="h-4 w-4" />
+                  <ZoomIn aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -210,7 +210,7 @@ export function TimelineView({ data, schema, onItemClick, createActionLabel, onC
                       <div
                         className="absolute sm:relative sm:inset-auto top-2 bottom-2 rounded-md bg-primary/80 hover:bg-primary cursor-pointer flex items-center px-2 text-xs text-primary-foreground font-medium overflow-hidden md:block"
                         style={position}
-                        onClick={() => onItemClick?.(item)}
+                         role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                       >
                         <span className="truncate">{getDisplayValue(item, schema)}</span>
                       </div>

@@ -48,7 +48,7 @@ export function BoardColumn({ column, items, schema, onItemClick }: BoardColumnP
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="ghost" size="icon" className="h-6 w-6">
-                <MoreHorizontal className="h-4 w-4" />
+                <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
               </Button>
             </TooltipTrigger>
             <TooltipContent>
@@ -58,7 +58,7 @@ export function BoardColumn({ column, items, schema, onItemClick }: BoardColumnP
         </div>
 
       {/* Cards */}
-      <ScrollArea className="flex-1 p-3">
+      <ScrollArea aria-hidden="true" className="flex-1 p-3">
         <SortableContext
           items={items.map((item: any) => item.id)}
           strategy={verticalListSortingStrategy}
@@ -79,7 +79,7 @@ export function BoardColumn({ column, items, schema, onItemClick }: BoardColumnP
               size="sm"
               className="w-full justify-start gap-2 max-w-full"
             >
-              <Plus className="h-4 w-4" />
+              <Plus aria-hidden="true" className="h-4 w-4" />
               Add card
             </Button>
           </div>

@@ -116,14 +116,14 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
               onClick={() => toggleExpanded(item.id)}
             >
               {isExpanded ? (
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown aria-hidden="true" className="h-4 w-4" />
               ) : (
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight aria-hidden="true" className="h-4 w-4" />
               )}
             </Button>
           )}
           
-          <GripVertical className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 cursor-grab mt-1" />
+          <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 cursor-grab mt-1" />
           
           <Checkbox
             checked={item.completed}
@@ -154,7 +154,7 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
                 size="icon"
                 className="h-6 w-6 opacity-0 group-hover:opacity-100"
               >
-                <MoreHorizontal className="h-4 w-4" />
+                <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -162,8 +162,7 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
                 Add sub-item
               </DropdownMenuItem>
               <DropdownMenuItem>Convert to task</DropdownMenuItem>
-              <DropdownMenuItem
-                className="text-destructive"
+              <DropdownMenuItem aria-hidden="true" className="text-destructive"
                 onClick={() => deleteItem(item.id)}
               >
                 Delete
@@ -215,7 +214,7 @@ export function ChecklistManager({ checklist, onUpdate }: ChecklistManagerProps)
           }}
         />
         <Button onClick={() => addItem()} size="icon">
-          <Plus className="h-4 w-4" />
+          <Plus aria-hidden="true" className="h-4 w-4" />
         </Button>
       </div>
     </div>

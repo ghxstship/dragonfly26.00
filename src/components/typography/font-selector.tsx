@@ -136,17 +136,17 @@ export function FontSelector({
           >
             {value || label}
           </span>
-          <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" aria-hidden="true" />
+          <Search aria-hidden="true" className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[400px] p-0" align="start">
+      <PopoverContent aria-hidden="true" className="w-[400px] p-0" align="start">
         <Command shouldFilter={false}>
           <CommandInput
             placeholder="Search fonts..."
             value={searchQuery}
             onValueChange={setSearchQuery}
           />
-          <CommandList className="max-h-[300px]">
+          <CommandList aria-hidden="true" className="max-h-[300px]">
             {isLoading ? (
               <div className="flex items-center justify-center p-4">
                 <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
@@ -172,12 +172,10 @@ export function FontSelector({
                           setOpen(false);
                         }}
                       >
-                        <Check
-                          className={cn(
+                        <Check aria-hidden="true" className={cn(
                             'mr-2 h-4 w-4',
                             value === font.name ? 'opacity-100' : 'opacity-0'
                           )}
-                          aria-hidden="true"
                         />
                         <span
                           style={{ fontFamily: font.name }}

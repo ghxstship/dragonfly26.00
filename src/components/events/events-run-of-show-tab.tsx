@@ -52,7 +52,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -113,7 +113,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -126,8 +126,8 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
     <main role="main" aria-label={t('title')}>
       <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Show Clock and Progress */}
-      <Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950">
-        <CardContent className="pt-6">
+      <Card aria-hidden="true" className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-2">
               <div className="text-sm text-muted-foreground">Show Clock</div>
@@ -140,11 +140,11 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 variant={isRunning ? "outline" : "default"}
                 onClick={() => setIsRunning(!isRunning)}
               >
-                {isRunning ? <Pause className="h-4 w-4 mr-2" aria-hidden="true" /> : <Play className="h-4 w-4 mr-2" aria-hidden="true" />}
+                {isRunning ? <Pause aria-hidden="true" className="h-4 w-4 mr-2" /> : <Play aria-hidden="true" className="h-4 w-4 mr-2" />}
                 {isRunning ? 'Pause' : 'Start'}
               </Button>
               <Button size="lg" variant="outline">
-                <SkipForward className="h-4 w-4 mr-2" aria-hidden="true" />
+                <SkipForward aria-hidden="true" className="h-4 w-4 mr-2" />
                 Next Cue
               </Button>
             </div>
@@ -165,7 +165,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
         {Object.entries(groupedCues).map(([act, cues]: [string, any]) => (
           <Card key={act}>
             <CardHeader>
-              <CardTitle className="text-lg">{act}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-lg">{act}</CardTitle>
               <CardDescription>{cues.length} cues</CardDescription>
             </CardHeader>
             <CardContent>
@@ -192,14 +192,14 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                           <CheckCircle2 className="h-4 w-4 mx-auto flex-shrink-0" aria-hidden="true" />
                         )}
                         {(cue as any).status === 'warning' && (
-                          <AlertCircle className="h-4 w-4 mx-auto" aria-hidden="true" />
+                          <AlertCircle aria-hidden="true" className="h-4 w-4 mx-auto" />
                         )}
                       </div>
 
                       {/* Time */}
                       <div className="flex-shrink-0 w-24">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm text-muted-foreground">
-                          <Clock className="h-4 w-4" aria-hidden="true" />
+                          <Clock aria-hidden="true" className="h-4 w-4" />
                           <span className="font-mono">{cue.time || '--:--'}</span>
                         </div>
                         {cue.duration && (
@@ -212,7 +212,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                       {/* Cue Type */}
                       <div className="flex-shrink-0">
                         <Badge variant="secondary" className={getCueTypeColor(cue.type)}>
-                          <CueIcon className="h-4 w-4 mr-1" aria-hidden="true" />
+                          <CueIcon aria-hidden="true" className="h-4 w-4 mr-1" />
                           {cue.type}
                         </Badge>
                       </div>
@@ -231,7 +231,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
                       {cue.assignedTo && (
                         <div className="flex-shrink-0">
                           <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm text-muted-foreground">
-                            <Users className="h-4 w-4" aria-hidden="true" />
+                            <Users aria-hidden="true" className="h-4 w-4" />
                             <span className="truncate max-w-32">{cue.assignedTo}</span>
                           </div>
                         </div>
@@ -267,7 +267,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
       {/* Current Cue Detail Panel */}
       {currentCue > 0 && runOfShow.find((c: any) => c.number === currentCue) && (
-        <Card className="border-primary">
+        <Card aria-hidden="true" className="border-primary">
           <CardHeader>
             <CardTitle>Current Cue Details</CardTitle>
           </CardHeader>
@@ -301,7 +301,7 @@ export function EventsRunOfShowTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
       {runOfShow.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               variant="inline"
               icon={Clock}

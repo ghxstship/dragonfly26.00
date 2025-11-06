@@ -85,11 +85,11 @@ export function CreateTaskDialog({ open, onOpenChange, workspaceId, userId, onSu
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-950">
-              <CheckSquare className="h-5 w-5 text-purple-600 flex-shrink-0" />
+              <CheckSquare aria-hidden="true" className="h-5 w-5 text-purple-600 flex-shrink-0" />
             </div>
             <div>
               <DialogTitle>Create Task</DialogTitle>
@@ -166,11 +166,11 @@ export function CreateTaskDialog({ open, onOpenChange, workspaceId, userId, onSu
                     !dueDate && "text-muted-foreground"
                   )}
                 >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  <CalendarIcon aria-hidden="true" className="mr-2 h-4 w-4" />
                   {dueDate ? format(dueDate, "PPP") : <span>No due date</span>}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0">
+              <PopoverContent aria-hidden="true" className="w-auto p-0">
                 <Calendar
                   mode="single"
                   selected={dueDate}

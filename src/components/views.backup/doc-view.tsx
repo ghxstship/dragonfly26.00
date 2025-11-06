@@ -75,13 +75,13 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <FileText className="h-5 w-5" />
+          <FileText aria-hidden="true" className="h-5 w-5" />
           <input
             type="text"
             className="font-semibold text-lg bg-transparent border-none outline-none focus:ring-0"
             placeholder={t('views.untitledDocument')}
             defaultValue="Document"
-          />
+           aria-label="text" />
         </div>
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           {/* Collaborators */}
@@ -90,8 +90,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
               {collaborators.map((collab: any) => (
                 <Tooltip key={collab.id}>
                   <TooltipTrigger asChild>
-                    <Avatar
-                      className="h-7 w-7 border-2 -ml-2 first:ml-0 cursor-pointer hover:z-10"
+                    <Avatar aria-hidden="true" className="h-7 w-7 border-2 -ml-2 first:ml-0 cursor-pointer hover:z-10"
                       style={{ borderColor: collab.color }}
                     >
                       <AvatarFallback style={{ backgroundColor: collab.color }}>
@@ -106,7 +105,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
               ))}
             </TooltipProvider>
             <Button variant="outline" size="icon" className="h-7 w-7 ml-1">
-              <Users className="h-3 w-3" />
+              <Users aria-hidden="true" className="h-3 w-3" />
             </Button>
           </div>
 
@@ -115,7 +114,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
             size="sm"
             onClick={() => setShowComments(!showComments)}
           >
-            <MessageSquare className="h-4 w-4 mr-2" />
+            <MessageSquare aria-hidden="true" className="h-4 w-4 mr-2" />
             Comments
           </Button>
           <Button variant="outline" size="sm">
@@ -139,7 +138,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
                     className="h-8 w-8"
                     onClick={() => handleFormat(button.action)}
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -151,7 +150,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
         </TooltipProvider>
         <div className="w-px h-6 bg-border mx-1" />
         <Button variant="ghost" size="icon" className="h-8 w-8">
-          <MoreHorizontal className="h-4 w-4" />
+          <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
         </Button>
       </div>
 
@@ -178,7 +177,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
               {/* Example comments */}
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
-                  <Avatar className="h-6 w-6">
+                  <Avatar aria-hidden="true" className="h-6 w-6">
                     <AvatarFallback>JD</AvatarFallback>
                   </Avatar>
                   <div className="flex-1">
@@ -194,7 +193,7 @@ export function DocView({ data, schema, onItemClick }: DocViewProps) {
               </div>
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
-                  <Avatar className="h-6 w-6">
+                  <Avatar aria-hidden="true" className="h-6 w-6">
                     <AvatarFallback>JS</AvatarFallback>
                   </Avatar>
                   <div className="flex-1">

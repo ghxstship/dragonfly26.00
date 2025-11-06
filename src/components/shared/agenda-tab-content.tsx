@@ -160,7 +160,7 @@ export function AgendaTabContent() {
             </p>
           </div>
           <Button size="sm" className="h-7 gap-1.5">
-            <Plus className="h-3.5 w-3.5" />
+            <Plus aria-hidden="true" className="h-3.5 w-3.5" />
             Add
           </Button>
         </div>
@@ -174,11 +174,11 @@ export function AgendaTabContent() {
       </div>
 
       {/* Content */}
-      <ScrollArea className="flex-1">
+      <ScrollArea aria-hidden="true" className="flex-1">
         <div className="p-4 space-y-4">
           {items.length === 0 ? (
             <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-              <Calendar className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <Calendar aria-hidden="true" className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <p className="text-sm font-medium">Your day is clear!</p>
               <p className="text-xs text-muted-foreground mt-1">
                 No events or tasks scheduled for today
@@ -264,7 +264,7 @@ function AgendaItemCard({
           {item.completed ? (
             <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
           ) : (
-            <Circle className="h-5 w-5 text-muted-foreground" />
+            <Circle aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
           )}
         </div>
         <div className="flex-1 min-w-0">
@@ -289,7 +289,7 @@ function AgendaItemCard({
             )}
           </div>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1 text-xs text-muted-foreground">
-            <Clock className="h-3 w-3" />
+            <Clock aria-hidden="true" className="h-3 w-3" />
             <span>
               {new Date(item.start_time).toLocaleTimeString('en-US', {
                 hour: 'numeric',

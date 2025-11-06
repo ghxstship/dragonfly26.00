@@ -132,9 +132,9 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
 {/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('activityFeed')}</div>
-            <ActivityIcon className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <ActivityIcon aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{posts.length}</div>
@@ -143,9 +143,9 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('engagement')}</div>
-            <Heart className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Heart aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -156,9 +156,9 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('trending')}</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -169,9 +169,9 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('activeUsers')}</div>
-            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">1.2K</div>
@@ -185,7 +185,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
         <CardHeader>
           <CardTitle>{t('shareUpdate')}</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Textarea
               placeholder={t('placeholder')}
@@ -215,7 +215,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
                   onClick={handlePostSubmit}
                   disabled={!newPost.trim() || newPost.length > characterLimit}
                 >
-                  <Send className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Send aria-hidden="true" className="h-4 w-4 mr-2" />
                   {t('post')}
                 </Button>
               </div>
@@ -228,11 +228,11 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
       <div className="space-y-4">
         {posts.map((post: any) => (
           <Card key={post.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-4 sm:p-6">
+            <CardContent aria-hidden="true" className="p-4 sm:p-6">
               {/* Post Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                  <Avatar className="h-10 w-10">
+                  <Avatar aria-hidden="true" className="h-10 w-10">
                     <AvatarImage src={post.authorImage} />
                     <AvatarFallback>{post.author.split(" ").map(n => n[0]).join("")}</AvatarFallback>
                   </Avatar>
@@ -246,7 +246,7 @@ export function ActivityTab({ data = [], loading = false, workspaceId }: Activit
                   </div>
                 </div>
                 <Button variant="ghost" size="sm">
-                  <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+                  <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
 

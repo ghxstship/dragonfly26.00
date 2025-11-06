@@ -56,7 +56,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       render: (value: string[]) => {
         if (!value || value.length === 0) {
           return <div className="w-12 h-12 bg-muted rounded flex flex-wrap items-center justify-center">
-            <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Package aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </div>
         }
         return <div className="w-12 h-12 bg-muted rounded overflow-hidden md:block relative">
@@ -73,7 +73,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
       type: 'text',
       render: (value: string) => value ? (
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs">
-          <QrCode className="h-4 w-4" aria-hidden="true" />
+          <QrCode aria-hidden="true" className="h-4 w-4" />
           {value}
         </div>
       ) : '-'
@@ -87,7 +87,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <span className="font-medium">{value || 0}</span>
           {item.low_stock_threshold && value <= item.low_stock_threshold && (
-            <AlertCircle className="h-4 w-4 text-orange-500" aria-hidden="true" />
+            <AlertCircle aria-hidden="true" className="h-4 w-4 text-orange-500" />
           )}
         </div>
       )
@@ -188,7 +188,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
               size="sm"
               onClick={() => setShowFolderTree(!showFolderTree)}
             >
-              <FolderTree className="h-4 w-4 mr-2" aria-hidden="true" />
+              <FolderTree aria-hidden="true" className="h-4 w-4 mr-2" />
               {showFolderTree ? 'Hide' : 'Show'} Folders
             </Button>
             <InventoryAlertsPanel workspaceId={workspaceId} />
@@ -209,27 +209,27 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
-            <CardHeader className="pb-3">
+            <CardHeader aria-hidden="true" className="pb-3">
               <CardDescription>{t('totalItems')}</CardDescription>
-              <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{totalItems}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{totalItems}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
-            <CardHeader className="pb-3">
+            <CardHeader aria-hidden="true" className="pb-3">
               <CardDescription>{t('totalValue')}</CardDescription>
-              <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">${totalValue.toLocaleString()}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">${totalValue.toLocaleString()}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
-            <CardHeader className="pb-3">
+            <CardHeader aria-hidden="true" className="pb-3">
               <CardDescription>Low Stock</CardDescription>
-              <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-orange-600">{lowStockItems}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-orange-600">{lowStockItems}</CardTitle>
             </CardHeader>
           </Card>
           <Card>
-            <CardHeader className="pb-3">
+            <CardHeader aria-hidden="true" className="pb-3">
               <CardDescription>Out of Stock</CardDescription>
-              <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-red-600">{outOfStockItems}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-red-600">{outOfStockItems}</CardTitle>
             </CardHeader>
           </Card>
         </div>
@@ -237,11 +237,11 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
         {/* Quick Actions */}
         <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
           <Button onClick={() => setRightSidebarOpen(true, 'photo-upload')} variant="outline">
-            <Camera className="h-4 w-4 mr-2" aria-hidden="true" />
+            <Camera aria-hidden="true" className="h-4 w-4 mr-2" />
             Upload Photos
           </Button>
           <Button onClick={() => setScannerOpen(true)} variant="outline">
-            <QrCode className="h-4 w-4 mr-2" aria-hidden="true" />
+            <QrCode aria-hidden="true" className="h-4 w-4 mr-2" />
             Scan Barcode
           </Button>
           <div className="flex-1" />
@@ -251,7 +251,7 @@ export function InventoryTab({ data, loading, workspaceId }: InventoryTabProps) 
               size="sm"
               onClick={() => setViewMode('table')}
             >
-              <List className="h-4 w-4" aria-hidden="true" />
+              <List aria-hidden="true" className="h-4 w-4" />
             </Button>
             <Button 
               variant={viewMode === 'grid' ? 'secondary' : 'ghost'} 

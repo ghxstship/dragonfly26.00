@@ -74,16 +74,16 @@ export function QuickStockAdjust({ item, onAdjusted }: QuickStockAdjustProps) {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem onClick={() => handleQuickAction('receive')}>
-            <Plus className="h-4 w-4 mr-2 text-green-600" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2 text-green-600" />
             Receive Stock
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => handleQuickAction('issue')}>
-            <Minus className="h-4 w-4 mr-2 text-red-600" />
+            <Minus aria-hidden="true" className="h-4 w-4 mr-2 text-red-600" />
             Issue Stock
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => handleQuickAction('transfer')}>
-            <ArrowRightLeft className="h-4 w-4 mr-2 text-blue-600" />
+            <ArrowRightLeft aria-hidden="true" className="h-4 w-4 mr-2 text-blue-600" />
             Transfer
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => handleQuickAction('adjustment')}>

@@ -129,9 +129,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
   }
 
   const getVarianceIcon = (variance: number) => {
-    if (variance > 0) return <TrendingUp className="h-4 w-4" aria-hidden="true" />
-    if (variance < 0) return <TrendingDown className="h-4 w-4" aria-hidden="true" />
-    return <Minus className="h-4 w-4" aria-hidden="true" />
+    if (variance > 0) return <TrendingUp aria-hidden="true" className="h-4 w-4" />
+    if (variance < 0) return <TrendingDown aria-hidden="true" className="h-4 w-4" />
+    return <Minus aria-hidden="true" className="h-4 w-4" />
   }
 
   const getScenarioColor = (type: string) => {
@@ -148,9 +148,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
       {/* Summary Metrics */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Active Scenarios</CardTitle>
-            <GitCompare className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Active Scenarios</CardTitle>
+            <GitCompare aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{scenarios.length}</div>
@@ -161,9 +161,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Weighted Average</CardTitle>
-            <TrendingUp className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Weighted Average</CardTitle>
+            <TrendingUp aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${weightedAverage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
@@ -176,9 +176,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Best Case</CardTitle>
-            <TrendingUp className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Best Case</CardTitle>
+            <TrendingUp aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
@@ -191,9 +191,9 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Worst Case</CardTitle>
-            <TrendingDown className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Worst Case</CardTitle>
+            <TrendingDown aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
@@ -215,7 +215,7 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               <CardDescription>Side-by-side analysis of financial projections</CardDescription>
             </div>
             <Button>
-              <Plus className="h-4 w-4" aria-hidden="true" />
+              <Plus aria-hidden="true" className="h-4 w-4" />
               New Scenario
             </Button>
           </div>
@@ -231,14 +231,14 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
               >
                 <CardHeader>
                   <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-                    <CardTitle className="text-lg" aria-hidden="true">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{scenario.nameKey ? t(scenario.nameKey) : scenario.name}</CardTitle>
                     {scenario.isBaseline && (
                       <Badge variant="secondary">Baseline</Badge>
                     )}
                   </div>
                   <CardDescription>{scenario.descriptionKey ? t(scenario.descriptionKey) : scenario.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4" aria-hidden="true">
+                <CardContent aria-hidden="true" className="space-y-4">
                   {/* Probability */}
                   <div>
                     <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm mb-1">
@@ -385,10 +385,10 @@ export function FinanceScenariosTab({ data, loading }: FinanceScenariosTabProps)
       </Card>
 
       {/* Insights */}
-      <Card className="border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950" aria-hidden="true">
+      <Card aria-hidden="true" className="border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950">
         <CardHeader>
-          <CardTitle className="flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
-            <AlertCircle className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-col md:flex-row items-center gap-2">
+            <AlertCircle aria-hidden="true" className="h-5 w-5" />
             Scenario Insights
           </CardTitle>
         </CardHeader>

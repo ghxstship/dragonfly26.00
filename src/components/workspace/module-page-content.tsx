@@ -206,7 +206,7 @@ export function ModulePageContent() {
 
             <div className="flex-1 max-w-md">
               <div className="relative">
-                <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+                <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
                 <Input
                   placeholder="Search..."
                   value={searchQuery as any}
@@ -224,7 +224,7 @@ export function ModulePageContent() {
               }}
               title="Filter"
             >
-              <Filter className="h-4 w-4" />
+              <Filter aria-hidden="true" className="h-4 w-4" />
             </Button>
 
             <Button 
@@ -235,7 +235,7 @@ export function ModulePageContent() {
               }}
               title="Sort"
             >
-              <ArrowUpDown className="h-4 w-4" />
+              <ArrowUpDown aria-hidden="true" className="h-4 w-4" />
             </Button>
 
             <Button 
@@ -253,7 +253,7 @@ export function ModulePageContent() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon" title="More Actions">
-                  <MoreHorizontal className="h-4 w-4" />
+                  <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
@@ -262,7 +262,7 @@ export function ModulePageContent() {
                     setRightSidebarOpen(true, 'import')
                   }}
                 >
-                  <Upload className="h-4 w-4 mr-2" />
+                  <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
                   Import Data
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -270,7 +270,7 @@ export function ModulePageContent() {
                     setRightSidebarOpen(true, 'export')
                   }}
                 >
-                  <Download className="h-4 w-4 mr-2" />
+                  <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                   Export Data
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -282,11 +282,11 @@ export function ModulePageContent() {
                   Share
                 </DropdownMenuItem>
                 <DropdownMenuItem disabled>
-                  <Camera className="h-4 w-4 mr-2" />
+                  <Camera aria-hidden="true" className="h-4 w-4 mr-2" />
                   Photo <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem disabled>
-                  <QrCode className="h-4 w-4 mr-2" />
+                  <QrCode aria-hidden="true" className="h-4 w-4 mr-2" />
                   Scan <span className="ml-auto text-xs text-muted-foreground">Coming Soon</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>

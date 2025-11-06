@@ -120,7 +120,7 @@ export function AssetCatalogAutocomplete({
         {label} {required && '*'}
       </Label>
       <div className="relative">
-        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+        <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           ref={inputRef}
           id="asset-autocomplete"
@@ -143,8 +143,8 @@ export function AssetCatalogAutocomplete({
               type="button"
               onClick={handleClear}
               className="hover:bg-muted rounded p-1"
-            >
-              <X className="h-4 w-4 text-muted-foreground" />
+             aria-label="x">
+        <X aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </button>
           )}
         </div>
@@ -185,7 +185,7 @@ export function AssetCatalogAutocomplete({
                     </div>
                   </div>
                   {selectedIndex === index && (
-                    <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                    <Check aria-hidden="true" className="h-4 w-4 text-primary flex-shrink-0" />
                   )}
                 </div>
               </li>

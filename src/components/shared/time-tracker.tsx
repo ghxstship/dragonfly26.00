@@ -334,7 +334,7 @@ export function TimeTracker() {
             {isSaving ? (
               <Loader2 className="h-4 w-4 animate-spin" />
             ) : (
-              <Play className="h-4 w-4" />
+              <Play aria-hidden="true" className="h-4 w-4" />
             )}
             Start
           </Button>
@@ -343,7 +343,7 @@ export function TimeTracker() {
             {isSaving ? (
               <Loader2 className="h-4 w-4 animate-spin" />
             ) : (
-              <Square className="h-4 w-4" />
+              <Square aria-hidden="true" className="h-4 w-4" />
             )}
             Stop
           </Button>
@@ -378,7 +378,7 @@ export function TimeTracker() {
             entries.map((entry) => (
               <div key={entry.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm p-2 rounded border">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Clock className="h-4 w-4 text-muted-foreground" />
+                  <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                   <span className="font-medium">{formatDuration(entry.duration)}</span>
                   {entry.notes && (
                     <span className="text-muted-foreground text-xs">- {entry.notes}</span>

@@ -42,14 +42,14 @@ export function ActivityTimeline({
   className
 }: ActivityTimelineProps) {
   return (
-    <Card className={className}>
-      <CardHeader className="pb-3">
-        <CardTitle className="text-sm">
+    <Card aria-hidden="true" className={className}>
+      <CardHeader aria-hidden="true" className="pb-3">
+        <CardTitle aria-hidden="true" className="text-sm">
           {personnelName ? `Activity: ${personnelName}` : "Activity Timeline"}
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <ScrollArea className="h-[400px] pr-4">
+        <ScrollArea aria-hidden="true" className="h-[400px] pr-4">
           <div className="space-y-4">
             {events.map((event, index) => (
               <TimelineEventItem 
@@ -142,12 +142,12 @@ function TimelineEventItem({
 function getEventConfig(type: TimelineEvent['type']) {
   const configs = {
     clock: {
-      icon: <Clock className="h-4 w-4 text-blue-600" />,
+      icon: <Clock aria-hidden="true" className="h-4 w-4 text-blue-600" />,
       bgColor: "bg-blue-100 dark:bg-blue-900",
       label: "Time Clock"
     },
     pto: {
-      icon: <Calendar className="h-4 w-4 text-purple-600" />,
+      icon: <Calendar aria-hidden="true" className="h-4 w-4 text-purple-600" />,
       bgColor: "bg-purple-100 dark:bg-purple-900",
       label: "PTO"
     },
@@ -157,17 +157,17 @@ function getEventConfig(type: TimelineEvent['type']) {
       label: "Onboarding"
     },
     document: {
-      icon: <FileText className="h-4 w-4 text-orange-600" />,
+      icon: <FileText aria-hidden="true" className="h-4 w-4 text-orange-600" />,
       bgColor: "bg-orange-100 dark:bg-orange-900",
       label: "Document"
     },
     edit: {
-      icon: <Edit className="h-4 w-4 text-gray-600" />,
+      icon: <Edit aria-hidden="true" className="h-4 w-4 text-gray-600" />,
       bgColor: "bg-gray-100 dark:bg-gray-800",
       label: "Update"
     },
     other: {
-      icon: <ArrowRight className="h-4 w-4 text-gray-600" />,
+      icon: <ArrowRight aria-hidden="true" className="h-4 w-4 text-gray-600" />,
       bgColor: "bg-gray-100 dark:bg-gray-800",
       label: "Activity"
     }

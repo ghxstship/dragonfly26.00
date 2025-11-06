@@ -50,14 +50,14 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
   }
 
   return (
-    <Card className={className}>
+    <Card aria-hidden="true" className={className}>
       <CardHeader>
-        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <MessageCircle className="h-5 w-5" />
+        <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+          <MessageCircle aria-hidden="true" className="h-5 w-5" />
           Comments ({comments.length})
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent aria-hidden="true" className="space-y-4">
         {/* New comment input */}
         <div className="space-y-2">
           {replyTo && (
@@ -80,7 +80,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
               disabled={!newComment.trim() || submitting}
               size="sm"
             >
-              <Send className="h-4 w-4 mr-2" />
+              <Send aria-hidden="true" className="h-4 w-4 mr-2" />
               {replyTo ? "Reply" : "Comment"}
             </Button>
           </div>
@@ -93,7 +93,7 @@ export function FileCommentsPanel({ fileId, className }: FileCommentsPanelProps)
           </div>
         ) : comments.length === 0 ? (
           <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
-            <MessageCircle className="h-12 w-12 mx-auto mb-2 opacity-50" />
+            <MessageCircle aria-hidden="true" className="h-12 w-12 mx-auto mb-2 opacity-50" />
             <p>No comments yet</p>
             <p className="text-sm">Be the first to comment!</p>
           </div>
@@ -126,7 +126,7 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
   return (
     <div className="space-y-2">
       <div className="flex flex-wrap gap-3">
-        <Avatar className="h-8 w-8">
+        <Avatar aria-hidden="true" className="h-8 w-8">
           <AvatarImage src={comment.user?.avatar_url} />
           <AvatarFallback>
             {comment.user?.first_name?.[0]}{comment.user?.last_name?.[0]}
@@ -143,13 +143,13 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
               </span>
               {comment.is_resolved && (
                 <Badge variant="outline" className="text-xs">
-                  <Check className="h-3 w-3 mr-1 flex-shrink-0" />
+                  <Check aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />
                   Resolved
                 </Badge>
               )}
             </div>
             <Button variant="ghost" size="icon" className="h-6 w-6">
-              <MoreHorizontal className="h-4 w-4" />
+              <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
           <p className="text-sm text-muted-foreground whitespace-pre-wrap">
@@ -157,12 +157,12 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
           </p>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 pt-1">
             <Button variant="ghost" size="sm" className="h-7 text-xs" onClick={onReply}>
-              <Reply className="h-3 w-3 mr-1" />
+              <Reply aria-hidden="true" className="h-3 w-3 mr-1" />
               Reply
             </Button>
             {!comment.is_resolved && (
               <Button variant="ghost" size="sm" className="h-7 text-xs">
-                <Check className="h-3 w-3 mr-1 flex-shrink-0" />
+                <Check aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />
                 Resolve
               </Button>
             )}
@@ -184,9 +184,9 @@ function CommentItem({ comment, onReply, formatTime }: CommentItemProps) {
                 <div className="space-y-3 pl-4 border-l-2">
                   {comment.replies.map((reply: any) => (
                     <div key={reply.id} className="flex flex-wrap gap-2">
-                      <Avatar className="h-6 w-6">
+                      <Avatar aria-hidden="true" className="h-6 w-6">
                         <AvatarImage src={reply.user?.avatar_url} />
-                        <AvatarFallback className="text-xs">
+                        <AvatarFallback aria-hidden="true" className="text-xs">
                           {reply.user?.first_name?.[0]}{reply.user?.last_name?.[0]}
                         </AvatarFallback>
                       </Avatar>

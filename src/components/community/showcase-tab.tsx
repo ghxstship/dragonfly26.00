@@ -109,9 +109,9 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
       {/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Showcase Posts</div>
-            <Sparkles className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+            <Sparkles aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{posts.length}</div>
@@ -120,9 +120,9 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Total Reach</div>
-            <Eye className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+            <Eye aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -133,9 +133,9 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('engagement')}</div>
-            <Heart className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Heart aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -146,9 +146,9 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('bookmarked')}</div>
-            <Bookmark className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Bookmark aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -167,11 +167,11 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
 
           return (
             <Card key={post.id} className="overflow-hidden md:block">
-              <CardContent className="p-4 sm:p-6">
+              <CardContent aria-hidden="true" className="p-4 sm:p-6">
                 {/* Post Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                    <Avatar className="h-12 w-12">
+                    <Avatar aria-hidden="true" className="h-12 w-12">
                       <AvatarImage src={post.authorImage} />
                       <AvatarFallback>{post.author.split(" ").map(n => n[0]).join("")}</AvatarFallback>
                     </Avatar>
@@ -185,11 +185,11 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
                   </div>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                     <Badge variant="outline" className={categoryConfig.color}>
-                      <CategoryIcon className="h-3 w-3 mr-1"  aria-hidden="true" />
+                      <CategoryIcon aria-hidden="true" className="h-3 w-3 mr-1" />
                       {categoryConfig.label}
                     </Badge>
                     <Button variant="ghost" size="sm">
-                      <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+                      <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
                     <span>{post.shares} shares</span>
                   </div>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Eye className="h-4 w-4" aria-hidden="true" />
+                    <Eye aria-hidden="true" className="h-4 w-4" />
                     <span>{post.views.toLocaleString()} views</span>
                   </div>
                 </div>
@@ -258,11 +258,11 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
                       size="sm"
                       onClick={() => handleLike(post.id)}
                     >
-                      <Heart className={`h-4 w-4 mr-2 ${post.isLiked ? 'fill-current' : ''}`} />
+                      <Heart aria-hidden="true" className={`h-4 w-4 mr-2 ${post.isLiked ? 'fill-current' : ''}`} />
                       Like
                     </Button>
                     <Button variant="ghost" size="sm">
-                      <MessageCircle className="h-4 w-4 mr-2" aria-hidden="true" />
+                      <MessageCircle aria-hidden="true" className="h-4 w-4 mr-2" />
                       Comment
                     </Button>
                     <Button variant="ghost" size="sm">
@@ -275,7 +275,7 @@ export function ShowcaseTab({ data = [], loading: loadingProp = false }: Showcas
                     size="sm"
                     onClick={() => handleBookmark(post.id)}
                   >
-                    <Bookmark className={`h-4 w-4 ${post.isBookmarked ? 'fill-current' : ''}`} />
+                    <Bookmark aria-hidden="true" className={`h-4 w-4 ${post.isBookmarked ? 'fill-current' : ''}`} />
                   </Button>
                 </div>
               </CardContent>

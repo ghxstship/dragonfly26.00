@@ -66,7 +66,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
         aria-live="assertive"
       >
         <div className="text-center">
-          <Package className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Package aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -123,7 +123,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.owned}</p>
               <p className="text-xs text-muted-foreground mt-1">Owned</p>
@@ -131,7 +131,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{summary.rented}</p>
               <p className="text-xs text-muted-foreground mt-1">Rented</p>
@@ -139,7 +139,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-purple-600">{summary.leased}</p>
               <p className="text-xs text-muted-foreground mt-1">Leased</p>
@@ -147,7 +147,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalValue}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalValue')}</p>
@@ -155,7 +155,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-orange-600">{summary.inUse}</p>
               <p className="text-xs text-muted-foreground mt-1">In Use</p>
@@ -163,7 +163,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-cyan-600">{summary.available}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('available')}</p>
@@ -175,7 +175,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Category Breakdown */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">By Category</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">By Category</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
@@ -186,7 +186,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
                   key={t(category.nameKey)}
                   className="p-4 border rounded-lg text-center hover:bg-accent transition-colors cursor-pointer"
                 >
-                  <Icon className={`h-8 w-8 mx-auto mb-2 ${category.color}`} />
+                  <Icon aria-hidden="true" className={`h-8 w-8 mx-auto mb-2 ${category.color}`} />
                   <p className="font-semibold">{category.count}</p>
                   <p className="text-xs text-muted-foreground">{t(category.nameKey)}</p>
                 </div>
@@ -199,7 +199,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Assets List */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">All Assets</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">All Assets</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -207,7 +207,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
               <div
                 key={asset.id}
                 className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
-                onClick={() => router.push(`/workspace/${workspaceId}/assets/inventory?id=${asset.id}`)}
+                 role="button" tabIndex={0} onClick={() => router.push(`/workspace/${workspaceId}/assets/inventory?id=${asset.id}`)}
               >
                 <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                   <div className="flex-1 space-y-2">
@@ -228,7 +228,7 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
                         {asset.category}
                       </Badge>
                       <span className={`flex items-center gap-1 font-medium ${getConditionColor(asset.condition)}`}>
-                        <AlertCircle className="h-3.5 w-3.5" />
+                        <AlertCircle aria-hidden="true" className="h-3.5 w-3.5" />
                         {asset.condition}
                       </span>
                     </div>
@@ -269,8 +269,8 @@ export function DashboardMyAssetsTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Asset Value */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <TrendingUp className="h-4 w-4" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <TrendingUp aria-hidden="true" className="h-4 w-4" />
             Asset Value
           </CardTitle>
         </CardHeader>

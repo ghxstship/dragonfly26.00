@@ -90,7 +90,7 @@ export function BoardView({ data, schema, onItemClick, createActionLabel, onCrea
         {!isMobile && (
           <div className="flex-shrink-0 w-full sm:w-80">
             <Button variant="ghost" className="w-full justify-start gap-2 h-10 max-w-full">
-              <Plus className="h-4 w-4" />
+              <Plus aria-hidden="true" className="h-4 w-4" />
               Add column
             </Button>
           </div>

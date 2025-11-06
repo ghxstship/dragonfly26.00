@@ -41,9 +41,9 @@ export function FileAttachmentButton({
 
   const getFileIcon = (file: File) => {
     if (file.type.startsWith('image/')) {
-      return <ImageIcon className="h-4 w-4" />
+      return <ImageIcon aria-hidden="true" className="h-4 w-4" />
     }
-    return <File className="h-4 w-4" />
+    return <File aria-hidden="true" className="h-4 w-4" />
   }
 
   return (
@@ -54,7 +54,7 @@ export function FileAttachmentButton({
         className="relative"
         disabled={selectedFiles.length >= maxFiles}
       >
-        <Paperclip className="h-4 w-4 mr-2" />
+        <Paperclip aria-hidden="true" className="h-4 w-4 mr-2" />
         Attach Files
         <input
           type="file"
@@ -86,7 +86,7 @@ export function FileAttachmentButton({
                 className="h-6 w-6 flex-shrink-0"
                 onClick={() => handleRemoveFile(index)}
               >
-                <X className="h-4 w-4" />
+                <X aria-hidden="true" className="h-4 w-4" />
               </Button>
             </div>
           ))}

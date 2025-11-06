@@ -77,7 +77,7 @@ export function EmbedContainerOrganism({
               disabled={isLoading}
               aria-label={t('embed.refresh')}
             >
-              <RefreshCw className={cn('h-4 w-4', isLoading && 'animate-spin')} aria-hidden="true" />
+              <RefreshCw aria-hidden="true" className={cn('h-4 w-4', isLoading && 'animate-spin')} />
             </Button>
           )}
           {allowFullscreen && (
@@ -97,7 +97,7 @@ export function EmbedContainerOrganism({
               onClick={onOpenExternal}
               aria-label={t('embed.openExternal')}
             >
-              <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              <ExternalLink aria-hidden="true" className="h-4 w-4" />
             </Button>
           )}
         </div>
@@ -108,7 +108,7 @@ export function EmbedContainerOrganism({
         {isLoading && (
           <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center bg-muted/50 sm:relative sm:inset-auto">
             <div className="flex flex-wrap flex-col md:flex-row flex-col items-center gap-2">
-              <RefreshCw className="h-8 w-8 animate-spin text-muted-foreground" aria-hidden="true" />
+              <RefreshCw aria-hidden="true" className="h-8 w-8 animate-spin text-muted-foreground" />
               <span className="text-sm text-muted-foreground">{t('embed.loading')}</span>
             </div>
           </div>

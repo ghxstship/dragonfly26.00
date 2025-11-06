@@ -37,7 +37,7 @@ export function PriorityBadge({
   
   return (
     <Badge variant={variant} className={cn(priorityColor, className)}>
-      {Icon && <Icon className="h-3.5 w-3.5 mr-1" aria-hidden="true" />}
+      {Icon && <Icon aria-hidden="true" className="h-3.5 w-3.5 mr-1" />}
       {displayText}
     </Badge>
   )

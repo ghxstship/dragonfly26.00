@@ -169,7 +169,7 @@ export function TopBar() {
           {/* Demo Mode Badge */}
           {demoMode && (
             <Badge variant="secondary" className="hidden md:flex flex-col md:flex-row gap-1 items-center">
-              <Database className="h-3 w-3" />
+              <Database aria-hidden="true" className="h-3 w-3" />
               Demo Mode
             </Badge>
           )}
@@ -193,7 +193,7 @@ export function TopBar() {
             className="w-full max-w-md h-9 justify-start text-muted-foreground hover:text-foreground transition-colors"
             onClick={() => setShowCommandPalette(true)}
           >
-            <Search className="mr-2 h-4 w-4 flex-shrink-0" />
+            <Search aria-hidden="true" className="mr-2 h-4 w-4 flex-shrink-0" />
             <span className="hidden md:block sm:inline truncate">{t('common.searchAnything')}</span>
             <span className="sm:hidden md:block truncate">{t('common.search')}</span>
             <div className="ml-auto flex flex-wrap flex-col md:flex-row items-center gap-1 flex-shrink-0">
@@ -226,7 +226,7 @@ export function TopBar() {
                 className="relative h-9 w-9"
                 onClick={() => setRightSidebarOpen(true, 'notifications')}
               >
-                <Bell className="h-4 w-4" />
+                <Bell aria-hidden="true" className="h-4 w-4" />
                 {unreadCount > 0 && (
                   <>
                     <span className="absolute sm:relative sm:inset-auto top-2 md:top-1.5 right-2 md:right-1.5 h-2 w-2 rounded-full bg-primary ring-2 ring-background" />
@@ -259,7 +259,7 @@ export function TopBar() {
                   className="h-9 w-9"
                   onClick={() => setRightSidebarOpen(true, 'comments')}
                 >
-                  <MessageSquare className="h-4 w-4" />
+                  <MessageSquare aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -276,7 +276,7 @@ export function TopBar() {
                   className="h-9 w-9"
                   onClick={() => setRightSidebarOpen(true, 'activity')}
                 >
-                  <Activity className="h-4 w-4" />
+                  <Activity aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -293,7 +293,7 @@ export function TopBar() {
                   className="h-9 w-9"
                   onClick={() => setRightSidebarOpen(true, 'time')}
                 >
-                  <Clock className="h-4 w-4" />
+                  <Clock aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -313,7 +313,7 @@ export function TopBar() {
                   className="h-9 w-9"
                   onClick={() => setShowCommandPalette(true)}
                 >
-                  <HelpCircle className="h-4 w-4" />
+                  <HelpCircle aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -334,9 +334,9 @@ export function TopBar() {
             <TooltipTrigger asChild>
               <div className="flex flex-wrap items-center">
                 {isOnline ? (
-                  <Wifi className="h-4 w-4 text-green-500" />
+                  <Wifi aria-hidden="true" className="h-4 w-4 text-green-500" />
                 ) : (
-                  <WifiOff className="h-4 w-4 text-destructive" />
+                  <WifiOff aria-hidden="true" className="h-4 w-4 text-destructive" />
                 )}
               </div>
             </TooltipTrigger>
@@ -357,7 +357,7 @@ export function TopBar() {
                   setIsOnline(!airplaneMode && navigator.onLine)
                 }}
               >
-                <Plane className={cn(
+                <Plane aria-hidden="true" className={cn(
                   "h-4 w-4",
                   airplaneMode && "text-orange-500"
                 )} />
@@ -387,7 +387,7 @@ export function TopBar() {
                   className="gap-2 h-9 hidden md:flex"
                   onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/billing`)}
                 >
-                  <Sparkles className="h-4 w-4" />
+                  <Sparkles aria-hidden="true" className="h-4 w-4" />
                   <span className="hidden lg:inline">{t('nav.upgrade')}</span>
                 </Button>
               </TooltipTrigger>
@@ -403,13 +403,13 @@ export function TopBar() {
               <TooltipTrigger asChild>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="gap-2 px-2 h-9">
-                    <Avatar className="h-7 w-7">
+                    <Avatar aria-hidden="true" className="h-7 w-7">
                       <AvatarImage src="/placeholder-avatar.jpg" />
-                      <AvatarFallback className="text-xs">
+                      <AvatarFallback aria-hidden="true" className="text-xs">
                         {getInitials("Current User")}
                       </AvatarFallback>
                     </Avatar>
-                    <ChevronDown className="h-3.5 w-3.5 text-muted-foreground hidden md:block sm:block" />
+                    <ChevronDown aria-hidden="true" className="h-3.5 w-3.5 text-muted-foreground hidden md:block sm:block" />
                   </Button>
                 </DropdownMenuTrigger>
               </TooltipTrigger>
@@ -447,7 +447,7 @@ export function TopBar() {
                   className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between"
                 >
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <Database className="h-4 w-4" />
+                    <Database aria-hidden="true" className="h-4 w-4" />
                     <span>Demo Mode</span>
                   </div>
                   <Switch
@@ -471,8 +471,7 @@ export function TopBar() {
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
-              <DropdownMenuItem 
-                className="text-destructive"
+              <DropdownMenuItem aria-hidden="true" className="text-destructive"
                 onClick={handleLogout}
               >
                 {t('nav.logout')}

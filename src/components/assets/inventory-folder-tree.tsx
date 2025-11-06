@@ -108,24 +108,24 @@ export function InventoryFolderTree({ workspaceId, onFolderSelect, selectedFolde
               className="p-0.5 hover:bg-muted rounded"
             >
               {isExpanded ? (
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown aria-hidden="true" className="h-4 w-4" />
               ) : (
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight aria-hidden="true" className="h-4 w-4" />
               )}
             </button>
           )}
           {!hasChildren && <div className="w-5" />}
           
           {isExpanded ? (
-            <FolderOpen className="h-4 w-4 text-blue-500" style={{ color: folder.color }} />
+            <FolderOpen aria-hidden="true" className="h-4 w-4 text-blue-500" style={{ color: folder.color }} />
           ) : (
-            <Folder className="h-4 w-4 text-blue-500" style={{ color: folder.color }} />
+            <Folder aria-hidden="true" className="h-4 w-4 text-blue-500" style={{ color: folder.color }} />
           )}
           
           <span className="flex-1 text-sm font-medium truncate">{folder.name}</span>
           
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-            {hasLowStock && <AlertCircle className="h-3 w-3 text-orange-500" />}
+            {hasLowStock && <AlertCircle aria-hidden="true" className="h-3 w-3 text-orange-500" />}
             <Badge variant="secondary" className="text-xs px-1.5 py-0">
               {folder.item_count}
             </Badge>
@@ -159,11 +159,11 @@ export function InventoryFolderTree({ workspaceId, onFolderSelect, selectedFolde
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <h3 className="font-semibold">Folders</h3>
         <Button size="sm" variant="ghost" onClick={() => {}}>
-          <Plus className="h-4 w-4" />
+          <Plus aria-hidden="true" className="h-4 w-4" />
         </Button>
       </div>
       
-      <ScrollArea className="flex-1">
+      <ScrollArea aria-hidden="true" className="flex-1">
         <div className="p-2">
           {/* All Items option */}
           <div
@@ -171,16 +171,16 @@ export function InventoryFolderTree({ workspaceId, onFolderSelect, selectedFolde
               "flex items-center gap-2 py-1.5 px-2 rounded-md cursor-pointer hover:bg-accent transition-colors mb-2",
               !selectedFolderId && "bg-accent"
             )}
-            onClick={() => onFolderSelect(null)}
+             role="button" tabIndex={0} onClick={() => onFolderSelect(null)}
           >
             <div className="w-5" />
-            <Folder className="h-4 w-4 text-gray-500" />
+            <Folder aria-hidden="true" className="h-4 w-4 text-gray-500" />
             <span className="flex-1 text-sm font-medium">All Items</span>
           </div>
           
           {folders.length === 0 ? (
             <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground text-sm">
-              <Folder className="h-8 w-8 mx-auto mb-2 opacity-50" />
+              <Folder aria-hidden="true" className="h-8 w-8 mx-auto mb-2 opacity-50" />
               <p>No folders yet</p>
               <p className="text-xs mt-1">Create folders to organize inventory</p>
             </div>

@@ -128,7 +128,7 @@ export function CalendarOrganism({
               onClick={previousMonth}
               aria-label={t('calendar.previousMonth')}
             >
-              <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+              <ChevronLeft aria-hidden="true" className="h-4 w-4" />
             </Button>
             <Button variant="outline" onClick={goToToday}>
               {t('calendar.today')}
@@ -139,7 +139,7 @@ export function CalendarOrganism({
               onClick={nextMonth}
               aria-label={t('calendar.nextMonth')}
             >
-              <ChevronRight className="h-4 w-4" aria-hidden="true" />
+              <ChevronRight aria-hidden="true" className="h-4 w-4" />
             </Button>
             <h3 className="font-semibold ml-4">
               {monthNames[month]} {year}
@@ -201,7 +201,7 @@ export function CalendarOrganism({
                         <Tooltip key={item.id}>
                           <TooltipTrigger asChild>
                             <div
-                              onClick={() => onItemClick?.(item)}
+                               role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                               className={cn(
                                 'text-xs p-1 rounded truncate cursor-pointer',
                                 getStatusColor(getStatusValue(item, schema))

@@ -153,10 +153,10 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
       {/* Sort Rules */}
       {sorts.length === 0 ? (
         <div className="text-center py-5 md:py-8 lg:py-10 border-2 border-dashed rounded-lg">
-          <ArrowUpDown className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+          <ArrowUpDown aria-hidden="true" className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
           <p className="text-sm text-muted-foreground mb-4">No sorting applied</p>
           <Button onClick={addSort} variant="outline" size="sm">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             Add Sort
           </Button>
         </div>
@@ -174,8 +174,8 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
           >
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <GripVertical className="h-4 w-4 text-muted-foreground" />
-                <Label className="text-xs font-medium">Sort {index + 1}</Label>
+                <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
+                <Label aria-hidden="true" className="text-xs font-medium">Sort {index + 1}</Label>
               </div>
               <Button
                 variant="ghost"
@@ -183,7 +183,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
                 className="h-6 w-6"
                 onClick={() => removeSort(sort.id)}
               >
-                <X className="h-3 w-3" />
+                <X aria-hidden="true" className="h-3 w-3" />
               </Button>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -191,7 +191,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
                 value={sort.field}
                 onValueChange={(value) => updateSort(sort.id, { field: value })}
               >
-                <SelectTrigger className="h-9 flex-1">
+                <SelectTrigger aria-hidden="true" className="h-9 flex-1">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -210,9 +210,9 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
                 title={sort.direction === "asc" ? "Ascending" : "Descending"}
               >
                 {sort.direction === "asc" ? (
-                  <ArrowUp className="h-4 w-4" />
+                  <ArrowUp aria-hidden="true" className="h-4 w-4" />
                 ) : (
-                  <ArrowDown className="h-4 w-4" />
+                  <ArrowDown aria-hidden="true" className="h-4 w-4" />
                 )}
               </Button>
             </div>
@@ -227,7 +227,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
       {sorts.length > 0 && (
         <div className="flex flex-wrap gap-2">
           <Button onClick={addSort} variant="outline" className="flex-1">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             Add Sort
           </Button>
           <Button onClick={clearAllSorts} variant="outline">
@@ -246,7 +246,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
             onClick={() => applySavedSort("priority-high")}
             className="justify-start"
           >
-            <ArrowDown className="h-3 w-3 mr-2" />
+            <ArrowDown aria-hidden="true" className="h-3 w-3 mr-2" />
             High Priority
           </Button>
           <Button
@@ -255,7 +255,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
             onClick={() => applySavedSort("due-date")}
             className="justify-start"
           >
-            <ArrowUp className="h-3 w-3 mr-2" />
+            <ArrowUp aria-hidden="true" className="h-3 w-3 mr-2" />
             Due Date
           </Button>
           <Button
@@ -264,7 +264,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
             onClick={() => applySavedSort("recent")}
             className="justify-start"
           >
-            <ArrowDown className="h-3 w-3 mr-2" />
+            <ArrowDown aria-hidden="true" className="h-3 w-3 mr-2" />
             Most Recent
           </Button>
           <Button
@@ -273,7 +273,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
             onClick={() => applySavedSort("alphabetical")}
             className="justify-start"
           >
-            <ArrowUp className="h-3 w-3 mr-2" />
+            <ArrowUp aria-hidden="true" className="h-3 w-3 mr-2" />
             A to Z
           </Button>
         </div>
@@ -289,7 +289,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
             size="sm"
             onClick={() => applySavedSort("priority-high")}
           >
-            <ArrowUpDown className="h-3 w-3 mr-2" />
+            <ArrowUpDown aria-hidden="true" className="h-3 w-3 mr-2" />
             Priority: High to Low, Due Date
           </Button>
           <Button
@@ -298,7 +298,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
             size="sm"
             onClick={() => applySavedSort("due-date")}
           >
-            <ArrowUpDown className="h-3 w-3 mr-2" />
+            <ArrowUpDown aria-hidden="true" className="h-3 w-3 mr-2" />
             Due Date (Soonest First)
           </Button>
           <Button
@@ -307,7 +307,7 @@ export function SortPanel({ onSortChange }: SortPanelProps) {
             size="sm"
             onClick={() => applySavedSort("recent")}
           >
-            <ArrowUpDown className="h-3 w-3 mr-2" />
+            <ArrowUpDown aria-hidden="true" className="h-3 w-3 mr-2" />
             Recently Updated
           </Button>
         </div>

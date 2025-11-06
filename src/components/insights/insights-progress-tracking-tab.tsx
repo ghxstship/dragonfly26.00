@@ -73,20 +73,20 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
       {/* Overall Progress Summary */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('overallProgress')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">58%</p>
             <p className="text-xs text-green-600 mt-1">+12% this quarter</p>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('objectivesOnTrack')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">2/3</p>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('avgVelocity')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">+6.2%</p>
             <p className="text-xs text-muted-foreground mt-1">per month</p>
@@ -100,7 +100,7 @@ export function InsightsProgressTrackingTab({ data = [], loading = false }: Insi
           <CardHeader>
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
-                <CardTitle className="text-lg">{data.objective}</CardTitle>
+                <CardTitle aria-hidden="true" className="text-lg">{data.objective}</CardTitle>
                 <p className="text-sm text-muted-foreground mt-1">
                   Velocity: {data.velocity}
                 </p>

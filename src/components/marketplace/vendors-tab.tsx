@@ -35,11 +35,11 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "verified":
-        return <Badge className="bg-green-600"><ShieldCheck className="h-3 w-3 mr-1"  aria-hidden="true" />{t('verified')}</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600"><ShieldCheck aria-hidden="true" className="h-3 w-3 mr-1" />{t('verified')}</Badge>
       case "certified":
-        return <Badge className="bg-blue-600"><Award className="h-3 w-3 mr-1" aria-hidden="true" />{t('certified')}</Badge>
+        return <Badge aria-hidden="true" className="bg-blue-600"><Award aria-hidden="true" className="h-3 w-3 mr-1" />{t('certified')}</Badge>
       case "featured":
-        return <Badge className="bg-purple-600"><Star className="h-3 w-3 mr-1" aria-hidden="true" />{t('featured')}</Badge>
+        return <Badge aria-hidden="true" className="bg-purple-600"><Star aria-hidden="true" className="h-3 w-3 mr-1" />{t('featured')}</Badge>
       case "active":
         return <Badge variant="outline">{t('active')}</Badge>
       default:
@@ -52,11 +52,11 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
 {/* Filters */}
       <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input placeholder={t('searchVendors')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-full max-w-[200px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[200px]">
             <SelectValue placeholder={t('vendorType')} />
           </SelectTrigger>
           <SelectContent>
@@ -69,7 +69,7 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
           </SelectContent>
         </Select>
         <Select defaultValue="verified">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('filter')} />
           </SelectTrigger>
           <SelectContent>
@@ -80,7 +80,7 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
           </SelectContent>
         </Select>
         <Select defaultValue="rating">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
@@ -97,16 +97,16 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
           <Card key={vendor.id} className="hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
-                <Avatar className="h-16 w-16">
-                  <AvatarFallback className="bg-primary/10 text-primary text-base md:text-lg lg:text-xl">
+                <Avatar aria-hidden="true" className="h-16 w-16">
+                  <AvatarFallback aria-hidden="true" className="bg-primary/10 text-primary text-base md:text-lg lg:text-xl">
                     {vendor.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1 space-y-2">
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <CardTitle className="text-lg">{vendor.name}</CardTitle>
-                      <CardDescription className="mt-1">
+                      <CardTitle aria-hidden="true" className="text-lg">{vendor.name}</CardTitle>
+                      <CardDescription aria-hidden="true" className="mt-1">
                         {vendor.assignee_name}
                       </CardDescription>
                     </div>
@@ -116,7 +116,7 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
               </div>
             </CardHeader>
 
-            <CardContent className="space-y-4">
+            <CardContent aria-hidden="true" className="space-y-4">
               {/* Description */}
               <p className="text-sm text-muted-foreground line-clamp-2">
                 {vendor.description}
@@ -126,31 +126,31 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
               <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 p-4 bg-muted/50 rounded-lg">
                 <div className="space-y-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                    <Star className="h-3 w-3" aria-hidden="true" />
+                    <Star aria-hidden="true" className="h-3 w-3" />
                     <span className="text-xs">{t('rating')}</span>
                   </div>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
+                    <Star aria-hidden="true" className="h-4 w-4 fill-yellow-500 text-yellow-500" />
                     <span className="font-semibold">{vendor.rating}</span>
                   </div>
                 </div>
                 <div className="space-y-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                    <TrendingUp className="h-3 w-3" aria-hidden="true" />
+                    <TrendingUp aria-hidden="true" className="h-3 w-3" />
                     <span className="text-xs">{t('sales')}</span>
                   </div>
                   <p className="font-semibold">{vendor.total_sales}</p>
                 </div>
                 <div className="space-y-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                    <MessageCircle className="h-3 w-3" aria-hidden="true" />
+                    <MessageCircle aria-hidden="true" className="h-3 w-3" />
                     <span className="text-xs">{t('reviews')}</span>
                   </div>
                   <p className="font-semibold">{vendor.comments_count}</p>
                 </div>
                 <div className="space-y-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                    <Clock className="h-3 w-3" aria-hidden="true" />
+                    <Clock aria-hidden="true" className="h-3 w-3" />
                     <span className="text-xs">{t('response')}</span>
                   </div>
                   <p className="font-semibold text-xs">{vendor.response_time}</p>
@@ -168,7 +168,7 @@ export function VendorsTab({ data = [], loading: loadingProp = false }: VendorsT
 
               {/* CTA */}
               <div className="flex flex-wrap gap-2 pt-2">
-                <Button className="flex-1">
+                <Button aria-hidden="true" className="flex-1">
                   View Store
                 </Button>
                 <Button variant="outline">

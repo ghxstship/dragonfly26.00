@@ -129,7 +129,7 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
                   toggleNode(node.id)
                 }}
               >
-                {node.collapsed ? <Plus className="h-3 w-3" /> : <Minimize2 className="h-3 w-3" />}
+                {node.collapsed ? <Plus aria-hidden="true" className="h-3 w-3" /> : <Minimize2 className="h-3 w-3" />}
               </Button>
             )}
           </div>
@@ -152,7 +152,7 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
       {/* Toolbar */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Network className="h-5 w-5" />
+          <Network aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Mind Map</h3>
           <Badge variant="secondary">{data.length} nodes</Badge>
         </div>
@@ -181,7 +181,7 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
                     size="icon"
                     onClick={() => setZoom(Math.max(50, zoom - 10))}
                   >
-                    <ZoomOut className="h-4 w-4" />
+                    <ZoomOut aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -198,7 +198,7 @@ export function MindMapView({ data, schema, onItemClick }: MindMapViewProps) {
                     size="icon"
                     onClick={() => setZoom(Math.min(200, zoom + 10))}
                   >
-                    <ZoomIn className="h-4 w-4" />
+                    <ZoomIn aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>

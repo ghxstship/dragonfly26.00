@@ -146,7 +146,7 @@ export function FieldConfigPanel() {
               draggedItem === field.id ? "opacity-50" : ""
             }`}
           >
-            <GripVertical className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+            <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <div className="text-sm font-medium">{field.name}</div>
               {field.locked && (
@@ -162,9 +162,9 @@ export function FieldConfigPanel() {
               disabled={field.locked}
             >
               {field.visible ? (
-                <Eye className="h-4 w-4" />
+                <Eye aria-hidden="true" className="h-4 w-4" />
               ) : (
-                <EyeOff className="h-4 w-4 text-muted-foreground" />
+                <EyeOff aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
               )}
             </Button>
           </div>

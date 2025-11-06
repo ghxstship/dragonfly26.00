@@ -145,9 +145,9 @@ export function EndorsementsTab() {
       {/* Stats */}
       <div className="grid md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('profile.endorsements.totalEndorsements')}</CardTitle>
-            <ThumbsUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('profile.endorsements.totalEndorsements')}</CardTitle>
+            <ThumbsUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{displayEndorsements.length}</div>
@@ -156,9 +156,9 @@ export function EndorsementsTab() {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('profile.endorsements.skillsEndorsed')}</CardTitle>
-            <Badge className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('profile.endorsements.skillsEndorsed')}</CardTitle>
+            <Badge aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{skillEndorsements.length}</div>
@@ -167,9 +167,9 @@ export function EndorsementsTab() {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('profile.endorsements.topSkill')}</CardTitle>
-            <MessageSquare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('profile.endorsements.topSkill')}</CardTitle>
+            <MessageSquare aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -215,7 +215,7 @@ export function EndorsementsTab() {
               <CardDescription>{t('profile.endorsements.detailedRecommendations')}</CardDescription>
             </div>
             <Button variant="outline" size="sm">
-              <UserPlus className="h-4 w-4 mr-2" />
+              <UserPlus aria-hidden="true" className="h-4 w-4 mr-2" />
               {t('profile.endorsements.requestEndorsement')}
             </Button>
           </div>
@@ -227,7 +227,7 @@ export function EndorsementsTab() {
             />
           </div>
         </CardHeader>
-        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
+        <CardContent aria-hidden="true" className="space-y-3 md:space-y-4 lg:space-y-6">
           {filteredEndorsements.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('profile.endorsements.noEndorsements')}
@@ -236,7 +236,7 @@ export function EndorsementsTab() {
             filteredEndorsements.map((endorsement: any) => (
               <div key={endorsement.id} className="border-b pb-6 last:border-0">
                 <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
-                  <Avatar className="h-12 w-12">
+                  <Avatar aria-hidden="true" className="h-12 w-12">
                     <AvatarImage src={endorsement.endorserImage} />
                     <AvatarFallback>
                       {endorsement.endorserName
@@ -270,11 +270,11 @@ export function EndorsementsTab() {
 
                     <div className="flex flex-wrap gap-2 pt-2">
                       <Button variant="ghost" size="sm">
-                        <ThumbsUp className="h-3 w-3 mr-1" aria-hidden="true" />
+                        <ThumbsUp aria-hidden="true" className="h-3 w-3 mr-1" />
                         {t('profile.endorsements.thank')}
                       </Button>
                       <Button variant="ghost" size="sm">
-                        <MessageSquare className="h-3 w-3 mr-1" aria-hidden="true" />
+                        <MessageSquare aria-hidden="true" className="h-3 w-3 mr-1" />
                         {t('profile.endorsements.reply')}
                       </Button>
                     </div>
@@ -295,12 +295,12 @@ export function EndorsementsTab() {
         </CardHeader>
         <CardContent>
           <div className="text-center py-4 md:py-6 lg:py-8">
-            <UserPlus className="h-12 w-12 mx-auto text-muted-foreground mb-4" aria-hidden="true" />
+            <UserPlus aria-hidden="true" className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
             <p className="text-sm text-muted-foreground mb-4">
               {t('profile.endorsements.helpColleagues')}
             </p>
             <Button>
-              <UserPlus className="h-4 w-4 mr-2" />
+              <UserPlus aria-hidden="true" className="h-4 w-4 mr-2" />
               {t('profile.endorsements.endorseColleague')}
             </Button>
           </div>

@@ -280,11 +280,11 @@ export function CreateItemDialogEnhanced({
                     !value && "text-muted-foreground"
                   )}
                 >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  <CalendarIcon aria-hidden="true" className="mr-2 h-4 w-4" />
                   {value ? format(new Date(value), field.type === 'datetime' ? "PPP p" : "PPP") : `Pick a ${field.label.toLowerCase()}`}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
+              <PopoverContent aria-hidden="true" className="w-auto p-0" align="start">
                 <Calendar
                   mode="single"
                   selected={value ? new Date(value) : undefined}
@@ -338,12 +338,11 @@ export function CreateItemDialogEnhanced({
                     }}
                     className="hover:text-destructive"
                   >
-                    <X className="h-3 w-3" />
+                    <X aria-hidden="true" className="h-3 w-3" />
                   </button>
                 </span>
               ))}
-              <Input
-                className="flex-1 min-w-[120px] border-0 shadow-none focus-visible:ring-0 p-0"
+              <Input aria-hidden="true" className="flex-1 min-w-[120px] border-0 shadow-none focus-visible:ring-0 p-0"
                 placeholder="Add tag..."
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
@@ -458,7 +457,7 @@ export function CreateItemDialogEnhanced({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[625px] max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-[625px] max-h-[90vh] overflow-y-auto">
         <form onSubmit={handleSubmit}>
           <DialogHeader>
             <DialogTitle>{config.title}</DialogTitle>

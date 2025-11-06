@@ -108,8 +108,8 @@ export function CustomStatusesTab() {
             </div>
             <Dialog open={isCreating} onOpenChange={setIsCreating}>
               <DialogTrigger asChild>
-                <Button className="gap-2" aria-label="Add new custom status">
-                  <Plus className="h-4 w-4" aria-hidden="true" />
+                <Button aria-hidden="true" className="gap-2" aria-label="Add new custom status">
+                  <Plus aria-hidden="true" className="h-4 w-4" />
                   Add Status
                 </Button>
               </DialogTrigger>
@@ -184,7 +184,7 @@ export function CustomStatusesTab() {
                 key={status.id}
                 className="flex flex-col md:flex-row items-center gap-3 p-3 border rounded-lg hover:bg-accent/50"
               >
-                <GripVertical className="h-4 w-4 text-muted-foreground cursor-grab" aria-hidden="true" />
+                <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground cursor-grab" />
                 
                 <div
                   className="h-3 w-3 rounded-full flex-shrink-0"
@@ -202,15 +202,14 @@ export function CustomStatusesTab() {
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Status actions">
-                      <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+                      <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem>Edit</DropdownMenuItem>
                     <DropdownMenuItem>Duplicate</DropdownMenuItem>
                     {!status.is_default && (
-                      <DropdownMenuItem
-                        className="text-destructive"
+                      <DropdownMenuItem aria-hidden="true" className="text-destructive"
                         onClick={() => deleteStatus(status.id)}
                       >
                         Delete

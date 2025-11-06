@@ -55,7 +55,7 @@ export function GlCodesTab({ data, loading }: GlCodesTabProps) {
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -69,7 +69,7 @@ export function GlCodesTab({ data, loading }: GlCodesTabProps) {
       {/* Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="pt-6" aria-hidden="true">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{items.length}</p>
               <p className="text-xs text-muted-foreground mt-1">{tCommon('summaryCards.totalItems')}</p>
@@ -77,7 +77,7 @@ export function GlCodesTab({ data, loading }: GlCodesTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6" aria-hidden="true">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">0</p>
               <p className="text-xs text-muted-foreground mt-1">{tCommon('summaryCards.active')}</p>
@@ -85,7 +85,7 @@ export function GlCodesTab({ data, loading }: GlCodesTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6" aria-hidden="true">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">0</p>
               <p className="text-xs text-muted-foreground mt-1">{tCommon('summaryCards.pending')}</p>
@@ -93,7 +93,7 @@ export function GlCodesTab({ data, loading }: GlCodesTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6" aria-hidden="true">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">0</p>
               <p className="text-xs text-muted-foreground mt-1">{tCommon('summaryCards.completed')}</p>
@@ -105,7 +105,7 @@ export function GlCodesTab({ data, loading }: GlCodesTabProps) {
       {/* Main Content Card */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base" aria-hidden="true">{t('tabs.glCodes')}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">{t('tabs.glCodes')}</CardTitle>
           <CardDescription>{t('descriptions.glCodes')}</CardDescription>
         </CardHeader>
         <CardContent>
@@ -117,7 +117,7 @@ export function GlCodesTab({ data, loading }: GlCodesTabProps) {
                 </p>
                 <p className="text-sm mb-4">{tCommon('emptyState.description')}</p>
                 <Button aria-label={tCommon('aria.createButton', { type: t('tabs.glCodes') })}>
-                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                   {tCommon('emptyState.button', { resource: t('tabs.glCodes') })}
                 </Button>
               </div>

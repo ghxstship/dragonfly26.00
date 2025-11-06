@@ -116,8 +116,7 @@ export function WishlistButton({
               size={size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'icon'}
               className={cn("relative", className)}
             >
-              <Heart
-                className={cn(
+              <Heart aria-hidden="true" className={cn(
                   size === 'sm' ? 'h-3.5 w-3.5' : size === 'lg' ? 'h-5 w-5' : 'h-4 w-4',
                   isInAnyWishlist && "fill-red-500 text-red-500"
                 )}
@@ -150,7 +149,7 @@ export function WishlistButton({
                   </p>
                 </div>
                 {isInWishlists.has(wishlist.id) && (
-                  <Check className="h-4 w-4 ml-2 flex-shrink-0" />
+                  <Check aria-hidden="true" className="h-4 w-4 ml-2 flex-shrink-0" />
                 )}
               </DropdownMenuItem>
             ))}
@@ -159,14 +158,14 @@ export function WishlistButton({
               onClick={() => setShowNewWishlistDialog(true)}
               className="cursor-pointer"
             >
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
               Create New Wishlist
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
         <Dialog open={showNewWishlistDialog} onOpenChange={setShowNewWishlistDialog}>
-          <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
+          <DialogContent aria-hidden="true" className="sm:max-w-md max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Create New Wishlist</DialogTitle>
               <DialogDescription>
@@ -231,8 +230,7 @@ export function WishlistButton({
         }
       }}
     >
-      <Heart
-        className={cn(
+      <Heart aria-hidden="true" className={cn(
           "mr-2",
           size === 'sm' ? 'h-3.5 w-3.5' : size === 'lg' ? 'h-5 w-5' : 'h-4 w-4',
           isInAnyWishlist && "fill-red-500 text-red-500"

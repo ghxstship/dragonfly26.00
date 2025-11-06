@@ -575,7 +575,7 @@ export function TabPageContent() {
 
             <div className="flex-1 max-w-md">
               <div className="relative">
-                <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+                <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
                 <Input
                   placeholder="Search..."
                   value={searchQuery as any}
@@ -593,7 +593,7 @@ export function TabPageContent() {
               }}
               title="Filter"
             >
-              <Filter className="h-4 w-4" />
+              <Filter aria-hidden="true" className="h-4 w-4" />
             </Button>
 
             <Button 
@@ -604,7 +604,7 @@ export function TabPageContent() {
               }}
               title="Sort"
             >
-              <ArrowUpDown className="h-4 w-4" />
+              <ArrowUpDown aria-hidden="true" className="h-4 w-4" />
             </Button>
 
             <Button 
@@ -622,7 +622,7 @@ export function TabPageContent() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon" title="More Actions">
-                  <MoreHorizontal className="h-4 w-4" />
+                  <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
@@ -631,7 +631,7 @@ export function TabPageContent() {
                     setRightSidebarOpen(true, 'import')
                   }}
                 >
-                  <Upload className="h-4 w-4 mr-2" />
+                  <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
                   Import Data
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -639,7 +639,7 @@ export function TabPageContent() {
                     setRightSidebarOpen(true, 'export')
                   }}
                 >
-                  <Download className="h-4 w-4 mr-2" />
+                  <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                   Export Data
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -655,7 +655,7 @@ export function TabPageContent() {
                     setRightSidebarOpen(true, 'photo-upload')
                   }}
                 >
-                  <Camera className="h-4 w-4 mr-2" />
+                  <Camera aria-hidden="true" className="h-4 w-4 mr-2" />
                   Photo Upload
                 </DropdownMenuItem>
                 <DropdownMenuItem
@@ -663,7 +663,7 @@ export function TabPageContent() {
                     setRightSidebarOpen(true, 'barcode-scanner')
                   }}
                 >
-                  <QrCode className="h-4 w-4 mr-2" />
+                  <QrCode aria-hidden="true" className="h-4 w-4 mr-2" />
                   Scan Barcode/QR
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -678,7 +678,7 @@ export function TabPageContent() {
                 }}
                 title="Activity"
               >
-                <ActivityIcon className="h-4 w-4" />
+                <ActivityIcon aria-hidden="true" className="h-4 w-4" />
               </Button>
               <Button 
                 variant="ghost" 
@@ -688,7 +688,7 @@ export function TabPageContent() {
                 }}
                 title="Comments"
               >
-                <MessageSquare className="h-4 w-4" />
+                <MessageSquare aria-hidden="true" className="h-4 w-4" />
               </Button>
               <Button 
                 variant="ghost" 
@@ -698,7 +698,7 @@ export function TabPageContent() {
                 }}
                 title="Time Tracking"
               >
-                <Clock className="h-4 w-4" />
+                <Clock aria-hidden="true" className="h-4 w-4" />
               </Button>
             </div>
           </div>

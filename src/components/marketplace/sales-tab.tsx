@@ -33,15 +33,15 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />{t('completed')}</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600"><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />{t('completed')}</Badge>
       case "in-progress":
-        return <Badge className="bg-blue-600"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />{t('inProgress')}</Badge>
+        return <Badge aria-hidden="true" className="bg-blue-600"><Clock aria-hidden="true" className="h-3 w-3 mr-1" />{t('inProgress')}</Badge>
       case "confirmed":
-        return <Badge className="bg-purple-600"><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />{t('confirmed')}</Badge>
+        return <Badge aria-hidden="true" className="bg-purple-600"><CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" />{t('confirmed')}</Badge>
       case "pending":
-        return <Badge variant="outline"><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('pending')}</Badge>
+        return <Badge variant="outline"><AlertCircle aria-hidden="true" className="h-3 w-3 mr-1" />{t('pending')}</Badge>
       case "cancelled":
-        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('cancelled')}</Badge>
+        return <Badge variant="destructive"><XCircle aria-hidden="true" className="h-3 w-3 mr-1" />{t('cancelled')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -71,28 +71,28 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
 {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Total Revenue</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <DollarSign className="h-6 w-6 text-green-600"  aria-hidden="true" />
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <DollarSign aria-hidden="true" className="h-6 w-6 text-green-600" />
               ${totalRevenue.toLocaleString()}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Completed Sales</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
               <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0" />
               {completedSales}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Pending Sales</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <Clock className="h-6 w-6 text-yellow-600" aria-hidden="true" />
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <Clock aria-hidden="true" className="h-6 w-6 text-yellow-600" />
               {pendingSales}
             </CardTitle>
           </CardHeader>
@@ -102,11 +102,11 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
       {/* Filters */}
       <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input placeholder={t('searchSales')} className="pl-9" />
         </div>
         <Button variant="outline">
-          <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+          <Download aria-hidden="true" className="h-4 w-4 mr-2" />
           Export
         </Button>
       </div>
@@ -126,7 +126,7 @@ export function SalesTab({ data = [], loading: loadingProp = false }: SalesTabPr
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
-                    <CardTitle className="text-lg">{sale.name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{sale.name}</CardTitle>
                     <CardDescription>
                       Customer: {sale.assignee_name}
                     </CardDescription>

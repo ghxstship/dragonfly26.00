@@ -129,14 +129,14 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
   }, [workspaceId])
 
   return (
-    <Card className="w-full max-w-2xl px-4 sm:px-6 lg:px-8">
+    <Card aria-hidden="true" className="w-full max-w-2xl px-4 sm:px-6 lg:px-8">
       <CardHeader>
         <CardTitle>Supabase Connection Test</CardTitle>
         <CardDescription>
           Testing database, API, and real-time connections
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent aria-hidden="true" className="space-y-4">
         {testing && (
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -149,7 +149,7 @@ export function SupabaseConnectionTest({ workspaceId }: { workspaceId: string })
             {result.success ? (
               <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
             ) : (
-              <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
+              <XCircle aria-hidden="true" className="h-5 w-5 text-red-500 mt-0.5" />
             )}
             <div className="flex-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">

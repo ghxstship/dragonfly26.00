@@ -119,7 +119,7 @@ export function ViewSwitcher({
             aria-label={viewLabels[mode]}
             aria-pressed={isActive}
           >
-            <Icon className="h-4 w-4" aria-hidden="true" />
+            <Icon aria-hidden="true" className="h-4 w-4" />
           </Button>
         )
       })}

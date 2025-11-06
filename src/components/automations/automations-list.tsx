@@ -24,11 +24,11 @@ export function AutomationsList({ automations, onUpdate }: AutomationsListProps)
     <div className="space-y-4">
       {automations.map((automation: any) => (
         <Card key={automation.id}>
-          <CardContent className="p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-6">
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
-                  <Zap className={`h-5 w-5 ${automation.is_active ? "text-purple-600" : "text-muted-foreground"}`} />
+                  <Zap aria-hidden="true" className={`h-5 w-5 ${automation.is_active ? "text-purple-600" : "text-muted-foreground"}`} />
                   <h3 className="text-lg font-semibold">{automation.name}</h3>
                 </div>
                 {automation.description && (
@@ -57,13 +57,13 @@ export function AutomationsList({ automations, onUpdate }: AutomationsListProps)
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="icon">
-                      <MoreHorizontal className="h-4 w-4" />
+                      <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem>Edit</DropdownMenuItem>
                     <DropdownMenuItem>View logs</DropdownMenuItem>
-                    <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
+                    <DropdownMenuItem aria-hidden="true" className="text-destructive">Delete</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>

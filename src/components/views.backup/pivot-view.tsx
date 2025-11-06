@@ -99,17 +99,17 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <TableIcon className="h-5 w-5" />
+          <TableIcon aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Pivot Table</h3>
           <Badge variant="secondary">{data.length} records</Badge>
         </div>
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Button variant="outline" size="sm">
-            <RefreshCw className="h-4 w-4 mr-2" />
+            <RefreshCw aria-hidden="true" className="h-4 w-4 mr-2" />
             Refresh
           </Button>
           <Button variant="outline" size="sm">
-            <Download className="h-4 w-4 mr-2" />
+            <Download aria-hidden="true" className="h-4 w-4 mr-2" />
             Export
           </Button>
         </div>
@@ -259,8 +259,8 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
           {/* Summary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 mt-6">
             <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Total Records</CardTitle>
+              <CardHeader aria-hidden="true" className="pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium">Total Records</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{data.length}</div>
@@ -268,8 +268,8 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
             </Card>
 
             <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Dimensions</CardTitle>
+              <CardHeader aria-hidden="true" className="pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium">Dimensions</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -279,8 +279,8 @@ export function PivotView({ data, schema, createActionLabel, onCreateAction }: P
             </Card>
 
             <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Grand Total</CardTitle>
+              <CardHeader aria-hidden="true" className="pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium">Grand Total</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatValue(grandTotal)}</div>

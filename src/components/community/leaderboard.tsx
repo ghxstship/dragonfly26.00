@@ -123,18 +123,18 @@ export function Leaderboard({
   }, [workspaceId, limit, showCurrentUser, currentUserId])
 
   const getRankIcon = (rank: number) => {
-    if (rank === 1) return <Trophy className="h-5 w-5 text-amber-500" />
-    if (rank === 2) return <Medal className="h-5 w-5 text-gray-400" />
-    if (rank === 3) return <Award className="h-5 w-5 text-amber-700" />
+    if (rank === 1) return <Trophy aria-hidden="true" className="h-5 w-5 text-amber-500" />
+    if (rank === 2) return <Medal aria-hidden="true" className="h-5 w-5 text-gray-400" />
+    if (rank === 3) return <Award aria-hidden="true" className="h-5 w-5 text-amber-700" />
     return null
   }
 
   if (loading) {
     return (
-      <Card className={className}>
+      <Card aria-hidden="true" className={className}>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <TrendingUp className="h-5 w-5" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <TrendingUp aria-hidden="true" className="h-5 w-5" />
             Leaderboard
           </CardTitle>
         </CardHeader>
@@ -156,10 +156,10 @@ export function Leaderboard({
   }
 
   return (
-    <Card className={className}>
-      <CardHeader className={compact ? "pb-3" : ""}>
-        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-lg">
-          <TrendingUp className="h-5 w-5" />
+    <Card aria-hidden="true" className={className}>
+      <CardHeader aria-hidden="true" className={compact ? "pb-3" : ""}>
+        <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-lg">
+          <TrendingUp aria-hidden="true" className="h-5 w-5" />
           Leaderboard
         </CardTitle>
         {!compact && totalMembers > 0 && (
@@ -168,7 +168,7 @@ export function Leaderboard({
           </p>
         )}
       </CardHeader>
-      <CardContent className={compact ? "pt-0" : ""}>
+      <CardContent aria-hidden="true" className={compact ? "pt-0" : ""}>
         <div className="space-y-3">
           {entries.map((entry: LeaderboardEntry, index: number) => (
             <div
@@ -186,7 +186,7 @@ export function Leaderboard({
               </div>
 
               {/* Avatar */}
-              <Avatar className="h-10 w-10">
+              <Avatar aria-hidden="true" className="h-10 w-10">
                 <AvatarImage src={entry.avatar_url || undefined} />
                 <AvatarFallback>
                   {entry.first_name?.[0]}{entry.last_name?.[0]}
@@ -234,7 +234,7 @@ export function Leaderboard({
                   <div className="flex flex-wrap items-center justify-center w-8 h-8 font-bold text-sm text-muted-foreground">
                     #{currentUserRank.current_rank}
                   </div>
-                  <Avatar className="h-10 w-10">
+                  <Avatar aria-hidden="true" className="h-10 w-10">
                     <AvatarImage src={currentUserRank.avatar_url || undefined} />
                     <AvatarFallback>
                       {currentUserRank.first_name?.[0]}{currentUserRank.last_name?.[0]}
@@ -258,7 +258,7 @@ export function Leaderboard({
 
           {entries.length === 0 && (
             <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
-              <TrendingUp className="h-12 w-12 mx-auto mb-2 opacity-20" />
+              <TrendingUp aria-hidden="true" className="h-12 w-12 mx-auto mb-2 opacity-20" />
               <p className="text-sm">No leaderboard data yet</p>
               <p className="text-xs">Be the first to earn points!</p>
             </div>

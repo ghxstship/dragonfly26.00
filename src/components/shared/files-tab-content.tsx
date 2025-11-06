@@ -240,7 +240,7 @@ export function FilesTabContent() {
                 {isUploading ? (
                   <Loader2 className="h-3.5 w-3.5 animate-spin" />
                 ) : (
-                  <Upload className="h-3.5 w-3.5" />
+                  <Upload aria-hidden="true" className="h-3.5 w-3.5" />
                 )}
                 Upload
               </span>
@@ -257,11 +257,11 @@ export function FilesTabContent() {
       </div>
 
       {/* Content */}
-      <ScrollArea className="flex-1">
+      <ScrollArea aria-hidden="true" className="flex-1">
         <div className="p-4 space-y-2">
           {files.length === 0 ? (
             <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 border-2 border-dashed rounded-lg">
-              <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <Upload aria-hidden="true" className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
               <p className="text-sm font-medium">No files yet</p>
               <p className="text-xs text-muted-foreground mt-1 mb-4">
                 Upload files to get started
@@ -269,7 +269,7 @@ export function FilesTabContent() {
               <label htmlFor="file-upload-input-empty">
                 <Button variant="outline" size="sm" disabled={isUploading} asChild>
                   <span>
-                    <Upload className="h-4 w-4 mr-2" />
+                    <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
                     Upload File
                   </span>
                 </Button>
@@ -285,7 +285,7 @@ export function FilesTabContent() {
                 >
                   <div className="flex-shrink-0">
                     <div className="h-10 w-10 rounded flex flex-wrap items-center justify-center bg-muted">
-                      <FileIcon className="h-5 w-5 text-muted-foreground" />
+                      <FileIcon aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -299,16 +299,15 @@ export function FilesTabContent() {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="icon" className="h-8 w-8 flex-shrink-0">
-                        <MoreHorizontal className="h-4 w-4" />
+                        <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem onClick={() => handleDownload(file.url, file.name)}>
-                        <Download className="h-4 w-4 mr-2" />
+                        <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                         Download
                       </DropdownMenuItem>
-                      <DropdownMenuItem 
-                        className="text-destructive"
+                      <DropdownMenuItem aria-hidden="true" className="text-destructive"
                         onClick={() => handleDelete(file.id, file.url)}
                       >
                         <Trash2 className="h-4 w-4 mr-2" />

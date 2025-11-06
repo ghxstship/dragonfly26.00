@@ -98,13 +98,13 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalKeyResults')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{keyResults.length}</p>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('onTrack')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">
               {keyResults.filter(kr => kr.status === "on_track").length}
@@ -112,7 +112,7 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('atRisk')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-yellow-600" aria-live="polite">
               {keyResults.filter(kr => kr.status === "at_risk").length}
@@ -120,7 +120,7 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('avgProgress')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">
               {Math.round(keyResults.reduce((sum: number, kr) => sum + kr.progress, 0) / keyResults.length)}%
@@ -136,7 +136,7 @@ export function InsightsKeyResultsTab({ data = [], loading = false }: InsightsKe
           <div className="space-y-3 mb-6">
             {keyResults.filter(kr => kr.objective === objective).map((kr: any) => (
               <Card key={kr.id} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-4">
+                <CardContent aria-hidden="true" className="p-4">
                   <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-3">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 flex-1">
                       <CheckCircle2 className={`h-5 w-5 ${kr.status === "on_track" ? "text-green-600" : "text-yellow-600"}`} aria-hidden="true" />

@@ -33,19 +33,19 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
       <SheetContent side="right" className="w-full sm:max-w-2xl p-0">
         <div className="flex flex-wrap flex-col h-full">
           {/* Header */}
-          <SheetHeader className="p-4 sm:p-6 pb-4 border-b">
+          <SheetHeader aria-hidden="true" className="p-4 sm:p-6 pb-4 border-b">
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <SheetTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{item.name}</SheetTitle>
+                <SheetTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{item.name}</SheetTitle>
                 <p className="text-sm text-muted-foreground mt-1">SKU: {item.sku || 'N/A'}</p>
               </div>
               <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
-                <X className="h-4 w-4" />
+                <X aria-hidden="true" className="h-4 w-4" />
               </Button>
             </div>
           </SheetHeader>
 
-          <ScrollArea className="flex-1">
+          <ScrollArea aria-hidden="true" className="flex-1">
             <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Photo Gallery */}
               {hasPhotos && (
@@ -79,23 +79,23 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
               {/* Quick Actions */}
               <div className="flex flex-wrap gap-2">
                 <Button onClick={onAdjustStock} className="flex-1">
-                  <TrendingUp className="h-4 w-4 mr-2" />
+                  <TrendingUp aria-hidden="true" className="h-4 w-4 mr-2" />
                   Adjust Stock
                 </Button>
                 <Button variant="outline" onClick={onEdit}>
-                  <Edit className="h-4 w-4 mr-2" />
+                  <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
                   Edit
                 </Button>
                 <Button variant="outline" size="icon">
-                  <QrCode className="h-4 w-4" />
+                  <QrCode aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
 
               {/* Key Info Cards */}
               <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                 <Card>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">Stock Level</CardTitle>
+                  <CardHeader aria-hidden="true" className="pb-3">
+                    <CardTitle aria-hidden="true" className="text-sm font-medium text-muted-foreground">Stock Level</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{item.stock_quantity || 0}</div>
@@ -106,8 +106,8 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
                 </Card>
 
                 <Card>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">Unit Value</CardTitle>
+                  <CardHeader aria-hidden="true" className="pb-3">
+                    <CardTitle aria-hidden="true" className="text-sm font-medium text-muted-foreground">Unit Value</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">${item.unit_cost?.toLocaleString() || '0'}</div>
@@ -126,7 +126,7 @@ export function InventoryItemDrawer({ item, open, onOpenChange, onEdit, onDelete
 
               {/* Tabs for Details */}
               <Tabs defaultValue="details" className="w-full max-w-full">
-                <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
+                <TabsList aria-hidden="true" className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
                   <TabsTrigger value="details">Details</TabsTrigger>
                   <TabsTrigger value="history">History</TabsTrigger>
                   <TabsTrigger value="notes">Notes</TabsTrigger>

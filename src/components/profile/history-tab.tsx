@@ -153,9 +153,9 @@ export function HistoryTab() {
       {/* Filters */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('profile.history.totalProjects')}</CardTitle>
-            <FolderKanban className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('profile.history.totalProjects')}</CardTitle>
+            <FolderKanban aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{displayHistory.length}</div>
@@ -164,9 +164,9 @@ export function HistoryTab() {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('profile.history.hoursWorked')}</CardTitle>
-            <CalendarDays className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('profile.history.hoursWorked')}</CardTitle>
+            <CalendarDays aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalHoursWorked.toLocaleString()}</div>
@@ -175,9 +175,9 @@ export function HistoryTab() {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('profile.history.averageRating')}</CardTitle>
-            <Briefcase className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('profile.history.averageRating')}</CardTitle>
+            <Briefcase aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{averageRating.toFixed(1)}</div>
@@ -222,7 +222,7 @@ export function HistoryTab() {
               <TableBody>
                 {filteredProjects.map((project: any) => (
                   <TableRow key={project.id} className="cursor-pointer hover:bg-muted/50">
-                    <TableCell className="font-medium">{(project.nameKey ? t(project.nameKey) : project.name)}</TableCell>
+                    <TableCell aria-hidden="true" className="font-medium">{(project.nameKey ? t(project.nameKey) : project.name)}</TableCell>
                     <TableCell>{project.role}</TableCell>
                     <TableCell>
                       <Badge variant="outline">{project.projectType}</Badge>

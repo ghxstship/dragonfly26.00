@@ -87,19 +87,19 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
             <CardHeader>
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
-                  <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <Award className="h-5 w-5 text-blue-600" aria-hidden="true" />
+                  <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                    <Award aria-hidden="true" className="h-5 w-5 text-blue-600" />
                     {t(area.nameKey)}
                   </CardTitle>
-                  <CardDescription className="mt-2">
+                  <CardDescription aria-hidden="true" className="mt-2">
                     Performance Score: <span className="font-bold text-lg text-foreground">{area.score}</span> / 100
                   </CardDescription>
                 </div>
                 <Badge variant={(area as any).status === "above" ? "default" : "secondary"} className={(area as any).status === "above" ? "bg-green-600" : "bg-yellow-600"}>
                   {(area as any).status === "above" ? (
-                    <><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" /> Above Benchmark</>
+                    <><CheckCircle aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" /> Above Benchmark</>
                   ) : (
-                    <><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Below Benchmark</>
+                    <><AlertCircle aria-hidden="true" className="h-3 w-3 mr-1" /> Below Benchmark</>
                   )}
                 </Badge>
               </div>
@@ -123,7 +123,7 @@ export function AnalyticsPerformanceTab({ data = [], loading = false }: Analytic
                       <p className="text-sm font-bold">{metric.value}</p>
                       <p className="text-xs text-muted-foreground">
                         Benchmark: {metric.benchmark}
-                        {(metric as any).status === "good" && <TrendingUp className="inline h-3 w-3 ml-1 text-green-600" aria-hidden="true" />}
+                        {(metric as any).status === "good" && <TrendingUp aria-hidden="true" className="inline h-3 w-3 ml-1 text-green-600" />}
                       </p>
                     </div>
                   ))}

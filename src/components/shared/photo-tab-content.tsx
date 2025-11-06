@@ -230,7 +230,7 @@ export function PhotoTabContent() {
               size="sm"
               onClick={stopCamera}
             >
-              <X className="h-4 w-4 mr-2" />
+              <X aria-hidden="true" className="h-4 w-4 mr-2" />
               Cancel
             </Button>
             <Button
@@ -238,7 +238,7 @@ export function PhotoTabContent() {
               onClick={capturePhoto}
               className="rounded-full h-14 w-14 p-0"
             >
-              <Camera className="h-6 w-6" />
+              <Camera aria-hidden="true" className="h-6 w-6" />
             </Button>
           </div>
         </div>
@@ -264,14 +264,14 @@ export function PhotoTabContent() {
                 size="sm"
                 onClick={retakePhoto}
               >
-                <X className="h-4 w-4 mr-2" />
+                <X aria-hidden="true" className="h-4 w-4 mr-2" />
                 Retake
               </Button>
               <Button
                 size="sm"
                 onClick={saveCapturedPhoto}
               >
-                <Check className="h-4 w-4 mr-2 flex-shrink-0" />
+                <Check aria-hidden="true" className="h-4 w-4 mr-2 flex-shrink-0" />
                 Save Photo
               </Button>
             </div>
@@ -280,7 +280,7 @@ export function PhotoTabContent() {
       ) : (
         <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64 border-2 border-dashed rounded-lg bg-muted/20">
           <div className="text-center">
-            <Camera className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
+            <Camera aria-hidden="true" className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
             <p className="text-sm font-medium mb-1">Camera Ready</p>
             <p className="text-xs text-muted-foreground max-w-xs">
               Capture images for your workspace items and documentation
@@ -295,13 +295,12 @@ export function PhotoTabContent() {
       {/* Action Buttons */}
       {!showCamera && !capturedPhoto && (
         <>
-          <Button
-            className={cn("w-full", uploading && "opacity-50")}
+          <Button aria-hidden="true" className={cn("w-full", uploading && "opacity-50")}
             size="lg"
             onClick={startCamera}
             disabled={uploading}
           >
-            <Camera className="h-4 w-4 mr-2" />
+            <Camera aria-hidden="true" className="h-4 w-4 mr-2" />
             Open Camera
           </Button>
 
@@ -319,7 +318,7 @@ export function PhotoTabContent() {
                 </>
               ) : (
                 <>
-                  <ImageIcon className="h-4 w-4 mr-2" />
+                  <ImageIcon aria-hidden="true" className="h-4 w-4 mr-2" />
                   Upload Image
                 </>
               )}
@@ -341,7 +340,7 @@ export function PhotoTabContent() {
             multiple
             onChange={handleFileUpload}
             className="hidden md:block"
-          />
+           aria-label="file" />
         </>
       )}
     </div>

@@ -59,7 +59,7 @@ export function TemplatesTab() {
                 >
                   <div className="flex items-start gap-3">
                     <div className="p-2 rounded-md bg-primary/10">
-                      <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                      <Icon aria-hidden="true" className="h-5 w-5 text-primary" />
                     </div>
                     <div className="flex-1">
                       <div className="font-medium">{category.name}</div>
@@ -90,7 +90,7 @@ export function TemplatesTab() {
             <div className="p-3 border rounded-lg hover:bg-accent/50 transition-colors">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                  <ListChecks className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                  <ListChecks aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                   <div>
                     <div className="font-medium text-sm">New Project Checklist</div>
                     <div className="text-xs text-muted-foreground">Updated 2 days ago</div>
@@ -102,7 +102,7 @@ export function TemplatesTab() {
             <div className="p-3 border rounded-lg hover:bg-accent/50 transition-colors">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                  <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                  <FileText aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                   <div>
                     <div className="font-medium text-sm">Vendor Contract Template</div>
                     <div className="text-xs text-muted-foreground">Updated 5 days ago</div>
@@ -114,7 +114,7 @@ export function TemplatesTab() {
             <div className="p-3 border rounded-lg hover:bg-accent/50 transition-colors">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                  <Layout className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                  <Layout aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                   <div>
                     <div className="font-medium text-sm">Live Event Production</div>
                     <div className="text-xs text-muted-foreground">Updated 1 week ago</div>

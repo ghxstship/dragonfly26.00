@@ -132,9 +132,9 @@ export function BasicInfoTab() {
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
-            <Avatar className="h-24 w-24">
+            <Avatar aria-hidden="true" className="h-24 w-24">
               <AvatarImage src={profileData.profileImage} />
-              <AvatarFallback className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+              <AvatarFallback aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
                 {profileData.firstName?.[0]}{profileData.lastName?.[0]}
               </AvatarFallback>
             </Avatar>
@@ -145,7 +145,7 @@ export function BasicInfoTab() {
                 accept="image/*"
                 onChange={handlePhotoUpload}
                 className="hidden md:block"
-              />
+               aria-label="file" />
               <Button 
                 variant="outline" 
                 size="sm"
@@ -155,7 +155,7 @@ export function BasicInfoTab() {
                 {uploading ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
-                  <Camera className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Camera aria-hidden="true" className="h-4 w-4 mr-2" />
                 )}
                 {t('profile.actions.uploadPhoto')}
               </Button>
@@ -172,7 +172,7 @@ export function BasicInfoTab() {
           <CardTitle>{t('profile.basicInfo.personalInfo')}</CardTitle>
           <CardDescription>{t('profile.basicInfo.personalDetails')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">{t('profile.basicInfo.firstName')}</Label>
@@ -234,7 +234,7 @@ export function BasicInfoTab() {
           <CardTitle>{t('profile.basicInfo.mailingAddress')}</CardTitle>
           <CardDescription>{t('profile.basicInfo.mailingAddressDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="address">{t('profile.basicInfo.streetAddress')}</Label>
             <Textarea
@@ -295,7 +295,7 @@ export function BasicInfoTab() {
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />
           ) : (
-            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+            <Save aria-hidden="true" className="h-4 w-4 mr-2" />
           )}
           {t('profile.actions.saveChanges')}
         </Button>

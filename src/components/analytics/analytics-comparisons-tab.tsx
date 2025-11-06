@@ -103,7 +103,7 @@ export function AnalyticsComparisonsTab({ data = [], loading = false }: Analytic
                       variant="outline" 
                       className={isPositive ? "bg-green-100 text-green-800 border-green-200" : "bg-red-100 text-red-800 border-red-200"}
                     >
-                      {isPositive ? <TrendingUp className="h-3 w-3 mr-1 inline" aria-hidden="true" /> : <TrendingDown className="h-3 w-3 mr-1 inline" aria-hidden="true" />}
+                      {isPositive ? <TrendingUp aria-hidden="true" className="h-3 w-3 mr-1 inline" /> : <TrendingDown aria-hidden="true" className="h-3 w-3 mr-1 inline" />}
                       {data.change} {t('vsQ1')}
                     </Badge>
                   </div>

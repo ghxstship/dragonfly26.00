@@ -70,7 +70,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
 
       {/* Item Display */}
       <div className="flex-1 overflow-auto p-4">
-        <Card className="p-4">
+        <Card aria-hidden="true" className="p-4">
           {/* Photo */}
           <div className="relative aspect-video bg-muted rounded-lg overflow-hidden md:block mb-4">
             {currentItem.photos?.[0] ? (
@@ -82,7 +82,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
               />
             ) : (
               <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
-                <Package className="h-12 w-12 text-muted-foreground" />
+                <Package aria-hidden="true" className="h-12 w-12 text-muted-foreground" />
               </div>
             )}
           </div>
@@ -126,14 +126,14 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
           {/* Actions */}
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" size="lg" className="flex-1" onClick={handlePrevious} disabled={currentIndex === 0}>
-              <ChevronLeft className="h-5 w-5 mr-2" />
+              <ChevronLeft aria-hidden="true" className="h-5 w-5 mr-2" />
               Previous
             </Button>
             <Button size="lg" className="flex-1" onClick={handleNext}>
               {currentIndex < items.length - 1 ? (
                 <>
                   Next
-                  <ChevronRight className="h-5 w-5 ml-2" />
+                  <ChevronRight aria-hidden="true" className="h-5 w-5 ml-2" />
                 </>
               ) : (
                 'Complete'
@@ -146,7 +146,7 @@ export function CountExecutionMobile({ items, onCountSubmit }: CountExecutionMob
       {/* Bottom Actions */}
       <div className="p-4 border-t">
         <Button variant="outline" className="w-full max-w-full" size="lg">
-          <Camera className="h-5 w-5 mr-2" />
+          <Camera aria-hidden="true" className="h-5 w-5 mr-2" />
           Scan Barcode
         </Button>
       </div>

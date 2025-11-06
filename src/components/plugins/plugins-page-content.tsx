@@ -99,31 +99,31 @@ export function PluginsPageContent() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Available Plugins</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{mockPlugins.length}</p>
                 </div>
-                <Zap className="h-8 w-8 text-muted-foreground" />
+                <Zap aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Installed</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{mockInstalled.length}</p>
                 </div>
-                <TrendingUp className="h-8 w-8 text-green-600" />
+                <TrendingUp aria-hidden="true" className="h-8 w-8 text-green-600" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Featured</p>
@@ -131,7 +131,7 @@ export function PluginsPageContent() {
                     {mockPlugins.filter((p: any) => p.is_featured).length}
                   </p>
                 </div>
-                <Star className="h-8 w-8 text-yellow-600" />
+                <Star aria-hidden="true" className="h-8 w-8 text-yellow-600" />
               </div>
             </CardContent>
           </Card>
@@ -150,7 +150,7 @@ export function PluginsPageContent() {
             {activeTab === "marketplace" && (
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <div className="relative w-full sm:w-64">
-                  <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+                  <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
                   <Input
                     placeholder="Search plugins..."
                     value={searchQuery as any}
@@ -165,7 +165,7 @@ export function PluginsPageContent() {
                     className="rounded-r-none"
                     onClick={() => setViewMode("grid")}
                   >
-                    <Grid className="h-4 w-4" />
+                    <Grid aria-hidden="true" className="h-4 w-4" />
                   </Button>
                   <Button
                     variant={viewMode === "list" ? "default" : "ghost"}
@@ -173,7 +173,7 @@ export function PluginsPageContent() {
                     className="rounded-l-none"
                     onClick={() => setViewMode("list")}
                   >
-                    <List className="h-4 w-4" />
+                    <List aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </div>
               </div>

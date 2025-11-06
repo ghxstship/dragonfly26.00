@@ -151,11 +151,11 @@ export function IntegrationsTab() {
           <div className="flex items-start justify-between">
             <div className="flex items-start gap-3">
               <div className="p-2 rounded-lg bg-primary/10">
-                <Icon className="h-5 w-5 text-primary" />
+                <Icon aria-hidden="true" className="h-5 w-5 text-primary" />
               </div>
               <div className="flex-1">
-                <CardTitle className="text-base">{integration.name}</CardTitle>
-                <CardDescription className="text-sm mt-1">
+                <CardTitle aria-hidden="true" className="text-base">{integration.name}</CardTitle>
+                <CardDescription aria-hidden="true" className="text-sm mt-1">
                   {integration.description}
                 </CardDescription>
               </div>
@@ -163,7 +163,7 @@ export function IntegrationsTab() {
             <Badge variant={integration.connected ? "default" : "outline"}>
               {integration.connected ? (
                 <>
-                  <Check className="h-3 w-3 mr-1 flex-shrink-0" />
+                  <Check aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />
                   {t('settings.integrationsTab.connected')}
                 </>
               ) : (
@@ -182,7 +182,7 @@ export function IntegrationsTab() {
                 </>
               ) : (
                 <>
-                  <User className="h-4 w-4" />
+                  <User aria-hidden="true" className="h-4 w-4" />
                   Personal
                 </>
               )}
@@ -201,7 +201,7 @@ export function IntegrationsTab() {
                     size="sm"
                     onClick={() => openConfigDialog(integration)}
                   >
-                    <Settings className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Settings aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('settings.integrationsTab.configureIntegration')}
                   </Button>
                   <Button
@@ -218,7 +218,7 @@ export function IntegrationsTab() {
                   size="sm"
                   onClick={() => openConfigDialog(integration)}
                 >
-                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                   {t('settings.integrationsTab.connectIntegration')}
                 </Button>
               )}
@@ -243,7 +243,7 @@ export function IntegrationsTab() {
             {t('settings.integrationsTab.organization')} ({organizationIntegrations.length})
           </TabsTrigger>
           <TabsTrigger value="personal">
-            <User className="h-4 w-4 mr-2" aria-hidden="true" />
+            <User aria-hidden="true" className="h-4 w-4 mr-2" />
             {t('settings.integrationsTab.personal')} ({personalIntegrations.length})
           </TabsTrigger>
         </TabsList>
@@ -264,7 +264,7 @@ export function IntegrationsTab() {
 
             <div>
               <h3 className="text-sm font-semibold mb-3 flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <User className="h-4 w-4" />
+                <User aria-hidden="true" className="h-4 w-4" />
                 Personal Integrations
               </h3>
               <div className="space-y-3">
@@ -313,7 +313,7 @@ export function IntegrationsTab() {
               />
             </div>
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 rounded-lg bg-muted">
-              <ExternalLink className="h-4 w-4 text-muted-foreground" />
+              <ExternalLink aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
               <a
                 href="#"
                 className="text-sm text-primary hover:underline"

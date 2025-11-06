@@ -55,19 +55,19 @@ export function QuickActionMenu({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="h-8 w-8">
-          <MoreVertical className="h-4 w-4" />
+          <MoreVertical aria-hidden="true" className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
         {onViewProfile && (
           <DropdownMenuItem onClick={onViewProfile}>
-            <Eye className="h-4 w-4 mr-2" />
+            <Eye aria-hidden="true" className="h-4 w-4 mr-2" />
             View Profile
           </DropdownMenuItem>
         )}
         {onEditDetails && (
           <DropdownMenuItem onClick={onEditDetails}>
-            <Edit className="h-4 w-4 mr-2" />
+            <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
             Edit Details
           </DropdownMenuItem>
         )}
@@ -76,25 +76,25 @@ export function QuickActionMenu({
 
         {onSendMessage && (
           <DropdownMenuItem onClick={onSendMessage}>
-            <Mail className="h-4 w-4 mr-2" />
+            <Mail aria-hidden="true" className="h-4 w-4 mr-2" />
             Send Message
           </DropdownMenuItem>
         )}
         {onRequestPTO && (
           <DropdownMenuItem onClick={onRequestPTO}>
-            <Calendar className="h-4 w-4 mr-2" />
+            <Calendar aria-hidden="true" className="h-4 w-4 mr-2" />
             Request PTO
           </DropdownMenuItem>
         )}
         {onViewTimesheet && (
           <DropdownMenuItem onClick={onViewTimesheet}>
-            <Clock className="h-4 w-4 mr-2" />
+            <Clock aria-hidden="true" className="h-4 w-4 mr-2" />
             View Timesheet
           </DropdownMenuItem>
         )}
         {onViewPerformance && (
           <DropdownMenuItem onClick={onViewPerformance}>
-            <TrendingUp className="h-4 w-4 mr-2" />
+            <TrendingUp aria-hidden="true" className="h-4 w-4 mr-2" />
             View Performance
           </DropdownMenuItem>
         )}
@@ -103,13 +103,13 @@ export function QuickActionMenu({
 
         {onReassignManager && (
           <DropdownMenuItem onClick={onReassignManager}>
-            <UserCog className="h-4 w-4 mr-2" />
+            <UserCog aria-hidden="true" className="h-4 w-4 mr-2" />
             Reassign Manager
           </DropdownMenuItem>
         )}
         {onUploadDocument && (
           <DropdownMenuItem onClick={onUploadDocument}>
-            <Upload className="h-4 w-4 mr-2" />
+            <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
             Upload Document
           </DropdownMenuItem>
         )}
@@ -139,13 +139,13 @@ export function EmployeeQuickActions({
     <div className={className}>
       <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
         <Button variant="ghost" size="sm" className="h-7">
-          <Eye className="h-3 w-3" />
+          <Eye aria-hidden="true" className="h-3 w-3" />
         </Button>
         <Button variant="ghost" size="sm" className="h-7">
-          <Edit className="h-3 w-3" />
+          <Edit aria-hidden="true" className="h-3 w-3" />
         </Button>
         <Button variant="ghost" size="sm" className="h-7">
-          <Mail className="h-3 w-3" />
+          <Mail aria-hidden="true" className="h-3 w-3" />
         </Button>
         <QuickActionMenu personnelId={personnelId} personnelName="" />
       </div>

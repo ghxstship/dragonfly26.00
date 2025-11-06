@@ -35,7 +35,7 @@ export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabCompon
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <DollarSign className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <DollarSign aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load budgets</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -119,11 +119,11 @@ export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabCompon
           </div>
           <div className="flex gap-2">
             <Button variant="outline" size="sm">
-              <Filter className="mr-2 h-4 w-4" aria-hidden="true" />
+              <Filter aria-hidden="true" className="mr-2 h-4 w-4" />
               {tCommon('filter')}
             </Button>
             <Button size="sm">
-              <Plus className="mr-2 h-4 w-4" aria-hidden="true" />
+              <Plus aria-hidden="true" className="mr-2 h-4 w-4" />
               {t('addBudget')}
             </Button>
           </div>
@@ -132,9 +132,9 @@ export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabCompon
         {/* Summary Stats */}
         <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-3">
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.totalAllocated')}</CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.totalAllocated')}</CardTitle>
+              <DollarSign aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{formatCurrency(totalAllocated)}</div>
@@ -143,9 +143,9 @@ export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabCompon
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.totalSpent')}</CardTitle>
-              <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.totalSpent')}</CardTitle>
+              <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{formatCurrency(totalSpent)}</div>
@@ -156,9 +156,9 @@ export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabCompon
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.totalRemaining')}</CardTitle>
-              <TrendingDown className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.totalRemaining')}</CardTitle>
+              <TrendingDown aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{formatCurrency(totalRemaining)}</div>
@@ -177,7 +177,7 @@ export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <CardTitle className="text-lg">{budget.project_name}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-lg">{budget.project_name}</CardTitle>
                       <Badge variant="outline" className="text-xs">
                         {budget.category}
                       </Badge>
@@ -189,7 +189,7 @@ export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                         </Badge>
                         {Math.abs(budget.variance) > 5 && (
                           <Badge variant="outline" className="bg-yellow-100 text-yellow-800 dark:bg-yellow-950 dark:text-yellow-400">
-                            <AlertCircle className="mr-1 h-3 w-3" aria-hidden="true" />
+                            <AlertCircle aria-hidden="true" className="mr-1 h-3 w-3" />
                             {formatPercentage(budget.variance)} {t('variance')}
                           </Badge>
                         )}

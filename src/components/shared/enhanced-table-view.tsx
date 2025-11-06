@@ -102,7 +102,7 @@ export function EnhancedTableView({
             className="h-8 px-2"
           >
             {field.label}
-            <ArrowUpDown className="ml-2 h-3 w-3" />
+            <ArrowUpDown aria-hidden="true" className="ml-2 h-3 w-3" />
           </Button>
         )
       },
@@ -194,7 +194,7 @@ export function EnhancedTableView({
                   className="h-8 px-3"
                   onClick={() => setViewMode('table')}
                 >
-                  <List className="h-4 w-4" />
+                  <List aria-hidden="true" className="h-4 w-4" />
                 </Button>
                 <Button
                   variant={viewMode === 'card' ? 'secondary' : 'ghost'}
@@ -207,7 +207,7 @@ export function EnhancedTableView({
               </div>
             )}
             <Button onClick={() => setCreateDialogOpen(true)} size="sm" className="h-9">
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
               <span className="hidden md:block sm:inline">{createButtonText}</span>
               <span className="sm:hidden md:block">{createButtonText}</span>
             </Button>

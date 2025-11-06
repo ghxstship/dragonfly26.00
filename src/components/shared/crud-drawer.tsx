@@ -385,7 +385,7 @@ export function CrudDrawer({
             ))}
             {!isReadOnly && (
               <Button variant="outline" size="sm">
-                <Tag className="h-3 w-3 mr-1" />
+                <Tag aria-hidden="true" className="h-3 w-3 mr-1" />
                 Add
               </Button>
             )}
@@ -432,7 +432,7 @@ export function CrudDrawer({
             <div className="flex flex-wrap gap-2">
               {(value || []).map((userId: string, idx: number) => (
                 <Badge key={idx} variant="secondary">
-                  <User className="h-3 w-3 mr-1" />
+                  <User aria-hidden="true" className="h-3 w-3 mr-1" />
                   User {userId}
                   {!isReadOnly && (
                     <button
@@ -451,7 +451,7 @@ export function CrudDrawer({
             </div>
             {!isReadOnly && (
               <Button variant="outline" size="sm">
-                <User className="h-3 w-3 mr-1" />
+                <User aria-hidden="true" className="h-3 w-3 mr-1" />
                 Add user
               </Button>
             )}
@@ -466,13 +466,13 @@ export function CrudDrawer({
           <div className="space-y-2">
             {value && (
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-2 border rounded">
-                <Paperclip className="h-4 w-4" />
+                <Paperclip aria-hidden="true" className="h-4 w-4" />
                 <span className="text-sm">{value.name || 'File attached'}</span>
               </div>
             )}
             {!isReadOnly && (
               <Button variant="outline" size="sm" className="w-full max-w-full">
-                <Paperclip className="h-4 w-4 mr-2" />
+                <Paperclip aria-hidden="true" className="h-4 w-4 mr-2" />
                 Upload {field.type}
               </Button>
             )}
@@ -488,7 +488,7 @@ export function CrudDrawer({
                 {(value || []).map((file: any, idx: number) => (
                   <div key={idx} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 border rounded">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                      <Paperclip className="h-4 w-4" />
+                      <Paperclip aria-hidden="true" className="h-4 w-4" />
                       <span className="text-sm">{file.name || `File ${idx + 1}`}</span>
                     </div>
                     {!isReadOnly && (
@@ -509,7 +509,7 @@ export function CrudDrawer({
             )}
             {!isReadOnly && (
               <Button variant="outline" size="sm" className="w-full max-w-full">
-                <Paperclip className="h-4 w-4 mr-2" />
+                <Paperclip aria-hidden="true" className="h-4 w-4 mr-2" />
                 Upload {field.type}
               </Button>
             )}
@@ -564,7 +564,7 @@ export function CrudDrawer({
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={value} alt="Avatar" className="w-full h-full rounded-full object-cover max-w-full" />
               ) : (
-                <User className="h-8 w-8 text-muted-foreground" />
+                <User aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
               )}
             </div>
             {!isReadOnly && (
@@ -742,10 +742,10 @@ export function CrudDrawer({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right" className="w-full max-w-800px lg:w-[800px] sm:max-w-[800px] p-0 flex flex-wrap flex-col">
         {/* Header */}
-        <SheetHeader className="border-b px-4 md:px-6 py-4">
+        <SheetHeader aria-hidden="true" className="border-b px-4 md:px-6 py-4">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-              <SheetTitle className="text-base md:text-lg lg:text-xl">
+              <SheetTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl">
                 {title || (isCreating ? 'Create New' : displayName)}
               </SheetTitle>
               {!isCreating && !isReadOnly && (
@@ -759,13 +759,13 @@ export function CrudDrawer({
                   size="sm"
                   onClick={() => {/* Switch to edit mode */}}
                 >
-                  <Edit className="h-4 w-4 mr-2" />
+                  <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
                   Edit
                 </Button>
               )}
               {!isCreating && onDuplicate && (
                 <Button variant="outline" size="sm" onClick={handleDuplicate} disabled={isSaving}>
-                  <Copy className="h-4 w-4 mr-2" />
+                  <Copy aria-hidden="true" className="h-4 w-4 mr-2" />
                   Duplicate
                 </Button>
               )}
@@ -775,7 +775,7 @@ export function CrudDrawer({
                 </Button>
               )}
               <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
-                <X className="h-4 w-4" />
+                <X aria-hidden="true" className="h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -784,13 +784,13 @@ export function CrudDrawer({
         {/* Content */}
         <div className="flex-1 flex flex-wrap overflow-hidden md:block">
           {/* Main Form */}
-          <ScrollArea className="flex-1">
+          <ScrollArea aria-hidden="true" className="flex-1">
             <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Form Fields */}
               <div className="space-y-4">
                 {formFields.map(field => (
                   <div key={field.id} className="space-y-2">
-                    <Label className="text-sm font-medium">
+                    <Label aria-hidden="true" className="text-sm font-medium">
                       {field.label}
                       {field.required && <span className="text-destructive ml-1">*</span>}
                     </Label>
@@ -809,18 +809,18 @@ export function CrudDrawer({
                   <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 text-sm">
                     {formData.created_at && (
                       <div>
-                        <Label className="text-xs text-muted-foreground">Created</Label>
+                        <Label aria-hidden="true" className="text-xs text-muted-foreground">Created</Label>
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mt-1">
-                          <Clock className="h-3 w-3" />
+                          <Clock aria-hidden="true" className="h-3 w-3" />
                           {new Date(formData.created_at).toLocaleString()}
                         </div>
                       </div>
                     )}
                     {formData.updated_at && (
                       <div>
-                        <Label className="text-xs text-muted-foreground">Last Updated</Label>
+                        <Label aria-hidden="true" className="text-xs text-muted-foreground">Last Updated</Label>
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mt-1">
-                          <Clock className="h-3 w-3" />
+                          <Clock aria-hidden="true" className="h-3 w-3" />
                           {new Date(formData.updated_at).toLocaleString()}
                         </div>
                       </div>
@@ -835,11 +835,11 @@ export function CrudDrawer({
           {!isCreating && item && (
             <div className="w-full sm:w-80 border-l flex flex-wrap flex-col">
               <Tabs defaultValue="activity" className="flex-1 flex flex-wrap flex-col">
-                <TabsList className="w-full justify-start rounded-none border-b px-4 max-w-full">
+                <TabsList aria-hidden="true" className="w-full justify-start rounded-none border-b px-4 max-w-full">
                   <TabsTrigger value="activity">Activity</TabsTrigger>
                   <TabsTrigger value="comments">Comments</TabsTrigger>
                 </TabsList>
-                <ScrollArea className="flex-1">
+                <ScrollArea aria-hidden="true" className="flex-1">
                   <TabsContent value="activity" className="p-4 m-0">
                     <ActivityFeed />
                   </TabsContent>
@@ -859,7 +859,7 @@ export function CrudDrawer({
               Cancel
             </Button>
             <Button onClick={handleSave} disabled={isSaving || loading}>
-              <Save className="h-4 w-4 mr-2" />
+              <Save aria-hidden="true" className="h-4 w-4 mr-2" />
               {isSaving ? 'Saving...' : (isCreating ? 'Create' : 'Save Changes')}
             </Button>
           </div>

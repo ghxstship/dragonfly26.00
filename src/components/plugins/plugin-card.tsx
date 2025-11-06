@@ -19,7 +19,7 @@ export function PluginCard({ plugin, layout = "grid", isInstalled = false, onIns
   if (layout === "list") {
     return (
       <Card>
-        <CardContent className="p-4 sm:p-6">
+        <CardContent aria-hidden="true" className="p-4 sm:p-6">
           <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
             <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex-shrink-0" />
             <div className="flex-1">
@@ -28,17 +28,17 @@ export function PluginCard({ plugin, layout = "grid", isInstalled = false, onIns
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                     <h3 className="text-lg font-semibold">{plugin.name}</h3>
                     {plugin.is_featured && <Badge variant="secondary">Featured</Badge>}
-                    {isInstalled && <Badge variant="default"><Check className="h-3 w-3 mr-1 flex-shrink-0" />Installed</Badge>}
+                    {isInstalled && <Badge variant="default"><Check aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />Installed</Badge>}
                   </div>
                   <p className="text-sm text-muted-foreground mb-2">{plugin.description}</p>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star aria-hidden="true" className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                       <span>{plugin.rating?.toFixed(1) || "N/A"}</span>
                       <span className="text-muted-foreground">({plugin.review_count})</span>
                     </div>
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <Download className="h-4 w-4" />
+                      <Download aria-hidden="true" className="h-4 w-4" />
                       <span>{plugin.install_count.toLocaleString()} installs</span>
                     </div>
                     <Badge variant="outline" className="capitalize">{plugin.category}</Badge>
@@ -56,7 +56,7 @@ export function PluginCard({ plugin, layout = "grid", isInstalled = false, onIns
   }
 
   return (
-    <Card className="hover:shadow-lg transition-shadow">
+    <Card aria-hidden="true" className="hover:shadow-lg transition-shadow">
       <CardHeader>
         <div className="h-32 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 mb-4" />
         <div className="flex items-start justify-between">
@@ -69,22 +69,22 @@ export function PluginCard({ plugin, layout = "grid", isInstalled = false, onIns
       <CardContent>
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm mb-4">
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+            <Star aria-hidden="true" className="h-4 w-4 fill-yellow-400 text-yellow-400" />
             <span>{plugin.rating?.toFixed(1) || "N/A"}</span>
           </div>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-            <Download className="h-4 w-4" />
+            <Download aria-hidden="true" className="h-4 w-4" />
             <span>{plugin.install_count.toLocaleString()}</span>
           </div>
         </div>
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Badge variant="outline" className="capitalize">{plugin.category}</Badge>
           {plugin.is_featured && <Badge variant="secondary">Featured</Badge>}
-          {isInstalled && <Badge variant="default"><Check className="h-3 w-3 flex-shrink-0" /></Badge>}
+          {isInstalled && <Badge variant="default"><Check aria-hidden="true" className="h-3 w-3 flex-shrink-0" /></Badge>}
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full max-w-full" onClick={() => onInstall?.(plugin)} disabled={isInstalled}>
+        <Button aria-hidden="true" className="w-full max-w-full" onClick={() => onInstall?.(plugin)} disabled={isInstalled}>
           {isInstalled ? "Installed" : "Install Plugin"}
         </Button>
       </CardFooter>

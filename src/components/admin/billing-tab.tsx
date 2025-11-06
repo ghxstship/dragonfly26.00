@@ -107,9 +107,9 @@ export function BillingTab() {
       {/* Current Plan */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">{t('admin.billingTab.currentPlan')}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">{t('admin.billingTab.currentPlan')}</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="flex items-start justify-between">
             <div>
               <h3 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{t(currentPlan.nameKey)}</h3>
@@ -125,7 +125,7 @@ export function BillingTab() {
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                <Users className="h-4 w-4" aria-hidden="true" />
+                <Users aria-hidden="true" className="h-4 w-4" />
                 {t('admin.billingTab.teamSeats')}
               </div>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -141,7 +141,7 @@ export function BillingTab() {
             </div>
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                <Database className="h-4 w-4" aria-hidden="true" />
+                <Database aria-hidden="true" className="h-4 w-4" />
                 {t('admin.billingTab.storage')}
               </div>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{currentPlan.usedStorage} / {currentPlan.storage}GB</p>
@@ -151,7 +151,7 @@ export function BillingTab() {
             </div>
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" aria-hidden="true" />
+                <Calendar aria-hidden="true" className="h-4 w-4" />
                 {t('admin.billingTab.nextBilling')}
               </div>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -160,7 +160,7 @@ export function BillingTab() {
             </div>
           </div>
 
-          <Button className="w-full max-w-full" variant="outline" size="sm" aria-label={t('admin.billingTab.viewAllPlans')}>
+          <Button aria-hidden="true" className="w-full max-w-full" variant="outline" size="sm" aria-label={t('admin.billingTab.viewAllPlans')}>
             {t('admin.billingTab.viewAllPlans')}
           </Button>
         </CardContent>
@@ -170,14 +170,14 @@ export function BillingTab() {
       <Card>
         <CardHeader>
           <div className="flex items-start justify-between">
-            <CardTitle className="text-base">{t('admin.billingTab.paymentMethod')}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base">{t('admin.billingTab.paymentMethod')}</CardTitle>
             <Button variant="outline" size="sm">{t('admin.billingTab.update')}</Button>
           </div>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 p-4 border rounded-lg">
             <div className="h-10 w-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded flex flex-wrap items-center justify-center">
-              <CreditCard className="h-6 w-6 text-white" />
+              <CreditCard aria-hidden="true" className="h-6 w-6 text-white" />
             </div>
             <div className="flex-1">
               <p className="font-medium">{t('admin.billingTab.cardEnding', { last4: '4242' })}</p>
@@ -191,7 +191,7 @@ export function BillingTab() {
       {/* Billing History with CRUD */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">{t('admin.billingTab.billingHistory')}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">{t('admin.billingTab.billingHistory')}</CardTitle>
           <CardDescription>
             {t('admin.billingTab.manageInvoices')}
           </CardDescription>

@@ -27,13 +27,13 @@ export function MembersPage() {
       {/* Content */}
       <div className="flex-1 overflow-auto p-4 sm:p-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-3 md:space-y-4 lg:space-y-6">
-          <TabsList className="grid w-full max-w-md grid-cols-1 md:grid-cols-2">
+          <TabsList aria-hidden="true" className="grid w-full max-w-md grid-cols-1 md:grid-cols-2">
             <TabsTrigger value="invite" className="gap-2">
-              <Mail className="h-4 w-4" />
+              <Mail aria-hidden="true" className="h-4 w-4" />
               Invite
             </TabsTrigger>
             <TabsTrigger value="create" className="gap-2">
-              <UserPlus className="h-4 w-4" />
+              <UserPlus aria-hidden="true" className="h-4 w-4" />
               Create
             </TabsTrigger>
           </TabsList>

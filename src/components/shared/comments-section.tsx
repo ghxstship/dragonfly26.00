@@ -228,7 +228,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
   if (!currentWorkspace?.id || !entityId || entityId === 'no-workspace') {
     return (
       <div className="flex flex-wrap flex-col items-center justify-center py-4 md:py-6 lg:py-8 text-center">
-        <MessageSquare className="h-12 w-12 text-muted-foreground mb-3" />
+        <MessageSquare aria-hidden="true" className="h-12 w-12 text-muted-foreground mb-3" />
         <p className="text-sm font-medium mb-1">No workspace selected</p>
         <p className="text-xs text-muted-foreground">
           Please select a workspace to view and add comments
@@ -252,7 +252,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
         />
         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <Button variant="ghost" size="icon" disabled>
-            <Smile className="h-4 w-4" />
+            <Smile aria-hidden="true" className="h-4 w-4" />
           </Button>
           <Button 
             size="sm" 
@@ -262,7 +262,7 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
             {isLoading ? (
               <Loader2 className="h-4 w-4 mr-2 animate-spin" />
             ) : (
-              <Send className="h-4 w-4 mr-2" />
+              <Send aria-hidden="true" className="h-4 w-4 mr-2" />
             )}
             Send
           </Button>
@@ -278,9 +278,9 @@ export function CommentsSection({ entityType, entityId }: CommentsSectionProps) 
         ) : (
           entityComments.map((comment) => (
             <div key={comment.id} className="flex flex-wrap gap-3">
-              <Avatar className="h-8 w-8 flex-shrink-0">
+              <Avatar aria-hidden="true" className="h-8 w-8 flex-shrink-0">
                 <AvatarImage src={comment.user?.avatar_url || undefined} />
-                <AvatarFallback className="text-xs">
+                <AvatarFallback aria-hidden="true" className="text-xs">
                   {getInitials(comment.user?.name || 'U')}
                 </AvatarFallback>
               </Avatar>

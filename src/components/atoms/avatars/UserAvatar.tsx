@@ -69,10 +69,10 @@ export function UserAvatar({ name, src, size = 'md', status, className }: UserAv
   
   return (
     <div className="relative inline-block">
-      <Avatar className={cn(sizeClasses[size], className)}>
+      <Avatar aria-hidden="true" className={cn(sizeClasses[size], className)}>
         <AvatarImage src={src} alt={name || 'User avatar'} />
         <AvatarFallback>
-          {initials || <User className="h-1/2 w-full md:w-1/2" aria-hidden="true" />}
+          {initials || <User aria-hidden="true" className="h-1/2 w-full md:w-1/2" />}
         </AvatarFallback>
       </Avatar>
       {status && (

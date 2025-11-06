@@ -41,7 +41,7 @@ export function ActionMenu({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant={triggerVariant} size="icon" aria-label={label}>
-          <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+          <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

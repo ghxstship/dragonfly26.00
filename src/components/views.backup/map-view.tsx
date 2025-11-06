@@ -59,7 +59,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
           ) : (
             <div className="text-center space-y-4">
               <div className="mx-auto w-24 h-24 rounded-full bg-primary/10 flex flex-wrap items-center justify-center">
-                <MapPin className="h-12 w-12 text-primary" />
+                <MapPin aria-hidden="true" className="h-12 w-12 text-primary" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Map View</h3>
@@ -78,7 +78,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button variant="secondary" size="icon">
-                  <Filter className="h-4 w-4" />
+                  <Filter aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -104,7 +104,7 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
           <div className="space-y-1">
             {Object.entries(clusters).map(([region, items]) => (
               <div key={region} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                <MapPin className="h-3 w-3 text-primary" />
+                <MapPin aria-hidden="true" className="h-3 w-3 text-primary" />
                 <span>{region}</span>
                 <Badge variant="secondary" className="ml-auto">
                   {(items as any[]).length}
@@ -140,13 +140,13 @@ export function MapView({ data, schema, onItemClick, createActionLabel, onCreate
                     "p-3 hover:bg-accent transition-colors cursor-pointer",
                     selectedItem?.id === item.id && "bg-accent"
                   )}
-                  onClick={() => {
+                   role="button" tabIndex={0} onClick={() => {
                     setSelectedItem(item)
                     onItemClick?.(item)
                   }}
                 >
                   <div className="flex items-start gap-2">
-                    <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <MapPin aria-hidden="true" className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
                       <div className="font-medium text-sm">
                         {item.name || item.title || "Untitled"}

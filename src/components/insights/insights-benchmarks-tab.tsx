@@ -98,11 +98,11 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div>
-                    <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                      <Award className="h-5 w-5 text-purple-600" aria-hidden="true" />
+                    <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                      <Award aria-hidden="true" className="h-5 w-5 text-purple-600" />
                       {t(benchmark.categoryKey)}
                     </CardTitle>
-                    <CardDescription className="mt-2 flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+                    <CardDescription aria-hidden="true" className="mt-2 flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                       <span>Your Score: <span className="font-bold text-lg text-foreground">{benchmark.yourScore}</span></span>
                       <span>•</span>
                       <span>Top {benchmark.percentile}th percentile</span>
@@ -139,7 +139,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                     <div className="space-y-2">
                       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
                         <span className="text-muted-foreground flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <TrendingUp className="h-3 w-3" aria-hidden="true" />
+                          <TrendingUp aria-hidden="true" className="h-3 w-3" />
                           Top Performer
                         </span>
                         <span>{benchmark.topPerformer}</span>
@@ -158,7 +158,7 @@ export function InsightsBenchmarksTab({ data = [], loading = false }: InsightsBe
                           <p className="text-sm font-bold">{metric.yours}</p>
                           <p className="text-xs text-muted-foreground">
                             Industry: {metric.industry}
-                            {metric.status === "above" && <TrendingUp className="inline h-3 w-3 ml-1 text-green-600" aria-hidden="true" />}
+                            {metric.status === "above" && <TrendingUp aria-hidden="true" className="inline h-3 w-3 ml-1 text-green-600" />}
                           </p>
                         </div>
                       ))}

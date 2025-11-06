@@ -80,25 +80,25 @@ export function ExportMenu({
           className={className}
           disabled={disabled || isExporting}
         >
-          <FileDown className="h-4 w-4 mr-2" />
+          <FileDown aria-hidden="true" className="h-4 w-4 mr-2" />
           {isExporting ? "Exporting..." : "Export"}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuItem onClick={() => handleExport("csv")}>
-          <FileText className="h-4 w-4 mr-2" />
+          <FileText aria-hidden="true" className="h-4 w-4 mr-2" />
           Export to CSV
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleExport("excel")}>
-          <FileSpreadsheet className="h-4 w-4 mr-2" />
+          <FileSpreadsheet aria-hidden="true" className="h-4 w-4 mr-2" />
           Export to Excel
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleExport("pdf")}>
-          <FileText className="h-4 w-4 mr-2" />
+          <FileText aria-hidden="true" className="h-4 w-4 mr-2" />
           Export to PDF
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleExport("json")}>
-          <FileText className="h-4 w-4 mr-2" />
+          <FileText aria-hidden="true" className="h-4 w-4 mr-2" />
           Export to JSON
         </DropdownMenuItem>
         
@@ -106,7 +106,7 @@ export function ExportMenu({
         
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
-            <Mail className="h-4 w-4 mr-2" />
+            <Mail aria-hidden="true" className="h-4 w-4 mr-2" />
             Email Report
           </DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
@@ -118,14 +118,14 @@ export function ExportMenu({
         </DropdownMenuSub>
 
         <DropdownMenuItem>
-          <Calendar className="h-4 w-4 mr-2" />
+          <Calendar aria-hidden="true" className="h-4 w-4 mr-2" />
           Schedule Export
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
 
         <DropdownMenuItem>
-          <Settings className="h-4 w-4 mr-2" />
+          <Settings aria-hidden="true" className="h-4 w-4 mr-2" />
           Configure Fields
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -165,7 +165,7 @@ export function PayrollExportMenu({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          <FileDown className="h-4 w-4 mr-2" />
+          <FileDown aria-hidden="true" className="h-4 w-4 mr-2" />
           Export for Payroll
         </Button>
       </DropdownMenuTrigger>
@@ -175,13 +175,13 @@ export function PayrollExportMenu({
             key={provider}
             onClick={() => handleExport(provider)}
           >
-            <FileSpreadsheet className="h-4 w-4 mr-2" />
+            <FileSpreadsheet aria-hidden="true" className="h-4 w-4 mr-2" />
             {providerLabels[provider] || provider}
           </DropdownMenuItem>
         ))}
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => handleExport("custom")}>
-          <Settings className="h-4 w-4 mr-2" />
+          <Settings aria-hidden="true" className="h-4 w-4 mr-2" />
           Custom Format
         </DropdownMenuItem>
       </DropdownMenuContent>

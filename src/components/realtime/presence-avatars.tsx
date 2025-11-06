@@ -38,7 +38,7 @@ export function PresenceAvatars({ presences, max = 5, size = "md" }: PresenceAva
           <Tooltip key={presence.id}>
             <TooltipTrigger asChild>
               <div className="relative">
-                <Avatar className={cn(sizeClasses[size], "border-2 border-background")}>
+                <Avatar aria-hidden="true" className={cn(sizeClasses[size], "border-2 border-background")}>
                   <AvatarImage src={`/avatars/${presence.user_id}.jpg`} />
                   <AvatarFallback>
                     {getInitials(presence.user_id)}
@@ -63,7 +63,7 @@ export function PresenceAvatars({ presences, max = 5, size = "md" }: PresenceAva
         ))}
 
         {overflow > 0 && (
-          <Avatar className={cn(sizeClasses[size], "border-2 border-background bg-muted")}>
+          <Avatar aria-hidden="true" className={cn(sizeClasses[size], "border-2 border-background bg-muted")}>
             <AvatarFallback>+{overflow}</AvatarFallback>
           </Avatar>
         )}

@@ -16,7 +16,7 @@ export function OfflineIndicator() {
   return (
     <div className="fixed top-16 left-1/2 -translate-x-1/2 z-50">
       <Badge variant="secondary" className="shadow-lg">
-        <WifiOff className="h-3 w-3 mr-2" />
+        <WifiOff aria-hidden="true" className="h-3 w-3 mr-2" />
         Offline Mode
       </Badge>
     </div>
@@ -31,7 +31,7 @@ export function SyncStatus({ isSyncing }: { isSyncing: boolean }) {
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
       <Badge variant="default" className="shadow-lg">
-        <Wifi className="h-3 w-3 mr-2 animate-pulse" />
+        <Wifi aria-hidden="true" className="h-3 w-3 mr-2 animate-pulse" />
         Syncing...
       </Badge>
     </div>

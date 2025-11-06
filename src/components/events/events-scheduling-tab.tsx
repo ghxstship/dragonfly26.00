@@ -89,7 +89,7 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -109,11 +109,11 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           </div>
           <div className="flex gap-2">
             <Button variant="outline" size="sm">
-              <Filter className="mr-2 h-4 w-4" aria-hidden="true" />
+              <Filter aria-hidden="true" className="mr-2 h-4 w-4" />
               {tCommon('filter')}
             </Button>
             <Button size="sm">
-              <Plus className="mr-2 h-4 w-4" aria-hidden="true" />
+              <Plus aria-hidden="true" className="mr-2 h-4 w-4" />
               {t('addSchedule')}
             </Button>
           </div>
@@ -122,9 +122,9 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         {/* Stats */}
         <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.totalSchedules')}</CardTitle>
-              <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.totalSchedules')}</CardTitle>
+              <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{scheduleData.length}</div>
@@ -133,9 +133,9 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.inProgress')}</CardTitle>
-              <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.inProgress')}</CardTitle>
+              <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
@@ -146,9 +146,9 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.totalCrew')}</CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.totalCrew')}</CardTitle>
+              <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
@@ -159,9 +159,9 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.locations')}</CardTitle>
-              <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.locations')}</CardTitle>
+              <MapPin aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
@@ -179,7 +179,7 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
-                    <CardTitle className="text-lg">{schedule.event_name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{schedule.event_name}</CardTitle>
                     <CardDescription>
                       <div className="flex flex-wrap gap-2 mt-2">
                         <Badge variant="outline" className={getStatusColor(schedule.status)}>
@@ -199,7 +199,7 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
               <CardContent>
                 <div className="grid gap-2 md:grid-cols-4">
                   <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                    <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="text-sm">
                       <div className="font-medium">{t('startTime')}</div>
                       <div className="text-muted-foreground">
@@ -208,7 +208,7 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                    <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="text-sm">
                       <div className="font-medium">{t('endTime')}</div>
                       <div className="text-muted-foreground">
@@ -217,14 +217,14 @@ export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                    <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="text-sm">
                       <div className="font-medium">{t('assignedCrew')}</div>
                       <div className="text-muted-foreground">{schedule.assigned_crew} {t('people')}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                    <MapPin aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="text-sm">
                       <div className="font-medium">{t('location')}</div>
                       <div className="text-muted-foreground">{schedule.location}</div>

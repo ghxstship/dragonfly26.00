@@ -108,23 +108,23 @@ export function RecurrenceRulesTab() {
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Total Rules</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{rules.length}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{rules.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Total Usage</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {rules.reduce((sum: number, r) => sum + r.usageCount, 0)}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Most Used</CardDescription>
-            <CardTitle className="text-lg">
+            <CardTitle aria-hidden="true" className="text-lg">
               {rules.reduce((prev: RecurrenceRule, curr: RecurrenceRule) => 
                 curr.usageCount > prev.usageCount ? curr : prev
               ).name}
@@ -141,15 +141,15 @@ export function RecurrenceRulesTab() {
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
-                    <CardTitle className="text-base">{(rule.nameKey ? t(rule.nameKey) : rule.name)}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-base">{(rule.nameKey ? t(rule.nameKey) : rule.name)}</CardTitle>
                     <Badge variant="outline">
-                      <Clock className="h-3 w-3 mr-1" />
+                      <Clock aria-hidden="true" className="h-3 w-3 mr-1" />
                       {rule.usageCount} uses
                     </Badge>
                   </div>
                   <CardDescription>{(rule.descriptionKey ? t(rule.descriptionKey) : rule.description || "")}</CardDescription>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-2 text-sm">
-                    <Calendar className="h-4 w-4 text-muted-foreground" />
+                    <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <span className="font-medium">{rule.pattern}</span>
                   </div>
                   <p className="text-xs text-muted-foreground mt-2">
@@ -162,7 +162,7 @@ export function RecurrenceRulesTab() {
                     size="sm"
                     onClick={() => handleEditRule(rule)}
                   >
-                    <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('common.edit')}
                   </Button>
                   <Button

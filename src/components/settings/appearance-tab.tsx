@@ -236,8 +236,8 @@ export function AppearanceTab() {
       {/* Theme Mode */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Palette className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Palette aria-hidden="true" className="h-5 w-5" />
             Theme Mode
           </CardTitle>
           <CardDescription>{t('settings.appearanceTab.chooseTheme')}</CardDescription>
@@ -263,13 +263,13 @@ export function AppearanceTab() {
       {/* Accent Color & Presets */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Sparkles className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Sparkles aria-hidden="true" className="h-5 w-5" />
             {t('settings.appearanceTab.accentColor')}
           </CardTitle>
           <CardDescription>{t('settings.appearanceTab.customizeColors')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {themePresets.map((preset: any) => (
               <button
@@ -317,15 +317,15 @@ export function AppearanceTab() {
       {/* Custom Background (MySpace Style) */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Upload className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Upload aria-hidden="true" className="h-5 w-5" />
             {t('settings.appearanceTab.customBackground')}
           </CardTitle>
           <CardDescription>
             {t('settings.appearanceTab.backgroundDescription')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label>Upload Background Image</Label>
             <input
@@ -334,14 +334,14 @@ export function AppearanceTab() {
               accept="image/*"
               onChange={handleBackgroundFileUpload}
               className="hidden md:block"
-            />
+             aria-label="file" />
             <Button
               type="button"
               variant="outline"
               onClick={() => backgroundFileInputRef.current?.click()}
               className="w-full max-w-full"
             >
-              <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
               Choose Image File
             </Button>
             <p className="text-xs text-muted-foreground">
@@ -375,15 +375,15 @@ export function AppearanceTab() {
       {/* Custom CSS */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Code className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Code aria-hidden="true" className="h-5 w-5" />
             Custom CSS
           </CardTitle>
           <CardDescription>
             Advanced: Add custom CSS to further personalize your experience
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <Textarea
             value={customCSS as any}
             onChange={(e) => setCustomCSS(e.target.value)}
@@ -399,15 +399,15 @@ export function AppearanceTab() {
       {/* Animation Settings */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Sparkles className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Sparkles aria-hidden="true" className="h-5 w-5" />
             {t('settings.appearanceTab.animationEffects')}
           </CardTitle>
           <CardDescription>
             Control visual effects and animations
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label htmlFor="animations">Enable Animations</Label>
@@ -443,15 +443,15 @@ export function AppearanceTab() {
       {/* Typography Settings */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Type className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Type aria-hidden="true" className="h-5 w-5" />
             Typography
           </CardTitle>
           <CardDescription>
             Customize fonts for headings, body text, and code
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           {/* Use Organization Typography Toggle */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 items-start">
             <div className="space-y-0.5">
@@ -538,7 +538,7 @@ export function AppearanceTab() {
                   disabled={isUpdatingTypography}
                   className="w-full"
                 >
-                  <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Save aria-hidden="true" className="h-4 w-4 mr-2" />
                   {isUpdatingTypography ? "Saving..." : "Save Typography"}
                 </Button>
               </div>
@@ -550,11 +550,11 @@ export function AppearanceTab() {
       {/* Action Buttons */}
       <div className="flex flex-wrap justify-end gap-2">
         <Button variant="outline" onClick={handleReset}>
-          <RotateCcw className="h-4 w-4 mr-2" aria-hidden="true" />
+          <RotateCcw aria-hidden="true" className="h-4 w-4 mr-2" />
           {t('settings.appearanceTab.resetToDefault')}
         </Button>
         <Button onClick={handleSave}>
-          <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+          <Save aria-hidden="true" className="h-4 w-4 mr-2" />
           {t('common.save')}
         </Button>
       </div>

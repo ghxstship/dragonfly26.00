@@ -118,10 +118,10 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
       <div className="space-y-3">
         {filters.length === 0 ? (
           <div className="text-center py-5 md:py-8 lg:py-10 border-2 border-dashed rounded-lg">
-            <Filter className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+            <Filter aria-hidden="true" className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
             <p className="text-sm text-muted-foreground mb-4">No filters applied</p>
             <Button onClick={addFilter} variant="outline" size="sm">
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
               Add Filter
             </Button>
           </div>
@@ -129,14 +129,14 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
           filters.map((filter: any, index: number) => (
             <div key={filter.id} className="space-y-2 p-3 border rounded-lg">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-                <Label className="text-xs font-medium">Filter {index + 1}</Label>
+                <Label aria-hidden="true" className="text-xs font-medium">Filter {index + 1}</Label>
                 <Button
                   variant="ghost"
                   size="icon"
                   className="h-6 w-6"
                   onClick={() => removeFilter(filter.id)}
                 >
-                  <X className="h-3 w-3" />
+                  <X aria-hidden="true" className="h-3 w-3" />
                 </Button>
               </div>
               <div className="grid gap-2">
@@ -144,7 +144,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
                   value={filter.field}
                   onValueChange={(value) => updateFilter(filter.id, { field: value })}
                 >
-                  <SelectTrigger className="h-9">
+                  <SelectTrigger aria-hidden="true" className="h-9">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -159,7 +159,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
                   value={filter.operator}
                   onValueChange={(value) => updateFilter(filter.id, { operator: value })}
                 >
-                  <SelectTrigger className="h-9">
+                  <SelectTrigger aria-hidden="true" className="h-9">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -188,7 +188,7 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
       {filters.length > 0 && (
         <div className="flex flex-wrap gap-2">
           <Button onClick={addFilter} variant="outline" className="flex-1">
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             Add Filter
           </Button>
           <Button onClick={clearAllFilters} variant="outline">
@@ -202,15 +202,15 @@ export function FilterPanel({ onFiltersChange }: FilterPanelProps) {
         <Label>Saved Filters</Label>
         <div className="space-y-2">
           <Button variant="outline" className="w-full justify-start max-w-full" size="sm">
-            <Filter className="h-3 w-3 mr-2" />
+            <Filter aria-hidden="true" className="h-3 w-3 mr-2" />
             High Priority Tasks
           </Button>
           <Button variant="outline" className="w-full justify-start max-w-full" size="sm">
-            <Filter className="h-3 w-3 mr-2" />
+            <Filter aria-hidden="true" className="h-3 w-3 mr-2" />
             Overdue Items
           </Button>
           <Button variant="outline" className="w-full justify-start max-w-full" size="sm">
-            <Filter className="h-3 w-3 mr-2" />
+            <Filter aria-hidden="true" className="h-3 w-3 mr-2" />
             My Assignments
           </Button>
         </div>

@@ -103,7 +103,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
         aria-live="assertive"
       >
         <div className="text-center">
-          <LayoutDashboard className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <LayoutDashboard aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -216,15 +216,15 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
           const Icon = stat.icon
           return (
             <Card key={t(stat.labelKey)}>
-              <CardHeader className="pb-3">
+              <CardHeader aria-hidden="true" className="pb-3">
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-                  <CardDescription className="text-xs">{t(stat.labelKey)}</CardDescription>
+                  <CardDescription aria-hidden="true" className="text-xs">{t(stat.labelKey)}</CardDescription>
                   <div className={`p-2 rounded-lg ${stat.bgColor}`} aria-hidden="true">
-                    <Icon className={`h-4 w-4 ${stat.color}`} aria-hidden="true" />
+                    <Icon aria-hidden="true" className={`h-4 w-4 ${stat.color}`} />
                   </div>
                 </div>
                 <div className="flex flex-wrap items-end justify-between">
-                  <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{stat.value}</CardTitle>
+                  <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{stat.value}</CardTitle>
                   <div className="text-xs text-muted-foreground">
                     {stat.change}
                   </div>
@@ -256,7 +256,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                     onClick={action.action}
                     aria-label={t(action.labelKey)}
                   >
-                    <Icon className={`h-5 w-5 ${action.color}`} aria-hidden="true" />
+                    <Icon aria-hidden="true" className={`h-5 w-5 ${action.color}`} />
                     <span className="text-sm">{t(action.labelKey)}</span>
                   </Button>
                 )
@@ -281,7 +281,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                 onClick={() => setWidgetCustomizationOpen(true)}
                 aria-label={t('customizeLabel')}
               >
-                <MoreHorizontal className="h-4 w-4 mr-2" aria-hidden="true" />
+                <MoreHorizontal aria-hidden="true" className="h-4 w-4 mr-2" />
                 {t('manageAll')}
               </Button>
             </div>
@@ -305,7 +305,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                     >
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                         <div className={`p-2 rounded ${widgetType.color}`}>
-                          <Icon className="h-4 w-4 text-white" />
+                          <Icon aria-hidden="true" className="h-4 w-4 text-white" />
                         </div>
                         <span className="text-sm font-medium">{t(widget.name)}</span>
                       </div>
@@ -315,7 +315,7 @@ export function DashboardOverviewTab({ workspaceId = '', userId = '' }: Dashboar
                         onClick={() => toggleWidget(widget.id)}
                         aria-label={`Add ${t(widget.name)} widget`}
                       >
-                        <Plus className="h-4 w-4" aria-hidden="true" />
+                        <Plus aria-hidden="true" className="h-4 w-4" />
                       </Button>
                     </div>
                   )

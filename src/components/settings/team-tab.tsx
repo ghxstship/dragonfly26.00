@@ -151,9 +151,9 @@ export function TeamTab() {
       case "active":
         return <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
       case "pending":
-        return <Clock className="h-4 w-4 text-yellow-500" />
+        return <Clock aria-hidden="true" className="h-4 w-4 text-yellow-500" />
       case "suspended":
-        return <XCircle className="h-4 w-4 text-red-500" />
+        return <XCircle aria-hidden="true" className="h-4 w-4 text-red-500" />
     }
   }
 
@@ -162,31 +162,31 @@ export function TeamTab() {
       {/* Team Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('settings.teamTab.totalMembers')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{members.length}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{members.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('settings.teamTab.active')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => (m as any).status === "active").length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('settings.teamTab.pending')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => (m as any).status === "pending").length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('settings.teamTab.admins')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => m.role === "admin" || m.role === "owner").length}
             </CardTitle>
           </CardHeader>
@@ -206,7 +206,7 @@ export function TeamTab() {
                 className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
               >
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-1">
-                  <Avatar className="h-10 w-10">
+                  <Avatar aria-hidden="true" className="h-10 w-10">
                     <AvatarImage src={member.avatar} />
                     <AvatarFallback>
                       {member.name.split(" ").map(n => n[0]).join("")}
@@ -217,12 +217,12 @@ export function TeamTab() {
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                       <p className="font-medium truncate">{(member.nameKey ? t(member.nameKey) : member.name)}</p>
                       {member.role === "owner" && (
-                        <Crown className="h-4 w-4 text-yellow-500" />
+                        <Crown aria-hidden="true" className="h-4 w-4 text-yellow-500" />
                       )}
                       {getStatusIcon(member.status)}
                     </div>
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                      <Mail className="h-3 w-3" />
+                      <Mail aria-hidden="true" className="h-3 w-3" />
                       <span className="truncate">{member.email}</span>
                       <span>•</span>
                       <span>Joined {new Date(member.joinedAt).toLocaleDateString()}</span>
@@ -238,7 +238,7 @@ export function TeamTab() {
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button variant="ghost" size="icon" aria-label={t('settings.team.memberActions')}>
-                            <MoreVertical className="h-4 w-4" aria-hidden="true" />
+                            <MoreVertical aria-hidden="true" className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
@@ -246,14 +246,14 @@ export function TeamTab() {
                             onClick={() => handleChangeRole(member.id, "admin")}
                             disabled={member.role === "admin"}
                           >
-                            <Shield className="h-4 w-4 mr-2" aria-hidden="true" />
+                            <Shield aria-hidden="true" className="h-4 w-4 mr-2" />
                             {t('settings.teamTab.makeAdmin')}
                           </DropdownMenuItem>
                           <DropdownMenuItem
                             onClick={() => handleChangeRole(member.id, "member")}
                             disabled={member.role === "member"}
                           >
-                            <Users className="h-4 w-4 mr-2" aria-hidden="true" />
+                            <Users aria-hidden="true" className="h-4 w-4 mr-2" />
                             {t('settings.teamTab.makeMember')}
                           </DropdownMenuItem>
                           <DropdownMenuSeparator />
@@ -286,7 +286,7 @@ export function TeamTab() {
         <CardContent>
           <div className="space-y-3">
             <div className="flex flex-wrap gap-3 p-3 border rounded-lg">
-              <Crown className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+              <Crown aria-hidden="true" className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium">Owner</p>
                 <p className="text-sm text-muted-foreground">
@@ -295,7 +295,7 @@ export function TeamTab() {
               </div>
             </div>
             <div className="flex flex-wrap gap-3 p-3 border rounded-lg">
-              <Shield className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
+              <Shield aria-hidden="true" className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium">Admin</p>
                 <p className="text-sm text-muted-foreground">
@@ -304,7 +304,7 @@ export function TeamTab() {
               </div>
             </div>
             <div className="flex flex-wrap gap-3 p-3 border rounded-lg">
-              <Users className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+              <Users aria-hidden="true" className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium">Member</p>
                 <p className="text-sm text-muted-foreground">

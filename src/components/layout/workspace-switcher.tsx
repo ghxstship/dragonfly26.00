@@ -119,18 +119,18 @@ export function WorkspaceSwitcher() {
           ) : (
             <span className="text-muted-foreground truncate">{t('workspace.selectWorkspace')}</span>
           )}
-          <ChevronsUpDown className="ml-1 h-4 w-4 text-muted-foreground flex-shrink-0" />
+          <ChevronsUpDown aria-hidden="true" className="ml-1 h-4 w-4 text-muted-foreground flex-shrink-0" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-full sm:w-80 p-0">
         <div className="p-2 border-b sticky top-0 bg-background z-10">
-          <DropdownMenuLabel className="px-2 py-1.5">
+          <DropdownMenuLabel aria-hidden="true" className="px-2 py-1.5">
             {currentOrganization?.name || t('workspace.organization')}
           </DropdownMenuLabel>
           
           {/* Search */}
           <div className="relative mt-2">
-            <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+            <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
             <Input
               placeholder={t('workspace.searchWorkspaces')}
               value={searchQuery as any}
@@ -168,7 +168,7 @@ export function WorkspaceSwitcher() {
                 )}
               </div>
               {currentWorkspace?.id === workspace.id && (
-                <Check className="h-4 w-4 flex-shrink-0" />
+                <Check aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
               )}
             </DropdownMenuItem>
           ))}
@@ -181,11 +181,10 @@ export function WorkspaceSwitcher() {
         </div>
 
         <div className="p-1 border-t">
-          <DropdownMenuItem 
-            className="gap-2"
+          <DropdownMenuItem aria-hidden="true" className="gap-2"
             onClick={() => setIsCreateDialogOpen(true)}
           >
-            <Plus className="h-4 w-4" />
+            <Plus aria-hidden="true" className="h-4 w-4" />
             <span>{t('workspace.createWorkspace')}</span>
           </DropdownMenuItem>
         </div>
@@ -193,7 +192,7 @@ export function WorkspaceSwitcher() {
     </DropdownMenu>
 
     <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <form onSubmit={handleCreateWorkspace}>
           <DialogHeader>
             <DialogTitle>{t('quickActions.createWorkspace')}</DialogTitle>
@@ -235,7 +234,7 @@ export function WorkspaceSwitcher() {
 
             {/* Icon Picker */}
             <div className="grid gap-2">
-              <Label className="text-sm font-medium">Icon (Optional)</Label>
+              <Label aria-hidden="true" className="text-sm font-medium">Icon (Optional)</Label>
               <div className="flex flex-wrap gap-2">
                 <button
                   type="button"
@@ -265,7 +264,7 @@ export function WorkspaceSwitcher() {
 
             {/* Color Picker */}
             <div className="grid gap-2">
-              <Label className="text-sm font-medium">Color</Label>
+              <Label aria-hidden="true" className="text-sm font-medium">Color</Label>
               <div className="flex flex-wrap gap-2">
                 {colors.map((color: any) => (
                   <button
@@ -284,7 +283,7 @@ export function WorkspaceSwitcher() {
 
             {/* Preview */}
             <div className="grid gap-2 pt-2">
-              <Label className="text-sm font-medium">Preview</Label>
+              <Label aria-hidden="true" className="text-sm font-medium">Preview</Label>
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 p-3 rounded-lg border bg-muted/50">
                 {formData.icon ? (
                   <span className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">{formData.icon}</span>

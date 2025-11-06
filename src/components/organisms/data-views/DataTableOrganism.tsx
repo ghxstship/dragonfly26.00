@@ -122,7 +122,7 @@ export function DataTableOrganism({
     .map(col => ({ value: col.key, label: col.label }))
 
   return (
-    <Card className={className}>
+    <Card aria-hidden="true" className={className}>
       {(title || searchable || sortable) && (
         <CardHeader>
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 md:gap-3 lg:gap-4">
@@ -165,7 +165,7 @@ export function DataTableOrganism({
               <TableHeader>
                 <TableRow>
                   {selectable && (
-                    <TableHead className="w-12">
+                    <TableHead aria-hidden="true" className="w-12">
                       <Checkbox
                         checked={selectedIds.size === sortedData.length}
                         onCheckedChange={handleSelectAll}

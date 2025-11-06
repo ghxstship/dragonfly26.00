@@ -80,7 +80,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -94,9 +94,9 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
       {/* Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Grants</CardTitle>
-            <CircleDollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Grants</CardTitle>
+            <CircleDollarSign aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{grants.length}</div>
@@ -105,8 +105,8 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('open')}</CardTitle>
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('open')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           </CardHeader>
           <CardContent>
@@ -118,9 +118,9 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('applied')}</CardTitle>
-            <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('applied')}</CardTitle>
+            <FileText aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">
@@ -131,9 +131,9 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Funding</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Funding</CardTitle>
+            <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -146,7 +146,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+        <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           placeholder={t('searchGrants')}
           value={searchQuery as any}
@@ -166,12 +166,12 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                   <div className="flex items-start gap-3 flex-1">
                     <div className="p-2 rounded-lg bg-green-100 dark:bg-green-950">
-                      <CircleDollarSign className="h-5 w-5 text-green-600" aria-hidden="true" />
+                      <CircleDollarSign aria-hidden="true" className="h-5 w-5 text-green-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <CardTitle className="text-lg">{grant.name}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-lg">{grant.name}</CardTitle>
                       {grant.provider && (
-                        <CardDescription className="mt-1 flex flex-wrap flex-col md:flex-row items-center gap-1">
+                        <CardDescription aria-hidden="true" className="mt-1 flex flex-wrap flex-col md:flex-row items-center gap-1">
                           <Building2 className="h-3 w-3" />
                           {grant.provider}
                         </CardDescription>
@@ -179,7 +179,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                     </div>
                   </div>
                   <div className="flex flex-wrap flex-col items-end gap-2">
-                    <Badge className={getStatusColor(grant.status)}>
+                    <Badge aria-hidden="true" className={getStatusColor(grant.status)}>
                       {grant.status.replace('_', ' ')}
                     </Badge>
                     {grant.amount && (
@@ -191,7 +191,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-4">
+              <CardContent aria-hidden="true" className="space-y-4">
                 {grant.description && (
                   <p className="text-sm text-muted-foreground">
                     {grant.description}
@@ -201,13 +201,13 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4 text-sm">
                   {grant.deadline && (
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <Calendar className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
+                      <Calendar aria-hidden="true" className="h-3 w-3 text-muted-foreground" />
                       <span className="text-muted-foreground">
                         Deadline: {new Date(grant.deadline).toLocaleDateString()}
                       </span>
                       {daysRemaining !== null && daysRemaining > 0 && daysRemaining <= 30 && (
                         <Badge variant="outline" className="ml-2 bg-yellow-100 text-yellow-800">
-                          <Clock className="h-3 w-3 mr-1" aria-hidden="true" />
+                          <Clock aria-hidden="true" className="h-3 w-3 mr-1" />
                           {daysRemaining} days left
                         </Badge>
                       )}
@@ -215,7 +215,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                   )}
                   {grant.eligibility && (
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <AlertCircle className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
+                      <AlertCircle aria-hidden="true" className="h-3 w-3 text-muted-foreground" />
                       <span className="text-muted-foreground">
                         {grant.eligibility}
                       </span>
@@ -248,7 +248,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
                 )}
 
                 <div className="flex flex-wrap gap-2 pt-2 border-t">
-                  <Button className="flex-1" size="sm">
+                  <Button aria-hidden="true" className="flex-1" size="sm">
                     {grant(t as any).status === 'applied' ? 'View Application' : 'Apply Now'}
                   </Button>
                   <Button variant="outline" size="sm">
@@ -263,7 +263,7 @@ export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
       {filteredGrants.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               variant="inline"
               icon={CircleDollarSign}

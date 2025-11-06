@@ -43,13 +43,13 @@ const mockDeliveries = [
 export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProps) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="w-full sm:max-w-2xl overflow-y-auto">
+      <SheetContent aria-hidden="true" className="w-full sm:max-w-2xl overflow-y-auto">
         <SheetHeader>
           <SheetTitle>{webhook.name}</SheetTitle>
         </SheetHeader>
 
         <Tabs defaultValue="overview" className="mt-6">
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
+          <TabsList aria-hidden="true" className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-full">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="config">Configuration</TabsTrigger>
             <TabsTrigger value="logs">Delivery Logs</TabsTrigger>
@@ -58,7 +58,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
           <TabsContent value="overview" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Status</CardTitle>
+                <CardTitle aria-hidden="true" className="text-sm">Status</CardTitle>
               </CardHeader>
               <CardContent>
                 {webhook.is_active ? (
@@ -68,7 +68,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                   </Badge>
                 ) : (
                   <Badge variant="secondary">
-                    <XCircle className="h-3 w-3 mr-1" />
+                    <XCircle aria-hidden="true" className="h-3 w-3 mr-1" />
                     Inactive
                   </Badge>
                 )}
@@ -77,7 +77,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Description</CardTitle>
+                <CardTitle aria-hidden="true" className="text-sm">Description</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm">{webhook.description}</p>
@@ -86,9 +86,9 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Statistics</CardTitle>
+                <CardTitle aria-hidden="true" className="text-sm">Statistics</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent aria-hidden="true" className="space-y-2">
                 <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Last Triggered</span>
                   <span>
@@ -118,9 +118,9 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
           <TabsContent value="config" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Endpoint</CardTitle>
+                <CardTitle aria-hidden="true" className="text-sm">Endpoint</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent aria-hidden="true" className="space-y-2">
                 <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Method</span>
                   <span className="font-mono">{webhook.method}</span>
@@ -134,7 +134,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Events</CardTitle>
+                <CardTitle aria-hidden="true" className="text-sm">Events</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -149,9 +149,9 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-sm">Retry Configuration</CardTitle>
+                <CardTitle aria-hidden="true" className="text-sm">Retry Configuration</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent aria-hidden="true" className="space-y-2">
                 <div className="flex flex-wrap justify-between text-sm">
                   <span className="text-muted-foreground">Retry Enabled</span>
                   <span>{webhook.retry_enabled ? "Yes" : "No"}</span>
@@ -171,7 +171,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
           <TabsContent value="logs" className="space-y-4">
             {mockDeliveries.map((delivery: any) => (
               <Card key={delivery.id}>
-                <CardContent className="p-4">
+                <CardContent aria-hidden="true" className="p-4">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <Badge variant="outline">{delivery.event_type}</Badge>
@@ -182,7 +182,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                         </Badge>
                       ) : (
                         <Badge variant="destructive">
-                          <XCircle className="h-3 w-3 mr-1" />
+                          <XCircle aria-hidden="true" className="h-3 w-3 mr-1" />
                           Failed
                         </Badge>
                       )}
@@ -194,7 +194,7 @@ export function WebhookDetail({ webhook, open, onOpenChange }: WebhookDetailProp
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                     <span>Status: {delivery.response_status}</span>
                     <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <Clock className="h-3 w-3" />
+                      <Clock aria-hidden="true" className="h-3 w-3" />
                       {delivery.duration_ms}ms
                     </span>
                   </div>

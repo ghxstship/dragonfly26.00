@@ -80,9 +80,9 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
           return (
             <div key={comment.id} className="space-y-3">
               <Card>
-                <CardContent className="p-4">
+                <CardContent aria-hidden="true" className="p-4">
                   <div className="flex flex-wrap gap-3">
-                    <Avatar className="h-8 w-8">
+                    <Avatar aria-hidden="true" className="h-8 w-8">
                       <AvatarImage src={`/avatars/${comment.created_by}.jpg`} />
                       <AvatarFallback>{getInitials(comment.created_by)}</AvatarFallback>
                     </Avatar>
@@ -98,7 +98,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
                             <Button variant="ghost" size="icon" className="h-6 w-6">
-                              <MoreHorizontal className="h-3 w-3" />
+                              <MoreHorizontal aria-hidden="true" className="h-3 w-3" />
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end">
@@ -107,7 +107,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                               Reply
                             </DropdownMenuItem>
                             <DropdownMenuItem>Resolve</DropdownMenuItem>
-                            <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
+                            <DropdownMenuItem aria-hidden="true" className="text-destructive">Delete</DropdownMenuItem>
                           </DropdownMenuContent>
                         </DropdownMenu>
                       </div>
@@ -128,7 +128,7 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                             </Button>
                           ))}
                           <Button variant="ghost" size="icon" className="h-6 w-6">
-                            <Smile className="h-3 w-3" />
+                            <Smile aria-hidden="true" className="h-3 w-3" />
                           </Button>
                         </div>
                       )}
@@ -142,11 +142,11 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
                 <div className="ml-8 space-y-3">
                   {replies.map((reply: any) => (
                     <Card key={reply.id}>
-                      <CardContent className="p-3">
+                      <CardContent aria-hidden="true" className="p-3">
                         <div className="flex flex-wrap gap-2">
-                          <Avatar className="h-6 w-6">
+                          <Avatar aria-hidden="true" className="h-6 w-6">
                             <AvatarImage src={`/avatars/${reply.created_by}.jpg`} />
-                            <AvatarFallback className="text-xs">
+                            <AvatarFallback aria-hidden="true" className="text-xs">
                               {getInitials(reply.created_by)}
                             </AvatarFallback>
                           </Avatar>
@@ -172,9 +172,9 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
 
       {/* New comment input */}
       <Card>
-        <CardContent className="p-4">
+        <CardContent aria-hidden="true" className="p-4">
           <div className="flex flex-wrap gap-3">
-            <Avatar className="h-8 w-8">
+            <Avatar aria-hidden="true" className="h-8 w-8">
               <AvatarFallback>You</AvatarFallback>
             </Avatar>
             <div className="flex-1 space-y-2">
@@ -201,11 +201,11 @@ export function CommentThread({ itemId, itemType, comments = mockComments }: Com
               <div className="flex flex-wrap justify-between">
                 <div className="flex flex-wrap gap-1">
                   <Button variant="ghost" size="icon" className="h-8 w-8">
-                    <Smile className="h-4 w-4" />
+                    <Smile aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </div>
                 <Button onClick={handleSubmit} disabled={!newComment.trim()}>
-                  <Send className="h-4 w-4 mr-2" />
+                  <Send aria-hidden="true" className="h-4 w-4 mr-2" />
                   Comment
                 </Button>
               </div>

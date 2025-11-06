@@ -77,7 +77,7 @@ export function MapOrganism({
         {/* Placeholder for actual map implementation */}
         <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap items-center justify-center sm:relative sm:inset-auto">
           <div className="text-center space-y-2">
-            <MapPin className="h-12 w-12 mx-auto text-muted-foreground" aria-hidden="true" />
+            <MapPin aria-hidden="true" className="h-12 w-12 mx-auto text-muted-foreground" />
             <p className="text-sm text-muted-foreground">
               {t('map.placeholder')}
             </p>
@@ -95,7 +95,7 @@ export function MapOrganism({
             onClick={handleZoomIn}
             aria-label={t('map.zoomIn')}
           >
-            <ZoomIn className="h-4 w-4" aria-hidden="true" />
+            <ZoomIn aria-hidden="true" className="h-4 w-4" />
           </Button>
           <Button
             variant="secondary"
@@ -103,14 +103,14 @@ export function MapOrganism({
             onClick={handleZoomOut}
             aria-label={t('map.zoomOut')}
           >
-            <ZoomOut className="h-4 w-4" aria-hidden="true" />
+            <ZoomOut aria-hidden="true" className="h-4 w-4" />
           </Button>
           <Button
             variant="secondary"
             size="icon"
             aria-label={t('map.layers')}
           >
-            <Layers className="h-4 w-4" aria-hidden="true" />
+            <Layers aria-hidden="true" className="h-4 w-4" />
           </Button>
           <Button
             variant="secondary"
@@ -133,14 +133,12 @@ export function MapOrganism({
               left: `${50 + (index % 5) * 10}%`,
               top: `${50 + Math.floor(index / 5) * 10}%`
             }}
-            onClick={() => handleLocationClick(location)}
+             role="button" tabIndex={0} onClick={() => handleLocationClick(location)}
           >
-            <MapPin 
-              className={cn(
+            <MapPin aria-hidden="true" className={cn(
                 'h-8 w-8',
                 selectedLocation === location.id ? 'text-primary' : 'text-destructive'
               )}
-              aria-hidden="true"
             />
           </div>
         ))}
@@ -157,10 +155,10 @@ export function MapOrganism({
                 'flex items-center justify-between p-2 rounded-lg cursor-pointer transition-colors',
                 selectedLocation === location.id ? 'bg-primary/10' : 'hover:bg-accent'
               )}
-              onClick={() => handleLocationClick(location)}
+               role="button" tabIndex={0} onClick={() => handleLocationClick(location)}
             >
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 min-w-0">
-                <MapPin className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+                <MapPin aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
                 <div className="min-w-0">
                   <p className="font-medium truncate">{location.title}</p>
                   {location.description && (

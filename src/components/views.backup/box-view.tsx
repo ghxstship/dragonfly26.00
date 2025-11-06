@@ -60,7 +60,7 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <LayoutGrid className="h-5 w-5" />
+          <LayoutGrid aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Card Grid</h3>
           <Badge variant="secondary">{data.length} items</Badge>
         </div>
@@ -106,14 +106,14 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
                   <div className="aspect-video bg-muted overflow-hidden md:block">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={item.cover_image}
+                       alt="" src={item.cover_image}
                       alt={item.name || "Cover"}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform max-w-full"
                     />
                   </div>
                 )}
 
-                <CardContent className={cn("p-4", !item.cover_image && "pt-6")}>
+                <CardContent aria-hidden="true" className={cn("p-4", !item.cover_image && "pt-6")}>
                   {/* Header */}
                   <div className="flex items-start gap-2 mb-2">
                     <div className="flex-1 min-w-0">
@@ -131,8 +131,7 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
                           toggleFavorite(item.id)
                         }}
                       >
-                        <Star
-                          className={cn(
+                        <Star aria-hidden="true" className={cn(
                             "h-3 w-3",
                             isFavorite && "fill-yellow-400 text-yellow-400"
                           )}
@@ -141,19 +140,19 @@ export function BoxView({ data, schema, onItemClick, createActionLabel, onCreate
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
                           <Button variant="ghost" size="icon" className="h-7 w-7">
-                            <MoreHorizontal className="h-3 w-3" />
+                            <MoreHorizontal aria-hidden="true" className="h-3 w-3" />
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           <DropdownMenuItem>
-                            <Eye className="h-4 w-4 mr-2" />
+                            <Eye aria-hidden="true" className="h-4 w-4 mr-2" />
                             View
                           </DropdownMenuItem>
                           <DropdownMenuItem>
-                            <Edit className="h-4 w-4 mr-2" />
+                            <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
                             Edit
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="text-destructive">
+                          <DropdownMenuItem aria-hidden="true" className="text-destructive">
                             Delete
                           </DropdownMenuItem>
                         </DropdownMenuContent>

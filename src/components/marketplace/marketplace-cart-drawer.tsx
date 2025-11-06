@@ -59,15 +59,15 @@ export function MarketplaceCartDrawer({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right" className="w-full max-w-[500px] sm:max-w-[500px] p-0 flex flex-wrap flex-col">
         {/* Header */}
-        <SheetHeader className="border-b px-4 md:px-6 py-4">
+        <SheetHeader aria-hidden="true" className="border-b px-4 md:px-6 py-4">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <ShoppingCart className="h-5 w-5" />
-              <SheetTitle className="text-base md:text-lg lg:text-xl">Shopping Cart</SheetTitle>
+              <ShoppingCart aria-hidden="true" className="h-5 w-5" />
+              <SheetTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl">Shopping Cart</SheetTitle>
               <Badge variant="secondary">{cartItems.length} items</Badge>
             </div>
             <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
-              <X className="h-4 w-4" />
+              <X aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
         </SheetHeader>
@@ -78,7 +78,7 @@ export function MarketplaceCartDrawer({
             <div className="flex-1 flex flex-wrap items-center justify-center p-4 sm:p-6">
               <div className="text-center space-y-4">
                 <div className="w-20 h-20 mx-auto rounded-full bg-muted flex flex-wrap items-center justify-center">
-                  <ShoppingCart className="h-10 w-10 text-muted-foreground" />
+                  <ShoppingCart aria-hidden="true" className="h-10 w-10 text-muted-foreground" />
                 </div>
                 <div className="space-y-2">
                   <p className="font-semibold text-lg">Your cart is empty</p>
@@ -94,14 +94,14 @@ export function MarketplaceCartDrawer({
           ) : (
             <>
               {/* Cart Items */}
-              <ScrollArea className="flex-1">
+              <ScrollArea aria-hidden="true" className="flex-1">
                 <div className="p-4 sm:p-6 space-y-4">
                   {cartItems.map((item: any) => (
                     <div key={item.id} className="space-y-3">
                       <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                         {/* Product Image Placeholder */}
                         <div className="w-20 h-20 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded flex flex-wrap items-center justify-center flex-shrink-0">
-                          <ShoppingCart className="h-8 w-8 text-muted-foreground/30" />
+                          <ShoppingCart aria-hidden="true" className="h-8 w-8 text-muted-foreground/30" />
                         </div>
 
                         {/* Product Details */}
@@ -136,7 +136,7 @@ export function MarketplaceCartDrawer({
                                 onClick={() => onUpdateQuantity?.(item.id, Math.max(1, item.quantity - 1))}
                                 disabled={item.quantity <= 1}
                               >
-                                <Minus className="h-3 w-3" />
+                                <Minus aria-hidden="true" className="h-3 w-3" />
                               </Button>
                               <span className="w-8 text-center font-medium">{item.quantity}</span>
                               <Button
@@ -145,7 +145,7 @@ export function MarketplaceCartDrawer({
                                 className="h-8 w-8"
                                 onClick={() => onUpdateQuantity?.(item.id, item.quantity + 1)}
                               >
-                                <Plus className="h-3 w-3" />
+                                <Plus aria-hidden="true" className="h-3 w-3" />
                               </Button>
                             </div>
                             <p className="font-bold">{item.price}</p>
@@ -222,7 +222,7 @@ export function MarketplaceCartDrawer({
                     </div>
                   )}
 
-                  <Button className="w-full max-w-full" size="lg" onClick={onCheckout}>
+                  <Button aria-hidden="true" className="w-full max-w-full" size="lg" onClick={onCheckout}>
                     Proceed to Checkout
                   </Button>
                   <Button variant="outline" className="w-full max-w-full" onClick={() => onOpenChange(false)}>

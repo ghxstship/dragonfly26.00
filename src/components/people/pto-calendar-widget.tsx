@@ -76,14 +76,14 @@ export function PTOCalendarWidget({
   }
 
   return (
-    <Card className={className}>
-      <CardHeader className="pb-3">
-        <CardTitle className="text-sm flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
+    <Card aria-hidden="true" className={className}>
+      <CardHeader aria-hidden="true" className="pb-3">
+        <CardTitle aria-hidden="true" className="text-sm flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <span>Request PTO</span>
-          <CalendarIcon className="h-4 w-4 text-muted-foreground" />
+          <CalendarIcon aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent aria-hidden="true" className="space-y-4">
         {/* Calendar */}
         <div className="border rounded-lg p-2">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
@@ -97,7 +97,7 @@ export function PTOCalendarWidget({
                 setMonth(newMonth)
               }}
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft aria-hidden="true" className="h-4 w-4" />
             </Button>
             <span className="text-sm font-medium">
               {month.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
@@ -112,7 +112,7 @@ export function PTOCalendarWidget({
                 setMonth(newMonth)
               }}
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
 
@@ -143,7 +143,7 @@ export function PTOCalendarWidget({
                 className="h-6 w-6"
                 onClick={() => handleDateSelect([])}
               >
-                <X className="h-3 w-3" />
+                <X aria-hidden="true" className="h-3 w-3" />
               </Button>
             </div>
             <div className="text-xs space-y-1">
@@ -176,7 +176,7 @@ export function PTOCalendarWidget({
             {isAvailable ? (
               <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
             ) : (
-              <X className="h-4 w-4 text-red-500" />
+              <X aria-hidden="true" className="h-4 w-4 text-red-500" />
             )}
           </div>
         </div>
@@ -203,8 +203,7 @@ export function PTOCalendarWidget({
 
         {/* Submit Button */}
         {onRequestPTO && selected.length > 0 && (
-          <Button 
-            className="w-full max-w-full"
+          <Button aria-hidden="true" className="w-full max-w-full"
             onClick={() => onRequestPTO(selected)}
             disabled={!isAvailable}
           >
@@ -215,7 +214,7 @@ export function PTOCalendarWidget({
               </>
             ) : (
               <>
-                <X className="h-4 w-4 mr-2" />
+                <X aria-hidden="true" className="h-4 w-4 mr-2" />
                 Insufficient Balance
               </>
             )}
@@ -254,7 +253,7 @@ export function TeamPTOCalendar({
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-sm">Team PTO Calendar</CardTitle>
+        <CardTitle aria-hidden="true" className="text-sm">Team PTO Calendar</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -269,7 +268,7 @@ export function TeamPTOCalendar({
                 setMonth(newMonth)
               }}
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft aria-hidden="true" className="h-4 w-4" />
             </Button>
             <span className="font-medium">
               {month.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
@@ -283,7 +282,7 @@ export function TeamPTOCalendar({
                 setMonth(newMonth)
               }}
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
 

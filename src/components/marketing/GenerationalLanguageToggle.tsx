@@ -41,9 +41,7 @@ export function GenerationalLanguageToggle() {
           <span className="text-base" aria-hidden="true">{currentConfig.icon}</span>
           <span className="sm:inline">{currentConfig.label}</span>
         </span>
-        <ChevronDown 
-          className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          aria-hidden="true"
+        <ChevronDown aria-hidden="true" className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
         />
       </Button>
 
@@ -52,7 +50,7 @@ export function GenerationalLanguageToggle() {
           {/* Backdrop */}
           <div 
             className="fixed inset-0 z-40" 
-            onClick={() => setIsOpen(false)}
+             role="button" tabIndex={0} onClick={() => setIsOpen(false)}
             aria-hidden="true"
           />
           
@@ -92,7 +90,7 @@ export function GenerationalLanguageToggle() {
                         {config.label}
                       </span>
                       {variant === config.variant && (
-                        <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-label="Currently selected" />
+                        <Check aria-hidden="true" className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-label="Currently selected" />
                       )}
                     </div>
                     <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mt-0.5 line-clamp-2">

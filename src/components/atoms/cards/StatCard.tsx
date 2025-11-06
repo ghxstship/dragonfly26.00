@@ -106,19 +106,18 @@ export function StatCard({
   )
   
   return (
-    <Card 
-      className={cardClasses}
+    <Card aria-hidden="true" className={cardClasses}
       onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
       aria-label={ariaLabel || `${label}: ${value}`}
     >
-      <CardContent className="pt-6">
+      <CardContent aria-hidden="true" className="pt-6">
         <div className="text-center">
           {/* Icon */}
           {Icon && (
             <div className={cn("p-2 rounded-lg inline-flex mb-2", iconBg)}>
-              <Icon className={cn("h-4 w-4", valueColor)} aria-hidden="true" />
+              <Icon aria-hidden="true" className={cn("h-4 w-4", valueColor)} />
             </div>
           )}
           

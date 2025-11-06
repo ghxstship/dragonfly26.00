@@ -119,7 +119,7 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
               onClick={previousPeriod}
               aria-label={t('timeline.previousPeriod')}
             >
-              <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+              <ChevronLeft aria-hidden="true" className="h-4 w-4" />
             </Button>
             <Button variant="outline" onClick={goToToday}>
               {t('timeline.today')}
@@ -130,7 +130,7 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
               onClick={nextPeriod}
               aria-label={t('timeline.nextPeriod')}
             >
-              <ChevronRight className="h-4 w-4" aria-hidden="true" />
+              <ChevronRight aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
 
@@ -142,7 +142,7 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
               disabled={zoomLevel === "quarters"}
               aria-label={t('timeline.zoomOut')}
             >
-              <ZoomOut className="h-4 w-4" aria-hidden="true" />
+              <ZoomOut aria-hidden="true" className="h-4 w-4" />
             </Button>
             <span className="text-sm text-muted-foreground capitalize">{zoomLevel}</span>
             <Button
@@ -152,7 +152,7 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
               disabled={zoomLevel === "days"}
               aria-label={t('timeline.zoomIn')}
             >
-              <ZoomIn className="h-4 w-4" aria-hidden="true" />
+              <ZoomIn aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -187,7 +187,7 @@ export function TimelineOrganism({ data, schema, onItemClick }: TimelineOrganism
                             getStatusColor(status)
                           )}
                           style={position}
-                          onClick={() => onItemClick?.(item)}
+                           role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                         >
                           <span className="text-xs font-medium truncate">
                             {getDisplayValue(item, schema)}

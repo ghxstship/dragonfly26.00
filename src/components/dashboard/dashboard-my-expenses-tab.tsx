@@ -42,7 +42,7 @@ export function DashboardMyExpensesTab({ workspaceId = '', userId = '' }: Dashbo
         aria-live="assertive"
       >
         <div className="text-center">
-          <DollarSign className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <DollarSign aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load expenses</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>

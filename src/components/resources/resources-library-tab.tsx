@@ -72,7 +72,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -90,18 +90,18 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </p>
         <div className="flex flex-wrap gap-2">
           <Button variant="outline" size="sm">
-            <Filter className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('filter')}</Button>
+            <Filter aria-hidden="true" className="h-4 w-4 mr-2" />{tCommon('filter')}</Button>
           <Button size="sm">
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />{t('addResource')}</Button>
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />{t('addResource')}</Button>
         </div>
       </div>
 
       {/* Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Resources</CardTitle>
-            <BookOpen className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Resources</CardTitle>
+            <BookOpen aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{resources.length}</div>
@@ -110,9 +110,9 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('courses')}</CardTitle>
-            <GraduationCap className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('courses')}</CardTitle>
+            <GraduationCap aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -123,9 +123,9 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('guides')}</CardTitle>
-            <Book className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('guides')}</CardTitle>
+            <Book aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -136,9 +136,9 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('grants')}</CardTitle>
-            <CircleDollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('grants')}</CardTitle>
+            <CircleDollarSign aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -152,7 +152,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
       {/* Search */}
       <div className="flex flex-wrap gap-2">
         <div className="relative flex-1">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input
             placeholder={t('searchResources')}
             value={searchQuery as any}
@@ -172,29 +172,29 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
               <CardHeader>
                 <div className="flex items-start gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
-                    <TypeIcon className="h-5 w-5 text-primary"  aria-hidden="true" />
+                    <TypeIcon aria-hidden="true" className="h-5 w-5 text-primary" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <CardTitle className="text-lg line-clamp-2">{resource.name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg line-clamp-2">{resource.name}</CardTitle>
                     {resource.category && (
-                      <CardDescription className="mt-1">{resource.category}</CardDescription>
+                      <CardDescription aria-hidden="true" className="mt-1">{resource.category}</CardDescription>
                     )}
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  <Badge className={getTypeColor(resource.type)}>
+                  <Badge aria-hidden="true" className={getTypeColor(resource.type)}>
                     {resource.type}
                   </Badge>
                   {resource.is_featured && (
                     <Badge variant="secondary">
-                      <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                      <Star aria-hidden="true" className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" />
                       Featured
                     </Badge>
                   )}
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-3">
+              <CardContent aria-hidden="true" className="space-y-3">
                 {/* Description */}
                 {resource.description && (
                   <p className="text-sm text-muted-foreground line-clamp-2">
@@ -206,13 +206,13 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                   {resource.duration && (
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <Clock className="h-3 w-3" aria-hidden="true" />
+                      <Clock aria-hidden="true" className="h-3 w-3" />
                       <span>{resource.duration}</span>
                     </div>
                   )}
                   {resource.author && (
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <Users className="h-3 w-3" aria-hidden="true" />
+                      <Users aria-hidden="true" className="h-3 w-3" />
                       <span className="truncate">{resource.author}</span>
                     </div>
                   )}
@@ -262,12 +262,12 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
                 {/* Actions */}
                 <div className="flex flex-wrap gap-2 pt-2">
-                  <Button className="flex-1" variant="outline" size="sm">
+                  <Button aria-hidden="true" className="flex-1" variant="outline" size="sm">
                     View Details
                   </Button>
                   {resource.downloadable && (
                     <Button variant="ghost" size="icon" aria-label={t('download')}>
-                      <Download className="h-4 w-4" aria-hidden="true" />
+                      <Download aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   )}
                 </div>
@@ -279,7 +279,7 @@ export function ResourcesLibraryTab({ workspaceId, moduleId, tabSlug }: TabCompo
 
       {filteredResources.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               variant="inline"
               icon={BookOpen}

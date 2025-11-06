@@ -69,7 +69,7 @@ export function ReportsPageContent() {
             </p>
           </div>
           <Button onClick={() => setShowCreateDialog(true)}>
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             Create Report
           </Button>
         </div>
@@ -77,7 +77,7 @@ export function ReportsPageContent() {
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Reports</p>
@@ -89,7 +89,7 @@ export function ReportsPageContent() {
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Charts</p>
@@ -97,13 +97,13 @@ export function ReportsPageContent() {
                     {mockReports.filter((r: any) => (r as any).type === "chart").length}
                   </p>
                 </div>
-                <LineChart className="h-8 w-8 text-blue-600" />
+                <LineChart aria-hidden="true" className="h-8 w-8 text-blue-600" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Tables</p>
@@ -111,13 +111,13 @@ export function ReportsPageContent() {
                     {mockReports.filter((r: any) => (r as any).type === "table").length}
                   </p>
                 </div>
-                <PieChart className="h-8 w-8 text-purple-600" />
+                <PieChart aria-hidden="true" className="h-8 w-8 text-purple-600" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Scheduled</p>
@@ -125,7 +125,7 @@ export function ReportsPageContent() {
                     {mockReports.filter((r: any) => r.schedule_enabled).length}
                   </p>
                 </div>
-                <Calendar className="h-8 w-8 text-green-600" />
+                <Calendar aria-hidden="true" className="h-8 w-8 text-green-600" />
               </div>
             </CardContent>
           </Card>

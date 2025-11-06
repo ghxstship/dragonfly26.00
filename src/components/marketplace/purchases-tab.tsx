@@ -35,17 +35,17 @@ export function PurchasesTab({ data = [], loading: loadingProp = false }: Purcha
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />{t('completed')}</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600"><CheckCircle aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />{t('completed')}</Badge>
       case "delivered":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />{t('delivered')}</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600"><CheckCircle aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />{t('delivered')}</Badge>
       case "shipped":
-        return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" aria-hidden="true" />{t('shipped')}</Badge>
+        return <Badge aria-hidden="true" className="bg-blue-600"><Truck aria-hidden="true" className="h-3 w-3 mr-1" />{t('shipped')}</Badge>
       case "processing":
-        return <Badge className="bg-cyan-600"><Package className="h-3 w-3 mr-1" aria-hidden="true" />{t('processing')}</Badge>
+        return <Badge aria-hidden="true" className="bg-cyan-600"><Package aria-hidden="true" className="h-3 w-3 mr-1" />{t('processing')}</Badge>
       case "pending":
-        return <Badge variant="outline"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />{t('pending')}</Badge>
+        return <Badge variant="outline"><Clock aria-hidden="true" className="h-3 w-3 mr-1" />{t('pending')}</Badge>
       case "cancelled":
-        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('cancelled')}</Badge>
+        return <Badge variant="destructive"><XCircle aria-hidden="true" className="h-3 w-3 mr-1" />{t('cancelled')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -65,11 +65,11 @@ export function PurchasesTab({ data = [], loading: loadingProp = false }: Purcha
   }
 
   const getPurchaseTypeIcon = (name: string) => {
-    if (name.includes("Product Order")) return <Package className="h-5 w-5 text-blue-500" aria-hidden="true" />
-    if (name.includes("Service Order")) return <FileText className="h-5 w-5 text-purple-500" aria-hidden="true" />
-    if (name.includes("Equipment Rental")) return <Truck className="h-5 w-5 text-green-500" aria-hidden="true" />
-    if (name.includes("Software License")) return <ClipboardList className="h-5 w-5 text-orange-500" aria-hidden="true" />
-    return <Package className="h-5 w-5 text-gray-500" aria-hidden="true" />
+    if (name.includes("Product Order")) return <Package aria-hidden="true" className="h-5 w-5 text-blue-500" />
+    if (name.includes("Service Order")) return <FileText aria-hidden="true" className="h-5 w-5 text-purple-500" />
+    if (name.includes("Equipment Rental")) return <Truck aria-hidden="true" className="h-5 w-5 text-green-500" />
+    if (name.includes("Software License")) return <ClipboardList aria-hidden="true" className="h-5 w-5 text-orange-500" />
+    return <Package aria-hidden="true" className="h-5 w-5 text-gray-500" />
   }
 
   return (
@@ -77,41 +77,41 @@ export function PurchasesTab({ data = [], loading: loadingProp = false }: Purcha
 {/* Quick Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('pending')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('pending')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {purchasesData.filter(p => (p as any).status === 'pending').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('processing')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('processing')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {purchasesData.filter(p => (p as any).status === 'processing').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('shipped')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('shipped')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {purchasesData.filter(p => (p as any).status === 'shipped').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('delivered')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('delivered')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {purchasesData.filter(p => (p as any).status === 'delivered').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('completed')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('completed')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {purchasesData.filter(p => (p as any).status === 'completed').length}
             </CardTitle>
           </CardHeader>
@@ -121,11 +121,11 @@ export function PurchasesTab({ data = [], loading: loadingProp = false }: Purcha
       {/* Filters */}
       <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input placeholder={t('searchPurchases')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-full max-w-[200px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[200px]">
             <SelectValue placeholder={t('purchaseType')} />
           </SelectTrigger>
           <SelectContent>
@@ -137,7 +137,7 @@ export function PurchasesTab({ data = [], loading: loadingProp = false }: Purcha
           </SelectContent>
         </Select>
         <Select defaultValue="all-status">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('status')} />
           </SelectTrigger>
           <SelectContent>
@@ -160,7 +160,7 @@ export function PurchasesTab({ data = [], loading: loadingProp = false }: Purcha
                 <div className="flex items-start gap-3">
                   {getPurchaseTypeIcon(purchase.name)}
                   <div className="space-y-1">
-                    <CardTitle className="text-lg">{purchase.name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{purchase.name}</CardTitle>
                     <CardDescription>
                       Vendor: {purchase.assignee_name}
                     </CardDescription>

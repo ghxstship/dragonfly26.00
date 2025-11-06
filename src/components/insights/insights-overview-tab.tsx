@@ -82,18 +82,18 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
       {/* Header Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-6">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('activeObjectives')}</p>
                 <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-2" aria-live="polite">12</p>
               </div>
-              <Target className="h-8 w-8 text-blue-600" aria-hidden="true" />
+              <Target aria-hidden="true" className="h-8 w-8 text-blue-600" />
             </div>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-6">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('onTrack')}</p>
@@ -104,24 +104,24 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-6">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('atRisk')}</p>
                 <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-2 text-yellow-600" aria-live="polite">3</p>
               </div>
-              <AlertTriangle className="h-8 w-8 text-yellow-600" aria-hidden="true" />
+              <AlertTriangle aria-hidden="true" className="h-8 w-8 text-yellow-600" />
             </div>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-6">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('insightsGenerated')}</p>
                 <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-2" aria-live="polite">47</p>
               </div>
-              <Sparkles className="h-8 w-8 text-purple-600" aria-hidden="true" />
+              <Sparkles aria-hidden="true" className="h-8 w-8 text-purple-600" />
             </div>
           </CardContent>
         </Card>
@@ -130,8 +130,8 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
       {/* AI-Powered Insights */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Lightbulb className="h-5 w-5 text-yellow-500" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Lightbulb aria-hidden="true" className="h-5 w-5 text-yellow-500" />
             {t('strategicInsightsRecommendations')}
           </CardTitle>
           <CardDescription>{t('aiPoweredAnalysisDesc')}</CardDescription>
@@ -142,8 +142,8 @@ export function InsightsOverviewTab({ data = [], loading = false }: InsightsOver
               <div key={insight.id} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-start gap-3">
-                    {insight.type === "opportunity" && <TrendingUp className="h-5 w-5 text-green-600 mt-1" aria-hidden="true" />}
-                    {insight.type === "risk" && <AlertTriangle className="h-5 w-5 text-yellow-600 mt-1" aria-hidden="true" />}
+                    {insight.type === "opportunity" && <TrendingUp aria-hidden="true" className="h-5 w-5 text-green-600 mt-1" />}
+                    {insight.type === "risk" && <AlertTriangle aria-hidden="true" className="h-5 w-5 text-yellow-600 mt-1" />}
                     {insight.type === "achievement" && <CheckCircle2 className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" aria-hidden="true" />}
                     <div>
                       <h4 className="font-semibold">{t(insight.titleKey)}</h4>

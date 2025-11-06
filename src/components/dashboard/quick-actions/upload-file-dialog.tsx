@@ -128,11 +128,11 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-950">
-              <FolderOpen className="h-5 w-5 text-orange-600" />
+              <FolderOpen aria-hidden="true" className="h-5 w-5 text-orange-600" />
             </div>
             <div>
               <DialogTitle>Upload File</DialogTitle>
@@ -149,12 +149,12 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
             <Label>File *</Label>
             <div 
               className="border-2 border-dashed rounded-lg p-4 sm:p-6 md:p-8 text-center cursor-pointer hover:border-primary transition-colors"
-              onClick={() => fileInputRef.current?.click()}
+               role="button" tabIndex={0} onClick={() => fileInputRef.current?.click()}
             >
               {selectedFile ? (
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 bg-muted rounded-lg">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                    <File className="h-8 w-8 text-muted-foreground" />
+                    <File aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
                     <div className="text-left">
                       <p className="font-medium text-sm">{selectedFile.name}</p>
                       <p className="text-xs text-muted-foreground">{formatFileSize(selectedFile.size)}</p>
@@ -172,12 +172,12 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
                       }
                     }}
                   >
-                    <X className="h-4 w-4" />
+                    <X aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </div>
               ) : (
                 <div className="space-y-2">
-                  <Upload className="h-10 w-10 text-muted-foreground mx-auto" />
+                  <Upload aria-hidden="true" className="h-10 w-10 text-muted-foreground mx-auto" />
                   <div>
                     <p className="font-medium">Click to upload or drag and drop</p>
                     <p className="text-xs text-muted-foreground mt-1">
@@ -193,7 +193,7 @@ export function UploadFileDialog({ open, onOpenChange, workspaceId, userId, onSu
               className="hidden md:block"
               onChange={handleFileSelect}
               accept="*/*"
-            />
+             aria-label="file" />
           </div>
 
           <div className="space-y-2">

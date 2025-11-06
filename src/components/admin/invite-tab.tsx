@@ -153,17 +153,17 @@ export function InviteTab() {
     switch (status) {
       case "pending":
         return <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
-          <Clock className="h-3 w-3 mr-1" aria-hidden="true" />
+          <Clock aria-hidden="true" className="h-3 w-3 mr-1" />
           {t('admin.invite.status.pending')}
         </Badge>
       case "accepted":
         return <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-          <Check className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />
+          <Check aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />
           {t('admin.invite.status.accepted')}
         </Badge>
       case "expired":
         return <Badge variant="outline" className="bg-gray-50 text-gray-700 border-gray-200">
-          <X className="h-3 w-3 mr-1" aria-hidden="true" />
+          <X aria-hidden="true" className="h-3 w-3 mr-1" />
           {t('admin.invite.status.expired')}
         </Badge>
     }
@@ -175,7 +175,7 @@ export function InviteTab() {
       <Card>
         <CardHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <UserPlus className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
+            <UserPlus aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
             <CardTitle>{t('admin.invite.sendInvitation')}</CardTitle>
           </div>
           <CardDescription>
@@ -187,7 +187,7 @@ export function InviteTab() {
             <div className="flex-1 space-y-2">
               <Label htmlFor="email">{t('admin.invite.emailAddress')}</Label>
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Mail className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                <Mail aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                 <Input
                   id="email"
                   type="email"
@@ -213,7 +213,7 @@ export function InviteTab() {
             </div>
             <div className="flex flex-wrap items-end">
               <Button onClick={handleSendInvite} disabled={loading}>
-                <Send className="h-4 w-4 mr-2" aria-hidden="true" />
+                <Send aria-hidden="true" className="h-4 w-4 mr-2" />
                 {loading ? t('common.sending') : t('admin.invite.send')}
               </Button>
             </div>
@@ -238,24 +238,24 @@ export function InviteTab() {
                 <TableHead>{t('admin.invite.status')}</TableHead>
                 <TableHead>{t('admin.invite.invitedBy')}</TableHead>
                 <TableHead>{t('admin.invite.expires')}</TableHead>
-                <TableHead className="text-right">{t('common.actions')}</TableHead>
+                <TableHead aria-hidden="true" className="text-right">{t('common.actions')}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {invitations.map((invitation: any) => (
                 <TableRow key={invitation.id}>
-                  <TableCell className="font-medium">{invitation.email}</TableCell>
+                  <TableCell aria-hidden="true" className="font-medium">{invitation.email}</TableCell>
                   <TableCell>
                     <Badge variant="secondary">
                       {t(`admin.invite.roles.${invitation.role}`)}
                     </Badge>
                   </TableCell>
                   <TableCell>{getStatusBadge(invitation.status)}</TableCell>
-                  <TableCell className="text-muted-foreground">{invitation.invited_by}</TableCell>
-                  <TableCell className="text-muted-foreground">
+                  <TableCell aria-hidden="true" className="text-muted-foreground">{invitation.invited_by}</TableCell>
+                  <TableCell aria-hidden="true" className="text-muted-foreground">
                     {new Date(invitation.expires_at).toLocaleDateString()}
                   </TableCell>
-                  <TableCell className="text-right">
+                  <TableCell aria-hidden="true" className="text-right">
                     <div className="flex flex-wrap flex-col md:flex-row items-center justify-end gap-2">
                       <Button
                         variant="ghost"
@@ -264,20 +264,20 @@ export function InviteTab() {
                         aria-label={t('admin.invite.copyLink')}
                       >
                         {copiedId === invitation.id ? (
-                          <Check className="h-4 w-4 text-green-600 flex-shrink-0" aria-hidden="true" />
+                          <Check aria-hidden="true" className="h-4 w-4 text-green-600 flex-shrink-0" />
                         ) : (
-                          <Copy className="h-4 w-4" aria-hidden="true" />
+                          <Copy aria-hidden="true" className="h-4 w-4" />
                         )}
                       </Button>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button variant="ghost" size="sm" aria-label={t('common.moreActions')}>
-                            <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+                            <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           <DropdownMenuItem onClick={() => handleResendInvite(invitation.id)}>
-                            <RefreshCw className="h-4 w-4 mr-2" aria-hidden="true" />
+                            <RefreshCw aria-hidden="true" className="h-4 w-4 mr-2" />
                             {t('admin.invite.resend')}
                           </DropdownMenuItem>
                           <DropdownMenuItem 

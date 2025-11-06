@@ -82,7 +82,7 @@ export function MindMapOrganism({
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           {!readOnly && (
             <Button onClick={addNode} size="sm" className="gap-2">
-              <Plus className="h-4 w-4" aria-hidden="true" />
+              <Plus aria-hidden="true" className="h-4 w-4" />
               {t('mindMap.addNode')}
             </Button>
           )}
@@ -97,7 +97,7 @@ export function MindMapOrganism({
             onClick={handleZoomOut}
             aria-label={t('mindMap.zoomOut')}
           >
-            <ZoomOut className="h-4 w-4" aria-hidden="true" />
+            <ZoomOut aria-hidden="true" className="h-4 w-4" />
           </Button>
           <span className="text-sm text-muted-foreground w-12 text-center">
             {Math.round(zoom * 100)}%
@@ -108,7 +108,7 @@ export function MindMapOrganism({
             onClick={handleZoomIn}
             aria-label={t('mindMap.zoomIn')}
           >
-            <ZoomIn className="h-4 w-4" aria-hidden="true" />
+            <ZoomIn aria-hidden="true" className="h-4 w-4" />
           </Button>
           <Button
             variant="ghost"
@@ -161,7 +161,7 @@ export function MindMapOrganism({
                 left: `${node.x}%`,
                 top: `${node.y}%`
               }}
-              onClick={() => setSelectedNode(node.id)}
+               role="button" tabIndex={0} onClick={() => setSelectedNode(node.id)}
             >
               <div
                 className={cn(

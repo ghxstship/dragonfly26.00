@@ -51,7 +51,7 @@ export function ItemDetailDrawer({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right" className="w-full max-w-[600px] p-0 flex flex-wrap flex-col">
         {/* Header */}
-        <SheetHeader className="border-b px-4 md:px-6 py-4">
+        <SheetHeader aria-hidden="true" className="border-b px-4 md:px-6 py-4">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
               <Input
@@ -64,22 +64,22 @@ export function ItemDetailDrawer({
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon">
-                    <MoreHorizontal className="h-4 w-4" />
+                    <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem>
-                    <Copy className="h-4 w-4 mr-2" />
+                    <Copy aria-hidden="true" className="h-4 w-4 mr-2" />
                     Duplicate
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="text-destructive" onClick={onDelete}>
+                  <DropdownMenuItem aria-hidden="true" className="text-destructive" onClick={onDelete}>
                     <Trash2 className="h-4 w-4 mr-2" />
                     Delete
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
-                <X className="h-4 w-4" />
+                <X aria-hidden="true" className="h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -95,7 +95,7 @@ export function ItemDetailDrawer({
                 <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                   {/* Status */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-muted-foreground uppercase">Status</Label>
+                    <Label aria-hidden="true" className="text-xs text-muted-foreground uppercase">Status</Label>
                     <Select
                       value={editedItem.status}
                       onValueChange={(value) => handleUpdate("status", value)}
@@ -114,7 +114,7 @@ export function ItemDetailDrawer({
 
                   {/* Priority */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-muted-foreground uppercase">Priority</Label>
+                    <Label aria-hidden="true" className="text-xs text-muted-foreground uppercase">Priority</Label>
                     <Select
                       value={editedItem.priority}
                       onValueChange={(value) => handleUpdate("priority", value)}
@@ -133,8 +133,8 @@ export function ItemDetailDrawer({
 
                   {/* Assignee */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <User className="h-3 w-3" />
+                    <Label aria-hidden="true" className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
+                      <User aria-hidden="true" className="h-3 w-3" />
                       Assignee
                     </Label>
                     <Select
@@ -154,8 +154,8 @@ export function ItemDetailDrawer({
 
                   {/* Due Date */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
-                      <Calendar className="h-3 w-3" />
+                    <Label aria-hidden="true" className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
+                      <Calendar aria-hidden="true" className="h-3 w-3" />
                       Due Date
                     </Label>
                     <Input
@@ -168,8 +168,8 @@ export function ItemDetailDrawer({
 
                 {/* Tags */}
                 <div className="space-y-2">
-                  <Label className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Tag className="h-3 w-3" />
+                  <Label aria-hidden="true" className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
+                    <Tag aria-hidden="true" className="h-3 w-3" />
                     Tags
                   </Label>
                   <div className="flex flex-wrap gap-2">
@@ -190,7 +190,7 @@ export function ItemDetailDrawer({
 
               {/* Description */}
               <div className="space-y-2">
-                <Label className="text-xs text-muted-foreground uppercase">Description</Label>
+                <Label aria-hidden="true" className="text-xs text-muted-foreground uppercase">Description</Label>
                 <Textarea
                   value={editedItem.description || ""}
                   onChange={(e) => handleUpdate("description", e.target.value)}
@@ -201,8 +201,8 @@ export function ItemDetailDrawer({
 
               {/* Attachments */}
               <div className="space-y-2">
-                <Label className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
-                  <Paperclip className="h-3 w-3" />
+                <Label aria-hidden="true" className="text-xs text-muted-foreground uppercase flex flex-wrap flex-col md:flex-row items-center gap-1">
+                  <Paperclip aria-hidden="true" className="h-3 w-3" />
                   Attachments
                 </Label>
                 <Button variant="outline" size="sm" className="w-full max-w-full">
@@ -215,11 +215,11 @@ export function ItemDetailDrawer({
           {/* Right Panel - Activity & Comments */}
           <div className="w-full sm:w-80 border-l flex flex-wrap flex-col">
             <Tabs defaultValue="comments" className="flex-1 flex flex-wrap flex-col">
-              <TabsList className="w-full justify-start rounded-none border-b px-4 max-w-full">
+              <TabsList aria-hidden="true" className="w-full justify-start rounded-none border-b px-4 max-w-full">
                 <TabsTrigger value="comments">Comments</TabsTrigger>
                 <TabsTrigger value="activity">Activity</TabsTrigger>
               </TabsList>
-              <ScrollArea className="flex-1">
+              <ScrollArea aria-hidden="true" className="flex-1">
                 <TabsContent value="comments" className="p-4 m-0">
                   <CommentsSection entityType="task" entityId={item.id} />
                 </TabsContent>

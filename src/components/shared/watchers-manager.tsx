@@ -60,14 +60,14 @@ export function WatchersManager({
           {watchers.slice(0, 3).map((watcher) => (
             <Avatar key={watcher.id} className="h-6 w-6 border-2 border-background">
               <AvatarImage src={watcher.user?.avatar_url} />
-              <AvatarFallback className="text-xs">
+              <AvatarFallback aria-hidden="true" className="text-xs">
                 {getInitials(watcher.user?.name || "U")}
               </AvatarFallback>
             </Avatar>
           ))}
           {watchers.length > 3 && (
-            <Avatar className="h-6 w-6 border-2 border-background">
-              <AvatarFallback className="text-xs">
+            <Avatar aria-hidden="true" className="h-6 w-6 border-2 border-background">
+              <AvatarFallback aria-hidden="true" className="text-xs">
                 +{watchers.length - 3}
               </AvatarFallback>
             </Avatar>
@@ -89,12 +89,12 @@ export function WatchersManager({
       >
         {isCurrentUserWatching ? (
           <>
-            <Eye className="h-4 w-4" />
+            <Eye aria-hidden="true" className="h-4 w-4" />
             Watching
           </>
         ) : (
           <>
-            <EyeOff className="h-4 w-4" />
+            <EyeOff aria-hidden="true" className="h-4 w-4" />
             Watch
           </>
         )}
@@ -118,9 +118,9 @@ export function WatchersManager({
                 onCheckedChange={() => toggleWatcher(user)}
                 className="gap-2"
               >
-                <Avatar className="h-6 w-6">
+                <Avatar aria-hidden="true" className="h-6 w-6">
                   <AvatarImage src={user.avatar_url} />
-                  <AvatarFallback className="text-xs">
+                  <AvatarFallback aria-hidden="true" className="text-xs">
                     {getInitials(user.name)}
                   </AvatarFallback>
                 </Avatar>

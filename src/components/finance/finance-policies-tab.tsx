@@ -172,9 +172,9 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
       {/* Summary Cards */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Active Policies</CardTitle>
-            <ShieldCheck className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Active Policies</CardTitle>
+            <ShieldCheck aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{activePolicies as any}</div>
@@ -185,9 +185,9 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Corporate Cards</CardTitle>
-            <CreditCard className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Corporate Cards</CardTitle>
+            <CreditCard aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -200,9 +200,9 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Policy Violations</CardTitle>
-            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Policy Violations</CardTitle>
+            <AlertTriangle aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-orange-600">{pendingViolations as any}</div>
@@ -213,8 +213,8 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Compliance Rate</CardTitle>
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Compliance Rate</CardTitle>
             <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
@@ -236,7 +236,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
           <div className="space-y-3">
             {spendingPolicies.map((policy: any) => (
               <Card key={policy.id} className={!policy.isActive ? 'opacity-60' : ''}>
-                <CardContent className="pt-6" aria-hidden="true">
+                <CardContent aria-hidden="true" className="pt-6">
                   <div className="flex items-start justify-between">
                     <div className="space-y-2 flex-1">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
@@ -263,7 +263,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                     </div>
                     <div className="flex flex-wrap gap-2 ml-4">
                       <Button variant="outline" size="sm">
-                        <Settings className="h-4 w-4" aria-hidden="true" />
+                        <Settings aria-hidden="true" className="h-4 w-4" />
                         Edit
                       </Button>
                     </div>
@@ -284,7 +284,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
               <CardDescription>Manage card assignments and spending limits</CardDescription>
             </div>
             <Button variant="outline">
-              <Plus className="h-4 w-4" aria-hidden="true" />
+              <Plus aria-hidden="true" className="h-4 w-4" />
               Issue Card
             </Button>
           </div>
@@ -295,7 +295,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
               const utilization = getCardUtilization(card.spentCurrentPeriod, card.spendingLimit)
               return (
                 <Card key={card.id} className={card.status === 'suspended' ? 'opacity-60 border-red-300' : ''}>
-                  <CardContent className="pt-6" aria-hidden="true">
+                  <CardContent aria-hidden="true" className="pt-6">
                     <div className="space-y-3">
                       <div className="flex items-start justify-between">
                         <div className="space-y-1">
@@ -380,7 +380,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                     violation.status === 'pending' ? 'border-l-orange-500' : 'border-l-green-500'
                   }`}
                 >
-                  <CardContent className="pt-6" aria-hidden="true">
+                  <CardContent aria-hidden="true" className="pt-6">
                     <div className="flex items-start justify-between">
                       <div className="space-y-2 flex-1">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
@@ -412,7 +412,7 @@ export function FinancePoliciesTab({ data, loading }: FinancePoliciesTabProps) {
                               Approve
                             </Button>
                             <Button size="sm" variant="outline">
-                              <XCircle className="h-4 w-4" aria-hidden="true" />
+                              <XCircle aria-hidden="true" className="h-4 w-4" />
                               Reject
                             </Button>
                           </div>

@@ -105,11 +105,11 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl p-0 overflow-hidden md:block max-w-[95vw] sm:max-w-lg md:max-w-2xl lg:max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="max-w-2xl p-0 overflow-hidden md:block max-w-[95vw] sm:max-w-lg md:max-w-2xl lg:max-w-4xl max-h-[90vh] overflow-y-auto">
         <div className="relative aspect-[4/3] bg-black">
           {hasPermission === false ? (
             <div className="absolute sm:relative sm:inset-auto inset-0 flex flex-wrap flex-col items-center justify-center text-white p-4 md:p-4 sm:p-6 md:p-8 text-center sm:relative sm:inset-auto">
-              <Camera className="h-16 w-16 mb-4 opacity-50" />
+              <Camera aria-hidden="true" className="h-16 w-16 mb-4 opacity-50" />
               <h3 className="text-lg font-semibold mb-2">Camera Access Required</h3>
               <p className="text-sm text-gray-300 mb-4">
                 Please allow camera access to scan barcodes and QR codes
@@ -146,8 +146,8 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
 
               {/* Instructions */}
               <div className="absolute sm:relative sm:inset-auto top-4 left-1/2 transform -translate-x-1/2 sm:relative sm:inset-auto">
-                <Badge className="bg-black/70 text-white border-white/20">
-                  <Camera className="h-3 w-3 mr-1" />
+                <Badge aria-hidden="true" className="bg-black/70 text-white border-white/20">
+                  <Camera aria-hidden="true" className="h-3 w-3 mr-1" />
                   Point at barcode or QR code
                 </Badge>
               </div>
@@ -160,14 +160,14 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
                   onClick={toggleFlash}
                   className={flashOn ? 'bg-yellow-400 text-black' : ''}
                 >
-                  <Flashlight className="h-4 w-4" />
+                  <Flashlight aria-hidden="true" className="h-4 w-4" />
                 </Button>
                 <Button
                   variant="secondary"
                   size="icon"
                   onClick={switchCamera}
                 >
-                  <RotateCw className="h-4 w-4" />
+                  <RotateCw aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
 
@@ -178,7 +178,7 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
                 className="absolute sm:relative sm:inset-auto top-2 md:top-4 right-2 md:right-4 text-white hover:bg-white/20"
                 onClick={() => onOpenChange(false)}
               >
-                <X className="h-4 w-4" />
+                <X aria-hidden="true" className="h-4 w-4" />
               </Button>
             </>
           )}
@@ -198,7 +198,7 @@ export function BarcodeScannerOverlay({ open, onOpenChange, onScanSuccess, works
                 placeholder={t('assets.barcode.manualPlaceholder')}
                 className="flex-1 px-3 py-2 text-sm border rounded-md"
                 autoComplete="off"
-              />
+               aria-label="text" />
               <Button type="submit">Lookup</Button>
             </div>
           </form>

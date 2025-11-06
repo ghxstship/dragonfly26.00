@@ -35,7 +35,7 @@ export function FilterButton({
       className={cn("gap-2", className)}
       aria-label={`${label}${activeCount > 0 ? ` (${activeCount} active)` : ''}`}
     >
-      <Filter className="h-4 w-4" aria-hidden="true" />
+      <Filter aria-hidden="true" className="h-4 w-4" />
       {label}
       {activeCount > 0 && (
         <Badge variant="secondary" className="ml-1 h-5 w-5 rounded-full p-0 flex flex-wrap items-center justify-center">

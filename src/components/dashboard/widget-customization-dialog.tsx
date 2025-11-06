@@ -108,7 +108,7 @@ export function WidgetCustomizationDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-primary/10">
@@ -151,9 +151,9 @@ export function WidgetCustomizationDialog({
                   className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors"
                 >
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 flex-1">
-                    <GripVertical className="h-4 w-4 text-muted-foreground cursor-move" />
+                    <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground cursor-move" />
                     <div className={`p-2 rounded ${color}`}>
-                      <Icon className="h-4 w-4 text-white" />
+                      <Icon aria-hidden="true" className="h-4 w-4 text-white" />
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">

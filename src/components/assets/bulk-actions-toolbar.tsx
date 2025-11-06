@@ -44,24 +44,24 @@ export function BulkActionsToolbar({
 
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
           <Button variant="outline" size="sm" onClick={onMoveToFolder}>
-            <FolderInput className="h-4 w-4 mr-2" />
+            <FolderInput aria-hidden="true" className="h-4 w-4 mr-2" />
             Move to Folder
           </Button>
 
           <Button variant="outline" size="sm" onClick={onChangeCategory}>
-            <Tag className="h-4 w-4 mr-2" />
+            <Tag aria-hidden="true" className="h-4 w-4 mr-2" />
             Set Category
           </Button>
 
           <Button variant="outline" size="sm" onClick={onPrintLabels}>
-            <Printer className="h-4 w-4 mr-2" />
+            <Printer aria-hidden="true" className="h-4 w-4 mr-2" />
             Print Labels
           </Button>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm">
-                <MoreHorizontal className="h-4 w-4 mr-2" />
+                <MoreHorizontal aria-hidden="true" className="h-4 w-4 mr-2" />
                 More
               </Button>
             </DropdownMenuTrigger>
@@ -70,7 +70,7 @@ export function BulkActionsToolbar({
                 Bulk Adjust Stock
               </DropdownMenuItem>
               <DropdownMenuItem onClick={onExport}>
-                <FileDown className="h-4 w-4 mr-2" />
+                <FileDown aria-hidden="true" className="h-4 w-4 mr-2" />
                 Export Selected
               </DropdownMenuItem>
               <DropdownMenuSeparator />

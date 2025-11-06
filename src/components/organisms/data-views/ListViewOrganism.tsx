@@ -90,7 +90,7 @@ export function ListViewOrganism({ data, schema, onItemClick, createActionLabel,
       {data.length === 0 ? (
         <div className="border rounded-lg">
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 bg-muted/50 border-b">
-            <List className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <List aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             <span className="font-semibold text-muted-foreground">Items</span>
           </div>
           <EmptyState
@@ -117,9 +117,9 @@ export function ListViewOrganism({ data, schema, onItemClick, createActionLabel,
                 aria-label={isExpanded ? `Collapse ${group}` : `Expand ${group}`}
               >
                 {isExpanded ? (
-                  <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                  <ChevronDown aria-hidden="true" className="h-4 w-4" />
                 ) : (
-                  <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                  <ChevronRight aria-hidden="true" className="h-4 w-4" />
                 )}
               </Button>
               <span className="font-semibold capitalize">{group}</span>
@@ -135,7 +135,7 @@ export function ListViewOrganism({ data, schema, onItemClick, createActionLabel,
                       "flex items-center gap-3 p-3 hover:bg-accent transition-colors cursor-pointer",
                       selectedItems.has(item.id) && "bg-accent"
                     )}
-                    onClick={() => onItemClick?.(item)}
+                     role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                   >
                     <Checkbox
                       checked={selectedItems.has(item.id)}
@@ -168,13 +168,13 @@ export function ListViewOrganism({ data, schema, onItemClick, createActionLabel,
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
                         <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Actions">
-                          <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+                          <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuItem>Duplicate</DropdownMenuItem>
-                        <DropdownMenuItem className="text-destructive">
+                        <DropdownMenuItem aria-hidden="true" className="text-destructive">
                           Delete
                         </DropdownMenuItem>
                       </DropdownMenuContent>
@@ -184,7 +184,7 @@ export function ListViewOrganism({ data, schema, onItemClick, createActionLabel,
 
                 <div className="p-3">
                   <Button variant="ghost" size="sm" className="gap-2 w-full justify-start max-w-full">
-                    <Plus className="h-4 w-4" aria-hidden="true" />
+                    <Plus aria-hidden="true" className="h-4 w-4" />
                     Add item
                   </Button>
                 </div>

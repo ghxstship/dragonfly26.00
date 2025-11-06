@@ -56,28 +56,28 @@ export function ExportPanel({ onExport }: ExportPanelProps) {
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="csv" id="export-csv" />
             <Label htmlFor="export-csv" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <FileSpreadsheet className="h-4 w-4" />
+              <FileSpreadsheet aria-hidden="true" className="h-4 w-4" />
               CSV (Comma Separated Values)
             </Label>
           </div>
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="excel" id="export-excel" />
             <Label htmlFor="export-excel" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <FileSpreadsheet className="h-4 w-4" />
+              <FileSpreadsheet aria-hidden="true" className="h-4 w-4" />
               Excel (.xlsx)
             </Label>
           </div>
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="json" id="export-json" />
             <Label htmlFor="export-json" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <FileJson className="h-4 w-4" />
+              <FileJson aria-hidden="true" className="h-4 w-4" />
               JSON
             </Label>
           </div>
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="pdf" id="export-pdf" />
             <Label htmlFor="export-pdf" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <File className="h-4 w-4" />
+              <File aria-hidden="true" className="h-4 w-4" />
               PDF Document
             </Label>
           </div>
@@ -89,7 +89,7 @@ export function ExportPanel({ onExport }: ExportPanelProps) {
         <Label>Export Options</Label>
         <div className="space-y-2 text-sm">
           <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <input type="checkbox" className="rounded" defaultChecked />
+            <input type="checkbox" className="rounded" defaultChecked  aria-label="checkbox" />
             <span>Include all visible fields</span>
           </label>
           <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
@@ -111,7 +111,7 @@ export function ExportPanel({ onExport }: ExportPanelProps) {
             <span>Apply current sorting</span>
           </label>
           <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <input type="checkbox" className="rounded" />
+            <input type="checkbox" className="rounded"  aria-label="checkbox" />
             <span>Include attachments (ZIP)</span>
           </label>
         </div>
@@ -155,7 +155,7 @@ export function ExportPanel({ onExport }: ExportPanelProps) {
       {/* Actions */}
       <div className="flex flex-wrap gap-2">
         <Button onClick={handleExport} disabled={exporting} className="flex-1">
-          <Download className="h-4 w-4 mr-2" />
+          <Download aria-hidden="true" className="h-4 w-4 mr-2" />
           {exporting ? "Exporting..." : t('common.export')}
         </Button>
       </div>

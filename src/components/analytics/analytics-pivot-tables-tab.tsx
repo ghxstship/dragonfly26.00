@@ -77,7 +77,7 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
                   </tr>
                 ))}
                 <tr className="bg-muted font-bold">
-                  <Table className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
+                  <Table aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
                   <td colSpan={2} className="border p-3">{t('grandTotal')}</td>
                   <td className="border p-3 text-right">$1,760K</td>
                   <td className="border p-3 text-right">$2,010K</td>
@@ -93,7 +93,7 @@ export function AnalyticsPivotTablesTab({ data = [], loading = false }: Analytic
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">{t('pivotConfiguration')}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-lg">{t('pivotConfiguration')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">

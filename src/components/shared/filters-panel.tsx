@@ -85,7 +85,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button variant="outline" size="icon" className="relative">
-          <Filter className="h-4 w-4" />
+          <Filter aria-hidden="true" className="h-4 w-4" />
           {filters.length > 0 && (
             <span className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-4 w-4 rounded-full bg-primary text-xs text-primary-foreground flex flex-wrap items-center justify-center">
               {filters.length}
@@ -93,7 +93,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
           )}
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-full md:w-96">
+      <SheetContent aria-hidden="true" className="w-full md:w-96">
         <SheetHeader>
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <SheetTitle>Filters</SheetTitle>
@@ -105,7 +105,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
           </div>
         </SheetHeader>
 
-        <ScrollArea className="h-[calc(100vh-8rem)] mt-4">
+        <ScrollArea aria-hidden="true" className="h-[calc(100vh-8rem)] mt-4">
           <div className="space-y-4">
             {filters.map((filter: any, index: number) => {
               const field = availableFields.find((f) => f.id === filter.field)
@@ -121,7 +121,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
                         updateFilter(filter.id, { condition: value as "AND" | "OR" })
                       }
                     >
-                      <SelectTrigger className="w-20 h-8">
+                      <SelectTrigger aria-hidden="true" className="w-20 h-8">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -185,7 +185,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
                     className="w-full gap-2 max-w-full"
                     onClick={() => removeFilter(filter.id)}
                   >
-                    <X className="h-4 w-4" />
+                    <X aria-hidden="true" className="h-4 w-4" />
                     Remove filter
                   </Button>
                 </div>
@@ -198,7 +198,7 @@ export function FiltersPanel({ filters, onFiltersChange, availableFields }: Filt
               className="w-full gap-2 max-w-full"
               onClick={addFilter}
             >
-              <Plus className="h-4 w-4" />
+              <Plus aria-hidden="true" className="h-4 w-4" />
               Add filter
             </Button>
           </div>

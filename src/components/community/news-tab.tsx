@@ -105,9 +105,9 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
       {/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Today&apos;s News</div>
-            <Newspaper className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Newspaper aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{newsArticles.length}</div>
@@ -116,9 +116,9 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('trending')}</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -129,9 +129,9 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('bookmarked')}</div>
-            <Bookmark className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Bookmark aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">12</div>
@@ -140,9 +140,9 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('thisWeek')}</div>
-            <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Star aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">47</div>
@@ -153,10 +153,10 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
 
       {/* Search and Filters */}
       <Card>
-        <CardContent className="pt-6">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('searchNews')}
                 value={searchQuery as any}
@@ -180,7 +180,7 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
       <div className="space-y-4">
         {filteredArticles.length === 0 ? (
           <Card>
-            <CardContent className="p-0">
+            <CardContent aria-hidden="true" className="p-0">
               <EmptyState
                 variant="inline"
                 icon={Newspaper}
@@ -192,7 +192,7 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
         ) : (
           filteredArticles.map((article: any) => (
             <Card key={article.id} className="overflow-hidden md:block hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
+              <CardContent aria-hidden="true" className="p-0">
                 <div className="md:flex">
                   {/* Image */}
                   {article.image && (
@@ -202,8 +202,8 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
                         style={{ backgroundImage: `url(${article.image})` }}
                       />
                       {article.trending && (
-                        <Badge className="absolute sm:relative sm:inset-auto top-3 left-3 bg-orange-500 sm:relative sm:inset-auto">
-                          <TrendingUp className="h-3 w-3 mr-1" aria-hidden="true" />{t('trending')}</Badge>
+                        <Badge aria-hidden="true" className="absolute sm:relative sm:inset-auto top-3 left-3 bg-orange-500 sm:relative sm:inset-auto">
+                          <TrendingUp aria-hidden="true" className="h-3 w-3 mr-1" />{t('trending')}</Badge>
                       )}
                     </div>
                   )}
@@ -213,7 +213,7 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
                     <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4 mb-3">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         {article.sourceImage && (
-                          <Avatar className="h-8 w-8">
+                          <Avatar aria-hidden="true" className="h-8 w-8">
                             <AvatarImage src={article.sourceImage} />
                             <AvatarFallback>{article.source[0]}</AvatarFallback>
                           </Avatar>
@@ -243,24 +243,24 @@ export function NewsTab({ data = [], loading: loadingProp = false }: NewsTabProp
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                         <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
                         <Button variant="ghost" size="sm" className="h-8">
-                          <ThumbsUp className="h-4 w-4 mr-1" aria-hidden="true" />
+                          <ThumbsUp aria-hidden="true" className="h-4 w-4 mr-1" />
                           {article.likes}
                         </Button>
                         <Button variant="ghost" size="sm" className="h-8">
-                          <MessageCircle className="h-4 w-4 mr-1" aria-hidden="true" />
+                          <MessageCircle aria-hidden="true" className="h-4 w-4 mr-1" />
                           {article.comments}
                         </Button>
                       </div>
 
                       <div className="flex flex-wrap gap-2">
                         <Button variant="ghost" size="sm" aria-label={t('bookmark')}>
-                          <Bookmark className="h-4 w-4" aria-hidden="true" />
+                          <Bookmark aria-hidden="true" className="h-4 w-4" />
                         </Button>
                         <Button variant="ghost" size="sm">
                           <Share2 className="h-4 w-4" aria-hidden="true" />
                         </Button>
                         <Button variant="outline" size="sm">
-                          <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
+                          <ExternalLink aria-hidden="true" className="h-4 w-4 mr-2" />
                           Read More
                         </Button>
                       </div>

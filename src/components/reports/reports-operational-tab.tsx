@@ -89,19 +89,19 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
       {/* Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card role="region" aria-label={`${t('totalReports')} metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('totalReports')}</p>
                 <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{operationalReports.length}</p>
               </div>
-              <Activity className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
+              <Activity aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
             </div>
           </CardContent>
         </Card>
         
         <Card role="region" aria-label={`${t('avgEfficiency')} metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('avgEfficiency')}</p>
@@ -115,7 +115,7 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
         </Card>
 
         <Card role="region" aria-label={`${t('itemsBlocked')} metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('itemsBlocked')}</p>
@@ -123,13 +123,13 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
                   {operationalReports.reduce((sum: number, r) => sum + r.metrics.blocked, 0)}
                 </p>
               </div>
-              <AlertTriangle className="h-8 w-8 text-red-600" aria-hidden="true" />
+              <AlertTriangle aria-hidden="true" className="h-8 w-8 text-red-600" />
             </div>
           </CardContent>
         </Card>
 
         <Card role="region" aria-label={`${t('inProgress')} metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('inProgress')}</p>
@@ -137,7 +137,7 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
                   {operationalReports.reduce((sum: number, r) => sum + r.metrics.inProgress, 0)}
                 </p>
               </div>
-              <Clock className="h-8 w-8 text-blue-600" aria-hidden="true" />
+              <Clock aria-hidden="true" className="h-8 w-8 text-blue-600" />
             </div>
           </CardContent>
         </Card>
@@ -150,9 +150,9 @@ export function ReportsOperationalTab({ data = [], loading = false }: ReportsOpe
             <CardHeader>
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
-                  <CardTitle className="text-lg" id={`report-${report.id}`}>{t(report.titleKey)}</CardTitle>
+                  <CardTitle aria-hidden="true" className="text-lg" id={`report-${report.id}`}>{t(report.titleKey)}</CardTitle>
                   <p className="text-sm text-muted-foreground mt-1 flex flex-col md:flex-row items-center gap-1" aria-label={`Frequency: ${report.frequency}`}>
-                    <Clock className="h-3 w-3" aria-hidden="true" />
+                    <Clock aria-hidden="true" className="h-3 w-3" />
                     {report.frequency}
                   </p>
                 </div>

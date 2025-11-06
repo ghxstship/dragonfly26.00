@@ -93,13 +93,13 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
       {/* Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalObjectives')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{objectives.length}</p>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('onTrack')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">
               {objectives.filter(o => (o as any).status === "on_track").length}
@@ -107,7 +107,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('atRisk')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-yellow-600" aria-live="polite">
               {objectives.filter(o => (o as any).status === "at_risk").length}
@@ -115,7 +115,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('avgProgress')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">
               {Math.round(objectives.reduce((sum: number, o) => sum + o.progress, 0) / objectives.length)}%
@@ -128,10 +128,10 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
       <div className="space-y-4">
         {objectives.map((objective: any) => (
           <Card key={objective.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-4 sm:p-6">
+            <CardContent aria-hidden="true" className="p-4 sm:p-6">
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-3 flex-1">
-                  <Target className="h-6 w-6 text-blue-600 mt-1" aria-hidden="true" />
+                  <Target aria-hidden="true" className="h-6 w-6 text-blue-600 mt-1" />
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                       <h3 className="font-semibold text-lg">{t(objective.nameKey)}</h3>
@@ -174,7 +174,7 @@ export function InsightsObjectivesTab({ data = [], loading = false }: InsightsOb
                 </div>
                 
                 <Button variant="outline" size="sm">
-                  <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
                   Edit
                 </Button>
               </div>

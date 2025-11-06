@@ -303,9 +303,9 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
       {/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('active')}</div>
-            <Trophy className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Trophy aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -316,9 +316,9 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('participating')}</div>
-            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -329,9 +329,9 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('yourRank')}</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">#247</div>
@@ -340,9 +340,9 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('totalPoints')}</div>
-            <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Star aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">3,456</div>
@@ -356,8 +356,8 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
         <CardHeader>
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
-              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Trophy className="h-5 w-5 text-yellow-500" aria-hidden="true" />{t('globalLeaderboard')}</CardTitle>
+              <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <Trophy aria-hidden="true" className="h-5 w-5 text-yellow-500" />{t('globalLeaderboard')}</CardTitle>
               <CardDescription>{t('topPerformers')}</CardDescription>
             </div>
             <Button variant="outline" size="sm">{t('viewFullRankings')}</Button>
@@ -379,12 +379,11 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                 >
                   {/* Rank */}
                   <div className="flex flex-wrap flex-col items-center min-w-[60px]">
-                    <RankIcon className={`h-6 w-6 ${rankBadge.color}`} />
+                    <RankIcon aria-hidden="true" className={`h-6 w-6 ${rankBadge.color}`} />
                     <span className="text-lg font-bold">#{entry.rank}</span>
                     {rankChange && rankChange.direction !== "same" && (
                       <div className={`flex items-center text-xs ${rankChange.color}`}>
-                        <TrendingUp 
-                          className={`h-3 w-3 ${
+                        <TrendingUp aria-hidden="true" className={`h-3 w-3 ${
                             rankChange.direction === "down" ? "rotate-180" : ""
                           }`}
                         />
@@ -394,7 +393,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                   </div>
 
                   {/* User Info */}
-                  <Avatar className="h-12 w-12">
+                  <Avatar aria-hidden="true" className="h-12 w-12">
                     <AvatarImage src={entry.image} />
                     <AvatarFallback>
                       {entry.name.split(" ").map(n => n[0]).join("")}
@@ -418,7 +417,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                     <div className="text-base md:text-lg lg:text-xl font-bold">{entry.score.toLocaleString()}</div>
                     <div className="text-xs text-muted-foreground">{t('points')}</div>
                     <div className="flex flex-wrap flex-col md:flex-row items-center justify-end gap-1 mt-1 text-orange-500">
-                      <Zap className="h-3 w-3 fill-current" aria-hidden="true" />
+                      <Zap aria-hidden="true" className="h-3 w-3 fill-current" />
                       <span className="text-xs font-semibold">{entry.streak} day streak</span>
                     </div>
                   </div>
@@ -431,10 +430,10 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
 
       {/* Search and Filter */}
       <Card>
-        <CardContent className="pt-6">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('searchCompetitions')}
                 value={searchQuery as any}
@@ -457,8 +456,8 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
       {/* Competitions Grid */}
       <div className="grid md:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
         {filteredCompetitions.length === 0 ? (
-          <Card className="col-span-2">
-            <CardContent className="p-0">
+          <Card aria-hidden="true" className="col-span-2">
+            <CardContent aria-hidden="true" className="p-0">
               <EmptyState
                 variant="inline"
                 icon={Trophy}
@@ -479,7 +478,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
 
             return (
               <Card key={competition.id} className="overflow-hidden md:block hover:shadow-lg transition-shadow">
-                <CardContent className="p-0">
+                <CardContent aria-hidden="true" className="p-0">
                   {/* Competition Image */}
                   {competition.image && (
                     <div className="relative">
@@ -487,8 +486,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                         className="h-48 bg-cover bg-center"
                         style={{ backgroundImage: `url(${competition.image})` }}
                       />
-                      <Badge 
-                        className={`absolute top-3 right-3 ${
+                      <Badge aria-hidden="true" className={`absolute top-3 right-3 ${
                           (competition as any).status === "active" ? "bg-green-500" :
                           (competition as any).status === "upcoming" ? "bg-blue-500" :
                           "bg-gray-500"
@@ -503,7 +501,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                     {/* Header */}
                     <div className="flex items-start gap-3 mb-3">
                       <div className="p-2 rounded-lg bg-primary/10">
-                        <CategoryIcon className="h-5 w-5 text-primary"  aria-hidden="true" />
+                        <CategoryIcon aria-hidden="true" className="h-5 w-5 text-primary" />
                       </div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-lg mb-1">{competition.titleKey ? (competition.titleKey ? t(competition.titleKey) : competition.title) : competition.title}</h3>
@@ -521,17 +519,17 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                     {/* Details */}
                     <div className="space-y-2 mb-4 text-sm">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
-                        <Calendar className="h-4 w-4" aria-hidden="true" />
+                        <Calendar aria-hidden="true" className="h-4 w-4" />
                         <span>
                           {new Date(competition.startDate).toLocaleDateString()} - {new Date(competition.endDate).toLocaleDateString()}
                         </span>
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-muted-foreground">
-                        <Users className="h-4 w-4" aria-hidden="true" />
+                        <Users aria-hidden="true" className="h-4 w-4" />
                         <span>{competition.participants} participants</span>
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-primary font-medium">
-                        <Trophy className="h-4 w-4" aria-hidden="true" />
+                        <Trophy aria-hidden="true" className="h-4 w-4" />
                         <span>{competition.prize}</span>
                       </div>
                     </div>
@@ -557,7 +555,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                       {competition.joined ? (
                         <>
                           <Button variant="default" size="sm" className="flex-1" disabled>
-                            <Flag className="h-4 w-4 mr-2" aria-hidden="true" />{t('participating')}</Button>
+                            <Flag aria-hidden="true" className="h-4 w-4 mr-2" />{t('participating')}</Button>
                           <Button variant="outline" size="sm">{tCommon('view')}</Button>
                         </>
                       ) : (
@@ -569,7 +567,7 @@ export function CompetitionsTab({ data = [], loading: loadingProp = false, works
                             onClick={() => handleJoin(competition.id)}
                             disabled={(competition as any).status === "completed"}
                           >
-                            <Play className="h-4 w-4 mr-2" aria-hidden="true" />
+                            <Play aria-hidden="true" className="h-4 w-4 mr-2" />
                             {(competition as any).status === "upcoming" ? t('register') : t('joinNow')}
                           </Button>
                           <Button variant="outline" size="sm">{tCommon('details')}</Button>

@@ -92,7 +92,7 @@ export const WaterfallChart: React.FC<WaterfallChartProps> = ({
             dataKey="name"
             className="text-gray-600 dark:text-gray-400"
           />
-          <YAxis className="text-gray-600 dark:text-gray-400" />
+          <YAxis aria-hidden="true" className="text-gray-600 dark:text-gray-400" />
           <Tooltip content={<CustomTooltip />} />
           <Legend />
           <ReferenceLine y={0} stroke="#000" />

@@ -75,7 +75,7 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <DollarSign className="h-5 w-5" />
+          <DollarSign aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Financial Dashboard</h3>
         </div>
         <Tabs value={period} onValueChange={(v) => setPeriod(v as any)}>
@@ -101,15 +101,15 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
             {/* Key Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             <Card>
-              <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-                <CardTitle className="text-sm font-medium">Revenue</CardTitle>
-                <TrendingUp className="h-4 w-4 text-green-500" />
+              <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium">Revenue</CardTitle>
+                <TrendingUp aria-hidden="true" className="h-4 w-4 text-green-500" />
               </CardHeader>
               <CardContent>
                 <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${metrics.revenue.toLocaleString()}</div>
                 <p className="text-xs text-muted-foreground mt-1">
                   <span className="text-green-500 inline-flex items-center">
-                    <ArrowUpRight className="h-3 w-3 mr-1" />
+                    <ArrowUpRight aria-hidden="true" className="h-3 w-3 mr-1" />
                     12.5%
                   </span>{" "}
                   from last {period}
@@ -118,15 +118,15 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
             </Card>
 
             <Card>
-              <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-                <CardTitle className="text-sm font-medium">Expenses</CardTitle>
-                <TrendingDown className="h-4 w-4 text-red-500" />
+              <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium">Expenses</CardTitle>
+                <TrendingDown aria-hidden="true" className="h-4 w-4 text-red-500" />
               </CardHeader>
               <CardContent>
                 <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${metrics.expenses.toLocaleString()}</div>
                 <p className="text-xs text-muted-foreground mt-1">
                   <span className="text-red-500 inline-flex items-center">
-                    <ArrowUpRight className="h-3 w-3 mr-1" />
+                    <ArrowUpRight aria-hidden="true" className="h-3 w-3 mr-1" />
                     5.2%
                   </span>{" "}
                   from last {period}
@@ -135,9 +135,9 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
             </Card>
 
             <Card>
-              <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-                <CardTitle className="text-sm font-medium">Profit</CardTitle>
-                <DollarSign className="h-4 w-4 text-primary" />
+              <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium">Profit</CardTitle>
+                <DollarSign aria-hidden="true" className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
                 <div className={cn("text-2xl font-bold", metrics.profit >= 0 ? "text-green-500" : "text-red-500")}>
@@ -150,8 +150,8 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
             </Card>
 
             <Card>
-              <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-                <CardTitle className="text-sm font-medium">Budget</CardTitle>
+              <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+                <CardTitle aria-hidden="true" className="text-sm font-medium">Budget</CardTitle>
                 <Badge variant={budgetUsed > 90 ? "destructive" : "secondary"}>
                   {budgetUsed.toFixed(0)}%
                 </Badge>
@@ -241,7 +241,7 @@ export function FinancialView({ data, schema, onItemClick, createActionLabel, on
                   <div
                     key={item.id}
                     className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 hover:bg-accent rounded-lg transition-colors cursor-pointer"
-                    onClick={() => onItemClick?.(item)}
+                     role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                   >
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                       <div

@@ -41,11 +41,11 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
   const getAvailabilityBadge = (status: string) => {
     switch (status) {
       case "available":
-        return <Badge className="bg-green-600">{t('available')}</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600">{t('available')}</Badge>
       case "busy":
-        return <Badge className="bg-red-600">{t('busy')}</Badge>
+        return <Badge aria-hidden="true" className="bg-red-600">{t('busy')}</Badge>
       case "limited-availability":
-        return <Badge className="bg-yellow-600">{t('limited')}</Badge>
+        return <Badge aria-hidden="true" className="bg-yellow-600">{t('limited')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -84,11 +84,11 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
 {/* Filters */}
       <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input placeholder={t('searchServices')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-full max-w-[200px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[200px]">
             <SelectValue placeholder={t('serviceType')} />
           </SelectTrigger>
           <SelectContent>
@@ -101,7 +101,7 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
           </SelectContent>
         </Select>
         <Select defaultValue="all-level">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('experienceLevel')} />
           </SelectTrigger>
           <SelectContent>
@@ -113,7 +113,7 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
           </SelectContent>
         </Select>
         <Select defaultValue="rating">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
@@ -132,17 +132,17 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
-                  <Avatar className="h-12 w-12">
-                    <AvatarFallback className="bg-primary/10 text-primary">
+                  <Avatar aria-hidden="true" className="h-12 w-12">
+                    <AvatarFallback aria-hidden="true" className="bg-primary/10 text-primary">
                       {service.assignee_name?.split(' ').map((n: string) => n[0]).join('') || "SE"}
                     </AvatarFallback>
                   </Avatar>
                   <div className="space-y-1 flex-1">
                     <div className="flex items-start justify-between gap-2">
-                      <CardTitle className="text-lg">{service.assignee_name}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-lg">{service.assignee_name}</CardTitle>
                       {getLevelBadge(service.priority)}
                     </div>
-                    <CardDescription className="line-clamp-1">
+                    <CardDescription aria-hidden="true" className="line-clamp-1">
                       {service.name}
                     </CardDescription>
                   </div>
@@ -151,7 +151,7 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
               </div>
             </CardHeader>
 
-            <CardContent className="space-y-4">
+            <CardContent aria-hidden="true" className="space-y-4">
               {/* Description */}
               <p className="text-sm text-muted-foreground line-clamp-2">
                 {service.description}
@@ -161,24 +161,24 @@ export function ServicesTab({ data = [], loading: loadingProp = false }: Service
               <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
                 <div className="space-y-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                    <Star className="h-3 w-3" aria-hidden="true" />
+                    <Star aria-hidden="true" className="h-3 w-3" />
                     <span className="text-xs">{t('rating')}</span>
                   </div>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
+                    <Star aria-hidden="true" className="h-4 w-4 fill-yellow-500 text-yellow-500" />
                     <span className="font-semibold">{service.rating}</span>
                   </div>
                 </div>
                 <div className="space-y-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                    <Briefcase className="h-3 w-3"  aria-hidden="true" />
+                    <Briefcase aria-hidden="true" className="h-3 w-3" />
                     <span className="text-xs">{t('experience')}</span>
                   </div>
                   <p className="font-semibold">{service.experience_years} years</p>
                 </div>
                 <div className="space-y-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                    <MessageCircle className="h-3 w-3" aria-hidden="true" />
+                    <MessageCircle aria-hidden="true" className="h-3 w-3" />
                     <span className="text-xs">{t('reviews')}</span>
                   </div>
                   <p className="font-semibold">{service.comments_count}</p>

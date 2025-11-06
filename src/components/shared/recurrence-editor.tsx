@@ -91,7 +91,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
       {recurrence && (
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-          <Repeat className="h-4 w-4" />
+          <Repeat aria-hidden="true" className="h-4 w-4" />
           <span>{getRecurrenceLabel()}</span>
         </div>
       )}
@@ -99,7 +99,7 @@ export function RecurrenceEditor({ recurrence, onRecurrenceChange }: RecurrenceE
       <Dialog open={isEditing} onOpenChange={setIsEditing}>
         <DialogTrigger asChild>
           <Button variant={recurrence ? "ghost" : "outline"} size="sm" className="gap-2">
-            <Calendar className="h-4 w-4" />
+            <Calendar aria-hidden="true" className="h-4 w-4" />
             {recurrence ? t('common.edit') : t('recurrence.setRecurrence')}
           </Button>
         </DialogTrigger>

@@ -108,15 +108,15 @@ export function OverviewTemplateOrganism({
               const Icon = stat.icon
               return (
                 <Card key={stat.labelKey}>
-                  <CardHeader className="pb-3">
+                  <CardHeader aria-hidden="true" className="pb-3">
                     <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-                      <CardDescription className="text-xs">{t(stat.labelKey)}</CardDescription>
+                      <CardDescription aria-hidden="true" className="text-xs">{t(stat.labelKey)}</CardDescription>
                       <div className={`p-2 rounded-lg ${stat.bgColor}`} aria-hidden="true">
-                        <Icon className={`h-4 w-4 ${stat.color}`} aria-hidden="true" />
+                        <Icon aria-hidden="true" className={`h-4 w-4 ${stat.color}`} />
                       </div>
                     </div>
                     <div className="flex flex-wrap items-end justify-between">
-                      <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{stat.value}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{stat.value}</CardTitle>
                       {stat.change && (
                         <div className="text-xs text-muted-foreground">
                           {stat.change}
@@ -150,7 +150,7 @@ export function OverviewTemplateOrganism({
                         onClick={action.action}
                         aria-label={t(action.labelKey)}
                       >
-                        <Icon className={`h-5 w-5 ${action.color}`} aria-hidden="true" />
+                        <Icon aria-hidden="true" className={`h-5 w-5 ${action.color}`} />
                         <span className="text-sm">{t(action.labelKey)}</span>
                       </Button>
                     )

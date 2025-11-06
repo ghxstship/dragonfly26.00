@@ -57,7 +57,7 @@ export function AgeVerification({ onVerified, onRejected }: AgeVerificationProps
         {/* Icon */}
         <div className="flex justify-center mb-6">
           <div className="w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center">
-            <AlertTriangle className="h-8 w-8 text-yellow-600 dark:text-yellow-400" aria-hidden="true" />
+            <AlertTriangle aria-hidden="true" className="h-8 w-8 text-yellow-600 dark:text-yellow-400" />
           </div>
         </div>
 
@@ -84,7 +84,7 @@ export function AgeVerification({ onVerified, onRejected }: AgeVerificationProps
             htmlFor="birth-date" 
             className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
-            <Calendar className="inline h-4 w-4 mr-1" aria-hidden="true" />
+            <Calendar aria-hidden="true" className="inline h-4 w-4 mr-1" />
             Date of Birth
           </label>
           <Input

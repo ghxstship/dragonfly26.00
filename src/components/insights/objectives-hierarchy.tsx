@@ -70,9 +70,9 @@ export function ObjectivesHierarchy({ goals, onGoalClick }: GoalsHierarchyProps)
               className="p-1 hover:bg-accent rounded"
             >
               {isExpanded ? (
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown aria-hidden="true" className="h-4 w-4" />
               ) : (
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight aria-hidden="true" className="h-4 w-4" />
               )}
             </button>
           )}

@@ -58,7 +58,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -72,9 +72,9 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
       {/* Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Guides</CardTitle>
-            <Book className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Guides</CardTitle>
+            <Book aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{guides.length}</div>
@@ -83,9 +83,9 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('beginner')}</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('beginner')}</CardTitle>
+            <BookMarked aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
@@ -96,9 +96,9 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('intermediate')}</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('intermediate')}</CardTitle>
+            <BookMarked aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">
@@ -109,9 +109,9 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('advanced')}</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('advanced')}</CardTitle>
+            <BookMarked aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
@@ -124,7 +124,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+        <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           placeholder={t('searchGuides')}
           value={searchQuery as any}
@@ -140,31 +140,31 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
             <CardHeader>
               <div className="flex items-start gap-3">
                 <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-950">
-                  <Book className="h-5 w-5 text-blue-600" aria-hidden="true" />
+                  <Book aria-hidden="true" className="h-5 w-5 text-blue-600" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <CardTitle className="text-lg line-clamp-2">{guide.name}</CardTitle>
+                  <CardTitle aria-hidden="true" className="text-lg line-clamp-2">{guide.name}</CardTitle>
                   {guide.category && (
-                    <CardDescription className="mt-1">{guide.category}</CardDescription>
+                    <CardDescription aria-hidden="true" className="mt-1">{guide.category}</CardDescription>
                   )}
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mt-2">
                 {guide.difficulty && (
-                  <Badge className={getDifficultyColor(guide.difficulty)}>
+                  <Badge aria-hidden="true" className={getDifficultyColor(guide.difficulty)}>
                     {guide.difficulty}
                   </Badge>
                 )}
                 {guide.is_featured && (
                   <Badge variant="secondary">
-                    <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                    <Star aria-hidden="true" className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" />
                     Featured
                   </Badge>
                 )}
               </div>
             </CardHeader>
 
-            <CardContent className="space-y-3">
+            <CardContent aria-hidden="true" className="space-y-3">
               {guide.description && (
                 <p className="text-sm text-muted-foreground line-clamp-2">
                   {guide.description}
@@ -174,13 +174,13 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                 {guide.duration && (
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Clock className="h-3 w-3" aria-hidden="true" />
+                    <Clock aria-hidden="true" className="h-3 w-3" />
                     <span>{guide.duration}</span>
                   </div>
                 )}
                 {guide.author && (
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Users className="h-3 w-3" aria-hidden="true" />
+                    <Users aria-hidden="true" className="h-3 w-3" />
                     <span className="truncate">{guide.author}</span>
                   </div>
                 )}
@@ -217,12 +217,12 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
               )}
 
               <div className="flex flex-wrap gap-2 pt-2">
-                <Button className="flex-1" size="sm">
+                <Button aria-hidden="true" className="flex-1" size="sm">
                   View Guide
                 </Button>
                 {guide.downloadable && (
                   <Button variant="outline" size="sm">
-                    <Download className="h-4 w-4" aria-hidden="true" />
+                    <Download aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 )}
               </div>
@@ -233,7 +233,7 @@ export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabCompon
 
       {filteredGuides.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               variant="inline"
               icon={Book}

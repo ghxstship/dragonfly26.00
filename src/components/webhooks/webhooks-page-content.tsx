@@ -74,7 +74,7 @@ export function WebhooksPageContent() {
             </p>
           </div>
           <Button onClick={() => setShowCreateDialog(true)}>
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             Create Webhook
           </Button>
         </div>
@@ -82,19 +82,19 @@ export function WebhooksPageContent() {
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Webhooks</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{mockWebhooks.length}</p>
                 </div>
-                <WebhookIcon className="h-8 w-8 text-muted-foreground" />
+                <WebhookIcon aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Active</p>
@@ -106,19 +106,19 @@ export function WebhooksPageContent() {
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Deliveries</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalDeliveries.toLocaleString()}</p>
                 </div>
-                <Clock className="h-8 w-8 text-muted-foreground" />
+                <Clock aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Success Rate</p>

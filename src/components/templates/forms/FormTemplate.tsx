@@ -132,7 +132,7 @@ export function FormTemplate({
                 disabled={loading}
                 className="gap-2"
               >
-                <X className="h-4 w-4" aria-hidden="true" />
+                <X aria-hidden="true" className="h-4 w-4" />
                 {cancelLabel || t('common.cancel')}
               </Button>
             )}
@@ -142,7 +142,7 @@ export function FormTemplate({
                 disabled={loading || saveDisabled}
                 className="gap-2"
               >
-                <Save className="h-4 w-4" aria-hidden="true" />
+                <Save aria-hidden="true" className="h-4 w-4" />
                 {saveLabel || t('common.save')}
               </Button>
             )}

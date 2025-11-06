@@ -81,7 +81,7 @@ export function FinancialDashboardOrganism({ data, schema, onItemClick }: Financ
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <DollarSign className="h-5 w-5" aria-hidden="true" />
+          <DollarSign aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">{t('financial.dashboard')}</h3>
         </div>
         <Tabs value={period} onValueChange={(v) => setPeriod(v as any)}>
@@ -167,7 +167,7 @@ export function FinancialDashboardOrganism({ data, schema, onItemClick }: Financ
                   <div
                     key={item.id}
                     className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 rounded-lg hover:bg-accent cursor-pointer transition-colors"
-                    onClick={() => onItemClick?.(item)}
+                     role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                   >
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                       <div className={cn(
@@ -175,9 +175,9 @@ export function FinancialDashboardOrganism({ data, schema, onItemClick }: Financ
                         item.amount > 0 ? 'bg-green-100 dark:bg-green-950' : 'bg-red-100 dark:bg-red-950'
                       )}>
                         {item.amount > 0 ? (
-                          <ArrowUpRight className="h-4 w-4 text-green-600" aria-hidden="true" />
+                          <ArrowUpRight aria-hidden="true" className="h-4 w-4 text-green-600" />
                         ) : (
-                          <ArrowDownRight className="h-4 w-4 text-red-600" aria-hidden="true" />
+                          <ArrowDownRight aria-hidden="true" className="h-4 w-4 text-red-600" />
                         )}
                       </div>
                       <div>

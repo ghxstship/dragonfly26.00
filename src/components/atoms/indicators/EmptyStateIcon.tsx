@@ -36,13 +36,11 @@ export function EmptyStateIcon({
   className,
 }: EmptyStateIconProps) {
   return (
-    <Icon 
-      className={cn(
+    <Icon aria-hidden="true" className={cn(
         sizeClasses[size],
         variantClasses[variant],
         className
-      )} 
-      aria-hidden="true"
+      )}
     />
   )
 }

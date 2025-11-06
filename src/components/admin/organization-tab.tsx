@@ -79,7 +79,7 @@ export function OrganizationTab() {
             {t('admin.organization.basicInfoDesc')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="name">{t('admin.organization.name')}</Label>
@@ -151,19 +151,19 @@ export function OrganizationTab() {
       <Card>
         <CardHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Mail className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
+            <Mail aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
             <CardTitle>{t('admin.organization.contactInfo')}</CardTitle>
           </div>
           <CardDescription>
             {t('admin.organization.contactInfoDesc')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="website">{t('admin.organization.website')}</Label>
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Globe className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                <Globe aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                 <Input
                   id="website"
                   type="url"
@@ -176,7 +176,7 @@ export function OrganizationTab() {
             <div className="space-y-2">
               <Label htmlFor="email">{t('admin.organization.email')}</Label>
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Mail className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                <Mail aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                 <Input
                   id="email"
                   type="email"
@@ -191,7 +191,7 @@ export function OrganizationTab() {
           <div className="space-y-2">
             <Label htmlFor="phone">{t('admin.organization.phone')}</Label>
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <Phone className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <Phone aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
               <Input
                 id="phone"
                 type="tel"
@@ -208,14 +208,14 @@ export function OrganizationTab() {
       <Card>
         <CardHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <MapPin className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
+            <MapPin aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
             <CardTitle>{t('admin.organization.address')}</CardTitle>
           </div>
           <CardDescription>
             {t('admin.organization.addressDesc')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="address">{t('admin.organization.streetAddress')}</Label>
             <Input

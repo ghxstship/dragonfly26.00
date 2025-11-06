@@ -92,9 +92,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
             {/* Error Icon */}
             <div className="mb-6 flex justify-center">
               <div className="rounded-full bg-red-500/10 p-4">
-                <AlertTriangle 
-                  className="h-12 w-12 text-red-500" 
-                  aria-hidden="true"
+                <AlertTriangle aria-hidden="true" className="h-12 w-12 text-red-500"
                 />
               </div>
             </div>

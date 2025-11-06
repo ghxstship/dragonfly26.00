@@ -125,27 +125,27 @@ export function ProfilePage() {
           {/* Profile Picture & Basic Info */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <UserCircle className="h-5 w-5" aria-hidden="true" />
+              <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <UserCircle aria-hidden="true" className="h-5 w-5" />
                 {t('profile.basicInfo.personalInfo')}
               </CardTitle>
               <CardDescription>
                 This information will be displayed on your profile
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
+            <CardContent aria-hidden="true" className="space-y-3 md:space-y-4 lg:space-y-6">
               {/* Profile Picture */}
               <div className="flex items-start gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
-                <Avatar className="h-32 w-32">
+                <Avatar aria-hidden="true" className="h-32 w-32">
                   <AvatarImage src={avatarUrl} />
-                  <AvatarFallback className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+                  <AvatarFallback aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
                     {formData.displayName?.charAt(0) || "?"}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1 space-y-4">
                   <div>
                     <Button variant="outline">
-                      <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
+                      <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
                       {t('profile.actions.uploadPhoto')}
                     </Button>
                     <p className="text-xs text-muted-foreground mt-2">
@@ -197,7 +197,7 @@ export function ProfilePage() {
               <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="company" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <Briefcase className="h-4 w-4" />
+                    <Briefcase aria-hidden="true" className="h-4 w-4" />
                     Company
                   </Label>
                   <Input
@@ -208,7 +208,7 @@ export function ProfilePage() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="location" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <MapPin className="h-4 w-4" />
+                    <MapPin aria-hidden="true" className="h-4 w-4" />
                     Location
                   </Label>
                   <Input
@@ -229,7 +229,7 @@ export function ProfilePage() {
                 Showcase your professional skills
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent aria-hidden="true" className="space-y-4">
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill: any) => (
                   <Badge key={skill} variant="secondary" className="text-sm px-3 py-1">
@@ -246,18 +246,18 @@ export function ProfilePage() {
           {/* Social Links */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <LinkIcon className="h-5 w-5" />
+              <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <LinkIcon aria-hidden="true" className="h-5 w-5" />
                 Social Links
               </CardTitle>
               <CardDescription>
                 Connect your social media profiles
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent aria-hidden="true" className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="website" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Globe className="h-4 w-4" />
+                  <Globe aria-hidden="true" className="h-4 w-4" />
                   Website
                 </Label>
                 <Input
@@ -271,7 +271,7 @@ export function ProfilePage() {
 
               <div className="space-y-2">
                 <Label htmlFor="linkedin" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Linkedin className="h-4 w-4" />
+                  <Linkedin aria-hidden="true" className="h-4 w-4" />
                   LinkedIn
                 </Label>
                 <div className="flex flex-wrap">
@@ -290,7 +290,7 @@ export function ProfilePage() {
 
               <div className="space-y-2">
                 <Label htmlFor="twitter" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Twitter className="h-4 w-4" />
+                  <Twitter aria-hidden="true" className="h-4 w-4" />
                   Twitter
                 </Label>
                 <Input
@@ -303,7 +303,7 @@ export function ProfilePage() {
 
               <div className="space-y-2">
                 <Label htmlFor="github" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Github className="h-4 w-4" />
+                  <Github aria-hidden="true" className="h-4 w-4" />
                   GitHub
                 </Label>
                 <div className="flex flex-wrap">
@@ -325,7 +325,7 @@ export function ProfilePage() {
           {/* Save Button */}
           <div className="flex flex-wrap justify-end">
             <Button onClick={handleSave} disabled={saving} size="lg">
-              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Save aria-hidden="true" className="h-4 w-4 mr-2" />
               {saving ? t('profile.actions.saving') : t('profile.actions.saveChanges')}
             </Button>
           </div>

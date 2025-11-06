@@ -64,28 +64,28 @@ function getStatusConfig(type: string, status: string) {
         return {
           variant: "secondary",
           className: "bg-yellow-500 hover:bg-yellow-600 text-white",
-          icon: <Calendar className="h-3 w-3" />,
+          icon: <Calendar aria-hidden="true" className="h-3 w-3" />,
           label: "On Leave"
         }
       case "inactive":
         return {
           variant: "secondary",
           className: "bg-gray-400 hover:bg-gray-500 text-white",
-          icon: <MinusCircle className="h-3 w-3" />,
+          icon: <MinusCircle aria-hidden="true" className="h-3 w-3" />,
           label: "Inactive"
         }
       case "terminated":
         return {
           variant: "destructive",
           className: "",
-          icon: <XCircle className="h-3 w-3" />,
+          icon: <XCircle aria-hidden="true" className="h-3 w-3" />,
           label: "Terminated"
         }
       default:
         return {
           variant: "outline",
           className: "",
-          icon: <User className="h-3 w-3" />,
+          icon: <User aria-hidden="true" className="h-3 w-3" />,
           label: status
         }
     }
@@ -98,7 +98,7 @@ function getStatusConfig(type: string, status: string) {
         return {
           variant: "secondary",
           className: "bg-yellow-500 hover:bg-yellow-600 text-white",
-          icon: <Clock className="h-3 w-3" />,
+          icon: <Clock aria-hidden="true" className="h-3 w-3" />,
           label: "Pending"
         }
       case "approved":
@@ -112,21 +112,21 @@ function getStatusConfig(type: string, status: string) {
         return {
           variant: "destructive",
           className: "",
-          icon: <XCircle className="h-3 w-3" />,
+          icon: <XCircle aria-hidden="true" className="h-3 w-3" />,
           label: "Denied"
         }
       case "cancelled":
         return {
           variant: "outline",
           className: "",
-          icon: <MinusCircle className="h-3 w-3" />,
+          icon: <MinusCircle aria-hidden="true" className="h-3 w-3" />,
           label: "Cancelled"
         }
       default:
         return {
           variant: "outline",
           className: "",
-          icon: <Clock className="h-3 w-3" />,
+          icon: <Clock aria-hidden="true" className="h-3 w-3" />,
           label: status
         }
     }
@@ -146,21 +146,21 @@ function getStatusConfig(type: string, status: string) {
         return {
           variant: "secondary",
           className: "bg-yellow-500 hover:bg-yellow-600 text-white",
-          icon: <AlertTriangle className="h-3 w-3" />,
+          icon: <AlertTriangle aria-hidden="true" className="h-3 w-3" />,
           label: "Warning"
         }
       case "violation":
         return {
           variant: "destructive",
           className: "",
-          icon: <AlertCircle className="h-3 w-3" />,
+          icon: <AlertCircle aria-hidden="true" className="h-3 w-3" />,
           label: "Violation"
         }
       default:
         return {
           variant: "outline",
           className: "",
-          icon: <AlertTriangle className="h-3 w-3" />,
+          icon: <AlertTriangle aria-hidden="true" className="h-3 w-3" />,
           label: status
         }
     }
@@ -188,7 +188,7 @@ export function EmploymentTypeBadge({ type }: { type: string }) {
   const config = typeConfig[type] || { label: type, className: "" }
 
   return (
-    <Badge className={cn("text-xs px-2 py-0", config.className)}>
+    <Badge aria-hidden="true" className={cn("text-xs px-2 py-0", config.className)}>
       {config.label}
     </Badge>
   )

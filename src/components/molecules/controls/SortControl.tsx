@@ -54,12 +54,12 @@ export function SortControl({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="sm" className="gap-2">
-          <ArrowUpDown className="h-4 w-4" aria-hidden="true" />
+          <ArrowUpDown aria-hidden="true" className="h-4 w-4" />
           {label}
           {currentOption && (
             <>
               : {currentOption.label}
-              <DirectionIcon className="h-3 w-3" aria-hidden="true" />
+              <DirectionIcon aria-hidden="true" className="h-3 w-3" />
             </>
           )}
         </Button>
@@ -73,7 +73,7 @@ export function SortControl({
           >
             {option.label}
             {option.value === value && (
-              <DirectionIcon className="h-3 w-3 ml-auto" aria-hidden="true" />
+              <DirectionIcon aria-hidden="true" className="h-3 w-3 ml-auto" />
             )}
           </DropdownMenuItem>
         ))}

@@ -219,7 +219,7 @@ export function SmartFiltersBar({
             className="h-8"
             onClick={clearFilters}
           >
-            <X className="h-3 w-3 mr-1" />
+            <X aria-hidden="true" className="h-3 w-3 mr-1" />
             Clear
           </Button>
         )}
@@ -235,7 +235,7 @@ export function SmartFiltersBar({
           className="h-7"
           onClick={() => handleQuickFilter("my_team")}
         >
-          <Users className="h-3 w-3 mr-1" />
+          <Users aria-hidden="true" className="h-3 w-3 mr-1" />
           My Team
         </Button>
 
@@ -245,7 +245,7 @@ export function SmartFiltersBar({
           className="h-7"
           onClick={() => handleQuickFilter("new_hires")}
         >
-          <UserPlus className="h-3 w-3 mr-1" />
+          <UserPlus aria-hidden="true" className="h-3 w-3 mr-1" />
           New Hires
         </Button>
 
@@ -255,7 +255,7 @@ export function SmartFiltersBar({
           className="h-7"
           onClick={() => handleQuickFilter("on_leave")}
         >
-          <Calendar className="h-3 w-3 mr-1" />
+          <Calendar aria-hidden="true" className="h-3 w-3 mr-1" />
           On Leave
         </Button>
 
@@ -265,7 +265,7 @@ export function SmartFiltersBar({
           className="h-7"
           onClick={() => handleQuickFilter("pending_review")}
         >
-          <SlidersHorizontal className="h-3 w-3 mr-1" />
+          <SlidersHorizontal aria-hidden="true" className="h-3 w-3 mr-1" />
           Pending Review
         </Button>
 
@@ -275,14 +275,14 @@ export function SmartFiltersBar({
           className="h-7"
           onClick={() => handleQuickFilter("expiring_certs")}
         >
-          <AlertTriangle className="h-3 w-3 mr-1" />
+          <AlertTriangle aria-hidden="true" className="h-3 w-3 mr-1" />
           Expiring Certs
         </Button>
       </div>
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+        <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           placeholder={t('people.search.placeholder')}
           value={searchQuery as any}
@@ -296,7 +296,7 @@ export function SmartFiltersBar({
             className="absolute sm:relative sm:inset-auto right-1 top-1/2 -translate-y-1/2 h-7 sm:relative sm:inset-auto"
             onClick={() => handleSearch("")}
           >
-            <X className="h-3 w-3" />
+            <X aria-hidden="true" className="h-3 w-3" />
           </Button>
         )}
         <Button

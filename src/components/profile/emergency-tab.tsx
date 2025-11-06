@@ -77,7 +77,7 @@ export function EmergencyContactTab() {
             {t('emergency.contactDescription')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="name">{t('emergency.name')}</Label>
@@ -129,7 +129,7 @@ export function EmergencyContactTab() {
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />
           ) : (
-            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+            <Save aria-hidden="true" className="h-4 w-4 mr-2" />
           )}
           {t('profile.actions.saveChanges')}
         </Button>

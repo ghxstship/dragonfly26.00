@@ -104,7 +104,7 @@ export function LevelBadge({
         <TooltipTrigger asChild>
           {badgeContent}
         </TooltipTrigger>
-        <TooltipContent className="max-w-xs">
+        <TooltipContent aria-hidden="true" className="max-w-xs">
           <div className="space-y-2">
             <div className="font-semibold text-sm">
               {customName || levelInfo.name}

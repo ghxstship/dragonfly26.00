@@ -59,7 +59,7 @@ export function APITokensPageContent() {
             </p>
           </div>
           <Button onClick={() => setShowCreateDialog(true)}>
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             Create Token
           </Button>
         </div>
@@ -67,19 +67,19 @@ export function APITokensPageContent() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Tokens</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{mockTokens.length}</p>
                 </div>
-                <Key className="h-8 w-8 text-muted-foreground" />
+                <Key aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Active</p>
@@ -91,13 +91,13 @@ export function APITokensPageContent() {
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Total Requests</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalRequests.toLocaleString()}</p>
                 </div>
-                <AlertTriangle className="h-8 w-8 text-muted-foreground" />
+                <AlertTriangle aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
               </div>
             </CardContent>
           </Card>

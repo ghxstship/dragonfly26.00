@@ -122,10 +122,10 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
 
           return (
             <Card key={insight.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-4 sm:p-6">
+              <CardContent aria-hidden="true" className="p-4 sm:p-6">
                 <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
                   <div className={`p-3 rounded-lg ${bgClass} flex-shrink-0`}>
-                    <Icon className={`h-6 w-6 ${colorClass}`} />
+                    <Icon aria-hidden="true" className={`h-6 w-6 ${colorClass}`} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-3 mb-2">
@@ -142,7 +142,7 @@ export function InsightsIntelligenceFeedTab({ data = [], loading = false }: Insi
                       </div>
                     </div>
                     
-                    <Rss className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
+                    <Rss aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
                     <p className="text-muted-foreground mb-3">{insight.message}</p>
                     
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">

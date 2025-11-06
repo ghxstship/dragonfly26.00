@@ -100,7 +100,7 @@ export function AccessTab() {
       <Card>
         <CardHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Key className="h-5 w-5" aria-hidden="true" />
+            <Key aria-hidden="true" className="h-5 w-5" />
             <div>
               <CardTitle>{t('access.credentials')}</CardTitle>
               <CardDescription>
@@ -129,7 +129,7 @@ export function AccessTab() {
               <TableBody>
                 {credentials.map((cred: any) => (
                   <TableRow key={cred.id}>
-                    <TableCell className="font-medium">{cred.type}</TableCell>
+                    <TableCell aria-hidden="true" className="font-medium">{cred.type}</TableCell>
                     <TableCell>{(cred.nameKey ? t(cred.nameKey) : cred.name)}</TableCell>
                     <TableCell>{cred.accessLevel}</TableCell>
                     <TableCell>{new Date(cred.issueDate).toLocaleDateString()}</TableCell>
@@ -146,7 +146,7 @@ export function AccessTab() {
       <Card>
         <CardHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Shield className="h-5 w-5" aria-hidden="true" />
+            <Shield aria-hidden="true" className="h-5 w-5" />
             <div>
               <CardTitle>{t('access.clearances')}</CardTitle>
               <CardDescription>
@@ -174,7 +174,7 @@ export function AccessTab() {
               <TableBody>
                 {clearances.map((clearance: any) => (
                   <TableRow key={clearance.id}>
-                    <TableCell className="font-medium">{clearance.type}</TableCell>
+                    <TableCell aria-hidden="true" className="font-medium">{clearance.type}</TableCell>
                     <TableCell>{clearance.level}</TableCell>
                     <TableCell>{clearance.issuedBy}</TableCell>
                     <TableCell>{new Date(clearance.validUntil).toLocaleDateString()}</TableCell>
@@ -190,7 +190,7 @@ export function AccessTab() {
       <Card>
         <CardHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Lock className="h-5 w-5" aria-hidden="true" />
+            <Lock aria-hidden="true" className="h-5 w-5" />
             <div>
               <CardTitle>{t('access.management')}</CardTitle>
               <CardDescription>
@@ -199,14 +199,14 @@ export function AccessTab() {
             </div>
           </div>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label>{t('access.requestCredential')}</Label>
             <p className="text-sm text-muted-foreground mb-3">
               {t('access.requestDescription')}
             </p>
             <Button variant="outline">
-              <Key className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Key aria-hidden="true" className="h-4 w-4 mr-2" />
               {t('access.requestButton')}
             </Button>
           </div>
@@ -234,7 +234,7 @@ export function AccessTab() {
 
       <div className="flex flex-wrap justify-end">
         <Button onClick={handleSave}>
-          <Save className="h-4 w-4 mr-2" />
+          <Save aria-hidden="true" className="h-4 w-4 mr-2" />
           {t('actions.saveChanges')}
         </Button>
       </div>

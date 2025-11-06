@@ -150,7 +150,7 @@ export function ProfessionalTab() {
           <CardTitle>{t('profile.professional.summary')}</CardTitle>
           <CardDescription>{t('profile.professional.headline')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="title">{t('profile.professional.title')}</Label>
             <Input
@@ -208,12 +208,12 @@ export function ProfessionalTab() {
               <CardDescription>{t('profile.professional.workHistory')}</CardDescription>
             </div>
             <Button variant="outline" size="sm" onClick={addExperience}>
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
               {t('profile.professional.addExperience')}
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
+        <CardContent aria-hidden="true" className="space-y-3 md:space-y-4 lg:space-y-6">
           {experiences.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('profile.professional.noExperience')}
@@ -324,12 +324,12 @@ export function ProfessionalTab() {
               <CardDescription>{t('profile.professional.educationBackground')}</CardDescription>
             </div>
             <Button variant="outline" size="sm" onClick={addEducation}>
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
               {t('profile.professional.addEducation')}
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
+        <CardContent aria-hidden="true" className="space-y-3 md:space-y-4 lg:space-y-6">
           {education.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-4 md:py-6 lg:py-8">
               {t('profile.professional.noEducation')}
@@ -402,7 +402,7 @@ export function ProfessionalTab() {
           <CardTitle>{t('profile.professional.portfolio')}</CardTitle>
           <CardDescription>{t('profile.professional.portfolioWebsite')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="portfolio">{t('profile.professional.portfolioUrl')}</Label>
             <Input
@@ -423,7 +423,7 @@ export function ProfessionalTab() {
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />
           ) : (
-            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+            <Save aria-hidden="true" className="h-4 w-4 mr-2" />
           )}
           {t('profile.actions.saveChanges')}
         </Button>

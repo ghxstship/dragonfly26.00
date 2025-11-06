@@ -73,13 +73,13 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
                   <CardTitle id={`report-${report.id}`}>{t(report.nameKey)}</CardTitle>
-                  <CardDescription className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
+                  <CardDescription aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                     <span className="flex flex-col md:flex-row items-center gap-1" aria-label={`Frequency: ${report.frequency}`}>
-                      <Calendar className="h-3 w-3" aria-hidden="true" />
+                      <Calendar aria-hidden="true" className="h-3 w-3" />
                       {report.frequency}
                     </span>
                     <span className="flex flex-col md:flex-row items-center gap-1" aria-label={`Schedule: ${report.schedule}`}>
-                      <Clock className="h-3 w-3" aria-hidden="true" />
+                      <Clock aria-hidden="true" className="h-3 w-3" />
                       {report.schedule}
                     </span>
                   </CardDescription>
@@ -107,13 +107,13 @@ export function ReportsScheduledTab({ data = [], loading = false }: ReportsSched
 
                 <div>
                   <p className="text-sm font-medium text-muted-foreground mb-2 flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <Users className="h-4 w-4" aria-hidden="true" />
+                    <Users aria-hidden="true" className="h-4 w-4" />
                     {t('recipients')} ({report.recipients.length})
                   </p>
                   <div className="flex flex-wrap gap-2" role="list" aria-label="Report recipients">
                     {report.recipients.map((email: any, index: number) => (
                       <Badge key={index} variant="outline" className="text-xs" role="listitem">
-                        <Mail className="h-3 w-3 mr-1" aria-hidden="true" />
+                        <Mail aria-hidden="true" className="h-3 w-3 mr-1" />
                         {email as string}
                       </Badge>
                     ))}

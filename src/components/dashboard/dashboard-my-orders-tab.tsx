@@ -56,7 +56,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
         aria-live="assertive"
       >
         <div className="text-center">
-          <ShoppingCart className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <ShoppingCart aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -115,7 +115,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Summary Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalOrders}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Orders</p>
@@ -123,7 +123,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">{summary.inTransit}</p>
               <p className="text-xs text-muted-foreground mt-1">In Transit</p>
@@ -131,7 +131,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{summary.totalSpent}</p>
               <p className="text-xs text-muted-foreground mt-1">Total Spent</p>
@@ -139,7 +139,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{summary.thisMonth}</p>
               <p className="text-xs text-muted-foreground mt-1">This Month</p>
@@ -151,7 +151,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Order Status Overview */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Order Status</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">Order Status</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 lg:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
@@ -182,7 +182,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Orders List */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">{t('recentOrders')}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">{t('recentOrders')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -192,7 +192,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
                 <div
                   key={order.id}
                   className="p-4 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
-                  onClick={() => router.push(`/workspace/${workspaceId}/marketplace/purchases?id=${order.id}`)}
+                   role="button" tabIndex={0} onClick={() => router.push(`/workspace/${workspaceId}/marketplace/purchases?id=${order.id}`)}
                 >
                   <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                     <div className="flex-1 space-y-2">
@@ -211,7 +211,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
 
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                         <Badge variant="secondary" className={getStatusColor(order.status)}>
-                          <StatusIcon className="h-4 w-4 mr-1" aria-hidden="true" />
+                          <StatusIcon aria-hidden="true" className="h-4 w-4 mr-1" />
                           {order.status.replace('_', ' ')}
                         </Badge>
                         <Badge variant="outline">
@@ -260,7 +260,7 @@ export function DashboardMyOrdersTab({ workspaceId = '', userId = '' }: Dashboar
       {/* Spending Overview */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Spending Overview</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">Spending Overview</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4 text-center">

@@ -46,11 +46,11 @@ export function TodaysScheduleSidebar({
   className
 }: TodaysScheduleSidebarProps) {
   return (
-    <Card className={cn("w-full max-w-sm", className)}>
-      <CardHeader className="pb-3">
+    <Card aria-hidden="true" className={cn("w-full max-w-sm", className)}>
+      <CardHeader aria-hidden="true" className="pb-3">
         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-          <CardTitle className="text-base">Today&apos;s Schedule</CardTitle>
-          <Clock className="h-4 w-4 text-muted-foreground" />
+          <CardTitle aria-hidden="true" className="text-base">Today&apos;s Schedule</CardTitle>
+          <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
         </div>
         <p className="text-xs text-muted-foreground">
           {new Date().toLocaleDateString('en-US', { 
@@ -60,8 +60,8 @@ export function TodaysScheduleSidebar({
           })}
         </p>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <ScrollArea className="h-[300px] md:h-[500px] pr-4">
+      <CardContent aria-hidden="true" className="space-y-4">
+        <ScrollArea aria-hidden="true" className="h-[300px] md:h-[500px] pr-4">
           {/* On Duty */}
           <div className="space-y-2">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
@@ -141,7 +141,7 @@ export function TodaysScheduleSidebar({
                     className="w-full h-7 mt-1 max-w-full"
                     onClick={onAssignShift}
                   >
-                    <Plus className="h-3 w-3 mr-1" />
+                    <Plus aria-hidden="true" className="h-3 w-3 mr-1" />
                     Assign Shifts
                   </Button>
                 )}
@@ -154,7 +154,7 @@ export function TodaysScheduleSidebar({
             <div className="space-y-2 mt-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Calendar className="h-4 w-4 text-muted-foreground" />
+                  <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                   <h4 className="text-sm font-medium">Out Today</h4>
                 </div>
                 <Badge variant="outline">{outToday.length}</Badge>
@@ -162,9 +162,9 @@ export function TodaysScheduleSidebar({
               <div className="space-y-1 pl-5">
                 {outToday.map((person, i) => (
                   <div key={i} className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs p-1">
-                    <Avatar className="h-5 w-5">
+                    <Avatar aria-hidden="true" className="h-5 w-5">
                       <AvatarImage src={person.avatar} />
-                      <AvatarFallback className="text-[10px]">
+                      <AvatarFallback aria-hidden="true" className="text-[10px]">
                         {person.name.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>
@@ -186,7 +186,7 @@ export function TodaysScheduleSidebar({
             onClick={onViewFullSchedule}
           >
             View Full Schedule
-            <ChevronRight className="h-4 w-4 ml-2" />
+            <ChevronRight aria-hidden="true" className="h-4 w-4 ml-2" />
           </Button>
         )}
       </CardContent>
@@ -203,9 +203,9 @@ function PersonnelShiftItem({
 }) {
   return (
     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs p-1.5 rounded hover:bg-muted/50">
-      <Avatar className="h-6 w-6">
+      <Avatar aria-hidden="true" className="h-6 w-6">
         <AvatarImage src={shift.avatar} />
-        <AvatarFallback className="text-[10px]">
+        <AvatarFallback aria-hidden="true" className="text-[10px]">
           {shift.name.split(' ').map(n => n[0]).join('')}
         </AvatarFallback>
       </Avatar>
@@ -240,7 +240,7 @@ export function TodaysScheduleCompact({
     <div className="p-4 bg-card border rounded-lg space-y-3">
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <h4 className="text-sm font-medium">Today&apos;s Schedule</h4>
-        <Clock className="h-4 w-4 text-muted-foreground" />
+        <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
       </div>
 
       <div className="space-y-2">

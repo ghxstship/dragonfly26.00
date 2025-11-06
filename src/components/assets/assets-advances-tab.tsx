@@ -96,7 +96,7 @@ export default function AssetsAdvancesTab() {
                 <TableRow key={advance.id as string}>
                   <TableCell>
                     <div className="flex items-start gap-2">
-                      <Package className="h-4 w-4 mt-1 text-muted-foreground" aria-hidden="true" />
+                      <Package aria-hidden="true" className="h-4 w-4 mt-1 text-muted-foreground" />
                       <div>
                         <div className="font-medium">{advance.asset_item}</div>
                         {advance.operational_purpose && (
@@ -131,7 +131,7 @@ export default function AssetsAdvancesTab() {
                   </TableCell>
                   <TableCell>
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm">
-                      <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                      <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                       <div>
                         {format(new Date(advance.start_date), 'MMM d')}
                         {advance.end_date && ` - ${format(new Date(advance.end_date), 'MMM d')}`}

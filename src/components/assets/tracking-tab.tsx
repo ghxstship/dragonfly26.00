@@ -68,7 +68,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
       key: 'status',
       label: 'Status',
       render: (value: any) => (
-        <Badge className={getStatusColor(value as string)}>
+        <Badge aria-hidden="true" className={getStatusColor(value as string)}>
           {(value as string)?.replace(/_/g, ' ')}
         </Badge>
       )
@@ -78,7 +78,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
       label: 'Location',
       render: (value: any) => (
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-          <MapPin className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
+          <MapPin aria-hidden="true" className="h-3 w-3 text-muted-foreground" />
           <span>{(value as string) || 'Unknown'}</span>
         </div>
       )
@@ -91,7 +91,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
         const assignee = value as any
         return (
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-            <User className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
+            <User aria-hidden="true" className="h-3 w-3 text-muted-foreground" />
             <span>{assignee.first_name} {assignee.last_name}</span>
           </div>
         )
@@ -151,7 +151,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -165,27 +165,27 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
       {/* Quick Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Checked Out</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-blue-600">{checkedOut}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-blue-600">{checkedOut}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>In Transit</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-yellow-600">{inTransit}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-yellow-600">{inTransit}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('available')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-green-600">{available}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl text-green-600">{available}</CardTitle>
           </CardHeader>
         </Card>
-        <Card className={overdue > 0 ? "border-red-200 dark:border-red-900" : ""}>
-          <CardHeader className="pb-3">
+        <Card aria-hidden="true" className={overdue > 0 ? "border-red-200 dark:border-red-900" : ""}>
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('overdue')}</CardDescription>
-            <CardTitle className={`text-2xl ${overdue > 0 ? 'text-red-600' : ''}`}>{overdue}</CardTitle>
+            <CardTitle aria-hidden="true" className={`text-2xl ${overdue > 0 ? 'text-red-600' : ''}`}>{overdue}</CardTitle>
           </CardHeader>
         </Card>
       </div>
@@ -232,7 +232,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
             {trackingData.slice(0, 5).map((item: any) => (
               <div key={item.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                  <Package className="h-5 w-5 text-muted-foreground" />
+                  <Package aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
                   <div>
                     <div className="font-medium">{item.asset_name}</div>
                     <div className="text-sm text-muted-foreground">
@@ -241,7 +241,7 @@ export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProp
                   </div>
                 </div>
                 <div className="text-right">
-                  <Badge className={getStatusColor(item.status)}>
+                  <Badge aria-hidden="true" className={getStatusColor(item.status)}>
                     {item.status?.replace(/_/g, ' ')}
                   </Badge>
                   <div className="text-xs text-muted-foreground mt-1">

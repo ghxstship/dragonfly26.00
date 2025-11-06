@@ -56,11 +56,11 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
     const expectedProgress = (daysPassed / daysTotal) * 100
 
     if (progress > expectedProgress) {
-      return <TrendingUp className="h-4 w-4 text-green-600" />
+      return <TrendingUp aria-hidden="true" className="h-4 w-4 text-green-600" />
     } else if (progress < expectedProgress - 10) {
-      return <TrendingDown className="h-4 w-4 text-red-600" />
+      return <TrendingDown aria-hidden="true" className="h-4 w-4 text-red-600" />
     }
-    return <Minus className="h-4 w-4 text-yellow-600" />
+    return <Minus aria-hidden="true" className="h-4 w-4 text-yellow-600" />
   }
 
   return (
@@ -76,7 +76,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
             className="hover:shadow-md transition-shadow cursor-pointer"
             onClick={() => onGoalClick(goal)}
           >
-            <CardContent className="p-4 sm:p-6">
+            <CardContent aria-hidden="true" className="p-4 sm:p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
@@ -113,7 +113,7 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
               {/* Meta */}
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                  <Calendar className="h-3 w-3" />
+                  <Calendar aria-hidden="true" className="h-3 w-3" />
                   <span>
                     {daysRemaining > 0 ? `${daysRemaining} days left` : "Overdue"}
                   </span>
@@ -121,9 +121,9 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
 
                 {goal.owner && (
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <Avatar className="h-5 w-5">
+                    <Avatar aria-hidden="true" className="h-5 w-5">
                       <AvatarImage src={goal.owner.avatar_url} />
-                      <AvatarFallback className="text-xs">
+                      <AvatarFallback aria-hidden="true" className="text-xs">
                         {getInitials(goal.owner.name)}
                       </AvatarFallback>
                     </Avatar>
@@ -142,8 +142,8 @@ export function ObjectivesList({ goals, onGoalClick, onGoalUpdate }: GoalsListPr
 
       {goals.length === 0 && (
         <Card>
-          <CardContent className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
-            <TrendingUp className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+          <CardContent aria-hidden="true" className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
+            <TrendingUp aria-hidden="true" className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
             <h3 className="text-lg font-semibold mb-2">No goals yet</h3>
             <p className="text-sm text-muted-foreground">
               Create your first goal to start tracking objectives

@@ -50,28 +50,28 @@ export function ActionButtonBar({
         {/* Primary Actions */}
         {onAddEmployee && (
           <Button onClick={onAddEmployee} size="sm">
-            <UserPlus className="h-4 w-4 mr-2" />
+            <UserPlus aria-hidden="true" className="h-4 w-4 mr-2" />
             Add Employee
           </Button>
         )}
 
         {onClockInOut && (
           <Button onClick={onClockInOut} variant="outline" size="sm">
-            <Clock className="h-4 w-4 mr-2" />
+            <Clock aria-hidden="true" className="h-4 w-4 mr-2" />
             Clock In/Out
           </Button>
         )}
 
         {onRequestPTO && (
           <Button onClick={onRequestPTO} variant="outline" size="sm">
-            <Calendar className="h-4 w-4 mr-2" />
+            <Calendar aria-hidden="true" className="h-4 w-4 mr-2" />
             Request PTO
           </Button>
         )}
 
         {onSwapShift && (
           <Button onClick={onSwapShift} variant="outline" size="sm">
-            <Repeat className="h-4 w-4 mr-2" />
+            <Repeat aria-hidden="true" className="h-4 w-4 mr-2" />
             Swap Shift
           </Button>
         )}
@@ -92,39 +92,39 @@ export function ActionButtonBar({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="sm">
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
               New
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             {onAddEmployee && (
               <DropdownMenuItem onClick={onAddEmployee}>
-                <UserPlus className="h-4 w-4 mr-2" />
+                <UserPlus aria-hidden="true" className="h-4 w-4 mr-2" />
                 Add Employee
               </DropdownMenuItem>
             )}
             {onClockInOut && (
               <DropdownMenuItem onClick={onClockInOut}>
-                <Clock className="h-4 w-4 mr-2" />
+                <Clock aria-hidden="true" className="h-4 w-4 mr-2" />
                 Clock In/Out
               </DropdownMenuItem>
             )}
             {onRequestPTO && (
               <DropdownMenuItem onClick={onRequestPTO}>
-                <Calendar className="h-4 w-4 mr-2" />
+                <Calendar aria-hidden="true" className="h-4 w-4 mr-2" />
                 Request PTO
               </DropdownMenuItem>
             )}
             {onSwapShift && (
               <DropdownMenuItem onClick={onSwapShift}>
-                <Repeat className="h-4 w-4 mr-2" />
+                <Repeat aria-hidden="true" className="h-4 w-4 mr-2" />
                 Request Shift Swap
               </DropdownMenuItem>
             )}
             <DropdownMenuSeparator />
             {onExport && (
               <DropdownMenuItem onClick={onExport}>
-                <FileDown className="h-4 w-4 mr-2" />
+                <FileDown aria-hidden="true" className="h-4 w-4 mr-2" />
                 Export Data
               </DropdownMenuItem>
             )}
@@ -134,7 +134,7 @@ export function ActionButtonBar({
         {/* Search */}
         {onSearch && (
           <Button onClick={onSearch} variant="outline" size="icon">
-            <Search className="h-4 w-4" />
+            <Search aria-hidden="true" className="h-4 w-4" />
           </Button>
         )}
       </div>

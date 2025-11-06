@@ -61,7 +61,7 @@ export function GDPRBanner(): JSX.Element | null {
           {/* Icon */}
           <div className="flex-shrink-0">
             <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-              <Cookie className="h-6 w-6 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+              <Cookie aria-hidden="true" className="h-6 w-6 text-blue-600 dark:text-blue-400" />
             </div>
           </div>
 
@@ -108,7 +108,7 @@ export function GDPRBanner(): JSX.Element | null {
         {/* Privacy Link */}
         <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
           <p className="text-xs text-gray-500 dark:text-gray-500">
-            <Shield className="inline h-3 w-3 mr-1" aria-hidden="true" />
+            <Shield aria-hidden="true" className="inline h-3 w-3 mr-1" />
             Your privacy is important to us. Read our{" "}
             <a 
               href="/privacy" 

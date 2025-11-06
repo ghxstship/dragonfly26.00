@@ -181,18 +181,18 @@ export function AccountTab() {
       {/* Profile Information */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <UserCircle className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <UserCircle aria-hidden="true" className="h-5 w-5" />
             {t('settings.accountTab.profileInfo')}
           </CardTitle>
           <CardDescription>
             {t('settings.accountTab.updateInfo')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
+        <CardContent aria-hidden="true" className="space-y-3 md:space-y-4 lg:space-y-6">
           {/* Profile Picture */}
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
-            <Avatar className="h-24 w-24">
+            <Avatar aria-hidden="true" className="h-24 w-24">
               <AvatarImage src={profilePicture} />
               <AvatarFallback>{formData.firstName[0]}{formData.lastName[0]}</AvatarFallback>
             </Avatar>
@@ -203,7 +203,7 @@ export function AccountTab() {
                 accept="image/jpeg,image/png,image/gif"
                 onChange={handlePhotoUpload}
                 className="hidden md:block"
-              />
+               aria-label="file" />
               <Button 
                 variant="outline" 
                 size="sm"
@@ -213,7 +213,7 @@ export function AccountTab() {
                 {uploading ? (
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 ) : (
-                  <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
                 )}
                 {t('settings.accountTab.uploadPhoto')}
               </Button>
@@ -249,7 +249,7 @@ export function AccountTab() {
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Mail className="h-4 w-4" aria-hidden="true" />
+                <Mail aria-hidden="true" className="h-4 w-4" />
                 {t('settings.accountTab.emailAddress')}
               </Label>
               <Input
@@ -262,7 +262,7 @@ export function AccountTab() {
 
             <div className="space-y-2">
               <Label htmlFor="phone" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Phone className="h-4 w-4" aria-hidden="true" />
+                <Phone aria-hidden="true" className="h-4 w-4" />
                 {t('settings.accountTab.phoneNumber')}
               </Label>
               <Input
@@ -278,8 +278,8 @@ export function AccountTab() {
 
           {/* Address */}
           <div className="space-y-4">
-            <Label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <MapPin className="h-4 w-4" aria-hidden="true" />
+            <Label aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <MapPin aria-hidden="true" className="h-4 w-4" />
                 {t('settings.accountTab.address')}
             </Label>
             <div className="space-y-4">
@@ -320,7 +320,7 @@ export function AccountTab() {
               {saving ? (
                 <Loader2 className="h-4 w-4 mr-2 animate-spin" />
               ) : (
-                <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+                <Save aria-hidden="true" className="h-4 w-4 mr-2" />
               )}
               {t('common.save')}
             </Button>
@@ -331,19 +331,19 @@ export function AccountTab() {
       {/* Security */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Shield className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Shield aria-hidden="true" className="h-5 w-5" />
             {t('settings.accountTab.security')}
           </CardTitle>
           <CardDescription>
             {t('settings.accountTab.managePassword')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg">
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Key className="h-4 w-4" />
+                <Key aria-hidden="true" className="h-4 w-4" />
                 <span className="font-medium">{t('settings.accountTab.password')}</span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -358,7 +358,7 @@ export function AccountTab() {
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg">
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Shield className="h-4 w-4" />
+                <Shield aria-hidden="true" className="h-4 w-4" />
                 <span className="font-medium">{t('settings.accountTab.twoFactorAuth')}</span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -380,11 +380,11 @@ export function AccountTab() {
             {t('settings.accountTab.exportDelete')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border rounded-lg">
             <div className="space-y-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Download className="h-4 w-4" />
+                <Download aria-hidden="true" className="h-4 w-4" />
                 <span className="font-medium">{t('settings.accountTab.exportData')}</span>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -400,7 +400,7 @@ export function AccountTab() {
 
           <div className="rounded-lg bg-destructive/10 p-4 space-y-4">
             <div className="flex flex-wrap gap-2">
-              <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+              <AlertTriangle aria-hidden="true" className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
               <div className="space-y-2 flex-1">
                 <h4 className="font-semibold text-destructive">{t('settings.accountTab.dangerZone')}</h4>
                 <p className="text-sm text-muted-foreground">

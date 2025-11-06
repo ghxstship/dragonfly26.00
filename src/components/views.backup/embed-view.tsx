@@ -85,7 +85,7 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Frame className="h-5 w-5" />
+          <Frame aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Embedded Content</h3>
         </div>
         <TooltipProvider delayDuration={300}>
@@ -97,13 +97,13 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
                   size="sm"
                   onClick={() => window.open(activeEmbedData.url, "_blank")}
                 >
-                  <ExternalLink className="h-4 w-4 mr-2" />
+                  <ExternalLink aria-hidden="true" className="h-4 w-4 mr-2" />
                   Open
                 </Button>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button variant="outline" size="icon">
-                      <RefreshCw className="h-4 w-4" />
+                      <RefreshCw aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
@@ -123,7 +123,7 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
               </>
             )}
           <Button onClick={() => setIsAddingEmbed(true)}>
-            <Plus className="h-4 w-4 mr-2" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             Add Embed
           </Button>
           </div>
@@ -156,7 +156,7 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
                       handleRemoveEmbed(embed.id)
                     }}
                   >
-                    <X className="h-3 w-3" />
+                    <X aria-hidden="true" className="h-3 w-3" />
                   </Button>
                 </div>
               ))}
@@ -181,15 +181,15 @@ export function EmbedView({ data, schema, onItemClick }: EmbedViewProps) {
             <div className="flex flex-wrap items-center justify-center h-full">
               <div className="text-center space-y-4">
                 <div className="mx-auto w-24 h-24 rounded-full bg-primary/10 flex flex-wrap items-center justify-center">
-                  <Frame className="h-12 w-12 text-primary" />
+                  <Frame aria-hidden="true" className="h-12 w-12 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">No Embeds</h3>
                   <p className="text-sm text-muted-foreground max-w-md">
                     Add external content like websites, videos, or documents
                   </p>
-                  <Button className="mt-4" onClick={() => setIsAddingEmbed(true)}>
-                    <Plus className="h-4 w-4 mr-2" />
+                  <Button aria-hidden="true" className="mt-4" onClick={() => setIsAddingEmbed(true)}>
+                    <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                     Add Your First Embed
                   </Button>
                 </div>

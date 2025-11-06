@@ -239,9 +239,9 @@ export function MembersManagementTab() {
       case "active":
         return <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" aria-hidden="true" />
       case "pending":
-        return <Clock className="h-4 w-4 text-yellow-500" aria-hidden="true" />
+        return <Clock aria-hidden="true" className="h-4 w-4 text-yellow-500" />
       case "suspended":
-        return <XCircle className="h-4 w-4 text-red-500" aria-hidden="true" />
+        return <XCircle aria-hidden="true" className="h-4 w-4 text-red-500" />
     }
   }
 
@@ -257,31 +257,31 @@ export function MembersManagementTab() {
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.members.totalMembers')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{members.length}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{members.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Active</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => (m as any).status === "active").length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Pending</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => (m as any).status === "pending").length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>High-Level Roles</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {members.filter(m => ['legend', 'phantom', 'aviator', 'gladiator'].includes(m.role)).length}
             </CardTitle>
           </CardHeader>
@@ -290,10 +290,10 @@ export function MembersManagementTab() {
 
       {/* Search and Filter */}
       <Card>
-        <CardContent className="pt-6">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="flex flex-wrap gap-2">
             <div className="relative flex-1">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('admin.members.searchPlaceholder')}
                 value={searchQuery as any}
@@ -302,7 +302,7 @@ export function MembersManagementTab() {
               />
             </div>
             <Button variant="outline">
-              <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Filter aria-hidden="true" className="h-4 w-4 mr-2" />
               Filter
             </Button>
           </div>
@@ -331,7 +331,7 @@ export function MembersManagementTab() {
                 className={`flex items-center justify-between p-4 border rounded-lg hover:bg-accent/50 transition-colors cursor-pointer ${
                   selectedIds.includes(member.id) ? 'bg-accent/50 border-primary' : ''
                 }`}
-                onClick={() => {
+                 role="button" tabIndex={0} onClick={() => {
                   setSelectedMember(member as any)
                   setDrawerMode('view')
                 }}
@@ -342,7 +342,7 @@ export function MembersManagementTab() {
                     onCheckedChange={() => handleSelectMember(member.id)}
                     onClick={(e) => e.stopPropagation()}
                   />
-                  <Avatar className="h-10 w-10">
+                  <Avatar aria-hidden="true" className="h-10 w-10">
                     <AvatarImage src={member.avatar} />
                     <AvatarFallback>
                       {member.name.split(" ").map(n => n[0]).join("")}
@@ -353,12 +353,12 @@ export function MembersManagementTab() {
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
                       <p className="font-medium truncate">{member.nameKey ? t(member.nameKey) : member.name}</p>
                       {(member.role === "legend" || member.role === "phantom") && (
-                        <Crown className="h-4 w-4 text-yellow-500" aria-hidden="true" />
+                        <Crown aria-hidden="true" className="h-4 w-4 text-yellow-500" />
                       )}
                       {getStatusIcon(member.status)}
                     </div>
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                      <Mail className="h-3 w-3" aria-hidden="true" />
+                      <Mail aria-hidden="true" className="h-3 w-3" />
                       <span className="truncate">{member.email}</span>
                       <span>•</span>
                       <span>{member.department}</span>
@@ -376,7 +376,7 @@ export function MembersManagementTab() {
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
                         <Button variant="ghost" size="icon" aria-label="Member actions">
-                          <MoreVertical className="h-4 w-4" aria-hidden="true" />
+                          <MoreVertical aria-hidden="true" className="h-4 w-4" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
@@ -387,7 +387,7 @@ export function MembersManagementTab() {
                             setDrawerMode('view')
                           }}
                         >
-                          <Eye className="h-4 w-4 mr-2" aria-hidden="true" />
+                          <Eye aria-hidden="true" className="h-4 w-4 mr-2" />
                           View Details
                         </DropdownMenuItem>
                         <DropdownMenuItem
@@ -397,7 +397,7 @@ export function MembersManagementTab() {
                             setDrawerMode('edit')
                           }}
                         >
-                          <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
+                          <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
                           Edit
                         </DropdownMenuItem>
                         <DropdownMenuItem
@@ -406,7 +406,7 @@ export function MembersManagementTab() {
                             handleDuplicate(member as any)
                           }}
                         >
-                          <Copy className="h-4 w-4 mr-2" aria-hidden="true" />
+                          <Copy aria-hidden="true" className="h-4 w-4 mr-2" />
                           Duplicate
                         </DropdownMenuItem>
                         
@@ -420,7 +420,7 @@ export function MembersManagementTab() {
                               }}
                               disabled={member.role === "aviator"}
                             >
-                              <Shield className="h-4 w-4 mr-2" aria-hidden="true" />
+                              <Shield aria-hidden="true" className="h-4 w-4 mr-2" />
                               Make Aviator
                             </DropdownMenuItem>
                             <DropdownMenuItem
@@ -430,7 +430,7 @@ export function MembersManagementTab() {
                               }}
                               disabled={member.role === "raider"}
                             >
-                              <Users className="h-4 w-4 mr-2" aria-hidden="true" />
+                              <Users aria-hidden="true" className="h-4 w-4 mr-2" />
                               Make Raider
                             </DropdownMenuItem>
                             <DropdownMenuItem
@@ -440,7 +440,7 @@ export function MembersManagementTab() {
                               }}
                               disabled={member.role === "passenger"}
                             >
-                              <Users className="h-4 w-4 mr-2" aria-hidden="true" />
+                              <Users aria-hidden="true" className="h-4 w-4 mr-2" />
                               Make Passenger
                             </DropdownMenuItem>
                           </>

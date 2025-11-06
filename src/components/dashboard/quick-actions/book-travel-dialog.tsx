@@ -92,11 +92,11 @@ export function BookTravelDialog({ open, onOpenChange, workspaceId, userId, onSu
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
             <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-950">
-              <Plane className="h-5 w-5 text-blue-600" />
+              <Plane aria-hidden="true" className="h-5 w-5 text-blue-600" />
             </div>
             <div>
               <DialogTitle>Book Travel</DialogTitle>
@@ -158,11 +158,11 @@ export function BookTravelDialog({ open, onOpenChange, workspaceId, userId, onSu
                       !departureDate && "text-muted-foreground"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    <CalendarIcon aria-hidden="true" className="mr-2 h-4 w-4" />
                     {departureDate ? format(departureDate, "PPP") : <span>Pick date</span>}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
+                <PopoverContent aria-hidden="true" className="w-auto p-0">
                   <Calendar
                     mode="single"
                     selected={departureDate}
@@ -184,11 +184,11 @@ export function BookTravelDialog({ open, onOpenChange, workspaceId, userId, onSu
                       !returnDate && "text-muted-foreground"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    <CalendarIcon aria-hidden="true" className="mr-2 h-4 w-4" />
                     {returnDate ? format(returnDate, "PPP") : <span>Pick date</span>}
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0">
+                <PopoverContent aria-hidden="true" className="w-auto p-0">
                   <Calendar
                     mode="single"
                     selected={returnDate}

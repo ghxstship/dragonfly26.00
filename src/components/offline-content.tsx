@@ -14,10 +14,10 @@ export function OfflineContent() {
 
   return (
     <div className="flex flex-wrap items-center justify-center min-h-screen p-4 bg-muted/30">
-      <Card className="max-w-md w-full max-w-full">
-        <CardContent className="pt-12 pb-8 text-center">
+      <Card aria-hidden="true" className="max-w-md w-full max-w-full">
+        <CardContent aria-hidden="true" className="pt-12 pb-8 text-center">
           <div className="mx-auto w-16 h-16 rounded-full bg-muted flex flex-wrap items-center justify-center mb-6">
-            <WifiOff className="h-8 w-8 text-muted-foreground" />
+            <WifiOff aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
           </div>
           
           <h1 className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mb-3">You&apos;re Offline</h1>
@@ -29,7 +29,7 @@ export function OfflineContent() {
 
           <div className="space-y-3">
             <Button onClick={handleRetry} className="w-full max-w-full">
-              <RefreshCw className="h-4 w-4 mr-2" />
+              <RefreshCw aria-hidden="true" className="h-4 w-4 mr-2" />
               Try Again
             </Button>
             

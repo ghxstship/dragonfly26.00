@@ -63,7 +63,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -77,9 +77,9 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
       {/* Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Publications</CardTitle>
-            <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Publications</CardTitle>
+            <FileText aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{publications.length}</div>
@@ -88,9 +88,9 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Research Papers</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Research Papers</CardTitle>
+            <BookMarked aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-purple-600">
@@ -101,9 +101,9 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('whitepapers')}</CardTitle>
-            <FileText className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('whitepapers')}</CardTitle>
+            <FileText aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">
@@ -114,9 +114,9 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Case Studies</CardTitle>
-            <BookMarked className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Case Studies</CardTitle>
+            <BookMarked aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-orange-600">
@@ -129,7 +129,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+        <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           placeholder={t('searchPublications')}
           value={searchQuery as any}
@@ -146,14 +146,14 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
               <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                 <div className="flex items-start gap-3 flex-1">
                   <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-950">
-                    <FileText className="h-5 w-5 text-orange-600" aria-hidden="true" />
+                    <FileText aria-hidden="true" className="h-5 w-5 text-orange-600" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <CardTitle className="text-lg">{publication.name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{publication.name}</CardTitle>
                     <div className="flex flex-wrap gap-2 mt-2">
                       {publication.author && (
-                        <CardDescription className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <Users className="h-3 w-3" aria-hidden="true" />
+                        <CardDescription aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-1">
+                          <Users aria-hidden="true" className="h-3 w-3" />
                           {publication.author}
                         </CardDescription>
                       )}
@@ -161,8 +161,8 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
                         <CardDescription>• {publication.publisher}</CardDescription>
                       )}
                       {publication.published_date && (
-                        <CardDescription className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          • <Calendar className="h-3 w-3" aria-hidden="true" />
+                        <CardDescription aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-1">
+                          • <Calendar aria-hidden="true" className="h-3 w-3" />
                           {new Date(publication.published_date).toLocaleDateString()}
                         </CardDescription>
                       )}
@@ -171,13 +171,13 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
                 </div>
                 <div className="flex flex-wrap flex-col gap-2">
                   {publication.type && (
-                    <Badge className={getTypeColor(publication.type)}>
+                    <Badge aria-hidden="true" className={getTypeColor(publication.type)}>
                       {publication.type.replace('_', ' ')}
                     </Badge>
                   )}
                   {publication.is_featured && (
                     <Badge variant="secondary">
-                      <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                      <Star aria-hidden="true" className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" />
                       Featured
                     </Badge>
                   )}
@@ -185,7 +185,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
               </div>
             </CardHeader>
 
-            <CardContent className="space-y-4">
+            <CardContent aria-hidden="true" className="space-y-4">
               {publication.description && (
                 <p className="text-sm text-muted-foreground">
                   {publication.description}
@@ -224,13 +224,13 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
               )}
 
               <div className="flex flex-wrap gap-2 pt-2 border-t">
-                <Button className="flex-1" size="sm">
-                  <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
+                <Button aria-hidden="true" className="flex-1" size="sm">
+                  <ExternalLink aria-hidden="true" className="h-4 w-4 mr-2" />
                   View Publication
                 </Button>
                 {publication.downloadable && (
                   <Button variant="outline" size="sm">
-                    <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                     Download
                   </Button>
                 )}
@@ -242,7 +242,7 @@ export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: Tab
 
       {filteredPublications.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               variant="inline"
               icon={FileText}

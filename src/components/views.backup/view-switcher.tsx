@@ -55,14 +55,14 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
         <DropdownMenuTrigger asChild>
           <Button variant="outline" className="gap-2">
             <span>{currentViewDef?.name || "Select View"}</span>
-            <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            <ChevronDown aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" className="w-full sm:w-64 p-0">
           <div className="p-2 border-b sticky top-0 bg-background z-10">
-            <DropdownMenuLabel className="px-2 py-1.5">Switch View</DropdownMenuLabel>
+            <DropdownMenuLabel aria-hidden="true" className="px-2 py-1.5">Switch View</DropdownMenuLabel>
             <div className="relative mt-2">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder="Search views..."
                 value={searchQuery as any}
@@ -77,7 +77,7 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
               {/* Favorites */}
               {filteredFavoriteViews.length > 0 && (
                 <>
-                  <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
+                  <DropdownMenuLabel aria-hidden="true" className="text-xs text-muted-foreground px-2">
                     Favorites
                   </DropdownMenuLabel>
                   {filteredFavoriteViews.map((viewType: any) => {
@@ -89,7 +89,7 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
                         onClick={() => onViewChange(view.type)}
                         className="gap-2"
                       >
-                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <Star aria-hidden="true" className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                         {view.name}
                       </DropdownMenuItem>
                     )
@@ -101,7 +101,7 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
               {/* Core Views */}
               {groupedViews.core.length > 0 && (
                 <>
-                  <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
+                  <DropdownMenuLabel aria-hidden="true" className="text-xs text-muted-foreground px-2">
                     Core Views
                   </DropdownMenuLabel>
                   {groupedViews.core.map((view: any) => (
@@ -119,7 +119,7 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
               {groupedViews.advanced.length > 0 && (
                 <>
                   <DropdownMenuSeparator />
-                  <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
+                  <DropdownMenuLabel aria-hidden="true" className="text-xs text-muted-foreground px-2">
                     Advanced Views
                   </DropdownMenuLabel>
                   {groupedViews.advanced.map((view: any) => (
@@ -137,7 +137,7 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
               {groupedViews.specialized.length > 0 && (
                 <>
                   <DropdownMenuSeparator />
-                  <DropdownMenuLabel className="text-xs text-muted-foreground px-2">
+                  <DropdownMenuLabel aria-hidden="true" className="text-xs text-muted-foreground px-2">
                     Specialized Views
                   </DropdownMenuLabel>
                   {groupedViews.specialized.map((view: any) => (
@@ -159,8 +159,8 @@ export function ViewSwitcher({ currentView, onViewChange, moduleSlug }: ViewSwit
               )}
 
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="gap-2">
-                <Plus className="h-4 w-4" />
+              <DropdownMenuItem aria-hidden="true" className="gap-2">
+                <Plus aria-hidden="true" className="h-4 w-4" />
                 Create custom view
               </DropdownMenuItem>
             </div>

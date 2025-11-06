@@ -59,7 +59,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -74,9 +74,9 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
       {/* Summary Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Shows</CardTitle>
-            <MapPin className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Shows</CardTitle>
+            <MapPin aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalShows as any}</div>
@@ -87,9 +87,9 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Travel Days</CardTitle>
-            <Truck className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Travel Days</CardTitle>
+            <Truck aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalTravelDays as any}</div>
@@ -98,9 +98,9 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Budget</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Budget</CardTitle>
+            <DollarSign aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(totalBudget)}</div>
@@ -109,9 +109,9 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Progress</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Progress</CardTitle>
+            <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -146,21 +146,20 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                       isShow ? 'bg-primary' : 'bg-muted-foreground'
                     }`} />
                     
-                    <Card 
-                      className={`cursor-pointer transition-shadow hover:shadow-lg ${
+                    <Card aria-hidden="true" className={`cursor-pointer transition-shadow hover:shadow-lg ${
                         selectedStop?.id === stop.id ? 'border-primary border-2' : ''
                       }`}
                       onClick={() => setSelectedStop(stop)}
                     >
-                      <CardContent className="pt-6">
+                      <CardContent aria-hidden="true" className="pt-6">
                         <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                           <div className="flex-1">
                             {/* Header */}
                             <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-3">
                               {isShow ? (
-                                <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
+                                <MapPin aria-hidden="true" className="h-4 w-4 text-primary" />
                               ) : (
-                                <Truck className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                                <Truck aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                               )}
                               <div>
                                 <h3 className="font-semibold text-lg">{stop.city}, {stop.state || stop.country}</h3>
@@ -171,41 +170,41 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
                             {/* Details Grid */}
                             <div className="grid gap-3 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                                <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                                <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                                 <span>{formatDate(stop.date)}</span>
                               </div>
                               
                               {stop.load_in_time && (
                                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                                  <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                                  <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                                   <span>{t('loadIn')}: {stop.load_in_time}</span>
                                 </div>
                               )}
                               
                               {stop.capacity && (
                                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                                  <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                                  <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                                   <span>{t('capacity')}: {stop.capacity.toLocaleString()}</span>
                                 </div>
                               )}
                               
                               {stop.distance_from_previous && (
                                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                                  <Navigation className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                                  <Navigation aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                                   <span>{stop.distance_from_previous} {t('miles')}</span>
                                 </div>
                               )}
                               
                               {stop.hotel && (
                                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                                  <Hotel className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                                  <Hotel aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                                   <span>{stop.hotel}</span>
                                 </div>
                               )}
                               
                               {stop.budget && (
                                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                                  <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                                  <DollarSign aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                                   <span>{formatCurrency(stop.budget)}</span>
                                 </div>
                               )}
@@ -213,7 +212,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
 
                             {/* Tags and Status */}
                             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-3">
-                              <Badge className={getStatusColor(stop.status)}>
+                              <Badge aria-hidden="true" className={getStatusColor(stop.status)}>
                                 {stop.status}
                               </Badge>
                               {isShow && (
@@ -252,7 +251,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
 
       {/* Selected Stop Details */}
       {selectedStop && (
-        <Card className="border-primary">
+        <Card aria-hidden="true" className="border-primary">
           <CardHeader>
             <CardTitle>{t('stopDetails')}: {selectedStop.city}</CardTitle>
           </CardHeader>
@@ -301,7 +300,7 @@ export function EventsToursTab({ workspaceId, moduleId, tabSlug }: TabComponentP
 
       {tourStops.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               variant="inline"
               icon={MapPin}

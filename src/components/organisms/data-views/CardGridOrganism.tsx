@@ -62,7 +62,7 @@ export function CardGridOrganism({
     : data
 
   return (
-    <Card className={className}>
+    <Card aria-hidden="true" className={className}>
       {(title || searchable) && (
         <CardHeader>
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 md:gap-3 lg:gap-4">
@@ -95,7 +95,7 @@ export function CardGridOrganism({
                   "border rounded-lg p-4 transition-colors",
                   onCardClick && "cursor-pointer hover:bg-accent"
                 )}
-                onClick={() => onCardClick?.(item)}
+                 role="button" tabIndex={0} onClick={() => onCardClick?.(item)}
               >
                 {renderCard(item)}
               </div>

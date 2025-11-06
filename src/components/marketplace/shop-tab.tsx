@@ -108,11 +108,11 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
       {/* Filters and Search */}
       <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input placeholder={t('searchProducts')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('category')} />
           </SelectTrigger>
           <SelectContent>
@@ -124,7 +124,7 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
           </SelectContent>
         </Select>
         <Select defaultValue="featured">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
@@ -136,7 +136,7 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
           </SelectContent>
         </Select>
         <Button variant="outline">
-          <Filter className="h-4 w-4 mr-2" aria-hidden="true" />
+          <Filter aria-hidden="true" className="h-4 w-4 mr-2" />
           Filters
         </Button>
       </div>
@@ -147,7 +147,7 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
           <Card key={item.id} className="group overflow-hidden md:block hover:shadow-lg transition-shadow">
             {/* Product Image */}
             <div className="relative aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex flex-wrap items-center justify-center">
-              <Package className="h-20 w-20 text-muted-foreground/30" aria-hidden="true" />
+              <Package aria-hidden="true" className="h-20 w-20 text-muted-foreground/30" />
               
               {/* Quick Actions */}
               <div className="absolute sm:relative sm:inset-auto top-2 md:top-2 right-2 md:right-2 flex flex-wrap flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -157,8 +157,7 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
                   className="h-8 w-8"
                   onClick={() => toggleFavorite(item.id)}
                 >
-                  <Heart
-                    className={`h-4 w-4 ${
+                  <Heart aria-hidden="true" className={`h-4 w-4 ${
                       favorites.has(item.id) ? "fill-red-500 text-red-500" : ""
                     }`}
                   />
@@ -167,13 +166,13 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
 
               {/* Status Badge */}
               {item.priority === "featured" && (
-                <Badge className="absolute sm:relative sm:inset-auto top-2 left-2 bg-purple-600 sm:relative sm:inset-auto">
+                <Badge aria-hidden="true" className="absolute sm:relative sm:inset-auto top-2 left-2 bg-purple-600 sm:relative sm:inset-auto">
                   Featured
                 </Badge>
               )}
             </div>
 
-            <CardHeader className="p-4">
+            <CardHeader aria-hidden="true" className="p-4">
               <div className="space-y-2">
                 <div className="flex items-start justify-between gap-2">
                   <p className="font-semibold line-clamp-2 text-sm">{item.name}</p>
@@ -183,7 +182,7 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
               </div>
             </CardHeader>
 
-            <CardContent className="p-4 pt-0 space-y-3">
+            <CardContent aria-hidden="true" className="p-4 pt-0 space-y-3">
               {/* Rating */}
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <div className="flex flex-wrap items-center">
@@ -214,12 +213,11 @@ export function ShopTab({ data = [], loading: loadingProp = false }: ShopTabProp
               </div>
             </CardContent>
 
-            <CardFooter className="p-4 pt-0 gap-2">
-              <Button
-                className="flex-1"
+            <CardFooter aria-hidden="true" className="p-4 pt-0 gap-2">
+              <Button aria-hidden="true" className="flex-1"
                 onClick={() => addToCart(item.id)}
               >
-                <ShoppingCart className="h-4 w-4 mr-2" aria-hidden="true" />{tCommon('add')}</Button>
+                <ShoppingCart aria-hidden="true" className="h-4 w-4 mr-2" />{tCommon('add')}</Button>
               <Button variant="outline" onClick={() => handleViewDetails(item)}>{tCommon('details')}</Button>
             </CardFooter>
           </Card>

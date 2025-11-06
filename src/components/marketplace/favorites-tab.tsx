@@ -37,9 +37,9 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
   const getAvailabilityBadge = (status: string) => {
     switch (status) {
       case "available":
-        return <Badge className="bg-green-600">{t('available')}</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600">{t('available')}</Badge>
       case "low-stock":
-        return <Badge className="bg-yellow-600">Low Stock</Badge>
+        return <Badge aria-hidden="true" className="bg-yellow-600">Low Stock</Badge>
       case "watchlist":
         return <Badge variant="outline">On Watchlist</Badge>
       default:
@@ -61,12 +61,12 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
                 className="absolute sm:relative sm:inset-auto top-2 md:top-2 right-2 md:right-2 h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity z-10"
                 onClick={() => removeFavorite(item.id)}
               >
-                <X className="h-4 w-4" aria-hidden="true" />
+                <X aria-hidden="true" className="h-4 w-4" />
               </Button>
 
               {/* Product Image */}
               <div className="relative aspect-square bg-gradient-to-br from-pink-500/10 to-red-500/10 flex flex-wrap items-center justify-center">
-                <Package className="h-20 w-20 text-muted-foreground/30" aria-hidden="true" />
+                <Package aria-hidden="true" className="h-20 w-20 text-muted-foreground/30" />
                 
                 {/* Status Badge */}
                 <div className="absolute sm:relative sm:inset-auto top-2 left-2 sm:relative sm:inset-auto">
@@ -74,14 +74,14 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
                 </div>
               </div>
 
-              <CardHeader className="p-4">
+              <CardHeader aria-hidden="true" className="p-4">
                 <div className="space-y-2">
                   <p className="font-semibold line-clamp-2">{item.name}</p>
                   <p className="text-xs text-muted-foreground">by {item.assignee_name}</p>
                 </div>
               </CardHeader>
 
-              <CardContent className="p-4 pt-0 space-y-3">
+              <CardContent aria-hidden="true" className="p-4 pt-0 space-y-3">
                 {/* Rating */}
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <div className="flex flex-wrap items-center">
@@ -108,22 +108,22 @@ export function FavoritesTab({ data = [], loading: loadingProp = false }: Favori
                 </p>
               </CardContent>
 
-              <CardFooter className="p-4 pt-0 gap-2">
-                <Button className="flex-1">
-                  <ShoppingCart className="h-4 w-4 mr-2" aria-hidden="true" />
+              <CardFooter aria-hidden="true" className="p-4 pt-0 gap-2">
+                <Button aria-hidden="true" className="flex-1">
+                  <ShoppingCart aria-hidden="true" className="h-4 w-4 mr-2" />
                   Add to Cart
                 </Button>
                 <Button variant="outline" size="icon" aria-label={t('view')}>
-                  <Eye className="h-4 w-4" aria-hidden="true" />
+                  <Eye aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </CardFooter>
             </Card>
           ))}
         </div>
       ) : (
-        <Card className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12">
+        <Card aria-hidden="true" className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12">
           <div className="text-center space-y-4">
-            <Heart className="h-16 w-16 mx-auto text-muted-foreground/30" aria-hidden="true" />
+            <Heart aria-hidden="true" className="h-16 w-16 mx-auto text-muted-foreground/30" />
             <div>
               <h3 className="text-base md:text-lg lg:text-xl font-semibold">No favorites yet</h3>
               <p className="text-muted-foreground mt-2">

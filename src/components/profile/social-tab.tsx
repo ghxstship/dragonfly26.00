@@ -84,7 +84,7 @@ export function SocialMediaTab() {
             {t('profile.social.visibility')}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
+        <CardContent aria-hidden="true" className="space-y-3 md:space-y-4 lg:space-y-6">
           {platforms.map((platform: any) => (
             <div key={platform.key} className="space-y-2">
               <Label htmlFor={platform.key}>{platform.label}</Label>

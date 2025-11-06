@@ -114,7 +114,7 @@ export function ReviewForm({
   if (submitted) {
     return (
       <Dialog open={open} onOpenChange={handleClose}>
-        <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
+        <DialogContent aria-hidden="true" className="sm:max-w-md max-h-[90vh] overflow-y-auto">
           <div className="flex flex-wrap flex-col items-center justify-center py-4 md:py-6 lg:py-8 text-center">
             <div className="h-16 w-16 rounded-full bg-green-500/10 flex flex-wrap items-center justify-center mb-4">
               <CheckCircle2 className="h-8 w-8 text-green-600 flex-shrink-0" />
@@ -131,7 +131,7 @@ export function ReviewForm({
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Write a Review</DialogTitle>
           <DialogDescription>
@@ -158,8 +158,7 @@ export function ReviewForm({
                   onMouseLeave={() => setHoverRating(0)}
                   className="transition-transform hover:scale-110"
                 >
-                  <Star
-                    className={cn(
+                  <Star aria-hidden="true" className={cn(
                       "h-8 w-8 transition-colors",
                       (hoverRating || rating) >= star
                         ? "fill-yellow-500 text-yellow-500"
@@ -234,21 +233,21 @@ export function ReviewForm({
                     onClick={() => removePhoto(index)}
                     className="absolute sm:relative sm:inset-auto -top-2 md:top-2 -right-2 md:right-2 h-6 w-6 rounded-full bg-red-500 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                   >
-                    <X className="h-4 w-4" />
+                    <X aria-hidden="true" className="h-4 w-4" />
                   </button>
                 </div>
               ))}
 
               {photos.length < 5 && (
                 <label className="h-20 w-20 border-2 border-dashed border-muted-foreground/25 rounded-lg flex flex-wrap items-center justify-center cursor-pointer hover:border-muted-foreground/50 transition-colors">
-                  <Upload className="h-6 w-6 text-muted-foreground/50" />
+                  <Upload aria-hidden="true" className="h-6 w-6 text-muted-foreground/50" />
                   <input
                     type="file"
                     accept="image/*"
                     multiple
                     className="hidden md:block"
                     onChange={handlePhotoUpload}
-                  />
+                   aria-label="file" />
                 </label>
               )}
             </div>

@@ -108,7 +108,7 @@ export default function TypographyTab(): JSX.Element {
   if (!canUpdate) {
     return (
       <div className="flex flex-col items-center justify-center p-8 text-center">
-        <Type className="h-12 w-12 text-muted-foreground mb-4" aria-hidden="true" />
+        <Type aria-hidden="true" className="h-12 w-12 text-muted-foreground mb-4" />
         <h3 className="text-lg font-semibold mb-2">{t('noPermission.title')}</h3>
         <p className="text-muted-foreground max-w-md">
           {t('noPermission.description')}
@@ -129,7 +129,7 @@ export default function TypographyTab(): JSX.Element {
       </div>
 
       {/* Font Selection */}
-      <Card className="p-6">
+      <Card aria-hidden="true" className="p-6">
         <div className="space-y-6">
           <div>
             <h4 className="font-medium mb-4">{t('fontSelection.title')}</h4>
@@ -172,7 +172,7 @@ export default function TypographyTab(): JSX.Element {
       </Card>
 
       {/* Font Weights */}
-      <Card className="p-6">
+      <Card aria-hidden="true" className="p-6">
         <div className="space-y-4">
           <h4 className="font-medium">{t('fontWeights.title')}</h4>
           
@@ -204,7 +204,7 @@ export default function TypographyTab(): JSX.Element {
       </Card>
 
       {/* Preview */}
-      <Card className="p-6">
+      <Card aria-hidden="true" className="p-6">
         <div className="space-y-4">
           <h4 className="font-medium">{t('preview.title')}</h4>
           
@@ -259,7 +259,7 @@ export default function TypographyTab(): JSX.Element {
             onClick={handleReset}
             disabled={isUpdating}
           >
-            <RotateCcw className="h-4 w-4 mr-2" aria-hidden="true" />
+            <RotateCcw aria-hidden="true" className="h-4 w-4 mr-2" />
             {t('actions.resetToDefaults')}
           </Button>
           
@@ -278,7 +278,7 @@ export default function TypographyTab(): JSX.Element {
           onClick={handleSave}
           disabled={!hasChanges || isUpdating}
         >
-          <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+          <Save aria-hidden="true" className="h-4 w-4 mr-2" />
           {isUpdating ? t('actions.saving') : t('actions.save')}
         </Button>
       </div>

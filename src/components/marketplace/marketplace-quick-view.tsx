@@ -78,7 +78,7 @@ export function QuickView({
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl px-4 sm:px-6 lg:px-8 max-h-[90vh] p-0">
+      <DialogContent aria-hidden="true" className="max-w-4xl px-4 sm:px-6 lg:px-8 max-h-[90vh] p-0">
         <div className="grid md:grid-cols-1 md:grid-cols-2 gap-0">
           {/* Left: Images */}
           <div className="bg-muted/30 p-4 sm:p-6">
@@ -92,7 +92,7 @@ export function QuickView({
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               ) : (
-                <Package className="h-32 w-32 text-muted-foreground/30" />
+                <Package aria-hidden="true" className="h-32 w-32 text-muted-foreground/30" />
               )}
             </div>
 
@@ -112,7 +112,7 @@ export function QuickView({
                         <Image src={img} alt="" fill className="object-cover rounded-lg" sizes="64px" />
                       </div>
                     ) : (
-                      <Package className="h-8 w-8 text-muted-foreground/30" />
+                      <Package aria-hidden="true" className="h-8 w-8 text-muted-foreground/30" />
                     )}
                   </button>
                 ))}
@@ -121,7 +121,7 @@ export function QuickView({
           </div>
 
           {/* Right: Details */}
-          <ScrollArea className="max-h-[90vh]">
+          <ScrollArea aria-hidden="true" className="max-h-[90vh]">
             <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
               {/* Header */}
               <div className="space-y-3">
@@ -239,7 +239,7 @@ export function QuickView({
                     className="h-8 w-8"
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   >
-                    <Minus className="h-3 w-3" />
+                    <Minus aria-hidden="true" className="h-3 w-3" />
                   </Button>
                   <span className="w-12 text-center font-medium">{quantity}</span>
                   <Button
@@ -248,19 +248,18 @@ export function QuickView({
                     className="h-8 w-8"
                     onClick={() => setQuantity(quantity + 1)}
                   >
-                    <Plus className="h-3 w-3" />
+                    <Plus aria-hidden="true" className="h-3 w-3" />
                   </Button>
                 </div>
               </div>
 
               {/* Actions */}
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button 
-                  className="flex-1"
+                <Button aria-hidden="true" className="flex-1"
                   size="lg"
                   onClick={handleAddToCart}
                 >
-                  <ShoppingCart className="h-4 w-4 mr-2" />
+                  <ShoppingCart aria-hidden="true" className="h-4 w-4 mr-2" />
                   Add to Cart
                 </Button>
                 <Button
@@ -268,7 +267,7 @@ export function QuickView({
                   size="lg"
                   onClick={handleViewFullDetails}
                 >
-                  <Eye className="h-4 w-4 mr-2" />
+                  <Eye aria-hidden="true" className="h-4 w-4 mr-2" />
                   Full Details
                 </Button>
               </div>

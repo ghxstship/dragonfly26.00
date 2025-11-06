@@ -48,7 +48,7 @@ export function AdminPageContent() {
       {/* Content */}
       <div className="flex-1 overflow-auto p-4 sm:p-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-3 md:space-y-4 lg:space-y-6">
-          <TabsList className="inline-flex h-auto flex-wrap justify-start gap-1 bg-muted p-1 rounded-lg">
+          <TabsList aria-hidden="true" className="inline-flex h-auto flex-wrap justify-start gap-1 bg-muted p-1 rounded-lg">
             {adminTabs.map((tab: any) => {
               const Icon = iconMap[tab.icon]
               return (

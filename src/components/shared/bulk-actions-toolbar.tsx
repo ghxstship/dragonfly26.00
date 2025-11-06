@@ -49,7 +49,7 @@ export function BulkActionsToolbar({
           className="h-8 w-8 text-primary-foreground hover:bg-primary-foreground/20"
           onClick={onDuplicate}
         >
-          <Copy className="h-4 w-4" />
+          <Copy aria-hidden="true" className="h-4 w-4" />
         </Button>
 
         <Button
@@ -58,7 +58,7 @@ export function BulkActionsToolbar({
           className="h-8 w-8 text-primary-foreground hover:bg-primary-foreground/20"
           onClick={onArchive}
         >
-          <Archive className="h-4 w-4" />
+          <Archive aria-hidden="true" className="h-4 w-4" />
         </Button>
 
         <Button
@@ -83,37 +83,37 @@ export function BulkActionsToolbar({
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuItem onClick={onEdit}>
-              <Edit className="h-4 w-4 mr-2" />
+              <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
               Bulk edit
             </DropdownMenuItem>
             {onAssign && (
               <DropdownMenuItem onClick={onAssign}>
-                <UserPlus className="h-4 w-4 mr-2" />
+                <UserPlus aria-hidden="true" className="h-4 w-4 mr-2" />
                 Assign to
               </DropdownMenuItem>
             )}
             {onSetDueDate && (
               <DropdownMenuItem onClick={onSetDueDate}>
-                <Calendar className="h-4 w-4 mr-2" />
+                <Calendar aria-hidden="true" className="h-4 w-4 mr-2" />
                 Set due date
               </DropdownMenuItem>
             )}
             {onAddTags && (
               <DropdownMenuItem onClick={onAddTags}>
-                <Tag className="h-4 w-4 mr-2" />
+                <Tag aria-hidden="true" className="h-4 w-4 mr-2" />
                 Add tags
               </DropdownMenuItem>
             )}
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={onDuplicate}>
-              <Copy className="h-4 w-4 mr-2" />
+              <Copy aria-hidden="true" className="h-4 w-4 mr-2" />
               Duplicate
             </DropdownMenuItem>
             <DropdownMenuItem onClick={onArchive}>
-              <Archive className="h-4 w-4 mr-2" />
+              <Archive aria-hidden="true" className="h-4 w-4 mr-2" />
               Archive
             </DropdownMenuItem>
-            <DropdownMenuItem className="text-destructive" onClick={onDelete}>
+            <DropdownMenuItem aria-hidden="true" className="text-destructive" onClick={onDelete}>
               <Trash2 className="h-4 w-4 mr-2" />
               Delete
             </DropdownMenuItem>
@@ -129,7 +129,7 @@ export function BulkActionsToolbar({
           className="h-8 w-8 text-primary-foreground hover:bg-primary-foreground/20"
           onClick={onClearSelection}
         >
-          <X className="h-4 w-4" />
+          <X aria-hidden="true" className="h-4 w-4" />
         </Button>
       </div>
     </div>

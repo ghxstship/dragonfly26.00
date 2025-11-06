@@ -123,11 +123,11 @@ export function PointsFeed({
 
   if (loading) {
     return (
-      <Card className={className}>
-        <CardHeader className={compact ? "pb-3" : ""}>
-          <CardTitle className="text-lg">Recent Activity</CardTitle>
+      <Card aria-hidden="true" className={className}>
+        <CardHeader aria-hidden="true" className={compact ? "pb-3" : ""}>
+          <CardTitle aria-hidden="true" className="text-lg">Recent Activity</CardTitle>
         </CardHeader>
-        <CardContent className={compact ? "pt-0" : ""}>
+        <CardContent aria-hidden="true" className={compact ? "pt-0" : ""}>
           <div className="space-y-3">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="flex items-start gap-3 animate-pulse">
@@ -145,15 +145,15 @@ export function PointsFeed({
   }
 
   return (
-    <Card className={className}>
-      <CardHeader className={compact ? "pb-3" : ""}>
-        <CardTitle className="text-lg flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Zap className="h-5 w-5" />
+    <Card aria-hidden="true" className={className}>
+      <CardHeader aria-hidden="true" className={compact ? "pb-3" : ""}>
+        <CardTitle aria-hidden="true" className="text-lg flex flex-wrap flex-col md:flex-row items-center gap-2">
+          <Zap aria-hidden="true" className="h-5 w-5" />
           Recent Activity
         </CardTitle>
       </CardHeader>
-      <CardContent className={compact ? "pt-0" : ""}>
-        <ScrollArea className={compact ? "h-64" : "h-96"}>
+      <CardContent aria-hidden="true" className={compact ? "pt-0" : ""}>
+        <ScrollArea aria-hidden="true" className={compact ? "h-64" : "h-96"}>
           <div className="space-y-3 pr-4">
             {transactions.map((transaction: any) => {
               const actionInfo = getActionInfo(transaction.action_type)
@@ -170,7 +170,7 @@ export function PointsFeed({
                     "p-2 rounded-full",
                     isPositive ? "bg-green-100 dark:bg-green-900/20" : "bg-red-100 dark:bg-red-900/20"
                   )}>
-                    <Icon className={cn("h-4 w-4", actionInfo.color)} />
+                    <Icon aria-hidden="true" className={cn("h-4 w-4", actionInfo.color)} />
                   </div>
 
                   {/* Content */}
@@ -196,7 +196,7 @@ export function PointsFeed({
 
             {transactions.length === 0 && (
               <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
-                <Zap className="h-12 w-12 mx-auto mb-2 opacity-20" />
+                <Zap aria-hidden="true" className="h-12 w-12 mx-auto mb-2 opacity-20" />
                 <p className="text-sm">No activity yet</p>
                 <p className="text-xs">Start engaging to earn points!</p>
               </div>

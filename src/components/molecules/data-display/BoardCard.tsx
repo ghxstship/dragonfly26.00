@@ -60,7 +60,7 @@ export function BoardCard({ item, schema, onClick, isDragging }: BoardCardProps)
         "group bg-background border rounded-lg p-3 cursor-pointer hover:border-primary/50 transition-colors",
         (isDragging || isSortableDragging) && "opacity-50"
       )}
-      onClick={onClick}
+       role="button" tabIndex={0} onClick={onClick}
     >
       <div className="flex items-start gap-2">
         <div
@@ -68,7 +68,7 @@ export function BoardCard({ item, schema, onClick, isDragging }: BoardCardProps)
           {...listeners}
           className="opacity-0 group-hover:opacity-100 cursor-grab active:cursor-grabbing"
         >
-          <GripVertical className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
         </div>
         
         <div className="flex-1 min-w-0 space-y-2">
@@ -103,13 +103,13 @@ export function BoardCard({ item, schema, onClick, isDragging }: BoardCardProps)
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
               {item.comments_count && (
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                  <MessageSquare className="h-3 w-3" aria-hidden="true" />
+                  <MessageSquare aria-hidden="true" className="h-3 w-3" />
                   <span>{item.comments_count}</span>
                 </div>
               )}
               {item.attachments_count && (
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                  <Paperclip className="h-3 w-3" aria-hidden="true" />
+                  <Paperclip aria-hidden="true" className="h-3 w-3" />
                   <span>{item.attachments_count}</span>
                 </div>
               )}
@@ -117,9 +117,9 @@ export function BoardCard({ item, schema, onClick, isDragging }: BoardCardProps)
 
             {/* Assignee */}
             {getAssigneeValue(item, schema) && (
-              <Avatar className="h-6 w-6">
+              <Avatar aria-hidden="true" className="h-6 w-6">
                 <AvatarImage src={item.assignee_avatar} />
-                <AvatarFallback className="text-xs">
+                <AvatarFallback aria-hidden="true" className="text-xs">
                   {getInitials(getAssigneeValue(item, schema)!)}
                 </AvatarFallback>
               </Avatar>

@@ -78,9 +78,9 @@ export function UserInfo({
         onClick && 'cursor-pointer hover:opacity-80 transition-opacity',
         className
       )}
-      onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
+      onClick={onClick}
     >
       <UserAvatar
         name={name}

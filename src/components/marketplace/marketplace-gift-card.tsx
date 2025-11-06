@@ -154,7 +154,7 @@ export function GiftCardInput({
         <div className="space-y-2">
           <div className="flex flex-wrap gap-2">
             <div className="relative flex-1">
-              <Gift className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+              <Gift aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('marketplace.giftCard.placeholder')}
                 value={code as any}
@@ -175,8 +175,8 @@ export function GiftCardInput({
 
           {error && (
             <Alert variant="destructive" className="py-2">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription className="text-sm">{error}</AlertDescription>
+              <AlertCircle aria-hidden="true" className="h-4 w-4" />
+              <AlertDescription aria-hidden="true" className="text-sm">{error}</AlertDescription>
             </Alert>
           )}
 
@@ -185,16 +185,16 @@ export function GiftCardInput({
           </p>
         </div>
       ) : (
-        <Card className="border-purple-200 dark:border-purple-900 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30">
-          <CardHeader className="pb-3">
+        <Card aria-hidden="true" className="border-purple-200 dark:border-purple-900 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30">
+          <CardHeader aria-hidden="true" className="pb-3">
             <div className="flex items-start justify-between">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                 <div className="h-10 w-10 rounded-full bg-purple-500/10 flex flex-wrap items-center justify-center">
-                  <Gift className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                  <Gift aria-hidden="true" className="h-5 w-5 text-purple-600 dark:text-purple-400" />
                 </div>
                 <div>
-                  <CardTitle className="text-base">Gift Card Applied</CardTitle>
-                  <CardDescription className="text-xs font-mono">
+                  <CardTitle aria-hidden="true" className="text-base">Gift Card Applied</CardTitle>
+                  <CardDescription aria-hidden="true" className="text-xs font-mono">
                     {appliedGiftCard.code}
                   </CardDescription>
                 </div>
@@ -209,7 +209,7 @@ export function GiftCardInput({
               </Button>
             </div>
           </CardHeader>
-          <CardContent className="space-y-3">
+          <CardContent aria-hidden="true" className="space-y-3">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
               <span className="text-muted-foreground">Gift card balance:</span>
               <span className="font-semibold">
@@ -247,8 +247,8 @@ export function GiftCardBalance({ giftCards }: { giftCards: GiftCard[] }) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Gift className="h-5 w-5" />
+          <CardTitle aria-hidden="true" className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Gift aria-hidden="true" className="h-5 w-5" />
             Gift Cards
           </CardTitle>
         </CardHeader>
@@ -264,8 +264,8 @@ export function GiftCardBalance({ giftCards }: { giftCards: GiftCard[] }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Gift className="h-5 w-5" />
+        <CardTitle aria-hidden="true" className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
+          <Gift aria-hidden="true" className="h-5 w-5" />
           Gift Cards
         </CardTitle>
         <CardDescription>

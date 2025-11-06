@@ -105,7 +105,7 @@ export function DashboardView({ data, schema }: DashboardViewProps) {
               <span className="text-sm font-medium text-muted-foreground">
                 {widget.title}
               </span>
-              <Icon className="h-4 w-4 text-muted-foreground" />
+              <Icon aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </div>
             <div>
               <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{widget.data.value}</div>
@@ -134,7 +134,7 @@ export function DashboardView({ data, schema }: DashboardViewProps) {
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <h2 className="text-base md:text-lg lg:text-xl font-semibold">Dashboard</h2>
         <Button size="sm" className="gap-2">
-          <Plus className="h-4 w-4" />
+          <Plus aria-hidden="true" className="h-4 w-4" />
           Add Widget
         </Button>
       </div>
@@ -159,13 +159,13 @@ export function DashboardView({ data, schema }: DashboardViewProps) {
                   size="icon"
                   className="absolute sm:relative sm:inset-auto top-2 md:top-2 right-2 md:right-2 opacity-0 group-hover:opacity-100 transition-opacity h-6 w-6"
                 >
-                  <MoreHorizontal className="h-4 w-4" />
+                  <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem>Edit</DropdownMenuItem>
                 <DropdownMenuItem>Duplicate</DropdownMenuItem>
-                <DropdownMenuItem className="text-destructive">
+                <DropdownMenuItem aria-hidden="true" className="text-destructive">
                   Delete
                 </DropdownMenuItem>
               </DropdownMenuContent>

@@ -63,7 +63,7 @@ export function OrganizationSettingsTab() {
             Enable or disable features for your entire organization
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="space-y-0.5">
               <Label>Multiple Assignees</Label>
@@ -164,7 +164,7 @@ export function OrganizationSettingsTab() {
             Set maximum limits for various features
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid gap-2">
             <Label>Max Assignees per Item</Label>
             <Input
@@ -229,7 +229,7 @@ export function OrganizationSettingsTab() {
             Configure default behaviors for your organization
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid gap-2">
             <Label>Default Assignee Behavior</Label>
             <Select

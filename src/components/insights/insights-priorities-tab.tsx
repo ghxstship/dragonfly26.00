@@ -90,41 +90,41 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Priority Matrix */}
       <Card>
-        <CardContent className="p-4 sm:p-6">
+        <CardContent aria-hidden="true" className="p-4 sm:p-6">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 md:gap-3 lg:gap-4 lg:gap-6">
             <div>
               <h3 className="font-semibold mb-3">{t('impactVsEffortMatrix')}</h3>
               <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 h-48 md:h-56 lg:h-64">
                 <div className="border-2 border-green-200 bg-green-50 rounded-lg p-3 flex flex-wrap flex-col">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs font-medium text-green-800 mb-2">
-                    <ArrowUp className="h-3 w-3" aria-hidden="true" />
+                    <ArrowUp aria-hidden="true" className="h-3 w-3" />
                     High Impact, Low Effort
                   </div>
                   <div className="flex-1 flex flex-wrap items-center justify-center">
-                    <Badge className="bg-green-600">Quick Wins: 1</Badge>
+                    <Badge aria-hidden="true" className="bg-green-600">Quick Wins: 1</Badge>
                   </div>
                 </div>
                 <div className="border-2 border-blue-200 bg-blue-50 rounded-lg p-3 flex flex-wrap flex-col">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs font-medium text-blue-800 mb-2">
-                    <ArrowUp className="h-3 w-3" aria-hidden="true" />
+                    <ArrowUp aria-hidden="true" className="h-3 w-3" />
                     High Impact, High Effort
                   </div>
                   <div className="flex-1 flex flex-wrap items-center justify-center">
-                    <Badge className="bg-blue-600">Strategic: 2</Badge>
+                    <Badge aria-hidden="true" className="bg-blue-600">Strategic: 2</Badge>
                   </div>
                 </div>
                 <div className="border-2 border-yellow-200 bg-yellow-50 rounded-lg p-3 flex flex-wrap flex-col">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs font-medium text-yellow-800 mb-2">
-                    <ArrowRight className="h-3 w-3" aria-hidden="true" />
+                    <ArrowRight aria-hidden="true" className="h-3 w-3" />
                     Medium Impact, Low Effort
                   </div>
                   <div className="flex-1 flex flex-wrap items-center justify-center">
-                    <Badge className="bg-yellow-600">Fill-ins: 0</Badge>
+                    <Badge aria-hidden="true" className="bg-yellow-600">Fill-ins: 0</Badge>
                   </div>
                 </div>
                 <div className="border-2 border-gray-200 bg-gray-50 rounded-lg p-3 flex flex-wrap flex-col">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-xs font-medium text-gray-800 mb-2">
-                    <ArrowDown className="h-3 w-3" aria-hidden="true" />
+                    <ArrowDown aria-hidden="true" className="h-3 w-3" />
                     Medium Impact, High Effort
                   </div>
                   <div className="flex-1 flex flex-wrap items-center justify-center">
@@ -161,7 +161,7 @@ export function InsightsPrioritiesTab({ data = [], loading = false }: InsightsPr
       <div className="space-y-3">
         {priorities.map((priority: any) => (
           <Card key={priority.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-4 sm:p-6">
+            <CardContent aria-hidden="true" className="p-4 sm:p-6">
               <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
                 <div className="flex flex-wrap items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 font-bold text-base md:text-lg lg:text-xl flex-shrink-0">
                   {priority.rank}

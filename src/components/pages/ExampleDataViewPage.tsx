@@ -174,7 +174,7 @@ export function ExampleDataViewPage() {
           {
             id: 'table',
             label: 'Table',
-            icon: <Table className="h-4 w-4" aria-hidden="true" />,
+            icon: <Table aria-hidden="true" className="h-4 w-4" />,
             content: (
               <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-muted-foreground">
                 Table view would use EnhancedTableView component here
@@ -184,7 +184,7 @@ export function ExampleDataViewPage() {
           {
             id: 'board',
             label: 'Board',
-            icon: <Kanban className="h-4 w-4" aria-hidden="true" />,
+            icon: <Kanban aria-hidden="true" className="h-4 w-4" />,
             content: (
               <BoardViewOrganism
                 data={filteredData}
@@ -197,7 +197,7 @@ export function ExampleDataViewPage() {
           {
             id: 'list',
             label: 'List',
-            icon: <List className="h-4 w-4" aria-hidden="true" />,
+            icon: <List aria-hidden="true" className="h-4 w-4" />,
             content: (
               <ListViewOrganism
                 data={filteredData}
@@ -226,7 +226,7 @@ export function ExampleDataViewPage() {
               onClick={handleBulkExport}
               className="gap-2"
             >
-              <Download className="h-4 w-4" aria-hidden="true" />
+              <Download aria-hidden="true" className="h-4 w-4" />
               Export
             </Button>
             <Button 

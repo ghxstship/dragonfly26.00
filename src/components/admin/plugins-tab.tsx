@@ -158,7 +158,7 @@ export function PluginsTab() {
             <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{plugin.icon}</div>
             <div className="flex-1">
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
-                <CardTitle className="text-base">{plugin.name}</CardTitle>
+                <CardTitle aria-hidden="true" className="text-base">{plugin.name}</CardTitle>
                 {plugin.installed && (
                   <Badge variant="default">
                     <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />
@@ -166,19 +166,19 @@ export function PluginsTab() {
                   </Badge>
                 )}
               </div>
-              <CardDescription className="text-sm">{plugin.description}</CardDescription>
+              <CardDescription aria-hidden="true" className="text-sm">{plugin.description}</CardDescription>
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mt-2 text-xs text-muted-foreground">
                 <span>by {plugin.author}</span>
                 <span>•</span>
                 <span>v{plugin.version}</span>
                 <span>•</span>
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                  <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                  <Star aria-hidden="true" className="h-3 w-3 fill-yellow-400 text-yellow-400" />
                   <span>{plugin.rating}</span>
                 </div>
                 <span>•</span>
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                  <Download className="h-3 w-3" aria-hidden="true" />
+                  <Download aria-hidden="true" className="h-3 w-3" />
                   <span>{plugin.downloads.toLocaleString()}</span>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export function PluginsTab() {
           {plugin.installed ? (
             <>
               <Button variant="outline" size="sm">
-                <Settings className="h-4 w-4 mr-2" aria-hidden="true" />
+                <Settings aria-hidden="true" className="h-4 w-4 mr-2" />
                 Configure
               </Button>
               <Button
@@ -206,11 +206,11 @@ export function PluginsTab() {
           ) : (
             <>
               <Button variant="outline" size="sm">
-                <ExternalLink className="h-4 w-4 mr-2" aria-hidden="true" />
+                <ExternalLink aria-hidden="true" className="h-4 w-4 mr-2" />
                 Learn More
               </Button>
               <Button size="sm" onClick={() => handleInstall(plugin.id)}>
-                <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                 Install
               </Button>
             </>
@@ -225,21 +225,21 @@ export function PluginsTab() {
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('plugins.installed')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{installedPlugins.length}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{installedPlugins.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('common.active')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{availablePlugins.length}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{availablePlugins.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Total Downloads</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {plugins.reduce((sum: number, p) => sum + p.downloads, 0).toLocaleString()}
             </CardTitle>
           </CardHeader>
@@ -248,9 +248,9 @@ export function PluginsTab() {
 
       {/* Search */}
       <Card>
-        <CardContent className="pt-6">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="relative">
-            <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+            <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
             <Input
               placeholder={t('admin.plugins.searchPlaceholder')}
               value={searchQuery as any}
@@ -265,7 +265,7 @@ export function PluginsTab() {
       <Tabs defaultValue="all">
         <TabsList>
           <TabsTrigger value="all">
-            <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+            <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
             {t('plugins.install')}s ({plugins.length})
           </TabsTrigger>
           <TabsTrigger value="installed">
@@ -273,7 +273,7 @@ export function PluginsTab() {
             Installed ({installedPlugins.length})
           </TabsTrigger>
           <TabsTrigger value="available">
-            <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+            <Download aria-hidden="true" className="h-4 w-4 mr-2" />
             Available ({availablePlugins.length})
           </TabsTrigger>
         </TabsList>
@@ -287,7 +287,7 @@ export function PluginsTab() {
             filteredPlugins(installedPlugins).map(renderPluginCard)
           ) : (
             <Card>
-              <CardContent className="p-0">
+              <CardContent aria-hidden="true" className="p-0">
                 <EmptyState
                   variant="inline"
                   icon={Package}

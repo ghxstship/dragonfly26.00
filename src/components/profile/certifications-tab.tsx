@@ -117,26 +117,26 @@ export function CertificationsTab() {
               </CardDescription>
             </div>
             <Button onClick={addCertification}>
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
               {t('profile.certifications.addCertification')}
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="space-y-3 md:space-y-4 lg:space-y-6">
+        <CardContent aria-hidden="true" className="space-y-3 md:space-y-4 lg:space-y-6">
           {certifications.length === 0 ? (
             <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 border-2 border-dashed rounded-lg">
               <p className="text-sm text-muted-foreground mb-4">
                 {t('profile.certifications.noCertifications')}
               </p>
               <Button variant="outline" onClick={addCertification}>
-                <Plus className="h-4 w-4 mr-2" />
+                <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                 {t('profile.certifications.addFirst')}
               </Button>
             </div>
           ) : (
             certifications.map((cert: any) => (
               <Card key={cert.id}>
-                <CardContent className="pt-6 space-y-4">
+                <CardContent aria-hidden="true" className="pt-6 space-y-4">
                   <div className="flex justify-between items-start">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                       <div className={`h-2 w-2 rounded-full ${getStatusColor(cert.status)}`} />
@@ -207,6 +207,7 @@ export function CertificationsTab() {
                         value={cert.status}
                         onChange={(e) => updateCertification(cert.id, "status", e.target.value)}
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background max-w-full"
+                        aria-label="Select certification status"
                       >
                         <option value="active">{t('profile.certifications.statusActive')}</option>
                         <option value="expired">{t('profile.certifications.statusExpired')}</option>
@@ -245,7 +246,7 @@ export function CertificationsTab() {
                             asChild
                           >
                             <a href={cert.credentialUrl} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="h-4 w-4" />
+                              <ExternalLink aria-hidden="true" className="h-4 w-4" />
                             </a>
                           </Button>
                         )}
@@ -263,12 +264,12 @@ export function CertificationsTab() {
                         disabled
                       />
                       <Button variant="outline" size="sm">
-                        <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
+                        <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
                         {t('profile.certifications.uploadDocument')}
                       </Button>
                       {cert.documentFile && (
                         <Button variant="outline" size="sm">
-                          <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                          <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                           {t('profile.certifications.downloadDocument')}
                         </Button>
                       )}
@@ -287,7 +288,7 @@ export function CertificationsTab() {
             {saving ? (
               <Loader2 className="h-4 w-4 mr-2 animate-spin" />
             ) : (
-              <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Save aria-hidden="true" className="h-4 w-4 mr-2" />
             )}
             {t('profile.actions.saveChanges')} 
           </Button>

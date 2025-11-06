@@ -56,7 +56,7 @@ export function ModuleTabs({ moduleSlug }: ModuleTabsProps) {
               )}
               style={isActive ? { borderColor: tab.color } : undefined}
             >
-              {IconComponent ? <IconComponent className="h-4 w-4" style={{ color: tab.color }} /> : null}
+              {IconComponent ? <IconComponent aria-hidden="true" className="h-4 w-4" style={{ color: tab.color }} /> : null}
               {tab.name}
             </Link>
           )

@@ -43,7 +43,7 @@ const getInspectionStatusBadge = (status: string, t: any) => {
   
   return (
     <Badge variant={config.variant} className="gap-1">
-      <Icon className="h-3 w-3" aria-hidden="true" />
+      <Icon aria-hidden="true" className="h-3 w-3" />
       {t(config.labelKey)}
     </Badge>
   )
@@ -126,9 +126,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
       {/* Summary Cards */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-5">
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Total Receipts</CardTitle>
-            <PackageCheck className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Receipts</CardTitle>
+            <PackageCheck aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.total}</div>
@@ -137,9 +137,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Received</CardTitle>
-            <PackageCheck className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Received</CardTitle>
+            <PackageCheck aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.received}</div>
@@ -148,9 +148,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">In Inspection</CardTitle>
-            <Clock className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">In Inspection</CardTitle>
+            <Clock aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.inspection}</div>
@@ -159,8 +159,8 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Accepted</CardTitle>
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Accepted</CardTitle>
             <CheckCircle2 className="h-4 w-4 flex-shrink-0" aria-hidden="true"  />
           </CardHeader>
           <CardContent>
@@ -170,9 +170,9 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Discrepancies</CardTitle>
-            <AlertCircle className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Discrepancies</CardTitle>
+            <AlertCircle aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.withDiscrepancies}</div>
@@ -185,7 +185,7 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 md:gap-3 lg:gap-4">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
           <div className="relative flex-1 max-w-sm">
-            <Search className="absolute sm:relative sm:inset-auto left-2.5 top-2.5 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+            <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-2.5 top-2.5 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
             <Input
               placeholder={t('searchPlaceholder')}
               value={searchQuery as any}
@@ -197,7 +197,7 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="sm" className="gap-2">
-                <Filter className="h-4 w-4" aria-hidden="true" />
+                <Filter aria-hidden="true" className="h-4 w-4" />
                 Status: {statusFilter === 'all' ? 'All' : statusFilter}
               </Button>
             </DropdownMenuTrigger>
@@ -215,11 +215,11 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
 
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
           <Button variant="outline" size="sm" className="gap-2">
-            <Camera className="h-4 w-4" aria-hidden="true" />
+            <Camera aria-hidden="true" className="h-4 w-4" />
             Scan Packing Slip
           </Button>
           <Button size="sm" className="gap-2">
-            <PackageCheck className="h-4 w-4" aria-hidden="true" />
+            <PackageCheck aria-hidden="true" className="h-4 w-4" />
             Record Receipt
           </Button>
         </div>
@@ -244,7 +244,7 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
                 <TableHead>Priority</TableHead>
                 <TableHead>Assignee</TableHead>
                 <TableHead>Attachments</TableHead>
-                <TableHead className="text-right" aria-hidden="true">Actions</TableHead>
+                <TableHead aria-hidden="true" className="text-right">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -257,10 +257,10 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
               ) : (
                 filteredData.map((item: any) => (
                   <TableRow key={item.id}>
-                    <TableCell className="font-medium" aria-hidden="true">{item.name?.replace('Receipt #', '')}</TableCell>
+                    <TableCell aria-hidden="true" className="font-medium">{item.name?.replace('Receipt #', '')}</TableCell>
                     <TableCell>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <FileText className="h-4 w-4" aria-hidden="true" />
+                        <FileText aria-hidden="true" className="h-4 w-4" />
                         {item.po_number}
                       </div>
                     </TableCell>
@@ -271,7 +271,7 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
                         <span className="text-xs text-muted-foreground">of {item.quantity_ordered || 0} ordered</span>
                         {item.has_discrepancy && (
                           <Badge variant="destructive" className="w-fit mt-1">
-                            <AlertCircle className="h-3 w-3" aria-hidden="true" />
+                            <AlertCircle aria-hidden="true" className="h-3 w-3" />
                             Discrepancy
                           </Badge>
                         )}
@@ -280,18 +280,18 @@ export function ProcurementReceivingTab({ data = [], loading }: ProcurementRecei
                     <TableCell>{getInspectionStatusBadge(item.inspection_status, t)}</TableCell>
                     <TableCell>{getStatusBadge(item.status, t)}</TableCell>
                     <TableCell>{getPriorityBadge(item.priority, t)}</TableCell>
-                    <TableCell className="text-sm text-muted-foreground" aria-hidden="true">{item.assignee_name}</TableCell>
+                    <TableCell aria-hidden="true" className="text-sm text-muted-foreground">{item.assignee_name}</TableCell>
                     <TableCell>
                       {item.attachments_count > 0 ? (
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-sm">
-                          <Camera className="h-4 w-4" aria-hidden="true" />
+                          <Camera aria-hidden="true" className="h-4 w-4" />
                           <span>{item.attachments_count}</span>
                         </div>
                       ) : (
                         <span className="text-muted-foreground text-sm">—</span>
                       )}
                     </TableCell>
-                    <TableCell className="text-right" aria-hidden="true">
+                    <TableCell aria-hidden="true" className="text-right">
                       <Button variant="ghost" size="sm">View</Button>
                     </TableCell>
                   </TableRow>

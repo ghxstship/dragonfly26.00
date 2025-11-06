@@ -84,8 +84,7 @@ export function TabConfigPanel({ moduleSlug }: TabConfigPanelProps) {
             >
               <div className="flex flex-col md:flex-row-1 min-w-0 flex flex-wrap items-center gap-2">
                 {Icon && (
-                  <Icon
-                    className="h-4 w-4 flex-shrink-0"
+                  <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0"
                     style={{ color: tab.color }}
                   />
                 )}
@@ -107,9 +106,9 @@ export function TabConfigPanel({ moduleSlug }: TabConfigPanelProps) {
                 disabled={isFirst}
               >
                 {tab.enabled ? (
-                  <Eye className="h-4 w-4" />
+                  <Eye aria-hidden="true" className="h-4 w-4" />
                 ) : (
-                  <EyeOff className="h-4 w-4 text-muted-foreground" />
+                  <EyeOff aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                 )}
               </Button>
             </div>

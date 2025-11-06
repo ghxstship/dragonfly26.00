@@ -99,11 +99,11 @@ export function DateInput({
               helperText && helperId
             )}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" aria-hidden="true" />
+            <CalendarIcon aria-hidden="true" className="mr-2 h-4 w-4" />
             {value ? format(value, "PPP") : <span>{placeholder}</span>}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent aria-hidden="true" className="w-auto p-0" align="start">
           <Calendar
             mode="single"
             selected={value}

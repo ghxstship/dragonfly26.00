@@ -108,7 +108,7 @@ export function TagsTab() {
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Info Banner */}
       <div className="flex items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950">
-        <Info className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" aria-hidden="true" />
+        <Info aria-hidden="true" className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" />
         <div>
           <h3 className="font-semibold text-blue-900 dark:text-blue-100">
             {t('tags.systemTags')}
@@ -145,7 +145,7 @@ export function TagsTab() {
                       className="ml-2 hover:opacity-70"
                       aria-label={`Remove ${tagName} tag`}
                     >
-                      <X className="h-3 w-3" aria-hidden="true" />
+                      <X aria-hidden="true" className="h-3 w-3" />
                     </button>
                   </Badge>
                 )
@@ -167,7 +167,7 @@ export function TagsTab() {
             {t('tags.clickToToggle')}
           </CardDescription>
           <div className="relative mt-4">
-            <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+            <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
             <Input
               placeholder={t('tags.searchTags')}
               value={searchQuery as any}
@@ -177,7 +177,7 @@ export function TagsTab() {
           </div>
         </CardHeader>
         <CardContent>
-          <ScrollArea className="h-[300px] md:h-[500px] pr-4">
+          <ScrollArea aria-hidden="true" className="h-[300px] md:h-[500px] pr-4">
             <div className="space-y-3 md:space-y-4 lg:space-y-6">
               {Object.entries(groupedTags).map(([category, tags]) => {
                 const tagArray = tags as any[]
@@ -248,8 +248,8 @@ export function TagsTab() {
             <TableHeader>
               <TableRow>
                 <TableHead>{t('tags.category')}</TableHead>
-                <TableHead className="text-right">{t('tags.selected')}</TableHead>
-                <TableHead className="text-right">{t('tags.available')}</TableHead>
+                <TableHead aria-hidden="true" className="text-right">{t('tags.selected')}</TableHead>
+                <TableHead aria-hidden="true" className="text-right">{t('tags.available')}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -260,9 +260,9 @@ export function TagsTab() {
                 ).length
                 return (
                   <TableRow key={category}>
-                    <TableCell className="font-medium">{category}</TableCell>
-                    <TableCell className="text-right">{selectedCount}</TableCell>
-                    <TableCell className="text-right">{tagArray.length}</TableCell>
+                    <TableCell aria-hidden="true" className="font-medium">{category}</TableCell>
+                    <TableCell aria-hidden="true" className="text-right">{selectedCount}</TableCell>
+                    <TableCell aria-hidden="true" className="text-right">{tagArray.length}</TableCell>
                   </TableRow>
                 )
               })}

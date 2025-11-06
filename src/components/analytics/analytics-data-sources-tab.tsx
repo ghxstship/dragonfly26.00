@@ -71,13 +71,13 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
       {/* Status Summary */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalSources')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{dataSources.length}</p>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('connected')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">
               {dataSources.filter(d => (d as any).status === "connected").length}
@@ -85,13 +85,13 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalRecords')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">11.6M</p>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalTables')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">94</p>
           </CardContent>
@@ -105,9 +105,9 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
             <CardHeader>
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                  <Database className="h-8 w-8 text-blue-600" aria-hidden="true" />
+                  <Database aria-hidden="true" className="h-8 w-8 text-blue-600" />
                   <div>
-                    <CardTitle className="text-lg">{t(source.nameKey)}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{t(source.nameKey)}</CardTitle>
                     <p className="text-sm text-muted-foreground">{source.type}</p>
                   </div>
                 </div>
@@ -117,13 +117,13 @@ export function AnalyticsDataSourcesTab({ data = [], loading = false }: Analytic
                     className={(source as any).status === "connected" ? "bg-green-600" : "bg-yellow-600"}
                   >
                     {(source as any).status === "connected" ? (
-                      <><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" /> Connected</>
+                      <><CheckCircle aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" /> Connected</>
                     ) : (
-                      <><AlertCircle className="h-3 w-3 mr-1" aria-hidden="true" /> Warning</>
+                      <><AlertCircle aria-hidden="true" className="h-3 w-3 mr-1" /> Warning</>
                     )}
                   </Badge>
                   <Button variant="outline" size="sm">
-                    <RefreshCw className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <RefreshCw aria-hidden="true" className="h-4 w-4 mr-2" />
                     Sync Now
                   </Button>
                 </div>

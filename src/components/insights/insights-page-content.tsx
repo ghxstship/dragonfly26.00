@@ -114,7 +114,7 @@ export function InsightsPageContent() {
         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-6">
           <div>
             <h1 className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold flex flex-wrap flex-col md:flex-row items-center gap-3">
-              <Lightbulb className="h-8 w-8 text-green-600" />
+              <Lightbulb aria-hidden="true" className="h-8 w-8 text-green-600" />
               Strategic Insights
             </h1>
             <p className="text-muted-foreground mt-2">
@@ -122,7 +122,7 @@ export function InsightsPageContent() {
             </p>
           </div>
           <Button onClick={() => setIsCreating(true)} className="gap-2">
-            <Plus className="h-4 w-4" />
+            <Plus aria-hidden="true" className="h-4 w-4" />
             Create Objective
           </Button>
         </div>
@@ -130,43 +130,43 @@ export function InsightsPageContent() {
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Active Objectives</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.total}</p>
                 </div>
-                <Target className="h-8 w-8 text-muted-foreground" />
+                <Target aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">On Track</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{stats.on_track}</p>
                 </div>
-                <TrendingUp className="h-8 w-8 text-green-600" />
+                <TrendingUp aria-hidden="true" className="h-8 w-8 text-green-600" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">At Risk</p>
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">{stats.at_risk}</p>
                 </div>
-                <AlertCircle className="h-8 w-8 text-yellow-600" />
+                <AlertCircle aria-hidden="true" className="h-8 w-8 text-yellow-600" />
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">Completed</p>

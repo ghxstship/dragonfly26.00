@@ -214,7 +214,7 @@ export function DiscountInput({
         <div className="space-y-2">
           <div className="flex flex-wrap gap-2">
             <div className="relative flex-1">
-              <Tag className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
+              <Tag aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('marketplace.discount.placeholder')}
                 value={code as any}
@@ -235,8 +235,8 @@ export function DiscountInput({
 
           {error && (
             <Alert variant="destructive" className="py-2">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription className="text-sm">{error}</AlertDescription>
+              <AlertCircle aria-hidden="true" className="h-4 w-4" />
+              <AlertDescription aria-hidden="true" className="text-sm">{error}</AlertDescription>
             </Alert>
           )}
 
@@ -248,10 +248,10 @@ export function DiscountInput({
         <div className="space-y-2">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-900 rounded-lg">
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
-              <Check className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" />
+              <Check aria-hidden="true" className="h-4 w-4 text-green-600 dark:text-green-400 flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="flex flex-col md:flex-row items-center gap-2 flex-wrap">
-                  <Badge className="bg-green-600 dark:bg-green-700">
+                  <Badge aria-hidden="true" className="bg-green-600 dark:bg-green-700">
                     {appliedDiscount.code}
                   </Badge>
                   <span className="text-sm font-medium text-green-700 dark:text-green-400">
@@ -271,7 +271,7 @@ export function DiscountInput({
               onClick={handleRemove}
               className="h-8 text-green-700 hover:text-green-900 dark:text-green-400 dark:hover:text-green-200"
             >
-              <X className="h-4 w-4" />
+              <X aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
 

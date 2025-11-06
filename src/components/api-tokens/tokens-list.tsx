@@ -30,7 +30,7 @@ export function APITokensList({ tokens }: APITokensListProps) {
       <div className="space-y-4">
       {tokens.map((token: any) => (
         <Card key={token.id}>
-          <CardContent className="p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-6">
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
@@ -51,7 +51,7 @@ export function APITokensList({ tokens }: APITokensListProps) {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button variant="ghost" size="icon" className="h-7 w-7">
-                          <Copy className="h-3 w-3" />
+                          <Copy aria-hidden="true" className="h-3 w-3" />
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
@@ -74,33 +74,33 @@ export function APITokensList({ tokens }: APITokensListProps) {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon">
-                    <MoreHorizontal className="h-4 w-4" />
+                    <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
                   <DropdownMenuItem>
-                    <Eye className="h-4 w-4 mr-2" />
+                    <Eye aria-hidden="true" className="h-4 w-4 mr-2" />
                     View Details
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Copy className="h-4 w-4 mr-2" />
+                    <Copy aria-hidden="true" className="h-4 w-4 mr-2" />
                     Copy Token
                   </DropdownMenuItem>
                   <DropdownMenuItem>Edit Scopes</DropdownMenuItem>
                   <DropdownMenuItem>
                     {token.is_active ? (
                       <>
-                        <EyeOff className="h-4 w-4 mr-2" />
+                        <EyeOff aria-hidden="true" className="h-4 w-4 mr-2" />
                         Deactivate
                       </>
                     ) : (
                       <>
-                        <Eye className="h-4 w-4 mr-2" />
+                        <Eye aria-hidden="true" className="h-4 w-4 mr-2" />
                         Activate
                       </>
                     )}
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="text-destructive">Revoke Token</DropdownMenuItem>
+                  <DropdownMenuItem aria-hidden="true" className="text-destructive">Revoke Token</DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

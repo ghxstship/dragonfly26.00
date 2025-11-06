@@ -88,7 +88,7 @@ export function BoxViewOrganism({
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <LayoutGrid className="h-5 w-5" aria-hidden="true" />
+          <LayoutGrid aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Card Grid</h3>
           <Badge variant="secondary">{data.length} items</Badge>
         </div>
@@ -141,7 +141,7 @@ export function BoxViewOrganism({
                   </div>
                 )}
 
-                <CardContent className={cn("p-4", !item.cover_image && "pt-6")}>
+                <CardContent aria-hidden="true" className={cn("p-4", !item.cover_image && "pt-6")}>
                   {/* Header */}
                   <div className="flex items-start gap-2 mb-2">
                     <div className="flex-1 min-w-0">
@@ -160,30 +160,28 @@ export function BoxViewOrganism({
                         }}
                         aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
                       >
-                        <Star
-                          className={cn(
+                        <Star aria-hidden="true" className={cn(
                             "h-3 w-3",
                             isFavorite && "fill-yellow-400 text-yellow-400"
                           )}
-                          aria-hidden="true"
                         />
                       </Button>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
                           <Button variant="ghost" size="icon" className="h-7 w-7" aria-label="More options">
-                            <MoreHorizontal className="h-3 w-3" aria-hidden="true" />
+                            <MoreHorizontal aria-hidden="true" className="h-3 w-3" />
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           <DropdownMenuItem>
-                            <Eye className="h-4 w-4 mr-2" aria-hidden="true" />
+                            <Eye aria-hidden="true" className="h-4 w-4 mr-2" />
                             View
                           </DropdownMenuItem>
                           <DropdownMenuItem>
-                            <Edit className="h-4 w-4 mr-2" aria-hidden="true" />
+                            <Edit aria-hidden="true" className="h-4 w-4 mr-2" />
                             Edit
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="text-destructive">
+                          <DropdownMenuItem aria-hidden="true" className="text-destructive">
                             Delete
                           </DropdownMenuItem>
                         </DropdownMenuContent>

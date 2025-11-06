@@ -62,27 +62,27 @@ export function RolesPermissionsTab() {
       {/* Role Hierarchy Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Total Roles</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">11</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">11</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Permission Categories</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">12</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">12</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Total Permissions</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">72+</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">72+</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>Access Levels</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">8</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">8</CardTitle>
           </CardHeader>
         </Card>
       </div>
@@ -106,10 +106,10 @@ export function RolesPermissionsTab() {
                       className="p-2 rounded-lg"
                       style={{ backgroundColor: `${role.color}20` }}
                     >
-                      <Icon className="h-5 w-5" aria-hidden="true" style={{ color: role.color }} />
+                      <Icon aria-hidden="true" className="h-5 w-5" style={{ color: role.color }} />
                     </div>
                     <div>
-                      <CardTitle className="text-base">{role.name}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-base">{role.name}</CardTitle>
                       <Badge 
                         variant="secondary" 
                         className="mt-1"
@@ -124,7 +124,7 @@ export function RolesPermissionsTab() {
                     </div>
                   </div>
                 </div>
-                <CardDescription className="mt-2 line-clamp-2">
+                <CardDescription aria-hidden="true" className="mt-2 line-clamp-2">
                   {role.description}
                 </CardDescription>
               </CardHeader>
@@ -153,8 +153,8 @@ export function RolesPermissionsTab() {
 
       {/* Role Details Panel */}
       {selectedRole && (
-        <Card className="max-h-[calc(100vh-8rem)] overflow-y-auto">
-          <CardHeader className="p-4 sm:p-4 sm:p-6">
+        <Card aria-hidden="true" className="max-h-[calc(100vh-8rem)] overflow-y-auto">
+          <CardHeader aria-hidden="true" className="p-4 sm:p-4 sm:p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div className="flex items-start gap-3 min-w-0 flex-1">
                 {(() => {
@@ -166,11 +166,11 @@ export function RolesPermissionsTab() {
                         className="p-2 sm:p-3 rounded-lg flex-shrink-0"
                         style={{ backgroundColor: `${role.color}20` }}
                       >
-                        <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" style={{ color: role.color }} />
+                        <Icon aria-hidden="true" className="h-5 w-5 sm:h-6 sm:w-6" style={{ color: role.color }} />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <CardTitle className="text-base sm:text-lg">{t('roles.userRoles')}</CardTitle>
-                        <CardDescription className="mt-1 text-sm">{role.description}</CardDescription>
+                        <CardTitle aria-hidden="true" className="text-base sm:text-lg">{t('roles.userRoles')}</CardTitle>
+                        <CardDescription aria-hidden="true" className="mt-1 text-sm">{role.description}</CardDescription>
                       </div>
                     </>
                   )
@@ -185,7 +185,7 @@ export function RolesPermissionsTab() {
               </Button>
             </div>
           </CardHeader>
-          <CardContent className="p-4 sm:p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-4 sm:p-6">
             <div className="space-y-4 sm:space-y-6">
               {/* Key Capabilities */}
               <div>

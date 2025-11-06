@@ -59,10 +59,10 @@ export function DataList({
 
   if (data.length === 0) {
     return (
-      <Card className={className}>
+      <Card aria-hidden="true" className={className}>
         {title && (
           <CardHeader>
-            <CardTitle className="text-base">{title}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base">{title}</CardTitle>
           </CardHeader>
         )}
         <CardContent>
@@ -88,10 +88,10 @@ export function DataList({
     : { all: data }
 
   return (
-    <Card className={className}>
+    <Card aria-hidden="true" className={className}>
       {title && (
         <CardHeader>
-          <CardTitle className="text-base">{title}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">{title}</CardTitle>
         </CardHeader>
       )}
       <CardContent>
@@ -110,9 +110,9 @@ export function DataList({
                     "p-4 border rounded-lg transition-colors",
                     onItemClick && "hover:bg-accent cursor-pointer"
                   )}
-                  onClick={() => onItemClick?.(item)}
                   role={onItemClick ? "button" : undefined}
                   tabIndex={onItemClick ? 0 : undefined}
+                  onClick={() => onItemClick?.(item)}
                 >
                   {renderItem ? (
                     renderItem(item)

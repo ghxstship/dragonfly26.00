@@ -112,7 +112,7 @@ export function PivotTableOrganism({
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between border-b p-4">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Table className="h-5 w-5" aria-hidden="true" />
+          <Table aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">{t('pivot.table')}</h3>
         </div>
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
@@ -166,9 +166,9 @@ export function PivotTableOrganism({
                           aria-label={isExpanded ? t('pivot.collapse') : t('pivot.expand')}
                         >
                           {isExpanded ? (
-                            <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                            <ChevronDown aria-hidden="true" className="h-4 w-4" />
                           ) : (
-                            <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                            <ChevronRight aria-hidden="true" className="h-4 w-4" />
                           )}
                         </Button>
                         <span className="font-medium">{row}</span>

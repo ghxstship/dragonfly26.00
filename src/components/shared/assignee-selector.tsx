@@ -66,9 +66,9 @@ export function AssigneeSelector({
       <div className="flex flex-wrap md:flex-nowrap -space-x-2">
         {assignees.slice(0, 3).map((assignee) => (
           <div key={assignee.id} className="relative group">
-            <Avatar className="h-8 w-8 border-2 border-background">
+            <Avatar aria-hidden="true" className="h-8 w-8 border-2 border-background">
               <AvatarImage src={assignee.user?.avatar_url} />
-              <AvatarFallback className="text-xs">
+              <AvatarFallback aria-hidden="true" className="text-xs">
                 {getInitials(assignee.user?.name || "U")}
               </AvatarFallback>
             </Avatar>
@@ -76,14 +76,14 @@ export function AssigneeSelector({
               onClick={() => removeAssignee(assignee.user_id)}
               className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-4 w-4 rounded-full bg-destructive text-destructive-foreground opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
             >
-              <X className="h-3 w-3" />
+              <X aria-hidden="true" className="h-3 w-3" />
             </button>
           </div>
         ))}
         
         {assignees.length > 3 && (
-          <Avatar className="h-8 w-8 border-2 border-background">
-            <AvatarFallback className="text-xs">
+          <Avatar aria-hidden="true" className="h-8 w-8 border-2 border-background">
+            <AvatarFallback aria-hidden="true" className="text-xs">
               +{assignees.length - 3}
             </AvatarFallback>
           </Avatar>
@@ -95,12 +95,12 @@ export function AssigneeSelector({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="h-8 w-8">
-              <UserPlus className="h-4 w-4" />
+              <UserPlus aria-hidden="true" className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-full sm:w-64 p-0">
             <div className="p-2 border-b sticky top-0 bg-background z-10">
-              <DropdownMenuLabel className="px-2 py-1.5">Assign to</DropdownMenuLabel>
+              <DropdownMenuLabel aria-hidden="true" className="px-2 py-1.5">Assign to</DropdownMenuLabel>
               <Input
                 placeholder="Search users..."
                 value={searchQuery}
@@ -119,9 +119,9 @@ export function AssigneeSelector({
                     disabled={isAssigned}
                     className="gap-2"
                   >
-                    <Avatar className="h-6 w-6">
+                    <Avatar aria-hidden="true" className="h-6 w-6">
                       <AvatarImage src={user.avatar_url} />
-                      <AvatarFallback className="text-xs">
+                      <AvatarFallback aria-hidden="true" className="text-xs">
                         {getInitials(user.name)}
                       </AvatarFallback>
                     </Avatar>
@@ -131,7 +131,7 @@ export function AssigneeSelector({
                         {user.email}
                       </div>
                     </div>
-                    {isAssigned && <Check className="h-4 w-4 flex-shrink-0" />}
+                    {isAssigned && <Check aria-hidden="true" className="h-4 w-4 flex-shrink-0" />}
                   </DropdownMenuItem>
                 )
               })}

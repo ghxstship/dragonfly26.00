@@ -67,9 +67,9 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case "sponsored": return <Sparkles className="h-3 w-3"  aria-hidden="true" />
-      case "trending": return <TrendingUp className="h-3 w-3" aria-hidden="true" />
-      case "featured": return <Star className="h-3 w-3" aria-hidden="true" />
+      case "sponsored": return <Sparkles aria-hidden="true" className="h-3 w-3" />
+      case "trending": return <TrendingUp aria-hidden="true" className="h-3 w-3" />
+      case "featured": return <Star aria-hidden="true" className="h-3 w-3" />
       default: return null
     }
   }
@@ -91,7 +91,7 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
         {spotlightItems.map((item, index) => (
           <Card key={item.id} className="overflow-hidden md:block">
             {/* Header */}
-            <CardHeader className="pb-3">
+            <CardHeader aria-hidden="true" className="pb-3">
               <div className="flex items-start justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <Avatar>
@@ -116,18 +116,18 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
             {/* Image Placeholder */}
             <div className="relative aspect-square bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-pink-500/20 flex flex-wrap items-center justify-center">
               <div className="text-center space-y-2">
-                <Sparkles className="h-16 w-16 mx-auto text-purple-500/50"  aria-hidden="true" />
+                <Sparkles aria-hidden="true" className="h-16 w-16 mx-auto text-purple-500/50" />
                 <p className="text-sm text-muted-foreground">Featured Image</p>
               </div>
               {(item as any).status === "sponsored" && (
-                <Badge className="absolute sm:relative sm:inset-auto top-2 md:top-4 right-2 md:right-4 bg-purple-600">
+                <Badge aria-hidden="true" className="absolute sm:relative sm:inset-auto top-2 md:top-4 right-2 md:right-4 bg-purple-600">
                   Sponsored
                 </Badge>
               )}
             </div>
 
             {/* Content */}
-            <CardContent className="pt-4 space-y-4">
+            <CardContent aria-hidden="true" className="pt-4 space-y-4">
               {/* Actions */}
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
@@ -137,8 +137,7 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
                     className="h-auto p-0"
                     onClick={() => toggleLike(item.id)}
                   >
-                    <Heart
-                      className={`h-6 w-6 ${
+                    <Heart aria-hidden="true" className={`h-6 w-6 ${
                         likedItems.has(item.id)
                           ? "fill-red-500 text-red-500"
                           : "text-foreground"
@@ -146,7 +145,7 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
                     />
                   </Button>
                   <Button variant="ghost" size="sm" className="h-auto p-0">
-                    <MessageCircle className="h-6 w-6" aria-hidden="true" />
+                    <MessageCircle aria-hidden="true" className="h-6 w-6" />
                   </Button>
                   <Button variant="ghost" size="sm" className="h-auto p-0">
                     <Share2 className="h-6 w-6" aria-hidden="true" />
@@ -158,8 +157,7 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
                   className="h-auto p-0"
                   onClick={() => toggleSave(item.id)}
                 >
-                  <Bookmark
-                    className={`h-6 w-6 ${
+                  <Bookmark aria-hidden="true" className={`h-6 w-6 ${
                       savedItems.has(item.id)
                         ? "fill-current text-foreground"
                         : ""
@@ -187,13 +185,13 @@ export function SpotlightTab({ data = [], loading: loadingProp = false }: Spotli
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
                   <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{item.price}</p>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" aria-hidden="true" />
+                    <Star aria-hidden="true" className="h-4 w-4 fill-yellow-500 text-yellow-500" />
                     <span className="font-semibold">{item.rating}</span>
                   </div>
                 </div>
                 <Button size="sm">
                   View Details
-                  <ChevronRight className="ml-1 h-4 w-4"  aria-hidden="true" />
+                  <ChevronRight aria-hidden="true" className="ml-1 h-4 w-4" />
                 </Button>
               </div>
 

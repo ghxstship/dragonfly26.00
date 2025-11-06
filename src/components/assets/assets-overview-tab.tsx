@@ -81,7 +81,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -96,9 +96,9 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
       {/* Key Metrics */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('totalAssets')}</CardTitle>
-            <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('totalAssets')}</CardTitle>
+            <Package aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{overview.totalAssets}</div>
@@ -109,9 +109,9 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('totalValue')}</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('totalValue')}</CardTitle>
+            <DollarSign aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(overview.totalValue)}</div>
@@ -122,23 +122,23 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('utilizationRate')}</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('utilizationRate')}</CardTitle>
+            <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{overview.utilizationRate}%</div>
             <div className="flex flex-wrap items-center text-xs text-green-600">
-              <TrendingUp className="h-4 w-4 mr-1" aria-hidden="true" />
+              <TrendingUp aria-hidden="true" className="h-4 w-4 mr-1" />
               +5% vs last month
             </div>
           </CardContent>
         </Card>
 
-        <Card className={overview.maintenanceAssets > 50 ? "border-yellow-200 dark:border-yellow-900" : ""}>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('inMaintenance')}</CardTitle>
-            <Wrench className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+        <Card aria-hidden="true" className={overview.maintenanceAssets > 50 ? "border-yellow-200 dark:border-yellow-900" : ""}>
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('inMaintenance')}</CardTitle>
+            <Wrench aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${overview.maintenanceAssets > 50 ? 'text-yellow-600' : ''}`}>
@@ -253,7 +253,7 @@ export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompone
                   'bg-blue-50 dark:bg-blue-950 border-blue-200'
                 }`}
               >
-                <AlertCircle className={`h-5 w-5 mt-0.5 ${
+                <AlertCircle aria-hidden="true" className={`h-5 w-5 mt-0.5 ${
                   (alert as any).type === 'warning' ? 'text-yellow-600' :
                   (alert as any).type === 'success' ? 'text-green-600' :
                   'text-blue-600'

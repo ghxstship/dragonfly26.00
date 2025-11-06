@@ -30,7 +30,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
   if (variances.length === 0) {
     return (
       <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-        <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4 flex-shrink-0" />
+        <CheckCircle aria-hidden="true" className="h-12 w-12 text-green-500 mx-auto mb-4 flex-shrink-0" />
         <h3 className="text-lg font-semibold mb-2">No Variances Found</h3>
         <p className="text-muted-foreground">All counted quantities match expected values</p>
       </div>
@@ -55,7 +55,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
       <Separator />
 
       {/* Variance List */}
-      <ScrollArea className="h-[360px] md:h-[600px]">
+      <ScrollArea aria-hidden="true" className="h-[360px] md:h-[600px]">
         <div className="space-y-4">
           {variances.map((variance: any) => (
             <Card key={variance.id} className="p-4">
@@ -81,7 +81,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                       </div>
                     </div>
                   </div>
-                  <AlertTriangle className="h-5 w-5 text-orange-500" />
+                  <AlertTriangle aria-hidden="true" className="h-5 w-5 text-orange-500" />
                 </div>
 
                 {/* Photos from count */}
@@ -91,7 +91,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                     <div className="flex flex-wrap gap-2">
                       {variance.photos.map((photo: any, idx: number) => (
                         <div key={idx} className="relative w-20 h-20 rounded border bg-muted">
-                          <ImageIcon className="absolute sm:relative sm:inset-auto inset-0 m-auto h-8 w-8 text-muted-foreground sm:relative sm:inset-auto" />
+                          <ImageIcon aria-hidden="true" className="absolute sm:relative sm:inset-auto inset-0 m-auto h-8 w-8 text-muted-foreground sm:relative sm:inset-auto" />
                         </div>
                       ))}
                     </div>
@@ -124,7 +124,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                     onClick={() => onAccept(variance.id, 'accepted')}
                     className="flex-1"
                   >
-                    <CheckCircle className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <CheckCircle aria-hidden="true" className="h-4 w-4 mr-2 flex-shrink-0" />
                     Accept & Adjust Stock
                   </Button>
                   <Button 
@@ -132,7 +132,7 @@ export function CountVariancePanel({ countId, variances, onAccept, onRecount, on
                     size="sm"
                     onClick={() => onRecount(variance.id)}
                   >
-                    <RotateCcw className="h-4 w-4 mr-2" />
+                    <RotateCcw aria-hidden="true" className="h-4 w-4 mr-2" />
                     Recount
                   </Button>
                   <Button variant="ghost" size="sm">

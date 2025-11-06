@@ -116,7 +116,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -130,9 +130,9 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
       {/* Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.totalContacts')}</CardTitle>
-            <User className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.totalContacts')}</CardTitle>
+            <User aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{contacts.length}</div>
@@ -143,9 +143,9 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.primaryContacts')}</CardTitle>
-            <Star className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.primaryContacts')}</CardTitle>
+            <Star aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{primaryContacts as any}</div>
@@ -154,9 +154,9 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.avgResponseTime')}</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.avgResponseTime')}</CardTitle>
+            <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">4.2 hrs</div>
@@ -165,9 +165,9 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">{t('stats.activeThreads')}</CardTitle>
-            <MessageSquare className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.activeThreads')}</CardTitle>
+            <MessageSquare aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -180,7 +180,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+        <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           placeholder={t('searchPlaceholder')}
           value={searchQuery as any}
@@ -206,7 +206,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
               >
                 <CardHeader>
                   <div className="flex items-start gap-3">
-                    <Avatar className="h-12 w-12" aria-hidden="true">
+                    <Avatar aria-hidden="true" className="h-12 w-12">
                       <AvatarImage 
                         src={c.avatar} 
                         alt={tCommon('aria.avatar', { name: c.name })} 
@@ -214,8 +214,8 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                       <AvatarFallback>{getInitials(c.name)}</AvatarFallback>
                     </Avatar>
                     <div className="flex-1 min-w-0">
-                      <CardTitle className="text-base line-clamp-1" aria-hidden="true">{c.name}</CardTitle>
-                      <CardDescription className="line-clamp-1" aria-hidden="true">{c.title}</CardDescription>
+                      <CardTitle aria-hidden="true" className="text-base line-clamp-1">{c.name}</CardTitle>
+                      <CardDescription aria-hidden="true" className="line-clamp-1">{c.title}</CardDescription>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 mt-1 text-sm text-muted-foreground">
                         <Building2 className="h-3 w-3" aria-hidden="true" />
                         <span className="truncate">{c.company}</span>
@@ -230,35 +230,35 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                     )}
                     {c.is_primary && (
                       <Badge variant="outline">
-                        <Star className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                        <Star aria-hidden="true" className="h-3 w-3 mr-1 fill-yellow-400 text-yellow-400" />
                         {t('primaryBadge')}
                       </Badge>
                     )}
                   </div>
                 </CardHeader>
 
-                <CardContent className="space-y-2" aria-hidden="true">
+                <CardContent aria-hidden="true" className="space-y-2">
                   {c.email && (
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                      <Mail className="h-3 w-3 text-muted-foreground flex-shrink-0" aria-hidden="true" />
+                      <Mail aria-hidden="true" className="h-3 w-3 text-muted-foreground flex-shrink-0" />
                       <span className="truncate">{c.email}</span>
                     </div>
                   )}
                   {c.phone && (
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm">
-                      <Phone className="h-3 w-3 text-muted-foreground flex-shrink-0" aria-hidden="true" />
+                      <Phone aria-hidden="true" className="h-3 w-3 text-muted-foreground flex-shrink-0" />
                       <span>{c.phone}</span>
                     </div>
                   )}
                   {c.last_contact && (
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-3 w-3 flex-shrink-0" aria-hidden="true" />
+                      <Calendar aria-hidden="true" className="h-3 w-3 flex-shrink-0" />
                       <span>{t('lastContact', { date: formatDate(c.last_contact) })}</span>
                     </div>
                   )}
                   {(c as any).active_threads > 0 && (
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm text-muted-foreground">
-                      <MessageSquare className="h-3 w-3 flex-shrink-0" aria-hidden="true" />
+                      <MessageSquare aria-hidden="true" className="h-3 w-3 flex-shrink-0" />
                       <span>{t('activeThreadsCount', { count: (c as any).active_threads })}</span>
                     </div>
                   )}
@@ -269,7 +269,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
 
           {filteredContacts.length === 0 && (
             <Card>
-              <CardContent className="p-0" aria-hidden="true">
+              <CardContent aria-hidden="true" className="p-0">
                 <EmptyState
                   variant="inline"
                   icon={User}
@@ -286,10 +286,10 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         {/* Contact Detail Panel */}
         {selectedContact ? (
           <div className="md:col-span-1">
-            <Card className="sticky top-6" aria-hidden="true">
+            <Card aria-hidden="true" className="sticky top-6">
               <CardHeader>
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                  <Avatar className="h-16 w-16" aria-hidden="true">
+                  <Avatar aria-hidden="true" className="h-16 w-16">
                     <AvatarImage 
                       src={selectedContact.avatar} 
                       alt={tCommon('aria.avatar', { name: selectedContact.name })} 
@@ -302,7 +302,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4" aria-hidden="true">
+              <CardContent aria-hidden="true" className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-sm mb-2">{t('contactInformation')}</h4>
                   <div className="space-y-2 text-sm">
@@ -377,10 +377,10 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                 )}
 
                 <div className="flex flex-wrap flex-col gap-2 pt-4 border-t">
-                  <Button className="w-full max-w-full" aria-hidden="true"
+                  <Button aria-hidden="true" className="w-full max-w-full"
                     aria-label={t('aria.sendEmail', { name: selectedContact.name })}
                   >
-                    <Mail className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Mail aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('sendEmail')}
                   </Button>
                   <Button 
@@ -388,7 +388,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
                     className="w-full max-w-full"
                     aria-label={t('aria.scheduleMeeting', { name: selectedContact.name })}
                   >
-                    <Calendar className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Calendar aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('scheduleMeeting')}
                   </Button>
                   <Button 
@@ -405,7 +405,7 @@ export function CompaniesContactsTab({ workspaceId, moduleId, tabSlug }: TabComp
         ) : (
           <div className="md:col-span-1">
             <Card>
-              <CardContent className="p-0" aria-hidden="true">
+              <CardContent aria-hidden="true" className="p-0">
                 <EmptyState
                   variant="compact"
                   icon={User}

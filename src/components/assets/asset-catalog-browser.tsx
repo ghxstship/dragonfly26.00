@@ -69,12 +69,12 @@ export function AssetCatalogBrowser({
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
         <Button variant="outline" className="gap-2">
-          <Plus className="w-4 h-4" aria-hidden="true" />
+          <Plus aria-hidden="true" className="w-4 h-4" />
           {t('addFromCatalog')}
         </Button>
       </DialogTrigger>
       
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>{t('browseCatalog')}</DialogTitle>
           <DialogDescription>
@@ -87,7 +87,7 @@ export function AssetCatalogBrowser({
           <div className="flex flex-col sm:flex-row gap-4">
             {/* Search */}
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" aria-hidden="true" />
+              <Search aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
                 type="text"
                 placeholder={t('searchPlaceholder')}
@@ -100,8 +100,8 @@ export function AssetCatalogBrowser({
 
             {/* Category Filter */}
             <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-              <SelectTrigger className="w-full sm:w-[200px]">
-                <Filter className="w-4 h-4 mr-2" aria-hidden="true" />
+              <SelectTrigger aria-hidden="true" className="w-full sm:w-[200px]">
+                <Filter aria-hidden="true" className="w-4 h-4 mr-2" />
                 <SelectValue placeholder={t('allCategories')} />
               </SelectTrigger>
               <SelectContent>
@@ -122,7 +122,7 @@ export function AssetCatalogBrowser({
                 onClick={() => setViewMode('grid')}
                 aria-label={t('gridView')}
               >
-                <Grid className="w-4 h-4" aria-hidden="true" />
+                <Grid aria-hidden="true" className="w-4 h-4" />
               </Button>
               <Button
                 variant={viewMode === 'list' ? 'default' : 'outline'}
@@ -130,7 +130,7 @@ export function AssetCatalogBrowser({
                 onClick={() => setViewMode('list')}
                 aria-label={t('listView')}
               >
-                <List className="w-4 h-4" aria-hidden="true" />
+                <List aria-hidden="true" className="w-4 h-4" />
               </Button>
             </div>
           </div>
@@ -204,7 +204,7 @@ export function AssetCatalogBrowser({
                       className="w-full mt-2"
                       size="sm"
                     >
-                      <Plus className="w-4 h-4 mr-2" aria-hidden="true" />
+                      <Plus aria-hidden="true" className="w-4 h-4 mr-2" />
                       {t('addToInventory')}
                     </Button>
                   </div>

@@ -39,11 +39,11 @@ export function OpportunitiesCareersTab({ workspaceId = '', userId = '' }: Oppor
       <h2 className="sr-only">{t("title")}</h2>
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Users className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
+          <Users aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
           <p className="text-sm text-muted-foreground">{t('description')}</p>
         </div>
         <Button aria-label={t('postCareer')}>
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
           {t('postCareer')}
         </Button>
       </div>

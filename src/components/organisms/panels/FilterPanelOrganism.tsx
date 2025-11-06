@@ -88,7 +88,7 @@ function FilterContent({ filters, values, onChange, onClear }: Omit<FilterPanelO
     <div className="flex flex-wrap flex-col h-full">
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <SlidersHorizontal className="h-5 w-5" aria-hidden="true" />
+          <SlidersHorizontal aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Filters</h3>
           {activeCount > 0 && (
             <span className="text-sm text-muted-foreground">({activeCount})</span>
@@ -101,11 +101,11 @@ function FilterContent({ filters, values, onChange, onClear }: Omit<FilterPanelO
         )}
       </div>
 
-      <ScrollArea className="flex-1">
+      <ScrollArea aria-hidden="true" className="flex-1">
         <div className="p-4 space-y-3 md:space-y-4 lg:space-y-6">
           {filters.map((group: any) => (
             <div key={group.id} className="space-y-3">
-              <Label className="text-sm font-medium">{group.label}</Label>
+              <Label aria-hidden="true" className="text-sm font-medium">{group.label}</Label>
               <div className="space-y-2">
                 {group.options.map((option: any) => {
                   const isChecked = (values[group.id] || []).includes(option.id)
@@ -160,7 +160,7 @@ export function FilterPanelOrganism({
       <SheetTrigger asChild>
         {trigger || (
           <Button variant="outline" size="icon">
-            <SlidersHorizontal className="h-4 w-4" />
+            <SlidersHorizontal aria-hidden="true" className="h-4 w-4" />
           </Button>
         )}
       </SheetTrigger>

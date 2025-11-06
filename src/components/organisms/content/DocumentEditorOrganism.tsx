@@ -135,14 +135,14 @@ export function DocumentEditorOrganism({
               size="sm"
               aria-label={t('editor.insertLink')}
             >
-              <Link className="h-4 w-4" aria-hidden="true" />
+              <Link aria-hidden="true" className="h-4 w-4" />
             </Button>
             <Button
               variant="ghost"
               size="sm"
               aria-label={t('editor.insertImage')}
             >
-              <ImageIcon className="h-4 w-4" aria-hidden="true" />
+              <ImageIcon aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>
         </div>

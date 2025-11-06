@@ -143,7 +143,7 @@ export function SpotlightTemplateOrganism({
                           aria-hidden="true"
                         />
                         {item.categoryKey && (
-                          <Badge className="absolute sm:relative sm:inset-auto top-2 left-2 z-10 sm:relative sm:inset-auto">
+                          <Badge aria-hidden="true" className="absolute sm:relative sm:inset-auto top-2 left-2 z-10 sm:relative sm:inset-auto">
                             {t(item.categoryKey)}
                           </Badge>
                         )}
@@ -151,12 +151,12 @@ export function SpotlightTemplateOrganism({
                     )}
                     
                     {/* Content */}
-                    <CardContent className={`p-6 ${item.imageUrl ? 'md:col-span-2' : 'md:col-span-3'}`}>
+                    <CardContent aria-hidden="true" className={`p-6 ${item.imageUrl ? 'md:col-span-2' : 'md:col-span-3'}`}>
                       <div className="space-y-3">
                         {/* Author Info */}
                         {item.authorName && (
                           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                            <Avatar className="h-8 w-8">
+                            <Avatar aria-hidden="true" className="h-8 w-8">
                               <AvatarImage src={item.authorAvatar} alt="" />
                               <AvatarFallback>{item.authorName.charAt(0)}</AvatarFallback>
                             </Avatar>
@@ -190,19 +190,19 @@ export function SpotlightTemplateOrganism({
                           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                             {item.metrics.views !== undefined && (
                               <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                                <Eye className="h-4 w-4" aria-hidden="true" />
+                                <Eye aria-hidden="true" className="h-4 w-4" />
                                 <span>{item.metrics.views.toLocaleString()}</span>
                               </div>
                             )}
                             {item.metrics.likes !== undefined && (
                               <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                                <Heart className="h-4 w-4" aria-hidden="true" />
+                                <Heart aria-hidden="true" className="h-4 w-4" />
                                 <span>{item.metrics.likes.toLocaleString()}</span>
                               </div>
                             )}
                             {item.metrics.rating !== undefined && (
                               <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                                <Star aria-hidden="true" className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                                 <span>{item.metrics.rating.toFixed(1)}</span>
                               </div>
                             )}
@@ -232,7 +232,7 @@ export function SpotlightTemplateOrganism({
               <Card>
                 <CardHeader>
                   <CardTitle id="trending-heading" className="text-base flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <TrendingUp className="h-5 w-5" aria-hidden="true" />
+                    <TrendingUp aria-hidden="true" className="h-5 w-5" />
                     {t('trendingTitle')}
                   </CardTitle>
                   <CardDescription>{t('trendingDescription')}</CardDescription>
@@ -245,9 +245,9 @@ export function SpotlightTemplateOrganism({
                         <div
                           key={item.id}
                           className="flex flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-3 border rounded-lg hover:bg-accent transition-colors cursor-pointer"
-                          onClick={item.action}
                           role="button"
                           tabIndex={0}
+                          onClick={item.action}
                           onKeyDown={(e) => {
                             if (e.key === 'Enter' || e.key === ' ') {
                               e.preventDefault()
@@ -259,7 +259,7 @@ export function SpotlightTemplateOrganism({
                             <span className="text-lg font-bold text-muted-foreground">
                               #{index + 1}
                             </span>
-                            {Icon && <Icon className="h-4 w-4" aria-hidden="true" />}
+                            {Icon && <Icon aria-hidden="true" className="h-4 w-4" />}
                             <span className="text-sm font-medium">
                               {item.titleKey ? t(item.titleKey) : item.title}
                             </span>

@@ -49,7 +49,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Film className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Film aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load productions</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -91,9 +91,9 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
       {/* Stats Overview */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('activeProductions')}</CardTitle>
-            <Clapperboard className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('activeProductions')}</CardTitle>
+            <Clapperboard aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -106,9 +106,9 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('totalBudget')}</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('totalBudget')}</CardTitle>
+            <DollarSign aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -121,9 +121,9 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('inPlanning')}</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('inPlanning')}</CardTitle>
+            <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -136,9 +136,9 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('atRisk')}</CardTitle>
-            <AlertCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('atRisk')}</CardTitle>
+            <AlertCircle aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">
@@ -161,25 +161,25 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <CardTitle className="text-lg line-clamp-1">{production.name}</CardTitle>
-                    <CardDescription className="mt-1">{production.code}</CardDescription>
+                    <CardTitle aria-hidden="true" className="text-lg line-clamp-1">{production.name}</CardTitle>
+                    <CardDescription aria-hidden="true" className="mt-1">{production.code}</CardDescription>
                   </div>
                   <Badge variant="secondary" className={getHealthColor(production.health)}>
                     {production.health === 'healthy' && <CheckCircle2 className="h-4 w-4 mr-1 flex-shrink-0" aria-hidden="true" />}
-                    {production.health === 'at_risk' && <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />}
-                    {production.health === 'critical' && <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />}
+                    {production.health === 'at_risk' && <AlertCircle aria-hidden="true" className="h-4 w-4 mr-1" />}
+                    {production.health === 'critical' && <AlertCircle aria-hidden="true" className="h-4 w-4 mr-1" />}
                     {production.health}
                   </Badge>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  <Badge className={getStatusColor(production.status)}>
+                  <Badge aria-hidden="true" className={getStatusColor(production.status)}>
                     {production.status}
                   </Badge>
                   <Badge variant="outline">{production.type}</Badge>
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-4">
+              <CardContent aria-hidden="true" className="space-y-4">
                 {/* Progress */}
                 <div className="space-y-2">
                   <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between text-sm">
@@ -208,16 +208,16 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
                 {/* Metadata */}
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground pt-2 border-t">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Calendar className="h-4 w-4" aria-hidden="true" />
+                    <Calendar aria-hidden="true" className="h-4 w-4" />
                     <span>{formatDate(production.start_date)}</span>
                   </div>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                    <Users className="h-4 w-4" aria-hidden="true" />
+                    <Users aria-hidden="true" className="h-4 w-4" />
                     <span>{production.project_manager_id}</span>
                   </div>
                 </div>
 
-                <Button className="w-full max-w-full" variant="outline" size="sm">
+                <Button aria-hidden="true" className="w-full max-w-full" variant="outline" size="sm">
                   {t('viewDetails')}
                 </Button>
               </CardContent>
@@ -228,7 +228,7 @@ export function ProjectsProductionsTab({ workspaceId, moduleId, tabSlug }: TabCo
 
       {productions.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               icon={Clapperboard}
               mainMessage={t('emptyMainMessage')}

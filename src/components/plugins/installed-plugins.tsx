@@ -24,7 +24,7 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
     <div className="space-y-4">
       {installations.map((installation: any) => (
         <Card key={installation.id}>
-          <CardContent className="p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-6">
             <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
               <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex-shrink-0" />
               <div className="flex-1">
@@ -41,28 +41,28 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="icon">
-                        <Settings className="h-4 w-4" />
+                        <Settings aria-hidden="true" className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem>
-                        <Settings className="h-4 w-4 mr-2" />
+                        <Settings aria-hidden="true" className="h-4 w-4 mr-2" />
                         Configure
                       </DropdownMenuItem>
                       <DropdownMenuItem>
                         {installation.status === "active" ? (
                           <>
-                            <Pause className="h-4 w-4 mr-2" />
+                            <Pause aria-hidden="true" className="h-4 w-4 mr-2" />
                             Pause
                           </>
                         ) : (
                           <>
-                            <Play className="h-4 w-4 mr-2" />
+                            <Play aria-hidden="true" className="h-4 w-4 mr-2" />
                             Activate
                           </>
                         )}
                       </DropdownMenuItem>
-                      <DropdownMenuItem className="text-destructive">
+                      <DropdownMenuItem aria-hidden="true" className="text-destructive">
                         <Trash2 className="h-4 w-4 mr-2" />
                         Uninstall
                       </DropdownMenuItem>
@@ -84,7 +84,7 @@ export function InstalledPlugins({ installations }: InstalledPluginsProps) {
 
       {installations.length === 0 && (
         <Card>
-          <CardContent className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
+          <CardContent aria-hidden="true" className="p-6 md:p-4 sm:p-6 md:p-8 lg:p-12 text-center">
             <p className="text-muted-foreground">No plugins installed yet</p>
           </CardContent>
         </Card>

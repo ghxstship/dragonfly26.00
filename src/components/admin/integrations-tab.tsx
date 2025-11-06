@@ -47,15 +47,15 @@ export function IntegrationsTab() {
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.integrationsTab.totalIntegrations')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{integrations.length}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{integrations.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.integrationsTab.connected')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {integrations.filter(i => i.connected).length}
             </CardTitle>
           </CardHeader>
@@ -71,7 +71,7 @@ export function IntegrationsTab() {
                   <div className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{integration.icon}</div>
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-1">
-                      <CardTitle className="text-base">{integration.name}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-base">{integration.name}</CardTitle>
                       {integration.connected && (
                         <Badge variant="default">
                           <CheckCircle2 className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />
@@ -91,7 +91,7 @@ export function IntegrationsTab() {
                   {integration.connected ? (
                     <>
                       <Button variant="outline" size="sm" aria-label={t('admin.integrationsTab.configure')}>
-                        <Settings className="h-4 w-4 mr-2" aria-hidden="true" />
+                        <Settings aria-hidden="true" className="h-4 w-4 mr-2" />
                         {t('admin.integrationsTab.configure')}
                       </Button>
                       <Button variant="destructive" size="sm" aria-label={t('admin.integrationsTab.disconnect')}>
@@ -100,7 +100,7 @@ export function IntegrationsTab() {
                     </>
                   ) : (
                     <Button size="sm" aria-label={t('admin.integrationsTab.connect')}>
-                      <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+                      <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                       {t('admin.integrationsTab.connect')}
                     </Button>
                   )}

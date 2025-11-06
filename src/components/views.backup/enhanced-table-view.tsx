@@ -95,7 +95,7 @@ export function EnhancedTableView({
             className="h-8 px-2"
           >
             {field.label}
-            <ArrowUpDown className="ml-2 h-3 w-3" />
+            <ArrowUpDown aria-hidden="true" className="ml-2 h-3 w-3" />
           </Button>
         )
       },

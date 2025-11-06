@@ -121,7 +121,7 @@ export function InviteTab() {
           Invite new team members
         </p>
         <Button size="sm">
-          <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+          <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
           Create
         </Button>
       </div>
@@ -130,18 +130,18 @@ export function InviteTab() {
       {/* Single Invite */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <UserPlus className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <UserPlus aria-hidden="true" className="h-5 w-5" />
             Invite Team Members
           </CardTitle>
           <CardDescription>
             Send email invitations to join your organization
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <Mail className="h-4 w-4" aria-hidden="true" />
+              <Mail aria-hidden="true" className="h-4 w-4" />
               Email Address
             </Label>
             <div className="flex flex-wrap gap-2">
@@ -159,7 +159,7 @@ export function InviteTab() {
                 }}
               />
               <Select value={role as any} onValueChange={setRole}>
-                <SelectTrigger className="w-full max-w-[180px]">
+                <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -181,15 +181,15 @@ export function InviteTab() {
             <>
               <Separator />
               <div className="space-y-2">
-                <Label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Users className="h-4 w-4" aria-hidden="true" />
+                <Label aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                  <Users aria-hidden="true" className="h-4 w-4" />
                   Pending Invites ({invites.length})
                 </Label>
                 <div className="space-y-2 max-h-[200px] overflow-auto border rounded-md p-3">
                   {invites.map((invite, index: number) => (
                     <div key={index} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 p-2 bg-muted rounded-md">
                       <div className="flex flex-col md:flex-row-1 flex flex-wrap items-center gap-2">
-                        <Mail className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                        <Mail aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                         <span className="text-sm">{invite.email}</span>
                         <Badge variant="outline" className="text-xs">
                           {invite.role}
@@ -200,7 +200,7 @@ export function InviteTab() {
                         size="sm"
                         onClick={() => handleRemoveInvite(index)}
                       >
-                        <X className="h-4 w-4" />
+                        <X aria-hidden="true" className="h-4 w-4" />
                       </Button>
                     </div>
                   ))}
@@ -225,7 +225,7 @@ export function InviteTab() {
 
           <div className="flex flex-wrap justify-end">
             <Button onClick={handleSendInvites} size="lg" disabled={invites.length === 0}>
-              <Send className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Send aria-hidden="true" className="h-4 w-4 mr-2" />
               Send {invites.length > 0 ? `${invites.length} ` : ''}Invitation{invites.length !== 1 ? 's' : ''}
             </Button>
           </div>
@@ -235,18 +235,18 @@ export function InviteTab() {
       {/* Bulk Invite */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Upload className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Upload aria-hidden="true" className="h-5 w-5" />
             Bulk Invite
           </CardTitle>
           <CardDescription>
             Import multiple email addresses at once
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="bulkEmails" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <FileText className="h-4 w-4" aria-hidden="true" />
+              <FileText aria-hidden="true" className="h-4 w-4" />
               Email Addresses
             </Label>
             <Textarea
@@ -283,7 +283,7 @@ export function InviteTab() {
               Clear
             </Button>
             <Button onClick={handleBulkImport}>
-              <Upload className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
               Import Emails
             </Button>
           </div>

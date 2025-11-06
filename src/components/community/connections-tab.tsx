@@ -133,9 +133,9 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
       {/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('connections')}</div>
-            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{connectedCount as any}</div>
@@ -144,9 +144,9 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('pending')}</div>
-            <UserPlus className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+            <UserPlus aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{pendingCount as any}</div>
@@ -155,9 +155,9 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('suggestions')}</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{suggestedCount as any}</div>
@@ -166,9 +166,9 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('growth')}</div>
-            <Calendar className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">+12</div>
@@ -179,10 +179,10 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
 
       {/* Search and Filter */}
       <Card>
-        <CardContent className="pt-6">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('searchConnections')}
                 value={searchQuery as any}
@@ -205,8 +205,8 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
       {/* Connections Grid */}
       <div className="grid md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
         {filteredConnections.length === 0 ? (
-          <Card className="col-span-2">
-            <CardContent className="p-0">
+          <Card aria-hidden="true" className="col-span-2">
+            <CardContent aria-hidden="true" className="p-0">
               <EmptyState
                 variant="inline"
                 icon={Users}
@@ -220,10 +220,10 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
         ) : (
           filteredConnections.map((connection: any) => (
             <Card key={connection.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-4 sm:p-6">
+              <CardContent aria-hidden="true" className="p-4 sm:p-6">
                 <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
                   {/* Avatar */}
-                  <Avatar className="h-16 w-16">
+                  <Avatar aria-hidden="true" className="h-16 w-16">
                     <AvatarImage src={connection.image} />
                     <AvatarFallback>
                       {connection.name.split(" ").map(n => n[0]).join("")}
@@ -238,28 +238,28 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
                           <h3 className="font-semibold truncate">{connection.name}</h3>
                           {connection.verified && (
                             <Badge variant="secondary" className="h-5 px-1">
-                              <UserCheck className="h-3 w-3"  aria-hidden="true" />
+                              <UserCheck aria-hidden="true" className="h-3 w-3" />
                             </Badge>
                           )}
                         </div>
                         <p className="text-sm text-muted-foreground truncate">{connection.title}</p>
                       </div>
                       <Button variant="ghost" size="sm">
-                        <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+                        <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                       </Button>
                     </div>
 
                     <div className="mt-2 space-y-1 text-sm text-muted-foreground">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <Briefcase className="h-3 w-3"  aria-hidden="true" />
+                        <Briefcase aria-hidden="true" className="h-3 w-3" />
                         <span className="truncate">{connection.company}</span>
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <MapPin className="h-3 w-3"  aria-hidden="true" />
+                        <MapPin aria-hidden="true" className="h-3 w-3" />
                         <span className="truncate">{connection.location}</span>
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <Users className="h-3 w-3" aria-hidden="true" />
+                        <Users aria-hidden="true" className="h-3 w-3" />
                         <span>{connection.mutualConnections} mutual connections</span>
                       </div>
                     </div>
@@ -285,11 +285,11 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
                       {(connection as any).status === "connected" && (
                         <>
                           <Button variant="outline" size="sm" className="flex-1">
-                            <MessageSquare className="h-4 w-4 mr-2"  aria-hidden="true" />
+                            <MessageSquare aria-hidden="true" className="h-4 w-4 mr-2" />
                             Message
                           </Button>
                           <Button variant="outline" size="sm" className="flex-1">
-                            <Mail className="h-4 w-4 mr-2"  aria-hidden="true" />
+                            <Mail aria-hidden="true" className="h-4 w-4 mr-2" />
                             Email
                           </Button>
                         </>
@@ -317,7 +317,7 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
                             className="flex-1"
                             onClick={() => handleConnect(connection.id)}
                           >
-                            <UserPlus className="h-4 w-4 mr-2"  aria-hidden="true" />
+                            <UserPlus aria-hidden="true" className="h-4 w-4 mr-2" />
                             Connect
                           </Button>
                           <Button variant="outline" size="sm" className="flex-1">
@@ -344,8 +344,8 @@ export function ConnectionsTab({ data = [], loading: loadingProp = false, worksp
       {/* Network Growth Tips */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <Award className="h-5 w-5" aria-hidden="true" />
+          <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <Award aria-hidden="true" className="h-5 w-5" />
             Grow Your Network
           </CardTitle>
           <CardDescription>Tips to expand your professional connections</CardDescription>

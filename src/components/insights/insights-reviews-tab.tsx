@@ -79,10 +79,10 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
         <div className="space-y-3">
           {upcomingReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-4 sm:p-6">
+              <CardContent aria-hidden="true" className="p-4 sm:p-6">
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-2 md:gap-3 lg:gap-4 flex-1">
-                    <Calendar className="h-8 w-8 text-blue-600 mt-1" aria-hidden="true" />
+                    <Calendar aria-hidden="true" className="h-8 w-8 text-blue-600 mt-1" />
                     <div className="flex-1">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                         <h4 className="font-semibold text-lg">{t(review.titleKey)}</h4>
@@ -93,14 +93,14 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                         <div>
                           <p className="text-muted-foreground">{t('dateTime')}</p>
                           <p className="font-medium flex flex-wrap flex-col md:flex-row items-center gap-1">
-                            <Calendar className="h-3 w-3" aria-hidden="true" />
+                            <Calendar aria-hidden="true" className="h-3 w-3" />
                             {review.date} at {review.time}
                           </p>
                         </div>
                         <div>
                           <p className="text-muted-foreground">{t('attendees')}</p>
                           <p className="font-medium flex flex-wrap flex-col md:flex-row items-center gap-1">
-                            <Users className="h-3 w-3" aria-hidden="true" />
+                            <Users aria-hidden="true" className="h-3 w-3" />
                             {review.attendees.join(", ")}
                           </p>
                         </div>
@@ -121,7 +121,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                   
                   <div className="flex flex-wrap flex-col gap-2">
                     <Button>
-                      <FileText className="h-4 w-4 mr-2" aria-hidden="true" />
+                      <FileText aria-hidden="true" className="h-4 w-4 mr-2" />
                       View Details
                     </Button>
                     <Button variant="outline">
@@ -141,9 +141,9 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
         <div className="space-y-3">
           {pastReviews.map((review: any) => (
             <Card key={review.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-4 sm:p-6">
+              <CardContent aria-hidden="true" className="p-4 sm:p-6">
                 <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
-                  <CheckCircle className="h-8 w-8 text-green-600 mt-1 flex-shrink-0" aria-hidden="true" />
+                  <CheckCircle aria-hidden="true" className="h-8 w-8 text-green-600 mt-1 flex-shrink-0" />
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                       <h4 className="font-semibold">{t(review.titleKey)}</h4>
@@ -166,7 +166,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                       <ul className="space-y-1">
                         {review.outcomes.map((outcome: any, idx: number) => (
                           <li key={idx} className="flex text-sm text-muted-foreground gap-2 items-start">
-                            <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                            <CheckCircle aria-hidden="true" className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
                             {outcome}
                           </li>
                         ))}
@@ -175,7 +175,7 @@ export function InsightsReviewsTab({ data = [], loading = false }: InsightsRevie
                   </div>
                   
                   <Button variant="outline" size="sm">
-                    <FileText className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <FileText aria-hidden="true" className="h-4 w-4 mr-2" />
                     View Notes
                   </Button>
                 </div>

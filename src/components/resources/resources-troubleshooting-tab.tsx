@@ -49,7 +49,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -63,9 +63,9 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
       {/* Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Issues</CardTitle>
-            <HelpCircle className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Issues</CardTitle>
+            <HelpCircle aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{issues.length}</div>
@@ -74,9 +74,9 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('critical')}</CardTitle>
-            <AlertCircle className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('critical')}</CardTitle>
+            <AlertCircle aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
@@ -87,8 +87,8 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('common')}</CardTitle>
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('common')}</CardTitle>
             <CheckCircle2 className="h-4 w-4 text-muted-foreground flex-shrink-0" />
           </CardHeader>
           <CardContent>
@@ -100,9 +100,9 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{t('helpful')}</CardTitle>
-            <ThumbsUp className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">{t('helpful')}</CardTitle>
+            <ThumbsUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-blue-600">
@@ -115,7 +115,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+        <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
         <Input
           placeholder={t('searchIssues')}
           value={searchQuery as any}
@@ -132,15 +132,15 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
               <div className="flex items-start justify-between gap-2 md:gap-3 lg:gap-4">
                 <div className="flex items-start gap-3 flex-1">
                   <div className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
-                    <HelpCircle className="h-5 w-5 text-gray-600"  aria-hidden="true" />
+                    <HelpCircle aria-hidden="true" className="h-5 w-5 text-gray-600" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <CardTitle className="text-lg">{issue.name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{issue.name}</CardTitle>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {issue.severity && (
-                    <Badge className={getSeverityColor(issue.severity)}>
+                    <Badge aria-hidden="true" className={getSeverityColor(issue.severity)}>
                       {issue.severity}
                     </Badge>
                   )}
@@ -151,7 +151,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
               </div>
             </CardHeader>
 
-            <CardContent className="space-y-4">
+            <CardContent aria-hidden="true" className="space-y-4">
               <div>
                 <p className="text-sm font-medium mb-2">Problem:</p>
                 <p className="text-sm text-muted-foreground">{issue.description}</p>
@@ -185,7 +185,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
 
               <div className="flex flex-wrap gap-2 pt-2 border-t">
                 <Button variant="outline" size="sm">
-                  <ThumbsUp className="h-4 w-4 mr-2"  aria-hidden="true" />
+                  <ThumbsUp aria-hidden="true" className="h-4 w-4 mr-2" />
                   Helpful ({issue.helpful_count || 0})
                 </Button>
                 <Button variant="outline" size="sm">{t('viewDetails')}</Button>
@@ -197,7 +197,7 @@ export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: 
 
       {filteredIssues.length === 0 && (
         <Card>
-          <CardContent className="p-0">
+          <CardContent aria-hidden="true" className="p-0">
             <EmptyState
               variant="inline"
               icon={HelpCircle}

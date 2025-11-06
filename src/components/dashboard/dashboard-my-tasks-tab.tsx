@@ -63,7 +63,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
         aria-live="assertive"
       >
         <div className="text-center">
-          <CheckSquare className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <CheckSquare aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">{tCommon('error.loadFailed')}</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -109,7 +109,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
         <h2 id="tasks-stats" className="sr-only">{t('summaryStats')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-red-600" aria-label={t('tasksDueToday', { count: 4 })}>4</p>
               <p className="text-xs text-muted-foreground mt-1">{t('dueToday')}</p>
@@ -117,7 +117,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-blue-600" aria-label={t('tasksInProgress', { count: 3 })}>3</p>
               <p className="text-xs text-muted-foreground mt-1">{t('inProgress')}</p>
@@ -125,7 +125,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-purple-600" aria-label={t('tasksCreatedByYou', { count: 3 })}>3</p>
               <p className="text-xs text-muted-foreground mt-1">{t('createdByYou')}</p>
@@ -133,7 +133,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold text-green-600" aria-label={t('tasksCompletedThisWeek', { count: 42 })}>42</p>
               <p className="text-xs text-muted-foreground mt-1">{t('completedThisWeek')}</p>
@@ -187,17 +187,17 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
 
                     <div className="flex flex-col md:flex-row flex-wrap items-center gap-3 text-sm">
                       <div className={`flex items-center gap-1 ${isOverdue(task.dueDate) ? 'text-red-600 font-medium' : 'text-muted-foreground'}`}>
-                        <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
+                        <Calendar aria-hidden="true" className="h-3.5 w-3.5" />
                         {task.dueDate}
                       </div>
                       
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                        <User className="h-3.5 w-3.5" aria-hidden="true" />
+                        <User aria-hidden="true" className="h-3.5 w-3.5" />
                         {task.assignedBy}
                       </div>
 
                       <div className={`flex items-center gap-1 font-medium ${getPriorityColor(task.priority)}`}>
-                        <Flag className="h-3.5 w-3.5" aria-hidden="true" />
+                        <Flag aria-hidden="true" className="h-3.5 w-3.5" />
                         {task.priority}
                       </div>
 
@@ -207,7 +207,7 @@ export function DashboardMyTasksTab({ workspaceId = '', userId = '' }: Dashboard
 
                       {task.subtasks.total > 0 && (
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 text-muted-foreground">
-                          <CheckSquare className="h-3.5 w-3.5 flex-shrink-0" aria-hidden="true" />
+                          <CheckSquare aria-hidden="true" className="h-3.5 w-3.5 flex-shrink-0" />
                           {task.subtasks.completed}/{task.subtasks.total} {t('subtasks')}
                         </div>
                       )}

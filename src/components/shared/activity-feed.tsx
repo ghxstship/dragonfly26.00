@@ -162,9 +162,9 @@ export function ActivityFeed() {
       ) : (
         activities.map((activity) => (
           <div key={activity.id} className="flex flex-wrap gap-3">
-            <Avatar className="h-8 w-8 flex-shrink-0">
+            <Avatar aria-hidden="true" className="h-8 w-8 flex-shrink-0">
               <AvatarImage src={activity.user?.avatar_url || undefined} />
-              <AvatarFallback className="text-xs">
+              <AvatarFallback aria-hidden="true" className="text-xs">
                 {getInitials(activity.user?.name || 'U')}
               </AvatarFallback>
             </Avatar>

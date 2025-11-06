@@ -38,7 +38,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "verified":
-        return <Badge className="bg-green-600">Verified Purchase</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600">Verified Purchase</Badge>
       case "published":
         return <Badge variant="outline" className="bg-blue-500/10 text-blue-600">{t('published')}</Badge>
       case "pending":
@@ -103,7 +103,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
                 <div key={rating} className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-1 w-16">
                     <span className="text-sm font-medium">{rating}</span>
-                    <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" aria-hidden="true" />
+                    <Star aria-hidden="true" className="h-3 w-3 fill-yellow-500 text-yellow-500" />
                   </div>
                   <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden md:block">
                     <div
@@ -124,11 +124,11 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
       {/* Filters */}
       <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input placeholder={t('searchReviews')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('itemType')} />
           </SelectTrigger>
           <SelectContent>
@@ -140,7 +140,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
           </SelectContent>
         </Select>
         <Select defaultValue="recent">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('sortBy')} />
           </SelectTrigger>
           <SelectContent>
@@ -151,7 +151,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
           </SelectContent>
         </Select>
         <Button variant="outline">
-          <Filter className="h-4 w-4 mr-2" aria-hidden="true" />{t('moreFilters')}</Button>
+          <Filter aria-hidden="true" className="h-4 w-4 mr-2" />{t('moreFilters')}</Button>
       </div>
 
       {/* Tabs */}
@@ -177,7 +177,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
                     </Avatar>
                     <div className="space-y-1">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <CardTitle className="text-base">{review.assignee_name}</CardTitle>
+                        <CardTitle aria-hidden="true" className="text-base">{review.assignee_name}</CardTitle>
                         {review.status === "verified" && getStatusBadge(review.status || 'published')}
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
@@ -189,12 +189,12 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
                     </div>
                   </div>
                   <Button variant="ghost" size="icon" aria-label={t('flag')}>
-                    <Flag className="h-4 w-4" aria-hidden="true" />
+                    <Flag aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-4">
+              <CardContent aria-hidden="true" className="space-y-4">
                 <div>
                   <p className="font-semibold mb-2">{review.name}</p>
                   <p className="text-sm text-muted-foreground">
@@ -216,7 +216,7 @@ export function ReviewsTab({ data = [], loading: loadingProp = false }: ReviewsT
                 {/* Actions */}
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 pt-2 border-t">
                   <Button variant="ghost" size="sm" className="gap-2">
-                    <ThumbsUp className="h-4 w-4"  aria-hidden="true" />
+                    <ThumbsUp aria-hidden="true" className="h-4 w-4" />
                     Helpful ({review.helpful_count})
                   </Button>
                   {review.comments_count > 0 && (

@@ -78,9 +78,9 @@ export function Sidebar() {
                 onClick={toggleSidebar}
               >
                 {sidebarCollapsed ? (
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight aria-hidden="true" className="h-4 w-4" />
                 ) : (
-                  <ChevronLeft className="h-4 w-4" />
+                  <ChevronLeft aria-hidden="true" className="h-4 w-4" />
                 )}
               </Button>
             </TooltipTrigger>
@@ -91,7 +91,7 @@ export function Sidebar() {
         </div>
 
       {/* Scrollable Content - Hubs */}
-      <ScrollArea className="flex-1">
+      <ScrollArea aria-hidden="true" className="flex-1">
         <div className="p-2">
           {/* Favorites Section */}
           {!sidebarCollapsed && favorites.length > 0 && (
@@ -102,9 +102,9 @@ export function Sidebar() {
               >
                 <span>{t('sidebar.favorites')}</span>
                 {collapsedHubs['favorites'] ? (
-                  <ChevronDown className="h-3 w-3" />
+                  <ChevronDown aria-hidden="true" className="h-3 w-3" />
                 ) : (
-                  <ChevronUp className="h-3 w-3" />
+                  <ChevronUp aria-hidden="true" className="h-3 w-3" />
                 )}
               </button>
               {!collapsedHubs['favorites'] && (
@@ -125,7 +125,7 @@ export function Sidebar() {
                           pathname.includes(favModule.slug) && "bg-accent"
                         )}
                       >
-                        {IconComponent ? <IconComponent className="h-4 w-4 flex-shrink-0" style={{ color: favModule.color }} /> : null}
+                        {IconComponent ? <IconComponent aria-hidden="true" className="h-4 w-4 flex-shrink-0" style={{ color: favModule.color }} /> : null}
                         <span>{favModule.name}</span>
                       </Link>
                     )
@@ -145,9 +145,9 @@ export function Sidebar() {
                 >
                   <span>{group.label}</span>
                   {collapsedHubs[group.category] ? (
-                    <ChevronDown className="h-3 w-3" />
+                    <ChevronDown aria-hidden="true" className="h-3 w-3" />
                   ) : (
-                    <ChevronUp className="h-3 w-3" />
+                    <ChevronUp aria-hidden="true" className="h-3 w-3" />
                   )}
                 </button>
               ) : null}
@@ -176,8 +176,7 @@ export function Sidebar() {
                             title={sidebarCollapsed ? moduleItem.name : undefined}
                           >
                             {Icon ? (
-                              <Icon
-                                className="h-4 w-4 flex-shrink-0"
+                              <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0"
                                 style={{ color: moduleItem.color }}
                               />
                             ) : null}
@@ -202,8 +201,7 @@ export function Sidebar() {
                           title={sidebarCollapsed ? moduleItem.name : undefined}
                         >
                           {Icon ? (
-                            <Icon
-                              className="h-4 w-4 flex-shrink-0"
+                            <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0"
                               style={{ color: moduleItem.color }}
                             />
                           ) : null}
@@ -217,8 +215,7 @@ export function Sidebar() {
                             className="h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
                             onClick={() => toggleFavorite(moduleItem.id)}
                           >
-                            <Star
-                              className={cn(
+                            <Star aria-hidden="true" className={cn(
                                 "h-3.5 w-3.5",
                                 isFavorited && "fill-yellow-400 text-yellow-400"
                               )}
@@ -255,8 +252,7 @@ export function Sidebar() {
                 title={sidebarCollapsed ? profileModule.name : undefined}
               >
                 {Icon ? (
-                  <Icon
-                    className="h-4 w-4 flex-shrink-0"
+                  <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0"
                     style={{ color: profileModule.color }}
                   />
                 ) : null}

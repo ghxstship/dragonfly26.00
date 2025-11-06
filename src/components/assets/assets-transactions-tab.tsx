@@ -96,7 +96,7 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -116,11 +116,11 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
           </div>
           <div className="flex gap-2">
             <Button variant="outline" size="sm">
-              <Filter className="mr-2 h-4 w-4" aria-hidden="true" />
+              <Filter aria-hidden="true" className="mr-2 h-4 w-4" />
               {tCommon('filter')}
             </Button>
             <Button size="sm">
-              <Plus className="mr-2 h-4 w-4" aria-hidden="true" />
+              <Plus aria-hidden="true" className="mr-2 h-4 w-4" />
               {t('newTransaction')}
             </Button>
           </div>
@@ -129,9 +129,9 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
         {/* Stats */}
         <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.totalTransactions')}</CardTitle>
-              <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.totalTransactions')}</CardTitle>
+              <Package aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{transactionData.length}</div>
@@ -140,9 +140,9 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.checkedOut')}</CardTitle>
-              <ArrowRight className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.checkedOut')}</CardTitle>
+              <ArrowRight aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
@@ -153,9 +153,9 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.checkedIn')}</CardTitle>
-              <ArrowLeft className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.checkedIn')}</CardTitle>
+              <ArrowLeft aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
@@ -166,9 +166,9 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
           </Card>
 
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">{t('stats.overdue')}</CardTitle>
-              <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <CardHeader aria-hidden="true" className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle aria-hidden="true" className="text-sm font-medium">{t('stats.overdue')}</CardTitle>
+              <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
@@ -187,7 +187,7 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <CardTitle className="text-lg">{transaction.asset_name}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-lg">{transaction.asset_name}</CardTitle>
                       <Badge variant="outline" className="text-xs">
                         {transaction.asset_id}
                       </Badge>
@@ -195,8 +195,8 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
                     <CardDescription>
                       <div className="flex flex-wrap gap-2 mt-2">
                         <Badge variant="outline" className={getTransactionTypeColor(transaction.transaction_type)}>
-                          {transaction.transaction_type === 'checkout' && <ArrowRight className="mr-1 h-3 w-3" aria-hidden="true" />}
-                          {transaction.transaction_type === 'checkin' && <ArrowLeft className="mr-1 h-3 w-3" aria-hidden="true" />}
+                          {transaction.transaction_type === 'checkout' && <ArrowRight aria-hidden="true" className="mr-1 h-3 w-3" />}
+                          {transaction.transaction_type === 'checkin' && <ArrowLeft aria-hidden="true" className="mr-1 h-3 w-3" />}
                           {t(`type.${transaction.transaction_type}`)}
                         </Badge>
                         <Badge variant="outline" className={getStatusColor(transaction.status)}>
@@ -213,14 +213,14 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
               <CardContent>
                 <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
                   <div className="flex items-center gap-2">
-                    <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                    <Package aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="text-sm">
                       <div className="font-medium">{t('quantity')}</div>
                       <div className="text-muted-foreground">{transaction.quantity} {t('units')}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <User className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                    <User aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="text-sm">
                       <div className="font-medium">
                         {transaction.transaction_type === 'checkout' ? t('checkedOutBy') : t('checkedInBy')}
@@ -231,7 +231,7 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                    <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="text-sm">
                       <div className="font-medium">{t('timestamp')}</div>
                       <div className="text-muted-foreground">
@@ -240,7 +240,7 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Package className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                    <Package aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="text-sm">
                       <div className="font-medium">
                         {transaction.transaction_type === 'checkout' ? t('destination') : t('source')}
@@ -254,7 +254,7 @@ export function AssetsTransactionsTab({ workspaceId, moduleId, tabSlug }: TabCom
                 {transaction.expected_return && transaction.status === 'active' && (
                   <div className="mt-3 pt-3 border-t">
                     <div className="flex items-center gap-2 text-sm">
-                      <Clock className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                      <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                       <span className="font-medium">{t('expectedReturn')}:</span>
                       <span className="text-muted-foreground">
                         {new Date(transaction.expected_return).toLocaleString()}

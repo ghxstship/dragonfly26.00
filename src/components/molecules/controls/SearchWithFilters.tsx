@@ -97,7 +97,7 @@ export function SearchWithFilters({
     <div className={cn('space-y-2', className)}>
       <div className="flex flex-wrap gap-2">
         <div className="relative flex-1">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground sm:relative sm:inset-auto" />
           <Input
             value={localValue as any}
             onChange={handleChange}
@@ -113,7 +113,7 @@ export function SearchWithFilters({
               onClick={handleClear}
               aria-label="Clear search"
             >
-              <X className="h-4 w-4" />
+              <X aria-hidden="true" className="h-4 w-4" />
             </Button>
           )}
         </div>
@@ -124,7 +124,7 @@ export function SearchWithFilters({
             onClick={onFilterClick}
             aria-label={`Filters${activeFilters.length > 0 ? ` (${activeFilters.length} active)` : ''}`}
           >
-            <SlidersHorizontal className="h-4 w-4" />
+            <SlidersHorizontal aria-hidden="true" className="h-4 w-4" />
             {activeFilters.length > 0 && (
               <span className="absolute sm:relative sm:inset-auto -right-1 -top-1 flex flex-wrap h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground sm:relative sm:inset-auto">
                 {activeFilters.length}
@@ -146,7 +146,7 @@ export function SearchWithFilters({
                   className="ml-1 rounded-full hover:bg-muted"
                   aria-label={`Remove filter: ${filter}`}
                 >
-                  <X className="h-3 w-3" />
+                  <X aria-hidden="true" className="h-3 w-3" />
                 </button>
               )}
             </Badge>

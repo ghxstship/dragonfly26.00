@@ -60,21 +60,21 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="csv" id="csv" />
             <Label htmlFor="csv" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <FileSpreadsheet className="h-4 w-4" />
+              <FileSpreadsheet aria-hidden="true" className="h-4 w-4" />
               CSV (Comma Separated Values)
             </Label>
           </div>
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="excel" id="excel" />
             <Label htmlFor="excel" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <FileSpreadsheet className="h-4 w-4" />
+              <FileSpreadsheet aria-hidden="true" className="h-4 w-4" />
               Excel (.xlsx)
             </Label>
           </div>
           <div className="flex flex-wrap md:flex-nowrap items-center space-x-2">
             <RadioGroupItem value="json" id="json" />
             <Label htmlFor="json" className="flex flex-wrap flex-col md:flex-row items-center gap-2 cursor-pointer font-normal">
-              <FileJson className="h-4 w-4" />
+              <FileJson aria-hidden="true" className="h-4 w-4" />
               JSON
             </Label>
           </div>
@@ -99,7 +99,7 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
             onChange={handleFileChange}
           />
           <label htmlFor="file-upload" className="cursor-pointer">
-            <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+            <Upload aria-hidden="true" className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
             <p className="text-sm font-medium mb-1">
               {file ? file.name : t('import.uploadPrompt')}
             </p>
@@ -135,7 +135,7 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
 
       {status === "error" && (
         <Alert variant="destructive">
-          <AlertCircle className="h-4 w-4" />
+          <AlertCircle aria-hidden="true" className="h-4 w-4" />
           <AlertDescription>
             Failed to import file. Please check the format and try again.
           </AlertDescription>
@@ -147,15 +147,15 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
         <Label>Import Options</Label>
         <div className="space-y-2 text-sm">
           <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <input type="checkbox" className="rounded" defaultChecked />
+            <input type="checkbox" className="rounded" defaultChecked  aria-label="checkbox" />
             <span>Update existing items</span>
           </label>
           <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <input type="checkbox" className="rounded" defaultChecked />
+            <input type="checkbox" className="rounded" defaultChecked  aria-label="checkbox" />
             <span>Skip duplicates</span>
           </label>
           <label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <input type="checkbox" className="rounded" />
+            <input type="checkbox" className="rounded"  aria-label="checkbox" />
             <span>Create new fields automatically</span>
           </label>
         </div>
@@ -164,7 +164,7 @@ export function ImportPanel({ onImport }: ImportPanelProps) {
       {/* Actions */}
       <div className="flex flex-wrap gap-2">
         <Button onClick={handleImport} disabled={!file || importing} className="flex-1">
-          <Upload className="h-4 w-4 mr-2" />
+          <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
           Import
         </Button>
       </div>

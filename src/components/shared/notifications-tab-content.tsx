@@ -212,8 +212,7 @@ export function NotificationsTabContent() {
                 notification.type === "update" && "bg-orange-100 dark:bg-orange-950"
               )}
             >
-              <Icon
-                className={cn(
+              <Icon aria-hidden="true" className={cn(
                   "h-4 w-4",
                   notification.type === "mention" && "text-blue-600 dark:text-blue-400",
                   notification.type === "comment" && "text-green-600 dark:text-green-400",
@@ -279,21 +278,21 @@ export function NotificationsTabContent() {
             className="w-full gap-2 justify-center max-w-full"
             onClick={markAllAsRead}
           >
-            <CheckCheck className="h-4 w-4 flex-shrink-0" />
+            <CheckCheck aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
             Mark all as read ({unreadCount})
           </Button>
         </div>
       )}
 
       <Tabs defaultValue="all" className="flex-1 flex flex-wrap flex-col min-h-0">
-        <TabsList className="w-full grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4 mt-4 max-w-full">
+        <TabsList aria-hidden="true" className="w-full grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4 mt-4 max-w-full">
           <TabsTrigger value="all">All</TabsTrigger>
           <TabsTrigger value="unread">Unread</TabsTrigger>
           <TabsTrigger value="mentions">Mentions</TabsTrigger>
         </TabsList>
 
         <TabsContent value="all" className="flex-1 mt-4 m-0">
-          <ScrollArea className="h-full px-4">
+          <ScrollArea aria-hidden="true" className="h-full px-4">
             <div className="space-y-4 pb-4">
               {groupedNotifications.today.length > 0 && (
                 <div>
@@ -329,7 +328,7 @@ export function NotificationsTabContent() {
         </TabsContent>
 
         <TabsContent value="unread" className="flex-1 mt-4 m-0">
-          <ScrollArea className="h-full px-4">
+          <ScrollArea aria-hidden="true" className="h-full px-4">
             <div className="space-y-1 pb-4">
               {notifications
                 .filter((n) => !n.read)
@@ -348,14 +347,14 @@ export function NotificationsTabContent() {
         </TabsContent>
 
         <TabsContent value="mentions" className="flex-1 mt-4 m-0">
-          <ScrollArea className="h-full px-4">
+          <ScrollArea aria-hidden="true" className="h-full px-4">
             <div className="space-y-1 pb-4">
               {notifications
                 .filter((n: any) => n.type === "mention")
                 .map(renderNotification)}
               {notifications.filter((n: any) => n.type === "mention").length === 0 && (
                 <div className="text-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12">
-                  <AtSign className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <AtSign aria-hidden="true" className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-sm font-medium">No mentions</p>
                   <p className="text-xs text-muted-foreground mt-1">
                     You haven&apos;t been mentioned recently

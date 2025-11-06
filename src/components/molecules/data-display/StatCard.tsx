@@ -67,8 +67,7 @@ export function StatCard({
   const isPositiveTrend = trend?.startsWith('+')
   
   return (
-    <Card
-      className={cn(
+    <Card aria-hidden="true" className={cn(
         'transition-all',
         onClick && 'cursor-pointer hover:shadow-md',
         className
@@ -77,7 +76,7 @@ export function StatCard({
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
     >
-      <CardContent className="p-4 sm:p-6">
+      <CardContent aria-hidden="true" className="p-4 sm:p-6">
         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
           <div className="space-y-1">
             <p className="text-sm font-medium text-muted-foreground">{label}</p>

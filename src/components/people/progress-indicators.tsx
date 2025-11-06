@@ -82,13 +82,13 @@ export function OnboardingProgressCard({
 }: OnboardingProgressProps) {
   return (
     <Card>
-      <CardHeader className="pb-3">
-        <CardTitle className="text-sm flex flex-wrap flex-col md:flex-row items-center gap-2">
+      <CardHeader aria-hidden="true" className="pb-3">
+        <CardTitle aria-hidden="true" className="text-sm flex flex-wrap flex-col md:flex-row items-center gap-2">
           <span className="text-muted-foreground">📋</span>
           Onboarding: {personnelName}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent aria-hidden="true" className="space-y-4">
         {/* Overall Progress */}
         <div>
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
@@ -115,9 +115,9 @@ export function OnboardingProgressCard({
                     {isComplete ? (
                       <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
                     ) : task.status === "in_progress" ? (
-                      <Clock className="h-4 w-4 text-blue-500" />
+                      <Clock aria-hidden="true" className="h-4 w-4 text-blue-500" />
                     ) : (
-                      <Clock className="h-4 w-4 text-muted-foreground" />
+                      <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     )}
                     <span className={cn(
                       "font-medium",
@@ -192,15 +192,15 @@ export function GoalProgressCard({
 
   return (
     <Card>
-      <CardHeader className="pb-3">
+      <CardHeader aria-hidden="true" className="pb-3">
         <div className="flex items-start justify-between">
-          <CardTitle className="text-sm line-clamp-2">{goalTitle}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-sm line-clamp-2">{goalTitle}</CardTitle>
           <Badge variant={config.variant as any} className="ml-2">
             {config.label}
           </Badge>
         </div>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent aria-hidden="true" className="space-y-4">
         {/* Progress */}
         <div>
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
@@ -247,7 +247,7 @@ export function GoalProgressCard({
         {onViewDetails && (
           <Button variant="ghost" size="sm" className="w-full max-w-full" onClick={onViewDetails}>
             View Details
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight aria-hidden="true" className="h-4 w-4 ml-2" />
           </Button>
         )}
       </CardContent>

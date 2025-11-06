@@ -167,22 +167,22 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl px-4 sm:px-6 lg:px-8 max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="max-w-3xl px-4 sm:px-6 lg:px-8 max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-            <UserPlus className="h-5 w-5" />
+          <DialogTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+            <UserPlus aria-hidden="true" className="h-5 w-5" />
             Invite Team Members
           </DialogTitle>
         </DialogHeader>
 
         <Tabs value={activeTab as any} onValueChange={setActiveTab} className="space-y-4">
-          <TabsList className="grid w-full grid-cols-1 md:grid-cols-2 max-w-full">
+          <TabsList aria-hidden="true" className="grid w-full grid-cols-1 md:grid-cols-2 max-w-full">
             <TabsTrigger value="single" className="gap-2">
-              <Mail className="h-4 w-4" />
+              <Mail aria-hidden="true" className="h-4 w-4" />
               Single Invite
             </TabsTrigger>
             <TabsTrigger value="bulk" className="gap-2">
-              <Upload className="h-4 w-4" />
+              <Upload aria-hidden="true" className="h-4 w-4" />
               Bulk Invite
             </TabsTrigger>
           </TabsList>
@@ -192,7 +192,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <Mail className="h-4 w-4" />
+                  <Mail aria-hidden="true" className="h-4 w-4" />
                   Email Address <span className="text-destructive">*</span>
                 </Label>
                 <Input
@@ -226,7 +226,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
 
                 <div className="space-y-2">
                   <Label htmlFor="project" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <FolderKanban className="h-4 w-4" />
+                    <FolderKanban aria-hidden="true" className="h-4 w-4" />
                     Project (Optional)
                   </Label>
                   <Input
@@ -253,7 +253,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
               </div>
 
               <Button onClick={handleAddInvite} className="w-full max-w-full">
-                <UserPlus className="h-4 w-4 mr-2" />
+                <UserPlus aria-hidden="true" className="h-4 w-4 mr-2" />
                 Add to Invite List
               </Button>
             </div>
@@ -264,7 +264,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="bulkEmails" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                  <FileText className="h-4 w-4" />
+                  <FileText aria-hidden="true" className="h-4 w-4" />
                   Email Addresses <span className="text-destructive">*</span>
                 </Label>
                 <Textarea
@@ -295,7 +295,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
 
                 <div className="space-y-2">
                   <Label htmlFor="bulkProject" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                    <FolderKanban className="h-4 w-4" />
+                    <FolderKanban aria-hidden="true" className="h-4 w-4" />
                     Project (Optional)
                   </Label>
                   <Input
@@ -329,7 +329,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                   Clear
                 </Button>
                 <Button onClick={handleBulkImport} className="flex-1">
-                  <Upload className="h-4 w-4 mr-2" />
+                  <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
                   Import Emails
                 </Button>
               </div>
@@ -342,8 +342,8 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
           <>
             <Separator />
             <div className="space-y-2">
-              <Label className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                <Users className="h-4 w-4" />
+              <Label aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+                <Users aria-hidden="true" className="h-4 w-4" />
                 Pending Invites ({invites.length})
               </Label>
               <div className="space-y-2 max-h-[200px] overflow-auto border rounded-md p-3">
@@ -351,7 +351,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                   <div key={index} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between gap-2 p-2 bg-muted rounded-md">
                     <div className="flex-1 flex flex-wrap flex-col gap-1">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <Mail className="h-4 w-4 text-muted-foreground" />
+                        <Mail aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                         <span className="text-sm font-medium">{invite.email}</span>
                         <Badge variant="outline" className="text-xs">
                           {invite.role}
@@ -367,7 +367,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                           )}
                           {invite.project && (
                             <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                              <FolderKanban className="h-3 w-3" />
+                              <FolderKanban aria-hidden="true" className="h-3 w-3" />
                               {invite.project}
                             </span>
                           )}
@@ -379,7 +379,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
                       size="sm"
                       onClick={() => handleRemoveInvite(index)}
                     >
-                      <X className="h-4 w-4" />
+                      <X aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </div>
                 ))}
@@ -407,7 +407,7 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
             Cancel
           </Button>
           <Button onClick={handleSendInvites} disabled={invites.length === 0}>
-            <Send className="h-4 w-4 mr-2" />
+            <Send aria-hidden="true" className="h-4 w-4 mr-2" />
             Send {invites.length > 0 ? `${invites.length} ` : ''}Invitation{invites.length !== 1 ? 's' : ''}
           </Button>
         </DialogFooter>

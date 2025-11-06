@@ -120,7 +120,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
       {/* Header Stats */}
       <div className="grid md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('myStudios')}</div>
             <Building2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
@@ -131,9 +131,9 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">Total Reach</div>
-            <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{(totalMembers / 1000).toFixed(1)}K</div>
@@ -142,9 +142,9 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('suggestions')}</div>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+            <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">
@@ -155,9 +155,9 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
             <div className="text-sm font-medium">{t('activity')}</div>
-            <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+            <MessageSquare aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">847</div>
@@ -167,8 +167,8 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
       </div>
 
       {/* Create Studio Button */}
-      <Card className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-primary/20">
-        <CardContent className="p-4 sm:p-6">
+      <Card aria-hidden="true" className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-primary/20">
+        <CardContent aria-hidden="true" className="p-4 sm:p-6">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div>
               <h3 className="font-semibold mb-1">Create Your Own Studio</h3>
@@ -182,10 +182,10 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
 
       {/* Search and Filter */}
       <Card>
-        <CardContent className="pt-6">
+        <CardContent aria-hidden="true" className="pt-6">
           <div className="flex flex-wrap flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-3 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input
                 placeholder={t('searchStudios')}
                 value={searchQuery as any}
@@ -208,7 +208,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
       <div className="space-y-4">
         {filteredStudios.length === 0 ? (
           <Card>
-            <CardContent className="p-0">
+            <CardContent aria-hidden="true" className="p-0">
               <EmptyState
                 variant="inline"
                 icon={Building2}
@@ -220,7 +220,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
         ) : (
           filteredStudios.map((studio: any) => (
             <Card key={studio.id} className="overflow-hidden md:block hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
+              <CardContent aria-hidden="true" className="p-0">
                 {/* Cover Image */}
                 {studio.coverImage && (
                   <div 
@@ -232,7 +232,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                 <div className="p-4 sm:p-6">
                   <div className="flex flex-wrap gap-2 md:gap-3 lg:gap-4">
                     {/* Studio Avatar */}
-                    <Avatar className="h-20 w-20 border-4 border-background -mt-12">
+                    <Avatar aria-hidden="true" className="h-20 w-20 border-4 border-background -mt-12">
                       <AvatarImage src={studio.image} />
                       <AvatarFallback>
                         {studio.name.split(" ").map(n => n[0]).join("")}
@@ -247,7 +247,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                             <h3 className="text-base md:text-lg lg:text-xl font-semibold truncate">{studio.name}</h3>
                             {studio.verified && (
                               <Badge variant="secondary" className="h-5">
-                                <Star className="h-3 w-3 mr-1 fill-current" aria-hidden="true" />
+                                <Star aria-hidden="true" className="h-3 w-3 mr-1 fill-current" />
                                 Verified
                               </Badge>
                             )}
@@ -258,9 +258,9 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                             </Badge>
                             <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
                               {studio.visibility === "public" ? (
-                                <Globe className="h-3 w-3"  aria-hidden="true" />
+                                <Globe aria-hidden="true" className="h-3 w-3" />
                               ) : (
-                                <Lock className="h-3 w-3"  aria-hidden="true" />
+                                <Lock aria-hidden="true" className="h-3 w-3" />
                               )}
                               {studio.visibility === "public" ? t('public') : t('private')}
                             </span>
@@ -269,7 +269,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                         </div>
                         {studio.joined && (
                           <Button variant="ghost" size="sm">
-                            <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+                            <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                           </Button>
                         )}
                       </div>
@@ -281,12 +281,12 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                       {/* Stats */}
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm mb-3">
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                          <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                           <span className="font-medium">{studio.members.toLocaleString()}</span>
                           <span className="text-muted-foreground">members</span>
                         </div>
                         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                          <MessageSquare className="h-4 w-4 text-muted-foreground"  aria-hidden="true" />
+                          <MessageSquare aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                           <span className="font-medium">{studio.posts.toLocaleString()}</span>
                           <span className="text-muted-foreground">posts</span>
                         </div>
@@ -308,7 +308,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
 
                       {/* Activity */}
                       <p className="text-xs text-muted-foreground mb-4">
-                        <Calendar className="h-3 w-3 inline mr-1" aria-hidden="true" />
+                        <Calendar aria-hidden="true" className="h-3 w-3 inline mr-1" />
                         {studio.recentActivity}
                       </p>
 
@@ -317,16 +317,16 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                         {studio.joined ? (
                           <>
                             <Button variant="outline" size="sm">
-                              <MessageSquare className="h-4 w-4 mr-2"  aria-hidden="true" />
+                              <MessageSquare aria-hidden="true" className="h-4 w-4 mr-2" />
                               View Posts
                             </Button>
                             <Button variant="outline" size="sm">
-                              <Bell className="h-4 w-4 mr-2"  aria-hidden="true" />
+                              <Bell aria-hidden="true" className="h-4 w-4 mr-2" />
                               Notifications
                             </Button>
                             {studio.role === "owner" || studio.role === "admin" ? (
                               <Button variant="outline" size="sm">
-                                <Settings className="h-4 w-4 mr-2"  aria-hidden="true" />
+                                <Settings aria-hidden="true" className="h-4 w-4 mr-2" />
                                 Manage
                               </Button>
                             ) : (
@@ -346,7 +346,7 @@ export function StudiosTab({ data = [], loading: loadingProp = false }: StudiosT
                               size="sm"
                               onClick={() => handleJoin(studio.id)}
                             >
-                              <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+                              <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                               Join
                             </Button>
                             <Button variant="outline" size="sm">

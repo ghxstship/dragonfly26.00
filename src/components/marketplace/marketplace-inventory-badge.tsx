@@ -115,7 +115,7 @@ export function InventoryBadge({
     return (
       <div className={cn("space-y-2", className)}>
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-1.5">
-          <Icon className={iconSizeClasses[size]} />
+          <Icon aria-hidden="true" className={iconSizeClasses[size]} />
           <span className="text-sm font-medium">
             {stockInfo.label}
             {showQuantity && ` (${totalAvailable})`}
@@ -149,7 +149,7 @@ export function InventoryBadge({
         className
       )}
     >
-      <Icon className={iconSizeClasses[size]} />
+      <Icon aria-hidden="true" className={iconSizeClasses[size]} />
       {stockInfo.label}
       {showQuantity && totalAvailable > 0 && totalAvailable <= lowStockThreshold && (
         <span className="ml-1">({totalAvailable})</span>

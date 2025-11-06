@@ -86,9 +86,9 @@ export function MarketplaceProductDetailDrawer({
       case "pre-order":
         return <Badge variant="outline" className="bg-blue-500/10 text-blue-600 border-blue-500/20">Pre-order</Badge>
       case "available":
-        return <Badge className="bg-green-600">Available</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600">Available</Badge>
       case "rented":
-        return <Badge className="bg-blue-600">Rented</Badge>
+        return <Badge aria-hidden="true" className="bg-blue-600">Rented</Badge>
       case "reserved":
         return <Badge variant="outline" className="bg-purple-500/10 text-purple-600">Reserved</Badge>
       default:
@@ -100,10 +100,10 @@ export function MarketplaceProductDetailDrawer({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right" className="w-full sm:w-[500px] md:w-[600px] lg:w-[700px] max-w-full p-0 flex flex-wrap flex-col max-w-full">
         {/* Header */}
-        <SheetHeader className="border-b px-4 md:px-6 py-4">
+        <SheetHeader aria-hidden="true" className="border-b px-4 md:px-6 py-4">
           <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <Package className="h-5 w-5" />
+              <Package aria-hidden="true" className="h-5 w-5" />
               <h2 className="text-base md:text-lg lg:text-xl font-semibold">Product Details</h2>
             </div>
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
@@ -116,20 +116,20 @@ export function MarketplaceProductDetailDrawer({
                 <Share2 className="h-4 w-4" />
               </Button>
               <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
-                <X className="h-4 w-4" />
+                <X aria-hidden="true" className="h-4 w-4" />
               </Button>
             </div>
           </div>
         </SheetHeader>
 
         {/* Content */}
-        <ScrollArea className="flex-1">
+        <ScrollArea aria-hidden="true" className="flex-1">
           <div className="p-4 sm:p-6 space-y-3 md:space-y-4 lg:space-y-6">
             {/* Product Image */}
             <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg flex flex-wrap items-center justify-center relative">
-              <Package className="h-32 w-32 text-muted-foreground/30" />
+              <Package aria-hidden="true" className="h-32 w-32 text-muted-foreground/30" />
               {product.priority === "featured" && (
-                <Badge className="absolute sm:relative sm:inset-auto top-4 left-4 bg-purple-600 sm:relative sm:inset-auto">
+                <Badge aria-hidden="true" className="absolute sm:relative sm:inset-auto top-4 left-4 bg-purple-600 sm:relative sm:inset-auto">
                   Featured
                 </Badge>
               )}
@@ -150,8 +150,8 @@ export function MarketplaceProductDetailDrawer({
               {/* Vendor Info */}
               {product.assignee_name && (
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 p-3 bg-muted rounded-lg">
-                  <Avatar className="h-10 w-10">
-                    <AvatarFallback className="bg-primary/10 text-primary">
+                  <Avatar aria-hidden="true" className="h-10 w-10">
+                    <AvatarFallback aria-hidden="true" className="bg-primary/10 text-primary">
                       {product.assignee_name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
@@ -228,7 +228,7 @@ export function MarketplaceProductDetailDrawer({
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     disabled={quantity <= 1}
                   >
-                    <Minus className="h-4 w-4" />
+                    <Minus aria-hidden="true" className="h-4 w-4" />
                   </Button>
                   <span className="w-12 text-center font-medium">{quantity}</span>
                   <Button
@@ -236,11 +236,11 @@ export function MarketplaceProductDetailDrawer({
                     size="icon"
                     onClick={() => setQuantity(quantity + 1)}
                   >
-                    <Plus className="h-4 w-4" />
+                    <Plus aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </div>
-                <Button className="flex-1" size="lg" onClick={handleAddToCart}>
-                  <ShoppingCart className="h-4 w-4 mr-2" />
+                <Button aria-hidden="true" className="flex-1" size="lg" onClick={handleAddToCart}>
+                  <ShoppingCart aria-hidden="true" className="h-4 w-4 mr-2" />
                   Add to Cart
                 </Button>
               </div>
@@ -250,7 +250,7 @@ export function MarketplaceProductDetailDrawer({
 
             {/* Tabs */}
             <Tabs defaultValue="description" className="w-full max-w-full">
-              <TabsList className="w-full max-w-full">
+              <TabsList aria-hidden="true" className="w-full max-w-full">
                 <TabsTrigger value="description" className="flex-1">Description</TabsTrigger>
                 <TabsTrigger value="specs" className="flex-1">Specifications</TabsTrigger>
                 <TabsTrigger value="reviews" className="flex-1">
@@ -270,7 +270,7 @@ export function MarketplaceProductDetailDrawer({
                       <ul className="space-y-2">
                         {product.features.map((feature: any, idx: number) => (
                           <li key={idx} className="flex items-start gap-2 text-sm">
-                            <Award className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                            <Award aria-hidden="true" className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -315,7 +315,7 @@ export function MarketplaceProductDetailDrawer({
                   onClick={() => setReviewFormOpen(true)}
                   className="w-full max-w-full"
                 >
-                  <Star className="h-4 w-4 mr-2" />
+                  <Star aria-hidden="true" className="h-4 w-4 mr-2" />
                   Write a Review
                 </Button>
 
@@ -325,8 +325,8 @@ export function MarketplaceProductDetailDrawer({
                       <div key={review.id} className="space-y-2 p-4 border rounded-lg">
                         <div className="flex items-start justify-between">
                           <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                            <Avatar className="h-8 w-8">
-                              <AvatarFallback className="bg-primary/10 text-primary text-xs">
+                            <Avatar aria-hidden="true" className="h-8 w-8">
+                              <AvatarFallback aria-hidden="true" className="bg-primary/10 text-primary text-xs">
                                 {review.author.split(' ').map(n => n[0]).join('')}
                               </AvatarFallback>
                             </Avatar>
@@ -354,7 +354,7 @@ export function MarketplaceProductDetailDrawer({
                   </div>
                 ) : (
                   <div className="text-center py-4 md:py-6 lg:py-8 space-y-2">
-                    <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/30" />
+                    <MessageCircle aria-hidden="true" className="h-12 w-12 mx-auto text-muted-foreground/30" />
                     <p className="text-sm text-muted-foreground">No reviews yet</p>
                   </div>
                 )}

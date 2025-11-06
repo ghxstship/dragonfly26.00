@@ -93,14 +93,14 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
         isReply ? "pl-12 py-2" : "p-3",
         !msg.read && "bg-primary/5"
       )}
-      onClick={() => {
+       role="button" tabIndex={0} onClick={() => {
         onItemClick?.(data.find((d: any) => d.id === msg.id)!)
         setActiveThread(isReply ? msg.parentId! : msg.id)
       }}
     >
       <div className="flex flex-wrap gap-3">
-        <Avatar className={cn("flex-shrink-0", isReply ? "h-6 w-6" : "h-8 w-8")}>
-          <AvatarFallback className={isReply ? "text-xs" : ""}>
+        <Avatar aria-hidden="true" className={cn("flex-shrink-0", isReply ? "h-6 w-6" : "h-8 w-8")}>
+          <AvatarFallback aria-hidden="true" className={isReply ? "text-xs" : ""}>
             {msg.userName.slice(0, 2).toUpperCase()}
           </AvatarFallback>
         </Avatar>
@@ -108,7 +108,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-1">
             <span className={cn("font-medium", isReply ? "text-sm" : "text-sm")}>{msg.userName}</span>
             <span className="text-xs text-muted-foreground">{formatTime(msg.timestamp)}</span>
-            {msg.read && <CheckCheck className="h-3 w-3 text-primary flex-shrink-0" />}
+            {msg.read && <CheckCheck aria-hidden="true" className="h-3 w-3 text-primary flex-shrink-0" />}
           </div>
           <div className={cn("whitespace-pre-wrap", isReply ? "text-sm" : "")}>
             {msg.content}
@@ -134,14 +134,14 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
               size="icon"
               className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <MoreHorizontal className="h-4 w-4" />
+              <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem>Reply</DropdownMenuItem>
             <DropdownMenuItem>Edit</DropdownMenuItem>
             <DropdownMenuItem>Copy</DropdownMenuItem>
-            <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
+            <DropdownMenuItem aria-hidden="true" className="text-destructive">Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -161,7 +161,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
       {/* Header */}
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-4 border-b">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <MessageSquare className="h-5 w-5" />
+          <MessageSquare aria-hidden="true" className="h-5 w-5" />
           <h3 className="font-semibold">Chat</h3>
           <Badge variant="secondary">{messages.length} messages</Badge>
           {unreadCount > 0 && (
@@ -171,7 +171,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
       </div>
 
       {/* Messages */}
-      <ScrollArea className="flex-1">
+      <ScrollArea aria-hidden="true" className="flex-1">
         <div className="divide-y">
           {threaded.map((msg: any) => renderMessage(msg))}
         </div>
@@ -199,7 +199,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="ghost" size="icon">
-                    <Paperclip className="h-4 w-4" />
+                    <Paperclip aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -209,7 +209,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="ghost" size="icon">
-                    <Smile className="h-4 w-4" />
+                    <Smile aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -219,7 +219,7 @@ export function ChatView({ data, schema, onItemClick }: ChatViewProps) {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button onClick={handleSendMessage}>
-                    <Send className="h-4 w-4" />
+                    <Send aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>

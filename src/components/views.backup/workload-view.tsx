@@ -106,13 +106,13 @@ export function WorkloadView({ data, schema, onItemClick, createActionLabel, onC
                 onClick={() => toggleUser(workload.userId)}
               >
                 {isExpanded ? (
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown aria-hidden="true" className="h-4 w-4" />
                 ) : (
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight aria-hidden="true" className="h-4 w-4" />
                 )}
               </Button>
 
-              <Avatar className="h-8 w-8">
+              <Avatar aria-hidden="true" className="h-8 w-8">
                 <AvatarFallback>
                   {workload.userName.slice(0, 2).toUpperCase()}
                 </AvatarFallback>
@@ -158,7 +158,7 @@ export function WorkloadView({ data, schema, onItemClick, createActionLabel, onC
                   <div
                     key={item.id}
                     className="flex flex-col md:flex-row items-center gap-3 p-3 hover:bg-accent transition-colors cursor-pointer"
-                    onClick={() => onItemClick?.(item)}
+                     role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                   >
                     <div className="flex-1 min-w-0">
                       <div className="font-medium">{getDisplayValue(item, schema)}</div>

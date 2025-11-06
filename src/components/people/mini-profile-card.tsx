@@ -45,11 +45,11 @@ export function MiniProfileCard({
     .toUpperCase()
 
   return (
-    <Card className={className}>
-      <CardContent className="p-4 space-y-3">
+    <Card aria-hidden="true" className={className}>
+      <CardContent aria-hidden="true" className="p-4 space-y-3">
         {/* Header */}
         <div className="flex items-start gap-3">
-          <Avatar className="h-12 w-12">
+          <Avatar aria-hidden="true" className="h-12 w-12">
             <AvatarImage src={personnel.avatar} />
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
@@ -70,7 +70,7 @@ export function MiniProfileCard({
         {/* Contact Info */}
         <div className="space-y-2">
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs">
-            <Mail className="h-3 w-3 text-muted-foreground flex-shrink-0" />
+            <Mail aria-hidden="true" className="h-3 w-3 text-muted-foreground flex-shrink-0" />
             <a 
               href={`mailto:${personnel.email}`} 
               className="text-primary hover:underline truncate"
@@ -80,7 +80,7 @@ export function MiniProfileCard({
           </div>
           {personnel.phone && (
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs">
-              <Phone className="h-3 w-3 text-muted-foreground flex-shrink-0" />
+              <Phone aria-hidden="true" className="h-3 w-3 text-muted-foreground flex-shrink-0" />
               <a 
                 href={`tel:${personnel.phone}`}
                 className="text-primary hover:underline"
@@ -91,7 +91,7 @@ export function MiniProfileCard({
           )}
           {personnel.manager && (
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs">
-              <User className="h-3 w-3 text-muted-foreground flex-shrink-0" />
+              <User aria-hidden="true" className="h-3 w-3 text-muted-foreground flex-shrink-0" />
               <span className="text-muted-foreground">
                 Manager: <span className="text-foreground">{personnel.manager}</span>
               </span>
@@ -115,7 +115,7 @@ export function MiniProfileCard({
 
           {personnel.isClockedIn !== undefined && (
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <Clock className="h-3 w-3 text-muted-foreground" />
+              <Clock aria-hidden="true" className="h-3 w-3 text-muted-foreground" />
               <span className="text-xs">
                 {personnel.isClockedIn ? (
                   <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
@@ -131,7 +131,7 @@ export function MiniProfileCard({
 
           {personnel.ptoAvailable !== undefined && (
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <Calendar className="h-3 w-3 text-muted-foreground" />
+              <Calendar aria-hidden="true" className="h-3 w-3 text-muted-foreground" />
               <span className="text-xs text-muted-foreground">
                 PTO: <span className="font-medium text-foreground">{personnel.ptoAvailable} days</span> available
               </span>
@@ -148,7 +148,7 @@ export function MiniProfileCard({
             onClick={onViewFullProfile}
           >
             View Full Profile
-            <ExternalLink className="h-3 w-3 ml-2" />
+            <ExternalLink aria-hidden="true" className="h-3 w-3 ml-2" />
           </Button>
         )}
       </CardContent>

@@ -47,14 +47,14 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
           const Icon = stat.icon
           return (
             <Card key={index} role="region" aria-label={`${t(stat.labelKey)} metric`}>
-              <CardContent className="p-4 sm:p-6">
+              <CardContent aria-hidden="true" className="p-4 sm:p-6">
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                   <div>
                     <p className="text-sm text-muted-foreground" id={`stat-label-${index}`}>{t(stat.labelKey)}</p>
                     <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-2" aria-labelledby={`stat-label-${index}`} aria-live="polite">{stat.value}</p>
                     <p className="text-sm text-green-600 mt-1" aria-label={`Change: ${stat.change}`}>{stat.change}</p>
                   </div>
-                  <Icon className={`h-8 w-8 ${stat.color}`} aria-hidden="true" />
+                  <Icon aria-hidden="true" className={`h-8 w-8 ${stat.color}`} />
                 </div>
               </CardContent>
             </Card>
@@ -78,7 +78,7 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
                 aria-label={`Report: ${t(report.nameKey)}`}
               >
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4">
-                  <FileText className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
+                  <FileText aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
                   <div>
                     <p className="font-medium" id={`report-name-${report.id}`}>{t(report.nameKey)}</p>
                     <p className="text-sm text-muted-foreground" aria-label={`Type: ${report.type}, Generated: ${report.generated}, Size: ${report.size}`}>
@@ -96,7 +96,7 @@ export function ReportsOverviewTab({ data = [], loading = false }: ReportsOvervi
                     aria-label={`Download ${t(report.nameKey)}`}
                     onClick={() => {}}
                   >
-                    <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('downloadAction')}
                   </Button>
                 </div>

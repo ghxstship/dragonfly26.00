@@ -73,14 +73,12 @@ export function CountrySelector(): JSX.Element {
         aria-haspopup="true"
       >
         <span className="flex items-center gap-2">
-          <Globe className="h-4 w-4" aria-hidden="true" />
+          <Globe aria-hidden="true" className="h-4 w-4" />
           <span className="text-base" aria-hidden="true">{currentCountry?.flag}</span>
           <span className="hidden sm:inline">{currentCountry?.name}</span>
           <span className="sm:hidden">{currentCountry?.code}</span>
         </span>
-        <ChevronDown 
-          className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-          aria-hidden="true"
+        <ChevronDown aria-hidden="true" className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
         />
       </Button>
 
@@ -89,7 +87,7 @@ export function CountrySelector(): JSX.Element {
           {/* Backdrop */}
           <div 
             className="fixed inset-0 z-40" 
-            onClick={() => setIsOpen(false)}
+             role="button" tabIndex={0} onClick={() => setIsOpen(false)}
             aria-hidden="true"
           />
           
@@ -107,7 +105,7 @@ export function CountrySelector(): JSX.Element {
               
               {/* Search */}
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" aria-hidden="true" />
+                <Search aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <Input
                   type="text"
                   placeholder="Search countries..."
@@ -138,7 +136,7 @@ export function CountrySelector(): JSX.Element {
             <div className="max-h-[60vh] sm:max-h-96 overflow-y-auto">
               {Object.keys(groupedCountries).length === 0 ? (
                 <div className="p-8 text-center text-gray-500 dark:text-gray-400">
-                  <Globe className="h-8 w-8 mx-auto mb-2 opacity-50" aria-hidden="true" />
+                  <Globe aria-hidden="true" className="h-8 w-8 mx-auto mb-2 opacity-50" />
                   <p className="text-sm">No countries found</p>
                 </div>
               ) : (
@@ -170,7 +168,7 @@ export function CountrySelector(): JSX.Element {
                               {country.name}
                             </span>
                             {localeState.selectedCountry === country.code && (
-                              <Check className="h-4 w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-label="Currently selected" />
+                              <Check aria-hidden="true" className="h-4 w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-label="Currently selected" />
                             )}
                           </div>
                           <div className="flex items-center gap-2 mt-0.5">

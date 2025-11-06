@@ -77,11 +77,10 @@ export function MobileTableCard({
   }
 
   return (
-    <Card 
-      className="cursor-pointer hover:bg-accent/50 transition-colors"
+    <Card aria-hidden="true" className="cursor-pointer hover:bg-accent/50 transition-colors"
       onClick={() => onViewDetails(item)}
     >
-      <CardContent className="p-4">
+      <CardContent aria-hidden="true" className="p-4">
         <div className="space-y-3">
           {/* Title/Name field - prominently displayed */}
           <div className="flex items-start justify-between gap-2">

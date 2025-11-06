@@ -41,12 +41,12 @@ export function OpportunitiesGrantsTab({ workspaceId = '', userId = '' }: Opport
       <h2 className="sr-only">{t("title")}</h2>
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-          <Globe className="h-5 w-5 text-muted-foreground" aria-hidden="true" />
+          <Globe aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
           <div>
             <p className="text-sm text-muted-foreground">{t('description')}</p>
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mt-1">
               <Badge variant="secondary" className="text-xs">
-                <DollarSign className="h-3 w-3 mr-1" aria-hidden="true" />
+                <DollarSign aria-hidden="true" className="h-3 w-3 mr-1" />
                 {t('totalAvailable')}
               </Badge>
               <Badge variant="outline" className="text-xs">
@@ -60,7 +60,7 @@ export function OpportunitiesGrantsTab({ workspaceId = '', userId = '' }: Opport
           onClick={refreshGrants}
           aria-label={t('refreshGrants')}
         >
-          <RefreshCw className="h-4 w-4 mr-2" aria-hidden="true" />
+          <RefreshCw aria-hidden="true" className="h-4 w-4 mr-2" />
           {t('refreshGrants')}
         </Button>
       </div>

@@ -63,14 +63,14 @@ export function TimeClockWidget({
   }
 
   return (
-    <Card className="w-full max-w-full">
+    <Card aria-hidden="true" className="w-full max-w-full">
       <CardHeader>
-        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Clock className="h-5 w-5" />
+        <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+          <Clock aria-hidden="true" className="h-5 w-5" />
           Time Clock
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent aria-hidden="true" className="space-y-4">
         {/* Greeting */}
         <div>
           <p className="text-sm text-muted-foreground">Welcome back,</p>
@@ -88,12 +88,12 @@ export function TimeClockWidget({
           >
             {isClockedIn ? (
               <>
-                <Play className="h-3 w-3 mr-1" />
+                <Play aria-hidden="true" className="h-3 w-3 mr-1" />
                 Clocked In
               </>
             ) : (
               <>
-                <Square className="h-3 w-3 mr-1" />
+                <Square aria-hidden="true" className="h-3 w-3 mr-1" />
                 Clocked Out
               </>
             )}
@@ -102,8 +102,7 @@ export function TimeClockWidget({
 
         {/* Clock In/Out Buttons */}
         <div className="space-y-2">
-          <Button 
-            className="w-full h-12 text-lg font-medium max-w-full"
+          <Button aria-hidden="true" className="w-full h-12 text-lg font-medium max-w-full"
             variant={isClockedIn ? "destructive" : "default"}
             onClick={handleClockAction}
             disabled={isProcessing}
@@ -112,12 +111,12 @@ export function TimeClockWidget({
               "Processing..."
             ) : isClockedIn ? (
               <>
-                <Square className="h-5 w-5 mr-2" />
+                <Square aria-hidden="true" className="h-5 w-5 mr-2" />
                 Clock Out
               </>
             ) : (
               <>
-                <Play className="h-5 w-5 mr-2" />
+                <Play aria-hidden="true" className="h-5 w-5 mr-2" />
                 Clock In
               </>
             )}
@@ -130,7 +129,7 @@ export function TimeClockWidget({
               onClick={onQRScan}
               disabled={isProcessing}
             >
-              <QrCode className="h-4 w-4 mr-2" />
+              <QrCode aria-hidden="true" className="h-4 w-4 mr-2" />
               Scan QR Code
             </Button>
           )}
@@ -139,7 +138,7 @@ export function TimeClockWidget({
         {/* Location Info */}
         {location && (
           <div className="flex items-start gap-2 p-3 bg-muted/30 rounded-lg">
-            <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+            <MapPin aria-hidden="true" className="h-4 w-4 mt-0.5 flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium">Location</p>
               <p className="text-sm text-muted-foreground truncate">
@@ -153,7 +152,7 @@ export function TimeClockWidget({
                   </>
                 ) : (
                   <>
-                    <AlertCircle className="h-3 w-3 text-yellow-500" />
+                    <AlertCircle aria-hidden="true" className="h-3 w-3 text-yellow-500" />
                     <span className="text-xs text-yellow-600">Outside geofence</span>
                   </>
                 )}
@@ -221,7 +220,7 @@ export function TimeClockWidgetCompact({
     <div className="p-4 bg-card border rounded-lg space-y-3">
       <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
         <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Clock className="h-4 w-4" />
+          <Clock aria-hidden="true" className="h-4 w-4" />
           <span className="font-medium text-sm">Time Clock</span>
         </div>
         <Badge 
@@ -235,8 +234,7 @@ export function TimeClockWidgetCompact({
         </Badge>
       </div>
 
-      <Button 
-        className="w-full max-w-full"
+      <Button aria-hidden="true" className="w-full max-w-full"
         size="sm"
         variant={isClockedIn ? "destructive" : "default"}
         onClick={handleClockAction}

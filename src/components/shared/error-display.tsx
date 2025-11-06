@@ -46,7 +46,7 @@ export function ErrorDisplay({
               <div className="relative">
                 <div className="absolute sm:relative sm:inset-auto inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse sm:relative sm:inset-auto" />
                 <div className="relative bg-primary/10 p-4 sm:p-6 rounded-full">
-                  <AlertTriangle className="w-16 h-16 text-primary" />
+                  <AlertTriangle aria-hidden="true" className="w-16 h-16 text-primary" />
                 </div>
               </div>
             </motion.div>

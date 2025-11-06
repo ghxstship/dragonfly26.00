@@ -158,12 +158,12 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
       {/* Summary Cards */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Total Variance</CardTitle>
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Variance</CardTitle>
             {totalVariance >= 0 ? (
-              <TrendingUp className="h-4 w-4" aria-hidden="true" />
+              <TrendingUp aria-hidden="true" className="h-4 w-4" />
             ) : (
-              <TrendingDown className="h-4 w-4" aria-hidden="true" />
+              <TrendingDown aria-hidden="true" className="h-4 w-4" />
             )}
           </CardHeader>
           <CardContent>
@@ -177,9 +177,9 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Favorable</CardTitle>
-            <TrendingUp className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Favorable</CardTitle>
+            <TrendingUp aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">
@@ -192,9 +192,9 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Unfavorable</CardTitle>
-            <TrendingDown className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Unfavorable</CardTitle>
+            <TrendingDown aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">
@@ -207,9 +207,9 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Action Required</CardTitle>
-            <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Action Required</CardTitle>
+            <AlertTriangle aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-orange-600">
@@ -234,7 +234,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
               <Card key={variance.id} className={`border-l-4 ${
                 variance.type === 'favorable' ? 'border-l-green-500' : 'border-l-red-500'
               }`}>
-                <CardContent className="pt-6" aria-hidden="true">
+                <CardContent aria-hidden="true" className="pt-6">
                   <div className="space-y-3">
                     {/* Header */}
                     <div className="flex items-start justify-between">
@@ -278,7 +278,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
 
                     {/* Root Cause */}
                     <div className="flex items-start gap-2 p-3 bg-muted rounded-md">
-                      <Info className="h-4 w-4" aria-hidden="true" />
+                      <Info aria-hidden="true" className="h-4 w-4" />
                       <div className="space-y-1 flex-1">
                         <p className="text-xs font-medium">Root Cause</p>
                         <p className="text-sm text-muted-foreground">{variance.rootCauseKey ? t(variance.rootCauseKey) : variance.rootCause}</p>
@@ -322,7 +322,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                       <span className="text-sm font-semibold">
                         ${Math.abs(cause.amount).toLocaleString()}
                       </span>
-                      <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                      <ChevronRight aria-hidden="true" className="h-4 w-4" />
                     </div>
                   </div>
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-xs text-muted-foreground">
@@ -386,7 +386,7 @@ export function FinanceVarianceTab({ data, loading }: FinanceVarianceTabProps) {
                   <span className="text-muted-foreground">Average variance: <strong className="text-green-600">+$1.0k</strong></span>
                 </div>
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 text-sm mt-2">
-                  <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+                  <AlertTriangle aria-hidden="true" className="h-4 w-4" />
                   <span className="text-muted-foreground">Trending: <strong className="text-orange-600">Worsening</strong></span>
                 </div>
               </div>

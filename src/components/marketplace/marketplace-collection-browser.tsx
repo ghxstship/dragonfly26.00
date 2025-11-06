@@ -123,7 +123,7 @@ export function CollectionBrowser({
 
   if (variant === 'chips') {
     return (
-      <ScrollArea className={className}>
+      <ScrollArea aria-hidden="true" className={className}>
         <div className="flex flex-wrap gap-2 pb-2">
           {showAllOption && (
             <Button
@@ -144,7 +144,7 @@ export function CollectionBrowser({
               className="flex-shrink-0"
             >
               {collection.collection_type === 'smart' && (
-                <Sparkles className="h-3 w-3 mr-1" />
+                <Sparkles aria-hidden="true" className="h-3 w-3 mr-1" />
               )}
               {collection.title}
               <Badge variant="secondary" className="ml-2">
@@ -168,10 +168,10 @@ export function CollectionBrowser({
             onClick={() => handleSelect(null)}
           >
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <Layers className="h-4 w-4" />
+              <Layers aria-hidden="true" className="h-4 w-4" />
               <span>All Collections</span>
             </div>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight aria-hidden="true" className="h-4 w-4" />
           </Button>
         )}
         {mockCollections.map((collection: any) => (
@@ -183,7 +183,7 @@ export function CollectionBrowser({
           >
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1 min-w-0">
               {collection.collection_type === 'smart' && (
-                <Sparkles className="h-4 w-4 flex-shrink-0 text-purple-500" />
+                <Sparkles aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-purple-500" />
               )}
               <span className="truncate">{collection.title}</span>
             </div>
@@ -201,21 +201,20 @@ export function CollectionBrowser({
     <div className={className}>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         {showAllOption && (
-          <Card
-            className={`cursor-pointer transition-all hover:shadow-md ${
+          <Card aria-hidden="true" className={`cursor-pointer transition-all hover:shadow-md ${
               selected === null ? 'ring-2 ring-primary' : ''
             }`}
             onClick={() => handleSelect(null)}
           >
-            <CardHeader className="pb-3">
+            <CardHeader aria-hidden="true" className="pb-3">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-                <Layers className="h-5 w-5 text-muted-foreground" />
+                <Layers aria-hidden="true" className="h-5 w-5 text-muted-foreground" />
                 <Badge variant="secondary">All</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <CardTitle className="text-base mb-1">All Products</CardTitle>
-              <CardDescription className="text-xs">
+              <CardTitle aria-hidden="true" className="text-base mb-1">All Products</CardTitle>
+              <CardDescription aria-hidden="true" className="text-xs">
                 Browse all available products
               </CardDescription>
             </CardContent>
@@ -232,16 +231,16 @@ export function CollectionBrowser({
           >
             {collection.image_url && (
               <div className="h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex flex-wrap items-center justify-center">
-                <Layers className="h-12 w-12 text-muted-foreground/20" />
+                <Layers aria-hidden="true" className="h-12 w-12 text-muted-foreground/20" />
               </div>
             )}
-            <CardHeader className="pb-3">
+            <CardHeader aria-hidden="true" className="pb-3">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   {collection.collection_type === 'smart' && (
-                    <Sparkles className="h-4 w-4 text-purple-500" />
+                    <Sparkles aria-hidden="true" className="h-4 w-4 text-purple-500" />
                   )}
-                  <CardTitle className="text-base line-clamp-1">
+                  <CardTitle aria-hidden="true" className="text-base line-clamp-1">
                     {collection.title}
                   </CardTitle>
                 </div>
@@ -251,7 +250,7 @@ export function CollectionBrowser({
               </div>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-xs line-clamp-2">
+              <CardDescription aria-hidden="true" className="text-xs line-clamp-2">
                 {collection.description || 'Curated product collection'}
               </CardDescription>
             </CardContent>

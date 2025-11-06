@@ -72,7 +72,7 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
         // Empty state with list skeleton
         <div className="border rounded-lg">
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3 bg-muted/50 border-b">
-            <List className="h-4 w-4 text-muted-foreground" />
+            <List aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
             <span className="font-semibold text-muted-foreground">Items</span>
           </div>
           <EmptyState
@@ -99,9 +99,9 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
                 className="h-6 w-6 p-0"
               >
                 {isExpanded ? (
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown aria-hidden="true" className="h-4 w-4" />
                 ) : (
-                  <ChevronRight className="h-4 w-4" />
+                  <ChevronRight aria-hidden="true" className="h-4 w-4" />
                 )}
               </Button>
               <span className="font-semibold capitalize">{group}</span>
@@ -118,7 +118,7 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
                       "flex items-center gap-3 p-3 hover:bg-accent transition-colors cursor-pointer",
                       selectedItems.has(item.id) && "bg-accent"
                     )}
-                    onClick={() => onItemClick?.(item)}
+                     role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                   >
                     <Checkbox
                       checked={selectedItems.has(item.id)}
@@ -150,13 +150,13 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
                         <Button variant="ghost" size="icon" className="h-8 w-8">
-                          <MoreHorizontal className="h-4 w-4" />
+                          <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
                         <DropdownMenuItem>Edit</DropdownMenuItem>
                         <DropdownMenuItem>Duplicate</DropdownMenuItem>
-                        <DropdownMenuItem className="text-destructive">
+                        <DropdownMenuItem aria-hidden="true" className="text-destructive">
                           Delete
                         </DropdownMenuItem>
                       </DropdownMenuContent>
@@ -167,7 +167,7 @@ export function ListView({ data, schema, onItemClick, createActionLabel, onCreat
                 {/* Add Item */}
                 <div className="p-3">
                   <Button variant="ghost" size="sm" className="gap-2 w-full justify-start max-w-full">
-                    <Plus className="h-4 w-4" />
+                    <Plus aria-hidden="true" className="h-4 w-4" />
                     Add item
                   </Button>
                 </div>

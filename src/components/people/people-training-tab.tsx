@@ -49,7 +49,7 @@ export function TrainingTab(props: TrainingTabProps) {
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -64,7 +64,7 @@ export function TrainingTab(props: TrainingTabProps) {
       {/* 1644 Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{items.length}</p>
               <p className="text-xs text-muted-foreground mt-1">{t('totalItems')}</p>
@@ -72,7 +72,7 @@ export function TrainingTab(props: TrainingTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">0</p>
               <p className="text-xs text-muted-foreground mt-1">{t('active')}</p>
@@ -80,7 +80,7 @@ export function TrainingTab(props: TrainingTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-yellow-600">0</p>
               <p className="text-xs text-muted-foreground mt-1">{t('pending')}</p>
@@ -88,7 +88,7 @@ export function TrainingTab(props: TrainingTabProps) {
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="pt-6">
+          <CardContent aria-hidden="true" className="pt-6">
             <div className="text-center">
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">0</p>
               <p className="text-xs text-muted-foreground mt-1">{t('completed')}</p>
@@ -100,7 +100,7 @@ export function TrainingTab(props: TrainingTabProps) {
       {/* Main Content Card */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Training</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">Training</CardTitle>
           <CardDescription>View and manage training</CardDescription>
         </CardHeader>
         <CardContent>
@@ -110,7 +110,7 @@ export function TrainingTab(props: TrainingTabProps) {
                 <p className="text-lg font-semibold mb-2">No training found</p>
                 <p className="text-sm mb-4">{t('emptyStateMessage')}</p>
                 <Button>
-                  <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+                  <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                   Create Training
                 </Button>
               </div>

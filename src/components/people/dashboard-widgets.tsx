@@ -31,9 +31,9 @@ export function HeadcountWidget({
 }: HeadcountWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm font-medium">Headcount</CardTitle>
-        <Users className="h-4 w-4 text-muted-foreground" />
+      <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+        <CardTitle aria-hidden="true" className="text-sm font-medium">Headcount</CardTitle>
+        <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
         <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{activeCount as any}</div>
@@ -62,7 +62,7 @@ export function HeadcountWidget({
             onClick={onViewDetails}
           >
             View Details
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight aria-hidden="true" className="h-4 w-4 ml-2" />
           </Button>
         )}
       </CardContent>
@@ -87,9 +87,9 @@ export function TodaysScheduleWidget({
 }: TodaysScheduleWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm font-medium">Today&apos;s Schedule</CardTitle>
-        <Clock className="h-4 w-4 text-muted-foreground" />
+      <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+        <CardTitle aria-hidden="true" className="text-sm font-medium">Today&apos;s Schedule</CardTitle>
+        <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
@@ -142,7 +142,7 @@ export function TodaysScheduleWidget({
             onClick={onViewSchedule}
           >
             View Full Schedule
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight aria-hidden="true" className="h-4 w-4 ml-2" />
           </Button>
         )}
       </CardContent>
@@ -167,8 +167,8 @@ export function PendingApprovalsWidget({
 }: PendingApprovalsWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm font-medium">Pending Approvals</CardTitle>
+      <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+        <CardTitle aria-hidden="true" className="text-sm font-medium">Pending Approvals</CardTitle>
         <CheckCircle2 className="h-4 w-4 text-muted-foreground flex-shrink-0" />
       </CardHeader>
       <CardContent>
@@ -204,7 +204,7 @@ export function PendingApprovalsWidget({
             onClick={onReviewAll}
           >
             Review All
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight aria-hidden="true" className="h-4 w-4 ml-2" />
           </Button>
         )}
       </CardContent>
@@ -225,9 +225,9 @@ export function AlertsWidget({
 }: AlertsWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm font-medium">Alerts</CardTitle>
-        <AlertTriangle className="h-4 w-4 text-yellow-600" />
+      <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+        <CardTitle aria-hidden="true" className="text-sm font-medium">Alerts</CardTitle>
+        <AlertTriangle aria-hidden="true" className="h-4 w-4 text-yellow-600" />
       </CardHeader>
       <CardContent>
         {alertCount === 0 ? (
@@ -261,7 +261,7 @@ export function AlertsWidget({
                 onClick={onReviewAlerts}
               >
                 Review All Alerts
-                <ArrowRight className="h-4 w-4 ml-2" />
+                <ArrowRight aria-hidden="true" className="h-4 w-4 ml-2" />
               </Button>
             )}
           </>
@@ -286,9 +286,9 @@ export function QuickStatsWidget({
 }: QuickStatsWidgetProps) {
   return (
     <Card>
-      <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm font-medium">Quick Stats</CardTitle>
-        <TrendingUp className="h-4 w-4 text-muted-foreground" />
+      <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between pb-2">
+        <CardTitle aria-hidden="true" className="text-sm font-medium">Quick Stats</CardTitle>
+        <TrendingUp aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
         <div className="space-y-3">
@@ -324,7 +324,7 @@ export function QuickStatsWidget({
             onClick={onViewReports}
           >
             View Reports
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight aria-hidden="true" className="h-4 w-4 ml-2" />
           </Button>
         )}
       </CardContent>
@@ -343,8 +343,8 @@ interface UpcomingPTOWidgetProps {
 export function UpcomingPTOWidget({ upcomingPTO }: UpcomingPTOWidgetProps) {
   return (
     <Card>
-      <CardHeader className="pb-2">
-        <CardTitle className="text-sm font-medium">Upcoming PTO</CardTitle>
+      <CardHeader aria-hidden="true" className="pb-2">
+        <CardTitle aria-hidden="true" className="text-sm font-medium">Upcoming PTO</CardTitle>
       </CardHeader>
       <CardContent>
         {upcomingPTO.length === 0 ? (

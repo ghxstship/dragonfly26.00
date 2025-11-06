@@ -114,7 +114,7 @@ export function HealthTab() {
           <CardTitle>{t('profile.health.medical')}</CardTitle>
           <CardDescription>{t('profile.health.medicalDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="bloodType">{t('profile.health.bloodType')}</Label>
@@ -167,7 +167,7 @@ export function HealthTab() {
           <CardTitle>{t('profile.health.dietary')}</CardTitle>
           <CardDescription>{t('profile.health.dietaryDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="dietaryRestrictions">{t('profile.health.dietaryRestrictions')}</Label>
             <div className="flex flex-wrap gap-2">
@@ -179,7 +179,7 @@ export function HealthTab() {
                 placeholder={t('profile.health.restrictionPlaceholder')}
               />
               <Button type="button" size="icon" onClick={addDietaryRestriction} aria-label={t('profile.health.addRestriction')}>
-                <Plus className="h-4 w-4" aria-hidden="true" />
+                <Plus aria-hidden="true" className="h-4 w-4" />
               </Button>
             </div>
             <div className="flex flex-wrap gap-2 mt-2">
@@ -191,7 +191,7 @@ export function HealthTab() {
                     className="ml-1 hover:text-destructive"
                     aria-label={`Remove ${restriction} dietary restriction`}
                   >
-                    <X className="h-3 w-3" />
+                    <X aria-hidden="true" className="h-3 w-3" />
                   </button>
                 </Badge>
               ))}
@@ -205,7 +205,7 @@ export function HealthTab() {
           <CardTitle>{t('profile.health.accommodations')}</CardTitle>
           <CardDescription>{t('profile.health.accommodationsDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="specialAccommodations">{t('profile.health.specialAccommodations')}</Label>
             <Textarea
@@ -226,7 +226,7 @@ export function HealthTab() {
           <CardTitle>{t('profile.health.provider')}</CardTitle>
           <CardDescription>{t('profile.health.providerDescription')}</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent aria-hidden="true" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4">
             <div className="space-y-2">
               <Label htmlFor="doctorName">{t('profile.health.doctorName')}</Label>
@@ -279,7 +279,7 @@ export function HealthTab() {
           {saving ? (
             <Loader2 className="h-4 w-4 mr-2 animate-spin" />
           ) : (
-            <Save className="h-4 w-4 mr-2" aria-hidden="true" />
+            <Save aria-hidden="true" className="h-4 w-4 mr-2" />
           )}
           {t('profile.actions.saveChanges')}
         </Button>

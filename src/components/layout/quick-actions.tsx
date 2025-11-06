@@ -41,7 +41,7 @@ export function QuickActions() {
           <TooltipTrigger asChild>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="h-9 w-9">
-                <LayoutGrid className="h-4 w-4" />
+                <LayoutGrid aria-hidden="true" className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
           </TooltipTrigger>
@@ -53,15 +53,15 @@ export function QuickActions() {
           <DropdownMenuLabel>Quick Access</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/integrations`)}>
-            <LayoutGrid className="mr-2 h-4 w-4" />
+            <LayoutGrid aria-hidden="true" className="mr-2 h-4 w-4" />
             Integrations
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/automations`)}>
-            <Zap className="mr-2 h-4 w-4" />
+            <Zap aria-hidden="true" className="mr-2 h-4 w-4" />
             Automations
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => router.push(`/workspace/${currentWorkspace?.id}/admin/templates`)}>
-            <FileText className="mr-2 h-4 w-4" />
+            <FileText aria-hidden="true" className="mr-2 h-4 w-4" />
             Templates
           </DropdownMenuItem>
         </DropdownMenuContent>

@@ -88,13 +88,13 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
   const getAlertIcon = (type: Alert['alert_type']) => {
     switch (type) {
       case 'low_stock':
-        return <AlertTriangle className="h-4 w-4 text-orange-500" />
+        return <AlertTriangle aria-hidden="true" className="h-4 w-4 text-orange-500" />
       case 'out_of_stock':
-        return <PackageX className="h-4 w-4 text-red-500" />
+        return <PackageX aria-hidden="true" className="h-4 w-4 text-red-500" />
       case 'expiring':
-        return <Clock className="h-4 w-4 text-yellow-500" />
+        return <Clock aria-hidden="true" className="h-4 w-4 text-yellow-500" />
       default:
-        return <AlertTriangle className="h-4 w-4" />
+        return <AlertTriangle aria-hidden="true" className="h-4 w-4" />
     }
   }
 
@@ -117,10 +117,9 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="relative">
-          <Bell className="h-5 w-5" />
+          <Bell aria-hidden="true" className="h-5 w-5" />
           {unacknowledgedCount > 0 && (
-            <Badge 
-              className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
+            <Badge aria-hidden="true" className="absolute sm:relative sm:inset-auto -top-2 md:top-1 -right-2 md:right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
               variant="destructive"
             >
               {unacknowledgedCount > 9 ? '9+' : unacknowledgedCount}
@@ -136,7 +135,7 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
           )}
         </div>
         <Separator />
-        <ScrollArea className="h-[400px]">
+        <ScrollArea aria-hidden="true" className="h-[400px]">
           {loading ? (
             <div className="p-4 md:p-4 sm:p-6 md:p-8 text-center text-muted-foreground">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-2"></div>
@@ -144,7 +143,7 @@ export function InventoryAlertsPanel({ workspaceId }: InventoryAlertsPanelProps)
             </div>
           ) : alerts.length === 0 ? (
             <div className="p-4 md:p-4 sm:p-6 md:p-8 text-center text-muted-foreground">
-              <CheckCircle className="h-12 w-12 mx-auto mb-2 opacity-50 flex-shrink-0" />
+              <CheckCircle aria-hidden="true" className="h-12 w-12 mx-auto mb-2 opacity-50 flex-shrink-0" />
               <p>No active alerts</p>
               <p className="text-xs mt-1">All inventory levels look good!</p>
             </div>

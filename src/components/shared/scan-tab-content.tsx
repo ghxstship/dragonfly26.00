@@ -253,7 +253,7 @@ export function ScanTabContent() {
               size="sm"
               onClick={stopScanning}
             >
-              <X className="h-4 w-4 mr-2" />
+              <X aria-hidden="true" className="h-4 w-4 mr-2" />
               Cancel
             </Button>
             <Button
@@ -261,7 +261,7 @@ export function ScanTabContent() {
               onClick={captureScan}
               className="rounded-full h-14 w-14 p-0"
             >
-              <ScanLine className="h-6 w-6" />
+              <ScanLine aria-hidden="true" className="h-6 w-6" />
             </Button>
           </div>
         </div>
@@ -287,14 +287,14 @@ export function ScanTabContent() {
                 size="sm"
                 onClick={rescan}
               >
-                <X className="h-4 w-4 mr-2" />
+                <X aria-hidden="true" className="h-4 w-4 mr-2" />
                 Rescan
               </Button>
               <Button
                 size="sm"
                 onClick={saveScan}
               >
-                <Check className="h-4 w-4 mr-2 flex-shrink-0" />
+                <Check aria-hidden="true" className="h-4 w-4 mr-2 flex-shrink-0" />
                 Save Scan
               </Button>
             </div>
@@ -303,7 +303,7 @@ export function ScanTabContent() {
       ) : (
         <div className="flex flex-wrap items-center justify-center h-48 md:h-56 lg:h-64 border-2 border-dashed rounded-lg bg-muted/20">
           <div className="text-center">
-            <ScanLine className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
+            <ScanLine aria-hidden="true" className="h-16 w-16 mx-auto text-muted-foreground mb-3" />
             <p className="text-sm font-medium mb-1">Ready to Scan</p>
             <p className="text-xs text-muted-foreground max-w-xs">
               Position your document in view and tap the button below to begin scanning
@@ -318,13 +318,12 @@ export function ScanTabContent() {
       {/* Action Buttons */}
       {!showScanner && !scannedImage && (
         <>
-          <Button
-            className={cn("w-full", uploading && "opacity-50")}
+          <Button aria-hidden="true" className={cn("w-full", uploading && "opacity-50")}
             size="lg"
             onClick={startScanning}
             disabled={uploading}
           >
-            <ScanLine className="h-4 w-4 mr-2" />
+            <ScanLine aria-hidden="true" className="h-4 w-4 mr-2" />
             Start Scanning
           </Button>
 
@@ -342,7 +341,7 @@ export function ScanTabContent() {
                 </>
               ) : (
                 <>
-                  <Upload className="h-4 w-4 mr-2" />
+                  <Upload aria-hidden="true" className="h-4 w-4 mr-2" />
                   Upload PDF
                 </>
               )}
@@ -363,7 +362,7 @@ export function ScanTabContent() {
             accept="application/pdf"
             onChange={handlePDFUpload}
             className="hidden md:block"
-          />
+           aria-label="file" />
         </>
       )}
     </div>

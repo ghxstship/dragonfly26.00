@@ -223,7 +223,7 @@ export function RightSidebar() {
                     className="w-full h-10 max-w-full"
                     onClick={() => setIsExpanded(true)}
                   >
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent side="left" className="z-[100]">
@@ -233,7 +233,7 @@ export function RightSidebar() {
             </div>
 
             {/* Group Icons */}
-            <ScrollArea className="flex-1">
+            <ScrollArea aria-hidden="true" className="flex-1">
               <div className="flex flex-wrap flex-col gap-1 p-2">
                 {Object.entries(tabGroups).map(([key, config]) => {
                   const GroupIcon = config.icon
@@ -246,7 +246,7 @@ export function RightSidebar() {
                           className="w-full h-12 max-w-full"
                           onClick={() => handleGroupChange(key as TabGroup)}
                         >
-                          <GroupIcon className="h-5 w-5" />
+                          <GroupIcon aria-hidden="true" className="h-5 w-5" />
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent side="left" className="z-[100]">
@@ -268,7 +268,7 @@ export function RightSidebar() {
                     className="w-full h-10 max-w-full"
                     onClick={() => setRightSidebarOpen(false)}
                   >
-                    <X className="h-4 w-4" />
+                    <X aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent side="left" className="z-[100]">
@@ -287,7 +287,7 @@ export function RightSidebar() {
               <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 min-w-0 flex-1">
                 {(() => {
                   const Icon = getTabIcon()
-                  return <Icon className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
+                  return <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
                 })()}
                 <h3 className="text-sm font-semibold truncate">{getTitle()}</h3>
               </div>
@@ -300,10 +300,10 @@ export function RightSidebar() {
                       className="h-8 w-8"
                       onClick={() => setIsExpanded(false)}
                     >
-                      <ChevronRight className="h-4 w-4" />
+                      <ChevronRight aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent className="z-[100]">
+                  <TooltipContent aria-hidden="true" className="z-[100]">
                     <p>Collapse sidebar</p>
                   </TooltipContent>
                 </Tooltip>
@@ -313,7 +313,7 @@ export function RightSidebar() {
                   className="h-8 w-8"
                   onClick={() => setRightSidebarOpen(false)}
                 >
-                  <X className="h-4 w-4" />
+                  <X aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -330,7 +330,7 @@ export function RightSidebar() {
                     className="text-xs h-7 gap-1.5 flex-shrink-0"
                     onClick={() => handleGroupChange(key as TabGroup)}
                   >
-                    <GroupIcon className="h-3 w-3" />
+                    <GroupIcon aria-hidden="true" className="h-3 w-3" />
                     <span className="hidden md:block sm:inline">{config.label}</span>
                   </Button>
                 )
@@ -340,20 +340,20 @@ export function RightSidebar() {
             {/* Tab Content */}
             <Tabs value={rightSidebarTab} onValueChange={setRightSidebarTab} className="flex-1 flex flex-wrap flex-col min-h-0">
               {/* Tabs Navigation - Horizontal Scroll */}
-              <TabsList className="w-full justify-start rounded-none border-b px-3 py-0 h-auto bg-transparent overflow-x-auto flex-nowrap max-w-full">
+              <TabsList aria-hidden="true" className="w-full justify-start rounded-none border-b px-3 py-0 h-auto bg-transparent overflow-x-auto flex-nowrap max-w-full">
                 {/* My Work Tabs */}
                 {activeGroup === 'mywork' && (
                   <>
                     <TabsTrigger value="agenda" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <Calendar className="h-3.5 w-3.5" />
+                      <Calendar aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Agenda</span>
                     </TabsTrigger>
                     <TabsTrigger value="tasks" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <ClipboardList className="h-3.5 w-3.5" />
+                      <ClipboardList aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Tasks</span>
                     </TabsTrigger>
                     <TabsTrigger value="files" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <FileText className="h-3.5 w-3.5" />
+                      <FileText aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Files</span>
                     </TabsTrigger>
                   </>
@@ -363,19 +363,19 @@ export function RightSidebar() {
                 {activeGroup === 'collaboration' && (
                   <>
                     <TabsTrigger value="notifications" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <Bell className="h-3.5 w-3.5" />
+                      <Bell aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Notifications</span>
                     </TabsTrigger>
                     <TabsTrigger value="comments" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <MessageSquare className="h-3.5 w-3.5" />
+                      <MessageSquare aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Comments</span>
                     </TabsTrigger>
                     <TabsTrigger value="time" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <Clock className="h-3.5 w-3.5" />
+                      <Clock aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Time</span>
                     </TabsTrigger>
                     <TabsTrigger value="activity" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <Activity className="h-3.5 w-3.5" />
+                      <Activity aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Activity</span>
                     </TabsTrigger>
                   </>
@@ -385,11 +385,11 @@ export function RightSidebar() {
                 {activeGroup === 'data' && (
                   <>
                     <TabsTrigger value="filter" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <Filter className="h-3.5 w-3.5" />
+                      <Filter aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Filter</span>
                     </TabsTrigger>
                     <TabsTrigger value="sort" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <ArrowUpDown className="h-3.5 w-3.5" />
+                      <ArrowUpDown aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Sort</span>
                     </TabsTrigger>
                     <TabsTrigger value="fields" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
@@ -403,11 +403,11 @@ export function RightSidebar() {
                 {activeGroup === 'transfer' && (
                   <>
                     <TabsTrigger value="import" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <Upload className="h-3.5 w-3.5" />
+                      <Upload aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Import</span>
                     </TabsTrigger>
                     <TabsTrigger value="export" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <Download className="h-3.5 w-3.5" />
+                      <Download aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Export</span>
                     </TabsTrigger>
                     <TabsTrigger value="share" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
@@ -421,18 +421,18 @@ export function RightSidebar() {
                 {activeGroup === 'capture' && (
                   <>
                     <TabsTrigger value="scan" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <ScanLine className="h-3.5 w-3.5" />
+                      <ScanLine aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Scan</span>
                     </TabsTrigger>
                     <TabsTrigger value="photo" className="gap-1.5 text-xs px-3 py-2.5 data-[state=active]:bg-background data-[state=active]:shadow-sm">
-                      <Camera className="h-3.5 w-3.5" />
+                      <Camera aria-hidden="true" className="h-3.5 w-3.5" />
                       <span className="hidden md:block sm:inline">Photo</span>
                     </TabsTrigger>
                   </>
                 )}
               </TabsList>
 
-              <ScrollArea className="flex-1">
+              <ScrollArea aria-hidden="true" className="flex-1">
                 {/* My Work Content */}
                 <TabsContent value="agenda" className="m-0 h-full flex flex-wrap flex-col">
                   <AgendaTabContent />

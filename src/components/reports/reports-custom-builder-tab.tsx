@@ -51,9 +51,9 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
         <div className="col-span-1 space-y-4">
           <Card role="region" aria-labelledby="config-title">
             <CardHeader>
-              <CardTitle className="text-lg" id="config-title">{t('reportConfiguration')}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-lg" id="config-title">{t('reportConfiguration')}</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent aria-hidden="true" className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="report-name">{t('reportName')}</Label>
                 <Input id="report-name" placeholder={t('reportNamePlaceholder')} aria-label={t('reportName')} />
@@ -82,7 +82,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
                     const Icon = chart.icon
                     return (
                       <Button key={chart.value} variant="outline" className="h-20 flex flex-wrap flex-col gap-2">
-                        <Icon className="h-6 w-6" />
+                        <Icon aria-hidden="true" className="h-6 w-6" />
                         <span className="text-xs">{t(chart.labelKey)}</span>
                       </Button>
                     )
@@ -94,7 +94,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
 
           <Card role="region" aria-labelledby="fields-title">
             <CardHeader>
-              <CardTitle className="text-sm" id="fields-title">{t('availableFields')}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-sm" id="fields-title">{t('availableFields')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
@@ -103,7 +103,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
                     key={field.id}
                     className="flex flex-col md:flex-row items-center gap-2 p-2 border rounded hover:bg-accent cursor-move"
                   >
-                    <GripVertical className="h-4 w-4 text-muted-foreground" />
+                    <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                     <div className="flex-1">
                       <p className="text-sm font-medium">{t(field.nameKey)}</p>
                       <Badge variant="outline" className="text-xs">{field.type}</Badge>
@@ -117,14 +117,14 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
 
         {/* Preview Panel */}
         <div className="col-span-2">
-          <Card className="h-full" role="region" aria-labelledby="preview-title">
+          <Card aria-hidden="true" className="h-full" role="region" aria-labelledby="preview-title">
             <CardHeader>
-              <CardTitle className="text-lg" id="preview-title">{t('reportPreview')}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-lg" id="preview-title">{t('reportPreview')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="border-2 border-dashed rounded-lg p-4 sm:p-6 md:p-8 text-center min-h-[300px] md:h-[500px] flex items-center justify-center" role="status" aria-label={t('dragFieldsPrompt')}>
                 <div className="text-muted-foreground">
-                  <BarChart className="h-16 w-16 mx-auto mb-4 opacity-50" aria-hidden="true" />
+                  <BarChart aria-hidden="true" className="h-16 w-16 mx-auto mb-4 opacity-50" />
                   <p className="text-lg font-medium mb-2">{t('dragFieldsPrompt')}</p>
                   <p className="text-sm">{t('getStartedPrompt')}</p>
                 </div>
@@ -134,7 +134,7 @@ export function ReportsCustomBuilderTab({ data = [], loading = false }: ReportsC
                 <h4 className="font-medium mb-2">{t('filters')}</h4>
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
                   <Button variant="outline" size="sm" aria-label={t('addFilter')}>
-                    <Plus className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Plus aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('addFilter')}
                   </Button>
                   <Badge variant="secondary">{t('noFiltersApplied')}</Badge>

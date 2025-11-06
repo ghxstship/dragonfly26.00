@@ -95,7 +95,7 @@ export function DependenciesManager({
       {/* Warning if blocked */}
       {hasBlockedDependencies && (
         <div className="flex items-start gap-2 p-3 bg-yellow-50 dark:bg-yellow-950 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-          <AlertCircle className="h-4 w-4 text-yellow-600 dark:text-yellow-400 mt-0.5" />
+          <AlertCircle aria-hidden="true" className="h-4 w-4 text-yellow-600 dark:text-yellow-400 mt-0.5" />
           <div className="text-sm text-yellow-800 dark:text-yellow-200">
             This item is blocked. Complete blocking items before marking this as done.
           </div>
@@ -149,7 +149,7 @@ export function DependenciesManager({
       <Dialog open={isAdding} onOpenChange={setIsAdding}>
         <DialogTrigger asChild>
           <Button variant="outline" className="w-full gap-2 max-w-full">
-            <Plus className="h-4 w-4" />
+            <Plus aria-hidden="true" className="h-4 w-4" />
             Add Dependency
           </Button>
         </DialogTrigger>

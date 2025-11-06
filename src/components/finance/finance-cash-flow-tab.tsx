@@ -82,9 +82,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
       {/* Summary Cards */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Current Balance</CardTitle>
-            <DollarSign className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Current Balance</CardTitle>
+            <DollarSign aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">${currentBalance.toLocaleString()}</div>
@@ -95,9 +95,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Projected (30d)</CardTitle>
-            <Waves className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Projected (30d)</CardTitle>
+            <Waves aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${projectedBalance < currentBalance ? 'text-red-600' : 'text-green-600'}`}>
@@ -110,9 +110,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Cash Runway</CardTitle>
-            <Calendar className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Cash Runway</CardTitle>
+            <Calendar aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{cashRunway} weeks</div>
@@ -123,9 +123,9 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Burn Rate</CardTitle>
-            <TrendingDown className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Burn Rate</CardTitle>
+            <TrendingDown aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-red-600">$7,800</div>
@@ -219,8 +219,8 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         {/* Inflow Breakdown */}
         <Card>
           <CardHeader>
-            <CardTitle className="flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
-              <TrendingUp className="h-5 w-5" aria-hidden="true" />
+            <CardTitle aria-hidden="true" className="flex flex-col md:flex-row items-center gap-2">
+              <TrendingUp aria-hidden="true" className="h-5 w-5" />
               Inflow Breakdown
             </CardTitle>
             <CardDescription>Sources of cash inflows this month</CardDescription>
@@ -263,8 +263,8 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
         {/* Outflow Breakdown */}
         <Card>
           <CardHeader>
-            <CardTitle className="flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
-              <TrendingDown className="h-5 w-5" aria-hidden="true" />
+            <CardTitle aria-hidden="true" className="flex flex-col md:flex-row items-center gap-2">
+              <TrendingDown aria-hidden="true" className="h-5 w-5" />
               Outflow Breakdown
             </CardTitle>
             <CardDescription>Cash outflows by category this month</CardDescription>
@@ -322,7 +322,7 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
               >
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
                   {payment.critical && (
-                    <AlertCircle className="h-4 w-4" aria-hidden="true" />
+                    <AlertCircle aria-hidden="true" className="h-4 w-4" />
                   )}
                   <div>
                     <p className="font-medium text-sm">{payment.description}</p>
@@ -352,10 +352,10 @@ export function FinanceCashFlowTab({ data, loading }: FinanceCashFlowTabProps) {
 
       {/* Alert */}
       {cashRunway < 20 && (
-        <Card className="border-orange-200 bg-orange-50 dark:border-orange-900 dark:bg-orange-950" aria-hidden="true">
+        <Card aria-hidden="true" className="border-orange-200 bg-orange-50 dark:border-orange-900 dark:bg-orange-950">
           <CardHeader>
-            <CardTitle className="flex flex-col md:flex-row items-center gap-2" aria-hidden="true">
-              <AlertCircle className="h-5 w-5" aria-hidden="true" />
+            <CardTitle aria-hidden="true" className="flex flex-col md:flex-row items-center gap-2">
+              <AlertCircle aria-hidden="true" className="h-5 w-5" />
               Cash Runway Alert
             </CardTitle>
           </CardHeader>

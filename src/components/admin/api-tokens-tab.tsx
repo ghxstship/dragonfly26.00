@@ -155,23 +155,23 @@ export function ApiTokensTab() {
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.apiTokensTab.totalTokens')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{tokens.length}</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">{tokens.length}</CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.apiTokensTab.activeTokens')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">
               {tokens.filter(t => (t as any).status === "active").length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader aria-hidden="true" className="pb-3">
             <CardDescription>{t('admin.apiTokensTab.apiCallsMonth')}</CardDescription>
-            <CardTitle className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">12.4k</CardTitle>
+            <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl">12.4k</CardTitle>
           </CardHeader>
         </Card>
       </div>
@@ -192,7 +192,7 @@ export function ApiTokensTab() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-3 mb-2">
-                      <CardTitle className="text-base">{token.name}</CardTitle>
+                      <CardTitle aria-hidden="true" className="text-base">{token.name}</CardTitle>
                       <Badge variant={
                         (token as any).status === "active" ? "default" :
                         (token as any).status === "expired" ? "secondary" :
@@ -215,9 +215,9 @@ export function ApiTokensTab() {
                           aria-label={isVisible ? t('admin.apiTokensTab.hideToken') : t('admin.apiTokensTab.showToken')}
                         >
                           {isVisible ? (
-                            <EyeOff className="h-4 w-4" aria-hidden="true" />
+                            <EyeOff aria-hidden="true" className="h-4 w-4" />
                           ) : (
-                            <Eye className="h-4 w-4" aria-hidden="true" />
+                            <Eye aria-hidden="true" className="h-4 w-4" />
                           )}
                         </Button>
                         <Button
@@ -226,7 +226,7 @@ export function ApiTokensTab() {
                           onClick={() => handleCopyToken(token.token)}
                           aria-label={t('admin.apiTokensTab.copyToken')}
                         >
-                          <Copy className="h-4 w-4" aria-hidden="true" />
+                          <Copy aria-hidden="true" className="h-4 w-4" />
                         </Button>
                       </div>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-xs text-muted-foreground">
@@ -235,7 +235,7 @@ export function ApiTokensTab() {
                           <>
                             <span>•</span>
                             <div className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                              <Clock className="h-3 w-3" aria-hidden="true" />
+                              <Clock aria-hidden="true" className="h-3 w-3" />
                               {t('admin.apiTokensTab.lastUsed')} {token.lastUsed}
                             </div>
                           </>
@@ -282,12 +282,12 @@ export function ApiTokensTab() {
       {/* Security Notice */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">{t('admin.apiTokensTab.securityBestPractices')}</CardTitle>
+          <CardTitle aria-hidden="true" className="text-base">{t('admin.apiTokensTab.securityBestPractices')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
             <div className="flex items-start gap-2 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
-              <AlertCircle className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+              <AlertCircle aria-hidden="true" className="h-4 w-4 text-amber-600 flex-shrink-0 mt-0.5" />
               <div className="text-xs text-amber-900 dark:text-amber-100">
                 <p className="font-medium mb-1">{t('admin.apiTokensTab.warningTitle')}</p>
                 <ul className="list-disc list-inside space-y-1">
@@ -360,7 +360,7 @@ export function ApiTokensTab() {
               {t('common.cancel')}
             </Button>
             {hasPermission('create') && <Button onClick={handleCreateToken}>
-              <Key className="h-4 w-4 mr-2" aria-hidden="true" />
+              <Key aria-hidden="true" className="h-4 w-4 mr-2" />
               {t('admin.apiTokensTab.generateToken')}
             </Button>}
           </DialogFooter>
@@ -390,7 +390,7 @@ export function ApiTokensTab() {
                   onClick={() => generatedToken && handleCopyToken(generatedToken)}
                   aria-label={t('admin.apiTokensTab.copyToken')}
                 >
-                  <Copy className="h-4 w-4" aria-hidden="true" />
+                  <Copy aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
             </div>

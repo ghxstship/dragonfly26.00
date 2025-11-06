@@ -73,10 +73,10 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
   return (
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Overall Success Score */}
-      <Card className="border-2">
-        <CardContent className="p-4 md:p-4 sm:p-6 md:p-8">
+      <Card aria-hidden="true" className="border-2">
+        <CardContent aria-hidden="true" className="p-4 md:p-4 sm:p-6 md:p-8">
           <div className="text-center">
-            <Trophy className="h-16 w-16 mx-auto mb-4 text-yellow-600" aria-hidden="true" />
+            <Trophy aria-hidden="true" className="h-16 w-16 mx-auto mb-4 text-yellow-600" />
             <div className="text-3xl md:text-4xl lg:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-gradient-purple">
               {totalScore}%
             </div>
@@ -93,7 +93,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
         <Card key={index} role="article">
           <CardHeader>
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
-              <CardTitle className="text-base md:text-lg lg:text-xl">{t(category.categoryKey)}</CardTitle>
+              <CardTitle aria-hidden="true" className="text-base md:text-lg lg:text-xl">{t(category.categoryKey)}</CardTitle>
               <div className="text-right">
                 <p className="text-base md:text-lg lg:text-xl md:text-lg md:text-xl lg:text-2xl lg:text-3xl font-bold">{category.overallScore}%</p>
                 <p className="text-sm text-muted-foreground">{t('categoryScore')}</p>
@@ -113,7 +113,7 @@ export function InsightsSuccessMetricsTab({ data = [], loading = false }: Insigh
                   <div key={idx} className="p-4 border rounded-lg hover:bg-accent transition-colors">
                     <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-2">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                        <Target className={`h-5 w-5 ${isOnTarget ? 'text-green-600' : 'text-yellow-600'}`} />
+                        <Target aria-hidden="true" className={`h-5 w-5 ${isOnTarget ? 'text-green-600' : 'text-yellow-600'}`} />
                         <div>
                           <p className="font-medium">{t(metric.nameKey)}</p>
                           <p className="text-xs text-muted-foreground">Weight: {metric.weight}%</p>

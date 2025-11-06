@@ -95,11 +95,11 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
       <div className="grid gap-2 md:gap-3 lg:gap-4">
         {executiveReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Executive report: ${t(report.titleKey)}`}>
-            <CardContent className="p-4 sm:p-6">
+            <CardContent aria-hidden="true" className="p-4 sm:p-6">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
-                    <Crown className="h-5 w-5 text-purple-600" aria-hidden="true" />
+                    <Crown aria-hidden="true" className="h-5 w-5 text-purple-600" />
                     <h3 className="font-semibold text-lg" id={`report-${report.id}`}>{t(report.titleKey)}</h3>
                     <Badge variant="outline" className="bg-green-100 text-green-800 border-green-200" aria-label={`Status: ${report.status}`}>
                       {report.status}
@@ -122,7 +122,7 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
                     <div>
                       <p className="text-sm font-medium text-muted-foreground mb-2">{t('recipients')}</p>
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-                        <Users className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                        <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                         <span className="text-sm" aria-label={`Recipients: ${report.recipients.join(", ")}`}>{report.recipients.join(", ")}</span>
                       </div>
                     </div>
@@ -135,11 +135,11 @@ export function ReportsExecutiveTab({ data = [], loading = false }: ReportsExecu
                 
                 <div className="flex flex-wrap flex-col gap-2 ml-4">
                   <Button aria-label={`${t('viewReport')}: ${t(report.titleKey)}`}>
-                    <Target className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Target aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('viewReport')}
                   </Button>
                   <Button variant="outline" aria-label={`${t('customize')}: ${t(report.titleKey)}`}>
-                    <TrendingUp className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <TrendingUp aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('customize')}
                   </Button>
                 </div>

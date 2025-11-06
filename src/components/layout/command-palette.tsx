@@ -66,19 +66,19 @@ export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPale
         
         <CommandGroup heading={t('commandPalette.quickActions')}>
           <CommandItem onSelect={() => runCommand(() => onCreateItem?.("task"))}>
-            <Plus className="mr-2 h-4 w-4" />
+            <Plus aria-hidden="true" className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.createNewTask')}</span>
           </CommandItem>
           <CommandItem onSelect={() => runCommand(() => onCreateItem?.("project"))}>
-            <Folder className="mr-2 h-4 w-4" />
+            <Folder aria-hidden="true" className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.createNewProject')}</span>
           </CommandItem>
           <CommandItem onSelect={() => runCommand(() => onCreateItem?.("file"))}>
-            <FileText className="mr-2 h-4 w-4" />
+            <FileText aria-hidden="true" className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.createNewDoc')}</span>
           </CommandItem>
           <CommandItem onSelect={() => runCommand(() => onCreateItem?.("workspace"))}>
-            <Plus className="mr-2 h-4 w-4" />
+            <Plus aria-hidden="true" className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.createNewWorkspace')}</span>
           </CommandItem>
         </CommandGroup>
@@ -87,15 +87,15 @@ export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPale
 
         <CommandGroup heading={t('commandPalette.navigation')}>
           <CommandItem onSelect={() => runCommand(() => router.push(`/workspace/${currentWorkspace?.id}/projects/overview`))}>
-            <Folder className="mr-2 h-4 w-4" />
+            <Folder aria-hidden="true" className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.projects')}</span>
           </CommandItem>
           <CommandItem onSelect={() => runCommand(() => router.push(`/workspace/${currentWorkspace?.id}/people/personnel`))}>
-            <Users className="mr-2 h-4 w-4" />
+            <Users aria-hidden="true" className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.people')}</span>
           </CommandItem>
           <CommandItem onSelect={() => runCommand(() => router.push(`/workspace/${currentWorkspace?.id}/events/all-events`))}>
-            <Calendar className="mr-2 h-4 w-4" />
+            <Calendar aria-hidden="true" className="mr-2 h-4 w-4" />
             <span>{t('commandPalette.events')}</span>
           </CommandItem>
         </CommandGroup>
@@ -104,7 +104,7 @@ export function CommandPalette({ open, onOpenChange, onCreateItem }: CommandPale
 
         <CommandGroup heading="Settings">
           <CommandItem onSelect={() => runCommand(() => router.push(`/workspace/${currentWorkspace?.id}/admin/overview`))}>
-            <Settings className="mr-2 h-4 w-4" />
+            <Settings aria-hidden="true" className="mr-2 h-4 w-4" />
             <span>Workspace settings</span>
           </CommandItem>
         </CommandGroup>

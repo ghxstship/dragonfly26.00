@@ -80,7 +80,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+      <DialogContent aria-hidden="true" className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Share &quot;{fileName}&quot;</DialogTitle>
           <DialogDescription>
@@ -100,7 +100,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                 onKeyDown={(e) => e.key === 'Enter' && handleShare()}
               />
               <Select value={permissionLevel as any} onValueChange={(value: any) => setPermissionLevel(value)}>
-                <SelectTrigger className="w-full max-w-[140px]">
+                <SelectTrigger aria-hidden="true" className="w-full max-w-[140px]">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -123,7 +123,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                 {permissions.map((perm: any) => (
                   <div key={perm.id} className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between p-2 rounded-lg border">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
-                      <Avatar className="h-8 w-8">
+                      <Avatar aria-hidden="true" className="h-8 w-8">
                         <AvatarImage src={perm.user?.avatar_url} />
                         <AvatarFallback>
                           {perm.user?.first_name?.[0]}{perm.user?.last_name?.[0]}
@@ -135,7 +135,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                         </p>
                         {perm.expires_at && (
                           <p className="text-xs text-muted-foreground flex flex-wrap flex-col md:flex-row items-center gap-1">
-                            <Calendar className="h-3 w-3" />
+                            <Calendar aria-hidden="true" className="h-3 w-3" />
                             Expires {new Date(perm.expires_at).toLocaleDateString()}
                           </p>
                         )}
@@ -146,7 +146,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                         {getPermissionBadge(perm.permission_level).label}
                       </Badge>
                       <Button variant="ghost" size="icon" className="h-8 w-8">
-                        <X className="h-4 w-4" />
+                        <X aria-hidden="true" className="h-4 w-4" />
                       </Button>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export function FileShareDialog({ fileId, fileName, open, onOpenChange }: FileSh
                   size="icon"
                   onClick={handleCopyLink}
                 >
-                  {copied ? <Check className="h-4 w-4 flex-shrink-0" /> : <Copy className="h-4 w-4" />}
+                  {copied ? <Check aria-hidden="true" className="h-4 w-4 flex-shrink-0" /> : <Copy aria-hidden="true" className="h-4 w-4" />}
                 </Button>
               </div>
             )}

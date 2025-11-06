@@ -99,10 +99,10 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
   }
 
   return (
-    <Card className={className}>
+    <Card aria-hidden="true" className={className}>
       <CardHeader>
-        <CardTitle className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-          <Activity className="h-5 w-5" />
+        <CardTitle aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2">
+          <Activity aria-hidden="true" className="h-5 w-5" />
           Activity
         </CardTitle>
       </CardHeader>
@@ -113,7 +113,7 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
           </div>
         ) : activities.length === 0 ? (
           <div className="text-center py-4 md:py-6 lg:py-8 text-muted-foreground">
-            <Activity className="h-12 w-12 mx-auto mb-2 opacity-50" />
+            <Activity aria-hidden="true" className="h-12 w-12 mx-auto mb-2 opacity-50" />
             <p>No activity yet</p>
           </div>
         ) : (
@@ -131,7 +131,7 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
                   
                   {/* Icon */}
                   <div className={`relative z-10 flex items-center justify-center h-8 w-8 rounded-full bg-background border-2 ${color}`}>
-                    <Icon className="h-4 w-4" />
+                    <Icon aria-hidden="true" className="h-4 w-4" />
                   </div>
                   
                   {/* Content */}
@@ -139,9 +139,9 @@ export function FileActivityTimeline({ fileId, className }: FileActivityTimeline
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 flex-1">
                         {activity.user && (
-                          <Avatar className="h-6 w-6">
+                          <Avatar aria-hidden="true" className="h-6 w-6">
                             <AvatarImage src={activity.user.avatar_url} />
-                            <AvatarFallback className="text-xs">
+                            <AvatarFallback aria-hidden="true" className="text-xs">
                               {activity.user.first_name?.[0]}{activity.user.last_name?.[0]}
                             </AvatarFallback>
                           </Avatar>

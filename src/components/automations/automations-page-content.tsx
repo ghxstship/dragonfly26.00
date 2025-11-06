@@ -47,26 +47,26 @@ export function AutomationsPageContent() {
             <p className="text-muted-foreground mt-2">Automate repetitive tasks</p>
           </div>
           <Button onClick={() => setIsBuilding(true)} className="gap-2">
-            <Plus className="h-4 w-4" />
+            <Plus aria-hidden="true" className="h-4 w-4" />
             Create Automation
           </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-4">
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <p className="text-sm text-muted-foreground">Total</p>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.total}</p>
             </CardContent>
           </Card>
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <p className="text-sm text-muted-foreground">Active</p>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{stats.active}</p>
             </CardContent>
           </Card>
           <Card>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <p className="text-sm text-muted-foreground">Executions</p>
               <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{stats.executions}</p>
             </CardContent>

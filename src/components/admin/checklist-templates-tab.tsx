@@ -82,12 +82,12 @@ export function ChecklistTemplatesTab() {
             </div>
             <Dialog open={isCreating} onOpenChange={setIsCreating}>
               <DialogTrigger asChild>
-                <Button className="gap-2" aria-label="Add new checklist template">
-                  <Plus className="h-4 w-4" aria-hidden="true" />
+                <Button aria-hidden="true" className="gap-2" aria-label="Add new checklist template">
+                  <Plus aria-hidden="true" className="h-4 w-4" />
                   Add Template
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl px-4 sm:px-6 lg:px-8 max-h-[90vh] overflow-y-auto">
+              <DialogContent aria-hidden="true" className="max-w-2xl px-4 sm:px-6 lg:px-8 max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle>Create Checklist Template</DialogTitle>
                 </DialogHeader>
@@ -139,7 +139,7 @@ export function ChecklistTemplatesTab() {
                             }
                             aria-label="Add another checklist item"
                           >
-                            <Plus className="h-4 w-4" aria-hidden="true" />
+                            <Plus aria-hidden="true" className="h-4 w-4" />
                           </Button>
                         )}
                       </div>
@@ -172,7 +172,7 @@ export function ChecklistTemplatesTab() {
               >
                 <div className="flex items-start justify-between">
                   <div className="flex flex-wrap gap-3 flex-1">
-                    <ListChecks className="h-5 w-5 text-muted-foreground mt-0.5" aria-hidden="true" />
+                    <ListChecks aria-hidden="true" className="h-5 w-5 text-muted-foreground mt-0.5" />
                     <div className="flex-1">
                       <div className="font-medium">{template.nameKey ? t(template.nameKey) : template.name}</div>
                       {template.description && (
@@ -189,14 +189,13 @@ export function ChecklistTemplatesTab() {
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Template actions">
-                        <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+                        <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem>Edit</DropdownMenuItem>
                       <DropdownMenuItem>Duplicate</DropdownMenuItem>
-                      <DropdownMenuItem
-                        className="text-destructive"
+                      <DropdownMenuItem aria-hidden="true" className="text-destructive"
                         onClick={() => deleteTemplate(template.id)}
                       >
                         Delete

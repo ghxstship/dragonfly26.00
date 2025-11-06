@@ -92,6 +92,7 @@ export function FormBuilderOrganism({
               <textarea
                 className="w-full min-h-[100px] rounded-md border border-input bg-background px-3 py-2 max-w-full"
                 placeholder={field.placeholder}
+                aria-label={field.placeholder || "Text input"}
               />
             ) : field.type === 'select' ? (
               <Select>
@@ -128,14 +129,14 @@ export function FormBuilderOrganism({
         <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
           <h3 className="font-semibold">{t('formBuilder.fields')}</h3>
           <Button onClick={addField} size="sm" className="gap-2">
-            <Plus className="h-4 w-4" aria-hidden="true" />
+            <Plus aria-hidden="true" className="h-4 w-4" />
             {t('formBuilder.addField')}
           </Button>
         </div>
 
         {fields.length === 0 ? (
           <Card>
-            <CardContent className="flex flex-wrap flex-col items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-center">
+            <CardContent aria-hidden="true" className="flex flex-wrap flex-col items-center justify-center py-6 md:py-4 md:py-6 lg:py-8 lg:py-12 text-center">
               <p className="text-muted-foreground mb-4">{t('formBuilder.noFields')}</p>
               <Button onClick={addField} variant="outline">
                 {t('formBuilder.addFirstField')}
@@ -152,8 +153,8 @@ export function FormBuilderOrganism({
               )}
               onClick={() => setSelectedField(field.id)}
             >
-              <CardContent className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3">
-                <GripVertical className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <CardContent aria-hidden="true" className="flex flex-wrap flex-col md:flex-row items-center gap-2 p-3">
+                <GripVertical aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
                 <div className="flex-1 min-w-0">
                   <p className="font-medium truncate">{field.label}</p>
                   <p className="text-xs text-muted-foreground">
@@ -182,7 +183,7 @@ export function FormBuilderOrganism({
         {selectedField ? (
           <div className="space-y-4">
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-4">
-              <Settings className="h-5 w-5" aria-hidden="true" />
+              <Settings aria-hidden="true" className="h-5 w-5" />
               <h3 className="font-semibold">{t('formBuilder.properties')}</h3>
             </div>
 

@@ -80,10 +80,10 @@ export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTempl
           <Card key={template.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Template: ${t(template.nameKey)}`}>
             <CardHeader>
               <div className="flex items-start justify-between">
-                <FileStack className="h-8 w-8 text-blue-600" aria-hidden="true" />
+                <FileStack aria-hidden="true" className="h-8 w-8 text-blue-600" />
                 <Badge variant="secondary" aria-label={`Category: ${t(template.categoryKey)}`}>{t(template.categoryKey)}</Badge>
               </div>
-              <CardTitle className="mt-4" id={`template-${template.id}`}>{t(template.nameKey)}</CardTitle>
+              <CardTitle aria-hidden="true" className="mt-4" id={`template-${template.id}`}>{t(template.nameKey)}</CardTitle>
               <CardDescription>{t(template.descriptionKey)}</CardDescription>
             </CardHeader>
             <CardContent>
@@ -98,21 +98,21 @@ export function ReportsTemplatesTab({ data = [], loading = false }: ReportsTempl
                 
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 text-sm text-muted-foreground">
                   <div className="flex flex-col md:flex-row items-center gap-1" aria-label={`Rating: ${template.rating} out of 5`}>
-                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                    <Star aria-hidden="true" className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                     <span>{template.rating}</span>
                   </div>
                   <div className="flex flex-col md:flex-row items-center gap-1" aria-label={`${template.uses} uses`}>
-                    <Download className="h-4 w-4" aria-hidden="true" />
+                    <Download aria-hidden="true" className="h-4 w-4" />
                     <span>{template.uses} {t('uses')}</span>
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <Button className="flex-1" size="sm" aria-label={`${t('useTemplate')}: ${t(template.nameKey)}`}>
+                  <Button aria-hidden="true" className="flex-1" size="sm" aria-label={`${t('useTemplate')}: ${t(template.nameKey)}`}>
                     {t('useTemplate')}
                   </Button>
                   <Button variant="outline" size="sm" aria-label={`${t('previewTemplate')}: ${t(template.nameKey)}`}>
-                    <Eye className="h-4 w-4" aria-hidden="true" />
+                    <Eye aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </div>
               </div>

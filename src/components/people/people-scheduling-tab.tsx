@@ -86,7 +86,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -101,9 +101,9 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
       {/* Stats */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Shifts</CardTitle>
-            <Calendar className="h-4 w-4 text-muted-foreground" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Shifts</CardTitle>
+            <Calendar aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{shifts.length}</div>
@@ -112,9 +112,9 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Hours</CardTitle>
-            <Clock className="h-4 w-4 text-muted-foreground" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Hours</CardTitle>
+            <Clock aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{totalHours as any}</div>
@@ -122,10 +122,10 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
           </CardContent>
         </Card>
 
-        <Card className={conflicts > 0 ? "border-yellow-200 dark:border-yellow-900" : ""}>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Conflicts</CardTitle>
-            <AlertTriangle className="h-4 w-4 text-muted-foreground" />
+        <Card aria-hidden="true" className={conflicts > 0 ? "border-yellow-200 dark:border-yellow-900" : ""}>
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Conflicts</CardTitle>
+            <AlertTriangle aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className={`text-2xl font-bold ${conflicts > 0 ? 'text-yellow-600' : ''}`}>
@@ -136,9 +136,9 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Overtime</CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
+          <CardHeader aria-hidden="true" className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Overtime</CardTitle>
+            <Users aria-hidden="true" className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{overtimeShifts as any}</div>
@@ -173,7 +173,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   newDate.setDate(newDate.getDate() - 7)
                   setCurrentDate(newDate)
                 }} aria-label="Previous week">
-                  <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+                  <ChevronLeft aria-hidden="true" className="h-4 w-4" />
                 </Button>
                 <Button variant="outline" size="sm" onClick={() => setCurrentDate(new Date())}>
                   Today
@@ -183,7 +183,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                   newDate.setDate(newDate.getDate() + 7)
                   setCurrentDate(newDate)
                 }} aria-label="Next week">
-                  <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                  <ChevronRight aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -244,7 +244,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
                                     <Badge variant="outline" className="text-[10px] px-1 py-0">OT</Badge>
                                   )}
                                   {shift.has_conflict && (
-                                    <AlertTriangle className="h-4 w-4 text-yellow-600" />
+                                    <AlertTriangle aria-hidden="true" className="h-4 w-4 text-yellow-600" />
                                   )}
                                   {shift.is_confirmed && (
                                     <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
@@ -277,7 +277,7 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
               <span>{t('evening')}</span>
             </div>
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <AlertTriangle className="h-4 w-4 text-yellow-600" />
+              <AlertTriangle aria-hidden="true" className="h-4 w-4 text-yellow-600" />
               <span>{t('conflict')}</span>
             </div>
             <div className="flex flex-wrap flex-col md:flex-row items-center gap-2">
@@ -289,10 +289,10 @@ export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabCompo
       </Card>
 
       {conflicts > 0 && (
-        <Card className="border-yellow-200 dark:border-yellow-900">
+        <Card aria-hidden="true" className="border-yellow-200 dark:border-yellow-900">
           <CardHeader>
-            <CardTitle className="text-yellow-600 flex flex-wrap flex-col md:flex-row items-center gap-2">
-              <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+            <CardTitle aria-hidden="true" className="text-yellow-600 flex flex-wrap flex-col md:flex-row items-center gap-2">
+              <AlertTriangle aria-hidden="true" className="h-4 w-4" />
               Scheduling Conflicts
             </CardTitle>
             <CardDescription>{t('needsAttention')}</CardDescription>

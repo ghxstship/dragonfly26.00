@@ -84,7 +84,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
       {/* Status Summary */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card role="region" aria-label={`${t('current')} reports metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('current')}</p>
@@ -98,7 +98,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
         </Card>
 
         <Card role="region" aria-label={`${t('dueSoon')} reports metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('dueSoon')}</p>
@@ -106,13 +106,13 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
                   {complianceReports.filter(r => (r as any).status === "due_soon").length}
                 </p>
               </div>
-              <Clock className="h-8 w-8 text-yellow-600" aria-hidden="true" />
+              <Clock aria-hidden="true" className="h-8 w-8 text-yellow-600" />
             </div>
           </CardContent>
         </Card>
 
         <Card role="region" aria-label={`${t('overdue')} reports metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('overdue')}</p>
@@ -120,19 +120,19 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
                   {complianceReports.filter(r => (r as any).status === "overdue").length}
                 </p>
               </div>
-              <AlertCircle className="h-8 w-8 text-red-600" aria-hidden="true" />
+              <AlertCircle aria-hidden="true" className="h-8 w-8 text-red-600" />
             </div>
           </CardContent>
         </Card>
 
         <Card role="region" aria-label={`${t('totalReports')} metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">{t('totalReports')}</p>
                 <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{complianceReports.length}</p>
               </div>
-              <Shield className="h-8 w-8 text-muted-foreground" aria-hidden="true" />
+              <Shield aria-hidden="true" className="h-8 w-8 text-muted-foreground" />
             </div>
           </CardContent>
         </Card>
@@ -142,10 +142,10 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
       <div className="space-y-3">
         {complianceReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-4 sm:p-6">
+            <CardContent aria-hidden="true" className="p-4 sm:p-6">
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-2 md:gap-3 lg:gap-4 flex-1">
-                  <Shield className="h-8 w-8 text-blue-600 mt-1" />
+                  <Shield aria-hidden="true" className="h-8 w-8 text-blue-600 mt-1" />
                   <div className="flex-1">
                     <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
                       <h3 className="font-semibold text-lg">{t(report.nameKey)}</h3>
@@ -184,7 +184,7 @@ export function ReportsComplianceTab({ data = [], loading = false }: ReportsComp
 
                     <div className="flex flex-wrap gap-2">
                       <Button size="sm" className="flex-1" aria-label={`${t('generate')} ${t(report.nameKey)}`}>
-                        <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                        <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                         {t('generate')}
                       </Button>
                       <Button size="sm" variant="outline" className="flex-1" aria-label={`${t('download')} ${t(report.nameKey)}`}>

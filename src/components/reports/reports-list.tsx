@@ -40,15 +40,15 @@ export function ReportsList({ reports, onSelect }: ReportsListProps) {
             className="cursor-pointer hover:shadow-lg transition-shadow"
             onClick={() => onSelect(report)}
           >
-            <CardContent className="p-4 sm:p-6">
+            <CardContent aria-hidden="true" className="p-4 sm:p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex flex-wrap items-center justify-center">
-                  <Icon className="h-6 w-6 text-white" />
+                  <Icon aria-hidden="true" className="h-6 w-6 text-white" />
                 </div>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
                     <Button variant="ghost" size="icon">
-                      <MoreHorizontal className="h-4 w-4" />
+                      <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
@@ -56,7 +56,7 @@ export function ReportsList({ reports, onSelect }: ReportsListProps) {
                     <DropdownMenuItem>Duplicate</DropdownMenuItem>
                     <DropdownMenuItem>Share</DropdownMenuItem>
                     <DropdownMenuItem>Export</DropdownMenuItem>
-                    <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
+                    <DropdownMenuItem aria-hidden="true" className="text-destructive">Delete</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>

@@ -35,17 +35,17 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "completed":
-        return <Badge className="bg-green-600"><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />{t('completed')}</Badge>
+        return <Badge aria-hidden="true" className="bg-green-600"><CheckCircle aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />{t('completed')}</Badge>
       case "in-progress":
-        return <Badge className="bg-blue-600"><Truck className="h-3 w-3 mr-1" aria-hidden="true" />{t('inProgress')}</Badge>
+        return <Badge aria-hidden="true" className="bg-blue-600"><Truck aria-hidden="true" className="h-3 w-3 mr-1" />{t('inProgress')}</Badge>
       case "approved":
-        return <Badge className="bg-purple-600"><CheckCircle className="h-3 w-3 mr-1 flex-shrink-0" aria-hidden="true" />{t('approved')}</Badge>
+        return <Badge aria-hidden="true" className="bg-purple-600"><CheckCircle aria-hidden="true" className="h-3 w-3 mr-1 flex-shrink-0" />{t('approved')}</Badge>
       case "submitted":
-        return <Badge className="bg-cyan-600"><FileText className="h-3 w-3 mr-1" aria-hidden="true" />{t('submitted')}</Badge>
+        return <Badge aria-hidden="true" className="bg-cyan-600"><FileText aria-hidden="true" className="h-3 w-3 mr-1" />{t('submitted')}</Badge>
       case "draft":
-        return <Badge variant="outline"><Clock className="h-3 w-3 mr-1" aria-hidden="true" />{t('draft')}</Badge>
+        return <Badge variant="outline"><Clock aria-hidden="true" className="h-3 w-3 mr-1" />{t('draft')}</Badge>
       case "cancelled":
-        return <Badge variant="destructive"><XCircle className="h-3 w-3 mr-1" aria-hidden="true" />{t('cancelled')}</Badge>
+        return <Badge variant="destructive"><XCircle aria-hidden="true" className="h-3 w-3 mr-1" />{t('cancelled')}</Badge>
       default:
         return <Badge variant="secondary">{status}</Badge>
     }
@@ -65,11 +65,11 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
   }
 
   const getOrderTypeIcon = (name: string) => {
-    if (name.includes("Purchase Order")) return <Package className="h-5 w-5 text-blue-500" aria-hidden="true" />
-    if (name.includes("Work Order")) return <ClipboardList className="h-5 w-5 text-purple-500" aria-hidden="true" />
-    if (name.includes("Rental Order")) return <Truck className="h-5 w-5 text-green-500" aria-hidden="true" />
-    if (name.includes("Change Order")) return <AlertCircle className="h-5 w-5 text-orange-500" aria-hidden="true" />
-    return <FileText className="h-5 w-5 text-gray-500" aria-hidden="true" />
+    if (name.includes("Purchase Order")) return <Package aria-hidden="true" className="h-5 w-5 text-blue-500" />
+    if (name.includes("Work Order")) return <ClipboardList aria-hidden="true" className="h-5 w-5 text-purple-500" />
+    if (name.includes("Rental Order")) return <Truck aria-hidden="true" className="h-5 w-5 text-green-500" />
+    if (name.includes("Change Order")) return <AlertCircle aria-hidden="true" className="h-5 w-5 text-orange-500" />
+    return <FileText aria-hidden="true" className="h-5 w-5 text-gray-500" />
   }
 
   return (
@@ -77,41 +77,41 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
 {/* Quick Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-5 gap-2 md:gap-3 lg:gap-4">
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('draft')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('draft')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'draft').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('submitted')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('submitted')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'submitted').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('approved')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('approved')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'approved').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('inProgress')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('inProgress')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'in-progress').length}
             </CardTitle>
           </CardHeader>
         </Card>
         <Card>
-          <CardHeader className="pb-2">
-            <CardDescription className="text-xs">{t('completed')}</CardDescription>
-            <CardTitle className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
+          <CardHeader aria-hidden="true" className="pb-2">
+            <CardDescription aria-hidden="true" className="text-xs">{t('completed')}</CardDescription>
+            <CardTitle aria-hidden="true" className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl">
               {ordersData.filter(o => (o as any).status === 'completed').length}
             </CardTitle>
           </CardHeader>
@@ -121,11 +121,11 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
       {/* Filters */}
       <div className="flex flex-wrap flex-col sm:flex-col md:flex-row gap-2 md:gap-3 lg:gap-4">
         <div className="flex-1 relative">
-          <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+          <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
           <Input placeholder={t('searchOrders')} className="pl-9" />
         </div>
         <Select defaultValue="all">
-          <SelectTrigger className="w-full max-w-[200px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[200px]">
             <SelectValue placeholder={t('orderType')} />
           </SelectTrigger>
           <SelectContent>
@@ -137,7 +137,7 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
           </SelectContent>
         </Select>
         <Select defaultValue="all-status">
-          <SelectTrigger className="w-full max-w-[180px]">
+          <SelectTrigger aria-hidden="true" className="w-full max-w-[180px]">
             <SelectValue placeholder={t('status')} />
           </SelectTrigger>
           <SelectContent>
@@ -160,7 +160,7 @@ export function OrdersTab({ data = [], loading: loadingProp = false }: OrdersTab
                 <div className="flex items-start gap-3">
                   {getOrderTypeIcon(order.name)}
                   <div className="space-y-1">
-                    <CardTitle className="text-lg">{order.name}</CardTitle>
+                    <CardTitle aria-hidden="true" className="text-lg">{order.name}</CardTitle>
                     <CardDescription>
                       Vendor: {order.assignee_name}
                     </CardDescription>

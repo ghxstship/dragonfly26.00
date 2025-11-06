@@ -161,7 +161,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                   <div
                     key={item.id}
                     className="text-xs p-1 rounded bg-primary/10 hover:bg-primary/20 cursor-pointer truncate"
-                    onClick={() => onItemClick?.(item)}
+                     role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                   >
                     {getDisplayValue(item, schema)}
                   </div>
@@ -194,7 +194,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="outline" size="icon" onClick={previousMonth}>
-                    <ChevronLeft className="h-4 w-4" />
+                    <ChevronLeft aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -214,7 +214,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="outline" size="icon" onClick={nextMonth}>
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -285,7 +285,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                       <div
                         key={item.id}
                         className="text-sm p-2 rounded bg-primary/10 hover:bg-primary/20 cursor-pointer"
-                        onClick={() => onItemClick?.(item)}
+                         role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                       >
                         <div className="font-medium truncate">{getDisplayValue(item, schema)}</div>
                         {getPriorityValue(item, schema) && (
@@ -327,7 +327,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                   <div
                     key={item.id}
                     className="p-4 rounded-lg border bg-card hover:bg-accent cursor-pointer transition-colors"
-                    onClick={() => onItemClick?.(item)}
+                     role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                   >
                     <div className="font-medium">{getDisplayValue(item, schema)}</div>
                     {item.description && (
@@ -383,7 +383,7 @@ export function CalendarView({ data, schema, onItemClick }: CalendarViewProps) {
                         <div
                           key={item.id}
                           className="p-3 rounded-lg border bg-card hover:bg-accent cursor-pointer transition-colors"
-                          onClick={() => onItemClick?.(item)}
+                           role="button" tabIndex={0} onClick={() => onItemClick?.(item)}
                         >
                           <div className="flex items-start justify-between">
                             <div className="flex-1">

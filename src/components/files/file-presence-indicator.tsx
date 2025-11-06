@@ -68,14 +68,14 @@ export function FilePresenceIndicator({
                 <Tooltip key={presence.id}>
                   <TooltipTrigger>
                     <div className="relative">
-                      <Avatar className="h-8 w-8 border-2 border-background">
+                      <Avatar aria-hidden="true" className="h-8 w-8 border-2 border-background">
                         <AvatarImage src={presence.user?.avatar_url} />
                         <AvatarFallback>
                           {presence.user?.first_name?.[0]}{presence.user?.last_name?.[0]}
                         </AvatarFallback>
                       </Avatar>
                       <div className={`absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-background flex items-center justify-center bg-white ${activityColor}`}>
-                        <ActivityIcon className="h-2 w-2" />
+                        <ActivityIcon aria-hidden="true" className="h-2 w-2" />
                       </div>
                     </div>
                   </TooltipTrigger>

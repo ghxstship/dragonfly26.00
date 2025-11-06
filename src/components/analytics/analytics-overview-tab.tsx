@@ -89,13 +89,13 @@ export function AnalyticsOverviewTab({ data = [], loading = false }: AnalyticsOv
           
           return (
             <Card key={index} role="region" aria-label={`${t(metric.labelKey)} metric`}>
-              <CardContent className="p-4 sm:p-6">
+              <CardContent aria-hidden="true" className="p-4 sm:p-6">
                 <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between mb-4">
                   <div className={`p-3 rounded-lg ${metric.bgColor}`}>
-                    <Icon className={`h-6 w-6 ${metric.color}`} aria-hidden="true" />
+                    <Icon aria-hidden="true" className={`h-6 w-6 ${metric.color}`} />
                   </div>
                   <div className={`flex items-center gap-1 text-sm ${metric.trend === "up" ? "text-green-600" : "text-red-600"}`} aria-label={`Change: ${metric.change}`}>
-                    <TrendIcon className="h-4 w-4" aria-hidden="true" />
+                    <TrendIcon aria-hidden="true" className="h-4 w-4" />
                     <span>{metric.change}</span>
                   </div>
                 </div>

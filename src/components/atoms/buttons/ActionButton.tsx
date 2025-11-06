@@ -55,9 +55,9 @@ export function ActionButton({
         </>
       ) : (
         <>
-          {Icon && iconPosition === 'left' && <Icon className="h-4 w-4 mr-2" aria-hidden="true" />}
+          {Icon && iconPosition === 'left' && <Icon aria-hidden="true" className="h-4 w-4 mr-2" />}
           {label}
-          {Icon && iconPosition === 'right' && <Icon className="h-4 w-4 ml-2" aria-hidden="true" />}
+          {Icon && iconPosition === 'right' && <Icon aria-hidden="true" className="h-4 w-4 ml-2" />}
         </>
       )}
     </Button>

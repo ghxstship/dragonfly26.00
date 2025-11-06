@@ -91,7 +91,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
     return (
       <div className="flex items-center justify-center h-full" role="alert" aria-live="assertive">
         <div className="text-center">
-          <Calendar className="h-8 w-8 text-destructive mx-auto mb-4" aria-hidden="true" />
+          <Calendar aria-hidden="true" className="h-8 w-8 text-destructive mx-auto mb-4" />
           <p className="text-muted-foreground">Failed to load data</p>
           <p className="text-sm text-muted-foreground mt-2">{error.message}</p>
         </div>
@@ -105,37 +105,37 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
       {/* Summary Cards */}
       <div className="grid gap-2 md:gap-3 lg:gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Total Revenue</CardTitle>
-            <DollarSign className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Revenue</CardTitle>
+            <DollarSign aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(overview.totalRevenue, locale)}</div>
             <div className="flex flex-wrap items-center text-xs text-green-600">
-              <TrendingUp className="h-3 w-3" aria-hidden="true" />
+              <TrendingUp aria-hidden="true" className="h-3 w-3" />
               {formatPercentage(overview.revenueChange)} vs last period
             </div>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Total Expenses</CardTitle>
-            <ArrowDownRight className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Total Expenses</CardTitle>
+            <ArrowDownRight aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(overview.totalExpenses, locale)}</div>
             <div className="flex flex-wrap items-center text-xs text-green-600">
-              <TrendingDown className="h-3 w-3" aria-hidden="true" />
+              <TrendingDown aria-hidden="true" className="h-3 w-3" />
               {formatPercentage(overview.expenseChange)} vs last period
             </div>
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Net Income</CardTitle>
-            <TrendingUp className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Net Income</CardTitle>
+            <TrendingUp aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold text-green-600">{formatCurrency(overview.netIncome, locale)}</div>
@@ -146,9 +146,9 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2" aria-hidden="true">
-            <CardTitle className="text-sm font-medium" aria-hidden="true">Cash on Hand</CardTitle>
-            <Wallet className="h-4 w-4" aria-hidden="true" />
+          <CardHeader aria-hidden="true" className="flex flex-col sm:flex-row flex-col md:flex-row flex-col md:flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle aria-hidden="true" className="text-sm font-medium">Cash on Hand</CardTitle>
+            <Wallet aria-hidden="true" className="h-4 w-4" />
           </CardHeader>
           <CardContent>
             <div className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold">{formatCurrency(overview.cashOnHand, locale)}</div>
@@ -286,7 +286,7 @@ export function FinanceOverviewTab({ workspaceId, moduleId, tabSlug }: TabCompon
                     'bg-blue-50 dark:bg-blue-950 border-blue-200'
                   }`}
                 >
-                  <AlertCircle className={`h-5 w-5 mt-0.5 ${
+                  <AlertCircle aria-hidden="true" className={`h-5 w-5 mt-0.5 ${
                     alert.type === 'warning' ? 'text-yellow-600' :
                     alert.type === 'success' ? 'text-green-600' :
                     'text-blue-600'

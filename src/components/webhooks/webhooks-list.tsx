@@ -26,7 +26,7 @@ export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
           className="cursor-pointer hover:shadow-md transition-shadow"
           onClick={() => onSelect(webhook)}
         >
-          <CardContent className="p-4 sm:p-6">
+          <CardContent aria-hidden="true" className="p-4 sm:p-6">
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 mb-2">
@@ -38,13 +38,13 @@ export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
                     </Badge>
                   ) : (
                     <Badge variant="secondary">
-                      <XCircle className="h-3 w-3 mr-1" />
+                      <XCircle aria-hidden="true" className="h-3 w-3 mr-1" />
                       Inactive
                     </Badge>
                   )}
                   {webhook.failure_count > 0 && (
                     <Badge variant="destructive">
-                      <AlertCircle className="h-3 w-3 mr-1" />
+                      <AlertCircle aria-hidden="true" className="h-3 w-3 mr-1" />
                       {webhook.failure_count} failures
                     </Badge>
                   )}
@@ -62,7 +62,7 @@ export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild onClick={(e) => e.stopPropagation()}>
                   <Button variant="ghost" size="icon">
-                    <MoreHorizontal className="h-4 w-4" />
+                    <MoreHorizontal aria-hidden="true" className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
@@ -70,7 +70,7 @@ export function WebhooksList({ webhooks, onSelect }: WebhooksListProps) {
                   <DropdownMenuItem>Test Webhook</DropdownMenuItem>
                   <DropdownMenuItem>View Logs</DropdownMenuItem>
                   <DropdownMenuItem>{webhook.is_active ? "Disable" : "Enable"}</DropdownMenuItem>
-                  <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
+                  <DropdownMenuItem aria-hidden="true" className="text-destructive">Delete</DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

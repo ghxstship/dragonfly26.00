@@ -32,14 +32,14 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       {/* Search and Filter Bar */}
       <Card role="search" aria-label="Search archived reports">
-        <CardContent className="p-4">
+        <CardContent aria-hidden="true" className="p-4">
           <div className="flex flex-wrap flex-col md:flex-row items-center gap-3">
             <div className="flex-1 relative">
-              <Search className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" aria-hidden="true" />
+              <Search aria-hidden="true" className="absolute sm:relative sm:inset-auto left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground sm:relative sm:inset-auto" />
               <Input placeholder={t('searchPlaceholder')} className="pl-10" aria-label="Search reports" />
             </div>
             <Button variant="outline" size="icon" aria-label={tCommon('filter')}>
-              <Filter className="h-4 w-4" aria-hidden="true" />
+              <Filter aria-hidden="true" className="h-4 w-4" />
             </Button>
             <div className="flex flex-col sm:flex-row gap-2" role="group" aria-label="Filter by year">
               <Badge variant="outline" className="cursor-pointer hover:bg-accent" role="button" tabIndex={0}>2024 ({archivedReports.filter(r => r.year === "2024").length})</Badge>
@@ -53,13 +53,13 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
         <Card role="region" aria-label={`${t('totalArchived')} metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('totalArchived')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1" aria-live="polite">{archivedReports.length}</p>
           </CardContent>
         </Card>
         <Card role="region" aria-label={`${t('executive')} reports metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('executive')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-purple-600" aria-live="polite">
               {archivedReports.filter(r => (r as any).type === "Executive").length}
@@ -67,7 +67,7 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
           </CardContent>
         </Card>
         <Card role="region" aria-label={`${t('compliance')} reports metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('compliance')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-green-600" aria-live="polite">
               {archivedReports.filter(r => (r as any).type === "Compliance").length}
@@ -75,7 +75,7 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
           </CardContent>
         </Card>
         <Card role="region" aria-label={`${t('operational')} reports metric`}>
-          <CardContent className="p-4">
+          <CardContent aria-hidden="true" className="p-4">
             <p className="text-sm text-muted-foreground">{t('operational')}</p>
             <p className="text-lg md:text-base md:text-lg lg:text-xl lg:text-2xl font-bold mt-1 text-orange-600" aria-live="polite">
               {archivedReports.filter(r => (r as any).type === "Operational").length}
@@ -88,16 +88,16 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
       <div className="space-y-2">
         {archivedReports.map((report: any) => (
           <Card key={report.id} className="hover:shadow-md transition-shadow" role="article" aria-label={`Archived report: ${t(report.nameKey)}`}>
-            <CardContent className="p-4">
+            <CardContent aria-hidden="true" className="p-4">
               <div className="flex flex-wrap flex-col sm:flex-row flex-col md:flex-row items-center justify-between">
                 <div className="flex flex-wrap flex-col md:flex-row items-center gap-2 md:gap-3 lg:gap-4 flex-1">
-                  <Archive className="h-8 w-8 text-gray-400" aria-hidden="true" />
+                  <Archive aria-hidden="true" className="h-8 w-8 text-gray-400" />
                   <div className="flex-1">
                     <h3 className="font-semibold" id={`report-${report.id}`}>{t(report.nameKey)}</h3>
                     <div className="flex flex-col md:flex-row items-center gap-3 text-sm text-muted-foreground mt-1" aria-label={`Type: ${report.type}, Archived: ${report.archivedDate}, Size: ${report.size}`}>
                       <Badge variant="outline" className="text-xs">{report.type}</Badge>
                       <span className="flex flex-wrap flex-col md:flex-row items-center gap-1">
-                        <Calendar className="h-3 w-3" aria-hidden="true" />
+                        <Calendar aria-hidden="true" className="h-3 w-3" />
                         {t('archived')} {report.archivedDate}
                       </span>
                       <span>{report.size}</span>
@@ -109,7 +109,7 @@ export function ReportsArchivedTab({ data = [], loading = false }: ReportsArchiv
                     {t('view')}
                   </Button>
                   <Button variant="outline" size="sm" aria-label={`${t('download')} ${t(report.nameKey)}`}>
-                    <Download className="h-4 w-4 mr-2" aria-hidden="true" />
+                    <Download aria-hidden="true" className="h-4 w-4 mr-2" />
                     {t('download')}
                   </Button>
                 </div>
