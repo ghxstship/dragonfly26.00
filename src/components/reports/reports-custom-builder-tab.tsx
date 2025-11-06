@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
-import { useReportsData } from "@/hooks/use-reports-data"
 
 const dataSourceOptions = [
   { value: "tasks", labelKey: "tasks" },

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useTranslations } from 'next-intl'
+import { useCommunityData } from "@/hooks/use-community-data"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -17,7 +18,6 @@ import {
   MoreHorizontal,
   Bookmark
 } from "lucide-react"
-import { useCommunityData } from "@/hooks/use-community-data"
 
 interface ShowcaseTabProps {
   data?: any[]

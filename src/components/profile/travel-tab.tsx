@@ -10,7 +10,6 @@ import { Textarea } from "@/components/ui/textarea"
 import {Save, Loader2} from "lucide-react"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
-import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function TravelProfileTab() {

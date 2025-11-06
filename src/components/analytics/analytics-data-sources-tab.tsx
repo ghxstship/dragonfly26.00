@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
-import { useAnalyticsData } from "@/hooks/use-analytics-data"
 const dataSources = [
   {
     id: "1",

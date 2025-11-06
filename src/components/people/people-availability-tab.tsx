@@ -14,6 +14,7 @@ interface TabComponentProps {
 
 export function PeopleAvailabilityTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('people.availability')
+
   const { data, loading , error } = useModuleData(workspaceId, 'people', 'availability-tab')
 
   const columns = [

@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Plus, Search, Calendar} from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import { useParams } from "next/navigation"
 import { useState } from "react"
 
@@ -16,6 +15,7 @@ interface AccessTabProps {
 
 export function AccessTab({ data, loading }: AccessTabProps) {
   const t = useTranslations('production.locations.access')
+
   const tCommon = useTranslations('common')
   const params = useParams()
   const workspaceId = params?.workspaceId as string

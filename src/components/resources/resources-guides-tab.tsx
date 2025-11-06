@@ -17,11 +17,11 @@ import {
 import { EmptyState } from "@/components/shared/empty-state"
 import { useState } from "react"
 import { useTranslations } from 'next-intl'
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function ResourcesGuidesTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('resources.guides')
+
   const tCommon = useTranslations('common')
   const { data: guides, loading, error } = useModuleData(workspaceId, 'resources', 'guides')
   const [searchQuery, setSearchQuery] = useState('')

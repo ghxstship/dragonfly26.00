@@ -6,8 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, Plus, Filter, Clock, MapPin, Users } from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
+import { useModuleData } from "@/hooks/use-module-data"
 
 export function EventsCalendarTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.events.calendar')

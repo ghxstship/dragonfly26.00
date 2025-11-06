@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Search, X, Plus, Info, Save, Loader2 } from "lucide-react"
-import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 import {
   Table,

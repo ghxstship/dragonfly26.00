@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ThumbsUp, MessageSquare, UserPlus, Loader2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
-import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 
 interface Endorsement {

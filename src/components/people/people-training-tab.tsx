@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Plus, Search, Calendar} from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import { useParams } from "next/navigation"
 import { useState } from "react"
 
@@ -17,6 +16,7 @@ interface TrainingTabProps {
 export function TrainingTab(props: TrainingTabProps) {
   const { data, loading }: { data?: any, loading?: boolean } = props
   const t = useTranslations('production.people.training')
+
   const tCommon = useTranslations('common')
   const params = useParams()
   const workspaceId = params?.workspaceId as string

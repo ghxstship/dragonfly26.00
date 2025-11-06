@@ -14,7 +14,6 @@ import {
   ArrowDownRight,
   Download,
   RefreshCw, Calendar} from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import { Plus } from "lucide-react"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"

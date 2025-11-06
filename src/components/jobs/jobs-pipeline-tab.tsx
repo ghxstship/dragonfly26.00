@@ -13,7 +13,6 @@ import {
   TrendingUp,
   Clock
 } from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
@@ -21,6 +20,7 @@ import { formatCurrency as formatCurrencyLocale, formatDate as formatDateLocale,
 
 export function JobsPipelineTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('business.jobs.pipeline')
+
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
   const { data: jobs, loading, error } = useModuleData(workspaceId, 'jobs', 'pipeline')

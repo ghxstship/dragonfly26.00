@@ -1,5 +1,7 @@
 "use client"
 
+import { useAdminData } from "@/hooks/use-admin-data"
+
 import { useTranslations } from "next-intl"
 import { FileText, ListChecks, Layout, Workflow, Plus } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"

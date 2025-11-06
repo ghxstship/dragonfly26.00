@@ -8,7 +8,6 @@ import { useIsMobile } from "@/hooks/use-is-mobile"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-import { useAnalyticsData } from "@/hooks/use-analytics-data"
 
 interface TrendPeriod {
   period: string

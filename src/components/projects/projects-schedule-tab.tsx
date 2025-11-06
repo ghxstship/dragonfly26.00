@@ -19,7 +19,6 @@ import {
   Download
 } from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function ProjectsScheduleTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {

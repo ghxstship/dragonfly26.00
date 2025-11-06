@@ -5,9 +5,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Plus, Search, Activity } from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import { useParams } from "next/navigation"
 import { useState } from "react"
+import { useModuleData } from "@/hooks/use-module-data"
 
 interface ActivitiesTabProps {
   data?: Record<string, unknown>[]

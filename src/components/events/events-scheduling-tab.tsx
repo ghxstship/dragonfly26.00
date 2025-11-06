@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, Users, MapPin, Plus, Filter, Search } from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function EventsSchedulingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {

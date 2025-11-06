@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import {Save, Loader2, Plus, X} from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 
 export function HealthTab() {

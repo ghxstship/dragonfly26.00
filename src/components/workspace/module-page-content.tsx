@@ -24,7 +24,6 @@ import { ModuleTabs } from "@/components/layout/module-tabs"
 import { CreateItemDialogEnhanced } from "@/components/shared/create-item-dialog-enhanced"
 import { getNewItemLabel } from "@/lib/modules/item-type-mapper"
 import { getCreateButtonLabel } from "@/lib/modules/form-fields-registry"
-import { useModuleData } from "@/hooks/use-module-data"
 import { getSchemaForTab } from "@/lib/data-schemas"
 import type { ViewType, DataItem } from "@/types"
 

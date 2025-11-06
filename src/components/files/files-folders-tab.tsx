@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Calendar } from 'lucide-react'
 import { useModuleData } from '@/hooks/use-module-data'
+import { useFilesData } from '@/hooks/use-files-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 
 interface TabComponentProps {

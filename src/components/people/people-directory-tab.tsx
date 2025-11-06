@@ -14,6 +14,7 @@ interface TabComponentProps {
 
 export function PeopleDirectoryTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('people.directory')
+
   const { data, loading , error } = useModuleData(workspaceId, 'people', 'directory-tab')
 
   const columns = [

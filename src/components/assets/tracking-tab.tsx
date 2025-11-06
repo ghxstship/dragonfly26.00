@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useModuleData } from "@/hooks/use-module-data"
 import { 
   ScanLine,
   MapPin,
@@ -20,7 +21,6 @@ import {
   Calendar
 } from "lucide-react"
 import { DataTableOrganism } from "@/components/organisms"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function TrackingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {

@@ -19,11 +19,11 @@ import {
 import { EmptyState } from "@/components/shared/empty-state"
 import { useState } from "react"
 import { useTranslations } from 'next-intl'
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function ResourcesPublicationsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('resources.publications')
+
   const tCommon = useTranslations('common')
   const { data: publications, loading, error } = useModuleData(workspaceId, 'resources', 'publications')
   const [searchQuery, setSearchQuery] = useState('')

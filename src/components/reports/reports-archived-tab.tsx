@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
-import { useReportsData } from "@/hooks/use-reports-data"
 
 const archivedReports = [
   { id: "1", nameKey: "q3_2024_financial_report", type: "Executive", archivedDate: "2024-10-15", size: "4.2 MB", year: "2024" },

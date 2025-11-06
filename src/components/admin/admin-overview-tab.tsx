@@ -1,6 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
+import { useAdminData } from "@/hooks/use-admin-data"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -21,6 +22,7 @@ import {
 
 export function AdminOverviewTab() {
   const t = useTranslations()
+
   const stats = [
     {
       label: t('admin.totalMembers'),

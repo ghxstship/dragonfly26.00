@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslations } from "next-intl"
-import { useReportsData } from "@/hooks/use-reports-data"
 
 const exports = [
   { id: "1", nameKey: "q4_performance_summarypdf", type: "PDF", size: "2.4 MB", date: "2025-10-10 14:30", status: "Ready", expires: "2025-11-10" },

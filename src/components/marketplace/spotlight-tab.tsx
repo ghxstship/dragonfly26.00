@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Heart, MessageCircle, Share2, Bookmark, Sparkles, TrendingUp, Star, ChevronRight , Plus} from "lucide-react"
-import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 
 interface SpotlightItem {
   id: string

@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Package, Heart, ShoppingCart, Star, Search, SlidersHorizontal, Grid3x3, List } from "lucide-react"
-import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { MarketplaceCartDrawer } from "./marketplace-cart-drawer"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 

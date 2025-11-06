@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CalendarDays, Briefcase, FolderKanban, Loader2 } from "lucide-react"
-import { useProfileData } from "@/hooks/use-profile-data"
 import { format } from "date-fns"
 import {
   Table,

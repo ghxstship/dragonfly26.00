@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
-import { useReportsData } from "@/hooks/use-reports-data"
 
 const operationalReports = [
   {

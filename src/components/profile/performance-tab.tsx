@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TrendingUp, Star, Clock, Target, Award, CheckCircle2, Loader2, Plus } from "lucide-react"
-import { useProfileData } from "@/hooks/use-profile-data"
 import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
 import {

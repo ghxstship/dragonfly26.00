@@ -8,7 +8,6 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import {Save, Plus, Trash2, Loader2, ExternalLink, Upload, Download} from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { useProfileData } from "@/hooks/use-profile-data"
 import { useToast } from "@/lib/hooks/use-toast"
 
 interface Certification {

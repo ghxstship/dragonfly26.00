@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { useTranslations } from "next-intl"
-import { useReportsData } from "@/hooks/use-reports-data"
 
 const executiveReports = [
   {

@@ -4,7 +4,6 @@ import { FileText, Download, Calendar, TrendingUp, Plus, type LucideIcon } from 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
-import { useReportsData } from "@/hooks/use-reports-data"
 
 const recentReports = [
   { id: "1", nameKey: "q4_performance_summary", type: "Executive", generated: "2025-10-10", size: "2.4 MB", downloads: 45 },

@@ -14,6 +14,7 @@ interface TabComponentProps {
 
 export function JobsPostingsTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('jobs.postings')
+
   const { data, loading , error } = useModuleData(workspaceId, 'jobs', 'postings-tab')
 
   const columns = [

@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Plus, Search, Calendar} from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import { useParams } from "next/navigation"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
@@ -17,6 +16,7 @@ interface OffersTabProps {
 
 export function OffersTab({ data, loading }: OffersTabProps) {
   const t = useTranslations('business.jobs')
+
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
   const params = useParams()

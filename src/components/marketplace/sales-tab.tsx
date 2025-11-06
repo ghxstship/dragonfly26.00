@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { TrendingUp, DollarSign, Package, Clock, CheckCircle2, XCircle, AlertCircle, Search, Download, Plus } from "lucide-react"
-import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { useTranslations } from 'next-intl'
 
 interface Sale {

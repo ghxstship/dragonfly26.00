@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useModuleData } from '@/hooks/use-module-data'
+import { useInsightsData } from '@/hooks/use-insights-data'
 import { DataTableOrganism } from '@/components/organisms/data-views/DataTableOrganism'
 import { Calendar } from 'lucide-react'
 

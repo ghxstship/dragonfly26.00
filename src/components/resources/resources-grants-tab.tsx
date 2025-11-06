@@ -20,11 +20,11 @@ import {
 import { EmptyState } from "@/components/shared/empty-state"
 import { useState } from "react"
 import { useTranslations } from 'next-intl'
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function ResourcesGrantsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('resources.grants')
+
   const tCommon = useTranslations('common')
   const { data: grants, loading, error } = useModuleData(workspaceId, 'resources', 'grants')
   const [searchQuery, setSearchQuery] = useState('')

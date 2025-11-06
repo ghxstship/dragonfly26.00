@@ -1,5 +1,6 @@
 "use client"
 
+
 import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -19,7 +20,6 @@ import {
   Maximize2,
   Plus, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 interface SiteMap {

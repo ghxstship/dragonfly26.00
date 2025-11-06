@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useTranslations } from 'next-intl'
+import { useCommunityData } from "@/hooks/use-community-data"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -24,7 +25,6 @@ import {
   Award,
   Calendar
 } from "lucide-react"
-import { useCommunityData } from "@/hooks/use-community-data"
 
 interface ConnectionsTabProps {
   data?: any[]

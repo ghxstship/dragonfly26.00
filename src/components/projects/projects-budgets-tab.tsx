@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { DollarSign, TrendingUp, TrendingDown, AlertCircle, Plus, Filter } from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function ProjectsBudgetsTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {

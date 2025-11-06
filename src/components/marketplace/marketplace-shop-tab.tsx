@@ -14,6 +14,7 @@ interface TabComponentProps {
 
 export function MarketplaceShopTab({ workspaceId }: TabComponentProps): JSX.Element {
   const t = useTranslations('marketplace.shop')
+
   const { data, loading , error } = useModuleData(workspaceId, 'marketplace', 'shop-tab')
 
   const columns = [

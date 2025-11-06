@@ -33,6 +33,7 @@ interface NewUser {
 export function CreateTab() {
   const t = useTranslations()
   const { toast } = useToast()
+  const { data: membersData, loading: membersLoading, error: membersError } = useModuleData('', 'members', 'create')
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
   const [role, setRole] = useState("member")
@@ -232,7 +233,7 @@ export function CreateTab() {
               <Input
                 id="createName"
                 type="text"
-                placeholder="John Doe"
+                placeholder={t('namePlaceholder')}
                 value={name as any}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -260,7 +261,7 @@ export function CreateTab() {
                 <Input
                   id="createPassword"
                   type="text"
-                  placeholder="Auto-generate if empty"
+                  placeholder={t('passwordPlaceholder')}
                   value={password as any}
                   onChange={(e) => setPassword(e.target.value)}
                 />

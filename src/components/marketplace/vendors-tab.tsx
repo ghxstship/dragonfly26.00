@@ -7,7 +7,6 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Store, Star, ShieldCheck, Award, TrendingUp, Clock, Search, MessageCircle, Plus } from "lucide-react"
-import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { useTranslations } from 'next-intl'
 
 interface Vendor {

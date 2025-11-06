@@ -8,11 +8,11 @@ import { HelpCircle, CheckCircle2, AlertCircle, Search, Plus, Filter, ThumbsUp, 
 import { EmptyState } from "@/components/shared/empty-state"
 import { useState } from "react"
 import { useTranslations } from 'next-intl'
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function ResourcesTroubleshootingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('resources.troubleshooting')
+
   const tCommon = useTranslations('common')
   const { data: issues, loading, error } = useModuleData(workspaceId, 'resources', 'troubleshooting')
   const [searchQuery, setSearchQuery] = useState('')

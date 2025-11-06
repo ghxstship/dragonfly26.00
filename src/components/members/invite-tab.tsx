@@ -25,6 +25,7 @@ import { useToast } from "@/lib/hooks/use-toast"
 export function InviteTab() {
   const t = useTranslations()
   const { toast } = useToast()
+  const { data: inviteData, loading: inviteLoading, error: inviteError } = useModuleData('', 'members', 'invite')
   const [email, setEmail] = useState("")
   const [role, setRole] = useState("member")
   const [message, setMessage] = useState("")
@@ -213,7 +214,7 @@ export function InviteTab() {
             <Label htmlFor="message">Custom Message (Optional)</Label>
             <Textarea
               id="message"
-              placeholder="Add a personal message to your invitation..."
+              placeholder={t('messagePlaceholder')}
               value={message as any}
               onChange={(e) => setMessage(e.target.value)}
               className="min-h-[100px]"
@@ -251,7 +252,7 @@ export function InviteTab() {
             </Label>
             <Textarea
               id="bulkEmails"
-              placeholder="Enter multiple emails separated by commas, semicolons, or new lines&#10;example1@company.com, example2@company.com&#10;example3@company.com"
+              placeholder={t('bulkEmailsPlaceholder')}
               value={bulkEmails as any}
               onChange={(e) => setBulkEmails(e.target.value)}
               className="min-h-[150px] font-mono text-sm"

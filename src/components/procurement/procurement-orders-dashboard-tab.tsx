@@ -15,7 +15,6 @@ import {
   Truck,
   Plus,
   Download, Calendar} from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"

@@ -106,11 +106,13 @@ function auditTabComponent(moduleName, tabName, filePath) {
     });
   }
 
-  // Check for Supabase hooks
+  // Check for Supabase hooks - more comprehensive patterns
   const supabaseHookPatterns = [
-    /use-[\w-]+-data/,
+    /from ["']@\/hooks\/use-[\w-]+-data["']/,  // Hook import
+    /use[\w]+Data\(/,                           // Hook function call
     /useSupabase/,
-    /createClient/
+    /createClient/,
+    /\.from\(['"][\w_]+['"]\)/                 // Direct Supabase query
   ];
   result.hasSupabaseHook = supabaseHookPatterns.some(pattern => pattern.test(content));
 

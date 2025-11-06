@@ -15,8 +15,8 @@ import { Package,
   Clock,
   Plus,
   Download, Calendar} from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
+import { useModuleData } from "@/hooks/use-module-data"
 
 export function AssetsOverviewTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {
   const t = useTranslations('production.assets.overview')

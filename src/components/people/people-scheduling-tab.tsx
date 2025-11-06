@@ -1,5 +1,6 @@
 "use client"
 
+
 import { useTranslations } from 'next-intl'
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -16,7 +17,6 @@ import {
   Plus,
   Download
 } from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 
 export function PeopleSchedulingTab({ workspaceId, moduleId, tabSlug }: TabComponentProps) {

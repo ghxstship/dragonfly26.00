@@ -4,11 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Plus, Search, Calendar} from "lucide-react"
-import { useModuleData } from "@/hooks/use-module-data"
 import { useParams } from "next/navigation"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"
+import { useModuleData } from "@/hooks/use-module-data"
 
 interface DocumentsTabProps {
   data?: Record<string, unknown>[]
@@ -17,6 +17,7 @@ interface DocumentsTabProps {
 
 export function DocumentsTab({ data, loading }: DocumentsTabProps) {
   const t = useTranslations('business.companies')
+
   const tCommon = useTranslations('business.common')
   const locale = useLocale()
   const params = useParams()

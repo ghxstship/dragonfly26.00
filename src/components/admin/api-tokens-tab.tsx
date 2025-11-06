@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
+import { useAdminData } from "@/hooks/use-admin-data"
 import { EmptyState } from "@/components/molecules/data-display/EmptyState";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -144,7 +145,7 @@ export function ApiTokensTab() {
     <div className="space-y-3 md:space-y-4 lg:space-y-6">
       <div className="mb-4">
         <Input
-          placeholder="Search..."
+          placeholder={t('searchPlaceholder')}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="max-w-sm"

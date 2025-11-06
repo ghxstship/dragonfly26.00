@@ -9,7 +9,6 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Users, Star, MapPin, Briefcase, Clock, MessageCircle, Search, Award, Plus } from "lucide-react"
-import { useMarketplaceData } from "@/hooks/use-marketplace-data"
 import { MarketplaceProductDetailDrawer, type MarketplaceProduct } from "./marketplace-product-detail-drawer"
 
 interface Service {

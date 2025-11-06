@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
 import { useTranslations } from "next-intl"
-import { useAnalyticsData } from "@/hooks/use-analytics-data"
 import type { LucideIcon } from "lucide-react"
 
 interface Metric {

@@ -1,5 +1,7 @@
 "use client"
 
+import { useAdminData } from "@/hooks/use-admin-data"
+
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import { Plus, MoreHorizontal, ListChecks } from "lucide-react"

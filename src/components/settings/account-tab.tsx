@@ -1,5 +1,6 @@
 "use client"
 
+
 import { useState, useRef, useEffect } from "react"
 import { useTranslations } from "next-intl"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -35,7 +36,6 @@ import {
   Plus
 } from "lucide-react"
 import { useToast } from "@/lib/hooks/use-toast"
-import { useProfileData } from "@/hooks/use-profile-data"
 
 export function AccountTab() {
   const t = useTranslations()

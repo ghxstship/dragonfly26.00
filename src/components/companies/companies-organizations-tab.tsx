@@ -1,9 +1,11 @@
 "use client"
 
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { useModuleData } from "@/hooks/use-module-data"
 import { 
   Building2,
   MapPin,
@@ -18,7 +20,6 @@ import {
   Search,
   ExternalLink, Calendar} from "lucide-react"
 import { EmptyState } from "@/components/shared/empty-state"
-import { useModuleData } from "@/hooks/use-module-data"
 import type { TabComponentProps } from "@/types"
 import { useTranslations } from "next-intl"
 import { useLocale } from "next-intl"

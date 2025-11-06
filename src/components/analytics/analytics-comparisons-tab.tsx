@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-import { useAnalyticsData } from "@/hooks/use-analytics-data"
 
 interface Period {
   nameKey: string

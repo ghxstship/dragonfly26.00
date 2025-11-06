@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 import { useTranslations } from "next-intl"
-import { useInsightsData } from "@/hooks/use-insights-data"
 
 interface BenchmarkMetric {
   nameKey: string
