@@ -238,14 +238,16 @@ export function IntegrationsTab() {
       {/* Connected Integrations */}
       <Tabs defaultValue="all" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="all">{t('settings.integrationsTab.allIntegrations')}</TabsTrigger>
-          <TabsTrigger value="organization">
-            <Building2 className="h-4 w-4 mr-2" aria-hidden="true" />
-            {t('settings.integrationsTab.organization')} ({organizationIntegrations.length})
+          <TabsTrigger value="all" className="min-w-0">
+            <span className="truncate">{t('settings.integrationsTab.allIntegrations')}</span>
           </TabsTrigger>
-          <TabsTrigger value="personal">
-            <User aria-hidden="true" className="h-4 w-4 mr-2" />
-            {t('settings.integrationsTab.personal')} ({personalIntegrations.length})
+          <TabsTrigger value="organization" className="min-w-0">
+            <Building2 className="h-4 w-4 mr-2 flex-shrink-0" aria-hidden="true" />
+            <span className="truncate">{t('settings.integrationsTab.organization')} ({organizationIntegrations.length})</span>
+          </TabsTrigger>
+          <TabsTrigger value="personal" className="min-w-0">
+            <User aria-hidden="true" className="h-4 w-4 mr-2 flex-shrink-0" />
+            <span className="truncate">{t('settings.integrationsTab.personal')} ({personalIntegrations.length})</span>
           </TabsTrigger>
         </TabsList>
 

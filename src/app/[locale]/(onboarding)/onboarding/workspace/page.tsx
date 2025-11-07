@@ -192,8 +192,12 @@ export default function WorkspacePage() {
         {/* Tabs */}
         <Tabs defaultValue="create" className="w-full max-w-full">
           <TabsList className="grid w-full grid-cols-2 max-w-full">
-            <TabsTrigger value="create">Create New</TabsTrigger>
-            <TabsTrigger value="join">Join Existing</TabsTrigger>
+            <TabsTrigger value="create" className="min-w-0">
+              <span className="truncate">Create New</span>
+            </TabsTrigger>
+            <TabsTrigger value="join" className="min-w-0">
+              <span className="truncate">Join Existing</span>
+            </TabsTrigger>
           </TabsList>
 
           {/* Create workspace */}

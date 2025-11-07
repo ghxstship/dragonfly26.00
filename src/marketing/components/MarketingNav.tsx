@@ -27,38 +27,38 @@ export function MarketingNav(): JSX.Element {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex flex-wrap md:flex-nowrap items-center space-x-2 md:space-x-4 lg:space-x-4 md:space-x-6 lg:space-x-8">
-              <Link href="/solutions" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase">
+            <div className="hidden md:flex flex-wrap md:flex-nowrap items-center gap-2 md:gap-3 lg:gap-4 xl:gap-6">
+              <Link href="/solutions" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase text-xs md:text-sm whitespace-nowrap">
                 {t('solutions')}
               </Link>
-              <Link href="/features" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase">
+              <Link href="/features" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase text-xs md:text-sm whitespace-nowrap">
                 {t('features')}
               </Link>
-              <Link href="/pricing" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase">
+              <Link href="/pricing" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase text-xs md:text-sm whitespace-nowrap">
                 {t('pricing')}
               </Link>
-              <Link href="/docs" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase">
+              <Link href="/docs" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase text-xs md:text-sm whitespace-nowrap">
                 {t('docs')}
               </Link>
-              <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase">
+              <Link href="/blog" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase text-xs md:text-sm whitespace-nowrap">
                 {t('blog')}
               </Link>
-              <Link href="/company" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase">
+              <Link href="/company" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-heading uppercase text-xs md:text-sm whitespace-nowrap">
                 {t('company')}
               </Link>
             </div>
 
             {/* CTA Buttons + Country/Theme Toggles */}
-            <div className="hidden md:flex flex-wrap md:flex-nowrap items-center space-x-2">
+            <div className="hidden md:flex flex-wrap md:flex-nowrap items-center gap-1.5 md:gap-2">
               <CountrySelector />
               <GenerationalLanguageToggle />
               <ThemeToggle />
-              <div className="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-2" />
+              <div className="w-px h-6 bg-gray-300 dark:bg-gray-700" />
               <Link href="/login">
-                <Button variant="ghost">{t('signIn')}</Button>
+                <Button variant="ghost" size="sm" className="text-xs md:text-sm whitespace-nowrap px-2 md:px-4">{t('signIn')}</Button>
               </Link>
               <Link href="/access">
-                <Button variant="default">{t('startFree')}</Button>
+                <Button variant="default" size="sm" className="text-xs md:text-sm whitespace-nowrap px-2 md:px-4">{t('startFree')}</Button>
               </Link>
             </div>
 

@@ -67,18 +67,18 @@ export function CountrySelector(): JSX.Element {
         variant="outline"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 font-tech text-sm w-full sm:w-auto justify-between sm:justify-start"
+        className="flex items-center gap-1.5 font-tech text-xs sm:text-sm w-full sm:w-auto sm:min-w-[140px] md:min-w-[160px] justify-between px-2 sm:px-3 h-8 sm:h-9"
         aria-label="Change country/region"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <span className="flex items-center gap-2">
-          <Globe aria-hidden="true" className="h-4 w-4" />
-          <span className="text-base" aria-hidden="true">{currentCountry?.flag}</span>
-          <span className="hidden sm:inline">{currentCountry?.name}</span>
-          <span className="sm:hidden">{currentCountry?.code}</span>
+        <span className="flex items-center gap-1.5 min-w-0 flex-1">
+          <Globe aria-hidden="true" className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
+          <span className="text-sm sm:text-base flex-shrink-0" aria-hidden="true">{currentCountry?.flag}</span>
+          <span className="hidden sm:inline truncate">{currentCountry?.name}</span>
+          <span className="sm:hidden truncate">{currentCountry?.code}</span>
         </span>
-        <ChevronDown aria-hidden="true" className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+        <ChevronDown aria-hidden="true" className={`h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`}
         />
       </Button>
 

@@ -177,13 +177,13 @@ export function InviteDialog({ open, onOpenChange }: InviteDialogProps) {
 
         <Tabs value={activeTab as any} onValueChange={setActiveTab} className="space-y-4">
           <TabsList aria-hidden="true" className="grid w-full grid-cols-1 md:grid-cols-2 max-w-full">
-            <TabsTrigger value="single" className="gap-2">
-              <Mail aria-hidden="true" className="h-4 w-4" />
-              Single Invite
+            <TabsTrigger value="single" className="gap-2 min-w-0">
+              <Mail aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">Single Invite</span>
             </TabsTrigger>
-            <TabsTrigger value="bulk" className="gap-2">
-              <Upload aria-hidden="true" className="h-4 w-4" />
-              Bulk Invite
+            <TabsTrigger value="bulk" className="gap-2 min-w-0">
+              <Upload aria-hidden="true" className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">Bulk Invite</span>
             </TabsTrigger>
           </TabsList>
 

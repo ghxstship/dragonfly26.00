@@ -31,17 +31,17 @@ export function GenerationalLanguageToggle() {
         size="sm"
         onClick={() => isEnglish && setIsOpen(!isOpen)}
         disabled={!isEnglish}
-        className="flex items-center gap-2 font-tech text-sm w-full sm:w-auto justify-between sm:justify-start"
+        className="flex items-center gap-1.5 font-tech text-xs sm:text-sm w-full sm:w-auto sm:min-w-[120px] md:min-w-[140px] justify-between px-2 sm:px-3 h-8 sm:h-9"
         aria-label={isEnglish ? "Change generational language variant" : "Generational variants only available in English"}
         aria-expanded={isOpen}
         aria-haspopup="true"
         title={!isEnglish ? "Generational variants only available in English" : undefined}
       >
-        <span className="flex items-center gap-2">
-          <span className="text-base" aria-hidden="true">{currentConfig.icon}</span>
-          <span className="sm:inline">{currentConfig.label}</span>
+        <span className="flex items-center gap-1.5 min-w-0 flex-1">
+          <span className="text-sm sm:text-base flex-shrink-0" aria-hidden="true">{currentConfig.icon}</span>
+          <span className="truncate">{currentConfig.label}</span>
         </span>
-        <ChevronDown aria-hidden="true" className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+        <ChevronDown aria-hidden="true" className={`h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`}
         />
       </Button>
 
@@ -93,12 +93,6 @@ export function GenerationalLanguageToggle() {
                         <Check aria-hidden="true" className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 dark:text-blue-400 flex-shrink-0" aria-label="Currently selected" />
                       )}
                     </div>
-                    <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mt-0.5 line-clamp-2">
-                      {config.description}
-                    </p>
-                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                      {config.ageRange}
-                    </p>
                   </div>
                 </button>
               ))}

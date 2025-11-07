@@ -128,13 +128,13 @@ export default function AccessPage() {
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'invite' | 'waitlist')}>
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="invite" className="flex items-center gap-2">
-              <KeyRound className="h-4 w-4" />
-              <span>I Have a Code</span>
+            <TabsTrigger value="invite" className="flex items-center gap-2 min-w-0">
+              <KeyRound className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">I Have a Code</span>
             </TabsTrigger>
-            <TabsTrigger value="waitlist" className="flex items-center gap-2">
-              <Users className="h-4 w-4" />
-              <span>Join Waitlist</span>
+            <TabsTrigger value="waitlist" className="flex items-center gap-2 min-w-0">
+              <Users className="h-4 w-4 flex-shrink-0" />
+              <span className="truncate">Join Waitlist</span>
             </TabsTrigger>
           </TabsList>
 

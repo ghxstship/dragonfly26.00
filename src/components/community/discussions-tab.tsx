@@ -227,17 +227,17 @@ export function DiscussionsTab({ data = [], loading: loadingProp = false }: Disc
             </div>
             <Tabs value={sortBy as any} onValueChange={(v) => setSortBy(v as any)}>
               <TabsList>
-                <TabsTrigger value="hot">
-                  <TrendingUp aria-hidden="true" className="h-4 w-4 mr-2" />
-                  Hot
+                <TabsTrigger value="hot" className="min-w-0">
+                  <TrendingUp aria-hidden="true" className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="truncate">Hot</span>
                 </TabsTrigger>
-                <TabsTrigger value="new">
-                  <Clock aria-hidden="true" className="h-4 w-4 mr-2" />
-                  New
+                <TabsTrigger value="new" className="min-w-0">
+                  <Clock aria-hidden="true" className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="truncate">New</span>
                 </TabsTrigger>
-                <TabsTrigger value="top">
-                  <ArrowUp aria-hidden="true" className="h-4 w-4 mr-2" />
-                  Top
+                <TabsTrigger value="top" className="min-w-0">
+                  <ArrowUp aria-hidden="true" className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="truncate">Top</span>
                 </TabsTrigger>
               </TabsList>
             </Tabs>

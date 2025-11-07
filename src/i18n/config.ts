@@ -21,6 +21,12 @@ export const locales = [
   'tr', // Turkish - Communities
   'sw', // Swahili - African diaspora
   'no', // Norwegian - Nordic communities
+  'da', // Danish - Nordic communities
+  'fi', // Finnish - Nordic communities
+  'sv', // Swedish - Nordic communities
+  'it', // Italian - European communities
+  'nl', // Dutch - European communities
+  'pl', // Polish - European communities
 ] as const
 
 export type Locale = (typeof locales)[number]
@@ -47,6 +53,12 @@ export const languageNames: Record<Locale, { native: string; english: string; fl
   vi: { native: 'Tiếng Việt', english: 'Vietnamese', flag: '🇻🇳' },
   ko: { native: '한국어', english: 'Korean', flag: '🇰🇷' },
   no: { native: 'Norsk', english: 'Norwegian', flag: '🇳🇴' },
+  da: { native: 'Dansk', english: 'Danish', flag: '🇩🇰' },
+  fi: { native: 'Suomi', english: 'Finnish', flag: '🇫🇮' },
+  sv: { native: 'Svenska', english: 'Swedish', flag: '🇸🇪' },
+  it: { native: 'Italiano', english: 'Italian', flag: '🇮🇹' },
+  nl: { native: 'Nederlands', english: 'Dutch', flag: '🇳🇱' },
+  pl: { native: 'Polski', english: 'Polish', flag: '🇵🇱' },
 }
 
 export const defaultLocale: Locale = 'en'

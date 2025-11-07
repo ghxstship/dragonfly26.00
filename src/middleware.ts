@@ -55,8 +55,8 @@ export const config = {
     '/',
     // Match auth callback (needs to be handled separately)
     '/auth/callback',
-    // Match all locale-prefixed paths (all 20 supported locales)
-    '/(en|es|fr|zh|hi|ar|ko|vi|pt|de|ja|ru|id|ur|bn|ta|te|mr|tr|sw)/:path*',
+    // Match all locale-prefixed paths (all 27 supported locales)
+    '/(en|es|fr|zh|hi|ar|ko|vi|pt|de|ja|ru|id|ur|bn|ta|te|mr|tr|sw|no|da|fi|sv|it|nl|pl)/:path*',
     /*
      * Match all other request paths except for the ones starting with:
      * - _next/static (static files)
