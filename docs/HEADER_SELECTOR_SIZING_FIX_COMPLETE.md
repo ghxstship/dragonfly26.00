@@ -47,22 +47,26 @@ Applied comprehensive sizing and spacing improvements across three components:
 
 ### 3. Marketing Navigation (`src/marketing/components/MarketingNav.tsx`)
 
+**Header Layout:**
+- Optimized header height: `h-14 sm:h-16` (more compact on mobile)
+- Responsive padding: `px-3 sm:px-4 md:px-6 lg:px-8`
+- Better breakpoint management: Desktop nav shows at `lg:` (1024px+)
+
 **Navigation Links:**
-- Changed from `space-x-*` to `gap-*` for better flex control
-- Progressive spacing: `gap-2 md:gap-3 lg:gap-4 xl:gap-6`
-- Reduced text size: `text-xs md:text-sm` (was default)
-- Added `whitespace-nowrap` to prevent text wrapping
+- Maintained original text size: `text-sm`
+- Consistent spacing: `gap-4 xl:gap-6`
+- Clean, professional appearance
 
 **Selector Container:**
-- Changed from `space-x-2` to `gap-1.5 md:gap-2`
-- Tighter spacing between selectors and buttons
-- Removed extra margin from divider
+- Consistent spacing: `gap-2`
+- Selectors visible on tablet (md:) and up
+- CTA buttons visible on desktop (lg:) and up
+- Divider only shows on desktop for cleaner tablet view
 
-**CTA Buttons:**
-- Added `size="sm"` for consistency
-- Reduced text size: `text-xs md:text-sm`
-- Added `whitespace-nowrap` to prevent text wrapping
-- Responsive padding: `px-2 md:px-4`
+**Responsive Strategy:**
+- Mobile (< 1024px): Logo + Selectors + Menu button
+- Desktop (≥ 1024px): Full navigation + Selectors + CTAs
+- Tablet (768px - 1023px): Logo + Selectors + Menu button (optimized middle ground)
 
 ## Technical Details
 
@@ -106,26 +110,23 @@ Applied comprehensive sizing and spacing improvements across three components:
 
 The new sizing works across all 27 supported locales:
 
-**Short Words (2-6 chars):**
-- English: "DOCS", "BLOG"
-- Spanish: "DOCS", "BLOG"
-- French: "DOCS", "BLOG"
+**Navigation Text:**
+- Maintained at standard `text-sm` size
+- All navigation items fit properly at all breakpoints
+- No changes to navigation text sizing
 
-**Medium Words (7-12 chars):**
-- German: "DOKUMENTE" (9 chars)
-- Portuguese: "DOCUMENTOS" (10 chars)
-- Italian: "DOCUMENTI" (9 chars)
+**Selector Optimization:**
+- Compact button sizes prevent overlap
+- Minimum width constraints ensure consistency
+- Text truncation handles longer country names
+- Icons maintain proper proportions
 
-**Long Words (13+ chars):**
-- German: "UNTERNEHMEN" (11 chars)
-- Portuguese: "DOCUMENTAÇÃO" (12 chars)
-
-All lengths now fit properly without overlap due to:
-1. Smaller base font sizes
-2. Responsive text sizing
-3. Proper truncation
+All layouts now work properly without overlap due to:
+1. Optimized selector sizing (not navigation text)
+2. Better breakpoint management (lg: for full nav)
+3. Proper truncation in selectors
 4. Flexible gap spacing
-5. Minimum width constraints on selectors
+5. Minimum width constraints on selectors only
 
 ## Files Modified
 
@@ -140,9 +141,10 @@ All lengths now fit properly without overlap due to:
    - Text truncation
 
 3. ✅ `/src/marketing/components/MarketingNav.tsx`
-   - Navigation link spacing and sizing
-   - Selector container spacing
-   - CTA button sizing
+   - Header height optimization (h-14 sm:h-16)
+   - Responsive padding (px-3 sm:px-4 md:px-6 lg:px-8)
+   - Breakpoint management (lg: for full navigation)
+   - Selector container spacing (gap-2)
 
 ## Testing Checklist
 
@@ -163,17 +165,20 @@ All lengths now fit properly without overlap due to:
 
 ### Before
 - Large selectors (default button size)
-- Inconsistent spacing
-- Text overflow on longer translations
+- Inconsistent header spacing
+- Selector text overflow on longer country names
 - Icons too large (16px)
-- Overlap on md/lg screens
+- Potential overlap on md/lg screens
+- Navigation text at default size (unchanged)
 
 ### After
 - Compact selectors (32px mobile, 36px desktop)
-- Consistent progressive spacing
-- Text truncates properly
-- Smaller icons (14px mobile, 16px desktop)
+- Optimized header height and padding
+- Selector text truncates properly
+- Smaller selector icons (14px mobile, 16px desktop)
 - No overlap on any screen size
+- Navigation text maintained at original size (text-sm)
+- Better breakpoint management (lg: for full nav)
 
 ## Responsive Behavior
 
@@ -184,16 +189,16 @@ All lengths now fit properly without overlap due to:
 - Smaller text and icons
 
 ### Tablet (640px - 1024px)
-- Selectors visible in header
-- Minimum width constraints active
-- Tighter spacing between elements
-- Medium text size
+- Selectors visible in header (md:flex)
+- Logo + Selectors + Menu button
+- Navigation in mobile menu
+- Optimized for space efficiency
 
 ### Desktop (1024px+)
-- Full navigation visible
-- Progressive spacing increases
-- All elements properly sized
-- Optimal readability
+- Full navigation visible (lg:flex)
+- All selectors and CTAs in header
+- Progressive spacing (gap-4 xl:gap-6)
+- Optimal layout and readability
 
 ## Impact
 
