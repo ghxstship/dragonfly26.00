@@ -1,0 +1,1765 @@
+{
+  "timestamp": "2025-11-07T03:40:14.857Z",
+  "mode": "live",
+  "backup": "/Users/julianclarkson/Documents/Dragonfly26.00/.reorganization-backup",
+  "operations": {
+    "moved": [
+      {
+        "from": "Full Stack Audit",
+        "to": "docs/audits/FULL_STACK_AUDIT_LATEST.txt",
+        "status": "success"
+      },
+      {
+        "from": "scripts/accessibility-achieve-perfect-100.js",
+        "to": "scripts/accessibility/accessibility-achieve-perfect-100.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/accessibility-comprehensive-final.js",
+        "to": "scripts/accessibility/accessibility-comprehensive-final.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/accessibility-final-push-100.js",
+        "to": "scripts/accessibility/accessibility-final-push-100.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/accessibility-final-remediation.js",
+        "to": "scripts/accessibility/accessibility-final-remediation.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/accessibility-remediation-complete.js",
+        "to": "scripts/accessibility/accessibility-remediation-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/accessibility-true-100-percent.js",
+        "to": "scripts/accessibility/accessibility-true-100-percent.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/accessibility-ultimate-fix.js",
+        "to": "scripts/accessibility/accessibility-ultimate-fix.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-accessibility-comprehensive.js",
+        "to": "scripts/accessibility/fix-accessibility-comprehensive.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-missing-aria.js",
+        "to": "scripts/accessibility/fix-missing-aria.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/find-missing-aria.js",
+        "to": "scripts/accessibility/find-missing-aria.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/remediate-accessibility-100-percent.js",
+        "to": "scripts/accessibility/remediate-accessibility-100-percent.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-accessibility-100-percent.js",
+        "to": "scripts/accessibility/verify-accessibility-100-percent.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-i18n-to-all-marketing-components.js",
+        "to": "scripts/i18n/add-i18n-to-all-marketing-components.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-marketing-i18n-to-all-languages.js",
+        "to": "scripts/i18n/add-marketing-i18n-to-all-languages.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-norwegian-language.js",
+        "to": "scripts/i18n/add-norwegian-language.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-sitemap-translation-keys.js",
+        "to": "scripts/i18n/add-sitemap-translation-keys.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-solutions-i18n-to-all-languages.js",
+        "to": "scripts/i18n/add-solutions-i18n-to-all-languages.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-marketing-i18n-accessibility.js",
+        "to": "scripts/i18n/audit-marketing-i18n-accessibility.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-marketing-i18n-complete.js",
+        "to": "scripts/i18n/audit-marketing-i18n-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/check-translation-progress.js",
+        "to": "scripts/i18n/check-translation-progress.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-marketing-i18n-accessibility.js",
+        "to": "scripts/i18n/complete-marketing-i18n-accessibility.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-translation-audit.js",
+        "to": "scripts/i18n/comprehensive-translation-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/diagnose-language-toggles.js",
+        "to": "scripts/i18n/diagnose-language-toggles.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-marketing-i18n-complete.js",
+        "to": "scripts/i18n/final-marketing-i18n-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/find-all-hardcoded-strings.js",
+        "to": "scripts/i18n/find-all-hardcoded-strings.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/find-translation-issues.js",
+        "to": "scripts/i18n/find-translation-issues.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-i18n-violations-complete.js",
+        "to": "scripts/i18n/fix-i18n-violations-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-language-toggles-complete.js",
+        "to": "scripts/i18n/fix-language-toggles-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-marketing-locale-params.js",
+        "to": "scripts/i18n/fix-marketing-locale-params.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/implement-marketing-i18n-accessibility.js",
+        "to": "scripts/i18n/implement-marketing-i18n-accessibility.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/implement-marketing-i18n-complete.js",
+        "to": "scripts/i18n/implement-marketing-i18n-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/sync-marketing-translation-keys.js",
+        "to": "scripts/i18n/sync-marketing-translation-keys.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/test-language-switching.js",
+        "to": "scripts/i18n/test-language-switching.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-all-complete.py",
+        "to": "scripts/i18n/translate-all-complete.py",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-all-languages-complete.js",
+        "to": "scripts/i18n/translate-all-languages-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-language.py",
+        "to": "scripts/i18n/translate-language.py",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-marketing-complete.js",
+        "to": "scripts/i18n/translate-marketing-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-missing-languages.js",
+        "to": "scripts/i18n/translate-missing-languages.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-norwegian-alt.js",
+        "to": "scripts/i18n/translate-norwegian-alt.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-norwegian-batch.js",
+        "to": "scripts/i18n/translate-norwegian-batch.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-norwegian-deepl.js",
+        "to": "scripts/i18n/translate-norwegian-deepl.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-norwegian-libre.js",
+        "to": "scripts/i18n/translate-norwegian-libre.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-norwegian.js",
+        "to": "scripts/i18n/translate-norwegian.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-spanish-marketing.js",
+        "to": "scripts/i18n/translate-spanish-marketing.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-all-marketing-components-i18n.js",
+        "to": "scripts/i18n/update-all-marketing-components-i18n.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-all-languages-complete.js",
+        "to": "scripts/i18n/verify-all-languages-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-marketing-i18n.js",
+        "to": "scripts/i18n/verify-marketing-i18n.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-marketing-translation-keys.js",
+        "to": "scripts/i18n/verify-marketing-translation-keys.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-marketing-translations.js",
+        "to": "scripts/i18n/verify-marketing-translations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-translation-keys.js",
+        "to": "scripts/i18n/verify-translation-keys.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-all-migrations-sequentially.js",
+        "to": "scripts/database/apply-all-migrations-sequentially.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-migration-to-supabase.js",
+        "to": "scripts/database/apply-migration-to-supabase.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-migrations-one-by-one.js",
+        "to": "scripts/database/apply-migrations-one-by-one.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-migrations-with-safety-checks.js",
+        "to": "scripts/database/apply-migrations-with-safety-checks.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-migrations.js",
+        "to": "scripts/database/apply-migrations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-missing-tables-migration.js",
+        "to": "scripts/database/apply-missing-tables-migration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-new-migrations-080-093.js",
+        "to": "scripts/database/apply-new-migrations-080-093.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-performance-migration.js",
+        "to": "scripts/database/apply-performance-migration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-database-optimization.js",
+        "to": "scripts/database/audit-database-optimization.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-rls-policies.js",
+        "to": "scripts/database/audit-rls-policies.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/check-database-schema.js",
+        "to": "scripts/database/check-database-schema.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/check-remote-migrations.js",
+        "to": "scripts/database/check-remote-migrations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/cleanup-and-consolidate-migrations.js",
+        "to": "scripts/database/cleanup-and-consolidate-migrations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-migration-restructure.js",
+        "to": "scripts/database/complete-migration-restructure.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-partial-rls.js",
+        "to": "scripts/database/complete-partial-rls.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-migration-audit.js",
+        "to": "scripts/database/comprehensive-migration-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-rls-audit.js",
+        "to": "scripts/database/comprehensive-rls-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-legend-users.sql",
+        "to": "scripts/database/create-legend-users.sql",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-missing-database-tables.js",
+        "to": "scripts/database/create-missing-database-tables.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/extract-actual-warning-tables.js",
+        "to": "scripts/database/extract-actual-warning-tables.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/extract-remaining-tables.js",
+        "to": "scripts/database/extract-remaining-tables.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-rls-warnings.js",
+        "to": "scripts/database/fix-all-rls-warnings.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-migrations-106-112.sh",
+        "to": "scripts/database/fix-migrations-106-112.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-corrected-auth-migration.js",
+        "to": "scripts/database/generate-corrected-auth-migration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-final-112.js",
+        "to": "scripts/database/generate-final-112.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-final-auth-migration.js",
+        "to": "scripts/database/generate-final-auth-migration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-migration-112.js",
+        "to": "scripts/database/generate-migration-112.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-migration-126.js",
+        "to": "scripts/database/generate-migration-126.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-safe-112.js",
+        "to": "scripts/database/generate-safe-112.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-safe-index-migration.js",
+        "to": "scripts/database/generate-safe-index-migration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/make-migrations-safe.js",
+        "to": "scripts/database/make-migrations-safe.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/mark-080-applied.js",
+        "to": "scripts/database/mark-080-applied.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/parse-linter-issues.js",
+        "to": "scripts/database/parse-linter-issues.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/push-migrations.js",
+        "to": "scripts/database/push-migrations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/restructure-migrations.js",
+        "to": "scripts/database/restructure-migrations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/sequential-migration-audit.js",
+        "to": "scripts/database/sequential-migration-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/setup-storage-buckets.js",
+        "to": "scripts/database/setup-storage-buckets.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/sync-migration-history.js",
+        "to": "scripts/database/sync-migration-history.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-seed-to-fictional.js",
+        "to": "scripts/database/update-seed-to-fictional.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-and-apply-all-migrations.js",
+        "to": "scripts/database/verify-and-apply-all-migrations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-and-generate-112.js",
+        "to": "scripts/database/verify-and-generate-112.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-database-indexes.sql",
+        "to": "scripts/database/verify-database-indexes.sql",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-database-tables.ts",
+        "to": "scripts/database/verify-database-tables.ts",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-demo-isolation.sql",
+        "to": "scripts/database/verify-demo-isolation.sql",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-linter-tables.js",
+        "to": "scripts/database/verify-linter-tables.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-migration-implementation.js",
+        "to": "scripts/database/verify-migration-implementation.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-rls-optimization.sql",
+        "to": "scripts/database/verify-rls-optimization.sql",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-rls-policies.ts",
+        "to": "scripts/database/verify-rls-policies.ts",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-schema-alignment.js",
+        "to": "scripts/database/verify-schema-alignment.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/achieve-100-percent-responsive.js",
+        "to": "scripts/responsive/achieve-100-percent-responsive.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/achieve-true-100-percent-responsive-final.js",
+        "to": "scripts/responsive/achieve-true-100-percent-responsive-final.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/achieve-true-100-percent-responsive.js",
+        "to": "scripts/responsive/achieve-true-100-percent-responsive.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/analyze-real-responsive-issues.js",
+        "to": "scripts/responsive/analyze-real-responsive-issues.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-responsive-atomic-ux.js",
+        "to": "scripts/responsive/audit-responsive-atomic-ux.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-responsive-audit.js",
+        "to": "scripts/responsive/comprehensive-responsive-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-responsive-push.js",
+        "to": "scripts/responsive/final-responsive-push.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-critical-responsive-files.js",
+        "to": "scripts/responsive/fix-critical-responsive-files.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-remaining-responsive.js",
+        "to": "scripts/responsive/fix-remaining-responsive.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-responsive-atomic-ux.js",
+        "to": "scripts/responsive/fix-responsive-atomic-ux.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-responsive-issues.js",
+        "to": "scripts/responsive/fix-responsive-issues.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-responsive-layout-issues.js",
+        "to": "scripts/responsive/fix-responsive-layout-issues.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-responsive-overflow-issues.js",
+        "to": "scripts/responsive/fix-responsive-overflow-issues.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-all-marketing-pages-typography.js",
+        "to": "scripts/typography/audit-all-marketing-pages-typography.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-auth-onboarding-typography.js",
+        "to": "scripts/typography/audit-auth-onboarding-typography.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-body-text-fonts.js",
+        "to": "scripts/typography/audit-body-text-fonts.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-marketing-typography.js",
+        "to": "scripts/typography/audit-marketing-typography.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-typography-audit.js",
+        "to": "scripts/typography/comprehensive-typography-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-typography-audit.js",
+        "to": "scripts/typography/final-typography-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-marketing-pages-typography.js",
+        "to": "scripts/typography/fix-all-marketing-pages-typography.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-typography-issues.js",
+        "to": "scripts/typography/fix-all-typography-issues.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-auth-onboarding-typography.js",
+        "to": "scripts/typography/fix-auth-onboarding-typography.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-typography-violations.js",
+        "to": "scripts/typography/fix-typography-violations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/normalize-marketing-headings.js",
+        "to": "scripts/typography/normalize-marketing-headings.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/standardize-h1-sizes.js",
+        "to": "scripts/typography/standardize-h1-sizes.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-marketing-typography.js",
+        "to": "scripts/typography/update-marketing-typography.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-marketing-heading-normalization.js",
+        "to": "scripts/typography/verify-marketing-heading-normalization.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/zero-tolerance-typography-audit.js",
+        "to": "scripts/typography/zero-tolerance-typography-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-automations-hub-i18n.js",
+        "to": "scripts/marketing/add-automations-hub-i18n.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-captain-testimonials-i18n.js",
+        "to": "scripts/marketing/add-captain-testimonials-i18n.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-generational-to-section.js",
+        "to": "scripts/marketing/apply-generational-to-section.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/apply-marketing-fonts.js",
+        "to": "scripts/marketing/apply-marketing-fonts.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-card-alignment-patterns.js",
+        "to": "scripts/marketing/audit-card-alignment-patterns.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-all-marketing-content.js",
+        "to": "scripts/marketing/complete-all-marketing-content.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-all-marketing-pages.js",
+        "to": "scripts/marketing/create-all-marketing-pages.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-priority-3-pages.js",
+        "to": "scripts/marketing/create-priority-3-pages.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-marketing-card-alignment.js",
+        "to": "scripts/marketing/fix-marketing-card-alignment.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-marketing-lint-errors.js",
+        "to": "scripts/marketing/fix-marketing-lint-errors.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-remaining-hero-splits.js",
+        "to": "scripts/marketing/fix-remaining-hero-splits.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-remaining-marketing-tokens.js",
+        "to": "scripts/marketing/fix-remaining-marketing-tokens.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-complete-generational-variants.js",
+        "to": "scripts/marketing/generate-complete-generational-variants.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-generational-marketing-copy.js",
+        "to": "scripts/marketing/generate-generational-marketing-copy.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/manual-split-hero-headlines.js",
+        "to": "scripts/marketing/manual-split-hero-headlines.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/marketing-dark-mode-responsive.js",
+        "to": "scripts/marketing/marketing-dark-mode-responsive.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/split-hero-headline-highlight.js",
+        "to": "scripts/marketing/split-hero-headline-highlight.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/true-100-marketing-complete.js",
+        "to": "scripts/marketing/true-100-marketing-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-about-to-company.js",
+        "to": "scripts/marketing/update-about-to-company.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-marketing-brand-voice.js",
+        "to": "scripts/marketing/update-marketing-brand-voice.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-marketing-design-tokens.js",
+        "to": "scripts/marketing/update-marketing-design-tokens.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-automations-hub.js",
+        "to": "scripts/marketing/verify-automations-hub.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-hero-headline-split.js",
+        "to": "scripts/marketing/verify-hero-headline-split.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-marketing-design-tokens.js",
+        "to": "scripts/marketing/verify-marketing-design-tokens.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-marketing-implementation.js",
+        "to": "scripts/marketing/verify-marketing-implementation.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-solutions-page.js",
+        "to": "scripts/marketing/verify-solutions-page.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/accurate-full-stack-audit.js",
+        "to": "scripts/audit/accurate-full-stack-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/atomic-workflow-audit.js",
+        "to": "scripts/audit/atomic-workflow-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/atomic-workflow-complete-audit.js",
+        "to": "scripts/audit/atomic-workflow-complete-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-atomic-audit.js",
+        "to": "scripts/audit/comprehensive-atomic-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-enterprise-audit.js",
+        "to": "scripts/audit/comprehensive-enterprise-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-full-stack-audit.js",
+        "to": "scripts/audit/comprehensive-full-stack-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-gap-audit.js",
+        "to": "scripts/audit/comprehensive-gap-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-marketing-audit.js",
+        "to": "scripts/audit/comprehensive-marketing-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-role-workflow-audit.js",
+        "to": "scripts/audit/comprehensive-role-workflow-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-supabase-audit.js",
+        "to": "scripts/audit/comprehensive-supabase-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-workflow-audit.js",
+        "to": "scripts/audit/comprehensive-workflow-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/cross-page-consistency-audit.js",
+        "to": "scripts/audit/cross-page-consistency-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/deep-dive-gap-analysis.js",
+        "to": "scripts/audit/deep-dive-gap-analysis.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/deep-workflow-analysis.js",
+        "to": "scripts/audit/deep-workflow-analysis.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-full-stack-audit.js",
+        "to": "scripts/audit/final-full-stack-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-verification-audit.js",
+        "to": "scripts/audit/final-verification-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fourth-verification-audit.js",
+        "to": "scripts/audit/fourth-verification-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/full-damage-audit.js",
+        "to": "scripts/audit/full-damage-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/smart-atomic-audit.js",
+        "to": "scripts/audit/smart-atomic-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/smart-marketing-audit.js",
+        "to": "scripts/audit/smart-marketing-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/validate-12-layer-full-stack.js",
+        "to": "scripts/audit/validate-12-layer-full-stack.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/validate-production-build.js",
+        "to": "scripts/audit/validate-production-build.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/validate-sitemap-updates.js",
+        "to": "scripts/audit/validate-sitemap-updates.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-100-percent-completion.ts",
+        "to": "scripts/audit/verify-100-percent-completion.ts",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-api-routes-compliance.js",
+        "to": "scripts/audit/verify-api-routes-compliance.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-atomic-workflow-error-handling.js",
+        "to": "scripts/audit/verify-atomic-workflow-error-handling.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-bullet-point-wrapping.js",
+        "to": "scripts/audit/verify-bullet-point-wrapping.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-performance-optimization.js",
+        "to": "scripts/audit/verify-performance-optimization.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-supabase-integration.js",
+        "to": "scripts/audit/verify-supabase-integration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/verify-type-safety.js",
+        "to": "scripts/audit/verify-type-safety.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/zero-tolerance-12-layer-audit.js",
+        "to": "scripts/audit/zero-tolerance-12-layer-audit.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/zero-tolerance-complete-all-workflows.js",
+        "to": "scripts/audit/zero-tolerance-complete-all-workflows.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/achieve-100-percent-compliance.js",
+        "to": "scripts/fix/achieve-100-percent-compliance.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/cleanup-empty-state-formatting.js",
+        "to": "scripts/fix/cleanup-empty-state-formatting.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-all-atomic-workflows.js",
+        "to": "scripts/fix/complete-all-atomic-workflows.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-all-remaining-stat-cards.js",
+        "to": "scripts/fix/complete-all-remaining-stat-cards.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-prop-interfaces.js",
+        "to": "scripts/fix/complete-prop-interfaces.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-supabase-integration.js",
+        "to": "scripts/fix/complete-supabase-integration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-cleanup.sh",
+        "to": "scripts/fix/comprehensive-cleanup.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/comprehensive-error-fix.js",
+        "to": "scripts/fix/comprehensive-error-fix.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/emergency-repair-all-damage.js",
+        "to": "scripts/fix/emergency-repair-all-damage.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-100-percent-fix.js",
+        "to": "scripts/fix/final-100-percent-fix.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-100-percent-marketing.js",
+        "to": "scripts/fix/final-100-percent-marketing.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-100-percent-verification.js",
+        "to": "scripts/fix/final-100-percent-verification.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-aggressive-fix-all.js",
+        "to": "scripts/fix/final-aggressive-fix-all.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-comprehensive-fix.sh",
+        "to": "scripts/fix/final-comprehensive-fix.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-data-hooks-fix.js",
+        "to": "scripts/fix/final-data-hooks-fix.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-empty-state-cleanup.js",
+        "to": "scripts/fix/final-empty-state-cleanup.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-mock-data-cleanup.js",
+        "to": "scripts/fix/final-mock-data-cleanup.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-type-safety-push.js",
+        "to": "scripts/fix/final-type-safety-push.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/final-type-safety-verification.js",
+        "to": "scripts/fix/final-type-safety-verification.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-build-errors.js",
+        "to": "scripts/fix/fix-all-build-errors.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-check-icons-complete.js",
+        "to": "scripts/fix/fix-all-check-icons-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-conditional-hooks-automated.js",
+        "to": "scripts/fix/fix-all-conditional-hooks-automated.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-dashboard-refresh.js",
+        "to": "scripts/fix/fix-all-dashboard-refresh.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-duplicate-props.js",
+        "to": "scripts/fix/fix-all-duplicate-props.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-errors-100-percent.js",
+        "to": "scripts/fix/fix-all-errors-100-percent.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-errors-comprehensive.js",
+        "to": "scripts/fix/fix-all-errors-comprehensive.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-errors-final.js",
+        "to": "scripts/fix/fix-all-errors-final.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-hook-destructuring.sh",
+        "to": "scripts/fix/fix-all-hook-destructuring.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-lint-errors-now.js",
+        "to": "scripts/fix/fix-all-lint-errors-now.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-all-violations.js",
+        "to": "scripts/fix/fix-all-violations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-aria-wrapper-syntax.js",
+        "to": "scripts/fix/fix-aria-wrapper-syntax.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-atomic-violations.js",
+        "to": "scripts/fix/fix-atomic-violations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-atomic-workflow-error-handling-v2.js",
+        "to": "scripts/fix/fix-atomic-workflow-error-handling-v2.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-atomic-workflow-error-handling-v3.js",
+        "to": "scripts/fix/fix-atomic-workflow-error-handling-v3.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-atomic-workflow-error-handling.js",
+        "to": "scripts/fix/fix-atomic-workflow-error-handling.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-atomic-workflow-final.js",
+        "to": "scripts/fix/fix-atomic-workflow-final.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-bullet-point-wrapping-complete.js",
+        "to": "scripts/fix/fix-bullet-point-wrapping-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-bullet-point-wrapping.js",
+        "to": "scripts/fix/fix-bullet-point-wrapping.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-bullet-points-advanced.js",
+        "to": "scripts/fix/fix-bullet-points-advanced.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-check-icons-flex-shrink.js",
+        "to": "scripts/fix/fix-check-icons-flex-shrink.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-conditional-hooks-complete.js",
+        "to": "scripts/fix/fix-conditional-hooks-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-dashboard-hooks.js",
+        "to": "scripts/fix/fix-dashboard-hooks.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-data-hooks-complete.js",
+        "to": "scripts/fix/fix-data-hooks-complete.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-datatable-columns.js",
+        "to": "scripts/fix/fix-datatable-columns.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-datatable-props.js",
+        "to": "scripts/fix/fix-datatable-props.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-dialog-syntax.js",
+        "to": "scripts/fix/fix-dialog-syntax.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-duplicate-aria-hidden.js",
+        "to": "scripts/fix/fix-duplicate-aria-hidden.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-duplicate-classnames.js",
+        "to": "scripts/fix/fix-duplicate-classnames.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-duplicate-function-signatures.js",
+        "to": "scripts/fix/fix-duplicate-function-signatures.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-hook-imports.sh",
+        "to": "scripts/fix/fix-hook-imports.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-hook-parameters.js",
+        "to": "scripts/fix/fix-hook-parameters.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-hub-by-hub-100-percent.js",
+        "to": "scripts/fix/fix-hub-by-hub-100-percent.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-missing-closing-braces.js",
+        "to": "scripts/fix/fix-missing-closing-braces.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-missing-hooks.sh",
+        "to": "scripts/fix/fix-missing-hooks.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-overview-template-props.js",
+        "to": "scripts/fix/fix-overview-template-props.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-parsing-errors-final.js",
+        "to": "scripts/fix/fix-parsing-errors-final.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-people-procurement-final.js",
+        "to": "scripts/fix/fix-people-procurement-final.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-remaining-30-files.js",
+        "to": "scripts/fix/fix-remaining-30-files.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-remaining-any-types.js",
+        "to": "scripts/fix/fix-remaining-any-types.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-remaining-conditional-hooks.js",
+        "to": "scripts/fix/fix-remaining-conditional-hooks.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-spotlight-template-props.js",
+        "to": "scripts/fix/fix-spotlight-template-props.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-storage-integration.js",
+        "to": "scripts/fix/fix-storage-integration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-syntax-errors-final.js",
+        "to": "scripts/fix/fix-syntax-errors-final.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/fix-type-safety-violations.js",
+        "to": "scripts/fix/fix-type-safety-violations.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-atlvs-favicon.js",
+        "to": "scripts/generation/create-atlvs-favicon.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-centered-favicon.js",
+        "to": "scripts/generation/create-centered-favicon.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-missing-tabs.js",
+        "to": "scripts/generation/create-missing-tabs.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-pixel-atlvs-favicon.js",
+        "to": "scripts/generation/create-pixel-atlvs-favicon.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-press-start-favicon-with-download.js",
+        "to": "scripts/generation/create-press-start-favicon-with-download.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/create-press-start-favicon.js",
+        "to": "scripts/generation/create-press-start-favicon.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-all-api-routes.js",
+        "to": "scripts/generation/generate-all-api-routes.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-complete-checklist.js",
+        "to": "scripts/generation/generate-complete-checklist.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-complete-linter-fix.js",
+        "to": "scripts/generation/generate-complete-linter-fix.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-emoji-favicon.js",
+        "to": "scripts/generation/generate-emoji-favicon.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-globe-favicon.js",
+        "to": "scripts/generation/generate-globe-favicon.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-icons.js",
+        "to": "scripts/generation/generate-icons.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-logo-pngs.js",
+        "to": "scripts/generation/generate-logo-pngs.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-favicon-from-image.js",
+        "to": "scripts/generation/update-favicon-from-image.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/test-language-toggles.sh",
+        "to": "scripts/testing/test-language-toggles.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/test-role-workflows.ts",
+        "to": "scripts/testing/test-role-workflows.ts",
+        "status": "success"
+      },
+      {
+        "from": "scripts/test-waitlist-system.ts",
+        "to": "scripts/testing/test-waitlist-system.ts",
+        "status": "success"
+      },
+      {
+        "from": "scripts/deploy-performance-optimization.js",
+        "to": "scripts/deployment/deploy-performance-optimization.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-aria-to-specific-files.js",
+        "to": "scripts/utilities/add-aria-to-specific-files.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-auth-final-19-files.js",
+        "to": "scripts/utilities/add-auth-final-19-files.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-auth-to-remaining-6-files.js",
+        "to": "scripts/utilities/add-auth-to-remaining-6-files.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-authentication-layer.js",
+        "to": "scripts/utilities/add-authentication-layer.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-back-hook-imports.sh",
+        "to": "scripts/utilities/add-back-hook-imports.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-error-handling-to-hooks.js",
+        "to": "scripts/utilities/add-error-handling-to-hooks.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-hook-calls-to-files.js",
+        "to": "scripts/utilities/add-hook-calls-to-files.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-hook-error-handling.js",
+        "to": "scripts/utilities/add-hook-error-handling.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-jsx-return-types.js",
+        "to": "scripts/utilities/add-jsx-return-types.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-missing-prop-interfaces.js",
+        "to": "scripts/utilities/add-missing-prop-interfaces.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-realtime-to-hooks.js",
+        "to": "scripts/utilities/add-realtime-to-hooks.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-refresh-functions-to-hooks.js",
+        "to": "scripts/utilities/add-refresh-functions-to-hooks.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-return-types.js",
+        "to": "scripts/utilities/add-return-types.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/add-storage-integration.js",
+        "to": "scripts/utilities/add-storage-integration.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-all-hooks.sh",
+        "to": "scripts/utilities/audit-all-hooks.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/audit-realtime-hooks.js",
+        "to": "scripts/utilities/audit-realtime-hooks.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/batch-remove-mock-data.sh",
+        "to": "scripts/utilities/batch-remove-mock-data.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/complete-mock-data-removal.sh",
+        "to": "scripts/utilities/complete-mock-data-removal.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/connect-all-tabs-to-supabase.js",
+        "to": "scripts/utilities/connect-all-tabs-to-supabase.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/execute-comprehensive-audit.sh",
+        "to": "scripts/utilities/execute-comprehensive-audit.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/expand-role-workflow-access.js",
+        "to": "scripts/utilities/expand-role-workflow-access.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/find-hooks-without-realtime.js",
+        "to": "scripts/utilities/find-hooks-without-realtime.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/find-mock-data.js",
+        "to": "scripts/utilities/find-mock-data.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/generate-translation-scripts.sh",
+        "to": "scripts/utilities/generate-translation-scripts.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/remediate-data-hooks-layer.js",
+        "to": "scripts/utilities/remediate-data-hooks-layer.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/remove-all-mock-data.js",
+        "to": "scripts/utilities/remove-all-mock-data.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/remove-bad-realtime.js",
+        "to": "scripts/utilities/remove-bad-realtime.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/remove-duplicate-closing-tags.js",
+        "to": "scripts/utilities/remove-duplicate-closing-tags.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/remove-incorrect-hook-imports.js",
+        "to": "scripts/utilities/remove-incorrect-hook-imports.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/replace-all-stat-cards-comprehensive.js",
+        "to": "scripts/utilities/replace-all-stat-cards-comprehensive.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/replace-all-stat-cards-final.js",
+        "to": "scripts/utilities/replace-all-stat-cards-final.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/replace-use-module-data.js",
+        "to": "scripts/utilities/replace-use-module-data.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/standardize-empty-states.js",
+        "to": "scripts/utilities/standardize-empty-states.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/storage-layer-remediation-clean.js",
+        "to": "scripts/utilities/storage-layer-remediation-clean.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-all-empty-states.js",
+        "to": "scripts/utilities/update-all-empty-states.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/update-module-registries.js",
+        "to": "scripts/utilities/update-module-registries.js",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-ar.sh",
+        "to": "scripts/i18n/translate-ar.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-bn.sh",
+        "to": "scripts/i18n/translate-bn.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-de.sh",
+        "to": "scripts/i18n/translate-de.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-es.sh",
+        "to": "scripts/i18n/translate-es.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-fr.sh",
+        "to": "scripts/i18n/translate-fr.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-hi.sh",
+        "to": "scripts/i18n/translate-hi.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-id.sh",
+        "to": "scripts/i18n/translate-id.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-ja.sh",
+        "to": "scripts/i18n/translate-ja.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-ko.sh",
+        "to": "scripts/i18n/translate-ko.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-mr.sh",
+        "to": "scripts/i18n/translate-mr.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-pt.sh",
+        "to": "scripts/i18n/translate-pt.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-ru.sh",
+        "to": "scripts/i18n/translate-ru.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-sw.sh",
+        "to": "scripts/i18n/translate-sw.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-ta.sh",
+        "to": "scripts/i18n/translate-ta.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-te.sh",
+        "to": "scripts/i18n/translate-te.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-tr.sh",
+        "to": "scripts/i18n/translate-tr.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-ur.sh",
+        "to": "scripts/i18n/translate-ur.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-vi.sh",
+        "to": "scripts/i18n/translate-vi.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-zh.sh",
+        "to": "scripts/i18n/translate-zh.sh",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-6-languages-marketing.py",
+        "to": "scripts/i18n/translate-6-languages-marketing.py",
+        "status": "success"
+      },
+      {
+        "from": "scripts/translate-6-missing-languages.py",
+        "to": "scripts/i18n/translate-6-missing-languages.py",
+        "status": "success"
+      },
+      {
+        "from": "docs/ACCESSIBILITY_LAYER_6_100_PERCENT_FINAL.md",
+        "to": "docs/completion-reports/ACCESSIBILITY_LAYER_6_100_PERCENT_FINAL.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/ACCESSIBILITY_LAYER_6_REMEDIATION_COMPLETE.md",
+        "to": "docs/completion-reports/ACCESSIBILITY_LAYER_6_REMEDIATION_COMPLETE.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/ACCESSIBILITY_LAYER_6_TRUE_100_PERCENT_COMPLETE.md",
+        "to": "docs/completion-reports/ACCESSIBILITY_LAYER_6_TRUE_100_PERCENT_COMPLETE.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/ACCESSIBILITY_REMEDIATION_COMPLETE_2025_01_20.md",
+        "to": "docs/completion-reports/ACCESSIBILITY_REMEDIATION_COMPLETE_2025_01_20.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/API_ROUTES_REMEDIATION_COMPLETE_2025_01_20.md",
+        "to": "docs/completion-reports/API_ROUTES_REMEDIATION_COMPLETE_2025_01_20.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/ASSET_CATALOG_VALIDATION_COMPLETE.md",
+        "to": "docs/completion-reports/ASSET_CATALOG_VALIDATION_COMPLETE.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/AUTHENTICATION_LAYER_100_PERCENT_COMPLETE_2025_01_20.md",
+        "to": "docs/completion-reports/AUTHENTICATION_LAYER_100_PERCENT_COMPLETE_2025_01_20.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/BULLET_POINT_WRAPPING_100_PERCENT_COMPLETE_2025_11_04.md",
+        "to": "docs/completion-reports/BULLET_POINT_WRAPPING_100_PERCENT_COMPLETE_2025_11_04.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/BUTTON_PLACEMENT_COMPLETION_REPORT.md",
+        "to": "docs/completion-reports/BUTTON_PLACEMENT_COMPLETION_REPORT.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/CARD_ALIGNMENT_IMPLEMENTATION_COMPLETE_2025_10_29.md",
+        "to": "docs/completion-reports/CARD_ALIGNMENT_IMPLEMENTATION_COMPLETE_2025_10_29.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/COMPETITIVE_FEATURES_IMPLEMENTATION_COMPLETE.md",
+        "to": "docs/completion-reports/COMPETITIVE_FEATURES_IMPLEMENTATION_COMPLETE.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/COMPLETE_APPLICATION_SITEMAP_2025_01_20.md",
+        "to": "docs/completion-reports/COMPLETE_APPLICATION_SITEMAP_2025_01_20.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/COMPLETE_MODULE_CHECKLIST_2025_01_20.md",
+        "to": "docs/completion-reports/COMPLETE_MODULE_CHECKLIST_2025_01_20.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/COUNTRY_EXPANSION_COMPLETE.md",
+        "to": "docs/completion-reports/COUNTRY_EXPANSION_COMPLETE.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/DATABASE_OPTIMIZATION_COMPLETE_2025_01_20.md",
+        "to": "docs/completion-reports/DATABASE_OPTIMIZATION_COMPLETE_2025_01_20.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/DATABASE_SCHEMA_REMEDIATION_COMPLETE.md",
+        "to": "docs/completion-reports/DATABASE_SCHEMA_REMEDIATION_COMPLETE.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/REALTIME_LAYER_REMEDIATION_COMPLETE_2025_01_20.md",
+        "to": "docs/completion-reports/REALTIME_LAYER_REMEDIATION_COMPLETE_2025_01_20.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/TYPE_SAFETY_100_PERCENT_CERTIFICATION.md",
+        "to": "docs/completion-reports/TYPE_SAFETY_100_PERCENT_CERTIFICATION.md",
+        "status": "success"
+      },
+      {
+        "from": "docs/TYPE_SAFETY_REMEDIATION_COMPLETE.md",
+        "to": "docs/completion-reports/TYPE_SAFETY_REMEDIATION_COMPLETE.md",
+        "status": "success"
+      }
+    ],
+    "deleted": [
+      {
+        "path": "build-final.log",
+        "status": "success"
+      },
+      {
+        "path": "build-output.log",
+        "status": "success"
+      },
+      {
+        "path": "final-build-output.log",
+        "status": "success"
+      },
+      {
+        "path": "tsconfig.tsbuildinfo",
+        "status": "success"
+      }
+    ],
+    "created": [
+      "scripts/accessibility",
+      "scripts/i18n",
+      "scripts/database",
+      "scripts/responsive",
+      "scripts/typography",
+      "scripts/marketing",
+      "scripts/audit",
+      "scripts/fix",
+      "scripts/generation",
+      "scripts/testing",
+      "scripts/deployment",
+      "scripts/archive",
+      "scripts/utilities",
+      "docs/completion-reports",
+      "docs/archive"
+    ],
+    "errors": []
+  }
+}
