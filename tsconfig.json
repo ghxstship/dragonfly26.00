@@ -43,6 +43,8 @@
     "supabase/migrations/**/*",
     "src/components/views.backup/**/*",
     "src/components/test/**/*",
-    "tests/**/*"
+    "tests/**/*",
+    "__tests__/**/*",
+    "scripts/**/*"
   ]
 }

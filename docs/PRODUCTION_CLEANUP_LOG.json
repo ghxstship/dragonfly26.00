@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-11-07T03:48:03.934Z",
+  "operations": {
+    "removed": [
+      ".reorganization-backup",
+      "docs/audits/archived-root-files",
+      "src/i18n/messages/no.json.backup"
+    ],
+    "kept": [],
+    "errors": []
+  },
+  "validation": "failed"
+}
